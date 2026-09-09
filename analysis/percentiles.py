@@ -19,6 +19,7 @@ VERTICALS = [("gaming", r"\b(twitch|stream|gaming|gamer|esport|steam|playstation
     ("software", r"\b(app|software|saas|subscription|plan|premium account|vpn|course|membership)\b"),
     ("music_media", r"\b(music|album|vinyl|guitar|podcast|book|novel|comic|film|movie|magazine)\b")]
 REPEAT = {"loyalty", "timed_bonus"}; EMAIL = {"Email Subscriptions", "Gleam Subscriber"}
+FOLLOWS = {"X Follows": "x_follows", "Instagram Follows": "instagram_follows", "TikTok Follows": "tiktok_follows", "Twitch Follows": "twitch_follows", "YouTube Entries": "youtube_subscribes", "Chat Members": "discord_joins", "Facebook Likes": "facebook_likes"}
 PCTS = list(range(5, 100, 5))
 
 def pct(xs):
@@ -42,15 +43,27 @@ def main():
         rf = sum(e["entry_count"] for e in ems if e.get("entry_method_generic_name") == "Viral Shares" and e.get("entry_count"))
         txt = " ".join([c.get("site_name") or "", c.get("name") or "", c.get("incentive_name") or ""] + [p.get("name") or "" for p in c["prizes"]]).lower()
         acts = sum(e["entry_count"] for e in ems if e.get("entry_count"))
+        usd = [(pz.get("value") or 0) * (pz.get("quantity") or 1) for pz in c["prizes"] if (pz.get("currency") or "").upper() == "USD" and pz.get("value")]
+        val = sum(usd) if usd and all((pz.get("currency") or "").upper() == "USD" and pz.get("value") for pz in c["prizes"]) else None
+        per_action = {}
+        for e in ems:
+            g = e.get("entry_method_generic_name")
+            if g and e.get("entry_count") is not None: per_action[g] = per_action.get(g, 0) + e["entry_count"] / c["valid_contestants"]
+        nets = {k: 0 for k in FOLLOWS.values()}
+        for e in ems:
+            k = FOLLOWS.get(e.get("entry_method_generic_name"))
+            if k and e.get("entry_count"): nets[k] += e["entry_count"]
         o.append({"contestants": c["valid_contestants"], "conversion": c["valid_contestants"] / c["impressions"] if c.get("impressions") else None,
                   "impressions": c.get("impressions") or None, "actions_per_contestant": acts / c["valid_contestants"] if acts else None,
                   "contestants_per_day": c["valid_contestants"] / c["duration_in_days"] if c.get("duration_in_days") else None,
                   "methods": len(ems), "duration_days": c.get("duration_in_days"),
-                  "entries_per_entrant": c["valid_entries"] / c["valid_contestants"], "invalid_share": inv / (c["valid_entries"] + inv),
+                  "entries_per_entrant": c["valid_entries"] / c["valid_contestants"], "entries": c["valid_entries"],
+                  "stated_usd_per_contestant": val / c["valid_contestants"] if val and 0 < val < 10 ** 7 else None, "_per_action": per_action,
+                  **{k: (v or None) for k, v in nets.items()},
                   "email_signups": em or None, "email_uptake": em / c["valid_contestants"] if em else None, "referrals_per_contestant": rf / c["valid_contestants"] if rf else None,
                   "clean": not any(e.get("entry_method_type") in REPEAT or (e.get("entry_method_type") == "custom_action" and e.get("entry_method_template") == "bonus") for e in ems) and c["duration_in_days"] <= 14,
                   "band": band(c["valid_contestants"]), "vertical": next((v for v, pat in VERTICALS if re.search(pat, txt)), "unclassified")})
-    METRICS = ["contestants", "conversion", "impressions", "actions_per_contestant", "contestants_per_day", "methods", "duration_days", "entries_per_entrant", "invalid_share", "email_signups", "email_uptake", "referrals_per_contestant"]
+    METRICS = ["contestants", "conversion", "impressions", "actions_per_contestant", "contestants_per_day", "methods", "duration_days", "entries_per_entrant", "entries", "stated_usd_per_contestant", "email_signups", "email_uptake", "referrals_per_contestant"] + list(FOLLOWS.values())
     def table(g): return {m: pct([c[m] for c in g]) for m in METRICS}
     out = {"percentiles": PCTS, "definitions": {"conversion": "contestants per impression, all campaigns; the clean group has no repeatable action and 14 days or less",
                                                 "email_signups": "campaigns with an email action", "actions_per_contestant": "completed actions divided by contestants, entry worth removed", "contestants_per_day": "contestants divided by run length", "vertical": "regex on organizer, campaign and prize names"},
@@ -58,6 +71,12 @@ def main():
     for b in ["1k-2.5k", "2.5k-10k", "10k+"]: out["groups"]["band:" + b] = table([c for c in o if c["band"] == b])
     for v, _ in VERTICALS: out["groups"]["vertical:" + v] = table([c for c in o if c["vertical"] == v])
     out["groups"] = {k: {m: t for m, t in v.items() if t} for k, v in out["groups"].items()}
+    counts = {}
+    for c in o:
+        for g in c["_per_action"]: counts[g] = counts.get(g, 0) + 1
+    out["per_action_uptake"] = {g: pct([c["_per_action"][g] for c in o if g in c["_per_action"]]) for g, n in counts.items() if n >= 300}
+    out["definitions"]["per_action_uptake"] = "completions per contestant for campaigns offering the action, by Gleam action name"
+    out["definitions"]["stated_usd_per_contestant"] = "stated USD prize pool divided by contestants, campaigns with every prize valued in USD"
     here = os.path.dirname(__file__)
     for p in [os.path.join(here, "output", "percentiles.json"), os.path.join(here, "..", "skills", "giveaway-results-review", "references", "percentiles.json")]:
         json.dump(out, open(p, "w"), separators=(",", ":")); print("wrote", p)
