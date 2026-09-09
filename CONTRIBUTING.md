@@ -78,3 +78,20 @@ Customer data of any kind: names, emails, account ids, campaign links, raw expor
 ## Licence
 
 MIT. By contributing you agree your contribution is licensed the same way.
+
+## Sample Data
+
+Two synthetic files let you run the scripts before you have an export of your own. No real people are in either.
+
+`skills/giveaway-random-draw/examples/sample-entrants.csv` is 40 rows of email, name and entries, with duplicates and one disposable domain so the pre-draw scan has something to report:
+
+```bash
+python3 skills/giveaway-random-draw/scripts/draw.py commit skills/giveaway-random-draw/examples/sample-entrants.csv --winners 3 --weight-column entries
+```
+
+`skills/giveaway-results-review/examples/sample-actions-export.csv` is 118 rows in the shape of a Gleam Actions export, 30 entrants over five days with invalid rows, referrals and both hosted and embedded landing pages:
+
+```bash
+python3 skills/giveaway-results-review/scripts/gleam_export.py skills/giveaway-results-review/examples/sample-actions-export.csv
+python3 skills/giveaway-results-review/scripts/campaign_report.py skills/giveaway-results-review/examples/sample-actions-export.csv --impressions 4200
+```

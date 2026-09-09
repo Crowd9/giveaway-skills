@@ -10,13 +10,25 @@ Every figure carries its sample size, and every finding describes what organizer
 
 ## Install
 
+Claude Code, as a plugin:
+
 ```bash
 /plugin marketplace add Crowd9/giveaway-skills
+```
+
+```bash
 /plugin install giveaway-skills
+```
+
+OpenAI Codex, Cursor and anything else that reads `.agents/skills`, with the skills CLI:
+
+```bash
 npx skills add Crowd9/giveaway-skills
 ```
 
-The first two are Claude Code, the third covers Codex, Cursor and anything else reading `.agents/skills`. Then ask: How long should my giveaway run?
+Or copy a skill folder into the place your assistant loads skills from: `.claude/skills/` for Claude Code, `.agents/skills/` for Codex ([Codex skills docs](https://developers.openai.com/codex/skills)). Then ask: How long should my giveaway run?
+
+If you keep the [marketingskills](https://github.com/coreyhaines31/marketingskills) product context file at `.agents/product-marketing.md`, every skill reads it first and skips the questions it answers.
 
 ## Skills
 
@@ -225,47 +237,6 @@ Our giveaway closes Friday. Walk me through a draw our sponsor can verify.
 ```
 
 Ask for a plan or ask it to check yours. Every answer states its assumptions, labels what came from the data, and ends with the next decision. You never need the dataset: the skills ship with the findings and paraphrased examples, and the private export is not part of this repository.
-
-## Sample Data
-
-Two synthetic files let you run the scripts before you have an export of your own. No real people are in either.
-
-`skills/giveaway-random-draw/examples/sample-entrants.csv` is 40 rows of email, name and entries, with duplicates and one disposable domain so the pre-draw scan has something to report:
-
-```bash
-python3 skills/giveaway-random-draw/scripts/draw.py commit skills/giveaway-random-draw/examples/sample-entrants.csv --winners 3 --weight-column entries
-```
-
-`skills/giveaway-results-review/examples/sample-actions-export.csv` is 118 rows in the shape of a Gleam Actions export, 30 entrants over five days with invalid rows, referrals and both hosted and embedded landing pages:
-
-```bash
-python3 skills/giveaway-results-review/scripts/gleam_export.py skills/giveaway-results-review/examples/sample-actions-export.csv
-python3 skills/giveaway-results-review/scripts/campaign_report.py skills/giveaway-results-review/examples/sample-actions-export.csv --impressions 4200
-```
-
-## Installing
-
-Two commands and you are done. Pick the one that matches your assistant.
-
-Claude Code, as a plugin:
-
-```bash
-/plugin marketplace add Crowd9/giveaway-skills
-```
-
-```bash
-/plugin install giveaway-skills
-```
-
-OpenAI Codex, Cursor and other agents that read `.agents/skills`, with the skills CLI, which lists all ten skills and installs them where Codex loads them from:
-
-```bash
-npx skills add Crowd9/giveaway-skills
-```
-
-Or copy a skill folder into the place your assistant loads skills from: `.claude/skills/` for Claude Code, `.agents/skills/` for Codex and the cross-agent standard. In Codex, run `/skills` or type `$` to pick one ([Codex skills docs](https://developers.openai.com/codex/skills)). 
-
-These skills follow the conventions of the [marketingskills library](https://github.com/coreyhaines31/marketingskills) by Corey Haines and sit beside it. If you already keep its product context file at `.agents/product-marketing.md`, every skill reads it first and skips the questions it answers.
 
 ## Evidence Behind the Advice
 
