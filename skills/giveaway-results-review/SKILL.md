@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway against benchmarks from 37,180 real campaigns: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.0.1
+  version: 1.0.2
 ---
 
 # Giveaway Results Review
@@ -19,8 +19,9 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 2. **Run the script.** `python3 scripts/review.py --contestants N --impressions N --entries N --invalid N --days N --methods N [--actions actions.csv]` prints the derived metrics, the size band, and each figure beside the benchmark for that band. Show its output. Do the arithmetic nowhere else.
 3. **Read the actions.** With an actions export, rank each action's completions per contestant against its family median in `references/benchmarks.md`, and read the asset totals (addresses, follows, joins, referrals) against the yield table for the band. Name the action that carried the campaign and the ones almost nobody did.
 4. **Explain, with care.** Load `references/reading-results.md`. Impressions are unique per user per day, so daily actions and long runs push conversion down without anything going wrong. Say which benchmark caveats apply before judging a number.
-5. **Recommend changes.** Three at most, each tied to a figure, each pointing at the skill that plans it: prize, entry mix, timing, structure, promotion.
-6. **Deliver.**
+5. **Price it.** When prize cost is known, run the prize picker's `scripts/roi.py` with the actual counts (`--emails`, `--follows`, `--referrals`) and show cost per result beside the vertical benchmark. Ask for a value per email only if the user wants a return figure.
+6. **Recommend changes.** Three at most, each tied to a figure, each pointing at the skill that plans it: prize, entry mix, timing, structure, promotion.
+7. **Deliver.**
 
 ## Output
 
@@ -28,6 +29,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 - The script output as a table: metric, this campaign, benchmark median for the band, read.
 - Actions ranked, when an export was given.
 - What to change next time, three items at most, each with the figure that motivates it and the skill to use.
+- Cost per contestant, per email and per follow beside the benchmark, when prize cost was given.
 - Caveats that apply to this campaign (repeatable actions, long run, missing impressions, small numbers).
 - Next decision needed.
 
@@ -68,4 +70,4 @@ Advice is platform-neutral. Reporting definitions come from the campaign's own p
 
 ## Related skills
 
-- `giveaway-entry-method-planner`, `giveaway-timing-and-duration`, `giveaway-prize-picker`, `giveaway-winner-structure`, `giveaway-promotion-plan` for the changes this review recommends.
+- `giveaway-entry-method-planner`, `giveaway-timing-and-duration`, `giveaway-prize-picker`, `giveaway-winner-structure`, `giveaway-promotion-plan` for the changes this review recommends. The prize picker holds the ROI script and the cost benchmarks reference.

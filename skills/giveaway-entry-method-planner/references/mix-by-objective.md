@@ -72,7 +72,7 @@ Median completions per campaign among campaigns that offered the action, complet
 | Referral entries (Viral Share) | 16,708 | 349 | 0.13 | 2.10 |
 | Content submissions | 1,109 | 186 | 0.06 | 20.00 |
 
-An email action in the median campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 350 referral entries, and a content action under 200 submissions.
+Stated prize value per email signup and per follow by vertical sits in the prize picker's `roi-benchmarks.md`. An email action in the median campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 350 referral entries, and a content action under 200 submissions.
 
 ## Friction
 

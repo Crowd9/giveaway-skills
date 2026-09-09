@@ -102,6 +102,20 @@ Stated USD per email signup by prize category, campaigns with an email action:
 | Music gear | 355 | 0.15 |
 | Sports and outdoor gear | 323 | 0.43 |
 
+## By start year
+
+| Year | n | Contestants | Contestants per impression |
+|---|---|---|---|
+| 2020 | 461 | 2,685 | 27% |
+| 2021 | 9,127 | 2,438 | 30% |
+| 2022 | 8,161 | 2,201 | 30% |
+| 2023 | 6,356 | 2,164 | 27% |
+| 2024 | 5,262 | 2,117 | 24% |
+| 2025 | 5,202 | 2,058 | 26% |
+| 2026 | 2,516 | 2,060 | 27% |
+
+The median campaign has drifted smaller since 2021 at a steady conversion. A campaign run this year sits a little under the whole-export medians at the same quality.
+
 ## Other reference points
 
 - Top fifth against bottom fifth by contestants: 35,098 against 4,028 impressions at the same conversion (28% and 28%), stated prize pool 2,000 against 409 USD, previous campaigns 10 against 5.

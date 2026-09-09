@@ -43,6 +43,7 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Recommend mode when you have nothing yet, evaluate mode when you want a prize checked or improved
 - Preferred option, two alternatives from different categories, and the tradeoffs between them
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
+- ROI script: cost per contestant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
 - Prize values by category and campaign size from 60,282 real prizes, with sample sizes shown
 - A prize description you can paste, and Gleam setup help only when you ask for it
 
@@ -140,6 +141,7 @@ Every message after the draw, in send order, in your voice.
 Your finished campaign read against 37,180 others of the same size, and what to change next time.
 
 - A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band
+- What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against its family median, so you see which one carried the campaign
 - Three changes at most, each tied to a figure and to the skill that plans it
