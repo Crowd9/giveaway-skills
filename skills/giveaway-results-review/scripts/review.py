@@ -41,13 +41,16 @@ def rank(value, table, lower_is_better=False):
 
 table_pcts = list(range(5, 100, 5))
 
-def rank_line(metric, value, groups, lower_is_better=False):
-    parts = []
+def rank_line(metric, value, groups, lower_is_better=False, fmt="{:,.2f}"):
+    parts = []; target = None
     for label, key in groups:
         t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
         r = rank(value, t, lower_is_better)
         if r: parts.append(f"{'better' if not lower_is_better else 'lower'} than {r[0]}% of {label} (n={r[1]:,})")
-    return "; ".join(parts) if False else ", ".join(parts)
+        if t and key.startswith("band") and not lower_is_better and value < t["p"][14]: target = (label, t["p"][14])
+    line = ", ".join(parts)
+    if target: line += f". Top quarter of {target[0]} reach " + fmt.format(target[1])
+    return line
 
 PCT = None
 
@@ -96,7 +99,7 @@ def review(a):
         if peer_m: note += f", clean campaigns with {a.methods} actions {peer_m:.0%}"
         if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
         if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per user per day, so a long run or a daily action lowers this without anything being wrong"
-        note += ". " + rank_line("conversion", conv, conv_groups)
+        note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
         rows.append(("Contestants per impression", f"{conv:.1%}", f"{BENCH['platform_average_conversion']:.0%}", note))
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)

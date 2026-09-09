@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 37,180 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.4.2
+  version: 1.4.3
 ---
 
 # Giveaway Results Review
@@ -27,11 +27,11 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 ## Output
 
 - The report from `campaign_report.py` when an export was given, with the insights list checked against its tables.
-- Verdict in one line: what the campaign did well and the one number that needs attention, with its rank ("better than 70% of food and drink campaigns on actions per entrant").
+- Verdict in one line that leads with what the campaign did well, with its rank, then the one number with the most room ("better than 70% of food and drink campaigns on actions per entrant, and email uptake has the most room at 68% against 89%").
 - The script output as a table: metric, this campaign, benchmark median for the band, read.
 - Actions ranked, when an export was given, plus the country split and where entrants came from (referrers) when the export carried them.
 - The organizer's own history, when given: this campaign beside the previous one and their own median, the change, and how many previous campaigns it beat, with the persistence note.
-- What to change next time, three items at most, each with the figure that motivates it and the skill to use.
+- What to change next time, three items at most, each framed as a target against a benchmark or the organizer's own previous campaign, with the figure that motivates it and the skill to use ("email uptake 68%, median for the band 89%, the change is one mandatory email action, and the previous campaign reached 77% with that setup").
 - Cost per contestant, per email and per follow beside the benchmark, when prize cost was given.
 - Caveats that apply to this campaign (repeatable actions, long run, missing impressions, small numbers).
 - Next decision needed.
@@ -45,6 +45,8 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 - A rank is a position among campaigns that reached 1,000 entrants, in a vertical guessed from names. Say "better than 70% of the 989 food and drink campaigns in the export", never "top 30% of all giveaways".
 - Benchmarks describe campaigns that reached 1,000 entrants. A campaign below that has no peer group here. Say so and compare against the 1,000 to 2,500 band with that caveat.
 - Actions and entries are outputs, never funnel stages. The only funnel is impressions to entrants. Every number in the report is recomputable from the file. Label every assumption inline, and omit a section whose column is empty in the file.
+- Lead with strengths. A campaign that reached 1,000 entrants already sits in the group every benchmark describes, so most figures will be near the middle and several will rank well. Name the best two or three before anything else.
+- Frame every gap as a target: the figure, the benchmark or own-history figure it can reach, and the one change that closes it. "Referrals at 0.04 per contestant, median 0.13, and the top quarter of campaigns this size reach 0.30" gives the reader somewhere to go.
 - Report the figure, the median and the rank, and stop. Words like weak, poor, strong or excellent are allowed only when the figure sits in the bottom or top tenth of its group, or a third or more away from the median, and the sentence must say which. An email uptake of 68% against a median of 89% is "below most campaigns of this size", never "poor". A completion rate above two thirds is a majority of entrants doing the thing, whatever the rank.
 - Never say a result was "good" or "bad" in the abstract. Say where it sits in the distribution and what the objective was.
 
