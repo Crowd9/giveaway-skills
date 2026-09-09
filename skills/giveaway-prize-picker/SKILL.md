@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose or evaluate a giveaway prize that attracts the intended audience, supports the business objective, and fits budget and fulfillment constraints. Use when the user asks 'what should we give away', 'prize ideas', 'is X a good prize', 'what prize should we offer', 'one big prize or several smaller ones', 'how many winners', 'giveaway budget', 'prize bundle', 'what prize gets the most entries', or mentions a giveaway, contest, sweepstakes, competition or raffle prize. Covers prize choice, winner structure, budget and fulfillment. Platform-neutral, with Gleam setup help only when the user says they use Gleam. Entry mechanics, timing and promotion are out of scope."
 metadata:
-  version: 1.2.0
+  version: 1.2.1
 ---
 
 # Giveaway Prize Picker

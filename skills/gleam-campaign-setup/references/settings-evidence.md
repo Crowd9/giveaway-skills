@@ -123,6 +123,10 @@ Fraud level and CAPTCHA mode, require login before actions and the login types o
 
 The entry-method-planner skill holds the table of actions over-represented in the top fifth of campaigns by vertical, in Gleam action names (Twitch Subscribers and secret codes in gaming, single choice questions in technology, YouTube channel visits and Pinterest visits in home, and so on). Load `mix-by-objective.md` from that skill when the user asks which Gleam actions fit their industry. As a default mix in Gleam terms: one acquire action (Subscribe to an Email List, or Custom for account creation), one follow on the network the audience uses, one Single Choice Question or Answer a Question that collects something useful, one Visit a Page or secret code for exposure, and Viral Share for reach.
 
+## Wording that showed up in the data
+
+The entry-method-planner skill holds uptake by question type (detail capture 0.97, trivia 0.84, preference 0.75), by share copy traits, by visit destination (own site 0.96, YouTube 0.81, other sites 0.70) and by the newsletter description under the email action (none 0.95, any description 0.84). The idea generator holds title wording. Load them when the user is writing the action titles and the description.
+
 ## Settings the other skills already measured
 
 - Email opt-in checkbox on: 0.89 email entries per contestant against 1.01 off. About one in ten entrants skips a visible checkbox (giveaway-entry-method-planner).

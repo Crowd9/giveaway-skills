@@ -74,6 +74,45 @@ Median completions per campaign among campaigns that offered the action, complet
 
 Stated prize value per email signup and per follow by vertical sits in the prize picker's `roi-benchmarks.md`. An email action in the median campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 350 referral entries, and a content action under 200 submissions.
 
+## Wording and destinations (extracted)
+
+Completions per contestant for the action, median across campaigns offering it.
+
+Question actions by what they ask (regex on the question text):
+
+| Question type | Actions | Median uptake |
+|---|---|---|
+| other | 2,668 | 0.83 |
+| detail capture | 1,411 | 0.97 |
+| preference | 930 | 0.75 |
+| trivia | 381 | 0.84 |
+| feedback or open | 307 | 0.82 |
+
+A detail capture (name, order id, account) is completed by nearly everyone. A preference question is completed least, at three quarters. Trivia and open questions sit between. Ask a preference question for what it collects, and expect a quarter of entrants to skip it.
+
+Share copy on Viral Share and X post actions (20,818 actions with custom text): medium (60 to 140) 0.16 (n=14,414) | long (over 140) 0.15 (n=5,938) | short (under 60) 0.20 (n=466). Hashtag: no hashtag 0.14 (n=17,787) | with hashtag 0.31 (n=3,031). First person: not first person 0.15 (n=17,584) | first person 0.21 (n=3,234). Emoji: no emoji 0.15 (n=19,843) | with emoji 0.25 (n=975). Most of the hashtag gap is the action type, since X post actions carry hashtags and record more completions than Viral Share (0.29 against 0.13). First person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
+
+Visit actions by where they send people:
+
+| Destination | Actions | Median uptake |
+|---|---|---|
+| another site | 46,931 | 0.70 |
+| YouTube | 17,400 | 0.81 |
+| organizer's own site | 3,202 | 0.96 |
+| another Gleam campaign | 255 | 0.84 |
+
+A visit to the organizer's own site is completed by almost everyone, a YouTube channel by four in five, and any other site by seven in ten.
+
+Email signup by the description under the action:
+
+| Newsletter description | Actions | Median uptake |
+|---|---|---|
+| no description | 9,534 | 0.95 |
+| description without those | 5,540 | 0.84 |
+| mentions frequency or unsubscribe | 2,224 | 0.84 |
+
+No description at all ran highest. A description, with or without frequency and unsubscribe wording, went with about a tenth fewer completions. More words under the checkbox give people more to think about. Write the frequency line anyway where the law asks for it, and keep it to one line.
+
 ## Friction
 
 Every required action removes some entrants. Extracted: the median campaign offers 7 methods and the top decile offers 17 or more. Nothing in the data shows the effect of adding a method, so keep the count tied to the number of assets you can use. Three assets, five to eight methods.
