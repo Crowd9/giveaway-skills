@@ -224,6 +224,9 @@ That data is what lets the skills say things like:
 - Half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 525 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
 - Start weekday makes no difference at all. December is the busiest month and its campaigns still drew more entrants and converted better.
 - A secret code is the only action that came with more entrants at no cost to conversion. Sharing actions, in this data, fed entries and left audiences where they were.
+- The top fifth of campaigns had nine times the impressions of the bottom fifth at the same conversion. Reach separates them, and the organizer's history does too: after a campaign over 5,000 entrants the next one got there 57% of the time, after a smaller one 11%.
+- Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.
+- Gaming gets the most for its prize money, music and media the cheapest addresses, technology the most referrals, and UK organizers the highest conversion on the smallest campaigns.
 
 Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 

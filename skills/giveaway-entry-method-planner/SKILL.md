@@ -2,7 +2,7 @@
 name: giveaway-entry-method-planner
 description: "Choose which actions a giveaway should ask entrants to take (follow, share, email signup, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC, with entry volume second. Platform-neutral. For choosing the prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
 metadata:
-  version: 1.1.3
+  version: 1.1.4
 ---
 
 # Giveaway Entry Method Planner
@@ -18,9 +18,10 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 1. **Pin the objective to one asset.** Email list, followers on a named channel, community members, content, installs, or reach. Each maps to a family in `references/action-families.md`.
 2. **Ask only what changes the plan**, in one message: which channels the business is active on and can moderate, whether it can send email, whether entrants are mostly mobile, and any platform rules it must follow (consent, age, region).
 3. **Build the mix.** One required action that captures the asset, two to four supporting actions on channels the business already runs, one sharing action for reach, and at most one content action. Load `references/action-families.md` for uptake by family and `references/mix-by-objective.md` for the patterns.
-4. **Weight it.** More entries for the action that captures the asset and for sharing. One entry for low-effort visits. Explain why in a sentence.
-5. **Check friction.** Extracted: in the clean comparison, campaigns with 11 or more methods had a fifth fewer contestants and converted at 31% against 50% for 1 to 3 methods, consistent across verticals. Every extra action costs people. Anything that needs a purchase, an app install or an account connection goes optional unless it is the objective.
-6. **Deliver.**
+4. **Write the actions.** Load the wording and destinations section of `references/mix-by-objective.md`: question types (detail capture 0.97, preference 0.75), share copy traits, visit destinations (own site 0.96, YouTube 0.81, other sites 0.70), and the newsletter description under the email action. Put the asset action first, since first position was completed by the median entrant and fifth position by two thirds.
+5. **Weight it.** More entries for the action that captures the asset and for sharing. One entry for low-effort visits. Explain why in a sentence.
+6. **Check friction.** Extracted: in the clean comparison, campaigns with 11 or more methods had a fifth fewer contestants and converted at 31% against 50% for 1 to 3 methods, consistent across verticals. Every extra action costs people. Anything that needs a purchase, an app install or an account connection goes optional unless it is the objective.
+7. **Deliver.**
 
 ## Output
 
