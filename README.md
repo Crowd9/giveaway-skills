@@ -71,6 +71,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 
 - Recommended duration and start date with the reason
 - A dated timeline: terms and assets, launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil
+- Holiday benchmarks: contestants, conversion and launch lead time for Christmas, Black Friday, the family days, Easter, Halloween, back to school and more, with a dated calendar of launch windows
 - Seasonal calendar by region, with December's peak and carrier cut-offs flagged
 - The recency finding: a campaign within 30 days of your last one drew 16% more entrants and converted a third better
 - Risks named in advance: the quiet middle, holiday gaps, the wrong time zone on the close

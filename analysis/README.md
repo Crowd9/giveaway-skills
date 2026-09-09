@@ -53,3 +53,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Text and context
 
 `analysis/text_and_context.py export.json --classification private/classification.jsonl` writes `output/text_context.json`: organizer region from the site domain, language guess, question types, share copy traits, visit destinations, description and terms wording flags, title wording, overlapping campaigns, close day and hour, newsletter wording.
+
+## Holidays
+
+`analysis/holidays.py export.json --classification private/classification.jsonl` writes `output/holidays.json`: campaigns by holiday theme (regex on title and description) with contestants, conversion, duration, launch lead days and close timing. The calendar table in the timing skill is generated from the same date functions.
