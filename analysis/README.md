@@ -57,3 +57,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Holidays
 
 `analysis/holidays.py export.json --classification private/classification.jsonl` writes `output/holidays.json`: campaigns by holiday theme (regex on title and description) with contestants, conversion, duration, launch lead days and close timing. The calendar table in the timing skill is generated from the same date functions.
+
+## Campaign types
+
+`analysis/campaign_types.py export.json --classification private/classification.jsonl` writes `output/campaign_types.json`: campaign types declared in the title and description, each with contestants, clean conversion, entries per entrant, email and referral uptake, duration, action count and a value-adjusted index.

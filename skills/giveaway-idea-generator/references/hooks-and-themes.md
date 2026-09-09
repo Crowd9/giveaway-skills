@@ -23,6 +23,52 @@ Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaw
 
 The timing skill's `holiday-benchmarks.md` holds contestants, conversion, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent is the only theme above the all-campaign medians on both counts. Load it when the hook is a date.
 
+## Campaign types (extracted)
+
+A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. Value index is the campaign's contestants against the median of its stated-USD value band, 1.00 being typical for the money. Conversion is the clean subset. All ordinary campaigns: 2,203 contestants, 38% conversion, 4.3 entries per entrant, 0.13 referral entries per contestant, index 1.00. Reproduce with `analysis/campaign_types.py`.
+
+| Type | n | Contestants | Conversion (clean n) | Entries per entrant | Referrals per contestant | Value index (n) | Duration | Actions |
+|---|---|---|---|---|---|---|---|---|
+| Advent or daily calendar | 1,061 | 3,277 | 50% (635) | 3.5 | 0.09 | 1.04 (294) | 5 | 5 |
+| Free or no purchase | 1,755 | 3,097 | 38% (261) | 8.4 | 0.10 | 1.57 (1,152) | 31 | 13 |
+| Charity or fundraiser | 242 | 2,976 | 34% (203) | 1.0 | 0.11 | 0.69 (23) | 0 | 1 |
+| Sweepstakes wording (US) | 1,804 | 2,946 | 29% (379) | 4.5 | 0.10 | 1.22 (1,088) | 22 | 7 |
+| Sorteo (Spanish) | 557 | 2,848 | 38% (220) | 4.8 | 0.11 | 1.01 (103) | 16 | 7 |
+| Concours (French) | 360 | 2,672 | 36% (199) | 3.1 | 0.07 | 1.44 (79) | 11 | 5 |
+| Milestone | 2,004 | 2,663 | 32% (539) | 4.8 | 0.17 | 0.94 (804) | 19 | 8 |
+| Gewinnspiel (German) | 298 | 2,600 | 37% (194) | 4.3 | 0.05 | 0.63 (16) | 1 | 6 |
+| Collaboration or partner | 6,449 | 2,380 | 32% (2,282) | 4.8 | 0.13 | 1.02 (2,427) | 15 | 8 |
+| Bundle, mega or ultimate | 5,835 | 2,341 | 33% (1,403) | 4.6 | 0.12 | 0.96 (2,679) | 19 | 8 |
+| Creator or streamer | 1,391 | 2,308 | 40% (440) | 5.4 | 0.16 | 0.98 (537) | 18 | 8 |
+| Anniversary or birthday | 854 | 2,274 | 32% (276) | 4.2 | 0.13 | 0.97 (368) | 14 | 7 |
+| Voting contest | 99 | 2,169 | 32% (47) | 2.9 | 0.15 | 0.73 (29) | 14 | 5 |
+| Holiday themed | 3,771 | 2,133 | 35% (1,207) | 4.3 | 0.12 | 0.96 (1,802) | 15 | 7 |
+| Scavenger hunt or secret code | 181 | 2,126 | 38% (69) | 4.6 | 0.14 | 0.91 (63) | 14 | 8 |
+| Product launch | 1,271 | 2,020 | 29% (343) | 5.1 | 0.20 | 0.89 (558) | 16 | 8 |
+| Cash prize | 1,442 | 1,976 | 42% (336) | 6.2 | 0.18 | 1.00 (718) | 21 | 10 |
+| Community or Discord | 1,585 | 1,965 | 33% (623) | 4.8 | 0.33 | 0.92 (537) | 13 | 7 |
+| Gift card or voucher | 2,811 | 1,953 | 35% (666) | 4.0 | 0.14 | 0.98 (1,559) | 21 | 7 |
+| Cart, wishlist or spree | 382 | 1,920 | 27% (84) | 3.8 | 0.11 | 0.93 (213) | 28 | 7 |
+| Competition wording (UK) | 1,733 | 1,788 | 46% (628) | 3.3 | 0.11 | 0.84 (584) | 15 | 6 |
+| Weekly or monthly series | 1,022 | 1,697 | 36% (247) | 4.6 | 0.17 | 0.88 (487) | 17 | 8 |
+| Flash (24 to 72 hours) | 104 | 1,693 | 40% (29) | 5.2 | 0.18 | 0.75 (51) | 12 | 8 |
+| Quiz or trivia | 134 | 1,676 | 33% (82) | 4.2 | 0.42 | 0.72 (34) | 8 | 7 |
+
+Reading it:
+
+- **Advent or daily calendars** lead on contestants (3,277) and conversion (50%) on 1,061 campaigns: five days, five actions, and a reason to come back. The shape wins, and it is a December shape.
+- **Campaigns that say free entry or no purchase** run long, with 13 actions and repeatable bonuses, and post the highest value index (1.57 on 1,152 valued campaigns). Those are the professional sweepstakes operators. Copy the discipline, not the action count.
+- **Sweepstakes wording** carries the largest US campaigns (2,946 contestants, index 1.22) at the lowest conversion (29%), which is the long-run, daily-entry pattern.
+- **Collaborations** are 17% of campaigns and sit a little above the median on contestants with a value index of 1.02. The title proxy for a partner does not by itself mark a strong campaign. The prize-picker reference shows the index rises to 1.13 when the collaboration is signalled in the title alone.
+- **Creator and streamer** campaigns convert at 40% with the most actions per entrant (5.4). An existing audience does that.
+- **Cash** converts well (42%) at a small size, with 10 actions and long runs. **Gift cards** sit below the median on everything except email uptake.
+- **Community and Discord** campaigns record the most referral entries per contestant (0.33). **Quiz and trivia** campaigns record 0.42, on 134 campaigns.
+- **Product launches** sit below the median (2,020 contestants, 29% conversion, index 0.89). A launch has no audience yet, which is the point of running one, so plan the promotion first.
+- **Weekly or monthly series**, **flash** campaigns and **cart or wishlist** campaigns are the smallest. A series spreads one audience across many draws. A flash campaign has no time to be found.
+- **UK competition wording** is small, short and converts at 46%, the UK pattern seen in the region table.
+
+Nothing here says the type caused the number. Organizers who run advent calendars have December audiences, and organizers who write "no purchase necessary" have run many campaigns before.
+
 ## Theme starters by business (advice)
 
 | Business | Moment-based | Manufactured |
