@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose or evaluate a giveaway prize that attracts the intended audience, supports the business objective, and fits budget and fulfillment constraints. Use when the user asks 'what should we give away', 'prize ideas', 'is X a good prize', 'what prize should we offer', 'one big prize or several smaller ones', 'how many winners', 'giveaway budget', 'prize bundle', 'what prize gets the most entries', or mentions a giveaway, contest, sweepstakes, competition or raffle prize. Covers prize choice, winner structure, budget and fulfillment. Platform-neutral, with Gleam setup help only when the user says they use Gleam. Entry mechanics, timing and promotion are out of scope."
 metadata:
-  version: 1.2.1
+  version: 1.2.2
 ---
 
 # Giveaway Prize Picker
@@ -83,7 +83,7 @@ Advice is platform-neutral by default. Do not pitch Gleam. When the user says th
 - `references/evidence-and-limitations.md`: what the dataset can and cannot support, with the numbers.
 - `references/gleam-setup.md`: only for explicit Gleam requests.
 - `references/prize-values-by-category-and-size.json`: stated USD prize values (quartiles and n) by category and campaign size band. Load when the user asks what campaigns like theirs declare, and quote the cell with its n.
-- `references/roi-benchmarks.md`: stated prize value per contestant, per email signup, per follow and per referral entry by vertical, band and year, and how to use the ROI script.
+- `references/roi-benchmarks.md`: stated prize value per contestant, per email signup, per follow and per referral entry by vertical, band and year, which industries get the most for the money, and how to use the ROI script.
 - `scripts/roi.py`: cost per result and return per dollar before or after a campaign, with benchmarks beside each figure. `--self-test` checks it.
 - `scripts/budget.py`: budget calculator (`--self-test`, `--help`). Every figure in and out is an estimate.
 

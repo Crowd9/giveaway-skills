@@ -69,6 +69,61 @@ Reading it:
 
 Nothing here says the type caused the number. Organizers who run advent calendars have December audiences, and organizers who write "no purchase necessary" have run many campaigns before.
 
+### Launches, pre-orders and drops (extracted)
+
+| Subtype | n | Contestants | Conversion (clean n) | Email uptake | Referrals per contestant | Value index (n) | Own product prize | Repeat organizer |
+|---|---|---|---|---|---|---|---|---|
+| Pre-order or crowdfunding | 178 | 1,504 | 35% (32) | 0.88 | 0.19 | 0.86 (105) | 22% | 51% |
+| Limited edition or drop | 654 | 2,076 | 32% (204) | 0.98 | 0.16 | 0.91 (260) | 26% | 77% |
+| Early access, beta or waitlist | 211 | 2,260 | 31% (84) | 1.01 | 0.21 | 1.09 (80) | 21% | 59% |
+| Launch or new release | 1,194 | 2,029 | 29% (349) | 0.90 | 0.20 | 0.89 (511) | 32% | 64% |
+
+Launch campaigns run below the all-campaign medians on contestants and conversion, and above them on referrals per contestant (0.16 to 0.21 against 0.13). A launch has no audience yet, and its entrants share more. Early access, beta and waitlist campaigns are the exception, at a value index of 1.09 with the highest referral rate: a promise of first access is a reason to bring a friend. Pre-order and crowdfunding campaigns are the smallest (1,504 contestants) and half come from first-time or occasional organizers. For a launch, plan the promotion and the referral action first, keep the prize the product itself (a third do), and treat the campaign as the start of the list.
+
+### Campaigns that beat their prize money (extracted)
+
+1,615 valued campaigns (11%) drew at least three times the median contestants for their stated prize band. Median 13,397 contestants on a 1,658 USD pool, 0.11 USD per contestant. What they had more often than the rest:
+
+| Feature | Standouts | The rest |
+|---|---|---|
+| twitch follow | 34% | 14% |
+| repeat organizer | 88% | 72% |
+| 11 or more actions | 48% | 34% |
+| secret code action | 26% | 12% |
+| repeatable action | 55% | 46% |
+| single prize unit | 67% | 60% |
+| discord join | 23% | 16% |
+| collaboration in title | 20% | 15% |
+| youtube visit | 47% | 42% |
+| 14 days or less | 40% | 37% |
+| email action | 59% | 56% |
+| december start | 9% | 9% |
+| own product prize | 19% | 22% |
+| question action | 10% | 14% |
+| stated pool under 250 USD | 9% | 19% |
+| viral share action | 49% | 59% |
+
+Prize categories over-represented among them:
+
+| Category | Standouts | The rest | Ratio |
+|---|---|---|---|
+| Tech hardware | 38% | 30% | 1.26 |
+| Regulated goods (firearms) | 16% | 5% | 3.30 |
+| Gift card or cash | 13% | 18% | 0.72 |
+| Bundle or box | 8% | 13% | 0.61 |
+| Placeholder prize name | 8% | 5% | 1.62 |
+| Game items or skins | 7% | 6% | 1.11 |
+| Merch, apparel, collectibles | 4% | 4% | 1.02 |
+| Home, garden, appliance | 3% | 6% | 0.59 |
+| Experience, travel, tickets | 3% | 5% | 0.61 |
+| Unclassified | 2% | 7% | 0.30 |
+| Tools, craft, DIY | 1% | 2% | 0.90 |
+| Music gear | 1% | 3% | 0.50 |
+
+The pattern is an organizer who has run many campaigns (88%), a secret code from a stream or video (26% against 12%), Twitch and Discord actions, a single hero prize, and a long list of actions with a daily bonus. Gaming is 29% of standouts against 21% of the rest. Firearms retailers with specialist audiences are the extreme case at three times their share. Cash, gift cards and bundles are under-represented. Standouts converted at 32%, under the median, because their reach came from audiences, streams and directories, and the landing page had less to do with it.
+
+Cheap prizes that drew crowds: 129 campaigns with a stated pool under 250 USD reached 5,000 contestants or more. 79% came from repeat organizers, only 10% gave away their own product, 7 actions and 22 days at the median, and the prizes were tech hardware, game items and small gift cards in gaming and unclassified verticals. A small prize in front of an audience that already exists beats a large prize in front of nobody.
+
 ## Theme starters by business (advice)
 
 | Business | Moment-based | Manufactured |

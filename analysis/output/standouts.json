@@ -1,0 +1,515 @@
+{
+ "all": {
+  "n": 37123,
+  "contestants": 2203,
+  "conv_clean": 0.37548964745383323,
+  "clean_n": 11652,
+  "entries_per_entrant": 4.344638949671772,
+  "email_uptake": 0.9823468328141225,
+  "referral_uptake": 0.1294052720425919,
+  "value_index": 1.0,
+  "valued_n": 14521,
+  "stated_pool_usd": 900,
+  "usd_per_contestant": 0.30102347983142685,
+  "repeat_organizer_share": 0.76965762465318,
+  "own_product_share": 0.21547288742827897,
+  "duration": 16,
+  "actions": 7
+ },
+ "definitions": {
+  "value_index": "contestants divided by the median contestants of the campaign's stated-USD value band",
+  "repeat_organizer": "organizer with five or more ordinary campaigns in the export",
+  "standout": "value index of 3 or more, the top 6% of valued campaigns",
+  "vertical": "regex on names"
+ },
+ "launch_subtypes": {
+  "Pre-order or crowdfunding": {
+   "n": 178,
+   "contestants": 1503.5,
+   "conv_clean": 0.3477608222642956,
+   "clean_n": 32,
+   "entries_per_entrant": 5.290594565917617,
+   "email_uptake": 0.8756355286284814,
+   "referral_uptake": 0.18935877634274217,
+   "value_index": 0.8639251086593113,
+   "valued_n": 105,
+   "stated_pool_usd": 495,
+   "usd_per_contestant": 0.21079258010118043,
+   "repeat_organizer_share": 0.5056179775280899,
+   "own_product_share": 0.2247191011235955,
+   "duration": 22.0,
+   "actions": 8.0
+  },
+  "Limited edition or drop": {
+   "n": 654,
+   "contestants": 2076.0,
+   "conv_clean": 0.3210700722246377,
+   "clean_n": 204,
+   "entries_per_entrant": 4.551608718240866,
+   "email_uptake": 0.9766393865055969,
+   "referral_uptake": 0.15792207792207794,
+   "value_index": 0.9080324659379068,
+   "valued_n": 260,
+   "stated_pool_usd": 1000.0,
+   "usd_per_contestant": 0.435336358446219,
+   "repeat_organizer_share": 0.7675840978593272,
+   "own_product_share": 0.25688073394495414,
+   "duration": 15.5,
+   "actions": 7.0
+  },
+  "Early access, beta or waitlist": {
+   "n": 211,
+   "contestants": 2260,
+   "conv_clean": 0.307104730765276,
+   "clean_n": 84,
+   "entries_per_entrant": 4.822811584770583,
+   "email_uptake": 1.0093065565740675,
+   "referral_uptake": 0.20725167870147276,
+   "value_index": 1.0874019072668668,
+   "valued_n": 80,
+   "stated_pool_usd": 1119.5,
+   "usd_per_contestant": 0.4075112256556048,
+   "repeat_organizer_share": 0.5924170616113744,
+   "own_product_share": 0.2132701421800948,
+   "duration": 14,
+   "actions": 8
+  },
+  "Launch or new release": {
+   "n": 1194,
+   "contestants": 2029.0,
+   "conv_clean": 0.2939052877468677,
+   "clean_n": 349,
+   "entries_per_entrant": 4.913107372919555,
+   "email_uptake": 0.8965620104656201,
+   "referral_uptake": 0.20239797284543495,
+   "value_index": 0.8867663981588032,
+   "valued_n": 511,
+   "stated_pool_usd": 999,
+   "usd_per_contestant": 0.4009433962264151,
+   "repeat_organizer_share": 0.6432160804020101,
+   "own_product_share": 0.32077051926298156,
+   "duration": 16.0,
+   "actions": 8.0
+  }
+ },
+ "standouts": {
+  "n": 1615,
+  "share_of_valued": 0.11121823565870119,
+  "contestants": 13397,
+  "stated_pool_usd": 1658,
+  "usd_per_contestant": 0.10981770261366132,
+  "features": {
+   "own product prize": {
+    "standouts": 0.19009287925696594,
+    "rest": 0.22020765535409886
+   },
+   "collaboration in title": {
+    "standouts": 0.19938080495356036,
+    "rest": 0.14628854796218813
+   },
+   "repeat organizer": {
+    "standouts": 0.8811145510835914,
+    "rest": 0.7197427553076089
+   },
+   "stated pool under 250 USD": {
+    "standouts": 0.09226006191950464,
+    "rest": 0.18929180226251355
+   },
+   "secret code action": {
+    "standouts": 0.25510835913312696,
+    "rest": 0.12335347900201457
+   },
+   "email action": {
+    "standouts": 0.5851393188854489,
+    "rest": 0.5601270726793739
+   },
+   "viral share action": {
+    "standouts": 0.48606811145510836,
+    "rest": 0.5857740585774058
+   },
+   "single prize unit": {
+    "standouts": 0.669969040247678,
+    "rest": 0.5981713931504726
+   },
+   "december start": {
+    "standouts": 0.09102167182662539,
+    "rest": 0.09135285913528592
+   },
+   "14 days or less": {
+    "standouts": 0.39504643962848296,
+    "rest": 0.3652564698589803
+   },
+   "repeatable action": {
+    "standouts": 0.5535603715170279,
+    "rest": 0.4580040291337362
+   },
+   "11 or more actions": {
+    "standouts": 0.4780185758513932,
+    "rest": 0.33596776693011005
+   },
+   "youtube visit": {
+    "standouts": 0.46563467492260063,
+    "rest": 0.42057957539129087
+   },
+   "twitch follow": {
+    "standouts": 0.33622291021671824,
+    "rest": 0.13908259724159305
+   },
+   "discord join": {
+    "standouts": 0.22724458204334366,
+    "rest": 0.16410971641097163
+   },
+   "question action": {
+    "standouts": 0.1021671826625387,
+    "rest": 0.13536339686967302
+   }
+  },
+  "prize_categories": {
+   "tech_hardware": {
+    "standouts": 0.37708978328173376,
+    "rest": 0.29900821323415466,
+    "ratio": 1.261135201615459
+   },
+   "regulated_goods_firearm": {
+    "standouts": 0.16037151702786379,
+    "rest": 0.04865953819928715,
+    "ratio": 3.2957878961172136
+   },
+   "gift_card_or_cash": {
+    "standouts": 0.13003095975232198,
+    "rest": 0.1801487680148768,
+    "ratio": 0.7217976630380505
+   },
+   "bundle_or_box": {
+    "standouts": 0.07925696594427245,
+    "rest": 0.12986207965287463,
+    "ratio": 0.6103164692582221
+   },
+   "placeholder_name": {
+    "standouts": 0.07801857585139318,
+    "rest": 0.04811715481171548,
+    "ratio": 1.6214295329115627
+   },
+   "game_item_or_skin": {
+    "standouts": 0.07120743034055728,
+    "rest": 0.06431117309778397,
+    "ratio": 1.107232645753292
+   },
+   "merch_apparel_collectible": {
+    "standouts": 0.04086687306501548,
+    "rest": 0.0399814039981404,
+    "ratio": 1.0221470228238172
+   },
+   "home_garden_appliance": {
+    "standouts": 0.0346749226006192,
+    "rest": 0.05834495583449558,
+    "ratio": 0.5943088327803339
+   },
+   "experience_travel_tickets": {
+    "standouts": 0.029721362229102165,
+    "rest": 0.04904695490469549,
+    "ratio": 0.6059777265857702
+   },
+   "other_unclassified": {
+    "standouts": 0.019814241486068113,
+    "rest": 0.066635673330234,
+    "ratio": 0.29735186118511053
+   },
+   "tools_craft_diy": {
+    "standouts": 0.014241486068111455,
+    "rest": 0.015884084921741825,
+    "ratio": 0.8965883863172998
+   },
+   "music_gear": {
+    "standouts": 0.014241486068111455,
+    "rest": 0.028513869518053618,
+    "ratio": 0.49945820433436533
+   }
+  },
+  "verticals": {
+   "unclassified": {
+    "standouts": 0.486687306501548,
+    "rest": 0.43375174337517436,
+    "ratio": 1.1220411535743084
+   },
+   "gaming": {
+    "standouts": 0.29226006191950465,
+    "rest": 0.20951495428482877,
+    "ratio": 1.39493652334805
+   },
+   "technology": {
+    "standouts": 0.043343653250773995,
+    "rest": 0.045327754532775454,
+    "ratio": 0.956227673255537
+   },
+   "travel_events": {
+    "standouts": 0.034055727554179564,
+    "rest": 0.05733767240043391,
+    "ratio": 0.5939502970462722
+   },
+   "home": {
+    "standouts": 0.02786377708978328,
+    "rest": 0.0464125213079188,
+    "ratio": 0.6003504292499883
+   },
+   "fitness_outdoor": {
+    "standouts": 0.026006191950464396,
+    "rest": 0.04865953819928715,
+    "ratio": 0.5344520912622508
+   },
+   "food_drink": {
+    "standouts": 0.026006191950464396,
+    "rest": 0.04966682163334883,
+    "ratio": 0.5236129692865733
+   },
+   "music_media": {
+    "standouts": 0.018575851393188854,
+    "rest": 0.04137610413761041,
+    "ratio": 0.4489511949072947
+   },
+   "kids_family_pets": {
+    "standouts": 0.014860681114551083,
+    "rest": 0.01991321865798853,
+    "ratio": 0.7462721807953163
+   },
+   "fashion_beauty": {
+    "standouts": 0.013003095975232198,
+    "rest": 0.01727878506121184,
+    "ratio": 0.7525468908356356
+   }
+  },
+  "email_uptake": 0.9994724810972393,
+  "referral_uptake": 0.0952250093990411,
+  "conv_clean": 0.3184499134825984
+ },
+ "cheap_and_big": {
+  "n": 129,
+  "prize_categories": {
+   "tech_hardware": 34,
+   "placeholder_name": 20,
+   "gift_card_or_cash": 18,
+   "game_item_or_skin": 17,
+   "bundle_or_box": 15,
+   "merch_apparel_collectible": 6
+  },
+  "verticals": {
+   "unclassified": 82,
+   "gaming": 27,
+   "home": 4,
+   "kids_family_pets": 4,
+   "fitness_outdoor": 4,
+   "food_drink": 3
+  },
+  "repeat_organizer_share": 0.7906976744186046,
+  "own_product_share": 0.10077519379844961,
+  "december_share": 0.046511627906976744,
+  "median_actions": 7,
+  "median_duration": 22
+ },
+ "industries": {
+  "unclassified": {
+   "n": 16977,
+   "contestants": 2089,
+   "conv_clean": 0.39766545731034775,
+   "clean_n": 6115,
+   "entries_per_entrant": 4.160988643954576,
+   "email_uptake": 0.9657915672235481,
+   "referral_uptake": 0.13682678311499272,
+   "value_index": 0.982958888171996,
+   "valued_n": 6384,
+   "stated_pool_usd": 800.0,
+   "usd_per_contestant": 0.27383650958858224,
+   "repeat_organizer_share": 0.7759321434882488,
+   "own_product_share": 0.20168463214937857,
+   "duration": 15,
+   "actions": 7
+  },
+  "gaming": {
+   "n": 8739,
+   "contestants": 2397,
+   "conv_clean": 0.359759157790531,
+   "clean_n": 2891,
+   "entries_per_entrant": 5.509424842919285,
+   "email_uptake": 0.918963926553243,
+   "referral_uptake": 0.14237598107769356,
+   "value_index": 1.1001049065345656,
+   "valued_n": 3176,
+   "stated_pool_usd": 1000.0,
+   "usd_per_contestant": 0.28520667081139583,
+   "repeat_organizer_share": 0.7783499256207804,
+   "own_product_share": 0.19670442842430483,
+   "duration": 16,
+   "actions": 9
+  },
+  "technology": {
+   "n": 1941,
+   "contestants": 2609,
+   "conv_clean": 0.37322758952174956,
+   "clean_n": 587,
+   "entries_per_entrant": 4.352202793787242,
+   "email_uptake": 0.8495428096425602,
+   "referral_uptake": 0.2393033954209798,
+   "value_index": 0.9889669007021064,
+   "valued_n": 655,
+   "stated_pool_usd": 1000,
+   "usd_per_contestant": 0.3610344827586207,
+   "repeat_organizer_share": 0.7903142709943328,
+   "own_product_share": 0.2431736218444101,
+   "duration": 18,
+   "actions": 7
+  },
+  "travel_events": {
+   "n": 1844,
+   "contestants": 2476.5,
+   "conv_clean": 0.3125196109193599,
+   "clean_n": 334,
+   "entries_per_entrant": 3.6504466587120397,
+   "email_uptake": 1.0070237386960859,
+   "referral_uptake": 0.09963925902975422,
+   "value_index": 1.0193158017221318,
+   "valued_n": 795,
+   "stated_pool_usd": 1350,
+   "usd_per_contestant": 0.4441512752858399,
+   "repeat_organizer_share": 0.7142082429501084,
+   "own_product_share": 0.28470715835141,
+   "duration": 17.0,
+   "actions": 7.0
+  },
+  "home": {
+   "n": 1519,
+   "contestants": 2250,
+   "conv_clean": 0.3881559659923776,
+   "clean_n": 394,
+   "entries_per_entrant": 3.943768996960486,
+   "email_uptake": 0.9450261780104712,
+   "referral_uptake": 0.1160363199543696,
+   "value_index": 0.9702380952380952,
+   "valued_n": 644,
+   "stated_pool_usd": 979.0,
+   "usd_per_contestant": 0.3727679206676389,
+   "repeat_organizer_share": 0.7755102040816326,
+   "own_product_share": 0.22909809084924293,
+   "duration": 21,
+   "actions": 7
+  },
+  "food_drink": {
+   "n": 1475,
+   "contestants": 2056,
+   "conv_clean": 0.3684564510705078,
+   "clean_n": 295,
+   "entries_per_entrant": 3.3376299376299374,
+   "email_uptake": 0.9862107004964148,
+   "referral_uptake": 0.11205848582620531,
+   "value_index": 0.9516129032258065,
+   "valued_n": 683,
+   "stated_pool_usd": 598,
+   "usd_per_contestant": 0.25647601949217746,
+   "repeat_organizer_share": 0.727457627118644,
+   "own_product_share": 0.24271186440677966,
+   "duration": 21,
+   "actions": 6
+  },
+  "fitness_outdoor": {
+   "n": 1256,
+   "contestants": 2451.0,
+   "conv_clean": 0.3969339266362353,
+   "clean_n": 221,
+   "entries_per_entrant": 3.8016831305799794,
+   "email_uptake": 1.0059243929048969,
+   "referral_uptake": 0.12258396268019073,
+   "value_index": 0.9565992346484025,
+   "valued_n": 670,
+   "stated_pool_usd": 1200.0,
+   "usd_per_contestant": 0.47565787341662086,
+   "repeat_organizer_share": 0.7292993630573248,
+   "own_product_share": 0.3049363057324841,
+   "duration": 21.0,
+   "actions": 6.0
+  },
+  "music_media": {
+   "n": 1106,
+   "contestants": 1974.5,
+   "conv_clean": 0.30845276658480847,
+   "clean_n": 134,
+   "entries_per_entrant": 3.930827725914696,
+   "email_uptake": 1.0293973542381185,
+   "referral_uptake": 0.09302325581395349,
+   "value_index": 1.0552789253931611,
+   "valued_n": 564,
+   "stated_pool_usd": 477.0,
+   "usd_per_contestant": 0.21752050145693724,
+   "repeat_organizer_share": 0.8453887884267631,
+   "own_product_share": 0.1853526220614828,
+   "duration": 20.5,
+   "actions": 6.0
+  },
+  "kids_family_pets": {
+   "n": 811,
+   "contestants": 1984,
+   "conv_clean": 0.3335153966898877,
+   "clean_n": 230,
+   "entries_per_entrant": 3.43453401943968,
+   "email_uptake": 1.013947847180109,
+   "referral_uptake": 0.11623616236162361,
+   "value_index": 0.9047141424272819,
+   "valued_n": 281,
+   "stated_pool_usd": 918,
+   "usd_per_contestant": 0.37514209928003034,
+   "repeat_organizer_share": 0.7620221948212084,
+   "own_product_share": 0.24907521578298397,
+   "duration": 15,
+   "actions": 6
+  },
+  "software": {
+   "n": 616,
+   "contestants": 2148.0,
+   "conv_clean": 0.32115965306508887,
+   "clean_n": 212,
+   "entries_per_entrant": 4.484342034202786,
+   "email_uptake": 0.9695481335952849,
+   "referral_uptake": 0.14907592247523266,
+   "value_index": 0.9881312543635095,
+   "valued_n": 303,
+   "stated_pool_usd": 949,
+   "usd_per_contestant": 0.3518482300019558,
+   "repeat_organizer_share": 0.7435064935064936,
+   "own_product_share": 0.24025974025974026,
+   "duration": 18.0,
+   "actions": 7.0
+  },
+  "fashion_beauty": {
+   "n": 581,
+   "contestants": 1840,
+   "conv_clean": 0.3631838729139004,
+   "clean_n": 168,
+   "entries_per_entrant": 2.745568896512293,
+   "email_uptake": 1.0037936267071321,
+   "referral_uptake": 0.10297766749379653,
+   "value_index": 0.8411316478140147,
+   "valued_n": 244,
+   "stated_pool_usd": 964.5,
+   "usd_per_contestant": 0.31742261202865135,
+   "repeat_organizer_share": 0.6884681583476764,
+   "own_product_share": 0.270223752151463,
+   "duration": 20,
+   "actions": 6
+  },
+  "auto": {
+   "n": 174,
+   "contestants": 2073.0,
+   "conv_clean": 0.5187381404174574,
+   "clean_n": 45,
+   "entries_per_entrant": 4.802630942602146,
+   "email_uptake": 0.9132423599791096,
+   "referral_uptake": 0.16153028692879914,
+   "value_index": 0.8195084485407066,
+   "valued_n": 93,
+   "stated_pool_usd": 1000,
+   "usd_per_contestant": 0.5034167643847802,
+   "repeat_organizer_share": 0.6436781609195402,
+   "own_product_share": 0.28160919540229884,
+   "duration": 24.5,
+   "actions": 8.0
+  }
+ }
+}
