@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 37,180 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.4.1
+  version: 1.4.2
 ---
 
 # Giveaway Results Review
@@ -45,6 +45,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 - A rank is a position among campaigns that reached 1,000 entrants, in a vertical guessed from names. Say "better than 70% of the 989 food and drink campaigns in the export", never "top 30% of all giveaways".
 - Benchmarks describe campaigns that reached 1,000 entrants. A campaign below that has no peer group here. Say so and compare against the 1,000 to 2,500 band with that caveat.
 - Actions and entries are outputs, never funnel stages. The only funnel is impressions to entrants. Every number in the report is recomputable from the file. Label every assumption inline, and omit a section whose column is empty in the file.
+- Report the figure, the median and the rank, and stop. Words like weak, poor, strong or excellent are allowed only when the figure sits in the bottom or top tenth of its group, or a third or more away from the median, and the sentence must say which. An email uptake of 68% against a median of 89% is "below most campaigns of this size", never "poor". A completion rate above two thirds is a majority of entrants doing the thing, whatever the rank.
 - Never say a result was "good" or "bad" in the abstract. Say where it sits in the distribution and what the objective was.
 
 ## How to write the answer
