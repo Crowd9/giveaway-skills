@@ -45,3 +45,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Cost benchmarks
 
 `analysis/roi_benchmarks.py export.json --classification private/classification.jsonl` writes `output/roi_benchmarks.json`: stated USD prize pool per contestant, per email signup, per follow, per join and per referral entry, by vertical, size band and start year, with what the median campaign in each produced. The constants in `skills/giveaway-prize-picker/scripts/roi.py` and the tables in `references/roi-benchmarks.md` come from it.
+
+## Percentiles
+
+`analysis/percentiles.py export.json --classification private/classification.jsonl` writes `output/percentiles.json` and the copy the results-review skill ships in its references: every fifth percentile of contestants, conversion, entries per entrant, invalid share, email signups, email uptake and referral entries per contestant, for all campaigns, the clean subset, each size band and each vertical.

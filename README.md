@@ -20,7 +20,7 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, four emails and a partner brief written |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
 | [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification to the reply that ends a dispute |
-| [Results Review](#results-review) | "How did our giveaway do?" | Your numbers beside the benchmarks for your size, the actions that pulled their weight, and three changes for next time |
+| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against 37,000 others and your industry, the actions that pulled their weight, and three changes for next time |
 | [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
 ### Idea Generator
@@ -140,7 +140,7 @@ Every message after the draw, in send order, in your voice.
 
 Your finished campaign read against 37,180 others of the same size, and what to change next time.
 
-- A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band
+- A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band, and ranks each one against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against its family median, so you see which one carried the campaign
