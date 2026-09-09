@@ -17,15 +17,50 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 ## 1.3.0 (2026-09-09)
 
-The data pass. Holiday benchmarks with launch lead times and a dated calendar, campaign types from titles and descriptions with a value-adjusted index, launch, pre-order, drop and early-access subtypes, the campaigns that beat their prize money and what they had in common, industries by value index and cost per result, region and language proxies, question types, share copy, visit destinations, description and terms wording, title wording, overlapping campaigns, close day, newsletter wording, and what campaigns produced per asset. The results review reads Gleam and other-platform exports into a full report with hosted, directory and embed landings, featured-listing traffic, strengths-first framing and targets with a route. Workflow hooks quote the new tables, CI runs every self-test and a style lint, and five new eval cases are recorded.
+The data pass. Every finding is reproducible from a script in `analysis/` and quoted in the skills as extracted, with sample sizes.
+
+New benchmarks
+
+- Holidays: contestants, conversion, duration and launch lead time for Christmas, Black Friday, the family days, Easter, Halloween, back to school and more, with a dated calendar of launch windows.
+- Campaign types from titles and descriptions: advent calendars, launches, collaborations, series, flash, cash, cart and wishlist, creator, community, charity, each with a value-adjusted index.
+- Launches, pre-orders, drops and early access as their own rows.
+- The campaigns that beat their prize money three times over, what they had in common, and the cheap prizes that drew crowds.
+- Industries by value index, conversion, uptake, cost per result and repeat organizers.
+- Region and language proxies, question types, share copy, visit destinations, description and terms wording, title wording, overlapping campaigns, close day, newsletter wording.
+- What campaigns produced: email signups, follows by network, joins and referrals per campaign, and what each cost.
+
+Results review
+
+- Reads a Gleam Actions export, or another platform's export through column matching, into a full report in the order of the reporting tabs.
+- Landing pages read as hosted page, Gleam giveaways directory listing or embed, with featured-listing traffic reported.
+- Percentile ranks for a dozen metrics against all campaigns, the size band and the vertical, and per-action ranks by Gleam action type.
+- Comparison against the organizer's own previous campaigns.
+- Strengths first, and every gap framed as a target with a route.
+
+Housekeeping
+
+- Workflow steps now quote the new tables.
+- CI runs the validator, every script self-test and a style lint on each push.
+- Five new eval cases recorded.
 
 ## 1.2.0 (2026-09-09)
 
-The results review reads exports. A full report in the order of the reporting tabs from a Gleam Actions export or another platform's export, percentile ranks for a dozen metrics against all campaigns, the size band and the vertical, per-action ranks by Gleam action type, comparison against the organizer's own previous campaigns, ROI with cost benchmarks by vertical, what campaigns produced (emails, follows, referrals) and what each cost, a winner-verification reference and a pre-commit list scan in the draw, CI with a style lint and self-tests, and Codex and Cursor install paths checked.
+The results review reads exports.
+
+- Full report from a Gleam Actions export or another platform's export, in the order of the reporting tabs.
+- Percentile ranks for a dozen metrics against all campaigns, the size band and the vertical, plus per-action ranks by Gleam action type.
+- Comparison against the organizer's own previous campaigns.
+- ROI with cost benchmarks by vertical, and what campaigns produced (emails, follows, referrals) with what each cost.
+- Winner-verification reference and a pre-commit list scan in the draw script.
+- CI with a style lint and self-tests. Codex and Cursor install paths checked.
 
 ## 1.1.0 (2026-09-09)
 
-Two new skills and a data pass over the rest. giveaway-results-review reads a finished campaign against benchmarks for its size band with a script that applies the impressions caveat. gleam-campaign-setup turns a plan into Gleam settings cited from the documentation, with what entrants did with each Gleam action in the export. Across the existing skills: invalid-entry rates, organizer experience, custom terms adoption, opt-in checkbox uptake, own-product prizes, a winner-verification reference with a proof ladder, a pre-commit list scan in the draw script, an entrant-list export guide, and the value-adjusted findings checked against Gleam's internal analysis (prize category and unit-count indexes, the reach gap between top and bottom campaigns, cadence, persistence, collaborations, actions over-represented in top campaigns by vertical).
+Two new skills and a data pass over the rest.
+
+- giveaway-results-review reads a finished campaign against benchmarks for its size band, with a script that applies the impressions caveat.
+- gleam-campaign-setup turns a plan into Gleam settings cited from the documentation, with what entrants did with each Gleam action in the export.
+- Existing skills gained invalid-entry rates, organizer experience, custom terms adoption, opt-in checkbox uptake, own-product prizes, a winner-verification reference with a proof ladder, a pre-commit list scan, an entrant-list export guide, and the value-adjusted findings checked against Gleam's internal analysis.
 
 ## 1.0.0 (2026-09-09)
 
