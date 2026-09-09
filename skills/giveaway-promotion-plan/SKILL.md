@@ -2,7 +2,7 @@
 name: giveaway-promotion-plan
 description: "Plan how a giveaway gets seen: channel-by-channel schedule, post and story templates, the email sequence (launch, mid, last call, winners), partner and creator briefs, paid boosts, and what to reuse afterwards. Use when the user asks 'how do I promote my giveaway', 'nobody is entering', 'promotion plan', 'launch posts', 'giveaway email sequence', 'partner brief', 'should I boost the post', or has a prize and dates but no plan to reach people. Platform-neutral. For run length see giveaway-timing-and-duration. For what entrants do see giveaway-entry-method-planner."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Giveaway Promotion Plan

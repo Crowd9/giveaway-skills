@@ -23,7 +23,15 @@ Expect a broad prize to bring entrants who never buy. That is acceptable when th
 
 Extracted: 21% of clean-subset campaigns showed an own-product signal in the prize name (n=2,429). Their median contestants were 2,020 against 2,082 for bought-in prizes, with 4.1 entries per entrant against 3.4 and conversion of 34% against 39%. Giving away your own product came with about the same number of entrants as buying a prize in, and those entrants completed more actions. That describes what organizers saw, with no comparison group of failed campaigns.
 
+### Prize hierarchy (advice, from Gleam's campaign team)
+
+A default order to consider, adapted to the business: an audience-specific hero prize, then your own product plus the aspirational thing your customer wants next (coffee plus an espresso machine, supplements plus a sports watch, skincare plus a beauty device), then own product or own-brand credit, then an exclusive or limited item, then category-specific equipment, then a relevant collaboration bundle, then generic technology, then cash, then a generic gift card. The question that finds the adjacent prize: what does the customer's ideal day contain right before or after using this product?
+
+Collaborations work when they pass one test: same customer, different product. Extracted: campaigns whose title signals a collaboration ("x", "collab", "partner") had a value-adjusted index of 1.13 against 0.99 for the rest, and reached the top fifth 29% of the time against 19% (n=1,195, a title proxy).
+
 ## Structure tradeoffs
+
+Default for an acquisition giveaway: one prize worth wanting. Extracted, value-adjusted: one-unit campaigns index 1.07 against 0.85 for six to twenty units (evidence-and-limitations.md). Split the budget only when the units are the point: sampling, digital prizes, community rewards, or tiers that make the campaign read better.
 
 | Structure | Strengths | Costs and risks |
 |---|---|---|

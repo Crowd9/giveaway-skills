@@ -35,6 +35,21 @@ Duration: median 16 days, IQR 8 to 31, 90th percentile 43 (n=37,180). By campaig
 
 Organizers on their eleventh or later campaign had a median 2,194 contestants and 44% conversion in the clean subset (n=6,031), against 1,844 and 33% on a first campaign (n=1,655). Second campaigns sat at 1,877 and 34%, third to fifth at 1,943 and 34%, sixth to tenth at 2,075 and 35%. The export holds only campaigns that passed 1,000 contestants, so organizers who stopped after a weak first run are missing, and the curve mostly shows who kept going. Read it with the recency finding: running again, soon, is the pattern that comes with better numbers.
 
+## Cadence and persistence (extracted)
+
+Gap since the organizer's previous campaign, all ordinary campaigns:
+
+| Cadence | n | Contestants | Entries per entrant | Contestants per impression |
+|---|---|---|---|---|
+| first | 6,578 | 1,954 | 3.94 | 27% |
+| monthly or faster | 18,252 | 2,266 | 4.51 | 31% |
+| 31-60 | 4,134 | 2,338 | 4.65 | 26% |
+| 61-120 | 3,644 | 2,272 | 4.47 | 26% |
+| 121-365 | 3,419 | 2,237 | 4.13 | 26% |
+| over a year | 1,096 | 1,978 | 3.84 | 25% |
+
+Persistence between an organizer's consecutive campaigns (29,897 pairs): after a campaign of 5,000 or more contestants, the next reached 5,000 57% of the time, against 11% after a smaller one. After 10,000 or more, the next reached 10,000 53% of the time against 5%. The log correlation between consecutive campaigns is 0.60. Results repeat because audiences, lists and promotion habits repeat. Gleam's internal analysis of the same export found the same figures within a point.
+
 ## Limits
 
 - Duration and start date co-vary with organizer type, budget and season. The data cannot separate a duration effect from those.

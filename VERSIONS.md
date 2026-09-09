@@ -4,14 +4,20 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version | Last change |
 |---|---|---|
-| giveaway-prize-picker | 1.0.1 | 2026-09-09. Two modes, six criteria, taxonomy from 60,282 prize records, value bands by campaign size, budget calculator, evidence rules, Gleam reference. 2026-09-09, 1.0.1: own-product prize finding. |
-| giveaway-entry-method-planner | 1.0.1 | 2026-09-09. Action families with uptake, mixes by objective, method-count and referral findings, promotion rules from seventeen networks. 2026-09-09, 1.0.1: invalid-entry rates by method and opt-in checkbox uptake. |
-| giveaway-timing-and-duration | 1.0.1 | 2026-09-09. Duration, month, weekday and recency findings, timeline template, calendar by region. 2026-09-09, 1.0.1: organizer experience curve. |
-| giveaway-winner-structure | 1.0.1 | 2026-09-09. Structure findings, draw and contact rules, terms draft generator, Gleam drawing reference. 2026-09-09, 1.0.1: invalid entries before naming winners, custom terms adoption. |
-| giveaway-promotion-plan | 1.0.0 | 2026-09-09. Channel playbook, email sequence, partner brief, paid rules. |
-| giveaway-random-draw | 1.1.1 | 2026-09-09. Provably fair draw: commit, public beacon seeds, hash-ranked selection, verify, audit record. 2026-09-09, 1.1.0: entrant-list reference (spreadsheets, platforms, comment exports), loader resolves nested JSON and prefers person fields over comment ids, script 2.2.0. 2026-09-09, 1.1.1: invalid-entry expectation in the pre-draw checklist. |
-| giveaway-winner-communications | 1.0.0 | 2026-09-09. Message set from notification to non-winner, edge cases, contact log. |
-| giveaway-idea-generator | 1.0.0 | 2026-09-09. Hook shares from 37,180 campaign titles, theme starters, mechanics, formats to avoid. |
+| giveaway-prize-picker | 1.1.0 | 2026-09-09. Two modes, six criteria, taxonomy from 60,282 prize records, value bands by campaign size, budget calculator, evidence rules, Gleam reference. 2026-09-09, 1.0.1: own-product prize finding. 2026-09-09, 1.1.0: value-adjusted prize category and unit-count indexes, value regression, top-fifth profile, prize hierarchy and collaboration rule. |
+| giveaway-entry-method-planner | 1.1.0 | 2026-09-09. Action families with uptake, mixes by objective, method-count and referral findings, promotion rules from seventeen networks. 2026-09-09, 1.0.1: invalid-entry rates by method and opt-in checkbox uptake. 2026-09-09, 1.1.0: five jobs for actions, actions over-represented in top campaigns by vertical, action-count reconciliation. |
+| giveaway-timing-and-duration | 1.1.0 | 2026-09-09. Duration, month, weekday and recency findings, timeline template, calendar by region. 2026-09-09, 1.0.1: organizer experience curve. 2026-09-09, 1.1.0: cadence table and persistence between consecutive campaigns. |
+| giveaway-winner-structure | 1.2.0 | 2026-09-09. Structure findings, draw and contact rules, terms draft generator, Gleam drawing reference. 2026-09-09, 1.0.1: invalid entries before naming winners, custom terms adoption. 2026-09-09, 1.1.0: winner-verification reference (entry checks, account fraud signals, proof scaled to prize, failure handling). 2026-09-09, 1.2.0: one-prize default with the value-adjusted unit index. |
+| giveaway-promotion-plan | 1.0.1 | 2026-09-09. Channel playbook, email sequence, partner brief, paid rules. 2026-09-09, 1.0.1: top-fifth reach finding. |
+| giveaway-random-draw | 1.2.0 | 2026-09-09. Provably fair draw: commit, public beacon seeds, hash-ranked selection, verify, audit record. 2026-09-09, 1.1.0: entrant-list reference (spreadsheets, platforms, comment exports), loader resolves nested JSON and prefers person fields over comment ids, script 2.2.0. 2026-09-09, 1.1.1: invalid-entry expectation in the pre-draw checklist. 2026-09-09, 1.2.0: pre-commit list scan for disposable domains, domain concentration and numbered handle runs, script 2.3.0. |
+| giveaway-winner-communications | 1.0.1 | 2026-09-09. Message set from notification to non-winner, edge cases, contact log. 2026-09-09, 1.0.1: verification rule points at the proof ladder. |
+| giveaway-idea-generator | 1.0.1 | 2026-09-09. Hook shares from 37,180 campaign titles, theme starters, mechanics, formats to avoid. 2026-09-09, 1.0.1: own product plus adjacent prize formula, collaboration rule. |
+| giveaway-results-review | 1.0.0 | 2026-09-09. Benchmarks by band, review script, reading guide with the impressions caveat and recommendation map. |
+| gleam-campaign-setup | 1.0.0 | 2026-09-09. Setup, User Details, How to Enter, Prize and Post Entry tabs, reporting and fraud, drawing winners, Gleam tips, all cited from the docs read 9 September 2026, plus settings evidence from the export (uptake by action, position effect, description length, templates, throwaway restriction). |
+
+## 1.1.0 (2026-09-09)
+
+Two new skills and a data pass over the rest. giveaway-results-review reads a finished campaign against benchmarks for its size band with a script that applies the impressions caveat. gleam-campaign-setup turns a plan into Gleam settings cited from the documentation, with what entrants did with each Gleam action in the export. Across the existing skills: invalid-entry rates, organizer experience, custom terms adoption, opt-in checkbox uptake, own-product prizes, a winner-verification reference with a proof ladder, a pre-commit list scan in the draw script, an entrant-list export guide, and the value-adjusted findings checked against Gleam's internal analysis (prize category and unit-count indexes, the reach gap between top and bottom campaigns, cadence, persistence, collaborations, actions over-represented in top campaigns by vertical).
 
 ## 1.0.0 (2026-09-09)
 

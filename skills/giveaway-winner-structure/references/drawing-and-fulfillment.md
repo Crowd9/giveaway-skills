@@ -4,6 +4,8 @@ Advice unless marked as extracted.
 
 ## Structure tradeoffs
 
+Extracted, value-adjusted: among 14,521 campaigns with a stated USD pool, one-unit campaigns had a contestant index of 1.07 against their value band, two to five units 0.93, six to twenty 0.85, twenty-one or more 0.83. Raw medians are close because larger pools carry more units. For a fixed budget, one prize worth wanting is the default. Several winners earn their place when the units are the point: product sampling, digital prizes, community rewards, daily draws.
+
 | Shape | Choose it when | Cost |
 |---|---|---|
 | One winner | The headline value matters and the prize cannot be split | Worst perceived odds, one unhappy winner is the whole outcome |

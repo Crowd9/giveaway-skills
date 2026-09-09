@@ -2,6 +2,8 @@
 
 Advice. Formats change, so treat lengths and features as current practice, and check any platform rule in the entry-method planner's compliance notes before using tag-to-enter or share-to-enter.
 
+Extracted: the top fifth of ordinary campaigns by contestants had a median 35,098 impressions against 4,028 for the bottom fifth, at the same conversion (28% against 28%). Reach is what separates them. A campaign that is not being seen is a promotion problem before it is a prize problem.
+
 ## Per channel
 
 | Channel | Launch format | Mid-run format | Last call | Notes |

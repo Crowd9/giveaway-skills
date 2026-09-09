@@ -29,3 +29,11 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Extra cuts
 
 `analysis/extra_cuts.py export.json --classification private/classification.jsonl` writes `output/extra_cuts.json`: invalid-entry share overall, by method presence and for validated questions, organizer experience (Nth campaign), custom terms adoption, own-product prizes, and the email opt-in checkbox. Same clean-subset rule as `compare_groups.py`. The references quote these figures by hand.
+
+## Gleam settings
+
+`analysis/gleam_settings.py export.json --classification private/classification.jsonl` writes `output/gleam_settings.json`: completions per contestant by Gleam action name, uptake by list position and family, description length against conversion, custom action templates, and the throwaway-account restriction. The tables in `skills/gleam-campaign-setup/references/settings-evidence.md` are written from it by hand.
+
+## Context checks
+
+`analysis/verify_context.py export.json --classification private/classification.jsonl` writes `output/context_checks.json`: prize value bands and a log-log regression, value-adjusted indexes by prize category and by prize unit count, the top-fifth against bottom-fifth profile, cadence, persistence between an organizer's consecutive campaigns, a collaboration title proxy, and entry-method prevalence in the top fifth by vertical. Used to check Gleam's internal campaign analysis before its findings were written into the references.
