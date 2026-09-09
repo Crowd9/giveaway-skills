@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Set up, run and report on a giveaway in Gleam Competitions, citing the official documentation: the Setup, User Details, How to Enter, Prize and Post Entry tabs, mandatory and daily actions, free entry alternatives, fraud filter levels, terms, allowed locations, reporting definitions, the Actions tab, drawing winners, repeat winners, admin entries and Quick Draws. Use when the user says they use Gleam and asks 'how do I set this up in Gleam', 'where is the fraud setting', 'how does the Gleam draw work', 'what does impressions mean in Gleam', 'Gleam terms and conditions', 'mandatory action', 'daily entries', 'export entries from Gleam', or wants a plan from the other giveaway skills translated into Gleam settings. For the plan itself use the platform-neutral skills first."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Gleam Campaign Setup

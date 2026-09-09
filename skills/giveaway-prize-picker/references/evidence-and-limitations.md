@@ -165,6 +165,37 @@ Ordinary campaigns split into quintiles by contestants. Medians:
 
 Nearly nine times the impressions at the same conversion. Reach, and the organizer's history, separate the top from the bottom far more than the prize does, and the top fifth still spent about five times more on the prize.
 
+## Region and language (extracted, proxies)
+
+Region is the top-level domain of the organizer's site, so a .com organizer in Manchester reads as global. Language is a stopword count on the description and title. Clean subset, medians.
+
+| Organizer domain | n | Contestants | Contestants per impression | Entries per entrant | Stated USD per contestant | December starts |
+|---|---|---|---|---|---|---|
+| global domain (.com, .io, .net and so on) | 9,542 | 2,076 | 36% | 3.61 | 0.31 | 16% |
+| other or none | 473 | 2,022 | 32% | 4.16 | 0.33 | 17% |
+| United Kingdom | 400 | 1,534 | 60% | 1.89 | 0.19 | 10% |
+| Brazil | 394 | 2,116 | 60% | 5.17 | 0.17 | 9% |
+| Australia | 296 | 1,980 | 32% | 2.78 | 0.64 | 11% |
+| Germany | 162 | 2,090 | 41% | 4.37 | 0.30 | 53% |
+| Sweden | 157 | 7,890 | 73% | 2.93 | 0.47 | 68% |
+| Finland | 132 | 10,770 | 87% | 1.00 | - | 92% |
+
+UK organizers run small, high-converting, low-action campaigns with cheap stated prizes. Australian organizers spend the most per contestant on the stated figure. The Nordic rows are advent calendars: one action, a start in December, huge audiences. Brazil converts at twice the global rate.
+
+| Language guess | n | Contestants | Contestants per impression | Entries per entrant |
+|---|---|---|---|---|
+| English or unknown | 34,356 | 2,214 | 28% | 4.29 |
+| Portuguese | 928 | 1,932 | 59% | 5.33 |
+| Indonesian | 754 | 1,921 | 24% | 5.37 |
+| Spanish | 603 | 2,091 | 37% | 5.23 |
+| French | 229 | 2,673 | 30% | 4.07 |
+| German | 136 | 3,250 | 30% | 3.76 |
+| Turkish | 66 | 3,022 | 39% | 2.84 |
+
+### Description wording (extracted, clean subset)
+
+Flags found by regex in the prize description. Value stated in 27% of descriptions, winner count in 6%, a no-purchase line in 5%, worldwide in 4%, US only in 1%, an age line in 2%. Campaigns that state the value converted at 34% against 39% without and drew 1,970 contestants against 2,108 (n=2,590 and 9,062). Campaigns that state the winner count drew 1,695 against 2,102 (n=648). A no-purchase line went with 2,368 against 2,066 (n=291). Careful organizers write more and run smaller campaigns. Nothing here says the wording moved a number.
+
 ## What the data cannot support
 
 - **Causation or effect size.** Every campaign reached at least 1,000 contestants, and there is no set of smaller or failed campaigns to compare against. The size bands compare selected samples with each other, which shows who ran what and nothing about what a prize did. Nothing here shows that a prize type produced participation.

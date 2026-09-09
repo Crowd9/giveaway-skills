@@ -49,3 +49,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Percentiles
 
 `analysis/percentiles.py export.json --classification private/classification.jsonl` writes `output/percentiles.json` and the copy the results-review skill ships in its references: every fifth percentile of contestants, conversion, entries per entrant, invalid share, email signups, email uptake and referral entries per contestant, for all campaigns, the clean subset, each size band and each vertical.
+
+## Text and context
+
+`analysis/text_and_context.py export.json --classification private/classification.jsonl` writes `output/text_context.json`: organizer region from the site domain, language guess, question types, share copy traits, visit destinations, description and terms wording flags, title wording, overlapping campaigns, close day and hour, newsletter wording.

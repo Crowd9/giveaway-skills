@@ -50,6 +50,24 @@ Gap since the organizer's previous campaign, all ordinary campaigns:
 
 Persistence between an organizer's consecutive campaigns (29,897 pairs): after a campaign of 5,000 or more contestants, the next reached 5,000 57% of the time, against 11% after a smaller one. After 10,000 or more, the next reached 10,000 53% of the time against 5%. The log correlation between consecutive campaigns is 0.60. Results repeat because audiences, lists and promotion habits repeat. Gleam's internal analysis of the same export found the same figures within a point.
 
+## Overlapping campaigns and close day (extracted)
+
+A campaign that started before the organizer's previous one ended: clean subset 2,164 contestants and 44% conversion against 2,025 and 36% without overlap (n=3,109 and 8,543). Overlapping campaigns are twice as often December starts (27% against 14%), the advent calendar pattern, which carries much of that gap. Across all ordinary campaigns the two groups sit within 5% of each other. Running two at once did not hurt at the median, and the recency finding still holds.
+
+Close day of the week, all ordinary campaigns:
+
+| Close day | n | Contestants | Contestants per impression |
+|---|---|---|---|
+| Monday | 6,454 | 2,247 | 27% |
+| Friday | 5,782 | 2,189 | 28% |
+| Thursday | 5,141 | 2,233 | 29% |
+| Tuesday | 5,107 | 2,212 | 27% |
+| Wednesday | 5,044 | 2,196 | 28% |
+| Saturday | 4,828 | 2,222 | 28% |
+| Sunday | 4,767 | 2,108 | 29% |
+
+Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the export, so pick the close time for your audience and your own working hours.
+
 ## Limits
 
 - Duration and start date co-vary with organizer type, budget and season. The data cannot separate a duration effect from those.

@@ -54,6 +54,8 @@ Extracted: the median ordinary campaign had 3.8% of entries marked invalid at ve
 
 49% of the 37,123 ordinary campaigns carried custom terms in place of the platform default. In the clean subset, campaigns with custom terms had a median 2,183 contestants against 1,995 without (n=5,062 and 6,590) and a lower conversion (34% against 40%). That describes who writes terms, larger and more careful organizers, and says nothing about the terms causing either figure.
 
+Extracted from the 18,308 campaigns with custom terms: median length 1,444 words, 66% carry a no-purchase line, 31% an age line, 31% say worldwide or international, 3% say US only. The generated draft below is far shorter than the median custom terms, which is the point.
+
 ## Terms snippet to adapt
 
 "Winners are selected at random from valid entries on [date, time, time zone] using [method]. Winners are notified by [channel] within [N] days and must respond within 72 hours or the prize is forfeited and redrawn. Entries that are incomplete, duplicated, automated or from ineligible regions are void. Prizes are as stated, with no cash alternative, and the promoter may substitute a prize of equal or greater value if the stated prize becomes unavailable. Prizes are delivered within [N] days of confirmation. [Taxes and duties statement.] Winners' first names and [city or handle] may be published with their consent."

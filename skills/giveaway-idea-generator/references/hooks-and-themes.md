@@ -38,6 +38,22 @@ Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaw
 
 Own product plus the aspirational thing the customer wants next: coffee plus an espresso machine, snacks plus a stand mixer, supplements plus a sports watch, skincare plus a beauty device, camera accessory plus a camera. Ask what the customer's ideal day contains right before or after using the product. And the collaboration rule: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 29% of the time against 19% for the rest (title proxy, n=1,195).
 
+## Title wording (extracted, clean subset)
+
+| Word in the title | n | Contestants | Contestants per impression | Entries per entrant | December starts |
+|---|---|---|---|---|---|
+| giveaway | 5,254 | 2,022 | 34% | 3.84 | 11% |
+| none of the usual words | 4,965 | 2,143 | 44% | 3.51 | 25% |
+| competition | 350 | 1,547 | 62% | 1.88 | 10% |
+| sweepstakes | 312 | 2,633 | 29% | 4.06 | 11% |
+| gewinnspiel | 179 | 2,193 | 38% | 4.30 | 48% |
+| sorteo | 177 | 2,604 | 39% | 4.59 | 5% |
+| raffle | 158 | 2,420 | 60% | 1.00 | 9% |
+| concours | 148 | 2,042 | 36% | 1.00 | 16% |
+| contest | 104 | 1,628 | 25% | 3.04 | 6% |
+
+"Competition" and "raffle" are UK words and carry the UK pattern: small, one or two actions, high conversion. "Sweepstakes" is the US word and carries the largest campaigns. Titles with none of the usual words are a quarter December starts, which is the advent calendar pattern. Titles that start with "Win" drew 1,926 contestants against 2,077 (n=529), a value in the title 1,694 against 2,095 (n=630), and an emoji 1,656 against 2,092 (n=349). Titles over 60 characters converted best at 41% (n=922). The title reflects the organizer's market and habits more than it moves anyone.
+
 ## Mechanics (advice)
 
 - Single draw: one prize, one push, the default for a small budget.
