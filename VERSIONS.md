@@ -47,21 +47,67 @@ Housekeeping
 
 The results review reads exports.
 
-- Full report from a Gleam Actions export or another platform's export, in the order of the reporting tabs.
-- Percentile ranks for a dozen metrics against all campaigns, the size band and the vertical, plus per-action ranks by Gleam action type.
+Reports
+
+- A full report from a Gleam Actions export or another platform's export, in the order of the reporting tabs: overview with insights, journey and heatmap, traffic by first-touch channel with UTM rollup and invalid rate per channel, entry methods with completion rate and seconds per action, the referral graph with top sharers, audience by country and city, retention, and ROI on supplied inputs.
+- Other platforms read through column matching or a mapping, including one-column-per-method exports.
+
+Benchmarks
+
+- Percentile ranks for a dozen metrics against all campaigns, the size band and the vertical, and per-action ranks by Gleam action type.
 - Comparison against the organizer's own previous campaigns.
-- ROI with cost benchmarks by vertical, and what campaigns produced (emails, follows, referrals) with what each cost.
-- Winner-verification reference and a pre-commit list scan in the draw script.
-- CI with a style lint and self-tests. Codex and Cursor install paths checked.
+- ROI script with cost per contestant, per email and per follow beside the benchmark for the industry, and cost benchmarks by vertical, band and year.
+- What campaigns produced per asset (emails, follows, joins, referrals) and what each cost.
+
+Housekeeping
+
+- CI runs the validator, every script self-test and a repo-wide style lint on each push.
+- Codex and Cursor install paths checked with the skills CLI.
 
 ## 1.1.0 (2026-09-09)
 
 Two new skills and a data pass over the rest.
 
-- giveaway-results-review reads a finished campaign against benchmarks for its size band, with a script that applies the impressions caveat.
-- gleam-campaign-setup turns a plan into Gleam settings cited from the documentation, with what entrants did with each Gleam action in the export.
-- Existing skills gained invalid-entry rates, organizer experience, custom terms adoption, opt-in checkbox uptake, own-product prizes, a winner-verification reference with a proof ladder, a pre-commit list scan, an entrant-list export guide, and the value-adjusted findings checked against Gleam's internal analysis.
+New skills
+
+- giveaway-results-review: a finished campaign read against benchmarks for its size band, with a script that applies the impressions caveat and ranks each action against its family.
+- gleam-campaign-setup: a plan turned into Gleam settings cited from the documentation (Setup, User Details, How to Enter, Prize and Post Entry tabs, reporting definitions, fraud filter, drawing winners), with what entrants did with each Gleam action in the export.
+
+New findings in the existing skills
+
+- Invalid-entry rates by action, organizer experience, custom terms adoption, opt-in checkbox uptake, own-product prizes.
+- Value-adjusted prize category and unit-count indexes, the reach gap between the top and bottom fifth, cadence, persistence between consecutive campaigns, collaborations, and actions over-represented in top campaigns by vertical, all checked against Gleam's internal analysis before use.
+- One prize worth wanting is now the default for acquisition.
+
+Draw and verification
+
+- A winner-verification reference: entry checks, account fraud signals, proof scaled to the prize, what to do when a drawn entry fails.
+- The draw script scans the list before commit for disposable domains, domain concentration and runs of numbered handles.
+- A guide to getting the entrant list out of spreadsheets, platforms and comment threads, and a loader that reads nested JSON exports.
 
 ## 1.0.0 (2026-09-09)
 
-First public release. Eight skills built on an export of 54,675 giveaway campaigns with 1,000 or more contestants (37,180 ordinary after excluding crypto, ambiguous and purchase-only campaigns), committed as aggregates only, with the analysis scripts, a validator, evals with a style checker, plugin manifests and an MIT licence.
+First public release. Eight platform-neutral skills for running giveaways, supported by Gleam.
+
+The skills
+
+- giveaway-idea-generator: three concepts with a hook, mechanic and prize direction, and the one to run.
+- giveaway-prize-picker: recommend or evaluate a prize against six criteria, with a budget calculator and prize values by category and campaign size.
+- giveaway-entry-method-planner: the actions entrants take, weighted, with promotion rules for seventeen networks read from the source pages.
+- giveaway-timing-and-duration: run length, start date and a dated timeline, with a calendar by region.
+- giveaway-winner-structure: winner counts, tiers, draw and redraw rules, and a terms draft with notes for AU, UK, US, EU and CA.
+- giveaway-promotion-plan: a channel schedule with the posts, four emails and a partner brief written.
+- giveaway-random-draw: a provably fair draw that commits to the list before the seed exists, seeds from a public beacon, and writes an audit record anyone can verify.
+- giveaway-winner-communications: every message after the draw, from notification to the reply that ends a dispute.
+
+The evidence
+
+- An export of 54,675 giveaway campaigns with 1,000 or more contestants, 37,180 ordinary after excluding crypto, ambiguous and purchase-only campaigns.
+- Committed as aggregates only. Every figure carries a sample size and none claims that a choice caused participation.
+- Findings baked in: recency within 30 days, the cost of every extra action, the secret code, prize value bands, December, and the weekday that makes no difference.
+
+The repository
+
+- Analysis scripts that regenerate every table from a private export.
+- A validator, evals with a style checker, plugin manifests for Claude Code, and an MIT licence.
+- Install with the Claude Code plugin marketplace, the skills CLI, or by copying a skill folder.
