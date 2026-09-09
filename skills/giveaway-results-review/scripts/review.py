@@ -8,7 +8,7 @@ Benchmarks are medians from the ordinary segment of the campaign export (37,180 
 entrants), as published in references/benchmarks.md. Update both together. Impressions count one view per user per day,
 so long runs and daily actions depress conversion without anything being wrong. The script says so when it applies.
 """
-import argparse, csv, sys
+import argparse, csv, json, os, sys
 
 BENCH = {
     "contestants": {"p25": 1415, "median": 2201, "p75": 4152, "p90": 9006},
@@ -25,6 +25,32 @@ BENCH = {
 FAMILY_WORDS = {"email": ("email", "newsletter", "subscribe to", "signup", "sign up"), "share": ("share", "refer", "retweet", "repost", "viral"),
                 "content": ("upload", "submit", "photo", "video", "post a", "write", "comment"), "follow": ("follow", "subscribe", "join", "like"),
                 "visit": ("visit", "view", "watch", "check out", "page")}
+
+PCT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "references", "percentiles.json")
+
+def load_pct():
+    try: return json.load(open(PCT_FILE))
+    except (OSError, ValueError): return None
+
+def rank(value, table, lower_is_better=False):
+    """Share of campaigns in the group that this value beats, from the every-fifth-percentile table."""
+    if not table or value is None: return None
+    ps, vals = table_pcts, table["p"]
+    beaten = sum(1 for v in vals if value > v) if not lower_is_better else sum(1 for v in vals if value < v)
+    pct = ps[beaten - 1] if beaten else 0
+    return pct, table["n"]
+
+table_pcts = list(range(5, 100, 5))
+
+def rank_line(metric, value, groups, lower_is_better=False):
+    parts = []
+    for label, key in groups:
+        t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
+        r = rank(value, t, lower_is_better)
+        if r: parts.append(f"{'better' if not lower_is_better else 'lower'} than {r[0]}% of {label} (n={r[1]:,})")
+    return "; ".join(parts) if False else ", ".join(parts)
+
+PCT = None
 
 def position(value, dist):
     if value < dist["p25"]: return "bottom quarter"
@@ -47,11 +73,16 @@ def family(name):
     return None
 
 def review(a):
+    global PCT
+    PCT = PCT or load_pct()
+    groups = [("all campaigns", "all"), (f"the {band(a.contestants)} band", "band:" + band(a.contestants))]
+    if getattr(a, "vertical", None): groups.append((a.vertical.replace("_", " ") + " campaigns", "vertical:" + a.vertical))
+    conv_groups = [("all campaigns", "all"), ("clean campaigns", "clean")] + groups[2:]
     rows = []
-    rows.append(("Unique contestants", f"{a.contestants:,}", f"{BENCH['contestants']['median']:,}", f"{position(a.contestants, BENCH['contestants'])}, band {band(a.contestants)}"))
+    rows.append(("Unique contestants", f"{a.contestants:,}", f"{BENCH['contestants']['median']:,}", f"{position(a.contestants, BENCH['contestants'])}, band {band(a.contestants)}. " + rank_line("contestants", a.contestants, [g for g in groups if not g[1].startswith("band")])))
     if a.entries:
         epc = a.entries / a.contestants
-        rows.append(("Entries per contestant", f"{epc:.2f}", f"{BENCH['entries_per_contestant']['median']}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care"))
+        rows.append(("Entries per contestant", f"{epc:.2f}", f"{BENCH['entries_per_contestant']['median']}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
     if a.impressions:
         conv = a.contestants / a.impressions
         rows.append(("Impressions", f"{a.impressions:,}", f"{BENCH['impressions']['median']:,}", position(a.impressions, BENCH["impressions"])))
@@ -61,13 +92,22 @@ def review(a):
         if peer_m: note += f", clean campaigns with {a.methods} actions {peer_m:.0%}"
         if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
         if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per user per day, so a long run or a daily action lowers this without anything being wrong"
+        note += ". " + rank_line("conversion", conv, conv_groups)
         rows.append(("Contestants per impression", f"{conv:.1%}", f"{BENCH['platform_average_conversion']:.0%}", note))
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)
         read = "below the median" if inv < BENCH["invalid_share"]["median"] else "above the median"
         if inv >= 0.2: read += f", in the top {BENCH['invalid_share']['share_20pct_plus']:.0%} of campaigns. Check for a validated-answer question, then referral and Discord actions"
         elif inv >= 0.05: read += f", like {BENCH['invalid_share']['share_5pct_plus']:.0%} of campaigns"
+        read += ". " + rank_line("invalid_share", inv, groups, lower_is_better=True)
         rows.append(("Invalid share of entries", f"{inv:.1%}", f"{BENCH['invalid_share']['median']:.1%}", read))
+    if getattr(a, "emails", None):
+        up = a.emails / a.contestants
+        rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
+        rows.append(("Email signups per contestant", f"{up:.2f}", f"{BENCH['family_uptake']['email']:.2f}", rank_line("email_uptake", up, groups)))
+    if getattr(a, "referrals", None):
+        rp = a.referrals / a.contestants
+        rows.append(("Referral entries per contestant", f"{rp:.2f}", "0.13", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
         rows.append(("Duration in days", f"{a.days}", f"{BENCH['duration_days']['median']}", position(a.days, BENCH["duration_days"])))
     if a.methods:
@@ -95,8 +135,10 @@ def print_table(rows, header):
     for line in [header] + rows: print("  ".join(str(x).ljust(w) for x, w in zip(line, widths)))
 
 def self_test():
-    class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False
+    class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False; vertical = "food_drink"; emails = 1500; referrals = 200
     rows = review(A); d = {r[0]: r for r in rows}
+    assert "better than" in d["Unique contestants"][3] and "food drink campaigns" in d["Unique contestants"][3], rows
+    assert "Email signups" in d and "better than" in d["Email signups"][3], rows
     assert "1k-2.5k" in d["Unique contestants"][3] and d["Entries per contestant"][1] == "5.00" and d["Contestants per impression"][1] == "30.0%", rows
     assert d["Invalid share of entries"][1] == "4.3%" and "above the median" in d["Invalid share of entries"][3]
     assert family("Subscribe to our newsletter") == "email" and family("Share on Facebook") == "share" and family("Visit our store") == "visit"
@@ -108,6 +150,8 @@ def main(argv):
     ap.add_argument("--entries", type=int); ap.add_argument("--invalid", type=int); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
     ap.add_argument("--actions", help="CSV with action name and completions per row, header row first")
+    ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")
+    ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral entries recorded")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.contestants: ap.error("--contestants is required")
