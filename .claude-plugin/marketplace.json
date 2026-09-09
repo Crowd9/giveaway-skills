@@ -1,0 +1,19 @@
+{
+  "name": "giveaway-skills",
+  "owner": {
+    "name": "Gleam",
+    "url": "https://gleam.io"
+  },
+  "metadata": {
+    "description": "Eight giveaway skills, supported by Gleam: ideas, prize, entry methods, timing, winner structure, promotion, provably fair draw, winner communications",
+    "version": "1.0.0",
+    "repository": "https://github.com/Crowd9/giveaway-skills"
+  },
+  "plugins": [
+    {
+      "name": "giveaway-skills",
+      "description": "Eight giveaway skills: generate concepts, choose or evaluate a prize, plan entry actions, set run length and start date, structure winners and terms, plan promotion, run a provably fair draw seeded from a public beacon, and write every winner message",
+      "source": "./"
+    }
+  ]
+}
