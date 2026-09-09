@@ -1,0 +1,14 @@
+{
+  "skill_name": "giveaway-winner-communications",
+  "evals": [
+    {"id": 1, "prompt": "We drew a winner for our $600 espresso machine giveaway. She entered by email. Terms give 72 hours to reply. Write everything we need to send.",
+     "expected_output": "Notification with deadline and time zone and the no-payment line, verification and address request with a privacy line, delivery update, announcement with consent, non-winner message, in send order with channels and timing, plus a contact log format. First name only in public copy.",
+     "assertions": ["Notification includes the deadline with time zone", "States no payment or card details will be requested", "Address request has a privacy and deletion line", "Announcement uses first name and city or handle with consent", "Includes a non-winner message", "Contact log format present"], "files": []},
+    {"id": 2, "prompt": "A guy is furious in our DMs saying his cousin should have won and we cheated. What do I reply?",
+     "expected_output": "A short, calm reply that cites the draw method, date, entrant count and where the record is, offers to walk through it, and does not redraw or argue. Advises logging the exchange and not engaging further after one factual reply.",
+     "assertions": ["Reply cites the draw record", "Does not offer a redraw", "One factual reply then stop", "Logs the exchange"], "files": []},
+    {"id": 3, "prompt": "Style check applied to every conversational reply above.",
+     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
+  ]
+}

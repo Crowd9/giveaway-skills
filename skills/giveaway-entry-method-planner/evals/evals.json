@@ -1,0 +1,17 @@
+{
+  "skill_name": "giveaway-entry-method-planner",
+  "evals": [
+    {"id": 1, "prompt": "We're a skincare brand with 12k Instagram followers and a Klaviyo list. Goal is email subscribers. What should the entry methods be?",
+     "expected_output": "Email signup as the required, top-weighted action with opt-in wording. Two to four supporting actions on Instagram (follow, engage with a post) and a visit to a product page. A referral action weighted high for reach. Leaves out account connections and content tasks. Cites the email family's uptake with n and labels it extracted. Ends with a next decision.",
+     "assertions": ["Email signup is required and weighted highest", "Mentions opt-in consent wording", "Includes one sharing or referral action", "Excludes app installs and account connections", "Cites uptake figure with sample size and extracted label", "No platform pitch"], "files": []},
+    {"id": 2, "prompt": "Here is my entry list: follow on X, follow on Instagram, follow on TikTok, join Discord, subscribe on YouTube, visit website, retweet, tag 3 friends, download our app, sign up to newsletter. All required. Is this good?",
+     "expected_output": "Flags too many required actions and channels the business may not run, recommends one asset-producing required action, moves app download and account-style actions to optional, keeps one sharing action, notes tag-a-friend rules vary by network, and says the data cannot show the effect of removing methods.",
+     "assertions": ["Recommends reducing required actions", "Identifies the objective before ranking actions", "Moves app download to optional", "Mentions network rules for tag-a-friend", "States the dataset cannot show the effect of method count"], "files": []},
+    {"id": 3, "prompt": "Which entry method gets the most entries?",
+     "expected_output": "Explains that uptake describes completion when offered, names page visits and email signup as the highest-uptake families with figures and n, and redirects to the objective because high uptake on a visit produces nothing the business keeps.",
+     "assertions": ["Distinguishes uptake from value to the business", "Cites the families with figures and sample sizes", "Redirects to objective"], "files": []},
+    {"id": 4, "prompt": "Style check applied to every conversational reply above.",
+     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply. Zero em dashes, semicolons, curly quotes, assistant openers or closers.",
+     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
+  ]
+}

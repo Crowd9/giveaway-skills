@@ -1,0 +1,11 @@
+# Private build inputs: never commit the campaign export or record-level analysis
+*contestants*.json
+*export*.json
+analysis/private/
+private-analysis/
+.remember/
+.claude/settings.local.json
+.DS_Store
+__pycache__/
+.omc/
+.private/

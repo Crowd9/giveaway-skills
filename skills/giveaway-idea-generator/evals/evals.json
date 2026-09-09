@@ -1,0 +1,14 @@
+{
+  "skill_name": "giveaway-idea-generator",
+  "evals": [
+    {"id": 1, "prompt": "We're a small candle brand hitting 10k Instagram followers next month. Give us giveaway ideas. Budget about $300.",
+     "expected_output": "Three concepts (a simple milestone draw, a participatory scent-vote or UGC concept, a partner bundle), each with title, hook, mechanic, prize direction and asset. Recommends one for the objective and budget, cites the milestone hook share as extracted, names what to avoid, hands off to the prize picker or entry planner.",
+     "assertions": ["Three concepts of different shape", "Milestone hook used with an extracted figure", "Recommendation with reasoning", "Hand-off to another skill", "No platform pitch", "No entrant-number promise"], "files": []},
+    {"id": 2, "prompt": "Ideas for a Christmas giveaway for our SaaS?",
+     "expected_output": "Notes December is the busiest month (extracted share), suggests a series or advent format and a partner concept and a simple year-free plan concept, warns about the crowded month and shipping, avoids purchase conditions, hands off.",
+     "assertions": ["Cites December share as extracted", "At least one series or advent concept", "Warns about competition for attention in December", "Hand-off to another skill"], "files": []},
+    {"id": 3, "prompt": "Style check applied to every conversational reply above.",
+     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
+  ]
+}
