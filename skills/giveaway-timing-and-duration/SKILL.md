@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Decide how long a giveaway should run, when to start it, and how to plan the lead-up and wrap-up. Use when the user asks 'how long should my giveaway run', 'when should I launch it', 'best day to start', 'should it run over Christmas', 'giveaway timeline', 'giveaway calendar', 'evergreen giveaway', or wants a launch schedule for a contest or sweepstakes. Platform-neutral. For the prize see giveaway-prize-picker. For entry actions see giveaway-entry-method-planner."
 metadata:
-  version: 1.2.2
+  version: 1.2.3
 ---
 
 # Giveaway Timing and Duration
@@ -64,4 +64,4 @@ Advice is platform-neutral. When the user says they use Gleam or asks about it, 
 - `references/timing-findings.md`: duration, start month and weekday distributions, by campaign size.
 - `references/timeline-template.md`: a fill-in timeline and the seasonal calendar notes.
 - `references/calendar-by-region.md`: seasons and holidays by audience region, load when the audience is outside the US or UK.
-- `references/holiday-benchmarks.md`: campaigns by holiday theme with contestants, conversion, duration and launch lead days, a dated calendar with launch windows and what that week did in the data, every week of the year with its share of starts and conversion, and campaigns live over each holiday against the same-length campaigns that were not.
+- `references/holiday-benchmarks.md`: campaigns by holiday theme with contestants, conversion, duration and launch lead days, a dated calendar with launch windows and what that week did in the data, every week of the year with its share of starts and conversion, and campaigns live over each holiday against the same-length campaigns that were not, plus the smaller and obscure dates organizers used (St Patrick's, Earth Day, Prime Day, the national and world days) with the dates that are missing from the data.

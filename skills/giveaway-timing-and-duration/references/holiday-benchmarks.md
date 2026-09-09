@@ -157,3 +157,51 @@ Reading it:
 ## Names against dates
 
 For each holiday, the share of campaigns naming it that started in the 60 days before it and ended no more than 14 days after it: Christmas and advent 67% of 1,806, New Year 95% of 411, Black Friday and Cyber Monday 97% of 364, Thanksgiving 80% of 111, Halloween 80% of 256, Valentine's Day 97% of 223, Mother's Day 90% of 141, Father's Day 90% of 155, Easter 90% of 157, Back to school 84% of 211, Lunar New Year 82% of 40. Names and dates agree for nearly every holiday. Christmas is the exception at 67% because a third of Christmas-named campaigns are advent runs that finish on 24 December, "Christmas in July" campaigns, or January runs still carrying the word.
+
+## Smaller and obscure dates (extracted)
+
+Themes that fewer than 100 campaigns named, so the shape only: campaigns, median contestants and the months they started. Under 50 campaigns a median is a rough read.
+
+| Theme | Campaigns | Contestants | Start months |
+|---|---|---|---|
+| Halloween (also in the main table) | 230 | 2,008 | October |
+| New Year's resolutions | 82 | 2,365 | January |
+| National days (National Coffee Day, National Sticker Day, National Dog Day and so on) | 71 | 1,808 | August and September |
+| Independence Day (US) | 63 | 2,739 | June and July |
+| Wedding season | 58 | 2,372 | January and April |
+| St Patrick's Day | 44 | 2,362 | March |
+| Earth Day | 38 | 1,915 | April |
+| Labor Day (US) | 36 | 1,754 | August |
+| Gamescom, E3, Summer Game Fest, The Game Awards | 35 | 2,419 | August and December |
+| Amazon Prime Day | 33 | 1,686 | June and July |
+| World days (World Photography Day, World Book Day, World Sleep Day) | 31 | 2,453 | August and March |
+| Chinese or Lunar New Year | 31 | 2,274 | February |
+| World Cup | 29 | 1,862 | June |
+| Stocking stuffers | 26 | 1,875 | December |
+| International Women's Day | 23 | 2,014 | March |
+| March Madness | 19 | 2,582 | March |
+| Super Bowl | 17 | 3,160 | February |
+| April Fools | 17 | 1,671 | April |
+| Canada Day | 16 | 4,774 | June |
+
+Named days that organizers used, with the campaign count: National Coffee Day 19, World Photography Day 15, National Sticker Day 13, National 811 Day 13, National Candy Day 9, National Camera Day 8, National Dog Day 7, World Sleep Day 7, World Book Day 7, National Peanut Day 6, National Knife Day 6, National Handwriting Day 6, World Friendship Day 6, World Music Day 6, International Youth Day 6. Most are one brand's annual habit (a sticker company on National Sticker Day, a utility on National 811 Day), which is the point: a named day nobody else in your category uses is a hook with no competition. Canada Day and the Super Bowl carry the largest campaigns in this group on small samples, both tied to national audiences with a single day of attention.
+
+Dates for the ones with a fixed or predictable day:
+
+| Date | When |
+|---|---|
+| International Women's Day | Sun 08 Mar 2026 and Mon 08 Mar 2027 |
+| St Patrick's Day | Tue 17 Mar 2026 and Wed 17 Mar 2027 |
+| March Madness | mid March to early April |
+| Earth Day | Wed 22 Apr 2026 and Thu 22 Apr 2027 |
+| Star Wars Day | Mon 04 May 2026 and Tue 04 May 2027 |
+| Canada Day | Wed 01 Jul 2026 and Thu 01 Jul 2027 |
+| Independence Day (US) | Sat 04 Jul 2026 and Sun 04 Jul 2027 |
+| Amazon Prime Day | mid July, announced by Amazon each year |
+| World Photography Day | Wed 19 Aug 2026 |
+| National Dog Day | Wed 26 Aug 2026 |
+| Labor Day (US) | Mon 07 Sep 2026 |
+| National Coffee Day | Tue 29 Sep 2026 in the US, Thu 01 Oct 2026 internationally |
+| Super Bowl | Sun 14 Feb 2027, the same day as Valentine's |
+
+Missing from the data at any count worth reporting: Pride, Juneteenth, Cinco de Mayo, Pi Day, Bastille Day, Oktoberfest, Bonfire Night, Movember, Giving Tuesday, Small Business Saturday, Hanukkah, Boxing Day, Australia Day, Eurovision, Ramadan and Eid, Holi, Diwali beyond the main table, Day of the Dead, Carnival, Midsummer, Black History Month, Galentine's, Grandparents Day. Each appeared in under 15 campaigns of 37,123. An organizer who owns one of those has it to themselves.
