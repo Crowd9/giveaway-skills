@@ -4,7 +4,7 @@ Plan, run and draw a giveaway your audience will trust, with an AI assistant tha
 
 No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io).
 
-Supported by [Gleam](https://gleam.io). The advice fits any giveaway platform, and the skills only bring up Gleam when you ask.
+Supported by [Gleam](https://gleam.io). The advice fits any giveaway platform, and the skills only bring up Gleam when you ask. Built to sit beside the [marketingskills library](https://github.com/coreyhaines31/marketingskills).
 
 ## Skills
 
@@ -146,7 +146,8 @@ Your finished campaign read against 37,180 others of the same size, and what to 
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
 - Three changes at most, each tied to a figure and to the skill that plans it
-- Works from plain numbers, a reporting screenshot, or a Gleam Actions export read directly: contestants, follows by network, email signups, the country split and the referrers that brought people in
+- A full report from your export in the order of the reporting tabs: overview with insights and a heatmap, traffic by first-touch channel with UTM rollup, entry methods with completion rate and seconds per action, the referral graph with top sharers, audience by country and city, retention, and ROI on the costs you supply
+- Reads a Gleam Actions export as is, and other platforms' exports through column matching or a mapping, including one-column-per-method exports
 
 > "1,800 entrants, 6,000 views, 9,000 entries, ran 14 days with 6 actions. How did we do?"
 
@@ -207,7 +208,7 @@ npx skills add Crowd9/giveaway-skills
 
 Or copy a skill folder into the place your assistant loads skills from: `.claude/skills/` for Claude Code, `.agents/skills/` for Codex and the cross-agent standard. In Codex, run `/skills` or type `$` to pick one ([Codex skills docs](https://developers.openai.com/codex/skills)). 
 
-If you already keep a product context file from the marketingskills library at `.agents/product-marketing.md`, the skill reads it first and skips the questions it answers.
+These skills follow the conventions of the [marketingskills library](https://github.com/coreyhaines31/marketingskills) by Corey Haines and sit beside it. If you already keep its product context file at `.agents/product-marketing.md`, every skill reads it first and skips the questions it answers.
 
 ## Evidence Behind the Advice
 
