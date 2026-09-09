@@ -2,6 +2,10 @@
 
 Advice from practice plus the reporting definitions Gleam publishes. Other platforms define the same words differently, so confirm before comparing.
 
+## Reading an export from another platform
+
+Most contest platforms export one row per entry or per action with an email, an action name, a date and often a status and points. The report script matches those columns by name (Email Address, Entry Type, Points, Date, Verified and so on) and says on its first line which column it used for each role and which roles it could not find. When a role is wrong, pass `--map role=Column`. Exports with one row per person and one column per entry method are read as wide exports, with a non-empty cell counting as a completion. Sections whose columns are missing (referrers, cities, connected accounts) are omitted, never estimated. Benchmarks still apply: they describe campaigns of 1,000 or more entrants whatever the platform, and the vertical rank is a name guess.
+
 ## Reading a Gleam Actions export
 
 One row per completed action. The person is the Email column, Status is Valid, Invalid or Winner, Entries is the worth of that action, When carries the campaign's timezone offset, Country comes from the entrant's IP, and Referring URL says where the visit came from. Contestants are unique valid emails. Actions completed are valid rows. Entries are the sum of the Entries column on valid rows. The export has no impressions, so conversion needs the Reporting tab. An auto-entry bonus (a row like "Entry Confirmed") counts as an action for nearly everyone and says nothing about engagement. Referrers show the promotion channels that worked and the giveaway-listing sites (contest aggregators) that found the campaign, which explain a low email uptake as much as the form does.
