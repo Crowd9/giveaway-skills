@@ -1,0 +1,29 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate skills
+        run: python3 scripts/validate.py
+      - name: Script self-tests
+        run: |
+          python3 skills/giveaway-random-draw/scripts/draw.py --self-test
+          python3 skills/giveaway-prize-picker/scripts/budget.py --self-test
+          python3 skills/giveaway-winner-structure/scripts/terms.py --self-test
+          python3 skills/giveaway-results-review/scripts/review.py --self-test
+      - name: Style rules on prose
+        run: python3 scripts/style_lint.py
+      - name: No customer data
+        run: |
+          ! git ls-files | grep -E 'contestants.*\.json$|export.*\.json$'
+          ! grep -rIl --include='*.json' --include='*.md' -E '"(restricted_field)"' analysis/output skills || (echo "customer field found" && exit 1)

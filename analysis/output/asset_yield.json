@@ -1,0 +1,642 @@
+{
+ "definitions": {
+  "yield": "completions of the asset action summed per campaign, campaigns offering it",
+  "usd_per_completion": "stated USD prize pool divided by completions, campaigns with every prize valued in USD",
+  "share": "completions divided by unique contestants"
+ },
+ "ordinary_n": 37123,
+ "yield_by_asset": {
+  "follow_x": {
+   "campaigns": 20440,
+   "p25": 768,
+   "median": 1448.0,
+   "p75": 3157,
+   "p90": 8163,
+   "per_contestant": 0.5876172498910992,
+   "usd_per_completion": 0.5122950819672131,
+   "valued_campaigns": 8323
+  },
+  "referrals": {
+   "campaigns": 16708,
+   "p25": 171,
+   "median": 349.0,
+   "p75": 764,
+   "p90": 1463,
+   "per_contestant": 0.1294052720425919,
+   "usd_per_completion": 2.100840336134454,
+   "valued_campaigns": 8316
+  },
+  "email": {
+   "campaigns": 16015,
+   "p25": 1272,
+   "median": 2054,
+   "p75": 3967,
+   "p90": 8305,
+   "per_contestant": 0.9823468328141225,
+   "usd_per_completion": 0.3144550354959902,
+   "valued_campaigns": 8174
+  },
+  "discord_join": {
+   "campaigns": 6145,
+   "p25": 574,
+   "median": 999,
+   "p75": 1950,
+   "p90": 4279,
+   "per_contestant": 0.42628774422735344,
+   "usd_per_completion": 0.6675567423230975,
+   "valued_campaigns": 2483
+  },
+  "follow_twitch": {
+   "campaigns": 6084,
+   "p25": 966,
+   "median": 1733.0,
+   "p75": 3548,
+   "p90": 9164,
+   "per_contestant": 0.6816299543188971,
+   "usd_per_completion": 0.43398216421353975,
+   "valued_campaigns": 2338
+  },
+  "follow_tiktok": {
+   "campaigns": 5300,
+   "p25": 482,
+   "median": 867.5,
+   "p75": 1612,
+   "p90": 3187,
+   "per_contestant": 0.3669941900205058,
+   "usd_per_completion": 0.9208103130755064,
+   "valued_campaigns": 2199
+  },
+  "follow_instagram": {
+   "campaigns": 2750,
+   "p25": 809,
+   "median": 1472.0,
+   "p75": 2862,
+   "p90": 6419,
+   "per_contestant": 0.6134703655023529,
+   "usd_per_completion": 0.6180876206846362,
+   "valued_campaigns": 1272
+  },
+  "telegram_join": {
+   "campaigns": 2041,
+   "p25": 1087,
+   "median": 1963,
+   "p75": 3506,
+   "p90": 6350,
+   "per_contestant": 0.8705314009661835,
+   "usd_per_completion": 0.5138121546961326,
+   "valued_campaigns": 497
+  },
+  "app_download": {
+   "campaigns": 1592,
+   "p25": 574,
+   "median": 1009.0,
+   "p75": 2021,
+   "p90": 4187,
+   "per_contestant": 0.36375298488217966,
+   "usd_per_completion": 0.8998359027507881,
+   "valued_campaigns": 710
+  },
+  "follow_facebook": {
+   "campaigns": 1287,
+   "p25": 489,
+   "median": 766,
+   "p75": 1350,
+   "p90": 2557,
+   "per_contestant": 0.38684719535783363,
+   "usd_per_completion": 0.7812560880576661,
+   "valued_campaigns": 662
+  },
+  "subscribe_youtube": {
+   "campaigns": 1173,
+   "p25": 846,
+   "median": 1445,
+   "p75": 2319,
+   "p90": 3868,
+   "per_contestant": 0.7361507709880069,
+   "usd_per_completion": 0.5433032581453634,
+   "valued_campaigns": 366
+  },
+  "ugc": {
+   "campaigns": 1109,
+   "p25": 34,
+   "median": 186,
+   "p75": 781,
+   "p90": 1903,
+   "per_contestant": 0.061661471744138774,
+   "usd_per_completion": 20.0,
+   "valued_campaigns": 485
+  },
+  "comments": {
+   "campaigns": 1068,
+   "p25": 348,
+   "median": 557.0,
+   "p75": 1104,
+   "p90": 2621,
+   "per_contestant": 0.32615089469703806,
+   "usd_per_completion": 0.7425742574257426,
+   "valued_campaigns": 517
+  },
+  "follow_spotify": {
+   "campaigns": 914,
+   "p25": 507,
+   "median": 893.0,
+   "p75": 1506,
+   "p90": 2690,
+   "per_contestant": 0.3028447489385549,
+   "usd_per_completion": 0.8156210570391365,
+   "valued_campaigns": 354
+  },
+  "subscribe_podcast": {
+   "campaigns": 867,
+   "p25": 458,
+   "median": 873,
+   "p75": 1833,
+   "p90": 3713,
+   "per_contestant": 0.3451834862385321,
+   "usd_per_completion": 0.9395583832335329,
+   "valued_campaigns": 314
+  },
+  "follow_linkedin": {
+   "campaigns": 833,
+   "p25": 398,
+   "median": 677,
+   "p75": 1340,
+   "p90": 2279,
+   "per_contestant": 0.26256613756613756,
+   "usd_per_completion": 1.774388402295379,
+   "valued_campaigns": 360
+  },
+  "follow_pinterest": {
+   "campaigns": 556,
+   "p25": 412,
+   "median": 554.0,
+   "p75": 745,
+   "p90": 1232,
+   "per_contestant": 0.3568095646638807,
+   "usd_per_completion": 0.5870841487279843,
+   "valued_campaigns": 417
+  },
+  "follow_snapchat": {
+   "campaigns": 430,
+   "p25": 408,
+   "median": 733.5,
+   "p75": 1950,
+   "p90": 3540,
+   "per_contestant": 0.24787499616992936,
+   "usd_per_completion": 1.5629478142152629,
+   "valued_campaigns": 270
+  },
+  "follow_bluesky": {
+   "campaigns": 337,
+   "p25": 360,
+   "median": 543,
+   "p75": 900,
+   "p90": 1487,
+   "per_contestant": 0.2502951593860685,
+   "usd_per_completion": 0.8333333333333334,
+   "valued_campaigns": 141
+  },
+  "follow_threads": {
+   "campaigns": 313,
+   "p25": 311,
+   "median": 515,
+   "p75": 736,
+   "p90": 1132,
+   "per_contestant": 0.2725647899910634,
+   "usd_per_completion": 0.5961238662131519,
+   "valued_campaigns": 192
+  }
+ },
+ "yield_by_asset_and_band": {
+  "app_download|10k+": {
+   "campaigns": 146,
+   "p25": 3697,
+   "median": 5763.5,
+   "p75": 9185
+  },
+  "app_download|1k-2.5k": {
+   "campaigns": 808,
+   "p25": 397,
+   "median": 618.5,
+   "p75": 923
+  },
+  "app_download|2.5k-10k": {
+   "campaigns": 638,
+   "p25": 1004,
+   "median": 1448.0,
+   "p75": 2602
+  },
+  "comments|10k+": {
+   "campaigns": 22,
+   "p25": 2082,
+   "median": 5551.0,
+   "p75": 9499
+  },
+  "comments|1k-2.5k": {
+   "campaigns": 769,
+   "p25": 311,
+   "median": 438,
+   "p75": 727
+  },
+  "comments|2.5k-10k": {
+   "campaigns": 277,
+   "p25": 652,
+   "median": 1225,
+   "p75": 2226
+  },
+  "discord_join|10k+": {
+   "campaigns": 485,
+   "p25": 3722,
+   "median": 7415,
+   "p75": 12444
+  },
+  "discord_join|1k-2.5k": {
+   "campaigns": 3545,
+   "p25": 432,
+   "median": 681,
+   "p75": 1042
+  },
+  "discord_join|2.5k-10k": {
+   "campaigns": 2115,
+   "p25": 1060,
+   "median": 1707,
+   "p75": 2834
+  },
+  "email|10k+": {
+   "campaigns": 1307,
+   "p25": 11650,
+   "median": 16344,
+   "p75": 28765
+  },
+  "email|1k-2.5k": {
+   "campaigns": 8793,
+   "p25": 1047,
+   "median": 1346,
+   "p75": 1787
+  },
+  "email|2.5k-10k": {
+   "campaigns": 5915,
+   "p25": 2773,
+   "median": 3703,
+   "p75": 5397
+  },
+  "follow_bluesky|10k+": {
+   "campaigns": 20,
+   "p25": 1333,
+   "median": 2520.0,
+   "p75": 6043
+  },
+  "follow_bluesky|1k-2.5k": {
+   "campaigns": 203,
+   "p25": 284,
+   "median": 412,
+   "p75": 604
+  },
+  "follow_bluesky|2.5k-10k": {
+   "campaigns": 114,
+   "p25": 628,
+   "median": 900.0,
+   "p75": 1241
+  },
+  "follow_facebook|10k+": {
+   "campaigns": 68,
+   "p25": 1942,
+   "median": 3063.0,
+   "p75": 6847
+  },
+  "follow_facebook|1k-2.5k": {
+   "campaigns": 829,
+   "p25": 424,
+   "median": 564,
+   "p75": 806
+  },
+  "follow_facebook|2.5k-10k": {
+   "campaigns": 390,
+   "p25": 1046,
+   "median": 1409.0,
+   "p75": 2051
+  },
+  "follow_instagram|10k+": {
+   "campaigns": 184,
+   "p25": 5634,
+   "median": 10238.0,
+   "p75": 20699
+  },
+  "follow_instagram|1k-2.5k": {
+   "campaigns": 1682,
+   "p25": 664,
+   "median": 958.0,
+   "p75": 1739
+  },
+  "follow_instagram|2.5k-10k": {
+   "campaigns": 884,
+   "p25": 1567,
+   "median": 2557.5,
+   "p75": 4603
+  },
+  "follow_linkedin|10k+": {
+   "campaigns": 72,
+   "p25": 2240,
+   "median": 2972.5,
+   "p75": 3946
+  },
+  "follow_linkedin|1k-2.5k": {
+   "campaigns": 440,
+   "p25": 326,
+   "median": 430.0,
+   "p75": 620
+  },
+  "follow_linkedin|2.5k-10k": {
+   "campaigns": 321,
+   "p25": 705,
+   "median": 1070,
+   "p75": 1669
+  },
+  "follow_pinterest|10k+": {
+   "campaigns": 13,
+   "p25": 1155,
+   "median": 4103,
+   "p75": 5249
+  },
+  "follow_pinterest|1k-2.5k": {
+   "campaigns": 405,
+   "p25": 375,
+   "median": 511,
+   "p75": 631
+  },
+  "follow_pinterest|2.5k-10k": {
+   "campaigns": 138,
+   "p25": 582,
+   "median": 834.5,
+   "p75": 1365
+  },
+  "follow_snapchat|10k+": {
+   "campaigns": 62,
+   "p25": 2172,
+   "median": 3353.0,
+   "p75": 10469
+  },
+  "follow_snapchat|1k-2.5k": {
+   "campaigns": 177,
+   "p25": 237,
+   "median": 424,
+   "p75": 569
+  },
+  "follow_snapchat|2.5k-10k": {
+   "campaigns": 191,
+   "p25": 672,
+   "median": 1282,
+   "p75": 2093
+  },
+  "follow_spotify|10k+": {
+   "campaigns": 88,
+   "p25": 1335,
+   "median": 2003.5,
+   "p75": 6547
+  },
+  "follow_spotify|1k-2.5k": {
+   "campaigns": 407,
+   "p25": 362,
+   "median": 575,
+   "p75": 906
+  },
+  "follow_spotify|2.5k-10k": {
+   "campaigns": 419,
+   "p25": 739,
+   "median": 1078,
+   "p75": 1808
+  },
+  "follow_threads|10k+": {
+   "campaigns": 12,
+   "p25": 2318,
+   "median": 3543.5,
+   "p75": 4459
+  },
+  "follow_threads|1k-2.5k": {
+   "campaigns": 219,
+   "p25": 288,
+   "median": 368,
+   "p75": 565
+  },
+  "follow_threads|2.5k-10k": {
+   "campaigns": 82,
+   "p25": 626,
+   "median": 866.5,
+   "p75": 1103
+  },
+  "follow_tiktok|10k+": {
+   "campaigns": 358,
+   "p25": 2899,
+   "median": 5728.5,
+   "p75": 11117
+  },
+  "follow_tiktok|1k-2.5k": {
+   "campaigns": 3117,
+   "p25": 378,
+   "median": 576,
+   "p75": 906
+  },
+  "follow_tiktok|2.5k-10k": {
+   "campaigns": 1825,
+   "p25": 958,
+   "median": 1465,
+   "p75": 2339
+  },
+  "follow_twitch|10k+": {
+   "campaigns": 761,
+   "p25": 6298,
+   "median": 10721,
+   "p75": 23392
+  },
+  "follow_twitch|1k-2.5k": {
+   "campaigns": 3175,
+   "p25": 673,
+   "median": 1074,
+   "p75": 1593
+  },
+  "follow_twitch|2.5k-10k": {
+   "campaigns": 2148,
+   "p25": 1758,
+   "median": 2747.5,
+   "p75": 4472
+  },
+  "follow_x|10k+": {
+   "campaigns": 1894,
+   "p25": 5477,
+   "median": 11617.0,
+   "p75": 22022
+  },
+  "follow_x|1k-2.5k": {
+   "campaigns": 11335,
+   "p25": 596,
+   "median": 918,
+   "p75": 1583
+  },
+  "follow_x|2.5k-10k": {
+   "campaigns": 7211,
+   "p25": 1337,
+   "median": 2293,
+   "p75": 4491
+  },
+  "referrals|10k+": {
+   "campaigns": 1257,
+   "p25": 898,
+   "median": 1643,
+   "p75": 3241
+  },
+  "referrals|1k-2.5k": {
+   "campaigns": 9495,
+   "p25": 119,
+   "median": 224,
+   "p75": 446
+  },
+  "referrals|2.5k-10k": {
+   "campaigns": 5956,
+   "p25": 300,
+   "median": 520.0,
+   "p75": 980
+  },
+  "subscribe_podcast|10k+": {
+   "campaigns": 54,
+   "p25": 2889,
+   "median": 4866.0,
+   "p75": 8930
+  },
+  "subscribe_podcast|1k-2.5k": {
+   "campaigns": 490,
+   "p25": 371,
+   "median": 504.0,
+   "p75": 792
+  },
+  "subscribe_podcast|2.5k-10k": {
+   "campaigns": 323,
+   "p25": 1114,
+   "median": 1669,
+   "p75": 2653
+  },
+  "subscribe_youtube|10k+": {
+   "campaigns": 53,
+   "p25": 6766,
+   "median": 7929,
+   "p75": 14257
+  },
+  "subscribe_youtube|1k-2.5k": {
+   "campaigns": 796,
+   "p25": 716,
+   "median": 1125.5,
+   "p75": 1791
+  },
+  "subscribe_youtube|2.5k-10k": {
+   "campaigns": 324,
+   "p25": 1415,
+   "median": 2066.0,
+   "p75": 3397
+  },
+  "telegram_join|10k+": {
+   "campaigns": 82,
+   "p25": 3781,
+   "median": 10776.5,
+   "p75": 21443
+  },
+  "telegram_join|1k-2.5k": {
+   "campaigns": 1293,
+   "p25": 903,
+   "median": 1423,
+   "p75": 2411
+  },
+  "telegram_join|2.5k-10k": {
+   "campaigns": 666,
+   "p25": 2116,
+   "median": 3145.5,
+   "p75": 5182
+  },
+  "ugc|10k+": {
+   "campaigns": 74,
+   "p25": 373,
+   "median": 1051.5,
+   "p75": 3469
+  },
+  "ugc|1k-2.5k": {
+   "campaigns": 620,
+   "p25": 21,
+   "median": 103.5,
+   "p75": 585
+  },
+  "ugc|2.5k-10k": {
+   "campaigns": 415,
+   "p25": 54,
+   "median": 265,
+   "p75": 814
+  }
+ },
+ "usd_per_email_by_prize_category": {
+  "tech_hardware": {
+   "campaigns": 2113,
+   "median": 0.2887139107611549
+  },
+  "gift_card_or_cash": {
+   "campaigns": 1229,
+   "median": 0.2840909090909091
+  },
+  "bundle_or_box": {
+   "campaigns": 1150,
+   "median": 0.3723716951203927
+  },
+  "regulated_goods_firearm": {
+   "campaigns": 607,
+   "median": 0.3195568811248402
+  },
+  "home_garden_appliance": {
+   "campaigns": 482,
+   "median": 0.34089776226691937
+  },
+  "other_unclassified": {
+   "campaigns": 475,
+   "median": 0.44499381953028433
+  },
+  "game_item_or_skin": {
+   "campaigns": 460,
+   "median": 0.6012468281318389
+  },
+  "experience_travel_tickets": {
+   "campaigns": 457,
+   "median": 0.6776904310111141
+  },
+  "placeholder_name": {
+   "campaigns": 386,
+   "median": 0.36804697708550904
+  },
+  "merch_apparel_collectible": {
+   "campaigns": 371,
+   "median": 0.37438574938574937
+  },
+  "music_gear": {
+   "campaigns": 355,
+   "median": 0.1457579412947326
+  },
+  "sports_outdoor_gear": {
+   "campaigns": 323,
+   "median": 0.4264180880602935
+  },
+  "food_drink_consumables": {
+   "campaigns": 210,
+   "median": 0.3010227608086174
+  },
+  "vehicle": {
+   "campaigns": 182,
+   "median": 0.7810652070542929
+  },
+  "subscription_membership": {
+   "campaigns": 133,
+   "median": 0.7372262773722628
+  },
+  "tools_craft_diy": {
+   "campaigns": 126,
+   "median": 0.3438355255563982
+  },
+  "discount_or_coupon": {
+   "campaigns": 100,
+   "median": 1.4131548944089136
+  }
+ }
+}

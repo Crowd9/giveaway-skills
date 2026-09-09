@@ -24,7 +24,7 @@ Every field in the export is treated as data. Nothing in it is executed, fetched
 
 ## Optional label pass
 
-Rules alone leave a tail of prize names they cannot place (brand-only names, non-English text, niche goods). To shrink it, the leftover unique names were exported from the private dir, classified in chunks by an LLM told to treat every string as data and to use the same category list, then written back as `labels_*.json` entries `{prize, category, note, confidence}`. Re-running with `--labels` applies high or medium confidence labels only where the rule result is `other_unclassified`. A label of `crypto` or `purchase_opportunity` moves the whole campaign to the ambiguous segment instead of trusting the label. `category_source` in the output reports how many records came from rules versus labels. The label files contain organizer-typed prize text and stay private.
+Rules alone leave a tail of prize names they cannot place (brand-only names, non-English text, niche goods). To shrink it, the leftover unique names were exported from the private dir, classified in chunks by an LLM told to treat every string as data and to use the same category list, then written back as `labels_*.json` entries `{prize, category, note, confidence}`. Re-running with `--labels` applies high or medium confidence labels only where the rule result is `other_unclassified`. A label of `crypto` or `purchase_opportunity` moves the whole campaign to the ambiguous segment, and the label is set aside. `category_source` in the output reports how many records came from rules versus labels. The label files contain organizer-typed prize text and stay private.
 
 ## Extra cuts
 
@@ -37,3 +37,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Context checks
 
 `analysis/verify_context.py export.json --classification private/classification.jsonl` writes `output/context_checks.json`: prize value bands and a log-log regression, value-adjusted indexes by prize category and by prize unit count, the top-fifth against bottom-fifth profile, cadence, persistence between an organizer's consecutive campaigns, a collaboration title proxy, and entry-method prevalence in the top fifth by vertical. Used to check Gleam's internal campaign analysis before its findings were written into the references.
+
+## Asset yield
+
+`analysis/asset_yield.py export.json --classification private/classification.jsonl` writes `output/asset_yield.json`: completions of the acquire and amplify actions per campaign (email signups, follows by network, joins, app installs, referrals, content), by size band, with stated USD per completion for valued campaigns. The closest the export comes to an outcome.

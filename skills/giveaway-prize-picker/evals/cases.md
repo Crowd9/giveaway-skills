@@ -2,7 +2,7 @@
 
 Machine-readable form: `evals.json` in this folder (prompt, expected output, assertions). This file holds the same cases with the last run's results.
 
-Run each request against an assistant that has loaded `SKILL.md`. Pass criteria are behavioural, so wording may vary. Data-level cases (7, 8) are checked against the analysis output instead of a conversation.
+Run each request against an assistant that has loaded `SKILL.md`. Pass criteria are behavioural, so wording may vary. Data-level cases (7, 8) are checked against the analysis output, with no conversation involved.
 
 ## 1. Small local business, limited budget
 

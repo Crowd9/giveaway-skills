@@ -35,7 +35,7 @@ Source: https://help.instagram.com/179379842258600
 - Encourage hashtags relevant to the contest. Adding your hashtag to unrelated posts can violate the X Rules.
 - Follow the X Rules and search best practices, and comply with applicable laws. X says compliance is your responsibility and suggests consulting an attorney.
 
-What it means: one entry per person per day, a mention rather than a bare repost count, and no "most reposts wins" mechanics.
+What it means: one entry per person per day, a mention, no bare repost counts, and no "most reposts wins" mechanics.
 
 Source: https://help.x.com/en/rules-and-policies/x-contest-rules
 
@@ -74,7 +74,7 @@ Source: https://discord.com/guidelines
 - Prohibited Gambling Content: no links or affiliate codes to sites with slots, roulette or dice games, and named sites (stake.com among them) cannot be streamed or linked. Skins gambling promotion is prohibited. Fantasy sports, sports betting and poker broadcasts are permitted.
 - Breaking the Law: content that solicits illegal activity is prohibited.
 
-What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows rather than asking viewers to follow. Paid "sub to enter" is not addressed by name. It had the lowest uptake of any action family in the data (median 0.05), so it costs entrants and gains little. Keep gambling sites and skins sites out of the prize and the chat.
+What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest uptake of any action family in the data (median 0.05), so it costs entrants and gains little. Keep gambling sites and skins sites out of the prize and the chat.
 
 Source: https://safety.twitch.tv/s/article/Community-Guidelines
 

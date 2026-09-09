@@ -20,6 +20,7 @@ BENCH = {
     "conv_by_duration": [(7, 0.45), (14, 0.31), (30, 0.28), (60, 0.24), (10 ** 9, 0.23)],  # no repeatable actions
     "platform_average_conversion": 0.34,
     "family_uptake": {"visit": 0.75, "follow": 0.47, "share": 0.22, "email": 0.89, "content": 0.24},
+    "yield_median": {"email": {"1k-2.5k": 1346, "2.5k-10k": 3703, "10k+": 16344}, "share": {"1k-2.5k": 224, "2.5k-10k": 520, "10k+": 1643}},
 }
 FAMILY_WORDS = {"email": ("email", "newsletter", "subscribe to", "signup", "sign up"), "share": ("share", "refer", "retweet", "repost", "viral"),
                 "content": ("upload", "submit", "photo", "video", "post a", "write", "comment"), "follow": ("follow", "subscribe", "join", "like"),
@@ -83,7 +84,10 @@ def read_actions(path, contestants):
             except ValueError: continue
             fam = family(r[0]); up = n / contestants
             bench = BENCH["family_uptake"].get(fam)
-            out.append((r[0], f"{up:.2f}", f"{bench:.2f}" if bench else "n/a", fam or "unclassified", ("at or above" if bench and up >= bench else "below") + " its family median" if bench else "no family benchmark"))
+            read = (("at or above" if bench and up >= bench else "below") + " its family median") if bench else "no family benchmark"
+            ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
+            if ym: read += f", median campaign in this band collected {ym:,}"
+            out.append((r[0], f"{up:.2f}", f"{bench:.2f}" if bench else "n/a", fam or "unclassified", read))
     return sorted(out, key=lambda x: -float(x[1]))
 
 def print_table(rows, header):
