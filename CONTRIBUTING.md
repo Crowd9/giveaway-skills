@@ -74,7 +74,7 @@ The validator checks frontmatter, name rules, file size, reference links, prose 
 
 ## What Never Goes In
 
-Customer data of any kind: names, emails, account ids, campaign links, raw exports, record-level analysis. Only aggregates with sample sizes. The `.gitignore` blocks the usual paths, and the validator will not catch a pasted name, so look before you commit.
+Personal data of any kind: organizer or entrant names, email addresses, IP addresses and the locations derived from them, billing details, campaign keys and landing URLs that identify a customer, raw exports, record-level analysis. Only aggregates with sample sizes. The `.gitignore` blocks the usual paths, and the validator will not catch a pasted name, so look before you commit.
 
 ## Licence
 

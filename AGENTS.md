@@ -24,3 +24,7 @@ python3 scripts/validate.py                                  # frontmatter, size
 python3 evals/style_check.py reply.txt   # score a saved reply
 python3 analysis/analyze_export.py <export> --private-dir <dir>       # regenerate aggregates (private input)
 ```
+
+## PII Never Enters the Repository
+
+Personal data from any export stays on the disk it landed on. That means organizer and entrant names, email addresses, IP addresses and locations derived from them, billing details, reply-to addresses, campaign keys and landing URLs that identify a customer, and any record-level row. Only aggregates with sample sizes are committed. `analysis/convert.py` drops the identity fields at conversion, `build-inputs/` and the export paths are gitignored, and CI fails on a PII field name, an email address or an IP address in a committed file. The synthetic files under `skills/*/examples/` use example.com and example.org only.
