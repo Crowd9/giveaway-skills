@@ -74,6 +74,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 - Recommended duration and start date with the reason
 - A dated timeline: terms and assets, launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil
 - Holiday benchmarks: contestants, conversion and launch lead time for Christmas, Black Friday, the family days, Easter, Halloween, back to school and more, with a dated calendar of launch windows
+- Every week of the year benchmarked: share of launches, contestants and conversion, and whether being live over each holiday helped or hurt
 - Seasonal calendar by region, with December's peak and carrier cut-offs flagged
 - The recency finding: a campaign within 30 days of your last one drew 16% more entrants and converted a third better
 - Risks named in advance: the quiet middle, holiday gaps, the wrong time zone on the close
@@ -222,7 +223,7 @@ That data is what lets the skills say things like:
 - A campaign that starts within 30 days of the organizer's previous one draws 16% more entrants and converts a third better, in every industry we could separate.
 - Every extra entry action costs people. Campaigns with 11 or more actions convert at 31% against 50% for one to three, and lose a fifth of their entrants.
 - Half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 525 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
-- Start weekday makes no difference at all. December is the busiest month and its campaigns still drew more entrants and converted better.
+- Start weekday makes no difference at all. December is the busiest month and its campaigns still drew more entrants and converted better. The first week of December is the best-converting week of the year at 46%, and being live over Christmas or New Year came with 7% to 8% better conversion, while Black Friday week came with 15% worse.
 - A secret code is the only action that came with more entrants at no cost to conversion. Sharing actions, in this data, fed entries and left audiences where they were.
 - The top fifth of campaigns had nine times the impressions of the bottom fifth at the same conversion. Reach separates them, and the organizer's history does too: after a campaign over 5,000 entrants the next one got there 57% of the time, after a smaller one 11%.
 - Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.

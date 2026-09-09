@@ -65,3 +65,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Standouts
 
 `analysis/standouts.py export.json --classification private/classification.jsonl` writes `output/standouts.json`: launch, pre-order, drop and early-access subtypes, campaigns with a value index of three or more and the features, prize categories and verticals over-represented among them, cheap prizes that drew large crowds, and industries profiled by value index, conversion, uptake and repeat organizers.
+
+## Calendar
+
+`analysis/calendar.py export.json --classification private/classification.jsonl` writes `output/calendar.json`: every ISO start week with share of starts, contestants, clean conversion and entries per entrant, start day of month, and campaigns live over each holiday against a comparison group with the same duration mix. `output/calendar_names.json` holds the name-against-date agreement per holiday and the holiday-named share of starts per week.
