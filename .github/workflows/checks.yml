@@ -21,6 +21,7 @@ jobs:
           python3 skills/giveaway-prize-picker/scripts/budget.py --self-test
           python3 skills/giveaway-winner-structure/scripts/terms.py --self-test
           python3 skills/giveaway-results-review/scripts/review.py --self-test
+          python3 skills/giveaway-prize-picker/scripts/roi.py --self-test
       - name: Style rules on prose
         run: python3 scripts/style_lint.py
       - name: No customer data

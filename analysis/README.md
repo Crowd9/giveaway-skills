@@ -41,3 +41,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Asset yield
 
 `analysis/asset_yield.py export.json --classification private/classification.jsonl` writes `output/asset_yield.json`: completions of the acquire and amplify actions per campaign (email signups, follows by network, joins, app installs, referrals, content), by size band, with stated USD per completion for valued campaigns. The closest the export comes to an outcome.
+
+## Cost benchmarks
+
+`analysis/roi_benchmarks.py export.json --classification private/classification.jsonl` writes `output/roi_benchmarks.json`: stated USD prize pool per contestant, per email signup, per follow, per join and per referral entry, by vertical, size band and start year, with what the median campaign in each produced. The constants in `skills/giveaway-prize-picker/scripts/roi.py` and the tables in `references/roi-benchmarks.md` come from it.
