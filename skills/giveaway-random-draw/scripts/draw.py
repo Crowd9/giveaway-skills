@@ -27,7 +27,7 @@ also prints the drand round that will be produced at that time, so the seed sour
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.2.0"
+VERSION = "2.3.0"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
@@ -105,6 +105,30 @@ def prepare(rows, id_column, weight_column, exclude):
     clusters = {k: v for k, v in plus.items() if len(v) > 1}
     return entrants, dupes, excluded, bad, clusters
 
+DISPOSABLE = {"mailinator.com", "guerrillamail.com", "10minutemail.com", "tempmail.com", "temp-mail.org", "yopmail.com", "trashmail.com",
+              "getnada.com", "dispostable.com", "sharklasers.com", "maildrop.cc", "fakeinbox.com", "mohmal.com", "throwawaymail.com", "emailondeck.com"}
+
+def scan(entrants):
+    """Signals worth a look before committing: disposable domains, one domain holding a large share, and runs of handles
+    that differ only by a trailing number. Each is a prompt to review, never a verdict."""
+    import re as _re
+    notes = []; doms = {}; stems = {}
+    for e in entrants:
+        i = e["id"]
+        if "@" in i:
+            dom = i.rpartition("@")[2]; doms[dom] = doms.get(dom, 0) + 1
+            if dom in DISPOSABLE: notes.append(f"disposable email domain: {i}")
+        m = _re.match(r"^(.*?[a-z_.])(\d{2,})(@.*)?$", i)
+        if m: stems.setdefault(m.group(1), []).append(i)
+    n = len(entrants)
+    for dom, k in sorted(doms.items(), key=lambda kv: -kv[1]):
+        if n >= 50 and k >= 10 and k / n >= 0.2 and dom not in ("gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "icloud.com", "aol.com", "live.com", "protonmail.com", "proton.me", "googlemail.com", "hotmail.co.uk", "yahoo.co.uk", "me.com", "msn.com", "gmx.com", "gmx.de", "web.de", "mail.ru", "yandex.ru", "qq.com", "163.com"):
+            notes.append(f"{k} of {n} entrants share the domain {dom}")
+    runs = [v for v in stems.values() if len(v) >= 5]
+    for v in sorted(runs, key=len, reverse=True)[:5]:
+        notes.append(f"{len(v)} handles differ only by a trailing number, e.g. {v[0]}, {v[1]}, {v[2]}")
+    return notes
+
 def rank(entrants, seed):
     for e in entrants:
         h = hashlib.sha256((seed + "|" + e["id"]).encode()).digest()
@@ -147,6 +171,8 @@ def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
+    ents, *_ = prepare(rows, id_column, a.weight_column, set(l.strip().lower() for l in open(a.exclude) if l.strip()) if a.exclude else set())
+    for note in scan(ents): print(f"review: {note}")
     print("\nPublish the commitment now, before the seed exists. Keep the input file unchanged.")
     if a.draw_at:
         ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at(ts)
@@ -172,6 +198,7 @@ def cmd_draw(a):
     for r in result: print(f"{r['tier']}: {show(r['id'])}" + (f" (weight {r['weight']:g})" if a.weight_column else ""))
     print(f"\nunique eligible {len(entrants)}, duplicates merged {dupes}, excluded {excluded}, invalid weights {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
     if clusters: print(f"warning: {len(clusters)} groups of addresses share a local part with plus-tags (possible duplicate people). Review before announcing.")
+    for note in scan(entrants): print(f"review: {note}")
     if a.audit: json.dump(audit, open(a.audit, "w"), indent=2); print(f"audit written to {a.audit}")
     if a.winners_csv:
         with open(a.winners_csv, "w", newline="") as f:
@@ -228,6 +255,8 @@ def self_test():
     rows, col, _ = load_entries(yj, None); assert col.endswith("authorChannelId.value") and len(rows) == 2 and rows[0][col] == "UCa", (col, rows)
     gj = os.path.join(d, "g.json"); open(gj, "w").write(json.dumps({"data": [{"id": "1", "text": "hi", "from": {"id": "9", "username": "ann"}}, {"id": "2", "text": "x", "from": {"id": "8", "username": "bob"}}]}))
     rows, col, _ = load_entries(gj, None); assert col == "from.username", (col, rows)
+    sc = scan([{"id": f"ava_k_{2290+i}@example.com"} for i in range(6)] + [{"id": "x@mailinator.com"}])
+    assert any("trailing number" in n for n in sc) and any("disposable" in n for n in sc), sc
     print("self-test passed"); return 0
 
 def main(argv):

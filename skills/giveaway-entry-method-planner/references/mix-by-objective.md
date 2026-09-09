@@ -14,6 +14,10 @@ Advice unless marked as extracted.
 | Reach or launch awareness | Visit the launch page | Follow, engage with the launch post | Share, weighted highest | Long questions, content tasks |
 | Local foot traffic | In-store code or visit | Follow, tag a local friend | Share to story | Email if the business cannot send to it |
 
+### Every action has a job (advice, from Gleam's campaign team)
+
+Five jobs. Acquire: email signup, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. A normal campaign has one of each, with a second social channel only when the audience is really there. Judge an amplify action by referrals, never by completion rate.
+
 ## Weighting
 
 - Give the asset-producing action 3 to 5 entries and sharing 3 to 5 per verified referral.
@@ -27,7 +31,28 @@ Clean subset, campaigns offering the action against those without it, medians. A
 
 ## What high referral uptake looks like (extracted)
 
+A share action's value is the people it brings, which the export does not count. Campaigns offering one had fewer contestants and lower conversion at the median, so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
+
 Among 16,745 campaigns offering a share action, the median records 0.13 referral entries per contestant and the top tenth 0.65 or more (each referral entry is a referred entrant times an entry worth the export does not carry). The top tenth is a Twitter-centred gaming and hardware audience: tech hardware prizes in a third of them, Twitter follow offered in three quarters and retweet in 40%, email signup offered in only a third, a slightly cheaper first prize, fewer contestants than the median campaign and lower conversion. High referral uptake in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the export lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
+
+## Actions more common in top campaigns, by vertical (extracted)
+
+Within each vertical (a regex on organizer, campaign and prize names, so rough), campaigns split into fifths by contestants. The ratio is how much more often an action appears in the top fifth than the bottom fifth. Association only: bigger organizers choose differently.
+
+| Vertical | n | Actions over-represented in the top fifth |
+|---|---|---|
+| Gaming | 6,503 | Twitch Subscribers 1.7x, custom actions 1.7x, secret code 1.5x, Twitch Follows 1.3x, bonus 1.2x |
+| Technology | 1,717 | Single choice question 7.2x, Facebook visits 1.4x, YouTube channel visits 1.3x, Instagram profile visits 1.3x |
+| Home | 883 | YouTube channel visits 2.3x, custom actions 1.7x, X posts 1.6x, Pinterest visits 1.4x, Viral Shares 1.3x |
+| Food and drink | 989 | YouTube channel visits 2.2x, Facebook visits 1.4x, Instagram profile visits 1.2x |
+| Fitness and outdoor | 878 | Answer a question 1.6x, bonus 1.2x |
+| Travel | 1,758 | Secret code 1.5x, answer a question 1.4x, Instagram profile visits 1.2x |
+| Software | 363 | X reposts 1.7x, bonus 1.4x, YouTube channel visits 1.3x, Viral Shares 1.3x |
+| Fashion and beauty | 359 | YouTube channel visits 1.8x, Instagram profile visits 1.3x, bonus 1.3x |
+
+Gleam's internal analysis of the same export, with its own industry labels, found the same shape: questions and single-choice actions over-represented in technology and food, Twitch and custom actions in gaming, Pinterest and YouTube in home. Two readings of one dataset agreeing is still one dataset.
+
+On action count: the top fifth and bottom fifth both ran a median of 7 actions, so count alone does not separate them. The clean-subset finding stands: eleven or more actions came with a fifth fewer contestants and lower conversion. Keep the list purposeful and short.
 
 ## Friction
 

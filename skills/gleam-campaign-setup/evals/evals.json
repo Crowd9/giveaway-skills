@@ -1,0 +1,43 @@
+{
+ "skill_name": "gleam-campaign-setup",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "We use Gleam. Plan is: email signup mandatory, Instagram follow and a share action optional, 14 days, US and Canada only, 18+, one grand prize and five runner-ups. Walk me through the settings.",
+   "expected_output": "A checklist in tab order with a doc link per setting: Setup (dates, timezone, fraud level High default, allowed locations US and CA, terms fields), User Details (minimum age 18 required, login options, subscriber list), How to Enter (email mandatory, follow and Viral Share optional, no daily), Prize (two prize entries with 1 and 5 winners, description lists both), Post Entry (entry email on). Notes plan-gated items only where the docs say so and lists anything the docs do not cover.",
+   "assertions": [
+    "Tab order with links",
+    "Email action set mandatory",
+    "Allowed Locations for US and CA",
+    "Minimum age via User Details",
+    "Two prize entries with winner counts",
+    "No invented plan limits or prices"
+   ],
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "What does the fraud level do in Gleam and should I change it?",
+   "expected_output": "Describes the five levels and CAPTCHA modes as the Setup page states them, that High is the default, that invalid entries are hidden from reporting and reviewable on the Actions tab, that Gleam may adjust the level, and advises keeping High unless entrants are being blocked, with Event Mode reserved for live events.",
+   "assertions": [
+    "Five levels named as documented",
+    "High is the default",
+    "Invalid entries reviewable on Actions tab",
+    "Links the Setup page",
+    "Does not invent behaviour beyond the page"
+   ],
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "Style check applied to every conversational reply above.",
+   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "assertions": [
+    "em_dashes == 0",
+    "semicolons == 0",
+    "assistant_opener == 0 and assistant_closer == 0"
+   ],
+   "files": []
+  }
+ ]
+}

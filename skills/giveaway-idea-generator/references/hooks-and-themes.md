@@ -34,6 +34,10 @@ Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaw
 | Local services | Opening, anniversary, local event | A year of the service, neighbourhood partner bundle, referral-weighted draw |
 | B2B | Webinar, report launch, trade show | Consultation or audit as the prize, a peer-nomination mechanic |
 
+### Two prize formulas that travel (advice, from Gleam's campaign team)
+
+Own product plus the aspirational thing the customer wants next: coffee plus an espresso machine, snacks plus a stand mixer, supplements plus a sports watch, skincare plus a beauty device, camera accessory plus a camera. Ask what the customer's ideal day contains right before or after using the product. And the collaboration rule: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 29% of the time against 19% for the rest (title proxy, n=1,195).
+
 ## Mechanics (advice)
 
 - Single draw: one prize, one push, the default for a small budget.

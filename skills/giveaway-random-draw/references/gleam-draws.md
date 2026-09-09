@@ -8,3 +8,5 @@ Load this only when the user says they use Gleam or asks about it. Checked again
 - **Random Name Picker** (page updated 4 May 2025): paste names or upload a text file, one per line. A weighted draw appends the entry worth after a comma ("Avery Higgins, 5"). The page lists name limits by plan (1k Free, 4k Hobby, 10k Pro, 50k Business, 100k Premium as of that date) and no limit on the number of winners. Re-check the page before quoting the limits.
 
 When the user runs the draw in Gleam, the audit note in `draw-procedure.md` still applies: record the date, the number drawn, and the announcement. When the user prefers a seed they can publish, `scripts/draw.py` on the exported entrant list gives that.
+
+For the full settings walk-through in tab order, use the `gleam-campaign-setup` skill.

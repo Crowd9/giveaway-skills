@@ -88,6 +88,83 @@ To reduce the 61% gap we parsed explicit amounts from prize names ("$4,000 RTX P
 
 Category medians of stated values are given in the taxonomy as reference ranges. We do not fill missing records with them.
 
+## Prize value, adjusted (extracted)
+
+Campaigns whose every prize carried a stated USD value: 14,521. Prize cost per contestant is the stated pool divided by contestants, and stated value is what the organizer wrote, which need not be what they paid.
+
+| Stated pool, USD | n | Contestants | Entries per entrant | Stated USD per contestant |
+|---|---|---|---|---|
+| under 50 | 255 | 1,854 | 4.84 | 0.01 |
+| 50 to 99 | 551 | 1,341 | 7.56 | 0.05 |
+| 100 to 249 | 1,786 | 1,496 | 4.46 | 0.10 |
+| 250 to 499 | 2,210 | 1,798 | 4.67 | 0.19 |
+| 500 to 999 | 2,756 | 2,148 | 4.91 | 0.30 |
+| 1000 to 2499 | 3,823 | 2,604 | 4.91 | 0.56 |
+| 2500 to 4999 | 1,880 | 3,906 | 5.49 | 0.85 |
+| 5000 to 9999 | 741 | 4,139 | 4.99 | 1.47 |
+| 10000 to 24999 | 333 | 4,345 | 4.74 | 3.08 |
+| 25000 to 49999 | 96 | 4,806 | 4.38 | 6.63 |
+| 50000+ | 90 | 3,909 | 5.38 | 32.20 |
+
+A log-log regression of contestants on stated pool gives a slope of 0.23: ten times the prize value came with 1.71 times the contestants, and value explains 15% of the variation in contestant counts. 56% of these campaigns used a pool of 1,000 USD or less, and 18% under 250 USD.
+
+### Value-adjusted index by prize category
+
+Each campaign's contestants divided by the median contestants of its value band, then the median of that ratio per category. 1.00 means typical for the money. Categories with at least 100 valued campaigns.
+
+| Category | n | Contestants | Index |
+|---|---|---|---|
+| Gaming PC or GPU (within tech hardware) | 661 | | 1.93 |
+| Console or handheld (within tech hardware) | 450 | | 1.25 |
+| Phone or tablet (within tech hardware) | 304 | | 1.00 |
+| Peripherals (within tech hardware) | 731 | | 0.96 |
+| Tech hardware (all) | 4,468 | 2,419 | 1.07 |
+| Gift card or cash | 2,535 | 1,972 | 0.94 |
+| Bundle or box | 1,804 | 2,032 | 0.92 |
+| Game items or skins | 945 | 2,186 | 0.98 |
+| Regulated goods (firearms) | 887 | 3,270 | 1.25 |
+| Home, garden, appliance | 809 | 2,309 | 1.01 |
+| Experience, travel, tickets | 681 | 2,478 | 0.91 |
+| Merch, apparel, collectibles | 582 | 2,128 | 0.94 |
+| Sports and outdoor gear | 469 | 1,985 | 0.86 |
+| Music gear | 391 | 2,255 | 1.07 |
+| Vehicle | 278 | 2,371 | 0.85 |
+| Food, drink, consumables | 278 | 1,932 | 0.90 |
+| Subscription or membership | 243 | 1,858 | 0.78 |
+| Tools, craft, DIY | 228 | 1,874 | 0.90 |
+| Discount or coupon | 181 | 2,013 | 0.78 |
+| Beauty and wellness | 151 | 1,395 | 0.76 |
+| Toys and collectibles | 105 | 1,752 | 0.94 |
+
+Gaming PCs and GPUs sit far above their value band, consoles above, phones and peripherals at par. Cash and gift cards sit a little under par: broadly wanted, and no better than the money suggests. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
+
+### Value-adjusted index by number of prize units
+
+| Prize units | n | Index | Contestants |
+|---|---|---|---|
+| 1 | 8,802 | 1.07 | 2,242 |
+| 2-5 | 3,136 | 0.93 | 2,076 |
+| 6-20 | 1,674 | 0.85 | 2,178 |
+| 21+ | 909 | 0.83 | 2,728 |
+
+One unit runs above par and six or more below. For a fixed budget, one prize worth wanting came with more entrants than the same money split. Many units still fit sampling, digital prizes and community goals, where the unit count is the point.
+
+### Top fifth against bottom fifth
+
+Ordinary campaigns split into quintiles by contestants. Medians:
+
+| | Top fifth | Bottom fifth |
+|---|---|---|
+| Contestants | 9,015 | 1,138 |
+| Impressions | 35,098 | 4,028 |
+| Contestants per impression | 28% | 28% |
+| Stated prize pool, USD | 2,000 | 409 |
+| Prize units | 1 | 1 |
+| Entry actions | 7 | 7 |
+| Organizer's previous campaigns | 10 | 5 |
+
+Nearly nine times the impressions at the same conversion. Reach, and the organizer's history, separate the top from the bottom far more than the prize does, and the top fifth still spent about five times more on the prize.
+
 ## What the data cannot support
 
 - **Causation or effect size.** Every campaign reached at least 1,000 contestants, and there is no set of smaller or failed campaigns to compare against. The size bands compare selected samples with each other, which shows who ran what and nothing about what a prize did. Nothing here shows that a prize type produced participation.

@@ -9,3 +9,5 @@ Load this only when the user says they use Gleam or asks about it. Checked again
 - **Contacting winners.** The docs state Gleam does not contact winners automatically. The organizer announces and contacts them. Draws must follow Gleam's Terms of Service.
 
 Do not quote plan prices or limits from memory, and do not name features beyond these pages.
+
+For the full settings walk-through in tab order, use the `gleam-campaign-setup` skill.

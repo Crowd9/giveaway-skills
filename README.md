@@ -1,6 +1,6 @@
 # Giveaway Skills
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 37,180 real campaigns. Eight skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, and every message afterwards.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 37,180 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there.
 
 No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io).
 
@@ -8,7 +8,7 @@ Supported by [Gleam](https://gleam.io). The advice fits any giveaway platform, a
 
 ## Skills
 
-Someone asks for a giveaway by Friday. The last one pulled 400 addresses that never opened an email, a follower called the draw rigged, and nobody could say what the prize should have been. These eight skills turn that into a plan you can defend, with every recommendation grounded in what 37,180 real campaigns did. Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
+Someone asks for a giveaway by Friday. The last one pulled 400 addresses that never opened an email, a follower called the draw rigged, and nobody could say what the prize should have been. These ten skills turn that into a plan you can defend, with every recommendation grounded in what 37,180 real campaigns did. Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
 
 | Skill | Ask it | You get |
 |---|---|---|
@@ -20,6 +20,8 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, four emails and a partner brief written |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
 | [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification to the reply that ends a dispute |
+| [Results Review](#results-review) | "How did our giveaway do?" | Your numbers beside the benchmarks for your size, the actions that pulled their weight, and three changes for next time |
+| [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
 ### Idea Generator
 
@@ -82,6 +84,7 @@ How many winners, what tiers, and a process that holds up when a winner disappea
 
 - Winner counts and tiers sized to the budget after shipping
 - Draw, contact, redraw, announcement and delivery rules
+- Winner verification: entry checks, the account signals that mark a fake, proof scaled to the prize, and what to do when a drawn entry fails
 - A terms draft from a short questionnaire, 13 clauses with notes for Australia, the UK, the US, the EU and Canada
 - Daily and series structures, skill-based judging, and what the data shows about how organizers split prizes
 - Review of a structure you already have, with gaps and fixes
@@ -111,7 +114,7 @@ Winners nobody can dispute, from a script that needs no account and no dependenc
 - Commits to your entrant list and rules before the random seed exists, so the draw cannot be steered
 - Seed from a public randomness beacon (drand or NIST) or a value you publish, and a formula anyone can rerun
 - Reads CSV, spreadsheet exports, one-per-line lists and comment exports from Instagram, TikTok and YouTube
-- Deduplication, exclusions, entry weights, tiers, backups, and a flag for plus-address clusters and obvious fraud
+- Deduplication, exclusions, entry weights, tiers, backups, and review lines for plus-address clusters, disposable domains and runs of numbered handles
 - Audit record with the input hash, seed, round and timestamp, and a verify command that refetches the beacon
 
 > "Pick 3 winners from this CSV, weight by entries, exclude staff."
@@ -131,6 +134,35 @@ Every message after the draw, in send order, in your voice.
 > "Winner hasn't replied in five days."
 
 [giveaway-winner-communications](skills/giveaway-winner-communications/SKILL.md)
+
+### Results Review
+
+Your finished campaign read against 37,180 others of the same size, and what to change next time.
+
+- A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band
+- Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
+- Each entry action ranked against its family median, so you see which one carried the campaign
+- Three changes at most, each tied to a figure and to the skill that plans it
+- Works from plain numbers, a reporting screenshot or an actions export
+
+> "1,800 entrants, 6,000 views, 9,000 entries, ran 14 days with 6 actions. How did we do?"
+
+[giveaway-results-review](skills/giveaway-results-review/SKILL.md)
+
+### Gleam Campaign Setup
+
+For teams on Gleam: the plan from the other skills turned into settings, with the documentation cited for every one.
+
+- The Setup, User Details, How to Enter, Prize and Post Entry tabs, read from the official pages in September 2026
+- Mandatory and daily actions, actions required, entry intervals, free entry alternatives for paid actions
+- Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
+- Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
+- What entrants did with every Gleam action across 37,123 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
+- Gleam's own tips library, attributed, beside that evidence
+
+> "We use Gleam. Email mandatory, Instagram follow optional, US and Canada, 18+, one grand prize and five runner-ups. Walk me through the settings."
+
+[gleam-campaign-setup](skills/gleam-campaign-setup/SKILL.md)
 
 ### Try It
 
@@ -218,6 +250,8 @@ skills/
   giveaway-idea-generator/
   giveaway-promotion-plan/
   giveaway-winner-communications/
+  giveaway-results-review/  includes scripts/review.py
+  gleam-campaign-setup/
 analysis/
   analyze_export.py     regenerates analysis/output from a private export
   render_reference_tables.py  rewrites generated tables in every skill's references
