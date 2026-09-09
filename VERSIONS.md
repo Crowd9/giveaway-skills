@@ -2,18 +2,179 @@
 
 Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump the middle number for a new skill, the last number for changes to an existing skill, the first for restructures. Each skill carries its own `metadata.version` in its frontmatter and must be bumped on any shipped change, since that is what installed users compare against.
 
-| Skill | Version | Last change |
-|---|---|---|
-| giveaway-prize-picker | 1.2.3 | 2026-09-09. Two modes, six criteria, taxonomy from 60,282 prize records, value bands by campaign size, budget calculator, evidence rules, Gleam reference. 2026-09-09, 1.0.1: own-product prize finding. 2026-09-09, 1.1.0: value-adjusted prize category and unit-count indexes, value regression, top-fifth profile, prize hierarchy and collaboration rule. 2026-09-09, 1.1.1: stated prize cost per email signup by category. 2026-09-09, 1.2.0: ROI script and cost benchmarks by vertical, band and year. 2026-09-09, 1.2.1: region and language proxies, description wording flags. 2026-09-09, 1.2.2: industries by value index, conversion, uptake and repeat organizers. 1.2.3: price-it step with industries and the ROI script, ROI eval. |
-| giveaway-entry-method-planner | 1.1.4 | 2026-09-09. Action families with uptake, mixes by objective, method-count and referral findings, promotion rules from seventeen networks. 2026-09-09, 1.0.1: invalid-entry rates by method and opt-in checkbox uptake. 2026-09-09, 1.1.0: five jobs for actions, actions over-represented in top campaigns by vertical, action-count reconciliation. 2026-09-09, 1.1.1: yield per action and stated USD per completion. 2026-09-09, 1.1.2: pointer to cost per follow by vertical. 2026-09-09, 1.1.3: question types, share copy traits, visit destinations, newsletter wording. 1.1.4: write-the-actions step with wording, destinations and position. |
-| giveaway-timing-and-duration | 1.2.3 | 2026-09-09. Duration, month, weekday and recency findings, timeline template, calendar by region. 2026-09-09, 1.0.1: organizer experience curve. 2026-09-09, 1.1.0: cadence table and persistence between consecutive campaigns. 2026-09-09, 1.1.1: overlapping campaigns, close day and hour. 2026-09-09, 1.2.0: holiday benchmarks by theme with lead days and a dated launch calendar. 1.2.1: Black Friday eval. 1.2.2: every start week benchmarked, live-over-holiday comparison, names checked against dates, calendar annotated. 1.2.3: smaller and obscure dates, named days, the holidays missing from the data. |
-| giveaway-winner-structure | 1.2.1 | 2026-09-09. Structure findings, draw and contact rules, terms draft generator, Gleam drawing reference. 2026-09-09, 1.0.1: invalid entries before naming winners, custom terms adoption. 2026-09-09, 1.1.0: winner-verification reference (entry checks, account fraud signals, proof scaled to prize, failure handling). 2026-09-09, 1.2.0: one-prize default with the value-adjusted unit index. 2026-09-09, 1.2.1: what custom terms contain. |
-| giveaway-promotion-plan | 1.0.1 | 2026-09-09. Channel playbook, email sequence, partner brief, paid rules. 2026-09-09, 1.0.1: top-fifth reach finding. |
-| giveaway-random-draw | 1.2.0 | 2026-09-09. Provably fair draw: commit, public beacon seeds, hash-ranked selection, verify, audit record. 2026-09-09, 1.1.0: entrant-list reference (spreadsheets, platforms, comment exports), loader resolves nested JSON and prefers person fields over comment ids, script 2.2.0. 2026-09-09, 1.1.1: invalid-entry expectation in the pre-draw checklist. 2026-09-09, 1.2.0: pre-commit list scan for disposable domains, domain concentration and numbered handle runs, script 2.3.0. |
-| giveaway-winner-communications | 1.0.1 | 2026-09-09. Message set from notification to non-winner, edge cases, contact log. 2026-09-09, 1.0.1: verification rule points at the proof ladder. |
-| giveaway-idea-generator | 1.1.3 | 2026-09-09. Hook shares from 37,180 campaign titles, theme starters, mechanics, formats to avoid. 2026-09-09, 1.0.1: own product plus adjacent prize formula, collaboration rule. 2026-09-09, 1.0.2: title wording table. 2026-09-09, 1.0.3: pointer to the holiday benchmarks. 1.1.0: campaign types table from titles and descriptions with contestants, conversion, referrals and a value index. 2026-09-09, 1.1.1: launch subtypes, standout campaigns and their features, cheap prizes that drew crowds. 1.1.2: workflow quotes the types, launch and standout data, launch eval. 1.1.3: pointer to the smaller dates. |
-| giveaway-results-review | 1.4.4 | 2026-09-09. Benchmarks by band, review script, reading guide with the impressions caveat and recommendation map. 2026-09-09, 1.0.1: what campaigns produced (yield per asset, by band, USD per completion), script reads asset totals against the band. 2026-09-09, 1.0.2: pricing step with the ROI script, start-year drift table. 2026-09-09, 1.1.0: percentile rank against all campaigns, the band, clean campaigns and the vertical, plus email and referral inputs. 1.1.1: impressions, actions per contestant, pace, action count and duration ranks, and a history file for comparison with the organizer's own campaigns. 1.2.0: invalid share removed from benchmarking, ranks added for entries, stated value per contestant, follows by network and per-action uptake by Gleam action name. 1.3.0: reads a Gleam Actions export directly (contestants, follows by network, emails, referrals, per-action counts mapped to Gleam action types, country and referrer splits, entrants file for the draw). 1.4.0: full campaign report in reporting-tab order from any export (Gleam as is, other platforms by column mapping, wide exports), with traffic channels, UTM, friction, referral graph, audience, retention, promotion lift and ROI on supplied inputs. 1.4.1: landing pages read as hosted, Gleam giveaways directory listing or embed, featured-listing traffic reported, aggregators grouped. 1.4.2: judgement-word rule, figures and ranks reported without verdicts unless the gap is large. 1.4.3: strengths first, every gap framed as a target with a route against the benchmark or the organizer's previous campaign. 1.4.4: eval 2 recorded, Gleam setup cross-link. |
-| gleam-campaign-setup | 1.0.2 | 2026-09-09. Setup, User Details, How to Enter, Prize and Post Entry tabs, reporting and fraud, drawing winners, Gleam tips, all cited from the docs read 9 September 2026, plus settings evidence from the export (uptake by action, position effect, description length, templates, throwaway restriction). 2026-09-09, 1.0.1: pointer to the wording findings. 1.0.2: eval 2 recorded, tab placement of login controls stated. |
+| Skill | Version |
+|---|---|
+| giveaway-prize-picker | 1.3.2 |
+| giveaway-entry-method-planner | 1.2.2 |
+| giveaway-timing-and-duration | 1.4.0 |
+| giveaway-winner-structure | 1.3.0 |
+| giveaway-promotion-plan | 1.3.2 |
+| giveaway-random-draw | 1.3.0 |
+| giveaway-winner-communications | 1.2.1 |
+| giveaway-idea-generator | 1.3.1 |
+| giveaway-results-review | 1.5.3 |
+| gleam-campaign-setup | 1.2.0 |
+
+## Skills
+
+### giveaway-prize-picker
+
+- 1.0.0 (2026-09-09): Two modes, six criteria, taxonomy from 60,282 prize records, value bands by campaign size, budget calculator, evidence rules, Gleam reference.
+- 1.0.1 (2026-09-09): own-product prize finding.
+- 1.1.0 (2026-09-09): value-adjusted prize category and unit-count indexes, value regression, top-fifth profile, prize hierarchy and collaboration rule.
+- 1.1.1 (2026-09-09): stated prize cost per email signup by category.
+- 1.2.0 (2026-09-09): ROI script and cost benchmarks by vertical, band and year.
+- 1.2.1 (2026-09-09): region and language proxies, description wording flags.
+- 1.2.2 (2026-09-09): industries by value index, conversion, uptake and repeat organizers.
+- 1.2.3 (2026-09-09): price-it step with industries and the ROI script, ROI eval.
+- 1.3.0 (2026-09-09): description narrowed to prize and budget, evaluate and platform phrases, table map at the top of decision criteria, CAC and LTV framing, 90-day asset value, insurance in transit, thin-sample flags, conversion equated with contestants per impression, 325,000 total derived, budget.py --rate, glosses on IQR, 90th percentile and clean subset.
+- 1.3.1 (2026-09-09): prizes for a store (own product at cost, cart cap, own gift card, codes as the non-winner tier, the discount budget line).
+- 1.3.2 (2026-09-09): ship the prize as a zero-value order, fourth quarter stock and cutoff rules.
+
+### giveaway-entry-method-planner
+
+- 1.0.0 (2026-09-09): Action families with uptake, mixes by objective, method-count and referral findings, promotion rules from seventeen networks.
+- 1.0.1 (2026-09-09): invalid-entry rates by method and opt-in checkbox uptake.
+- 1.1.0 (2026-09-09): five jobs for actions, actions over-represented in top campaigns by vertical, action-count reconciliation.
+- 1.1.1 (2026-09-09): yield per action and stated USD per completion.
+- 1.1.2 (2026-09-09): pointer to cost per follow by vertical.
+- 1.1.3 (2026-09-09): question types, share copy traits, visit destinations, newsletter wording.
+- 1.1.4 (2026-09-09): write-the-actions step with wording, destinations and position.
+- 1.2.0 (2026-09-09): SMS and messaging opt-in family as practice, five jobs used in the output table, uptake by position table behind the first-position claim, three assets five to eight methods stated in the workflow, entry consent split from marketing consent, using what you built in the first 30 days, TikTok re-check date.
+- 1.2.1 (2026-09-09): welcome series timing aligned with the promotion plan (welcome at entry, result and two brand messages after the draw).
+- 1.2.2 (2026-09-09): store campaign actions (product page visit, cart or wishlist question, pick your prize, tagged subscribe, referral on purchase, purchase kept out of entry).
+
+### giveaway-timing-and-duration
+
+- 1.0.0 (2026-09-09): Duration, month, weekday and recency findings, timeline template, calendar by region.
+- 1.0.1 (2026-09-09): organizer experience curve.
+- 1.1.0 (2026-09-09): cadence table and persistence between consecutive campaigns.
+- 1.1.1 (2026-09-09): overlapping campaigns, close day and hour.
+- 1.2.0 (2026-09-09): holiday benchmarks by theme with lead days and a dated launch calendar.
+- 1.2.1 (2026-09-09): Black Friday eval.
+- 1.2.2 (2026-09-09): every start week benchmarked, live-over-holiday comparison, names checked against dates, calendar annotated.
+- 1.2.3 (2026-09-09): smaller and obscure dates, named days, the holidays missing from the data.
+- 1.3.0 (2026-09-09): clarifying-question step, stray entry-method rule removed, instrument before launch (UTM, conversion tracking, timezone), peak-hour posting, holiday close behaviour for the under-half themes, glosses.
+- 1.3.1 (2026-09-09): instrument row adds email authentication and a tested entry sync.
+- 1.4.0 (2026-09-09): the season plan for a store (pre-sale list build, nothing live over the sale, December gift guide, shipping cutoff, New Year restart) with 2026 windows and the figures behind each slot.
+
+### giveaway-winner-structure
+
+- 1.0.0 (2026-09-09): Structure findings, draw and contact rules, terms draft generator, Gleam drawing reference.
+- 1.0.1 (2026-09-09): invalid entries before naming winners, custom terms adoption.
+- 1.1.0 (2026-09-09): winner-verification reference (entry checks, account fraud signals, proof scaled to prize, failure handling).
+- 1.2.0 (2026-09-09): one-prize default with the value-adjusted unit index.
+- 1.2.1 (2026-09-09): what custom terms contain.
+- 1.3.0 (2026-09-09): description points at winner communications for the message, handoff to random draw, terms.py --marketing-consent clause with runtime numbering, contact rule reconciled (second attempt halfway to the deadline), tax placeholder replaced with the clause terms.py writes, 600 USD line dated as US practice, announcement points at the photo and review template, Gleam draw reference synced.
+
+### giveaway-promotion-plan
+
+- 1.0.0 (2026-09-09): Channel playbook, email sequence, partner brief, paid rules.
+- 1.0.1 (2026-09-09): top-fifth reach finding.
+- 1.1.0 (2026-09-09): referral loop with a second reward on purchase, retargeting and lookalike audiences from the entrant list, UTM on every post, separate segment or stream and domain warming in the email sequence.
+- 1.2.0 (2026-09-09): profile prep, feed balance, hashtags and who they bring, comments and DMs table with the impersonation warning, fourteen-day calendar, Collab post for the partner push, social figures to record at launch, close and 30 days after.
+- 1.3.0 (2026-09-09): email sequence rebuilt as two branches (not entered, entered) with a welcome and referral email on sync, preview text, sender and suppression rules, authentication and integration checks before the launch send, what to read after each send, connector rule for audience sizes.
+- 1.3.1 (2026-09-09): store row in the channel table (announcement bar, giveaway page in the nav, order confirmation and packing slip, customer list tag) and Shopify Audiences for retargeting.
+- 1.3.2 (2026-09-09): fourth quarter sending for a store (prove the giveaway segment before the sale send, close the day before, early access as the offer, no giveaway email on sale days).
+
+### giveaway-random-draw
+
+- 1.0.0 (2026-09-09): Provably fair draw: commit, public beacon seeds, hash-ranked selection, verify, audit record.
+- 1.1.0 (2026-09-09): entrant-list reference (spreadsheets, platforms, comment exports), loader resolves nested JSON and prefers person fields over comment ids, script 2.2.0.
+- 1.1.1 (2026-09-09): invalid-entry expectation in the pre-draw checklist.
+- 1.2.0 (2026-09-09): pre-commit list scan for disposable domains, domain concentration and numbered handle runs, script 2.3.0.
+- 1.3.0 (2026-09-09): draw.py 2.4.0 with --rules FILE shared by commit and draw, pre-commit look at the list (campaign report referral tell and scan lines), privacy rule for the published entrant file, worked SHA-256 line, per-column dedupe note, sample entrant list under examples/, Gleam draw reference synced.
+
+### giveaway-winner-communications
+
+- 1.0.0 (2026-09-09): Message set from notification to non-winner, edge cases, contact log.
+- 1.0.1 (2026-09-09): verification rule points at the proof ladder.
+- 1.1.0 (2026-09-09): after-the-draw reference: non-winner message as the first of a welcome series, separate sending stream, what to read after the send, sunset rule, entry consent against marketing consent with double opt-in, one-question feedback, eval case 3.
+- 1.1.1 (2026-09-09): social versions of the announcement (feed, story, pinned comment) with the official-account line against fake winner DMs.
+- 1.1.2 (2026-09-09): welcome series starts at entry (message 0 from the promotion plan), re-permission copy for the sunset rule.
+- 1.2.0 (2026-09-09): the non-winner code (single-use per person, expiry, minimum spend, referrer tier, no code for winners, tracked as revenue, never promised on the entry form) with the store version of message 5.
+- 1.2.1 (2026-09-09): non-winner codes during a sale (early access or a stacking code).
+
+### giveaway-idea-generator
+
+- 1.0.0 (2026-09-09): Hook shares from 37,180 campaign titles, theme starters, mechanics, formats to avoid.
+- 1.0.1 (2026-09-09): own product plus adjacent prize formula, collaboration rule.
+- 1.0.2 (2026-09-09): title wording table.
+- 1.0.3 (2026-09-09): pointer to the holiday benchmarks.
+- 1.1.0 (2026-09-09): campaign types table from titles and descriptions with contestants, conversion, referrals and a value index.
+- 1.1.1 (2026-09-09): launch subtypes, standout campaigns and their features, cheap prizes that drew crowds.
+- 1.1.2 (2026-09-09): workflow quotes the types, launch and standout data, launch eval.
+- 1.1.3 (2026-09-09): pointer to the smaller dates.
+- 1.2.0 (2026-09-09): evaluate branch, ask-once rule, worked contrast-sentence examples, handoffs to winner structure and promotion plan, hook against campaign type distinction, accessibility line for UGC, prize formula pointer to the prize picker, Instagram phrase in the description.
+- 1.3.0 (2026-09-09): store campaigns section (win your cart up to a cap, wishlist, pick your prize, bundle builder, restock drop, partner spree, gift card tiers, mystery box) with the cart and gift card figures, Shopify phrases in the description.
+- 1.3.1 (2026-09-09): season formats for a store (pre-sale early access, gift guide, advent or 12 days, win your order back, January restart).
+
+### giveaway-results-review
+
+- 1.0.0 (2026-09-09): Benchmarks by band, review script, reading guide with the impressions caveat and recommendation map.
+- 1.0.1 (2026-09-09): what campaigns produced (yield per asset, by band, USD per completion), script reads asset totals against the band.
+- 1.0.2 (2026-09-09): pricing step with the ROI script, start-year drift table.
+- 1.1.0 (2026-09-09): percentile rank against all campaigns, the band, clean campaigns and the vertical, plus email and referral inputs.
+- 1.1.1 (2026-09-09): impressions, actions per contestant, pace, action count and duration ranks, and a history file for comparison with the organizer's own campaigns.
+- 1.2.0 (2026-09-09): invalid share removed from benchmarking, ranks added for entries, stated value per contestant, follows by network and per-action uptake by Gleam action name.
+- 1.3.0 (2026-09-09): reads a Gleam Actions export directly (contestants, follows by network, emails, referrals, per-action counts mapped to Gleam action types, country and referrer splits, entrants file for the draw).
+- 1.4.0 (2026-09-09): full campaign report in reporting-tab order from any export (Gleam as is, other platforms by column mapping, wide exports), with traffic channels, UTM, friction, referral graph, audience, retention, promotion lift and ROI on supplied inputs.
+- 1.4.1 (2026-09-09): landing pages read as hosted, Gleam giveaways directory listing or embed, featured-listing traffic reported, aggregators grouped.
+- 1.4.2 (2026-09-09): judgement-word rule, figures and ranks reported without verdicts unless the gap is large.
+- 1.4.3 (2026-09-09): strengths first, every gap framed as a target with a route against the benchmark or the organizer's previous campaign.
+- 1.4.4 (2026-09-09): eval 2 recorded, Gleam setup cross-link.
+- 1.5.0 (2026-09-09): loader passes invalid entries worth (was rows), step 7 measures what the list did next at 30, 60 and 90 days, recommendation map rows for them, retargeting and revenue attribution section, Outcomes checklist and lead-value label in campaign_report.py, benchmarks reading moved up with the email above 1.0 and thin 2020 notes, sample actions export under examples/.
+- 1.5.1 (2026-09-09): step 7 takes follower counts and launch-post reach, saves and link clicks against the user's own posts, read from a connector when the session has one, never scraped.
+- 1.5.2 (2026-09-09): non-winner code redemption as the store's revenue line at 14 and 90 days.
+- 1.5.3 (2026-09-09): November and December campaigns compared against their week as well as the year.
+
+### gleam-campaign-setup
+
+- 1.0.0 (2026-09-09): Setup, User Details, How to Enter, Prize and Post Entry tabs, reporting and fraud, drawing winners, Gleam tips, all cited from the docs read 9 September 2026, plus settings evidence from the export (uptake by action, position effect, description length, templates, throwaway restriction).
+- 1.0.1 (2026-09-09): pointer to the wording findings.
+- 1.0.2 (2026-09-09): eval 2 recorded, tab placement of login controls stated.
+- 1.1.0 (2026-09-09): uptake defined, fraud level table, consent line under User Details, results review step after close, short-lookup rule, drawing-winners.md as the single reconciled Gleam draw text dated 9 September 2026.
+- 1.1.1 (2026-09-09): connect and test the email provider integration before launch so entrant emails trigger during the run.
+- 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
+
+## 1.4.0 (2026-09-09)
+
+The activation pass. Every skill now covers what happens to the list after the draw, and a wide review closed the wording, evidence and workflow gaps.
+
+After the draw
+
+- Winner communications ships an after-the-draw reference: the non-winner message opens a welcome series, the send goes from its own segment or stream, unsubscribes and complaints get read, no-opens are sunset before they join the core list, entry consent and marketing consent are collected separately, and one question goes to entrants.
+- Results review measures what the list did at 30, 60 and 90 days, shows how to build a retargeting or lookalike audience from entrants, and attributes revenue by joining entrant email to orders on the user's own machine.
+- Promotion plan adds retargeting and lookalike audiences, UTM tags on every post, a referral reward on purchase, and domain warming for a new sending stream.
+- Entry planner adds SMS and messaging opt-in as practice, the consent split, and the first 30 days with the asset. Timing adds an instrument-before-launch row. Prize picker frames cost per asset as CAC against a 90-day value. Terms draft gains a marketing-consent clause.
+
+Fixes from the review
+
+- The Gleam export loader passed invalid rows where the review script expected invalid entries worth. Fixed, with the unit stated in both scripts.
+- Prize picker no longer claims winner structure. Winner structure and winner communications point at each other for the redraw rule and the message. Timing drops a rule copied from the entry planner. Idea generator gains the evaluate branch and the worked style examples the other skills carry.
+- One Gleam draw text across three skills, dated 9 September 2026. Two attempts, the second halfway to the deadline, everywhere. Value index is the one name for the value-adjusted metric. The 37,180 and 37,123 counts are explained once.
+- draw.py reads commit and draw rules from one file, publishes a hashed list, and shows a worked SHA-256 line. Random draw and results review ship synthetic sample data under examples/.
+
+Social media manager pass
+
+- Promotion plan gains profile prep, feed balance, hashtag guidance, a comments and DMs table with the impersonation warning, a fourteen-day calendar and the social figures to record. Winner communications adds social forms of the announcement with the official-account line. Results review reads follower and launch-post figures.
+
+Email marketer pass
+
+- The promotion plan's email sequence splits into a branch for the list that has not entered and a branch for entrants, who get a welcome with their referral link the day they enter and never a last call. Preview text, sender, suppression, footer, authentication and integration checks, and what to read after each send. The welcome series in winner communications now starts at entry, with re-permission copy for the sunset rule.
+
+Stores
+
+- Win your cart, wishlist, pick your prize, bundle builder, restock drop, partner spree, gift card tiers and mystery box formats in the idea generator with the cart and gift card figures from the data. Store prizes and the discount budget line in the prize picker. Store actions in the entry planner. The non-winner code mechanics in winner communications. A store row in the promotion channel table. Code redemption as the revenue line in results review. A Gleam Shopify reference from the official pages.
+
+Holiday season for stores
+
+- Timing carries a season plan for a store with 2026 windows: build the list before Black Friday, keep nothing live over the sale (campaigns live over it converted 12% to 15% below matched campaigns), run the gift guide campaign in early December (the best converting weeks of the year), close before the shipping cutoff, restart at New Year. Season formats in the idea generator, fourth quarter fulfillment in the prize picker, fourth quarter sending in the promotion plan, codes during a sale in winner communications, and week-level comparison in results review.
+
+Repository
+
+- GLOSSARY.md defines every metric term. VERSIONS.md lists one line per version. The shared style checker moved to evals/ at the repo root.
+- README leads with install, shows a real answer under Try It, states what the skills will not do, and carries CI and licence badges. CONTRIBUTING explains platform loaders and benchmark contributions. Plugin manifests carry keywords.
 
 ## 1.3.0 (2026-09-09)
 

@@ -16,6 +16,8 @@ never funnel stages. The only funnel is impressions to entrants, and impressions
 """
 import argparse, collections, csv, datetime as dt, statistics as st, sys, urllib.parse
 
+# Maintenance: DIRECTORIES, SOCIAL, WEBMAIL and SEARCH are hand-kept host lists used only to label a referrer.
+# Add a host when a report shows it under "Other referrers" with a meaningful entrant count. An unknown host is labelled, never dropped.
 DIRECTORIES = ("contestgirl", "giveawaybase", "ozbargain", "loquax", "latestdeals", "jeu-concours", "freestuffspot", "aussiecomps", "competitiondatabase",
                "giveawaylisting", "sweepstakes", "sweepsadvantage", "contestcanada", "hotukdeals", "prizefinder", "myoffers", "competitions")
 SOCIAL = ("facebook", "t.co", "twitter", "x.com", "reddit", "instagram", "tiktok", "youtube", "pinterest", "discord", "linkedin", "threads", "bsky")
@@ -264,7 +266,8 @@ def render(R, a):
         w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New entrants in 48h | Lift |\n|---|---|---|---|---|")
         for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
     if R.get("roi"):
-        r = R["roi"]; w(f"\nROI on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {r['per_entry']:.4f} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead value at the stated benchmark CPL of {a.benchmark_cpl:.2f}: {r['lead_value']:,.0f}, an assumption supplied by the user." if r["lead_value"] else "."))
+        r = R["roi"]; w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {r['per_entry']:.4f} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
+        w("A real revenue figure comes from joining entrant email against store orders over a fixed window and summing order value. The export carries no order data, so nothing here is revenue.")
     else: w("\nROI needs prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
     w("\n## Traffic\n\nFirst-touch channel per entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
@@ -292,7 +295,17 @@ def render(R, a):
     if R["handles"]: w("\nConnected accounts: " + ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) + ".")
     Rt = R["retention"]; w("\nRetention by distinct active days: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in Rt.items()) + f". {1 - Rt['1'][1]:.0%} returned on a later day. One-day dominance is normal for a giveaway.")
     w("\nMost engaged entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {t[0]} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
-    w("\n## Outcomes\n\nEmails synced against collected, unsubscribe rate, customers and revenue from entrants come from the email provider and the store. Supply them and they go here. Nothing is estimated.")
+    w("""
+## Outcomes
+
+Nothing in this section is in the export. Pull each figure from the email provider and the store, then record it beside this report.
+
+- Unsubscribes and spam complaints in the 7 days after the winners email, from the email provider, for the giveaway segment on its own.
+- Addresses synced to the email provider against addresses collected here, so the gap between the two is visible.
+- Customers and revenue from a join of entrant email against order data at 30, 60 and 90 days after close.
+- Open share of the new subscribers in their first 30 days, which says how much of the list is worth keeping.
+
+Run the same four again after the next campaign and the pair becomes a trend.""")
     return "\n".join(L)
 
 def self_test():

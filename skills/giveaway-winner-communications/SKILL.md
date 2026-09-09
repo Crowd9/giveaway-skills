@@ -1,8 +1,8 @@
 ---
 name: giveaway-winner-communications
-description: "Write every message after the draw: winner notification, verification request, address collection with a privacy note, shipping and delivery updates, the reply to a winner who disputes or stalls, the public announcement, and the message to everyone who did not win. Use when the user asks 'how do I tell the winner', 'winner email', 'announce the winner', 'what do I send non-winners', 'winner won't reply', 'someone says they should have won', or 'ask the winner for a photo'. Platform-neutral. For the draw itself see giveaway-random-draw. For deadlines and redraw rules see giveaway-winner-structure."
+description: "Write every message after the draw: winner notification, verification request, address collection with a privacy note, shipping and delivery updates, the reply to a winner who disputes or stalls, the public announcement, and the message to everyone who did not win. Use when the user asks 'how do I tell the winner', 'winner email', 'announce the winner', 'what do I send non-winners', 'winner won't reply' (answered here as the message to send, with the redraw rule in giveaway-winner-structure), 'someone says they should have won', 'ask the winner for a photo', or 'what do I email entrants after the giveaway'. Platform-neutral. For the draw itself see giveaway-random-draw. For deadlines and the redraw rule see giveaway-winner-structure."
 metadata:
-  version: 1.0.1
+  version: 1.2.1
 ---
 
 # Giveaway Winner Communications
@@ -18,13 +18,15 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 1. **Get the facts.** Prize, winner identifier and channel they entered with, reply deadline from the terms, what verification is needed (age, region, one account), delivery method and window, what the terms allow to be published, and whether non-winners get anything.
 2. **Write the set.** Load `references/message-templates.md`. Notification (short, specific, a deadline, no attachments or links that look like phishing), verification ask, address form request with a one-line privacy note, delivery update, announcement, non-winner message with any offer.
 3. **Handle the edge cases** the user names: no reply, a dispute, a winner outside eligibility, a prize that is out of stock, a winner who wants cash. Each has a template and a rule in the reference.
-4. **Deliver** the messages ready to send, each labelled with when it goes and by which channel.
+4. **Plan what happens to the list.** Load `references/after-the-draw.md` when the campaign collected email addresses. The non-winner message is email one of a three-message welcome series, the giveaway sends go out on their own stream, the unsubscribe and complaint rates get read after the winners email, and the addresses that never open are sunset before they reach the core list. Say where entry consent was collected and where marketing consent was collected, and add the one feedback question to the result email.
+5. **Deliver** the messages ready to send, each labelled with when it goes and by which channel.
 
 ## Output
 
 - The messages in send order, each with channel, timing and the fields to fill.
 - Consent and privacy lines called out so they are not deleted.
 - A short contact log format (date, channel, message, response).
+- The welcome series after the non-winner message, with what each email does and when it sends, the stream the giveaway sends run on, the unsubscribe, complaint and bounce figures to read afterwards, the sunset rule before addresses join the core list, and the one feedback question. Only when the campaign collected addresses.
 - Next decision needed.
 
 ## Rules
@@ -59,6 +61,7 @@ Advice is platform-neutral. Gleam's documentation states Gleam does not contact 
 ## References
 
 - `references/message-templates.md`: the full message set with edge cases and the contact log.
+- `references/after-the-draw.md`: the welcome series that starts with the non-winner message, list separation and sender reputation, what to read after the send, the sunset rule, entry consent against marketing consent, and the one-question feedback capture.
 
 ## Related skills
 

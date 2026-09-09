@@ -1,8 +1,8 @@
 ---
 name: giveaway-prize-picker
-description: "Choose or evaluate a giveaway prize that attracts the intended audience, supports the business objective, and fits budget and fulfillment constraints. Use when the user asks 'what should we give away', 'prize ideas', 'is X a good prize', 'what prize should we offer', 'one big prize or several smaller ones', 'how many winners', 'giveaway budget', 'prize bundle', 'what prize gets the most entries', or mentions a giveaway, contest, sweepstakes, competition or raffle prize. Covers prize choice, winner structure, budget and fulfillment. Platform-neutral, with Gleam setup help only when the user says they use Gleam. Entry mechanics, timing and promotion are out of scope."
+description: "Choose or evaluate a giveaway prize that attracts the intended audience, supports the business objective, and fits budget and fulfillment constraints. Use when the user asks 'what should we give away', 'prize ideas', 'is X a good prize', 'what prize should we offer', 'Instagram giveaway prize', 'giveaway budget', 'prize bundle', 'what prize gets the most entries', or mentions a giveaway, contest, sweepstakes, competition or raffle prize. Covers prize choice, budget and fulfillment. For how many winners to draw and how to structure the draw, see giveaway-winner-structure. Platform-neutral, with Gleam setup help only when the user says they use Gleam. Entry mechanics, timing and promotion are out of scope."
 metadata:
-  version: 1.2.3
+  version: 1.3.2
 ---
 
 # Giveaway Prize Picker
@@ -14,7 +14,9 @@ Help a business pick a prize that pulls in the people it wants. Volume comes sec
 
 ## Before starting
 
-If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first. It holds the business, audience, positioning and brand voice, so ask only for what it lacks: objective, budget and currency, locations, and what the business can give away.
+If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first. It holds the business, audience, positioning and brand voice, so ask only for what it lacks: objective, budget and currency, locations, and what the business can give away. Where the file and the user's live message disagree, the live message wins and the file is background.
+
+If a constraint changes mid-conversation (budget, date, objective), re-run the affected recommendation and say which figures moved.
 
 ## Workflow
 
@@ -22,14 +24,14 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 2. **Ask only what changes the answer.** At most the missing items from this list, in one message:
    - What does the business sell, and whom should the giveaway attract?
    - Primary objective (leads, followers, launch awareness, sales/retention, UGC, event signups)?
-   - Total budget and currency?
+   - Total budget, and which currency does the team pay in?
    - Where are entrants and where can winners be?
    - What can the business offer cheaply: own products, partner products, experiences, access?
    - Timing, shipping, availability or fulfillment limits?
    If the user wants ideas now, proceed with stated assumptions and skip the questions.
 3. **Score options against six criteria** (load `references/decision-criteria.md`): audience relevance, desirability, connection to the business, accessibility, fulfillment practicality, total cost. Let the objective decide between broad and specialized appeal.
-4. **Choose structure**: one major prize, several winners, tiers, or bundles. State the tradeoffs. Default to one prize worth wanting for acquisition (value-adjusted index 1.07 for one unit against 0.85 for six to twenty).
-5. **Price it.** When the vertical is clear, load `references/roi-benchmarks.md` for stated value per contestant and per email in that industry and where the industry sits on the value index. When the user gives a budget and an expected size, run `scripts/roi.py` and show cost per result beside the benchmark.
+4. **Choose structure**: one major prize, several winners, tiers, or bundles. State the tradeoffs. Default to one prize worth wanting for acquisition (value index 1.07 for one unit against 0.85 for six to twenty, where the value index is a campaign's contestants against the median for its stated prize band and 1.00 is typical for the money). Winner counts, draw mechanics and terms belong to giveaway-winner-structure.
+5. **Price it.** When the vertical is clear, load `references/roi-benchmarks.md` for stated value per contestant and per email in that industry and where the industry sits on the value index. When the user gives a budget and an expected size, run `scripts/roi.py` and show cost per result beside the benchmark. Then say what the asset is worth: cost per email or per follow is the giveaway's acquisition cost for that asset, and the number to set against it is what a new subscriber or follower converts to over the next 90 days. Ask the user for that figure and never invent one.
 6. **Deliver** in the shape below. Keep length proportional to the request.
 
 ## Output: recommendation mode
@@ -83,7 +85,7 @@ Advice is platform-neutral by default. Do not pitch Gleam. When the user says th
 - `references/examples.md`: anonymized example prizes by category and objective.
 - `references/evidence-and-limitations.md`: what the dataset can and cannot support, with the numbers.
 - `references/gleam-setup.md`: only for explicit Gleam requests.
-- `references/prize-values-by-category-and-size.json`: stated USD prize values (quartiles and n) by category and campaign size band. Load when the user asks what campaigns like theirs declare, and quote the cell with its n.
+- `references/prize-values-by-category-and-size.json`: stated USD prize values (quartiles and n) by category and campaign size band. Load when the user asks what campaigns like theirs declare, and quote the cell with its n. Thin cells behave oddly: beauty_wellness in the 2.5k-10k band has a 25th percentile equal to its median (250 USD) on n=40, which is a sample artifact of clustered round numbers and not a real floor. Below about 100 campaigns, quote the median and the n and leave the quartiles alone.
 - `references/roi-benchmarks.md`: stated prize value per contestant, per email signup, per follow and per referral entry by vertical, band and year, which industries get the most for the money, and how to use the ROI script.
 - `scripts/roi.py`: cost per result and return per dollar before or after a campaign, with benchmarks beside each figure. `--self-test` checks it.
 - `scripts/budget.py`: budget calculator (`--self-test`, `--help`). Every figure in and out is an estimate.

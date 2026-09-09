@@ -4,7 +4,7 @@ Advice unless marked as extracted.
 
 ## Structure tradeoffs
 
-Extracted, value-adjusted: among 14,521 campaigns with a stated USD pool, one-unit campaigns had a contestant index of 1.07 against their value band, two to five units 0.93, six to twenty 0.85, twenty-one or more 0.83. Raw medians are close because larger pools carry more units. For a fixed budget, one prize worth wanting is the default. Several winners earn their place when the units are the point: product sampling, digital prizes, community rewards, daily draws.
+Extracted, value index: among 14,521 campaigns with a stated USD pool, one-unit campaigns had a contestant index of 1.07 against their value band, two to five units 0.93, six to twenty 0.85, twenty-one or more 0.83. Raw medians are close because larger pools carry more units. For a fixed budget, one prize worth wanting is the default. Several winners earn their place when the units are the point: product sampling, digital prizes, community rewards, daily draws.
 
 | Shape | Choose it when | Cost |
 |---|---|---|
@@ -31,7 +31,7 @@ Extracted: the median ordinary campaign had 3.8% of entries marked invalid at ve
 
 ## Contact and redraw
 
-- Contact by the channel the entrant gave. Two attempts, 72 hours apart, is common practice.
+- Contact by the channel the entrant gave. Two attempts, the second sent halfway to the reply deadline. On a seven-day deadline that puts the attempts about 72 hours apart.
 - Reply deadline in the terms. When it passes, the prize is forfeited and redrawn.
 - Keep a written log of draws, contacts and responses. Disputes are settled by the log.
 - Never publish a winner's full details without consent. First name and city, or a handle, with permission.
@@ -40,7 +40,7 @@ Extracted: the median ordinary campaign had 3.8% of entries marked invalid at ve
 
 - Announce on the channels used to promote, within a week of the draw.
 - Thank entrants and, when the objective was leads, give everyone something small (a code, a guide) so the list stays warm.
-- Ask winners for a photo or a line of feedback, and only use it with permission.
+- Ask winners for a photo or a line of feedback, and only use it with permission. The photo and review request in giveaway-winner-communications is the wording for it, sent about a week after delivery, and it is the step that turns one winner into a repeat customer and a piece of proof for the next campaign.
 
 ## Fulfillment
 
@@ -52,12 +52,12 @@ Extracted: the median ordinary campaign had 3.8% of entries marked invalid at ve
 
 ## How many organizers write terms (extracted)
 
-49% of the 37,123 ordinary campaigns carried custom terms in place of the platform default. In the clean subset, campaigns with custom terms had a median 2,183 contestants against 1,995 without (n=5,062 and 6,590) and a lower conversion (34% against 40%). That describes who writes terms, larger and more careful organizers, and says nothing about the terms causing either figure.
+49% of the 37,123 ordinary campaigns carried custom terms in place of the platform default. In the clean subset, campaigns with custom terms had a median 2,183 contestants against 1,995 without (n=5,062 and 6,590) and a lower conversion (34% against 40%). That describes who writes terms. Larger and more careful organizers do. It says nothing about the terms causing either figure.
 
 Extracted from the 18,308 campaigns with custom terms: median length 1,444 words, 66% carry a no-purchase line, 31% an age line, 31% say worldwide or international, 3% say US only. The generated draft below is far shorter than the median custom terms, which is the point.
 
 ## Terms snippet to adapt
 
-"Winners are selected at random from valid entries on [date, time, time zone] using [method]. Winners are notified by [channel] within [N] days and must respond within 72 hours or the prize is forfeited and redrawn. Entries that are incomplete, duplicated, automated or from ineligible regions are void. Prizes are as stated, with no cash alternative, and the promoter may substitute a prize of equal or greater value if the stated prize becomes unavailable. Prizes are delivered within [N] days of confirmation. [Taxes and duties statement.] Winners' first names and [city or handle] may be published with their consent."
+"Winners are selected at random from valid entries on [date, time, time zone] using [method]. Winners are notified by [channel] within [N] days and must respond within 72 hours or the prize is forfeited and redrawn. Entries that are incomplete, duplicated, automated or from ineligible regions are void. Prizes are as stated, with no cash alternative, and the promoter may substitute a prize of equal or greater value if the stated prize becomes unavailable. Prizes are delivered within [N] days of confirmation. Any tax, duty or charge arising from receipt of the prize is the winner's responsibility unless stated otherwise. Winners' first names and [city or handle] may be published with their consent."
 
 Sweepstakes and lottery law differs by jurisdiction. This is not legal advice. Have the terms checked where the giveaway runs.

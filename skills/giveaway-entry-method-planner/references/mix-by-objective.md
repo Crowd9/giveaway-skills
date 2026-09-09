@@ -1,12 +1,13 @@
 # Mix by objective
 
-Advice unless marked as extracted.
+Advice unless marked as extracted. Uptake throughout this file means entries recorded on an action divided by the campaign's contestants, so 0.75 is three completions for every four entrants.
 
 ## Patterns
 
 | Objective | Required action | Supporting actions | Reach action | Leave out |
 |---|---|---|---|---|
 | Email list | Email signup with clear opt-in | Visit a key page, follow the main channel | Refer a friend, weighted high | Content tasks, account connections |
+| Phone or messaging list | SMS or messaging opt-in with its own marketing consent (advice, no dataset support) | Email signup, visit a key page | Refer a friend | A second messaging channel in the same campaign |
 | Followers on one channel | Follow on that channel | Engage with a pinned post, visit profile | Share the giveaway | Follows on channels the business ignores |
 | Community members | Join the community | Answer a question that seeds a first post, follow main channel | Refer a friend | Anything that needs an app install |
 | Content (UGC) | Submit a photo, video or review | Follow, visit a product page | Share | More than one content task |
@@ -16,7 +17,7 @@ Advice unless marked as extracted.
 
 ### Every action has a job (advice, from Gleam's campaign team)
 
-Five jobs. Acquire: email signup, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. A normal campaign has one of each, with a second social channel only when the audience is really there. Judge an amplify action by referrals, never by completion rate.
+Five jobs, and every action in a recommended list carries exactly one of these labels. Acquire: email signup, SMS or messaging opt-in, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. A normal campaign has one of each, with a second social channel only when the audience is really there. Judge an amplify action by referrals, never by completion rate.
 
 ## Weighting
 
@@ -27,7 +28,7 @@ Five jobs. Acquire: email signup, account creation, app install, community join,
 
 ## Actions that came with more people (extracted)
 
-Clean subset, campaigns offering the action against those without it, medians. A secret code (a code shown on a stream, in a newsletter or in store) came with 16% more contestants and no conversion cost, the only action with that shape. An app download came with 21% more contestants, likely because app campaigns that reached 1,000 entrants are large apps. Actions that pull a single-channel audience converted far better on arrival: Telegram join +46%, YouTube sign-in +76%, Twitch follow +13%, each with fewer contestants overall. Every social follow, retweet, Discord join and Facebook like came with fewer contestants and lower conversion. These describe organizers' choices and audiences, never an action's effect.
+Clean subset (the campaigns with no repeatable action and a run of 14 days or less, which is what makes impressions comparable), campaigns offering the action against those without it, medians. A secret code (a code shown on a stream, in a newsletter or in store) came with 16% more contestants and no conversion cost, the only action with that shape. An app download came with 21% more contestants, likely because app campaigns that reached 1,000 entrants are large apps. Actions that pull a single-channel audience converted far better on arrival: Telegram join +46%, YouTube sign-in +76%, Twitch follow +13%, each with fewer contestants overall. Every social follow, retweet, Discord join and Facebook like came with fewer contestants and lower conversion. These describe organizers' choices and audiences, never an action's effect.
 
 ## What high referral uptake looks like (extracted)
 
@@ -78,6 +79,18 @@ Stated prize value per email signup and per follow by vertical sits in the prize
 
 Completions per contestant for the action, median across campaigns offering it.
 
+Uptake by position in the action list, campaigns with four or more actions, from `analysis/output/gleam_settings.json`:
+
+| Family | 1st | 2nd | 3rd to 4th | 5th or later |
+|---|---|---|---|---|
+| Email signup | 1.00 (n=7,537) | 0.76 (n=2,105) | 0.70 (n=1,928) | 0.66 (n=3,644) |
+| Visit a page | 0.97 (n=7,311) | 0.88 (n=12,772) | 0.80 (n=28,118) | 0.68 (n=86,044) |
+| Follow or subscribe | 0.74 (n=4,436) | 0.62 (n=7,006) | 0.52 (n=15,131) | 0.39 (n=43,308) |
+| Other actions | 1.00 (n=10,424) | 0.53 (n=6,354) | 0.45 (n=12,605) | 0.36 (n=47,238) |
+| Share or refer | 0.16 (n=365) | 0.12 (n=1,836) | 0.12 (n=2,364) | 0.13 (n=11,191) |
+
+Everything except sharing falls down the list, and a follow loses about half its uptake between first place and fifth. Put the action that captures the asset at the top. Sharing sits flat at about 0.13 wherever it goes, so its position is free and it can take the bottom slot. Organizers who put an action first chose to, so this describes their lists and cannot show that moving an action would move its uptake.
+
 Question actions by what they ask (regex on the question text):
 
 | Question type | Actions | Median uptake |
@@ -125,7 +138,11 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 
 ## Consent and rules
 
+Entry consent and marketing consent are two separate things, and a campaign needs both collected in the right place. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the entrant accepts. Marketing consent is agreement to be contacted afterwards, and it is collected at the email or messaging action itself, in its own wording, with its own checkbox. One does not imply the other, and an entrant who declines the second is still a valid entrant.
+
 - Email entries need opt-in wording that says what the entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
+- Where the region requires double opt-in (Germany and much of the EU for email, and most regimes for SMS), the confirmation goes out at the moment of capture and only confirmed contacts join the list. Plan for a share of entrants never confirming.
+- Retention is a legal question this skill cannot answer. How long entry data, contact details and winner records may be held, and what has to be deleted at the end, goes to the business's privacy counsel before the campaign opens.
 - Follow-to-enter, tag-a-friend and share-to-enter are governed by each network's promotion rules, which change. Read the current rules for each network you name.
 - Do not require a purchase to enter where sweepstakes law forbids it. Discount codes as entries count as a purchase condition in most readings.
 - Age and region limits belong in the terms and on the entry form.
@@ -133,3 +150,26 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 This skill does not give legal advice.
 
 Extracted: 28% of email signup actions in the ordinary campaigns showed an explicit opt-in checkbox. Where the checkbox was on, the median email action recorded 0.89 entries per contestant against 1.01 where it was off (clean subset, n=821 and 2,655). Expect roughly one in ten entrants to skip a visible checkbox. Those who tick it are the list you can mail.
+
+## Store campaigns
+
+The actions a store wants send the entrant into the catalogue and bring something back.
+
+- **Visit a product or collection page.** The visit action is in four out of five campaigns at a median 0.72 completions per contestant (n=20,205). Point it at the page the campaign is about, not the home page.
+- **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the mandatory action. Question templates ran near 0.9 completions per contestant. The answers are the wishlist data a cart campaign exists to collect.
+- **Pick your prize.** A choice action with the three prize options, so the preference is recorded on entry.
+- **Subscribe with the store tag.** The email action synced to the store's customer list with the campaign name as the tag, so the non-winner code and the welcome series go to the right segment.
+- **Refer a friend.** The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
+- **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
+
+## Using what you built (advice)
+
+The list is the point of the campaign, and it decays from the day the winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the export to support it.
+
+- **Welcome series.** Four messages: a welcome with the referral link within a day of entry, sent by the email provider when the sync lands, then the result and two brand messages over the fortnight after the draw. The first names the giveaway so nobody wonders who is writing. The rest do the job the giveaway could not: what the business sells, why anyone buys it, one reason to come back.
+- **A separate segment.** Tag the giveaway cohort and keep it apart from customers and organic signups for at least 90 days. Its open and complaint rates run differently and will distort the reporting on the rest of the list if they are mixed.
+- **A sunset rule.** Set it before the campaign opens. No opens in 60 or 90 days, one re-permission message, then out of the sending list. A giveaway list that is never pruned quietly damages deliverability for every other campaign.
+- **Consent noted at capture.** Store what the entrant agreed to, in what wording, on what date, alongside the address. That record is what answers a complaint or an audit later, and it cannot be reconstructed after the fact.
+- **Followers and community members get the same treatment.** A first post that welcomes the new arrivals and says what the channel is for, then the normal cadence. A community with nothing happening in it loses the people a giveaway just brought.
+
+The messages themselves, including the winner announcement and the consolation offer to everyone who did not win, belong to giveaway-winner-communications.

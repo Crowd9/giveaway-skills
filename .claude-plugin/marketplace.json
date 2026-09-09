@@ -6,13 +6,14 @@
   },
   "metadata": {
     "description": "Ten giveaway skills, supported by Gleam: ideas, prize, entry methods, timing, winner structure, promotion, provably fair draw, winner communications, results review, Gleam setup",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "repository": "https://github.com/Crowd9/giveaway-skills"
   },
   "plugins": [
     {
       "name": "giveaway-skills",
       "description": "Ten giveaway skills: generate concepts, choose or evaluate a prize, plan entry actions, set run length and start date, structure winners and terms, plan promotion, run a provably fair draw seeded from a public beacon, write every winner message, review results against benchmarks, and set up the campaign in Gleam",
+      "keywords": ["giveaway", "contest", "sweepstakes", "competition", "raffle", "marketing", "gleam", "random-draw", "winner"],
       "source": "./"
     }
   ]

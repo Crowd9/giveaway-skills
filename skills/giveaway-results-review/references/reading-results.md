@@ -22,7 +22,7 @@ One row per completed action. The person is the Email column, Status is Valid, I
 
 ## The impressions caveat
 
-A visitor who returns every day for a daily bonus counts as a new impression each day and as one contestant once. A 30-day campaign with a daily action can show a conversion rate half that of a 7-day campaign with the same audience. In the export, clean campaigns (no repeatable action, 14 days or less) converted at a median 42%. Campaigns of 31 to 60 days sat at 24% and 61 days or more at 23%. Before calling conversion low, check run length and repeatable actions.
+A visitor who returns every day for a daily bonus counts as a new impression each day and as one contestant once. A 30-day campaign with a daily action can show a conversion rate half that of a 7-day campaign with the same audience. In the export, the clean subset (the campaigns with no repeatable action and a run of 14 days or less, which is the group the script names clean campaigns) converted at a median 42%. Campaigns of 31 to 60 days sat at 24% and 61 days or more at 23%. Before calling conversion low, check run length and repeatable actions.
 
 ## Tone
 
@@ -50,3 +50,22 @@ A rank says where a figure sits. It does not say the figure is bad. Most metrics
 | The asset action (email, follow) underperformed | Make it the single mandatory action, cut the rest | giveaway-entry-method-planner |
 | Share action near zero | Expected. Drop it or give it a reason to exist | giveaway-entry-method-planner |
 | Winner drama | Structure, terms, communications | giveaway-winner-structure, giveaway-winner-communications |
+| Unsubscribes or spam complaints on the winners email above what the core list runs at | A visible marketing opt-in on the entry form and a separate sending stream for the giveaway segment. Target: the core list's own rate on the same send type | giveaway-winner-communications, giveaway-entry-method-planner |
+| Open share of the new subscribers in their first 30 days under the core list's | The welcome series after the non-winner message, then the sunset rule before these addresses join the core list. Target: the core list's 30-day open share | giveaway-winner-communications |
+| Customers and revenue at 30, 60 and 90 days under what the core list produces over the same window | Prize relevance to what the business sells, and the offer carried in the result email. Target: the store's own 90-day rate for a new subscriber | giveaway-prize-picker, giveaway-winner-communications |
+
+The last three come from the email provider and the store. Ask for them, or read them from the outcomes checklist the report prints.
+
+## Using the entrant list afterwards
+
+Two things the list can do once the winner is announced. Both are practice, with no dataset figure behind them.
+
+**A retargeting or lookalike audience.** Ad platforms take a customer list as hashed email addresses and match it against their own users. Upload the entrants who gave marketing consent, exclude anyone who is already a customer, and use the matched audience two ways: retarget the entrants who never bought, and seed a lookalike audience for cold prospecting. Entrants self-selected on the prize, so a lookalike built from them resembles people who want that prize. Where the prize was close to what the business sells, that is the audience worth copying. Where the prize was a generic gift card, the lookalike will be people who like gift cards, and the campaign report's country and city split usually shows it first.
+
+**Revenue attributed by joining email to orders.** Take the entrant addresses, take the store's order export, and match on email over a fixed window from the close date. Thirty, sixty and ninety days gives a curve. Count the entrants who ordered, sum the order value, and set it beside what the same window produces for a new subscriber from any other source. That comparison is the only honest revenue read available, since the campaign export carries no order data and the report says so where the ROI figures print.
+
+Both joins run on the organizer's own machine, in a spreadsheet or the store's admin. The entrant export never leaves it. Uploading a customer list to an ad platform is a separate decision with its own consent question, so check the marketing consent and the privacy policy cover it before the file goes anywhere.
+
+For a store that sent a non-winner code, the redemption count and revenue on that code in the store's discount report is the attribution figure, with no join needed. Read it at 14 days (the usual expiry) and again at 90.
+
+A campaign that ran in November or December compares against its week as well as the year. The timing skill's every-week table gives contestants and conversion for weeks 46 to 52 (weeks 48 to 51 convert at 40% to 53% against 38% for the year, week 47 at 33%), so a December result that matches the all-year median sits below its week, and a week 47 result that matches the median sits above it.

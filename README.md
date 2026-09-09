@@ -1,14 +1,26 @@
 # Giveaway Skills
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 37,180 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there.
+[![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io).
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 37,180 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
 
-Supported by [Gleam](https://gleam.io). The advice fits any giveaway platform, and the skills only bring up Gleam when you ask. Built to sit beside the [marketingskills library](https://github.com/coreyhaines31/marketingskills).
+Behind the advice sit 6,817 organizers, 60,282 prizes and 325,000 entry actions, from campaigns that all reached at least 1,000 entrants.
+Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
+
+## Install
+
+```bash
+/plugin marketplace add Crowd9/giveaway-skills
+/plugin install giveaway-skills
+npx skills add Crowd9/giveaway-skills
+```
+
+The first two are Claude Code, the third covers Codex, Cursor and anything else reading `.agents/skills`. Then ask: How long should my giveaway run?
 
 ## Skills
 
-Someone asks for a giveaway by Friday. The last one pulled 400 addresses that never opened an email, a follower called the draw rigged, and nobody could say what the prize should have been. These ten skills turn that into a plan you can defend, with every recommendation grounded in what 37,180 real campaigns did. Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
+Someone asks for a giveaway by Friday. The last one pulled 400 addresses that never opened an email, a follower called the draw rigged, and nobody could say what the prize should have been. These ten skills turn that into a plan you can defend, with every recommendation grounded in what real campaigns did. Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
 
 | Skill | Ask it | You get |
 |---|---|---|
@@ -17,9 +29,9 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Entry Method Planner](#entry-method-planner) | "How should people enter?" | A weighted entry list that builds the asset you want and stops before entrants drop off |
 | [Timing and Duration](#timing-and-duration) | "How long should it run?" | A run length, a start date and a dated timeline from terms to delivery |
 | [Winner Structure](#winner-structure) | "One winner or ten?" | Winner count, tiers, redraw rules and a terms draft for your country |
-| [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, four emails and a partner brief written |
+| [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, the emails for people who entered and people who have not, the replies for comments and DMs, a partner brief, and the retargeting audiences to build once it closes |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
-| [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification to the reply that ends a dispute |
+| [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification through the welcome series and list hygiene for everyone who did not win |
 | [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against 37,000 others and your industry, the actions that pulled their weight, and three changes for next time |
 | [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
@@ -29,7 +41,8 @@ Three giveaway concepts that fit your business, your date and your goal, then th
 
 - Hooks for the moment you have (launch, milestone, season, holiday, collaboration, daily series) and for moments you can manufacture
 - Each concept in five lines: title, hook, mechanic, prize direction, and the asset it builds
-- Campaign types measured: advent calendars, launches, pre-orders and drops, collaborations, series, flash, cash, cart and wishlist, creator, community, charity and more, with contestants, conversion and a value-adjusted index for each
+- Campaign types measured: advent calendars, launches, pre-orders and drops, collaborations, series, flash, cash, cart and wishlist, creator, community, charity and more, with contestants, conversion and a value index for each
+- Store campaigns for Shopify and similar: win your cart up to a cap, win your wishlist, pick your prize, bundle builder, restock drop, gift card tiers, with the cart and wishlist figures from the data
 - What the campaigns that beat their prize money had in common, and the cheap prizes that drew crowds
 - Formats to avoid for your business, from the list of tired and risky ones
 - Which hooks organizers use most, from campaign titles across the dataset, with December's crowding called out
@@ -78,6 +91,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 - Seasonal calendar by region, with December's peak and carrier cut-offs flagged
 - The recency finding: a campaign within 30 days of your last one drew 16% more entrants and converted a third better
 - Risks named in advance: the quiet middle, holiday gaps, the wrong time zone on the close
+- The season plan for a store: list build before Black Friday, the gift guide campaign in early December, the New Year restart, with the weeks that convert best behind each
 
 > "Shoe launches 14 October, want hype and emails."
 
@@ -104,8 +118,10 @@ A schedule that fills the whole run, with the copy written.
 
 - Schedule table by date, push, channel, format, owner and asset needed
 - Post and story copy for every push in your brand voice
-- Four emails: launch, mid-campaign, last call, winners
+- Two email branches: launch, mid and last call for the list, a welcome with the referral link for entrants the day they enter, and the winners email to everyone opted in, each with subject, preview text and send time
+- Profile prep, a fourteen-day calendar that keeps the rest of the feed running, and the replies for the comments and DMs that land, including the impersonation warning
 - Partner and creator briefs, a paid recommendation with a cap, and what to reuse afterwards
+- Retargeting and lookalike audiences built from the entrant list once the campaign closes, with winners and existing customers excluded
 - A fix for "nobody is entering" mid-campaign
 
 > "Runs 1 to 14 October, one partner post, no paid budget."
@@ -133,8 +149,11 @@ Every message after the draw, in send order, in your voice.
 - Winner notification with a deadline, and the line that says you will never ask for payment or a login
 - Verification request that asks only what the terms allow, and address collection with a privacy note
 - Shipping and delivery updates, the public announcement, and the thank-you to everyone who did not win
+- The welcome series for entrants who opted in, and the list hygiene pass that retires addresses that never engage
 - Replies for the winner who stalls, the winner who disputes, and the entrant who says the draw was rigged
 - A contact log format so you can show what was sent and when
+
+- For a store, the non-winner code: one single-use code per person, 7 to 14 day expiry, a larger code for referrers, tracked as the campaign's revenue line
 
 > "Winner hasn't replied in five days."
 
@@ -153,6 +172,8 @@ Your finished campaign read against 37,180 others of the same size, and what to 
 - A full report from your export in the order of the reporting tabs: overview with insights and a heatmap, traffic by first-touch channel with UTM rollup, entry methods with completion rate and seconds per action, the referral graph with top sharers, audience by country and city, retention, and ROI on the costs you supply
 - Reads a Gleam Actions export as is, and other platforms' exports through column matching or a mapping, including one-column-per-method exports
 
+- For a store, the redemption count on the non-winner code as the revenue line, read at 14 and 90 days
+
 > "1,800 entrants, 6,000 views, 9,000 entries, ran 14 days with 6 actions. How did we do?"
 
 [giveaway-results-review](skills/giveaway-results-review/SKILL.md)
@@ -165,6 +186,7 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 - Mandatory and daily actions, actions required, entry intervals, free entry alternatives for paid actions
 - Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
 - Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
+- The Shopify app: page creation, Open Graph tags, syncing entrants to the customer list with a campaign tag, and the test before launch
 - What entrants did with every Gleam action across 37,123 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
 - Gleam's own tips library, attributed, beside that evidence
 
@@ -177,8 +199,22 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 Paste one of these into an assistant with the skills loaded:
 
 ```text
-We sell running shoes online and want email subscribers who will buy. Budget $2,000. One big prize or ten small ones?
+How long should my giveaway run? We sell running shoes, first campaign, launching in October.
 ```
+
+An abbreviated version of what comes back:
+
+> Two weeks, opening on a Monday and closing on a weekday evening in your customers' time zone.
+>
+> Half of all campaigns run between 8 and 31 days and the median is 16. The ones that finished under 2,500 entrants ran 15 days, the ones over 10,000 ran 20. As a first campaign with no list to warm, plan for the shorter end of that.
+>
+> The 8 to 14 day band holds 20% of campaigns and the 15 to 30 band 30%. Entries per contestant sit at 4.4 and 4.62 across those two bands, so the second week buys you repeat entries and very little after that. Past two months the figure falls.
+>
+> Start day makes no measurable difference on any measure. Monday is the most common choice at 18.7% of campaigns and Saturday the rarest at 6.4%, which is a habit worth copying only because your own week is easier that way. Close day is flat too, so set the close for the hours you can answer questions in.
+>
+> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 16% more entrants and converted a third better than a first campaign. Book the second one before you launch this one.
+>
+> Next decision: the exact close date and time zone, which the promotion pushes hang off.
 
 ```text
 Which entry actions should a skincare brand with 12k Instagram followers use to grow a Klaviyo list?
@@ -189,6 +225,23 @@ Our giveaway closes Friday. Walk me through a draw our sponsor can verify.
 ```
 
 Ask for a plan or ask it to check yours. Every answer states its assumptions, labels what came from the data, and ends with the next decision. You never need the dataset: the skills ship with the findings and paraphrased examples, and the private export is not part of this repository.
+
+## Sample Data
+
+Two synthetic files let you run the scripts before you have an export of your own. No real people are in either.
+
+`skills/giveaway-random-draw/examples/sample-entrants.csv` is 40 rows of email, name and entries, with duplicates and one disposable domain so the pre-draw scan has something to report:
+
+```bash
+python3 skills/giveaway-random-draw/scripts/draw.py commit skills/giveaway-random-draw/examples/sample-entrants.csv --winners 3 --weight-column entries
+```
+
+`skills/giveaway-results-review/examples/sample-actions-export.csv` is 118 rows in the shape of a Gleam Actions export, 30 entrants over five days with invalid rows, referrals and both hosted and embedded landing pages:
+
+```bash
+python3 skills/giveaway-results-review/scripts/gleam_export.py skills/giveaway-results-review/examples/sample-actions-export.csv
+python3 skills/giveaway-results-review/scripts/campaign_report.py skills/giveaway-results-review/examples/sample-actions-export.csv --impressions 4200
+```
 
 ## Installing
 
@@ -204,7 +257,7 @@ Claude Code, as a plugin:
 /plugin install giveaway-skills
 ```
 
-OpenAI Codex, Cursor and other agents that read `.agents/skills`, with the skills CLI (checked 9 September 2026: it lists all ten skills and installs them into `.agents/skills`, and Codex loads them from there):
+OpenAI Codex, Cursor and other agents that read `.agents/skills`, with the skills CLI, which lists all ten skills and installs them where Codex loads them from:
 
 ```bash
 npx skills add Crowd9/giveaway-skills
@@ -229,42 +282,19 @@ That data is what lets the skills say things like:
 - Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.
 - Gaming gets the most for its prize money, music and media the cheapest addresses, technology the most referrals, and UK organizers the highest conversion on the smallest campaigns.
 
-Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
+Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
+
+## What These Skills Will Not Do
+
+- Give legal advice. The winner-structure skill drafts terms from your answers, and a lawyer in your jurisdiction has to review that draft before you publish it.
+- Run anything on your behalf. Nothing here posts, emails, schedules or changes a setting in any platform. You get the copy, the settings list and the commands, and you run them.
+- Send your data anywhere. The draw and review scripts read your export on your own machine, have no dependencies and make no network calls except the public randomness beacon you choose for a seed.
+- Promise results. The benchmarks describe what other campaigns did at the same size, and no skill will forecast your entrant count or your revenue.
 
 ## Issues and Support
 
-Found a wrong number, a broken script or a platform rule that has changed? Open an issue on this repository. The skills are maintained here in the open and supported by the community and the maintainers, and they are separate from Gleam's product support.
+Found a wrong number, a broken script or a platform rule that has changed? Open an issue on this repository. Used these for a giveaway? Open a discussion and tell us what happened. The skills are maintained here in the open and supported by the community and the maintainers, and they are separate from Gleam's product support.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions: one folder per skill, quoted trigger phrases in the description, references loaded on demand, an eval file per skill, the style rules, and the rule that no customer data ever enters the repository.
-
-## Repository Layout
-
-```
-README.md
-CONTRIBUTING.md         how to add or change a skill
-AGENTS.md               rules for agents editing this repo
-VERSIONS.md             changelog and per-skill versions
-LICENSE                 MIT
-.claude-plugin/         plugin and marketplace manifests
-scripts/validate.py     frontmatter, size, links, style and evals checks
-skills/
-  giveaway-prize-picker/
-    SKILL.md
-    references/
-    evals/              evals.json, cases.md, style_check.py
-  giveaway-entry-method-planner/
-  giveaway-timing-and-duration/
-  giveaway-winner-structure/
-  giveaway-random-draw/     includes scripts/draw.py
-  giveaway-idea-generator/
-  giveaway-promotion-plan/
-  giveaway-winner-communications/
-  giveaway-results-review/  includes scripts/review.py
-  gleam-campaign-setup/
-analysis/
-  analyze_export.py     regenerates analysis/output from a private export
-  render_reference_tables.py  rewrites generated tables in every skill's references
-  output/               committed aggregates (no customer data)
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions: one folder per skill, quoted trigger phrases in the description, references loaded on demand, an eval file per skill, the style rules, the repository layout, and the rule that no customer data ever enters the repository.

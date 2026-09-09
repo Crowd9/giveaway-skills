@@ -1,6 +1,6 @@
 # Timing findings
 
-Extracted from the ordinary segment of the export (crypto, ambiguous and purchase-only campaigns removed). All campaigns reached at least 1,000 contestants. Duration is end date minus start date in days as recorded, so a campaign extended after launch shows its final length.
+Extracted from the ordinary segment of the export (crypto, ambiguous and purchase-only campaigns removed). All campaigns reached at least 1,000 contestants. Duration is end date minus start date in days as recorded, so a campaign extended after launch shows its final length. IQR is the interquartile range, the middle half of campaigns between the 25th and 75th percentile. The 90th percentile is the level nine campaigns in ten sit below.
 
 <!-- generated:timing -->
 Duration: median 16 days, IQR 8 to 31, 90th percentile 43 (n=37,180). By campaign size: 1k-2.5k 15 days, 2.5k-10k 18 days, 10k+ 20 days.
@@ -33,7 +33,7 @@ Duration: median 16 days, IQR 8 to 31, 90th percentile 43 (n=37,180). By campaig
 
 ## Experience (extracted)
 
-Organizers on their eleventh or later campaign had a median 2,194 contestants and 44% conversion in the clean subset (n=6,031), against 1,844 and 33% on a first campaign (n=1,655). Second campaigns sat at 1,877 and 34%, third to fifth at 1,943 and 34%, sixth to tenth at 2,075 and 35%. The export holds only campaigns that passed 1,000 contestants, so organizers who stopped after a weak first run are missing, and the curve mostly shows who kept going. Read it with the recency finding: running again, soon, is the pattern that comes with better numbers.
+Organizers on their eleventh or later campaign had a median 2,194 contestants and 44% conversion in the clean subset, the campaigns with no repeatable action and a run of 14 days or less (n=6,031), against 1,844 and 33% on a first campaign (n=1,655). Second campaigns sat at 1,877 and 34%, third to fifth at 1,943 and 34%, sixth to tenth at 2,075 and 35%. The export holds only campaigns that passed 1,000 contestants, so organizers who stopped after a weak first run are missing, and the curve mostly shows who kept going. Read it with the recency finding: running again, soon, is the pattern that comes with better numbers.
 
 ## Cadence and persistence (extracted)
 

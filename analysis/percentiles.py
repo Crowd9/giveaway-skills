@@ -65,7 +65,7 @@ def main():
                   "band": band(c["valid_contestants"]), "vertical": next((v for v, pat in VERTICALS if re.search(pat, txt)), "unclassified")})
     METRICS = ["contestants", "conversion", "impressions", "actions_per_contestant", "contestants_per_day", "methods", "duration_days", "entries_per_entrant", "entries", "stated_usd_per_contestant", "email_signups", "email_uptake", "referrals_per_contestant"] + list(FOLLOWS.values())
     def table(g): return {m: pct([c[m] for c in g]) for m in METRICS}
-    out = {"percentiles": PCTS, "definitions": {"conversion": "contestants per impression, all campaigns; the clean group has no repeatable action and 14 days or less",
+    out = {"percentiles": PCTS, "definitions": {"conversion": "contestants per impression, all campaigns; the clean group has no repeatable action and 14 days or less. groups.all and groups.clean carry separate conversion arrays, so rank a campaign against the group its run length and actions place it in.",
                                                 "email_signups": "campaigns with an email action", "actions_per_contestant": "completed actions divided by contestants, entry worth removed", "contestants_per_day": "contestants divided by run length", "vertical": "regex on organizer, campaign and prize names"},
            "groups": {"all": table(o), "clean": table([c for c in o if c["clean"]])}}
     for b in ["1k-2.5k", "2.5k-10k", "10k+"]: out["groups"]["band:" + b] = table([c for c in o if c["band"] == b])

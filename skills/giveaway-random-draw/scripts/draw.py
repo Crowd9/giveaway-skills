@@ -11,6 +11,11 @@ with the person named by a field such as username, author, handle, email or owne
   python3 draw.py verify  draw.json [--input entries.csv]
   python3 draw.py --self-test
 
+--rules rules.json keeps the flags in one file so commit and draw cannot drift apart. Keys, all optional:
+tiers, backups, winners, id-column, weight-column, exclude. A flag given on the command line wins over the file.
+
+  {"tiers": "Grand prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}
+
 How the draw works (documented so anyone can recheck it in any language):
   1. Entrants are read, ids trimmed and lower-cased, duplicates merged (weights add up when a weight column is given),
      exclusions removed, invalid or zero weights dropped.
@@ -27,7 +32,7 @@ also prints the drand round that will be produced at that time, so the seed sour
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.3.0"
+VERSION = "2.4.0"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
@@ -105,6 +110,8 @@ def prepare(rows, id_column, weight_column, exclude):
     clusters = {k: v for k, v in plus.items() if len(v) > 1}
     return entrants, dupes, excluded, bad, clusters
 
+# Maintenance: a hand-kept sample of throwaway-mail domains, never a full list. Add a domain when a real export shows it.
+# A miss here costs a review line, so keep it short and do not chase completeness.
 DISPOSABLE = {"mailinator.com", "guerrillamail.com", "10minutemail.com", "tempmail.com", "temp-mail.org", "yopmail.com", "trashmail.com",
               "getnada.com", "dispostable.com", "sharklasers.com", "maildrop.cc", "fakeinbox.com", "mohmal.com", "throwawaymail.com", "emailondeck.com"}
 
@@ -146,6 +153,16 @@ def parse_tiers(spec, winners):
 def rules_of(a, id_column, tiers):
     return {"id_column": id_column, "weight_column": a.weight_column, "exclude_file_sha256": sha(open(a.exclude, "rb").read()) if a.exclude else None,
             "tiers": tiers, "backups": a.backups, "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id", "tool_version": VERSION}
+
+def apply_rules(a):
+    """Fill any option the command line left unset from --rules FILE. Command-line flags win."""
+    if getattr(a, "rules", None):
+        for k, v in json.load(open(a.rules)).items():
+            attr = k.replace("-", "_")
+            if hasattr(a, attr) and getattr(a, attr) is None: setattr(a, attr, v)
+    if getattr(a, "backups", None) is None: a.backups = 0
+    if getattr(a, "winners", None) is None: a.winners = 1
+    return a
 
 def commitment(digest, rules): return sha((digest + "\n" + json.dumps(rules, sort_keys=True, separators=(",", ":"))).encode())
 
@@ -257,6 +274,15 @@ def self_test():
     rows, col, _ = load_entries(gj, None); assert col == "from.username", (col, rows)
     sc = scan([{"id": f"ava_k_{2290+i}@example.com"} for i in range(6)] + [{"id": "x@mailinator.com"}])
     assert any("trailing number" in n for n in sc) and any("disposable" in n for n in sc), sc
+    rp = os.path.join(d, "rules.json")
+    open(rp, "w").write(json.dumps({"tiers": "Grand prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}))
+    class R: rules = rp; tiers = None; backups = None; winners = None; id_column = None; weight_column = None; exclude = None
+    apply_rules(R)
+    assert (R.tiers, R.backups, R.winners, R.id_column, R.weight_column, R.exclude) == ("Grand prize:1,Runner-up:5", 2, 1, "email", "entries", "staff.txt"), vars(R)
+    class O: rules = rp; tiers = "Only:1"; backups = 0; winners = None; id_column = None; weight_column = None; exclude = None
+    apply_rules(O); assert O.tiers == "Only:1" and O.backups == 0 and O.id_column == "email", vars(O)
+    class N: rules = None; tiers = None; backups = None; winners = None
+    apply_rules(N); assert (N.backups, N.winners) == (0, 1), vars(N)
     print("self-test passed"); return 0
 
 def main(argv):
@@ -264,8 +290,9 @@ def main(argv):
     ap.add_argument("--self-test", action="store_true")
     sub = ap.add_subparsers(dest="cmd")
     def common(p):
-        p.add_argument("input"); p.add_argument("--winners", type=int, default=1); p.add_argument("--tiers"); p.add_argument("--backups", type=int, default=0)
+        p.add_argument("input"); p.add_argument("--winners", type=int); p.add_argument("--tiers"); p.add_argument("--backups", type=int)
         p.add_argument("--id-column"); p.add_argument("--weight-column"); p.add_argument("--exclude")
+        p.add_argument("--rules", help="JSON file holding tiers, backups, winners, id-column, weight-column and exclude, so commit and draw read the same rules")
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
     d.add_argument("--seed"); d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
@@ -273,6 +300,7 @@ def main(argv):
     v = sub.add_parser("verify", help="recompute a draw from its audit record"); v.add_argument("audit_file"); v.add_argument("--input"); v.add_argument("--exclude")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
+    if a.cmd in ("commit", "draw"): apply_rules(a)
     return {"commit": cmd_commit, "draw": cmd_draw, "verify": cmd_verify}.get(a.cmd, lambda a: ap.print_help() or 2)(a)
 
 if __name__ == "__main__":
