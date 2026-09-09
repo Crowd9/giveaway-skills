@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose or evaluate a giveaway prize that attracts the intended audience, supports the business objective, and fits budget and fulfillment constraints. Use when the user asks 'what should we give away', 'prize ideas', 'is X a good prize', 'what prize should we offer', 'one big prize or several smaller ones', 'how many winners', 'giveaway budget', 'prize bundle', 'what prize gets the most entries', or mentions a giveaway, contest, sweepstakes, competition or raffle prize. Covers prize choice, winner structure, budget and fulfillment. Platform-neutral, with Gleam setup help only when the user says they use Gleam. Entry mechanics, timing and promotion are out of scope."
 metadata:
-  version: 1.2.2
+  version: 1.2.3
 ---
 
 # Giveaway Prize Picker
@@ -28,8 +28,9 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
    - Timing, shipping, availability or fulfillment limits?
    If the user wants ideas now, proceed with stated assumptions and skip the questions.
 3. **Score options against six criteria** (load `references/decision-criteria.md`): audience relevance, desirability, connection to the business, accessibility, fulfillment practicality, total cost. Let the objective decide between broad and specialized appeal.
-4. **Choose structure**: one major prize, several winners, tiers, or bundles. State the tradeoffs. No structure is best everywhere.
-5. **Deliver** in the shape below. Keep length proportional to the request.
+4. **Choose structure**: one major prize, several winners, tiers, or bundles. State the tradeoffs. Default to one prize worth wanting for acquisition (value-adjusted index 1.07 for one unit against 0.85 for six to twenty).
+5. **Price it.** When the vertical is clear, load `references/roi-benchmarks.md` for stated value per contestant and per email in that industry and where the industry sits on the value index. When the user gives a budget and an expected size, run `scripts/roi.py` and show cost per result beside the benchmark.
+6. **Deliver** in the shape below. Keep length proportional to the request.
 
 ## Output: recommendation mode
 

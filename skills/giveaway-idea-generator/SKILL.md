@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate giveaway concepts: the hook (launch, milestone, season, holiday, collaboration, daily series), the theme, the mechanic and the prize direction, matched to the business, the calendar and the objective. Use when the user asks 'giveaway ideas', 'what kind of giveaway should we run', 'themes for a Christmas giveaway', 'ideas for our 10k follower milestone', 'something different from a standard giveaway', or wants three concepts to choose from. Platform-neutral. Hands off to giveaway-prize-picker for the prize and giveaway-entry-method-planner for the mechanics."
 metadata:
-  version: 1.1.1
+  version: 1.1.2
 ---
 
 # Giveaway Idea Generator
@@ -16,7 +16,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 ## Workflow
 
 1. **Fix the constraints.** Business and audience, objective, rough budget, the date or season, channels, and any moment to tie to (launch, milestone, event, partner).
-2. **Pick hooks.** Load `references/hooks-and-themes.md`. Choose one hook that fits a moment the business has (a launch, a milestone, a season) and one that manufactures a moment (a series, a collaboration, a challenge). For every hook you use, quote its row from the table (share of titles, and peak month where relevant) labelled extracted, with the 37,180-campaign base. Extracted: collaborations appear in about one campaign title in ten and holiday-season hooks in a fifth of December starts.
+2. **Pick hooks.** Load `references/hooks-and-themes.md`. Choose one hook that fits a moment the business has (a launch, a milestone, a season) and one that manufactures a moment (a series, a collaboration, a challenge). Read the campaign types table for where each shape sits on contestants, conversion and the value index, the launch subtypes when the moment is a launch, drop or pre-order, and the standouts section for what campaigns that beat their prize money had in common. Quote the row for the chosen shape as extracted with n. For every hook you use, quote its row from the table (share of titles, and peak month where relevant) labelled extracted, with the 37,180-campaign base. Extracted: collaborations appear in about one campaign title in ten and holiday-season hooks in a fifth of December starts.
 3. **Build three concepts** that differ in shape: one simple (single prize, one push), one participatory (UGC, question, series), one partnered (bundle or co-promotion). Each with a working title, the hook, the mechanic in one sentence, the prize direction, and what asset it produces.
 4. **Say which one to run and why**, tied to the objective and the budget.
 5. **Hand off.** Name the next skill for the chosen concept: prize picker for the prize, entry-method planner for the actions, timing for the dates.

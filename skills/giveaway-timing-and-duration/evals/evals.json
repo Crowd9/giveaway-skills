@@ -1,17 +1,65 @@
 {
-  "skill_name": "giveaway-timing-and-duration",
-  "evals": [
-    {"id": 1, "prompt": "We launch a new running shoe on 14 October. Want to build hype and collect emails. How long should the giveaway run and when should it start?",
-     "expected_output": "Anchors on the launch date, recommends a two to three week run ending on or just before launch, starts on a weekday, gives a timeline with pushes, draw, announce and delivery, cites the duration distribution with n and the extracted label, and lists risks.",
-     "assertions": ["Anchors the end date to the launch", "Recommends a specific duration with a reason", "Starts on a weekday", "Includes a draw and announce step with a response deadline", "Cites a dataset figure with sample size", "No platform pitch"], "files": []},
-    {"id": 2, "prompt": "Is a 3-month giveaway a good idea? We sell coffee subscriptions.",
-     "expected_output": "Explains the quiet-middle problem, says long runs need repeatable actions and fresh content, offers a shorter run or a monthly recurring draw as alternatives, notes the data shows most campaigns run 8 to 31 days and that entries per contestant fall past two months, and says the data cannot show which length performs better.",
-     "assertions": ["Names the quiet-middle risk", "Offers a shorter or recurring alternative", "Cites the duration distribution", "States the data cannot show which length performs better"], "files": []},
-    {"id": 3, "prompt": "Best day of the week to start a giveaway?",
-     "expected_output": "Says organizers start on weekdays about five times more often than weekends with Monday most common (extracted, with n), explains that this describes choice and shows nothing about results, and advises starting when the audience is online and the team can respond.",
-     "assertions": ["Cites the weekday figure as extracted", "Says it shows organizer choice and nothing about outcomes", "Ties the choice to the audience and team availability"], "files": []},
-    {"id": 4, "prompt": "Style check applied to every conversational reply above.",
-     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
-     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
-  ]
+ "skill_name": "giveaway-timing-and-duration",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "We launch a new running shoe on 14 October. Want to build hype and collect emails. How long should the giveaway run and when should it start?",
+   "expected_output": "Anchors on the launch date, recommends a two to three week run ending on or just before launch, starts on a weekday, gives a timeline with pushes, draw, announce and delivery, cites the duration distribution with n and the extracted label, and lists risks.",
+   "assertions": [
+    "Anchors the end date to the launch",
+    "Recommends a specific duration with a reason",
+    "Starts on a weekday",
+    "Includes a draw and announce step with a response deadline",
+    "Cites a dataset figure with sample size",
+    "No platform pitch"
+   ],
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "Is a 3-month giveaway a good idea? We sell coffee subscriptions.",
+   "expected_output": "Explains the quiet-middle problem, says long runs need repeatable actions and fresh content, offers a shorter run or a monthly recurring draw as alternatives, notes the data shows most campaigns run 8 to 31 days and that entries per contestant fall past two months, and says the data cannot show which length performs better.",
+   "assertions": [
+    "Names the quiet-middle risk",
+    "Offers a shorter or recurring alternative",
+    "Cites the duration distribution",
+    "States the data cannot show which length performs better"
+   ],
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "Best day of the week to start a giveaway?",
+   "expected_output": "Says organizers start on weekdays about five times more often than weekends with Monday most common (extracted, with n), explains that this describes choice and shows nothing about results, and advises starting when the audience is online and the team can respond.",
+   "assertions": [
+    "Cites the weekday figure as extracted",
+    "Says it shows organizer choice and nothing about outcomes",
+    "Ties the choice to the audience and team availability"
+   ],
+   "files": []
+  },
+  {
+   "prompt": "We want to run a Black Friday giveaway this year. When should we launch and how long should it run?",
+   "expected_output": "Quotes the Black Friday row (364 campaigns, 8 days, launch 8 days out with an IQR of 3 to 16, 46% closed by the day) from holiday-benchmarks.md, gives the date and launch window from the calendar table, warns that a prize tied to the sale needs a close before the day, gives a dated timeline.",
+   "assertions": [
+    "Cites the Black Friday benchmark row with n",
+    "Gives a launch window from the calendar",
+    "Recommends a run length near 8 days",
+    "Dated timeline"
+   ],
+   "files": [],
+   "id": 4
+  },
+  {
+   "id": 5,
+   "prompt": "Style check applied to every conversational reply above.",
+   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "assertions": [
+    "em_dashes == 0",
+    "semicolons == 0",
+    "assistant_opener == 0 and assistant_closer == 0"
+   ],
+   "files": []
+  }
+ ]
 }

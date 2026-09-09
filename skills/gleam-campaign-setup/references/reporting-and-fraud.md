@@ -25,7 +25,7 @@ Real-time list of every action with Who, Action, Details (form answers, tweet UR
 
 [Setup Tab](https://gleam.io/docs/competitions/setup/setup), Fraud Filter section
 
-The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions, email or phone verification (User Details), Allowed Locations (Setup).
+The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions and email or phone verification live on the User Details tab, Allowed Locations on the Setup tab.
 
 ## Admin and test entries
 
