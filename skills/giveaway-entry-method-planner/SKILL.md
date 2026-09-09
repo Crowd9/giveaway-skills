@@ -1,8 +1,8 @@
 ---
 name: giveaway-entry-method-planner
-description: "Choose which actions a giveaway should ask entrants to take (follow, share, email signup, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC rather than raw entries. Platform-neutral. For choosing the prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
+description: "Choose which actions a giveaway should ask entrants to take (follow, share, email signup, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC, with entry volume second. Platform-neutral. For choosing the prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Giveaway Entry Method Planner

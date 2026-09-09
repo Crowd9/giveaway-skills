@@ -196,7 +196,7 @@ Claude Code, as a plugin:
 /plugin install giveaway-skills
 ```
 
-OpenAI Codex, Cursor and other agents that read `.agents/skills`, with the skills CLI:
+OpenAI Codex, Cursor and other agents that read `.agents/skills`, with the skills CLI (checked 9 September 2026: it lists all ten skills and installs them into `.agents/skills`, and Codex loads them from there):
 
 ```bash
 npx skills add Crowd9/giveaway-skills
@@ -216,9 +216,9 @@ That data is what lets the skills say things like:
 - Every extra entry action costs people. Campaigns with 11 or more actions convert at 31% against 50% for one to three, and lose a fifth of their entrants.
 - Half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 525 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
 - Start weekday makes no difference at all. December is the busiest month and its campaigns still drew more entrants and converted better.
-- A secret code is the only action that came with more entrants at no cost to conversion. Sharing actions, in this data, fed entries rather than audiences.
+- A secret code is the only action that came with more entrants at no cost to conversion. Sharing actions, in this data, fed entries and left audiences where they were.
 
-Every figure carries its sample size, and every finding describes what organizers chose rather than what caused participation, because the export holds no failed campaigns to compare against. The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
+Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 
 ## Issues and Support
 

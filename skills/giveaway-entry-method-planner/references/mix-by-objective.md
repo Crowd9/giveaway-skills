@@ -54,6 +54,26 @@ Gleam's internal analysis of the same export, with its own industry labels, foun
 
 On action count: the top fifth and bottom fifth both ran a median of 7 actions, so count alone does not separate them. The clean-subset finding stands: eleven or more actions came with a fifth fewer contestants and lower conversion. Keep the list purposeful and short.
 
+## What each action produced per campaign (extracted)
+
+Median completions per campaign among campaigns that offered the action, completions per contestant, and stated USD of prize per completion where the pool was valued. A completion is a signup, follow or join at that moment. Full table with quartiles and size bands in the results-review skill.
+
+| Asset | Campaigns | Median per campaign | Per contestant | Stated USD per completion |
+|---|---|---|---|---|
+| Email signups | 16,015 | 2,054 | 0.98 | 0.31 |
+| X follows | 20,440 | 1,448 | 0.59 | 0.51 |
+| Instagram follows | 2,750 | 1,472 | 0.61 | 0.62 |
+| TikTok follows | 5,300 | 868 | 0.37 | 0.92 |
+| Twitch follows | 6,084 | 1,733 | 0.68 | 0.43 |
+| YouTube subscribes | 1,173 | 1,445 | 0.74 | 0.54 |
+| Discord joins | 6,145 | 999 | 0.43 | 0.67 |
+| Telegram joins | 2,041 | 1,963 | 0.87 | 0.51 |
+| App downloads | 1,592 | 1,009 | 0.36 | 0.90 |
+| Referral entries (Viral Share) | 16,708 | 349 | 0.13 | 2.10 |
+| Content submissions | 1,109 | 186 | 0.06 | 20.00 |
+
+An email action in the median campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 350 referral entries, and a content action under 200 submissions.
+
 ## Friction
 
 Every required action removes some entrants. Extracted: the median campaign offers 7 methods and the top decile offers 17 or more. Nothing in the data shows the effect of adding a method, so keep the count tied to the number of assets you can use. Three assets, five to eight methods.

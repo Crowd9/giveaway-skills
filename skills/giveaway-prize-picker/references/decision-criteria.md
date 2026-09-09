@@ -43,6 +43,23 @@ Default for an acquisition giveaway: one prize worth wanting. Extracted, value-a
 
 Dataset observation (extracted, ordinary segment): 79% of campaigns listed one prize record, 32% listed a quantity above one for at least one prize, and 8,761 of 37,180 campaigns listed five or more prize units. Contestant medians for single-winner and multi-unit structures were almost identical (2,228 vs 2,270), which says nothing about effect because every campaign passed the export floor.
 
+## Stated prize cost per email signup (extracted)
+
+For campaigns with an email action and every prize valued in USD, the stated pool divided by email signups. Music gear and cash sit lowest, experiences and game items highest. Use it to sanity-check a budget against the list it is meant to build, and remember the stated value is what the organizer wrote.
+
+| Prize category | Campaigns | Median USD per signup |
+|---|---|---|
+| Tech hardware | 2,113 | 0.29 |
+| Gift card or cash | 1,229 | 0.28 |
+| Bundle or box | 1,150 | 0.37 |
+| Regulated goods (firearms) | 607 | 0.32 |
+| Home, garden, appliance | 482 | 0.34 |
+| Game items or skins | 460 | 0.60 |
+| Experience, travel, tickets | 457 | 0.68 |
+| Merch, apparel, collectibles | 371 | 0.37 |
+| Music gear | 355 | 0.15 |
+| Sports and outdoor gear | 323 | 0.43 |
+
 ## Budget template
 
 Label every figure an estimate. Verify current prices when a tool is available and the number matters.

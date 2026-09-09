@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway against benchmarks from 37,180 real campaigns: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Giveaway Results Review
@@ -17,7 +17,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 
 1. **Collect the numbers.** Unique entrants (contestants), impressions or views, total entries, invalid entries, run length in days, number of entry actions, and if available the completions per action and the objective (list, followers, sales, reach). Accept a pasted reporting screenshot, a CSV export, or plain numbers. If impressions are missing, skip conversion and say so.
 2. **Run the script.** `python3 scripts/review.py --contestants N --impressions N --entries N --invalid N --days N --methods N [--actions actions.csv]` prints the derived metrics, the size band, and each figure beside the benchmark for that band. Show its output. Do the arithmetic nowhere else.
-3. **Read the actions.** With an actions export, rank each action's completions per contestant against its family median in `references/benchmarks.md`. Name the action that carried the campaign and the ones almost nobody did.
+3. **Read the actions.** With an actions export, rank each action's completions per contestant against its family median in `references/benchmarks.md`, and read the asset totals (addresses, follows, joins, referrals) against the yield table for the band. Name the action that carried the campaign and the ones almost nobody did.
 4. **Explain, with care.** Load `references/reading-results.md`. Impressions are unique per user per day, so daily actions and long runs push conversion down without anything going wrong. Say which benchmark caveats apply before judging a number.
 5. **Recommend changes.** Three at most, each tied to a figure, each pointing at the skill that plans it: prize, entry mix, timing, structure, promotion.
 6. **Deliver.**
@@ -62,7 +62,7 @@ Advice is platform-neutral. Reporting definitions come from the campaign's own p
 
 ## References
 
-- `references/benchmarks.md`: distributions for contestants, entries, impressions, duration, conversion by method count and duration, invalid share, action family uptake. Generated from the analysis output.
+- `references/benchmarks.md`: distributions for contestants, entries, impressions, duration, conversion by method count and duration, invalid share, action family uptake, and what campaigns produced (email signups, follows, joins, referrals per campaign and stated USD per completion). Written from the analysis output.
 - `references/reading-results.md`: how to read each metric, the impressions caveat, common misreads, the recommendation map.
 - `scripts/review.py`: derived metrics and benchmark comparison from the numbers. `--self-test` checks it.
 
