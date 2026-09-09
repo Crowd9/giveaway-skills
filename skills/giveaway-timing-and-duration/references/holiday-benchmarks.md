@@ -36,23 +36,124 @@ Reading it:
 
 Dates for the next sixteen months. The launch window is the holiday date minus the interquartile range of lead days organizers used, and the typical launch is the median. Dates for Mother's Day and Father's Day are the US convention (second Sunday in May, third Sunday in June). The UK Mother's Day is the fourth Sunday of Lent and Australia's Father's Day is the first Sunday of September, so shift those for those audiences. Diwali and Lunar New Year dates are entered by hand for each year.
 
-| Holiday | Date | Launch window | Typical launch |
-|---|---|---|---|
-| Halloween | Sat 31 Oct 2026 | 01 Oct to 24 Oct | 12 Oct |
-| Thanksgiving | Thu 26 Nov 2026 | 30 Oct to 17 Nov | 09 Nov |
-| Black Friday and Cyber Monday | Fri 27 Nov 2026 | 11 Nov to 24 Nov | 19 Nov |
-| Christmas and advent | Fri 25 Dec 2026 | 27 Nov to 14 Dec | 06 Dec |
-| New Year | Fri 01 Jan 2027 | 09 Dec to 27 Dec | 21 Dec |
-| Lunar New Year | Mon 01 Feb 2027 | 25 Jan to 31 Jan | 27 Jan |
-| Valentine's Day | Sun 14 Feb 2027 | 26 Jan to 08 Feb | 02 Feb |
-| Easter | Sun 28 Mar 2027 | 07 Mar to 24 Mar | 18 Mar |
-| Mother's Day | Sun 09 May 2027 | 15 Apr to 02 May | 26 Apr |
-| Father's Day | Sun 20 Jun 2027 | 01 Jun to 11 Jun | 07 Jun |
-| Back to school | Wed 25 Aug 2027 | 23 Jul to 14 Aug | 04 Aug |
-| Halloween | Sun 31 Oct 2027 | 01 Oct to 24 Oct | 12 Oct |
-| Thanksgiving | Thu 25 Nov 2027 | 29 Oct to 16 Nov | 08 Nov |
-| Black Friday and Cyber Monday | Fri 26 Nov 2027 | 10 Nov to 23 Nov | 18 Nov |
-| Christmas and advent | Sat 25 Dec 2027 | 27 Nov to 14 Dec | 06 Dec |
-| New Year | Sat 01 Jan 2028 | 09 Dec to 27 Dec | 21 Dec |
+| Holiday | Date | Launch window | Typical launch | That week in the data |
+|---|---|---|---|---|
+| Halloween | Sat 31 Oct 2026 | 01 Oct to 24 Oct | 12 Oct | week 44: 2% of starts, 37% conversion |
+| Thanksgiving | Thu 26 Nov 2026 | 30 Oct to 17 Nov | 09 Nov | week 48: 3% of starts, 40% conversion |
+| Black Friday and Cyber Monday | Fri 27 Nov 2026 | 11 Nov to 24 Nov | 19 Nov | week 48: 3% of starts, 40% conversion |
+| Christmas and advent | Fri 25 Dec 2026 | 27 Nov to 14 Dec | 06 Dec | week 52: 1% of starts, 41% conversion |
+| New Year | Fri 01 Jan 2027 | 09 Dec to 27 Dec | 21 Dec | - |
+| Lunar New Year | Mon 01 Feb 2027 | 25 Jan to 31 Jan | 27 Jan | week 5: 2% of starts, 34% conversion |
+| Valentine's Day | Sun 14 Feb 2027 | 26 Jan to 08 Feb | 02 Feb | week 6: 2% of starts, 33% conversion |
+| Easter | Sun 28 Mar 2027 | 07 Mar to 24 Mar | 18 Mar | week 12: 2% of starts, 33% conversion |
+| Mother's Day | Sun 09 May 2027 | 15 Apr to 02 May | 26 Apr | week 18: 2% of starts, 38% conversion |
+| Father's Day | Sun 20 Jun 2027 | 01 Jun to 11 Jun | 07 Jun | week 24: 2% of starts, 37% conversion |
+| Back to school | Wed 25 Aug 2027 | 23 Jul to 14 Aug | 04 Aug | week 34: 2% of starts, 37% conversion |
+| Halloween | Sun 31 Oct 2027 | 01 Oct to 24 Oct | 12 Oct | week 43: 2% of starts, 36% conversion |
+| Thanksgiving | Thu 25 Nov 2027 | 29 Oct to 16 Nov | 08 Nov | week 47: 2% of starts, 33% conversion |
+| Black Friday and Cyber Monday | Fri 26 Nov 2027 | 10 Nov to 23 Nov | 18 Nov | week 47: 2% of starts, 33% conversion |
+| Christmas and advent | Sat 25 Dec 2027 | 27 Nov to 14 Dec | 06 Dec | week 51: 3% of starts, 53% conversion |
+| New Year | Sat 01 Jan 2028 | 09 Dec to 27 Dec | 21 Dec | week 52: 1% of starts, 41% conversion |
 
 Ramadan and Eid, Prime Day, Singles' Day, anniversaries and milestones have no fixed date here. Use the theme row above for their shape and the region calendar in `calendar-by-region.md` for the dates that stall a team or an audience.
+
+## Every week of the year (extracted)
+
+All ordinary campaigns by the ISO week of their start date, whatever their theme. Share of starts is that week's share of all 37,123 campaigns (an even spread would be 1.9%). Conversion is the clean subset. The holiday-named column is the share of that week's starts whose title or description names a holiday, which is how the dates and the names were checked against each other. Monday dates are 2026.
+
+| Week | Monday | Share of starts | Contestants | Conversion (clean n) | Entries per entrant | Holiday-named | Holidays in the week |
+|---|---|---|---|---|---|---|---|
+| 1 | 29 Dec | 1% | 2,072 | 36% (131) | 4.4 | 19% |  |
+| 2 | 05 Jan | 1% | 2,244 | 34% (135) | 4.6 | 12% |  |
+| 3 | 12 Jan | 1% | 2,178 | 33% (150) | 4.4 | 10% |  |
+| 4 | 19 Jan | 2% | 2,163 | 35% (197) | 4.5 | 8% |  |
+| 5 | 26 Jan | 2% | 2,146 | 34% (216) | 4.4 | 13% |  |
+| 6 | 02 Feb | 2% | 2,250 | 33% (201) | 4.3 | 10% | Super Bowl (US) |
+| 7 | 09 Feb | 2% | 2,202 | 35% (212) | 4.3 | 7% | Valentine's Day |
+| 8 | 16 Feb | 2% | 2,149 | 37% (178) | 4.2 | 2% | Lunar New Year |
+| 9 | 23 Feb | 3% | 2,305 | 38% (222) | 4.6 | 2% |  |
+| 10 | 02 Mar | 2% | 2,184 | 38% (198) | 4.3 | 3% |  |
+| 11 | 09 Mar | 2% | 2,169 | 37% (217) | 4.5 | 3% |  |
+| 12 | 16 Mar | 2% | 2,160 | 33% (211) | 4.3 | 5% |  |
+| 13 | 23 Mar | 2% | 2,146 | 36% (208) | 4.6 | 6% |  |
+| 14 | 30 Mar | 2% | 2,220 | 36% (212) | 4.4 | 6% | Easter |
+| 15 | 06 Apr | 2% | 2,017 | 35% (202) | 4.4 | 4% |  |
+| 16 | 13 Apr | 2% | 2,268 | 37% (236) | 4.4 | 4% |  |
+| 17 | 20 Apr | 2% | 2,074 | 38% (187) | 4.7 | 5% |  |
+| 18 | 27 Apr | 2% | 2,160 | 38% (185) | 4.2 | 4% |  |
+| 19 | 04 May | 2% | 2,196 | 37% (212) | 4.0 | 5% | Mother's Day |
+| 20 | 11 May | 2% | 2,228 | 40% (201) | 4.3 | 2% |  |
+| 21 | 18 May | 2% | 2,212 | 42% (205) | 4.5 | 2% |  |
+| 22 | 25 May | 2% | 2,222 | 38% (232) | 4.5 | 4% |  |
+| 23 | 01 Jun | 2% | 2,224 | 36% (222) | 4.4 | 7% |  |
+| 24 | 08 Jun | 2% | 2,076 | 37% (224) | 4.3 | 4% |  |
+| 25 | 15 Jun | 2% | 2,268 | 35% (210) | 4.4 | 2% | Father's Day |
+| 26 | 22 Jun | 2% | 2,240 | 37% (222) | 4.7 | 2% |  |
+| 27 | 29 Jun | 2% | 2,293 | 33% (167) | 4.3 | 2% | Independence Day (US) |
+| 28 | 06 Jul | 2% | 2,062 | 37% (171) | 4.4 | 3% | Prime Day (mid July, varies) |
+| 29 | 13 Jul | 2% | 2,273 | 37% (188) | 4.3 | 5% |  |
+| 30 | 20 Jul | 2% | 2,190 | 37% (171) | 4.6 | 4% |  |
+| 31 | 27 Jul | 2% | 2,102 | 36% (188) | 4.5 | 4% |  |
+| 32 | 03 Aug | 2% | 2,239 | 38% (198) | 4.5 | 6% |  |
+| 33 | 10 Aug | 2% | 2,210 | 38% (205) | 4.6 | 5% |  |
+| 34 | 17 Aug | 2% | 2,409 | 37% (230) | 4.5 | 5% |  |
+| 35 | 24 Aug | 2% | 2,193 | 38% (233) | 4.4 | 6% | Back to school |
+| 36 | 31 Aug | 2% | 2,188 | 34% (161) | 4.6 | 4% |  |
+| 37 | 07 Sep | 2% | 2,275 | 33% (202) | 4.2 | 4% |  |
+| 38 | 14 Sep | 2% | 2,228 | 37% (230) | 4.4 | 3% |  |
+| 39 | 21 Sep | 2% | 2,226 | 38% (164) | 4.4 | 5% |  |
+| 40 | 28 Sep | 2% | 2,099 | 38% (182) | 4.3 | 7% |  |
+| 41 | 05 Oct | 2% | 2,162 | 37% (219) | 4.0 | 10% |  |
+| 42 | 12 Oct | 2% | 2,008 | 33% (195) | 4.2 | 12% |  |
+| 43 | 19 Oct | 2% | 2,005 | 36% (218) | 4.2 | 14% |  |
+| 44 | 26 Oct | 2% | 2,092 | 37% (172) | 4.4 | 16% | Halloween |
+| 45 | 02 Nov | 2% | 2,180 | 35% (192) | 4.3 | 18% | Diwali |
+| 46 | 09 Nov | 2% | 2,094 | 35% (219) | 4.4 | 22% | Singles Day |
+| 47 | 16 Nov | 2% | 2,306 | 33% (285) | 4.3 | 32% |  |
+| 48 | 23 Nov | 3% | 2,491 | 40% (402) | 4.2 | 35% | Black Friday and Cyber Monday, Thanksgiving |
+| 49 | 30 Nov | 3% | 2,372 | 46% (615) | 3.9 | 33% | Cyber Monday |
+| 50 | 07 Dec | 3% | 2,240 | 47% (526) | 4.1 | 34% |  |
+| 51 | 14 Dec | 3% | 2,234 | 53% (493) | 3.9 | 32% |  |
+| 52 | 21 Dec | 1% | 2,375 | 41% (196) | 4.4 | 23% | Christmas and advent |
+
+Reading it:
+
+- Weeks 48 to 51, late November to mid December, are the launch peak at 2.6% to 3.3% of starts each, and they convert best: 40%, 46%, 47%, 53% against 38% for the year. A third of those starts name a holiday. Week 52, Christmas week itself, drops to 1.4% of starts and 41%.
+- Week 49, the first week of December, is the single best week in the data on conversion with a large clean sample (615). The advent shape runs through it, and so do plain December campaigns.
+- Weeks 20 and 21, mid to late May, convert at 40% and 42% with no holiday attached. Weeks 12, 27, 37, 42 and 47 sit at 33%, the low end. Week 47, the week before Thanksgiving, is the quiet before the peak.
+- Contestants barely move by week. Week 34 (late August, back to school) is the high at 2,409, weeks 42 and 43 the low near 2,000.
+- Start day of the month makes no difference: the first week of the month and the last convert within a point of each other.
+
+## Live over a holiday (extracted)
+
+Campaigns whose run included the holiday date, against campaigns that did not, drawn with the same duration mix so a 45-day campaign is compared with 45-day campaigns. Closed on the day is the count that ended exactly on the holiday.
+
+| Holiday | Live over it, n | Contestants | Conversion | Not over it, contestants | Conversion | Contestant ratio | Conversion ratio | Closed on the day |
+|---|---|---|---|---|---|---|---|---|
+| Christmas and advent | 2,874 | 2,335 | 36% | 2,288 | 34% | 1.02 | 1.07 | 148 |
+| New Year | 2,405 | 2,335 | 36% | 2,316 | 33% | 1.01 | 1.08 | 0 |
+| Black Friday and Cyber Monday | 2,866 | 2,256 | 31% | 2,292 | 36% | 0.98 | 0.85 | 144 |
+| Thanksgiving | 2,851 | 2,254 | 31% | 2,300 | 36% | 0.98 | 0.87 | 110 |
+| Halloween | 2,798 | 2,236 | 33% | 2,313 | 35% | 0.97 | 0.96 | 228 |
+| Valentine's Day | 2,507 | 2,235 | 31% | 2,303 | 34% | 0.97 | 0.93 | 106 |
+| Mother's Day | 2,578 | 2,348 | 32% | 2,290 | 35% | 1.03 | 0.93 | 96 |
+| Father's Day | 2,781 | 2,316 | 31% | 2,293 | 34% | 1.01 | 0.89 | 90 |
+| Easter | 2,671 | 2,292 | 33% | 2,302 | 34% | 1.00 | 0.97 | 115 |
+| Back to school | 2,794 | 2,442 | 30% | 2,291 | 35% | 1.07 | 0.88 | 92 |
+| Diwali | 2,706 | 2,263 | 32% | 2,311 | 35% | 0.98 | 0.91 | 152 |
+| Lunar New Year | 2,470 | 2,281 | 31% | 2,304 | 34% | 0.99 | 0.92 | 134 |
+| Prime Day (mid July, varies) | 2,655 | 2,356 | 31% | 2,296 | 34% | 1.03 | 0.92 | 67 |
+| Cyber Monday | 2,821 | 2,280 | 33% | 2,294 | 35% | 0.99 | 0.93 | 181 |
+| Singles Day | 2,706 | 2,238 | 30% | 2,309 | 34% | 0.97 | 0.88 | 91 |
+| Independence Day (US) | 2,627 | 2,351 | 31% | 2,302 | 34% | 1.02 | 0.90 | 77 |
+| Super Bowl (US) | 2,425 | 2,245 | 31% | 2,303 | 34% | 0.97 | 0.92 | 63 |
+
+Reading it:
+
+- Being live over Christmas or New Year came with 7% to 8% better conversion than the same-length campaigns that were not. Every other holiday came with the same or lower conversion, and Black Friday, Thanksgiving, back to school and Singles Day sat 12% to 15% lower. Those are weeks when the audience is being sold to from every direction.
+- Contestant counts do not move with any holiday: every ratio sits between 0.97 and 1.07. A holiday does not add entrants. It changes how many of the people who arrive decide to enter.
+- Closing on the holiday itself is rare (60 to 230 campaigns per holiday) and those campaigns look like the rest.
+
+## Names against dates
+
+For each holiday, the share of campaigns naming it that started in the 60 days before it and ended no more than 14 days after it: Christmas and advent 67% of 1,806, New Year 95% of 411, Black Friday and Cyber Monday 97% of 364, Thanksgiving 80% of 111, Halloween 80% of 256, Valentine's Day 97% of 223, Mother's Day 90% of 141, Father's Day 90% of 155, Easter 90% of 157, Back to school 84% of 211, Lunar New Year 82% of 40. Names and dates agree for nearly every holiday. Christmas is the exception at 67% because a third of Christmas-named campaigns are advent runs that finish on 24 December, "Christmas in July" campaigns, or January runs still carrying the word.

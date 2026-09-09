@@ -1,0 +1,1088 @@
+{
+ "ordinary_n": 37123,
+ "all": {
+  "n": 37123,
+  "contestants": 2203,
+  "conv_clean": 0.37548964745383323,
+  "clean_n": 11652,
+  "entries_per_entrant": 4.344638949671772,
+  "duration": 16,
+  "email_uptake": 0.9823468328141225
+ },
+ "definitions": {
+  "week": "ISO week of the start date, UTC",
+  "conv_clean": "contestants per impression on campaigns with no repeatable action and 14 days or less",
+  "live_over": "start on or before the holiday date and end on or after it; the comparison group is drawn from campaigns not spanning it with the same duration mix",
+  "holiday dates": "2026 dates used to place holidays in weeks; live-over uses each campaign's own year"
+ },
+ "by_start_week": {
+  "1": {
+   "n": 554,
+   "contestants": 2072.0,
+   "conv_clean": 0.36216222915365204,
+   "clean_n": 131,
+   "entries_per_entrant": 4.415029945444551,
+   "duration": 27.0,
+   "email_uptake": 0.9956474428726877,
+   "share_of_starts": 0.014923362874767664,
+   "holidays": []
+  },
+  "2": {
+   "n": 528,
+   "contestants": 2244.0,
+   "conv_clean": 0.3417006589268905,
+   "clean_n": 135,
+   "entries_per_entrant": 4.572094496327531,
+   "duration": 20.0,
+   "email_uptake": 0.9965897693079238,
+   "share_of_starts": 0.01422298844382189,
+   "holidays": []
+  },
+  "3": {
+   "n": 528,
+   "contestants": 2177.5,
+   "conv_clean": 0.32946302351492196,
+   "clean_n": 150,
+   "entries_per_entrant": 4.417409704393448,
+   "duration": 17.0,
+   "email_uptake": 0.9892257134489355,
+   "share_of_starts": 0.01422298844382189,
+   "holidays": []
+  },
+  "4": {
+   "n": 577,
+   "contestants": 2163,
+   "conv_clean": 0.3506574827802129,
+   "clean_n": 197,
+   "entries_per_entrant": 4.456981664315938,
+   "duration": 15,
+   "email_uptake": 0.9521975026573304,
+   "share_of_starts": 0.015542924871373542,
+   "holidays": []
+  },
+  "5": {
+   "n": 844,
+   "contestants": 2146.5,
+   "conv_clean": 0.34271042643447197,
+   "clean_n": 216,
+   "entries_per_entrant": 4.419030217371588,
+   "duration": 23.0,
+   "email_uptake": 0.9954669084315503,
+   "share_of_starts": 0.022735231527624383,
+   "holidays": []
+  },
+  "6": {
+   "n": 673,
+   "contestants": 2250,
+   "conv_clean": 0.3269574685450243,
+   "clean_n": 201,
+   "entries_per_entrant": 4.348623853211009,
+   "duration": 16,
+   "email_uptake": 0.9961568024596464,
+   "share_of_starts": 0.018128922770250248,
+   "holidays": [
+    "Super Bowl (US)"
+   ]
+  },
+  "7": {
+   "n": 665,
+   "contestants": 2202,
+   "conv_clean": 0.349370253681323,
+   "clean_n": 212,
+   "entries_per_entrant": 4.332697972621729,
+   "duration": 15,
+   "email_uptake": 0.9968875345106006,
+   "share_of_starts": 0.017913422945343857,
+   "holidays": [
+    "Valentine's Day"
+   ]
+  },
+  "8": {
+   "n": 611,
+   "contestants": 2149,
+   "conv_clean": 0.374894322230206,
+   "clean_n": 178,
+   "entries_per_entrant": 4.18515205724508,
+   "duration": 15,
+   "email_uptake": 1.0018558184143223,
+   "share_of_starts": 0.01645879912722571,
+   "holidays": [
+    "Lunar New Year"
+   ]
+  },
+  "9": {
+   "n": 941,
+   "contestants": 2305,
+   "conv_clean": 0.38437607874727464,
+   "clean_n": 222,
+   "entries_per_entrant": 4.613004236507644,
+   "duration": 26,
+   "email_uptake": 0.9868147120055517,
+   "share_of_starts": 0.02534816690461439,
+   "holidays": []
+  },
+  "10": {
+   "n": 704,
+   "contestants": 2184.0,
+   "conv_clean": 0.38161370938950373,
+   "clean_n": 198,
+   "entries_per_entrant": 4.316133720930233,
+   "duration": 20.0,
+   "email_uptake": 1.0,
+   "share_of_starts": 0.01896398459176252,
+   "holidays": []
+  },
+  "11": {
+   "n": 690,
+   "contestants": 2169.0,
+   "conv_clean": 0.3731301157211403,
+   "clean_n": 217,
+   "entries_per_entrant": 4.4836269487756475,
+   "duration": 15.0,
+   "email_uptake": 0.9469306930693069,
+   "share_of_starts": 0.018586859898176333,
+   "holidays": []
+  },
+  "12": {
+   "n": 620,
+   "contestants": 2159.5,
+   "conv_clean": 0.33159361840934704,
+   "clean_n": 211,
+   "entries_per_entrant": 4.273629503836602,
+   "duration": 15.0,
+   "email_uptake": 0.9929196186261751,
+   "share_of_starts": 0.0167012364302454,
+   "holidays": []
+  },
+  "13": {
+   "n": 780,
+   "contestants": 2145.5,
+   "conv_clean": 0.3615511468094431,
+   "clean_n": 208,
+   "entries_per_entrant": 4.615753177510307,
+   "duration": 21.5,
+   "email_uptake": 0.9742937983236878,
+   "share_of_starts": 0.021011232928373244,
+   "holidays": []
+  },
+  "14": {
+   "n": 794,
+   "contestants": 2220.5,
+   "conv_clean": 0.35836803366006126,
+   "clean_n": 212,
+   "entries_per_entrant": 4.428618697181231,
+   "duration": 22.0,
+   "email_uptake": 0.946520618556701,
+   "share_of_starts": 0.021388357621959432,
+   "holidays": [
+    "Easter"
+   ]
+  },
+  "15": {
+   "n": 621,
+   "contestants": 2017,
+   "conv_clean": 0.3529253167969803,
+   "clean_n": 202,
+   "entries_per_entrant": 4.386755427793328,
+   "duration": 15,
+   "email_uptake": 0.9694304447382242,
+   "share_of_starts": 0.0167281739083587,
+   "holidays": []
+  },
+  "16": {
+   "n": 636,
+   "contestants": 2267.5,
+   "conv_clean": 0.36527070305756737,
+   "clean_n": 236,
+   "entries_per_entrant": 4.415601076234006,
+   "duration": 14.0,
+   "email_uptake": 0.9973432518597237,
+   "share_of_starts": 0.017132236080058184,
+   "holidays": []
+  },
+  "17": {
+   "n": 669,
+   "contestants": 2074,
+   "conv_clean": 0.3802058347019809,
+   "clean_n": 187,
+   "entries_per_entrant": 4.684870550161812,
+   "duration": 20,
+   "email_uptake": 0.9678259469335979,
+   "share_of_starts": 0.018021172857797054,
+   "holidays": []
+  },
+  "18": {
+   "n": 800,
+   "contestants": 2159.5,
+   "conv_clean": 0.3751392811591677,
+   "clean_n": 185,
+   "entries_per_entrant": 4.248150754496541,
+   "duration": 26.0,
+   "email_uptake": 0.9345724907063196,
+   "share_of_starts": 0.021549982490639226,
+   "holidays": []
+  },
+  "19": {
+   "n": 680,
+   "contestants": 2195.5,
+   "conv_clean": 0.3663735819444113,
+   "clean_n": 212,
+   "entries_per_entrant": 4.000805455336462,
+   "duration": 16.0,
+   "email_uptake": 0.9616829451540195,
+   "share_of_starts": 0.01831748511704334,
+   "holidays": [
+    "Mother's Day"
+   ]
+  },
+  "20": {
+   "n": 660,
+   "contestants": 2227.5,
+   "conv_clean": 0.3987359164605661,
+   "clean_n": 201,
+   "entries_per_entrant": 4.276266846055074,
+   "duration": 15.0,
+   "email_uptake": 0.9914092861525874,
+   "share_of_starts": 0.017778735554777363,
+   "holidays": []
+  },
+  "21": {
+   "n": 577,
+   "contestants": 2212,
+   "conv_clean": 0.41948649067520793,
+   "clean_n": 205,
+   "entries_per_entrant": 4.517744287797764,
+   "duration": 15,
+   "email_uptake": 0.9367400520281337,
+   "share_of_starts": 0.015542924871373542,
+   "holidays": []
+  },
+  "22": {
+   "n": 848,
+   "contestants": 2222.0,
+   "conv_clean": 0.3825726141078838,
+   "clean_n": 232,
+   "entries_per_entrant": 4.496447992017959,
+   "duration": 21.0,
+   "email_uptake": 0.935226706527155,
+   "share_of_starts": 0.02284298144007758,
+   "holidays": []
+  },
+  "23": {
+   "n": 785,
+   "contestants": 2224,
+   "conv_clean": 0.3609057368994561,
+   "clean_n": 222,
+   "entries_per_entrant": 4.359353507565337,
+   "duration": 19,
+   "email_uptake": 0.9542586750788643,
+   "share_of_starts": 0.02114592031893974,
+   "holidays": []
+  },
+  "24": {
+   "n": 663,
+   "contestants": 2076,
+   "conv_clean": 0.3676213343740149,
+   "clean_n": 224,
+   "entries_per_entrant": 4.273491406348011,
+   "duration": 15,
+   "email_uptake": 0.9533163929629274,
+   "share_of_starts": 0.01785954798911726,
+   "holidays": []
+  },
+  "25": {
+   "n": 616,
+   "contestants": 2268.5,
+   "conv_clean": 0.3464092445459363,
+   "clean_n": 210,
+   "entries_per_entrant": 4.3566535878167185,
+   "duration": 14.5,
+   "email_uptake": 1.0002149613069649,
+   "share_of_starts": 0.016593486517792206,
+   "holidays": [
+    "Father's Day"
+   ]
+  },
+  "26": {
+   "n": 782,
+   "contestants": 2240.5,
+   "conv_clean": 0.36619723127008863,
+   "clean_n": 222,
+   "entries_per_entrant": 4.670591871320228,
+   "duration": 19.0,
+   "email_uptake": 0.9996194824961948,
+   "share_of_starts": 0.021065107884599844,
+   "holidays": []
+  },
+  "27": {
+   "n": 738,
+   "contestants": 2293.0,
+   "conv_clean": 0.3343551565579155,
+   "clean_n": 167,
+   "entries_per_entrant": 4.280908057002705,
+   "duration": 24.0,
+   "email_uptake": 0.9744595982086959,
+   "share_of_starts": 0.019879858847614687,
+   "holidays": [
+    "Independence Day (US)"
+   ]
+  },
+  "28": {
+   "n": 608,
+   "contestants": 2061.5,
+   "conv_clean": 0.3676080135167753,
+   "clean_n": 171,
+   "entries_per_entrant": 4.438852088000731,
+   "duration": 16.0,
+   "email_uptake": 0.9345023207839093,
+   "share_of_starts": 0.016377986692885812,
+   "holidays": [
+    "Prime Day (mid July, varies)"
+   ]
+  },
+  "29": {
+   "n": 655,
+   "contestants": 2273,
+   "conv_clean": 0.3723654093971598,
+   "clean_n": 188,
+   "entries_per_entrant": 4.347649186256781,
+   "duration": 15,
+   "email_uptake": 0.9634195338552467,
+   "share_of_starts": 0.017644048164210866,
+   "holidays": []
+  },
+  "30": {
+   "n": 570,
+   "contestants": 2189.5,
+   "conv_clean": 0.36950054798810084,
+   "clean_n": 171,
+   "entries_per_entrant": 4.586091544403073,
+   "duration": 16.0,
+   "email_uptake": 0.9023520853540252,
+   "share_of_starts": 0.015354362524580448,
+   "holidays": []
+  },
+  "31": {
+   "n": 793,
+   "contestants": 2102,
+   "conv_clean": 0.36051159072741806,
+   "clean_n": 188,
+   "entries_per_entrant": 4.456988764044944,
+   "duration": 27,
+   "email_uptake": 0.9549365146413067,
+   "share_of_starts": 0.021361420143846132,
+   "holidays": []
+  },
+  "32": {
+   "n": 653,
+   "contestants": 2239,
+   "conv_clean": 0.37612978053196167,
+   "clean_n": 198,
+   "entries_per_entrant": 4.501918859649122,
+   "duration": 16,
+   "email_uptake": 0.916483860858665,
+   "share_of_starts": 0.01759017320798427,
+   "holidays": []
+  },
+  "33": {
+   "n": 636,
+   "contestants": 2209.5,
+   "conv_clean": 0.3835616438356164,
+   "clean_n": 205,
+   "entries_per_entrant": 4.586262287876687,
+   "duration": 15.0,
+   "email_uptake": 1.0064027939464493,
+   "share_of_starts": 0.017132236080058184,
+   "holidays": []
+  },
+  "34": {
+   "n": 621,
+   "contestants": 2409,
+   "conv_clean": 0.3685600951496061,
+   "clean_n": 230,
+   "entries_per_entrant": 4.54037766171153,
+   "duration": 14,
+   "email_uptake": 0.9889690908405643,
+   "share_of_starts": 0.0167281739083587,
+   "holidays": []
+  },
+  "35": {
+   "n": 833,
+   "contestants": 2193,
+   "conv_clean": 0.37559129612109743,
+   "clean_n": 233,
+   "entries_per_entrant": 4.446303291958985,
+   "duration": 21,
+   "email_uptake": 0.9768331631718108,
+   "share_of_starts": 0.022438919268378096,
+   "holidays": [
+    "Back to school"
+   ]
+  },
+  "36": {
+   "n": 632,
+   "contestants": 2188.5,
+   "conv_clean": 0.34042978664709,
+   "clean_n": 161,
+   "entries_per_entrant": 4.588456723998893,
+   "duration": 20.0,
+   "email_uptake": 1.0012678653757492,
+   "share_of_starts": 0.017024486167604987,
+   "holidays": []
+  },
+  "37": {
+   "n": 639,
+   "contestants": 2275,
+   "conv_clean": 0.3328262853665957,
+   "clean_n": 202,
+   "entries_per_entrant": 4.242146996035377,
+   "duration": 15,
+   "email_uptake": 0.9888832491432098,
+   "share_of_starts": 0.01721304851439808,
+   "holidays": []
+  },
+  "38": {
+   "n": 605,
+   "contestants": 2228,
+   "conv_clean": 0.3728686285968985,
+   "clean_n": 230,
+   "entries_per_entrant": 4.354383358098068,
+   "duration": 14,
+   "email_uptake": 1.0015082956259427,
+   "share_of_starts": 0.016297174258545915,
+   "holidays": []
+  },
+  "39": {
+   "n": 746,
+   "contestants": 2226.5,
+   "conv_clean": 0.3824454491351372,
+   "clean_n": 164,
+   "entries_per_entrant": 4.377596457223415,
+   "duration": 26.0,
+   "email_uptake": 1.0013586956521738,
+   "share_of_starts": 0.020095358672521078,
+   "holidays": []
+  },
+  "40": {
+   "n": 776,
+   "contestants": 2099.0,
+   "conv_clean": 0.37651145229009386,
+   "clean_n": 182,
+   "entries_per_entrant": 4.273984428802446,
+   "duration": 24.0,
+   "email_uptake": 0.9829787234042553,
+   "share_of_starts": 0.02090348301592005,
+   "holidays": []
+  },
+  "41": {
+   "n": 691,
+   "contestants": 2162,
+   "conv_clean": 0.37218578266264846,
+   "clean_n": 219,
+   "entries_per_entrant": 4.015394912985275,
+   "duration": 16,
+   "email_uptake": 1.0023547880690737,
+   "share_of_starts": 0.018613797376289633,
+   "holidays": []
+  },
+  "42": {
+   "n": 599,
+   "contestants": 2008,
+   "conv_clean": 0.3322942643391521,
+   "clean_n": 195,
+   "entries_per_entrant": 4.238302867684052,
+   "duration": 14,
+   "email_uptake": 0.9967781967225342,
+   "share_of_starts": 0.01613554938986612,
+   "holidays": []
+  },
+  "43": {
+   "n": 636,
+   "contestants": 2005.0,
+   "conv_clean": 0.3594414086217365,
+   "clean_n": 218,
+   "entries_per_entrant": 4.206701571718796,
+   "duration": 14.0,
+   "email_uptake": 1.0069817400644467,
+   "share_of_starts": 0.017132236080058184,
+   "holidays": []
+  },
+  "44": {
+   "n": 842,
+   "contestants": 2092.0,
+   "conv_clean": 0.3674033149171271,
+   "clean_n": 172,
+   "entries_per_entrant": 4.429493072427605,
+   "duration": 27.0,
+   "email_uptake": 1.001762632197415,
+   "share_of_starts": 0.022681356571397786,
+   "holidays": [
+    "Halloween"
+   ]
+  },
+  "45": {
+   "n": 677,
+   "contestants": 2180,
+   "conv_clean": 0.3480269056302116,
+   "clean_n": 192,
+   "entries_per_entrant": 4.3317829457364345,
+   "duration": 16,
+   "email_uptake": 0.9802037209181308,
+   "share_of_starts": 0.018236672682703445,
+   "holidays": [
+    "Diwali"
+   ]
+  },
+  "46": {
+   "n": 688,
+   "contestants": 2094.0,
+   "conv_clean": 0.34560714769189116,
+   "clean_n": 219,
+   "entries_per_entrant": 4.442411188579017,
+   "duration": 15.0,
+   "email_uptake": 0.9883772944437581,
+   "share_of_starts": 0.018532984941949736,
+   "holidays": [
+    "Singles Day"
+   ]
+  },
+  "47": {
+   "n": 696,
+   "contestants": 2306.0,
+   "conv_clean": 0.3287461773700306,
+   "clean_n": 285,
+   "entries_per_entrant": 4.290090798071228,
+   "duration": 12.0,
+   "email_uptake": 1.0051020408163265,
+   "share_of_starts": 0.018748484766856126,
+   "holidays": []
+  },
+  "48": {
+   "n": 1022,
+   "contestants": 2491.0,
+   "conv_clean": 0.39764126034148917,
+   "clean_n": 402,
+   "entries_per_entrant": 4.205344970501506,
+   "duration": 15.0,
+   "email_uptake": 0.9309671711922498,
+   "share_of_starts": 0.027530102631791613,
+   "holidays": [
+    "Black Friday and Cyber Monday",
+    "Thanksgiving"
+   ]
+  },
+  "49": {
+   "n": 1239,
+   "contestants": 2372,
+   "conv_clean": 0.45614076191368724,
+   "clean_n": 615,
+   "entries_per_entrant": 3.934232026143791,
+   "duration": 9,
+   "email_uptake": 0.9121855933299716,
+   "share_of_starts": 0.0333755353823775,
+   "holidays": [
+    "Cyber Monday"
+   ]
+  },
+  "50": {
+   "n": 1182,
+   "contestants": 2240.5,
+   "conv_clean": 0.4665694140530027,
+   "clean_n": 526,
+   "entries_per_entrant": 4.133890483036159,
+   "duration": 8.0,
+   "email_uptake": 0.9487138189436299,
+   "share_of_starts": 0.031840099129919454,
+   "holidays": []
+  },
+  "51": {
+   "n": 956,
+   "contestants": 2233.5,
+   "conv_clean": 0.531023102310231,
+   "clean_n": 493,
+   "entries_per_entrant": 3.9094175355472496,
+   "duration": 8.0,
+   "email_uptake": 0.9433808553971487,
+   "share_of_starts": 0.025752229076313877,
+   "holidays": []
+  },
+  "52": {
+   "n": 531,
+   "contestants": 2375,
+   "conv_clean": 0.4070113530792048,
+   "clean_n": 196,
+   "entries_per_entrant": 4.421103769918383,
+   "duration": 14,
+   "email_uptake": 0.9294632317757796,
+   "share_of_starts": 0.014303800878161787,
+   "holidays": [
+    "Christmas and advent"
+   ]
+  }
+ },
+ "by_start_day_of_month": {
+  "1-7": {
+   "n": 10760,
+   "contestants": 2235.0,
+   "conv_clean": 0.37244952552056343,
+   "clean_n": 2669,
+   "entries_per_entrant": 4.35131366351675,
+   "duration": 24.0,
+   "email_uptake": 0.9687688897844046
+  },
+  "15-21": {
+   "n": 8039,
+   "contestants": 2201,
+   "conv_clean": 0.37281879194630874,
+   "clean_n": 2825,
+   "entries_per_entrant": 4.356046065259117,
+   "duration": 14,
+   "email_uptake": 0.9874224283267118
+  },
+  "22-31": {
+   "n": 10035,
+   "contestants": 2168,
+   "conv_clean": 0.37804117280099814,
+   "clean_n": 3457,
+   "entries_per_entrant": 4.332503113325031,
+   "duration": 15,
+   "email_uptake": 0.9928073981048064
+  },
+  "8-14": {
+   "n": 8289,
+   "contestants": 2207,
+   "conv_clean": 0.3765971755211836,
+   "clean_n": 2701,
+   "entries_per_entrant": 4.341576506955178,
+   "duration": 15,
+   "email_uptake": 0.9784790668234018
+  }
+ },
+ "live_over_holiday": {
+  "Christmas and advent": {
+   "over": {
+    "n": 2874,
+    "contestants": 2335.0,
+    "conv_clean": 0.3598042486931376,
+    "clean_n": 358,
+    "entries_per_entrant": 4.337312005848219,
+    "duration": 31.0,
+    "email_uptake": 0.9648029901884442
+   },
+   "same_length_not_over": {
+    "n": 14107,
+    "contestants": 2288,
+    "conv_clean": 0.3369123475992173,
+    "clean_n": 1821,
+    "entries_per_entrant": 4.6753530932962,
+    "duration": 31,
+    "email_uptake": 0.996047377656992
+   },
+   "contestants_ratio": 1.0205419580419581,
+   "conv_ratio": 1.067946162427837,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 148,
+   "closed_on_holiday_contestants": 2491.0
+  },
+  "New Year": {
+   "over": {
+    "n": 2405,
+    "contestants": 2335,
+    "conv_clean": 0.35690707212163647,
+    "clean_n": 231,
+    "entries_per_entrant": 4.3998025666337615,
+    "duration": 32,
+    "email_uptake": 0.967072463768116
+   },
+   "same_length_not_over": {
+    "n": 12025,
+    "contestants": 2316,
+    "conv_clean": 0.33170885107403114,
+    "clean_n": 1133,
+    "entries_per_entrant": 4.680599727396638,
+    "duration": 31,
+    "email_uptake": 0.996230479267636
+   },
+   "contestants_ratio": 1.008203799654577,
+   "conv_ratio": 1.0759648739128205,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 0,
+   "closed_on_holiday_contestants": null
+  },
+  "Black Friday and Cyber Monday": {
+   "over": {
+    "n": 2866,
+    "contestants": 2256.5,
+    "conv_clean": 0.30912136686075614,
+    "clean_n": 322,
+    "entries_per_entrant": 4.3460749900279225,
+    "duration": 31.0,
+    "email_uptake": 0.9868010165721437
+   },
+   "same_length_not_over": {
+    "n": 14330,
+    "contestants": 2291.5,
+    "conv_clean": 0.362838318741885,
+    "clean_n": 1607,
+    "entries_per_entrant": 4.680171249564124,
+    "duration": 31.0,
+    "email_uptake": 0.9952774498229043
+   },
+   "contestants_ratio": 0.9847261619026838,
+   "conv_ratio": 0.8519534759520758,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 144,
+   "closed_on_holiday_contestants": 2480.0
+  },
+  "Thanksgiving": {
+   "over": {
+    "n": 2851,
+    "contestants": 2254,
+    "conv_clean": 0.30912136686075614,
+    "clean_n": 314,
+    "entries_per_entrant": 4.323734001112966,
+    "duration": 31,
+    "email_uptake": 0.988306947374566
+   },
+   "same_length_not_over": {
+    "n": 14250,
+    "contestants": 2300.5,
+    "conv_clean": 0.3556295941629986,
+    "clean_n": 1549,
+    "entries_per_entrant": 4.69677851569082,
+    "duration": 31.0,
+    "email_uptake": 0.9948416751787539
+   },
+   "contestants_ratio": 0.9797870028254727,
+   "conv_ratio": 0.8692228429084955,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 110,
+   "closed_on_holiday_contestants": 2253.5
+  },
+  "Halloween": {
+   "over": {
+    "n": 2798,
+    "contestants": 2236.5,
+    "conv_clean": 0.33496766823199653,
+    "clean_n": 233,
+    "entries_per_entrant": 4.235525762302496,
+    "duration": 32.0,
+    "email_uptake": 0.9837691614066727
+   },
+   "same_length_not_over": {
+    "n": 12497,
+    "contestants": 2313,
+    "conv_clean": 0.3471384190839139,
+    "clean_n": 1274,
+    "entries_per_entrant": 4.706224549156486,
+    "duration": 31,
+    "email_uptake": 0.9964242991037573
+   },
+   "contestants_ratio": 0.9669260700389105,
+   "conv_ratio": 0.9649397756548078,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 228,
+   "closed_on_holiday_contestants": 2148.5
+  },
+  "Valentine's Day": {
+   "over": {
+    "n": 2507,
+    "contestants": 2235,
+    "conv_clean": 0.31438587885057023,
+    "clean_n": 274,
+    "entries_per_entrant": 4.3317829457364345,
+    "duration": 31,
+    "email_uptake": 0.9911575249282432
+   },
+   "same_length_not_over": {
+    "n": 12535,
+    "contestants": 2303,
+    "conv_clean": 0.33820169581045445,
+    "clean_n": 1419,
+    "entries_per_entrant": 4.686915887850467,
+    "duration": 31,
+    "email_uptake": 0.9953679876479671
+   },
+   "contestants_ratio": 0.9704732957012592,
+   "conv_ratio": 0.9295810244155848,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 106,
+   "closed_on_holiday_contestants": 2537.5
+  },
+  "Mother's Day": {
+   "over": {
+    "n": 2578,
+    "contestants": 2347.5,
+    "conv_clean": 0.32371119760544614,
+    "clean_n": 214,
+    "entries_per_entrant": 4.355016843807391,
+    "duration": 32.0,
+    "email_uptake": 0.9783094098883572
+   },
+   "same_length_not_over": {
+    "n": 12477,
+    "contestants": 2290,
+    "conv_clean": 0.347257256482001,
+    "clean_n": 1202,
+    "entries_per_entrant": 4.670775924583031,
+    "duration": 31,
+    "email_uptake": 0.9983443708609272
+   },
+   "contestants_ratio": 1.025109170305677,
+   "conv_ratio": 0.9321941919512479,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 96,
+   "closed_on_holiday_contestants": 2172.5
+  },
+  "Father's Day": {
+   "over": {
+    "n": 2781,
+    "contestants": 2316,
+    "conv_clean": 0.30693625386127493,
+    "clean_n": 229,
+    "entries_per_entrant": 4.362204724409449,
+    "duration": 32,
+    "email_uptake": 0.9523729544091504
+   },
+   "same_length_not_over": {
+    "n": 13690,
+    "contestants": 2293.0,
+    "conv_clean": 0.3432471950334863,
+    "clean_n": 1256,
+    "entries_per_entrant": 4.695437486109937,
+    "duration": 31.0,
+    "email_uptake": 0.9977477477477478
+   },
+   "contestants_ratio": 1.0100305276929786,
+   "conv_ratio": 0.8942134365623324,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 90,
+   "closed_on_holiday_contestants": 2403.0
+  },
+  "Easter": {
+   "over": {
+    "n": 2671,
+    "contestants": 2292,
+    "conv_clean": 0.33077942487912937,
+    "clean_n": 246,
+    "entries_per_entrant": 4.4678935003915425,
+    "duration": 32,
+    "email_uptake": 0.9769704984408418
+   },
+   "same_length_not_over": {
+    "n": 13320,
+    "contestants": 2302.0,
+    "conv_clean": 0.34185873605947953,
+    "clean_n": 1277,
+    "entries_per_entrant": 4.677385818312446,
+    "duration": 31.0,
+    "email_uptake": 0.996394361467091
+   },
+   "contestants_ratio": 0.9956559513466551,
+   "conv_ratio": 0.9675909666429514,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 115,
+   "closed_on_holiday_contestants": 2025
+  },
+  "Back to school": {
+   "over": {
+    "n": 2794,
+    "contestants": 2442.0,
+    "conv_clean": 0.3039419831981044,
+    "clean_n": 269,
+    "entries_per_entrant": 4.350138750244216,
+    "duration": 32.0,
+    "email_uptake": 0.9704482439432127
+   },
+   "same_length_not_over": {
+    "n": 13017,
+    "contestants": 2291,
+    "conv_clean": 0.34567361721917866,
+    "clean_n": 1382,
+    "entries_per_entrant": 4.686085343228201,
+    "duration": 31,
+    "email_uptake": 0.9972444561081223
+   },
+   "contestants_ratio": 1.0659100829332169,
+   "conv_ratio": 0.8792744602356685,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 92,
+   "closed_on_holiday_contestants": 2133.0
+  },
+  "Diwali": {
+   "over": {
+    "n": 2706,
+    "contestants": 2263.0,
+    "conv_clean": 0.3162771110891214,
+    "clean_n": 232,
+    "entries_per_entrant": 4.281181012274296,
+    "duration": 32.0,
+    "email_uptake": 0.9932666305498447
+   },
+   "same_length_not_over": {
+    "n": 12883,
+    "contestants": 2311,
+    "conv_clean": 0.34567361721917866,
+    "clean_n": 1276,
+    "entries_per_entrant": 4.697445972495088,
+    "duration": 31,
+    "email_uptake": 0.9960726558664703
+   },
+   "contestants_ratio": 0.9792297706620511,
+   "conv_ratio": 0.914958780000216,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 152,
+   "closed_on_holiday_contestants": 2078.0
+  },
+  "Lunar New Year": {
+   "over": {
+    "n": 2470,
+    "contestants": 2281.0,
+    "conv_clean": 0.31184834531877836,
+    "clean_n": 234,
+    "entries_per_entrant": 4.382493214863414,
+    "duration": 31.0,
+    "email_uptake": 0.9896429750020626
+   },
+   "same_length_not_over": {
+    "n": 12350,
+    "contestants": 2304.0,
+    "conv_clean": 0.3372443701589505,
+    "clean_n": 1242,
+    "entries_per_entrant": 4.691352406679003,
+    "duration": 31.0,
+    "email_uptake": 0.9948760893430885
+   },
+   "contestants_ratio": 0.9900173611111112,
+   "conv_ratio": 0.9246954817119633,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 134,
+   "closed_on_holiday_contestants": 2338.0
+  },
+  "Prime Day (mid July, varies)": {
+   "over": {
+    "n": 2655,
+    "contestants": 2356,
+    "conv_clean": 0.3137455210999146,
+    "clean_n": 198,
+    "entries_per_entrant": 4.3353174603174605,
+    "duration": 33,
+    "email_uptake": 0.9780252043231257
+   },
+   "same_length_not_over": {
+    "n": 12454,
+    "contestants": 2296.0,
+    "conv_clean": 0.3416868796674884,
+    "clean_n": 1096,
+    "entries_per_entrant": 4.6957111089573775,
+    "duration": 31.0,
+    "email_uptake": 0.9981972428419936
+   },
+   "contestants_ratio": 1.0261324041811846,
+   "conv_ratio": 0.9182252517428681,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 67,
+   "closed_on_holiday_contestants": 1947
+  },
+  "Cyber Monday": {
+   "over": {
+    "n": 2821,
+    "contestants": 2280,
+    "conv_clean": 0.327925020195146,
+    "clean_n": 296,
+    "entries_per_entrant": 4.295506473724296,
+    "duration": 31,
+    "email_uptake": 0.9895889603301703
+   },
+   "same_length_not_over": {
+    "n": 14010,
+    "contestants": 2294.5,
+    "conv_clean": 0.35178557874762806,
+    "clean_n": 1529,
+    "entries_per_entrant": 4.695957411374971,
+    "duration": 31.0,
+    "email_uptake": 0.9951397326852977
+   },
+   "contestants_ratio": 0.99368054042275,
+   "conv_ratio": 0.9321730053931526,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 181,
+   "closed_on_holiday_contestants": 2115
+  },
+  "Singles Day": {
+   "over": {
+    "n": 2706,
+    "contestants": 2237.5,
+    "conv_clean": 0.3020363536968703,
+    "clean_n": 214,
+    "entries_per_entrant": 4.212888195780405,
+    "duration": 32.0,
+    "email_uptake": 0.9932666305498447
+   },
+   "same_length_not_over": {
+    "n": 13411,
+    "contestants": 2309,
+    "conv_clean": 0.3434084473756229,
+    "clean_n": 1250,
+    "entries_per_entrant": 4.732182597839657,
+    "duration": 31,
+    "email_uptake": 0.9953952417498081
+   },
+   "contestants_ratio": 0.9690342139454309,
+   "conv_ratio": 0.8795251136222066,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 91,
+   "closed_on_holiday_contestants": 2096
+  },
+  "Independence Day (US)": {
+   "over": {
+    "n": 2627,
+    "contestants": 2351,
+    "conv_clean": 0.3100802851869485,
+    "clean_n": 213,
+    "entries_per_entrant": 4.380461251969632,
+    "duration": 33,
+    "email_uptake": 0.9792535051155741
+   },
+   "same_length_not_over": {
+    "n": 12440,
+    "contestants": 2302.0,
+    "conv_clean": 0.34281650071123754,
+    "clean_n": 1149,
+    "entries_per_entrant": 4.686741526014785,
+    "duration": 31.0,
+    "email_uptake": 0.9982289912856273
+   },
+   "contestants_ratio": 1.02128583840139,
+   "conv_ratio": 0.9045080518108913,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 77,
+   "closed_on_holiday_contestants": 2161
+  },
+  "Super Bowl (US)": {
+   "over": {
+    "n": 2425,
+    "contestants": 2245,
+    "conv_clean": 0.3115115501746439,
+    "clean_n": 258,
+    "entries_per_entrant": 4.3317829457364345,
+    "duration": 31,
+    "email_uptake": 0.9878213802435724
+   },
+   "same_length_not_over": {
+    "n": 12125,
+    "contestants": 2303,
+    "conv_clean": 0.33915622940013185,
+    "clean_n": 1347,
+    "entries_per_entrant": 4.686915887850467,
+    "duration": 31,
+    "email_uptake": 0.9960726558664703
+   },
+   "contestants_ratio": 0.9748154580981329,
+   "conv_ratio": 0.9184898379299024,
+   "closed_on_holiday_share": null,
+   "closed_on_holiday_n": 63,
+   "closed_on_holiday_contestants": 2234
+  }
+ }
+}
