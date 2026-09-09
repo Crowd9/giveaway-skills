@@ -4,6 +4,8 @@
 
 A private export of 54,675 campaigns from one giveaway platform, each with at least 1,000 valid (unique) contestants. Half sit between 1,000 and 2,500 contestants, 38% between 2,500 and 10,000, and 12% above 10,000. Fields: contestant, entry and impression counts, dates and duration, nested prize records (name, value, currency, quantity, position), the campaign's public title and description, entry methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
 
+Where the repository summary says the skills rest on about 325,000 entry actions, that total is not a field in the export and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed n with uptake: 134,195 visits, 58,527 follows, 28,609 shares, 22,336 bonus or code actions, 17,875 email signups, 15,641 custom actions, 11,179 community joins, 9,450 questions, 7,670 post engagements, 6,954 content posts, 6,485 account connections, 2,575 paid subscriptions, 1,938 downloads and 858 imported entries. That is 324,292, rounded to 325,000. Each one is an entry action offered in an ordinary campaign for which the export recorded an uptake figure.
+
 Verified counts: 54,675 campaigns, 85,326 prize records, 10,703 organizers, and prize value missing in 61.3% of prize records (51,461 null, 801 zero). Currencies on stated values: USD 33,818, then EUR 17, GBP 9, CAD 8, AUD 7 and a handful of others, so only USD supports any distribution. Campaign start years run 2013 to 2026, with 69% between 2021 and 2023. Sixty-nine campaigns have a null entry count and 5,157 have no description. A few stated values are data-entry errors (one negative, one of 50 million).
 
 ## Segmenting before any benchmark
@@ -12,6 +14,8 @@ Verified counts: 54,675 campaigns, 85,326 prize records, 10,703 organizers, and 
 | Segment | Campaigns | Handling |
 |---|---|---|
 | Ordinary | 37,180 (60,282 prize records, 6,817 organizers) | Basis for every default figure |
+
+Where a table shows n=37,123 it is the same ordinary segment with the 57 campaigns that carry no entries figure left out, so entries, entries per contestant and any share computed on entries use that base.
 | Crypto | 16,150 | Excluded. Described only when a user asks for crypto advice. 40% used a wallet-address entry method |
 | Ambiguous | 1,251 | Excluded and reported separately |
 | Purchase opportunity | 94 | Excluded. The prize is the right to buy something |
@@ -22,6 +26,8 @@ Excluded campaigns are similar in size to ordinary ones (crypto median 3,339 con
 The crypto rule combines prize names, campaign names, descriptions and entry-method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto median 17,305 contestants versus 16,175 ordinary. Any claim that crypto inflated participation figures is a hypothesis.
 
 ## What the ordinary segment shows (extracted)
+
+Two shorthands run through the tables below. IQR is the interquartile range, the middle half of campaigns lying between the 25th and 75th percentile. The 90th percentile is the level nine campaigns in ten sit below, so it marks the top tenth without naming an extreme.
 
 <!-- generated:benchmark -->
 | Measure | Value | n or note |
@@ -108,9 +114,9 @@ Campaigns whose every prize carried a stated USD value: 14,521. Prize cost per c
 
 A log-log regression of contestants on stated pool gives a slope of 0.23: ten times the prize value came with 1.71 times the contestants, and value explains 15% of the variation in contestant counts. 56% of these campaigns used a pool of 1,000 USD or less, and 18% under 250 USD.
 
-### Value-adjusted index by prize category
+### Value index by prize category
 
-Each campaign's contestants divided by the median contestants of its value band, then the median of that ratio per category. 1.00 means typical for the money. Categories with at least 100 valued campaigns.
+Each campaign's contestants divided by the median contestants of its value band, then the median of that ratio per category. That ratio is the value index, and 1.00 means typical for the money. Categories with at least 100 valued campaigns.
 
 | Category | n | Contestants | Index |
 |---|---|---|---|
@@ -138,7 +144,7 @@ Each campaign's contestants divided by the median contestants of its value band,
 
 Gaming PCs and GPUs sit far above their value band, consoles above, phones and peripherals at par. Cash and gift cards sit a little under par: broadly wanted, and no better than the money suggests. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
 
-### Value-adjusted index by number of prize units
+### Value index by number of prize units
 
 | Prize units | n | Index | Contestants |
 |---|---|---|---|
@@ -148,6 +154,8 @@ Gaming PCs and GPUs sit far above their value band, consoles above, phones and p
 | 21+ | 909 | 0.83 | 2,728 |
 
 One unit runs above par and six or more below. For a fixed budget, one prize worth wanting came with more entrants than the same money split. Many units still fit sampling, digital prizes and community goals, where the unit count is the point.
+
+The raw contestant column tells the flatter story that `references/decision-criteria.md` reports under structure tradeoffs: single-winner and multi-unit campaigns sat at 2,228 and 2,270 contestants, which is the same crowd. The index column is those campaigns with the money held constant. Quote the raw medians when the question is what campaigns looked like, and the index when the question is where to put a fixed budget.
 
 ### Top fifth against bottom fifth
 
@@ -167,7 +175,7 @@ Nearly nine times the impressions at the same conversion. Reach, and the organiz
 
 ## Region and language (extracted, proxies)
 
-Region is the top-level domain of the organizer's site, so a .com organizer in Manchester reads as global. Language is a stopword count on the description and title. Clean subset, medians.
+Region is the top-level domain of the organizer's site, so a .com organizer in Manchester reads as global. Language is a stopword count on the description and title. Figures are medians on the clean subset, the 11,636 campaigns with no repeatable action and a run of 14 days or less, which is the cut that makes impressions comparable between campaigns.
 
 | Organizer domain | n | Contestants | Contestants per impression | Entries per entrant | Stated USD per contestant | December starts |
 |---|---|---|---|---|---|---|
@@ -194,7 +202,7 @@ UK organizers run small, high-converting, low-action campaigns with cheap stated
 
 ### Description wording (extracted, clean subset)
 
-Flags found by regex in the prize description. Value stated in 27% of descriptions, winner count in 6%, a no-purchase line in 5%, worldwide in 4%, US only in 1%, an age line in 2%. Campaigns that state the value converted at 34% against 39% without and drew 1,970 contestants against 2,108 (n=2,590 and 9,062). Campaigns that state the winner count drew 1,695 against 2,102 (n=648). A no-purchase line went with 2,368 against 2,066 (n=291). Careful organizers write more and run smaller campaigns. Nothing here says the wording moved a number.
+Flags found by regex in the prize description. Value stated in 27% of descriptions, winner count in 6%, a no-purchase line in 5%, worldwide in 4%, US only in 1%, an age line in 2%. Every comparison below is stated as present against absent, with both n values. Campaigns that state the value converted at 34% against 39% and drew 1,970 contestants against 2,108 (n=2,590 present and 9,062 absent). Campaigns that state the winner count drew 1,695 against 2,102 (n=648 and 11,004). A no-purchase line went with 2,368 against 2,066 (n=291 and 11,361). Careful organizers write more and run smaller campaigns. Nothing here says the wording moved a number.
 
 ## What the data cannot support
 
@@ -217,6 +225,8 @@ Flags found by regex in the prize description. Value stated in 27% of descriptio
 Descriptions contained URLs in 5,069 campaigns, HTML in 17, and phrases addressed to an AI in 14. All were treated as data. Nothing was fetched, executed or followed, and no example reproduces a link.
 
 ## Impressions and conversion
+
+Conversion in these references means contestants per impression, the share of unique daily views of the entry page that became a unique entrant, so the two names refer to one measure and are used interchangeably in the tables.
 
 Verified from the platform's reporting terms page on 9 September 2026: impressions count one view per user per 24 hours, an action is one entry method completed, entries are actions completed times entry worth, users are unique entrants, and the platform quotes an average conversion rate of about 34%. The export's valid contestants are users, valid entries are entries, and entry worth is absent, so entries per entrant mixes how many actions people did with how much each was worth.
 

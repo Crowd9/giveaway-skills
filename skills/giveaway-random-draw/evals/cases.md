@@ -1,6 +1,6 @@
 # Evaluation cases
 
-Machine-readable form: `evals.json`. Style checks use `../../giveaway-prize-picker/evals/style_check.py`. The script's own check is `python3 scripts/draw.py --self-test`.
+Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root. The script's own check is `python3 scripts/draw.py --self-test`.
 
 ## Last run
 

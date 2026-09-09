@@ -77,7 +77,7 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 ### Style check, before and after the writing rules
 
-Counts from `evals/style_check.py` on saved replies. "Before" is the first run with no style section in SKILL.md. "After" is the run with the current section, including the worked contrast examples.
+Counts from `evals/style_check.py` (repo root) on saved replies. "Before" is the first run with no style section in SKILL.md. "After" is the run with the current section, including the worked contrast examples.
 
 | Case | Em dashes before / after | Semicolons before / after | Assistant opener before / after | Contrast sentences before / after | Filler words before / after |
 |---|---|---|---|---|---|

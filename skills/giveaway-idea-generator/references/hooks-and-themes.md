@@ -21,11 +21,13 @@ Regex matches on the titles of 37,180 ordinary campaigns with 1,000 or more cont
 
 Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaway" with a prize name is the default, and a hook is what separates a campaign from the default.
 
+A hook and a campaign type are two different things. The hook is the occasion the title claims (Black Friday, a 10k milestone, a collaboration). The campaign type is the shape the campaign declares and runs (an advent calendar, a bundle, a cash draw, a voting contest). One campaign carries both, and the tables below are separate for that reason.
+
 The timing skill's `holiday-benchmarks.md` holds contestants, conversion, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent is the only theme above the all-campaign medians on both counts, and the smaller dates section lists the national and world days organizers used (National Coffee Day, World Photography Day, National Sticker Day) and the holidays nobody in the data has taken. Load it when the hook is a date.
 
 ## Campaign types (extracted)
 
-A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. Value index is the campaign's contestants against the median of its stated-USD value band, 1.00 being typical for the money. Conversion is the clean subset. All ordinary campaigns: 2,203 contestants, 38% conversion, 4.3 entries per entrant, 0.13 referral entries per contestant, index 1.00. Reproduce with `analysis/campaign_types.py`.
+A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. Value index is the campaign's contestants against the median of its stated-USD value band, 1.00 being typical for the money. Uptake, where it appears below, is entries recorded on an action divided by the campaign's contestants. Conversion is the clean subset, the campaigns with no repeatable action and a run of 14 days or less, which is what makes impressions comparable between them. All ordinary campaigns: 2,203 contestants, 38% conversion, 4.3 entries per entrant, 0.13 referral entries per contestant, index 1.00. Reproduce with `analysis/campaign_types.py`.
 
 | Type | n | Contestants | Conversion (clean n) | Entries per entrant | Referrals per contestant | Value index (n) | Duration | Actions |
 |---|---|---|---|---|---|---|---|---|
@@ -122,7 +124,33 @@ Prize categories over-represented among them:
 
 The pattern is an organizer who has run many campaigns (88%), a secret code from a stream or video (26% against 12%), Twitch and Discord actions, a single hero prize, and a long list of actions with a daily bonus. Gaming is 29% of standouts against 21% of the rest. Firearms retailers with specialist audiences are the extreme case at three times their share. Cash, gift cards and bundles are under-represented. Standouts converted at 32%, under the median, because their reach came from audiences, streams and directories, and the landing page had less to do with it.
 
-Cheap prizes that drew crowds: 129 campaigns with a stated pool under 250 USD reached 5,000 contestants or more. 79% came from repeat organizers, only 10% gave away their own product, 7 actions and 22 days at the median, and the prizes were tech hardware, game items and small gift cards in gaming and unclassified verticals. A small prize in front of an audience that already exists beats a large prize in front of nobody.
+## Store campaigns
+
+For a store, the giveaway is a shopping session with a prize at the end. The data has one line on the shape: cart, wishlist and spree campaigns (382, matched on words like "win your cart" and "wishlist") drew a median 1,920 contestants at 27% clean conversion, ran 28 days at the median, and posted a value index of 0.93. Below the all-campaign medians on size, long by design, and the export cannot see what they were for: every entrant browsed the catalogue and told the store what they wanted. Gift card and voucher campaigns (2,811) sit at 1,953 contestants, 35% conversion and an index of 0.98.
+
+Formats to pick from, each with the store job it does:
+
+- **Win your cart.** Entrants build a cart, submit the cart link or a screenshot, and one cart is paid for up to a cap. Job: browsing depth and a wishlist per entrant. Cap the prize at a number in the title ("up to 500 USD") so the cost is fixed.
+- **Win your wishlist.** Same shape on the wishlist app, lighter on the entrant. Job: a wishlist per entrant the store can email against when items restock or drop in price.
+- **Pick your prize.** Three products from the range as the prize options, entrant chooses one on the form. Job: a preference vote across the range, and the entrant reads three product pages to choose.
+- **Bundle builder.** The prize is the bundle the entrant designs from a set of options. Job: tells the store which combinations sell, and the bundle becomes the post-campaign offer.
+- **Restock or drop.** A giveaway of the item that sells out, drawn on restock day. Job: the waitlist. Launch and early-access campaigns sit at a value index of 1.09 in the launch table above.
+- **Own product plus the next thing.** The prize hierarchy in giveaway-prize-picker: the store's product with the aspirational adjacent item.
+- **Shopping spree with a partner.** Two stores, one cart across both, one entry page. Job: audience swap with a product that fits.
+- **Gift card tiers.** One large gift card and several small ones, so the store has many winners who all come back to spend. Job: winners who become customers, and codes with expiry dates that pull a visit.
+- **Mystery box.** A box from the range at a stated value. Job: reach at fixed cost and content for the reveal.
+
+Season formats for a store, with the timing skill's holiday table behind them:
+
+- **Pre-sale early access.** A giveaway in the two weeks before Black Friday, closing the day before the sale, with early access to the sale as the offer to everyone who did not win. Black Friday campaigns in the data run 8 days.
+- **Gift guide giveaway.** The hero item from the gift guide as the prize, entry by picking the gift for someone on the entrant's list. The December shape, launched around 6 December.
+- **Advent or 12 days.** A product a day, one draw a day, a reason to return. Advent calendars lead every type on contestants and conversion.
+- **Win your order back.** Everyone who buys in the sale window can also enter free, and one order is refunded. Keep the free entry route equal, and have the terms read by a lawyer, since it sits close to a purchase condition.
+- **January restart.** The product that pairs with December's purchases, launched in the last ten days of December. Campaigns live over New Year converted 7% to 8% above matched campaigns.
+
+Every entrant who did not win is a shopper who just browsed the store, so the non-winner code in giveaway-winner-communications is the second half of a store campaign. Keep purchase out of the entry conditions: a purchase-to-enter reads as a lottery in most places, and the free entry route has to stay open.
+
+Cheap prizes that drew crowds: 129 campaigns with a stated pool under 250 USD reached 5,000 contestants or more. 79% came from repeat organizers, only 10% gave away their own product, 7 actions and 22 days at the median, and the prizes were tech hardware, game items and small gift cards in gaming and unclassified verticals. A small prize in front of an audience that already exists beats a large prize in front of nobody. Both cuts on this page describe campaigns that outran their budget, so read them against the spending benchmarks in giveaway-prize-picker before setting a prize budget from them.
 
 ## Theme starters by business (advice)
 
@@ -137,9 +165,11 @@ Cheap prizes that drew crowds: 129 campaigns with a stated pool under 250 USD re
 | Local services | Opening, anniversary, local event | A year of the service, neighbourhood partner bundle, referral-weighted draw |
 | B2B | Webinar, report launch, trade show | Consultation or audit as the prize, a peer-nomination mechanic |
 
-### Two prize formulas that travel (advice, from Gleam's campaign team)
+### Prize direction for a concept (advice, from Gleam's campaign team)
 
-Own product plus the aspirational thing the customer wants next: coffee plus an espresso machine, snacks plus a stand mixer, supplements plus a sports watch, skincare plus a beauty device, camera accessory plus a camera. Ask what the customer's ideal day contains right before or after using the product. And the collaboration rule: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 29% of the time against 19% for the rest (title proxy, n=1,195).
+The own-product-plus-adjacent-item formula and its worked pairs live in one place: the prize hierarchy in giveaway-prize-picker. Point there once the concept is chosen.
+
+What belongs to the concept is the collaboration test: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 29% of the time against 19% for the rest (title proxy, n=1,195).
 
 ## Title wording (extracted, clean subset)
 
@@ -162,7 +192,7 @@ Own product plus the aspirational thing the customer wants next: coffee plus an 
 - Single draw: one prize, one push, the default for a small budget.
 - Series: daily or weekly winners keep a long run alive and suit advent calendars and challenges. Needs a prize per draw and fresh content each week.
 - Question or poll entry: cheap research and higher completion when it is one tap. Ask something that segments the list.
-- UGC: photo or video entry with a review or a use of the product. Fewer entrants, better content, needs clear rights wording.
+- UGC: photo or video entry with a review or a use of the product. Fewer entrants, better content, needs clear rights wording. Ask for alt text with every image and captions on every video, in the brief and in the entry form, so entrants who use a screen reader can judge the submissions and the content is usable when the brand reposts it.
 - Referral-weighted: extra entries per verified friend. The only mechanic that reaches new people. Say the reward in every post.
 - Nomination: entrants nominate someone who deserves the prize. Suits services, B2B and cause-linked campaigns.
 - Instant win or scratch: high-frequency small prizes for foot traffic or app installs. Regulated as a game of chance in some places.

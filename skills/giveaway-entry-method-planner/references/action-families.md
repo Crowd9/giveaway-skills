@@ -1,6 +1,6 @@
 # Action families
 
-Extracted from the ordinary segment of the export (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. Uptake is entries recorded on a method divided by the campaign's valid contestants, capped at 5, then the median across campaigns that offered the family. Entries are actions completed times the entry worth the organizer set, and entry worth is unknown in the export, so a value near 1 means most entrants did it only where the worth was 1. Repeatable actions (daily bonuses) and referrals (one entry per referred entrant, times worth) can exceed 1.
+Extracted from the ordinary segment of the export (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. Uptake is entries recorded on a method divided by the campaign's valid contestants, capped at 5, then the median across campaigns that offered the family. Entries are actions completed times the entry worth the organizer set, and entry worth is unknown in the export, so a value near 1 means most entrants did it only where the worth was 1. Repeatable actions (daily bonuses) and referrals (one entry per referred entrant, times worth) can exceed 1. IQR is the interquartile range, the middle half of campaigns between the 25th and 75th percentile. The 90th percentile is the level nine campaigns in ten sit below.
 
 <!-- generated:entry_families -->
 | Action family | Campaigns using it | Share of campaigns | Uptake median (IQR) | n with uptake |
@@ -30,6 +30,18 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 17 (n=37,180). upta
 - Free follows are the most common social action and are completed by about half of entrants. Community joins and content posting see lower uptake.
 - Sharing and referring is offered in more than half of campaigns and records about a fifth of an entry per contestant, where each entry is a referred person times the entry worth. In the top tenth of campaigns the figure reaches 0.65. That is the only action whose entries are new people, so weight it and name the reward.
 - Paid subscriptions and imported entries have very low uptake. Paid actions only work when the audience already intended to pay.
+
+## SMS and messaging opt-in (advice, no dataset support)
+
+A phone number or a messaging opt-in (SMS, WhatsApp, Messenger, a Telegram or Discord bot subscription) is an owned channel in the same family as an email signup: the entrant hands over a way to reach them that no platform can take away. The export carries no SMS action type, so there is no benchmark on this page for uptake, cost per number or anything else. Say that plainly when recommending it, and never borrow the email row as a stand-in.
+
+What practice suggests, with no numbers attached:
+
+- Treat it as a second asset alongside email. A number costs more to message and carries a harder consent regime.
+- Ask for it only where the business already sends messages and has a sender identity registered where the region requires one.
+- Keep it optional unless the messaging channel is the objective. It asks more of an entrant than an email field does.
+- Collect the marketing consent at the same moment and in its own wording. A number given to enter a giveaway is not a number given for promotional messages.
+- Where the region requires double opt-in, the confirmation message goes out at capture, and only confirmed numbers reach the list.
 
 ## Use by campaign size
 

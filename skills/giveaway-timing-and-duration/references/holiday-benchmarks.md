@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Extracted from the ordinary segment (37,123 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are organizer-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. Conversion is the clean subset (no repeatable action, 14 days or less). Every figure describes what organizers chose. Reproduce with `analysis/holidays.py`.
+Extracted from the ordinary segment (37,123 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are organizer-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. Conversion is the clean subset (no repeatable action, 14 days or less). IQR is the interquartile range, the middle half of campaigns between the 25th and 75th percentile. Every figure describes what organizers chose. Reproduce with `analysis/holidays.py`.
 
 All ordinary campaigns for comparison: 2,203 contestants, 38% clean conversion, 4.3 entries per entrant, 16 days.
 
@@ -30,6 +30,7 @@ Reading it:
 - Summer, New Year, Black Friday, Thanksgiving and back to school sit at or above the median on contestants. Halloween, Valentine's, Mother's Day, Father's Day and Easter sit below, on small samples.
 - Black Friday campaigns are short (8 days) and launch 8 days out. Family days launch about two weeks out and run about two weeks. Back to school launches three weeks out.
 - Roughly half of campaigns for a dated holiday close after the day. A prize that only makes sense before the day (a gift for Mother's Day) needs a close a week before it, which is the minority pattern.
+- For Lunar New Year (19% close on or before the day), New Year and Father's Day (34% each), Black Friday and Cyber Monday (46%), Halloween (38%), Valentine's Day (40%) and Easter (41%), the majority run through the date and close after it. Those campaigns use the holiday as a hook for attention while people are already looking, and they keep collecting entries through the days around it, when a Christmas campaign would already have drawn. Read a close after the day as the default for those themes, and a close before it as the exception a gift-timed prize forces.
 - Anniversary, birthday and milestone campaigns match the all-campaign medians and run all year, so they are a hook to use when the calendar offers nothing.
 
 ## Calendar with launch windows
@@ -56,6 +57,22 @@ Dates for the next sixteen months. The launch window is the holiday date minus t
 | New Year | Sat 01 Jan 2028 | 09 Dec to 27 Dec | 21 Dec | week 52: 1% of starts, 41% conversion |
 
 Ramadan and Eid, Prime Day, Singles' Day, anniversaries and milestones have no fixed date here. Use the theme row above for their shape and the region calendar in `calendar-by-region.md` for the dates that stall a team or an audience.
+
+## The season plan for a store
+
+Four dates decide a store's fourth quarter, and the data gives each a shape. Dates below are 2026, the 2027 rows in the calendar move them a day.
+
+| Slot | Window (2026) | What the data says | What the giveaway does for the store |
+|---|---|---|---|
+| Pre-sale list build | Launch 11 to 24 Nov, close before 27 Nov | Black Friday campaigns run 8 days and launch 8 days out (n=364). Campaigns live over Black Friday convert 12% to 15% below matched campaigns, and week 47 is the year's quiet week at 33% conversion | Build the list that receives the sale. Close the giveaway the day before the sale, send the winners email with early access as the non-winner offer, then the sale email to the same segment |
+| The sale itself | 27 to 30 Nov | Week 48 holds 3% of starts at 40% conversion and week 49 46% | No giveaway live. The store is selling, the audience is being sold to from every direction, and a prize on the same page splits the click |
+| December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent is the only theme above the medians on both contestants (2,424) and conversion (44%) on 1,806 campaigns, and week 49 is the best converting week in the data (46%, n=615). Advent calendars: 3,277 contestants, 50% conversion, five days, five actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero prize from the gift guide, closing before the shipping cutoff so the winner has it by the day |
+| Shipping cutoff | Set by the carrier, usually mid December for domestic | 78% of Christmas campaigns close on or before the day | The prize ships as an order through the store with tracking. Close the draw a week before the cutoff, or make the prize a gift card |
+| New Year | Launch 9 to 27 Dec, 21 Dec typical | New Year campaigns run 11 days at 34% conversion (n=411), and being live over Christmas or New Year came with 7% to 8% better conversion than matched campaigns | The restart campaign for the January customer: resolutions, restock, the product that pairs with what they bought in December |
+
+Two rules fall out of the table. A store builds the list before the sale and sells to it during the sale, so the giveaway and the discount never share a week. And December is crowded (about one and a half times a typical month on starts) and still converts best, so a store that skips December because of the noise is skipping the best week of the year.
+
+Other store dates in the data: Singles Day (11 Nov, week 46, 22% of that week's starts name it) and Prime Day (July, 43 campaigns at 23% conversion, the lowest theme) sit below the medians, and Mother's Day and Father's Day launch about two weeks out and run two weeks. For a store the family days are gift days, so the gift guide shape applies.
 
 ## Every week of the year (extracted)
 

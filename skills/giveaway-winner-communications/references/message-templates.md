@@ -8,7 +8,7 @@ Subject: You won the [prize] from [Brand]
 
 "Hi [first name], you were drawn as the winner of [prize] in the [campaign name] giveaway on [date]. To claim it, reply to this message by [deadline with time zone] and confirm [what verification is needed, for example that you are over 18 and live in [region]]. We will never ask for payment, card details or a password. If we do not hear back by the deadline the prize goes to a reserve winner under the terms. [Name], [Brand]"
 
-Send from an address or account the winner has seen before. Two attempts, the second about halfway to the deadline.
+Send from an address or account the winner has seen before. Two attempts, the second sent halfway to the reply deadline. On a seven-day deadline that puts the attempts about 72 hours apart, which matches the contact rule in giveaway-winner-structure.
 
 ## 2. Verification and address request (after the winner replies)
 
@@ -28,11 +28,21 @@ For experiences: dates, what is included, what to bring, the contact on the day.
 
 Only after the winner has consented to being named. If they decline, announce that a winner has been confirmed and leave the name out.
 
+Social versions of the same announcement:
+
+- Feed post: the winner line, one photo of the prize or the winner with consent, the draw method in one sentence ("drawn by [method] from [N] valid entries, record at [link]"), and the thank-you. Tag the partner.
+- Story: "Winner drawn" over the prize, the first name or handle, and a link sticker to the next thing.
+- Pinned comment on the launch post: "This giveaway has closed. Winner: [name]. We contact winners only from this account and [email], never for a fee."
+
+The official-account line matters. Fake accounts DM entrants during and after giveaways asking for a delivery fee or card details, and the announcement is where entrants look to check.
+
 ## 5. Message to everyone else (with the announcement, to opted-in entrants)
 
 "The [campaign name] winner has been drawn and notified. Thank you for entering. As a thank-you, here is [a code, a guide, early access] valid until [date]. [Next campaign teaser if there is one.]"
 
 One message. No second offer chasing.
+
+For a store, the offer is a code. Subject "You did not win, but here is [X]% off until [date]", preview "A thank-you from [Brand], one use, [N] days." Body: the winner line, the code on its own line, what it applies to, the expiry, one button to the collection the prize came from. Read the code mechanics in `references/after-the-draw.md` before sending.
 
 ## 6. Photo or review request (a week after delivery, optional)
 

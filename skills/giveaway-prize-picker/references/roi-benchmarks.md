@@ -21,9 +21,9 @@ Music and media buys addresses cheapest at the median, travel and events dearest
 
 ## Which industries get the most from a giveaway (extracted)
 
-Value index is contestants against the median for the stated prize band, 1.00 being typical for the money. Repeat organizer means five or more campaigns in the export. All ordinary campaigns: index 1.00, 38% conversion, 0.98 email uptake, 0.13 referrals per contestant, 77% from repeat organizers.
+Value index is contestants against the median for the stated prize band, 1.00 being typical for the money. Email uptake is email signups recorded divided by the campaign's contestants, so 0.98 means the action was completed by very nearly everyone who entered. Conversion is contestants per impression, the same measure the vertical table above reports under that longer name, so the two columns are one thing under two headings. Repeat organizer means five or more campaigns in the export. All ordinary campaigns: index 1.00, 38% conversion, 0.98 email uptake, 0.13 referrals per contestant, 77% from repeat organizers.
 
-| Industry | n | Contestants | Conversion | Email uptake | Referrals per contestant | Value index (n) | Stated USD per contestant | Repeat organizers | Own product prize |
+| Industry | n | Contestants | Conversion (contestants per impression) | Email uptake | Referrals per contestant | Value index (n) | Stated USD per contestant | Repeat organizers | Own product prize |
 |---|---|---|---|---|---|---|---|---|---|
 | Gaming | 8,739 | 2,397 | 36% | 0.92 | 0.14 | 1.10 (3,176) | 0.29 | 78% | 20% |
 | Music and media | 1,106 | 1,974 | 31% | 1.03 | 0.09 | 1.06 (564) | 0.22 | 85% | 19% |
@@ -68,6 +68,14 @@ Median contestants have drifted down since 2021 while conversion has held near 2
 `scripts/roi.py` prices a campaign before or after it runs. Give it what the prizes cost you, the stated value you advertise, promotion and admin spend, and either expected contestants (with the actions you will offer) or the actual counts of emails, follows and referrals. It prints cost per result, stated value per result beside the benchmark for the vertical or band, and either the return per dollar on the per-unit values you supply or the breakeven value per email.
 
 Value per email is the organizer's number: expected revenue per subscriber over the period they care about, or the price of the same list from another channel. Say so in the answer and never invent one. A breakeven figure with no value attached is still useful: "each address has to be worth 0.79 USD" is a question the business can answer.
+
+## Reading cost per asset as acquisition cost
+
+Cost per email signup or per follow is the giveaway's customer acquisition cost for that asset. It belongs beside what the team already pays for the same thing elsewhere: cost per lead on paid search, cost per follower on paid social, the rate an affiliate or a list rental charges. A giveaway that buys addresses at 0.39 USD is cheap or dear only against that internal number, and the team has it.
+
+The other half is what the asset is worth. Set a window the business can measure, 90 days after the campaign closes being the usual one, and ask what a new subscriber or follower converts to inside it: orders placed, revenue attributed, a trial started. That figure is the lifetime value the acquisition cost is judged against, and it is the organizer's to supply. The export holds none of it, so it can price what a giveaway captured and never what the capture was worth.
+
+Two habits keep the comparison honest. Compare a giveaway list with a paid list, since both are cold. And measure the giveaway cohort separately in the email tool for those 90 days, because a giveaway cohort behaves nothing like people who found the business on their own.
 
 ## What ROI the export cannot show
 

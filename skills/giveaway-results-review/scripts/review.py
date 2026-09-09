@@ -7,6 +7,9 @@
 Benchmarks are medians from the ordinary segment of the campaign export (37,180 campaigns that reached 1,000 unique
 entrants), as published in references/benchmarks.md. Update both together. Impressions count one view per user per day,
 so long runs and daily actions depress conversion without anything being wrong. The script says so when it applies.
+
+--invalid takes invalid entries worth, the Entries column summed over rows whose status is Invalid, which is the unit
+gleam_export.py writes into the command it prints. The invalid share is derived as invalid / (entries + invalid).
 """
 import argparse, csv, json, os, sys
 
@@ -206,7 +209,7 @@ def self_test():
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true"); ap.add_argument("--contestants", type=int); ap.add_argument("--impressions", type=int)
-    ap.add_argument("--entries", type=int); ap.add_argument("--invalid", type=int); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
+    ap.add_argument("--entries", type=int); ap.add_argument("--invalid", type=int, help="invalid entries worth (the Entries column summed over invalid rows), never a count of rows"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
     ap.add_argument("--actions", help="CSV with action name and completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")

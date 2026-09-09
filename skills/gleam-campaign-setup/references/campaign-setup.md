@@ -13,7 +13,17 @@ Start: [Competitions overview](https://gleam.io/docs/competitions/setup/overview
 - **Timezone** is set per competition, independent of the account default.
 - **Hide X ways to enter** and **Hide total entry count** are checkboxes.
 - **Event Mode** is for shared devices at a live event only. It drops cookies, logs users out on refresh and relaxes the fraud filter. The page warns against using it on a normal campaign.
-- **Fraud Filter** invalidates suspicious entries automatically from 20 or more attributes. Invalid entries show as Invalid on the Actions tab for review before drawing, do not appear in reporting, and entrants are never told. **Fraud Level** defaults to High. Off accepts same-network and same-device entries with no CAPTCHA. Low and Medium add CAPTCHA and login verification, Medium adds VPN and data-centre protection. High is the default. Very High adds more aggressive Cloudflare challenges. Gleam may adjust a campaign's level if it blocks legitimate entrants or lets too many suspicious ones through. **CAPTCHA** can be Automatic, Always or Never.
+- **Fraud Filter** invalidates suspicious entries automatically from 20 or more attributes. Invalid entries show as Invalid on the Actions tab for review before drawing, do not appear in reporting, and entrants are never told. **CAPTCHA** can be Automatic, Always or Never. **Fraud Level** has five settings:
+
+| Fraud Level | What it does |
+|---|---|
+| Off | Accepts same-network and same-device entries with no CAPTCHA |
+| Low | Adds CAPTCHA and login verification |
+| Medium | Low plus VPN and data-centre protection |
+| High | The default |
+| Very High | Adds more aggressive Cloudflare challenges |
+
+Gleam may adjust a campaign's level if it blocks legitimate entrants or lets too many suspicious ones through.
 - **Terms and Conditions** are generated automatically from the campaign setup with editable fields: sponsor name and address, governing law country, privacy policy link, selection method (Random Draw by default, or Judges Panel, Popular Vote, Most Entries, other), contact window (7 days by default), claim window (7 days by default), additional terms. **Custom terms** written from scratch are available on Hobby and above. A "read the terms" checkbox can be added to the User Details form.
 - **Allowed Locations** restricts by country (not city) using MaxMind. Restricted visitors see a message.
 - **Age Restriction** works through the Minimum Age field in User Details, set required, with a DD/MM/YYYY format.
@@ -28,7 +38,8 @@ Start: [Competitions overview](https://gleam.io/docs/competitions/setup/overview
 - **Login With**: default shows actions first and asks for login after the first one. **Require login before actions** hides the actions until the user logs in, which the page notes can reduce fraud, for example by forcing Facebook or Instagram login. With it on, **Automatic Entry** awards an entry for logging in through a bonus action added on save. Email-only login shows the details form first. Single or multiple social login types can be offered.
 - **Build Competition Subscriber List** (Pre-Entry tab) adds a checkbox so entrants can opt in to future campaign emails. Promotion emails skip people who already entered and carry unsubscribe links. **Capture Subscribers After Competition Ends** shows a name and email form on the ended campaign.
 - **Email Verification** sends a 4-digit code before entry. **Phone Number Verification** does the same by SMS through a Twilio integration under Site Settings. Turning either on mid-campaign leaves earlier unverified entries valid.
-- **Custom User Details fields** are on Business and above, and sync to email providers and webhooks.
+- **Custom User Details fields** are on Business and above, and sync to email providers and webhooks. Connect the email provider integration before launch and test it with an admin entry (admin entries made before the start are invalidated automatically, see the reporting reference), so the entrant emails in giveaway-promotion-plan trigger during the run.
+- The subscribe checkbox is marketing consent and covers nothing else. Entering the giveaway is its own consent, so an entrant who leaves the box unticked still gets the entry confirmation and the winner announcement and no marketing. Where the entrant's country requires confirmed opt-in, configure double opt-in in the email provider, since the checkbox on its own is a single opt-in.
 
 ## How to Enter tab
 

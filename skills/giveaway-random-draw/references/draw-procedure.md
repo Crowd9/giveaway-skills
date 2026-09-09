@@ -31,19 +31,31 @@ Do not let the script or the organizer generate the seed. A generated seed can b
 
 ## Running it
 
+Write the rules once into a small JSON file so the commit and the draw cannot disagree.
+
+```json
+{
+  "tiers": "Grand prize:1,Runner-up:5",
+  "backups": 2,
+  "id-column": "email",
+  "weight-column": "entries",
+  "exclude": "staff.txt"
+}
+```
+
 ```bash
 # 1. Freeze the list, then commit and announce the drand round for the draw time
-python3 scripts/draw.py commit entries.csv --tiers "Grand prize:1,Runner-up:5" --backups 2 \
-  --id-column email --weight-column entries --exclude staff.txt --draw-at "2026-09-12T09:00:00+10:00"
+python3 scripts/draw.py commit entries.csv --rules rules.json --draw-at "2026-09-12T09:00:00+10:00"
 
 # 2. After that time, draw once
-python3 scripts/draw.py draw entries.csv --tiers "Grand prize:1,Runner-up:5" --backups 2 \
-  --id-column email --weight-column entries --exclude staff.txt \
+python3 scripts/draw.py draw entries.csv --rules rules.json \
   --seed-drand 6452000 --audit draw-2026-09-12.json --winners-csv winners.csv --mask
 
 # 3. Anyone with the same files can check
 python3 scripts/draw.py verify draw-2026-09-12.json --exclude staff.txt
 ```
+
+Every option still works as a flag, and a flag on the command line overrides the file. Publish `rules.json` beside the commitment so anyone checking the draw can see what was fixed in advance.
 
 One draw. If the tool errors (too few eligible entrants, wrong column), fix the input, commit again, and keep only the final run.
 
@@ -51,10 +63,14 @@ One draw. If the tool errors (too few eligible entrants, wrong column), fix the 
 
 For each eligible entrant: u = the first 8 bytes of SHA-256(seed + "|" + lowercase trimmed id), read as an unsigned integer, plus 0.5, divided by 2^64. Key = u raised to the power 1/weight (weight 1 when unweighted). Sort by key, highest first, ties broken by id. The first entrants fill the tiers in order, then the backups. Ten lines in Python, JavaScript or Go reproduce it, and the audit record lists every winner's key for comparison.
 
+Worked example with a seed of `seed-2026` and an entrant id of `ann`. Running `printf '%s' 'seed-2026|ann' | shasum -a 256` in a terminal returns `2c7bf4025594c526ab0099a90d19078a9be42ced94b2583e3d1b781f6d20cacd`. The first 8 bytes are `2c7bf4025594c526`, which as an unsigned integer is 3205423850667164966, and (3205423850667164966 + 0.5) / 2^64 gives u = 0.1737663751. Unweighted, that is the entrant's key. Anyone can run that one line and check that the audit record holds the same key for the same person.
+
+Deduplication is per identifier column. The script merges rows that match on the one column named by `--id-column`, so somebody who entered by email on one action and by handle on another counts twice unless the export links the two into one row. Pick the column that is unique per person in your file, and where the export carries both, merge them before you commit.
+
 ## After the draw
 
 - Verify each drawn entrant against the terms before calling them a winner: required action completed, eligible region, age, one account.
-- Contact by the channel the entrant gave. Two attempts, a reply deadline from the terms (72 hours is common), then forfeiture and the next backup.
+- Contact by the channel the entrant gave. Two attempts, the second sent halfway to the reply deadline from the terms, then forfeiture and the next backup. On a seven-day deadline that puts the attempts about 72 hours apart.
 - If backups run out, hold a second draw with a new seed, recorded as draw 2, from the same frozen list minus everyone already drawn.
 - Announce first names and city, or handles, with consent. Never publish the entrant list.
 - Keep the input file, the exclusions file, the audit JSON and the announcement together for as long as the terms or local law require.

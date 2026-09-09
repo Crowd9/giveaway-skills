@@ -51,6 +51,8 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 Completions of the acquire and amplify actions, summed per campaign, across the 37,123 ordinary campaigns that offered each. This is the closest the export comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated prize pool by completions, for campaigns with every prize valued in USD, and the stated value is what the organizer wrote.
 
+Reading it: the median campaign with an email action put about 2,000 addresses on the list for a stated prize cost near 0.31 USD each. Follows cost about 0.4 to 0.9 USD each depending on the network. A referral entry cost 2.10 USD at the median of the 8,316 campaigns with a fully valued pool. A content submission cost about 20 USD and the median campaign collected 186. Email signups per contestant can pass 1.0, because a campaign can offer more than one subscribe action (a newsletter and an SMS list, or two partner lists) and every completion counts. The column counts completions per contestant, so a value above 1.0 is a normal reading.
+
 | Asset | Campaigns | p25 | Median | p75 | p90 | Per contestant | Stated USD per completion (n) |
 |---|---|---|---|---|---|---|---|
 | X follows | 20,440 | 768 | 1,448 | 3,157 | 8,163 | 0.59 | 0.51 (8,323) |
@@ -75,8 +77,6 @@ Completions of the acquire and amplify actions, summed per campaign, across the 
 | Threads follows | 313 | 311 | 515 | 736 | 1,132 | 0.27 | 0.60 (192) |
 
 By campaign size, email signups ran 1,047 to 1,787, median 1,346 | 2,773 to 5,397, median 3,703 | 11,650 to 28,765, median 16,344. Referral entries ran 119 to 446, median 224 | 300 to 980, median 520 | 898 to 3,241, median 1,643.
-
-Reading it: the median campaign with an email action put about 2,000 addresses on the list for a stated prize cost near 0.31 USD each. Follows cost about 0.4 to 0.9 USD each depending on the network. A referral entry cost about 2 USD. A content submission cost about 20 USD and the median campaign collected 186.
 
 Stated USD per email signup by prize category, campaigns with an email action:
 
@@ -105,7 +105,7 @@ Stated USD per email signup by prize category, campaigns with an email action:
 | 2025 | 5,202 | 2,058 | 26% |
 | 2026 | 2,516 | 2,060 | 27% |
 
-The median campaign has drifted smaller since 2021 at a steady conversion. A campaign run this year sits a little under the whole-export medians at the same quality.
+The median campaign has drifted smaller since 2021 at a steady conversion. A campaign run this year sits a little under the whole-export medians at the same quality. The 2020 row rests on 461 campaigns against several thousand in every later year, so treat it as a rough marker.
 
 ## Other reference points
 
@@ -114,4 +114,7 @@ The median campaign has drifted smaller since 2021 at a steady conversion. A cam
 
 - Campaign within 30 days of the organizer's previous one: contestants 16% higher, conversion a third higher (clean subset).
 - Share action offered: contestants 1,869 against 2,189 without, conversion 31% against 42% (clean subset).
+
+The share-action line and the top-fifth line answer different questions and cannot be read as one finding. The share-action line splits campaigns by a setting the organizer chose before launch. The top-fifth line splits the same campaigns by the result they got afterwards. Neither says that adding or removing a share action moves a campaign between the fifths.
+
 - December: about 12% of starts, and December campaigns drew more entrants and converted better.

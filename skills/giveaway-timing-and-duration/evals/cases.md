@@ -1,6 +1,6 @@
 # Evaluation cases
 
-Machine-readable form: `evals.json`. Style checks use `../../giveaway-prize-picker/evals/style_check.py`.
+Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
 ## Last run
 

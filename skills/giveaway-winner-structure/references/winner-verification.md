@@ -43,7 +43,7 @@ Enthusiastic entrants who enter many giveaways ("compers") are legitimate. A ful
 | Over 1,000 USD, cash, travel | The above, plus one photo ID with the number covered, and proof of residence if the terms restrict region. View it, record that it was checked, delete it | A copy kept on file, card details, a login |
 | Skill contests or where local law requires | A signed declaration of eligibility and release, on the form your terms describe | Anything beyond the form |
 
-Age checks need only a date of birth or an ID with the number covered. In the United States a prize of 600 USD or more usually means a tax form for the winner. Confirm the threshold and the form with an accountant before asking.
+Age checks need only a date of birth or an ID with the number covered. In the United States a prize of 600 USD or more usually means a tax form for the winner. That is US practice, checked 9 September 2026, and thresholds move. Confirm the threshold and the form with an accountant before asking.
 
 ## How to ask
 

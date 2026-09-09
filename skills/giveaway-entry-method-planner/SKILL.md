@@ -1,8 +1,8 @@
 ---
 name: giveaway-entry-method-planner
-description: "Choose which actions a giveaway should ask entrants to take (follow, share, email signup, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC, with entry volume second. Platform-neutral. For choosing the prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
+description: "Choose which actions a giveaway should ask entrants to take (follow, share, email signup, SMS or messaging opt-in, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'TikTok giveaway entry methods', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC, with entry volume second. Platform-neutral. For choosing the prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
 metadata:
-  version: 1.1.4
+  version: 1.2.2
 ---
 
 # Giveaway Entry Method Planner
@@ -11,24 +11,27 @@ Pick the actions entrants take so the giveaway produces the asset the business w
 
 ## Before starting
 
-If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first for business, audience and channels. Ask only for what it lacks.
+If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first for business, audience and channels. Ask only for what it lacks. Where the file and the user's live message disagree, the live message wins and the file is background.
+
+If a constraint changes mid-conversation (budget, date, objective), re-run the affected part of the mix and say which actions moved.
 
 ## Workflow
 
 1. **Pin the objective to one asset.** Email list, followers on a named channel, community members, content, installs, or reach. Each maps to a family in `references/action-families.md`.
 2. **Ask only what changes the plan**, in one message: which channels the business is active on and can moderate, whether it can send email, whether entrants are mostly mobile, and any platform rules it must follow (consent, age, region).
-3. **Build the mix.** One required action that captures the asset, two to four supporting actions on channels the business already runs, one sharing action for reach, and at most one content action. Load `references/action-families.md` for uptake by family and `references/mix-by-objective.md` for the patterns.
-4. **Write the actions.** Load the wording and destinations section of `references/mix-by-objective.md`: question types (detail capture 0.97, preference 0.75), share copy traits, visit destinations (own site 0.96, YouTube 0.81, other sites 0.70), and the newsletter description under the email action. Put the asset action first, since first position was completed by the median entrant and fifth position by two thirds.
+3. **Build the mix.** Target three assets and five to eight methods, the count `references/mix-by-objective.md` sets under friction. One required action that captures the asset, two to four supporting actions on channels the business already runs, one sharing action for reach, and at most one content action. Load `references/action-families.md` for uptake by family (uptake is entries recorded on a method divided by the campaign's contestants) and `references/mix-by-objective.md` for the patterns.
+4. **Write the actions.** Load the wording and destinations section of `references/mix-by-objective.md`: question types (detail capture 0.97, preference 0.75), share copy traits, visit destinations (own site 0.96, YouTube 0.81, other sites 0.70), and the newsletter description under the email action. Put the asset action first. Extracted: an email action in first position recorded a median 1.00 entries per contestant against 0.66 in fifth position or later, and a page visit 0.97 against 0.68, in the uptake by position table in `references/mix-by-objective.md`.
 5. **Weight it.** More entries for the action that captures the asset and for sharing. One entry for low-effort visits. Explain why in a sentence.
 6. **Check friction.** Extracted: in the clean comparison, campaigns with 11 or more methods had a fifth fewer contestants and converted at 31% against 50% for 1 to 3 methods, consistent across verticals. Every extra action costs people. Anything that needs a purchase, an app install or an account connection goes optional unless it is the objective.
 7. **Deliver.**
 
 ## Output
 
-- Recommended entry list: action, required or optional, entry weight, and the asset it produces.
+- Recommended entry list as a table: action, its job, required or optional, entry weight, and the asset it produces. The job column takes one of the five labels from `references/mix-by-objective.md`: Acquire, Grow social, Learn, Engage, Amplify. One label per action, and a normal campaign carries one of each.
 - Why each action is there, in one line, with the family's uptake figure where useful (extracted, with n).
 - What to leave out and why.
-- Consent and rules notes: email opt-in wording, age or region limits, platform terms for follow-to-enter on the named channels. Say plainly that the user should confirm local rules.
+- Consent and rules notes: email opt-in wording, age or region limits, platform terms for follow-to-enter on the named channels. Entry consent and marketing consent are separate, so say where each is collected. Say plainly that the user should confirm local rules.
+- What happens to the asset in the first 30 days: the welcome series, the separate segment, the sunset rule for people who never open, and the consent noted at capture. The using what you built section of `references/mix-by-objective.md` holds it, and giveaway-winner-communications writes the messages.
 - Next decision needed.
 
 For an evaluation request ("here is my entry list, is it good?"), give strengths, friction points, and specific changes.
@@ -64,6 +67,6 @@ Advice is platform-neutral. When the user says they use Gleam or asks about it, 
 
 ## References
 
-- `references/action-families.md`: families of actions, how often each was used, uptake, and by campaign size.
-- `references/mix-by-objective.md`: recommended mixes by objective, actions that came with more people, what high referral uptake looks like, weighting, friction, consent.
+- `references/action-families.md`: families of actions, how often each was used, uptake, by campaign size, and the SMS or messaging opt-in family, which is practice with no dataset behind it.
+- `references/mix-by-objective.md`: recommended mixes by objective, the five action jobs, actions that came with more people, uptake by position in the list, what high referral uptake looks like, weighting, friction, consent, and what to do with the asset in the first 30 days.
 - `references/platform-promotion-rules.md`: what twelve networks' own policies say (Facebook, Instagram, X, YouTube, TikTok, Discord, Twitch, Telegram, Pinterest, Reddit, LinkedIn, Snapchat, Steam, Bluesky, Kick, Spotify, Threads), read 9 September 2026, with a summary table. Load before recommending any action on a named network. LinkedIn and Steam ban giveaways outright.

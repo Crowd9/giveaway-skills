@@ -9,6 +9,9 @@ Columns read: Email (the person), Status (Valid, Invalid, Winner), Action, Entri
 Contestants are unique emails with at least one valid row. Actions completed are valid rows. Entries are the sum of the
 Entries column on valid rows. Impressions are not in this export: pass them from the Reporting tab. Nothing leaves the
 machine and no row is printed: the summary is aggregates only.
+
+The review.py command printed at the end passes --invalid as invalid entries worth, the Entries column summed over rows
+whose Status is Invalid. The row count is printed separately as "invalid rows".
 """
 import argparse, collections, csv, datetime as dt, sys
 
@@ -49,6 +52,7 @@ def load(path):
     if not rows or "Action" not in rows[0]: sys.exit("not a Gleam Actions export: no Action column")
     who = "Email" if "Email" in rows[0] else "Name"
     valid = [r for r in rows if (r.get("Status") or "Valid").strip().lower() in ("valid", "winner")]
+    bad = [r for r in rows if (r.get("Status") or "Valid").strip().lower() not in ("valid", "winner")]
     people = {r[who].strip().lower() for r in valid if r.get(who)}
     per_action = collections.Counter(r["Action"].strip() for r in valid)
     entries = sum(float(r.get("Entries") or 0) for r in valid)
@@ -64,13 +68,14 @@ def load(path):
         u = (r.get("Referring URL") or "").strip()
         refs[u.split("/")[2] if u.startswith("http") and u.count("/") >= 2 else (u or "direct or unknown")] += 1
     span = (max(whens).date() - min(whens).date()).days + 1 if whens else None
-    return {"rows": len(rows), "valid_rows": len(valid), "invalid_rows": len(rows) - len(valid), "contestants": len(people), "entries": int(entries),
+    return {"rows": len(rows), "valid_rows": len(valid), "invalid_rows": len(bad), "invalid_entries": int(sum(float(r.get("Entries") or 0) for r in bad)),
+            "contestants": len(people), "entries": int(entries),
             "actions_completed": len(valid), "per_action": dict(per_action.most_common()), "assets": dict(assets), "days_covered": span,
             "by_day": dict(sorted(days.items())), "by_hour_local": dict(sorted(hours.items())), "countries": dict(countries.most_common(10)),
             "country_share_top": countries.most_common(1)[0][1] / len(valid) if countries and valid else None, "referrers": dict(refs.most_common(8)), "person_column": who}
 
 def review_command(s, args):
-    cmd = f"python3 review.py --contestants {s['contestants']} --entries {s['entries']} --invalid {s['invalid_rows']} --actions-completed {s['actions_completed']}"
+    cmd = f"python3 review.py --contestants {s['contestants']} --entries {s['entries']} --invalid {s['invalid_entries']} --actions-completed {s['actions_completed']}"
     if s["days_covered"]: cmd += f" --days {s['days_covered']}"
     cmd += f" --methods {len(s['per_action'])}"
     for k in ("emails", "referrals", "x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"):
@@ -85,10 +90,12 @@ def self_test():
         w = csv.writer(f); w.writerow(["ID", "Email", "Status", "Action", "Entries", "Country", "When", "Referring URL"])
         w.writerow([1, "a@example.com", "Valid", "Subscribe to Our List", 1, "Australia", "2026-05-01 10:00:00 +1000", "https://x.com/p"])
         w.writerow([2, "a@example.com", "Valid", "Follow @brand on X", 2, "Australia", "2026-05-02 11:00:00 +1000", ""])
-        w.writerow([3, "b@example.com", "Invalid", "Subscribe to Our List", 1, "Canada", "2026-05-02 12:00:00 +1000", ""])
+        w.writerow([3, "b@example.com", "Invalid", "Subscribe to Our List", 4, "Canada", "2026-05-02 12:00:00 +1000", ""])
         w.writerow([4, "c@example.com", "Winner", "Refer 3 Friends", 5, "Canada", "2026-05-03 09:00:00 +1000", ""])
     s = load(p)
-    assert s["contestants"] == 2 and s["entries"] == 8 and s["invalid_rows"] == 1 and s["assets"] == {"emails": 1, "x_follows": 1, "referrals": 1} and s["days_covered"] == 3, s
+    assert s["contestants"] == 2 and s["entries"] == 8 and s["invalid_rows"] == 1 and s["invalid_entries"] == 4 and s["assets"] == {"emails": 1, "x_follows": 1, "referrals": 1} and s["days_covered"] == 3, s
+    class A: actions_csv = None
+    assert "--invalid 4" in review_command(s, A), review_command(s, A)
     assert generic_name("Follow @Gleamapp on Instagram:") == "Instagram Follows" and generic_name("Read Our Ideas:") == "Visit a Page" and generic_name("Subscribe to Our Giveaway List") == "Email Subscriptions", "generic"
     assert kind("Follow @Gleamapp on Instagram:") == "instagram_follows" and kind("Follow Gleamapp on X") == "x_follows" and kind("Subscribe to Our Giveaway List") == "emails"
     print("self-test passed"); return 0
@@ -102,7 +109,7 @@ def main(argv):
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")
     s = load(a.export)
-    print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid {s['invalid_rows']:,}  contestants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  days {s['days_covered']}")
+    print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid rows {s['invalid_rows']:,}  invalid entries {s['invalid_entries']:,}  contestants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  days {s['days_covered']}")
     print("assets", {k: f"{v:,}" for k, v in s["assets"].items()})
     print("per action"); [print(f"  {n:>7,}  {name}") for name, n in s["per_action"].items()]
     print("top countries", {k: f"{v / s['valid_rows']:.0%}" for k, v in list(s["countries"].items())[:6]})

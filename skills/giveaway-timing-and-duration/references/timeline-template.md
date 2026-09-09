@@ -8,8 +8,9 @@ Advice. Fill in the dates and delete what does not apply.
 |---|---|
 | T minus 10 days | Terms written (eligibility, dates with time zone, prize value, how winners are chosen and contacted, redraw rule). Prize secured or ordered. Partner briefs sent. |
 | T minus 5 days | Entry page built and tested on a phone. Assets for every channel ready. Email announcement drafted. |
+| T minus 2 days | Instrument before launch. Every link to the entry page carries UTM parameters (source, medium, campaign) so each channel can be told apart afterwards. Conversion tracking is live on the entry page and fires on a completed entry. The campaign timezone is written down and used on every date in the terms and the posts. Without this, the results review has nothing to attribute and every channel looks the same., email authentication (SPF, DKIM, DMARC) passing and the entry sync to the email provider tested with an admin entry |
 | T minus 1 day | Teaser post. Team knows who answers questions and who draws. |
-| Launch day (a weekday) | Announce on every channel within the same two hours. Email the list. Pin the post. |
+| Launch day (a weekday) | Announce on every channel within the same two hours. Email the list. Pin the post. Schedule the launch post and, later, the last-call post for the hours the audience is actually on each channel, taken from the channel's own analytics. |
 | Day 3 and day 7 | Push two: show the prize in use, share early entrant count if it helps, remind of the sharing action. |
 | Day 10 to 12 | Push three: partner posts, a story countdown. |
 | Final 48 hours | "Closing soon" on every channel. Check the close time reads correctly in the audience's time zone. |

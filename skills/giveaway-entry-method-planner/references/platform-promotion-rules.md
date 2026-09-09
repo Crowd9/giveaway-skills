@@ -51,6 +51,8 @@ Source: https://support.google.com/youtube/answer/1620498
 
 ## TikTok (Community Guidelines, effective 13 September 2025, update announced for 24 September 2026)
 
+**Re-read this section after 24 September 2026.** Everything below describes the guidelines in force from 13 September 2025, read on 9 September 2026. TikTok has announced a Community Guidelines update effective 24 September 2026 whose text was not published at the time of reading, so on or after that date treat this section as out of date until the two linked pages have been checked again and the fake-engagement and commercial-disclosure lines confirmed.
+
 TikTok has no single promotion page. Two sections apply.
 
 - Integrity and Authenticity, "Deceptive Behaviors and Fake Engagement": TikTok does not allow accounts that mislead or manipulate the platform, or "the trade of services that artificially boost engagement or trick the recommendation system". Multiple accounts are allowed for legitimate purposes but not to deceive or break the rules. Automation tools and scripts are prohibited. Inauthentic likes and followers are removed, and "content that tries to manipulate people into giving gifts or inflating likes or follows isn't eligible for the FYF" (the For You feed).
@@ -74,7 +76,7 @@ Source: https://discord.com/guidelines
 - Prohibited Gambling Content: no links or affiliate codes to sites with slots, roulette or dice games, and named sites (stake.com among them) cannot be streamed or linked. Skins gambling promotion is prohibited. Fantasy sports, sports betting and poker broadcasts are permitted.
 - Breaking the Law: content that solicits illegal activity is prohibited.
 
-What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest uptake of any action family in the data (median 0.05), so it costs entrants and gains little. Keep gambling sites and skins sites out of the prize and the chat.
+What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest uptake of any action family in the data, at a median 0.05 entries recorded per contestant, so it costs entrants and gains little. Keep gambling sites and skins sites out of the prize and the chat.
 
 Source: https://safety.twitch.tv/s/article/Community-Guidelines
 

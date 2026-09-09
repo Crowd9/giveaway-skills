@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Giveaway ROI, before or after the campaign. No dependencies.
 
-Before (estimate from a size band):
+Before the campaign, pricing a plan: we will spend 1,400 USD all in on a food and drink campaign we expect to draw 2,000 entrants, and an email address is worth 4 USD to us.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --vertical food_drink --value-per-email 4
-After (actual counts):
+After the campaign, pricing what actually happened: the same spend drew 1,800 entrants, 1,500 addresses, 900 follows and 200 referral entries.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --contestants 1800 --emails 1500 --follows 900 --referrals 200 --value-per-email 4
 
 Costs are what you pay. --stated-value is the retail figure you advertise, which is what the benchmarks below use, because the

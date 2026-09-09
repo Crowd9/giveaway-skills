@@ -1,0 +1,83 @@
+# After the draw
+
+Advice from practice. Nothing here carries a dataset figure. The campaign emails that run while entries are open belong to giveaway-promotion-plan, and the opt-in wording on the entry form belongs to giveaway-entry-method-planner. This page picks up at the moment the winner is announced and the rest of the list is still sitting there.
+
+## The welcome series that starts with the non-winner message
+
+The series starts at entry. Message one is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them from the giveaway stream, on a fixed schedule, and stop.
+
+| Message | When | What it does |
+|---|---|---|
+| 0. Welcome and referral | Within a day of entry, during the run | Confirms the entry, names the brand, carries the referral link. Written in giveaway-promotion-plan. |
+| 1. Result and thank-you | With the public announcement, within a week of the draw | Names the winner as the terms allow, thanks everyone, carries the one offer promised at entry. This is the non-winner message in `references/message-templates.md`. |
+| 2. What the brand is for | A few days after message one | One product or one story, chosen because the prize pointed at it. A person who entered for a coffee machine came for coffee. |
+| 3. One reason to come back | About a week after message two | A single next step: a code with an expiry, a guide, a restock alert, an invitation to the community. |
+
+After message three the subscriber either joins the core list or drops out under the hygiene rule below. Three messages is the practice, chosen so the sequence finishes before entry interest fades. Adjust the count to what the business has to say.
+
+## The code for everyone who did not win
+
+Every entrant browsed the store to enter, so the result email is the store's best-timed offer of the year. Mechanics, from practice:
+
+- **One code per person.** Generate unique single-use codes in the store (Shopify Discounts supports single-use codes, and the email tool merges them per address, Klaviyo and Mailchimp both do this). A shared code lands on coupon sites within a day and the discount goes to people who never entered.
+- **Expiry of 7 to 14 days.** Long enough to open the email, short enough to act on. Say the date in the subject.
+- **Minimum spend or a collection limit** so the code does not turn the cheapest item free. Exclude sale items and gift cards.
+- **A tier for referrers.** Entrants who referred a friend get a larger code. The referral entries are in the export, so the segment is a filter on the entrant list.
+- **Winners get no code.** They got the prize. The welcome series still goes to them.
+- **Track it.** The redemption count is the campaign's revenue line in giveaway-results-review, and the code name carries the campaign name so the store's reports show it. Without the code, revenue attribution is a join of entrant email to orders.
+- **Codes during a sale.** A 15% code sent the day the store goes 30% off is dead on arrival. Before Black Friday or a seasonal sale, make the non-winner offer early access to the sale, or a code that stacks on one item, and say which it is in the email.
+- **Wording that keeps the terms honest.** The code is a thank-you after the draw, never promised on the entry form as a reward for entering, which would make it a purchase condition under most sweepstakes readings.
+
+## Keep the giveaway list on its own stream
+
+Send the winners email and the whole welcome series from a separate stream, segment or subaccount, kept apart from the list the business mails every week.
+
+A giveaway list opens and clicks less than a list built from purchases. Mailbox providers read engagement per sending domain and stream, so a large low-engagement send lands the core list in the promotions tab or the spam folder alongside it. The separation costs one segment in the email tool and protects the asset the giveaway was meant to grow.
+
+Keep the separation until the address has done something: opened, clicked, or bought. Then move it across.
+
+## Watch the send
+
+Read these in the email provider within a day or two of the winners email, for the giveaway segment on its own.
+
+- Unsubscribe rate on that send.
+- Spam complaint rate on that send.
+- Bounce rate, hard bounces especially, which say how many addresses were typed to win and never to be read.
+- Open share in the first 48 hours.
+
+A complaint rate that jumps on the winners email usually means the entry form did not make the marketing opt-in obvious, so people who only wanted a prize are receiving marketing. Fix the form before the next campaign. Set the numbers down beside the campaign report so the next giveaway has something to compare with.
+
+## Hygiene before the core list
+
+Addresses that never open in their first weeks are the ones that cost sender reputation later.
+
+- Sunset rule (external practice, no dataset support here): after the first 30 to 60 days, stop mailing an address that has never opened. Suppress it, or run one plain re-permission email and suppress everyone who ignores it.
+- Re-permission copy, plain text, one link: "You entered the [campaign name] giveaway and have not opened anything since. Tap here if you want to keep hearing from [Brand]. If not, this is the last one." Subject: "Should we stop emailing you?"
+- Hard bounces come off immediately.
+- Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag the same addresses at draw time.
+- Only what survives this joins the core list.
+
+## Two consents, collected in different places
+
+Entry consent and marketing consent are separate permissions and they are collected in separate places.
+
+| Consent | Where it is given | What it allows |
+|---|---|---|
+| Entry consent | The entry form, by entering | Running the promotion: contacting a winner, verifying eligibility, delivering the prize, publishing the result as the terms describe |
+| Marketing consent | A ticked opt-in box on the entry form, or an opt-in on the thank-you page | Sending the welcome series and everything after it |
+
+Entering does not subscribe anyone. Anyone who skipped the marketing box gets the winner notification and nothing else. The terms script in giveaway-winner-structure writes this as a marketing-consent clause under its --marketing-consent flag.
+
+Where the region requires confirmed opt-in, send the confirmation email before message one, and hold the address out of the series until it is confirmed. Germany and Austria are the usual examples. Confirm the requirement for every country the entrants live in before launch, since this is not legal advice.
+
+## One question to entrants
+
+Ask one question with the result email or on the thank-you page. One question, one screen, no login.
+
+Useful shapes:
+
+- Which of these would you rather win next time? (three options taken from the prize shortlist)
+- Where did you hear about the giveaway? (fills the gap left by referrers that arrive as direct traffic)
+- Had you bought from us before entering? (yes or no, and the answer sizes how much of the list is new)
+
+Send the answers to whoever plans the next campaign. A prize question answered by a few hundred entrants is the cheapest prize research available, and it feeds giveaway-prize-picker directly.

@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """Giveaway budget calculator. Python 3.8+, no dependencies. Every number in is an estimate and every number out is one.
 
+Price one 500 USD grand prize and five 60 USD runner-up prizes that cost us 60% of retail, where one entrant in five is overseas.
   python3 budget.py --currency USD --prize "Grand prize" 500 1 --prize "Runner-up" 60 5 \
      --cost-ratio 0.6 --shipping 25 --international-share 0.2 --international-shipping 60 \
      --duty-rate 0.1 --tax-on-prize 0 --substitute-reserve 1 --admin-hours 6 --hourly 50 --promotion 300 --contingency 0.08
+Check the arithmetic still works after an edit.
   python3 budget.py --self-test
 
 --cost-ratio is what a unit costs you as a fraction of retail (1.0 for bought at retail, 0.5 for own product at half).
 Shipping and duty apply to physical units only (add --digital to a prize to skip them).
+Every figure is in one currency. For a prize bought or shipped in another, convert before you enter it and pass --rate
+"1 USD = 0.92 EUR, 9 Sep 2026" so the rate and the date it was taken sit on the printed breakdown.
 """
 import argparse, json, sys
 
@@ -43,6 +47,7 @@ def main(argv):
     ap.add_argument("--substitute-reserve", type=float, default=0.0, help="units of the most expensive prize held back at cost")
     ap.add_argument("--admin-hours", type=float, default=0.0); ap.add_argument("--hourly", type=float, default=0.0)
     ap.add_argument("--promotion", type=float, default=0.0); ap.add_argument("--contingency", type=float, default=0.08)
+    ap.add_argument("--rate", help='exchange rate and the date you took it, e.g. "1 USD = 0.92 EUR, 9 Sep 2026"')
     ap.add_argument("--json", action="store_true"); ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
@@ -53,6 +58,8 @@ def main(argv):
     print(f"Retail value you can state: {c} {r['retail_value_total']:,.0f}")
     for label, v in r["lines"]: print(f"  {label:44} {c} {v:,.0f}")
     print(f"Total estimate: {c} {r['total_estimate']:,.0f}  (about {c} {r['cost_per_winner']:,.0f} per winner). Estimates only. Confirm prices and shipping quotes before committing.")
+    if a.rate: print(f"Converted at {a.rate}. Rates move, so re-check before committing.")
+    elif a.international_share: print(f"Multi-region prize with everything priced in {c}. Pass --rate with the exchange rate and the date you took it.")
     return 0
 
 def self_test():
