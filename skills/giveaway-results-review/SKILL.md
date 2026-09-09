@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 37,180 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.4.0
+  version: 1.4.1
 ---
 
 # Giveaway Results Review
