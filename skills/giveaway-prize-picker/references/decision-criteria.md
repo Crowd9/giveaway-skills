@@ -21,6 +21,8 @@ Broad appeal (cash, gift cards, phones, consoles) is appropriate when the object
 
 Expect a broad prize to bring entrants who never buy. That is acceptable when the objective needs reach and the follow-up handles the mismatch. It becomes a problem when the leads go straight to a sales team.
 
+Extracted: 21% of clean-subset campaigns showed an own-product signal in the prize name (n=2,429). Their median contestants were 2,020 against 2,082 for bought-in prizes, with 4.1 entries per entrant against 3.4 and conversion of 34% against 39%. Giving away your own product came with about the same number of entrants as buying a prize in, and those entrants completed more actions. That describes what organizers saw, with no comparison group of failed campaigns.
+
 ## Structure tradeoffs
 
 | Structure | Strengths | Costs and risks |

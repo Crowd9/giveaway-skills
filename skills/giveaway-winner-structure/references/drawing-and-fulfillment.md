@@ -25,6 +25,8 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the p
 - Verification before release: check the winning entry completed the required action, the entrant is eligible, and one person did not enter under several names. Disqualify and redraw where it fails.
 - Duplicates and fraud: say in the terms that entries from automation, duplicate accounts or ineligible regions are void.
 
+Extracted: the median ordinary campaign had 3.8% of entries marked invalid at verification, 43% of campaigns had 5% or more, and campaigns with a referral action ran higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
+
 ## Contact and redraw
 
 - Contact by the channel the entrant gave. Two attempts, 72 hours apart, is common practice.
@@ -45,6 +47,10 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the p
 - Say who pays duties, import tax and any tax on the prize. Some jurisdictions tax prizes as income.
 - Experiences: dates, blackout periods, travel included or excluded, transferability.
 - Digital prizes: region locks, platform accounts, expiry.
+
+## How many organizers write terms (extracted)
+
+49% of the 37,123 ordinary campaigns carried custom terms in place of the platform default. In the clean subset, campaigns with custom terms had a median 2,183 contestants against 1,995 without (n=5,062 and 6,590) and a lower conversion (34% against 40%). That describes who writes terms, larger and more careful organizers, and says nothing about the terms causing either figure.
 
 ## Terms snippet to adapt
 

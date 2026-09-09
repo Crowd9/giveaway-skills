@@ -35,6 +35,10 @@ Every required action removes some entrants. Extracted: the median campaign offe
 
 Actions that cost the most: account connections (sign in with a social account), app installs, anything that leaves the entry page, and content creation. Keep those optional unless they are the objective.
 
+## Invalid entries (extracted)
+
+Gleam marks an entry invalid when its check fails: a follow that was undone, a duplicate account, a rejected answer, a referral that did not verify. Across 37,123 ordinary campaigns the median campaign had 3.8% of its entries marked invalid. 43% of campaigns had 5% or more, and 7% had 20% or more. Campaigns with a share or referral action ran a median 4.6% invalid against 3.1% without one. Discord join ran 4.8% against 3.7%, retweet 4.5% against 3.7%, email signup 4.3% against 3.4%. Twitch follow went the other way, 2.6% against 4.0%. Campaigns whose question action validated the answer had a median 17% invalid, because wrong answers count as invalid, so a quiz-style action inflates the figure without any fraud. These are medians of what organizers saw, and invalid entries were already excluded from every other figure in these references. Plan for a few percent of entries to fall away at verification, more when the mix leans on referrals, and say so in the terms.
+
 ## Consent and rules
 
 - Email entries need opt-in wording that says what the entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
@@ -43,3 +47,5 @@ Actions that cost the most: account connections (sign in with a social account),
 - Age and region limits belong in the terms and on the entry form.
 
 This skill does not give legal advice.
+
+Extracted: 28% of email signup actions in the ordinary campaigns showed an explicit opt-in checkbox. Where the checkbox was on, the median email action recorded 0.89 entries per contestant against 1.01 where it was off (clean subset, n=821 and 2,655). Expect roughly one in ten entrants to skip a visible checkbox. Those who tick it are the list you can mail.

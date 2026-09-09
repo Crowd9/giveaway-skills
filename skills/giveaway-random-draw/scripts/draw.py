@@ -27,14 +27,14 @@ also prints the drand round that will be produced at that time, so the seed sour
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.1.0"
+VERSION = "2.2.0"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
 def sha(b): return hashlib.sha256(b).hexdigest()
 def norm(s): return (s or "").strip().lower()
 
-ID_KEYS = ("email", "Email", "id", "ID", "entrant", "username", "user_name", "handle", "author", "name", "Name", "owner", "user", "from")
+ID_KEYS = ("email", "Email", "username", "user_name", "handle", "authorChannelId.value", "authorDisplayName", "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name", "id", "ID")
 
 def _flatten_json(obj):
     """Best-effort: find the list of comment or entrant objects inside a JSON export and the field that names the person."""
@@ -49,11 +49,11 @@ def _flatten_json(obj):
         if isinstance(it, str): rows.append({"entrant": it}); continue
         if not isinstance(it, dict): continue
         flat = {}
-        for k, v in it.items():
-            if isinstance(v, dict):
-                for k2, v2 in v.items():
-                    if isinstance(v2, (str, int, float)): flat[f"{k}.{k2}"] = v2
-            elif isinstance(v, (str, int, float)): flat[k] = v
+        def walk(prefix, d):
+            for k, v in d.items():
+                if isinstance(v, dict): walk(f"{prefix}{k}.", v)
+                elif isinstance(v, (str, int, float)): flat[f"{prefix}{k}"] = v
+        walk("", it)
         rows.append(flat)
     return rows
 
@@ -224,6 +224,10 @@ def self_test():
     pj = os.path.join(d, "c.json"); open(pj, "w").write(json.dumps({"comments": [{"owner": {"username": "ann"}, "text": "hi"}, {"owner": {"username": "Ann"}, "text": "again"}, {"owner": {"username": "bob"}, "text": "x"}]}))
     rows, col, _ = load_entries(pj, None); assert col == "owner.username" and len(rows) == 3, (col, rows)
     ents, dupes, *_ = prepare(rows, col, None, set()); assert [e["id"] for e in ents] == ["ann", "bob"] and dupes == 1
+    yj = os.path.join(d, "y.json"); open(yj, "w").write(json.dumps({"kind": "youtube#commentThreadListResponse", "items": [{"id": "Ugx1", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Ann", "authorChannelId": {"value": "UCa"}, "textDisplay": "hi"}}}}, {"id": "Ugx2", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Bob", "authorChannelId": {"value": "UCb"}, "textDisplay": "yo"}}}}]}))
+    rows, col, _ = load_entries(yj, None); assert col.endswith("authorChannelId.value") and len(rows) == 2 and rows[0][col] == "UCa", (col, rows)
+    gj = os.path.join(d, "g.json"); open(gj, "w").write(json.dumps({"data": [{"id": "1", "text": "hi", "from": {"id": "9", "username": "ann"}}, {"id": "2", "text": "x", "from": {"id": "8", "username": "bob"}}]}))
+    rows, col, _ = load_entries(gj, None); assert col == "from.username", (col, rows)
     print("self-test passed"); return 0
 
 def main(argv):

@@ -1,7 +1,7 @@
 {
   "name": "giveaway-skills",
   "description": "Skills for running better giveaways from idea to winner messages: ideas, prize choice, entry methods, timing, winner structure, promotion plan, provably fair random draw and winner communications, platform-neutral, supported by Gleam",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": {
     "name": "Gleam"
   },

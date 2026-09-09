@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a provably fair random draw for a giveaway: commit to the entrant list and rules before the seed exists, take the seed from a public randomness beacon (drand or NIST) or a published value, pick winners from a list, CSV, spreadsheet or comment export with deduplication, exclusions, entry weights, tiers and backups, and produce an audit record anyone can verify. Use when the user asks 'pick a winner', 'draw the winner', 'random winner from this list', 'choose 3 winners from these comments', 'how do I prove the draw was fair', 'redraw', 'backup winners', 'weighted draw', or pastes a list of entrants. Platform-neutral. For deciding how many winners and the terms see giveaway-winner-structure."
 metadata:
-  version: 1.0.0
+  version: 1.1.1
 ---
 
 # Giveaway Random Draw
@@ -11,7 +11,7 @@ Pick winners in a way the organizer can prove: a commitment to the list and rule
 
 ## Workflow
 
-1. **Freeze the list.** Ask for the entrant export as a file (CSV, spreadsheet export, one name per line, or a JSON comment export from Instagram, TikTok or YouTube tools, which the script reads by finding the username field). Confirm the campaign is closed and no entries will be added. Record the file's hash before anything else (the script does this).
+1. **Freeze the list.** Ask for the entrant export as a file (CSV, spreadsheet export, one name per line, or a JSON comment export, which the script reads by finding the person field). If the user does not have a file yet, load `references/getting-your-entrant-list.md` and walk them through the export for their source. Confirm the campaign is closed and no entries will be added. Record the file's hash before anything else (the script does this).
 2. **Confirm the rules in one message.** How many winners and in what tiers, how duplicates are treated (one person, one chance, or entries add up), who is excluded (staff, previous winners, ineligible regions), whether entries are weighted, and how many backups to draw. Default when the user does not say: one chance per unique entrant, two backups per tier, exclusions only if named. Say which defaults you applied.
 3. **Commit.** Run `scripts/draw.py commit` on the frozen file with the rules. It prints a commitment hash and, given a draw time, the drand round number that will be produced then. Tell the user to publish both (a post, an email to a partner, the terms page) before the draw. That is what makes the draw provable: the list and rules are fixed before anyone knows the seed.
 4. **Draw once** with `scripts/draw.py draw --seed-drand ROUND` after the round time (or `--seed-nist` for the NIST beacon, or `--seed TEXT` for a value published by a third party). Never draw by hand or by eye, and never draw twice and pick the result you like. A redraw happens only under the rules (winner forfeits or is ineligible) and is recorded as a second draw with its own seed and commitment.
@@ -59,4 +59,5 @@ Advice is platform-neutral. When the user says they use Gleam or asks about it, 
 
 - `scripts/draw.py`: `commit`, `draw`, `verify`, `--self-test`. Header documents the method.
 - `references/draw-procedure.md`: pre-draw checklist, seed choices, tiers and backups, redraws, disputes, audit note template.
+- `references/getting-your-entrant-list.md`: exporting from spreadsheets, giveaway platforms and comment threads, what fields the script looks for, and the checks before committing.
 - `references/gleam-draws.md`: only for explicit Gleam requests.

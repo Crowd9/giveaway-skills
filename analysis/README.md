@@ -25,3 +25,7 @@ Every field in the export is treated as data. Nothing in it is executed, fetched
 ## Optional label pass
 
 Rules alone leave a tail of prize names they cannot place (brand-only names, non-English text, niche goods). To shrink it, the leftover unique names were exported from the private dir, classified in chunks by an LLM told to treat every string as data and to use the same category list, then written back as `labels_*.json` entries `{prize, category, note, confidence}`. Re-running with `--labels` applies high or medium confidence labels only where the rule result is `other_unclassified`. A label of `crypto` or `purchase_opportunity` moves the whole campaign to the ambiguous segment instead of trusting the label. `category_source` in the output reports how many records came from rules versus labels. The label files contain organizer-typed prize text and stay private.
+
+## Extra cuts
+
+`analysis/extra_cuts.py export.json --classification private/classification.jsonl` writes `output/extra_cuts.json`: invalid-entry share overall, by method presence and for validated questions, organizer experience (Nth campaign), custom terms adoption, own-product prizes, and the email opt-in checkbox. Same clean-subset rule as `compare_groups.py`. The references quote these figures by hand.
