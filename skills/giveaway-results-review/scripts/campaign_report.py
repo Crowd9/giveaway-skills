@@ -48,9 +48,20 @@ def host_of(url):
     if u.startswith("http"): return u.split("/")[2].lower() if u.count("/") >= 2 else u.lower()
     return u.lower()
 
-def channel(host):
+def landing_kind(url):
+    """gleam.io/giveaways/KEY is the Gleam giveaways directory listing (the campaign was featured). gleam.io/KEY/slug is the
+    hosted campaign page. Anything else is the organizer's own page with the widget embedded."""
+    u = (url or "").strip(); h = host_of(u)
+    if not h: return "unknown"
+    if "gleam.io" in h:
+        path = u.split(h, 1)[1] if h in u else ""
+        return "Gleam giveaways directory" if path.startswith("/giveaways") else "hosted page on gleam.io"
+    return "embedded on " + h
+
+def channel(host, landing=None):
+    if "gleam.io" in (host or "") and landing == "Gleam giveaways directory": return "Gleam giveaways directory (featured)"
     if not host: return "Direct or unknown"
-    if "gleam.io" in host: return "Gleam network"
+    if "gleam.io" in host: return "Gleam network (other campaigns and pages)"
     if any(d in host for d in DIRECTORIES): return "Competition directories"
     if any(s in host for s in SOCIAL): return "Social"
     if any(w in host for w in WEBMAIL): return "Email (webmail)"
@@ -97,7 +108,8 @@ def load(path, mapping=None):
         r["_when"] = parse_when(r.get(cols["when"])) if "when" in cols else None
         try: r["_entries"] = float(r.get(cols["entries"]) or 0) if "entries" in cols else 1.0
         except ValueError: r["_entries"] = 1.0
-        r["_host"] = host_of(r.get(cols["referrer"])) if "referrer" in cols else ""; r["_channel"] = channel(r["_host"])
+        r["_host"] = host_of(r.get(cols["referrer"])) if "referrer" in cols else ""
+        r["_landing"] = landing_kind(r.get(cols["landing"])) if "landing" in cols else "unknown"; r["_channel"] = channel(r["_host"], r["_landing"])
         r["_refer"] = "refer" in r["Action"].lower() or "share" in r["Action"].lower() and "@" in (r.get(cols.get("details", ""), "") or "")
         for role, key in (("country", "Country"), ("city", "City"), ("details", "Details"), ("landing", "Landing Page URL")):
             if role in cols and cols[role] != key: r[key] = r.get(cols[role])
@@ -182,8 +194,11 @@ def analyze(rows, a):
         ppl = [w for w in first if first[w]["_channel"] == c]; ch_apc[c] = (sum(len(people[w]) for w in ppl) / len(ppl)) / avg_apc if ppl else None
     R["channels"] = [(c, ft[c], ft[c] / n, ch_actions[c], ch_apc[c], ch_invalid[c] / ch_all[c] if ch_all[c] else 0) for c, _ in ft.most_common()]
     R["hosts"] = fh.most_common(12); R["invalid_rate_all"] = R["topline"]["invalid_rate"]
-    lp = collections.Counter("hosted on gleam.io" if "gleam.io" in host_of(first[w].get("Landing Page URL")) else ("embedded on " + host_of(first[w].get("Landing Page URL")) if host_of(first[w].get("Landing Page URL")) else "unknown") for w in first)
-    R["landing"] = lp.most_common(5)
+    lp = collections.Counter(first[w]["_landing"] for w in first); R["landing"] = lp.most_common(6)
+    feat = [w for w in first if first[w]["_channel"] == "Gleam giveaways directory (featured)"]
+    landed = [w for w in first if first[w]["_landing"] == "Gleam giveaways directory"]
+    R["featured"] = {"entrants": len(feat), "share": len(feat) / n, "depth": (sum(len(people[w]) for w in feat) / len(feat)) / avg_apc if feat else None,
+                     "landed": len(landed), "landed_share": len(landed) / n, "landed_depth": (sum(len(people[w]) for w in landed) / len(landed)) / avg_apc if landed else None} if landed else None
     utm = collections.Counter()
     for w in first:
         q = urllib.parse.parse_qs(urllib.parse.urlparse(first[w].get("Landing Page URL") or "").query)
@@ -254,7 +269,9 @@ def render(R, a):
     w("\n## Traffic\n\nFirst-touch channel per entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
     w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {h} | {k:,} |" for h, k in R["hosts"]))
-    w("\nLanding: " + ", ".join(f"{k} {v:,}" for k, v in R["landing"]) + ".")
+    w("\nLanding page at first touch: " + ", ".join(f"{k} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
+    if R.get("featured"):
+        F = R["featured"]; w(f"\nFeatured on gleam.io/giveaways: {F['entrants']:,} entrants ({F['share']:.0%}) came from browsing the directory (landed on the listing with gleam.io as the referrer)" + (f", at {F['depth']:.2f}x the average actions per entrant" if F["depth"] else "") + f". {F['landed']:,} entrants ({F['landed_share']:.0%}) landed on the listing URL from any source, at {F['landed_depth']:.2f}x, since the listing link also gets shared by aggregators, email and social. Listing traffic is people browsing giveaways, so read its depth and email uptake apart from your own channels.")
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
     if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ".")
     else: w("\nPartner contribution needs --partners with the hosts or UTM values that identify them. Without tagging it is not attributable.")
@@ -294,6 +311,7 @@ def self_test():
     class A: impressions = None; prize_value = 100.0; plan_cost = 50.0; benchmark_cpl = 2.0; sends = "2026-05-01=Launch"; partners = ["contestgirl"]
     R = analyze(load(p), A)
     assert R["topline"]["entrants"] == 2 and R["topline"]["invalid_actions"] == 1 and R["viral"]["referred_entrants"] == 1 and R["viral"]["sharers"] == 1, R["topline"]
+    assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
     assert R["channels"][0][0] in ("Email (webmail)", "Competition directories") and R["utm"][0][1] == 1 and R["roi"]["emails"] == 1 and R["partners"][0][1] == 1, (R["channels"], R["utm"], R["roi"])
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
     q = os.path.join(d, "wide.csv")
