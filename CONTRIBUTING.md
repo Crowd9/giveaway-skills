@@ -47,6 +47,7 @@ skills/
   giveaway-prize-picker/
     SKILL.md
     references/
+    defaults/           machine-readable defaults for the Gleam editor, written by analysis/defaults.py
     evals/              evals.json, cases.md (style_check.py lives in evals/ at the repo root)
   giveaway-entry-method-planner/
   giveaway-timing-and-duration/

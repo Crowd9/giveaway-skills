@@ -69,3 +69,5 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Calendar
 
 `analysis/calendar.py export.json --classification private/classification.jsonl` writes `output/calendar.json`: every ISO start week with share of starts, contestants, clean conversion and entries per entrant, start day of month, and campaigns live over each holiday against a comparison group with the same duration mix. `output/calendar_names.json` holds the name-against-date agreement per holiday and the holiday-named share of starts per week.
+
+`analysis/defaults.py` reads the outputs above and writes `defaults/*.json`, the machine-readable defaults for the Gleam AI campaign editor. Run it last.

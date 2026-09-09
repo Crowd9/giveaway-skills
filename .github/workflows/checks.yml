@@ -24,6 +24,8 @@ jobs:
           python3 skills/giveaway-prize-picker/scripts/roi.py --self-test
           python3 skills/giveaway-results-review/scripts/gleam_export.py --self-test
           python3 skills/giveaway-results-review/scripts/campaign_report.py --self-test
+      - name: Editor defaults
+        run: python3 defaults/validate.py
       - name: Style rules on prose
         run: python3 scripts/style_lint.py
       - name: No customer data

@@ -5,7 +5,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.2 |
-| giveaway-entry-method-planner | 1.2.2 |
+| giveaway-entry-method-planner | 1.2.3 |
 | giveaway-timing-and-duration | 1.4.0 |
 | giveaway-winner-structure | 1.3.0 |
 | giveaway-promotion-plan | 1.3.2 |
@@ -13,7 +13,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-winner-communications | 1.2.1 |
 | giveaway-idea-generator | 1.3.1 |
 | giveaway-results-review | 1.5.3 |
-| gleam-campaign-setup | 1.2.0 |
+| gleam-campaign-setup | 1.2.1 |
 
 ## Skills
 
@@ -43,6 +43,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.0 (2026-09-09): SMS and messaging opt-in family as practice, five jobs used in the output table, uptake by position table behind the first-position claim, three assets five to eight methods stated in the workflow, entry consent split from marketing consent, using what you built in the first 30 days, TikTok re-check date.
 - 1.2.1 (2026-09-09): welcome series timing aligned with the promotion plan (welcome at entry, result and two brand messages after the draw).
 - 1.2.2 (2026-09-09): store campaign actions (product page visit, cart or wishlist question, pick your prize, tagged subscribe, referral on purchase, purchase kept out of entry).
+- 1.2.3 (2026-09-09): referral cap guidance (leave off unless referral farming pays).
 
 ### giveaway-timing-and-duration
 
@@ -136,6 +137,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.1.0 (2026-09-09): uptake defined, fraud level table, consent line under User Details, results review step after close, short-lookup rule, drawing-winners.md as the single reconciled Gleam draw text dated 9 September 2026.
 - 1.1.1 (2026-09-09): connect and test the email provider integration before launch so entrant emails trigger during the run.
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
+- 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
 
 ## 1.4.0 (2026-09-09)
 

@@ -139,7 +139,7 @@ The entry-method-planner skill holds uptake by question type (detail capture 0.9
 
 - Put the action that produces the asset first and make it the single mandatory action. First position was completed by the median entrant, fifth position by two thirds.
 - Keep the list short. Everything after the fourth action is completed by a minority, and eleven or more actions came with fewer contestants.
-- Set Viral Share expectations at one referred entry per eight entrants, and weight it accordingly. Its position does not matter.
+- Set Viral Share expectations at one referred entry per eight entrants, and weight it accordingly. Its position does not matter. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
 - Use a question or choice template when you want an answer. Free-form custom actions lose half the entrants.
 - Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a fifth of completions, and showing the page as HTML inside the widget costs a third against a plain link.
 - Keep the description under 150 words and lead with eligibility and winner count, which the Gleam tips library also recommends.

@@ -159,7 +159,7 @@ The actions a store wants send the entrant into the catalogue and bring somethin
 - **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the mandatory action. Question templates ran near 0.9 completions per contestant. The answers are the wishlist data a cart campaign exists to collect.
 - **Pick your prize.** A choice action with the three prize options, so the preference is recorded on entry.
 - **Subscribe with the store tag.** The email action synced to the store's customer list with the campaign name as the tag, so the non-winner code and the welcome series go to the right segment.
-- **Refer a friend.** The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
+- **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
 - **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
 
 ## Using what you built (advice)
