@@ -24,6 +24,10 @@ One row per completed action. The person is the Email column, Status is Valid, I
 
 A visitor who returns every day for a daily bonus counts as a new impression each day and as one contestant once. A 30-day campaign with a daily action can show a conversion rate half that of a 7-day campaign with the same audience. In the export, clean campaigns (no repeatable action, 14 days or less) converted at a median 42%. Campaigns of 31 to 60 days sat at 24% and 61 days or more at 23%. Before calling conversion low, check run length and repeatable actions.
 
+## Judgement words
+
+A rank says where a figure sits. It does not say the figure is bad. Most metrics here have a narrow spread, so a campaign can be "better than 15% of campaigns" on email uptake while four in five of its entrants still subscribed. Write the figure, the median and the rank. Use weak or strong only for the bottom or top tenth, or a gap of a third or more from the median, and say so in the same sentence. Absolute reads matter too: 68% of entrants subscribing is most of them.
+
 ## Common misreads
 
 - **Low conversion with a long run or daily action.** Usually the caveat above. Compare against the duration row, not the overall median.
