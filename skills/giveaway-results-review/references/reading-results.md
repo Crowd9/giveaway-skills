@@ -11,7 +11,6 @@ Advice from practice plus the reporting definitions Gleam publishes. Other platf
 | Actions | Entry methods completed | Engagement depth |
 | Entries | Actions completed multiplied by entry worth | A weighting artefact. Never compare entries between campaigns with different worths |
 | Conversion rate | Users divided by impressions | Landing page fit, with the impressions caveat below. Platform average about 34% |
-| Invalid entries | Entries the fraud filter or a check rejected | Hidden from other reports. Median campaign 3.8% |
 
 ## The impressions caveat
 
@@ -22,7 +21,7 @@ A visitor who returns every day for a daily bonus counts as a new impression eac
 - **Low conversion with a long run or daily action.** Usually the caveat above. Compare against the duration row, not the overall median.
 - **High entries, ordinary contestants.** Entry worth on share or bonus actions. Look at contestants and actions instead.
 - **One action at 90%, the rest under 20%.** Normal. Visits and email signups sit near 0.75 to 0.89 completions per contestant, follows near 0.47, shares near 0.22, content near 0.24. Rank against the family median, not against the top action.
-- **Invalid share above 10%.** Check for a validated-answer question first (wrong answers count as invalid). Otherwise look at referral and Discord actions, which carried more invalids in the data.
+- **A fifth or more of entries invalid.** Check for a validated-answer question first (wrong answers count as invalid), then referral and Discord actions. Invalid entries are otherwise left out of the benchmarks.
 - **Fewer contestants than last time.** Check the gap since the previous campaign, the prize category, the month, and the number of actions before blaming promotion.
 
 ## Recommendation map
@@ -34,5 +33,4 @@ A visitor who returns every day for a daily bonus counts as a new impression eac
 | Actions per entrant low | Entry mix and ordering, entry worth | giveaway-entry-method-planner |
 | The asset action (email, follow) underperformed | Make it the single mandatory action, cut the rest | giveaway-entry-method-planner |
 | Share action near zero | Expected. Drop it or give it a reason to exist | giveaway-entry-method-planner |
-| Invalid share high | Verification and fraud settings, referral action review | giveaway-winner-structure |
 | Winner drama | Structure, terms, communications | giveaway-winner-structure, giveaway-winner-communications |

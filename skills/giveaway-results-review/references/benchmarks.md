@@ -1,6 +1,6 @@
 # Benchmarks
 
-The script ranks a campaign against every fifth percentile of twelve metrics in `percentiles.json` (contestants, impressions, conversion, actions and entries per contestant, contestants per day, action count, duration, invalid share, email signups, email uptake, referral entries per contestant), for all campaigns, the clean subset, the size band and the vertical. The tables below are the medians and the reading guide.
+The script ranks a campaign against every fifth percentile of twelve metrics in `percentiles.json` (contestants, impressions, conversion, actions and entries per contestant, entries, contestants per day, action count, duration, stated prize value per contestant, email signups, email uptake, referral entries per contestant, follows by network), plus completions per contestant for 51 Gleam actions, for all campaigns, the clean subset, the size band and the vertical. The tables below are the medians and the reading guide.
 
 Every figure is extracted from the ordinary segment of the export (37,180 campaigns that reached 1,000 unique entrants, crypto and purchase-only campaigns removed). Medians unless stated. The clean subset has no repeatable action and a run of 14 days or less, because impressions are unique per user per day.
 
@@ -34,17 +34,6 @@ Half of all campaigns sat between 1,000 and 2,500 contestants. Bands used by the
 | 15 to 30 | 7,030 | 2,233 | 28% |
 | 31 to 60 | 3,751 | 2,201 | 24% |
 | 61 or more | 1,440 | 2,392 | 23% |
-
-## Invalid entries (all ordinary)
-
-| Invalid share | Share of campaigns |
-|---|---|
-| Under 1% | 25% |
-| 1% to 5% | 32% |
-| 5% to 20% | 35% |
-| 20% or more | 7% |
-
-Median 3.8%. Referral, Discord join, retweet and email actions ran higher. Validated-answer questions ran a median 17%.
 
 ## Action family uptake (completions per contestant, all ordinary)
 
