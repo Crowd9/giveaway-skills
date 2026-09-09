@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate giveaway concepts: the hook (launch, milestone, season, holiday, collaboration, daily series), the theme, the mechanic and the prize direction, matched to the business, the calendar and the objective. Use when the user asks 'giveaway ideas', 'what kind of giveaway should we run', 'themes for a Christmas giveaway', 'ideas for our 10k follower milestone', 'something different from a standard giveaway', or wants three concepts to choose from. Platform-neutral. Hands off to giveaway-prize-picker for the prize and giveaway-entry-method-planner for the mechanics."
 metadata:
-  version: 1.0.3
+  version: 1.1.0
 ---
 
 # Giveaway Idea Generator
@@ -25,7 +25,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 
 - Three concepts, each in five lines: title, hook, mechanic, prize direction, asset produced. Write each line as "Hook: ..." with a colon, never a dash.
 - The recommendation with a sentence of reasoning.
-- What to avoid for this business (from the reference's list of tired or risky formats).
+- What to avoid for this business (from the reference's list of tired or risky formats), and where the chosen type sits in the campaign types table (contestants, conversion, value index), quoted as extracted with n.
 - Next step and which skill takes it.
 
 ## Evidence rules
