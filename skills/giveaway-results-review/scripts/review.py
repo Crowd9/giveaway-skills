@@ -137,9 +137,10 @@ def read_actions(path, contestants):
             fam = family(r[0]); up = n / contestants
             bench = BENCH["family_uptake"].get(fam)
             read = (("at or above" if bench and up >= bench else "below") + " its family median") if bench else "no family benchmark"
-            t = (PCT or {}).get("per_action_uptake", {}).get(r[0])
+            gname = r[2].strip() if len(r) > 2 and r[2].strip() else r[0]
+            t = (PCT or {}).get("per_action_uptake", {}).get(gname)
             rr = rank(up, t)
-            if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {r[0]}"
+            if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
             ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
             if ym: read += f", median campaign in this band collected {ym:,}"
             out.append((r[0], f"{up:.2f}", f"{bench:.2f}" if bench else "n/a", fam or "unclassified", read))
@@ -204,7 +205,7 @@ def main(argv):
     ap.add_argument("--self-test", action="store_true"); ap.add_argument("--contestants", type=int); ap.add_argument("--impressions", type=int)
     ap.add_argument("--entries", type=int); ap.add_argument("--invalid", type=int); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
-    ap.add_argument("--actions", help="CSV with action name and completions per row, header row first")
+    ap.add_argument("--actions", help="CSV with action name and completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")
     ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral entries recorded")
     ap.add_argument("--actions-completed", type=int, help="total actions completed across all entry methods (sum of the actions report)")

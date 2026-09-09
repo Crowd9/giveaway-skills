@@ -18,6 +18,8 @@ If bonus entries live in a column, name it with `--weight-column`. If the sheet 
 
 ## Your giveaway platform
 
+A Gleam Actions export has one row per completed action with an Entries column for its worth and a Status column. The results-review skill's `gleam_export.py --entrants-csv entrants.csv` writes the valid rows as email and entries, and the draw script adds the entries up per person with `--weight-column entries`, so bonus entries carry their weight and invalid rows never enter the draw.
+
 Every hosted giveaway tool has an entrant or users export, usually CSV, with an email column and an entries column. Export once after close, name the email column with `--id-column` if the header is unusual, and use the entries column as the weight. Platform-specific notes belong in your platform's own help pages.
 
 ## Comment giveaways
