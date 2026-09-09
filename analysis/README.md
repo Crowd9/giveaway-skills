@@ -71,3 +71,15 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 `analysis/calendar.py export.json --classification private/classification.jsonl` writes `output/calendar.json`: every ISO start week with share of starts, contestants, clean conversion and entries per entrant, start day of month, and campaigns live over each holiday against a comparison group with the same duration mix. `output/calendar_names.json` holds the name-against-date agreement per holiday and the holiday-named share of starts per week.
 
 `analysis/defaults.py` reads the outputs above and writes `defaults/*.json`, the machine-readable defaults for the Gleam AI campaign editor. Run it last.
+
+## analysis (September 2026)
+
+Nikita's analysis is 40 JSON shards with histograms and per-action settings, every campaign with 100 or more contestants. Convert it once, then query tables:
+
+```
+python3 -m pip install the query engine
+python3 analysis/convert.py "<export dir>" build-inputs/tables      # streams each shard, about 45 seconds per 2 GB shard, skips shards still downloading
+python3 analysis/load.py build-inputs/tables                        # row counts per table
+```
+
+`the analysis notes` lists the new fields, the derived columns and the known gaps. `build-inputs/` is gitignored. Scripts migrate to `load.connect()` one at a time as they are re-run.
