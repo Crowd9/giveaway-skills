@@ -146,7 +146,7 @@ Your finished campaign read against 37,180 others of the same size, and what to 
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
 - Three changes at most, each tied to a figure and to the skill that plans it
-- Works from plain numbers, a reporting screenshot or an actions export
+- Works from plain numbers, a reporting screenshot, or a Gleam Actions export read directly: contestants, follows by network, email signups, the country split and the referrers that brought people in
 
 > "1,800 entrants, 6,000 views, 9,000 entries, ran 14 days with 6 actions. How did we do?"
 

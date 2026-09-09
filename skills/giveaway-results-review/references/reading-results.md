@@ -2,6 +2,10 @@
 
 Advice from practice plus the reporting definitions Gleam publishes. Other platforms define the same words differently, so confirm before comparing.
 
+## Reading a Gleam Actions export
+
+One row per completed action. The person is the Email column, Status is Valid, Invalid or Winner, Entries is the worth of that action, When carries the campaign's timezone offset, Country comes from the entrant's IP, and Referring URL says where the visit came from. Contestants are unique valid emails. Actions completed are valid rows. Entries are the sum of the Entries column on valid rows. The export has no impressions, so conversion needs the Reporting tab. An auto-entry bonus (a row like "Entry Confirmed") counts as an action for nearly everyone and says nothing about engagement. Referrers show the promotion channels that worked and the giveaway-listing sites (contest aggregators) that found the campaign, which explain a low email uptake as much as the form does.
+
 ## The metrics
 
 | Metric | Definition (Gleam) | What it tells you |
