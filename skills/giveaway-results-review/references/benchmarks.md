@@ -1,6 +1,6 @@
 # Benchmarks
 
-The script ranks a campaign against every fifth percentile of each metric in `percentiles.json`, for all campaigns, the clean subset, the size band and the vertical. The tables below are the medians and the reading guide.
+The script ranks a campaign against every fifth percentile of twelve metrics in `percentiles.json` (contestants, impressions, conversion, actions and entries per contestant, contestants per day, action count, duration, invalid share, email signups, email uptake, referral entries per contestant), for all campaigns, the clean subset, the size band and the vertical. The tables below are the medians and the reading guide.
 
 Every figure is extracted from the ordinary segment of the export (37,180 campaigns that reached 1,000 unique entrants, crypto and purchase-only campaigns removed). Medians unless stated. The clean subset has no repeatable action and a run of 14 days or less, because impressions are unique per user per day.
 

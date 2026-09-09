@@ -52,6 +52,10 @@ def rank_line(metric, value, groups, lower_is_better=False):
 
 PCT = None
 
+def median_of(metric, key="all"):
+    t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
+    return t["p"][9] if t else None
+
 def position(value, dist):
     if value < dist["p25"]: return "bottom quarter"
     if value < dist["median"]: return "below the median"
@@ -85,7 +89,7 @@ def review(a):
         rows.append(("Entries per contestant", f"{epc:.2f}", f"{BENCH['entries_per_contestant']['median']}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
     if a.impressions:
         conv = a.contestants / a.impressions
-        rows.append(("Impressions", f"{a.impressions:,}", f"{BENCH['impressions']['median']:,}", position(a.impressions, BENCH["impressions"])))
+        rows.append(("Impressions", f"{a.impressions:,}", f"{BENCH['impressions']['median']:,}", position(a.impressions, BENCH["impressions"]) + ". " + rank_line("impressions", a.impressions, groups)))
         peer_m = lookup(BENCH["conv_by_methods"], a.methods) if a.methods else None
         peer_d = lookup(BENCH["conv_by_duration"], a.days) if a.days else None
         note = f"platform average {BENCH['platform_average_conversion']:.0%}"
@@ -101,6 +105,12 @@ def review(a):
         elif inv >= 0.05: read += f", like {BENCH['invalid_share']['share_5pct_plus']:.0%} of campaigns"
         read += ". " + rank_line("invalid_share", inv, groups, lower_is_better=True)
         rows.append(("Invalid share of entries", f"{inv:.1%}", f"{BENCH['invalid_share']['median']:.1%}", read))
+    if getattr(a, "actions_completed", None):
+        apc = a.actions_completed / a.contestants
+        rows.append(("Actions completed per contestant", f"{apc:.2f}", f"{median_of('actions_per_contestant') or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))
+    if a.days:
+        pace = a.contestants / a.days
+        rows.append(("Contestants per day", f"{pace:,.0f}", f"{median_of('contestants_per_day') or 0:,.0f}", rank_line("contestants_per_day", pace, groups)))
     if getattr(a, "emails", None):
         up = a.emails / a.contestants
         rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
@@ -109,9 +119,9 @@ def review(a):
         rp = a.referrals / a.contestants
         rows.append(("Referral entries per contestant", f"{rp:.2f}", "0.13", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
-        rows.append(("Duration in days", f"{a.days}", f"{BENCH['duration_days']['median']}", position(a.days, BENCH["duration_days"])))
+        rows.append(("Duration in days", f"{a.days}", f"{BENCH['duration_days']['median']}", position(a.days, BENCH["duration_days"]) + ". " + rank_line("duration_days", a.days, groups).replace("better than", "longer than")))
     if a.methods:
-        rows.append(("Entry actions", f"{a.methods}", "5", "11 or more lost a fifth of contestants in the clean subset" if a.methods >= 11 else "within the usual range"))
+        rows.append(("Entry actions", f"{a.methods}", "5", ("11 or more lost a fifth of contestants in the clean subset" if a.methods >= 11 else "within the usual range") + ". " + rank_line("methods", a.methods, groups).replace("better than", "more than")))
     return rows
 
 def read_actions(path, contestants):
@@ -130,15 +140,54 @@ def read_actions(path, contestants):
             out.append((r[0], f"{up:.2f}", f"{bench:.2f}" if bench else "n/a", fam or "unclassified", read))
     return sorted(out, key=lambda x: -float(x[1]))
 
+HIST_COLS = ("campaign", "contestants", "impressions", "entries", "invalid", "days", "methods", "emails")
+
+def read_history(path):
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        rd = csv.DictReader(f); rows = []
+        for r in rd:
+            row = {"campaign": r.get("campaign") or r.get("name") or f"campaign {len(rows) + 1}"}
+            for k in HIST_COLS[1:]:
+                try: row[k] = float(str(r.get(k, "")).replace(",", "")) if r.get(k, "") not in ("", None) else None
+                except ValueError: row[k] = None
+            rows.append(row)
+    return rows
+
+def history_table(a, hist):
+    """This campaign beside the organizer's previous ones and their own median."""
+    def metrics(c, i, e, inv, d):
+        return {"contestants": c, "conversion": c / i if i else None, "entries_per_entrant": e / c if e and c else None,
+                "invalid_share": inv / (e + inv) if e is not None and inv is not None and (e + inv) else None, "contestants_per_day": c / d if d else None}
+    prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in hist if h.get("contestants")]
+    now = metrics(a.contestants, a.impressions, a.entries, a.invalid, a.days); now["emails"] = getattr(a, "emails", None)
+    out = []
+    for m, label, fmt in [("contestants", "Contestants", "{:,.0f}"), ("conversion", "Contestants per impression", "{:.1%}"), ("entries_per_entrant", "Entries per contestant", "{:.2f}"),
+                          ("invalid_share", "Invalid share", "{:.1%}"), ("contestants_per_day", "Contestants per day", "{:,.0f}"), ("emails", "Email signups", "{:,.0f}")]:
+        vals = [p.get(m) for p in prev if p.get(m) is not None]
+        if now.get(m) is None or not vals: continue
+        last = vals[-1]; med = sorted(vals)[len(vals) // 2]
+        delta = (now[m] - last) / last if last else None
+        better = (lambda v: now[m] < v) if m == "invalid_share" else (lambda v: now[m] > v)
+        out.append((label, fmt.format(now[m]), fmt.format(last), fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if better(v))} of {len(vals)} previous beaten"))
+    notes = []
+    if prev and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the export")
+    elif prev: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the export, so a jump past it is unusual")
+    return out, notes
+
 def print_table(rows, header):
     widths = [max(len(str(x)) for x in col) for col in zip(header, *rows)]
     for line in [header] + rows: print("  ".join(str(x).ljust(w) for x, w in zip(line, widths)))
 
 def self_test():
-    class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False; vertical = "food_drink"; emails = 1500; referrals = 200
+    class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False; vertical = "food_drink"; emails = 1500; referrals = 200; actions_completed = 5400
     rows = review(A); d = {r[0]: r for r in rows}
     assert "better than" in d["Unique contestants"][3] and "food drink campaigns" in d["Unique contestants"][3], rows
     assert "Email signups" in d and "better than" in d["Email signups"][3], rows
+    assert d["Actions completed per contestant"][1] == "3.00" and "Contestants per day" in d and "Impressions" in d and "better than" in d["Impressions"][3], rows
+    hist = [{"campaign": "spring", "contestants": 1200, "impressions": 5000, "entries": 5000, "invalid": 100, "days": 10, "methods": 5, "emails": 900},
+            {"campaign": "summer", "contestants": 1500, "impressions": 5500, "entries": 7000, "invalid": 200, "days": 14, "methods": 6, "emails": 1200}]
+    ht, notes = history_table(A, hist); hd = {r[0]: r for r in ht}
+    assert hd["Contestants"][4] == "+20% against the previous" and hd["Contestants"][5] == "2 of 2 previous beaten" and notes, ht
     assert "1k-2.5k" in d["Unique contestants"][3] and d["Entries per contestant"][1] == "5.00" and d["Contestants per impression"][1] == "30.0%", rows
     assert d["Invalid share of entries"][1] == "4.3%" and "above the median" in d["Invalid share of entries"][3]
     assert family("Subscribe to our newsletter") == "email" and family("Share on Facebook") == "share" and family("Visit our store") == "visit"
@@ -152,12 +201,17 @@ def main(argv):
     ap.add_argument("--actions", help="CSV with action name and completions per row, header row first")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")
     ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral entries recorded")
+    ap.add_argument("--actions-completed", type=int, help="total actions completed across all entry methods (sum of the actions report)")
+    ap.add_argument("--history", help="CSV of the organizer's previous campaigns, oldest first: campaign,contestants,impressions,entries,invalid,days,methods,emails (missing cells allowed)")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.contestants: ap.error("--contestants is required")
     print_table(review(a), ("Metric", "This campaign", "Benchmark median", "Read"))
     if a.actions:
-        print(); print_table(read_actions(a.actions, a.contestants), ("Action", "Per contestant", "Family median", "Family", "Read"))
+        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Per contestant", "Family median", "Family", "Read"))
+    if a.history:
+        rows, notes = history_table(a, read_history(a.history)); print()
+        print_table(rows, ("Metric", "This campaign", "Previous", "Your median", "Change", "Record")); [print(n) for n in notes]
     return 0
 
 if __name__ == "__main__":

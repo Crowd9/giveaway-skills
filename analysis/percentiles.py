@@ -41,15 +41,19 @@ def main():
         em = sum(e["entry_count"] for e in ems if e.get("entry_method_generic_name") in EMAIL and e.get("entry_count"))
         rf = sum(e["entry_count"] for e in ems if e.get("entry_method_generic_name") == "Viral Shares" and e.get("entry_count"))
         txt = " ".join([c.get("site_name") or "", c.get("name") or "", c.get("incentive_name") or ""] + [p.get("name") or "" for p in c["prizes"]]).lower()
+        acts = sum(e["entry_count"] for e in ems if e.get("entry_count"))
         o.append({"contestants": c["valid_contestants"], "conversion": c["valid_contestants"] / c["impressions"] if c.get("impressions") else None,
+                  "impressions": c.get("impressions") or None, "actions_per_contestant": acts / c["valid_contestants"] if acts else None,
+                  "contestants_per_day": c["valid_contestants"] / c["duration_in_days"] if c.get("duration_in_days") else None,
+                  "methods": len(ems), "duration_days": c.get("duration_in_days"),
                   "entries_per_entrant": c["valid_entries"] / c["valid_contestants"], "invalid_share": inv / (c["valid_entries"] + inv),
                   "email_signups": em or None, "email_uptake": em / c["valid_contestants"] if em else None, "referrals_per_contestant": rf / c["valid_contestants"] if rf else None,
                   "clean": not any(e.get("entry_method_type") in REPEAT or (e.get("entry_method_type") == "custom_action" and e.get("entry_method_template") == "bonus") for e in ems) and c["duration_in_days"] <= 14,
                   "band": band(c["valid_contestants"]), "vertical": next((v for v, pat in VERTICALS if re.search(pat, txt)), "unclassified")})
-    METRICS = ["contestants", "conversion", "entries_per_entrant", "invalid_share", "email_signups", "email_uptake", "referrals_per_contestant"]
+    METRICS = ["contestants", "conversion", "impressions", "actions_per_contestant", "contestants_per_day", "methods", "duration_days", "entries_per_entrant", "invalid_share", "email_signups", "email_uptake", "referrals_per_contestant"]
     def table(g): return {m: pct([c[m] for c in g]) for m in METRICS}
     out = {"percentiles": PCTS, "definitions": {"conversion": "contestants per impression, all campaigns; the clean group has no repeatable action and 14 days or less",
-                                                "email_signups": "campaigns with an email action", "vertical": "regex on organizer, campaign and prize names"},
+                                                "email_signups": "campaigns with an email action", "actions_per_contestant": "completed actions divided by contestants, entry worth removed", "contestants_per_day": "contestants divided by run length", "vertical": "regex on organizer, campaign and prize names"},
            "groups": {"all": table(o), "clean": table([c for c in o if c["clean"]])}}
     for b in ["1k-2.5k", "2.5k-10k", "10k+"]: out["groups"]["band:" + b] = table([c for c in o if c["band"] == b])
     for v, _ in VERTICALS: out["groups"]["vertical:" + v] = table([c for c in o if c["vertical"] == v])
