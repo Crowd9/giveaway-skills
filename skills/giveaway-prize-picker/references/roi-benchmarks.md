@@ -19,6 +19,26 @@ Extracted from the ordinary segment of the export (37,123 campaigns). Cost figur
 
 Music and media buys addresses cheapest at the median, travel and events dearest. Gaming buys follows cheapest because Twitch and X follows run high there. Fitness and software pay the most per referral entry.
 
+## Which industries get the most from a giveaway (extracted)
+
+Value index is contestants against the median for the stated prize band, 1.00 being typical for the money. Repeat organizer means five or more campaigns in the export. All ordinary campaigns: index 1.00, 38% conversion, 0.98 email uptake, 0.13 referrals per contestant, 77% from repeat organizers.
+
+| Industry | n | Contestants | Conversion | Email uptake | Referrals per contestant | Value index (n) | Stated USD per contestant | Repeat organizers | Own product prize |
+|---|---|---|---|---|---|---|---|---|---|
+| Gaming | 8,739 | 2,397 | 36% | 0.92 | 0.14 | 1.10 (3,176) | 0.29 | 78% | 20% |
+| Music and media | 1,106 | 1,974 | 31% | 1.03 | 0.09 | 1.06 (564) | 0.22 | 85% | 19% |
+| Travel and events | 1,844 | 2,476 | 31% | 1.01 | 0.10 | 1.02 (795) | 0.44 | 71% | 28% |
+| Technology | 1,941 | 2,609 | 37% | 0.85 | 0.24 | 0.99 (655) | 0.36 | 79% | 24% |
+| Software | 616 | 2,148 | 32% | 0.97 | 0.15 | 0.99 (303) | 0.35 | 74% | 24% |
+| Home | 1,519 | 2,250 | 39% | 0.95 | 0.12 | 0.97 (644) | 0.37 | 78% | 23% |
+| Fitness and outdoor | 1,256 | 2,451 | 40% | 1.01 | 0.12 | 0.96 (670) | 0.48 | 73% | 30% |
+| Food and drink | 1,475 | 2,056 | 37% | 0.99 | 0.11 | 0.95 (683) | 0.26 | 73% | 24% |
+| Kids, family, pets | 811 | 1,984 | 33% | 1.01 | 0.12 | 0.90 (281) | 0.38 | 76% | 25% |
+| Fashion and beauty | 581 | 1,840 | 36% | 1.00 | 0.10 | 0.84 (244) | 0.32 | 69% | 27% |
+| Auto | 174 | 2,073 | 52% | 0.91 | 0.16 | 0.82 (93) | 0.50 | 64% | 28% |
+
+Gaming gets the most for its money (index 1.10 on 3,176 valued campaigns) with the most actions per campaign, Twitch and Discord audiences, and the highest share of standout campaigns. Music and media buys the cheapest contestants and addresses (0.22 USD per contestant) and has the most repeat organizers (85%). Technology has the highest referral rate (0.24) and the lowest email uptake (0.85). Auto converts at 52% on small campaigns with the priciest contestants. Fashion and beauty and kids and family sit under par on the index and use their own product most often, which is the qualified-audience trade. Every row is a proxy vertical from names, and none of it says an industry causes a result.
+
 ## By campaign size
 
 | Band | n | Stated pool USD | Per contestant | Per email signup | Per follow | Emails per campaign |

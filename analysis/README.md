@@ -61,3 +61,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 ## Campaign types
 
 `analysis/campaign_types.py export.json --classification private/classification.jsonl` writes `output/campaign_types.json`: campaign types declared in the title and description, each with contestants, clean conversion, entries per entrant, email and referral uptake, duration, action count and a value-adjusted index.
+
+## Standouts
+
+`analysis/standouts.py export.json --classification private/classification.jsonl` writes `output/standouts.json`: launch, pre-order, drop and early-access subtypes, campaigns with a value index of three or more and the features, prize categories and verticals over-represented among them, cheap prizes that drew large crowds, and industries profiled by value index, conversion, uptake and repeat organizers.

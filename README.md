@@ -29,7 +29,8 @@ Three giveaway concepts that fit your business, your date and your goal, then th
 
 - Hooks for the moment you have (launch, milestone, season, holiday, collaboration, daily series) and for moments you can manufacture
 - Each concept in five lines: title, hook, mechanic, prize direction, and the asset it builds
-- Campaign types measured: advent calendars, launches, collaborations, series, flash, cash, cart and wishlist, creator, community, charity and more, with contestants, conversion and a value-adjusted index for each
+- Campaign types measured: advent calendars, launches, pre-orders and drops, collaborations, series, flash, cash, cart and wishlist, creator, community, charity and more, with contestants, conversion and a value-adjusted index for each
+- What the campaigns that beat their prize money had in common, and the cheap prizes that drew crowds
 - Formats to avoid for your business, from the list of tired and risky ones
 - Which hooks organizers use most, from campaign titles across the dataset, with December's crowding called out
 
