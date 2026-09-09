@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway against benchmarks from 37,180 real campaigns: contestants for the size band, landing conversion, actions per entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Giveaway Results Review
@@ -15,8 +15,8 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 
 ## Workflow
 
-1. **Collect the numbers.** Unique entrants (contestants), impressions or views, total entries, invalid entries, run length in days, number of entry actions, and if available the completions per action and the objective (list, followers, sales, reach). Accept a pasted reporting screenshot, a CSV export, or plain numbers. If impressions are missing, skip conversion and say so.
-2. **Run the script.** `python3 scripts/review.py --contestants N --impressions N --entries N --invalid N --days N --methods N [--emails N] [--referrals N] [--vertical NAME] [--actions actions.csv]` prints the derived metrics, the size band, each figure beside the benchmark, and where the campaign ranks: the share of all campaigns, of its size band, of clean campaigns for conversion, and of its vertical it beat, with the group size. Ask which vertical fits from the list in `--help` when the business is clear. Show the output. Do the arithmetic nowhere else.
+1. **Collect the numbers.** Unique entrants (contestants), impressions or views, total entries, invalid entries, run length in days, number of entry actions, and if available the completions per action, total actions completed, email signups, referral entries and the objective (list, followers, sales, reach). Accept a pasted reporting screenshot, a CSV export, or plain numbers. If impressions are missing, skip conversion and say so. If the user has previous campaigns, collect the same numbers for each into a CSV (columns: campaign, contestants, impressions, entries, invalid, days, methods, emails, oldest first) and pass it with `--history`.
+2. **Run the script.** `python3 scripts/review.py --contestants N --impressions N --entries N --invalid N --days N --methods N [--emails N] [--referrals N] [--actions-completed N] [--vertical NAME] [--actions actions.csv] [--history previous.csv]` prints the derived metrics, the size band, each figure beside the benchmark, and where the campaign ranks: the share of all campaigns, of its size band, of clean campaigns for conversion, and of its vertical it beat, with the group size. Ask which vertical fits from the list in `--help` when the business is clear. Show the output. Do the arithmetic nowhere else.
 3. **Read the actions.** With an actions export, rank each action's completions per contestant against its family median in `references/benchmarks.md`, and read the asset totals (addresses, follows, joins, referrals) against the yield table for the band. Name the action that carried the campaign and the ones almost nobody did.
 4. **Explain, with care.** Load `references/reading-results.md`. Impressions are unique per user per day, so daily actions and long runs push conversion down without anything going wrong. Say which benchmark caveats apply before judging a number.
 5. **Price it.** When prize cost is known, run the prize picker's `scripts/roi.py` with the actual counts (`--emails`, `--follows`, `--referrals`) and show cost per result beside the vertical benchmark. Ask for a value per email only if the user wants a return figure.
@@ -28,6 +28,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 - Verdict in one line: what the campaign did well and the one number that needs attention, with its rank ("better than 70% of food and drink campaigns on actions per entrant").
 - The script output as a table: metric, this campaign, benchmark median for the band, read.
 - Actions ranked, when an export was given.
+- The organizer's own history, when given: this campaign beside the previous one and their own median, the change, and how many previous campaigns it beat, with the persistence note.
 - What to change next time, three items at most, each with the figure that motivates it and the skill to use.
 - Cost per contestant, per email and per follow beside the benchmark, when prize cost was given.
 - Caveats that apply to this campaign (repeatable actions, long run, missing impressions, small numbers).

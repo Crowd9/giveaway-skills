@@ -140,7 +140,8 @@ Every message after the draw, in send order, in your voice.
 
 Your finished campaign read against 37,180 others of the same size, and what to change next time.
 
-- A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band, and ranks each one against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
+- A script that places contestants, entries per entrant, impressions, conversion, invalid share and duration beside the benchmark for your band, and ranks each one, plus impressions, actions per entrant and pace per day, against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
+- Your own history: this campaign beside your previous ones, the change, and how many it beat
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against its family median, so you see which one carried the campaign
