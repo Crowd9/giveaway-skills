@@ -21,6 +21,8 @@ Regex matches on the titles of 37,180 ordinary campaigns with 1,000 or more cont
 
 Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaway" with a prize name is the default, and a hook is what separates a campaign from the default.
 
+The timing skill's `holiday-benchmarks.md` holds contestants, conversion, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent is the only theme above the all-campaign medians on both counts. Load it when the hook is a date.
+
 ## Theme starters by business (advice)
 
 | Business | Moment-based | Manufactured |

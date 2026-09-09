@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Decide how long a giveaway should run, when to start it, and how to plan the lead-up and wrap-up. Use when the user asks 'how long should my giveaway run', 'when should I launch it', 'best day to start', 'should it run over Christmas', 'giveaway timeline', 'giveaway calendar', 'evergreen giveaway', or wants a launch schedule for a contest or sweepstakes. Platform-neutral. For the prize see giveaway-prize-picker. For entry actions see giveaway-entry-method-planner."
 metadata:
-  version: 1.1.1
+  version: 1.2.0
 ---
 
 # Giveaway Timing and Duration
@@ -17,7 +17,7 @@ If `.agents/product-marketing.md` exists in the project (or `.claude/product-mar
 
 1. **Anchor on a fixed date if one exists.** A launch, a holiday, an event. The giveaway ends a few days before the moment the business wants attention, or runs through it if the goal is to be present during it.
 2. **Set the run length from the promotion plan.** Load `references/timing-findings.md` for what organizers chose. Rule of thumb from practice: two to three promotional pushes per week, and a campaign that outlives the pushes goes quiet. One week for a focused list or launch push. Two to four weeks when there is a content series or partner posts to fill it. Longer only with repeatable daily actions and fresh content.
-3. **Pick the start day.** Extracted: start weekday shows no difference on contestants, entries or conversion. Load `references/calendar-by-region.md` when the audience is outside the US or UK, since seasons and holidays flip.
+3. **Pick the start day.** Extracted: start weekday shows no difference on contestants, entries or conversion. Load `references/calendar-by-region.md` when the audience is outside the US or UK, since seasons and holidays flip. For a holiday or seasonal hook, load `references/holiday-benchmarks.md` for the lead time organizers used and the launch window.
    **Momentum.** Extracted: a campaign started within 30 days of the organizer's previous one drew 16% more contestants and converted a third better, in the clean comparison. Suggest a follow-up campaign inside a month when the first one worked, and say the data describes organizers who did this and cannot prove scheduling caused it. Start on a day the audience is online and the team can respond. Extracted: organizers start on weekdays five times more often than weekends. Avoid starting during a holiday the audience is away for.
 4. **Plan the wrap-up.** Draw within 48 hours of the close, contact winners with a deadline to respond, announce publicly, and hold a redraw rule. Shipping lead time sets the earliest promised delivery date.
 5. **Deliver** a timeline.
@@ -64,3 +64,4 @@ Advice is platform-neutral. When the user says they use Gleam or asks about it, 
 - `references/timing-findings.md`: duration, start month and weekday distributions, by campaign size.
 - `references/timeline-template.md`: a fill-in timeline and the seasonal calendar notes.
 - `references/calendar-by-region.md`: seasons and holidays by audience region, load when the audience is outside the US or UK.
+- `references/holiday-benchmarks.md`: campaigns by holiday theme with contestants, conversion, duration and launch lead days, plus a dated calendar with launch windows for the next sixteen months.

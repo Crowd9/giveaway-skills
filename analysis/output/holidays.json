@@ -1,0 +1,316 @@
+{
+ "all_ordinary": {
+  "n": 37123,
+  "contestants": 2203,
+  "conv_clean": 0.37548964745383323,
+  "epc": 4.344638949671772,
+  "duration": 16
+ },
+ "holidays": {
+  "Christmas and advent": {
+   "n": 1806,
+   "share_of_campaigns": 0.04864908547261805,
+   "contestants": 2424.0,
+   "conv_clean": 0.43995331526868364,
+   "clean_n": 857,
+   "epc": 3.884661645117592,
+   "duration": 10.0,
+   "repeatable_share": 0.2956810631229236,
+   "start_months": {
+    "Dec": 1226,
+    "Nov": 356,
+    "Oct": 106,
+    "Sep": 38
+   },
+   "lead_days_median": 19.0,
+   "lead_days_p25": 11,
+   "lead_days_p75": 28,
+   "lead_n": 1708,
+   "close_before_holiday_share": 0.7822014051522248
+  },
+  "New Year": {
+   "n": 411,
+   "share_of_campaigns": 0.011071303504565902,
+   "contestants": 2390,
+   "conv_clean": 0.3445425508898032,
+   "clean_n": 112,
+   "epc": 4.885384615384615,
+   "duration": 19,
+   "repeatable_share": 0.3771289537712895,
+   "start_months": {
+    "Jan": 200,
+    "Dec": 149,
+    "Feb": 28,
+    "Nov": 20
+   },
+   "lead_days_median": 11,
+   "lead_days_p25": 5,
+   "lead_days_p75": 23,
+   "lead_n": 173,
+   "close_before_holiday_share": 0.34104046242774566
+  },
+  "Black Friday and Cyber Monday": {
+   "n": 364,
+   "share_of_campaigns": 0.009805242033240848,
+   "contestants": 2241.0,
+   "conv_clean": 0.3498459958932238,
+   "clean_n": 181,
+   "epc": 3.759462976294019,
+   "duration": 8.0,
+   "repeatable_share": 0.32142857142857145,
+   "start_months": {
+    "Nov": 299,
+    "Dec": 32,
+    "Oct": 24,
+    "Jun": 3
+   },
+   "lead_days_median": 8,
+   "lead_days_p25": 3,
+   "lead_days_p75": 16,
+   "lead_n": 309,
+   "close_before_holiday_share": 0.4627831715210356
+  },
+  "Thanksgiving": {
+   "n": 111,
+   "share_of_campaigns": 0.0029900600705761926,
+   "contestants": 2324,
+   "conv_clean": 0.3538680591742499,
+   "clean_n": 22,
+   "epc": 4.975,
+   "duration": 15,
+   "repeatable_share": 0.5405405405405406,
+   "start_months": {
+    "Nov": 81,
+    "Oct": 26,
+    "Sep": 1,
+    "Dec": 1
+   },
+   "lead_days_median": 17,
+   "lead_days_p25": 9,
+   "lead_days_p75": 27,
+   "lead_n": 105,
+   "close_before_holiday_share": 0.49523809523809526
+  },
+  "Halloween": {
+   "n": 256,
+   "share_of_campaigns": 0.006895994397004552,
+   "contestants": 2007.5,
+   "conv_clean": 0.30081869708207964,
+   "clean_n": 72,
+   "epc": 5.0978319483522885,
+   "duration": 18.5,
+   "repeatable_share": 0.34375,
+   "start_months": {
+    "Oct": 180,
+    "Sep": 44,
+    "Aug": 10,
+    "Jul": 5
+   },
+   "lead_days_median": 19,
+   "lead_days_p25": 7,
+   "lead_days_p75": 30,
+   "lead_n": 239,
+   "close_before_holiday_share": 0.38493723849372385
+  },
+  "Valentine's Day": {
+   "n": 223,
+   "share_of_campaigns": 0.006007057619265684,
+   "contestants": 1952,
+   "conv_clean": 0.39075342465753427,
+   "clean_n": 69,
+   "epc": 4.26353441608662,
+   "duration": 14,
+   "repeatable_share": 0.3632286995515695,
+   "start_months": {
+    "Feb": 143,
+    "Jan": 70,
+    "Mar": 3,
+    "Dec": 3
+   },
+   "lead_days_median": 12.0,
+   "lead_days_p25": 6,
+   "lead_days_p75": 19,
+   "lead_n": 214,
+   "close_before_holiday_share": 0.40186915887850466
+  },
+  "Mother's Day": {
+   "n": 141,
+   "share_of_campaigns": 0.0037981844139751636,
+   "contestants": 1692,
+   "conv_clean": 0.36540922470610393,
+   "clean_n": 42,
+   "epc": 3.810429880197322,
+   "duration": 12,
+   "repeatable_share": 0.44680851063829785,
+   "start_months": {
+    "Apr": 69,
+    "May": 54,
+    "Mar": 15,
+    "Feb": 2
+   },
+   "lead_days_median": 13,
+   "lead_days_p25": 7,
+   "lead_days_p75": 24,
+   "lead_n": 139,
+   "close_before_holiday_share": 0.5323741007194245
+  },
+  "Father's Day": {
+   "n": 155,
+   "share_of_campaigns": 0.00417530910756135,
+   "contestants": 2058,
+   "conv_clean": 0.36505626859399354,
+   "clean_n": 50,
+   "epc": 3.9741784037558685,
+   "duration": 14,
+   "repeatable_share": 0.432258064516129,
+   "start_months": {
+    "Jun": 103,
+    "May": 32,
+    "Aug": 15,
+    "Sep": 2
+   },
+   "lead_days_median": 13,
+   "lead_days_p25": 9,
+   "lead_days_p75": 19,
+   "lead_n": 133,
+   "close_before_holiday_share": 0.3383458646616541
+  },
+  "Easter": {
+   "n": 157,
+   "share_of_campaigns": 0.004229184063787948,
+   "contestants": 1999,
+   "conv_clean": 0.31836304777988655,
+   "clean_n": 56,
+   "epc": 4.825263157894737,
+   "duration": 14,
+   "repeatable_share": 0.3503184713375796,
+   "start_months": {
+    "Mar": 76,
+    "Apr": 68,
+    "Feb": 9,
+    "Jan": 2
+   },
+   "lead_days_median": 10,
+   "lead_days_p25": 4,
+   "lead_days_p75": 21,
+   "lead_n": 151,
+   "close_before_holiday_share": 0.4105960264900662
+  },
+  "Back to school": {
+   "n": 211,
+   "share_of_campaigns": 0.005683807881906096,
+   "contestants": 2209,
+   "conv_clean": 0.343098490294752,
+   "clean_n": 59,
+   "epc": 4.219512195121951,
+   "duration": 14,
+   "repeatable_share": 0.41706161137440756,
+   "start_months": {
+    "Aug": 131,
+    "Jul": 51,
+    "Sep": 25,
+    "Oct": 2
+   },
+   "lead_days_median": 21,
+   "lead_days_p25": 11,
+   "lead_days_p75": 33,
+   "lead_n": 155,
+   "close_before_holiday_share": 0.5483870967741935
+  },
+  "Summer": {
+   "n": 1181,
+   "share_of_campaigns": 0.03181316165180616,
+   "contestants": 2465,
+   "conv_clean": 0.3560593964553728,
+   "clean_n": 291,
+   "epc": 4.022417658216934,
+   "duration": 18,
+   "repeatable_share": 0.3852667231160034,
+   "start_months": {
+    "Jun": 326,
+    "Jul": 321,
+    "May": 198,
+    "Aug": 139
+   },
+   "lead_days_median": 28.0,
+   "lead_days_p25": 14,
+   "lead_days_p75": 47,
+   "lead_n": 630,
+   "close_before_holiday_share": 0.5904761904761905
+  },
+  "Lunar New Year": {
+   "n": 40,
+   "share_of_campaigns": 0.0010774991245319613,
+   "contestants": 2113.5,
+   "conv_clean": 0.338378487462792,
+   "clean_n": 17,
+   "epc": 4.126852430878772,
+   "duration": 10.5,
+   "repeatable_share": 0.375,
+   "start_months": {
+    "Feb": 19,
+    "Jan": 13,
+    "Jul": 4,
+    "Aug": 1
+   },
+   "lead_days_median": 5,
+   "lead_days_p25": 1,
+   "lead_days_p75": 7,
+   "lead_n": 31,
+   "close_before_holiday_share": 0.1935483870967742
+  },
+  "Prime Day and Singles Day": {
+   "n": 43,
+   "share_of_campaigns": 0.0011583115588718585,
+   "contestants": 1802,
+   "conv_clean": 0.23348751156336725,
+   "clean_n": 21,
+   "epc": 4.547449584816133,
+   "duration": 11,
+   "repeatable_share": 0.23255813953488372,
+   "start_months": {
+    "Jul": 16,
+    "Jun": 13,
+    "Oct": 10,
+    "Nov": 3
+   }
+  },
+  "Anniversary or birthday": {
+   "n": 815,
+   "share_of_campaigns": 0.02195404466233871,
+   "contestants": 2323,
+   "conv_clean": 0.3268186753528773,
+   "clean_n": 265,
+   "epc": 4.224200913242009,
+   "duration": 14,
+   "repeatable_share": 0.38650306748466257,
+   "start_months": {
+    "Jun": 103,
+    "May": 92,
+    "Aug": 82,
+    "Oct": 80
+   }
+  },
+  "Milestone": {
+   "n": 408,
+   "share_of_campaigns": 0.010990491070226005,
+   "contestants": 2109.0,
+   "conv_clean": 0.33528677556293834,
+   "clean_n": 110,
+   "epc": 4.520634225484773,
+   "duration": 17.5,
+   "repeatable_share": 0.33088235294117646,
+   "start_months": {
+    "Jul": 54,
+    "Aug": 40,
+    "Oct": 38,
+    "May": 36
+   }
+  }
+ },
+ "definitions": {
+  "match": "regex on title, incentive name and the first 400 characters of the description",
+  "lead_days": "holiday date minus start date, median, for campaigns starting within 120 days before the holiday",
+  "clean": "conversion on campaigns with no repeatable action and 14 days or less"
+ }
+}
