@@ -10,6 +10,8 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 - Decide tiers and backups. Two backups per tier covers most no-reply cases without a second draw.
 - Pick the seed and, if the terms or a partner require it, publish it before drawing.
 
+- Expect some entries to fail verification. Across ordinary campaigns in the export the median campaign had 3.8% of entries marked invalid, and referral-heavy mixes ran higher. Draw from valid entries only, and treat a drawn name as a winner only after the entry checks out.
+
 ## Why commit first
 
 A draw is provable when three things hold: the entrant list and rules were fixed before the seed was known, the seed came from somewhere the organizer could not steer, and the selection from seed to winners is a fixed calculation anyone can redo. The script does all three. `commit` hashes the frozen file and the rules into one value to publish. The seed comes from a public randomness beacon whose round was named in advance. The selection is a hash ranking, so the audit record plus the file reproduces the winners in any language.

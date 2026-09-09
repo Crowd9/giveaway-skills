@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Eight giveaway skills, supported by Gleam: ideas, prize, entry methods, timing, winner structure, promotion, provably fair draw, winner communications",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "repository": "https://github.com/Crowd9/giveaway-skills"
   },
   "plugins": [

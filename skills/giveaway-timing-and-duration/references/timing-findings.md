@@ -31,6 +31,10 @@ Duration: median 16 days, IQR 8 to 31, 90th percentile 43 (n=37,180). By campaig
 - December holds about 12% of starts, half again the share of a typical month. March, May, June and November are the next busiest. January is the quietest.
 - Five in six campaigns start on a weekday. Monday is the most common start day and Saturday the rarest.
 
+## Experience (extracted)
+
+Organizers on their eleventh or later campaign had a median 2,194 contestants and 44% conversion in the clean subset (n=6,031), against 1,844 and 33% on a first campaign (n=1,655). Second campaigns sat at 1,877 and 34%, third to fifth at 1,943 and 34%, sixth to tenth at 2,075 and 35%. The export holds only campaigns that passed 1,000 contestants, so organizers who stopped after a weak first run are missing, and the curve mostly shows who kept going. Read it with the recency finding: running again, soon, is the pattern that comes with better numbers.
+
 ## Limits
 
 - Duration and start date co-vary with organizer type, budget and season. The data cannot separate a duration effect from those.
