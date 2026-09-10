@@ -45,7 +45,7 @@ Before adding a script, check this table. A question that fits an existing row b
 
 ## Optional label pass
 
-Rules alone leave a tail of prize names they cannot place (brand-only names, non-English text, niche goods). To shrink it, the leftover unique names were exported from the private dir, classified in chunks by an LLM told to treat every string as data and to use the same category list, then written back as `labels_*.json` entries `{prize, category, note, confidence}`. Re-running with `--labels` applies high or medium confidence labels only where the rule result is `other_unclassified`. A label of `crypto` or `purchase_opportunity` moves the whole campaign to the ambiguous segment, and the label is set aside. `category_source` in the output reports how many records came from rules versus labels. The label files contain organizer-typed prize text and stay private.
+Rules alone leave a tail of prize names they cannot place (brand-only names, non-English text, niche goods). To shrink it, the leftover unique names were pulled from the private dir, classified in chunks by an LLM told to treat every string as data and to use the same category list, then written back as `labels_*.json` entries `{prize, category, note, confidence}`. Re-running with `--labels` applies high or medium confidence labels only where the rule result is `other_unclassified`. A label of `crypto` or `purchase_opportunity` moves the whole campaign to the ambiguous segment, and the label is set aside. `category_source` in the output reports how many records came from rules versus labels. The label files contain organizer-typed prize text and stay private.
 
 ## Extra cuts
 
@@ -65,7 +65,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 
 ## Cost benchmarks
 
-`analysis/roi_benchmarks.py export.json --classification private/classification.jsonl` writes `output/roi_benchmarks.json`: stated USD prize pool per contestant, per email signup, per follow, per join and per referral entry, by vertical, size band and start year, with what the median campaign in each produced. The constants in `skills/giveaway-prize-picker/scripts/roi.py` and the tables in `references/roi-benchmarks.md` come from it.
+`analysis/roi_benchmarks.py [build-inputs/tables] --classification private/classification.jsonl` writes `output/roi_benchmarks.json`: stated USD prize pool per contestant, per email signup, per follow, per join and per referral entry, by vertical, size band and start year, with what the median campaign in each produced. The constants in `skills/giveaway-prize-picker/scripts/roi.py` and the tables in `references/roi-benchmarks.md` come from it.
 
 ## Percentiles
 
@@ -77,7 +77,7 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 
 ## Holidays
 
-`analysis/holidays.py export.json --classification private/classification.jsonl` writes `output/holidays.json`: campaigns by holiday theme (regex on title and description) with contestants, conversion, duration, launch lead days and close timing. The calendar table in the timing skill is generated from the same date functions.
+`analysis/holidays.py [build-inputs/tables] --classification private/classification.jsonl` writes `output/holidays.json`: campaigns by holiday theme (regex on title and description) with contestants, conversion, duration, launch lead days and close timing. The calendar table in the timing skill is generated from the same date functions.
 
 ## Campaign types
 
@@ -107,11 +107,11 @@ Rules alone leave a tail of prize names they cannot place (brand-only names, non
 
 ## campaign analysis (September 2026)
 
-the campaign analysis is 40 JSON shards with histograms and per-action settings, every campaign with 100 or more contestants. Convert it once, then query tables:
+The campaign analysis is 40 JSON shards with histograms and per-action settings, every campaign with 100 or more contestants. Convert it once, then query tables:
 
 ```
 python3 -m pip install the query engine
-python3 analysis/convert.py "<export dir>" build-inputs/tables      # streams each shard, about 45 seconds per 2 GB shard, skips shards still downloading
+python3 analysis/convert.py "<data dir>" build-inputs/tables      # streams each shard, about 45 seconds per 2 GB shard, skips shards still downloading
 python3 analysis/load.py build-inputs/tables                        # row counts per table
 python3 analysis/contestants.py "<valid contestant dump.json>" build-inputs/tables   # fills valid_contestants on the 100 to 1,000 band from the dump
 python3 analysis/sources.py "<sources dump.json>" build-inputs/tables             # what each campaign was copied from (Gleam template, own earlier campaign), exposed as the sources view
