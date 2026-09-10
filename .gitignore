@@ -1,5 +1,6 @@
 # Private build inputs: never commit source campaign data or record-level analysis
 build-inputs
+the analysis notes
 analysis/private/
 build-inputs/
 *contestants*.json
