@@ -1,119 +1,119 @@
 {
- "source": "ordinary campaigns with 1,000 or more contestants in the campaign analysis, regex on campaign name and headline prize name, one campaign can match several hooks",
- "campaigns": 35658,
- "organizers": 6398,
+ "source": "ordinary campaigns with 100 or more contestants in the campaign analysis, regex on campaign name and headline prize name, one campaign can match several hooks",
+ "campaigns": 117348,
+ "organizers": 17777,
  "hooks": {
   "no hook": {
-   "campaigns": 24420,
-   "conversion": 0.28
+   "campaigns": 81213,
+   "conversion": 0.269
   },
   "collaboration or partner": {
-   "campaigns": 3954,
-   "share": 0.111,
+   "campaigns": 12426,
+   "share": 0.106,
    "peak_month": 3,
-   "peak_month_share_of_that_months_campaigns": 0.123,
-   "organizers": 1343,
-   "conversion": 0.272,
-   "entries_per_entrant": 4.84
-  },
-  "seasonal (summer, spring, back to school)": {
-   "campaigns": 1727,
-   "share": 0.048,
-   "peak_month": 7,
-   "peak_month_share_of_that_months_campaigns": 0.095,
-   "organizers": 782,
-   "conversion": 0.274,
-   "entries_per_entrant": 4.07
-  },
-  "daily or weekly series": {
-   "campaigns": 1572,
-   "share": 0.044,
-   "peak_month": 12,
-   "peak_month_share_of_that_months_campaigns": 0.139,
-   "organizers": 265,
-   "conversion": 0.339,
-   "entries_per_entrant": 3.525
-  },
-  "milestone or anniversary": {
-   "campaigns": 1262,
-   "share": 0.035,
-   "peak_month": 9,
-   "peak_month_share_of_that_months_campaigns": 0.043,
-   "organizers": 777,
-   "conversion": 0.262,
-   "entries_per_entrant": 4.42
+   "peak_month_share_of_that_months_campaigns": 0.11,
+   "organizers": 3278,
+   "conversion": 0.263,
+   "entries_per_entrant": 4.938
   },
   "gaming release tie-in": {
-   "campaigns": 1240,
-   "share": 0.035,
+   "campaigns": 5823,
+   "share": 0.05,
+   "peak_month": 10,
+   "peak_month_share_of_that_months_campaigns": 0.06,
+   "organizers": 1766,
+   "conversion": 0.28,
+   "entries_per_entrant": 5.038
+  },
+  "daily or weekly series": {
+   "campaigns": 5430,
+   "share": 0.046,
+   "peak_month": 12,
+   "peak_month_share_of_that_months_campaigns": 0.164,
+   "organizers": 775,
+   "conversion": 0.339,
+   "entries_per_entrant": 3.957
+  },
+  "seasonal (summer, spring, back to school)": {
+   "campaigns": 4469,
+   "share": 0.038,
+   "peak_month": 6,
+   "peak_month_share_of_that_months_campaigns": 0.068,
+   "organizers": 1656,
+   "conversion": 0.241,
+   "entries_per_entrant": 4.416
+  },
+  "milestone or anniversary": {
+   "campaigns": 3737,
+   "share": 0.032,
    "peak_month": 5,
-   "peak_month_share_of_that_months_campaigns": 0.042,
-   "organizers": 513,
+   "peak_month_share_of_that_months_campaigns": 0.038,
+   "organizers": 1940,
    "conversion": 0.259,
-   "entries_per_entrant": 5.351
+   "entries_per_entrant": 4.405
   },
   "holiday season": {
-   "campaigns": 1057,
-   "share": 0.03,
+   "campaigns": 3037,
+   "share": 0.026,
    "peak_month": 12,
-   "peak_month_share_of_that_months_campaigns": 0.146,
-   "organizers": 526,
-   "conversion": 0.291,
+   "peak_month_share_of_that_months_campaigns": 0.149,
+   "organizers": 1243,
+   "conversion": 0.274,
    "entries_per_entrant": 4.589
   },
-  "launch or new product": {
-   "campaigns": 505,
-   "share": 0.014,
-   "peak_month": 9,
-   "peak_month_share_of_that_months_campaigns": 0.023,
-   "organizers": 283,
-   "conversion": 0.225,
-   "entries_per_entrant": 5.145
-  },
   "event or livestream tie-in": {
-   "campaigns": 452,
-   "share": 0.013,
+   "campaigns": 1879,
+   "share": 0.016,
    "peak_month": 7,
-   "peak_month_share_of_that_months_campaigns": 0.025,
-   "organizers": 210,
-   "conversion": 0.301,
-   "entries_per_entrant": 4.41
+   "peak_month_share_of_that_months_campaigns": 0.022,
+   "organizers": 737,
+   "conversion": 0.31,
+   "entries_per_entrant": 4.182
   },
-  "black friday or sales event": {
-   "campaigns": 450,
-   "share": 0.013,
-   "peak_month": 11,
-   "peak_month_share_of_that_months_campaigns": 0.086,
-   "organizers": 189,
-   "conversion": 0.255,
-   "entries_per_entrant": 4.323
+  "launch or new product": {
+   "campaigns": 1687,
+   "share": 0.014,
+   "peak_month": 8,
+   "peak_month_share_of_that_months_campaigns": 0.017,
+   "organizers": 818,
+   "conversion": 0.235,
+   "entries_per_entrant": 4.974
   },
   "valentines, mothers, fathers day": {
-   "campaigns": 403,
-   "share": 0.011,
+   "campaigns": 1118,
+   "share": 0.01,
    "peak_month": 2,
-   "peak_month_share_of_that_months_campaigns": 0.036,
-   "organizers": 254,
-   "conversion": 0.308,
-   "entries_per_entrant": 4.108
+   "peak_month_share_of_that_months_campaigns": 0.029,
+   "organizers": 597,
+   "conversion": 0.27,
+   "entries_per_entrant": 4.287
+  },
+  "black friday or sales event": {
+   "campaigns": 1072,
+   "share": 0.009,
+   "peak_month": 11,
+   "peak_month_share_of_that_months_campaigns": 0.056,
+   "organizers": 436,
+   "conversion": 0.248,
+   "entries_per_entrant": 4.287
   },
   "halloween": {
-   "campaigns": 192,
+   "campaigns": 635,
    "share": 0.005,
    "peak_month": 10,
-   "peak_month_share_of_that_months_campaigns": 0.047,
-   "organizers": 137,
-   "conversion": 0.265,
-   "entries_per_entrant": 4.987
+   "peak_month_share_of_that_months_campaigns": 0.051,
+   "organizers": 383,
+   "conversion": 0.244,
+   "entries_per_entrant": 5.006
   },
   "charity or cause": {
-   "campaigns": 48,
+   "campaigns": 140,
    "share": 0.001,
    "peak_month": 2,
-   "peak_month_share_of_that_months_campaigns": 0.003,
-   "organizers": 24,
-   "conversion": 0.275,
-   "entries_per_entrant": 3.131
+   "peak_month_share_of_that_months_campaigns": 0.002,
+   "organizers": 82,
+   "conversion": 0.233,
+   "entries_per_entrant": 3.581
   }
  }
 }

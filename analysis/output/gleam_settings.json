@@ -1,41 +1,41 @@
 {
  "visit_post_visit_mode": {
-  "Question": {
-   "actions": 5794,
-   "organizers": 652,
-   "median_uptake": 0.6471
-  },
   "Delay": {
-   "actions": 4016,
-   "organizers": 544,
-   "median_uptake": 0.7482
+   "actions": 9363,
+   "organizers": 1096,
+   "median_uptake": 0.7724
+  },
+  "Question": {
+   "actions": 17292,
+   "organizers": 1446,
+   "median_uptake": 0.7138
   },
   "unset": {
-   "actions": 60599,
-   "organizers": 3634,
-   "median_uptake": 0.7109
+   "actions": 165167,
+   "organizers": 9483,
+   "median_uptake": 0.7811
   },
   "Complete": {
-   "actions": 57868,
-   "organizers": 4363,
-   "median_uptake": 0.8001
+   "actions": 176152,
+   "organizers": 12320,
+   "median_uptake": 0.839
   }
  },
  "visit_a_page_link_option": {
   "open_graph": {
-   "actions": 1227,
-   "organizers": 484,
-   "median_uptake": 0.8527
+   "actions": 5351,
+   "organizers": 1197,
+   "median_uptake": 0.8583
   },
   "html": {
-   "actions": 9818,
-   "organizers": 186,
-   "median_uptake": 0.4964
+   "actions": 15384,
+   "organizers": 332,
+   "median_uptake": 0.5737
   },
   "simple": {
-   "actions": 47702,
-   "organizers": 3292,
-   "median_uptake": 0.744
+   "actions": 138494,
+   "organizers": 8638,
+   "median_uptake": 0.7912
   }
  },
  "definitions": {
@@ -43,550 +43,711 @@
   "clean": "no repeatable action and duration <= 14 days",
   "position": "0-indexed position of the action in the campaign's action list, family expression and buckets match field_cuts.py's uptake_by_family_and_position"
  },
- "ordinary_n": 35668,
- "clean_n": 10723,
+ "ordinary_n": 117348,
+ "clean_n": 39850,
  "uptake_by_gleam_action": {
   "X Follows": {
-   "campaigns": 19433,
-   "organizers": 3398,
-   "median": 0.5001,
-   "p25": 0.3582,
-   "p75": 0.6571
+   "campaigns": 66279,
+   "organizers": 10170,
+   "median": 0.5415,
+   "p25": 0.386,
+   "p75": 0.7016
   },
   "Visit a Page": {
-   "campaigns": 19348,
-   "organizers": 3566,
-   "median": 0.7126,
-   "p25": 0.4793,
-   "p75": 0.993
+   "campaigns": 63172,
+   "organizers": 9315,
+   "median": 0.7845,
+   "p25": 0.5611,
+   "p75": 1.0
   },
   "Instagram Profile Visits": {
-   "campaigns": 18044,
-   "organizers": 3822,
-   "median": 0.7865,
-   "p25": 0.6339,
-   "p75": 0.9037
-  },
-  "Viral Shares": {
-   "campaigns": 16018,
-   "organizers": 3483,
-   "median": 0.1237,
-   "p25": 0.0738,
-   "p75": 0.2327
-  },
-  "Email Subscriptions": {
-   "campaigns": 15463,
-   "organizers": 3024,
-   "median": 0.898,
-   "p25": 0.7095,
-   "p75": 1.0238
+   "campaigns": 59199,
+   "organizers": 9848,
+   "median": 0.8191,
+   "p25": 0.6844,
+   "p75": 0.9214
   },
   "Facebook visits": {
-   "campaigns": 14640,
-   "organizers": 3054,
-   "median": 0.7592,
-   "p25": 0.5965,
-   "p75": 0.8794
+   "campaigns": 46762,
+   "organizers": 7443,
+   "median": 0.8216,
+   "p25": 0.6528,
+   "p75": 0.916
   },
   "YouTube Channel Visits": {
-   "campaigns": 14099,
-   "organizers": 3085,
-   "median": 0.8254,
-   "p25": 0.6622,
-   "p75": 0.949
+   "campaigns": 44796,
+   "organizers": 8922,
+   "median": 0.865,
+   "p25": 0.7064,
+   "p75": 0.9744
+  },
+  "Viral Shares": {
+   "campaigns": 42900,
+   "organizers": 7005,
+   "median": 0.1142,
+   "p25": 0.0561,
+   "p75": 0.2273
   },
   "Bonus": {
-   "campaigns": 12328,
-   "organizers": 2769,
-   "median": 1.0135,
-   "p25": 0.4104,
-   "p75": 1.9498
+   "campaigns": 39454,
+   "organizers": 7662,
+   "median": 1.0248,
+   "p25": 0.605,
+   "p75": 1.9962
+  },
+  "Email Subscriptions": {
+   "campaigns": 38554,
+   "organizers": 5725,
+   "median": 0.8516,
+   "p25": 0.7233,
+   "p75": 1.0102
   },
   "X Reposts": {
-   "campaigns": 7182,
-   "organizers": 1753,
-   "median": 0.3889,
-   "p25": 0.2742,
-   "p75": 0.5271
+   "campaigns": 27878,
+   "organizers": 5758,
+   "median": 0.4373,
+   "p25": 0.3101,
+   "p75": 0.5966
   },
   "Custom Actions": {
-   "campaigns": 6695,
-   "organizers": 1333,
-   "median": 0.4674,
-   "p25": 0.2176,
-   "p75": 0.8053
+   "campaigns": 22972,
+   "organizers": 3022,
+   "median": 0.5087,
+   "p25": 0.2609,
+   "p75": 0.8119
   },
   "Twitch Follows": {
-   "campaigns": 5998,
-   "organizers": 1099,
-   "median": 0.5533,
-   "p25": 0.4053,
-   "p75": 0.7303
+   "campaigns": 22521,
+   "organizers": 4330,
+   "median": 0.6788,
+   "p25": 0.4791,
+   "p75": 0.8843
   },
   "Chat Members": {
-   "campaigns": 5734,
-   "organizers": 1182,
-   "median": 0.358,
-   "p25": 0.2509,
-   "p75": 0.4959
-  },
-  "TikTok Follows": {
-   "campaigns": 5276,
-   "organizers": 1329,
-   "median": 0.3377,
-   "p25": 0.2502,
-   "p75": 0.4582
-  },
-  "Secret Code": {
-   "campaigns": 3803,
-   "organizers": 972,
-   "median": 0.25,
-   "p25": 0.081,
-   "p75": 0.537
-  },
-  "Answer a Question": {
-   "campaigns": 3695,
-   "organizers": 976,
-   "median": 0.8142,
-   "p25": 0.4715,
-   "p75": 1.0052
+   "campaigns": 19190,
+   "organizers": 3332,
+   "median": 0.4491,
+   "p25": 0.2927,
+   "p75": 0.6423
   },
   "X Posts": {
-   "campaigns": 3655,
-   "organizers": 722,
-   "median": 0.291,
-   "p25": 0.1934,
-   "p75": 0.386
+   "campaigns": 15558,
+   "organizers": 2130,
+   "median": 0.3434,
+   "p25": 0.2508,
+   "p75": 0.4351
+  },
+  "TikTok Follows": {
+   "campaigns": 14329,
+   "organizers": 2997,
+   "median": 0.3529,
+   "p25": 0.2514,
+   "p75": 0.4915
+  },
+  "Answer a Question": {
+   "campaigns": 14035,
+   "organizers": 2753,
+   "median": 0.7331,
+   "p25": 0.4059,
+   "p75": 1.0
+  },
+  "Secret Code": {
+   "campaigns": 9122,
+   "organizers": 2371,
+   "median": 0.2751,
+   "p25": 0.0878,
+   "p75": 0.57
   },
   "Instagram Follows": {
-   "campaigns": 2750,
-   "organizers": 981,
-   "median": 0.4825,
-   "p25": 0.3909,
-   "p75": 0.623
-  },
-  "TikTok Video Views": {
-   "campaigns": 2353,
-   "organizers": 850,
-   "median": 0.4792,
-   "p25": 0.3481,
-   "p75": 0.6295
+   "campaigns": 8234,
+   "organizers": 2601,
+   "median": 0.5148,
+   "p25": 0.4041,
+   "p75": 0.6667
   },
   "Pinterest Visits": {
-   "campaigns": 1972,
-   "organizers": 453,
-   "median": 0.6267,
-   "p25": 0.4881,
-   "p75": 0.7235
-  },
-  "Twitch Subscribers": {
-   "campaigns": 1884,
-   "organizers": 334,
-   "median": 0.0469,
-   "p25": 0.0173,
-   "p75": 0.1496
+   "campaigns": 7863,
+   "organizers": 931,
+   "median": 0.6619,
+   "p25": 0.514,
+   "p75": 0.7584
   },
   "Facebook Entries": {
-   "campaigns": 1842,
-   "organizers": 534,
-   "median": 0.4911,
-   "p25": 0.3733,
-   "p75": 0.6372
+   "campaigns": 7591,
+   "organizers": 1638,
+   "median": 0.5379,
+   "p25": 0.4146,
+   "p75": 0.6809
   },
-  "Loyalty Bonuses": {
-   "campaigns": 1780,
-   "organizers": 250,
-   "median": 0.473,
-   "p25": 0.2918,
-   "p75": 0.6568
-  },
-  "Single Choice List": {
-   "campaigns": 1659,
-   "organizers": 394,
-   "median": 0.9324,
-   "p25": 0.672,
-   "p75": 1.026
-  },
-  "Telegram Channel Members": {
-   "campaigns": 1622,
-   "organizers": 231,
-   "median": 0.8288,
-   "p25": 0.5542,
-   "p75": 0.8877
+  "Twitch Subscribers": {
+   "campaigns": 7374,
+   "organizers": 1177,
+   "median": 0.1095,
+   "p25": 0.0306,
+   "p75": 0.3616
   },
   "Instagram Post Views": {
-   "campaigns": 1545,
-   "organizers": 634,
-   "median": 0.6163,
-   "p25": 0.4029,
-   "p75": 0.789
+   "campaigns": 7204,
+   "organizers": 1880,
+   "median": 0.7422,
+   "p25": 0.5826,
+   "p75": 0.8421
   },
-  "App Downloads": {
-   "campaigns": 1501,
-   "organizers": 387,
-   "median": 0.3506,
-   "p25": 0.2555,
-   "p75": 0.4883
+  "TikTok Video Views": {
+   "campaigns": 6756,
+   "organizers": 1858,
+   "median": 0.5269,
+   "p25": 0.3788,
+   "p75": 0.6781
   },
-  "Facebook Likes": {
-   "campaigns": 1281,
-   "organizers": 506,
-   "median": 0.367,
-   "p25": 0.2865,
-   "p75": 0.4426
-  },
-  "YouTube Entries": {
-   "campaigns": 1111,
-   "organizers": 235,
-   "median": 0.7658,
-   "p25": 0.4678,
-   "p75": 1.0161
-  },
-  "Reddit Visits": {
-   "campaigns": 1061,
-   "organizers": 232,
-   "median": 0.708,
-   "p25": 0.5072,
-   "p75": 0.8316
-  },
-  "Facebook Post Views": {
-   "campaigns": 947,
-   "organizers": 411,
-   "median": 0.6249,
-   "p25": 0.3842,
-   "p75": 0.7941
-  },
-  "Instagram Entries": {
-   "campaigns": 925,
-   "organizers": 359,
-   "median": 0.4691,
-   "p25": 0.3241,
-   "p75": 0.5876
-  },
-  "Spotify follows": {
-   "campaigns": 899,
-   "organizers": 249,
-   "median": 0.2905,
-   "p25": 0.1771,
-   "p75": 0.424
-  },
-  "Podcast Subscriptions": {
-   "campaigns": 865,
-   "organizers": 203,
-   "median": 0.2889,
-   "p25": 0.241,
-   "p75": 0.3642
-  },
-  "LinkedIn Follow": {
-   "campaigns": 767,
-   "organizers": 200,
-   "median": 0.2535,
-   "p25": 0.1896,
-   "p75": 0.3121
-  },
-  "Media Submits": {
-   "campaigns": 683,
-   "organizers": 354,
-   "median": 0.0407,
-   "p25": 0.0139,
-   "p75": 0.1572
-  },
-  "Group Members": {
-   "campaigns": 682,
-   "organizers": 77,
-   "median": 0.4128,
-   "p25": 0.2849,
-   "p75": 0.5778
-  },
-  "Multiple Choice Checkboxes": {
-   "campaigns": 657,
-   "organizers": 252,
-   "median": 0.8973,
-   "p25": 0.6387,
-   "p75": 1.0185
+  "Loyalty Bonuses": {
+   "campaigns": 6152,
+   "organizers": 605,
+   "median": 0.5568,
+   "p25": 0.3408,
+   "p75": 0.716
   },
   "Blog Comment": {
-   "campaigns": 592,
-   "organizers": 110,
-   "median": 0.2378,
-   "p25": 0.1617,
-   "p75": 0.372
+   "campaigns": 6102,
+   "organizers": 423,
+   "median": 0.2217,
+   "p25": 0.1307,
+   "p75": 0.4114
   },
-  "X Hashtag Posts": {
-   "campaigns": 508,
-   "organizers": 219,
-   "median": 0.3423,
-   "p25": 0.2144,
-   "p75": 0.5085
+  "Single Choice List": {
+   "campaigns": 4869,
+   "organizers": 948,
+   "median": 0.7722,
+   "p25": 0.5728,
+   "p75": 1.0053
   },
-  "Pinterest Entries": {
-   "campaigns": 506,
-   "organizers": 74,
-   "median": 0.3779,
-   "p25": 0.1843,
-   "p75": 0.4441
+  "Telegram Channel Members": {
+   "campaigns": 4153,
+   "organizers": 906,
+   "median": 0.8615,
+   "p25": 0.6134,
+   "p75": 0.9773
   },
-  "csv_import": {
-   "campaigns": 495,
-   "organizers": 156,
-   "median": 0.0453,
-   "p25": 0.0015,
-   "p75": 0.7114
+  "Facebook Post Views": {
+   "campaigns": 4068,
+   "organizers": 1119,
+   "median": 0.7071,
+   "p25": 0.5152,
+   "p75": 0.8333
   },
-  "Instagram Comments": {
-   "campaigns": 484,
-   "organizers": 208,
-   "median": 0.3309,
-   "p25": 0.2278,
-   "p75": 0.4386
+  "Facebook Likes": {
+   "campaigns": 3971,
+   "organizers": 1258,
+   "median": 0.3899,
+   "p25": 0.2955,
+   "p75": 0.4747
+  },
+  "Instagram Entries": {
+   "campaigns": 3810,
+   "organizers": 1203,
+   "median": 0.5259,
+   "p25": 0.3837,
+   "p75": 0.6714
+  },
+  "YouTube Entries": {
+   "campaigns": 3503,
+   "organizers": 947,
+   "median": 0.8065,
+   "p25": 0.5317,
+   "p75": 0.9709
+  },
+  "App Downloads": {
+   "campaigns": 3495,
+   "organizers": 779,
+   "median": 0.4065,
+   "p25": 0.2762,
+   "p75": 0.6201
+  },
+  "Group Members": {
+   "campaigns": 3325,
+   "organizers": 211,
+   "median": 0.5356,
+   "p25": 0.3625,
+   "p75": 0.6631
+  },
+  "Reddit Visits": {
+   "campaigns": 2754,
+   "organizers": 469,
+   "median": 0.7698,
+   "p25": 0.5821,
+   "p75": 0.8774
   },
   "X Entries": {
-   "campaigns": 456,
-   "organizers": 179,
-   "median": 0.3965,
-   "p25": 0.2771,
-   "p75": 0.5874
+   "campaigns": 2633,
+   "organizers": 754,
+   "median": 0.5944,
+   "p25": 0.4194,
+   "p75": 0.7863
   },
-  "Snapchat": {
-   "campaigns": 430,
-   "organizers": 72,
-   "median": 0.2562,
-   "p25": 0.1599,
-   "p75": 0.3838
+  "Podcast Subscriptions": {
+   "campaigns": 2489,
+   "organizers": 480,
+   "median": 0.3452,
+   "p25": 0.2772,
+   "p75": 0.4432
   },
-  "Gleam Subscriber": {
-   "campaigns": 423,
-   "organizers": 98,
-   "median": 0.6066,
-   "p25": 0.5248,
-   "p75": 0.6791
+  "Media Submits": {
+   "campaigns": 2204,
+   "organizers": 909,
+   "median": 0.1023,
+   "p25": 0.0266,
+   "p75": 0.6349
   },
-  "X Post Views": {
-   "campaigns": 392,
-   "organizers": 146,
-   "median": 0.5937,
-   "p25": 0.4931,
-   "p75": 0.7145
+  "Multiple Choice Checkboxes": {
+   "campaigns": 2191,
+   "organizers": 635,
+   "median": 0.8235,
+   "p25": 0.586,
+   "p75": 1.0052
   },
-  "File Uploads": {
-   "campaigns": 383,
-   "organizers": 171,
-   "median": 0.0853,
-   "p25": 0.0182,
-   "p75": 0.326
+  "Spotify follows": {
+   "campaigns": 2186,
+   "organizers": 555,
+   "median": 0.3191,
+   "p25": 0.2179,
+   "p75": 0.4765
   },
-  "Submit URL": {
-   "campaigns": 373,
-   "organizers": 180,
-   "median": 0.144,
-   "p25": 0.0537,
-   "p75": 0.3783
+  "Goodreads Follows": {
+   "campaigns": 2057,
+   "organizers": 78,
+   "median": 0.4773,
+   "p25": 0.4143,
+   "p75": 0.5242
   },
-  "Spotify listen": {
-   "campaigns": 370,
-   "organizers": 137,
-   "median": 0.6994,
-   "p25": 0.3097,
-   "p75": 1.332
+  "Twitch Channel Rewards": {
+   "campaigns": 2009,
+   "organizers": 310,
+   "median": 0.4784,
+   "p25": 0.121,
+   "p75": 1.3788
   },
   "Bluesky Follows": {
-   "campaigns": 340,
-   "organizers": 141,
-   "median": 0.2379,
-   "p25": 0.1717,
-   "p75": 0.3336
+   "campaigns": 1913,
+   "organizers": 464,
+   "median": 0.291,
+   "p25": 0.1947,
+   "p75": 0.4074
   },
-  "Threads Follows": {
-   "campaigns": 315,
-   "organizers": 75,
-   "median": 0.2652,
-   "p25": 0.2062,
-   "p75": 0.3232
+  "LinkedIn Follow": {
+   "campaigns": 1737,
+   "organizers": 391,
+   "median": 0.2781,
+   "p25": 0.2049,
+   "p75": 0.3866
+  },
+  "Submit URL": {
+   "campaigns": 1619,
+   "organizers": 610,
+   "median": 0.1955,
+   "p25": 0.0756,
+   "p75": 0.4349
+  },
+  "Pinterest Entries": {
+   "campaigns": 1608,
+   "organizers": 221,
+   "median": 0.3966,
+   "p25": 0.2633,
+   "p75": 0.4767
+  },
+  "Instagram Comments": {
+   "campaigns": 1568,
+   "organizers": 612,
+   "median": 0.3523,
+   "p25": 0.2679,
+   "p75": 0.4843
   },
   "Patreon Visits": {
-   "campaigns": 304,
-   "organizers": 110,
-   "median": 0.5868,
-   "p25": 0.2386,
-   "p75": 0.7518
+   "campaigns": 1525,
+   "organizers": 316,
+   "median": 0.4332,
+   "p25": 0.0826,
+   "p75": 0.7311
+  },
+  "X Hashtag Posts": {
+   "campaigns": 1509,
+   "organizers": 559,
+   "median": 0.3682,
+   "p25": 0.2381,
+   "p75": 0.561
+  },
+  "Twitch Entries": {
+   "campaigns": 1497,
+   "organizers": 483,
+   "median": 0.7482,
+   "p25": 0.5387,
+   "p75": 0.9566
+  },
+  "X Post Views": {
+   "campaigns": 1462,
+   "organizers": 552,
+   "median": 0.6587,
+   "p25": 0.5086,
+   "p75": 0.8336
+  },
+  "File Uploads": {
+   "campaigns": 1236,
+   "organizers": 415,
+   "median": 0.1733,
+   "p25": 0.0386,
+   "p75": 0.728
+  },
+  "Threads Follows": {
+   "campaigns": 1219,
+   "organizers": 232,
+   "median": 0.2419,
+   "p25": 0.1904,
+   "p75": 0.3116
+  },
+  "Promote Entries": {
+   "campaigns": 1215,
+   "organizers": 117,
+   "median": 0.4859,
+   "p25": 0.37,
+   "p75": 0.5699
+  },
+  "Gleam Subscriber": {
+   "campaigns": 1206,
+   "organizers": 319,
+   "median": 0.6177,
+   "p25": 0.5148,
+   "p75": 0.708
+  },
+  "RSS Feed": {
+   "campaigns": 1174,
+   "organizers": 84,
+   "median": 0.5038,
+   "p25": 0.25,
+   "p75": 0.6111
+  },
+  "Snapchat": {
+   "campaigns": 983,
+   "organizers": 118,
+   "median": 0.2143,
+   "p25": 0.1451,
+   "p75": 0.3396
+  },
+  "Spotify listen": {
+   "campaigns": 926,
+   "organizers": 282,
+   "median": 0.5807,
+   "p25": 0.334,
+   "p75": 1.2266
+  },
+  "Facebook Join Group": {
+   "campaigns": 884,
+   "organizers": 184,
+   "median": 0.3496,
+   "p25": 0.3108,
+   "p75": 0.4094
+  },
+  "Kick Follow": {
+   "campaigns": 760,
+   "organizers": 160,
+   "median": 0.4532,
+   "p25": 0.3247,
+   "p75": 0.6101
+  },
+  "csv_import": {
+   "campaigns": 725,
+   "organizers": 249,
+   "median": 0.0478,
+   "p25": 0.003,
+   "p75": 0.7891
+  },
+  "Discord Entries": {
+   "campaigns": 685,
+   "organizers": 222,
+   "median": 0.6148,
+   "p25": 0.4287,
+   "p75": 0.8155
+  },
+  "Choose Image": {
+   "campaigns": 680,
+   "organizers": 241,
+   "median": 0.9648,
+   "p25": 0.8121,
+   "p75": 1.0157
+  },
+  "SoundCloud Follows": {
+   "campaigns": 670,
+   "organizers": 100,
+   "median": 0.207,
+   "p25": 0.125,
+   "p75": 0.3187
+  },
+  "Bluesky Reposts": {
+   "campaigns": 667,
+   "organizers": 183,
+   "median": 0.2545,
+   "p25": 0.1866,
+   "p75": 0.3344
+  },
+  "Crypto Wallet Address": {
+   "campaigns": 663,
+   "organizers": 233,
+   "median": 1.0926,
+   "p25": 0.8673,
+   "p75": 1.4532
+  },
+  "Steam Entries": {
+   "campaigns": 604,
+   "organizers": 167,
+   "median": 0.7048,
+   "p25": 0.4563,
+   "p75": 0.9061
+  },
+  "Instagram Uploads": {
+   "campaigns": 597,
+   "organizers": 297,
+   "median": 0.0267,
+   "p25": 0.01,
+   "p75": 0.0626
+  },
+  "Game Players": {
+   "campaigns": 576,
+   "organizers": 228,
+   "median": 0.1064,
+   "p25": 0.0329,
+   "p75": 0.2846
+  },
+  "Watch a Video": {
+   "campaigns": 499,
+   "organizers": 35,
+   "median": 0.4667,
+   "p25": 0.355,
+   "p75": 0.7024
+  },
+  "Facebook Uploads": {
+   "campaigns": 497,
+   "organizers": 167,
+   "median": 0.0338,
+   "p25": 0.0111,
+   "p75": 0.0624
+  },
+  "Spotify saves": {
+   "campaigns": 488,
+   "organizers": 117,
+   "median": 0.4096,
+   "p25": 0.2481,
+   "p75": 0.6407
+  },
+  "Kickstarter visits": {
+   "campaigns": 437,
+   "organizers": 196,
+   "median": 0.7931,
+   "p25": 0.59,
+   "p75": 0.9629
+  },
+  "Blog Post": {
+   "campaigns": 401,
+   "organizers": 87,
+   "median": 0.0091,
+   "p25": 0.0046,
+   "p75": 0.0241
+  },
+  "Tumblr Follows": {
+   "campaigns": 375,
+   "organizers": 66,
+   "median": 0.1567,
+   "p25": 0.0804,
+   "p75": 0.2265
+  },
+  "LinkedIn Share": {
+   "campaigns": 341,
+   "organizers": 134,
+   "median": 0.0376,
+   "p25": 0.0214,
+   "p75": 0.0904
+  },
+  "Facebook check-ins": {
+   "campaigns": 305,
+   "organizers": 128,
+   "median": 0.2901,
+   "p25": 0.1221,
+   "p75": 0.4233
   }
  },
  "uptake_by_family_and_position": {
   "content|1st": {
-   "n": 301,
-   "sites": 157,
-   "median": 0.7399,
-   "completions_per_contestant": 0.7399
+   "n": 2581,
+   "sites": 616,
+   "median": 0.8075,
+   "completions_per_contestant": 0.8075
   },
   "content|2nd-4th": {
-   "n": 717,
-   "sites": 288,
-   "median": 0.1891,
-   "completions_per_contestant": 0.1891
+   "n": 4684,
+   "sites": 843,
+   "median": 0.2745,
+   "completions_per_contestant": 0.2745
   },
   "content|5th+": {
-   "n": 1593,
-   "sites": 433,
-   "median": 0.1055,
-   "completions_per_contestant": 0.1055
+   "n": 6667,
+   "sites": 1136,
+   "median": 0.135,
+   "completions_per_contestant": 0.135
   },
   "email|1st": {
-   "n": 9153,
-   "sites": 2079,
-   "median": 1.0056,
-   "completions_per_contestant": 1.0056
+   "n": 21108,
+   "sites": 3814,
+   "median": 1.0069,
+   "completions_per_contestant": 1.0069
   },
   "email|2nd-4th": {
-   "n": 4430,
-   "sites": 1011,
-   "median": 0.7466,
-   "completions_per_contestant": 0.7466
+   "n": 10220,
+   "sites": 2124,
+   "median": 0.7784,
+   "completions_per_contestant": 0.7784
   },
   "email|5th+": {
-   "n": 3917,
-   "sites": 774,
-   "median": 0.6542,
-   "completions_per_contestant": 0.6542
+   "n": 16915,
+   "sites": 1633,
+   "median": 0.7333,
+   "completions_per_contestant": 0.7333
   },
   "follow|1st": {
-   "n": 4921,
-   "sites": 1408,
-   "median": 0.7699,
-   "completions_per_contestant": 0.7699
+   "n": 20734,
+   "sites": 5402,
+   "median": 0.8241,
+   "completions_per_contestant": 0.8241
   },
   "follow|2nd-4th": {
-   "n": 22055,
-   "sites": 3381,
-   "median": 0.5316,
-   "completions_per_contestant": 0.5316
+   "n": 75853,
+   "sites": 10578,
+   "median": 0.5644,
+   "completions_per_contestant": 0.5644
   },
   "follow|5th+": {
-   "n": 42344,
-   "sites": 2955,
-   "median": 0.3867,
-   "completions_per_contestant": 0.3867
+   "n": 117336,
+   "sites": 7540,
+   "median": 0.4261,
+   "completions_per_contestant": 0.4261
   },
   "share|1st": {
-   "n": 392,
-   "sites": 165,
-   "median": 0.1541,
-   "completions_per_contestant": 0.1541
+   "n": 999,
+   "sites": 383,
+   "median": 0.1612,
+   "completions_per_contestant": 0.1612
   },
   "share|2nd-4th": {
-   "n": 5057,
-   "sites": 1509,
-   "median": 0.1229,
-   "completions_per_contestant": 0.1229
+   "n": 11386,
+   "sites": 3034,
+   "median": 0.1238,
+   "completions_per_contestant": 0.1238
   },
   "share|5th+": {
-   "n": 10681,
-   "sites": 2434,
-   "median": 0.1228,
-   "completions_per_contestant": 0.1228
+   "n": 30786,
+   "sites": 4972,
+   "median": 0.1086,
+   "completions_per_contestant": 0.1086
   },
   "visit|1st": {
-   "n": 4124,
-   "sites": 1267,
-   "median": 0.9806,
-   "completions_per_contestant": 0.9806
+   "n": 14480,
+   "sites": 4157,
+   "median": 0.9836,
+   "completions_per_contestant": 0.9836
   },
   "visit|2nd-4th": {
-   "n": 26029,
-   "sites": 3827,
-   "median": 0.834,
-   "completions_per_contestant": 0.834
+   "n": 84694,
+   "sites": 10672,
+   "median": 0.8646,
+   "completions_per_contestant": 0.8646
   },
   "visit|5th+": {
-   "n": 45914,
-   "sites": 3439,
-   "median": 0.6995,
-   "completions_per_contestant": 0.6995
+   "n": 133275,
+   "sites": 8435,
+   "median": 0.7469,
+   "completions_per_contestant": 0.7469
   }
  },
  "description_length_clean": {
   "301+": {
-   "n": 48,
-   "organizers": 25,
-   "contestants": 1750.5,
-   "contestants_per_impression": 0.2976,
-   "entries_per_entrant": 5.4942
-  },
-  "76-150": {
-   "n": 2514,
-   "organizers": 734,
-   "contestants": 2125.5,
-   "contestants_per_impression": 0.3994,
-   "entries_per_entrant": 3.9998
+   "n": 268,
+   "organizers": 78,
+   "contestants": 329.5,
+   "contestants_per_impression": 0.2894,
+   "entries_per_entrant": 4.1506
   },
   "151-300": {
-   "n": 805,
-   "organizers": 244,
-   "contestants": 1940.0,
-   "contestants_per_impression": 0.3807,
-   "entries_per_entrant": 3.5276
+   "n": 2388,
+   "organizers": 649,
+   "contestants": 626.0,
+   "contestants_per_impression": 0.3341,
+   "entries_per_entrant": 3.823
+  },
+  "76-150": {
+   "n": 7227,
+   "organizers": 2054,
+   "contestants": 590.0,
+   "contestants_per_impression": 0.3315,
+   "entries_per_entrant": 3.9546
   },
   "0-25": {
-   "n": 3577,
-   "organizers": 789,
-   "contestants": 2168.0,
-   "contestants_per_impression": 0.4109,
-   "entries_per_entrant": 2.983
+   "n": 14906,
+   "organizers": 2986,
+   "contestants": 418.0,
+   "contestants_per_impression": 0.3945,
+   "entries_per_entrant": 3.4746
   },
   "26-75": {
-   "n": 3779,
-   "organizers": 1261,
-   "contestants": 2078.0,
-   "contestants_per_impression": 0.3391,
-   "entries_per_entrant": 3.8987
+   "n": 15061,
+   "organizers": 3926,
+   "contestants": 422.0,
+   "contestants_per_impression": 0.3236,
+   "entries_per_entrant": 3.8179
   }
  },
  "custom_action_templates": {
   "visit": {
-   "actions": 58747,
-   "organizers": 3566,
-   "median_uptake": 0.7126
+   "actions": 159229,
+   "organizers": 9315,
+   "median_uptake": 0.7845
   },
   "none": {
-   "actions": 15106,
-   "organizers": 1333,
-   "median_uptake": 0.4674
+   "actions": 52841,
+   "organizers": 3022,
+   "median_uptake": 0.5087
   },
   "bonus": {
-   "actions": 13999,
-   "organizers": 2769,
-   "median_uptake": 1.0135
+   "actions": 44584,
+   "organizers": 7662,
+   "median_uptake": 1.0248
   },
   "question": {
-   "actions": 4875,
-   "organizers": 976,
-   "median_uptake": 0.8142
+   "actions": 19467,
+   "organizers": 2753,
+   "median_uptake": 0.7331
   },
   "choose_option": {
-   "actions": 2348,
-   "organizers": 394,
-   "median_uptake": 0.9324
+   "actions": 7970,
+   "organizers": 948,
+   "median_uptake": 0.7722
   },
   "multiple_choice": {
-   "actions": 826,
-   "organizers": 252,
-   "median_uptake": 0.8973
+   "actions": 2766,
+   "organizers": 635,
+   "median_uptake": 0.8235
   },
   "choose_image": {
-   "actions": 296,
-   "organizers": 99,
-   "median_uptake": 0.9795
+   "actions": 977,
+   "organizers": 241,
+   "median_uptake": 0.9648
   }
  },
  "throwaway_restriction_per_action": {
   "1": {
-   "actions": 3286,
-   "organizers": 467,
-   "median_uptake": 0.3566
+   "actions": 7827,
+   "organizers": 882,
+   "median_uptake": 0.3891
   },
   "0": {
-   "actions": 41289,
-   "organizers": 3443,
-   "median_uptake": 0.4564
+   "actions": 139752,
+   "organizers": 10418,
+   "median_uptake": 0.4914
   }
  }
 }

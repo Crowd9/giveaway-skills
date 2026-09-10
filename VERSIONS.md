@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.14 |
-| giveaway-entry-method-planner | 1.2.13 |
-| giveaway-timing-and-duration | 1.4.11 |
-| giveaway-winner-structure | 1.3.10 |
-| giveaway-promotion-plan | 1.3.14 |
-| giveaway-random-draw | 1.3.7 |
-| giveaway-winner-communications | 1.2.7 |
-| giveaway-idea-generator | 1.3.11 |
-| giveaway-results-review | 1.5.15 |
-| gleam-campaign-setup | 1.2.12 |
+| giveaway-prize-picker | 1.3.15 |
+| giveaway-entry-method-planner | 1.2.14 |
+| giveaway-timing-and-duration | 1.4.12 |
+| giveaway-winner-structure | 1.3.11 |
+| giveaway-promotion-plan | 1.3.15 |
+| giveaway-random-draw | 1.3.8 |
+| giveaway-winner-communications | 1.2.8 |
+| giveaway-idea-generator | 1.3.12 |
+| giveaway-results-review | 1.5.16 |
+| gleam-campaign-setup | 1.2.13 |
 
 ## Skills
 
@@ -229,6 +229,22 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
 - 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
 - 1.2.2 (2026-09-10): analysis section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
+
+## 1.5.1 (2026-09-11)
+
+The benchmark floor moves from 1,000 Entrants to 100, and the size bands go from three to six.
+
+**What changed.** Every benchmark now describes 117,348 campaigns from 17,777 businesses, up from 36,183 from 6,586. The 81,165 campaigns between 100 and 1,000 Entrants had never been in a benchmark before, and they are most of the customer base. Bands are now 100 to 250, 250 to 500, 500 to 1,000, 1,000 to 2,500, 2,500 to 10,000 and 10,000 or more, because a single 100 to 1,000 band would have held 69% of the data.
+
+**Why the bands changed too.** Moving the floor without splitting the bottom band would have filed a 300-Entrant campaign under 1,000 to 2,500 and compared it with campaigns five times its size.
+
+**Results review.** A campaign under 1,000 Entrants used to get a single typical figure and no rank, because no rank table covered it. It now gets a full percentile rank inside its own band. The `small_band_rows` path and its hardcoded constants are gone.
+
+**Prize budgets.** Stated Prize value spans ten times across the bands, from a typical 69 USD at 100 to 250 Entrants to 779 USD at 10,000 or more. The old advice pointed a business expecting 200 Entrants at a 900 USD median.
+
+**What held.** Entries per Entrant barely moves across the whole range, 4.09 to 4.68, so reach and engagement come apart: a small campaign works its Entrants as hard as a large one. The 1,000-plus bands are unchanged from the previous run, so nothing already published shifted underneath.
+
+**Also.** The campaign screen is now `analysis/segments.py`, rules that can be rerun, replacing the lost classification file. Currency codes with fewer than 10 records are no longer published as if they were currencies, which was letting typed-in codes like GPD and UDD into a shipped table.
 
 ## 1.5.0 (2026-09-11)
 

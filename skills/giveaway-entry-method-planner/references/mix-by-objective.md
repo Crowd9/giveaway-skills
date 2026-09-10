@@ -426,7 +426,7 @@ A two-segment fit on the pooled curve (10,550 campaigns) puts the elbow at 12-13
 | Gaming and esports | 13-14 actions (2,245 campaigns, 125 businesses) |
 | Electronics and tech | 13-14 actions (2,387 campaigns, 101 businesses) |
 
-Past 16 actions conversion climbs back up, likely a handful of unusually well-optimized businesses still clearing 1,000 Entrants at that length. Don't read the climb as evidence that more actions help past 14. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
+Past 16 actions conversion climbs back up, likely a handful of unusually well-optimized businesses still clearing 100 Entrants at that length. Don't read the climb as evidence that more actions help past 14. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
 
 **Every action past the first has a measurable conversion cost, and it holds inside each industry, not just pooled across all of them.** Inside every industry tested, the top quarter by conversion runs fewer actions and far less social or referral friction than the rest of that same industry, a like-for-like version of the pattern above.
 
@@ -462,7 +462,7 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 
 | Context | Invalid entry rate |
 |---|---|
-| Typical campaign | 3.8% |
+| Typical campaign | 4.2% |
 | With a share or referral action | 4.5% |
 | Without one | 3.2% |
 | Chat Members offered | 4.5% (3.7% without) |
@@ -472,7 +472,7 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 | Question action validated the answer | 3.2% |
 | Question action did not validate | 3.2%, the same |
 
-[Across 35,668 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 58 campaigns validated, 10,665 did not.]
+[Across 117,348 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 516 campaigns validated, 39,334 did not.]
 
 ## Consent and rules
 

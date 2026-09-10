@@ -10,7 +10,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 - Decide tiers and backups. Two backups per tier covers most no-reply cases without a second draw.
 - Pick the seed and, if the terms or a partner require it, publish it before drawing.
 
-- Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 3.8% of entries marked invalid, across 35,203 campaigns and 6,315 businesses, and referral-heavy mixes ran higher. Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
+- Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,886 campaigns and 16,633 businesses, and referral-heavy mixes ran higher. Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
 
 `commit` also prints review lines for disposable email domains, one domain holding a fifth or more of the list, and runs of handles that differ only by a trailing number. They are prompts to look, never verdicts. Decide what to exclude, update the exclusion file, then commit again.
 

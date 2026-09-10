@@ -1,6 +1,6 @@
 # What the data says about Gleam settings
 
-Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 1,000 or more unique Entrants, crypto and purchase-only campaigns removed. (35,668 campaigns.)
+Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 100 or more unique Entrants, crypto and purchase-only campaigns removed. (117,348 campaigns.)
 
 Every figure below is the share of a campaign's Entrants who completed a given action, worked out as completions of that action divided by Entrants, then taken as the typical value across every campaign that offered it, shown as a count % of Entrants with the decimal it came from in brackets. A figure of 51 per 100 means about half the Entrants did it. A figure above 100 per 100 means the action was completed more than once per Entrant on average, which happens on daily and repeatable actions.
 
@@ -412,7 +412,7 @@ The entry-method-planner skill holds the share of Entrants who completed it by q
 - Validated-answer question: a typical 17% of entries come back invalid, because wrong answers count as invalid (giveaway-entry-method-planner).
 - Custom terms: written by 49% of campaigns (giveaway-winner-structure).
 - Eleven or more actions: a quarter fewer Entrants, 32% of viewers enter against 48% for one to three (giveaway-entry-method-planner).
-- Invalid entries: a typical 3.8% of entries, higher with Viral Share, Discord and retweet actions (giveaway-winner-structure).
+- Invalid entries: a typical 4.2% of entries, higher with Viral Share, Discord and retweet actions (giveaway-winner-structure).
 
 ## What this suggests for the setup, as advice
 

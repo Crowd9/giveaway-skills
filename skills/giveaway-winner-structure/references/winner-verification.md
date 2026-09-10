@@ -4,9 +4,9 @@ Advice from practice. A drawn entry is a Winner only after it passes these check
 
 ## Why it matters
 
-A drawn name has a real chance of failing. The typical campaign has 3.8% of entries marked invalid at verification, and mixes with referral actions run higher. Backups exist for this.
+A drawn name has a real chance of failing. The typical campaign has 4.2% of entries marked invalid at verification, and mixes with referral actions run higher. Backups exist for this.
 
-[Extracted from 35,203 campaigns and 6,315 businesses. 42% of campaigns had 5% or more invalid.]
+[Extracted from 107,886 campaigns and 16,633 businesses. 45% of campaigns had 5% or more invalid.]
 
 ## Check the entry first
 

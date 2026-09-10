@@ -2,63 +2,66 @@
 
 The script ranks a campaign against every fifth percentile of twelve figures in `percentiles.json` (Entrants, Impressions (views of the campaign page), Conversion Rate, actions and entries per Entrant, entries, Entrants per day, action count, duration, stated Prize value per Entrant, email signups, share who signed up for email, referral entries per Entrant, follows by network), plus completions per Entrant for 51 Gleam actions, for all campaigns, the campaigns we can compare fairly, campaigns your size, and your vertical. The tables below give the typical figure and the reading guide.
 
-Every figure is drawn from the campaigns behind these numbers (35,614 campaigns that reached 1,000 unique Entrants, crypto and purchase-only campaigns removed). Typical figures unless stated. The campaigns we can compare fairly have no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.
+Every figure is drawn from the campaigns behind these numbers (117,348 campaigns that reached 100 unique Entrants, crypto and purchase-only campaigns removed). Typical figures unless stated. The campaigns we can compare fairly have no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.
 
 ## Campaign size
 
 | Metric | Lower quarter | Typical | Upper quarter | Top tenth | Campaigns |
 |---|---|---|---|---|---|
-| Entrants | 1,418 | 2,211 | 4,184 | 9,095 | 35,614 |
-| Entries | 5,402 | 10,486 | 22,976 | 57,213 | 35,614 |
-| Entries per Entrant | 2.68 | 4.33 | 7.08 | 12.11 | 35,614 |
-| Entries per 100 Entrants | 268 | 433 | 708 | 1,211 | 35,614 |
-| Impressions | 4,803 | 9,183 | 19,911 | 46,257 | 35,583 |
-| Duration in days | 8 | 16 | 31 | 43 | 35,614 |
+| Entrants | 225 | 492 | 1,293 | 3,349 | 117,130 |
+| Entries | 883 | 2,320 | 6,719 | 17,968 | 117,130 |
+| Entries per Entrant | 2.74 | 4.39 | 7.05 | 11.84 | 117,130 |
+| Entries per 100 Entrants | 274 | 439 | 705 | 1,184 | 117,130 |
+| Impressions | 862 | 2,033 | 5,608 | 16,452 | 117,041 |
+| Duration in days | 7 | 14 | 29 | 36 | 117,130 |
 
-Half of all campaigns sat between 1,000 and 2,500 Entrants, and the script compares a campaign against others in that band or in the next two size bands.
+Half of all campaigns sat between 225 and 1,293 Entrants, and the script compares a campaign against others in its own band.
 
-| Comparison band | Entrants |
-|---|---|
-| Small | 1,000 to 2,500 |
-| Mid | 2,500 to 10,000 |
-| Large | 10,000 or more |
+| Comparison band | Campaigns | Businesses |
+|---|---|---|
+| 100 to 250 Entrants | 33,338 | 9,607 |
+| 250 to 500 | 25,892 | 6,554 |
+| 500 to 1,000 | 21,935 | 5,550 |
+| 1,000 to 2,500 | 20,137 | 5,123 |
+| 2,500 to 10,000 | 12,828 | 3,035 |
+| 10,000 or more | 3,218 | 762 |
 
 State entries as entries per 100 Entrants, not the raw decimal, using the row above. Give the reader's own figure the same way (entries divided by Entrants, times 100), and state the gap against the typical figure as a percentage or a plain multiple ("about half the typical rate"), never as two decimals side by side.
 
 ## Conversion Rate, by number of actions (the campaigns we can compare fairly)
 
-| Actions | Campaigns | Entrants | Conversion Rate |
-|---|---|---|---|
-| 1 to 3 | 3,213 | 2,305 | 48% |
-| 4 to 6 | 3,189 | 2,176 | 38% |
-| 7 to 10 | 2,635 | 2,080 | 33% |
-| 11 or more | 1,682 | 1,760 | 32% |
+| Actions | Campaigns | Conversion Rate |
+|---|---|---|
+| 1 to 3 | 10,838 | 44% |
+| 4 to 6 | 12,430 | 35% |
+| 7 to 10 | 9,744 | 29% |
+| 11 or more | 6,795 | 31% |
 
 ## Conversion Rate, by duration (no repeatable actions)
 
-| Duration | Campaigns | Entrants | Conversion Rate |
-|---|---|---|---|
-| 1 to 7 days | 6,159 | 2,095 | 45% |
-| 8 to 14 | 4,560 | 2,145 | 31% |
-| 15 to 30 | 6,854 | 2,230 | 28% |
-| 31 to 60 | 3,681 | 2,182 | 24% |
-| 61 or more | 1,399 | 2,367 | 23% |
+| Duration | Campaigns | Conversion Rate |
+|---|---|---|
+| 1 to 7 days | 21,429 | 40% |
+| 8 to 14 | 16,613 | 29% |
+| 15 to 30 | 20,578 | 26% |
+| 31 to 60 | 11,468 | 23% |
+| 61 or more | 3,532 | 22% |
 
 ## How many did each kind of action (completions per Entrant, all campaigns)
 
 | Family | Campaigns offering | Typical | Typical range |
 |---|---|---|---|
-| Visit a page or profile | 29,073 | 0.75 | 0.55 to 0.92 |
-| Follow or subscribe (free) | 22,705 | 0.46 | 0.32 to 0.63 |
-| Share, repost or refer | 20,078 | 0.20 | 0.09 to 0.39 |
-| Email or newsletter signup | 15,855 | 0.89 | 0.69 to 1.02 |
-| Post or create content | 5,507 | 0.23 | 0.08 to 0.37 |
+| Visit a page or profile | 94,591 | 0.80 | 0.61 to 0.94 |
+| Follow or subscribe (free) | 78,061 | 0.51 | 0.35 to 0.69 |
+| Share, repost or refer | 61,298 | 0.26 | 0.10 to 0.47 |
+| Email or newsletter signup | 40,733 | 0.84 | 0.70 to 1.01 |
+| Post or create content | 21,785 | 0.31 | 0.15 to 0.44 |
 
 A share entry is a referred person multiplied by entry worth, so the share row is not a click rate. Full family tables sit in the entry-method-planner skill.
 
 ## What campaigns produced (extracted)
 
-Completions of the acquire and amplify actions, summed per campaign, across the 35,614 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
+Completions of the acquire and amplify actions, summed per campaign, across the 117,348 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
 Reading it: cost per completion varies widely by asset, from under $0.50 for an email signup to about $17 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.4 to $0.9 depending on the network.
 
@@ -91,9 +94,12 @@ Email signups and referral entries both scale with campaign size:
 
 | Campaign size | Email signups (range) | Email signups typical | Referral entries (range) | Referral entries typical |
 |---|---|---|---|---|
-| 1,000 to 2,500 | 1,046 to 1,787 | 1,344 | 116 to 413 | 215 |
-| 2,500 to 10,000 | 2,776 to 5,395 | 3,703 | 296 to 943 | 505 |
-| 10,000 or more | 11,669 to 28,865 | 16,419 | 882 to 3,023 | 1,615 |
+| 100 to 250 | 118 to 211 | 157 | 5 to 44 | 17 |
+| 250 to 500 | 274 to 481 | 353 | 11 to 88 | 35 |
+| 500 to 1,000 | 516 to 827 | 645 | 34 to 189 | 84 |
+| 1,000 to 2,500 | 1,046 to 1,790 | 1,346 | 97 to 522 | 218 |
+| 2,500 to 10,000 | 2,782 to 5,433 | 3,713 | 230 to 1,254 | 515 |
+| 10,000 or more | 11,686 to 28,933 | 16,566 | 707 to 3,705 | 1,698 |
 
 Stated USD per email signup by Prize category, campaigns with an email action:
 
@@ -126,7 +132,7 @@ The typical campaign has drifted smaller since 2021 while the Conversion Rate he
 
 ## By template
 
-Where a campaign was copied from, scoped to 1,000 or more Entrants, finance_crypto organizers excluded, so a review can compare a campaign against others built from the same template or the same source kind (across 35,657 campaigns, the four source kinds).
+Where a campaign was copied from, scoped to 100 or more Entrants, finance_crypto organizers excluded, so a review can compare a campaign against others built from the same template or the same source kind (across 117,346 campaigns, the four source kinds).
 
 | Source | Share | Campaigns | Businesses | Conversion Rate |
 |---|---|---|---|---|
@@ -156,7 +162,7 @@ Source: `analysis/output/templates.json` (`source_mix_1k`, `by_template_1k`).
 
 ## Benchmarks by plan tier
 
-A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`'s own scope (1,000 or more Entrants, plausible start dates, no crypto or purchase-only exclusion), which is wider than the 35,614 campaigns behind the numbers above, so treat these as tier comparisons, not a restatement of the campaign-size table. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
+A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`'s own scope (100 or more Entrants, plausible start dates, no crypto or purchase-only exclusion), which is wider than the 117,348 campaigns behind the numbers above, so treat these as tier comparisons, not a restatement of the campaign-size table. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
 
 | Tier | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
@@ -170,7 +176,7 @@ Free and Hobby campaigns carry no email or share action at all, so their Convers
 
 ## Benchmarks by organizer stage, scale and business type
 
-For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 1,000 or more Entrants and a labelled organizer site, also wider than the 35,614 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
+For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, also wider than the 117,348 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
 
 By organizer stage (`by_org_stage`), read from the homepage:
 
@@ -236,7 +242,7 @@ By industry (`by_industry`), finance_crypto (15,796 campaigns) held out on the s
 | Jewelry and watches | 137 | 65 | 2,225 | 26% | 3.51 | 22 | 71% |
 | Nonprofit or community | 134 | 57 | 2,069 | 32% | 2.57 | 16 | 42% |
 
-This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the analysis rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 35,614 campaigns). Say which cut a rank came from.
+This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the analysis rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 117,348 campaigns). Say which cut a rank came from.
 
 | Vertical | Conversion Rate |
 |---|---|
@@ -288,10 +294,10 @@ Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s
 
 | Sequence | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| 1st campaign | 10,714 | 10,714 | 2,332 | 28% | 17 |
-| 2nd to 3rd | 8,296 | 5,012 | 2,324 | 28% | 15 |
-| 4th to 10th | 10,845 | 2,489 | 2,419 | 29% | 14 |
-| 11th plus | 24,931 | 897 | 2,548 | 33% | 10 |
+| 1st campaign | 25,482 | 25,482 | 433 | 26% | 15 |
+| 2nd to 3rd | 20,660 | 12,314 | 484 | 27% | 14 |
+| 4th to 10th | 29,232 | 6,452 | 539 | 28% | 12 |
+| 11th plus | 91,694 | 2,531 | 520 | 30% | 9 |
 
 | Organizer activity | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
@@ -394,7 +400,7 @@ Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business
 
 ### City benchmarks
 
-`field_cuts.json`'s `by_organizer_city` adds a city cut of the same shape, scoped like the rest of this page to 1,000 or more Entrants. Every row already carries five or more organizers. The eight cities with the most campaigns, for a finer comparison when one fits:
+`field_cuts.json`'s `by_organizer_city` adds a city cut of the same shape, scoped like the rest of this page to 100 or more Entrants. Every row already carries five or more organizers. The eight cities with the most campaigns, for a finer comparison when one fits:
 
 | City | Campaigns | Businesses | Entrants | Conversion Rate | Entries/Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
@@ -409,27 +415,33 @@ Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business
 
 Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/indicators.json` (`impressions_per_contestant_by_country`, `plan_tier_by_country`), `analysis/output/field_cuts.json` (`by_organizer_city`).
 
-## Campaigns of 100 to 1,000 Entrants
+## Every size band
 
-`field_cuts.json`'s `by_band_all` adds the campaigns below the 1,000-Entrant floor the rest of this page uses, so a small campaign has a benchmark row too. Entrants in this group are estimated from a model with a 17% typical error where the true count is known. Email offered, share offered, days and methods are exact for every size.
+`field_cuts.json`'s `by_band_all` covers every campaign with a contestant count, so each band has its own benchmark row. Counts are exact: the contestant dump covers the 100 to 1,000 range, so nothing here is modelled.
 
 | Size | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
-| 100 to 1,000 (estimated) | 112,282 | 20,559 | 295 | 27% | 4.75 | 10 | 7 | 21.5% | 38% |
+| 100 to 250 | 47,150 | 13,254 | 160 | 27% | 4.46 | 9 | 6 | 17% | 30% |
+| 250 to 500 | 35,627 | 9,067 | 350 | 28% | 4.92 | 11 | 7 | 22% | 42% |
+| 500 to 1,000 | 29,505 | 7,649 | 690 | 28% | 4.98 | 11 | 7 | 28% | 46% |
 | 1,000 to 2,500 | 27,891 | 7,404 | 1,496 | 29% | 4.72 | 13 | 7 | 32% | 50% |
-| 2,500 to 10,000 | 20,532 | 5,375 | 4,125 | 30% | 4.95 | 14 | 8 | 30% | 56% |
-| 10,000 plus | 6,363 | 1,989 | 16,706 | 34% | 5.28 | 14 | 8 | 23% | 61% |
+| 2,500 to 10,000 | 20,532 | 5,375 | 4,124 | 30% | 4.95 | 14 | 8 | 30% | 56% |
+| 10,000 or more | 6,363 | 1,989 | 16,706 | 34% | 5.28 | 14 | 8 | 23% | 61% |
 
-A campaign under 1,000 Entrants has its own row here, not a gap in the data (table above). It leads the whole chart on entries per Entrant, above every size that follows, so the Entrants who do show up are already doing more per person than in a bigger campaign. Conversion Rate sits lower than every size above it, a reversal from the earlier dataset, where the smallest campaigns had the highest Conversion Rate, and email and a share action both get offered less often than in the next size up. Both gaps close the same way the bigger sizes got there: add the action, the target is the next size's own figure. The estimated-Entrants row is a rough marker, given the model's own error.
+Entries per Entrant barely moves across the whole range, from 4.46 in the smallest band to 5.28 in the largest. The Entrants a small campaign does reach are working about as hard as the ones in a campaign a hundred times the size, so a low Entrant count is a reach problem and not an engagement problem.
+
+Conversion Rate climbs gently with size, from 27% to 34%. Email and a share action are both offered far less often in small campaigns, 17% against 23% for email and 30% against 61% for sharing. Those are the two gaps a small campaign can close on its own, and the target is the next band's own figure.
 
 State entries the same way here: entries per 100 Entrants, not the raw decimal (table below). Read a campaign's own figure against the matching row and state the gap as a percentage or a plain multiple ("about half", "roughly double"), never as two decimals set side by side.
 
 | Size | Entries per 100 Entrants |
 |---|---|
-| 100 to 1,000 (estimated) | 475 |
+| 100 to 250 | 446 |
+| 250 to 500 | 492 |
+| 500 to 1,000 | 498 |
 | 1,000 to 2,500 | 472 |
 | 2,500 to 10,000 | 495 |
-| 10,000 plus | 528 |
+| 10,000 or more | 528 |
 
 Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `by_organizer_active`, `by_band_all`) and `analysis/output/industries.json` (`by_org_stage`, `by_org_scale`, `by_business_type`, `by_industry`).
 

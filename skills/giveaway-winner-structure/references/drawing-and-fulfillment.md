@@ -36,9 +36,9 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the P
 - Verification before release: check the winning entry completed the required action, the Entrant is eligible, and one person did not enter under several names. Disqualify and redraw where it fails.
 - Duplicates and fraud: say in the terms that entries from automation, duplicate accounts or ineligible regions are void.
 
-A drawn name has a real chance of failing verification. The typical campaign has 3.8% of entries marked invalid, and campaigns with a referral action run higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
+A drawn name has a real chance of failing verification. The typical campaign has 4.2% of entries marked invalid, and campaigns with a referral action run higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
 
-[Extracted from 35,203 campaigns and 6,315 businesses. 42% of campaigns had 5% or more invalid.]
+[Extracted from 107,886 campaigns and 16,633 businesses. 45% of campaigns had 5% or more invalid.]
 
 ## Contact and redraw
 
@@ -71,7 +71,7 @@ Half of ordinary campaigns write their own terms in place of the platform defaul
 | Campaigns | 4,713 | 6,010 |
 | Conversion Rate | 34% | 41% |
 
-[50% of the 35,668 ordinary campaigns carried custom terms.]
+[39% of the 117,348 ordinary campaigns carried custom terms.]
 
 Custom terms run long, and the generated draft below is far shorter, which is the point.
 

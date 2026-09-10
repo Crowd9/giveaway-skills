@@ -3,10 +3,11 @@
 [![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,072 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,072 real campaigns. Ten skills cover the whole job, from the idea to the draw to the review afterwards. No code to write. Install once, then ask in plain English.
 
-Every campaign in it reached at least 100 Entrants, and 25,483 businesses ran them. The main benchmarks come from the 35,668 that reached 1,000 Entrants or more, run by 6,402 businesses, holding 58,064 Prize records and 313,206 entry actions, with a separate 100 to 1,000 band of 112,282 campaigns for a smaller campaign to be read against.
-Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
+Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by [Gleam](https://gleam.io), and the advice fits any giveaway platform.
+
+Benchmarks come from 117,348 campaigns run by 17,777 businesses, in six size bands from 100 Entrants up. Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
 
 ## Install
 
@@ -32,7 +33,7 @@ If you keep the [marketingskills](https://github.com/coreyhaines31/marketingskil
 
 ## Skills
 
-Someone asks for a giveaway by Friday. The last one pulled 400 addresses that never opened an email, a follower called the draw rigged, and nobody could say what the prize should have been. These ten skills turn that into a plan you can defend, with every recommendation grounded in what real campaigns did. Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
+Run them in order for a whole campaign, or call one when you are stuck. Each hands off to the next.
 
 | Skill | Ask it | You get |
 |---|---|---|
@@ -41,10 +42,10 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Entry Method Planner](#entry-method-planner) | "How should people enter?" | A weighted entry list that builds the asset you want and stops before entrants drop off |
 | [Timing and Duration](#timing-and-duration) | "How long should it run?" | A run length, a start date and a dated timeline from terms to delivery |
 | [Winner Structure](#winner-structure) | "One winner or ten?" | Winner count, tiers, redraw rules and a terms draft for your country |
-| [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, the emails for people who entered and people who have not, the replies for comments and DMs, a partner brief, and the retargeting audiences to build once it closes |
+| [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts and emails written, plus partner briefs and retargeting audiences |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
-| [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification through the welcome series and list hygiene for everyone who did not win |
-| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against campaigns its own size and your industry, the actions that pulled their weight, and three changes for next time |
+| [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification through the welcome series |
+| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against campaigns its own size, and three changes for next time |
 | [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
 ### Idea Generator
@@ -53,11 +54,9 @@ Three giveaway concepts that fit your business, your date and your goal, then th
 
 - Hooks for the moment you have (launch, milestone, season, holiday, collaboration, daily series) and for moments you can manufacture
 - Each concept in five lines: title, hook, mechanic, prize direction, and the asset it builds
-- Campaign types measured: advent calendars, launches, pre-orders and drops, collaborations, series, flash, cash, cart and wishlist, creator, community, charity and more, with contestants, conversion and a value index for each
-- Store campaigns for Shopify and similar: win your cart up to a cap, win your wishlist, pick your prize, bundle builder, restock drop, gift card tiers, with the cart and wishlist figures from the data
+- Campaign types measured (advent calendars, launches, drops, collaborations, series, cash, creator, charity and more) with Entrants, Conversion Rate and a value index for each
+- Store campaigns for Shopify and similar: win your cart, win your wishlist, bundle builder, restock drop, gift card tiers
 - What the campaigns that beat their prize money had in common, and the cheap prizes that drew crowds
-- Formats to avoid for your business, from the list of tired and risky ones
-- Which hooks organizers use most, from campaign titles across the dataset, with December's crowding called out
 
 > "We're a candle brand about to hit 10k followers, budget $300, ideas?"
 
@@ -71,8 +70,7 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Preferred option, two alternatives from different categories, and the tradeoffs between them
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
 - ROI script: cost per Entrant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
-- Prize values by category and campaign size from 58,064 real Prize records, with sample sizes shown
-- A prize description you can paste, and Gleam setup help only when you ask for it
+- Prize values by category and campaign size from 172,645 real Prize records, with sample sizes shown
 
 > "Is a PS5 a good prize for our accounting software?"
 
@@ -84,7 +82,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Completion rates by action family from 313,206 real entry actions, and the friction finding that every extra action costs Entrants
+- Completion rates by action family from 966,269 real entry actions, and the friction finding that every extra action costs Entrants
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 
@@ -98,12 +96,9 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 
 - Recommended duration and start date with the reason
 - A dated timeline: terms and assets, launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil
-- Holiday benchmarks: contestants, conversion and launch lead time for Christmas, Black Friday, the family days, Easter, Halloween, back to school and more, with a dated calendar of launch windows
-- Every week of the year benchmarked: share of launches, contestants and conversion, and whether being live over each holiday helped or hurt
-- Seasonal calendar by region, with December's peak and carrier cut-offs flagged
+- Holiday benchmarks with a dated calendar of launch windows: Christmas, Black Friday, Easter, Halloween, back to school and more
+- Every week of the year benchmarked, and whether being live over each holiday helped or hurt
 - The recency finding: a campaign within 30 days of your last one converted at 41% against 32% for a first campaign
-- Risks named in advance: the quiet middle, holiday gaps, the wrong time zone on the close
-- The season plan for a store: list build before Black Friday, the gift guide campaign in early December, the New Year restart, with the weeks that convert best behind each
 
 > "Shoe launches 14 October, want hype and emails."
 
@@ -115,10 +110,9 @@ How many winners, what tiers, and a process that holds up when a winner disappea
 
 - Winner counts and tiers sized to the budget after shipping
 - Draw, contact, redraw, announcement and delivery rules
-- Winner verification: entry checks, the account signals that mark a fake, proof scaled to the prize, and what to do when a drawn entry fails
+- Winner verification: the account signals that mark a fake, and what to do when a drawn entry fails
 - A terms draft from a short questionnaire, 13 clauses with notes for Australia, the UK, the US, the EU and Canada
 - Daily and series structures, skill-based judging, and what the data shows about how organizers split prizes
-- Review of a structure you already have, with gaps and fixes
 
 > "Budget $1,500 of our own $60 meal-prep sets, we want reviews."
 
@@ -130,11 +124,10 @@ A schedule that fills the whole run, with the copy written.
 
 - Schedule table by date, push, channel, format, owner and asset needed
 - Post and story copy for every push in your brand voice
-- Two email branches: launch, mid and last call for the list, a welcome with the referral link for entrants the day they enter, and the winners email to everyone opted in, each with subject, preview text and send time
-- Profile prep, a fourteen-day calendar that keeps the rest of the feed running, and the replies for the comments and DMs that land, including the impersonation warning
+- Two email branches, list and entrants, each with subject, preview text and send time
+- Profile prep, a fourteen-day calendar, and the replies for comments and DMs including the impersonation warning
 - Partner and creator briefs, a paid recommendation with a cap, and what to reuse afterwards
 - Retargeting and lookalike audiences built from the entrant list once the campaign closes, with winners and existing customers excluded
-- A fix for "nobody is entering" mid-campaign
 
 > "Runs 1 to 14 October, one partner post, no paid budget."
 
@@ -147,7 +140,7 @@ Winners nobody can dispute, from a script that needs no account and no dependenc
 - Commits to your entrant list and rules before the random seed exists, so the draw cannot be steered
 - Seed from a public randomness beacon (drand or NIST) or a value you publish, and a formula anyone can rerun
 - Reads CSV, spreadsheet exports, one-per-line lists and comment exports from Instagram, TikTok and YouTube
-- Deduplication, exclusions, entry weights, tiers, backups, and review lines for plus-address clusters, disposable domains and runs of numbered handles
+- Deduplication, exclusions, entry weights, tiers, backups, and review lines for suspicious entry clusters
 - Audit record with the input hash, seed, round and timestamp, and a verify command that refetches the beacon
 
 > "Pick 3 winners from this CSV, weight by entries, exclude staff."
@@ -163,7 +156,6 @@ Every message after the draw, in send order, in your voice.
 - Shipping and delivery updates, the public announcement, and the thank-you to everyone who did not win
 - The welcome series for entrants who opted in, and the list hygiene pass that retires addresses that never engage
 - Replies for the winner who stalls, the winner who disputes, and the entrant who says the draw was rigged
-- A contact log format so you can show what was sent and when
 
 - For a store, the non-winner code: one single-use code per person, 7 to 14 day expiry, a larger code for referrers, tracked as the campaign's revenue line
 
@@ -173,15 +165,14 @@ Every message after the draw, in send order, in your voice.
 
 ### Results Review
 
-Your finished campaign read against 35,668 others of the same size, or against the 100 to 1,000 band when it is smaller, and what to change next time.
+Your finished campaign read against 117,348 others in its own size band, from 100 Entrants up, and what to change next time.
 
-- A script that ranks contestants, impressions, conversion, actions and entries per entrant, pace per day, duration, prize value per contestant, email signups, referrals and follows by network against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
-- Your own history: this campaign beside your previous ones, the change, and how many it beat
+- A script that ranks twelve figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
 - Three changes at most, each tied to a figure and to the skill that plans it
-- A full report from your export in the order of the reporting tabs: overview with insights and a heatmap, traffic by first-touch channel with UTM rollup, entry methods with completion rate and seconds per action, the referral graph with top sharers, audience by country and city, retention, and ROI on the costs you supply
+- A full report from your export in reporting-tab order: overview, traffic by channel, entry methods, the referral graph, audience, retention and ROI
 - Reads a Gleam Actions export as is, and other platforms' exports through column matching or a mapping, including one-column-per-method exports
 
 - For a store, the redemption count on the non-winner code as the revenue line, read at 14 and 90 days
@@ -199,7 +190,7 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 - Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
 - Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
 - The Shopify app: page creation, Open Graph tags, syncing entrants to the customer list with a campaign tag, and the test before launch
-- What Entrants did with every Gleam action across 35,668 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
+- What Entrants did with every Gleam action across 117,348 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
 - Gleam's own tips library, attributed, beside that evidence
 
 > "We use Gleam. Email mandatory, Instagram follow optional, US and Canada, 18+, one grand prize and five runner-ups. Walk me through the settings."
@@ -218,13 +209,13 @@ An abbreviated version of what comes back:
 
 > Two weeks, opening on a Monday and closing on a weekday evening in your customers' time zone.
 >
-> Half of all campaigns run between 8 and 31 days and the median is 16. The ones that finished under 2,500 entrants ran 15 days, the ones over 10,000 ran 20. As a first campaign with no list to warm, plan for the shorter end of that.
+> Half of all campaigns run between 7 and 29 days and the median is 14. Campaigns that finished under 250 Entrants ran 12 days, the ones over 10,000 ran 19. As a first campaign with no list to warm, plan for the shorter end.
 >
-> The 8 to 14 day band holds 20% of campaigns and the 15 to 30 band 30%. Entries per contestant sit at 4.4 and 4.62 across those two bands, so the second week buys you repeat entries and very little after that. Past two months the figure falls.
+> Entries per Entrant sit at 4.42 for an 8 to 14 day run and 4.84 for 15 to 30, so the second week buys repeat entries and little after that. Past two months the figure falls.
 >
-> Start day makes no measurable difference on any measure. Monday is the most common choice at 18.7% of campaigns and Saturday the rarest at 6.4%, which is a habit worth copying only because your own week is easier that way. Close day is flat too, so set the close for the hours you can answer questions in.
+> Start day makes no measurable difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only because your own week is easier that way.
 >
-> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one converted at 41% against 32% for a first campaign. Book the second one before you launch this one.
+> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one converted at 41% against 32% for a first campaign. Book the second before you launch this one.
 >
 > Next decision: the exact close date and time zone, which the promotion pushes hang off.
 
@@ -236,24 +227,11 @@ Which entry actions should a skincare brand with 12k Instagram followers use to 
 Our giveaway closes Friday. Walk me through a draw our sponsor can verify.
 ```
 
-Ask for a plan or ask it to check yours. Every answer states its assumptions, labels what came from the data, and ends with the next decision. You never need the dataset: the skills ship with the findings and paraphrased examples, and the private export is not part of this repository.
-
-## New in 1.5
-
-The dataset behind the skills was rebuilt, and it carries per-action settings the earlier one did not.
-
-- **Entry weight and the mandatory flag.** The planner can now tell you what a weight is worth and what making an action required costs on everything left optional, because the data records both per action for the first time.
-- **Templates.** A campaign can be read against others built from the same Gleam template, and the idea generator can say which template to start from.
-- **Plan tier and business stage.** Benchmarks split by plan, by whether this is a first campaign or a fifteenth, and by the kind of business running it.
-- **Where the traffic came from.** The promotion plan carries a measured traffic mix: which channels sent Entrants, what a shared link is worth, where deals forums fit, what mass mail through Klaviyo and Listrak looks like arriving, and how the traffic falls across a run.
-- **Country and language.** Run length, start hour, weekend starts, Prize structure, opt-in wording and invalid-entry rates, each by the business's own country.
-- **Community size.** Whether a bigger Discord, Telegram or YouTube audience actually came with a bigger campaign, which mostly it did not.
-- **Build lead time.** How long businesses spent between creating a campaign and launching it.
-- **A smaller campaign has peers now.** The 100 to 1,000 Entrant band is published separately, so a 300-Entrant campaign is read against campaigns its own size.
+Ask for a plan or ask it to check yours. Every answer states its assumptions, labels what came from the data, and ends with the next decision. The skills ship with the findings, so you never need the dataset, which is not part of this repository.
 
 ## Evidence Behind the Advice
 
-Most giveaway advice is somebody's opinion. These skills are built on 35,668 real giveaways from 6,402 businesses, every one of which reached at least 1,000 Entrants, with 58,064 Prize records and 313,206 entry actions. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
+Most giveaway advice is somebody's opinion. These skills are built on 117,348 real giveaways from 17,777 businesses, every one of which reached at least 100 Entrants, with 172,645 Prize records and 966,269 entry actions. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
 
 That data is what lets the skills say things like:
 
@@ -270,7 +248,7 @@ Every figure carries its sample size, and every finding describes what organizer
 
 ## Defaults for the Gleam Editor
 
-The same analysis also writes `defaults/`, machine-readable defaults for the Gleam AI campaign editor keyed to its campaign fields, with sample sizes on every value. See [defaults/README.md](defaults/README.md).
+The same analysis writes `defaults/`, machine-readable defaults for the Gleam AI campaign editor, with sample sizes on every value. See [defaults/README.md](defaults/README.md).
 
 ## What These Skills Will Not Do
 
@@ -281,8 +259,8 @@ The same analysis also writes `defaults/`, machine-readable defaults for the Gle
 
 ## Issues and Support
 
-Found a wrong number, a broken script or a platform rule that has changed? Open an issue on this repository. Used these for a giveaway? Open a discussion and tell us what happened. The skills are maintained here in the open and supported by the community and the maintainers, and they are separate from Gleam's product support.
+Found a wrong number, a broken script or a platform rule that has changed? Open an issue. Used these for a giveaway? Open a discussion and tell us what happened. Support here is separate from Gleam's product support.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions: one folder per skill, quoted trigger phrases in the description, references loaded on demand, an eval file per skill, the style rules, the repository layout, and the rule that no customer data ever enters the repository.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the conventions, including the rule that no customer data ever enters the repository.

@@ -450,7 +450,7 @@
     "q3_share": 0.2703,
     "q4_share": 0.2401,
     "nov_dec_share": 0.1735,
-    "modal_month": 8
+    "modal_month": 7
    },
    "south korea": {
     "n": 4521,
@@ -578,184 +578,184 @@
   "definition": "Median run length in days from the dataset's duration_in_days, with the share of very short and very long runs, by organizer country. duration_in_days disagrees with the date span on about one campaign in seven, so treat it as a band not a day count.",
   "rows": {
    "united states": {
-    "n": 58843,
-    "sites": 9105,
+    "n": 58610,
+    "sites": 9028,
     "days_p50": 14.0,
     "days_p25": 7.0,
-    "days_p75": 30.0,
-    "share_week_or_less": 0.2987,
-    "share_30_plus": 0.2519
+    "days_p75": 29.0,
+    "share_week_or_less": 0.2999,
+    "share_30_plus": 0.249
    },
    "united kingdom": {
-    "n": 15716,
-    "sites": 1847,
+    "n": 15650,
+    "sites": 1824,
     "days_p50": 21.0,
     "days_p25": 10.0,
     "days_p75": 31.0,
-    "share_week_or_less": 0.1845,
-    "share_30_plus": 0.3314
+    "share_week_or_less": 0.1853,
+    "share_30_plus": 0.3286
    },
    "canada": {
-    "n": 7276,
-    "sites": 1156,
+    "n": 7210,
+    "sites": 1145,
     "days_p50": 12.0,
     "days_p25": 7.0,
-    "days_p75": 28.0,
-    "share_week_or_less": 0.3446,
-    "share_30_plus": 0.2192
+    "days_p75": 27.0,
+    "share_week_or_less": 0.3477,
+    "share_30_plus": 0.2121
    },
    "japan": {
-    "n": 6505,
-    "sites": 291,
+    "n": 6487,
+    "sites": 289,
     "days_p50": 6.0,
     "days_p25": 3.0,
     "days_p75": 11.0,
-    "share_week_or_less": 0.6172,
-    "share_30_plus": 0.063
+    "share_week_or_less": 0.6189,
+    "share_30_plus": 0.0604
    },
    "australia": {
-    "n": 6433,
-    "sites": 1406,
+    "n": 6304,
+    "sites": 1398,
     "days_p50": 15.0,
     "days_p25": 8.0,
     "days_p75": 30.0,
-    "share_week_or_less": 0.2294,
-    "share_30_plus": 0.2678
+    "share_week_or_less": 0.2341,
+    "share_30_plus": 0.2529
    },
    "india": {
-    "n": 6010,
-    "sites": 873,
+    "n": 5947,
+    "sites": 859,
     "days_p50": 9.0,
     "days_p25": 6.0,
     "days_p75": 17.0,
-    "share_week_or_less": 0.3526,
-    "share_30_plus": 0.1581
+    "share_week_or_less": 0.3563,
+    "share_30_plus": 0.1492
    },
    "brazil": {
-    "n": 5860,
-    "sites": 563,
+    "n": 5710,
+    "sites": 559,
     "days_p50": 1.0,
     "days_p25": 1.0,
-    "days_p75": 9.0,
-    "share_week_or_less": 0.7078,
-    "share_30_plus": 0.1265
+    "days_p75": 8.0,
+    "share_week_or_less": 0.7264,
+    "share_30_plus": 0.1035
    },
    "singapore": {
-    "n": 4743,
-    "sites": 351,
+    "n": 4736,
+    "sites": 349,
     "days_p50": 7.0,
     "days_p25": 3.0,
     "days_p75": 12.0,
-    "share_week_or_less": 0.5965,
-    "share_30_plus": 0.0814
+    "share_week_or_less": 0.5973,
+    "share_30_plus": 0.08
    },
    "south korea": {
-    "n": 4521,
+    "n": 4517,
     "sites": 537,
     "days_p50": 7.0,
     "days_p25": 5.0,
     "days_p75": 14.0,
-    "share_week_or_less": 0.5149,
-    "share_30_plus": 0.0622
+    "share_week_or_less": 0.5154,
+    "share_30_plus": 0.0613
    },
    "vietnam": {
-    "n": 3762,
-    "sites": 773,
+    "n": 3707,
+    "sites": 745,
     "days_p50": 9.0,
-    "days_p25": 5.25,
-    "days_p75": 19.0,
-    "share_week_or_less": 0.4179,
-    "share_30_plus": 0.1797
+    "days_p25": 5.0,
+    "days_p75": 18.0,
+    "share_week_or_less": 0.4241,
+    "share_30_plus": 0.1675
    },
    "germany": {
-    "n": 3530,
-    "sites": 472,
+    "n": 3509,
+    "sites": 469,
     "days_p50": 11.0,
     "days_p25": 6.0,
-    "days_p75": 27.0,
-    "share_week_or_less": 0.3527,
-    "share_30_plus": 0.2181
+    "days_p75": 26.0,
+    "share_week_or_less": 0.3548,
+    "share_30_plus": 0.2135
    },
    "hong kong": {
-    "n": 3113,
+    "n": 3112,
     "sites": 573,
     "days_p50": 7.0,
     "days_p25": 5.0,
     "days_p75": 14.0,
-    "share_week_or_less": 0.5047,
-    "share_30_plus": 0.0909
+    "share_week_or_less": 0.5048,
+    "share_30_plus": 0.0906
    },
    "taiwan": {
-    "n": 2806,
+    "n": 2805,
     "sites": 203,
     "days_p50": 7.0,
     "days_p25": 3.0,
     "days_p75": 14.0,
-    "share_week_or_less": 0.5584,
-    "share_30_plus": 0.0902
+    "share_week_or_less": 0.5586,
+    "share_30_plus": 0.0898
    },
    "china": {
-    "n": 2613,
+    "n": 2607,
     "sites": 166,
     "days_p50": 7.0,
     "days_p25": 5.0,
-    "days_p75": 12.0,
-    "share_week_or_less": 0.5113,
-    "share_30_plus": 0.054
+    "days_p75": 11.0,
+    "share_week_or_less": 0.5125,
+    "share_30_plus": 0.0518
    },
    "france": {
-    "n": 2560,
-    "sites": 425,
+    "n": 2545,
+    "sites": 422,
     "days_p50": 13.0,
     "days_p25": 7.0,
     "days_p75": 28.0,
-    "share_week_or_less": 0.3187,
-    "share_30_plus": 0.2285
+    "share_week_or_less": 0.3206,
+    "share_30_plus": 0.224
    },
    "philippines": {
-    "n": 2471,
-    "sites": 363,
+    "n": 2465,
+    "sites": 360,
     "days_p50": 15.0,
     "days_p25": 7.0,
     "days_p75": 26.0,
-    "share_week_or_less": 0.3379,
-    "share_30_plus": 0.1858
-   },
-   "malaysia": {
-    "n": 2345,
-    "sites": 160,
-    "days_p50": 7.0,
-    "days_p25": 4.0,
-    "days_p75": 14.0,
-    "share_week_or_less": 0.5795,
-    "share_30_plus": 0.1203
+    "share_week_or_less": 0.3387,
+    "share_30_plus": 0.1838
    },
    "poland": {
-    "n": 2335,
-    "sites": 219,
+    "n": 2321,
+    "sites": 218,
     "days_p50": 13.0,
     "days_p25": 8.0,
     "days_p75": 22.0,
-    "share_week_or_less": 0.2094,
-    "share_30_plus": 0.1799
+    "share_week_or_less": 0.2107,
+    "share_30_plus": 0.1749
+   },
+   "malaysia": {
+    "n": 2310,
+    "sites": 159,
+    "days_p50": 6.0,
+    "days_p25": 4.0,
+    "days_p75": 13.0,
+    "share_week_or_less": 0.5883,
+    "share_30_plus": 0.1069
    },
    "spain": {
-    "n": 2142,
-    "sites": 562,
-    "days_p50": 13.0,
+    "n": 2119,
+    "sites": 556,
+    "days_p50": 12.0,
     "days_p25": 7.0,
     "days_p75": 27.0,
-    "share_week_or_less": 0.3095,
-    "share_30_plus": 0.2082
+    "share_week_or_less": 0.3129,
+    "share_30_plus": 0.1996
    },
    "t\u00fcrkiye": {
-    "n": 2132,
-    "sites": 509,
+    "n": 2118,
+    "sites": 502,
     "days_p50": 8.0,
     "days_p25": 6.0,
     "days_p75": 16.0,
-    "share_week_or_less": 0.4057,
-    "share_30_plus": 0.1454
+    "share_week_or_less": 0.4084,
+    "share_30_plus": 0.1398
    }
   }
  },
@@ -763,204 +763,204 @@
   "definition": "Median run length in days by organizer industry, all countries, with the share of runs of a week or less.",
   "rows": {
    "finance_crypto": {
-    "n": 43170,
-    "sites": 7138,
+    "n": 43032,
+    "sites": 7095,
     "days_p50": 7.0,
-    "share_week_or_less": 0.531,
-    "share_30_plus": 0.1087,
+    "share_week_or_less": 0.5327,
+    "share_30_plus": 0.1058,
     "contestants_p50": 538.0
    },
    "gaming_esports": {
-    "n": 27472,
-    "sites": 5207,
+    "n": 27366,
+    "sites": 5166,
     "days_p50": 12.0,
-    "share_week_or_less": 0.339,
-    "share_30_plus": 0.1946,
-    "contestants_p50": 415.0
-   },
-   "media_entertainment": {
-    "n": 21948,
-    "sites": 2143,
-    "days_p50": 18.0,
-    "share_week_or_less": 0.1964,
-    "share_30_plus": 0.3078,
-    "contestants_p50": 399.0
-   },
-   "electronics_tech": {
-    "n": 15749,
-    "sites": 2102,
-    "days_p50": 14.0,
-    "share_week_or_less": 0.3109,
-    "share_30_plus": 0.2353,
-    "contestants_p50": 899.0
-   },
-   "other": {
-    "n": 4878,
-    "sites": 1632,
-    "days_p50": 11.0,
-    "share_week_or_less": 0.367,
-    "share_30_plus": 0.213,
-    "contestants_p50": 318.0
-   },
-   "food_drink": {
-    "n": 4774,
-    "sites": 914,
-    "days_p50": 19.0,
-    "share_week_or_less": 0.2283,
-    "share_30_plus": 0.3056,
-    "contestants_p50": 620.0
-   },
-   "toys_hobbies_collectibles": {
-    "n": 4746,
-    "sites": 773,
-    "days_p50": 15.0,
-    "share_week_or_less": 0.3276,
-    "share_30_plus": 0.2531,
+    "share_week_or_less": 0.3403,
+    "share_30_plus": 0.1915,
     "contestants_p50": 416.0
    },
+   "media_entertainment": {
+    "n": 21866,
+    "sites": 2110,
+    "days_p50": 17.0,
+    "share_week_or_less": 0.1971,
+    "share_30_plus": 0.3052,
+    "contestants_p50": 400.0
+   },
+   "electronics_tech": {
+    "n": 15699,
+    "sites": 2083,
+    "days_p50": 14.0,
+    "share_week_or_less": 0.3119,
+    "share_30_plus": 0.2328,
+    "contestants_p50": 900.0
+   },
+   "food_drink": {
+    "n": 4749,
+    "sites": 905,
+    "days_p50": 19.0,
+    "share_week_or_less": 0.2295,
+    "share_30_plus": 0.302,
+    "contestants_p50": 622.0
+   },
+   "other": {
+    "n": 4744,
+    "sites": 1597,
+    "days_p50": 10.0,
+    "share_week_or_less": 0.3773,
+    "share_30_plus": 0.1908,
+    "contestants_p50": 317.0
+   },
    "apparel_fashion": {
-    "n": 4692,
-    "sites": 840,
+    "n": 4681,
+    "sites": 835,
     "days_p50": 8.0,
-    "share_week_or_less": 0.4815,
-    "share_30_plus": 0.2055,
-    "contestants_p50": 608.0
+    "share_week_or_less": 0.4826,
+    "share_30_plus": 0.2036,
+    "contestants_p50": 611.0
+   },
+   "toys_hobbies_collectibles": {
+    "n": 4660,
+    "sites": 769,
+    "days_p50": 15.0,
+    "share_week_or_less": 0.3337,
+    "share_30_plus": 0.2393,
+    "contestants_p50": 413.5
    },
    "sports_outdoors": {
-    "n": 4675,
-    "sites": 1028,
+    "n": 4659,
+    "sites": 1021,
     "days_p50": 16.0,
-    "share_week_or_less": 0.2043,
-    "share_30_plus": 0.2815,
+    "share_week_or_less": 0.205,
+    "share_30_plus": 0.279,
     "contestants_p50": 967.0
    },
    "travel_events": {
-    "n": 4084,
-    "sites": 673,
+    "n": 4068,
+    "sites": 665,
     "days_p50": 15.0,
-    "share_week_or_less": 0.2618,
-    "share_30_plus": 0.275,
-    "contestants_p50": 488.0
+    "share_week_or_less": 0.2628,
+    "share_30_plus": 0.2721,
+    "contestants_p50": 488.5
    },
    "home_garden": {
-    "n": 3744,
-    "sites": 605,
+    "n": 3731,
+    "sites": 599,
     "days_p50": 15.0,
-    "share_week_or_less": 0.246,
-    "share_30_plus": 0.2091,
+    "share_week_or_less": 0.2469,
+    "share_30_plus": 0.2064,
     "contestants_p50": 916.0
    },
    "creator_influencer": {
-    "n": 3466,
-    "sites": 1077,
+    "n": 3445,
+    "sites": 1063,
     "days_p50": 8.0,
-    "share_week_or_less": 0.4662,
-    "share_30_plus": 0.1685,
-    "contestants_p50": 312.0
+    "share_week_or_less": 0.4691,
+    "share_30_plus": 0.1634,
+    "contestants_p50": 313.0
    },
    "health_wellness_fitness": {
-    "n": 3236,
-    "sites": 516,
-    "days_p50": 18.0,
-    "share_week_or_less": 0.2519,
-    "share_30_plus": 0.3687,
-    "contestants_p50": 475.0
+    "n": 3092,
+    "sites": 510,
+    "days_p50": 16.0,
+    "share_week_or_less": 0.2636,
+    "share_30_plus": 0.3393,
+    "contestants_p50": 481.5
    },
    "software_saas": {
-    "n": 3070,
-    "sites": 692,
+    "n": 3021,
+    "sites": 688,
     "days_p50": 11.0,
-    "share_week_or_less": 0.3029,
-    "share_30_plus": 0.2107,
-    "contestants_p50": 715.0
+    "share_week_or_less": 0.3078,
+    "share_30_plus": 0.1979,
+    "contestants_p50": 723.0
    },
    "retail_marketplace": {
-    "n": 2938,
-    "sites": 391,
+    "n": 2926,
+    "sites": 389,
     "days_p50": 8.0,
-    "share_week_or_less": 0.453,
-    "share_30_plus": 0.1293,
-    "contestants_p50": 488.5
+    "share_week_or_less": 0.4549,
+    "share_30_plus": 0.1258,
+    "contestants_p50": 489.0
    },
    "automotive": {
-    "n": 2350,
-    "sites": 389,
+    "n": 2306,
+    "sites": 384,
     "days_p50": 14.0,
-    "share_week_or_less": 0.3234,
-    "share_30_plus": 0.3021,
-    "contestants_p50": 932.0
+    "share_week_or_less": 0.3296,
+    "share_30_plus": 0.2888,
+    "contestants_p50": 949.0
    },
    "education": {
-    "n": 1921,
-    "sites": 376,
+    "n": 1913,
+    "sites": 374,
     "days_p50": 8.0,
-    "share_week_or_less": 0.2051,
-    "share_30_plus": 0.1733,
-    "contestants_p50": 484.0
+    "share_week_or_less": 0.206,
+    "share_30_plus": 0.1699,
+    "contestants_p50": 485.0
    },
    "art_crafts": {
-    "n": 1731,
-    "sites": 441,
+    "n": 1718,
+    "sites": 438,
     "days_p50": 15.0,
-    "share_week_or_less": 0.2432,
-    "share_30_plus": 0.2328,
-    "contestants_p50": 436.0
+    "share_week_or_less": 0.2451,
+    "share_30_plus": 0.227,
+    "contestants_p50": 438.0
    },
    "beauty_personal_care": {
-    "n": 1428,
-    "sites": 356,
+    "n": 1424,
+    "sites": 354,
     "days_p50": 19.0,
-    "share_week_or_less": 0.2136,
-    "share_30_plus": 0.3978,
-    "contestants_p50": 547.5
+    "share_week_or_less": 0.2142,
+    "share_30_plus": 0.3961,
+    "contestants_p50": 545.0
    },
    "marketing_agency": {
-    "n": 1387,
-    "sites": 174,
+    "n": 1365,
+    "sites": 171,
     "days_p50": 15.0,
-    "share_week_or_less": 0.204,
-    "share_30_plus": 0.2826,
-    "contestants_p50": 628.0
+    "share_week_or_less": 0.2073,
+    "share_30_plus": 0.2711,
+    "contestants_p50": 616.0
    },
    "baby_kids": {
-    "n": 1191,
-    "sites": 138,
+    "n": 1189,
+    "sites": 137,
     "days_p50": 18.0,
-    "share_week_or_less": 0.1906,
-    "share_30_plus": 0.2796,
+    "share_week_or_less": 0.1909,
+    "share_30_plus": 0.2784,
     "contestants_p50": 546.0
    },
    "pets": {
-    "n": 996,
-    "sites": 218,
+    "n": 993,
+    "sites": 216,
     "days_p50": 15.0,
-    "share_week_or_less": 0.1837,
-    "share_30_plus": 0.256,
-    "contestants_p50": 726.5
+    "share_week_or_less": 0.1843,
+    "share_30_plus": 0.2538,
+    "contestants_p50": 728.0
    },
    "local_services": {
-    "n": 927,
-    "sites": 182,
+    "n": 922,
+    "sites": 178,
     "days_p50": 11.0,
-    "share_week_or_less": 0.4013,
-    "share_30_plus": 0.205,
-    "contestants_p50": 526.0
+    "share_week_or_less": 0.4035,
+    "share_30_plus": 0.2007,
+    "contestants_p50": 528.0
    },
    "nonprofit_community": {
-    "n": 557,
-    "sites": 209,
+    "n": 553,
+    "sites": 207,
     "days_p50": 13.0,
-    "share_week_or_less": 0.3106,
-    "share_30_plus": 0.2388,
+    "share_week_or_less": 0.3128,
+    "share_30_plus": 0.2333,
     "contestants_p50": 393.0
    },
    "jewelry_watches": {
-    "n": 476,
-    "sites": 179,
+    "n": 467,
+    "sites": 172,
     "days_p50": 17.0,
-    "share_week_or_less": 0.2227,
-    "share_30_plus": 0.355,
-    "contestants_p50": 493.0
+    "share_week_or_less": 0.227,
+    "share_30_plus": 0.3426,
+    "contestants_p50": 490.0
    }
   }
  },
@@ -1534,7 +1534,7 @@
     "discord_share": 0.109,
     "contestants_wallet_p50": 333.5,
     "contestants_no_wallet_p50": 553.0,
-    "days_wallet_p50": 11.0,
+    "days_wallet_p50": 9.0,
     "days_no_wallet_p50": 15.0
    },
    "india": {
@@ -1546,7 +1546,7 @@
     "contestants_wallet_p50": 1886.0,
     "contestants_no_wallet_p50": 596.0,
     "days_wallet_p50": 8.0,
-    "days_no_wallet_p50": 14.0
+    "days_no_wallet_p50": 13.0
    },
    "brazil": {
     "n": 5860,
@@ -1590,7 +1590,7 @@
     "contestants_wallet_p50": 2121.0,
     "contestants_no_wallet_p50": 711.0,
     "days_wallet_p50": 10.0,
-    "days_no_wallet_p50": 9.0
+    "days_no_wallet_p50": 8.0
    },
    "germany": {
     "n": 3530,
@@ -1612,7 +1612,7 @@
     "contestants_wallet_p50": 1186.0,
     "contestants_no_wallet_p50": 658.0,
     "days_wallet_p50": 7.0,
-    "days_no_wallet_p50": 7.5
+    "days_no_wallet_p50": 7.0
    },
    "taiwan": {
     "n": 2806,
@@ -1645,7 +1645,7 @@
     "contestants_wallet_p50": 350.0,
     "contestants_no_wallet_p50": 358.0,
     "days_wallet_p50": 7.0,
-    "days_no_wallet_p50": 14.0
+    "days_no_wallet_p50": 13.0
    },
    "philippines": {
     "n": 2471,
@@ -1688,8 +1688,8 @@
     "discord_share": 0.3436,
     "contestants_wallet_p50": 1536.5,
     "contestants_no_wallet_p50": 373.5,
-    "days_wallet_p50": 15.5,
-    "days_no_wallet_p50": 13.0
+    "days_wallet_p50": 15.0,
+    "days_no_wallet_p50": 12.0
    },
    "t\u00fcrkiye": {
     "n": 2132,
@@ -3074,7 +3074,7 @@
     "prize_units_p50": 3.0,
     "single_unit_share": 0.4722,
     "ten_plus_units_share": 0.394,
-    "pool_stated_share": 0.2686,
+    "pool_stated_share": 0.2682,
     "pool_usd_p50": 250.0
    },
    "brazil": {
@@ -3114,7 +3114,7 @@
     "prize_units_p50": 10.0,
     "single_unit_share": 0.3889,
     "ten_plus_units_share": 0.5112,
-    "pool_stated_share": 0.3355,
+    "pool_stated_share": 0.3352,
     "pool_usd_p50": 500.0
    },
    "germany": {
@@ -3134,8 +3134,8 @@
     "prize_units_p50": 6.0,
     "single_unit_share": 0.3527,
     "ten_plus_units_share": 0.4847,
-    "pool_stated_share": 0.3607,
-    "pool_usd_p50": 549.0
+    "pool_stated_share": 0.3595,
+    "pool_usd_p50": 547.0
    },
    "taiwan": {
     "n": 2806,
@@ -3174,8 +3174,8 @@
     "prize_units_p50": 3.0,
     "single_unit_share": 0.4549,
     "ten_plus_units_share": 0.3205,
-    "pool_stated_share": 0.3149,
-    "pool_usd_p50": 355.0
+    "pool_stated_share": 0.3136,
+    "pool_usd_p50": 350.0
    },
    "malaysia": {
     "n": 2345,
@@ -3228,8 +3228,8 @@
     "prize_count_p50": 1.0,
     "prize_units_p50": 10.0,
     "single_unit_share": 0.283,
-    "pool_stated_share": 0.3416,
-    "pool_usd_p50": 876.5
+    "pool_stated_share": 0.3414,
+    "pool_usd_p50": 875.0
    },
    "gaming_esports": {
     "n": 27472,
@@ -3237,7 +3237,7 @@
     "prize_count_p50": 1.0,
     "prize_units_p50": 2.0,
     "single_unit_share": 0.4851,
-    "pool_stated_share": 0.3153,
+    "pool_stated_share": 0.3152,
     "pool_usd_p50": 229.0
    },
    "media_entertainment": {
@@ -3255,7 +3255,7 @@
     "prize_count_p50": 1.0,
     "prize_units_p50": 1.0,
     "single_unit_share": 0.5735,
-    "pool_stated_share": 0.3327,
+    "pool_stated_share": 0.3325,
     "pool_usd_p50": 550.0
    },
    "other": {
@@ -4729,7 +4729,7 @@
     "eleventh_plus_share": 0.5204,
     "campaign_sequence_p50": 12.0,
     "campaigns_per_organizer_mean": 6.4627,
-    "contestants_first_p50": 410.0,
+    "contestants_first_p50": 409.0,
     "contestants_repeat_p50": 504.0
    },
    "united kingdom": {
@@ -4739,7 +4739,7 @@
     "eleventh_plus_share": 0.6329,
     "campaign_sequence_p50": 23.0,
     "campaigns_per_organizer_mean": 8.5089,
-    "contestants_first_p50": 368.5,
+    "contestants_first_p50": 367.0,
     "contestants_repeat_p50": 516.0
    },
    "canada": {
@@ -4749,8 +4749,8 @@
     "eleventh_plus_share": 0.5216,
     "campaign_sequence_p50": 12.0,
     "campaigns_per_organizer_mean": 6.2941,
-    "contestants_first_p50": 365.0,
-    "contestants_repeat_p50": 597.0
+    "contestants_first_p50": 363.0,
+    "contestants_repeat_p50": 599.0
    },
    "japan": {
     "n": 6505,
@@ -4759,8 +4759,8 @@
     "eleventh_plus_share": 0.8297,
     "campaign_sequence_p50": 187.0,
     "campaigns_per_organizer_mean": 22.354,
-    "contestants_first_p50": 593.0,
-    "contestants_repeat_p50": 346.0
+    "contestants_first_p50": 560.0,
+    "contestants_repeat_p50": 347.0
    },
    "australia": {
     "n": 6433,
@@ -4770,7 +4770,7 @@
     "campaign_sequence_p50": 6.0,
     "campaigns_per_organizer_mean": 4.5754,
     "contestants_first_p50": 516.5,
-    "contestants_repeat_p50": 559.0
+    "contestants_repeat_p50": 557.0
    },
    "india": {
     "n": 6010,
@@ -4779,7 +4779,7 @@
     "eleventh_plus_share": 0.6226,
     "campaign_sequence_p50": 24.5,
     "campaigns_per_organizer_mean": 6.8843,
-    "contestants_first_p50": 453.0,
+    "contestants_first_p50": 461.0,
     "contestants_repeat_p50": 1206.0
    },
    "brazil": {
@@ -4789,7 +4789,7 @@
     "eleventh_plus_share": 0.7229,
     "campaign_sequence_p50": 91.0,
     "campaigns_per_organizer_mean": 10.4085,
-    "contestants_first_p50": 323.0,
+    "contestants_first_p50": 334.0,
     "contestants_repeat_p50": 494.0
    },
    "singapore": {
@@ -4799,7 +4799,7 @@
     "eleventh_plus_share": 0.7451,
     "campaign_sequence_p50": 63.0,
     "campaigns_per_organizer_mean": 13.5128,
-    "contestants_first_p50": 529.5,
+    "contestants_first_p50": 534.0,
     "contestants_repeat_p50": 668.0
    },
    "south korea": {
@@ -4809,8 +4809,8 @@
     "eleventh_plus_share": 0.572,
     "campaign_sequence_p50": 16.0,
     "campaigns_per_organizer_mean": 8.419,
-    "contestants_first_p50": 996.0,
-    "contestants_repeat_p50": 491.5
+    "contestants_first_p50": 959.0,
+    "contestants_repeat_p50": 492.0
    },
    "vietnam": {
     "n": 3762,
@@ -4819,7 +4819,7 @@
     "eleventh_plus_share": 0.4043,
     "campaign_sequence_p50": 6.0,
     "campaigns_per_organizer_mean": 4.8668,
-    "contestants_first_p50": 1359.0,
+    "contestants_first_p50": 1386.0,
     "contestants_repeat_p50": 792.0
    },
    "germany": {
@@ -4830,7 +4830,7 @@
     "campaign_sequence_p50": 15.0,
     "campaigns_per_organizer_mean": 7.4788,
     "contestants_first_p50": 362.5,
-    "contestants_repeat_p50": 744.0
+    "contestants_repeat_p50": 744.5
    },
    "hong kong": {
     "n": 3113,
@@ -4849,8 +4849,8 @@
     "eleventh_plus_share": 0.7185,
     "campaign_sequence_p50": 48.0,
     "campaigns_per_organizer_mean": 13.8227,
-    "contestants_first_p50": 475.0,
-    "contestants_repeat_p50": 516.0
+    "contestants_first_p50": 471.0,
+    "contestants_repeat_p50": 517.0
    },
    "china": {
     "n": 2613,
@@ -4859,7 +4859,7 @@
     "eleventh_plus_share": 0.7597,
     "campaign_sequence_p50": 45.0,
     "campaigns_per_organizer_mean": 15.741,
-    "contestants_first_p50": 837.5,
+    "contestants_first_p50": 848.0,
     "contestants_repeat_p50": 545.0
    },
    "france": {
@@ -4869,18 +4869,18 @@
     "eleventh_plus_share": 0.5039,
     "campaign_sequence_p50": 11.0,
     "campaigns_per_organizer_mean": 6.0235,
-    "contestants_first_p50": 366.0,
-    "contestants_repeat_p50": 355.0
+    "contestants_first_p50": 370.0,
+    "contestants_repeat_p50": 353.0
    },
    "philippines": {
     "n": 2471,
     "sites": 363,
     "repeat_campaign_share": 0.8535,
-    "eleventh_plus_share": 0.5496,
+    "eleventh_plus_share": 0.5492,
     "campaign_sequence_p50": 14.0,
     "campaigns_per_organizer_mean": 6.8072,
-    "contestants_first_p50": 450.5,
-    "contestants_repeat_p50": 374.0
+    "contestants_first_p50": 445.0,
+    "contestants_repeat_p50": 375.0
    },
    "malaysia": {
     "n": 2345,
@@ -4899,7 +4899,7 @@
     "eleventh_plus_share": 0.6779,
     "campaign_sequence_p50": 31.0,
     "campaigns_per_organizer_mean": 10.6621,
-    "contestants_first_p50": 399.5,
+    "contestants_first_p50": 404.0,
     "contestants_repeat_p50": 377.0
    },
    "spain": {
@@ -4909,7 +4909,7 @@
     "eleventh_plus_share": 0.288,
     "campaign_sequence_p50": 4.0,
     "campaigns_per_organizer_mean": 3.8114,
-    "contestants_first_p50": 333.0,
+    "contestants_first_p50": 330.5,
     "contestants_repeat_p50": 401.5
    },
    "t\u00fcrkiye": {
@@ -6582,7 +6582,7 @@
    "vietnam": {
     "n": 813,
     "sites": 214,
-    "days_p50": 15.0,
+    "days_p50": 14.0,
     "any_mandatory_share": 0.4207,
     "question_share": 0.5646,
     "max_worth_p50": 1.0,
@@ -6591,7 +6591,7 @@
    "malaysia": {
     "n": 535,
     "sites": 66,
-    "days_p50": 15.0,
+    "days_p50": 14.0,
     "any_mandatory_share": 0.871,
     "question_share": 0.0579,
     "max_worth_p50": 7.0,
@@ -6729,6 +6729,38 @@
      "share_of_country": 0.0027
     }
    },
+   "china": {
+    "finance_crypto": {
+     "n": 1732,
+     "sites": 85,
+     "share_of_country": 0.6641
+    },
+    "electronics_tech": {
+     "n": 375,
+     "sites": 40,
+     "share_of_country": 0.1438
+    },
+    "home_garden": {
+     "n": 151,
+     "sites": 8,
+     "share_of_country": 0.0579
+    },
+    "other": {
+     "n": 99,
+     "sites": 10,
+     "share_of_country": 0.038
+    },
+    "software_saas": {
+     "n": 52,
+     "sites": 6,
+     "share_of_country": 0.0199
+    },
+    "gaming_esports": {
+     "n": 40,
+     "sites": 9,
+     "share_of_country": 0.0153
+    }
+   },
    "australia": {
     "gaming_esports": {
      "n": 1071,
@@ -6839,38 +6871,6 @@
      "n": 34,
      "sites": 26,
      "share_of_country": 0.0053
-    }
-   },
-   "china": {
-    "finance_crypto": {
-     "n": 1732,
-     "sites": 85,
-     "share_of_country": 0.6641
-    },
-    "electronics_tech": {
-     "n": 375,
-     "sites": 40,
-     "share_of_country": 0.1438
-    },
-    "home_garden": {
-     "n": 151,
-     "sites": 8,
-     "share_of_country": 0.0579
-    },
-    "other": {
-     "n": 99,
-     "sites": 10,
-     "share_of_country": 0.038
-    },
-    "software_saas": {
-     "n": 52,
-     "sites": 6,
-     "share_of_country": 0.0199
-    },
-    "gaming_esports": {
-     "n": 40,
-     "sites": 9,
-     "share_of_country": 0.0153
     }
    },
    "united kingdom": {
@@ -6990,6 +6990,33 @@
      "share_of_country": 0.003
     }
    },
+   "malaysia": {
+    "finance_crypto": {
+     "n": 1799,
+     "sites": 98,
+     "share_of_country": 0.7672
+    },
+    "toys_hobbies_collectibles": {
+     "n": 163,
+     "sites": 7,
+     "share_of_country": 0.0695
+    },
+    "media_entertainment": {
+     "n": 132,
+     "sites": 7,
+     "share_of_country": 0.0563
+    },
+    "gaming_esports": {
+     "n": 131,
+     "sites": 25,
+     "share_of_country": 0.0559
+    },
+    "other": {
+     "n": 54,
+     "sites": 12,
+     "share_of_country": 0.023
+    }
+   },
    "spain": {
     "gaming_esports": {
      "n": 731,
@@ -7050,90 +7077,6 @@
      "n": 30,
      "sites": 10,
      "share_of_country": 0.0141
-    }
-   },
-   "philippines": {
-    "finance_crypto": {
-     "n": 642,
-     "sites": 138,
-     "share_of_country": 0.2609
-    },
-    "food_drink": {
-     "n": 499,
-     "sites": 10,
-     "share_of_country": 0.2028
-    },
-    "gaming_esports": {
-     "n": 367,
-     "sites": 66,
-     "share_of_country": 0.1491
-    },
-    "home_garden": {
-     "n": 197,
-     "sites": 15,
-     "share_of_country": 0.08
-    },
-    "electronics_tech": {
-     "n": 129,
-     "sites": 19,
-     "share_of_country": 0.0524
-    },
-    "marketing_agency": {
-     "n": 111,
-     "sites": 5,
-     "share_of_country": 0.0451
-    },
-    "media_entertainment": {
-     "n": 103,
-     "sites": 25,
-     "share_of_country": 0.0419
-    },
-    "other": {
-     "n": 99,
-     "sites": 34,
-     "share_of_country": 0.0402
-    },
-    "beauty_personal_care": {
-     "n": 50,
-     "sites": 5,
-     "share_of_country": 0.0203
-    },
-    "health_wellness_fitness": {
-     "n": 38,
-     "sites": 13,
-     "share_of_country": 0.0154
-    },
-    "local_services": {
-     "n": 36,
-     "sites": 5,
-     "share_of_country": 0.0146
-    }
-   },
-   "malaysia": {
-    "finance_crypto": {
-     "n": 1799,
-     "sites": 98,
-     "share_of_country": 0.7672
-    },
-    "toys_hobbies_collectibles": {
-     "n": 163,
-     "sites": 7,
-     "share_of_country": 0.0695
-    },
-    "media_entertainment": {
-     "n": 132,
-     "sites": 7,
-     "share_of_country": 0.0563
-    },
-    "gaming_esports": {
-     "n": 131,
-     "sites": 25,
-     "share_of_country": 0.0559
-    },
-    "other": {
-     "n": 54,
-     "sites": 12,
-     "share_of_country": 0.023
     }
    },
    "japan": {
@@ -7295,41 +7238,189 @@
      "share_of_country": 0.0044
     }
    },
-   "t\u00fcrkiye": {
+   "philippines": {
     "finance_crypto": {
-     "n": 1108,
-     "sites": 289,
-     "share_of_country": 0.5209
+     "n": 642,
+     "sites": 138,
+     "share_of_country": 0.2609
+    },
+    "food_drink": {
+     "n": 499,
+     "sites": 10,
+     "share_of_country": 0.2028
     },
     "gaming_esports": {
-     "n": 616,
-     "sites": 119,
-     "share_of_country": 0.2896
+     "n": 367,
+     "sites": 66,
+     "share_of_country": 0.1491
     },
-    "creator_influencer": {
-     "n": 72,
-     "sites": 36,
-     "share_of_country": 0.0339
-    },
-    "other": {
-     "n": 69,
-     "sites": 32,
-     "share_of_country": 0.0324
+    "home_garden": {
+     "n": 197,
+     "sites": 15,
+     "share_of_country": 0.08
     },
     "electronics_tech": {
-     "n": 54,
-     "sites": 25,
-     "share_of_country": 0.0254
-    },
-    "media_entertainment": {
-     "n": 50,
-     "sites": 31,
-     "share_of_country": 0.0235
+     "n": 129,
+     "sites": 19,
+     "share_of_country": 0.0524
     },
     "marketing_agency": {
-     "n": 48,
+     "n": 111,
      "sites": 5,
-     "share_of_country": 0.0226
+     "share_of_country": 0.0451
+    },
+    "media_entertainment": {
+     "n": 103,
+     "sites": 25,
+     "share_of_country": 0.0419
+    },
+    "other": {
+     "n": 99,
+     "sites": 34,
+     "share_of_country": 0.0402
+    },
+    "beauty_personal_care": {
+     "n": 50,
+     "sites": 5,
+     "share_of_country": 0.0203
+    },
+    "health_wellness_fitness": {
+     "n": 38,
+     "sites": 13,
+     "share_of_country": 0.0154
+    },
+    "local_services": {
+     "n": 36,
+     "sites": 5,
+     "share_of_country": 0.0146
+    }
+   },
+   "poland": {
+    "gaming_esports": {
+     "n": 1322,
+     "sites": 78,
+     "share_of_country": 0.5691
+    },
+    "finance_crypto": {
+     "n": 347,
+     "sites": 68,
+     "share_of_country": 0.1494
+    },
+    "electronics_tech": {
+     "n": 197,
+     "sites": 15,
+     "share_of_country": 0.0848
+    }
+   },
+   "hong kong": {
+    "finance_crypto": {
+     "n": 2004,
+     "sites": 348,
+     "share_of_country": 0.6509
+    },
+    "electronics_tech": {
+     "n": 384,
+     "sites": 78,
+     "share_of_country": 0.1247
+    },
+    "gaming_esports": {
+     "n": 252,
+     "sites": 44,
+     "share_of_country": 0.0818
+    },
+    "other": {
+     "n": 129,
+     "sites": 36,
+     "share_of_country": 0.0419
+    },
+    "home_garden": {
+     "n": 55,
+     "sites": 12,
+     "share_of_country": 0.0179
+    },
+    "software_saas": {
+     "n": 51,
+     "sites": 19,
+     "share_of_country": 0.0166
+    },
+    "media_entertainment": {
+     "n": 47,
+     "sites": 7,
+     "share_of_country": 0.0153
+    }
+   },
+   "brazil": {
+    "gaming_esports": {
+     "n": 1653,
+     "sites": 222,
+     "share_of_country": 0.2844
+    },
+    "electronics_tech": {
+     "n": 1049,
+     "sites": 56,
+     "share_of_country": 0.1805
+    },
+    "creator_influencer": {
+     "n": 920,
+     "sites": 74,
+     "share_of_country": 0.1583
+    },
+    "finance_crypto": {
+     "n": 862,
+     "sites": 168,
+     "share_of_country": 0.1483
+    },
+    "other": {
+     "n": 393,
+     "sites": 64,
+     "share_of_country": 0.0676
+    },
+    "media_entertainment": {
+     "n": 342,
+     "sites": 47,
+     "share_of_country": 0.0588
+    },
+    "retail_marketplace": {
+     "n": 200,
+     "sites": 13,
+     "share_of_country": 0.0344
+    },
+    "software_saas": {
+     "n": 61,
+     "sites": 13,
+     "share_of_country": 0.0105
+    },
+    "food_drink": {
+     "n": 61,
+     "sites": 18,
+     "share_of_country": 0.0105
+    }
+   },
+   "vietnam": {
+    "finance_crypto": {
+     "n": 2904,
+     "sites": 556,
+     "share_of_country": 0.7738
+    },
+    "gaming_esports": {
+     "n": 360,
+     "sites": 70,
+     "share_of_country": 0.0959
+    },
+    "other": {
+     "n": 259,
+     "sites": 81,
+     "share_of_country": 0.069
+    },
+    "media_entertainment": {
+     "n": 37,
+     "sites": 23,
+     "share_of_country": 0.0099
+    },
+    "software_saas": {
+     "n": 36,
+     "sites": 21,
+     "share_of_country": 0.0096
     }
    },
    "india": {
@@ -7389,88 +7480,41 @@
      "share_of_country": 0.0063
     }
    },
-   "france": {
-    "gaming_esports": {
-     "n": 793,
-     "sites": 127,
-     "share_of_country": 0.311
-    },
+   "t\u00fcrkiye": {
     "finance_crypto": {
-     "n": 540,
-     "sites": 136,
-     "share_of_country": 0.2118
+     "n": 1108,
+     "sites": 289,
+     "share_of_country": 0.5209
     },
-    "media_entertainment": {
-     "n": 317,
-     "sites": 44,
-     "share_of_country": 0.1243
-    },
-    "electronics_tech": {
-     "n": 222,
-     "sites": 52,
-     "share_of_country": 0.0871
-    },
-    "toys_hobbies_collectibles": {
-     "n": 162,
-     "sites": 8,
-     "share_of_country": 0.0635
+    "gaming_esports": {
+     "n": 616,
+     "sites": 119,
+     "share_of_country": 0.2896
     },
     "creator_influencer": {
-     "n": 116,
-     "sites": 33,
-     "share_of_country": 0.0455
+     "n": 72,
+     "sites": 36,
+     "share_of_country": 0.0339
     },
     "other": {
-     "n": 87,
-     "sites": 23,
-     "share_of_country": 0.0341
-    },
-    "software_saas": {
-     "n": 33,
-     "sites": 15,
-     "share_of_country": 0.0129
-    }
-   },
-   "singapore": {
-    "finance_crypto": {
-     "n": 3486,
-     "sites": 195,
-     "share_of_country": 0.7358
+     "n": 69,
+     "sites": 32,
+     "share_of_country": 0.0324
     },
     "electronics_tech": {
-     "n": 530,
-     "sites": 37,
-     "share_of_country": 0.1119
-    },
-    "gaming_esports": {
-     "n": 262,
-     "sites": 47,
-     "share_of_country": 0.0553
-    },
-    "health_wellness_fitness": {
-     "n": 122,
-     "sites": 6,
-     "share_of_country": 0.0257
-    },
-    "other": {
-     "n": 79,
-     "sites": 23,
-     "share_of_country": 0.0167
-    },
-    "software_saas": {
-     "n": 49,
-     "sites": 13,
-     "share_of_country": 0.0103
+     "n": 54,
+     "sites": 25,
+     "share_of_country": 0.0254
     },
     "media_entertainment": {
-     "n": 37,
-     "sites": 14,
-     "share_of_country": 0.0078
+     "n": 50,
+     "sites": 31,
+     "share_of_country": 0.0235
     },
-    "home_garden": {
-     "n": 32,
-     "sites": 8,
-     "share_of_country": 0.0068
+    "marketing_agency": {
+     "n": 48,
+     "sites": 5,
+     "share_of_country": 0.0226
     }
    },
    "germany": {
@@ -7577,115 +7621,88 @@
      "share_of_country": 0.008
     }
    },
-   "vietnam": {
+   "singapore": {
     "finance_crypto": {
-     "n": 2904,
-     "sites": 556,
-     "share_of_country": 0.7738
+     "n": 3486,
+     "sites": 195,
+     "share_of_country": 0.7358
+    },
+    "electronics_tech": {
+     "n": 530,
+     "sites": 37,
+     "share_of_country": 0.1119
     },
     "gaming_esports": {
-     "n": 360,
-     "sites": 70,
-     "share_of_country": 0.0959
+     "n": 262,
+     "sites": 47,
+     "share_of_country": 0.0553
+    },
+    "health_wellness_fitness": {
+     "n": 122,
+     "sites": 6,
+     "share_of_country": 0.0257
     },
     "other": {
-     "n": 259,
-     "sites": 81,
-     "share_of_country": 0.069
+     "n": 79,
+     "sites": 23,
+     "share_of_country": 0.0167
+    },
+    "software_saas": {
+     "n": 49,
+     "sites": 13,
+     "share_of_country": 0.0103
     },
     "media_entertainment": {
      "n": 37,
-     "sites": 23,
-     "share_of_country": 0.0099
-    },
-    "software_saas": {
-     "n": 36,
-     "sites": 21,
-     "share_of_country": 0.0096
-    }
-   },
-   "brazil": {
-    "gaming_esports": {
-     "n": 1653,
-     "sites": 222,
-     "share_of_country": 0.2844
-    },
-    "electronics_tech": {
-     "n": 1049,
-     "sites": 56,
-     "share_of_country": 0.1805
-    },
-    "creator_influencer": {
-     "n": 920,
-     "sites": 74,
-     "share_of_country": 0.1583
-    },
-    "finance_crypto": {
-     "n": 862,
-     "sites": 168,
-     "share_of_country": 0.1483
-    },
-    "other": {
-     "n": 393,
-     "sites": 64,
-     "share_of_country": 0.0676
-    },
-    "media_entertainment": {
-     "n": 342,
-     "sites": 47,
-     "share_of_country": 0.0588
-    },
-    "retail_marketplace": {
-     "n": 200,
-     "sites": 13,
-     "share_of_country": 0.0344
-    },
-    "food_drink": {
-     "n": 61,
-     "sites": 18,
-     "share_of_country": 0.0105
-    },
-    "software_saas": {
-     "n": 61,
-     "sites": 13,
-     "share_of_country": 0.0105
-    }
-   },
-   "hong kong": {
-    "finance_crypto": {
-     "n": 2004,
-     "sites": 348,
-     "share_of_country": 0.6509
-    },
-    "electronics_tech": {
-     "n": 384,
-     "sites": 78,
-     "share_of_country": 0.1247
-    },
-    "gaming_esports": {
-     "n": 252,
-     "sites": 44,
-     "share_of_country": 0.0818
-    },
-    "other": {
-     "n": 129,
-     "sites": 36,
-     "share_of_country": 0.0419
+     "sites": 14,
+     "share_of_country": 0.0078
     },
     "home_garden": {
-     "n": 55,
-     "sites": 12,
-     "share_of_country": 0.0179
+     "n": 32,
+     "sites": 8,
+     "share_of_country": 0.0068
+    }
+   },
+   "france": {
+    "gaming_esports": {
+     "n": 793,
+     "sites": 127,
+     "share_of_country": 0.311
     },
-    "software_saas": {
-     "n": 51,
-     "sites": 19,
-     "share_of_country": 0.0166
+    "finance_crypto": {
+     "n": 540,
+     "sites": 136,
+     "share_of_country": 0.2118
     },
     "media_entertainment": {
-     "n": 47,
-     "sites": 7,
-     "share_of_country": 0.0153
+     "n": 317,
+     "sites": 44,
+     "share_of_country": 0.1243
+    },
+    "electronics_tech": {
+     "n": 222,
+     "sites": 52,
+     "share_of_country": 0.0871
+    },
+    "toys_hobbies_collectibles": {
+     "n": 162,
+     "sites": 8,
+     "share_of_country": 0.0635
+    },
+    "creator_influencer": {
+     "n": 116,
+     "sites": 33,
+     "share_of_country": 0.0455
+    },
+    "other": {
+     "n": 87,
+     "sites": 23,
+     "share_of_country": 0.0341
+    },
+    "software_saas": {
+     "n": 33,
+     "sites": 15,
+     "share_of_country": 0.0129
     }
    },
    "taiwan": {
@@ -7703,23 +7720,6 @@
      "n": 236,
      "sites": 33,
      "share_of_country": 0.0843
-    }
-   },
-   "poland": {
-    "gaming_esports": {
-     "n": 1322,
-     "sites": 78,
-     "share_of_country": 0.5691
-    },
-    "finance_crypto": {
-     "n": 347,
-     "sites": 68,
-     "share_of_country": 0.1494
-    },
-    "electronics_tech": {
-     "n": 197,
-     "sites": 15,
-     "share_of_country": 0.0848
     }
    }
   }

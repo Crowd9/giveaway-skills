@@ -1,174 +1,199 @@
 {
  "source": {
-  "campaigns": 54786,
-  "prize_records": 85526,
-  "selection": "campaigns with >= 1,000 valid contestants only; no comparison group of smaller or failed campaigns",
-  "min_valid_contestants": 1000,
+  "campaigns": 167068,
+  "prize_records": 243835,
+  "selection": "campaigns with >= 101 valid contestants only; no comparison group of smaller or failed campaigns",
+  "min_valid_contestants": 101,
   "campaign_start_years": {
    "2013": 3,
-   "2014": 3,
-   "2015": 7,
-   "2016": 2,
-   "2018": 1,
-   "2019": 30,
-   "2020": 480,
-   "2021": 11653,
-   "2022": 15158,
-   "2023": 11128,
-   "2024": 6912,
-   "2025": 6590,
-   "2026": 2819
+   "2014": 8,
+   "2015": 22,
+   "2016": 3,
+   "2017": 1,
+   "2018": 11,
+   "2019": 86,
+   "2020": 1276,
+   "2021": 34601,
+   "2022": 46844,
+   "2023": 31588,
+   "2024": 22617,
+   "2025": 21086,
+   "2026": 8922
   },
-  "unique_organizers_sites": 10714,
-  "prize_value_missing_null": 51553,
-  "prize_value_zero": 801,
-  "prize_value_missing_share": 0.6121,
+  "unique_organizers_sites": 25482,
+  "prize_value_missing_null": 149194,
+  "prize_value_zero": 2099,
+  "prize_value_missing_share": 0.6205,
   "prize_currency_counts": {
-   "NULL": 51550,
-   "USD": 33924,
-   "EUR": 17,
-   "GBP": 10,
-   "CAD": 8,
-   "AUD": 7,
-   "USDT": 6,
+   "NULL": 149083,
+   "USD": 94611,
+   "GBP": 38,
+   "EUR": 38,
+   "AUD": 22,
+   "CAD": 21,
+   "USDT": 11,
+   "NZD": 2,
    "TRY": 2,
-   "NZD": 1,
-   "COIN": 1
+   "GPD": 2,
+   "TGBP": 1,
+   "SEK": 1,
+   "UDD": 1,
+   "COIN": 1,
+   "BRL": 1
   },
-  "campaigns_missing_description": 5167,
-  "campaigns_with_zero_impressions": 49,
+  "campaigns_missing_description": 16432,
+  "campaigns_with_zero_impressions": 111,
   "null_numeric_fields_in_source": {
-   "valid_entries": 70
+   "duration_in_days": 1023,
+   "valid_entries": 259
   }
  },
  "segments": {
-  "finance_crypto_industry": 15728,
-  "ordinary": 35668,
-  "crypto": 3015,
-  "ambiguous": 283,
-  "purchase_opportunity": 92
+  "finance_crypto_industry": 43170,
+  "ordinary": 117348,
+  "crypto": 6288,
+  "purchase_opportunity": 262
  },
  "benchmark_scope": "segment == ordinary (crypto, ambiguous, purchase_opportunity and finance_crypto_industry excluded)",
  "ordinary_benchmark": {
-  "campaigns": 35668,
-  "prize_records": 58064,
-  "unique_organizers": 6402,
-  "organizers_with_5_plus_campaigns": 1366,
-  "share_of_campaigns_from_repeat_organizers": 0.775,
+  "campaigns": 117348,
+  "prize_records": 172645,
+  "unique_organizers": 17777,
+  "organizers_with_5_plus_campaigns": 3818,
+  "share_of_campaigns_from_repeat_organizers": 0.815,
   "start_years": {
    "2013": 3,
-   "2014": 3,
-   "2015": 7,
-   "2016": 2,
-   "2018": 1,
-   "2019": 20,
-   "2020": 454,
-   "2021": 8749,
-   "2022": 7602,
-   "2023": 6177,
-   "2024": 5088,
-   "2025": 5031,
-   "2026": 2531
+   "2014": 8,
+   "2015": 19,
+   "2016": 3,
+   "2017": 1,
+   "2018": 11,
+   "2019": 66,
+   "2020": 1188,
+   "2021": 27984,
+   "2022": 26261,
+   "2023": 20555,
+   "2024": 16824,
+   "2025": 16404,
+   "2026": 8021
   },
   "tier": {
-   "Business": 12223,
-   "Hobby": 2149,
-   "Pro": 18703,
-   "Free": 1490,
-   "Premium": 1099,
-   "Not Available": 4
+   "Business": 29966,
+   "Hobby": 10838,
+   "Free": 12039,
+   "Pro": 62493,
+   "Premium": 2007,
+   "Not Available": 5
   },
   "valid_contestants": {
-   "n": 35668,
-   "min": 1000,
-   "p25": 1417,
-   "median": 2209.0,
-   "p75": 4180,
-   "p90": 9092,
-   "max": 412638
+   "n": 117348,
+   "min": 101,
+   "p25": 225,
+   "median": 492.0,
+   "p75": 1292,
+   "p90": 3345,
+   "max": 599561
   },
   "valid_entries": {
-   "n": 35614,
-   "min": 178,
-   "p25": 5402,
-   "median": 10486.5,
-   "p75": 22980,
-   "p90": 57225,
-   "max": 2778742
+   "n": 117128,
+   "min": 100,
+   "p25": 883,
+   "median": 2320.0,
+   "p75": 6720,
+   "p90": 17969,
+   "max": 3348248
   },
   "entries_per_contestant": {
-   "n": 35614,
+   "n": 117128,
    "min": 0.07,
-   "p25": 2.68,
-   "median": 4.33,
-   "p75": 7.08,
-   "p90": 12.11,
+   "p25": 2.74,
+   "median": 4.39,
+   "p75": 7.05,
+   "p90": 11.84,
    "max": 909.52
   },
   "impressions_where_nonzero": {
-   "n": 35637,
+   "n": 117258,
    "min": 1,
-   "p25": 4794,
-   "median": 9162,
-   "p75": 19887,
-   "p90": 46207,
-   "max": 3919793
+   "p25": 862,
+   "median": 2029.0,
+   "p75": 5601,
+   "p90": 16440,
+   "max": 10094115
   },
   "duration_days": {
-   "n": 35668,
+   "n": 116491,
    "min": 0,
-   "p25": 8,
-   "median": 16.0,
-   "p75": 31,
-   "p90": 43,
-   "max": 13200
+   "p25": 7,
+   "median": 14,
+   "p75": 29,
+   "p90": 35,
+   "max": 365
   },
   "prizes_per_campaign": {
-   "1": 28196,
-   "2": 2482,
-   "3": 2422,
-   "4": 784,
-   "5": 505,
-   "6": 283,
-   "7": 263,
-   "8": 116,
-   "9": 95,
-   "10": 522
+   "1": 96743,
+   "2": 7307,
+   "3": 7019,
+   "4": 2164,
+   "5": 1493,
+   "6": 614,
+   "7": 491,
+   "8": 309,
+   "9": 175,
+   "10": 1033
   },
-  "single_prize_record_share": 0.791,
-  "any_prize_quantity_gt1_share": 0.304,
-  "prize_value_stated_share": 0.405,
-  "own_product_signal_prize_share": 0.185,
+  "single_prize_record_share": 0.824,
+  "any_prize_quantity_gt1_share": 0.318,
+  "prize_value_stated_share": 0.377,
+  "own_product_signal_prize_share": 0.151,
   "stated_prize_value_by_currency": {
    "USD": {
-    "n": 23482,
-    "min": -21.0,
-    "p25": 100.0,
-    "median": 299.0,
-    "p75": 899.0,
-    "p90": 2070.0,
-    "max": 10000000.0
+    "n": 65018,
+    "min": 1.0,
+    "p25": 50.0,
+    "median": 125.0,
+    "p75": 424.0,
+    "p90": 1199.0,
+    "max": 1000000.0
+   },
+   "GBP": {
+    "n": 34,
+    "min": 10.0,
+    "p25": 25.0,
+    "median": 62.5,
+    "p75": 400.0,
+    "p90": 450.0,
+    "max": 1200.0
    },
    "AUD": {
-    "n": 7,
-    "min": 333.0,
-    "p25": 750.0,
-    "median": 899.0,
-    "p75": 4000.0,
-    "p90": 4500.0,
-    "max": 4500.0
+    "n": 18,
+    "min": 15.0,
+    "p25": 129.0,
+    "median": 600.0,
+    "p75": 3600.0,
+    "p90": 6000.0,
+    "max": 60000.0
    },
    "CAD": {
-    "n": 8,
-    "min": 550.0,
-    "p25": 840.0,
-    "median": 2339.5,
-    "p75": 4500.0,
-    "p90": 35000.0,
+    "n": 21,
+    "min": 40.0,
+    "p25": 200.0,
+    "median": 545.0,
+    "p75": 2180.0,
+    "p90": 4500.0,
     "max": 35000.0
    },
+   "EUR": {
+    "n": 35,
+    "min": 5.0,
+    "p25": 39.0,
+    "median": 75.0,
+    "p75": 332.0,
+    "p90": 2200.0,
+    "max": 9100.0
+   },
    "NZD": {
-    "n": 1,
+    "n": 2,
     "min": 1000.0,
     "p25": 1000.0,
     "median": 1000.0,
@@ -176,14 +201,23 @@
     "p90": 1000.0,
     "max": 1000.0
    },
-   "EUR": {
-    "n": 15,
-    "min": 5.0,
-    "p25": 41.0,
-    "median": 41.0,
-    "p75": 1000.0,
-    "p90": 3748.0,
-    "max": 9100.0
+   "SEK": {
+    "n": 1,
+    "min": 3990.0,
+    "p25": 3990.0,
+    "median": 3990.0,
+    "p75": 3990.0,
+    "p90": 3990.0,
+    "max": 3990.0
+   },
+   "UDD": {
+    "n": 1,
+    "min": 25.0,
+    "p25": 25.0,
+    "median": 25.0,
+    "p75": 25.0,
+    "p90": 25.0,
+    "max": 25.0
    },
    "TRY": {
     "n": 2,
@@ -194,1213 +228,1312 @@
     "p90": 85000.0,
     "max": 85000.0
    },
-   "GBP": {
-    "n": 7,
-    "min": 17.0,
+   "GPD": {
+    "n": 2,
+    "min": 50.0,
     "p25": 50.0,
-    "median": 429.0,
-    "p75": 940.0,
-    "p90": 1200.0,
-    "max": 1200.0
+    "median": 55.0,
+    "p75": 60.0,
+    "p90": 60.0,
+    "max": 60.0
    }
   },
   "inferred_value_from_text": {
    "method": "regex on prize name, then 'worth/valued at/MSRP' phrases in description and the campaign name (single-prize campaigns only); '$' recorded as USD? (ambiguous symbol)",
-   "prize_records_with_parsed_value": 9847,
+   "prize_records_with_parsed_value": 30915,
    "by_source": {
-    "prize_name": 7127,
-    "campaign_name": 823,
-    "description_phrase": 1897
+    "prize_name": 23997,
+    "description_phrase": 4155,
+    "campaign_name": 2763
    },
-   "records_missing_stated_but_parsed": 4634,
-   "coverage_stated_only": 0.405,
-   "coverage_stated_or_parsed": 0.485,
-   "validation_overlap_n": 4824,
-   "validation_within_20pct_share": 0.805,
+   "records_missing_stated_but_parsed": 15186,
+   "coverage_stated_only": 0.377,
+   "coverage_stated_or_parsed": 0.465,
+   "validation_overlap_n": 14222,
+   "validation_within_20pct_share": 0.795,
    "parsed_only_values_by_currency": {
-    "BRL": {
-     "n": 185,
-     "min": 20.0,
-     "p25": 300.0,
-     "median": 500.0,
+    "AUD": {
+     "n": 160,
+     "min": 100.0,
+     "p25": 400.0,
+     "median": 700.0,
      "p75": 1000.0,
      "p90": 2000.0,
+     "max": 5000.0
+    },
+    "BRL": {
+     "n": 1370,
+     "min": 10.0,
+     "p25": 500.0,
+     "median": 500.0,
+     "p75": 500.0,
+     "p90": 1000.0,
      "max": 11000.0
     },
     "CAD": {
-     "n": 8,
+     "n": 9,
      "min": 1.0,
      "p25": 1.0,
      "median": 1.0,
      "p75": 1.0,
-     "p90": 1.0,
-     "max": 1.0
+     "p90": 900.0,
+     "max": 900.0
     },
     "EUR": {
-     "n": 413,
+     "n": 1464,
      "min": 0.0,
-     "p25": 50.0,
-     "median": 200.0,
-     "p75": 2000.0,
-     "p90": 4500.0,
+     "p25": 40.0,
+     "median": 100.0,
+     "p75": 500.0,
+     "p90": 5000.0,
      "max": 500000.0
     },
     "GBP": {
-     "n": 639,
-     "min": 5.0,
-     "p25": 100.0,
-     "median": 200.0,
-     "p75": 500.0,
-     "p90": 1949.0,
-     "max": 100000.0
+     "n": 2261,
+     "min": 1.0,
+     "p25": 47.5,
+     "median": 100.0,
+     "p75": 248.0,
+     "p90": 565.0,
+     "max": 300000.0
     },
     "INR": {
-     "n": 14,
-     "min": 12.0,
+     "n": 38,
+     "min": 2.0,
      "p25": 500.0,
-     "median": 1000.0,
+     "median": 2000.0,
      "p75": 5000.0,
-     "p90": 15000.0,
+     "p90": 10000.0,
      "max": 30000.0
     },
     "USD": {
-     "n": 33,
-     "min": 10.0,
-     "p25": 99.0,
+     "n": 192,
+     "min": 0.0,
+     "p25": 30.0,
      "median": 100.0,
-     "p75": 300.0,
-     "p90": 1000.0,
-     "max": 4200.0
+     "p75": 200.0,
+     "p90": 600.0,
+     "max": 30000.0
     },
     "USD?": {
-     "n": 3342,
+     "n": 9692,
      "min": 0.0,
-     "p25": 100.0,
-     "median": 399.0,
-     "p75": 1000.0,
-     "p90": 3429.0,
+     "p25": 50.0,
+     "median": 125.0,
+     "p75": 500.0,
+     "p90": 1800.0,
      "max": 2358980.0
     }
    },
    "caveat": "Parsed values are what organizers wrote in text, often rounded marketing numbers or totals across several prizes; not organizer cost. Never a substitute for a stated value in a record-level claim."
   },
   "campaign_total_stated_value_usd_fully_valued_campaigns": {
-   "n": 13959,
-   "min": -21.0,
-   "p25": 328.0,
-   "median": 900.0,
-   "p75": 2000.0,
-   "p90": 4500.0,
-   "max": 40600000.0
+   "n": 43109,
+   "min": 1.0,
+   "p25": 90.0,
+   "median": 299.0,
+   "p75": 1000.0,
+   "p90": 2580.0,
+   "max": 10000000.0
   },
   "by_prize_category": {
    "art_custom": {
-    "prize_records": 82,
-    "campaigns": 65,
-    "unique_organizers": 51,
+    "prize_records": 217,
+    "campaigns": 185,
+    "unique_organizers": 112,
     "share_of_prize_records": 0.001,
-    "value_stated_share": 0.329,
+    "value_stated_share": 0.323,
     "stated_value_usd": {
-     "n": 27,
-     "min": 40.0,
-     "p25": 110.0,
-     "median": 209.0,
-     "p75": 300.0,
-     "p90": 689.0,
-     "max": 1800.0
+     "n": 70,
+     "min": 1.0,
+     "p25": 45.0,
+     "median": 73.0,
+     "p75": 200.0,
+     "p90": 550.0,
+     "max": 1000000.0
     },
     "campaign_valid_contestants": {
-     "n": 65,
-     "min": 1026,
-     "p25": 1241,
-     "median": 1821,
-     "p75": 3895,
-     "p90": 8587,
+     "n": 185,
+     "min": 102,
+     "p25": 257,
+     "median": 397,
+     "p75": 1091,
+     "p90": 3408,
      "max": 39016
     },
     "quantity": {
-     "n": 82,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 3,
-     "p90": 7,
-     "max": 50
-    }
-   },
-   "baby_kids": {
-    "prize_records": 92,
-    "campaigns": 55,
-    "unique_organizers": 34,
-    "share_of_prize_records": 0.002,
-    "value_stated_share": 0.293,
-    "stated_value_usd": {
-     "n": 27,
-     "min": 25.0,
-     "p25": 69.0,
-     "median": 269.0,
-     "p75": 500.0,
-     "p90": 608.0,
-     "max": 3256.0
-    },
-    "campaign_valid_contestants": {
-     "n": 55,
-     "min": 1002,
-     "p25": 1324,
-     "median": 1934,
-     "p75": 2670,
-     "p90": 5251,
-     "max": 7982
-    },
-    "quantity": {
-     "n": 92,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 1,
-     "p90": 5,
-     "max": 40
-    }
-   },
-   "beauty_wellness": {
-    "prize_records": 336,
-    "campaigns": 273,
-    "unique_organizers": 143,
-    "share_of_prize_records": 0.006,
-    "value_stated_share": 0.497,
-    "stated_value_usd": {
-     "n": 167,
-     "min": 10.0,
-     "p25": 111.0,
-     "median": 250.0,
-     "p75": 455.0,
-     "p90": 780.0,
-     "max": 7619.0
-    },
-    "campaign_valid_contestants": {
-     "n": 273,
-     "min": 1001,
-     "p25": 1174,
-     "median": 1505,
-     "p75": 2383,
-     "p90": 4901,
-     "max": 57445
-    },
-    "quantity": {
-     "n": 336,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 1,
-     "p90": 5,
-     "max": 247
-    }
-   },
-   "bullion_precious_metal": {
-    "prize_records": 27,
-    "campaigns": 23,
-    "unique_organizers": 10,
-    "share_of_prize_records": 0.0,
-    "value_stated_share": 0.296,
-    "stated_value_usd": {
-     "n": 8,
-     "min": 150.0,
-     "p25": 546.0,
-     "median": 1041.0,
-     "p75": 1797.0,
-     "p90": 2800.0,
-     "max": 2800.0
-    },
-    "campaign_valid_contestants": {
-     "n": 23,
-     "min": 1042,
-     "p25": 2268,
-     "median": 3847,
-     "p75": 6068,
-     "p90": 7317,
-     "max": 10488
-    },
-    "quantity": {
-     "n": 27,
-     "min": 1,
-     "p25": 1,
-     "median": 1,
-     "p75": 1,
-     "p90": 5,
-     "max": 50
-    }
-   },
-   "bundle_or_box": {
-    "prize_records": 5235,
-    "campaigns": 4108,
-    "unique_organizers": 1567,
-    "share_of_prize_records": 0.09,
-    "value_stated_share": 0.423,
-    "stated_value_usd": {
-     "n": 2211,
-     "min": 1.0,
-     "p25": 140.0,
-     "median": 348.0,
-     "p75": 970.0,
-     "p90": 2360.0,
-     "max": 244396.0
-    },
-    "campaign_valid_contestants": {
-     "n": 4108,
-     "min": 1000,
-     "p25": 1372,
-     "median": 2044.5,
-     "p75": 3632,
-     "p90": 6885,
-     "max": 167420
-    },
-    "quantity": {
-     "n": 5235,
-     "min": 1,
-     "p25": 1,
-     "median": 1,
-     "p75": 2,
-     "p90": 5,
-     "max": 1000
-    }
-   },
-   "discount_or_coupon": {
-    "prize_records": 583,
-    "campaigns": 438,
-    "unique_organizers": 148,
-    "share_of_prize_records": 0.01,
-    "value_stated_share": 0.431,
-    "stated_value_usd": {
-     "n": 251,
-     "min": 10.0,
-     "p25": 30.0,
-     "median": 100.0,
-     "p75": 350.0,
-     "p90": 550.0,
-     "max": 5000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 438,
-     "min": 1001,
-     "p25": 1253,
-     "median": 1707.0,
-     "p75": 3218,
-     "p90": 4729,
-     "max": 28503
-    },
-    "quantity": {
-     "n": 583,
-     "min": 1,
-     "p25": 1,
-     "median": 3,
-     "p75": 10,
-     "p90": 20,
-     "max": 340
-    }
-   },
-   "exclusive_access": {
-    "prize_records": 151,
-    "campaigns": 135,
-    "unique_organizers": 111,
-    "share_of_prize_records": 0.003,
-    "value_stated_share": 0.185,
-    "stated_value_usd": {
-     "n": 28,
-     "min": 9.0,
-     "p25": 100.0,
-     "median": 422.5,
-     "p75": 2298.0,
-     "p90": 5000.0,
-     "max": 6349.0
-    },
-    "campaign_valid_contestants": {
-     "n": 135,
-     "min": 1001,
-     "p25": 1637,
-     "median": 2402,
-     "p75": 4367,
-     "p90": 8548,
-     "max": 130748
-    },
-    "quantity": {
-     "n": 151,
-     "min": 1,
-     "p25": 1,
-     "median": 2,
-     "p75": 10,
-     "p90": 100,
-     "max": 500
-    }
-   },
-   "experience_travel_tickets": {
-    "prize_records": 2497,
-    "campaigns": 2075,
-    "unique_organizers": 770,
-    "share_of_prize_records": 0.043,
-    "value_stated_share": 0.338,
-    "stated_value_usd": {
-     "n": 842,
-     "min": 7.0,
-     "p25": 200.0,
-     "median": 700.0,
-     "p75": 2500.0,
-     "p90": 5000.0,
-     "max": 50000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 2075,
-     "min": 1000,
-     "p25": 1465,
-     "median": 2431,
-     "p75": 5174,
-     "p90": 9461,
-     "max": 236527
-    },
-    "quantity": {
-     "n": 2497,
+     "n": 217,
      "min": 1,
      "p25": 1,
      "median": 1,
      "p75": 1,
      "p90": 4,
-     "max": 300
+     "max": 99
     }
    },
-   "food_drink_consumables": {
-    "prize_records": 844,
-    "campaigns": 712,
-    "unique_organizers": 316,
-    "share_of_prize_records": 0.015,
-    "value_stated_share": 0.391,
+   "beauty_wellness": {
+    "prize_records": 895,
+    "campaigns": 815,
+    "unique_organizers": 310,
+    "share_of_prize_records": 0.005,
+    "value_stated_share": 0.45,
     "stated_value_usd": {
-     "n": 330,
-     "min": -1.0,
-     "p25": 72.0,
-     "median": 200.0,
-     "p75": 599.0,
-     "p90": 1200.0,
-     "max": 10000.0
+     "n": 403,
+     "min": 4.0,
+     "p25": 65.0,
+     "median": 150.0,
+     "p75": 300.0,
+     "p90": 750.0,
+     "max": 12000.0
     },
     "campaign_valid_contestants": {
-     "n": 712,
-     "min": 1000,
-     "p25": 1347,
-     "median": 1878.5,
-     "p75": 3004,
-     "p90": 5516,
-     "max": 56587
+     "n": 815,
+     "min": 101,
+     "p25": 241,
+     "median": 472,
+     "p75": 869,
+     "p90": 1529,
+     "max": 57445
     },
     "quantity": {
-     "n": 844,
+     "n": 895,
+     "min": 1,
+     "p25": 1,
+     "median": 1,
+     "p75": 1,
+     "p90": 3,
+     "max": 250
+    }
+   },
+   "bullion_precious_metal": {
+    "prize_records": 26,
+    "campaigns": 25,
+    "unique_organizers": 13,
+    "share_of_prize_records": 0.0,
+    "value_stated_share": 0.385,
+    "stated_value_usd": {
+     "n": 9,
+     "min": 11.0,
+     "p25": 150.0,
+     "median": 750.0,
+     "p75": 1489.0,
+     "p90": 5000.0,
+     "max": 5000.0
+    },
+    "campaign_valid_contestants": {
+     "n": 25,
+     "min": 108,
+     "p25": 288,
+     "median": 1178,
+     "p75": 5183,
+     "p90": 6120,
+     "max": 10488
+    },
+    "quantity": {
+     "n": 26,
      "min": 1,
      "p25": 1,
      "median": 1.0,
+     "p75": 5,
+     "p90": 10,
+     "max": 35
+    }
+   },
+   "bundle_or_box": {
+    "prize_records": 16071,
+    "campaigns": 13410,
+    "unique_organizers": 3944,
+    "share_of_prize_records": 0.093,
+    "value_stated_share": 0.395,
+    "stated_value_usd": {
+     "n": 6333,
+     "min": 1.0,
+     "p25": 70.0,
+     "median": 175.0,
+     "p75": 450.0,
+     "p90": 1200.0,
+     "max": 1000000.0
+    },
+    "campaign_valid_contestants": {
+     "n": 13410,
+     "min": 101,
+     "p25": 238,
+     "median": 499.0,
+     "p75": 1212,
+     "p90": 2948,
+     "max": 167420
+    },
+    "quantity": {
+     "n": 16071,
+     "min": 1,
+     "p25": 1,
+     "median": 1,
      "p75": 1,
      "p90": 5,
-     "max": 200
+     "max": 1000
     }
    },
-   "game_item_or_skin": {
-    "prize_records": 6465,
-    "campaigns": 3032,
-    "unique_organizers": 876,
-    "share_of_prize_records": 0.111,
-    "value_stated_share": 0.362,
+   "discount_or_coupon": {
+    "prize_records": 1352,
+    "campaigns": 1054,
+    "unique_organizers": 348,
+    "share_of_prize_records": 0.008,
+    "value_stated_share": 0.344,
     "stated_value_usd": {
-     "n": 2341,
+     "n": 465,
      "min": 1.0,
-     "p25": 20.0,
-     "median": 59.0,
-     "p75": 200.0,
-     "p90": 556.0,
-     "max": 57995.0
-    },
-    "campaign_valid_contestants": {
-     "n": 3032,
-     "min": 1000,
-     "p25": 1362,
-     "median": 2058.0,
-     "p75": 3663,
-     "p90": 7644,
-     "max": 140679
-    },
-    "quantity": {
-     "n": 6465,
-     "min": 1,
-     "p25": 1,
-     "median": 1,
-     "p75": 5,
-     "p90": 20,
-     "max": 1000
-    }
-   },
-   "gift_card_or_cash": {
-    "prize_records": 6367,
-    "campaigns": 4684,
-    "unique_organizers": 1638,
-    "share_of_prize_records": 0.11,
-    "value_stated_share": 0.535,
-    "stated_value_usd": {
-     "n": 3403,
-     "min": -5.0,
-     "p25": 50.0,
-     "median": 150.0,
-     "p75": 500.0,
-     "p90": 1004.0,
-     "max": 100000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 4684,
-     "min": 1000,
-     "p25": 1376,
-     "median": 2090.0,
-     "p75": 3920,
-     "p90": 7655,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 6367,
-     "min": 1,
-     "p25": 1,
-     "median": 1,
-     "p75": 3,
-     "p90": 10,
-     "max": 300
-    }
-   },
-   "home_garden_appliance": {
-    "prize_records": 2240,
-    "campaigns": 1770,
-    "unique_organizers": 580,
-    "share_of_prize_records": 0.039,
-    "value_stated_share": 0.467,
-    "stated_value_usd": {
-     "n": 1045,
-     "min": 6.0,
-     "p25": 142.0,
-     "median": 300.0,
-     "p75": 699.0,
-     "p90": 1500.0,
-     "max": 680495.0
-    },
-    "campaign_valid_contestants": {
-     "n": 1770,
-     "min": 1001,
-     "p25": 1446,
-     "median": 2190.0,
-     "p75": 3424,
-     "p90": 6035,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 2240,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 1,
-     "p90": 3,
-     "max": 110
-    }
-   },
-   "merch_apparel_collectible": {
-    "prize_records": 2682,
-    "campaigns": 2082,
-    "unique_organizers": 761,
-    "share_of_prize_records": 0.046,
-    "value_stated_share": 0.286,
-    "stated_value_usd": {
-     "n": 767,
-     "min": -1.0,
-     "p25": 50.0,
-     "median": 120.0,
-     "p75": 307.0,
-     "p90": 1000.0,
-     "max": 75000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 2082,
-     "min": 1001,
-     "p25": 1407,
-     "median": 2217.0,
-     "p75": 4583,
-     "p90": 9058,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 2682,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 5,
-     "p90": 18,
-     "max": 300
-    }
-   },
-   "music_gear": {
-    "prize_records": 972,
-    "campaigns": 675,
-    "unique_organizers": 148,
-    "share_of_prize_records": 0.017,
-    "value_stated_share": 0.639,
-    "stated_value_usd": {
-     "n": 621,
-     "min": 6.0,
-     "p25": 200.0,
-     "median": 299.0,
-     "p75": 599.0,
-     "p90": 1447.0,
-     "max": 7100.0
-    },
-    "campaign_valid_contestants": {
-     "n": 675,
-     "min": 1001,
-     "p25": 1425,
-     "median": 2395,
-     "p75": 3953,
-     "p90": 6273,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 972,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 1,
-     "p90": 1,
-     "max": 100
-    }
-   },
-   "other_unclassified": {
-    "prize_records": 3902,
-    "campaigns": 2961,
-    "unique_organizers": 1322,
-    "share_of_prize_records": 0.067,
-    "value_stated_share": 0.372,
-    "stated_value_usd": {
-     "n": 1451,
-     "min": -21.0,
-     "p25": 100.0,
-     "median": 279.0,
-     "p75": 1000.0,
-     "p90": 2361.0,
-     "max": 400000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 2961,
-     "min": 1000,
-     "p25": 1425,
-     "median": 2351,
-     "p75": 5694,
-     "p90": 13917,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 3902,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 3,
-     "p90": 10,
-     "max": 1000
-    }
-   },
-   "pet_products": {
-    "prize_records": 111,
-    "campaigns": 94,
-    "unique_organizers": 29,
-    "share_of_prize_records": 0.002,
-    "value_stated_share": 0.405,
-    "stated_value_usd": {
-     "n": 45,
-     "min": 29.0,
-     "p25": 75.0,
-     "median": 150.0,
-     "p75": 275.0,
+     "p25": 29.0,
+     "median": 100.0,
+     "p75": 299.0,
      "p90": 500.0,
-     "max": 1495.0
+     "max": 9900.0
     },
     "campaign_valid_contestants": {
-     "n": 94,
-     "min": 1009,
-     "p25": 1249,
-     "median": 1632.5,
-     "p75": 2121,
-     "p90": 2944,
-     "max": 6662
+     "n": 1054,
+     "min": 101,
+     "p25": 256,
+     "median": 726.5,
+     "p75": 1433,
+     "p90": 3156,
+     "max": 28503
     },
     "quantity": {
-     "n": 111,
+     "n": 1352,
+     "min": 1,
+     "p25": 1,
+     "median": 3.0,
+     "p75": 10,
+     "p90": 19,
+     "max": 1000
+    }
+   },
+   "exclusive_access": {
+    "prize_records": 587,
+    "campaigns": 535,
+    "unique_organizers": 332,
+    "share_of_prize_records": 0.003,
+    "value_stated_share": 0.203,
+    "stated_value_usd": {
+     "n": 119,
+     "min": 1.0,
+     "p25": 59.0,
+     "median": 200.0,
+     "p75": 600.0,
+     "p90": 2247.0,
+     "max": 6788.0
+    },
+    "campaign_valid_contestants": {
+     "n": 535,
+     "min": 101,
+     "p25": 190,
+     "median": 380,
+     "p75": 846,
+     "p90": 2452,
+     "max": 130748
+    },
+    "quantity": {
+     "n": 587,
      "min": 1,
      "p25": 1,
      "median": 1,
-     "p75": 1,
-     "p90": 3,
-     "max": 12
+     "p75": 10,
+     "p90": 50,
+     "max": 500
     }
    },
-   "placeholder_name": {
-    "prize_records": 3458,
-    "campaigns": 2247,
-    "unique_organizers": 749,
-    "share_of_prize_records": 0.06,
-    "value_stated_share": 0.329,
+   "experience_travel_tickets": {
+    "prize_records": 7165,
+    "campaigns": 6321,
+    "unique_organizers": 1925,
+    "share_of_prize_records": 0.042,
+    "value_stated_share": 0.294,
     "stated_value_usd": {
-     "n": 1137,
-     "min": -3.0,
-     "p25": 100.0,
-     "median": 396.0,
-     "p75": 1000.0,
-     "p90": 2535.0,
-     "max": 10000000.0
+     "n": 2101,
+     "min": 2.0,
+     "p25": 140.0,
+     "median": 400.0,
+     "p75": 1300.0,
+     "p90": 3588.0,
+     "max": 150000.0
     },
     "campaign_valid_contestants": {
-     "n": 2247,
-     "min": 1000,
-     "p25": 1401,
-     "median": 2173,
-     "p75": 4164,
-     "p90": 8421,
-     "max": 126249
+     "n": 6321,
+     "min": 101,
+     "p25": 185,
+     "median": 404,
+     "p75": 1283,
+     "p90": 3994,
+     "max": 236527
     },
     "quantity": {
-     "n": 3458,
+     "n": 7165,
      "min": 1,
      "p25": 1,
-     "median": 1.0,
-     "p75": 1,
+     "median": 1,
+     "p75": 2,
      "p90": 5,
      "max": 500
     }
    },
-   "regulated_goods_firearm": {
-    "prize_records": 1569,
-    "campaigns": 1363,
-    "unique_organizers": 202,
-    "share_of_prize_records": 0.027,
-    "value_stated_share": 0.641,
+   "food_drink_consumables": {
+    "prize_records": 1591,
+    "campaigns": 1468,
+    "unique_organizers": 608,
+    "share_of_prize_records": 0.009,
+    "value_stated_share": 0.371,
     "stated_value_usd": {
-     "n": 1005,
-     "min": 5.0,
-     "p25": 630.0,
-     "median": 1330.0,
-     "p75": 2698.0,
-     "p90": 5122.0,
-     "max": 387996.0
+     "n": 588,
+     "min": 1.0,
+     "p25": 66.0,
+     "median": 189.5,
+     "p75": 576.0,
+     "p90": 1007.0,
+     "max": 50000.0
     },
     "campaign_valid_contestants": {
-     "n": 1363,
-     "min": 1000,
-     "p25": 1846,
-     "median": 3104,
-     "p75": 8339,
-     "p90": 27741,
-     "max": 102047
+     "n": 1468,
+     "min": 101,
+     "p25": 289,
+     "median": 693.5,
+     "p75": 1611,
+     "p90": 3162,
+     "max": 56587
     },
     "quantity": {
-     "n": 1569,
-     "min": 1,
-     "p25": 1,
-     "median": 1,
-     "p75": 1,
-     "p90": 1,
-     "max": 30
-    }
-   },
-   "services": {
-    "prize_records": 74,
-    "campaigns": 60,
-    "unique_organizers": 45,
-    "share_of_prize_records": 0.001,
-    "value_stated_share": 0.527,
-    "stated_value_usd": {
-     "n": 39,
-     "min": 59.0,
-     "p25": 150.0,
-     "median": 650.0,
-     "p75": 997.0,
-     "p90": 3000.0,
-     "max": 100000.0
-    },
-    "campaign_valid_contestants": {
-     "n": 60,
-     "min": 1024,
-     "p25": 1185,
-     "median": 1724.0,
-     "p75": 3738,
-     "p90": 5881,
-     "max": 9887
-    },
-    "quantity": {
-     "n": 74,
-     "min": 1,
-     "p25": 1,
-     "median": 1.0,
-     "p75": 3,
-     "p90": 10,
-     "max": 10
-    }
-   },
-   "sports_outdoor_gear": {
-    "prize_records": 1131,
-    "campaigns": 883,
-    "unique_organizers": 417,
-    "share_of_prize_records": 0.019,
-    "value_stated_share": 0.526,
-    "stated_value_usd": {
-     "n": 594,
-     "min": 3.0,
-     "p25": 149.0,
-     "median": 379.0,
-     "p75": 999.0,
-     "p90": 2000.0,
-     "max": 25420.0
-    },
-    "campaign_valid_contestants": {
-     "n": 883,
-     "min": 1001,
-     "p25": 1414,
-     "median": 2057,
-     "p75": 3315,
-     "p90": 5897,
-     "max": 289875
-    },
-    "quantity": {
-     "n": 1131,
+     "n": 1591,
      "min": 1,
      "p25": 1,
      "median": 1,
      "p75": 1,
      "p90": 3,
-     "max": 200
+     "max": 100
+    }
+   },
+   "game_item_or_skin": {
+    "prize_records": 17194,
+    "campaigns": 11228,
+    "unique_organizers": 2730,
+    "share_of_prize_records": 0.1,
+    "value_stated_share": 0.368,
+    "stated_value_usd": {
+     "n": 6310,
+     "min": 1.0,
+     "p25": 24.0,
+     "median": 56.0,
+     "p75": 150.0,
+     "p90": 340.0,
+     "max": 57995.0
+    },
+    "campaign_valid_contestants": {
+     "n": 11228,
+     "min": 101,
+     "p25": 181,
+     "median": 362.0,
+     "p75": 890,
+     "p90": 2338,
+     "max": 140679
+    },
+    "quantity": {
+     "n": 17194,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 4,
+     "p90": 10,
+     "max": 1000
+    }
+   },
+   "gift_card_or_cash": {
+    "prize_records": 22963,
+    "campaigns": 17927,
+    "unique_organizers": 4514,
+    "share_of_prize_records": 0.133,
+    "value_stated_share": 0.56,
+    "stated_value_usd": {
+     "n": 12845,
+     "min": 1.0,
+     "p25": 25.0,
+     "median": 50.0,
+     "p75": 200.0,
+     "p90": 500.0,
+     "max": 300000.0
+    },
+    "campaign_valid_contestants": {
+     "n": 17927,
+     "min": 101,
+     "p25": 239,
+     "median": 436,
+     "p75": 1008,
+     "p90": 2582,
+     "max": 289875
+    },
+    "quantity": {
+     "n": 22963,
+     "min": 1,
+     "p25": 1,
+     "median": 1,
+     "p75": 2,
+     "p90": 5,
+     "max": 500
+    }
+   },
+   "home_garden_appliance": {
+    "prize_records": 2830,
+    "campaigns": 2452,
+    "unique_organizers": 913,
+    "share_of_prize_records": 0.016,
+    "value_stated_share": 0.454,
+    "stated_value_usd": {
+     "n": 1283,
+     "min": 5.0,
+     "p25": 80.0,
+     "median": 200.0,
+     "p75": 500.0,
+     "p90": 1000.0,
+     "max": 680495.0
+    },
+    "campaign_valid_contestants": {
+     "n": 2452,
+     "min": 101,
+     "p25": 346,
+     "median": 913.0,
+     "p75": 2191,
+     "p90": 4068,
+     "max": 53317
+    },
+    "quantity": {
+     "n": 2830,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 1,
+     "p90": 3,
+     "max": 500
+    }
+   },
+   "merch_apparel_collectible": {
+    "prize_records": 6728,
+    "campaigns": 5548,
+    "unique_organizers": 1838,
+    "share_of_prize_records": 0.039,
+    "value_stated_share": 0.299,
+    "stated_value_usd": {
+     "n": 2011,
+     "min": 1.0,
+     "p25": 25.0,
+     "median": 50.0,
+     "p75": 150.0,
+     "p90": 380.0,
+     "max": 1000000.0
+    },
+    "campaign_valid_contestants": {
+     "n": 5548,
+     "min": 101,
+     "p25": 221,
+     "median": 497.0,
+     "p75": 1354,
+     "p90": 4070,
+     "max": 289875
+    },
+    "quantity": {
+     "n": 6728,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 3,
+     "p90": 10,
+     "max": 500
+    }
+   },
+   "music_gear": {
+    "prize_records": 573,
+    "campaigns": 452,
+    "unique_organizers": 175,
+    "share_of_prize_records": 0.003,
+    "value_stated_share": 0.447,
+    "stated_value_usd": {
+     "n": 256,
+     "min": 6.0,
+     "p25": 200.0,
+     "median": 399.0,
+     "p75": 999.0,
+     "p90": 1800.0,
+     "max": 7100.0
+    },
+    "campaign_valid_contestants": {
+     "n": 452,
+     "min": 102,
+     "p25": 630,
+     "median": 1306.0,
+     "p75": 3358,
+     "p90": 6451,
+     "max": 289875
+    },
+    "quantity": {
+     "n": 573,
+     "min": 1,
+     "p25": 1,
+     "median": 1,
+     "p75": 1,
+     "p90": 1,
+     "max": 51
+    }
+   },
+   "other_unclassified": {
+    "prize_records": 46800,
+    "campaigns": 34953,
+    "unique_organizers": 8748,
+    "share_of_prize_records": 0.271,
+    "value_stated_share": 0.341,
+    "stated_value_usd": {
+     "n": 15943,
+     "min": 1.0,
+     "p25": 45.0,
+     "median": 120.0,
+     "p75": 370.0,
+     "p90": 1000.0,
+     "max": 1000000.0
+    },
+    "campaign_valid_contestants": {
+     "n": 34953,
+     "min": 101,
+     "p25": 201,
+     "median": 424,
+     "p75": 1078,
+     "p90": 2655,
+     "max": 599561
+    },
+    "quantity": {
+     "n": 46800,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 3,
+     "p90": 10,
+     "max": 1000
+    }
+   },
+   "placeholder_name": {
+    "prize_records": 7859,
+    "campaigns": 5696,
+    "unique_organizers": 1292,
+    "share_of_prize_records": 0.046,
+    "value_stated_share": 0.258,
+    "stated_value_usd": {
+     "n": 2023,
+     "min": 1.0,
+     "p25": 50.0,
+     "median": 200.0,
+     "p75": 610.0,
+     "p90": 1675.0,
+     "max": 221093.0
+    },
+    "campaign_valid_contestants": {
+     "n": 5696,
+     "min": 101,
+     "p25": 257,
+     "median": 545.5,
+     "p75": 1192,
+     "p90": 3488,
+     "max": 126249
+    },
+    "quantity": {
+     "n": 7859,
+     "min": 1,
+     "p25": 1,
+     "median": 1,
+     "p75": 2,
+     "p90": 10,
+     "max": 500
+    }
+   },
+   "regulated_goods_firearm": {
+    "prize_records": 1770,
+    "campaigns": 1579,
+    "unique_organizers": 329,
+    "share_of_prize_records": 0.01,
+    "value_stated_share": 0.631,
+    "stated_value_usd": {
+     "n": 1116,
+     "min": 1.0,
+     "p25": 549.0,
+     "median": 1117.5,
+     "p75": 2250.0,
+     "p90": 5100.0,
+     "max": 387996.0
+    },
+    "campaign_valid_contestants": {
+     "n": 1579,
+     "min": 101,
+     "p25": 794,
+     "median": 2107,
+     "p75": 5228,
+     "p90": 24554,
+     "max": 102047
+    },
+    "quantity": {
+     "n": 1770,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 1,
+     "p90": 1,
+     "max": 50
+    }
+   },
+   "sports_outdoor_gear": {
+    "prize_records": 1562,
+    "campaigns": 1366,
+    "unique_organizers": 654,
+    "share_of_prize_records": 0.009,
+    "value_stated_share": 0.515,
+    "stated_value_usd": {
+     "n": 804,
+     "min": 1.0,
+     "p25": 120.0,
+     "median": 299.0,
+     "p75": 799.0,
+     "p90": 1699.0,
+     "max": 25420.0
+    },
+    "campaign_valid_contestants": {
+     "n": 1366,
+     "min": 101,
+     "p25": 300,
+     "median": 776.0,
+     "p75": 1967,
+     "p90": 3848,
+     "max": 289875
+    },
+    "quantity": {
+     "n": 1562,
+     "min": 1,
+     "p25": 1,
+     "median": 1.0,
+     "p75": 1,
+     "p90": 3,
+     "max": 100
     }
    },
    "subscription_membership": {
-    "prize_records": 765,
-    "campaigns": 517,
-    "unique_organizers": 311,
-    "share_of_prize_records": 0.013,
-    "value_stated_share": 0.48,
+    "prize_records": 2157,
+    "campaigns": 1637,
+    "unique_organizers": 882,
+    "share_of_prize_records": 0.012,
+    "value_stated_share": 0.474,
     "stated_value_usd": {
-     "n": 366,
+     "n": 1020,
      "min": 5.0,
-     "p25": 75.0,
+     "p25": 69.0,
      "median": 150.0,
      "p75": 500.0,
-     "p90": 1500.0,
-     "max": 62400.0
+     "p90": 1295.0,
+     "max": 60000.0
     },
     "campaign_valid_contestants": {
-     "n": 517,
-     "min": 1001,
-     "p25": 1375,
-     "median": 1949,
-     "p75": 3712,
-     "p90": 7531,
+     "n": 1637,
+     "min": 101,
+     "p25": 203,
+     "median": 427,
+     "p75": 1130,
+     "p90": 2705,
      "max": 137856
     },
     "quantity": {
-     "n": 765,
+     "n": 2157,
      "min": 1,
      "p25": 1,
-     "median": 2,
-     "p75": 6,
-     "p90": 13,
+     "median": 1,
+     "p75": 4,
+     "p90": 10,
      "max": 450
     }
    },
    "tech_hardware": {
-    "prize_records": 16327,
-    "campaigns": 11431,
-    "unique_organizers": 2469,
-    "share_of_prize_records": 0.281,
-    "value_stated_share": 0.368,
+    "prize_records": 30188,
+    "campaigns": 22137,
+    "unique_organizers": 4938,
+    "share_of_prize_records": 0.175,
+    "value_stated_share": 0.335,
     "stated_value_usd": {
-     "n": 5988,
+     "n": 10082,
      "min": 1.0,
-     "p25": 175.0,
-     "median": 429.0,
-     "p75": 1099.0,
-     "p90": 2499.0,
-     "max": 1499180.0
+     "p25": 107.0,
+     "median": 299.0,
+     "p75": 749.0,
+     "p90": 1899.0,
+     "max": 271998.0
     },
     "campaign_valid_contestants": {
-     "n": 11431,
-     "min": 1000,
-     "p25": 1515,
-     "median": 2478,
-     "p75": 4886,
-     "p90": 10665,
+     "n": 22137,
+     "min": 101,
+     "p25": 343,
+     "median": 896,
+     "p75": 2402,
+     "p90": 6180,
      "max": 359660
     },
     "quantity": {
-     "n": 16327,
+     "n": 30188,
      "min": 1,
      "p25": 1,
-     "median": 1,
+     "median": 1.0,
      "p75": 1,
      "p90": 3,
      "max": 500
     }
    },
    "tools_craft_diy": {
-    "prize_records": 802,
-    "campaigns": 538,
-    "unique_organizers": 159,
-    "share_of_prize_records": 0.014,
-    "value_stated_share": 0.425,
+    "prize_records": 790,
+    "campaigns": 581,
+    "unique_organizers": 203,
+    "share_of_prize_records": 0.005,
+    "value_stated_share": 0.447,
     "stated_value_usd": {
-     "n": 341,
-     "min": 6.0,
-     "p25": 100.0,
-     "median": 300.0,
-     "p75": 789.0,
+     "n": 353,
+     "min": 1.0,
+     "p25": 55.0,
+     "median": 209.0,
+     "p75": 650.0,
      "p90": 1823.0,
      "max": 20000.0
     },
     "campaign_valid_contestants": {
-     "n": 538,
-     "min": 1003,
-     "p25": 1332,
-     "median": 1867.0,
-     "p75": 2695,
-     "p90": 5855,
+     "n": 581,
+     "min": 102,
+     "p25": 400,
+     "median": 941,
+     "p75": 1816,
+     "p90": 4049,
      "max": 289875
     },
     "quantity": {
-     "n": 802,
+     "n": 790,
      "min": 1,
      "p25": 1,
      "median": 1.0,
      "p75": 2,
      "p90": 5,
-     "max": 90
+     "max": 50
     }
    },
    "toys_collectibles": {
-    "prize_records": 889,
-    "campaigns": 712,
-    "unique_organizers": 207,
+    "prize_records": 2524,
+    "campaigns": 2297,
+    "unique_organizers": 474,
     "share_of_prize_records": 0.015,
-    "value_stated_share": 0.156,
+    "value_stated_share": 0.168,
     "stated_value_usd": {
-     "n": 132,
+     "n": 416,
      "min": 1.0,
-     "p25": 35.0,
-     "median": 100.0,
-     "p75": 240.0,
-     "p90": 618.0,
+     "p25": 30.0,
+     "median": 57.5,
+     "p75": 140.0,
+     "p90": 215.0,
      "max": 3500.0
     },
     "campaign_valid_contestants": {
-     "n": 712,
-     "min": 1001,
-     "p25": 1269,
-     "median": 1708.5,
-     "p75": 2866,
-     "p90": 5285,
+     "n": 2297,
+     "min": 101,
+     "p25": 215,
+     "median": 420,
+     "p75": 978,
+     "p90": 2058,
      "max": 55861
     },
     "quantity": {
-     "n": 889,
+     "n": 2524,
      "min": 1,
      "p25": 1,
-     "median": 1,
+     "median": 1.0,
      "p75": 3,
-     "p90": 5,
+     "p90": 3,
      "max": 300
     }
    },
    "vehicle": {
-    "prize_records": 463,
-    "campaigns": 407,
-    "unique_organizers": 198,
-    "share_of_prize_records": 0.008,
-    "value_stated_share": 0.685,
+    "prize_records": 803,
+    "campaigns": 733,
+    "unique_organizers": 369,
+    "share_of_prize_records": 0.005,
+    "value_stated_share": 0.583,
     "stated_value_usd": {
-     "n": 316,
-     "min": 29.0,
-     "p25": 649.0,
-     "median": 1094.0,
-     "p75": 2000.0,
-     "p90": 5595.0,
-     "max": 7109999.0
+     "n": 468,
+     "min": 10.0,
+     "p25": 200.0,
+     "median": 699.0,
+     "p75": 1399.0,
+     "p90": 3189.0,
+     "max": 61635.0
     },
     "campaign_valid_contestants": {
-     "n": 407,
-     "min": 1000,
-     "p25": 1524,
-     "median": 2356,
-     "p75": 3937,
-     "p90": 9325,
+     "n": 733,
+     "min": 101,
+     "p25": 343,
+     "median": 805,
+     "p75": 2045,
+     "p90": 5053,
      "max": 412638
     },
     "quantity": {
-     "n": 463,
+     "n": 803,
      "min": 1,
      "p25": 1,
      "median": 1,
      "p75": 1,
-     "p90": 2,
+     "p90": 3,
      "max": 500
     }
    }
   },
   "category_source": {
-   "rule": 49511,
-   "label": 8553,
+   "rule": 172645,
    "note": "rule = regex on the prize name; label = private LLM-assisted label applied only where rules failed, high or medium confidence labels only, never committed"
   },
   "primary_prize_category_by_campaign": {
-   "tech_hardware": 10806,
-   "gift_card_or_cash": 3860,
-   "bundle_or_box": 3377,
-   "game_item_or_skin": 2574,
-   "other_unclassified": 2337,
-   "placeholder_name": 2080,
-   "experience_travel_tickets": 1925,
-   "home_garden_appliance": 1540,
-   "merch_apparel_collectible": 1512,
-   "regulated_goods_firearm": 1316,
-   "sports_outdoor_gear": 706,
-   "music_gear": 644,
-   "toys_collectibles": 615,
-   "food_drink_consumables": 555,
-   "tools_craft_diy": 432,
-   "vehicle": 373,
-   "subscription_membership": 284,
-   "beauty_wellness": 236,
-   "discount_or_coupon": 177,
-   "exclusive_access": 105,
-   "pet_products": 87,
-   "baby_kids": 41,
-   "art_custom": 35,
-   "services": 31,
-   "bullion_precious_metal": 20
+   "other_unclassified": 31365,
+   "tech_hardware": 20271,
+   "gift_card_or_cash": 15812,
+   "bundle_or_box": 11756,
+   "game_item_or_skin": 10168,
+   "experience_travel_tickets": 5934,
+   "placeholder_name": 5199,
+   "merch_apparel_collectible": 4282,
+   "toys_collectibles": 2120,
+   "home_garden_appliance": 2038,
+   "regulated_goods_firearm": 1473,
+   "food_drink_consumables": 1269,
+   "subscription_membership": 1176,
+   "sports_outdoor_gear": 1072,
+   "beauty_wellness": 748,
+   "vehicle": 652,
+   "discount_or_coupon": 539,
+   "exclusive_access": 463,
+   "tools_craft_diy": 449,
+   "music_gear": 402,
+   "art_custom": 141,
+   "bullion_precious_metal": 19
   },
   "structure": {
    "single_winner_single_prize": {
-    "campaigns": 21464,
-    "unique_organizers": 4075,
+    "campaigns": 70506,
+    "unique_organizers": 11262,
     "valid_contestants": {
-     "n": 21464,
-     "min": 1000,
-     "p25": 1416,
-     "median": 2232.5,
-     "p75": 4230,
-     "p90": 9293,
+     "n": 70506,
+     "min": 101,
+     "p25": 228,
+     "median": 492.0,
+     "p75": 1280,
+     "p90": 3343,
      "max": 412638
     }
    },
    "five_plus_prize_units": {
-    "campaigns": 7961,
-    "unique_organizers": 2475,
+    "campaigns": 25054,
+    "unique_organizers": 6518,
     "valid_contestants": {
-     "n": 7961,
-     "min": 1000,
-     "p25": 1457,
-     "median": 2293,
-     "p75": 4455,
-     "p90": 9695,
-     "max": 359660
+     "n": 25054,
+     "min": 101,
+     "p25": 231,
+     "median": 510.0,
+     "p75": 1450,
+     "p90": 3845,
+     "max": 599561
     }
    },
    "note": "Every campaign passed the dataset floor, so these medians describe structure and say nothing about effect."
   },
   "by_contestant_band": {
-   "1k-2.5k": {
-    "campaigns": 19956,
-    "unique_organizers": 5024,
+   "100-250": {
+    "campaigns": 33338,
+    "unique_organizers": 9607,
     "valid_contestants": {
-     "n": 19956,
-     "min": 1000,
-     "p25": 1200,
-     "median": 1484.0,
-     "p75": 1892,
-     "p90": 2225,
-     "max": 2499
+     "n": 33338,
+     "min": 101,
+     "p25": 127,
+     "median": 161.0,
+     "p75": 200,
+     "p90": 229,
+     "max": 249
     },
-    "entries_per_contestant_median": 4.3,
-    "duration_days_median": 15.0,
-    "single_prize_record_share": 0.795,
-    "any_prize_quantity_gt1_share": 0.311,
-    "prize_value_stated_share": 0.397,
+    "entries_per_contestant_median": 4.09,
+    "duration_days_median": 12,
+    "single_prize_record_share": 0.848,
+    "any_prize_quantity_gt1_share": 0.328,
+    "prize_value_stated_share": 0.361,
     "stated_value_usd": {
-     "n": 12216,
-     "min": -5.0,
-     "p25": 85.0,
-     "median": 210.0,
-     "p75": 550.0,
-     "p90": 1399.0,
-     "max": 10000000.0
+     "n": 16411,
+     "min": 1.0,
+     "p25": 25.0,
+     "median": 69.0,
+     "p75": 200.0,
+     "p90": 500.0,
+     "max": 1000000.0
     },
     "campaign_total_stated_value_usd": {
-     "n": 7731,
-     "min": -1.0,
-     "p25": 229.0,
-     "median": 511.0,
-     "p75": 1308.0,
-     "p90": 2785.0,
+     "n": 11715,
+     "min": 1.0,
+     "p25": 50.0,
+     "median": 120.0,
+     "p75": 398.0,
+     "p90": 1200.0,
      "max": 10000000.0
     },
     "primary_prize_category_share": {
-     "tech_hardware": 0.272,
-     "gift_card_or_cash": 0.116,
-     "bundle_or_box": 0.104,
-     "game_item_or_skin": 0.081,
-     "other_unclassified": 0.062,
-     "placeholder_name": 0.058,
-     "experience_travel_tickets": 0.049,
-     "home_garden_appliance": 0.046,
-     "merch_apparel_collectible": 0.042,
-     "regulated_goods_firearm": 0.026,
-     "sports_outdoor_gear": 0.023,
-     "toys_collectibles": 0.022,
-     "food_drink_consumables": 0.019,
-     "music_gear": 0.017,
-     "tools_craft_diy": 0.016,
-     "vehicle": 0.01,
-     "subscription_membership": 0.01,
-     "beauty_wellness": 0.009,
-     "discount_or_coupon": 0.007,
-     "pet_products": 0.004,
-     "exclusive_access": 0.003,
-     "baby_kids": 0.002,
-     "services": 0.001,
+     "other_unclassified": 0.32,
+     "gift_card_or_cash": 0.13,
+     "game_item_or_skin": 0.119,
+     "tech_hardware": 0.108,
+     "bundle_or_box": 0.097,
+     "experience_travel_tickets": 0.064,
+     "merch_apparel_collectible": 0.038,
+     "placeholder_name": 0.038,
+     "toys_collectibles": 0.02,
+     "subscription_membership": 0.013,
+     "home_garden_appliance": 0.011,
+     "food_drink_consumables": 0.008,
+     "sports_outdoor_gear": 0.006,
+     "beauty_wellness": 0.006,
+     "discount_or_coupon": 0.006,
+     "exclusive_access": 0.005,
+     "regulated_goods_firearm": 0.003,
+     "vehicle": 0.003,
+     "tools_craft_diy": 0.002,
+     "music_gear": 0.001,
      "art_custom": 0.001,
      "bullion_precious_metal": 0.0
     },
     "tier": {
-     "Pro": 11565,
-     "Business": 5623,
-     "Hobby": 1464,
-     "Free": 857,
-     "Premium": 447
+     "Pro": 16004,
+     "Free": 6292,
+     "Business": 6216,
+     "Hobby": 4530,
+     "Premium": 296
+    }
+   },
+   "250-500": {
+    "campaigns": 25892,
+    "unique_organizers": 6554,
+    "valid_contestants": {
+     "n": 25892,
+     "min": 250,
+     "p25": 296,
+     "median": 352.0,
+     "p75": 417,
+     "p90": 465,
+     "max": 499
+    },
+    "entries_per_contestant_median": 4.61,
+    "duration_days_median": 14.0,
+    "single_prize_record_share": 0.845,
+    "any_prize_quantity_gt1_share": 0.321,
+    "prize_value_stated_share": 0.369,
+    "stated_value_usd": {
+     "n": 13293,
+     "min": 1.0,
+     "p25": 30.0,
+     "median": 80.0,
+     "p75": 220.0,
+     "p90": 550.0,
+     "max": 1000000.0
+    },
+    "campaign_total_stated_value_usd": {
+     "n": 9455,
+     "min": 1.0,
+     "p25": 50.0,
+     "median": 149.0,
+     "p75": 469.0,
+     "p90": 1400.0,
+     "max": 1000000.0
+    },
+    "primary_prize_category_share": {
+     "other_unclassified": 0.272,
+     "gift_card_or_cash": 0.184,
+     "tech_hardware": 0.125,
+     "bundle_or_box": 0.109,
+     "game_item_or_skin": 0.089,
+     "experience_travel_tickets": 0.046,
+     "placeholder_name": 0.046,
+     "merch_apparel_collectible": 0.036,
+     "toys_collectibles": 0.021,
+     "home_garden_appliance": 0.013,
+     "food_drink_consumables": 0.01,
+     "subscription_membership": 0.01,
+     "beauty_wellness": 0.008,
+     "sports_outdoor_gear": 0.008,
+     "regulated_goods_firearm": 0.005,
+     "vehicle": 0.005,
+     "exclusive_access": 0.004,
+     "tools_craft_diy": 0.004,
+     "discount_or_coupon": 0.003,
+     "art_custom": 0.002,
+     "music_gear": 0.002,
+     "bullion_precious_metal": 0.0
+    },
+    "tier": {
+     "Pro": 14239,
+     "Business": 6019,
+     "Free": 2863,
+     "Hobby": 2524,
+     "Premium": 246,
+     "Not Available": 1
+    }
+   },
+   "500-1k": {
+    "campaigns": 21935,
+    "unique_organizers": 5550,
+    "valid_contestants": {
+     "n": 21935,
+     "min": 500,
+     "p25": 585,
+     "median": 691,
+     "p75": 822,
+     "p90": 923,
+     "max": 999
+    },
+    "entries_per_contestant_median": 4.68,
+    "duration_days_median": 14.0,
+    "single_prize_record_share": 0.822,
+    "any_prize_quantity_gt1_share": 0.313,
+    "prize_value_stated_share": 0.365,
+    "stated_value_usd": {
+     "n": 11515,
+     "min": 1.0,
+     "p25": 50.0,
+     "median": 120.0,
+     "p75": 339.0,
+     "p90": 899.0,
+     "max": 150000.0
+    },
+    "campaign_total_stated_value_usd": {
+     "n": 7838,
+     "min": 1.0,
+     "p25": 100.0,
+     "median": 260.0,
+     "p75": 749.0,
+     "p90": 1997.0,
+     "max": 5959800.0
+    },
+    "primary_prize_category_share": {
+     "other_unclassified": 0.261,
+     "tech_hardware": 0.168,
+     "gift_card_or_cash": 0.137,
+     "bundle_or_box": 0.111,
+     "game_item_or_skin": 0.079,
+     "placeholder_name": 0.057,
+     "experience_travel_tickets": 0.04,
+     "merch_apparel_collectible": 0.038,
+     "toys_collectibles": 0.019,
+     "home_garden_appliance": 0.017,
+     "food_drink_consumables": 0.012,
+     "subscription_membership": 0.01,
+     "sports_outdoor_gear": 0.01,
+     "beauty_wellness": 0.01,
+     "regulated_goods_firearm": 0.008,
+     "vehicle": 0.006,
+     "tools_craft_diy": 0.005,
+     "discount_or_coupon": 0.005,
+     "exclusive_access": 0.004,
+     "music_gear": 0.004,
+     "art_custom": 0.001,
+     "bullion_precious_metal": 0.0
+    },
+    "tier": {
+     "Pro": 13291,
+     "Business": 5312,
+     "Hobby": 1620,
+     "Free": 1375,
+     "Premium": 337
+    }
+   },
+   "1k-2.5k": {
+    "campaigns": 20137,
+    "unique_organizers": 5123,
+    "valid_contestants": {
+     "n": 20137,
+     "min": 1000,
+     "p25": 1201,
+     "median": 1484,
+     "p75": 1891,
+     "p90": 2224,
+     "max": 2499
+    },
+    "entries_per_contestant_median": 4.32,
+    "duration_days_median": 15,
+    "single_prize_record_share": 0.793,
+    "any_prize_quantity_gt1_share": 0.315,
+    "prize_value_stated_share": 0.395,
+    "stated_value_usd": {
+     "n": 12345,
+     "min": 1.0,
+     "p25": 80.0,
+     "median": 210.0,
+     "p75": 550.0,
+     "p90": 1399.0,
+     "max": 271998.0
+    },
+    "campaign_total_stated_value_usd": {
+     "n": 7794,
+     "min": 1.0,
+     "p25": 230.0,
+     "median": 529.5,
+     "p75": 1348.0,
+     "p90": 2799.0,
+     "max": 8000000.0
+    },
+    "primary_prize_category_share": {
+     "other_unclassified": 0.244,
+     "tech_hardware": 0.235,
+     "gift_card_or_cash": 0.11,
+     "bundle_or_box": 0.099,
+     "game_item_or_skin": 0.065,
+     "experience_travel_tickets": 0.044,
+     "placeholder_name": 0.038,
+     "merch_apparel_collectible": 0.031,
+     "home_garden_appliance": 0.027,
+     "regulated_goods_firearm": 0.02,
+     "toys_collectibles": 0.018,
+     "food_drink_consumables": 0.015,
+     "sports_outdoor_gear": 0.013,
+     "subscription_membership": 0.009,
+     "vehicle": 0.007,
+     "tools_craft_diy": 0.007,
+     "discount_or_coupon": 0.006,
+     "beauty_wellness": 0.006,
+     "music_gear": 0.005,
+     "exclusive_access": 0.002,
+     "art_custom": 0.001,
+     "bullion_precious_metal": 0.0
+    },
+    "tier": {
+     "Pro": 11683,
+     "Business": 5661,
+     "Hobby": 1471,
+     "Free": 870,
+     "Premium": 452
     }
    },
    "2.5k-10k": {
-    "campaigns": 12591,
-    "unique_organizers": 2937,
+    "campaigns": 12828,
+    "unique_organizers": 3035,
     "valid_contestants": {
-     "n": 12591,
+     "n": 12828,
      "min": 2500,
-     "p25": 3075,
-     "median": 3984,
-     "p75": 5665,
-     "p90": 7721,
+     "p25": 3076,
+     "median": 3986.5,
+     "p75": 5666,
+     "p90": 7718,
      "max": 9999
     },
-    "entries_per_contestant_median": 4.365,
+    "entries_per_contestant_median": 4.39,
     "duration_days_median": 18,
-    "single_prize_record_share": 0.781,
-    "any_prize_quantity_gt1_share": 0.294,
-    "prize_value_stated_share": 0.424,
+    "single_prize_record_share": 0.779,
+    "any_prize_quantity_gt1_share": 0.3,
+    "prize_value_stated_share": 0.419,
     "stated_value_usd": {
-     "n": 9183,
-     "min": -21.0,
-     "p25": 115.0,
-     "median": 389.0,
+     "n": 9313,
+     "min": 1.0,
+     "p25": 110.0,
+     "median": 375.0,
      "p75": 1000.0,
-     "p90": 2409.0,
+     "p90": 2400.0,
      "max": 680495.0
     },
     "campaign_total_stated_value_usd": {
-     "n": 5093,
-     "min": -21.0,
+     "n": 5152,
+     "min": 1.0,
      "p25": 500.0,
-     "median": 1298.0,
-     "p75": 2599.0,
+     "median": 1299.0,
+     "p75": 2615.0,
      "p90": 5000.0,
-     "max": 40600000.0
+     "max": 3750000.0
     },
     "primary_prize_category_share": {
-     "tech_hardware": 0.333,
-     "gift_card_or_cash": 0.103,
-     "bundle_or_box": 0.091,
-     "game_item_or_skin": 0.063,
-     "experience_travel_tickets": 0.061,
-     "placeholder_name": 0.061,
-     "other_unclassified": 0.056,
-     "home_garden_appliance": 0.046,
-     "merch_apparel_collectible": 0.042,
-     "regulated_goods_firearm": 0.04,
-     "music_gear": 0.023,
-     "sports_outdoor_gear": 0.019,
-     "food_drink_consumables": 0.013,
-     "toys_collectibles": 0.012,
-     "vehicle": 0.011,
-     "tools_craft_diy": 0.008,
+     "tech_hardware": 0.298,
+     "other_unclassified": 0.198,
+     "gift_card_or_cash": 0.098,
+     "bundle_or_box": 0.087,
+     "experience_travel_tickets": 0.054,
+     "game_item_or_skin": 0.053,
+     "placeholder_name": 0.046,
+     "merch_apparel_collectible": 0.037,
+     "home_garden_appliance": 0.029,
+     "regulated_goods_firearm": 0.029,
+     "sports_outdoor_gear": 0.013,
+     "food_drink_consumables": 0.011,
+     "toys_collectibles": 0.01,
+     "music_gear": 0.009,
+     "vehicle": 0.008,
      "subscription_membership": 0.006,
-     "beauty_wellness": 0.003,
-     "exclusive_access": 0.003,
+     "tools_craft_diy": 0.004,
      "discount_or_coupon": 0.003,
-     "pet_products": 0.001,
-     "bullion_precious_metal": 0.001,
-     "baby_kids": 0.001,
+     "exclusive_access": 0.003,
+     "beauty_wellness": 0.002,
      "art_custom": 0.001,
-     "services": 0.0
+     "bullion_precious_metal": 0.001
     },
     "tier": {
-     "Pro": 6074,
-     "Business": 5091,
-     "Hobby": 602,
-     "Free": 444,
-     "Premium": 379,
+     "Pro": 6182,
+     "Business": 5185,
+     "Hobby": 609,
+     "Free": 450,
+     "Premium": 401,
      "Not Available": 1
     }
    },
    "10k+": {
-    "campaigns": 3121,
-    "unique_organizers": 727,
+    "campaigns": 3218,
+    "unique_organizers": 762,
     "valid_contestants": {
-     "n": 3121,
+     "n": 3218,
      "min": 10003,
-     "p25": 12261,
-     "median": 16127,
-     "p75": 25432,
-     "p90": 48532,
-     "max": 412638
+     "p25": 12276,
+     "median": 16144.5,
+     "p75": 25424,
+     "p90": 48851,
+     "max": 599561
     },
-    "entries_per_contestant_median": 4.41,
-    "duration_days_median": 20,
-    "single_prize_record_share": 0.804,
-    "any_prize_quantity_gt1_share": 0.294,
-    "prize_value_stated_share": 0.376,
+    "entries_per_contestant_median": 4.39,
+    "duration_days_median": 18.0,
+    "single_prize_record_share": 0.801,
+    "any_prize_quantity_gt1_share": 0.299,
+    "prize_value_stated_share": 0.369,
     "stated_value_usd": {
-     "n": 2083,
+     "n": 2141,
      "min": 1.0,
-     "p25": 199.0,
-     "median": 800.0,
+     "p25": 174.0,
+     "median": 779.0,
      "p75": 2500.0,
      "p90": 5000.0,
-     "max": 178865.0
+     "max": 300000.0
     },
     "campaign_total_stated_value_usd": {
-     "n": 1135,
+     "n": 1155,
      "min": 1.0,
      "p25": 1500.0,
      "median": 3000.0,
      "p75": 5000.0,
-     "p90": 10400.0,
-     "max": 748800.0
+     "p90": 10500.0,
+     "max": 1000000.0
     },
     "primary_prize_category_share": {
-     "tech_hardware": 0.379,
-     "other_unclassified": 0.125,
-     "regulated_goods_firearm": 0.096,
-     "gift_card_or_cash": 0.082,
-     "experience_travel_tickets": 0.055,
-     "game_item_or_skin": 0.052,
-     "bundle_or_box": 0.05,
-     "placeholder_name": 0.05,
-     "merch_apparel_collectible": 0.048,
+     "tech_hardware": 0.369,
+     "other_unclassified": 0.153,
+     "regulated_goods_firearm": 0.091,
+     "gift_card_or_cash": 0.081,
+     "experience_travel_tickets": 0.054,
+     "game_item_or_skin": 0.05,
+     "bundle_or_box": 0.049,
+     "placeholder_name": 0.048,
+     "merch_apparel_collectible": 0.046,
      "home_garden_appliance": 0.014,
-     "vehicle": 0.011,
+     "vehicle": 0.012,
      "sports_outdoor_gear": 0.006,
      "toys_collectibles": 0.006,
      "music_gear": 0.006,
      "food_drink_consumables": 0.004,
-     "subscription_membership": 0.004,
      "tools_craft_diy": 0.004,
+     "subscription_membership": 0.003,
      "beauty_wellness": 0.002,
      "art_custom": 0.002,
      "exclusive_access": 0.002,
@@ -1408,11 +1541,11 @@
      "bullion_precious_metal": 0.0
     },
     "tier": {
-     "Business": 1509,
-     "Pro": 1064,
-     "Premium": 273,
+     "Business": 1573,
+     "Pro": 1094,
+     "Premium": 275,
      "Free": 189,
-     "Hobby": 83,
+     "Hobby": 84,
      "Not Available": 3
     }
    }
@@ -1421,495 +1554,567 @@
    "definition": "uptake = entries recorded on the method divided by the campaign's valid contestants, capped at 5 (repeatable methods can exceed 1). Family names are generic, and platform types were mapped to them by hand.",
    "families": {
     "Visit a page or profile": {
-     "campaigns": 29073,
-     "unique_organizers": 5404,
-     "share_of_campaigns": 0.815,
+     "campaigns": 94591,
+     "unique_organizers": 14868,
+     "share_of_campaigns": 0.806,
      "uptake": {
-      "n": 131129,
+      "n": 376120,
       "min": 0.00024067388688327315,
-      "p25": 0.5502325581395349,
-      "median": 0.75,
-      "p75": 0.9204517554628038,
-      "p90": 1.1498501498501499,
+      "p25": 0.6149706457925636,
+      "median": 0.8040591333266924,
+      "p75": 0.9441913439635535,
+      "p90": 1.1292134831460674,
       "max": 5.0
      }
     },
     "Follow or subscribe (free)": {
-     "campaigns": 22705,
-     "unique_organizers": 4273,
-     "share_of_campaigns": 0.637,
+     "campaigns": 78061,
+     "unique_organizers": 12616,
+     "share_of_campaigns": 0.665,
      "uptake": {
-      "n": 56477,
+      "n": 173303,
       "min": 0.0005370569280343716,
-      "p25": 0.3185240963855422,
-      "median": 0.45854145854145856,
-      "p75": 0.629018245004344,
-      "p90": 0.7823844096293466,
-      "max": 4.621800264391299
-     }
-    },
-    "Share, repost or refer": {
-     "campaigns": 20078,
-     "unique_organizers": 4348,
-     "share_of_campaigns": 0.563,
-     "uptake": {
-      "n": 26865,
-      "min": 5.244663554832957e-05,
-      "p25": 0.0927676974188602,
-      "median": 0.2034548944337812,
-      "p75": 0.3944203944203944,
-      "p90": 0.5678391959798995,
+      "p25": 0.35185185185185186,
+      "median": 0.5073529411764706,
+      "p75": 0.6940559440559441,
+      "p90": 0.8928571428571429,
       "max": 5.0
      }
     },
-    "Email or newsletter signup": {
-     "campaigns": 15855,
-     "unique_organizers": 3114,
-     "share_of_campaigns": 0.445,
+    "Share, repost or refer": {
+     "campaigns": 61298,
+     "unique_organizers": 10783,
+     "share_of_campaigns": 0.522,
      "uptake": {
-      "n": 17634,
-      "min": 8.337849668570476e-05,
-      "p25": 0.6930005146680391,
-      "median": 0.8867717649339625,
-      "p75": 1.0213766566908935,
-      "p90": 1.0907821229050279,
+      "n": 81916,
+      "min": 5.244663554832957e-05,
+      "p25": 0.09659863945578231,
+      "median": 0.2585824633425325,
+      "p75": 0.4663951120162933,
+      "p90": 0.66,
       "max": 5.0
      }
     },
     "Bonus, loyalty or code": {
-     "campaigns": 14590,
-     "unique_organizers": 3182,
-     "share_of_campaigns": 0.409,
+     "campaigns": 45912,
+     "unique_organizers": 8644,
+     "share_of_campaigns": 0.391,
      "uptake": {
-      "n": 21882,
+      "n": 64921,
       "min": 3.338563749874804e-05,
-      "p25": 0.2344328805785853,
-      "median": 0.6531039634436264,
-      "p75": 1.1053775122216187,
-      "p90": 3.4979154258487193,
+      "p25": 0.32786885245901637,
+      "median": 0.873015873015873,
+      "p75": 1.2222222222222223,
+      "p90": 3.3391304347826085,
+      "max": 5.0
+     }
+    },
+    "Email or newsletter signup": {
+     "campaigns": 40733,
+     "unique_organizers": 6047,
+     "share_of_campaigns": 0.347,
+     "uptake": {
+      "n": 49688,
+      "min": 8.337849668570476e-05,
+      "p25": 0.6995515695067265,
+      "median": 0.8365975465752085,
+      "p75": 1.0074074074074073,
+      "p90": 1.0745033112582782,
       "max": 5.0
      }
     },
     "Join a community": {
-     "campaigns": 7103,
-     "unique_organizers": 1384,
-     "share_of_campaigns": 0.199,
+     "campaigns": 23242,
+     "unique_organizers": 4039,
+     "share_of_campaigns": 0.198,
      "uptake": {
-      "n": 9963,
-      "min": 6.90894016857814e-05,
-      "p25": 0.27116342236306024,
-      "median": 0.39805825242718446,
-      "p75": 0.6012950971322849,
-      "p90": 0.8610842207163601,
-      "max": 3.6718648473034436
-     }
-    },
-    "Custom action (other)": {
-     "campaigns": 6732,
-     "unique_organizers": 1339,
-     "share_of_campaigns": 0.189,
-     "uptake": {
-      "n": 15106,
-      "min": 7.630675314765356e-05,
-      "p25": 0.21757770632368703,
-      "median": 0.46743719798016925,
-      "p75": 0.805383856763852,
-      "p90": 1.06963249516441,
+      "n": 32383,
+      "min": 5.003723358852323e-05,
+      "p25": 0.3175182481751825,
+      "median": 0.4940867279894875,
+      "p75": 0.72,
+      "p90": 0.9304347826086956,
       "max": 5.0
      }
     },
-    "Answer a question or poll": {
-     "campaigns": 5684,
-     "unique_organizers": 1336,
-     "share_of_campaigns": 0.159,
+    "Custom action (other)": {
+     "campaigns": 23057,
+     "unique_organizers": 3039,
+     "share_of_campaigns": 0.196,
      "uptake": {
-      "n": 8437,
-      "min": 0.0003161555485298767,
-      "p25": 0.5586235318359778,
-      "median": 0.8615485564304461,
-      "p75": 1.0141342756183747,
-      "p90": 1.0898876404494382,
+      "n": 52841,
+      "min": 7.630675314765356e-05,
+      "p25": 0.2608695652173913,
+      "median": 0.5087108013937283,
+      "p75": 0.8118609406952966,
+      "p90": 1.0455445544554456,
       "max": 5.0
      }
     },
     "Post or create content": {
-     "campaigns": 5507,
-     "unique_organizers": 1398,
-     "share_of_campaigns": 0.154,
+     "campaigns": 21785,
+     "unique_organizers": 3999,
+     "share_of_campaigns": 0.186,
      "uptake": {
-      "n": 6658,
+      "n": 26338,
       "min": 8.303234109685722e-05,
-      "p25": 0.07869415807560137,
-      "median": 0.2336308640745066,
-      "p75": 0.371900826446281,
-      "p90": 0.5392574558734023,
+      "p25": 0.1454242928452579,
+      "median": 0.3070333603832942,
+      "p75": 0.4380165289256198,
+      "p90": 0.6743295019157088,
       "max": 5.0
      }
     },
     "Engage with a post": {
-     "campaigns": 4030,
-     "unique_organizers": 1293,
-     "share_of_campaigns": 0.113,
+     "campaigns": 19841,
+     "unique_organizers": 3933,
+     "share_of_campaigns": 0.169,
      "uptake": {
-      "n": 7489,
+      "n": 36525,
       "min": 0.0008525149190110827,
-      "p25": 0.28044971892567144,
-      "median": 0.48367501898253606,
-      "p75": 0.7496299220369091,
-      "p90": 0.9554682383759004,
+      "p25": 0.28652138821630346,
+      "median": 0.5436241610738255,
+      "p75": 0.802773497688752,
+      "p90": 0.9934640522875817,
+      "max": 5.0
+     }
+    },
+    "Answer a question or poll": {
+     "campaigns": 19474,
+     "unique_organizers": 3545,
+     "share_of_campaigns": 0.166,
+     "uptake": {
+      "n": 31477,
+      "min": 0.0003161555485298767,
+      "p25": 0.486646884272997,
+      "median": 0.7633587786259542,
+      "p75": 1.0,
+      "p90": 1.0841584158415842,
       "max": 5.0
      }
     },
     "Connect an account to enter": {
-     "campaigns": 3991,
-     "unique_organizers": 1062,
-     "share_of_campaigns": 0.112,
+     "campaigns": 15382,
+     "unique_organizers": 3598,
+     "share_of_campaigns": 0.131,
      "uptake": {
-      "n": 6115,
+      "n": 24194,
       "min": 0.0002105263157894737,
-      "p25": 0.3358849216542512,
-      "median": 0.4669187145557656,
-      "p75": 0.6471389645776566,
-      "p90": 0.9258572752548656,
-      "max": 4.5481312342266556
+      "p25": 0.3943217665615142,
+      "median": 0.548297891552666,
+      "p75": 0.7433489827856025,
+      "p90": 0.9662595419847329,
+      "max": 5.0
      }
     },
     "Paid subscription": {
-     "campaigns": 1889,
-     "unique_organizers": 336,
-     "share_of_campaigns": 0.053,
+     "campaigns": 7529,
+     "unique_organizers": 1220,
+     "share_of_campaigns": 0.064,
      "uptake": {
-      "n": 2562,
+      "n": 8413,
       "min": 0.00019342359767891682,
-      "p25": 0.017327535855668767,
-      "median": 0.04694247385093324,
-      "p75": 0.14958775029446408,
-      "p90": 0.42487046632124353,
+      "p25": 0.03063978409271313,
+      "median": 0.10945273631840796,
+      "p75": 0.36160714285714285,
+      "p90": 0.649737302977233,
       "max": 1.388101983002833
      }
     },
     "Download or play": {
-     "campaigns": 1673,
-     "unique_organizers": 475,
-     "share_of_campaigns": 0.047,
+     "campaigns": 4082,
+     "unique_organizers": 1000,
+     "share_of_campaigns": 0.035,
      "uptake": {
-      "n": 1798,
+      "n": 4392,
       "min": 0.0005333333333333334,
-      "p25": 0.2263843648208469,
-      "median": 0.3326493774405069,
-      "p75": 0.47279881157907416,
-      "p90": 0.6696606786427146,
-      "max": 2.192
-     }
-    },
-    "Imported or offline entries": {
-     "campaigns": 702,
-     "unique_organizers": 233,
-     "share_of_campaigns": 0.02,
-     "uptake": {
-      "n": 841,
-      "min": 1.1033387029150208e-05,
-      "p25": 0.009329732383992144,
-      "median": 0.05310492505353319,
-      "p75": 0.39861895794099184,
-      "p90": 0.9807225994180407,
+      "p25": 0.2329896907216495,
+      "median": 0.3654915030414783,
+      "p75": 0.5777537796976242,
+      "p90": 0.8406113537117904,
       "max": 5.0
      }
     },
     "Other": {
-     "campaigns": 184,
-     "unique_organizers": 94,
-     "share_of_campaigns": 0.005,
+     "campaigns": 1472,
+     "unique_organizers": 372,
+     "share_of_campaigns": 0.013,
      "uptake": {
-      "n": 249,
+      "n": 1698,
       "min": 0.00013333333333333334,
-      "p25": 0.023089840470193114,
-      "median": 0.09817464232856438,
-      "p75": 0.1634463097877732,
-      "p90": 0.3301029678982435,
+      "p25": 0.05963302752293578,
+      "median": 0.1383142559157323,
+      "p75": 0.2938775510204082,
+      "p90": 0.48514851485148514,
+      "max": 5.0
+     }
+    },
+    "Imported or offline entries": {
+     "campaigns": 1190,
+     "unique_organizers": 431,
+     "share_of_campaigns": 0.01,
+     "uptake": {
+      "n": 1390,
+      "min": 1.1033387029150208e-05,
+      "p25": 0.012345679012345678,
+      "median": 0.08056768417506673,
+      "p75": 0.6413793103448275,
+      "p90": 1.0,
       "max": 5.0
      }
     },
     "Crypto wallet": {
-     "campaigns": 1,
-     "unique_organizers": 1,
-     "share_of_campaigns": 0.0,
+     "campaigns": 667,
+     "unique_organizers": 236,
+     "share_of_campaigns": 0.006,
      "uptake": {
-      "n": 1,
-      "min": 2.201,
-      "p25": 2.201,
-      "median": 2.201,
-      "p75": 2.201,
-      "p90": 2.201,
-      "max": 2.201
+      "n": 670,
+      "min": 0.011910926980838944,
+      "p25": 0.8672172808132147,
+      "median": 1.0925761032889976,
+      "p75": 1.4534046492491257,
+      "p90": 1.971563981042654,
+      "max": 5.0
      }
     }
    },
    "methods_per_campaign": {
-    "n": 35668,
+    "n": 117348,
     "min": 0,
     "p25": 4,
     "median": 7.0,
     "p75": 11,
-    "p90": 17,
-    "max": 90
+    "p90": 16,
+    "max": 187
    },
    "by_band": {
-    "1k-2.5k": {
-     "campaigns": 19956,
-     "unique_organizers": 5024,
+    "100-250": {
+     "campaigns": 33338,
+     "unique_organizers": 9607,
+     "methods_per_campaign_median": 6.0,
+     "share_with_family": {
+      "Visit a page or profile": 0.787,
+      "Follow or subscribe (free)": 0.677,
+      "Email or newsletter signup": 0.249,
+      "Join a community": 0.182,
+      "Share, repost or refer": 0.447,
+      "Post or create content": 0.213,
+      "Engage with a post": 0.19,
+      "Answer a question or poll": 0.167,
+      "Bonus, loyalty or code": 0.395,
+      "Connect an account to enter": 0.151,
+      "Download or play": 0.027,
+      "Paid subscription": 0.066,
+      "Imported or offline entries": 0.005
+     }
+    },
+    "250-500": {
+     "campaigns": 25892,
+     "unique_organizers": 6554,
      "methods_per_campaign_median": 7.0,
      "share_with_family": {
-      "Visit a page or profile": 0.803,
-      "Follow or subscribe (free)": 0.636,
-      "Email or newsletter signup": 0.438,
-      "Join a community": 0.209,
-      "Share, repost or refer": 0.567,
+      "Visit a page or profile": 0.817,
+      "Follow or subscribe (free)": 0.682,
+      "Email or newsletter signup": 0.311,
+      "Join a community": 0.192,
+      "Share, repost or refer": 0.53,
+      "Post or create content": 0.198,
+      "Engage with a post": 0.199,
+      "Answer a question or poll": 0.173,
+      "Bonus, loyalty or code": 0.372,
+      "Connect an account to enter": 0.13,
+      "Download or play": 0.027,
+      "Paid subscription": 0.075,
+      "Imported or offline entries": 0.007
+     }
+    },
+    "500-1k": {
+     "campaigns": 21935,
+     "unique_organizers": 5550,
+     "methods_per_campaign_median": 7,
+     "share_with_family": {
+      "Visit a page or profile": 0.811,
+      "Follow or subscribe (free)": 0.67,
+      "Email or newsletter signup": 0.384,
+      "Join a community": 0.216,
+      "Share, repost or refer": 0.559,
+      "Post or create content": 0.179,
+      "Engage with a post": 0.196,
+      "Answer a question or poll": 0.168,
+      "Bonus, loyalty or code": 0.385,
+      "Connect an account to enter": 0.134,
+      "Download or play": 0.035,
+      "Paid subscription": 0.068,
+      "Imported or offline entries": 0.007
+     }
+    },
+    "1k-2.5k": {
+     "campaigns": 20137,
+     "unique_organizers": 5123,
+     "methods_per_campaign_median": 7,
+     "share_with_family": {
+      "Visit a page or profile": 0.801,
+      "Follow or subscribe (free)": 0.638,
+      "Email or newsletter signup": 0.434,
+      "Join a community": 0.214,
+      "Share, repost or refer": 0.566,
       "Post or create content": 0.158,
-      "Engage with a post": 0.136,
-      "Answer a question or poll": 0.16,
-      "Bonus, loyalty or code": 0.396,
+      "Engage with a post": 0.134,
+      "Answer a question or poll": 0.159,
+      "Bonus, loyalty or code": 0.393,
       "Connect an account to enter": 0.124,
-      "Download or play": 0.043,
-      "Paid subscription": 0.049,
-      "Imported or offline entries": 0.017
+      "Download or play": 0.042,
+      "Paid subscription": 0.048,
+      "Imported or offline entries": 0.016
      }
     },
     "2.5k-10k": {
-     "campaigns": 12591,
-     "unique_organizers": 2937,
-     "methods_per_campaign_median": 7,
+     "campaigns": 12828,
+     "unique_organizers": 3035,
+     "methods_per_campaign_median": 7.0,
      "share_with_family": {
-      "Visit a page or profile": 0.833,
-      "Follow or subscribe (free)": 0.633,
-      "Email or newsletter signup": 0.463,
-      "Join a community": 0.193,
-      "Share, repost or refer": 0.568,
-      "Post or create content": 0.145,
+      "Visit a page or profile": 0.829,
+      "Follow or subscribe (free)": 0.638,
+      "Email or newsletter signup": 0.459,
+      "Join a community": 0.202,
+      "Share, repost or refer": 0.571,
+      "Post or create content": 0.146,
       "Engage with a post": 0.092,
-      "Answer a question or poll": 0.159,
-      "Bonus, loyalty or code": 0.421,
+      "Answer a question or poll": 0.158,
+      "Bonus, loyalty or code": 0.416,
       "Connect an account to enter": 0.102,
-      "Download or play": 0.053,
+      "Download or play": 0.054,
       "Paid subscription": 0.051,
       "Imported or offline entries": 0.017
      }
     },
     "10k+": {
-     "campaigns": 3121,
-     "unique_organizers": 727,
-     "methods_per_campaign_median": 7,
+     "campaigns": 3218,
+     "unique_organizers": 762,
+     "methods_per_campaign_median": 7.0,
      "share_with_family": {
-      "Visit a page or profile": 0.824,
-      "Follow or subscribe (free)": 0.654,
-      "Email or newsletter signup": 0.413,
-      "Join a community": 0.163,
-      "Share, repost or refer": 0.516,
-      "Post or create content": 0.172,
+      "Visit a page or profile": 0.821,
+      "Follow or subscribe (free)": 0.658,
+      "Email or newsletter signup": 0.404,
+      "Join a community": 0.173,
+      "Share, repost or refer": 0.522,
+      "Post or create content": 0.175,
       "Engage with a post": 0.05,
-      "Answer a question or poll": 0.158,
-      "Bonus, loyalty or code": 0.445,
+      "Answer a question or poll": 0.163,
+      "Bonus, loyalty or code": 0.435,
       "Connect an account to enter": 0.073,
       "Download or play": 0.05,
-      "Paid subscription": 0.087,
-      "Imported or offline entries": 0.049
+      "Paid subscription": 0.085,
+      "Imported or offline entries": 0.047
      }
     }
    }
   },
   "timing": {
    "duration_days": {
-    "n": 35668,
+    "n": 116491,
     "min": 0,
-    "p25": 8,
-    "median": 16.0,
-    "p75": 31,
-    "p90": 43,
-    "max": 13200
+    "p25": 7,
+    "median": 14,
+    "p75": 29,
+    "p90": 35,
+    "max": 365
    },
    "duration_bucket_share": {
-    "1-3": 0.115,
-    "4-7": 0.126,
-    "8-14": 0.198,
-    "15-30": 0.306,
-    "31-60": 0.193,
-    "61-180": 0.049,
-    "181+": 0.013
+    "1-3": 0.126,
+    "4-7": 0.163,
+    "8-14": 0.22,
+    "15-30": 0.282,
+    "31-60": 0.164,
+    "61-180": 0.034,
+    "181+": 0.006
    },
    "start_month_share": {
-    "1": 0.065,
-    "2": 0.075,
-    "3": 0.088,
-    "4": 0.078,
-    "5": 0.084,
-    "6": 0.085,
-    "7": 0.078,
-    "8": 0.084,
-    "9": 0.076,
-    "10": 0.082,
-    "11": 0.086,
-    "12": 0.119
+    "1": 0.067,
+    "2": 0.08,
+    "3": 0.091,
+    "4": 0.083,
+    "5": 0.086,
+    "6": 0.084,
+    "7": 0.079,
+    "8": 0.079,
+    "9": 0.074,
+    "10": 0.083,
+    "11": 0.09,
+    "12": 0.104
    },
    "start_weekday_share": {
-    "Monday": 0.188,
-    "Tuesday": 0.165,
-    "Wednesday": 0.169,
-    "Thursday": 0.161,
-    "Friday": 0.163,
-    "Saturday": 0.064,
-    "Sunday": 0.089
+    "Monday": 0.192,
+    "Tuesday": 0.16,
+    "Wednesday": 0.165,
+    "Thursday": 0.159,
+    "Friday": 0.156,
+    "Saturday": 0.072,
+    "Sunday": 0.097
    },
    "entries_per_contestant_median_by_duration": {
-    "15-30": 4.61,
-    "61-180": 3.56,
-    "31-60": 5.06,
-    "8-14": 4.38,
-    "4-7": 4.13,
-    "1-3": 2.99,
-    "181+": 3.62
+    "4-7": 4.01,
+    "61-180": 3.89,
+    "1-3": 3.53,
+    "15-30": 4.84,
+    "8-14": 4.42,
+    "31-60": 5.14,
+    "181+": 3.86
    },
    "duration_median_by_band": {
-    "1k-2.5k": 15.0,
+    "100-250": 12,
+    "250-500": 14.0,
+    "500-1k": 14.0,
+    "1k-2.5k": 15,
     "2.5k-10k": 18,
-    "10k+": 20
+    "10k+": 18.0
    },
    "note": "Descriptive. Duration and start date are organizer choices that co-vary with organizer type and season. Nothing here shows a duration or start day changed participation."
   },
   "structure_detail": {
    "prize_records_per_campaign_share": {
-    "1": 0.791,
-    "2": 0.07,
-    "3": 0.068,
-    "4": 0.022,
-    "5": 0.014,
-    "6+": 0.036
+    "1": 0.824,
+    "2": 0.062,
+    "3": 0.06,
+    "4": 0.018,
+    "5": 0.013,
+    "6+": 0.022
    },
    "total_prize_units": {
-    "n": 35668,
+    "n": 117348,
     "min": 1,
     "p25": 1,
     "median": 1.0,
     "p75": 3,
-    "p90": 11,
+    "p90": 10,
     "max": 1133
    },
-   "share_more_than_one_unit": 0.398,
-   "share_tiered_positions": 0.209,
+   "share_more_than_one_unit": 0.399,
+   "share_tiered_positions": 0.176,
    "by_band": {
+    "100-250": {
+     "campaigns": 33338,
+     "unique_organizers": 9607,
+     "share_single_unit": 0.593,
+     "share_tiered": 0.152,
+     "share_ten_plus_units": 0.111
+    },
+    "250-500": {
+     "campaigns": 25892,
+     "unique_organizers": 6554,
+     "share_single_unit": 0.611,
+     "share_tiered": 0.155,
+     "share_ten_plus_units": 0.123
+    },
+    "500-1k": {
+     "campaigns": 21935,
+     "unique_organizers": 5550,
+     "share_single_unit": 0.607,
+     "share_tiered": 0.178,
+     "share_ten_plus_units": 0.113
+    },
     "1k-2.5k": {
-     "campaigns": 19956,
-     "unique_organizers": 5024,
-     "share_single_unit": 0.597,
-     "share_tiered": 0.205,
-     "share_ten_plus_units": 0.125
+     "campaigns": 20137,
+     "unique_organizers": 5123,
+     "share_single_unit": 0.594,
+     "share_tiered": 0.207,
+     "share_ten_plus_units": 0.129
     },
     "2.5k-10k": {
-     "campaigns": 12591,
-     "unique_organizers": 2937,
-     "share_single_unit": 0.605,
-     "share_tiered": 0.219,
-     "share_ten_plus_units": 0.148
+     "campaigns": 12828,
+     "unique_organizers": 3035,
+     "share_single_unit": 0.599,
+     "share_tiered": 0.221,
+     "share_ten_plus_units": 0.156
     },
     "10k+": {
-     "campaigns": 3121,
-     "unique_organizers": 727,
-     "share_single_unit": 0.618,
-     "share_tiered": 0.196,
-     "share_ten_plus_units": 0.181
+     "campaigns": 3218,
+     "unique_organizers": 762,
+     "share_single_unit": 0.615,
+     "share_tiered": 0.199,
+     "share_ten_plus_units": 0.189
     }
    },
    "note": "Quantity is units listed, which may differ from winners. Structure is an organizer choice and says nothing about effect."
   }
  },
  "excluded_crypto": {
-  "campaigns": 3015,
-  "unique_organizers": 840,
+  "campaigns": 6288,
+  "unique_organizers": 1528,
   "valid_contestants": {
-   "n": 3015,
-   "min": 1001,
-   "p25": 1780,
-   "median": 3123,
-   "p75": 6598,
-   "p90": 13165,
-   "max": 599561
+   "n": 6288,
+   "min": 101,
+   "p25": 257,
+   "median": 731.5,
+   "p75": 2612,
+   "p90": 7386,
+   "max": 177388
   },
   "start_years": {
-   "2020": 2,
-   "2021": 422,
-   "2022": 1059,
-   "2023": 1084,
-   "2024": 258,
-   "2025": 159,
-   "2026": 31
+   "2020": 14,
+   "2021": 894,
+   "2022": 2744,
+   "2023": 1782,
+   "2024": 536,
+   "2025": 261,
+   "2026": 57
   },
-  "wallet_address_entry_method_share": 0.533
+  "wallet_address_entry_method_share": 0.376
  },
  "excluded_ambiguous": {
-  "campaigns": 283,
-  "unique_organizers": 171,
+  "campaigns": 0,
+  "unique_organizers": 0,
   "valid_contestants": {
-   "n": 283,
-   "min": 1004,
-   "p25": 1622,
-   "median": 2610,
-   "p75": 6834,
-   "p90": 16076,
-   "max": 89222
+   "n": 0
   },
-  "start_years": {
-   "2020": 2,
-   "2021": 94,
-   "2022": 109,
-   "2023": 32,
-   "2024": 21,
-   "2025": 22,
-   "2026": 3
-  },
-  "wallet_address_entry_method_share": 0.0
+  "start_years": {},
+  "wallet_address_entry_method_share": null
  },
  "excluded_purchase_opportunity": {
-  "campaigns": 92,
-  "unique_organizers": 9,
+  "campaigns": 262,
+  "unique_organizers": 125,
   "valid_contestants": {
-   "n": 92,
-   "min": 1097,
-   "p25": 1939,
-   "median": 3174.5,
-   "p75": 7659,
-   "p90": 14220,
-   "max": 43868
+   "n": 262,
+   "min": 101,
+   "p25": 168,
+   "median": 378.5,
+   "p75": 1147,
+   "p90": 3746,
+   "max": 12271
   },
   "start_years": {
-   "2021": 65,
-   "2022": 17,
-   "2023": 4,
-   "2024": 4,
-   "2025": 2
+   "2015": 3,
+   "2021": 75,
+   "2022": 47,
+   "2023": 23,
+   "2024": 33,
+   "2025": 64,
+   "2026": 17
   },
-  "wallet_address_entry_method_share": 0.0
+  "wallet_address_entry_method_share": 0.004
  },
  "excluded_finance_crypto_industry": {
-  "campaigns": 15728,
-  "unique_organizers": 3670,
+  "campaigns": 43170,
+  "unique_organizers": 7138,
   "valid_contestants": {
-   "n": 15728,
-   "min": 1000,
-   "p25": 1658,
-   "median": 3049.0,
-   "p75": 6938,
-   "p90": 15643,
+   "n": 43170,
+   "min": 101,
+   "p25": 225,
+   "median": 538.0,
+   "p75": 1930,
+   "p90": 6327,
    "max": 503985
   },
   "start_years": {
-   "2019": 10,
-   "2020": 22,
-   "2021": 2323,
-   "2022": 6371,
-   "2023": 3831,
-   "2024": 1541,
-   "2025": 1376,
-   "2026": 254
+   "2019": 20,
+   "2020": 74,
+   "2021": 5648,
+   "2022": 17792,
+   "2023": 9228,
+   "2024": 5224,
+   "2025": 4357,
+   "2026": 827
   },
-  "wallet_address_entry_method_share": 0.313
+  "wallet_address_entry_method_share": 0.211
  }
 }

@@ -2,59 +2,63 @@
 
 ## The source
 
-A private dataset of 54,786 campaigns from one giveaway platform, each with at least 1,000 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
+A private dataset of 167,068 campaigns from one giveaway platform, each with at least 100 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
 
-| Entrant count | Share of the 54,786 campaigns |
+The benchmarks below describe the 117,348 of those campaigns left after removing crypto, purchase-only and finance_crypto organizers.
+
+| Entrant count | Share of the 117,348 campaigns |
 |---|---|
-| 1,000 to 2,500 | 50% |
-| 2,500 to 10,000 | 38% |
-| Above 10,000 | 12% |
+| 100 to 250 | 28% |
+| 250 to 500 | 22% |
+| 500 to 1,000 | 19% |
+| 1,000 to 2,500 | 17% |
+| 2,500 to 10,000 | 11% |
+| Above 10,000 | 3% |
 
-Where the repository summary says the skills rest on about 325,000 entry actions, that total is not a field in the dataset and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed with how many Entrants took the action. Each one is an entry action offered in one of the campaigns behind these numbers, for which the dataset recorded how many Entrants took it.
+Where the repository summary says the skills rest on about 966,000 entry actions, that total is not a field in the dataset and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed with how many Entrants took the action. Each one is an entry action offered in one of the campaigns behind these numbers, for which the dataset recorded how many Entrants took it.
 
 | Action family | Entrants who took it |
 |---|---|
-| Visits | 134,195 |
-| Follows | 58,527 |
-| Shares | 28,609 |
-| Bonus or code | 22,336 |
-| Email signups | 17,875 |
-| Custom actions | 15,641 |
-| Community joins | 11,179 |
-| Questions | 9,450 |
-| Post engagements | 7,670 |
-| Content posts | 6,954 |
-| Account connections | 6,485 |
-| Paid subscriptions | 2,575 |
-| Downloads | 1,938 |
-| Imported entries | 858 |
+| Visits | 376,120 |
+| Follows | 173,303 |
+| Shares | 81,916 |
+| Bonus or code | 64,921 |
+| Custom actions | 52,841 |
+| Email signups | 49,688 |
+| Post engagements | 36,525 |
+| Community joins | 32,383 |
+| Questions | 31,477 |
+| Content posts | 26,338 |
+| Account connections | 24,194 |
+| Paid subscriptions | 8,413 |
+| Downloads | 4,392 |
+| Imported entries | 1,390 |
 
-That sums to 324,292, rounded to 325,000.
+That sums to 966,269, rounded to 966,000.
 
 The dataset's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
 
 | Field | Value |
 |---|---|
-| Campaigns | 54,786 |
-| Prize records | 85,526 |
-| Businesses | 10,714 |
-| Prize value missing | 61.2% of Prize records (51,553 null, 801 zero) |
-| Stated-value currencies | USD 33,924, EUR 17, GBP 10, CAD 8, AUD 7, plus a handful of others |
-| Campaign start years | 2013 to 2026, 69% between 2021 and 2023 |
-| Missing fields | 69 campaigns with no entry count, 5,167 with no description |
-| Data-entry errors | one negative value, one of 50 million |
+| Campaigns | 167,068 |
+| Prize records | 243,835 |
+| Businesses | 25,482 |
+| Prize value missing | 62.0% of Prize records (149,102 null, 2,099 zero) |
+| Stated-value currencies | USD 94,611, GBP 38, EUR 38, AUD 22, CAD 21, plus a handful of others |
+| Campaign start years | 2013 to 2026, 68% between 2021 and 2023 |
+| Missing fields | 259 campaigns with no entry count, 16,432 with no description |
+| Data-entry errors | negative values, and a stated value of 250 million |
 
 ## Segmenting before any benchmark
 
 <!-- generated:segments -->
 | Segment | Campaigns | Handling |
 |---|---|---|
-| Ordinary | 35,668 (58,064 Prize listings, 6,402 businesses) | Basis for every default figure |
-| Crypto | 3,015 | Excluded. Described only when a user asks for crypto advice. 53% used a wallet-address Entry Method |
-| Ambiguous | 283 | Excluded and reported separately |
-| Purchase opportunity | 92 | Excluded. The Prize is the right to buy something |
+| Ordinary | 117,348 (172,645 prize records, 17,777 organizers) | Basis for every default figure |
+| Crypto | 6,288 | Excluded. Described only when a user asks for crypto advice. 38% used a wallet-address entry method |
+| Purchase opportunity | 262 | Excluded. The prize is the right to buy something |
 
-Excluded campaigns are similar in size to the rest (crypto typical 3,123 Entrants versus 2,209 for the rest), so exclusion changes who is in the benchmark and leaves the size distribution alone.
+Excluded campaigns are similar in size to ordinary ones (crypto median 732 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
 <!-- /generated -->
 
 The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 17,305 Entrants versus 16,175 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
@@ -66,26 +70,25 @@ A homepage-label industry cut on the campaign analysis confirms the exclusion is
 Two shorthands run through the tables below. The middle half is the middle half of campaigns, running from the lower quarter to the upper quarter. The top-tenth mark is the level nine campaigns in ten sit below, so it marks the top tenth without naming an extreme.
 
 <!-- generated:benchmark -->
-| Measure | Value | Campaigns or note |
+| Measure | Value | n or note |
 |---|---|---|
-| Valid Entrants | typical 2,209, middle half 1,417 to 4,180, top-tenth mark 9,092 | 35,668. Floor is 1,000 by selection |
-| Valid Entries | typical 10,486 | 35,614. Entries count Actions, and one person makes many |
-| Actions per Entrant | typical 4.33 each, middle half 2.68 to 7.08 | 35,614 |
-| Impressions | typical 9,162 | 35,637 with a non-zero value. Zeros treated as unknown |
-| Duration | typical 16 days, middle half 8 to 31 | 35,668. Maximum 13,200 days (evergreen campaigns) |
-| One Prize listed | 79.1% of campaigns | quantity may still exceed 1 |
-| Any quantity above 1 | 30.4% of campaigns | |
-| Prize value stated | 40.5% of Prize listings | 59.5% unknown |
-| Stated USD values | typical 299, middle half 100 to 899, top-tenth mark 2,070 | 23,482 listings. Max 10,000,000 |
-| Stated EUR values | typical 41, middle half 41 to 1,000, top-tenth mark 3,748 | 15 listings. Too few to use. Max 9,100 |
-| Stated CAD values | typical 2,340, middle half 840 to 4,500, top-tenth mark 35,000 | 8 listings. Too few to use. Max 35,000 |
-| Stated AUD values | typical 899, middle half 750 to 4,000, top-tenth mark 4,500 | 7 listings. Too few to use. Max 4,500 |
-| Stated GBP values | typical 429, middle half 50 to 940, top-tenth mark 1,200 | 7 listings. Too few to use. Max 1,200 |
-| Stated TRY values | typical 52,500, middle half 20,000 to 85,000, top-tenth mark 85,000 | 2 listings. Too few to use. Max 85,000 |
-| Stated NZD values | typical 1,000, middle half 1,000 to 1,000, top-tenth mark 1,000 | 1 listing. Too few to use. Max 1,000 |
-| Fully valued campaign totals (USD) | typical 900, middle half 328 to 2,000 | 13,959 campaigns. Max 40,600,000 |
-| Repeat businesses | 1,366 businesses with 5+ campaigns account for 77.5% of campaigns | patterns can reflect prolific accounts |
-| Plan tier | Business 12,223, Hobby 2,149, Pro 18,703, Free 1,490, Premium 1,099, Not Available 4 | tier at export time |
+| Valid contestants | median 492, IQR 225 to 1,292, 90th pct 3,345 | 117,348. Floor is 101 by selection |
+| Valid entries | median 2,320 | 117,128. Entries count actions, and one person makes many |
+| Entries per contestant | median 4.39, IQR 2.74 to 7.05 | 117,128 |
+| Impressions | median 2,029 | 117,258 with a non-zero value. Zeros treated as unknown |
+| Duration | median 14 days, IQR 7 to 29 | 116,491. Maximum 365 days (evergreen campaigns) |
+| One prize record | 82.4% of campaigns | quantity may still exceed 1 |
+| Any quantity above 1 | 31.8% of campaigns | |
+| Prize value stated | 37.7% of prize records | 62.3% unknown |
+| Stated USD values | median 125, IQR 50 to 424, 90th pct 1,199 | 65,018 records. Max 1,000,000 |
+| Stated EUR values | median 75, IQR 39 to 332, 90th pct 2,200 | 35 records. Max 9,100 |
+| Stated GBP values | median 62, IQR 25 to 400, 90th pct 450 | 34 records. Max 1,200 |
+| Stated CAD values | median 545, IQR 200 to 2,180, 90th pct 4,500 | 21 records. Too few to use. Max 35,000 |
+| Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use. Max 60,000 |
+| Other currency codes | not reported | 8 records across codes with fewer than 10 each, including typed-in codes that are not currencies |
+| Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 43,109 campaigns. Max 10,000,000 |
+| Repeat organizers | 3,818 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
+| Plan tier | Business 29,966, Hobby 10,838, Free 12,039, Pro 62,493, Premium 2,007, Not Available 5 | tier at export time |
 <!-- /generated -->
 
 ## By campaign size
@@ -93,28 +96,31 @@ Two shorthands run through the tables below. The middle half is the middle half 
 Every size group is still a selected sample with a floor, and bigger campaigns come from bigger businesses with bigger budgets, so differences between size groups describe who runs what. They do not show that a Prize made a campaign larger.
 
 <!-- generated:bands -->
-| Campaign size (valid Entrants) | Campaigns | Businesses | Value stated | Typical stated USD (campaigns) | Typical campaign total USD (campaigns) | One Prize listed | Actions per Entrant | Typical duration |
+| Band (valid contestants) | Campaigns | Organizers | Value stated | Stated USD median (n) | Campaign total USD median (n) | One prize record | Entries per contestant | Duration median |
 |---|---|---|---|---|---|---|---|---|
-| 1k-2.5k | 19,956 | 5,024 | 40% | 210 (12,216) | 511 (7,731) | 80% | 4.3 | 15 days |
-| 2.5k-10k | 12,591 | 2,937 | 42% | 389 (9,183) | 1,298 (5,093) | 78% | 4.365 | 18 days |
-| 10k+ | 3,121 | 727 | 38% | 800 (2,083) | 3,000 (1,135) | 80% | 4.41 | 20 days |
+| 100-250 | 33,338 | 9,607 | 36% | 69 (16,411) | 120 (11,715) | 85% | 4.09 | 12 days |
+| 250-500 | 25,892 | 6,554 | 37% | 80 (13,293) | 149 (9,455) | 84% | 4.61 | 14 days |
+| 500-1k | 21,935 | 5,550 | 36% | 120 (11,515) | 260 (7,838) | 82% | 4.68 | 14 days |
+| 1k-2.5k | 20,137 | 5,123 | 40% | 210 (12,345) | 530 (7,794) | 79% | 4.32 | 15 days |
+| 2.5k-10k | 12,828 | 3,035 | 42% | 375 (9,313) | 1,299 (5,152) | 78% | 4.39 | 18 days |
+| 10k+ | 3,218 | 762 | 37% | 779 (2,141) | 3,000 (1,155) | 80% | 4.39 | 18 days |
 
-Primary Prize category (first Prize listed) by campaign size, share of campaigns:
+Primary prize category (first prize record) by band, share of campaigns:
 
-| Category | 1k-2.5k | 2.5k-10k | 10k+ |
-|---|---|---|---|
-| Tech hardware | 27.2% | 33.3% | 37.9% |
-| Gift card or cash | 11.6% | 10.3% | 8.2% |
-| Bundle or box | 10.4% | 9.1% | 5.0% |
-| Experience, travel, tickets | 4.9% | 6.1% | 5.5% |
-| Game items or skins | 8.1% | 6.3% | 5.2% |
-| Merch, apparel, collectibles | 4.2% | 4.2% | 4.8% |
-| Home, garden, appliance | 4.6% | 4.6% | 1.4% |
-| Regulated goods (firearms) | 2.6% | 4.0% | 9.6% |
-| Sports and outdoor gear | 2.3% | 1.9% | 0.6% |
-| Food, drink, consumables | 1.9% | 1.3% | 0.4% |
-| Subscription or membership | 1.0% | 0.6% | 0.4% |
-| Discount or coupon | 0.7% | 0.3% | 0.1% |
+| Category | 100-250 | 250-500 | 500-1k | 1k-2.5k | 2.5k-10k | 10k+ |
+|---|---|---|---|---|---|---|
+| Tech hardware | 10.8% | 12.5% | 16.8% | 23.5% | 29.8% | 36.9% |
+| Gift card or cash | 13.0% | 18.4% | 13.7% | 11.0% | 9.8% | 8.1% |
+| Bundle or box | 9.7% | 10.9% | 11.1% | 9.9% | 8.7% | 4.9% |
+| Experience, travel, tickets | 6.4% | 4.6% | 4.0% | 4.4% | 5.4% | 5.4% |
+| Game items or skins | 11.9% | 8.9% | 7.9% | 6.5% | 5.3% | 5.0% |
+| Merch, apparel, collectibles | 3.8% | 3.6% | 3.8% | 3.1% | 3.7% | 4.6% |
+| Home, garden, appliance | 1.1% | 1.3% | 1.7% | 2.7% | 2.9% | 1.4% |
+| Regulated goods (firearms) | 0.3% | 0.5% | 0.8% | 2.0% | 2.9% | 9.1% |
+| Sports and outdoor gear | 0.6% | 0.8% | 1.0% | 1.3% | 1.3% | 0.6% |
+| Food, drink, consumables | 0.8% | 1.0% | 1.2% | 1.5% | 1.1% | 0.4% |
+| Subscription or membership | 1.3% | 1.0% | 1.0% | 0.9% | 0.6% | 0.3% |
+| Discount or coupon | 0.6% | 0.3% | 0.5% | 0.6% | 0.3% | 0.1% |
 <!-- /generated -->
 
 ## Plan tier, extended
@@ -140,12 +146,12 @@ Homepage labels also split businesses into listed and private companies. Private
 
 ## Repeat businesses
 
-Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it: businesses active in the last 12 months convert about the same as inactive ones (29% against 30%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them. Reproduce with `analysis/field_cuts.py`.
+Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it: businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them. Reproduce with `analysis/field_cuts.py`.
 
 | Campaign sequence | Conversion Rate | Duration | Campaigns | Businesses |
 |---|---|---|---|---|
-| First campaign | 28% | 17 days | 10,714 | 10,714 |
-| Eleventh or later | 33% | 10 days | 24,931 | 897 |
+| First campaign | 26% | 15 days | 25,482 | 25,482 |
+| Eleventh or later | 30% | 9 days | 91,694 | 2,531 |
 
 ## Inferred Prize values from text
 
@@ -349,7 +355,7 @@ Australian businesses spend the most % of Entrants on the stated figure. Brazil 
 
 ### Prize currency by country
 
-Among Prize listings that state a currency, how often that currency is the business's own against USD. This cut uses a 100-Entrant floor, a different scope from the 1,000-Entrant benchmark used above. Read it as a separate check on currency.
+Among Prize listings that state a currency, how often that currency is the business's own against USD. This cut uses the same 100-Entrant floor as the benchmarks above.
 
 | Country | Campaigns | Businesses | Home-currency share | USD share |
 |---|---|---|---|---|
@@ -381,7 +387,7 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 
 ## What the data cannot support
 
-- **Cause and effect.** Every campaign reached at least 1,000 Entrants, and there is no set of smaller or failed campaigns to compare against. The campaign-size groups compare selected samples with each other, which shows who ran what and nothing about what a Prize did. Nothing here shows that a Prize type produced participation.
+- **Cause and effect.** Every campaign reached at least 100 Entrants, and there is no set of smaller or failed campaigns to compare against. The campaign-size groups compare selected samples with each other, which shows who ran what and nothing about what a Prize did. Nothing here shows that a Prize type produced participation.
 - **Entrant volume promises.** No Prize "guarantees" a number of Entrants. Volume depends on promotion, audience size, entry friction and timing, none of which the Prize controls.
 - **Business outcomes.** Sales, lead quality, retention and profitability are absent from the dataset.
 - **Cost.** Values are stated retail values entered by businesses, often rounded, sometimes totals, occasionally wrong by orders of magnitude. What the business actually paid is unknown.
@@ -399,7 +405,7 @@ Categorization draws on 49,511 listings from name-pattern rules plus 8,553 more 
 
 ## Company profile data (thin)
 
-Apollo organization matches cover about a third of the businesses in the source count [3,609 of 10,714].
+Apollo organization matches cover about a seventh of the businesses in the source count [3,609 of 25,482].
 
 Industry and country cuts on this match (`by_apollo_industry`, `by_apollo_country`) carry many thin cells. Quote nothing from either cut without its campaign count and business count next to it.
 
@@ -421,19 +427,19 @@ Verified from the platform's reporting terms page on 9 September 2026: Impressio
 Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by `analysis/compare_groups.py`.
 
 <!-- generated:cmp_vertical -->
-| Industry, campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |
+| Vertical, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| technology | 2,501 | 2,139 | 4.27 | 43% | 2.3 | 6 |
-| gaming | 2,350 | 1,922 (-10%) | 4.40 (+3%) | 37% (-15%) | 2.7 | 7 |
-| music and media | 1,212 | 2,292 (+7%) | 4.18 (-2%) | 33% (-24%) | 3.0 | 6 |
-| unclassified | 1,474 | 1,972 (-8%) | 2.88 (-33%) | 39% (-9%) | 2.6 | 4 |
-| fitness_outdoor | 496 | 1,758 (-18%) | 3.01 (-30%) | 35% (-19%) | 2.8 | 5 |
-| fashion and beauty | 1,032 | 3,049 (+43%) | 2.48 (-42%) | 36% (-16%) | 2.7 | 4 |
-| food and drink | 459 | 2,610 (+22%) | 3.02 (-29%) | 36% (-16%) | 2.7 | 5 |
-| home | 467 | 2,146 (+0%) | 3.25 (-24%) | 40% (-8%) | 2.5 | 5 |
-| kids, family and pets | 377 | 1,690 (-21%) | 2.98 (-30%) | 31% (-28%) | 3.2 | 4 |
-| travel and events | 229 | 2,927 (+37%) | 2.33 (-45%) | 36% (-17%) | 2.8 | 5 |
-| software | 122 | 1,696 (-21%) | 4.65 (+9%) | 31% (-29%) | 3.2 | 7 |
+| music_media | 7,047 | 365 | 4.01 | 36% | 2.8 | 6 |
+| gaming | 10,161 | 383 (+5%) | 4.17 (+4%) | 35% (-4%) | 2.9 | 6 |
+| unclassified | 6,861 | 406 (+11%) | 3.88 (-3%) | 33% (-8%) | 3.0 | 6 |
+| technology | 5,742 | 816 (+124%) | 4.16 (+4%) | 40% (+11%) | 2.5 | 6 |
+| fitness_outdoor | 2,010 | 429 (+18%) | 3.05 (-24%) | 31% (-15%) | 3.3 | 5 |
+| kids_family_pets | 1,909 | 366 (+0%) | 3.15 (-21%) | 29% (-19%) | 3.4 | 4 |
+| fashion_beauty | 2,443 | 832 (+128%) | 2.44 (-39%) | 34% (-6%) | 2.9 | 4 |
+| food_drink | 1,178 | 686 (+88%) | 2.95 (-27%) | 35% (-4%) | 2.9 | 5 |
+| travel_events | 803 | 452 (+24%) | 3.00 (-25%) | 34% (-6%) | 2.9 | 6 |
+| home | 1,078 | 744 (+104%) | 3.22 (-20%) | 35% (-4%) | 2.9 | 5 |
+| software | 578 | 424 (+16%) | 4.30 (+7%) | 31% (-15%) | 3.3 | 6 |
 <!-- /generated -->
 
 Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut, technology has the highest Conversion Rate, and travel and events has the lowest Actions per Entrant. Use them as context for a customer's expectations, never as targets.

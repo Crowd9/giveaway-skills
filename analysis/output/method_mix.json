@@ -1,6 +1,6 @@
 {
  "definitions": {
-  "scope": "the ordinary segment (1,000 or more contestants, crypto and ambiguous segments removed), campaign_id count 35657, 6398 organizers",
+  "scope": "the ordinary segment (100 or more contestants, crypto and ambiguous segments removed), campaign_id count 117339, 17776 organizers",
   "family": "entry_type and custom_action template mapped by hand to eleven generic families plus bonus/question/custom_other/paid/other, the same mapping analyze.py uses on the earlier dataset. A campaign 'has' a family if any of its actions maps to it, regardless of how many actions or their worth",
   "family_pair_lift": "for each pair of families, how often they appear on the same campaign against what independence would predict. lift 1.0 is independence, above 1.0 means the two ship together more than chance, below 1.0 less. conditional_b_given_a is the share of campaigns with family a that also carry family b",
   "top_combinations": "the most common exact sets of families present on a campaign (order not counted, only presence), with outcomes for campaigns holding that exact set. email_completions_per_contestant and share_completions_per_contestant are medians across the campaigns in that combination that carry the family, not the whole row",
@@ -12,1247 +12,1322 @@
  },
  "family_pair_lift": {
   "follow+visit": {
-   "n_both": 20890,
-   "sites_both": 3842,
-   "n_follow": 22695,
-   "n_visit": 29069,
-   "lift": 1.129,
-   "conditional_visit_given_follow": 0.92,
-   "conditional_follow_given_visit": 0.719
+   "n_both": 70436,
+   "sites_both": 11052,
+   "n_follow": 78061,
+   "n_visit": 94591,
+   "lift": 1.119,
+   "conditional_visit_given_follow": 0.902,
+   "conditional_follow_given_visit": 0.745
   },
   "visit+share": {
-   "n_both": 17992,
-   "sites_both": 3862,
-   "n_visit": 29069,
-   "n_share": 20069,
-   "lift": 1.1,
-   "conditional_share_given_visit": 0.619,
-   "conditional_visit_given_share": 0.897
+   "n_both": 54719,
+   "sites_both": 9426,
+   "n_visit": 94591,
+   "n_share": 61298,
+   "lift": 1.107,
+   "conditional_share_given_visit": 0.578,
+   "conditional_visit_given_share": 0.893
   },
   "follow+share": {
-   "n_both": 14146,
-   "sites_both": 3079,
-   "n_follow": 22695,
-   "n_share": 20069,
-   "lift": 1.107,
-   "conditional_share_given_follow": 0.623,
-   "conditional_follow_given_share": 0.705
-  },
-  "email+visit": {
-   "n_both": 13382,
-   "sites_both": 2658,
-   "n_email": 15855,
-   "n_visit": 29069,
-   "lift": 1.035,
-   "conditional_visit_given_email": 0.844,
-   "conditional_email_given_visit": 0.46
+   "n_both": 46934,
+   "sites_both": 8290,
+   "n_follow": 78061,
+   "n_share": 61298,
+   "lift": 1.151,
+   "conditional_share_given_follow": 0.601,
+   "conditional_follow_given_share": 0.766
   },
   "visit+bonus": {
-   "n_both": 13077,
-   "sites_both": 2802,
-   "n_visit": 29069,
-   "n_bonus": 14586,
-   "lift": 1.1,
-   "conditional_bonus_given_visit": 0.45,
-   "conditional_visit_given_bonus": 0.897
+   "n_both": 39431,
+   "sites_both": 7466,
+   "n_visit": 94591,
+   "n_bonus": 45912,
+   "lift": 1.065,
+   "conditional_bonus_given_visit": 0.417,
+   "conditional_visit_given_bonus": 0.859
   },
-  "email+share": {
-   "n_both": 11298,
-   "sites_both": 2416,
-   "n_email": 15855,
-   "n_share": 20069,
-   "lift": 1.266,
-   "conditional_share_given_email": 0.713,
-   "conditional_email_given_share": 0.563
+  "email+visit": {
+   "n_both": 34399,
+   "sites_both": 5131,
+   "n_email": 40733,
+   "n_visit": 94591,
+   "lift": 1.048,
+   "conditional_visit_given_email": 0.844,
+   "conditional_email_given_visit": 0.364
   },
   "follow+bonus": {
-   "n_both": 10348,
-   "sites_both": 2179,
-   "n_follow": 22695,
-   "n_bonus": 14586,
-   "lift": 1.115,
-   "conditional_bonus_given_follow": 0.456,
-   "conditional_follow_given_bonus": 0.709
+   "n_both": 32904,
+   "sites_both": 6081,
+   "n_follow": 78061,
+   "n_bonus": 45912,
+   "lift": 1.077,
+   "conditional_bonus_given_follow": 0.422,
+   "conditional_follow_given_bonus": 0.717
   },
   "share+bonus": {
-   "n_both": 10141,
-   "sites_both": 2391,
-   "n_share": 20069,
-   "n_bonus": 14586,
-   "lift": 1.235,
-   "conditional_bonus_given_share": 0.505,
-   "conditional_share_given_bonus": 0.695
+   "n_both": 27969,
+   "sites_both": 5773,
+   "n_share": 61298,
+   "n_bonus": 45912,
+   "lift": 1.166,
+   "conditional_bonus_given_share": 0.456,
+   "conditional_share_given_bonus": 0.609
+  },
+  "email+share": {
+   "n_both": 27423,
+   "sites_both": 4486,
+   "n_email": 40733,
+   "n_share": 61298,
+   "lift": 1.289,
+   "conditional_share_given_email": 0.673,
+   "conditional_email_given_share": 0.447
   },
   "email+follow": {
-   "n_both": 9603,
-   "sites_both": 1838,
-   "n_email": 15855,
-   "n_follow": 22695,
-   "lift": 0.952,
-   "conditional_follow_given_email": 0.606,
-   "conditional_email_given_follow": 0.423
-  },
-  "email+bonus": {
-   "n_both": 6993,
-   "sites_both": 1537,
-   "n_email": 15855,
-   "n_bonus": 14586,
-   "lift": 1.078,
-   "conditional_bonus_given_email": 0.441,
-   "conditional_email_given_bonus": 0.479
+   "n_both": 25949,
+   "sites_both": 3662,
+   "n_email": 40733,
+   "n_follow": 78061,
+   "lift": 0.958,
+   "conditional_follow_given_email": 0.637,
+   "conditional_email_given_follow": 0.332
   },
   "follow+join": {
-   "n_both": 6734,
-   "sites_both": 1281,
-   "n_follow": 22695,
-   "n_join": 7096,
-   "lift": 1.491,
-   "conditional_join_given_follow": 0.297,
-   "conditional_follow_given_join": 0.949
+   "n_both": 21486,
+   "sites_both": 3722,
+   "n_follow": 78061,
+   "n_join": 23242,
+   "lift": 1.39,
+   "conditional_join_given_follow": 0.275,
+   "conditional_follow_given_join": 0.924
   },
   "visit+join": {
-   "n_both": 6511,
-   "sites_both": 1240,
-   "n_visit": 29069,
-   "n_join": 7096,
-   "lift": 1.126,
-   "conditional_join_given_visit": 0.224,
-   "conditional_visit_given_join": 0.918
+   "n_both": 20285,
+   "sites_both": 3460,
+   "n_visit": 94591,
+   "n_join": 23242,
+   "lift": 1.083,
+   "conditional_join_given_visit": 0.214,
+   "conditional_visit_given_join": 0.873
   },
   "visit+content": {
-   "n_both": 5002,
-   "sites_both": 1209,
-   "n_visit": 29069,
-   "n_content": 5505,
-   "lift": 1.115,
-   "conditional_content_given_visit": 0.172,
-   "conditional_visit_given_content": 0.909
+   "n_both": 19305,
+   "sites_both": 3324,
+   "n_visit": 94591,
+   "n_content": 21785,
+   "lift": 1.099,
+   "conditional_content_given_visit": 0.204,
+   "conditional_visit_given_content": 0.886
   },
   "follow+content": {
-   "n_both": 4560,
-   "sites_both": 1108,
-   "n_follow": 22695,
-   "n_content": 5505,
-   "lift": 1.301,
-   "conditional_content_given_follow": 0.201,
-   "conditional_follow_given_content": 0.828
-  },
-  "share+join": {
-   "n_both": 4530,
-   "sites_both": 1020,
-   "n_share": 20069,
-   "n_join": 7096,
-   "lift": 1.134,
-   "conditional_join_given_share": 0.226,
-   "conditional_share_given_join": 0.638
-  },
-  "share+content": {
-   "n_both": 4192,
-   "sites_both": 1091,
-   "n_share": 20069,
-   "n_content": 5505,
-   "lift": 1.353,
-   "conditional_content_given_share": 0.209,
-   "conditional_share_given_content": 0.761
-  },
-  "visit+question": {
-   "n_both": 3986,
-   "sites_both": 1079,
-   "n_visit": 29069,
-   "n_question": 5678,
-   "lift": 0.861,
-   "conditional_question_given_visit": 0.137,
-   "conditional_visit_given_question": 0.702
+   "n_both": 17487,
+   "sites_both": 3128,
+   "n_follow": 78061,
+   "n_content": 21785,
+   "lift": 1.207,
+   "conditional_content_given_follow": 0.224,
+   "conditional_follow_given_content": 0.803
   },
   "visit+engage": {
-   "n_both": 3507,
-   "sites_both": 1182,
-   "n_visit": 29069,
-   "n_engage": 4029,
-   "lift": 1.068,
-   "conditional_engage_given_visit": 0.121,
-   "conditional_visit_given_engage": 0.87
+   "n_both": 16966,
+   "sites_both": 3523,
+   "n_visit": 94591,
+   "n_engage": 19841,
+   "lift": 1.061,
+   "conditional_engage_given_visit": 0.179,
+   "conditional_visit_given_engage": 0.855
   },
-  "join+bonus": {
-   "n_both": 3470,
-   "sites_both": 678,
-   "n_join": 7096,
-   "n_bonus": 14586,
-   "lift": 1.195,
-   "conditional_bonus_given_join": 0.489,
-   "conditional_join_given_bonus": 0.238
-  },
-  "visit+connect_account": {
-   "n_both": 3365,
-   "sites_both": 899,
-   "n_visit": 29069,
-   "n_connect_account": 3991,
-   "lift": 1.034,
-   "conditional_connect_account_given_visit": 0.116,
-   "conditional_visit_given_connect_account": 0.843
+  "email+bonus": {
+   "n_both": 16535,
+   "sites_both": 3080,
+   "n_email": 40733,
+   "n_bonus": 45912,
+   "lift": 1.037,
+   "conditional_bonus_given_email": 0.406,
+   "conditional_email_given_bonus": 0.36
   },
   "follow+engage": {
-   "n_both": 3213,
-   "sites_both": 1055,
-   "n_follow": 22695,
-   "n_engage": 4029,
-   "lift": 1.253,
-   "conditional_engage_given_follow": 0.142,
-   "conditional_follow_given_engage": 0.797
+   "n_both": 15708,
+   "sites_both": 3177,
+   "n_follow": 78061,
+   "n_engage": 19841,
+   "lift": 1.19,
+   "conditional_engage_given_follow": 0.201,
+   "conditional_follow_given_engage": 0.792
+  },
+  "share+join": {
+   "n_both": 15240,
+   "sites_both": 2905,
+   "n_share": 61298,
+   "n_join": 23242,
+   "lift": 1.255,
+   "conditional_join_given_share": 0.249,
+   "conditional_share_given_join": 0.656
+  },
+  "visit+question": {
+   "n_both": 14368,
+   "sites_both": 2807,
+   "n_visit": 94591,
+   "n_question": 19474,
+   "lift": 0.915,
+   "conditional_question_given_visit": 0.152,
+   "conditional_visit_given_question": 0.738
+  },
+  "share+content": {
+   "n_both": 13773,
+   "sites_both": 2886,
+   "n_share": 61298,
+   "n_content": 21785,
+   "lift": 1.21,
+   "conditional_content_given_share": 0.225,
+   "conditional_share_given_content": 0.632
+  },
+  "visit+connect_account": {
+   "n_both": 13056,
+   "sites_both": 2962,
+   "n_visit": 94591,
+   "n_connect_account": 15382,
+   "lift": 1.053,
+   "conditional_connect_account_given_visit": 0.138,
+   "conditional_visit_given_connect_account": 0.849
   },
   "share+engage": {
-   "n_both": 3091,
-   "sites_both": 1010,
-   "n_share": 20069,
-   "n_engage": 4029,
-   "lift": 1.363,
-   "conditional_engage_given_share": 0.154,
-   "conditional_share_given_engage": 0.767
-  },
-  "follow+question": {
-   "n_both": 3067,
-   "sites_both": 813,
-   "n_follow": 22695,
-   "n_question": 5678,
-   "lift": 0.849,
-   "conditional_question_given_follow": 0.135,
-   "conditional_follow_given_question": 0.54
+   "n_both": 12608,
+   "sites_both": 2789,
+   "n_share": 61298,
+   "n_engage": 19841,
+   "lift": 1.216,
+   "conditional_engage_given_share": 0.206,
+   "conditional_share_given_engage": 0.635
   },
   "bonus+content": {
-   "n_both": 3006,
-   "sites_both": 787,
-   "n_bonus": 14586,
-   "n_content": 5505,
-   "lift": 1.335,
-   "conditional_content_given_bonus": 0.206,
-   "conditional_bonus_given_content": 0.546
+   "n_both": 11585,
+   "sites_both": 2135,
+   "n_bonus": 45912,
+   "n_content": 21785,
+   "lift": 1.359,
+   "conditional_content_given_bonus": 0.252,
+   "conditional_bonus_given_content": 0.532
   },
-  "share+question": {
-   "n_both": 2985,
-   "sites_both": 871,
-   "n_share": 20069,
-   "n_question": 5678,
-   "lift": 0.934,
-   "conditional_question_given_share": 0.149,
-   "conditional_share_given_question": 0.526
+  "follow+question": {
+   "n_both": 11290,
+   "sites_both": 2214,
+   "n_follow": 78061,
+   "n_question": 19474,
+   "lift": 0.871,
+   "conditional_question_given_follow": 0.145,
+   "conditional_follow_given_question": 0.58
   },
   "follow+connect_account": {
-   "n_both": 2817,
-   "sites_both": 738,
-   "n_follow": 22695,
-   "n_connect_account": 3991,
-   "lift": 1.109,
-   "conditional_connect_account_given_follow": 0.124,
-   "conditional_follow_given_connect_account": 0.706
-  },
-  "email+content": {
-   "n_both": 2737,
-   "sites_both": 647,
-   "n_email": 15855,
-   "n_content": 5505,
-   "lift": 1.118,
-   "conditional_content_given_email": 0.173,
-   "conditional_email_given_content": 0.497
-  },
-  "share+connect_account": {
-   "n_both": 2675,
-   "sites_both": 699,
-   "n_share": 20069,
-   "n_connect_account": 3991,
-   "lift": 1.191,
-   "conditional_connect_account_given_share": 0.133,
-   "conditional_share_given_connect_account": 0.67
-  },
-  "email+join": {
-   "n_both": 2355,
-   "sites_both": 391,
-   "n_email": 15855,
-   "n_join": 7096,
-   "lift": 0.746,
-   "conditional_join_given_email": 0.149,
-   "conditional_email_given_join": 0.332
-  },
-  "question+bonus": {
-   "n_both": 2269,
-   "sites_both": 638,
-   "n_question": 5678,
-   "n_bonus": 14586,
-   "lift": 0.977,
-   "conditional_bonus_given_question": 0.4,
-   "conditional_question_given_bonus": 0.156
+   "n_both": 10966,
+   "sites_both": 2488,
+   "n_follow": 78061,
+   "n_connect_account": 15382,
+   "lift": 1.072,
+   "conditional_connect_account_given_follow": 0.14,
+   "conditional_follow_given_connect_account": 0.713
   },
   "bonus+engage": {
-   "n_both": 2104,
-   "sites_both": 723,
-   "n_bonus": 14586,
-   "n_engage": 4029,
-   "lift": 1.277,
-   "conditional_engage_given_bonus": 0.144,
-   "conditional_bonus_given_engage": 0.522
+   "n_both": 10894,
+   "sites_both": 2120,
+   "n_bonus": 45912,
+   "n_engage": 19841,
+   "lift": 1.403,
+   "conditional_engage_given_bonus": 0.237,
+   "conditional_bonus_given_engage": 0.549
   },
-  "email+question": {
-   "n_both": 2038,
-   "sites_both": 588,
-   "n_email": 15855,
-   "n_question": 5678,
-   "lift": 0.807,
-   "conditional_question_given_email": 0.129,
-   "conditional_email_given_question": 0.359
+  "join+bonus": {
+   "n_both": 10358,
+   "sites_both": 1955,
+   "n_join": 23242,
+   "n_bonus": 45912,
+   "lift": 1.139,
+   "conditional_bonus_given_join": 0.446,
+   "conditional_join_given_bonus": 0.226
+  },
+  "share+question": {
+   "n_both": 9598,
+   "sites_both": 2098,
+   "n_share": 61298,
+   "n_question": 19474,
+   "lift": 0.943,
+   "conditional_question_given_share": 0.157,
+   "conditional_share_given_question": 0.493
+  },
+  "share+connect_account": {
+   "n_both": 9142,
+   "sites_both": 2048,
+   "n_share": 61298,
+   "n_connect_account": 15382,
+   "lift": 1.138,
+   "conditional_connect_account_given_share": 0.149,
+   "conditional_share_given_connect_account": 0.594
+  },
+  "email+content": {
+   "n_both": 8140,
+   "sites_both": 1356,
+   "n_email": 40733,
+   "n_content": 21785,
+   "lift": 1.076,
+   "conditional_content_given_email": 0.2,
+   "conditional_email_given_content": 0.374
+  },
+  "question+bonus": {
+   "n_both": 7858,
+   "sites_both": 1685,
+   "n_question": 19474,
+   "n_bonus": 45912,
+   "lift": 1.031,
+   "conditional_bonus_given_question": 0.404,
+   "conditional_question_given_bonus": 0.171
   },
   "bonus+connect_account": {
-   "n_both": 1984,
-   "sites_both": 488,
-   "n_bonus": 14586,
-   "n_connect_account": 3991,
-   "lift": 1.215,
-   "conditional_connect_account_given_bonus": 0.136,
-   "conditional_bonus_given_connect_account": 0.497
-  },
-  "email+connect_account": {
-   "n_both": 1800,
-   "sites_both": 433,
-   "n_email": 15855,
-   "n_connect_account": 3991,
-   "lift": 1.014,
-   "conditional_connect_account_given_email": 0.114,
-   "conditional_email_given_connect_account": 0.451
-  },
-  "email+engage": {
-   "n_both": 1790,
-   "sites_both": 577,
-   "n_email": 15855,
-   "n_engage": 4029,
-   "lift": 0.999,
-   "conditional_engage_given_email": 0.113,
-   "conditional_email_given_engage": 0.444
-  },
-  "visit+download": {
-   "n_both": 1495,
-   "sites_both": 415,
-   "n_visit": 29069,
-   "n_download": 1672,
-   "lift": 1.097,
-   "conditional_download_given_visit": 0.051,
-   "conditional_visit_given_download": 0.894
-  },
-  "follow+download": {
-   "n_both": 1323,
-   "sites_both": 357,
-   "n_follow": 22695,
-   "n_download": 1672,
+   "n_both": 7481,
+   "sites_both": 1683,
+   "n_bonus": 45912,
+   "n_connect_account": 15382,
    "lift": 1.243,
-   "conditional_download_given_follow": 0.058,
-   "conditional_follow_given_download": 0.791
-  },
-  "join+content": {
-   "n_both": 1259,
-   "sites_both": 330,
-   "n_join": 7096,
-   "n_content": 5505,
-   "lift": 1.149,
-   "conditional_content_given_join": 0.177,
-   "conditional_join_given_content": 0.229
-  },
-  "share+download": {
-   "n_both": 1185,
-   "sites_both": 360,
-   "n_share": 20069,
-   "n_download": 1672,
-   "lift": 1.259,
-   "conditional_download_given_share": 0.059,
-   "conditional_share_given_download": 0.709
-  },
-  "content+connect_account": {
-   "n_both": 1151,
-   "sites_both": 284,
-   "n_content": 5505,
-   "n_connect_account": 3991,
-   "lift": 1.868,
-   "conditional_connect_account_given_content": 0.209,
-   "conditional_content_given_connect_account": 0.288
-  },
-  "question+content": {
-   "n_both": 1109,
-   "sites_both": 388,
-   "n_question": 5678,
-   "n_content": 5505,
-   "lift": 1.265,
-   "conditional_content_given_question": 0.195,
-   "conditional_question_given_content": 0.201
+   "conditional_connect_account_given_bonus": 0.163,
+   "conditional_bonus_given_connect_account": 0.486
   },
   "content+engage": {
-   "n_both": 1040,
-   "sites_both": 398,
-   "n_content": 5505,
-   "n_engage": 4029,
-   "lift": 1.672,
-   "conditional_engage_given_content": 0.189,
-   "conditional_content_given_engage": 0.258
+   "n_both": 7245,
+   "sites_both": 1175,
+   "n_content": 21785,
+   "n_engage": 19841,
+   "lift": 1.967,
+   "conditional_engage_given_content": 0.333,
+   "conditional_content_given_engage": 0.365
+  },
+  "email+engage": {
+   "n_both": 5760,
+   "sites_both": 1252,
+   "n_email": 40733,
+   "n_engage": 19841,
+   "lift": 0.836,
+   "conditional_engage_given_email": 0.141,
+   "conditional_email_given_engage": 0.29
+  },
+  "email+question": {
+   "n_both": 5753,
+   "sites_both": 1188,
+   "n_email": 40733,
+   "n_question": 19474,
+   "lift": 0.851,
+   "conditional_question_given_email": 0.141,
+   "conditional_email_given_question": 0.295
+  },
+  "email+join": {
+   "n_both": 5368,
+   "sites_both": 828,
+   "n_email": 40733,
+   "n_join": 23242,
+   "lift": 0.665,
+   "conditional_join_given_email": 0.132,
+   "conditional_email_given_join": 0.231
+  },
+  "question+content": {
+   "n_both": 5284,
+   "sites_both": 1026,
+   "n_question": 19474,
+   "n_content": 21785,
+   "lift": 1.461,
+   "conditional_content_given_question": 0.271,
+   "conditional_question_given_content": 0.243
   },
   "join+engage": {
-   "n_both": 966,
-   "sites_both": 317,
-   "n_join": 7096,
-   "n_engage": 4029,
-   "lift": 1.205,
-   "conditional_engage_given_join": 0.136,
-   "conditional_join_given_engage": 0.24
+   "n_both": 5003,
+   "sites_both": 969,
+   "n_join": 23242,
+   "n_engage": 19841,
+   "lift": 1.273,
+   "conditional_engage_given_join": 0.215,
+   "conditional_join_given_engage": 0.252
+  },
+  "email+connect_account": {
+   "n_both": 4735,
+   "sites_both": 959,
+   "n_email": 40733,
+   "n_connect_account": 15382,
+   "lift": 0.887,
+   "conditional_connect_account_given_email": 0.116,
+   "conditional_email_given_connect_account": 0.308
+  },
+  "join+content": {
+   "n_both": 4079,
+   "sites_both": 1006,
+   "n_join": 23242,
+   "n_content": 21785,
+   "lift": 0.945,
+   "conditional_content_given_join": 0.176,
+   "conditional_join_given_content": 0.187
+  },
+  "content+connect_account": {
+   "n_both": 4033,
+   "sites_both": 930,
+   "n_content": 21785,
+   "n_connect_account": 15382,
+   "lift": 1.412,
+   "conditional_connect_account_given_content": 0.185,
+   "conditional_content_given_connect_account": 0.262
   },
   "join+connect_account": {
-   "n_both": 931,
-   "sites_both": 238,
-   "n_join": 7096,
-   "n_connect_account": 3991,
-   "lift": 1.172,
-   "conditional_connect_account_given_join": 0.131,
+   "n_both": 3588,
+   "sites_both": 783,
+   "n_join": 23242,
+   "n_connect_account": 15382,
+   "lift": 1.178,
+   "conditional_connect_account_given_join": 0.154,
    "conditional_join_given_connect_account": 0.233
   },
-  "join+question": {
-   "n_both": 884,
-   "sites_both": 258,
-   "n_join": 7096,
-   "n_question": 5678,
-   "lift": 0.782,
-   "conditional_question_given_join": 0.125,
-   "conditional_join_given_question": 0.156
-  },
-  "email+download": {
-   "n_both": 820,
-   "sites_both": 222,
-   "n_email": 15855,
-   "n_download": 1672,
-   "lift": 1.103,
-   "conditional_download_given_email": 0.052,
-   "conditional_email_given_download": 0.49
+  "visit+download": {
+   "n_both": 3548,
+   "sites_both": 843,
+   "n_visit": 94591,
+   "n_download": 4082,
+   "lift": 1.078,
+   "conditional_download_given_visit": 0.038,
+   "conditional_visit_given_download": 0.869
   },
   "question+engage": {
-   "n_both": 682,
-   "sites_both": 255,
-   "n_question": 5678,
-   "n_engage": 4029,
-   "lift": 1.063,
-   "conditional_engage_given_question": 0.12,
-   "conditional_question_given_engage": 0.169
-  },
-  "bonus+download": {
-   "n_both": 677,
-   "sites_both": 258,
-   "n_bonus": 14586,
-   "n_download": 1672,
-   "lift": 0.99,
-   "conditional_download_given_bonus": 0.046,
-   "conditional_bonus_given_download": 0.405
-  },
-  "join+download": {
-   "n_both": 653,
-   "sites_both": 155,
-   "n_join": 7096,
-   "n_download": 1672,
-   "lift": 1.962,
-   "conditional_download_given_join": 0.092,
-   "conditional_join_given_download": 0.391
+   "n_both": 3542,
+   "sites_both": 763,
+   "n_question": 19474,
+   "n_engage": 19841,
+   "lift": 1.076,
+   "conditional_engage_given_question": 0.182,
+   "conditional_question_given_engage": 0.179
   },
   "engage+connect_account": {
-   "n_both": 599,
-   "sites_both": 241,
-   "n_engage": 4029,
-   "n_connect_account": 3991,
-   "lift": 1.328,
-   "conditional_connect_account_given_engage": 0.149,
-   "conditional_engage_given_connect_account": 0.15
+   "n_both": 3287,
+   "sites_both": 934,
+   "n_engage": 19841,
+   "n_connect_account": 15382,
+   "lift": 1.264,
+   "conditional_connect_account_given_engage": 0.166,
+   "conditional_engage_given_connect_account": 0.214
+  },
+  "follow+download": {
+   "n_both": 3234,
+   "sites_both": 763,
+   "n_follow": 78061,
+   "n_download": 4082,
+   "lift": 1.191,
+   "conditional_download_given_follow": 0.041,
+   "conditional_follow_given_download": 0.792
   },
   "question+connect_account": {
-   "n_both": 471,
-   "sites_both": 161,
-   "n_question": 5678,
-   "n_connect_account": 3991,
-   "lift": 0.741,
-   "conditional_connect_account_given_question": 0.083,
-   "conditional_question_given_connect_account": 0.118
+   "n_both": 2960,
+   "sites_both": 584,
+   "n_question": 19474,
+   "n_connect_account": 15382,
+   "lift": 1.159,
+   "conditional_connect_account_given_question": 0.152,
+   "conditional_question_given_connect_account": 0.192
+  },
+  "join+question": {
+   "n_both": 2927,
+   "sites_both": 744,
+   "n_join": 23242,
+   "n_question": 19474,
+   "lift": 0.759,
+   "conditional_question_given_join": 0.126,
+   "conditional_join_given_question": 0.15
+  },
+  "share+download": {
+   "n_both": 2816,
+   "sites_both": 763,
+   "n_share": 61298,
+   "n_download": 4082,
+   "lift": 1.321,
+   "conditional_download_given_share": 0.046,
+   "conditional_share_given_download": 0.69
+  },
+  "bonus+download": {
+   "n_both": 1779,
+   "sites_both": 507,
+   "n_bonus": 45912,
+   "n_download": 4082,
+   "lift": 1.114,
+   "conditional_download_given_bonus": 0.039,
+   "conditional_bonus_given_download": 0.436
+  },
+  "email+download": {
+   "n_both": 1705,
+   "sites_both": 390,
+   "n_email": 40733,
+   "n_download": 4082,
+   "lift": 1.203,
+   "conditional_download_given_email": 0.042,
+   "conditional_email_given_download": 0.418
+  },
+  "join+download": {
+   "n_both": 1601,
+   "sites_both": 396,
+   "n_join": 23242,
+   "n_download": 4082,
+   "lift": 1.98,
+   "conditional_download_given_join": 0.069,
+   "conditional_join_given_download": 0.392
   },
   "question+download": {
-   "n_both": 309,
-   "sites_both": 100,
-   "n_question": 5678,
-   "n_download": 1672,
-   "lift": 1.161,
-   "conditional_download_given_question": 0.054,
-   "conditional_question_given_download": 0.185
+   "n_both": 747,
+   "sites_both": 223,
+   "n_question": 19474,
+   "n_download": 4082,
+   "lift": 1.103,
+   "conditional_download_given_question": 0.038,
+   "conditional_question_given_download": 0.183
   },
   "content+download": {
-   "n_both": 243,
-   "sites_both": 117,
-   "n_content": 5505,
-   "n_download": 1672,
-   "lift": 0.941,
-   "conditional_download_given_content": 0.044,
-   "conditional_content_given_download": 0.145
+   "n_both": 744,
+   "sites_both": 282,
+   "n_content": 21785,
+   "n_download": 4082,
+   "lift": 0.982,
+   "conditional_download_given_content": 0.034,
+   "conditional_content_given_download": 0.182
   },
   "connect_account+download": {
-   "n_both": 190,
-   "sites_both": 75,
-   "n_connect_account": 3991,
-   "n_download": 1672,
-   "lift": 1.015,
-   "conditional_download_given_connect_account": 0.048,
-   "conditional_connect_account_given_download": 0.114
+   "n_both": 559,
+   "sites_both": 187,
+   "n_connect_account": 15382,
+   "n_download": 4082,
+   "lift": 1.045,
+   "conditional_download_given_connect_account": 0.036,
+   "conditional_connect_account_given_download": 0.137
   },
   "engage+download": {
-   "n_both": 160,
-   "sites_both": 83,
-   "n_engage": 4029,
-   "n_download": 1672,
-   "lift": 0.847,
-   "conditional_download_given_engage": 0.04,
-   "conditional_engage_given_download": 0.096
+   "n_both": 476,
+   "sites_both": 194,
+   "n_engage": 19841,
+   "n_download": 4082,
+   "lift": 0.69,
+   "conditional_download_given_engage": 0.024,
+   "conditional_engage_given_download": 0.117
   }
  },
  "top_combinations": {
   "follow+visit": {
-   "n": 1554,
-   "sites": 453,
-   "contestants": 2389.0,
-   "conversion": 0.384,
-   "entries_per_entrant": 3.561,
-   "methods": 5.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "email+visit+share": {
-   "n": 1168,
-   "sites": 413,
-   "contestants": 2108.0,
-   "conversion": 0.287,
-   "entries_per_entrant": 3.174,
-   "methods": 5.0,
-   "email_completions_per_contestant": 1.009,
-   "share_completions_per_contestant": 0.108
-  },
-  "visit": {
-   "n": 1160,
-   "sites": 286,
-   "contestants": 2770.5,
-   "conversion": 0.426,
-   "entries_per_entrant": 1.926,
-   "methods": 2.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "email+follow+visit+share+bonus": {
-   "n": 1153,
-   "sites": 341,
-   "contestants": 2395.0,
-   "conversion": 0.207,
-   "entries_per_entrant": 6.469,
-   "methods": 10.0,
-   "email_completions_per_contestant": 0.795,
-   "share_completions_per_contestant": 0.182
-  },
-  "email": {
-   "n": 1017,
-   "sites": 223,
-   "contestants": 1784.0,
-   "conversion": 0.442,
-   "entries_per_entrant": 1.0,
-   "methods": 1.0,
-   "email_completions_per_contestant": 1.011,
-   "share_completions_per_contestant": null
-  },
-  "follow+visit+share": {
-   "n": 1007,
-   "sites": 381,
-   "contestants": 2291.0,
-   "conversion": 0.272,
-   "entries_per_entrant": 4.64,
-   "methods": 7.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.454
-  },
-  "email+follow+visit+share": {
-   "n": 968,
-   "sites": 317,
-   "contestants": 2174.5,
-   "conversion": 0.259,
-   "entries_per_entrant": 4.301,
-   "methods": 8.0,
-   "email_completions_per_contestant": 0.929,
-   "share_completions_per_contestant": 0.163
-  },
-  "email+visit+share+bonus": {
-   "n": 965,
-   "sites": 355,
-   "contestants": 2154.0,
-   "conversion": 0.234,
-   "entries_per_entrant": 4.075,
-   "methods": 7.0,
-   "email_completions_per_contestant": 0.765,
-   "share_completions_per_contestant": 0.118
-  },
-  "follow+visit+share+bonus": {
-   "n": 910,
-   "sites": 302,
-   "contestants": 2245.0,
-   "conversion": 0.254,
-   "entries_per_entrant": 5.363,
-   "methods": 8.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.302
-  },
-  "email+follow+visit": {
-   "n": 908,
-   "sites": 181,
-   "contestants": 2552.0,
-   "conversion": 0.297,
-   "entries_per_entrant": 3.169,
-   "methods": 5.0,
-   "email_completions_per_contestant": 1.009,
-   "share_completions_per_contestant": null
-  },
-  "question": {
-   "n": 862,
-   "sites": 135,
-   "contestants": 2041.5,
-   "conversion": 0.549,
-   "entries_per_entrant": 1.0,
-   "methods": 1.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "follow+visit+join": {
-   "n": 834,
-   "sites": 183,
-   "contestants": 2075.0,
-   "conversion": 0.436,
-   "entries_per_entrant": 5.42,
-   "methods": 8.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "follow+visit+bonus": {
-   "n": 736,
-   "sites": 229,
-   "contestants": 3218.0,
-   "conversion": 0.332,
-   "entries_per_entrant": 4.843,
-   "methods": 6.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "follow+visit+share+join": {
-   "n": 634,
-   "sites": 237,
-   "contestants": 2061.0,
-   "conversion": 0.261,
-   "entries_per_entrant": 6.128,
-   "methods": 10.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.439
-  },
-  "email+follow+visit+share+join+bonus": {
-   "n": 587,
-   "sites": 75,
-   "contestants": 3429.0,
-   "conversion": 0.185,
-   "entries_per_entrant": 14.497,
-   "methods": 21.0,
-   "email_completions_per_contestant": 1.002,
-   "share_completions_per_contestant": 0.346
-  },
-  "email+visit": {
-   "n": 573,
-   "sites": 249,
-   "contestants": 2610.0,
-   "conversion": 0.33,
-   "entries_per_entrant": 3.039,
-   "methods": 5.0,
-   "email_completions_per_contestant": 1.002,
-   "share_completions_per_contestant": null
-  },
-  "follow+visit+join+bonus": {
-   "n": 459,
-   "sites": 91,
-   "contestants": 1739.0,
-   "conversion": 0.486,
-   "entries_per_entrant": 11.982,
-   "methods": 17.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": null
-  },
-  "visit+bonus": {
-   "n": 448,
-   "sites": 138,
-   "contestants": 2223.5,
-   "conversion": 0.269,
-   "entries_per_entrant": 3.965,
+   "n": 6307,
+   "sites": 1676,
+   "contestants": 437.0,
+   "conversion": 0.38,
+   "entries_per_entrant": 3.417,
    "methods": 4.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
-  "none_of_the_eleven": {
-   "n": 443,
-   "sites": 79,
-   "contestants": 3108.0,
-   "conversion": 0.437,
+  "email+follow+visit+share": {
+   "n": 4153,
+   "sites": 572,
+   "contestants": 409.0,
+   "conversion": 0.2,
+   "entries_per_entrant": 7.196,
+   "methods": 10.0,
+   "email_completions_per_contestant": 0.793,
+   "share_completions_per_contestant": 0.081
+  },
+  "visit": {
+   "n": 3814,
+   "sites": 1055,
+   "contestants": 435.0,
+   "conversion": 0.396,
+   "entries_per_entrant": 1.872,
+   "methods": 2.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": null
+  },
+  "follow+visit+share": {
+   "n": 3802,
+   "sites": 1367,
+   "contestants": 407.0,
+   "conversion": 0.268,
+   "entries_per_entrant": 4.363,
+   "methods": 6.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.454
+  },
+  "email+visit+share": {
+   "n": 2830,
+   "sites": 689,
+   "contestants": 710.0,
+   "conversion": 0.257,
+   "entries_per_entrant": 3.544,
+   "methods": 6.0,
+   "email_completions_per_contestant": 0.89,
+   "share_completions_per_contestant": 0.098
+  },
+  "follow+visit+share+join": {
+   "n": 2825,
+   "sites": 709,
+   "contestants": 434.0,
+   "conversion": 0.334,
+   "entries_per_entrant": 6.63,
+   "methods": 10.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.441
+  },
+  "follow+visit+bonus": {
+   "n": 2744,
+   "sites": 796,
+   "contestants": 348.5,
+   "conversion": 0.257,
+   "entries_per_entrant": 4.359,
+   "methods": 6.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": null
+  },
+  "follow+visit+share+bonus": {
+   "n": 2678,
+   "sites": 859,
+   "contestants": 510.5,
+   "conversion": 0.253,
+   "entries_per_entrant": 4.998,
+   "methods": 8.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.372
+  },
+  "email": {
+   "n": 2504,
+   "sites": 473,
+   "contestants": 712.5,
+   "conversion": 0.447,
+   "entries_per_entrant": 1.0,
+   "methods": 1.0,
+   "email_completions_per_contestant": 1.021,
+   "share_completions_per_contestant": null
+  },
+  "question": {
+   "n": 2466,
+   "sites": 404,
+   "contestants": 623.5,
+   "conversion": 0.458,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
+  },
+  "email+follow+visit+share+bonus": {
+   "n": 2461,
+   "sites": 641,
+   "contestants": 883.0,
+   "conversion": 0.192,
+   "entries_per_entrant": 6.675,
+   "methods": 10.0,
+   "email_completions_per_contestant": 0.791,
+   "share_completions_per_contestant": 0.163
   },
   "bonus": {
-   "n": 437,
-   "sites": 184,
-   "contestants": 2074.0,
-   "conversion": 0.442,
+   "n": 2435,
+   "sites": 642,
+   "contestants": 280.0,
+   "conversion": 0.525,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
-  "visit+share+bonus": {
-   "n": 437,
-   "sites": 165,
-   "contestants": 2811.0,
-   "conversion": 0.256,
-   "entries_per_entrant": 3.667,
+  "email+follow+visit": {
+   "n": 2288,
+   "sites": 415,
+   "contestants": 750.0,
+   "conversion": 0.305,
+   "entries_per_entrant": 3.411,
+   "methods": 5.0,
+   "email_completions_per_contestant": 1.003,
+   "share_completions_per_contestant": null
+  },
+  "follow+visit+join": {
+   "n": 2166,
+   "sites": 543,
+   "contestants": 683.0,
+   "conversion": 0.372,
+   "entries_per_entrant": 5.071,
    "methods": 7.0,
    "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.129
+   "share_completions_per_contestant": null
+  },
+  "email+visit+share+bonus": {
+   "n": 1881,
+   "sites": 615,
+   "contestants": 1027.0,
+   "conversion": 0.224,
+   "entries_per_entrant": 4.067,
+   "methods": 6.0,
+   "email_completions_per_contestant": 0.839,
+   "share_completions_per_contestant": 0.125
+  },
+  "visit+bonus": {
+   "n": 1468,
+   "sites": 476,
+   "contestants": 443.5,
+   "conversion": 0.302,
+   "entries_per_entrant": 3.291,
+   "methods": 4.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": null
+  },
+  "email+visit": {
+   "n": 1373,
+   "sites": 508,
+   "contestants": 736.0,
+   "conversion": 0.311,
+   "entries_per_entrant": 2.988,
+   "methods": 4.0,
+   "email_completions_per_contestant": 1.0,
+   "share_completions_per_contestant": null
+  },
+  "none_of_the_eleven": {
+   "n": 1234,
+   "sites": 203,
+   "contestants": 584.0,
+   "conversion": 0.419,
+   "entries_per_entrant": 1.0,
+   "methods": 1.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": null
   },
   "follow+visit+share+join+bonus": {
-   "n": 396,
-   "sites": 172,
-   "contestants": 2277.0,
-   "conversion": 0.22,
-   "entries_per_entrant": 7.232,
+   "n": 1207,
+   "sites": 476,
+   "contestants": 534.0,
+   "conversion": 0.234,
+   "entries_per_entrant": 6.803,
    "methods": 11.0,
    "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.371
+   "share_completions_per_contestant": 0.415
   },
-  "email+follow+visit+share+content": {
-   "n": 383,
-   "sites": 84,
-   "contestants": 3198.0,
-   "conversion": 0.221,
-   "entries_per_entrant": 6.454,
-   "methods": 12.0,
-   "email_completions_per_contestant": 0.949,
-   "share_completions_per_contestant": 0.153
-  },
-  "email+follow+visit+share+bonus+content": {
-   "n": 373,
-   "sites": 101,
-   "contestants": 6513.0,
-   "conversion": 0.162,
-   "entries_per_entrant": 10.622,
-   "methods": 16.0,
-   "email_completions_per_contestant": 0.804,
-   "share_completions_per_contestant": 0.103
-  },
-  "email+follow+visit+bonus": {
-   "n": 347,
-   "sites": 73,
-   "contestants": 2626.0,
-   "conversion": 0.161,
-   "entries_per_entrant": 6.258,
-   "methods": 8.0,
-   "email_completions_per_contestant": 0.851,
+  "follow+visit+join+bonus": {
+   "n": 1011,
+   "sites": 269,
+   "contestants": 878.0,
+   "conversion": 0.395,
+   "entries_per_entrant": 7.929,
+   "methods": 11.0,
+   "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
+  },
+  "follow+visit+share+bonus+content+engage": {
+   "n": 996,
+   "sites": 164,
+   "contestants": 311.5,
+   "conversion": 0.162,
+   "entries_per_entrant": 14.007,
+   "methods": 18.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.246
+  },
+  "visit+share": {
+   "n": 994,
+   "sites": 308,
+   "contestants": 409.5,
+   "conversion": 0.249,
+   "entries_per_entrant": 3.003,
+   "methods": 4.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.277
+  },
+  "follow+visit+share+content": {
+   "n": 949,
+   "sites": 297,
+   "contestants": 472.0,
+   "conversion": 0.231,
+   "entries_per_entrant": 5.529,
+   "methods": 9.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.378
+  },
+  "email+follow+visit+share+join+bonus": {
+   "n": 938,
+   "sites": 171,
+   "contestants": 1580.5,
+   "conversion": 0.186,
+   "entries_per_entrant": 12.579,
+   "methods": 19.0,
+   "email_completions_per_contestant": 1.001,
+   "share_completions_per_contestant": 0.358
+  },
+  "visit+share+bonus": {
+   "n": 921,
+   "sites": 360,
+   "contestants": 880.0,
+   "conversion": 0.241,
+   "entries_per_entrant": 3.586,
+   "methods": 6.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.155
   }
  },
  "top_combinations_by_size_band": {
-  "1k-2.5k": {
-   "campaigns": 19948,
+  "100-250": {
+   "campaigns": 33335,
    "top_combinations": {
     "follow+visit": {
-     "n": 812,
+     "n": 1908,
+     "share_of_band": 0.057
+    },
+    "visit": {
+     "n": 1268,
+     "share_of_band": 0.038
+    },
+    "follow+visit+share": {
+     "n": 1233,
+     "share_of_band": 0.037
+    },
+    "bonus": {
+     "n": 1104,
+     "share_of_band": 0.033
+    },
+    "email+follow+visit+share": {
+     "n": 995,
+     "share_of_band": 0.03
+    }
+   }
+  },
+  "250-500": {
+   "campaigns": 25891,
+   "top_combinations": {
+    "follow+visit": {
+     "n": 1568,
+     "share_of_band": 0.061
+    },
+    "email+follow+visit+share": {
+     "n": 1488,
+     "share_of_band": 0.057
+    },
+    "follow+visit+share": {
+     "n": 929,
+     "share_of_band": 0.036
+    },
+    "follow+visit+share+join": {
+     "n": 853,
+     "share_of_band": 0.033
+    },
+    "visit": {
+     "n": 788,
+     "share_of_band": 0.03
+    }
+   }
+  },
+  "500-1k": {
+   "campaigns": 21931,
+   "top_combinations": {
+    "follow+visit": {
+     "n": 1268,
+     "share_of_band": 0.058
+    },
+    "email+follow+visit+share": {
+     "n": 699,
+     "share_of_band": 0.032
+    },
+    "follow+visit+share": {
+     "n": 633,
+     "share_of_band": 0.029
+    },
+    "email+follow+visit+share+bonus": {
+     "n": 632,
+     "share_of_band": 0.029
+    },
+    "visit": {
+     "n": 600,
+     "share_of_band": 0.027
+    }
+   }
+  },
+  "1k-2.5k": {
+   "campaigns": 20136,
+   "top_combinations": {
+    "follow+visit": {
+     "n": 816,
      "share_of_band": 0.041
     },
     "email+visit+share": {
-     "n": 682,
+     "n": 684,
      "share_of_band": 0.034
     },
     "email": {
-     "n": 675,
-     "share_of_band": 0.034
+     "n": 672,
+     "share_of_band": 0.033
     },
     "email+follow+visit+share+bonus": {
-     "n": 613,
-     "share_of_band": 0.031
+     "n": 608,
+     "share_of_band": 0.03
     },
-    "follow+visit+share": {
-     "n": 553,
+    "follow+visit+join": {
+     "n": 556,
      "share_of_band": 0.028
     }
    }
   },
   "2.5k-10k": {
-   "campaigns": 12589,
+   "campaigns": 12828,
    "top_combinations": {
     "visit": {
-     "n": 527,
-     "share_of_band": 0.042
+     "n": 526,
+     "share_of_band": 0.041
     },
     "follow+visit": {
-     "n": 522,
+     "n": 525,
      "share_of_band": 0.041
     },
     "email+follow+visit+share+bonus": {
-     "n": 468,
-     "share_of_band": 0.037
+     "n": 467,
+     "share_of_band": 0.036
     },
     "email+visit+share": {
-     "n": 409,
+     "n": 416,
      "share_of_band": 0.032
     },
-    "email+visit+share+bonus": {
-     "n": 375,
-     "share_of_band": 0.03
+    "email+follow+visit": {
+     "n": 378,
+     "share_of_band": 0.029
     }
    }
   },
   "10k+": {
-   "campaigns": 3120,
+   "campaigns": 3218,
    "top_combinations": {
     "follow+visit": {
-     "n": 220,
-     "share_of_band": 0.071
+     "n": 222,
+     "share_of_band": 0.069
     },
     "follow+visit+bonus": {
      "n": 190,
-     "share_of_band": 0.061
+     "share_of_band": 0.059
     },
     "email+follow+visit+share+bonus+content": {
      "n": 175,
-     "share_of_band": 0.056
+     "share_of_band": 0.054
     },
     "question": {
-     "n": 125,
-     "share_of_band": 0.04
+     "n": 127,
+     "share_of_band": 0.039
     },
     "email+follow+visit": {
-     "n": 117,
-     "share_of_band": 0.037
+     "n": 123,
+     "share_of_band": 0.038
     }
    }
   }
  },
  "top_combinations_by_industry": {
-  "electronics_tech": {
-   "campaigns": 7289,
-   "top_combinations": {
-    "follow+visit": {
-     "n": 438,
-     "share_of_band": 0.06
-    },
-    "visit": {
-     "n": 432,
-     "share_of_band": 0.059
-    },
-    "follow+visit+share": {
-     "n": 344,
-     "share_of_band": 0.047
-    },
-    "follow+visit+join": {
-     "n": 326,
-     "share_of_band": 0.045
-    },
-    "follow+visit+join+bonus": {
-     "n": 303,
-     "share_of_band": 0.042
-    }
-   }
-  },
   "gaming_esports": {
-   "campaigns": 6328,
+   "campaigns": 24672,
    "top_combinations": {
     "follow+visit": {
-     "n": 497,
-     "share_of_band": 0.079
-    },
-    "follow+visit+join": {
-     "n": 413,
-     "share_of_band": 0.065
+     "n": 1771,
+     "share_of_band": 0.072
     },
     "follow+visit+share": {
-     "n": 358,
-     "share_of_band": 0.057
+     "n": 1424,
+     "share_of_band": 0.058
     },
-    "follow+visit+share+join": {
-     "n": 305,
+    "follow+visit+join": {
+     "n": 1187,
      "share_of_band": 0.048
     },
-    "follow+visit+bonus": {
-     "n": 220,
-     "share_of_band": 0.035
+    "follow+visit+share+join": {
+     "n": 1135,
+     "share_of_band": 0.046
+    },
+    "visit": {
+     "n": 733,
+     "share_of_band": 0.03
     }
    }
   },
   "media_entertainment": {
-   "campaigns": 5019,
+   "campaigns": 21584,
    "top_combinations": {
-    "email+follow+visit+share+join+bonus": {
-     "n": 436,
-     "share_of_band": 0.087
-    },
-    "email": {
-     "n": 409,
-     "share_of_band": 0.081
+    "email+follow+visit+share": {
+     "n": 2337,
+     "share_of_band": 0.108
     },
     "question": {
-     "n": 407,
-     "share_of_band": 0.081
+     "n": 1063,
+     "share_of_band": 0.049
     },
-    "email+follow+visit+share+bonus": {
-     "n": 249,
-     "share_of_band": 0.05
-    },
-    "email+visit+share+bonus": {
-     "n": 238,
+    "follow+visit": {
+     "n": 1010,
      "share_of_band": 0.047
+    },
+    "email": {
+     "n": 911,
+     "share_of_band": 0.042
+    },
+    "email+visit+share": {
+     "n": 715,
+     "share_of_band": 0.033
     }
    }
   },
-  "sports_outdoors": {
-   "campaigns": 2268,
+  "electronics_tech": {
+   "campaigns": 15591,
    "top_combinations": {
+    "follow+visit": {
+     "n": 1156,
+     "share_of_band": 0.074
+    },
+    "visit": {
+     "n": 800,
+     "share_of_band": 0.051
+    },
+    "follow+visit+share+bonus": {
+     "n": 646,
+     "share_of_band": 0.041
+    },
+    "follow+visit+share": {
+     "n": 622,
+     "share_of_band": 0.04
+    },
+    "follow+visit+join": {
+     "n": 535,
+     "share_of_band": 0.034
+    }
+   }
+  },
+  "toys_hobbies_collectibles": {
+   "campaigns": 4710,
+   "top_combinations": {
+    "follow+visit": {
+     "n": 616,
+     "share_of_band": 0.131
+    },
+    "bonus": {
+     "n": 209,
+     "share_of_band": 0.044
+    },
+    "visit": {
+     "n": 161,
+     "share_of_band": 0.034
+    },
+    "email": {
+     "n": 141,
+     "share_of_band": 0.03
+    },
     "email+follow+visit+share+bonus": {
-     "n": 199,
-     "share_of_band": 0.088
-    },
-    "visit+share+bonus": {
-     "n": 137,
-     "share_of_band": 0.06
-    },
-    "email+visit+share": {
-     "n": 132,
-     "share_of_band": 0.058
-    },
-    "email+visit+share+bonus": {
-     "n": 105,
-     "share_of_band": 0.046
-    },
-    "email+visit": {
-     "n": 97,
-     "share_of_band": 0.043
+     "n": 139,
+     "share_of_band": 0.03
     }
    }
   },
   "food_drink": {
-   "campaigns": 1787,
+   "campaigns": 4686,
    "top_combinations": {
-    "email+follow+visit+share": {
-     "n": 143,
-     "share_of_band": 0.08
-    },
     "email+visit+share": {
-     "n": 128,
-     "share_of_band": 0.072
-    },
-    "email+visit+share+bonus": {
-     "n": 81,
-     "share_of_band": 0.045
-    },
-    "question": {
-     "n": 79,
-     "share_of_band": 0.044
-    },
-    "email+follow+visit+share+bonus": {
-     "n": 79,
-     "share_of_band": 0.044
-    }
-   }
-  },
-  "home_garden": {
-   "campaigns": 1777,
-   "top_combinations": {
-    "follow+visit+share+bonus": {
-     "n": 98,
+     "n": 257,
      "share_of_band": 0.055
     },
     "email+follow+visit+share": {
-     "n": 86,
-     "share_of_band": 0.048
+     "n": 228,
+     "share_of_band": 0.049
     },
-    "follow+visit": {
-     "n": 86,
-     "share_of_band": 0.048
-    },
-    "email+visit+share+bonus": {
-     "n": 84,
-     "share_of_band": 0.047
+    "email+follow+visit+share+content": {
+     "n": 190,
+     "share_of_band": 0.041
     },
     "email+follow+visit+share+bonus": {
-     "n": 83,
-     "share_of_band": 0.047
+     "n": 187,
+     "share_of_band": 0.04
+    },
+    "bonus": {
+     "n": 186,
+     "share_of_band": 0.04
+    }
+   }
+  },
+  "sports_outdoors": {
+   "campaigns": 4638,
+   "top_combinations": {
+    "email+follow+visit+share+bonus": {
+     "n": 258,
+     "share_of_band": 0.056
+    },
+    "email+visit+share": {
+     "n": 246,
+     "share_of_band": 0.053
+    },
+    "email+visit": {
+     "n": 200,
+     "share_of_band": 0.043
+    },
+    "email": {
+     "n": 200,
+     "share_of_band": 0.043
+    },
+    "visit": {
+     "n": 193,
+     "share_of_band": 0.042
     }
    }
   }
  },
  "reach_vs_deep": {
   "0-25% reach": {
-   "n": 2012,
-   "sites": 496,
-   "contestants": 2053.0,
-   "conversion": 0.47,
-   "entries_per_entrant": 1.0,
-   "email_offered": 0.176,
-   "share_offered": 0.223,
-   "methods": 1.0
+   "n": 6131,
+   "sites": 1512,
+   "contestants": 520.0,
+   "conversion": 0.348,
+   "entries_per_entrant": 1.073,
+   "email_offered": 0.154,
+   "share_offered": 0.178,
+   "methods": 2.0
   },
   "25-50% reach": {
-   "n": 1353,
-   "sites": 476,
-   "contestants": 1861.0,
-   "conversion": 0.213,
-   "entries_per_entrant": 5.844,
-   "email_offered": 0.451,
-   "share_offered": 0.728,
-   "methods": 12.0
+   "n": 5183,
+   "sites": 1446,
+   "contestants": 409.0,
+   "conversion": 0.222,
+   "entries_per_entrant": 5.163,
+   "email_offered": 0.295,
+   "share_offered": 0.611,
+   "methods": 9.0
   },
   "50-75% reach": {
-   "n": 13457,
-   "sites": 2912,
-   "contestants": 2233.0,
+   "n": 43564,
+   "sites": 8244,
+   "contestants": 508.0,
    "conversion": 0.252,
-   "entries_per_entrant": 5.592,
-   "email_offered": 0.425,
-   "share_offered": 0.654,
-   "methods": 10.0
+   "entries_per_entrant": 5.44,
+   "email_offered": 0.324,
+   "share_offered": 0.614,
+   "methods": 9.0
   },
   "75-100% reach": {
-   "n": 16273,
-   "sites": 3779,
-   "contestants": 2250.0,
-   "conversion": 0.282,
-   "entries_per_entrant": 4.109,
-   "email_offered": 0.474,
-   "share_offered": 0.567,
+   "n": 54830,
+   "sites": 10452,
+   "contestants": 481.0,
+   "conversion": 0.27,
+   "entries_per_entrant": 4.242,
+   "email_offered": 0.377,
+   "share_offered": 0.529,
    "methods": 6.0
   }
  },
  "lead_action_family": {
-  "email": {
-   "n": 9164,
-   "sites": 2083,
-   "contestants": 2278.5,
-   "conversion": 0.269,
-   "entries_per_entrant": 3.803,
+  "visit": {
+   "n": 31153,
+   "sites": 6209,
+   "contestants": 459.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 5.018,
    "methods": 7.0
   },
-  "visit": {
-   "n": 8474,
-   "sites": 2090,
-   "contestants": 2121.0,
-   "conversion": 0.286,
-   "entries_per_entrant": 4.853,
+  "email": {
+   "n": 21169,
+   "sites": 3832,
+   "contestants": 802.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 3.726,
    "methods": 7.0
   },
   "bonus": {
-   "n": 6087,
-   "sites": 1356,
-   "contestants": 2502.0,
-   "conversion": 0.257,
-   "entries_per_entrant": 5.01,
-   "methods": 9.0
+   "n": 19139,
+   "sites": 3807,
+   "contestants": 480.0,
+   "conversion": 0.262,
+   "entries_per_entrant": 4.541,
+   "methods": 8.0
   },
   "follow": {
-   "n": 3564,
-   "sites": 1142,
-   "contestants": 2070.0,
-   "conversion": 0.277,
-   "entries_per_entrant": 4.636,
+   "n": 16473,
+   "sites": 4565,
+   "contestants": 355.0,
+   "conversion": 0.282,
+   "entries_per_entrant": 4.337,
    "methods": 7.0
   },
   "question": {
-   "n": 2431,
-   "sites": 489,
-   "contestants": 2255.0,
-   "conversion": 0.342,
-   "entries_per_entrant": 2.549,
-   "methods": 4.0
-  },
-  "connect_account": {
-   "n": 1152,
-   "sites": 305,
-   "contestants": 1865.5,
-   "conversion": 0.389,
-   "entries_per_entrant": 2.849,
+   "n": 7338,
+   "sites": 1257,
+   "contestants": 545.0,
+   "conversion": 0.309,
+   "entries_per_entrant": 2.909,
    "methods": 5.0
   },
-  "share": {
-   "n": 898,
-   "sites": 353,
-   "contestants": 2064.5,
-   "conversion": 0.258,
-   "entries_per_entrant": 5.33,
-   "methods": 9.0
-  },
-  "join": {
-   "n": 755,
-   "sites": 252,
-   "contestants": 1585.0,
-   "conversion": 0.303,
-   "entries_per_entrant": 5.329,
-   "methods": 9.0
-  },
-  "content": {
-   "n": 381,
-   "sites": 195,
-   "contestants": 2071.0,
-   "conversion": 0.165,
-   "entries_per_entrant": 4.075,
-   "methods": 7.0
+  "connect_account": {
+   "n": 4816,
+   "sites": 1343,
+   "contestants": 369.5,
+   "conversion": 0.305,
+   "entries_per_entrant": 3.971,
+   "methods": 6.0
   },
   "engage": {
-   "n": 320,
-   "sites": 113,
-   "contestants": 1491.5,
-   "conversion": 0.255,
-   "entries_per_entrant": 4.833,
-   "methods": 9.0
+   "n": 2869,
+   "sites": 445,
+   "contestants": 372.0,
+   "conversion": 0.223,
+   "entries_per_entrant": 5.394,
+   "methods": 10.0
+  },
+  "share": {
+   "n": 2753,
+   "sites": 927,
+   "contestants": 551.0,
+   "conversion": 0.239,
+   "entries_per_entrant": 4.863,
+   "methods": 8.0
+  },
+  "join": {
+   "n": 2638,
+   "sites": 858,
+   "contestants": 470.0,
+   "conversion": 0.271,
+   "entries_per_entrant": 4.628,
+   "methods": 7.0
+  },
+  "content": {
+   "n": 1765,
+   "sites": 654,
+   "contestants": 350.0,
+   "conversion": 0.147,
+   "entries_per_entrant": 3.474,
+   "methods": 6.0
   },
   "download": {
-   "n": 165,
-   "sites": 91,
-   "contestants": 2354.0,
+   "n": 656,
+   "sites": 259,
+   "contestants": 339.5,
    "conversion": 0.209,
-   "entries_per_entrant": 3.762,
+   "entries_per_entrant": 3.645,
    "methods": 7.0
   }
  },
  "share_position_relative_to_email": {
   "1-6": {
    "share_after_email": {
-    "n": 2718,
-    "sites": 901,
-    "email_completions_per_contestant": 1.009,
-    "share_completions_per_contestant": 0.115
+    "n": 5877,
+    "sites": 1669,
+    "email_completions_per_contestant": 1.007,
+    "share_completions_per_contestant": 0.118
    },
    "share_before_email": {
-    "n": 235,
-    "sites": 118,
-    "email_completions_per_contestant": 0.74,
-    "share_completions_per_contestant": 0.159
+    "n": 676,
+    "sites": 257,
+    "email_completions_per_contestant": 0.825,
+    "share_completions_per_contestant": 0.138
    }
   },
   "11+": {
    "share_after_email": {
-    "n": 3353,
-    "sites": 726,
-    "email_completions_per_contestant": 0.91,
-    "share_completions_per_contestant": 0.166
+    "n": 7511,
+    "sites": 1240,
+    "email_completions_per_contestant": 0.891,
+    "share_completions_per_contestant": 0.203
    },
    "share_before_email": {
-    "n": 1595,
-    "sites": 253,
-    "email_completions_per_contestant": 0.717,
-    "share_completions_per_contestant": 0.523
+    "n": 4567,
+    "sites": 528,
+    "email_completions_per_contestant": 0.922,
+    "share_completions_per_contestant": 0.343
    }
   },
   "7-10": {
    "share_after_email": {
-    "n": 2987,
-    "sites": 1003,
-    "email_completions_per_contestant": 0.977,
-    "share_completions_per_contestant": 0.128
+    "n": 6965,
+    "sites": 1893,
+    "email_completions_per_contestant": 0.954,
+    "share_completions_per_contestant": 0.133
    },
    "share_before_email": {
-    "n": 410,
-    "sites": 188,
-    "email_completions_per_contestant": 0.726,
-    "share_completions_per_contestant": 0.315
+    "n": 1827,
+    "sites": 424,
+    "email_completions_per_contestant": 1.039,
+    "share_completions_per_contestant": 0.099
    }
   }
  },
  "mandatory_count_vs_optional_completion": {
   "1-6": {
    "2": {
-    "n": 1122,
-    "sites": 463,
-    "contestants": 2131.5,
-    "conversion": 0.325,
-    "optional_completions_per_contestant": 0.663
+    "n": 4518,
+    "sites": 1651,
+    "contestants": 412.5,
+    "conversion": 0.335,
+    "optional_completions_per_contestant": 0.664
    },
    "1": {
-    "n": 4724,
-    "sites": 1377,
-    "contestants": 2316.0,
-    "conversion": 0.33,
-    "optional_completions_per_contestant": 0.544
+    "n": 13710,
+    "sites": 3707,
+    "contestants": 543.0,
+    "conversion": 0.323,
+    "optional_completions_per_contestant": 0.591
    },
    "3+": {
-    "n": 1545,
-    "sites": 554,
-    "contestants": 2368.0,
-    "conversion": 0.373,
-    "optional_completions_per_contestant": 0.5
+    "n": 6272,
+    "sites": 2215,
+    "contestants": 387.0,
+    "conversion": 0.317,
+    "optional_completions_per_contestant": 0.524
    },
    "0": {
-    "n": 8384,
-    "sites": 2083,
-    "contestants": 2082.0,
-    "conversion": 0.357,
-    "optional_completions_per_contestant": 0.803
+    "n": 29499,
+    "sites": 6697,
+    "contestants": 433.0,
+    "conversion": 0.332,
+    "optional_completions_per_contestant": 0.829
    }
   },
   "7-10": {
    "1": {
-    "n": 2382,
-    "sites": 806,
-    "contestants": 2328.5,
-    "conversion": 0.274,
-    "optional_completions_per_contestant": 0.502
-   },
-   "2": {
-    "n": 553,
-    "sites": 275,
-    "contestants": 2116.0,
-    "conversion": 0.251,
-    "optional_completions_per_contestant": 0.488
-   },
-   "0": {
-    "n": 5493,
-    "sites": 1660,
-    "contestants": 2126.0,
-    "conversion": 0.261,
-    "optional_completions_per_contestant": 0.668
+    "n": 6208,
+    "sites": 1820,
+    "contestants": 644.0,
+    "conversion": 0.241,
+    "optional_completions_per_contestant": 0.544
    },
    "3+": {
-    "n": 1314,
-    "sites": 485,
-    "contestants": 2086.5,
-    "conversion": 0.27,
-    "optional_completions_per_contestant": 0.427
+    "n": 4994,
+    "sites": 1535,
+    "contestants": 415.5,
+    "conversion": 0.26,
+    "optional_completions_per_contestant": 0.388
+   },
+   "2": {
+    "n": 2109,
+    "sites": 803,
+    "contestants": 388.0,
+    "conversion": 0.238,
+    "optional_completions_per_contestant": 0.525
+   },
+   "0": {
+    "n": 19076,
+    "sites": 4329,
+    "contestants": 485.0,
+    "conversion": 0.246,
+    "optional_completions_per_contestant": 0.7
    }
   },
   "11+": {
+   "2": {
+    "n": 1910,
+    "sites": 437,
+    "contestants": 408.0,
+    "conversion": 0.194,
+    "optional_completions_per_contestant": 0.458
+   },
    "3+": {
-    "n": 1079,
-    "sites": 359,
-    "contestants": 2119.0,
-    "conversion": 0.208,
-    "optional_completions_per_contestant": 0.364
+    "n": 3510,
+    "sites": 957,
+    "contestants": 552.0,
+    "conversion": 0.206,
+    "optional_completions_per_contestant": 0.395
    },
    "1": {
-    "n": 2451,
-    "sites": 502,
-    "contestants": 2823.0,
-    "conversion": 0.21,
-    "optional_completions_per_contestant": 0.431
-   },
-   "2": {
-    "n": 503,
-    "sites": 174,
-    "contestants": 2026.0,
-    "conversion": 0.186,
-    "optional_completions_per_contestant": 0.378
+    "n": 5901,
+    "sites": 1005,
+    "contestants": 747.0,
+    "conversion": 0.208,
+    "optional_completions_per_contestant": 0.479
    },
    "0": {
-    "n": 6107,
-    "sites": 1226,
-    "contestants": 2267.0,
-    "conversion": 0.211,
-    "optional_completions_per_contestant": 0.575
+    "n": 19632,
+    "sites": 2577,
+    "contestants": 561.5,
+    "conversion": 0.224,
+    "optional_completions_per_contestant": 0.606
    }
   }
  }

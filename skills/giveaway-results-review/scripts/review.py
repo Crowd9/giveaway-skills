@@ -4,35 +4,31 @@
   python3 review.py --contestants 1800 --impressions 6000 --entries 9000 --invalid 400 --days 14 --methods 6 [--actions actions.csv]
   python3 review.py --self-test
 
-Benchmarks are typical figures from the campaigns behind these numbers (35,614 campaigns that reached 1,000 unique
+Benchmarks are typical figures from the campaigns behind these numbers (117,348 campaigns that reached 100 unique
 Entrants), as published in references/benchmarks.md. Update both together. Impressions count one look per person per day,
 so long runs and daily actions pull down the Conversion Rate without anything being wrong. The script says so when it applies.
 
 --invalid takes invalid Entries worth, the Entries column summed over rows whose status is Invalid, which is the unit
 gleam_export.py writes into the command it prints. The invalid share is derived as invalid / (Entries + invalid).
 
-A campaign under 1,000 Entrants gets the typical figure for campaigns of 100 to 1,000 Entrants instead of a rank:
-this skill's rank tables only cover campaigns of 1,000 or more, so ranking a smaller one against them would compare
-it to a group it was never part of.
+Every campaign is ranked inside its own size band. The six bands run 100 to 250, 250 to 500, 500 to 1,000,
+1,000 to 2,500, 2,500 to 10,000 and 10,000 or more Entrants, so a campaign is only ever compared with a group
+it belongs to.
 """
 import argparse, csv, json, os, sys
 
 BENCH = {
-    "contestants": {"p25": 1415, "median": 2201, "p75": 4152, "p90": 9006},
-    "entries_per_contestant": {"p25": 2.68, "median": 4.34, "p75": 7.07, "p90": 12.06},
-    "impressions": {"p25": 4751, "median": 9073, "p75": 19661, "p90": 45590},
-    "duration_days": {"p25": 8, "median": 16, "p75": 31, "p90": 43},
-    "conv_by_methods": [(3, 0.50), (6, 0.37), (10, 0.33), (10 ** 9, 0.31)],       # the campaigns we can compare fairly
-    "conv_by_duration": [(7, 0.45), (14, 0.31), (30, 0.28), (60, 0.24), (10 ** 9, 0.23)],  # no repeatable actions
-    "platform_average_conversion": 0.28,
-    "family_uptake": {"visit": 0.75, "follow": 0.47, "share": 0.22, "email": 0.89, "content": 0.24},
-    "yield_median": {"email": {"1k-2.5k": 1346, "2.5k-10k": 3703, "10k+": 16344}, "share": {"1k-2.5k": 224, "2.5k-10k": 520, "10k+": 1643}},
+    "contestants": {"p25": 225, "median": 492, "p75": 1293, "p90": 3349},
+    "entries_per_contestant": {"p25": 2.74, "median": 4.39, "p75": 7.05, "p90": 11.84},
+    "impressions": {"p25": 862, "median": 2033, "p75": 5608, "p90": 16452},
+    "duration_days": {"p25": 7, "median": 14, "p75": 29, "p90": 36},
+    "conv_by_methods": [(3, 0.44), (6, 0.35), (10, 0.29), (10 ** 9, 0.31)],       # the campaigns we can compare fairly
+    "conv_by_duration": [(7, 0.40), (14, 0.29), (30, 0.26), (60, 0.23), (10 ** 9, 0.22)],  # no repeatable actions
+    "platform_average_conversion": 0.27,
+    "family_uptake": {"visit": 0.78, "follow": 0.53, "share": 0.11, "email": 0.85, "content": 0.13},
+    "yield_median": {"email": {"100-250": 157, "250-500": 353, "500-1k": 645, "1k-2.5k": 1346, "2.5k-10k": 3713, "10k+": 16566},
+                     "share": {"100-250": 17, "250-500": 35, "500-1k": 84, "1k-2.5k": 218, "2.5k-10k": 515, "10k+": 1698}},
 }
-# The 100-1,000 entrants group, from benchmarks.md's "Campaigns of 100 to 1,000 entrants" table. This skill's
-# rank tables (percentiles.json) only cover campaigns of 1,000+ entrants, so a smaller campaign has no rank
-# here. Give it this group's own typical figure instead of ranking it against a group it can't belong to.
-SMALL_BAND = {"contestants": 295, "conversion": 0.27, "entries_per_entrant": 4.75, "days": 10, "methods": 7,
-              "n": 112282, "organizers": 20559}
 FAMILY_WORDS = {"email": ("email", "newsletter", "subscribe to", "signup", "sign up"), "share": ("share", "refer", "retweet", "repost", "viral"),
                 "content": ("upload", "submit", "photo", "video", "post a", "write", "comment"), "follow": ("follow", "subscribe", "join", "like"),
                 "visit": ("visit", "view", "watch", "check out", "page")}
@@ -62,7 +58,10 @@ def rank_line(metric, value, groups, lower_is_better=False, fmt="{:,.2f}"):
     for label, key in groups:
         t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
         r = rank(value, t, lower_is_better)
-        if r: parts.append(f"{'better' if not lower_is_better else 'lower'} than {r[0]}% of {label} (across {r[1]:,} campaigns)")
+        if r:
+            word = "better" if not lower_is_better else "lower"
+            parts.append(f"in the bottom 5% of {label} (across {r[1]:,} campaigns)" if r[0] == 0
+                         else f"{word} than {r[0]}% of {label} (across {r[1]:,} campaigns)")
         if t and key.startswith("band") and not lower_is_better and value < t["p"][14]: target = (label, t["p"][14])
     line = ", ".join(parts)
     if target: line += f". The best quarter of {target[0]} reach " + fmt.format(target[1])
@@ -81,9 +80,10 @@ def position(value, dist):
     if value < dist["p90"]: return "top quarter"
     return "top tenth"
 
-def band(c): return "10k+" if c >= 10000 else "2.5k-10k" if c >= 2500 else "1k-2.5k" if c >= 1000 else "under 1k (no matching group in the benchmarks)"
+def band(c): return "10k+" if c >= 10000 else "2.5k-10k" if c >= 2500 else "1k-2.5k" if c >= 1000 else "500-1k" if c >= 500 else "250-500" if c >= 250 else "100-250"
 
-BAND_NAMES = {"10k+": "10,000 or more Entrants", "2.5k-10k": "2,500 to 10,000 Entrants", "1k-2.5k": "1,000 to 2,500 Entrants"}
+BAND_NAMES = {"10k+": "10,000 or more Entrants", "2.5k-10k": "2,500 to 10,000 Entrants", "1k-2.5k": "1,000 to 2,500 Entrants",
+              "500-1k": "500 to 1,000 Entrants", "250-500": "250 to 500 Entrants", "100-250": "100 to 250 Entrants"}
 def band_label(c): return BAND_NAMES.get(band(c), band(c))
 
 def lookup(table, x):
@@ -97,29 +97,9 @@ def family(name):
         if any(w in n for w in words): return fam
     return None
 
-def small_band_rows(a):
-    """A campaign under 1,000 Entrants sits below every rank table this skill has. Compare it only
-    to the typical figure for campaigns of 100 to 1,000 Entrants, never to the bigger campaigns, which would
-    rank it near zero on Entrants alone and say nothing about whether it did well for its own size."""
-    sb = SMALL_BAND
-    cav = f"typical for campaigns of 100 to 1,000 entrants, across {sb['n']:,} campaigns and {sb['organizers']:,} businesses. Below this skill's 1,000-entrant floor, so not ranked against bigger campaigns"
-    rows = [("Users", f"{a.contestants:,}", f"{sb['contestants']:,} (estimated)", cav)]
-    if a.entries:
-        epc = a.entries / a.contestants
-        rows.append(("Entries per Entrant", f"{epc:.2f}", f"{sb['entries_per_entrant']}", cav))
-    if a.impressions:
-        conv = a.contestants / a.impressions
-        rows.append(("Conversion Rate", f"{conv:.1%}", f"{sb['conversion']:.0%}", cav))
-    if a.days:
-        rows.append(("Duration in days", f"{a.days}", f"{sb['days']}", cav))
-    if a.methods:
-        rows.append(("Entry actions", f"{a.methods}", f"{sb['methods']}", cav))
-    return rows
-
 def review(a):
     global PCT
     PCT = PCT or load_pct()
-    if a.contestants < 1000: return small_band_rows(a)
     groups = [("all campaigns", "all"), (f"campaigns of {band_label(a.contestants)}", "band:" + band(a.contestants))]
     if getattr(a, "vertical", None): groups.append((a.vertical.replace("_", " ") + " campaigns", "vertical:" + a.vertical))
     conv_groups = [("all campaigns", "all"), ("the campaigns we can compare fairly", "clean")] + groups[2:]
@@ -248,7 +228,7 @@ def self_test():
     assert "Email signups" in d and "better than" in d["Email signups"][3], rows
     assert d["Actions completed per Entrant"][1] == "3.00" and "Entrants per day" in d and "Impressions" in d and "better than" in d["Impressions"][3], rows
     assert "X follows" in d and "better than" in d["X follows"][3] and "higher than" in d["Stated Prize value per Entrant"][3], rows
-    assert d["Conversion Rate"][2] == "28%", rows
+    assert d["Conversion Rate"][2] == "27%", rows
     hist = [{"campaign": "spring", "contestants": 1200, "impressions": 5000, "entries": 5000, "invalid": 100, "days": 10, "methods": 5, "emails": 900},
             {"campaign": "summer", "contestants": 1500, "impressions": 5500, "entries": 7000, "invalid": 200, "days": 14, "methods": 6, "emails": 1200}]
     ht, notes = history_table(A, hist); hd = {r[0]: r for r in ht}
@@ -263,10 +243,10 @@ def self_test():
     assert family("Subscribe to our newsletter") == "email" and family("Share on Facebook") == "share" and family("Visit our store") == "visit"
     class Small: contestants = 300; impressions = 1000; entries = 1200; invalid = None; days = 9; methods = 6; repeatable = False; vertical = None
     srows = review(Small); sd = {r[0]: r for r in srows}
-    assert sd["Users"][1] == "300" and "estimated" in sd["Users"][2] and "not ranked against bigger campaigns" in sd["Users"][3], srows
-    assert "Conversion Rate" in sd and "better than" not in sd["Conversion Rate"][3], srows
-    assert plain_reading(rows) == "\nIn plain terms: each person took about 5.0 Entries, against about 4.3 for campaigns this size, about 15% above typical.", plain_reading(rows)
-    assert plain_reading(srows) == "\nIn plain terms: each person took about 4.0 Entries, against about 4.8 for campaigns this size, about 16% below typical.", plain_reading(srows)
+    assert sd["Users"][1] == "300" and "250 to 500 Entrants" in sd["Users"][3], srows
+    assert "Conversion Rate" in sd and "better than" in sd["Conversion Rate"][3], srows
+    assert plain_reading(rows) == "\nIn plain terms: each person took about 5.0 Entries, against about 4.4 for campaigns this size, about 14% above typical.", plain_reading(rows)
+    assert plain_reading(srows) == "\nIn plain terms: each person took about 4.0 Entries, against about 4.4 for campaigns this size, about 9% below typical.", plain_reading(srows)
     print("self-test passed"); return 0
 
 def main(argv):

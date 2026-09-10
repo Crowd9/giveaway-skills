@@ -1,23 +1,24 @@
 # Cost benchmarks and ROI
 
-From the campaigns behind these numbers (35,614 campaigns, 6,394 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 1,000 Entrants. Reproduce with `analysis/roi_benchmarks.py`.
+From the campaigns behind these numbers (117,128 campaigns, 17,777 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 100 Entrants. Reproduce with `analysis/roi_benchmarks.py`.
 
 ## By industry
 
 | Industry | Campaigns | Businesses | Stated pool USD | Share of Entrants | Per email signup | Per follow | Per referral entry | Emails per campaign | Follows per campaign | Conversion Rate (the share of people who saw it and entered) |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Technology | 7,236 | 1,032 | 1,000 | 39 | 0.44 | 0.35 | 1.66 | 1,719 | 2,975 | 29% |
-| Gaming | 6,294 | 1,409 | 836 | 27 | 0.48 | 0.26 | 1.45 | 1,586 | 2,690 | 27% |
-| Music and media | 5,223 | 654 | 500 | 17 | 0.15 | 0.15 | 1.76 | 2,244 | 1,815 | 26% |
-| Fitness and outdoor | 3,147 | 738 | 1,000 | 39 | 0.41 | 0.72 | 1.99 | 2,152 | 1,023 | 24% |
-| Fashion and beauty | 2,175 | 487 | 1,000 | 30 | 0.30 | 0.59 | 2.61 | 2,399 | 1,303 | 31% |
-| Food and drink | 1,785 | 419 | 750 | 26 | 0.34 | 0.55 | 2.07 | 1,985 | 1,133 | 29% |
-| Home | 1,774 | 328 | 850 | 32 | 0.36 | 0.66 | 2.81 | 1,864 | 1,148 | 31% |
-| Kids, family, pets | 1,662 | 350 | 600 | 28 | 0.30 | 0.45 | 3.13 | 1,570 | 1,146 | 27% |
-| Travel and events | 1,347 | 261 | 1,156 | 46 | 0.46 | 1.99 | 4.65 | 2,573 | 816 | 29% |
-| Software | 548 | 163 | 1,600 | 68 | 0.71 | 0.74 | 3.42 | 2,143 | 2,190 | 26% |
+| Music and media | 24,965 | 2,872 | 70 | 384 | 0.09 | 0.23 | 2.00 | 828 | 310 | 25% |
+| Gaming | 24,651 | 4,725 | 200 | 397 | 0.59 | 0.38 | 2.11 | 478 | 502 | 27% |
+| Unclassified | 16,694 | 3,616 | 379 | 427 | 0.55 | 0.73 | 3.87 | 578 | 332 | 27% |
+| Technology | 15,589 | 2,068 | 540 | 904 | 0.64 | 0.51 | 2.49 | 768 | 1,027 | 30% |
+| Fitness and outdoor | 7,801 | 1,512 | 540 | 702 | 0.66 | 1.13 | 3.57 | 850 | 437 | 24% |
+| Kids, family, pets | 6,837 | 1,089 | 249 | 477 | 0.57 | 0.76 | 5.12 | 486 | 313 | 26% |
+| Fashion and beauty | 6,465 | 1,310 | 368 | 580 | 0.41 | 0.52 | 2.99 | 880 | 437 | 31% |
+| Food and drink | 4,682 | 890 | 426 | 634 | 0.52 | 0.87 | 2.78 | 712 | 331 | 27% |
+| Travel and events | 3,979 | 645 | 599 | 488 | 0.84 | 2.72 | 7.84 | 648 | 181 | 27% |
+| Home | 3,713 | 595 | 510 | 918 | 0.54 | 0.91 | 3.32 | 868 | 517 | 29% |
+| Software | 1,752 | 571 | 1,000 | 565 | 1.19 | 1.24 | 4.03 | 979 | 600 | 23% |
 
-Music and media buys addresses and follows cheapest, typically 0.15 USD for both. Software pays the most per email signup (0.71), and travel and events pays the most per referral entry (4.65).
+Music and media buys addresses and follows cheapest, typically 0.09 USD per email signup and 0.23 per follow. Software pays the most per email signup (1.19), and travel and events pays the most per referral entry (7.84).
 
 ## Which industries get the most from a giveaway
 
@@ -101,25 +102,30 @@ Source: `analysis/output/prize_timing_cuts.json` (by_industry_ordinary, by_busin
 
 | Campaign size | Campaigns | Stated pool USD | Share of Entrants | Per email signup | Per follow | Emails per campaign |
 |---|---|---|---|---|---|---|
-| 1k-2.5k | 19,911 | 519 | 35 | 0.39 | 0.46 | 1,344 |
-| 2.5k-10k | 12,582 | 1,299 | 29 | 0.28 | 0.37 | 3,703 |
-| 10k+ | 3,121 | 3,000 | 14 | 0.16 | 0.19 | 16,419 |
+| 100 to 250 | 33,285 | 120 | 160 | 1.03 | 0.74 | 157 |
+| 250 to 500 | 25,832 | 149 | 352 | 0.34 | 0.36 | 353 |
+| 500 to 1,000 | 21,886 | 260 | 691 | 0.42 | 0.43 | 645 |
+| 1,000 to 2,500 | 20,090 | 534 | 1,484 | 0.39 | 0.46 | 1,346 |
+| 2,500 to 10,000 | 12,817 | 1,299 | 3,989 | 0.29 | 0.37 | 3,713 |
+| 10,000 or more | 3,218 | 3,000 | 16,144 | 0.16 | 0.18 | 16,566 |
 
-Bigger campaigns pay less per result on the stated figure, and they also have the audiences that make them big. A first campaign should budget against the 1,000 to 2,500 Entrant row.
+Bigger campaigns pay less per result on the stated figure, and they also have the audiences that make them big. A first campaign should budget against the 100 to 250 or 250 to 500 Entrant row, where the typical stated pool is 120 to 149 USD.
+
+The 100 to 250 row costs more per email signup (1.03) than any band above it, which reads backwards. Only 23% of campaigns that size offer an email action at all, against 38% at 500 to 1,000, so the ratio rests on the few small campaigns that both valued their Prize and collected addresses [11,737 valued campaigns in the band]. Quote the stated pool for this band and treat its cost per email signup as thin.
 
 ## By start year
 
 | Year | Campaigns | Entrants | Conversion Rate | Actions | Stated pool USD |
 |---|---|---|---|---|---|
-| 2020 | 454 | 2,679 | 27% | 8 | 1,077 |
-| 2021 | 8,749 | 2,470 | 30% | 7 | 688 |
-| 2022 | 7,600 | 2,220 | 30% | 7 | 860 |
-| 2023 | 6,125 | 2,166 | 27% | 7 | 1,000 |
-| 2024 | 5,088 | 2,121 | 24% | 7 | 1,077 |
-| 2025 | 5,031 | 2,064 | 26% | 8 | 885 |
-| 2026 | 2,531 | 2,027 | 28% | 8 | 802 |
+| 2020 | 1,185 | 598 | 26% | 7 | 550 |
+| 2021 | 27,979 | 498 | 28% | 7 | 235 |
+| 2022 | 26,239 | 473 | 29% | 7 | 300 |
+| 2023 | 20,374 | 490 | 26% | 7 | 300 |
+| 2024 | 16,815 | 473 | 24% | 7 | 310 |
+| 2025 | 16,404 | 512 | 25% | 7 | 299 |
+| 2026 | 8,021 | 528 | 27% | 7 | 300 |
 
-Typical Entrant counts have drifted down since 2021 while Conversion Rate has held near 24% to 30%. Benchmarks from the whole export sit a little above what a campaign started this year would typically see.
+Typical Entrant counts have held near 470 to 600 since 2021 and Conversion Rate near 24% to 29%. Stated Prize pools were highest in 2020 (550 USD) and have sat near 300 USD every year since 2022.
 
 ## Using the ROI script
 

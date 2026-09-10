@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (35,614 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose. Reproduce with `analysis/holidays.py`.
+Built from the campaigns behind these numbers (117,348 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose. Reproduce with `analysis/holidays.py`.
 
 Baseline for comparison across this page, all the campaigns behind these numbers:
 
@@ -42,41 +42,44 @@ Reading it:
 
 ## Holiday theme against no theme, and how early businesses launch
 
-A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. Campaigns naming no holiday get 27.7% to enter (31,329 campaigns, 5,899 businesses). Against that baseline:
+A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. Campaigns naming no holiday get 34.8% to enter (101,318 campaigns, 16,101 businesses). Against that baseline:
 
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |
 |---|---|---|---|---|
-| Father's Day | 145 | 107 | 2,076 | 32.4% |
-| Christmas and advent | 1,217 | 436 | 2,258 | 31.9% |
-| Mother's Day | 121 | 100 | 1,692 | 31.6% |
-| Valentine's Day | 154 | 128 | 1,868.5 | 29.0% |
-| Back to school | 181 | 110 | 2,134 | 28.9% |
-| Milestone | 189 | 137 | 2,086 | 28.5% |
-| Black Friday and Cyber Monday | 318 | 146 | 2,413.5 | 27.9% |
-| Summer | 790 | 473 | 2,475 | 27.4% |
-| Easter | 134 | 95 | 1,905.5 | 27.1% |
-| Halloween | 190 | 136 | 1,931 | 26.5% |
-| Thanksgiving | 79 | 52 | 2,079 | 26.3% |
-| New Year | 237 | 183 | 2,298 | 26.1% |
-| Anniversary or birthday | 510 | 336 | 2,318.5 | 25.8% |
+| Christmas and advent | 4,911 | 1,563 | 586 | 39.0% |
+| Father's Day | 331 | 236 | 823 | 34.7% |
+| Lunar New Year | 111 | 82 | 614 | 34.0% |
+| Milestone | 1,171 | 772 | 523 | 32.4% |
+| Summer | 3,087 | 1,348 | 623 | 32.1% |
+| Back to school | 477 | 284 | 876 | 31.9% |
+| New Year | 934 | 628 | 774 | 31.4% |
+| Anniversary or birthday | 2,191 | 1,155 | 599 | 31.1% |
+| Valentine's Day | 684 | 399 | 551 | 30.5% |
+| Black Friday and Cyber Monday | 751 | 383 | 898 | 30.5% |
+| Easter | 453 | 273 | 602 | 30.1% |
+| Mother's Day | 371 | 289 | 601 | 29.8% |
+| Halloween | 838 | 509 | 482 | 28.8% |
+| Thanksgiving | 264 | 182 | 718 | 27.4% |
+| Prime Day and Singles Day | 99 | 60 | 794 | 27.1% |
 
-Father's Day, Christmas and Mother's Day clear the no-theme baseline by four to five points. Valentine's Day, back to school, milestone campaigns and Black Friday sit within two points either side of it. New Year, Halloween, Thanksgiving and anniversary or birthday campaigns run a point or more behind it. This reads differently from the fair-comparison table above (Christmas 43%, Halloween 27%), because this check counts every run at its actual length, long or short, repeatable actions included.
+Christmas clears the no-theme baseline by four points and is the only theme to do so by more than one. Father's Day and Lunar New Year sit level with it. Everything from Milestone down runs behind the baseline, and Thanksgiving and Prime Day trail it by seven points. This reads differently from the fair-comparison table above, because this check counts every run at its actual length, long or short, repeatable actions included.
 
 Lead time, days before the holiday date businesses started, for campaigns matched to a specific date:
 
-| Theme | Campaigns | Businesses | Lower quarter | Typical | Upper quarter |
-|---|---|---|---|---|---|
-| Christmas and advent | 1,173 | 428 | 10 days | 17 days | 25 days |
-| Thanksgiving | 79 | 52 | 9 days | 14 days | 27 days |
-| Halloween | 181 | 133 | 7 days | 18 days | 30 days |
-| Father's Day | 132 | 98 | 7.75 days | 13 days | 18.25 days |
-| Mother's Day | 120 | 99 | 6 days | 12 days | 20 days |
-| Valentine's Day | 150 | 125 | 5 days | 11 days | 15 days |
-| Easter | 133 | 94 | 4 days | 11 days | 20 days |
-| New Year | 96 | 79 | 3 days | 7.5 days | 20 days |
-| Black Friday and Cyber Monday | 315 | 145 | 1 day | 6 days | 14 days |
-| Summer | 729 | 430 | 15 days after the reference date | 9 days before it | 30 days before it |
-| Back to school | 181 | 110 | 1 day after the reference date | 14 days before it | 24 days before it |
+| Theme | Campaigns with a lead figure | Lower quarter | Typical | Upper quarter |
+|---|---|---|---|---|
+| Summer | 1,628 | 10 days | 27 days | 43 days |
+| Back to school | 322 | 10 days | 18.5 days | 27 days |
+| Halloween | 777 | 8 days | 18 days | 30 days |
+| Christmas and advent | 4,607 | 9 days | 17 days | 26 days |
+| Thanksgiving | 251 | 7 days | 14 days | 24 days |
+| Valentine's Day | 657 | 6 days | 13 days | 21 days |
+| Mother's Day | 364 | 6 days | 12 days | 22 days |
+| Father's Day | 294 | 7 days | 12 days | 18 days |
+| New Year | 434 | 4 days | 11 days | 25 days |
+| Easter | 433 | 4 days | 10 days | 21 days |
+| Black Friday and Cyber Monday | 650 | 3 days | 7 days | 14 days |
+| Lunar New Year | 79 | 1 day | 5 days | 10 days |
 
 Black Friday launches closest to its date, a typical 6 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
 
@@ -153,7 +156,7 @@ Other store dates in the data sit below the typical figures: Singles Day (table 
 
 ## Every week of the year (extracted)
 
-All the campaigns behind these numbers, by the calendar week of their start date, whatever their theme. Share of starts is that week's share of all 35,604 campaigns (an even spread would be 1.9%). Conversion Rate is from the campaigns we can compare fairly. The holiday-named column is the share of that week's starts whose title or description names a holiday, which is how the dates and the names were checked against each other. Monday dates are 2026.
+All the campaigns behind these numbers, by the calendar week of their start date, whatever their theme. Share of starts is that week's share of all 117,090 campaigns (an even spread would be 1.9%). Conversion Rate is from the campaigns we can compare fairly. The holiday-named column is the share of that week's starts whose title or description names a holiday, which is how the dates and the names were checked against each other. Monday dates are 2026.
 
 | Week | Monday | Share of starts | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Holiday-named | Holidays in the week |
 |---|---|---|---|---|---|---|---|
@@ -325,4 +328,4 @@ Dates for the ones with a fixed or predictable day:
 | National Coffee Day | Tue 29 Sep 2026 in the US, Thu 01 Oct 2026 internationally |
 | Super Bowl | Sun 14 Feb 2027, the same day as Valentine's |
 
-Missing from the data at any count worth reporting: Juneteenth, Cinco de Mayo, Pi Day, Bastille Day, Oktoberfest, Bonfire Night, Movember, Giving Tuesday, Small Business Saturday, Hanukkah, Boxing Day, Australia Day, Eurovision, Ramadan and Eid, Holi, Diwali beyond the main table, Day of the Dead, Carnival, Midsummer, Black History Month, Galentine's, Grandparents Day. Each appeared in under 15 campaigns of 35,604 on the campaign analysis. A business that owns one of those has it to themselves.
+Missing from the data at any count worth reporting: Juneteenth, Cinco de Mayo, Pi Day, Bastille Day, Oktoberfest, Bonfire Night, Movember, Giving Tuesday, Small Business Saturday, Hanukkah, Boxing Day, Australia Day, Eurovision, Ramadan and Eid, Holi, Diwali beyond the main table, Day of the Dead, Carnival, Midsummer, Black History Month, Galentine's, Grandparents Day. Each appeared in under 15 campaigns of 117,090 on the campaign analysis. A business that owns one of those has it to themselves.

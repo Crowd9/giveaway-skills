@@ -21,7 +21,7 @@ Five minutes.
 
 ## What the dataset shows for Shopify stores
 
-From the campaign data, Shopify stores with a labelled organizer site and 1,000 or more Entrants.
+From the campaign data, Shopify stores with a labelled organizer site and 100 or more Entrants.
 
 Bigger stores, pricier stores and Australian-currency stores offer email more than their counterparts, and Shopify stores offer email more but ask for fewer actions than WooCommerce stores.
 

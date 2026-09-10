@@ -70,30 +70,30 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`, `template
 
 ## Hooks in campaign titles (extracted)
 
-Matches are on words in the campaign name and headline Prize name, and one title can match several hooks. Peak month is the month where the hook's share of that month's starts is highest. Conversion Rate is the typical share of viewers who entered for campaigns carrying the hook, against 28% for titles with no hook.
+Matches are on words in the campaign name and headline Prize name, and one title can match several hooks. Peak month is the month where the hook's share of that month's starts is highest. Conversion Rate is the typical share of viewers who entered for campaigns carrying the hook, against 27% for titles with no hook.
 
-(35,658 campaigns, 1,000 or more Entrants, 6,398 businesses, campaign analysis, 24,420 titles carry no hook. Rebuilt by `analysis/hook_patterns.py`.)
+(117,348 campaigns, 100 or more Entrants, 17,777 businesses, campaign analysis, 81,213 titles carry no hook. Rebuilt by `analysis/hook_patterns.py`.)
 
 | Hook | Campaigns | Share of titles | Peak month | Share of that month's starts | Conversion Rate |
 |---|---|---|---|---|---|
-| Collaboration or partner ("X x Y", "with", "ft.") | 3,954 | 11.1% | March | 12.3% | 27% |
-| Seasonal (summer, spring, back to school) | 1,727 | 4.8% | July | 9.5% | 27% |
-| Daily or weekly series (day 3, week 2, advent calendar) | 1,572 | 4.4% | December | 13.9% | 34% |
-| Milestone or anniversary (birthday, 100k, celebration) | 1,262 | 3.5% | September | 4.3% | 26% |
-| Gaming release tie-in | 1,240 | 3.5% | May | 4.2% | 26% |
-| Holiday season (Christmas, advent, New Year) | 1,057 | 3.0% | December | 14.6% | 29% |
-| Launch or new product | 505 | 1.4% | September | 2.3% | 22% |
-| Event or livestream tie-in | 452 | 1.3% | July | 2.5% | 30% |
-| Black Friday or sales event | 450 | 1.3% | November | 8.6% | 26% |
-| Valentine's, Mother's and Father's Day | 403 | 1.1% | February | 3.6% | 31% |
-| Halloween | 192 | 0.5% | October | 4.7% | 26% |
-| Charity or cause | 48 | 0.1% | February | 0.3% | 28% |
+| Collaboration or partner ("X x Y", "with", "ft.") | 12,426 | 10.6% | March | 11.0% | 26% |
+| Gaming release tie-in | 5,823 | 5.0% | October | 6.0% | 28% |
+| Daily or weekly series (day 3, week 2, advent calendar) | 5,430 | 4.6% | December | 16.4% | 34% |
+| Seasonal (summer, spring, back to school) | 4,469 | 3.8% | June | 6.8% | 24% |
+| Milestone or anniversary (birthday, 100k, celebration) | 3,737 | 3.2% | May | 3.8% | 26% |
+| Holiday season (Christmas, advent, New Year) | 3,037 | 2.6% | December | 14.9% | 27% |
+| Event or livestream tie-in | 1,879 | 1.6% | July | 2.2% | 31% |
+| Launch or new product | 1,687 | 1.4% | August | 1.7% | 24% |
+| Valentine's, Mother's and Father's Day | 1,118 | 1.0% | February | 2.9% | 27% |
+| Black Friday or sales event | 1,072 | 0.9% | November | 5.6% | 25% |
+| Halloween | 635 | 0.5% | October | 5.1% | 24% |
+| Charity or cause | 140 | 0.1% | February | 0.2% | 23% |
 
-Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaway" with a Prize name is the default, and a hook is what separates a campaign from the default. Daily or weekly series titles get the most to enter (34%), launch titles the fewest (22%).
+Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaway" with a Prize name is the default, and a hook is what separates a campaign from the default. Daily or weekly series titles get the most to enter (34%), charity or cause titles the fewest (23%).
 
 A hook and a campaign type are two different things. The hook is the occasion the title claims (Black Friday, a 10k milestone, a collaboration). The campaign type is the shape the campaign declares and runs (an advent calendar, a bundle, a cash draw, a voting contest). One campaign carries both, and the tables below are separate for that reason.
 
-Two pairings draw more than the hook and the type would predict apart, on the 1,000-plus-Entrant frame:
+Two pairings draw more than the hook and the type would predict apart, on the 100-plus-Entrant frame:
 
 | Pairing | Ratio vs. predicted | Campaigns | Businesses |
 |---|---|---|---|
@@ -110,7 +110,7 @@ A type is declared by words in the title, incentive name or the start of the des
 
 | Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) | Duration | Actions |
 |---|---|---|---|---|---|---|---|---|---|
-| All campaigns (baseline) | 35,614 | 6,394 | 2,211.5 | 38% | 4.3 | 12 | 1.00 | – | – |
+| All campaigns (baseline) | 117,128 | 17,747 | 492 | 35% | 4.4 | 12 | 1.00 | – | – |
 | Advent or daily calendar | 1,029 | 280 | 3,325 | 50% (612) | 3.5 | 9 | 1.02 (282) | 5 | 5 |
 | Charity or fundraiser | 231 | 31 | 3,108 | 34% (200) | 1.0 | 14 | 0.74 (14) | 0 | 1 |
 | Free or no purchase | 1,739 | 315 | 3,097 | 38% (256) | 8.5 | 10 | 1.56 (1,145) | 31 | 13 |
@@ -141,7 +141,7 @@ Reading it:
 - **Advent or daily calendars** lead on Entrants and Conversion Rate: five days, five actions, and a reason to come back (figures in the table above). The shape wins, and it is a December shape.
 - **Campaigns that say free entry or no purchase** run long, with the most actions of any type and repeatable bonuses, and post the highest value index. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
 - **Sweepstakes wording** carries the largest US campaigns at a value index above the typical figure, which is the long-run, daily-entry pattern.
-- **Collaborations** are 17% of campaigns and sit a little above the typical figure on Entrants. The title proxy for a partner does not by itself mark a strong campaign: the Prize-picker reference shows the value index rises further when the collaboration is signalled in the title alone (see table below). A collab title trades Conversion Rate for reach: on the 1,000-plus-Entrant frame, and after matching on size and industry, it still lands more often in the top fifth by raw audience and by value-index performance, but less often in the top fifth by Conversion Rate among the campaigns we can compare fairly, or by low cost per Entrant (see table below). That reach is the point for a business without a partner's audience of their own: borrowing attention costs Conversion Rate and cost per Entrant, and earns it back in who shows up.
+- **Collaborations** are 17% of campaigns and sit a little above the typical figure on Entrants. The title proxy for a partner does not by itself mark a strong campaign: the Prize-picker reference shows the value index rises further when the collaboration is signalled in the title alone (see table below). A collab title trades Conversion Rate for reach: on the 100-plus-Entrant frame, and after matching on size and industry, it still lands more often in the top fifth by raw audience and by value-index performance, but less often in the top fifth by Conversion Rate among the campaigns we can compare fairly, or by low cost per Entrant (see table below). That reach is the point for a business without a partner's audience of their own: borrowing attention costs Conversion Rate and cost per Entrant, and earns it back in who shows up.
 
   | Collaboration title signal, matched comparison | Ratio vs. matched non-collab | Campaigns | Businesses |
   |---|---|---|---|
@@ -270,7 +270,7 @@ A small Prize in front of an audience that already exists beats a large Prize in
 
 ## Hooks by business type (extracted)
 
-Where the business runs from and what it sells shapes which hook lands, ahead of industry. Wider in scope than the 35,658-campaign base above (it keeps crypto and applies no purchase-only exclusion), every row at least 10 businesses.
+Where the business runs from and what it sells shapes which hook lands, ahead of industry. Wider in scope than the 117,348-campaign base above (it keeps crypto and applies no purchase-only exclusion), every row at least 10 businesses.
 
 **Creator campaigns run from a platform page.** Businesses whose campaign is hosted from a shared platform page (YouTube, Twitch, X and the like) get a good share to enter over a short run and rarely ask for email. The hook is the audience already on the page, so lead with the creator's own moment (a stream milestone, a video drop) and treat email as a stretch goal, not the mandatory action.
 

@@ -5,27 +5,23 @@ These figures come from the campaigns we can compare fairly (crypto, unclear lis
 <!-- generated:structure_detail -->
 | Prize records per campaign | Share |
 |---|---|
-| 1 | 79.1% |
-| 2 | 7.0% |
-| 3 | 6.8% |
-| 4 | 2.2% |
-| 5 | 1.4% |
-| 6+ | 3.6% |
+| 1 | 82.4% |
+| 2 | 6.2% |
+| 3 | 6.0% |
+| 4 | 1.8% |
+| 5 | 1.3% |
+| 6+ | 2.2% |
 
-Total Prize units per campaign follow the same lopsided shape as Prize records (table below, 35,668 campaigns). 40% of campaigns list more than one unit and 21% list tiered Prizes (more than one position).
+Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10, maximum 1,133 (n=117,348). 40% of campaigns list more than one unit and 18% list tiered prizes (more than one position).
 
-| Total Prize units per campaign | Value |
-|---|---|
-| Typical | 1 |
-| Top quarter | 3 or more |
-| Top tenth | 11 or more |
-| Largest | 1,133 |
-
-| Campaign size (Entrants) | Single unit | Tiered Prizes | Ten or more units |
+| Band | Single unit | Tiered prizes | Ten or more units |
 |---|---|---|---|
-| 1k-2.5k | 60% | 20% | 12% |
-| 2.5k-10k | 60% | 22% | 15% |
-| 10k+ | 62% | 20% | 18% |
+| 100-250 | 59% | 15% | 11% |
+| 250-500 | 61% | 16% | 12% |
+| 500-1k | 61% | 18% | 11% |
+| 1k-2.5k | 59% | 21% | 13% |
+| 2.5k-10k | 60% | 22% | 16% |
+| 10k+ | 62% | 20% | 19% |
 <!-- /generated -->
 
 ## Reading the tables
@@ -182,4 +178,4 @@ Source: `analysis/output/indicators.json` (prize_structure_by_country), `analysi
 
 - Recurring draws (daily or weekly Winners) appear as high quantities on one record and cannot be separated from a single bulk draw.
 
-- Every campaign in the tables above passed the 1,000-Entrant floor. Nothing here shows a structure changed participation. The country group uses a lower, 100-Entrant floor and does not exclude crypto businesses, so its figures are not directly comparable to the tables above.
+- Every campaign in the tables above passed the 100-Entrant floor. Nothing here shows a structure changed participation. The country group uses a lower, 100-Entrant floor and does not exclude crypto businesses, so its figures are not directly comparable to the tables above.

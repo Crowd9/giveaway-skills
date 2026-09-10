@@ -3,25 +3,25 @@
 Built from the campaigns behind these numbers: crypto, ambiguous and purchase-only campaigns removed, and every one reached at least 1,000 Entrants. Duration is the end date minus the start date in days as recorded, so a campaign extended after launch shows its final length. The typical range given below covers the middle half of campaigns, from the lower quarter to the upper quarter. Where a figure says nine campaigns in ten sit below it, that's the top-tenth mark.
 
 <!-- generated:timing -->
-Duration typically runs 16 days, longer for bigger campaigns. [Middle half 8 to 31 days, top tenth above 43 days, 15 days at 1,000-2,500 Entrants, 18 at 2,500-10,000, 20 at 10,000+, 35,668 campaigns.]
+Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=116,491). By campaign size: 100-250 12 days, 250-500 14 days, 500-1k 14 days, 1k-2.5k 15 days, 2.5k-10k 18 days, 10k+ 18 days.
 
-| Duration (days) | Share of campaigns | Actions per Entrant, typical |
+| Duration (days) | Share of campaigns | Entries per contestant, median |
 |---|---|---|
-| 1-3 | 12% | 2.99 |
-| 4-7 | 13% | 4.13 |
-| 8-14 | 20% | 4.38 |
-| 15-30 | 31% | 4.61 |
-| 31-60 | 19% | 5.06 |
-| 61-180 | 5% | 3.56 |
-| 181+ | 1% | 3.62 |
+| 1-3 | 13% | 3.53 |
+| 4-7 | 16% | 4.01 |
+| 8-14 | 22% | 4.42 |
+| 15-30 | 28% | 4.84 |
+| 31-60 | 16% | 5.14 |
+| 61-180 | 3% | 3.89 |
+| 181+ | 1% | 3.86 |
 
 | Start month | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Share of campaigns | 6.5% | 7.5% | 8.8% | 7.8% | 8.4% | 8.5% | 7.8% | 8.4% | 7.6% | 8.2% | 8.6% | 11.9% |
+| Share of campaigns | 6.7% | 8.0% | 9.1% | 8.3% | 8.6% | 8.4% | 7.9% | 7.9% | 7.4% | 8.3% | 9.0% | 10.4% |
 
 | Start weekday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 |---|---|---|---|---|---|---|---|
-| Share of campaigns | 18.8% | 16.5% | 16.9% | 16.1% | 16.3% | 6.4% | 8.9% |
+| Share of campaigns | 19.2% | 16.0% | 16.5% | 15.9% | 15.6% | 7.2% | 9.7% |
 <!-- /generated -->
 
 ## Reading the tables
@@ -43,7 +43,7 @@ Experience tracks a better Conversion Rate: businesses on their eleventh campaig
 | Sixth to tenth | 2,067 | 35% |
 | Eleventh or later (6,516 campaigns) | 2,148.5 | 41% |
 
-These are campaigns that already reached 1,000 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
+These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
 
 A shorter first campaign is part of that pattern too: businesses that went on to run a second campaign ran a shorter first one than businesses that did not, at every starting size. [13 days against 16 for a first campaign under 250 Entrants, 22 against 31 at 10,000 or more.] For advice on a new business's first-campaign duration, mention this and see giveaway-results-review for the full table by campaign size.
 
@@ -113,20 +113,20 @@ One secondary pattern does not repeat across sizes: a weekend close brings about
 Impressions in the data are counted once per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower the Conversion Rate, without any change in who actually entered. The campaigns we can compare fairly are the ones with no repeatable action and any run over 14 days removed. Figures below are typical values from the campaigns behind these numbers, description only.
 
 <!-- generated:cmp_repeatable -->
-| Repeatable actions | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |
+| Repeatable actions | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no repeatable actions | 22,653 | 2,172 | 3.69 | 31% | 3.2 | 6 |
-| has repeatable actions | 12,961 | 2,291 (+5%) | 5.85 (+59%) | 22% (-28%) | 4.5 | 10 |
+| no repeatable actions | 75,386 | 493 | 3.83 | 29% | 3.4 | 6 |
+| has repeatable actions | 41,742 | 490 (-1%) | 5.66 (+48%) | 23% (-23%) | 4.4 | 9 |
 <!-- /generated -->
 
 <!-- generated:cmp_duration -->
-| Duration, no repeatable actions | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |
+| Duration, no repeatable actions | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| 1 to 7 days | 6,159 | 2,095 | 3.17 | 45% | 2.2 | 5 |
-| 8 to 14 | 4,560 | 2,144 (+2%) | 3.91 (+23%) | 31% (-31%) | 3.2 | 6 |
-| 15 to 30 | 6,854 | 2,230 (+6%) | 3.96 (+25%) | 28% (-38%) | 3.6 | 6 |
-| 31 to 60 | 3,681 | 2,182 (+4%) | 3.84 (+21%) | 24% (-46%) | 4.1 | 7 |
-| 61 or more | 1,399 | 2,367 (+13%) | 2.85 (-10%) | 23% (-49%) | 4.4 | 5 |
+| 1 to 7 days | 23,197 | 439 | 3.54 | 41% | 2.4 | 5 |
+| 8 to 14 | 16,613 | 468 (+7%) | 3.92 (+11%) | 29% (-31%) | 3.5 | 6 |
+| 15 to 30 | 20,578 | 538 (+23%) | 4.07 (+15%) | 26% (-37%) | 3.9 | 6 |
+| 31 to 60 | 11,468 | 544 (+24%) | 4.19 (+18%) | 23% (-45%) | 4.4 | 7 |
+| 61 or more | 2,941 | 733 (+67%) | 3.22 (-9%) | 22% (-48%) | 4.6 | 5 |
 <!-- /generated -->
 
 Longer runs collect about a tenth more Entrants and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
@@ -202,50 +202,52 @@ A 14-day campaign shows the same shape: close 4.9% against 9.0% on the launch da
 This is a finding about where volume sits, not a reason to close early. The people who were going to show up mostly showed up by the launch window, but the closing days still carry their own work: the deadline reminder, the last-call push and the draw itself shape whether the Entrants already signed up finish, respond to the Winner email and stay on the list afterward, the Entrant relationship `giveaway-winner-communications` covers. Cutting a run short trades that closing work away for a volume gain this data does not show happening.
 
 <!-- generated:cmp_weekday -->
-| Start weekday | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |
+| Start weekday | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| Monday | 6,688 | 2,197 | 4.24 | 27% | 3.7 | 7 |
-| Tuesday | 5,868 | 2,151 (-2%) | 4.32 (+2%) | 28% (+2%) | 3.6 | 7 |
-| Wednesday | 6,027 | 2,255 (+3%) | 4.18 (-1%) | 29% (+6%) | 3.5 | 7 |
-| Thursday | 5,747 | 2,189 (-0%) | 4.39 (+3%) | 27% (+0%) | 3.7 | 7 |
-| Friday | 5,819 | 2,282 (+4%) | 4.63 (+9%) | 27% (-0%) | 3.7 | 7 |
-| Saturday | 2,283 | 2,287 (+4%) | 4.15 (-2%) | 29% (+7%) | 3.4 | 7 |
-| Sunday | 3,182 | 2,118 (-4%) | 4.38 (+3%) | 29% (+6%) | 3.5 | 7 |
+| Monday | 22,450 | 480 | 4.40 | 26% | 3.8 | 7 |
+| Tuesday | 18,732 | 499 (+4%) | 4.26 (-3%) | 26% (+2%) | 3.8 | 7 |
+| Wednesday | 19,315 | 504 (+5%) | 4.23 (-4%) | 28% (+6%) | 3.6 | 7 |
+| Thursday | 18,614 | 513 (+7%) | 4.43 (+1%) | 27% (+3%) | 3.7 | 7 |
+| Friday | 18,244 | 521 (+9%) | 4.53 (+3%) | 27% (+3%) | 3.7 | 7 |
+| Saturday | 8,399 | 438 (-9%) | 4.44 (+1%) | 28% (+9%) | 3.5 | 7 |
+| Sunday | 11,374 | 449 (-6%) | 4.52 (+3%) | 27% (+4%) | 3.7 | 7 |
 <!-- /generated -->
 
 Start weekday shows no difference on any measure. Businesses favour weekdays, and the data gives no reason to prefer one day over another.
 
 <!-- generated:cmp_recency -->
-| Gap since previous campaign, campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |
+| Gap since previous campaign, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| first campaign | 1,103 | 2,025 | 3.42 | 32% | 3.1 | 6 |
-| previous within 30 days | 7,007 | 2,109 (+4%) | 3.59 (+5%) | 41% (+29%) | 2.4 | 5 |
-| previous 31 to 90 days | 1,460 | 2,077 (+3%) | 3.62 (+6%) | 33% (+3%) | 3.0 | 6 |
-| previous 91 to 365 days | 979 | 2,282 (+13%) | 3.51 (+2%) | 32% (-2%) | 3.2 | 6 |
-| previous over a year | 170 | 2,172 (+7%) | 3.14 (-8%) | 33% (+2%) | 3.0 | 5 |
+| first campaign | 5,017 | 333 | 3.19 | 31% | 3.2 | 5 |
+| previous within 30 days | 25,947 | 470 (+41%) | 3.96 (+24%) | 38% (+22%) | 2.7 | 6 |
+| previous 31 to 90 days | 4,855 | 496 (+49%) | 3.51 (+10%) | 33% (+6%) | 3.1 | 5 |
+| previous 91 to 365 days | 3,307 | 434 (+30%) | 3.36 (+5%) | 31% (+0%) | 3.2 | 5 |
+| previous over a year | 684 | 382 (+15%) | 3.12 (-2%) | 32% (+3%) | 3.2 | 5 |
 <!-- /generated -->
 
 <!-- generated:cmp_recency_vertical -->
-| Industry (matched by title wording) | First campaigns | Within 30 days | Entrants | Conversion Rate |
+| Vertical (regex proxy) | First campaigns | Within 30 days | Contestants | Contestants per impression |
 |---|---|---|---|---|
-| technology | 177 | 1,847 | +1% | +40% |
-| gaming | 309 | 1,344 | -12% | +22% |
-| music and media | 93 | 878 | +1% | +15% |
-| unclassified | 112 | 1,078 | -8% | +30% |
-| fitness_outdoor | 107 | 196 | -20% | +7% |
-| fashion and beauty | 100 | 711 | +70% | +40% |
-| food and drink | 54 | 239 | +13% | +20% |
-| home | 52 | 292 | +41% | +50% |
-| kids, family and pets | 54 | 195 | -10% | -5% |
+| music_media | 700 | 5,157 | +46% | +19% |
+| gaming | 1,481 | 6,084 | +35% | +15% |
+| unclassified | 809 | 4,865 | +68% | +17% |
+| technology | 515 | 4,008 | +72% | +47% |
+| fitness_outdoor | 346 | 1,047 | -32% | +6% |
+| kids_family_pets | 235 | 1,191 | +1% | -9% |
+| fashion_beauty | 327 | 1,561 | +105% | +35% |
+| food_drink | 190 | 585 | +66% | +22% |
+| travel_events | 139 | 484 | +37% | +37% |
+| home | 134 | 647 | +26% | +25% |
+| software | 141 | 318 | +69% | +42% |
 <!-- /generated -->
 
 A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a third more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in every industry with enough campaigns. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
 
 ## Build lead time (extracted)
 
-A wider set than the campaigns behind the numbers above (54,786 campaigns, 10,714 businesses, crypto and token formats included): the recorded create date sits after the campaign's start date in 24% of them. That is not a business building after launch. The field also updates on a later edit, so for about a quarter of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
+A wider set than the campaigns behind the numbers above (167,068 campaigns, 25,482 businesses, crypto and token formats included): the recorded create date sits after the campaign's start date in 27% of them. That is not a business building after launch. The field also updates on a later edit, so for about a quarter of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
 
-Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 5 days, the top tenth 15 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
+Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 4 days, the top tenth 12 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
 
 | Build lead | Campaigns | Businesses | Conversion Rate | Actions per Entrant | Methods |
 |---|---|---|---|---|---|
@@ -260,14 +262,15 @@ Source: analysis/output/field_cuts.json (build_lead_days, by_build_lead).
 
 ## Duration by plan tier and hosting mix (extracted)
 
-Premium accounts run the longest campaigns with the most methods, Free accounts run the shortest with the fewest. [54,786 campaigns, 10,714 businesses total.]
+Premium accounts run the longest campaigns with the most methods, Hobby accounts run the shortest and Free accounts use the fewest. [167,068 campaigns, 25,482 businesses total.]
 
 | Plan tier | Campaigns | Businesses | Typical duration | Methods |
 |---|---|---|---|---|
-| Premium | 1,788 | 418 | 22 days | 13 |
-| Business | 19,383 | 3,590 | 14 days | 8 |
-| Pro | 29,173 | 6,947 | 13 days | 8 |
-| Free | 1,936 | 804 | 11 days | 4 |
+| Premium | 3,068 | 550 | 19 days | 9 |
+| Free | 14,364 | 5,423 | 12 days | 4 |
+| Pro | 89,858 | 15,115 | 11 days | 8 |
+| Business | 46,880 | 5,877 | 11 days | 7 |
+| Hobby | 12,892 | 3,164 | 10 days | 6 |
 
 By growth stage, startups run short and enterprises run long:
 

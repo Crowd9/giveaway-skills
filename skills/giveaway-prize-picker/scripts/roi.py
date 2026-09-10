@@ -8,7 +8,7 @@ After the campaign, pricing what actually happened: the same spend drew 1,800 En
 
 Costs are what you pay. --stated-value is the retail figure you advertise, which is what the benchmarks below use, because the
 export records what organizers stated, never what they paid. Benchmarks are medians from the ordinary segment of the campaign
-export (35,668 campaigns that reached 1,000 Entrants). Value per email or follow is yours to supply: expected revenue per
+export (117,128 campaigns that reached 100 Entrants). Value per email or follow is yours to supply: expected revenue per
 subscriber over the period you care about, or what you would pay a channel for the same list. The script reports the breakeven
 value if you give none. Nothing here predicts Entrants. Give the number you expect and the script prices it.
 
@@ -19,121 +19,174 @@ import argparse, json, sys
 
 BENCH = {
  "all": {
-  "usd_per_contestant": 0.3,
-  "usd_per_email": 0.31,
-  "usd_per_follow": 0.37,
-  "usd_per_referral_entry": 2.1,
-  "stated_pool_usd": 900
+  "usd_per_contestant": 0.42,
+  "usd_per_email": 0.4,
+  "usd_per_follow": 0.47,
+  "usd_per_referral_entry": 2.89,
+  "emails_per_campaign": 712.0,
+  "stated_pool_usd": 299.0
  },
  "by_band": {
-  "10k+": {
-   "usd_per_contestant": 0.14,
-   "usd_per_email": 0.16,
-   "usd_per_follow": 0.18,
-   "emails_per_campaign": 16344,
-   "stated_pool_usd": 3000.0
+  "100-250": {
+   "usd_per_contestant": 0.77,
+   "usd_per_email": 1.03,
+   "usd_per_follow": 0.74,
+   "usd_per_referral_entry": 8.57,
+   "emails_per_campaign": 157,
+   "stated_pool_usd": 120.0,
+   "n": 33285
+  },
+  "250-500": {
+   "usd_per_contestant": 0.39,
+   "usd_per_email": 0.34,
+   "usd_per_follow": 0.36,
+   "usd_per_referral_entry": 3.12,
+   "emails_per_campaign": 353,
+   "stated_pool_usd": 149.0,
+   "n": 25832
+  },
+  "500-1k": {
+   "usd_per_contestant": 0.38,
+   "usd_per_email": 0.42,
+   "usd_per_follow": 0.43,
+   "usd_per_referral_entry": 2.51,
+   "emails_per_campaign": 645,
+   "stated_pool_usd": 260.0,
+   "n": 21886
   },
   "1k-2.5k": {
    "usd_per_contestant": 0.36,
    "usd_per_email": 0.39,
-   "usd_per_follow": 0.44,
+   "usd_per_follow": 0.46,
+   "usd_per_referral_entry": 2.21,
    "emails_per_campaign": 1346,
-   "stated_pool_usd": 529
+   "stated_pool_usd": 534.0,
+   "n": 20090
   },
   "2.5k-10k": {
    "usd_per_contestant": 0.29,
    "usd_per_email": 0.29,
-   "usd_per_follow": 0.35,
-   "emails_per_campaign": 3703,
-   "stated_pool_usd": 1299.0
+   "usd_per_follow": 0.37,
+   "usd_per_referral_entry": 2.16,
+   "emails_per_campaign": 3713,
+   "stated_pool_usd": 1299.0,
+   "n": 12817
+  },
+  "10k+": {
+   "usd_per_contestant": 0.14,
+   "usd_per_email": 0.16,
+   "usd_per_follow": 0.18,
+   "usd_per_referral_entry": 1.38,
+   "emails_per_campaign": 16566,
+   "stated_pool_usd": 3000.0,
+   "n": 3218
   }
  },
  "by_vertical": {
-  "gaming": {
-   "usd_per_contestant": 0.29,
-   "usd_per_email": 0.29,
-   "usd_per_follow": 0.21,
-   "usd_per_referral_entry": 2.08,
-   "stated_pool_usd": 1087.5,
-   "n": 6503
+  "music_media": {
+   "usd_per_contestant": 0.17,
+   "usd_per_email": 0.09,
+   "usd_per_follow": 0.23,
+   "usd_per_referral_entry": 2.0,
+   "emails_per_campaign": 827.5,
+   "stated_pool_usd": 70.0,
+   "n": 24965
   },
-  "travel_events": {
-   "usd_per_contestant": 0.48,
-   "usd_per_email": 0.5,
-   "usd_per_follow": 1.15,
-   "usd_per_referral_entry": 4.9,
-   "stated_pool_usd": 1497,
-   "n": 1758
+  "gaming": {
+   "usd_per_contestant": 0.42,
+   "usd_per_email": 0.59,
+   "usd_per_follow": 0.38,
+   "usd_per_referral_entry": 2.11,
+   "emails_per_campaign": 478.0,
+   "stated_pool_usd": 200.0,
+   "n": 24651
+  },
+  "unclassified": {
+   "usd_per_contestant": 0.55,
+   "usd_per_email": 0.55,
+   "usd_per_follow": 0.73,
+   "usd_per_referral_entry": 3.87,
+   "emails_per_campaign": 578.0,
+   "stated_pool_usd": 379.0,
+   "n": 16694
   },
   "technology": {
-   "usd_per_contestant": 0.38,
-   "usd_per_email": 0.4,
-   "usd_per_follow": 0.53,
-   "usd_per_referral_entry": 1.28,
-   "stated_pool_usd": 1038.5,
-   "n": 1717
-  },
-  "music_media": {
-   "usd_per_contestant": 0.21,
-   "usd_per_email": 0.14,
-   "usd_per_follow": 0.48,
-   "usd_per_referral_entry": 2.15,
-   "stated_pool_usd": 419.5,
-   "n": 1006
-  },
-  "food_drink": {
-   "usd_per_contestant": 0.26,
-   "usd_per_email": 0.31,
-   "usd_per_follow": 0.54,
-   "usd_per_referral_entry": 2.16,
-   "stated_pool_usd": 550,
-   "n": 989
-  },
-  "home": {
-   "usd_per_contestant": 0.33,
-   "usd_per_email": 0.38,
-   "usd_per_follow": 0.52,
-   "usd_per_referral_entry": 2.2,
-   "stated_pool_usd": 900.0,
-   "n": 883
+   "usd_per_contestant": 0.6,
+   "usd_per_email": 0.64,
+   "usd_per_follow": 0.51,
+   "usd_per_referral_entry": 2.49,
+   "emails_per_campaign": 768.0,
+   "stated_pool_usd": 540.0,
+   "n": 15589
   },
   "fitness_outdoor": {
-   "usd_per_contestant": 0.46,
-   "usd_per_email": 0.43,
-   "usd_per_follow": 0.91,
-   "usd_per_referral_entry": 3.99,
-   "stated_pool_usd": 1434.5,
-   "n": 878
+   "usd_per_contestant": 0.69,
+   "usd_per_email": 0.66,
+   "usd_per_follow": 1.13,
+   "usd_per_referral_entry": 3.57,
+   "emails_per_campaign": 849.5,
+   "stated_pool_usd": 540.0,
+   "n": 7801
   },
   "kids_family_pets": {
-   "usd_per_contestant": 0.39,
-   "usd_per_email": 0.43,
-   "usd_per_follow": 0.68,
-   "usd_per_referral_entry": 3.64,
-   "stated_pool_usd": 999.0,
-   "n": 660
+   "usd_per_contestant": 0.52,
+   "usd_per_email": 0.57,
+   "usd_per_follow": 0.76,
+   "usd_per_referral_entry": 5.12,
+   "emails_per_campaign": 486.5,
+   "stated_pool_usd": 249.0,
+   "n": 6837
   },
   "fashion_beauty": {
-   "usd_per_contestant": 0.29,
-   "usd_per_email": 0.37,
-   "usd_per_follow": 0.54,
-   "usd_per_referral_entry": 2.82,
-   "stated_pool_usd": 1000.0,
-   "n": 359
+   "usd_per_contestant": 0.44,
+   "usd_per_email": 0.41,
+   "usd_per_follow": 0.52,
+   "usd_per_referral_entry": 2.99,
+   "emails_per_campaign": 880.0,
+   "stated_pool_usd": 368.0,
+   "n": 6465
+  },
+  "food_drink": {
+   "usd_per_contestant": 0.5,
+   "usd_per_email": 0.52,
+   "usd_per_follow": 0.87,
+   "usd_per_referral_entry": 2.78,
+   "emails_per_campaign": 712,
+   "stated_pool_usd": 426.0,
+   "n": 4682
+  },
+  "travel_events": {
+   "usd_per_contestant": 0.86,
+   "usd_per_email": 0.84,
+   "usd_per_follow": 2.72,
+   "usd_per_referral_entry": 7.84,
+   "emails_per_campaign": 648,
+   "stated_pool_usd": 599.0,
+   "n": 3979
+  },
+  "home": {
+   "usd_per_contestant": 0.48,
+   "usd_per_email": 0.54,
+   "usd_per_follow": 0.91,
+   "usd_per_referral_entry": 3.32,
+   "emails_per_campaign": 867.5,
+   "stated_pool_usd": 510.0,
+   "n": 3713
   },
   "software": {
-   "usd_per_contestant": 0.46,
-   "usd_per_email": 0.41,
-   "usd_per_follow": 0.55,
-   "usd_per_referral_entry": 4.29,
-   "stated_pool_usd": 1187.0,
-   "n": 349
+   "usd_per_contestant": 1.09,
+   "usd_per_email": 1.19,
+   "usd_per_follow": 1.24,
+   "usd_per_referral_entry": 4.03,
+   "emails_per_campaign": 979.0,
+   "stated_pool_usd": 1000.0,
+   "n": 1752
   }
  }
 }
-UPTAKE = {"email": 0.89, "follow": 0.47, "referral": 0.13}   # median completions per Entrant when the action is offered
+UPTAKE = {"email": 0.85, "follow": 0.53, "referral": 0.11}   # median completions per Entrant when the action is offered
 
-def band(n): return "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2.5k"
+def band(n): return "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2.5k" if n >= 1000 else "500-1k" if n >= 500 else "250-500" if n >= 250 else "100-250"
 
 def money(x): return "-" if x is None else f"{x:,.2f}"
 
@@ -168,7 +221,7 @@ def self_test():
     class A: prize_cost = 900; stated_value = 1500; promotion = 300; admin = 200; shipping = 0; contestants = 2000; vertical = "food_drink"
     class A(A): emails = None; follows = None; referrals = None; email_action = True; follow_action = True; share_action = True; value_per_email = 4; value_per_follow = 0; value_per_referral = 0
     rows, note = run(A); d = {r[0]: r for r in rows}
-    assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.79" and d["Return per dollar"][1] == "5.09", rows
+    assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Return per dollar"][1] == "4.86", rows
     A.value_per_email = 0; rows, _ = run(A); assert any(r[0] == "Breakeven value per email" for r in rows)
     print("self-test passed"); return 0
 

@@ -32,6 +32,10 @@ jobs:
       - name: No PII
         run: |
           ! git ls-files | grep -E 'contestants.*\.json$|\.jsonl$|\.tables$|with-histograms'
+          # no symlinks: one pointing at a private directory leaks a local path and can smuggle data in
+          if git ls-files -s | awk '$1 == "120000" {print $4}' | grep -q .; then
+            echo "symlink committed:"; git ls-files -s | awk '$1 == "120000" {print $4}'; exit 1
+          fi
           # data and doc files never carry the dataset's identity fields (scripts may name them to drop them)
           ! git ls-files -z -- '*.json' '*.md' '*.csv' | xargs -0 grep -Il -E '"(restricted_field)"' -- 2>/dev/null  || (echo "PII field name found" && exit 1)
           # the only email addresses in the repo are synthetic (example.*, the draw self-test's x.com fixtures, the disposable-domain sample)

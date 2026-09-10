@@ -3,24 +3,24 @@
 Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. Entries are actions completed times the entry worth the business set, and entry worth is unknown in the dataset, so a figure near 100 per 100 means most Entrants did it only where the worth was 1, repeatable actions and referrals can pass 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, and its top marks the level nine campaigns in ten sit below.]
 
 <!-- generated:entry_families -->
-| Action family | Campaigns using it | Share of campaigns | Share who completed it (middle half in brackets) | Campaigns behind the figure |
+| Action family | Campaigns using it | Share of campaigns | Uptake median (IQR) | n with uptake |
 |---|---|---|---|---|
-| Visit a page or profile | 29,073 | 82% | 75 (55 to 92) [raw 0.75] | 131,129 |
-| Follow or subscribe (free) | 22,705 | 64% | 46 (32 to 63) [raw 0.46] | 56,477 |
-| Share, repost or refer | 20,078 | 56% | 20 (9 to 39) [raw 0.20] | 26,865 |
-| Email or newsletter signup | 15,855 | 44% | 89 (69 to 102) [raw 0.89] | 17,634 |
-| Bonus, loyalty or code | 14,590 | 41% | 65 (23 to 111) [raw 0.65] | 21,882 |
-| Join a community | 7,103 | 20% | 40 (27 to 60) [raw 0.40] | 9,963 |
-| Custom action (other) | 6,732 | 19% | 47 (22 to 81) [raw 0.47] | 15,106 |
-| Answer a question or poll | 5,684 | 16% | 86 (56 to 101) [raw 0.86] | 8,437 |
-| Post or create content | 5,507 | 15% | 23 (8 to 37) [raw 0.23] | 6,658 |
-| Engage with a post | 4,030 | 11% | 48 (28 to 75) [raw 0.48] | 7,489 |
-| Connect an account to enter | 3,991 | 11% | 47 (34 to 65) [raw 0.47] | 6,115 |
-| Paid subscription | 1,889 | 5% | 5 (2 to 15) [raw 0.05] | 2,562 |
-| Download or play | 1,673 | 5% | 33 (23 to 47) [raw 0.33] | 1,798 |
-| Imported or offline entries | 702 | 2% | 5 (1 to 40) [raw 0.05] | 841 |
+| Visit a page or profile | 94,591 | 81% | 0.80 (0.61 to 0.94) | 376,120 |
+| Follow or subscribe (free) | 78,061 | 66% | 0.51 (0.35 to 0.69) | 173,303 |
+| Share, repost or refer | 61,298 | 52% | 0.26 (0.10 to 0.47) | 81,916 |
+| Bonus, loyalty or code | 45,912 | 39% | 0.87 (0.33 to 1.22) | 64,921 |
+| Email or newsletter signup | 40,733 | 35% | 0.84 (0.70 to 1.01) | 49,688 |
+| Join a community | 23,242 | 20% | 0.49 (0.32 to 0.72) | 32,383 |
+| Custom action (other) | 23,057 | 20% | 0.51 (0.26 to 0.81) | 52,841 |
+| Post or create content | 21,785 | 19% | 0.31 (0.15 to 0.44) | 26,338 |
+| Engage with a post | 19,841 | 17% | 0.54 (0.29 to 0.80) | 36,525 |
+| Answer a question or poll | 19,474 | 17% | 0.76 (0.49 to 1.00) | 31,477 |
+| Connect an account to enter | 15,382 | 13% | 0.55 (0.39 to 0.74) | 24,194 |
+| Paid subscription | 7,529 | 6% | 0.11 (0.03 to 0.36) | 8,413 |
+| Download or play | 4,082 | 4% | 0.37 (0.23 to 0.58) | 4,392 |
+| Imported or offline entries | 1,190 | 1% | 0.08 (0.01 to 0.64) | 1,390 |
 
-Methods per campaign typically run 7, middle half 4 to 11. [Top tenth of campaigns run 17 or more, 35,668 campaigns. Completion means entries recorded on the method divided by the campaign's valid Entrants, capped at 5 (repeatable methods can pass 100 per 100). Family names are generic, and platform types were mapped to them by hand.]
+Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=117,348). uptake = entries recorded on the method divided by the campaign's valid contestants, capped at 5 (repeatable methods can exceed 1). Family names are generic, and platform types were mapped to them by hand.
 <!-- /generated -->
 
 ## Reading the table
@@ -33,7 +33,7 @@ Methods per campaign typically run 7, middle half 4 to 11. [Top tenth of campaig
 
 ## Completions by action, required versus optional
 
-A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: campaigns with 1,000 or more Entrants, every group at least five businesses. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
+A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: campaigns with 100 or more Entrants, every group at least five businesses. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
 
 <!-- table -->
 | Action | Campaigns | Businesses | Share who completed it | When required | When optional | How often required |
@@ -114,26 +114,29 @@ Typical settings: share worth typically sits at 5, with the top quarter of campa
 
 ## Action settings from the config
 
-Share who completed it by settings read from the action config, campaigns with 1,000 or more Entrants, every group covers at least 30 campaigns and 10 businesses. Source: `analysis/output/field_cuts.json`, config_cuts.
+Share who completed it by settings read from the action config, campaigns with 100 or more Entrants, every group covers at least 30 campaigns and 10 businesses. Source: `analysis/output/field_cuts.json`, config_cuts.
 
-**Share text.** Medium-length copy completes far better than long copy, and a hashtag beats a link.
+**Share text.** Medium-length copy completes about twice as often as long copy.
 
 | Share text trait | Completion |
 |---|---|
-| 60-140 characters | 41 per 100 (23,207 campaigns, 5,345 businesses) |
-| Over 140 characters | 13 per 100 (4,934 campaigns, 1,401 businesses) |
-| Plain, no link or hashtag | 31 per 100 (27,705 campaigns, 6,332 businesses) |
-| With hashtag | 35 per 100 (283 campaigns, 97 businesses) |
-| With link | 23 per 100 (1,328 campaigns, 309 businesses) |
+| 60-140 characters | 26 per 100 (53,617 campaigns, 9,335 businesses) |
+| Over 140 characters | 14 per 100 (14,664 campaigns, 2,731 businesses) |
+| Plain, no link or hashtag | 22 per 100 (66,155 campaigns, 11,243 businesses) |
+| With hashtag | 22 per 100 (665 campaigns, 175 businesses) |
+| With link | 44 per 100 (4,753 campaigns, 552 businesses) |
+
+Share text carrying a link completes twice as often as plain text, and a hashtag makes no difference either way. Read the link row with care: 40% of those actions were mandatory against 15% of the plain ones, so the gap is partly who was made to complete them and not the link itself.
 
 **Actions required.** Completion holds steady through a few steps, then falls hard from eight steps on.
 
 | Steps required | Completion |
 |---|---|
-| 1 | 82 per 100 (129,402 campaigns, 8,403 businesses) |
-| 2-4 | 92-102 per 100 (668 to 1,365 campaigns, 314 to 550 businesses each) |
-| 8 | 42 per 100 (857 campaigns, 344 businesses) |
-| 11 | 26 per 100 (302 campaigns, 133 businesses) |
+| 1 | 84 per 100 (372,987 actions, 19,088 businesses) |
+| 2-4 | 99-109 per 100 (2,709 to 4,517 actions, 871 to 1,391 businesses each) |
+| 5-7 | 66-81 per 100 (3,726 to 5,900 actions, 1,398 to 1,938 businesses each) |
+| 8 | 31 per 100 (2,429 actions, 738 businesses) |
+| 11 | 23 per 100 (682 actions, 270 businesses) |
 
 **Paid actions.** A paid step moves completion in different directions depending on the action.
 
@@ -159,19 +162,19 @@ What practice suggests, with no numbers attached:
 Share of campaigns of each size that offered at least one action from the family.
 
 <!-- generated:entry_by_band -->
-| Action family | 1k-2.5k | 2.5k-10k | 10k+ |
-|---|---|---|---|
-| Visit a page or profile | 80% | 83% | 82% |
-| Follow or subscribe (free) | 64% | 63% | 65% |
-| Share, repost or refer | 57% | 57% | 52% |
-| Email or newsletter signup | 44% | 46% | 41% |
-| Bonus, loyalty or code | 40% | 42% | 44% |
-| Join a community | 21% | 19% | 16% |
-| Answer a question or poll | 16% | 16% | 16% |
-| Post or create content | 16% | 14% | 17% |
-| Connect an account to enter | 12% | 10% | 7% |
-| Download or play | 4% | 5% | 5% |
-| Methods per campaign (typical) | 7 | 7 | 7 |
+| Action family | 100-250 | 250-500 | 500-1k | 1k-2.5k | 2.5k-10k | 10k+ |
+|---|---|---|---|---|---|---|
+| Visit a page or profile | 79% | 82% | 81% | 80% | 83% | 82% |
+| Follow or subscribe (free) | 68% | 68% | 67% | 64% | 64% | 66% |
+| Share, repost or refer | 45% | 53% | 56% | 57% | 57% | 52% |
+| Email or newsletter signup | 25% | 31% | 38% | 43% | 46% | 40% |
+| Bonus, loyalty or code | 40% | 37% | 38% | 39% | 42% | 44% |
+| Join a community | 18% | 19% | 22% | 21% | 20% | 17% |
+| Answer a question or poll | 17% | 17% | 17% | 16% | 16% | 16% |
+| Post or create content | 21% | 20% | 18% | 16% | 15% | 18% |
+| Connect an account to enter | 15% | 13% | 13% | 12% | 10% | 7% |
+| Download or play | 3% | 3% | 4% | 4% | 5% | 5% |
+| Methods per campaign (median) | 6 | 7 | 7 | 7 | 7 | 7 |
 <!-- /generated -->
 
 The mix barely changes with size. Seven methods is typical at every size. Bigger campaigns are slightly less likely to ask for shares and slightly more likely to ask for follows and page visits.
@@ -299,47 +302,47 @@ Bigger channels pull less direct traffic to the campaign. A bigger audience reli
 
 - The completion figures count completions the platform recorded. They cannot show whether a follow stayed or an email address was real.
 - Families group actions across platforms whose rules differ. A follow on one network is verifiable, on another it is on trust.
-- Every campaign passed the 1,000-Entrant floor, so the table describes campaigns that reached an audience and nothing about what a mix does for a campaign that has not.
+- Every campaign passed the 100-Entrant floor, so the table describes campaigns that reached an audience and nothing about what a mix does for a campaign that has not.
 
 ## Method count, sharing and email against Entrants and conversion
 
 Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Entrants per Impression without any change in who entered. The campaigns we can compare fairly here remove any campaign with a repeatable action and any run over 14 days. Typical values, the campaigns we can compare fairly, descriptive only. A vertical is a regex proxy on business, campaign and Prize names.
 
 <!-- generated:cmp_methods -->
-| Entry methods, the campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Entrants per 100 Impressions | Impressions per Entrant | Methods |
+| Entry methods, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| 1 to 3 | 3,213 | 2,305 | 1.00 | 48 | 2.1 | 2 |
-| 4 to 6 | 3,189 | 2,176 (-6%) | 3.36 (+235%) | 38 (-22%) | 2.7 | 5 |
-| 7 to 10 | 2,635 | 2,080 (-10%) | 5.01 (+400%) | 33 (-32%) | 3.1 | 8 |
-| 11 or more | 1,682 | 1,760 (-24%) | 9.05 (+803%) | 32 (-34%) | 3.1 | 14 |
+| 1 to 3 | 10,841 | 443 | 1.29 | 44% | 2.3 | 2 |
+| 4 to 6 | 12,430 | 401 (-9%) | 3.43 (+166%) | 35% (-21%) | 2.9 | 5 |
+| 7 to 10 | 9,744 | 463 (+5%) | 5.26 (+307%) | 29% (-35%) | 3.5 | 8 |
+| 11 or more | 6,795 | 519 (+17%) | 9.26 (+617%) | 31% (-29%) | 3.2 | 14 |
 <!-- /generated -->
 
 Entrants per 100 Impressions falls with every extra group of methods and Entrants fall about a quarter at 11 or more, in the campaigns we can compare fairly and in every vertical with enough campaigns. Actions per Entrant rise because there are more things to do. More methods means more Actions per Entrant and fewer people.
 
 <!-- generated:cmp_share -->
-| Share action, the campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Entrants per 100 Impressions | Impressions per Entrant | Methods |
+| Share action, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no share action | 7,534 | 2,236 | 3.32 | 41 | 2.4 | 5 |
-| offers a share action | 3,185 | 1,871 (-16%) | 4.13 (+24%) | 31 (-25%) | 3.2 | 7 |
+| no share action | 28,415 | 406 | 3.36 | 37% | 2.7 | 5 |
+| offers a share action | 11,395 | 544 (+34%) | 4.90 (+46%) | 29% (-23%) | 3.5 | 8 |
 <!-- /generated -->
 
 <!-- generated:cmp_email -->
-| Email signup, the campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Entrants per 100 Impressions | Impressions per Entrant | Methods |
+| Email signup, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no email signup | 7,203 | 2,099 | 3.68 | 41 | 2.5 | 5 |
-| offers email signup | 3,516 | 2,170 (+3%) | 3.33 (-9%) | 33 (-20%) | 3.1 | 6 |
+| no email signup | 28,961 | 423 | 3.71 | 37% | 2.7 | 5 |
+| offers email signup | 10,849 | 546 (+29%) | 3.65 (-2%) | 30% (-17%) | 3.3 | 6 |
 <!-- /generated -->
 
 Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had fewer Entrants and lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup cost about a fifth of conversion for a small gain in Entrants. Both are prices worth paying only when the asset is the objective.
 
-A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit, excluding crypto businesses.
+A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit, excluding crypto businesses [14.9% against 22.5%].
 
 | Cut | Share-click conversion |
 |---|---|
-| Excluding finance and crypto | 15.8% (against 24.3% for ordinary Impressions on the same campaigns, 18,461 campaigns, 4,011 businesses) |
-| Pooled with crypto (referral farms included) | 22.1% (29,151 campaigns, 6,536 businesses) |
-| Worth 1-9, pooled | 18.7%-19.6% |
-| Worth 10+, pooled | 28.1% (11,903 campaigns, 2,555 businesses), with more clicks per Entrant too (1.90 against 1.47 at worth 1) |
+| Excluding finance and crypto | 14.9% (against 22.5% for ordinary Impressions on the same campaigns, 47,097 campaigns, 7,603 businesses) |
+| Pooled with crypto (referral farms included) | 20.0% (71,191 campaigns, 11,563 businesses) |
+| Worth 1-9, pooled | 16.7%-18.1% |
+| Worth 10+, pooled | 26.2% (27,991 campaigns, 4,196 businesses), with more clicks per Entrant too (1.61 against 1.27 at worth 1) |
 
 [Source: analysis/output/field_cuts.json (viral_click_conversion, viral_click_conversion_excluding_crypto, viral_click_conversion_by_worth).]
 </content>

@@ -1,37 +1,34 @@
 # Prize taxonomy
 
-Categories were built from Prize names, campaign names and descriptions in the dataset, then refined against what the listings contained. Classification is by pattern matching on the Prize name, with campaign context for the segment decision. These labels are our inference. The business never chose them. Figures are for the campaigns behind these numbers (35,668 campaigns, 58,064 Prize listings, 6,402 businesses) after excluding crypto, ambiguous and purchase-opportunity campaigns. "Value stated" is the share of listings with a non-null, non-zero value. USD figures are typical values, using stated USD values only.
+Categories were built from Prize names, campaign names and descriptions in the dataset, then refined against what the listings contained. Classification is by pattern matching on the Prize name, with campaign context for the segment decision. These labels are our inference. The business never chose them. Figures are for the campaigns behind these numbers (117,348 campaigns, 172,645 Prize listings, 17,777 businesses) after excluding crypto, ambiguous and purchase-opportunity campaigns. "Value stated" is the share of listings with a non-null, non-zero value. USD figures are typical values, using stated USD values only.
 
 <!-- generated:taxonomy -->
-| Category | What it covers | Prize listings | Campaigns | Businesses | Value stated | Typical stated USD (listings) |
+| Category | What it covers | Prize records | Campaigns | Organizers | Value stated | Stated USD median (n) |
 |---|---|---|---|---|---|---|
-| Tech hardware | PCs, GPUs, consoles, phones, peripherals, monitors, audio, smart devices | 16,327 | 11,431 | 2,469 | 37% | 429 (5,988) |
-| Game items or skins | Game keys and copies, in-game currency, cosmetic skins, editions | 6,465 | 3,032 | 876 | 36% | 59 (2,341) |
-| Gift card or cash | Store gift cards, vouchers, cash, store credit, shopping sprees | 6,367 | 4,684 | 1,638 | 54% | 150 (3,403) |
-| Bundle or box | Packs, kits, setups, boxes, partner bundles, mystery boxes | 5,235 | 4,108 | 1,567 | 42% | 348 (2,211) |
-| Merch, apparel, collectibles | Signed items, jerseys, hoodies, sneakers, bags, replicas, comics | 2,682 | 2,082 | 761 | 29% | 120 (767) |
-| Experience, travel, tickets | Trips, stays, cruises, event tickets, concerts, guided experiences | 2,497 | 2,075 | 770 | 34% | 700 (842) |
-| Home, garden, appliance | Grills, kitchen appliances, furniture, decor, power stations, wellness devices | 2,240 | 1,770 | 580 | 47% | 300 (1,045) |
-| Regulated goods (firearms) | Firearms, ammunition, parts and optics, from specialist retailers | 1,569 | 1,363 | 202 | 64% | 1,330 (1,005) |
-| Sports and outdoor gear | Fitness, bikes, fishing, hunting gear, camping, archery, EDC knives | 1,131 | 883 | 417 | 53% | 379 (594) |
-| Music gear | Guitars, pianos, pedals, recording equipment | 972 | 675 | 148 | 64% | 299 (621) |
-| Toys and collectibles | LEGO, figures, statues, plush, board games | 889 | 712 | 207 | 16% | 100 (132) |
-| Food, drink, consumables | Food, drink, supplements, a year's supply of consumables | 844 | 712 | 316 | 39% | 200 (330) |
-| Tools, craft, DIY | Power tools, 3D printers and filament, crafting machines, epoxy | 802 | 538 | 159 | 42% | 300 (341) |
-| Subscription or membership | Annual plans, lifetime memberships, a year of a product, courses | 765 | 517 | 311 | 48% | 150 (366) |
-| Discount or coupon | Discount codes, coupons, cashback. Requires a purchase, so a weak Prize | 583 | 438 | 148 | 43% | 100 (251) |
-| Vehicle | Cars, trucks, motorcycles, e-bikes, outboard motors | 463 | 407 | 198 | 68% | 1,094 (316) |
-| Beauty and wellness | Skincare, grooming, wellness products | 336 | 273 | 143 | 50% | 250 (167) |
-| Exclusive access | Beta keys, playtests, creator interaction, community roles | 151 | 135 | 111 | 18% | 422 (28) |
-| Pet products | Pet supplies | 111 | 94 | 29 | 40% | 150 (45) |
-| Baby and kids | Cribs, strollers, baby products | 92 | 55 | 34 | 29% | 269 (27) |
-| Art and custom | Artwork, prints, commissions | 82 | 65 | 51 | 33% | 209 (27) |
-| Services | Car washes, courses, insurance, consultations | 74 | 60 | 45 | 53% | 650 (39) |
-| Bullion | Silver and gold bars, rounds, coins | 27 | 23 | 10 | 30% | 1,041 (8) |
-| Placeholder name | "1st Prize", "Winner", a campaign title reused: the record does not say what the Prize was | 3,458 | 2,247 | 749 | 33% | 396 (1,137) |
-| Unclassified | Neither rules nor the label pass could place them (opaque brand codes, ambiguous short names) | 3,902 | 2,961 | 1,322 | 37% | 279 (1,451) |
+| Tech hardware | PCs, GPUs, consoles, phones, peripherals, monitors, audio, smart devices | 30,188 | 22,137 | 4,938 | 34% | 299 (10,082) |
+| Gift card or cash | Store gift cards, vouchers, cash, store credit, shopping sprees | 22,963 | 17,927 | 4,514 | 56% | 50 (12,845) |
+| Game items or skins | Game keys and copies, in-game currency, cosmetic skins, editions | 17,194 | 11,228 | 2,730 | 37% | 56 (6,310) |
+| Bundle or box | Packs, kits, setups, boxes, partner bundles, mystery boxes | 16,071 | 13,410 | 3,944 | 40% | 175 (6,333) |
+| Experience, travel, tickets | Trips, stays, cruises, event tickets, concerts, guided experiences | 7,165 | 6,321 | 1,925 | 29% | 400 (2,101) |
+| Merch, apparel, collectibles | Signed items, jerseys, hoodies, sneakers, bags, replicas, comics | 6,728 | 5,548 | 1,838 | 30% | 50 (2,011) |
+| Home, garden, appliance | Grills, kitchen appliances, furniture, decor, power stations, wellness devices | 2,830 | 2,452 | 913 | 45% | 200 (1,283) |
+| Toys and collectibles | LEGO, figures, statues, plush, board games | 2,524 | 2,297 | 474 | 17% | 58 (416) |
+| Subscription or membership | Annual plans, lifetime memberships, a year of a product, courses | 2,157 | 1,637 | 882 | 47% | 150 (1,020) |
+| Regulated goods (firearms) | Firearms, ammunition, parts and optics, from specialist retailers | 1,770 | 1,579 | 329 | 63% | 1,118 (1,116) |
+| Food, drink, consumables | Food, drink, supplements, a year's supply of consumables | 1,591 | 1,468 | 608 | 37% | 190 (588) |
+| Sports and outdoor gear | Fitness, bikes, fishing, hunting gear, camping, archery, EDC knives | 1,562 | 1,366 | 654 | 52% | 299 (804) |
+| Discount or coupon | Discount codes, coupons, cashback. Requires a purchase, so a weak prize | 1,352 | 1,054 | 348 | 34% | 100 (465) |
+| Beauty and wellness | Skincare, grooming, wellness products | 895 | 815 | 310 | 45% | 150 (403) |
+| Vehicle | Cars, trucks, motorcycles, e-bikes, outboard motors | 803 | 733 | 369 | 58% | 699 (468) |
+| Tools, craft, DIY | Power tools, 3D printers and filament, crafting machines, epoxy | 790 | 581 | 203 | 45% | 209 (353) |
+| Exclusive access | Beta keys, playtests, creator interaction, community roles | 587 | 535 | 332 | 20% | 200 (119) |
+| Music gear | Guitars, pianos, pedals, recording equipment | 573 | 452 | 175 | 45% | 399 (256) |
+| Art and custom | Artwork, prints, commissions | 217 | 185 | 112 | 32% | 73 (70) |
+| Bullion | Silver and gold bars, rounds, coins | 26 | 25 | 13 | 38% | 750 (9) |
+| Placeholder name | "1st Prize", "Winner", a campaign title reused: the record does not say what the prize was | 7,859 | 5,696 | 1,292 | 26% | 200 (2,023) |
+| Unclassified | Neither rules nor the label pass could place them (opaque brand codes, ambiguous short names) | 46,800 | 34,953 | 8,748 | 34% | 120 (15,943) |
 
-Categories were assigned in two passes: name-pattern rules (49,511 listings) and, only where rules failed, a private AI-assisted label pass over the leftover names (8,553 listings). Small categories are listed for completeness and are too thin to benchmark.
+Categories were assigned in two passes: name-pattern rules (172,645 records) and, only where rules failed, a private LLM-assisted label pass over the leftover names (0 records). Small categories are listed for completeness and are too thin to benchmark.
 <!-- /generated -->
 
 ## Category performance
@@ -111,12 +108,11 @@ The crypto rule needs two or more strong signals among: wallet-address Entry Met
 <!-- generated:segments -->
 | Segment | Campaigns | Handling |
 |---|---|---|
-| Ordinary | 35,668 (58,064 Prize listings, 6,402 businesses) | Basis for every default figure |
-| Crypto | 3,015 | Excluded. Described only when a user asks for crypto advice. 53% used a wallet-address Entry Method |
-| Ambiguous | 283 | Excluded and reported separately |
-| Purchase opportunity | 92 | Excluded. The Prize is the right to buy something |
+| Ordinary | 117,348 (172,645 prize records, 17,777 organizers) | Basis for every default figure |
+| Crypto | 6,288 | Excluded. Described only when a user asks for crypto advice. 38% used a wallet-address entry method |
+| Purchase opportunity | 262 | Excluded. The prize is the right to buy something |
 
-Excluded campaigns are similar in size to the rest (crypto typical 3,123 Entrants versus 2,209 for the rest), so exclusion changes who is in the benchmark and leaves the size distribution alone.
+Excluded campaigns are similar in size to ordinary ones (crypto median 732 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
 <!-- /generated -->
 
 Any claim that crypto campaigns inflate a benchmark remains a hypothesis.
