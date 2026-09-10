@@ -58,7 +58,7 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 ## What campaigns produced (extracted)
 
-Completions of the acquire and amplify actions, summed per campaign, across the 35,614 campaigns behind these numbers that offered each. This is the closest the export comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
+Completions of the acquire and amplify actions, summed per campaign, across the 35,614 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
 Reading it: cost per completion varies widely by asset, from under $0.50 for an email signup to about $17 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.4 to $0.9 depending on the network.
 
@@ -133,7 +133,7 @@ Where a campaign was copied from, scoped to 1,000 or more Entrants, finance_cryp
 | Own earlier campaign, copied | 62% | 21,973 | 2,710 | 0.270 |
 | Blank, no copying | 23% | 8,167 | 3,432 | 0.307 |
 | Gleam library template | 9% | 3,059 | 2,219 | 0.264 |
-| A campaign outside the export | 7% | 2,458 | 1,268 | 0.273 |
+| A campaign outside the dataset | 7% | 2,458 | 1,268 | 0.273 |
 
 Typical figures for the library templates with the most campaigns at this size:
 
@@ -247,13 +247,13 @@ This industry cut reads the organizer's own homepage, and so do `percentiles.jso
 | Fitness and outdoor | 24% |
 | Software | 26% |
 
-Gaming reads differently across sources because each draws on a different scope, so use the cut that matches the comparison you're making. `prize_timing_cuts.json`'s `by_industry_ordinary` scopes the homepage labels to the campaigns behind these numbers, tighter than the `by_industry` table further up the page. The Prize picker's ROI benchmarks describe the first export's campaigns we can compare fairly, no repeatable action and a run of 14 days or less.
+Gaming reads differently across sources because each draws on a different scope, so use the cut that matches the comparison you're making. `prize_timing_cuts.json`'s `by_industry_ordinary` scopes the homepage labels to the campaigns behind these numbers, tighter than the `by_industry` table further up the page. The Prize picker's ROI benchmarks describe the earlier dataset's campaigns we can compare fairly, no repeatable action and a run of 14 days or less.
 
 | Source | Conversion Rate | Campaigns | Organizers |
 |---|---|---|---|
 | `by_industry_ordinary` (tighter scope) | 27% | 6,328 | 1,414 |
 | `by_industry` (table above) | 28% | 7,808 | 1,840 |
-| Prize picker ROI benchmarks (first export) | 36% | — | — |
+| Prize picker ROI benchmarks (earlier dataset) | 36% | — | — |
 
 Source: `analysis/output/prize_timing_cuts.json` (`by_industry_ordinary`), `analysis/output/industries.json` (`vertical_mapping`).
 
@@ -420,7 +420,7 @@ Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/ind
 | 2,500 to 10,000 | 20,532 | 5,375 | 4,125 | 30% | 4.95 | 14 | 8 | 30% | 56% |
 | 10,000 plus | 6,363 | 1,989 | 16,706 | 34% | 5.28 | 14 | 8 | 23% | 61% |
 
-A campaign under 1,000 Entrants has its own row here, not a gap in the data (table above). It leads the whole chart on entries per Entrant, above every size that follows, so the Entrants who do show up are already doing more per person than in a bigger campaign. Conversion Rate sits lower than every size above it, a reversal from the first export, where the smallest campaigns had the highest Conversion Rate, and email and a share action both get offered less often than in the next size up. Both gaps close the same way the bigger sizes got there: add the action, the target is the next size's own figure. The estimated-Entrants row is a rough marker, given the model's own error.
+A campaign under 1,000 Entrants has its own row here, not a gap in the data (table above). It leads the whole chart on entries per Entrant, above every size that follows, so the Entrants who do show up are already doing more per person than in a bigger campaign. Conversion Rate sits lower than every size above it, a reversal from the earlier dataset, where the smallest campaigns had the highest Conversion Rate, and email and a share action both get offered less often than in the next size up. Both gaps close the same way the bigger sizes got there: add the action, the target is the next size's own figure. The estimated-Entrants row is a rough marker, given the model's own error.
 
 State entries the same way here: entries per 100 Entrants, not the raw decimal (table below). Read a campaign's own figure against the matching row and state the gap as a percentage or a plain multiple ("about half", "roughly double"), never as two decimals set side by side.
 
@@ -435,7 +435,7 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 
 ## Other reference points
 
-- Top fifth against bottom fifth by Entrants pulls apart on Impressions and Prize pool, not on Conversion Rate or organizer experience (table below). Previous campaigns from the organizer no longer separate the two groups, unlike the first export where the top fifth had noticeably more.
+- Top fifth against bottom fifth by Entrants pulls apart on Impressions and Prize pool, not on Conversion Rate or organizer experience (table below). Previous campaigns from the organizer no longer separate the two groups, unlike the earlier dataset where the top fifth had noticeably more.
 
 - After a campaign of 5,000 or more Entrants, the next one reached 5,000 again 61% of the time, against 12% after a smaller one.
 

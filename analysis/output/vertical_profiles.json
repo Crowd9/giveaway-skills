@@ -4,12 +4,12 @@
   "gate": "every group needs 30 campaigns and 5 organizers; a cut finer than an industry (prize category, action, campaign type, or the top-quartile split inside one industry) needs 30 campaigns and 10 organizers on both sides of the split it appears in",
   "conversion_clean": "contestants over impressions, clean campaigns only (no repeatable action, 14 days or less), so runs of different length and cadence are comparable",
   "value_index": "contestants divided by the median contestants of every valued ordinary campaign in the same stated-USD prize pool band, independent of industry",
-  "prize_category": "analyze_export.classify_prize applied to the lowest-position prize, full coverage (not the first-export classification file)",
+  "prize_category": "analyze.classify_prize applied to the lowest-position prize, full coverage (not the earlier classification file)",
   "campaign_type": "title/incentive-name/description regex from campaign_types.py; a campaign can match more than one type",
   "action_uptake": "completions of that action over contestants, median among campaigns offering it; never divided by worth",
   "top_quartile_vs_rest": "within one industry's clean subset, campaigns ranked by conversion; the top quarter compared with the remaining three quarters of the SAME industry, never against another industry",
   "repeat_organizer_share": "share of the industry's organizers who ran two or more ordinary campaigns in that industry",
-  "nth_campaign": "this campaign's position among every campaign the site has run in the export (all industries), median across the group"
+  "nth_campaign": "this campaign's position among every campaign the site has run in the dataset (all industries), median across the group"
  },
  "scope_counts": {
   "ordinary_n": 35604,

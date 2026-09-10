@@ -85,7 +85,7 @@ Close day of the week, all the campaigns behind these numbers:
 | Saturday | 4,673 | 2,228 | 28% |
 | Sunday | 4,420 | 2,162 | 28% |
 
-Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the export, so pick the close time for your audience and your own working hours.
+Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the dataset, so pick the close time for your audience and your own working hours.
 
 Holding run length fixed, close-day type makes no real difference: every gap sits under two points with no consistent direction. Without holding the run length fixed, a raw comparison would mix short flash campaigns that close mid-week against long advent-style runs that close disproportionately in the holiday period, and holding it fixed removes that mix-up.
 

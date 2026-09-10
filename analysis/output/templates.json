@@ -1,12 +1,12 @@
 {
  "definitions": {
   "scope": "campaigns with 100 or more contestants, plausible dates, finance_crypto organizers and the crypto, ambiguous and purchase-opportunity segments excluded; the 1k keys repeat each cut on 1,000 or more contestants",
-  "source_kind": "template: copied from a Gleam library template; own_campaign: copied from an earlier campaign on the same site; campaign_outside_export: copied from a campaign not in the export (under 100 contestants or another organizer); blank: built without copying",
+  "source_kind": "template: copied from a Gleam library template; own_campaign: copied from an earlier campaign on the same site; campaign_outside_data: copied from a campaign not in the dataset (under 100 contestants or another organizer); blank: built without copying",
   "template": "the Gleam library template name, published because it is Gleam's own; copied campaign names are never published",
   "conversion": "contestants per impression, median across campaigns",
   "entries_per_entrant": "valid entries over contestants, median",
   "email_offered": "share of campaigns with an email subscribe action",
-  "first_campaign": "the organizer's first campaign in the export by start date (seq 1) against later ones"
+  "first_campaign": "the organizer's first campaign in the dataset by start date (seq 1) against later ones"
  },
  "source_mix": {
   "own_campaign": {
@@ -33,7 +33,7 @@
    "share_offered": 0.234,
    "prizes": 1.0
   },
-  "campaign_outside_export": {
+  "campaign_outside_data": {
    "n": 12383,
    "organizers": 4397,
    "contestants": 267.0,
@@ -95,7 +95,7 @@
    "share_offered": 0.604,
    "prizes": 1.0
   },
-  "campaign_outside_export": {
+  "campaign_outside_data": {
    "n": 2458,
    "organizers": 1268,
    "contestants": 2275.0,
@@ -145,7 +145,7 @@
    "share_offered": 0.257,
    "prizes": 1.0
   },
-  "campaign_outside_export|repeat": {
+  "campaign_outside_data|repeat": {
    "n": 9516,
    "organizers": 2606,
    "contestants": 251.0,
@@ -181,7 +181,7 @@
    "share_offered": 0.428,
    "prizes": 1.0
   },
-  "campaign_outside_export|first": {
+  "campaign_outside_data|first": {
    "n": 2867,
    "organizers": 2867,
    "contestants": 359.0,
@@ -243,7 +243,7 @@
    "share_offered": 0.499,
    "prizes": 1.0
   },
-  "campaign_outside_export|100-1k": {
+  "campaign_outside_data|100-1k": {
    "n": 9925,
    "organizers": 3634,
    "contestants": 204.0,
@@ -327,7 +327,7 @@
    "share_offered": 0.618,
    "prizes": 1.0
   },
-  "campaign_outside_export|1k-2.5k": {
+  "campaign_outside_data|1k-2.5k": {
    "n": 1333,
    "organizers": 818,
    "contestants": 1477.0,
@@ -351,7 +351,7 @@
    "share_offered": 0.591,
    "prizes": 1.0
   },
-  "campaign_outside_export|2.5k-10k": {
+  "campaign_outside_data|2.5k-10k": {
    "n": 855,
    "organizers": 525,
    "contestants": 3983.0,
@@ -375,7 +375,7 @@
    "share_offered": 0.246,
    "prizes": 1.0
   },
-  "campaign_outside_export|10k+": {
+  "campaign_outside_data|10k+": {
    "n": 270,
    "organizers": 174,
    "contestants": 16693.5,
@@ -1973,7 +1973,7 @@
     "organizers": 3380,
     "share": 0.3
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 2677,
     "organizers": 1200,
     "share": 0.103
@@ -1995,7 +1995,7 @@
     "organizers": 1196,
     "share": 0.166
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 2627,
     "organizers": 532,
     "share": 0.12
@@ -2017,7 +2017,7 @@
     "organizers": 1330,
     "share": 0.262
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 1262,
     "organizers": 465,
     "share": 0.08
@@ -2044,7 +2044,7 @@
     "organizers": 420,
     "share": 0.121
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 411,
     "organizers": 279,
     "share": 0.086
@@ -2066,7 +2066,7 @@
     "organizers": 409,
     "share": 0.132
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 480,
     "organizers": 195,
     "share": 0.101
@@ -2083,7 +2083,7 @@
     "organizers": 446,
     "share": 0.167
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 673,
     "organizers": 161,
     "share": 0.142
@@ -2110,7 +2110,7 @@
     "organizers": 463,
     "share": 0.152
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 405,
     "organizers": 219,
     "share": 0.087
@@ -2132,7 +2132,7 @@
     "organizers": 424,
     "share": 0.162
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 389,
     "organizers": 174,
     "share": 0.085
@@ -2149,7 +2149,7 @@
     "organizers": 345,
     "share": 0.154
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 525,
     "organizers": 157,
     "share": 0.13
@@ -2176,7 +2176,7 @@
     "organizers": 295,
     "share": 0.152
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 333,
     "organizers": 129,
     "share": 0.089
@@ -2193,7 +2193,7 @@
     "organizers": 645,
     "share": 0.286
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 281,
     "organizers": 162,
     "share": 0.081
@@ -2215,7 +2215,7 @@
     "organizers": 265,
     "share": 0.251
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 371,
     "organizers": 135,
     "share": 0.116
@@ -2237,7 +2237,7 @@
     "organizers": 213,
     "share": 0.118
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 263,
     "organizers": 87,
     "share": 0.09
@@ -2264,7 +2264,7 @@
     "organizers": 137,
     "share": 0.087
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 183,
     "organizers": 80,
     "share": 0.078
@@ -2281,7 +2281,7 @@
     "organizers": 353,
     "share": 0.31
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 363,
     "organizers": 116,
     "share": 0.155
@@ -2308,7 +2308,7 @@
     "organizers": 143,
     "share": 0.101
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 149,
     "organizers": 84,
     "share": 0.078
@@ -2325,7 +2325,7 @@
     "organizers": 199,
     "share": 0.198
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 191,
     "organizers": 103,
     "share": 0.115
@@ -2352,7 +2352,7 @@
     "organizers": 157,
     "share": 0.145
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 107,
     "organizers": 68,
     "share": 0.075
@@ -2369,7 +2369,7 @@
     "organizers": 108,
     "share": 0.35
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 122,
     "organizers": 43,
     "share": 0.097
@@ -2391,7 +2391,7 @@
     "organizers": 73,
     "share": 0.213
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 136,
     "organizers": 40,
     "share": 0.115
@@ -2418,7 +2418,7 @@
     "organizers": 87,
     "share": 0.121
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 92,
     "organizers": 48,
     "share": 0.094
@@ -2435,7 +2435,7 @@
     "organizers": 94,
     "share": 0.186
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 141,
     "organizers": 43,
     "share": 0.152
@@ -2462,7 +2462,7 @@
     "organizers": 67,
     "share": 0.135
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 74,
     "organizers": 33,
     "share": 0.135
@@ -2484,7 +2484,7 @@
     "organizers": 71,
     "share": 0.169
    },
-   "campaign_outside_export": {
+   "campaign_outside_data": {
     "n": 34,
     "organizers": 29,
     "share": 0.073
@@ -3022,7 +3022,7 @@
    "share_offered": 0.224,
    "prizes": 1.0
   },
-  "6th or later|campaign_outside_export": {
+  "6th or later|campaign_outside_data": {
    "n": 6881,
    "organizers": 1312,
    "contestants": 243.0,
@@ -3046,7 +3046,7 @@
    "share_offered": 0.489,
    "prizes": 1.0
   },
-  "first campaign|campaign_outside_export": {
+  "first campaign|campaign_outside_data": {
    "n": 2863,
    "organizers": 2863,
    "contestants": 359.0,
@@ -3058,7 +3058,7 @@
    "share_offered": 0.381,
    "prizes": 1.0
   },
-  "2nd to 5th|campaign_outside_export": {
+  "2nd to 5th|campaign_outside_data": {
    "n": 2639,
    "organizers": 1895,
    "contestants": 280.0,

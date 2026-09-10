@@ -1034,7 +1034,7 @@
   }
  },
  "vertical_mapping": {
-  "note": "the first-export verticals came from a title regex; the analysis uses homepage labels. On the same scope both give gaming about 27 to 28% conversion, so the published 36% was the clean ordinary subset of the first export, not a label difference",
+  "note": "the earlier verticals came from a title regex; the campaign analysis uses homepage labels. On the same scope both give gaming about 27 to 28% conversion, so the published 36% was the clean ordinary subset of the earlier dataset, not a label difference",
   "old_to_new": {
    "gaming": "gaming_esports",
    "technology": "electronics_tech",

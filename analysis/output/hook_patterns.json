@@ -1,5 +1,5 @@
 {
- "source": "ordinary campaigns with 1,000 or more contestants in the analysis, regex on campaign name and headline prize name, one campaign can match several hooks",
+ "source": "ordinary campaigns with 1,000 or more contestants in the campaign analysis, regex on campaign name and headline prize name, one campaign can match several hooks",
  "campaigns": 35658,
  "organizers": 6398,
  "hooks": {

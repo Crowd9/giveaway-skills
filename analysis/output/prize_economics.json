@@ -8,7 +8,7 @@
   "value_band": "the eleven stated-USD prize pool bands used throughout the prize skills",
   "size_band": "contestant count band (1k-2.5k, 2.5k-10k, 10k+), the standard organizer-scale proxy used across analysis scripts",
   "email/referral/follow_per_contestant": "completions of email-subscribe, share-action and any follow or subscribe-type action, summed per campaign and divided by contestants",
-  "own_product": "word overlap between organizer name and prize name (analyze_export.own_product_signal, carried from the classification file), true for any prize on the campaign",
+  "own_product": "word overlap between organizer name and prize name (analyze.own_product_signal, carried from the classification file), true for any prize on the campaign",
   "generic_prize": "prize category is gift card or cash, bundle or box, subscription or membership, or a discount, all of which suit any audience",
   "audience_specific_prize": "prize category matches the weak industry-to-category fit map (a gaming item on a gaming site, tech hardware on an electronics site, and so on)",
   "niche_mismatch": "a definite (non-generic, non-placeholder) prize category that does not match the organizer's industry in the fit map",

@@ -3,7 +3,7 @@
   "invalid_share": "invalid_entries / (valid_entries + invalid_entries) per campaign, median across campaigns",
   "clean": "no repeatable action and duration <= 14 days",
   "own_signal": "word overlap between organizer name and prize name (classification file)",
-  "nth_campaign": "this campaign's position among every campaign the site has run in the export, ordered by starts_at"
+  "nth_campaign": "this campaign's position among every campaign the site has run in the dataset, ordered by starts_at"
  },
  "ordinary_n": 35668,
  "clean_n": 10723,

@@ -1,6 +1,6 @@
 # Action families
 
-Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. Entries are actions completed times the entry worth the business set, and entry worth is unknown in the export, so a figure near 100 per 100 means most Entrants did it only where the worth was 1, repeatable actions and referrals can pass 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, and its top marks the level nine campaigns in ten sit below.]
+Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. Entries are actions completed times the entry worth the business set, and entry worth is unknown in the dataset, so a figure near 100 per 100 means most Entrants did it only where the worth was 1, repeatable actions and referrals can pass 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, and its top marks the level nine campaigns in ten sit below.]
 
 <!-- generated:entry_families -->
 | Action family | Campaigns using it | Share of campaigns | Share who completed it (middle half in brackets) | Campaigns behind the figure |
@@ -33,7 +33,7 @@ Methods per campaign typically run 7, middle half 4 to 11. [Top tenth of campaig
 
 ## Completions by action, required versus optional
 
-A completions cut of the export: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: campaigns with 1,000 or more Entrants, every group at least five businesses. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
+A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: campaigns with 1,000 or more Entrants, every group at least five businesses. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
 
 <!-- table -->
 | Action | Campaigns | Businesses | Share who completed it | When required | When optional | How often required |
@@ -144,7 +144,7 @@ Share who completed it by settings read from the action config, campaigns with 1
 
 ## SMS and messaging opt-in (advice, no dataset support)
 
-A phone number or a messaging opt-in (SMS, WhatsApp, Messenger, a Telegram or Discord bot subscription used to message Entrants directly) is an owned channel in the same family as an email signup: the Entrant hands over a way to reach them that no platform can take away. The export carries no SMS action type and no bot-subscription action type, so there is no benchmark on this page for how many Entrants would complete a messaging opt-in, cost per number or anything else. That gap is specific to the messaging opt-in itself. Joining a Telegram channel or a Discord server is a different action and is measured, in the family table above and in the table below. Say plainly that a messaging opt-in has no benchmark when recommending one, and never borrow the email row or the channel-join row as a stand-in.
+A phone number or a messaging opt-in (SMS, WhatsApp, Messenger, a Telegram or Discord bot subscription used to message Entrants directly) is an owned channel in the same family as an email signup: the Entrant hands over a way to reach them that no platform can take away. The dataset carries no SMS action type and no bot-subscription action type, so there is no benchmark on this page for how many Entrants would complete a messaging opt-in, cost per number or anything else. That gap is specific to the messaging opt-in itself. Joining a Telegram channel or a Discord server is a different action and is measured, in the family table above and in the table below. Say plainly that a messaging opt-in has no benchmark when recommending one, and never borrow the email row or the channel-join row as a stand-in.
 
 What practice suggests, with no numbers attached:
 
@@ -178,7 +178,7 @@ The mix barely changes with size. Seven methods is typical at every size. Bigger
 
 ## How much the business's own community or channel size mattered
 
-The business's own server, channel, page or app against how much its join, follow, visit or download action was completed. Completion here is entries on the action divided by Entrants, the same measure as the family table above, not worth-normalised. Every group listed has at least five businesses, the export's own floor. A note flags any group under 30 campaigns or 10 businesses, this skill's own floor for calling a figure more than advice. Source: `analysis/output/industries.json`.
+The business's own server, channel, page or app against how much its join, follow, visit or download action was completed. Completion here is entries on the action divided by Entrants, the same measure as the family table above, not worth-normalised. Every group listed has at least five businesses, the dataset's own floor. A note flags any group under 30 campaigns or 10 businesses, this skill's own floor for calling a figure more than advice. Source: `analysis/output/industries.json`.
 
 Discord, the business's own server (by_discord_server_size, action is a Discord server join):
 
@@ -268,7 +268,7 @@ Small channels lean on referrals: channels with 1,000 to 10,000 subscribers reco
 
 ### Does a bigger channel mean a bigger campaign? (extracted)
 
-Every figure in this subsection comes from businesses whose action config named a public channel URL, a self-selected minority of the export. Don't generalize it to businesses without a channel-join or channel-follow action.
+Every figure in this subsection comes from businesses whose action config named a public channel URL, a self-selected minority of the dataset. Don't generalize it to businesses without a channel-join or channel-follow action.
 
 Channel size barely predicts campaign size, in either direction. A big channel does not guarantee a big campaign, and on this same evidence a small channel does not cap one either. If the business's channel is small, that is not the constraint to plan around.
 
@@ -303,7 +303,7 @@ Bigger channels pull less direct traffic to the campaign. A bigger audience reli
 
 ## Method count, sharing and email against Entrants and conversion
 
-Impressions in the export are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Entrants per Impression without any change in who entered. The campaigns we can compare fairly here remove any campaign with a repeatable action and any run over 14 days. Typical values, the campaigns we can compare fairly, descriptive only. A vertical is a regex proxy on business, campaign and Prize names.
+Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Entrants per Impression without any change in who entered. The campaigns we can compare fairly here remove any campaign with a repeatable action and any run over 14 days. Typical values, the campaigns we can compare fairly, descriptive only. A vertical is a regex proxy on business, campaign and Prize names.
 
 <!-- generated:cmp_methods -->
 | Entry methods, the campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Entrants per 100 Impressions | Impressions per Entrant | Methods |
@@ -330,7 +330,7 @@ Entrants per 100 Impressions falls with every extra group of methods and Entrant
 | offers email signup | 3,516 | 2,170 (+3%) | 3.33 (-9%) | 33 (-20%) | 3.1 | 6 |
 <!-- /generated -->
 
-Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the export. Campaigns offering a share action had fewer Entrants and lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup cost about a fifth of conversion for a small gain in Entrants. Both are prices worth paying only when the asset is the objective.
+Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had fewer Entrants and lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup cost about a fifth of conversion for a small gain in Entrants. Both are prices worth paying only when the asset is the objective.
 
 A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit, excluding crypto businesses.
 

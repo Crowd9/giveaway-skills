@@ -1,6 +1,6 @@
 # Cost benchmarks and ROI
 
-From the campaigns behind these numbers (35,614 campaigns, 6,394 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the export holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 1,000 Entrants. Reproduce with `analysis/roi_benchmarks.py`.
+From the campaigns behind these numbers (35,614 campaigns, 6,394 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 1,000 Entrants. Reproduce with `analysis/roi_benchmarks.py`.
 
 ## By industry
 
@@ -21,7 +21,7 @@ Music and media buys addresses and follows cheapest, typically 0.15 USD for both
 
 ## Which industries get the most from a giveaway
 
-Crowd per Prize dollar is Entrants against the typical for the stated Prize cost, 1.00 being typical for the money. Email uptake is email signups recorded divided by the campaign's Entrants, so 100% means very nearly everyone who entered signed up, and a figure over 100% means some Entrants signed up more than once. Conversion Rate here is the typical figure among the campaigns we can compare fairly (no repeatable action, run of 14 days or less), a narrower and higher-converting scope than the industry table's full-population Conversion Rate above, so the two are separate figures under similar names. Repeat business means five or more campaigns in the export.
+Crowd per Prize dollar is Entrants against the typical for the stated Prize cost, 1.00 being typical for the money. Email uptake is email signups recorded divided by the campaign's Entrants, so 100% means very nearly everyone who entered signed up, and a figure over 100% means some Entrants signed up more than once. Conversion Rate here is the typical figure among the campaigns we can compare fairly (no repeatable action, run of 14 days or less), a narrower and higher-converting scope than the industry table's full-population Conversion Rate above, so the two are separate figures under similar names. Repeat business means five or more campaigns in the dataset.
 
 [All the campaigns behind these numbers: crowd per Prize dollar 1.00 (typical for the money), Conversion Rate 38%, email uptake 98%, referrals 12% of Entrants, repeat businesses 78%.]
 
@@ -61,7 +61,7 @@ Electronics and tech is the largest label behind the technology industry name, a
 
 ## Industries
 
-Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the first-export crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. The ten largest industries by campaign count:
+Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. The ten largest industries by campaign count:
 
 | Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods | Email offered |
 |---|---|---|---|---|---|---|---|---|
@@ -131,10 +131,10 @@ Value per email is the business's number: expected revenue per subscriber over t
 
 Cost per email signup or per follow is the giveaway's customer acquisition cost for that asset. It belongs beside what the team already pays for the same thing elsewhere: cost per lead on paid search, cost per follower on paid social, the rate an affiliate or a list rental charges. A giveaway that buys addresses at 0.39 USD is cheap or dear only against that internal number, and the team has it.
 
-The other half is what the asset is worth. Set a window the business can measure, 90 days after the campaign closes being the usual one, and ask what a new subscriber or follower converts to inside it: orders placed, revenue attributed, a trial started. That figure is the lifetime value the acquisition cost is judged against, and it is the business's to supply. The export holds none of it, so it can price what a giveaway captured and never what the capture was worth.
+The other half is what the asset is worth. Set a window the business can measure, 90 days after the campaign closes being the usual one, and ask what a new subscriber or follower converts to inside it: orders placed, revenue attributed, a trial started. That figure is the lifetime value the acquisition cost is judged against, and it is the business's to supply. The dataset holds none of it, so it can price what a giveaway captured and never what the capture was worth.
 
 Two habits keep the comparison honest. Compare a giveaway list with a paid list, since both are cold. And measure the giveaway group separately in the email tool for those 90 days, because a giveaway group behaves nothing like people who found the business on their own.
 
-## What ROI the export cannot show
+## What ROI the dataset cannot show
 
-Revenue, purchases, unsubscribes, unfollows and list quality are not in the export. The figures above price participation and the assets captured at the moment of entry. A follow that lapses in a week cost the same as one that stays.
+Revenue, purchases, unsubscribes, unfollows and list quality are not in the dataset. The figures above price participation and the assets captured at the moment of entry. A follow that lapses in a week cost the same as one that stays.

@@ -2,7 +2,7 @@
 
 ## The source
 
-A private export of 54,786 campaigns from one giveaway platform, each with at least 1,000 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
+A private dataset of 54,786 campaigns from one giveaway platform, each with at least 1,000 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
 
 | Entrant count | Share of the 54,786 campaigns |
 |---|---|
@@ -10,7 +10,7 @@ A private export of 54,786 campaigns from one giveaway platform, each with at le
 | 2,500 to 10,000 | 38% |
 | Above 10,000 | 12% |
 
-Where the repository summary says the skills rest on about 325,000 entry actions, that total is not a field in the export and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed with how many Entrants took the action. Each one is an entry action offered in one of the campaigns behind these numbers, for which the export recorded how many Entrants took it.
+Where the repository summary says the skills rest on about 325,000 entry actions, that total is not a field in the dataset and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed with how many Entrants took the action. Each one is an entry action offered in one of the campaigns behind these numbers, for which the dataset recorded how many Entrants took it.
 
 | Action family | Entrants who took it |
 |---|---|
@@ -31,7 +31,7 @@ Where the repository summary says the skills rest on about 325,000 entry actions
 
 That sums to 324,292, rounded to 325,000.
 
-The export's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
+The dataset's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
 
 | Field | Value |
 |---|---|
@@ -59,7 +59,7 @@ Excluded campaigns are similar in size to the rest (crypto typical 3,123 Entrant
 
 The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 17,305 Entrants versus 16,175 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
 
-A homepage-label industry cut on the analysis confirms the exclusion is not a small correction: finance and crypto is the largest single industry by campaign count, ahead of gaming and esports. See `references/roi-benchmarks.md` for the table this cut produced.
+A homepage-label industry cut on the campaign analysis confirms the exclusion is not a small correction: finance and crypto is the largest single industry by campaign count, ahead of gaming and esports. See `references/roi-benchmarks.md` for the table this cut produced.
 
 ## What the campaigns behind these numbers show
 
@@ -119,7 +119,7 @@ Primary Prize category (first Prize listed) by campaign size, share of campaigns
 
 ## Plan tier, extended
 
-The plan tier row above comes from the export at large. A analysis cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free converts best and never offers an email action, and neither does Hobby. Premium runs longest and offers the most Entry Methods, but converts worst. Business and Pro sit in the middle on every measure. Reproduce with `analysis/field_cuts.py`.
+The plan tier row above comes from the dataset at large. A analysis cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free converts best and never offers an email action, and neither does Hobby. Premium runs longest and offers the most Entry Methods, but converts worst. Business and Pro sit in the middle on every measure. Reproduce with `analysis/field_cuts.py`.
 
 | Tier | Conversion Rate | Campaigns | Businesses | Notable |
 |---|---|---|---|---|
@@ -383,11 +383,11 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 
 - **Cause and effect.** Every campaign reached at least 1,000 Entrants, and there is no set of smaller or failed campaigns to compare against. The campaign-size groups compare selected samples with each other, which shows who ran what and nothing about what a Prize did. Nothing here shows that a Prize type produced participation.
 - **Entrant volume promises.** No Prize "guarantees" a number of Entrants. Volume depends on promotion, audience size, entry friction and timing, none of which the Prize controls.
-- **Business outcomes.** Sales, lead quality, retention and profitability are absent from the export.
+- **Business outcomes.** Sales, lead quality, retention and profitability are absent from the dataset.
 - **Cost.** Values are stated retail values entered by businesses, often rounded, sometimes totals, occasionally wrong by orders of magnitude. What the business actually paid is unknown.
 - **Winners.** Quantity is the number of units listed and may differ from the number of Winners actually awarded.
 - **Currency merging.** Values were never converted. USD and EUR are reported separately, and parsed "$" values are flagged as ambiguous.
-- **Current platform features.** Entry-method types in the export are history. Current capability lives in each platform's own documentation.
+- **Current platform features.** Entry-method types in the dataset are history. Current capability lives in each platform's own documentation.
 
 ## Classification limits
 
@@ -416,9 +416,9 @@ Descriptions contained URLs in 5,069 campaigns, HTML in 17, and phrases addresse
 
 Conversion Rate means Entrants per Impression: the share of unique daily Impressions of the entry page that became a unique Entrant.
 
-Verified from the platform's reporting terms page on 9 September 2026: Impressions count one view per user per 24 hours, an Action is one Entry Method completed, Entries are Actions completed times Entry Worth, Users are unique Entrants, and the platform quotes an average Conversion Rate of about 34%. The export's valid Entrants are Users, valid entries are Entries, and Entry Worth is absent, so Actions per Entrant mixes how many Actions people did with how much each was worth.
+Verified from the platform's reporting terms page on 9 September 2026: Impressions count one view per user per 24 hours, an Action is one Entry Method completed, Entries are Actions completed times Entry Worth, Users are unique Entrants, and the platform quotes an average Conversion Rate of about 34%. The dataset's valid Entrants are Users, valid entries are Entries, and Entry Worth is absent, so Actions per Entrant mixes how many Actions people did with how much each was worth.
 
-Impressions in the export are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by `analysis/compare_groups.py`.
+Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by `analysis/compare_groups.py`.
 
 <!-- generated:cmp_vertical -->
 | Industry, campaigns we can compare fairly | Campaigns | Entrants | Actions per Entrant | Conversion Rate | Impressions per Entrant | Methods |

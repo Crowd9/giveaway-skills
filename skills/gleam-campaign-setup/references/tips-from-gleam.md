@@ -10,7 +10,7 @@ Selected from [Advanced Tips & Tricks](https://gleam.io/docs/competitions/tips/l
 - **Daily bonus entries** bring people back, and **daily Winners** suit the holiday season.
 - **Chained giveaways with partners** through the Promote action, each brand owning its own Entrants.
 - **Custom actions** cover account creation, order IDs, forms, reviews, calendar adds, app downloads.
-- **Feature images**: the page claims competitions with them get over 100% more engagement. Treat this as the vendor's figure, not the export's. Feature images on Hobby, up to four on Business, video from YouTube, Twitch, Vimeo or Wistia.
+- **Feature images**: the page claims competitions with them get over 100% more engagement. Treat this as the vendor's figure, not the dataset's. Feature images on Hobby, up to four on Business, video from YouTube, Twitch, Vimeo or Wistia.
 - **Filter countries** in or out during setup.
 - **Change a live campaign** when an action is not converting.
 - **Free entry alternatives** where no-purchase laws apply.

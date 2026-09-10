@@ -3,10 +3,10 @@
 [![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 35,668 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,072 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
 
-Behind the advice sit 6,402 organizers, 58,000 prizes and 314,000 entry actions, from campaigns that all reached at least 1,000 entrants.
-Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
+The benchmarks come from the 35,668 of those that reached at least 1,000 Entrants, run by 6,402 businesses, holding 58,064 Prize records and 325,000 entry actions.
+Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
 
 ## Install
 
@@ -253,7 +253,7 @@ That data is what lets the skills say things like:
 - Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.
 - Music and media organizers declared the least prize money per entrant and per address captured, gaming the least per referred entry, and software the most on every count. Brazil and Sweden convert highest of the large organizer countries, the UK sits at 31%.
 
-Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
+Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the dataset holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 
 ## Defaults for the Gleam Editor
 

@@ -37,7 +37,7 @@
   },
   "campaigns_missing_description": 5167,
   "campaigns_with_zero_impressions": 49,
-  "null_numeric_fields_in_raw_export": {
+  "null_numeric_fields_in_source": {
    "valid_entries": 70
   }
  },
@@ -1204,7 +1204,7 @@
      "max": 359660
     }
    },
-   "note": "Every campaign passed the export floor, so these medians describe structure and say nothing about effect."
+   "note": "Every campaign passed the dataset floor, so these medians describe structure and say nothing about effect."
   },
   "by_contestant_band": {
    "1k-2.5k": {

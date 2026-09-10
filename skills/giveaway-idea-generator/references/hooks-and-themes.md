@@ -9,7 +9,7 @@ From the campaign analysis's campaign-history match, scope 100 or more Entrants,
 | Own earlier campaign, copied | 58% | 69,476 | 5,830 | 26.6% |
 | Blank, no copying | 23% | 28,223 | 11,226 | 28.4% |
 | Gleam library template | 9% | 10,477 | 6,709 | 26.2% |
-| A campaign outside the export | 10% | 12,383 | 4,397 | 25.4% |
+| A campaign outside the dataset | 10% | 12,383 | 4,397 | 25.4% |
 
 Most campaigns are a copy of the business's own earlier campaign, not a fresh build or a library template. A blank build gets a little more to enter than either kind of copy.
 

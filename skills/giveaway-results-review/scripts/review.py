@@ -220,8 +220,8 @@ def history_table(a, hist):
         delta = (now[m] - last) / last if last else None
         out.append((label, fmt.format(now[m]), fmt.format(last), fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if now[m] > v)} of {len(vals)} previous beaten"))
     notes = []
-    if prev and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the export")
-    elif prev: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the export, so a jump past it is unusual")
+    if prev and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the dataset")
+    elif prev: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the dataset, so a jump past it is unusual")
     return out, notes
 
 def print_table(rows, header):

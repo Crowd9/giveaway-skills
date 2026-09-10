@@ -14,7 +14,7 @@ Run `commit` first. It prints the column it chose, so a wrong guess shows up bef
 
 Google Sheets: File, then Download, then Comma Separated Values. Excel and Numbers: Save As or Export to CSV. Export the one sheet that holds Entrants, with a header row, and keep that downloaded file as the frozen input. A live sheet keeps changing and its hash will not match later.
 
-If bonus entries live in a column, name it with `--weight-column`. If the sheet has a column of formulas, the export holds the values, which is what you want.
+If bonus entries live in a column, name it with `--weight-column`. If the sheet has a column of formulas, the dataset holds the values, which is what you want.
 
 ## Your giveaway platform
 
@@ -40,7 +40,7 @@ Prefer a unique id over a display name where both exist. Display names repeat an
 ## Checks before committing
 
 - Open the file and read ten rows. Confirm the person column, the count, and that the last comments before close are present.
-- Remove entries after the close time. If the export has a timestamp column, filter on it before the draw and say so in the audit note.
+- Remove entries after the close time. If the dataset has a timestamp column, filter on it before the draw and say so in the audit note.
 - Decide the duplicate rule. The script merges exact matches after trimming and lower-casing. It flags plus-addressed emails but does not merge them.
 - For a comment or social draw, drop the organizer's own account from the list before committing. A handle matching the brand's account is not an Entrant, whether or not the user named it as an exclusion.
 - Put staff, partners and previous Winners in the exclusion file, one id per line, using the same identifier as the Entrant file.

@@ -575,7 +575,7 @@
   }
  },
  "duration_by_country": {
-  "definition": "Median run length in days from the export's duration_in_days, with the share of very short and very long runs, by organizer country. duration_in_days disagrees with the date span on about one campaign in seven, so treat it as a band not a day count.",
+  "definition": "Median run length in days from the dataset's duration_in_days, with the share of very short and very long runs, by organizer country. duration_in_days disagrees with the date span on about one campaign in seven, so treat it as a band not a day count.",
   "rows": {
    "united states": {
     "n": 58843,
@@ -4720,7 +4720,7 @@
   }
  },
  "repeat_organizer_by_country": {
-  "definition": "How much of each country's campaign volume comes from organizers who run repeatedly: the share of campaigns that are not the organizer's first on the export, the median campaigns per organizer, and the share that are an organizer's eleventh or later.",
+  "definition": "How much of each country's campaign volume comes from organizers who run repeatedly: the share of campaigns that are not the organizer's first on the dataset, the median campaigns per organizer, and the share that are an organizer's eleventh or later.",
   "rows": {
    "united states": {
     "n": 58843,

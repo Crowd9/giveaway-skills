@@ -1,6 +1,6 @@
 {
  "definitions": {
-  "scope": "campaigns with 100 or more contestants (counts from the export or the contestant dump), plausible dates, organizer country from IP; every row needs five organizers",
+  "scope": "campaigns with 100 or more contestants (counts from the dataset or the contestant dump), plausible dates, organizer country from IP; every row needs five organizers",
   "skill_signal_share": "share of campaigns whose name, incentive text, custom terms or selection method mention a judged or skill entry (25 words or less, game of skill, judged, best answer, most creative and similar)",
   "judged_selection_share": "share whose generated terms name a judged, skill, best-answer or vote selection",
   "action_*": "share of campaigns offering that action family",

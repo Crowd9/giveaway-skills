@@ -5825,7 +5825,7 @@
    }
   },
   "organizer_experience_by_performance_and_band": {
-   "definition": "clean conversion by organizer sequence band (1st, 2nd-5th, 6th-20th, 21st+ campaign on the export by that site, all campaigns not just ordinary) crossed with contestant band",
+   "definition": "clean conversion by organizer sequence band (1st, 2nd-5th, 6th-20th, 21st+ campaign on the dataset by that site, all campaigns not just ordinary) crossed with contestant band",
    "cells": {
     "21st+ | 1k-2.5k": {
      "n": 2984,

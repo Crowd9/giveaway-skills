@@ -19,9 +19,9 @@ Five minutes.
 - Add tags in the site settings, or per campaign by changing Use site settings to Add different tags. Tag with the campaign name so the non-Winner code, the welcome series and the retargeting segment in giveaway-promotion-plan all filter on it.
 - **Test before launch**: create the competition with a Subscribe action linked to Shopify, complete the action from the dashboard, go to the Actions tab and mark the invalidated admin action valid, and the address appears in the customer list within a few minutes.
 
-## What the export shows for Shopify stores
+## What the dataset shows for Shopify stores
 
-From the campaign export, Shopify stores with a labelled organizer site and 1,000 or more Entrants.
+From the campaign data, Shopify stores with a labelled organizer site and 1,000 or more Entrants.
 
 Bigger stores, pricier stores and Australian-currency stores offer email more than their counterparts, and Shopify stores offer email more but ask for fewer actions than WooCommerce stores.
 

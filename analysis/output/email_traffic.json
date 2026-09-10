@@ -1,9 +1,9 @@
 {
  "definitions": {
-  "scope": "every campaign in the export with location rows, organizer country and labels joined where known",
+  "scope": "every campaign in the dataset with location rows, organizer country and labels joined where known",
   "mail_client_referrer": "the referring host is a mail client, a webmail domain or a provider's hosted campaign page. It says the click came out of an email, never which email, so a forwarded link counts the same as a newsletter blast",
   "utm_tagged": "the landing URL carries an email UTM tag, which names the provider but rides on only the tagged 11% of impressions",
-  "share_of_all_impressions": "email-client impressions over all impressions in the export",
+  "share_of_all_impressions": "email-client impressions over all impressions in the dataset",
   "day": "days since the campaign started, from the daily location rows",
   "by_client": "campaigns and organizers are the largest single host in the group, never a sum, because one campaign reaches several hosts",
   "day_curve": "day 0 is the start date and day 29 holds day 29 and everything after it. Email traffic against all traffic, each as a share of its own total, so a day above the all-traffic line is a day when mail lands harder than the campaign as a whole",

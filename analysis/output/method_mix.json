@@ -1,7 +1,7 @@
 {
  "definitions": {
   "scope": "the ordinary segment (1,000 or more contestants, crypto and ambiguous segments removed), campaign_id count 35657, 6398 organizers",
-  "family": "entry_type and custom_action template mapped by hand to eleven generic families plus bonus/question/custom_other/paid/other, the same mapping analyze_export.py uses on the first export. A campaign 'has' a family if any of its actions maps to it, regardless of how many actions or their worth",
+  "family": "entry_type and custom_action template mapped by hand to eleven generic families plus bonus/question/custom_other/paid/other, the same mapping analyze.py uses on the earlier dataset. A campaign 'has' a family if any of its actions maps to it, regardless of how many actions or their worth",
   "family_pair_lift": "for each pair of families, how often they appear on the same campaign against what independence would predict. lift 1.0 is independence, above 1.0 means the two ship together more than chance, below 1.0 less. conditional_b_given_a is the share of campaigns with family a that also carry family b",
   "top_combinations": "the most common exact sets of families present on a campaign (order not counted, only presence), with outcomes for campaigns holding that exact set. email_completions_per_contestant and share_completions_per_contestant are medians across the campaigns in that combination that carry the family, not the whole row",
   "reach_vs_deep": "families split into reach (visit, follow, engage: cheap, teaches little) and deep (question, content, connect_account, download, join: costs more, asks more). reach_share is reach families present over (reach plus deep) families present, among campaigns with at least one of either",

@@ -136,7 +136,7 @@ An organizer with a list should tag the campaign link with an email UTM before s
 
 ## Mail clients: the wider view
 
-Extracted: clicks whose traffic source is a mail client or a webmail page, which catches a send whether or not the link was tagged. 13,527,852 Impressions, 0.83% of all Impressions in the export, across 114,965 campaigns and 18,733 businesses. A mail-client source says the click came out of an email, never which email, so a link a friend forwarded counts the same as a newsletter.
+Extracted: clicks whose traffic source is a mail client or a webmail page, which catches a send whether or not the link was tagged. 13,527,852 Impressions, 0.83% of all Impressions in the dataset, across 114,965 campaigns and 18,733 businesses. A mail-client source says the click came out of an email, never which email, so a link a friend forwarded counts the same as a newsletter.
 
 | Client | Share of mail-client Impressions | Campaigns | Businesses |
 |---|---|---|---|
@@ -438,7 +438,7 @@ One page, sent a week before their date.
 - Never run paid to audiences outside eligibility. Wasted spend and angry Entrants.
 - Add a UTM to every link you post, on every channel, paid and organic. Source is the network, medium is the format (post, story, email, partner), campaign is the giveaway name. Without it the results review has traffic sources and no way to separate your posts from a partner's.
 - A store with Shopify Audiences or the equivalent can build the retargeting audience from the tagged customer segment without an export.
-- After the close, upload the Entrant list as a custom audience on the networks you run ads on. Exclude the Winners and anyone already a customer, then run the launch offer to the rest. Practice, with no dataset figure behind it: the export holds no purchase data.
+- After the close, upload the Entrant list as a custom audience on the networks you run ads on. Exclude the Winners and anyone already a customer, then run the launch offer to the rest. Practice, with no dataset figure behind it: the dataset holds no purchase data.
 - Build a lookalike audience from that same Entrant list for the next campaign's launch push. Entrants opted in to a Prize, so a lookalike of them is a prospecting audience and should be judged on cost per lead against your usual sources.
 
 ## Afterwards

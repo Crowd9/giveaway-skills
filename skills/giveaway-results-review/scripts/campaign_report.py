@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Full report from a campaign export, in the order of Gleam's reporting tabs. Reads a Gleam Actions export (one row per
+"""Full report from a campaign data, in the order of Gleam's reporting tabs. Reads a Gleam Actions export (one row per
 completed action) as is, and exports from other platforms through --map or the built-in column synonyms, including wide
 exports with one column per entry method. No dependencies. Aggregates only: no email, name, IP or row ever prints. Top Entrants show a display name (first
 name and last initial) only.
@@ -12,7 +12,7 @@ name and last initial) only.
 Parsing rules. ID is per row: Entrants are keyed by lower-cased Email, with Name as the fallback. When is in the account's
 timezone, so every time figure is account time. Status Invalid rows are counted and excluded from engagement metrics.
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
-never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the export.
+never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
 """
 import argparse, collections, csv, datetime as dt, statistics as st, sys, urllib.parse
 
@@ -235,7 +235,7 @@ def render(R, a):
     info = getattr(load, "last", None)
     if info:
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
-    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the export" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
+    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
     w(f"| Metric | Value |\n|---|---|\n| Users | {n:,} |\n| Actions completed | {T['actions']:,} |\n| Entries | {T['entries']:,} |\n| Actions per entrant | {T['actions_per_entrant']:.2f} |\n| Entries per entrant | {T['entries_per_entrant']:.2f} |\n| Invalid actions | {T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows) |"
       + (f"\n| Conversion Rate | {n / a.impressions:.1%} |" if a.impressions else ""))
@@ -267,7 +267,7 @@ def render(R, a):
         for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
     if R.get("roi"):
         r = R["roi"]; w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {r['per_entry']:.4f} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
-        w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The export carries no order data, so nothing here is revenue.")
+        w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The dataset carries no order data, so nothing here is revenue.")
     else: w("\nROI needs Prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
     w("\n## Traffic\n\nFirst-touch channel per Entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
@@ -298,7 +298,7 @@ def render(R, a):
     w("""
 ## Outcomes
 
-Nothing in this section is in the export. Pull each figure from the email provider and the store, then record it beside this report.
+Nothing in this section is in the dataset. Pull each figure from the email provider and the store, then record it beside this report.
 
 - Unsubscribes and spam complaints in the 7 days after the Winners email, from the email provider, for the giveaway segment on its own.
 - Addresses synced to the email provider against addresses collected here, so the gap between the two is visible.
@@ -327,7 +327,7 @@ def self_test():
     assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
     assert R["channels"][0][0] in ("Email (webmail)", "Competition directories") and R["utm"][0][1] == 1 and R["roi"]["emails"] == 1 and R["partners"][0][1] == 1, (R["channels"], R["utm"], R["roi"])
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
-    assert "| Users | 2 |" in out and "Impressions are not in the export" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
+    assert "| Users | 2 |" in out and "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     out2 = render(analyze(load(p), C), C)
     assert "| Conversion Rate | 20.0% |" in out2 and "supplied from the Reporting tab" in out2 and "Views" not in out2 and "share who entered" not in out2.lower(), out2[:400]

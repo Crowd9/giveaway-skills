@@ -1,6 +1,6 @@
 # Prize taxonomy
 
-Categories were built from Prize names, campaign names and descriptions in the export, then refined against what the listings contained. Classification is by pattern matching on the Prize name, with campaign context for the segment decision. These labels are our inference. The business never chose them. Figures are for the campaigns behind these numbers (35,668 campaigns, 58,064 Prize listings, 6,402 businesses) after excluding crypto, ambiguous and purchase-opportunity campaigns. "Value stated" is the share of listings with a non-null, non-zero value. USD figures are typical values, using stated USD values only.
+Categories were built from Prize names, campaign names and descriptions in the dataset, then refined against what the listings contained. Classification is by pattern matching on the Prize name, with campaign context for the segment decision. These labels are our inference. The business never chose them. Figures are for the campaigns behind these numbers (35,668 campaigns, 58,064 Prize listings, 6,402 businesses) after excluding crypto, ambiguous and purchase-opportunity campaigns. "Value stated" is the share of listings with a non-null, non-zero value. USD figures are typical values, using stated USD values only.
 
 <!-- generated:taxonomy -->
 | Category | What it covers | Prize listings | Campaigns | Businesses | Value stated | Typical stated USD (listings) |

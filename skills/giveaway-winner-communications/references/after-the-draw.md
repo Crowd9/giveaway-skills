@@ -22,7 +22,7 @@ Every Entrant browsed the store to enter, so the result email is the store's bes
 - **One code per person.** Generate unique single-use codes in the store (Shopify Discounts supports single-use codes, and the email tool merges them per address, Klaviyo and Mailchimp both do this). A shared code lands on coupon sites within a day and the discount goes to people who never entered.
 - **Expiry of 7 to 14 days.** Long enough to open the email, short enough to act on. Say the date in the subject.
 - **Minimum spend or a collection limit** so the code does not turn the cheapest item free. Exclude sale items and gift cards.
-- **A tier for referrers.** Entrants who referred a friend get a larger code. The referral entries are in the export, so the segment is a filter on the Entrant list.
+- **A tier for referrers.** Entrants who referred a friend get a larger code. The referral entries are in the dataset, so the segment is a filter on the Entrant list.
 - **Winners get no code.** They got the Prize. The welcome series still goes to them.
 - **Track it.** The redemption count is the campaign's revenue line in giveaway-results-review, and the code name carries the campaign name so the store's reports show it. Without the code, revenue attribution is a join of Entrant email to orders.
 - **Codes during a sale.** A 15% code sent the day the store goes 30% off is dead on arrival. Before Black Friday or a seasonal sale, make the non-Winner offer early access to the sale, or a code that stacks on one item, and say which it is in the email.

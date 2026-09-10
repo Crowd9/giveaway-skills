@@ -1,11 +1,11 @@
 {
  "definitions": {
   "scope": "wider band: campaigns with 100 or more contestants, frame.ordinary(floor=100), plausible dates, finance_crypto and the crypto/ambiguous/purchase-opportunity segments removed",
-  "seq_all / total_campaigns_export": "this campaign's position, and the site's total campaign count, among every campaign the site ran in the export in any segment, in date order. Not restricted to ordinary campaigns, so it reflects real experience rather than only the campaigns that survive the outcome filters",
+  "seq_all / total_campaigns_seen": "this campaign's position, and the site's total campaign count, among every campaign the site ran in the dataset in any segment, in date order. Not restricted to ordinary campaigns, so it reflects real experience rather than only the campaigns that survive the outcome filters",
   "first_size / band": "the site's literal first campaign's estimated contestant count (contestants_est, which fills the 100-1,000 band), banded. Used throughout as the matching variable: comparisons within a band hold starting size fixed",
   "within_organizer_transition": "paired consecutive campaigns from the same site where the second campaign's seq_all is exactly one more than the first (no other campaign of any segment fell between them). log_ratio_contestants is log10(next / current); positive means the next campaign drew more contestants",
-  "cadence_regularity": "for sites with at least 4 campaigns in the export (3 gaps), the coefficient of variation (stdev / mean) of the gaps between consecutive campaigns. regular is at or below the median cv among qualifying sites, sporadic is above it",
-  "reach_rate_by_first_band": "one row per organizer (not per campaign): the band of their first campaign against how many campaigns they went on to run in total, in the export. This is the direct survivorship check the brief asks for",
+  "cadence_regularity": "for sites with at least 4 campaigns in the dataset (3 gaps), the coefficient of variation (stdev / mean) of the gaps between consecutive campaigns. regular is at or below the median cv among qualifying sites, sporadic is above it",
+  "reach_rate_by_first_band": "one row per organizer (not per campaign): the band of their first campaign against how many campaigns they went on to run in total, in the dataset. This is the direct survivorship check the brief asks for",
   "mix_jaccard / cat_jaccard": "overlap between the current and next campaign's entry-method types, or prize categories (from the classification file), as a Jaccard ratio: intersection over union of the two sets"
  },
  "ordinary_n": 120561,

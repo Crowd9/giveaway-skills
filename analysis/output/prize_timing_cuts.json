@@ -1,7 +1,7 @@
 {
  "definitions": {
-  "scope": "campaigns with 1,000 or more contestants and plausible dates; ordinary excludes finance_crypto organizers and the crypto, ambiguous and purchase-opportunity segments from the first-export classification where a campaign was in it",
-  "prize_category": "rules in analyze_export.classify_prize on the prize name",
+  "scope": "campaigns with 1,000 or more contestants and plausible dates; ordinary excludes finance_crypto organizers and the crypto, ambiguous and purchase-opportunity segments from the earlier classification where a campaign was in it",
+  "prize_category": "rules in analyze.classify_prize on the prize name",
   "usd_value": "stated value times quantity, converted with Frankfurter rates when the currency is not USD, capped at ten million",
   "holiday": "named holiday in the campaign or incentive name (holidays.py regex); public_holiday_within_3 is a Nager.Date public holiday in the organizer's country within three days of the start",
   "winners": "prize quantity is the number of winners of that prize row; usd_per_winner is the stated value of one unit converted to USD",

@@ -89,9 +89,9 @@ An app-download action's payoff depends heavily on the Prize. Match the action t
 
 ## What it looks like when many Entrants were referred (extracted)
 
-A share action's value is the people it brings, which the export does not count. Campaigns offering one had fewer Entrants and lower conversion typically, so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
+A share action's value is the people it brings, which the dataset does not count. Campaigns offering one had fewer Entrants and lower conversion typically, so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
 
-Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (each referral entry is a referred Entrant times an entry worth the export does not carry). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the export lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
+Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (each referral entry is a referred Entrant times an entry worth the dataset does not carry). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the dataset lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
 
 **A share action is a design tradeoff, not a free addition.** When reach or new people is the objective, its reach and referral gain is worth the completion it costs elsewhere, and it's the case where a share action clearly earns its place. When the objective is a tight, high-completion list, that same cost is the reason to leave sharing out or push it to the bottom of the list. Consistent at every campaign size tested. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
 
@@ -278,7 +278,7 @@ Stated Prize value per email signup and per follow by vertical sits in the Prize
 
 Completions % of Entrants for the action, typical value across campaigns offering it.
 
-Completions % of Entrants by position in the action list, analysis, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
+Completions % of Entrants by position in the action list, campaign analysis, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
 
 | Family | 1st | 2nd to 4th | 5th or later |
 |---|---|---|---|
@@ -497,12 +497,12 @@ The actions a store wants send the Entrant into the catalogue and bring somethin
 - **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the required action. Question templates ran a typical 81 completions % of Entrants (4,875 campaigns, 976 businesses). The answers are the wishlist data a cart campaign exists to collect.
 - **Pick your Prize.** A choice action with the three Prize options, so the preference is recorded on entry.
 - **Subscribe with the store tag.** The Email Subscriptions action synced to the store's customer list with the campaign name as the tag, so the non-Winner code and the welcome series go to the right segment.
-- **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
+- **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the dataset.
 - **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
 
 ## Using what you built (advice)
 
-The list is the point of the campaign, and it decays from the day the Winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the export to support it.
+The list is the point of the campaign, and it decays from the day the Winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the dataset to support it.
 
 - **Welcome series.** Four messages: a welcome with the referral link within a day of entry, sent by the email provider when the sync lands, then the result and two brand messages over the fortnight after the draw. The first names the giveaway so nobody wonders who is writing. The rest do the job the giveaway could not: what the business sells, why anyone buys it, one reason to come back.
 - **A separate segment.** Tag the giveaway group and keep it apart from customers and organic signups for at least 90 days. Its open and complaint rates run differently and will distort the reporting on the rest of the list if they are mixed.

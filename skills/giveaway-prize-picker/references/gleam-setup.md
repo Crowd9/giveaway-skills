@@ -32,7 +32,7 @@ Start here: [Competitions documentation](https://gleam.io/docs/competitions).
 ## Claims to avoid
 
 - Do not quote plan prices, Prize-count limits or Winner limits from memory.
-- Do not claim integrations, Entry Methods or features beyond the linked pages. The export used to build this skill shows historical Entry Methods. Current capability lives in the docs.
+- Do not claim integrations, Entry Methods or features beyond the linked pages. The dataset used to build this skill shows historical Entry Methods. Current capability lives in the docs.
 - If the user is on another platform, translate the same structure into that platform's terms and do not suggest switching.
 
 For the full settings walk-through in tab order, use the `gleam-campaign-setup` skill.

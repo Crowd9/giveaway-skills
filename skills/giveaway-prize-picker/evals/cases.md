@@ -66,7 +66,7 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 ## Last run
 
-10 September 2026, Claude Sonnet reading only the skill folder, one fresh agent per case, run against the 1,000-contestant export. Data checks (7, 8) were verified directly against `analysis/output/benchmarks.json` and the skill's own references, no conversational agent involved.
+10 September 2026, Claude Sonnet reading only the skill folder, one fresh agent per case, run against the 1,000-contestant dataset. Data checks (7, 8) were verified directly against `analysis/output/benchmarks.json` and the skill's own references, no conversational agent involved.
 
 | Case | Result | Notes |
 |---|---|---|

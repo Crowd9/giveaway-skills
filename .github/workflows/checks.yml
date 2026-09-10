@@ -31,8 +31,8 @@ jobs:
         run: python3 scripts/style_lint.py
       - name: No PII
         run: |
-          ! git ls-files | grep -E 'contestants.*\.json$|export.*\.json$|stats-with-histograms'
-          # data and doc files never carry the export's identity fields (scripts may name them to drop them)
+          ! git ls-files | grep -E 'contestants.*\.json$|\.jsonl$|\.tables$|with-histograms'
+          # data and doc files never carry the dataset's identity fields (scripts may name them to drop them)
           ! git ls-files -z -- '*.json' '*.md' '*.csv' | xargs -0 grep -Il -E '"(restricted_field)"' -- 2>/dev/null  || (echo "PII field name found" && exit 1)
           # the only email addresses in the repo are synthetic (example.*, the draw self-test's x.com fixtures, the disposable-domain sample)
           if git ls-files -z | xargs -0 grep -IhoE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}' -- 2>/dev/null | grep -v -E '@(example\.com|example\.org|x\.com|mailinator\.com|gleam\.io|anthropic\.com)$' | grep -q .; then echo "email address found"; exit 1; fi

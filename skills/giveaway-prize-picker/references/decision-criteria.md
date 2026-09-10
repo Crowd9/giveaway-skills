@@ -76,7 +76,7 @@ By campaign size, crowd per Prize dollar does not reverse the same way: own prod
 
 ### Prize hierarchy (advice, from Gleam's campaign team)
 
-This ordering is one operator's working practice, written down by the team that runs campaigns on the platform. Nothing in the export tests it. Treat it as a starting shortlist a practitioner would defend, and drop any rung the business has a reason to drop.
+This ordering is one operator's working practice, written down by the team that runs campaigns on the platform. Nothing in the dataset tests it. Treat it as a starting shortlist a practitioner would defend, and drop any rung the business has a reason to drop.
 
 A default order to consider, adapted to the business: an audience-specific hero Prize, then your own product plus the aspirational thing your customer wants next (coffee plus an espresso machine, supplements plus a sports watch, skincare plus a beauty device), then own product or own-brand credit, then an exclusive or limited item, then category-specific equipment, then a relevant collaboration bundle, then generic technology, then cash, then a generic gift card. The question that finds the adjacent Prize: what does the customer's ideal day contain right before or after using this product?
 
@@ -122,7 +122,7 @@ Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns
 
 Looking at the campaigns behind these numbers: 79% listed one Prize, and 30% listed a quantity above one for at least one Prize [7,961 of 35,668 campaigns listed five or more Prize units].
 
-Typical Entrant counts for single-Winner and multi-unit structures were almost identical [2,233 against 2,293], which says nothing about effect because every campaign passed the export's 1,000-Entrant floor. Those raw Entrant counts and the crowd-per-Prize-dollar figures by number of Prize units are the same campaigns seen two ways: raw, one unit and many units drew the same crowd, and once the money is held constant, one unit sits above typical and six or more below. The crowd-per-Prize-dollar table in `references/evidence-and-limitations.md` carries the second view, and it is the one to quote when a budget is fixed.
+Typical Entrant counts for single-Winner and multi-unit structures were almost identical [2,233 against 2,293], which says nothing about effect because every campaign passed the dataset's 1,000-Entrant floor. Those raw Entrant counts and the crowd-per-Prize-dollar figures by number of Prize units are the same campaigns seen two ways: raw, one unit and many units drew the same crowd, and once the money is held constant, one unit sits above typical and six or more below. The crowd-per-Prize-dollar table in `references/evidence-and-limitations.md` carries the second view, and it is the one to quote when a budget is fixed.
 
 ## Stated Prize cost per email signup (extracted)
 

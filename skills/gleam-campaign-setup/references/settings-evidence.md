@@ -1,20 +1,20 @@
 # What the data says about Gleam settings
 
-Extracted from the campaigns we could compare fairly in the export: campaigns that reached 1,000 or more unique Entrants, crypto and purchase-only campaigns removed. (35,668 campaigns.)
+Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 1,000 or more unique Entrants, crypto and purchase-only campaigns removed. (35,668 campaigns.)
 
 Every figure below is the share of a campaign's Entrants who completed a given action, worked out as completions of that action divided by Entrants, then taken as the typical value across every campaign that offered it, shown as a count % of Entrants with the decimal it came from in brackets. A figure of 51 per 100 means about half the Entrants did it. A figure above 100 per 100 means the action was completed more than once per Entrant on average, which happens on daily and repeatable actions.
 
-Action names are the export's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. (Reproduce with `analysis/gleam_settings.py`.)
+Action names are the dataset's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. (Reproduce with `analysis/gleam_settings.py`.)
 
 ## Starting point (extracted)
 
-From the analysis's campaign-history match, covering campaigns with 100 or more Entrants, finance and crypto organizers excluded, an organizer's first campaign in the export more often starts blank than from a template.
+From the campaign analysis's campaign-history match, covering campaigns with 100 or more Entrants, finance and crypto organizers excluded, an organizer's first campaign in the dataset more often starts blank than from a template.
 
 | Starting point (organizer's first campaign) | Share |
 |---|---|
 | Gleam library template | 31% |
 | Blank | 53% |
-| Copied from outside the export | remainder |
+| Copied from outside the dataset | remainder |
 
 (17,959 first campaigns, holding out 365 tagged as a copy of the organizer's own earlier campaign, a data anomaly.)
 
@@ -99,7 +99,7 @@ Reading it: visits and email signups are completed by most Entrants (see table a
 
 ## Position in the action list
 
-Typical share of Entrants who completed an action, by the action's list position, split by family, analysis. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice.
+Typical share of Entrants who completed an action, by the action's list position, split by family, campaign analysis. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice.
 
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Every family sees fewer Entrants complete it the further down the list it sits, 
 
 ## Description length
 
-Words in the campaign description, analysis, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
+Words in the campaign description, campaign analysis, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
 
 | Words | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|---|
@@ -169,7 +169,7 @@ Visit a Page link options work the same way. A plain link outperforms embedding 
 | Page content as HTML in the widget | 50% (0.50) | 9,818 |
 | Open Graph preview | 85% (0.85) | 1,227 |
 
-Nearly every Viral Share action carried custom share text, not the default, so the export cannot compare the two. (16,640 with custom text against 182 with the default.)
+Nearly every Viral Share action carried custom share text, not the default, so the dataset cannot compare the two. (16,640 with custom text against 182 with the default.)
 
 ## More settings that move how many Entrants complete an action
 
@@ -276,11 +276,11 @@ Most of these 631 still carry a plain generated-terms selection method reading "
 
 Source: `analysis/output/country_cuts.json` keys `skill_against_other` and `australia_skill_industries`. The selection-method share is computed from the same base view as `skill_against_other` (name, incentive text, custom terms and the generated selection-method field), not itself a stored key.
 
-## Settings the analysis added
+## Settings the campaign analysis added
 
 The September 2026 export carries entry worth, the mandatory flag, actions required, the paid flag, loyalty tiers, integrations, language, allowed and excluded countries, the generated terms settings and the organizer's country. Aggregates live in `analysis/output/field_cuts.json`. Headlines on campaigns with 1,000 or more Entrants:
 
-- Entry worth: `entry_count` is the number of completions of the action, not a worth-weighted total, so no division by worth is needed. Making an action mandatory raises how many Entrants complete it, and typically lowers the cost per completion too, scoped to campaigns with every Prize valued (about a third of the export). Email was mandatory on 41% of the campaigns offering it.
+- Entry worth: `entry_count` is the number of completions of the action, not a worth-weighted total, so no division by worth is needed. Making an action mandatory raises how many Entrants complete it, and typically lowers the cost per completion too, scoped to campaigns with every Prize valued (about a third of the dataset). Email was mandatory on 41% of the campaigns offering it.
 
   | Email action | Completion, % of Entrants (decimal) | Actions |
   |---|---|---|
@@ -333,7 +333,7 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Methods (typical) | 10 | 8 |
   | Actions per Entrant | 5.31 | 4.86 |
   | Entry rate | 26% | 30% |
-- Language: English dominates the export and runs the longest campaigns with the most email asks. Portuguese and German campaigns are both one-day runs, but German offers email far more often. Spanish and French sit in between on both duration and email.
+- Language: English dominates the dataset and runs the longest campaigns with the most email asks. Portuguese and German campaigns are both one-day runs, but German offers email far more often. Spanish and French sit in between on both duration and email.
 
   | Language | Share of campaigns | Campaigns | Businesses | Duration (typical) | Email offered |
   |---|---|---|---|---|---|
@@ -378,14 +378,14 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Search | 2.6% |
 
   (11% of Impressions carry a UTM tag. Of those, 35% trace to email newsletters and 20% to Meta.)
-- Hosted share: campaigns landing almost entirely on the hosted page get the most to enter, over the shortest run, with the least email offered. Campaigns that lean on an embed run longer, offer email far more, and get less to enter. This is the largest split in the export, with no comparison group to show what caused it.
+- Hosted share: campaigns landing almost entirely on the hosted page get the most to enter, over the shortest run, with the least email offered. Campaigns that lean on an embed run longer, offer email far more, and get less to enter. This is the largest split in the dataset, with no comparison group to show what caused it.
 
   | Landing mix | Campaigns | Businesses | Entry rate | Duration | Email offered |
   |---|---|---|---|---|---|
   | 90% or more hosted | 36,817 | 8,400 | 34% | 10 days | 16% |
   | Embed-mostly / 10–50% hosted | 7,444 + 7,125 | 1,568 + 1,660 | 21–24% | 18–27 days | 57–67% |
 
-Still not in the export: fraud level and CAPTCHA mode, require login and the login types, email and phone verification, age restriction, daily and interval settings, feature images and video, post-entry emails, redirects, pixels and webhooks. The docs describe what they do.
+Still not in the dataset: fraud level and CAPTCHA mode, require login and the login types, email and phone verification, age restriction, daily and interval settings, feature images and video, post-entry emails, redirects, pixels and webhooks. The docs describe what they do.
 
 ## Actions that top campaigns used, by vertical
 

@@ -19,7 +19,7 @@
  },
  "definitions": {
   "value_index": "contestants divided by the median contestants of the campaign's stated-USD value band",
-  "repeat_organizer": "organizer with five or more ordinary campaigns in the export",
+  "repeat_organizer": "organizer with five or more ordinary campaigns in the dataset",
   "standout": "value index of 3 or more, the top slice of valued campaigns",
   "vertical": "homepage-label industry folded into the ten vertical names this script has always used",
   "industry": "homepage-label industry, one group per label",
