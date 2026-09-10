@@ -10,7 +10,7 @@ Read from the official documentation on 9 September 2026.
 - **Actions**: entry methods completed.
 - **Entries**: actions completed multiplied by entry worth.
 - **Users**: unique people who entered.
-- **Conversion Rate**: users who entered after viewing. The page gives the platform average as about 34%.
+- **Conversion Rate**: users who entered after viewing. Across the campaigns behind these skills, the typical figure is about 28%.
 - **Events**: optional metrics outside the incentivised actions, such as Facebook likes.
 
 [Reporting Tab](https://gleam.io/docs/competitions/data/reporting-tab) shows the campaign over time with a date-range filter. The Actions report under Data & Reporting ranks completed actions by volume.
@@ -25,7 +25,7 @@ Real-time list of every action with Who, Action, Details (form answers, tweet UR
 
 [Setup Tab](https://gleam.io/docs/competitions/setup/setup), Fraud Filter section
 
-The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions and email or phone verification live on the User Details tab, Allowed Locations on the Setup tab.
+The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and Entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions and email or phone verification live on the User Details tab, Allowed Locations on the Setup tab.
 
 ## Admin and test entries
 
@@ -35,4 +35,4 @@ An admin's own entries made before the competition starts are invalidated automa
 
 ## Importing entries
 
-The tips library notes that entries can be imported from a CSV so winners can be drawn in Gleam for an audience managed elsewhere ([Advanced Tips](https://gleam.io/docs/competitions/tips/library), "Import External Entries With CSV").
+The tips library notes that entries can be imported from a CSV so Winners can be drawn in Gleam for an audience managed elsewhere ([Advanced Tips](https://gleam.io/docs/competitions/tips/library), "Import External Entries With CSV").

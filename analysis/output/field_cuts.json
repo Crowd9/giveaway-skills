@@ -1,0 +1,6791 @@
+{
+ "definitions": {
+  "scope": "campaigns with a contestant count (1,000 or more contestants), plausible start dates, every group at least five organizers",
+  "completions_per_contestant": "entry_count divided by contestants. entry_count is the number of completions of the action, not worth-weighted: per campaign the sum of entry_count equals valid entries within 8% whether or not any action carries a worth above one, while the worth-weighted sum runs five times higher. Worth changes what an entrant is credited, never the count",
+  "share_click_ratio": "viral share clicks over impressions, summed per campaign then the median across campaigns with a share action",
+  "by_band_all": "every band including 100 to 1,000; contestants come from the export or Nikita's contestant dump, the estimate only fills campaigns in neither",
+  "worth_bands_by_action": "optional actions only, completions per contestant by the worth the organizer set, with the campaign's entries per entrant and conversion alongside; mandatory actions excluded because they complete regardless of worth",
+  "config_cuts": "completions per contestant by action settings read from the action config JSON",
+  "promotion_sites": "third-party sites that sent visitors, by channel, with the impressions they sent and the campaigns and organizers they reached (at least five organizers per site), for the promotion plan's listing advice",
+  "referrer_channel_share": "referrer hosts classified by an assistant into channels (the top 400 hosts, which carry 90% of referred impressions), the rest by pattern, the remainder unclassified_tail",
+  "channel_quantity_vs_quality": "outcomes_when_channel_over_10pct with the channel's share of all impressions in the export alongside it, so a channel that sends a lot of traffic but converts, emails or refers it poorly reads as a tradeoff rather than a failure",
+  "channel_quality_by_size_band": "outcomes_when_channel_over_10pct split by contestant band, to check whether a channel's conversion and entries-per-entrant ranking against other channels holds once organizer size is controlled for, or whether it is really a size effect",
+  "email_traffic_by_provider": "impressions whose landing URL carries an email UTM tag, grouped by the provider named in utm_source. This is the organizer's own mass mail reaching the campaign page, never anything Gleam sent, and only 11% of impressions carry a UTM tag at all",
+  "outcomes_when_email_over_10pct": "campaigns where tagged email impressions are a tenth or more of all impressions, against campaigns with no tagged email impressions at all",
+  "viral_click_conversion_excluding_crypto": "the same cut with finance_crypto organizers removed. Crypto campaigns run referral farms, so they lift the pooled figure well above what an ordinary organizer sees",
+  "viral_click_conversion": "a viral share click is a click on one entrant's own share link. Referrals are completions of the share action, which Gleam credits when a referred person enters. referrals_per_click is the median across campaigns of referrals over clicks, so it reads as the share of clicks on a shared link that ended in an entry. campaign_conversion_same_campaigns is contestants per impression on the same campaigns, for comparison",
+  "uptake_by_family_and_position": "completions per contestant by action family and list position (position is zero-indexed in the export, 1st is position 0), campaigns offering the action",
+  "by_method_count_clean": "clean campaigns (no repeatable action, 14 days or less) by action count",
+  "by_description_length": "clean campaigns by word count of the campaign description"
+ },
+ "by_tier": {
+  "Pro": {
+   "n": 29173,
+   "sites": 6947,
+   "contestants": 2272.0,
+   "conversion": 0.303,
+   "entries_per_entrant": 4.984,
+   "days": 13.0,
+   "methods": 8.0,
+   "email_offered": 0.304,
+   "share_offered": 0.599
+  },
+  "Business": {
+   "n": 19383,
+   "sites": 3590,
+   "contestants": 2883.0,
+   "conversion": 0.281,
+   "entries_per_entrant": 4.943,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.345,
+   "share_offered": 0.549
+  },
+  "Hobby": {
+   "n": 2501,
+   "sites": 841,
+   "contestants": 1833.0,
+   "conversion": 0.37,
+   "entries_per_entrant": 3.799,
+   "days": 13.0,
+   "methods": 5.0,
+   "email_offered": 0.0,
+   "share_offered": 0.016
+  },
+  "Free": {
+   "n": 1936,
+   "sites": 804,
+   "contestants": 2085.0,
+   "conversion": 0.45,
+   "entries_per_entrant": 2.828,
+   "days": 11.0,
+   "methods": 4.0,
+   "email_offered": 0.0,
+   "share_offered": 0.0
+  },
+  "Premium": {
+   "n": 1788,
+   "sites": 418,
+   "contestants": 4136.5,
+   "conversion": 0.231,
+   "entries_per_entrant": 7.878,
+   "days": 22.0,
+   "methods": 13.0,
+   "email_offered": 0.5,
+   "share_offered": 0.603
+  }
+ },
+ "by_continent": {
+  "north america": {
+   "n": 21586,
+   "sites": 4199,
+   "contestants": 2323.0,
+   "conversion": 0.265,
+   "entries_per_entrant": 4.418,
+   "days": 16.0,
+   "methods": 7.0,
+   "email_offered": 0.466,
+   "share_offered": 0.518
+  },
+  "asia": {
+   "n": 17114,
+   "sites": 3090,
+   "contestants": 2879.0,
+   "conversion": 0.334,
+   "entries_per_entrant": 5.48,
+   "days": 9.0,
+   "methods": 8.0,
+   "email_offered": 0.07,
+   "share_offered": 0.68
+  },
+  "europe": {
+   "n": 11250,
+   "sites": 2272,
+   "contestants": 2304.0,
+   "conversion": 0.3,
+   "entries_per_entrant": 4.791,
+   "days": 17.0,
+   "methods": 8.0,
+   "email_offered": 0.319,
+   "share_offered": 0.391
+  },
+  "oceania": {
+   "n": 2309,
+   "sites": 658,
+   "contestants": 2219.0,
+   "conversion": 0.285,
+   "entries_per_entrant": 3.43,
+   "days": 18.0,
+   "methods": 7.0,
+   "email_offered": 0.622,
+   "share_offered": 0.587
+  },
+  "south america": {
+   "n": 1885,
+   "sites": 269,
+   "contestants": 1974.0,
+   "conversion": 0.531,
+   "entries_per_entrant": 5.474,
+   "days": 4.0,
+   "methods": 8.0,
+   "email_offered": 0.02,
+   "share_offered": 0.186
+  },
+  "africa": {
+   "n": 619,
+   "sites": 221,
+   "contestants": 2096.0,
+   "conversion": 0.279,
+   "entries_per_entrant": 4.674,
+   "days": 15.0,
+   "methods": 8.0,
+   "email_offered": 0.218,
+   "share_offered": 0.439
+  }
+ },
+ "by_region": {
+  "North America": {
+   "n": 21439,
+   "sites": 4169,
+   "contestants": 2320.0,
+   "conversion": 0.265,
+   "entries_per_entrant": 4.419,
+   "days": 16.0,
+   "methods": 7.0,
+   "email_offered": 0.467,
+   "share_offered": 0.516
+  },
+  "Eastern Asia": {
+   "n": 5860,
+   "sites": 1051,
+   "contestants": 2588.0,
+   "conversion": 0.307,
+   "entries_per_entrant": 5.726,
+   "days": 8.0,
+   "methods": 8.0,
+   "email_offered": 0.07,
+   "share_offered": 0.678
+  },
+  "South-Eastern Asia": {
+   "n": 5857,
+   "sites": 1144,
+   "contestants": 2858.0,
+   "conversion": 0.327,
+   "entries_per_entrant": 5.287,
+   "days": 9.0,
+   "methods": 8.0,
+   "email_offered": 0.101,
+   "share_offered": 0.636
+  },
+  "Northern Europe": {
+   "n": 5687,
+   "sites": 864,
+   "contestants": 2188.0,
+   "conversion": 0.331,
+   "entries_per_entrant": 4.082,
+   "days": 21.0,
+   "methods": 6.0,
+   "email_offered": 0.419,
+   "share_offered": 0.324
+  },
+  "Southern Asia": {
+   "n": 3977,
+   "sites": 462,
+   "contestants": 3292.0,
+   "conversion": 0.383,
+   "entries_per_entrant": 5.426,
+   "days": 9.0,
+   "methods": 8.0,
+   "email_offered": 0.033,
+   "share_offered": 0.802
+  },
+  "Western Europe": {
+   "n": 2807,
+   "sites": 530,
+   "contestants": 2354.0,
+   "conversion": 0.287,
+   "entries_per_entrant": 5.075,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.237,
+   "share_offered": 0.426
+  },
+  "Australia and New Zealand": {
+   "n": 2307,
+   "sites": 657,
+   "contestants": 2219.0,
+   "conversion": 0.285,
+   "entries_per_entrant": 3.43,
+   "days": 18.0,
+   "methods": 7.0,
+   "email_offered": 0.623,
+   "share_offered": 0.587
+  },
+  "South America": {
+   "n": 1885,
+   "sites": 269,
+   "contestants": 1974.0,
+   "conversion": 0.531,
+   "entries_per_entrant": 5.474,
+   "days": 4.0,
+   "methods": 8.0,
+   "email_offered": 0.02,
+   "share_offered": 0.186
+  },
+  "Western Asia": {
+   "n": 1409,
+   "sites": 423,
+   "contestants": 3221.0,
+   "conversion": 0.329,
+   "entries_per_entrant": 5.272,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.043,
+   "share_offered": 0.529
+  },
+  "Southern Europe": {
+   "n": 1186,
+   "sites": 372,
+   "contestants": 2450.0,
+   "conversion": 0.297,
+   "entries_per_entrant": 5.189,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.181,
+   "share_offered": 0.423
+  },
+  "Central Europe": {
+   "n": 853,
+   "sites": 201,
+   "contestants": 2118.0,
+   "conversion": 0.207,
+   "entries_per_entrant": 5.612,
+   "days": 15.0,
+   "methods": 10.0,
+   "email_offered": 0.32,
+   "share_offered": 0.471
+  },
+  "Eastern Europe": {
+   "n": 367,
+   "sites": 151,
+   "contestants": 3351.0,
+   "conversion": 0.273,
+   "entries_per_entrant": 5.884,
+   "days": 14.0,
+   "methods": 9.0,
+   "email_offered": 0.033,
+   "share_offered": 0.733
+  },
+  "Southeast Europe": {
+   "n": 350,
+   "sites": 157,
+   "contestants": 2723.5,
+   "conversion": 0.289,
+   "entries_per_entrant": 5.125,
+   "days": 11.0,
+   "methods": 8.0,
+   "email_offered": 0.137,
+   "share_offered": 0.557
+  },
+  "Southern Africa": {
+   "n": 226,
+   "sites": 58,
+   "contestants": 2053.5,
+   "conversion": 0.348,
+   "entries_per_entrant": 3.619,
+   "days": 18.5,
+   "methods": 5.0,
+   "email_offered": 0.279,
+   "share_offered": 0.301
+  },
+  "Northern Africa": {
+   "n": 193,
+   "sites": 61,
+   "contestants": 1816.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 4.937,
+   "days": 13.0,
+   "methods": 12.0,
+   "email_offered": 0.119,
+   "share_offered": 0.383
+  },
+  "Western Africa": {
+   "n": 115,
+   "sites": 83,
+   "contestants": 2747.0,
+   "conversion": 0.296,
+   "entries_per_entrant": 5.537,
+   "days": 17.0,
+   "methods": 8.0,
+   "email_offered": 0.13,
+   "share_offered": 0.661
+  },
+  "Eastern Africa": {
+   "n": 85,
+   "sites": 19,
+   "contestants": 2417.0,
+   "conversion": 0.261,
+   "entries_per_entrant": 4.528,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.4,
+   "share_offered": 0.635
+  },
+  "Caribbean": {
+   "n": 82,
+   "sites": 12,
+   "contestants": 2414.0,
+   "conversion": 0.283,
+   "entries_per_entrant": 4.469,
+   "days": 9.0,
+   "methods": 6.0,
+   "email_offered": 0.061,
+   "share_offered": 0.829
+  },
+  "Central America": {
+   "n": 65,
+   "sites": 18,
+   "contestants": 2833.0,
+   "conversion": 0.275,
+   "entries_per_entrant": 3.421,
+   "days": 21.0,
+   "methods": 7.0,
+   "email_offered": 0.569,
+   "share_offered": 0.738
+  }
+ },
+ "by_language": {
+  "en": {
+   "n": 52259,
+   "sites": 10386,
+   "contestants": 2460.0,
+   "conversion": 0.297,
+   "entries_per_entrant": 4.876,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.309,
+   "share_offered": 0.544
+  },
+  "pt-BR": {
+   "n": 563,
+   "sites": 68,
+   "contestants": 2129.0,
+   "conversion": 0.595,
+   "entries_per_entrant": 5.175,
+   "days": 1.0,
+   "methods": 7.0,
+   "email_offered": 0.004,
+   "share_offered": 0.284
+  },
+  "es": {
+   "n": 457,
+   "sites": 119,
+   "contestants": 3870.0,
+   "conversion": 0.296,
+   "entries_per_entrant": 4.912,
+   "days": 11.0,
+   "methods": 7.0,
+   "email_offered": 0.162,
+   "share_offered": 0.256
+  },
+  "fr": {
+   "n": 425,
+   "sites": 100,
+   "contestants": 2515.0,
+   "conversion": 0.333,
+   "entries_per_entrant": 2.925,
+   "days": 10.0,
+   "methods": 5.0,
+   "email_offered": 0.268,
+   "share_offered": 0.294
+  },
+  "de": {
+   "n": 390,
+   "sites": 55,
+   "contestants": 2347.5,
+   "conversion": 0.351,
+   "entries_per_entrant": 4.362,
+   "days": 1.0,
+   "methods": 6.0,
+   "email_offered": 0.19,
+   "share_offered": 0.367
+  },
+  "sv": {
+   "n": 153,
+   "sites": 6,
+   "contestants": 1682.0,
+   "conversion": 0.713,
+   "entries_per_entrant": 4.83,
+   "days": 9.0,
+   "methods": 5.0,
+   "email_offered": 0.0,
+   "share_offered": 0.007
+  },
+  "ar": {
+   "n": 106,
+   "sites": 13,
+   "contestants": 1531.5,
+   "conversion": 0.253,
+   "entries_per_entrant": 4.871,
+   "days": 8.0,
+   "methods": 13.0,
+   "email_offered": 0.0,
+   "share_offered": 0.075
+  }
+ },
+ "by_country_rule": {
+  "open": {
+   "n": 41796,
+   "sites": 8862,
+   "contestants": 2467.0,
+   "conversion": 0.302,
+   "entries_per_entrant": 5.062,
+   "days": 13.0,
+   "methods": 8.0,
+   "email_offered": 0.232,
+   "share_offered": 0.528
+  },
+  "restricted": {
+   "n": 12990,
+   "sites": 2736,
+   "contestants": 2402.0,
+   "conversion": 0.289,
+   "entries_per_entrant": 4.247,
+   "days": 15.0,
+   "methods": 7.0,
+   "email_offered": 0.522,
+   "share_offered": 0.551
+  }
+ },
+ "by_campaign_sequence": {
+  "11th plus": {
+   "n": 24931,
+   "sites": 897,
+   "contestants": 2549.0,
+   "conversion": 0.325,
+   "entries_per_entrant": 5.129,
+   "days": 10.0,
+   "methods": 8.0,
+   "email_offered": 0.286,
+   "share_offered": 0.51
+  },
+  "4th to 10th": {
+   "n": 10845,
+   "sites": 2489,
+   "contestants": 2416.0,
+   "conversion": 0.286,
+   "entries_per_entrant": 4.797,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.335,
+   "share_offered": 0.545
+  },
+  "1st campaign": {
+   "n": 10714,
+   "sites": 10714,
+   "contestants": 2332.0,
+   "conversion": 0.283,
+   "entries_per_entrant": 4.633,
+   "days": 17.0,
+   "methods": 7.0,
+   "email_offered": 0.291,
+   "share_offered": 0.562
+  },
+  "2nd to 3rd": {
+   "n": 8296,
+   "sites": 5012,
+   "contestants": 2324.0,
+   "conversion": 0.284,
+   "entries_per_entrant": 4.661,
+   "days": 15.0,
+   "methods": 7.0,
+   "email_offered": 0.311,
+   "share_offered": 0.553
+  }
+ },
+ "by_paid_action": {
+  "no_paid_action": {
+   "n": 53149,
+   "sites": 10423,
+   "contestants": 2453.0,
+   "conversion": 0.3,
+   "entries_per_entrant": 4.858,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.3,
+   "share_offered": 0.531
+  },
+  "has_paid_action": {
+   "n": 1637,
+   "sites": 664,
+   "contestants": 2345.0,
+   "conversion": 0.262,
+   "entries_per_entrant": 5.31,
+   "days": 15.0,
+   "methods": 10.0,
+   "email_offered": 0.324,
+   "share_offered": 0.604
+  }
+ },
+ "by_band_all": {
+  "100-1k": {
+   "n": 112282,
+   "sites": 20559,
+   "contestants": 295.0,
+   "conversion": 0.273,
+   "entries_per_entrant": 4.748,
+   "days": 10.0,
+   "methods": 7.0,
+   "email_offered": 0.215,
+   "share_offered": 0.38,
+   "business_plus_share": 0.256,
+   "organizer_active_12m": 0.437
+  },
+  "1k-2.5k": {
+   "n": 27891,
+   "sites": 7404,
+   "contestants": 1496.0,
+   "conversion": 0.291,
+   "entries_per_entrant": 4.716,
+   "days": 13.0,
+   "methods": 7.0,
+   "email_offered": 0.316,
+   "share_offered": 0.498,
+   "business_plus_share": 0.328,
+   "organizer_active_12m": 0.472
+  },
+  "2.5k-10k": {
+   "n": 20532,
+   "sites": 5375,
+   "contestants": 4124.5,
+   "conversion": 0.298,
+   "entries_per_entrant": 4.953,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.303,
+   "share_offered": 0.557,
+   "business_plus_share": 0.417,
+   "organizer_active_12m": 0.444
+  },
+  "10k+": {
+   "n": 6363,
+   "sites": 1989,
+   "contestants": 16706.0,
+   "conversion": 0.336,
+   "entries_per_entrant": 5.281,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.226,
+   "share_offered": 0.612,
+   "business_plus_share": 0.546,
+   "organizer_active_12m": 0.38
+  }
+ },
+ "by_organizer_active": {
+  "organizer_inactive": {
+   "n": 30082,
+   "sites": 8729,
+   "contestants": 2559.0,
+   "conversion": 0.303,
+   "entries_per_entrant": 5.069,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.264,
+   "share_offered": 0.587
+  },
+  "organizer_active_last_12m": {
+   "n": 24704,
+   "sites": 1985,
+   "contestants": 2324.0,
+   "conversion": 0.293,
+   "entries_per_entrant": 4.598,
+   "days": 15.0,
+   "methods": 8.0,
+   "email_offered": 0.345,
+   "share_offered": 0.469
+  }
+ },
+ "actions_completions": {
+  "custom_action": {
+   "n": 138883,
+   "sites": 8753,
+   "mandatory_share": 0.231,
+   "worth": 2.0,
+   "completions_per_contestant": 0.82,
+   "worth_weighted_entries_per_contestant": 1.745,
+   "completions_when_mandatory": 1.013,
+   "completions_when_optional": 0.724
+  },
+  "twitter_follow": {
+   "n": 61231,
+   "sites": 7475,
+   "mandatory_share": 0.357,
+   "worth": 2.0,
+   "completions_per_contestant": 0.69,
+   "worth_weighted_entries_per_contestant": 1.262,
+   "completions_when_mandatory": 1.032,
+   "completions_when_optional": 0.561
+  },
+  "instagram_visit_profile": {
+   "n": 30371,
+   "sites": 4785,
+   "mandatory_share": 0.109,
+   "worth": 1.0,
+   "completions_per_contestant": 0.792,
+   "worth_weighted_entries_per_contestant": 0.916,
+   "completions_when_mandatory": 0.939,
+   "completions_when_optional": 0.772
+  },
+  "share_action": {
+   "n": 29316,
+   "sites": 6538,
+   "mandatory_share": 0.174,
+   "worth": 5.0,
+   "completions_per_contestant": 0.307,
+   "worth_weighted_entries_per_contestant": 1.511,
+   "completions_when_mandatory": 0.997,
+   "completions_when_optional": 0.219
+  },
+  "twitter_retweet": {
+   "n": 27707,
+   "sites": 5276,
+   "mandatory_share": 0.399,
+   "worth": 4.0,
+   "completions_per_contestant": 0.685,
+   "worth_weighted_entries_per_contestant": 1.853,
+   "completions_when_mandatory": 0.998,
+   "completions_when_optional": 0.486
+  },
+  "youtube_visit_channel": {
+   "n": 21661,
+   "sites": 4205,
+   "mandatory_share": 0.137,
+   "worth": 1.0,
+   "completions_per_contestant": 0.834,
+   "worth_weighted_entries_per_contestant": 0.985,
+   "completions_when_mandatory": 0.982,
+   "completions_when_optional": 0.808
+  },
+  "facebook_visit": {
+   "n": 21503,
+   "sites": 3793,
+   "mandatory_share": 0.077,
+   "worth": 1.0,
+   "completions_per_contestant": 0.767,
+   "worth_weighted_entries_per_contestant": 0.884,
+   "completions_when_mandatory": 0.917,
+   "completions_when_optional": 0.75
+  },
+  "telegram_join": {
+   "n": 20971,
+   "sites": 2843,
+   "mandatory_share": 0.55,
+   "worth": 5.0,
+   "completions_per_contestant": 1.183,
+   "worth_weighted_entries_per_contestant": 4.298,
+   "completions_when_mandatory": 1.237,
+   "completions_when_optional": 1.126
+  },
+  "email_subscribe": {
+   "n": 18113,
+   "sites": 3430,
+   "mandatory_share": 0.409,
+   "worth": 1.0,
+   "completions_per_contestant": 0.901,
+   "worth_weighted_entries_per_contestant": 1.112,
+   "completions_when_mandatory": 1.023,
+   "completions_when_optional": 0.759
+  },
+  "discord_join_server": {
+   "n": 17658,
+   "sites": 3670,
+   "mandatory_share": 0.355,
+   "worth": 2.0,
+   "completions_per_contestant": 0.534,
+   "worth_weighted_entries_per_contestant": 1.319,
+   "completions_when_mandatory": 0.886,
+   "completions_when_optional": 0.429
+  },
+  "twitchtv_follow": {
+   "n": 9172,
+   "sites": 1237,
+   "mandatory_share": 0.121,
+   "worth": 1.0,
+   "completions_per_contestant": 0.547,
+   "worth_weighted_entries_per_contestant": 0.874,
+   "completions_when_mandatory": 0.746,
+   "completions_when_optional": 0.52
+  },
+  "twitter_tweet": {
+   "n": 7117,
+   "sites": 1820,
+   "mandatory_share": 0.231,
+   "worth": 5.0,
+   "completions_per_contestant": 0.417,
+   "worth_weighted_entries_per_contestant": 1.741,
+   "completions_when_mandatory": 0.995,
+   "completions_when_optional": 0.353
+  },
+  "tiktok_follow": {
+   "n": 7059,
+   "sites": 1503,
+   "mandatory_share": 0.076,
+   "worth": 1.0,
+   "completions_per_contestant": 0.34,
+   "worth_weighted_entries_per_contestant": 0.594,
+   "completions_when_mandatory": 0.579,
+   "completions_when_optional": 0.329
+  },
+  "wallet_address": {
+   "n": 6690,
+   "sites": 1627,
+   "mandatory_share": 0.552,
+   "worth": 10.0,
+   "completions_per_contestant": 1.166,
+   "worth_weighted_entries_per_contestant": 5.695,
+   "completions_when_mandatory": 1.166,
+   "completions_when_optional": 1.164
+  },
+  "secret_code": {
+   "n": 6647,
+   "sites": 1246,
+   "mandatory_share": 0.041,
+   "worth": 10.0,
+   "completions_per_contestant": 0.256,
+   "worth_weighted_entries_per_contestant": 1.76,
+   "completions_when_mandatory": 0.94,
+   "completions_when_optional": 0.245
+  },
+  "instagram_follow": {
+   "n": 4747,
+   "sites": 1077,
+   "mandatory_share": 0.11,
+   "worth": 1.0,
+   "completions_per_contestant": 0.485,
+   "worth_weighted_entries_per_contestant": 0.795,
+   "completions_when_mandatory": 0.774,
+   "completions_when_optional": 0.469
+  },
+  "tiktok_visit": {
+   "n": 3233,
+   "sites": 1039,
+   "mandatory_share": 0.058,
+   "worth": 1.0,
+   "completions_per_contestant": 0.475,
+   "worth_weighted_entries_per_contestant": 0.678,
+   "completions_when_mandatory": 0.668,
+   "completions_when_optional": 0.465
+  },
+  "download_app": {
+   "n": 3023,
+   "sites": 724,
+   "mandatory_share": 0.243,
+   "worth": 5.0,
+   "completions_per_contestant": 0.549,
+   "worth_weighted_entries_per_contestant": 1.746,
+   "completions_when_mandatory": 1.147,
+   "completions_when_optional": 0.426
+  },
+  "twitchtv_subscribe": {
+   "n": 2604,
+   "sites": 342,
+   "mandatory_share": 0.014,
+   "worth": 100.0,
+   "completions_per_contestant": 0.047,
+   "worth_weighted_entries_per_contestant": 3.2,
+   "completions_when_mandatory": 0.988,
+   "completions_when_optional": 0.046
+  },
+  "facebook_enter": {
+   "n": 2349,
+   "sites": 680,
+   "mandatory_share": 0.124,
+   "worth": 1.0,
+   "completions_per_contestant": 0.49,
+   "worth_weighted_entries_per_contestant": 0.697,
+   "completions_when_mandatory": 0.724,
+   "completions_when_optional": 0.469
+  },
+  "instagram_view_post": {
+   "n": 2308,
+   "sites": 753,
+   "mandatory_share": 0.075,
+   "worth": 2.0,
+   "completions_per_contestant": 0.626,
+   "worth_weighted_entries_per_contestant": 0.888,
+   "completions_when_mandatory": 0.867,
+   "completions_when_optional": 0.599
+  },
+  "pinterest_visit": {
+   "n": 2148,
+   "sites": 467,
+   "mandatory_share": 0.018,
+   "worth": 1.0,
+   "completions_per_contestant": 0.625,
+   "worth_weighted_entries_per_contestant": 0.787,
+   "completions_when_mandatory": 0.681,
+   "completions_when_optional": 0.623
+  },
+  "twitter_hashtags": {
+   "n": 1880,
+   "sites": 920,
+   "mandatory_share": 0.336,
+   "worth": 5.0,
+   "completions_per_contestant": 0.714,
+   "worth_weighted_entries_per_contestant": 2.075,
+   "completions_when_mandatory": 0.945,
+   "completions_when_optional": 0.557
+  },
+  "reddit_visit": {
+   "n": 1702,
+   "sites": 467,
+   "mandatory_share": 0.104,
+   "worth": 1.0,
+   "completions_per_contestant": 0.735,
+   "worth_weighted_entries_per_contestant": 1.121,
+   "completions_when_mandatory": 0.948,
+   "completions_when_optional": 0.719
+  },
+  "facebook_like": {
+   "n": 1597,
+   "sites": 546,
+   "mandatory_share": 0.058,
+   "worth": 3.0,
+   "completions_per_contestant": 0.367,
+   "worth_weighted_entries_per_contestant": 0.923,
+   "completions_when_mandatory": 0.552,
+   "completions_when_optional": 0.36
+  },
+  "media_action": {
+   "n": 1359,
+   "sites": 531,
+   "mandatory_share": 0.155,
+   "worth": 5.0,
+   "completions_per_contestant": 0.068,
+   "worth_weighted_entries_per_contestant": 0.503,
+   "completions_when_mandatory": 0.506,
+   "completions_when_optional": 0.05
+  },
+  "podcast_subscribe": {
+   "n": 1297,
+   "sites": 229,
+   "mandatory_share": 0.027,
+   "worth": 1.0,
+   "completions_per_contestant": 0.294,
+   "worth_weighted_entries_per_contestant": 0.496,
+   "completions_when_mandatory": 0.944,
+   "completions_when_optional": 0.292
+  },
+  "linkedin_follow": {
+   "n": 1275,
+   "sites": 380,
+   "mandatory_share": 0.063,
+   "worth": 1.0,
+   "completions_per_contestant": 0.301,
+   "worth_weighted_entries_per_contestant": 0.624,
+   "completions_when_mandatory": 0.509,
+   "completions_when_optional": 0.289
+  },
+  "youtube_enter": {
+   "n": 1265,
+   "sites": 276,
+   "mandatory_share": 0.112,
+   "worth": 1.0,
+   "completions_per_contestant": 0.727,
+   "worth_weighted_entries_per_contestant": 0.939,
+   "completions_when_mandatory": 1.0,
+   "completions_when_optional": 0.62
+  },
+  "submit_url": {
+   "n": 1253,
+   "sites": 463,
+   "mandatory_share": 0.302,
+   "worth": 5.0,
+   "completions_per_contestant": 0.321,
+   "worth_weighted_entries_per_contestant": 1.275,
+   "completions_when_mandatory": 0.782,
+   "completions_when_optional": 0.229
+  },
+  "facebook_view_post": {
+   "n": 1244,
+   "sites": 480,
+   "mandatory_share": 0.097,
+   "worth": 1.0,
+   "completions_per_contestant": 0.628,
+   "worth_weighted_entries_per_contestant": 0.939,
+   "completions_when_mandatory": 0.823,
+   "completions_when_optional": 0.597
+  },
+  "spotify_follow": {
+   "n": 1183,
+   "sites": 271,
+   "mandatory_share": 0.055,
+   "worth": 2.0,
+   "completions_per_contestant": 0.283,
+   "worth_weighted_entries_per_contestant": 0.649,
+   "completions_when_mandatory": 0.9,
+   "completions_when_optional": 0.274
+  },
+  "instagram_enter": {
+   "n": 1065,
+   "sites": 414,
+   "mandatory_share": 0.098,
+   "worth": 1.0,
+   "completions_per_contestant": 0.465,
+   "worth_weighted_entries_per_contestant": 0.576,
+   "completions_when_mandatory": 0.611,
+   "completions_when_optional": 0.453
+  },
+  "blog_comment": {
+   "n": 882,
+   "sites": 180,
+   "mandatory_share": 0.087,
+   "worth": 3.0,
+   "completions_per_contestant": 0.26,
+   "worth_weighted_entries_per_contestant": 0.907,
+   "completions_when_mandatory": 1.028,
+   "completions_when_optional": 0.242
+  },
+  "twitter_enter": {
+   "n": 854,
+   "sites": 403,
+   "mandatory_share": 0.28,
+   "worth": 1.0,
+   "completions_per_contestant": 0.622,
+   "worth_weighted_entries_per_contestant": 0.781,
+   "completions_when_mandatory": 1.059,
+   "completions_when_optional": 0.467
+  },
+  "upload_action": {
+   "n": 831,
+   "sites": 269,
+   "mandatory_share": 0.253,
+   "worth": 8.0,
+   "completions_per_contestant": 0.197,
+   "worth_weighted_entries_per_contestant": 0.963,
+   "completions_when_mandatory": 0.666,
+   "completions_when_optional": 0.113
+  },
+  "twitter_view_post": {
+   "n": 772,
+   "sites": 359,
+   "mandatory_share": 0.218,
+   "worth": 2.0,
+   "completions_per_contestant": 0.655,
+   "worth_weighted_entries_per_contestant": 1.413,
+   "completions_when_mandatory": 0.949,
+   "completions_when_optional": 0.609
+  },
+  "steam_join_group": {
+   "n": 759,
+   "sites": 83,
+   "mandatory_share": 0.058,
+   "worth": 5.0,
+   "completions_per_contestant": 0.403,
+   "worth_weighted_entries_per_contestant": 1.747,
+   "completions_when_mandatory": 0.427,
+   "completions_when_optional": 0.403
+  },
+  "spotify_listen": {
+   "n": 755,
+   "sites": 144,
+   "mandatory_share": 0.024,
+   "worth": 1.0,
+   "completions_per_contestant": 0.572,
+   "worth_weighted_entries_per_contestant": 1.468,
+   "completions_when_mandatory": 1.4,
+   "completions_when_optional": 0.551
+  },
+  "promote_campaign": {
+   "n": 732,
+   "sites": 76,
+   "mandatory_share": 0.022,
+   "worth": 3.0,
+   "completions_per_contestant": 0.291,
+   "worth_weighted_entries_per_contestant": 0.88,
+   "completions_when_mandatory": 0.525,
+   "completions_when_optional": 0.287
+  },
+  "instagram_comment": {
+   "n": 661,
+   "sites": 227,
+   "mandatory_share": 0.059,
+   "worth": 5.0,
+   "completions_per_contestant": 0.329,
+   "worth_weighted_entries_per_contestant": 1.484,
+   "completions_when_mandatory": 0.59,
+   "completions_when_optional": 0.321
+  },
+  "csv_import": {
+   "n": 592,
+   "sites": 204,
+   "mandatory_share": 0.0,
+   "worth": 1.0,
+   "completions_per_contestant": 0.05,
+   "worth_weighted_entries_per_contestant": 0.05,
+   "completions_when_mandatory": null,
+   "completions_when_optional": 0.05
+  },
+  "watch_video": {
+   "n": 580,
+   "sites": 23,
+   "mandatory_share": 0.124,
+   "worth": 1.0,
+   "completions_per_contestant": 0.439,
+   "worth_weighted_entries_per_contestant": 0.443,
+   "completions_when_mandatory": 1.156,
+   "completions_when_optional": 0.407
+  },
+  "pinterest_enter": {
+   "n": 563,
+   "sites": 77,
+   "mandatory_share": 0.057,
+   "worth": 3.0,
+   "completions_per_contestant": 0.358,
+   "worth_weighted_entries_per_contestant": 0.846,
+   "completions_when_mandatory": 0.448,
+   "completions_when_optional": 0.34
+  },
+  "gleam_subscribe": {
+   "n": 473,
+   "sites": 123,
+   "mandatory_share": 0.074,
+   "worth": 2.0,
+   "completions_per_contestant": 0.618,
+   "worth_weighted_entries_per_contestant": 1.233,
+   "completions_when_mandatory": 1.025,
+   "completions_when_optional": 0.609
+  },
+  "linkedin_share": {
+   "n": 469,
+   "sites": 87,
+   "mandatory_share": 0.028,
+   "worth": 30.0,
+   "completions_per_contestant": 0.036,
+   "worth_weighted_entries_per_contestant": 0.851,
+   "completions_when_mandatory": 1.819,
+   "completions_when_optional": 0.035
+  },
+  "snapchat_snapcode": {
+   "n": 467,
+   "sites": 76,
+   "mandatory_share": 0.013,
+   "worth": 5.0,
+   "completions_per_contestant": 0.255,
+   "worth_weighted_entries_per_contestant": 1.201,
+   "completions_when_mandatory": 0.726,
+   "completions_when_optional": 0.249
+  },
+  "discord_enter": {
+   "n": 394,
+   "sites": 191,
+   "mandatory_share": 0.317,
+   "worth": 1.0,
+   "completions_per_contestant": 0.62,
+   "worth_weighted_entries_per_contestant": 1.035,
+   "completions_when_mandatory": 1.001,
+   "completions_when_optional": 0.494
+  },
+  "bluesky_follow": {
+   "n": 366,
+   "sites": 143,
+   "mandatory_share": 0.0,
+   "worth": 1.0,
+   "completions_per_contestant": 0.24,
+   "worth_weighted_entries_per_contestant": 0.384,
+   "completions_when_mandatory": null,
+   "completions_when_optional": 0.24
+  },
+  "twitchtv_channel_reward": {
+   "n": 347,
+   "sites": 66,
+   "mandatory_share": 0.006,
+   "worth": 10.0,
+   "completions_per_contestant": 0.285,
+   "worth_weighted_entries_per_contestant": 1.55,
+   "completions_when_mandatory": 6.463,
+   "completions_when_optional": 0.285
+  },
+  "threads_follow": {
+   "n": 338,
+   "sites": 80,
+   "mandatory_share": 0.03,
+   "worth": 2.0,
+   "completions_per_contestant": 0.266,
+   "worth_weighted_entries_per_contestant": 0.54,
+   "completions_when_mandatory": 0.41,
+   "completions_when_optional": 0.259
+  },
+  "patreon_visit": {
+   "n": 320,
+   "sites": 116,
+   "mandatory_share": 0.078,
+   "worth": 2.0,
+   "completions_per_contestant": 0.585,
+   "worth_weighted_entries_per_contestant": 1.244,
+   "completions_when_mandatory": 0.669,
+   "completions_when_optional": 0.573
+  },
+  "kick_follow": {
+   "n": 315,
+   "sites": 65,
+   "mandatory_share": 0.063,
+   "worth": 1.0,
+   "completions_per_contestant": 0.403,
+   "worth_weighted_entries_per_contestant": 0.604,
+   "completions_when_mandatory": 0.865,
+   "completions_when_optional": 0.394
+  },
+  "spotify_save": {
+   "n": 313,
+   "sites": 61,
+   "mandatory_share": 0.064,
+   "worth": 4.0,
+   "completions_per_contestant": 0.338,
+   "worth_weighted_entries_per_contestant": 0.864,
+   "completions_when_mandatory": 0.966,
+   "completions_when_optional": 0.323
+  },
+  "facebook_join_group": {
+   "n": 283,
+   "sites": 75,
+   "mandatory_share": 0.021,
+   "worth": 3.0,
+   "completions_per_contestant": 0.33,
+   "worth_weighted_entries_per_contestant": 1.18,
+   "completions_when_mandatory": 0.508,
+   "completions_when_optional": 0.329
+  },
+  "soundcloud_follow": {
+   "n": 280,
+   "sites": 48,
+   "mandatory_share": 0.004,
+   "worth": 1.0,
+   "completions_per_contestant": 0.207,
+   "worth_weighted_entries_per_contestant": 0.312,
+   "completions_when_mandatory": 0.102,
+   "completions_when_optional": 0.207
+  },
+  "instagram_choose": {
+   "n": 261,
+   "sites": 144,
+   "mandatory_share": 0.027,
+   "worth": 5.0,
+   "completions_per_contestant": 0.013,
+   "worth_weighted_entries_per_contestant": 0.075,
+   "completions_when_mandatory": 0.046,
+   "completions_when_optional": 0.013
+  },
+  "steam_play_game": {
+   "n": 243,
+   "sites": 101,
+   "mandatory_share": 0.021,
+   "worth": 6.0,
+   "completions_per_contestant": 0.092,
+   "worth_weighted_entries_per_contestant": 0.614,
+   "completions_when_mandatory": 1.096,
+   "completions_when_optional": 0.088
+  },
+  "twitchtv_enter": {
+   "n": 231,
+   "sites": 86,
+   "mandatory_share": 0.048,
+   "worth": 1.0,
+   "completions_per_contestant": 0.58,
+   "worth_weighted_entries_per_contestant": 0.851,
+   "completions_when_mandatory": 1.0,
+   "completions_when_optional": 0.576
+  },
+  "reddit_enter": {
+   "n": 212,
+   "sites": 59,
+   "mandatory_share": 0.047,
+   "worth": 1.0,
+   "completions_per_contestant": 0.244,
+   "worth_weighted_entries_per_contestant": 0.303,
+   "completions_when_mandatory": 1.001,
+   "completions_when_optional": 0.242
+  }
+ },
+ "worth_bands_by_action": {
+  "blog_comment": {
+   "1": {
+    "n": 215,
+    "sites": 73,
+    "completions_per_contestant": 0.2,
+    "worth_weighted_entries_per_contestant": 0.2,
+    "campaign_entries_per_entrant": 5.267,
+    "campaign_conversion": 0.198
+   },
+   "3-4": {
+    "n": 320,
+    "sites": 21,
+    "completions_per_contestant": 0.296,
+    "worth_weighted_entries_per_contestant": 0.892,
+    "campaign_entries_per_entrant": 5.008,
+    "campaign_conversion": 0.233
+   },
+   "5-9": {
+    "n": 138,
+    "sites": 32,
+    "completions_per_contestant": 0.244,
+    "worth_weighted_entries_per_contestant": 1.262,
+    "campaign_entries_per_entrant": 3.849,
+    "campaign_conversion": 0.26
+   }
+  },
+  "custom_action": {
+   "1": {
+    "n": 47585,
+    "sites": 4771,
+    "completions_per_contestant": 0.819,
+    "worth_weighted_entries_per_contestant": 0.819,
+    "campaign_entries_per_entrant": 7.193,
+    "campaign_conversion": 0.243
+   },
+   "10+": {
+    "n": 30647,
+    "sites": 3210,
+    "completions_per_contestant": 0.616,
+    "worth_weighted_entries_per_contestant": 14.042,
+    "campaign_entries_per_entrant": 7.885,
+    "campaign_conversion": 0.199
+   },
+   "2": {
+    "n": 7354,
+    "sites": 1233,
+    "completions_per_contestant": 0.676,
+    "worth_weighted_entries_per_contestant": 1.352,
+    "campaign_entries_per_entrant": 8.384,
+    "campaign_conversion": 0.223
+   },
+   "3-4": {
+    "n": 8108,
+    "sites": 1188,
+    "completions_per_contestant": 0.632,
+    "worth_weighted_entries_per_contestant": 1.938,
+    "campaign_entries_per_entrant": 8.709,
+    "campaign_conversion": 0.189
+   },
+   "5-9": {
+    "n": 13048,
+    "sites": 1999,
+    "completions_per_contestant": 0.686,
+    "worth_weighted_entries_per_contestant": 3.508,
+    "campaign_entries_per_entrant": 8.348,
+    "campaign_conversion": 0.215
+   }
+  },
+  "discord_join_server": {
+   "1": {
+    "n": 4880,
+    "sites": 1253,
+    "completions_per_contestant": 0.457,
+    "worth_weighted_entries_per_contestant": 0.457,
+    "campaign_entries_per_entrant": 6.742,
+    "campaign_conversion": 0.277
+   },
+   "10+": {
+    "n": 3287,
+    "sites": 802,
+    "completions_per_contestant": 0.422,
+    "worth_weighted_entries_per_contestant": 8.236,
+    "campaign_entries_per_entrant": 6.503,
+    "campaign_conversion": 0.246
+   },
+   "2": {
+    "n": 945,
+    "sites": 329,
+    "completions_per_contestant": 0.443,
+    "worth_weighted_entries_per_contestant": 0.886,
+    "campaign_entries_per_entrant": 7.242,
+    "campaign_conversion": 0.288
+   },
+   "3-4": {
+    "n": 664,
+    "sites": 281,
+    "completions_per_contestant": 0.394,
+    "worth_weighted_entries_per_contestant": 1.298,
+    "campaign_entries_per_entrant": 6.841,
+    "campaign_conversion": 0.259
+   },
+   "5-9": {
+    "n": 1620,
+    "sites": 419,
+    "completions_per_contestant": 0.358,
+    "worth_weighted_entries_per_contestant": 1.821,
+    "campaign_entries_per_entrant": 9.079,
+    "campaign_conversion": 0.226
+   }
+  },
+  "download_app": {
+   "1": {
+    "n": 884,
+    "sites": 212,
+    "completions_per_contestant": 0.409,
+    "worth_weighted_entries_per_contestant": 0.409,
+    "campaign_entries_per_entrant": 5.266,
+    "campaign_conversion": 0.287
+   },
+   "10+": {
+    "n": 812,
+    "sites": 236,
+    "completions_per_contestant": 0.586,
+    "worth_weighted_entries_per_contestant": 8.425,
+    "campaign_entries_per_entrant": 6.487,
+    "campaign_conversion": 0.228
+   },
+   "2": {
+    "n": 127,
+    "sites": 41,
+    "completions_per_contestant": 0.339,
+    "worth_weighted_entries_per_contestant": 0.677,
+    "campaign_entries_per_entrant": 6.882,
+    "campaign_conversion": 0.2
+   },
+   "3-4": {
+    "n": 147,
+    "sites": 48,
+    "completions_per_contestant": 0.297,
+    "worth_weighted_entries_per_contestant": 0.965,
+    "campaign_entries_per_entrant": 4.736,
+    "campaign_conversion": 0.222
+   },
+   "5-9": {
+    "n": 318,
+    "sites": 114,
+    "completions_per_contestant": 0.357,
+    "worth_weighted_entries_per_contestant": 1.817,
+    "campaign_entries_per_entrant": 5.755,
+    "campaign_conversion": 0.237
+   }
+  },
+  "email_subscribe": {
+   "1": {
+    "n": 4835,
+    "sites": 993,
+    "completions_per_contestant": 0.771,
+    "worth_weighted_entries_per_contestant": 0.771,
+    "campaign_entries_per_entrant": 4.031,
+    "campaign_conversion": 0.276
+   },
+   "10+": {
+    "n": 2589,
+    "sites": 560,
+    "completions_per_contestant": 0.77,
+    "worth_weighted_entries_per_contestant": 14.981,
+    "campaign_entries_per_entrant": 6.5,
+    "campaign_conversion": 0.195
+   },
+   "2": {
+    "n": 625,
+    "sites": 244,
+    "completions_per_contestant": 0.731,
+    "worth_weighted_entries_per_contestant": 1.462,
+    "campaign_entries_per_entrant": 4.608,
+    "campaign_conversion": 0.235
+   },
+   "3-4": {
+    "n": 1074,
+    "sites": 290,
+    "completions_per_contestant": 0.668,
+    "worth_weighted_entries_per_contestant": 2.028,
+    "campaign_entries_per_entrant": 5.388,
+    "campaign_conversion": 0.251
+   },
+   "5-9": {
+    "n": 1586,
+    "sites": 465,
+    "completions_per_contestant": 0.775,
+    "worth_weighted_entries_per_contestant": 3.976,
+    "campaign_entries_per_entrant": 5.55,
+    "campaign_conversion": 0.218
+   }
+  },
+  "facebook_enter": {
+   "1": {
+    "n": 1249,
+    "sites": 391,
+    "completions_per_contestant": 0.483,
+    "worth_weighted_entries_per_contestant": 0.483,
+    "campaign_entries_per_entrant": 4.964,
+    "campaign_conversion": 0.248
+   },
+   "10+": {
+    "n": 391,
+    "sites": 82,
+    "completions_per_contestant": 0.424,
+    "worth_weighted_entries_per_contestant": 5.169,
+    "campaign_entries_per_entrant": 7.816,
+    "campaign_conversion": 0.15
+   },
+   "2": {
+    "n": 115,
+    "sites": 52,
+    "completions_per_contestant": 0.505,
+    "worth_weighted_entries_per_contestant": 1.009,
+    "campaign_entries_per_entrant": 6.465,
+    "campaign_conversion": 0.277
+   },
+   "3-4": {
+    "n": 111,
+    "sites": 43,
+    "completions_per_contestant": 0.56,
+    "worth_weighted_entries_per_contestant": 1.705,
+    "campaign_entries_per_entrant": 5.513,
+    "campaign_conversion": 0.211
+   },
+   "5-9": {
+    "n": 192,
+    "sites": 67,
+    "completions_per_contestant": 0.435,
+    "worth_weighted_entries_per_contestant": 2.178,
+    "campaign_entries_per_entrant": 9.188,
+    "campaign_conversion": 0.218
+   }
+  },
+  "facebook_like": {
+   "1": {
+    "n": 585,
+    "sites": 264,
+    "completions_per_contestant": 0.351,
+    "worth_weighted_entries_per_contestant": 0.351,
+    "campaign_entries_per_entrant": 4.239,
+    "campaign_conversion": 0.239
+   },
+   "10+": {
+    "n": 361,
+    "sites": 103,
+    "completions_per_contestant": 0.37,
+    "worth_weighted_entries_per_contestant": 5.584,
+    "campaign_entries_per_entrant": 5.64,
+    "campaign_conversion": 0.245
+   },
+   "2": {
+    "n": 133,
+    "sites": 65,
+    "completions_per_contestant": 0.359,
+    "worth_weighted_entries_per_contestant": 0.717,
+    "campaign_entries_per_entrant": 5.004,
+    "campaign_conversion": 0.208
+   },
+   "3-4": {
+    "n": 221,
+    "sites": 55,
+    "completions_per_contestant": 0.361,
+    "worth_weighted_entries_per_contestant": 1.098,
+    "campaign_entries_per_entrant": 12.495,
+    "campaign_conversion": 0.216
+   },
+   "5-9": {
+    "n": 204,
+    "sites": 81,
+    "completions_per_contestant": 0.361,
+    "worth_weighted_entries_per_contestant": 1.851,
+    "campaign_entries_per_entrant": 5.15,
+    "campaign_conversion": 0.217
+   }
+  },
+  "facebook_view_post": {
+   "1": {
+    "n": 558,
+    "sites": 254,
+    "completions_per_contestant": 0.64,
+    "worth_weighted_entries_per_contestant": 0.64,
+    "campaign_entries_per_entrant": 6.911,
+    "campaign_conversion": 0.212
+   },
+   "10+": {
+    "n": 257,
+    "sites": 80,
+    "completions_per_contestant": 0.333,
+    "worth_weighted_entries_per_contestant": 4.914,
+    "campaign_entries_per_entrant": 8.085,
+    "campaign_conversion": 0.194
+   },
+   "2": {
+    "n": 100,
+    "sites": 53,
+    "completions_per_contestant": 0.742,
+    "worth_weighted_entries_per_contestant": 1.485,
+    "campaign_entries_per_entrant": 6.63,
+    "campaign_conversion": 0.231
+   },
+   "5-9": {
+    "n": 120,
+    "sites": 61,
+    "completions_per_contestant": 0.592,
+    "worth_weighted_entries_per_contestant": 2.999,
+    "campaign_entries_per_entrant": 8.337,
+    "campaign_conversion": 0.193
+   }
+  },
+  "facebook_visit": {
+   "1": {
+    "n": 13398,
+    "sites": 2321,
+    "completions_per_contestant": 0.759,
+    "worth_weighted_entries_per_contestant": 0.759,
+    "campaign_entries_per_entrant": 6.086,
+    "campaign_conversion": 0.269
+   },
+   "10+": {
+    "n": 2444,
+    "sites": 546,
+    "completions_per_contestant": 0.726,
+    "worth_weighted_entries_per_contestant": 10.121,
+    "campaign_entries_per_entrant": 7.341,
+    "campaign_conversion": 0.227
+   },
+   "2": {
+    "n": 1373,
+    "sites": 401,
+    "completions_per_contestant": 0.761,
+    "worth_weighted_entries_per_contestant": 1.521,
+    "campaign_entries_per_entrant": 6.773,
+    "campaign_conversion": 0.263
+   },
+   "3-4": {
+    "n": 957,
+    "sites": 244,
+    "completions_per_contestant": 0.686,
+    "worth_weighted_entries_per_contestant": 2.103,
+    "campaign_entries_per_entrant": 7.801,
+    "campaign_conversion": 0.209
+   },
+   "5-9": {
+    "n": 1680,
+    "sites": 451,
+    "completions_per_contestant": 0.727,
+    "worth_weighted_entries_per_contestant": 3.744,
+    "campaign_entries_per_entrant": 7.443,
+    "campaign_conversion": 0.23
+   }
+  },
+  "gleam_subscribe": {
+   "1": {
+    "n": 114,
+    "sites": 57,
+    "completions_per_contestant": 0.588,
+    "worth_weighted_entries_per_contestant": 0.588,
+    "campaign_entries_per_entrant": 7.668,
+    "campaign_conversion": 0.153
+   },
+   "2": {
+    "n": 157,
+    "sites": 10,
+    "completions_per_contestant": 0.586,
+    "worth_weighted_entries_per_contestant": 1.172,
+    "campaign_entries_per_entrant": 15.657,
+    "campaign_conversion": 0.229
+   }
+  },
+  "instagram_comment": {
+   "1": {
+    "n": 169,
+    "sites": 81,
+    "completions_per_contestant": 0.309,
+    "worth_weighted_entries_per_contestant": 0.309,
+    "campaign_entries_per_entrant": 5.346,
+    "campaign_conversion": 0.23
+   },
+   "10+": {
+    "n": 260,
+    "sites": 58,
+    "completions_per_contestant": 0.319,
+    "worth_weighted_entries_per_contestant": 4.932,
+    "campaign_entries_per_entrant": 6.17,
+    "campaign_conversion": 0.262
+   }
+  },
+  "instagram_enter": {
+   "1": {
+    "n": 658,
+    "sites": 268,
+    "completions_per_contestant": 0.46,
+    "worth_weighted_entries_per_contestant": 0.46,
+    "campaign_entries_per_entrant": 5.53,
+    "campaign_conversion": 0.243
+   },
+   "10+": {
+    "n": 152,
+    "sites": 45,
+    "completions_per_contestant": 0.405,
+    "worth_weighted_entries_per_contestant": 5.133,
+    "campaign_entries_per_entrant": 8.537,
+    "campaign_conversion": 0.193
+   }
+  },
+  "instagram_follow": {
+   "1": {
+    "n": 2310,
+    "sites": 533,
+    "completions_per_contestant": 0.451,
+    "worth_weighted_entries_per_contestant": 0.451,
+    "campaign_entries_per_entrant": 5.835,
+    "campaign_conversion": 0.26
+   },
+   "10+": {
+    "n": 874,
+    "sites": 207,
+    "completions_per_contestant": 0.52,
+    "worth_weighted_entries_per_contestant": 9.119,
+    "campaign_entries_per_entrant": 6.169,
+    "campaign_conversion": 0.244
+   },
+   "2": {
+    "n": 306,
+    "sites": 127,
+    "completions_per_contestant": 0.472,
+    "worth_weighted_entries_per_contestant": 0.944,
+    "campaign_entries_per_entrant": 4.611,
+    "campaign_conversion": 0.252
+   },
+   "3-4": {
+    "n": 273,
+    "sites": 92,
+    "completions_per_contestant": 0.485,
+    "worth_weighted_entries_per_contestant": 1.476,
+    "campaign_entries_per_entrant": 8.695,
+    "campaign_conversion": 0.246
+   },
+   "5-9": {
+    "n": 463,
+    "sites": 164,
+    "completions_per_contestant": 0.457,
+    "worth_weighted_entries_per_contestant": 2.363,
+    "campaign_entries_per_entrant": 5.662,
+    "campaign_conversion": 0.211
+   }
+  },
+  "instagram_view_post": {
+   "1": {
+    "n": 1029,
+    "sites": 428,
+    "completions_per_contestant": 0.667,
+    "worth_weighted_entries_per_contestant": 0.667,
+    "campaign_entries_per_entrant": 7.042,
+    "campaign_conversion": 0.233
+   },
+   "10+": {
+    "n": 338,
+    "sites": 115,
+    "completions_per_contestant": 0.484,
+    "worth_weighted_entries_per_contestant": 7.183,
+    "campaign_entries_per_entrant": 7.394,
+    "campaign_conversion": 0.206
+   },
+   "2": {
+    "n": 157,
+    "sites": 87,
+    "completions_per_contestant": 0.656,
+    "worth_weighted_entries_per_contestant": 1.311,
+    "campaign_entries_per_entrant": 8.823,
+    "campaign_conversion": 0.195
+   },
+   "3-4": {
+    "n": 430,
+    "sites": 71,
+    "completions_per_contestant": 0.417,
+    "worth_weighted_entries_per_contestant": 1.255,
+    "campaign_entries_per_entrant": 57.018,
+    "campaign_conversion": 0.138
+   },
+   "5-9": {
+    "n": 180,
+    "sites": 87,
+    "completions_per_contestant": 0.704,
+    "worth_weighted_entries_per_contestant": 3.52,
+    "campaign_entries_per_entrant": 7.521,
+    "campaign_conversion": 0.23
+   }
+  },
+  "instagram_visit_profile": {
+   "1": {
+    "n": 17874,
+    "sites": 2883,
+    "completions_per_contestant": 0.783,
+    "worth_weighted_entries_per_contestant": 0.783,
+    "campaign_entries_per_entrant": 6.068,
+    "campaign_conversion": 0.284
+   },
+   "10+": {
+    "n": 3614,
+    "sites": 709,
+    "completions_per_contestant": 0.752,
+    "worth_weighted_entries_per_contestant": 9.868,
+    "campaign_entries_per_entrant": 7.305,
+    "campaign_conversion": 0.229
+   },
+   "2": {
+    "n": 1929,
+    "sites": 510,
+    "completions_per_contestant": 0.745,
+    "worth_weighted_entries_per_contestant": 1.49,
+    "campaign_entries_per_entrant": 7.55,
+    "campaign_conversion": 0.269
+   },
+   "3-4": {
+    "n": 1437,
+    "sites": 336,
+    "completions_per_contestant": 0.723,
+    "worth_weighted_entries_per_contestant": 2.29,
+    "campaign_entries_per_entrant": 8.133,
+    "campaign_conversion": 0.204
+   },
+   "5-9": {
+    "n": 2192,
+    "sites": 583,
+    "completions_per_contestant": 0.762,
+    "worth_weighted_entries_per_contestant": 3.876,
+    "campaign_entries_per_entrant": 7.319,
+    "campaign_conversion": 0.237
+   }
+  },
+  "linkedin_follow": {
+   "1": {
+    "n": 692,
+    "sites": 195,
+    "completions_per_contestant": 0.286,
+    "worth_weighted_entries_per_contestant": 0.286,
+    "campaign_entries_per_entrant": 7.57,
+    "campaign_conversion": 0.208
+   },
+   "10+": {
+    "n": 190,
+    "sites": 80,
+    "completions_per_contestant": 0.309,
+    "worth_weighted_entries_per_contestant": 5.321,
+    "campaign_entries_per_entrant": 7.054,
+    "campaign_conversion": 0.216
+   },
+   "2": {
+    "n": 138,
+    "sites": 46,
+    "completions_per_contestant": 0.277,
+    "worth_weighted_entries_per_contestant": 0.553,
+    "campaign_entries_per_entrant": 8.684,
+    "campaign_conversion": 0.258
+   },
+   "5-9": {
+    "n": 142,
+    "sites": 47,
+    "completions_per_contestant": 0.301,
+    "worth_weighted_entries_per_contestant": 1.504,
+    "campaign_entries_per_entrant": 12.361,
+    "campaign_conversion": 0.284
+   }
+  },
+  "media_action": {
+   "1": {
+    "n": 298,
+    "sites": 121,
+    "completions_per_contestant": 0.151,
+    "worth_weighted_entries_per_contestant": 0.151,
+    "campaign_entries_per_entrant": 5.496,
+    "campaign_conversion": 0.217
+   },
+   "10+": {
+    "n": 526,
+    "sites": 202,
+    "completions_per_contestant": 0.039,
+    "worth_weighted_entries_per_contestant": 1.044,
+    "campaign_entries_per_entrant": 6.616,
+    "campaign_conversion": 0.197
+   },
+   "5-9": {
+    "n": 191,
+    "sites": 125,
+    "completions_per_contestant": 0.041,
+    "worth_weighted_entries_per_contestant": 0.216,
+    "campaign_entries_per_entrant": 5.053,
+    "campaign_conversion": 0.212
+   }
+  },
+  "pinterest_enter": {
+   "1": {
+    "n": 267,
+    "sites": 50,
+    "completions_per_contestant": 0.21,
+    "worth_weighted_entries_per_contestant": 0.21,
+    "campaign_entries_per_entrant": 5.662,
+    "campaign_conversion": 0.23
+   },
+   "10+": {
+    "n": 113,
+    "sites": 16,
+    "completions_per_contestant": 0.318,
+    "worth_weighted_entries_per_contestant": 3.594,
+    "campaign_entries_per_entrant": 5.634,
+    "campaign_conversion": 0.217
+   },
+   "3-4": {
+    "n": 138,
+    "sites": 6,
+    "completions_per_contestant": 0.426,
+    "worth_weighted_entries_per_contestant": 1.278,
+    "campaign_entries_per_entrant": 15.902,
+    "campaign_conversion": 0.231
+   }
+  },
+  "pinterest_visit": {
+   "1": {
+    "n": 1137,
+    "sites": 312,
+    "completions_per_contestant": 0.636,
+    "worth_weighted_entries_per_contestant": 0.636,
+    "campaign_entries_per_entrant": 6.008,
+    "campaign_conversion": 0.236
+   },
+   "10+": {
+    "n": 291,
+    "sites": 53,
+    "completions_per_contestant": 0.58,
+    "worth_weighted_entries_per_contestant": 7.561,
+    "campaign_entries_per_entrant": 6.688,
+    "campaign_conversion": 0.192
+   },
+   "2": {
+    "n": 274,
+    "sites": 57,
+    "completions_per_contestant": 0.629,
+    "worth_weighted_entries_per_contestant": 1.257,
+    "campaign_entries_per_entrant": 5.95,
+    "campaign_conversion": 0.264
+   },
+   "3-4": {
+    "n": 130,
+    "sites": 38,
+    "completions_per_contestant": 0.543,
+    "worth_weighted_entries_per_contestant": 1.665,
+    "campaign_entries_per_entrant": 7.05,
+    "campaign_conversion": 0.206
+   },
+   "5-9": {
+    "n": 278,
+    "sites": 57,
+    "completions_per_contestant": 0.655,
+    "worth_weighted_entries_per_contestant": 3.277,
+    "campaign_entries_per_entrant": 7.757,
+    "campaign_conversion": 0.239
+   }
+  },
+  "podcast_subscribe": {
+   "1": {
+    "n": 675,
+    "sites": 113,
+    "completions_per_contestant": 0.279,
+    "worth_weighted_entries_per_contestant": 0.279,
+    "campaign_entries_per_entrant": 6.951,
+    "campaign_conversion": 0.252
+   },
+   "10+": {
+    "n": 259,
+    "sites": 53,
+    "completions_per_contestant": 0.278,
+    "worth_weighted_entries_per_contestant": 3.504,
+    "campaign_entries_per_entrant": 8.386,
+    "campaign_conversion": 0.244
+   },
+   "5-9": {
+    "n": 149,
+    "sites": 41,
+    "completions_per_contestant": 0.414,
+    "worth_weighted_entries_per_contestant": 2.079,
+    "campaign_entries_per_entrant": 6.435,
+    "campaign_conversion": 0.237
+   }
+  },
+  "promote_campaign": {
+   "1": {
+    "n": 108,
+    "sites": 25,
+    "completions_per_contestant": 0.357,
+    "worth_weighted_entries_per_contestant": 0.357,
+    "campaign_entries_per_entrant": 7.348,
+    "campaign_conversion": 0.23
+   },
+   "10+": {
+    "n": 121,
+    "sites": 27,
+    "completions_per_contestant": 0.228,
+    "worth_weighted_entries_per_contestant": 4.539,
+    "campaign_entries_per_entrant": 11.658,
+    "campaign_conversion": 0.137
+   },
+   "3-4": {
+    "n": 318,
+    "sites": 12,
+    "completions_per_contestant": 0.281,
+    "worth_weighted_entries_per_contestant": 0.888,
+    "campaign_entries_per_entrant": 39.987,
+    "campaign_conversion": 0.137
+   }
+  },
+  "reddit_visit": {
+   "1": {
+    "n": 746,
+    "sites": 242,
+    "completions_per_contestant": 0.748,
+    "worth_weighted_entries_per_contestant": 0.748,
+    "campaign_entries_per_entrant": 6.566,
+    "campaign_conversion": 0.224
+   },
+   "10+": {
+    "n": 318,
+    "sites": 84,
+    "completions_per_contestant": 0.634,
+    "worth_weighted_entries_per_contestant": 18.161,
+    "campaign_entries_per_entrant": 7.944,
+    "campaign_conversion": 0.197
+   },
+   "3-4": {
+    "n": 300,
+    "sites": 40,
+    "completions_per_contestant": 0.747,
+    "worth_weighted_entries_per_contestant": 2.242,
+    "campaign_entries_per_entrant": 16.041,
+    "campaign_conversion": 0.214
+   }
+  },
+  "secret_code": {
+   "1": {
+    "n": 1320,
+    "sites": 234,
+    "completions_per_contestant": 0.536,
+    "worth_weighted_entries_per_contestant": 0.536,
+    "campaign_entries_per_entrant": 9.153,
+    "campaign_conversion": 0.371
+   },
+   "10+": {
+    "n": 3642,
+    "sites": 626,
+    "completions_per_contestant": 0.196,
+    "worth_weighted_entries_per_contestant": 7.979,
+    "campaign_entries_per_entrant": 8.06,
+    "campaign_conversion": 0.175
+   },
+   "2": {
+    "n": 212,
+    "sites": 76,
+    "completions_per_contestant": 0.37,
+    "worth_weighted_entries_per_contestant": 0.741,
+    "campaign_entries_per_entrant": 4.905,
+    "campaign_conversion": 0.275
+   },
+   "3-4": {
+    "n": 271,
+    "sites": 117,
+    "completions_per_contestant": 0.205,
+    "worth_weighted_entries_per_contestant": 0.657,
+    "campaign_entries_per_entrant": 4.963,
+    "campaign_conversion": 0.237
+   },
+   "5-9": {
+    "n": 929,
+    "sites": 359,
+    "completions_per_contestant": 0.176,
+    "worth_weighted_entries_per_contestant": 0.912,
+    "campaign_entries_per_entrant": 5.861,
+    "campaign_conversion": 0.21
+   }
+  },
+  "share_action": {
+   "1": {
+    "n": 6901,
+    "sites": 2004,
+    "completions_per_contestant": 0.16,
+    "worth_weighted_entries_per_contestant": 0.16,
+    "campaign_entries_per_entrant": 4.91,
+    "campaign_conversion": 0.271
+   },
+   "10+": {
+    "n": 9184,
+    "sites": 2162,
+    "completions_per_contestant": 0.337,
+    "worth_weighted_entries_per_contestant": 9.918,
+    "campaign_entries_per_entrant": 5.942,
+    "campaign_conversion": 0.261
+   },
+   "2": {
+    "n": 1655,
+    "sites": 682,
+    "completions_per_contestant": 0.182,
+    "worth_weighted_entries_per_contestant": 0.363,
+    "campaign_entries_per_entrant": 4.902,
+    "campaign_conversion": 0.267
+   },
+   "3-4": {
+    "n": 2527,
+    "sites": 813,
+    "completions_per_contestant": 0.18,
+    "worth_weighted_entries_per_contestant": 0.562,
+    "campaign_entries_per_entrant": 5.109,
+    "campaign_conversion": 0.256
+   },
+   "5-9": {
+    "n": 3947,
+    "sites": 1461,
+    "completions_per_contestant": 0.214,
+    "worth_weighted_entries_per_contestant": 1.099,
+    "campaign_entries_per_entrant": 5.478,
+    "campaign_conversion": 0.253
+   }
+  },
+  "spotify_follow": {
+   "1": {
+    "n": 411,
+    "sites": 121,
+    "completions_per_contestant": 0.281,
+    "worth_weighted_entries_per_contestant": 0.281,
+    "campaign_entries_per_entrant": 5.848,
+    "campaign_conversion": 0.212
+   },
+   "10+": {
+    "n": 310,
+    "sites": 64,
+    "completions_per_contestant": 0.286,
+    "worth_weighted_entries_per_contestant": 4.361,
+    "campaign_entries_per_entrant": 9.108,
+    "campaign_conversion": 0.291
+   },
+   "2": {
+    "n": 193,
+    "sites": 36,
+    "completions_per_contestant": 0.189,
+    "worth_weighted_entries_per_contestant": 0.378,
+    "campaign_entries_per_entrant": 7.346,
+    "campaign_conversion": 0.225
+   },
+   "5-9": {
+    "n": 141,
+    "sites": 55,
+    "completions_per_contestant": 0.339,
+    "worth_weighted_entries_per_contestant": 1.72,
+    "campaign_entries_per_entrant": 7.728,
+    "campaign_conversion": 0.191
+   }
+  },
+  "spotify_listen": {
+   "1": {
+    "n": 371,
+    "sites": 69,
+    "completions_per_contestant": 0.894,
+    "worth_weighted_entries_per_contestant": 0.894,
+    "campaign_entries_per_entrant": 10.496,
+    "campaign_conversion": 0.158
+   },
+   "10+": {
+    "n": 207,
+    "sites": 36,
+    "completions_per_contestant": 0.28,
+    "worth_weighted_entries_per_contestant": 5.4,
+    "campaign_entries_per_entrant": 8.501,
+    "campaign_conversion": 0.311
+   }
+  },
+  "steam_join_group": {
+   "1": {
+    "n": 225,
+    "sites": 32,
+    "completions_per_contestant": 0.397,
+    "worth_weighted_entries_per_contestant": 0.397,
+    "campaign_entries_per_entrant": 9.757,
+    "campaign_conversion": 0.331
+   },
+   "10+": {
+    "n": 269,
+    "sites": 31,
+    "completions_per_contestant": 0.449,
+    "worth_weighted_entries_per_contestant": 40.145,
+    "campaign_entries_per_entrant": 4.647,
+    "campaign_conversion": 0.139
+   },
+   "5-9": {
+    "n": 116,
+    "sites": 19,
+    "completions_per_contestant": 0.363,
+    "worth_weighted_entries_per_contestant": 1.817,
+    "campaign_entries_per_entrant": 7.175,
+    "campaign_conversion": 0.225
+   }
+  },
+  "submit_url": {
+   "1": {
+    "n": 186,
+    "sites": 104,
+    "completions_per_contestant": 0.462,
+    "worth_weighted_entries_per_contestant": 0.462,
+    "campaign_entries_per_entrant": 6.015,
+    "campaign_conversion": 0.222
+   },
+   "10+": {
+    "n": 373,
+    "sites": 157,
+    "completions_per_contestant": 0.186,
+    "worth_weighted_entries_per_contestant": 4.071,
+    "campaign_entries_per_entrant": 5.997,
+    "campaign_conversion": 0.218
+   },
+   "5-9": {
+    "n": 187,
+    "sites": 82,
+    "completions_per_contestant": 0.169,
+    "worth_weighted_entries_per_contestant": 0.844,
+    "campaign_entries_per_entrant": 5.872,
+    "campaign_conversion": 0.25
+   }
+  },
+  "telegram_join": {
+   "1": {
+    "n": 3904,
+    "sites": 802,
+    "completions_per_contestant": 1.026,
+    "worth_weighted_entries_per_contestant": 1.026,
+    "campaign_entries_per_entrant": 6.849,
+    "campaign_conversion": 0.337
+   },
+   "10+": {
+    "n": 3573,
+    "sites": 536,
+    "completions_per_contestant": 1.234,
+    "worth_weighted_entries_per_contestant": 13.23,
+    "campaign_entries_per_entrant": 6.218,
+    "campaign_conversion": 0.391
+   },
+   "2": {
+    "n": 412,
+    "sites": 146,
+    "completions_per_contestant": 0.989,
+    "worth_weighted_entries_per_contestant": 1.978,
+    "campaign_entries_per_entrant": 7.424,
+    "campaign_conversion": 0.304
+   },
+   "3-4": {
+    "n": 489,
+    "sites": 132,
+    "completions_per_contestant": 0.893,
+    "worth_weighted_entries_per_contestant": 2.703,
+    "campaign_entries_per_entrant": 8.649,
+    "campaign_conversion": 0.448
+   },
+   "5-9": {
+    "n": 1053,
+    "sites": 236,
+    "completions_per_contestant": 1.136,
+    "worth_weighted_entries_per_contestant": 5.827,
+    "campaign_entries_per_entrant": 6.701,
+    "campaign_conversion": 0.292
+   }
+  },
+  "threads_follow": {
+   "1": {
+    "n": 154,
+    "sites": 49,
+    "completions_per_contestant": 0.291,
+    "worth_weighted_entries_per_contestant": 0.291,
+    "campaign_entries_per_entrant": 6.754,
+    "campaign_conversion": 0.248
+   },
+   "10+": {
+    "n": 116,
+    "sites": 13,
+    "completions_per_contestant": 0.226,
+    "worth_weighted_entries_per_contestant": 4.871,
+    "campaign_entries_per_entrant": 5.435,
+    "campaign_conversion": 0.285
+   }
+  },
+  "tiktok_follow": {
+   "1": {
+    "n": 3438,
+    "sites": 802,
+    "completions_per_contestant": 0.333,
+    "worth_weighted_entries_per_contestant": 0.333,
+    "campaign_entries_per_entrant": 5.988,
+    "campaign_conversion": 0.252
+   },
+   "10+": {
+    "n": 1404,
+    "sites": 323,
+    "completions_per_contestant": 0.329,
+    "worth_weighted_entries_per_contestant": 5.267,
+    "campaign_entries_per_entrant": 7.849,
+    "campaign_conversion": 0.217
+   },
+   "2": {
+    "n": 392,
+    "sites": 190,
+    "completions_per_contestant": 0.297,
+    "worth_weighted_entries_per_contestant": 0.595,
+    "campaign_entries_per_entrant": 5.188,
+    "campaign_conversion": 0.229
+   },
+   "3-4": {
+    "n": 444,
+    "sites": 136,
+    "completions_per_contestant": 0.337,
+    "worth_weighted_entries_per_contestant": 1.024,
+    "campaign_entries_per_entrant": 8.15,
+    "campaign_conversion": 0.237
+   },
+   "5-9": {
+    "n": 844,
+    "sites": 234,
+    "completions_per_contestant": 0.326,
+    "worth_weighted_entries_per_contestant": 1.651,
+    "campaign_entries_per_entrant": 7.847,
+    "campaign_conversion": 0.229
+   }
+  },
+  "tiktok_visit": {
+   "1": {
+    "n": 1864,
+    "sites": 590,
+    "completions_per_contestant": 0.474,
+    "worth_weighted_entries_per_contestant": 0.474,
+    "campaign_entries_per_entrant": 6.218,
+    "campaign_conversion": 0.264
+   },
+   "10+": {
+    "n": 581,
+    "sites": 185,
+    "completions_per_contestant": 0.409,
+    "worth_weighted_entries_per_contestant": 6.256,
+    "campaign_entries_per_entrant": 8.947,
+    "campaign_conversion": 0.191
+   },
+   "2": {
+    "n": 176,
+    "sites": 99,
+    "completions_per_contestant": 0.441,
+    "worth_weighted_entries_per_contestant": 0.882,
+    "campaign_entries_per_entrant": 5.23,
+    "campaign_conversion": 0.233
+   },
+   "3-4": {
+    "n": 164,
+    "sites": 87,
+    "completions_per_contestant": 0.503,
+    "worth_weighted_entries_per_contestant": 1.559,
+    "campaign_entries_per_entrant": 6.033,
+    "campaign_conversion": 0.239
+   },
+   "5-9": {
+    "n": 260,
+    "sites": 124,
+    "completions_per_contestant": 0.536,
+    "worth_weighted_entries_per_contestant": 2.696,
+    "campaign_entries_per_entrant": 6.512,
+    "campaign_conversion": 0.248
+   }
+  },
+  "twitchtv_channel_reward": {
+   "1": {
+    "n": 103,
+    "sites": 25,
+    "completions_per_contestant": 0.936,
+    "worth_weighted_entries_per_contestant": 0.936,
+    "campaign_entries_per_entrant": 5.895,
+    "campaign_conversion": 0.537
+   },
+   "10+": {
+    "n": 175,
+    "sites": 34,
+    "completions_per_contestant": 0.066,
+    "worth_weighted_entries_per_contestant": 2.954,
+    "campaign_entries_per_entrant": 11.039,
+    "campaign_conversion": 0.181
+   }
+  },
+  "twitchtv_follow": {
+   "1": {
+    "n": 4075,
+    "sites": 658,
+    "completions_per_contestant": 0.545,
+    "worth_weighted_entries_per_contestant": 0.545,
+    "campaign_entries_per_entrant": 8.466,
+    "campaign_conversion": 0.309
+   },
+   "10+": {
+    "n": 1810,
+    "sites": 246,
+    "completions_per_contestant": 0.482,
+    "worth_weighted_entries_per_contestant": 11.725,
+    "campaign_entries_per_entrant": 10.837,
+    "campaign_conversion": 0.237
+   },
+   "2": {
+    "n": 973,
+    "sites": 136,
+    "completions_per_contestant": 0.602,
+    "worth_weighted_entries_per_contestant": 1.204,
+    "campaign_entries_per_entrant": 11.175,
+    "campaign_conversion": 0.348
+   },
+   "3-4": {
+    "n": 277,
+    "sites": 98,
+    "completions_per_contestant": 0.463,
+    "worth_weighted_entries_per_contestant": 1.424,
+    "campaign_entries_per_entrant": 8.877,
+    "campaign_conversion": 0.252
+   },
+   "5-9": {
+    "n": 930,
+    "sites": 171,
+    "completions_per_contestant": 0.433,
+    "worth_weighted_entries_per_contestant": 2.172,
+    "campaign_entries_per_entrant": 11.784,
+    "campaign_conversion": 0.197
+   }
+  },
+  "twitchtv_subscribe": {
+   "10+": {
+    "n": 2175,
+    "sites": 223,
+    "completions_per_contestant": 0.043,
+    "worth_weighted_entries_per_contestant": 5.535,
+    "campaign_entries_per_entrant": 12.301,
+    "campaign_conversion": 0.247
+   },
+   "5-9": {
+    "n": 211,
+    "sites": 81,
+    "completions_per_contestant": 0.09,
+    "worth_weighted_entries_per_contestant": 0.478,
+    "campaign_entries_per_entrant": 4.963,
+    "campaign_conversion": 0.322
+   }
+  },
+  "twitter_follow": {
+   "1": {
+    "n": 20233,
+    "sites": 3038,
+    "completions_per_contestant": 0.553,
+    "worth_weighted_entries_per_contestant": 0.553,
+    "campaign_entries_per_entrant": 6.505,
+    "campaign_conversion": 0.279
+   },
+   "10+": {
+    "n": 8946,
+    "sites": 1284,
+    "completions_per_contestant": 0.609,
+    "worth_weighted_entries_per_contestant": 10.903,
+    "campaign_entries_per_entrant": 6.873,
+    "campaign_conversion": 0.286
+   },
+   "2": {
+    "n": 2890,
+    "sites": 708,
+    "completions_per_contestant": 0.541,
+    "worth_weighted_entries_per_contestant": 1.081,
+    "campaign_entries_per_entrant": 7.585,
+    "campaign_conversion": 0.255
+   },
+   "3-4": {
+    "n": 2799,
+    "sites": 526,
+    "completions_per_contestant": 0.51,
+    "worth_weighted_entries_per_contestant": 1.575,
+    "campaign_entries_per_entrant": 9.4,
+    "campaign_conversion": 0.235
+   },
+   "5-9": {
+    "n": 4515,
+    "sites": 828,
+    "completions_per_contestant": 0.566,
+    "worth_weighted_entries_per_contestant": 2.907,
+    "campaign_entries_per_entrant": 8.122,
+    "campaign_conversion": 0.24
+   }
+  },
+  "twitter_hashtags": {
+   "1": {
+    "n": 387,
+    "sites": 217,
+    "completions_per_contestant": 0.571,
+    "worth_weighted_entries_per_contestant": 0.571,
+    "campaign_entries_per_entrant": 6.445,
+    "campaign_conversion": 0.23
+   },
+   "10+": {
+    "n": 432,
+    "sites": 249,
+    "completions_per_contestant": 0.693,
+    "worth_weighted_entries_per_contestant": 12.121,
+    "campaign_entries_per_entrant": 6.405,
+    "campaign_conversion": 0.261
+   },
+   "3-4": {
+    "n": 123,
+    "sites": 74,
+    "completions_per_contestant": 0.455,
+    "worth_weighted_entries_per_contestant": 1.514,
+    "campaign_entries_per_entrant": 6.667,
+    "campaign_conversion": 0.235
+   },
+   "5-9": {
+    "n": 216,
+    "sites": 121,
+    "completions_per_contestant": 0.413,
+    "worth_weighted_entries_per_contestant": 2.074,
+    "campaign_entries_per_entrant": 7.218,
+    "campaign_conversion": 0.213
+   }
+  },
+  "twitter_retweet": {
+   "1": {
+    "n": 5937,
+    "sites": 1674,
+    "completions_per_contestant": 0.48,
+    "worth_weighted_entries_per_contestant": 0.48,
+    "campaign_entries_per_entrant": 6.479,
+    "campaign_conversion": 0.265
+   },
+   "10+": {
+    "n": 5587,
+    "sites": 1122,
+    "completions_per_contestant": 0.558,
+    "worth_weighted_entries_per_contestant": 10.095,
+    "campaign_entries_per_entrant": 6.597,
+    "campaign_conversion": 0.272
+   },
+   "2": {
+    "n": 1508,
+    "sites": 537,
+    "completions_per_contestant": 0.442,
+    "worth_weighted_entries_per_contestant": 0.885,
+    "campaign_entries_per_entrant": 7.319,
+    "campaign_conversion": 0.259
+   },
+   "3-4": {
+    "n": 1478,
+    "sites": 493,
+    "completions_per_contestant": 0.446,
+    "worth_weighted_entries_per_contestant": 1.473,
+    "campaign_entries_per_entrant": 7.339,
+    "campaign_conversion": 0.237
+   },
+   "5-9": {
+    "n": 2153,
+    "sites": 657,
+    "completions_per_contestant": 0.455,
+    "worth_weighted_entries_per_contestant": 2.316,
+    "campaign_entries_per_entrant": 8.009,
+    "campaign_conversion": 0.23
+   }
+  },
+  "twitter_tweet": {
+   "1": {
+    "n": 1808,
+    "sites": 543,
+    "completions_per_contestant": 0.313,
+    "worth_weighted_entries_per_contestant": 0.313,
+    "campaign_entries_per_entrant": 6.081,
+    "campaign_conversion": 0.256
+   },
+   "10+": {
+    "n": 1650,
+    "sites": 411,
+    "completions_per_contestant": 0.39,
+    "worth_weighted_entries_per_contestant": 12.743,
+    "campaign_entries_per_entrant": 6.689,
+    "campaign_conversion": 0.239
+   },
+   "2": {
+    "n": 381,
+    "sites": 166,
+    "completions_per_contestant": 0.374,
+    "worth_weighted_entries_per_contestant": 0.748,
+    "campaign_entries_per_entrant": 4.973,
+    "campaign_conversion": 0.25
+   },
+   "3-4": {
+    "n": 572,
+    "sites": 205,
+    "completions_per_contestant": 0.302,
+    "worth_weighted_entries_per_contestant": 0.957,
+    "campaign_entries_per_entrant": 7.007,
+    "campaign_conversion": 0.231
+   },
+   "5-9": {
+    "n": 1063,
+    "sites": 259,
+    "completions_per_contestant": 0.386,
+    "worth_weighted_entries_per_contestant": 1.966,
+    "campaign_entries_per_entrant": 7.319,
+    "campaign_conversion": 0.272
+   }
+  },
+  "twitter_view_post": {
+   "1": {
+    "n": 240,
+    "sites": 152,
+    "completions_per_contestant": 0.648,
+    "worth_weighted_entries_per_contestant": 0.648,
+    "campaign_entries_per_entrant": 7.536,
+    "campaign_conversion": 0.223
+   },
+   "10+": {
+    "n": 240,
+    "sites": 57,
+    "completions_per_contestant": 0.569,
+    "worth_weighted_entries_per_contestant": 54.662,
+    "campaign_entries_per_entrant": 4.394,
+    "campaign_conversion": 0.155
+   }
+  },
+  "upload_action": {
+   "1": {
+    "n": 155,
+    "sites": 63,
+    "completions_per_contestant": 0.327,
+    "worth_weighted_entries_per_contestant": 0.327,
+    "campaign_entries_per_entrant": 4.938,
+    "campaign_conversion": 0.257
+   },
+   "10+": {
+    "n": 332,
+    "sites": 119,
+    "completions_per_contestant": 0.063,
+    "worth_weighted_entries_per_contestant": 1.92,
+    "campaign_entries_per_entrant": 5.196,
+    "campaign_conversion": 0.191
+   }
+  },
+  "wallet_address": {
+   "1": {
+    "n": 1042,
+    "sites": 463,
+    "completions_per_contestant": 1.106,
+    "worth_weighted_entries_per_contestant": 1.106,
+    "campaign_entries_per_entrant": 5.476,
+    "campaign_conversion": 0.359
+   },
+   "10+": {
+    "n": 1598,
+    "sites": 263,
+    "completions_per_contestant": 1.184,
+    "worth_weighted_entries_per_contestant": 12.259,
+    "campaign_entries_per_entrant": 5.745,
+    "campaign_conversion": 0.399
+   },
+   "5-9": {
+    "n": 234,
+    "sites": 99,
+    "completions_per_contestant": 1.268,
+    "worth_weighted_entries_per_contestant": 6.36,
+    "campaign_entries_per_entrant": 5.834,
+    "campaign_conversion": 0.345
+   }
+  },
+  "youtube_enter": {
+   "1": {
+    "n": 900,
+    "sites": 165,
+    "completions_per_contestant": 0.747,
+    "worth_weighted_entries_per_contestant": 0.747,
+    "campaign_entries_per_entrant": 4.107,
+    "campaign_conversion": 0.362
+   },
+   "3-4": {
+    "n": 102,
+    "sites": 13,
+    "completions_per_contestant": 0.448,
+    "worth_weighted_entries_per_contestant": 1.343,
+    "campaign_entries_per_entrant": 5.545,
+    "campaign_conversion": 0.561
+   }
+  },
+  "youtube_visit_channel": {
+   "1": {
+    "n": 11747,
+    "sites": 2290,
+    "completions_per_contestant": 0.826,
+    "worth_weighted_entries_per_contestant": 0.826,
+    "campaign_entries_per_entrant": 6.642,
+    "campaign_conversion": 0.275
+   },
+   "10+": {
+    "n": 2265,
+    "sites": 637,
+    "completions_per_contestant": 0.795,
+    "worth_weighted_entries_per_contestant": 10.027,
+    "campaign_entries_per_entrant": 7.62,
+    "campaign_conversion": 0.246
+   },
+   "2": {
+    "n": 1596,
+    "sites": 405,
+    "completions_per_contestant": 0.836,
+    "worth_weighted_entries_per_contestant": 1.672,
+    "campaign_entries_per_entrant": 9.002,
+    "campaign_conversion": 0.297
+   },
+   "3-4": {
+    "n": 1239,
+    "sites": 328,
+    "completions_per_contestant": 0.756,
+    "worth_weighted_entries_per_contestant": 2.284,
+    "campaign_entries_per_entrant": 9.058,
+    "campaign_conversion": 0.192
+   },
+   "5-9": {
+    "n": 1844,
+    "sites": 493,
+    "completions_per_contestant": 0.728,
+    "worth_weighted_entries_per_contestant": 3.711,
+    "campaign_entries_per_entrant": 8.928,
+    "campaign_conversion": 0.21
+   }
+  }
+ },
+ "worth_distribution_by_action": {
+  "custom_action": {
+   "n": 139283,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 10.0,
+   "p90": 50.0,
+   "share_worth_1": 0.464
+  },
+  "twitter_follow": {
+   "n": 61336,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 10.0,
+   "p90": 10.0,
+   "share_worth_1": 0.498
+  },
+  "instagram_visit_profile": {
+   "n": 30395,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 3.0,
+   "p90": 10.0,
+   "share_worth_1": 0.662
+  },
+  "share_action": {
+   "n": 29458,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 40.0,
+   "share_worth_1": 0.264
+  },
+  "twitter_retweet": {
+   "n": 27753,
+   "p25": 1.0,
+   "p50": 4.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.366
+  },
+  "youtube_visit_channel": {
+   "n": 21679,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 3.0,
+   "p90": 10.0,
+   "share_worth_1": 0.624
+  },
+  "facebook_visit": {
+   "n": 21521,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 3.0,
+   "p90": 10.0,
+   "share_worth_1": 0.666
+  },
+  "telegram_join": {
+   "n": 21014,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 10.0,
+   "share_worth_1": 0.4
+  },
+  "email_subscribe": {
+   "n": 18122,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 20.0,
+   "share_worth_1": 0.55
+  },
+  "discord_join_server": {
+   "n": 17693,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.446
+  },
+  "twitchtv_follow": {
+   "n": 9176,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 50.0,
+   "share_worth_1": 0.531
+  },
+  "twitter_tweet": {
+   "n": 7132,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 50.0,
+   "share_worth_1": 0.316
+  },
+  "tiktok_follow": {
+   "n": 7067,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 20.0,
+   "share_worth_1": 0.539
+  },
+  "secret_code": {
+   "n": 6801,
+   "p25": 3.0,
+   "p50": 10.0,
+   "p75": 65.0,
+   "p90": 350.0,
+   "share_worth_1": 0.215
+  },
+  "wallet_address": {
+   "n": 6710,
+   "p25": 1.0,
+   "p50": 10.0,
+   "p75": 10.0,
+   "p90": 10.0,
+   "share_worth_1": 0.388
+  },
+  "instagram_follow": {
+   "n": 4748,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 15.0,
+   "share_worth_1": 0.547
+  },
+  "tiktok_visit": {
+   "n": 3251,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 25.0,
+   "share_worth_1": 0.605
+  },
+  "download_app": {
+   "n": 3026,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.363
+  },
+  "twitchtv_subscribe": {
+   "n": 2630,
+   "p25": 10.0,
+   "p50": 100.0,
+   "p75": 699.0,
+   "p90": 999.0,
+   "share_worth_1": 0.04
+  },
+  "facebook_enter": {
+   "n": 2361,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.588
+  },
+  "instagram_view_post": {
+   "n": 2328,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 4.0,
+   "p90": 15.0,
+   "share_worth_1": 0.486
+  },
+  "pinterest_visit": {
+   "n": 2150,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.534
+  },
+  "twitter_hashtags": {
+   "n": 1888,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 25.0,
+   "share_worth_1": 0.337
+  },
+  "reddit_visit": {
+   "n": 1703,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 25.0,
+   "share_worth_1": 0.505
+  },
+  "facebook_like": {
+   "n": 1598,
+   "p25": 1.0,
+   "p50": 3.0,
+   "p75": 7.0,
+   "p90": 15.0,
+   "share_worth_1": 0.395
+  },
+  "media_action": {
+   "n": 1374,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 20.0,
+   "p90": 50.0,
+   "share_worth_1": 0.287
+  },
+  "podcast_subscribe": {
+   "n": 1298,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.528
+  },
+  "linkedin_follow": {
+   "n": 1278,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 14.299999999999955,
+   "share_worth_1": 0.566
+  },
+  "youtube_enter": {
+   "n": 1275,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 1.0,
+   "p90": 5.0,
+   "share_worth_1": 0.789
+  },
+  "submit_url": {
+   "n": 1263,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 15.0,
+   "p90": 50.0,
+   "share_worth_1": 0.264
+  },
+  "facebook_view_post": {
+   "n": 1254,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 50.0,
+   "share_worth_1": 0.501
+  },
+  "spotify_follow": {
+   "n": 1184,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.392
+  },
+  "instagram_enter": {
+   "n": 1068,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.675
+  },
+  "blog_comment": {
+   "n": 928,
+   "p25": 1.0,
+   "p50": 3.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.319
+  },
+  "twitter_enter": {
+   "n": 880,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 1.0,
+   "p90": 10.0,
+   "share_worth_1": 0.785
+  },
+  "upload_action": {
+   "n": 848,
+   "p25": 1.0,
+   "p50": 8.5,
+   "p75": 20.0,
+   "p90": 60.0,
+   "share_worth_1": 0.32
+  },
+  "twitter_view_post": {
+   "n": 776,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 16.25,
+   "p90": 200.0,
+   "share_worth_1": 0.443
+  },
+  "steam_join_group": {
+   "n": 760,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 50.0,
+   "p90": 250.0,
+   "share_worth_1": 0.299
+  },
+  "spotify_listen": {
+   "n": 756,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 10.0,
+   "p90": 50.0,
+   "share_worth_1": 0.503
+  },
+  "promote_campaign": {
+   "n": 739,
+   "p25": 3.0,
+   "p50": 3.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.149
+  },
+  "instagram_comment": {
+   "n": 662,
+   "p25": 1.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 25.0,
+   "share_worth_1": 0.272
+  },
+  "csv_import": {
+   "n": 628,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 1.0,
+   "p90": 1.0,
+   "share_worth_1": 1.0
+  },
+  "watch_video": {
+   "n": 580,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 1.0,
+   "p90": 1.0,
+   "share_worth_1": 0.967
+  },
+  "pinterest_enter": {
+   "n": 563,
+   "p25": 1.0,
+   "p50": 3.0,
+   "p75": 5.0,
+   "p90": 10.0,
+   "share_worth_1": 0.48
+  },
+  "linkedin_share": {
+   "n": 476,
+   "p25": 2.0,
+   "p50": 30.0,
+   "p75": 50.0,
+   "p90": 50.0,
+   "share_worth_1": 0.227
+  },
+  "gleam_subscribe": {
+   "n": 473,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 5.0,
+   "p90": 20.0,
+   "share_worth_1": 0.296
+  },
+  "snapchat_snapcode": {
+   "n": 467,
+   "p25": 3.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 10.0,
+   "share_worth_1": 0.214
+  },
+  "discord_enter": {
+   "n": 394,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 20.0,
+   "share_worth_1": 0.596
+  },
+  "bluesky_follow": {
+   "n": 366,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 50.0,
+   "share_worth_1": 0.536
+  },
+  "twitchtv_channel_reward": {
+   "n": 352,
+   "p25": 1.0,
+   "p50": 10.0,
+   "p75": 25.0,
+   "p90": 200.0,
+   "share_worth_1": 0.301
+  },
+  "threads_follow": {
+   "n": 338,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 15.0,
+   "p90": 30.0,
+   "share_worth_1": 0.485
+  },
+  "patreon_visit": {
+   "n": 320,
+   "p25": 1.0,
+   "p50": 2.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.384
+  },
+  "kick_follow": {
+   "n": 316,
+   "p25": 1.0,
+   "p50": 1.0,
+   "p75": 15.0,
+   "p90": 250.0,
+   "share_worth_1": 0.601
+  },
+  "spotify_save": {
+   "n": 313,
+   "p25": 1.0,
+   "p50": 4.0,
+   "p75": 9.0,
+   "p90": 15.0,
+   "share_worth_1": 0.351
+  }
+ },
+ "email_by_provider": {
+  "MailChimp": {
+   "n": 2545,
+   "sites": 623,
+   "completions_per_contestant": 0.858,
+   "mandatory_share": 0.355
+  },
+  "Klaviyo": {
+   "n": 1917,
+   "sites": 642,
+   "completions_per_contestant": 0.96,
+   "mandatory_share": 0.529
+  },
+  "Sendinblue": {
+   "n": 371,
+   "sites": 82,
+   "completions_per_contestant": 0.694,
+   "mandatory_share": 0.318
+  },
+  "Zapier": {
+   "n": 322,
+   "sites": 72,
+   "completions_per_contestant": 0.876,
+   "mandatory_share": 0.419
+  },
+  "MailerLite": {
+   "n": 243,
+   "sites": 60,
+   "completions_per_contestant": 0.998,
+   "mandatory_share": 0.502
+  },
+  "Active Campaign": {
+   "n": 214,
+   "sites": 65,
+   "completions_per_contestant": 0.785,
+   "mandatory_share": 0.369
+  },
+  "ConstantContact": {
+   "n": 186,
+   "sites": 45,
+   "completions_per_contestant": 0.858,
+   "mandatory_share": 0.28
+  },
+  "Sendy": {
+   "n": 130,
+   "sites": 9,
+   "completions_per_contestant": 1.03,
+   "mandatory_share": 0.938
+  },
+  "Omnisend": {
+   "n": 119,
+   "sites": 51,
+   "completions_per_contestant": 0.849,
+   "mandatory_share": 0.412
+  },
+  "Customerio": {
+   "n": 112,
+   "sites": 10,
+   "completions_per_contestant": 0.822,
+   "mandatory_share": 0.08
+  },
+  "HubspotV2": {
+   "n": 106,
+   "sites": 34,
+   "completions_per_contestant": 0.435,
+   "mandatory_share": 0.264
+  },
+  "AWeber": {
+   "n": 102,
+   "sites": 17,
+   "completions_per_contestant": 0.747,
+   "mandatory_share": 0.108
+  },
+  "SendGridMarketing": {
+   "n": 101,
+   "sites": 14,
+   "completions_per_contestant": 0.844,
+   "mandatory_share": 0.089
+  },
+  "no_integration": {
+   "n": 11039,
+   "sites": 2025,
+   "completions_per_contestant": 0.915,
+   "mandatory_share": 0.404
+  }
+ },
+ "config_cuts": {
+  "email_opt_in_checkbox": {
+   "off": {
+    "n": 13076,
+    "sites": 2710,
+    "completions_per_contestant": 0.93,
+    "mandatory_share": 0.442
+   },
+   "on": {
+    "n": 3872,
+    "sites": 922,
+    "completions_per_contestant": 0.862,
+    "mandatory_share": 0.324
+   },
+   "auto": {
+    "n": 1165,
+    "sites": 198,
+    "completions_per_contestant": 0.719,
+    "mandatory_share": 0.321
+   }
+  },
+  "email_opt_in_text": {
+   "default_or_none": {
+    "n": 13079,
+    "sites": 2713,
+    "completions_per_contestant": 0.93,
+    "mandatory_share": 0.442
+   },
+   "custom_checkbox_text": {
+    "n": 5034,
+    "sites": 1085,
+    "completions_per_contestant": 0.841,
+    "mandatory_share": 0.323
+   }
+  },
+  "email_newsletter_description": {
+   "none": {
+    "n": 10092,
+    "sites": 2191,
+    "completions_per_contestant": 0.953,
+    "mandatory_share": 0.442
+   },
+   "long": {
+    "n": 6881,
+    "sites": 1514,
+    "completions_per_contestant": 0.857,
+    "mandatory_share": 0.385
+   },
+   "short": {
+    "n": 1140,
+    "sites": 313,
+    "completions_per_contestant": 0.759,
+    "mandatory_share": 0.263
+   }
+  },
+  "twitter_throwaway_restriction": {
+   "open": {
+    "n": 87436,
+    "sites": 7382,
+    "completions_per_contestant": 0.679,
+    "mandatory_share": 0.357
+   },
+   "restricted": {
+    "n": 8619,
+    "sites": 1246,
+    "completions_per_contestant": 0.642,
+    "mandatory_share": 0.389
+   }
+  },
+  "share_text_length": {
+   "60_140_chars": {
+    "n": 23207,
+    "sites": 5345,
+    "completions_per_contestant": 0.405,
+    "mandatory_share": 0.18
+   },
+   "140_plus_chars": {
+    "n": 4934,
+    "sites": 1401,
+    "completions_per_contestant": 0.131,
+    "mandatory_share": 0.147
+   },
+   "default": {
+    "n": 1006,
+    "sites": 464,
+    "completions_per_contestant": 0.279,
+    "mandatory_share": 0.191
+   }
+  },
+  "share_text_has_url_or_hashtag": {
+   "plain": {
+    "n": 27705,
+    "sites": 6332,
+    "completions_per_contestant": 0.31,
+    "mandatory_share": 0.168
+   },
+   "has_link": {
+    "n": 1328,
+    "sites": 309,
+    "completions_per_contestant": 0.234,
+    "mandatory_share": 0.31
+   },
+   "has_hashtag": {
+    "n": 283,
+    "sites": 97,
+    "completions_per_contestant": 0.353,
+    "mandatory_share": 0.134
+   }
+  },
+  "custom_visit_post_visit": {
+   "unset": {
+    "n": 138883,
+    "sites": 8753,
+    "completions_per_contestant": 0.82,
+    "mandatory_share": 0.231
+   }
+  },
+  "instagram_visit_delay": {
+   "5s_or_less": {
+    "n": 72067,
+    "sites": 6355,
+    "completions_per_contestant": 0.798,
+    "mandatory_share": 0.108
+   },
+   "6_15s": {
+    "n": 849,
+    "sites": 221,
+    "completions_per_contestant": 0.711,
+    "mandatory_share": 0.128
+   },
+   "16s_plus": {
+    "n": 417,
+    "sites": 74,
+    "completions_per_contestant": 0.584,
+    "mandatory_share": 0.055
+   },
+   "unset": {
+    "n": 202,
+    "sites": 14,
+    "completions_per_contestant": 0.688,
+    "mandatory_share": 0.03
+   }
+  },
+  "secret_code_format": {
+   "^.{6}$": {
+    "n": 683,
+    "sites": 206,
+    "completions_per_contestant": 0.348,
+    "mandatory_share": 0.028
+   },
+   "^.{8}$": {
+    "n": 596,
+    "sites": 226,
+    "completions_per_contestant": 0.275,
+    "mandatory_share": 0.035
+   },
+   "^.{10}$": {
+    "n": 524,
+    "sites": 223,
+    "completions_per_contestant": 0.193,
+    "mandatory_share": 0.025
+   },
+   "^.{7}$": {
+    "n": 512,
+    "sites": 209,
+    "completions_per_contestant": 0.199,
+    "mandatory_share": 0.029
+   },
+   "^.{5}$": {
+    "n": 465,
+    "sites": 169,
+    "completions_per_contestant": 0.248,
+    "mandatory_share": 0.026
+   },
+   "^.{9}$": {
+    "n": 447,
+    "sites": 206,
+    "completions_per_contestant": 0.211,
+    "mandatory_share": 0.049
+   },
+   "^.{4}$": {
+    "n": 387,
+    "sites": 138,
+    "completions_per_contestant": 0.318,
+    "mandatory_share": 0.057
+   },
+   "^.{11}$": {
+    "n": 383,
+    "sites": 174,
+    "completions_per_contestant": 0.199,
+    "mandatory_share": 0.042
+   },
+   "^.{12}$": {
+    "n": 280,
+    "sites": 163,
+    "completions_per_contestant": 0.195,
+    "mandatory_share": 0.064
+   },
+   "^.{13}$": {
+    "n": 218,
+    "sites": 120,
+    "completions_per_contestant": 0.191,
+    "mandatory_share": 0.032
+   },
+   "^.{8,8}$": {
+    "n": 209,
+    "sites": 51,
+    "completions_per_contestant": 0.084,
+    "mandatory_share": 0.019
+   },
+   "^.{3}$": {
+    "n": 176,
+    "sites": 72,
+    "completions_per_contestant": 0.675,
+    "mandatory_share": 0.074
+   }
+  },
+  "actions_required": {
+   "1": {
+    "n": 129402,
+    "sites": 8403,
+    "completions_per_contestant": 0.818,
+    "mandatory_share": 0.229
+   },
+   "5": {
+    "n": 1975,
+    "sites": 768,
+    "completions_per_contestant": 0.761,
+    "mandatory_share": 0.307
+   },
+   "6": {
+    "n": 1501,
+    "sites": 631,
+    "completions_per_contestant": 0.741,
+    "mandatory_share": 0.336
+   },
+   "7": {
+    "n": 1464,
+    "sites": 637,
+    "completions_per_contestant": 0.732,
+    "mandatory_share": 0.217
+   },
+   "4": {
+    "n": 1365,
+    "sites": 550,
+    "completions_per_contestant": 0.927,
+    "mandatory_share": 0.327
+   },
+   "3": {
+    "n": 1270,
+    "sites": 467,
+    "completions_per_contestant": 1.024,
+    "mandatory_share": 0.396
+   },
+   "8": {
+    "n": 857,
+    "sites": 344,
+    "completions_per_contestant": 0.417,
+    "mandatory_share": 0.21
+   },
+   "10": {
+    "n": 714,
+    "sites": 283,
+    "completions_per_contestant": 0.371,
+    "mandatory_share": 0.099
+   },
+   "2": {
+    "n": 668,
+    "sites": 314,
+    "completions_per_contestant": 0.923,
+    "mandatory_share": 0.433
+   },
+   "9": {
+    "n": 605,
+    "sites": 260,
+    "completions_per_contestant": 0.49,
+    "mandatory_share": 0.145
+   },
+   "11": {
+    "n": 302,
+    "sites": 133,
+    "completions_per_contestant": 0.262,
+    "mandatory_share": 0.079
+   },
+   "14": {
+    "n": 301,
+    "sites": 55,
+    "completions_per_contestant": 0.386,
+    "mandatory_share": 0.017
+   }
+  },
+  "paid_by_type": {
+   "custom_action:free": {
+    "n": 137494,
+    "sites": 8713,
+    "completions_per_contestant": 0.822,
+    "mandatory_share": 0.231
+   },
+   "twitchtv_subscribe:free": {
+    "n": 2226,
+    "sites": 250,
+    "completions_per_contestant": 0.042,
+    "mandatory_share": 0.015
+   },
+   "custom_action:paid": {
+    "n": 1389,
+    "sites": 541,
+    "completions_per_contestant": 0.442,
+    "mandatory_share": 0.292
+   },
+   "media_action:free": {
+    "n": 1359,
+    "sites": 531,
+    "completions_per_contestant": 0.068,
+    "mandatory_share": 0.155
+   },
+   "twitchtv_subscribe:paid": {
+    "n": 378,
+    "sites": 118,
+    "completions_per_contestant": 0.108,
+    "mandatory_share": 0.011
+   },
+   "patreon_visit:free": {
+    "n": 320,
+    "sites": 116,
+    "completions_per_contestant": 0.585,
+    "mandatory_share": 0.078
+   }
+  },
+  "loyalty_tier_count": {
+   "1": {
+    "n": 905,
+    "sites": 167
+   },
+   "2": {
+    "n": 513,
+    "sites": 143
+   },
+   "3": {
+    "n": 446,
+    "sites": 53
+   },
+   "4": {
+    "n": 56,
+    "sites": 15
+   },
+   "5": {
+    "n": 66,
+    "sites": 16
+   }
+  }
+ },
+ "by_organizer_tenure": {
+  "site_3_years_plus": {
+   "n": 19034,
+   "sites": 2013,
+   "contestants": 2331.0,
+   "conversion": 0.281,
+   "entries_per_entrant": 4.772,
+   "days": 16.0,
+   "methods": 8.0,
+   "email_offered": 0.414,
+   "share_offered": 0.416
+  },
+  "site_1_3_years": {
+   "n": 12992,
+   "sites": 2499,
+   "contestants": 2347.0,
+   "conversion": 0.316,
+   "entries_per_entrant": 4.483,
+   "days": 12.0,
+   "methods": 7.0,
+   "email_offered": 0.292,
+   "share_offered": 0.544
+  },
+  "site_1_6_months": {
+   "n": 9011,
+   "sites": 3475,
+   "contestants": 2588.0,
+   "conversion": 0.306,
+   "entries_per_entrant": 5.357,
+   "days": 10.0,
+   "methods": 8.0,
+   "email_offered": 0.203,
+   "share_offered": 0.633
+  },
+  "site_6_12_months": {
+   "n": 6437,
+   "sites": 1939,
+   "contestants": 2605.0,
+   "conversion": 0.311,
+   "entries_per_entrant": 5.246,
+   "days": 10.0,
+   "methods": 8.0,
+   "email_offered": 0.208,
+   "share_offered": 0.631
+  },
+  "site_1_4_weeks": {
+   "n": 3287,
+   "sites": 2487,
+   "contestants": 2679.0,
+   "conversion": 0.296,
+   "entries_per_entrant": 4.926,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.239,
+   "share_offered": 0.629
+  },
+  "site_under_1_week": {
+   "n": 3273,
+   "sites": 3032,
+   "contestants": 2664.0,
+   "conversion": 0.291,
+   "entries_per_entrant": 4.808,
+   "days": 15.0,
+   "methods": 7.0,
+   "email_offered": 0.208,
+   "share_offered": 0.615
+  }
+ },
+ "by_organizer_city": {
+  "singapore: singapore": {
+   "n": 1614,
+   "sites": 145,
+   "contestants": 2682.0,
+   "conversion": 0.366,
+   "entries_per_entrant": 4.576,
+   "days": 6.0,
+   "methods": 6.0,
+   "email_offered": 0.025,
+   "share_offered": 0.367
+  },
+  "united states: los angeles": {
+   "n": 1216,
+   "sites": 240,
+   "contestants": 1996.5,
+   "conversion": 0.264,
+   "entries_per_entrant": 4.792,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.375,
+   "share_offered": 0.725
+  },
+  "vietnam: hanoi": {
+   "n": 786,
+   "sites": 219,
+   "contestants": 6500.0,
+   "conversion": 0.335,
+   "entries_per_entrant": 6.458,
+   "days": 9.0,
+   "methods": 9.0,
+   "email_offered": 0.006,
+   "share_offered": 0.896
+  },
+  "taiwan: taipei": {
+   "n": 750,
+   "sites": 37,
+   "contestants": 3089.0,
+   "conversion": 0.354,
+   "entries_per_entrant": 6.525,
+   "days": 7.0,
+   "methods": 9.0,
+   "email_offered": 0.032,
+   "share_offered": 0.809
+  },
+  "vietnam: ho chi minh city": {
+   "n": 723,
+   "sites": 201,
+   "contestants": 4002.0,
+   "conversion": 0.315,
+   "entries_per_entrant": 5.883,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.012,
+   "share_offered": 0.797
+  },
+  "australia: sydney": {
+   "n": 710,
+   "sites": 204,
+   "contestants": 2211.5,
+   "conversion": 0.287,
+   "entries_per_entrant": 3.543,
+   "days": 22.0,
+   "methods": 6.0,
+   "email_offered": 0.615,
+   "share_offered": 0.532
+  },
+  "japan: tokyo": {
+   "n": 702,
+   "sites": 79,
+   "contestants": 2126.0,
+   "conversion": 0.274,
+   "entries_per_entrant": 6.001,
+   "days": 8.0,
+   "methods": 8.0,
+   "email_offered": 0.027,
+   "share_offered": 0.734
+  },
+  "australia: melbourne": {
+   "n": 700,
+   "sites": 171,
+   "contestants": 2072.0,
+   "conversion": 0.279,
+   "entries_per_entrant": 3.412,
+   "days": 19.0,
+   "methods": 7.0,
+   "email_offered": 0.617,
+   "share_offered": 0.609
+  },
+  "united states: seattle": {
+   "n": 623,
+   "sites": 69,
+   "contestants": 2273.0,
+   "conversion": 0.401,
+   "entries_per_entrant": 2.912,
+   "days": 10.0,
+   "methods": 5.0,
+   "email_offered": 0.255,
+   "share_offered": 0.335
+  },
+  "hong kong: hong kong": {
+   "n": 513,
+   "sites": 116,
+   "contestants": 2743.0,
+   "conversion": 0.325,
+   "entries_per_entrant": 5.261,
+   "days": 8.0,
+   "methods": 8.0,
+   "email_offered": 0.088,
+   "share_offered": 0.676
+  },
+  "united kingdom: london": {
+   "n": 477,
+   "sites": 39,
+   "contestants": 1667.0,
+   "conversion": 0.452,
+   "entries_per_entrant": 1.79,
+   "days": 23.0,
+   "methods": 3.0,
+   "email_offered": 0.468,
+   "share_offered": 0.224
+  },
+  "malaysia: kuala lumpur": {
+   "n": 431,
+   "sites": 36,
+   "contestants": 2029.0,
+   "conversion": 0.295,
+   "entries_per_entrant": 5.649,
+   "days": 7.0,
+   "methods": 7.0,
+   "email_offered": 0.218,
+   "share_offered": 0.592
+  },
+  "united arab emirates: dubai": {
+   "n": 429,
+   "sites": 94,
+   "contestants": 4298.0,
+   "conversion": 0.391,
+   "entries_per_entrant": 5.808,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.047,
+   "share_offered": 0.457
+  },
+  "india: new delhi": {
+   "n": 426,
+   "sites": 36,
+   "contestants": 3640.5,
+   "conversion": 0.389,
+   "entries_per_entrant": 5.565,
+   "days": 8.0,
+   "methods": 9.0,
+   "email_offered": 0.009,
+   "share_offered": 0.805
+  },
+  "australia: brisbane": {
+   "n": 340,
+   "sites": 104,
+   "contestants": 2157.0,
+   "conversion": 0.256,
+   "entries_per_entrant": 3.045,
+   "days": 17.0,
+   "methods": 6.0,
+   "email_offered": 0.791,
+   "share_offered": 0.732
+  },
+  "brazil: curitiba": {
+   "n": 320,
+   "sites": 12,
+   "contestants": 1571.5,
+   "conversion": 0.535,
+   "entries_per_entrant": 12.333,
+   "days": 1.0,
+   "methods": 18.0,
+   "email_offered": 0.0,
+   "share_offered": 0.006
+  },
+  "germany: berlin": {
+   "n": 315,
+   "sites": 28,
+   "contestants": 2205.0,
+   "conversion": 0.152,
+   "entries_per_entrant": 4.19,
+   "days": 32.0,
+   "methods": 13.0,
+   "email_offered": 0.479,
+   "share_offered": 0.81
+  },
+  "united states: charlotte": {
+   "n": 308,
+   "sites": 27,
+   "contestants": 2020.0,
+   "conversion": 0.289,
+   "entries_per_entrant": 4.33,
+   "days": 14.0,
+   "methods": 6.0,
+   "email_offered": 0.263,
+   "share_offered": 0.623
+  },
+  "united states: chicago": {
+   "n": 296,
+   "sites": 62,
+   "contestants": 2062.0,
+   "conversion": 0.269,
+   "entries_per_entrant": 4.877,
+   "days": 15.0,
+   "methods": 7.0,
+   "email_offered": 0.571,
+   "share_offered": 0.402
+  },
+  "canada: toronto": {
+   "n": 296,
+   "sites": 55,
+   "contestants": 2017.0,
+   "conversion": 0.244,
+   "entries_per_entrant": 3.135,
+   "days": 21.0,
+   "methods": 4.0,
+   "email_offered": 0.432,
+   "share_offered": 0.331
+  },
+  "united states: austin": {
+   "n": 291,
+   "sites": 50,
+   "contestants": 2012.0,
+   "conversion": 0.246,
+   "entries_per_entrant": 4.599,
+   "days": 18.0,
+   "methods": 6.0,
+   "email_offered": 0.454,
+   "share_offered": 0.381
+  },
+  "germany: frankfurt am main": {
+   "n": 282,
+   "sites": 27,
+   "contestants": 2134.0,
+   "conversion": 0.263,
+   "entries_per_entrant": 6.411,
+   "days": 13.0,
+   "methods": 9.0,
+   "email_offered": 0.372,
+   "share_offered": 0.408
+  },
+  "united states: portland": {
+   "n": 276,
+   "sites": 36,
+   "contestants": 2382.0,
+   "conversion": 0.317,
+   "entries_per_entrant": 4.61,
+   "days": 25.0,
+   "methods": 7.0,
+   "email_offered": 0.721,
+   "share_offered": 0.409
+  },
+  "united states: san francisco": {
+   "n": 276,
+   "sites": 30,
+   "contestants": 2596.0,
+   "conversion": 0.302,
+   "entries_per_entrant": 1.0,
+   "days": 0.0,
+   "methods": 1.0,
+   "email_offered": 0.225,
+   "share_offered": 0.21
+  },
+  "t\u00fcrkiye: istanbul": {
+   "n": 275,
+   "sites": 96,
+   "contestants": 3223.0,
+   "conversion": 0.311,
+   "entries_per_entrant": 4.803,
+   "days": 10.0,
+   "methods": 7.0,
+   "email_offered": 0.029,
+   "share_offered": 0.553
+  },
+  "united states: new york": {
+   "n": 270,
+   "sites": 80,
+   "contestants": 2099.5,
+   "conversion": 0.283,
+   "entries_per_entrant": 4.14,
+   "days": 16.0,
+   "methods": 7.0,
+   "email_offered": 0.444,
+   "share_offered": 0.622
+  },
+  "china: shenzhen": {
+   "n": 268,
+   "sites": 35,
+   "contestants": 1913.0,
+   "conversion": 0.27,
+   "entries_per_entrant": 5.88,
+   "days": 13.0,
+   "methods": 8.0,
+   "email_offered": 0.269,
+   "share_offered": 0.675
+  },
+  "brazil: rio de janeiro": {
+   "n": 265,
+   "sites": 13,
+   "contestants": 1613.0,
+   "conversion": 0.629,
+   "entries_per_entrant": 10.519,
+   "days": 1.0,
+   "methods": 13.0,
+   "email_offered": 0.0,
+   "share_offered": 0.098
+  },
+  "united states: san diego": {
+   "n": 259,
+   "sites": 40,
+   "contestants": 2585.0,
+   "conversion": 0.236,
+   "entries_per_entrant": 4.613,
+   "days": 9.0,
+   "methods": 7.0,
+   "email_offered": 0.579,
+   "share_offered": 0.363
+  },
+  "united states: dallas": {
+   "n": 253,
+   "sites": 43,
+   "contestants": 2090.0,
+   "conversion": 0.333,
+   "entries_per_entrant": 4.265,
+   "days": 13.0,
+   "methods": 7.0,
+   "email_offered": 0.308,
+   "share_offered": 0.32
+  },
+  "poland: warsaw": {
+   "n": 249,
+   "sites": 27,
+   "contestants": 2363.0,
+   "conversion": 0.148,
+   "entries_per_entrant": 9.241,
+   "days": 14.0,
+   "methods": 12.0,
+   "email_offered": 0.522,
+   "share_offered": 0.53
+  },
+  "france: paris": {
+   "n": 215,
+   "sites": 37,
+   "contestants": 3218.0,
+   "conversion": 0.298,
+   "entries_per_entrant": 6.311,
+   "days": 11.0,
+   "methods": 9.0,
+   "email_offered": 0.116,
+   "share_offered": 0.335
+  },
+  "australia: adelaide": {
+   "n": 213,
+   "sites": 34,
+   "contestants": 4785.0,
+   "conversion": 0.438,
+   "entries_per_entrant": 5.311,
+   "days": 7.0,
+   "methods": 9.0,
+   "email_offered": 0.296,
+   "share_offered": 0.329
+  },
+  "united states: raleigh": {
+   "n": 207,
+   "sites": 15,
+   "contestants": 3319.0,
+   "conversion": 0.021,
+   "entries_per_entrant": 4.242,
+   "days": 7.0,
+   "methods": 7.0,
+   "email_offered": 0.957,
+   "share_offered": 0.072
+  },
+  "india: ludhiana": {
+   "n": 207,
+   "sites": 8,
+   "contestants": 3123.0,
+   "conversion": 0.408,
+   "entries_per_entrant": 5.848,
+   "days": 8.0,
+   "methods": 9.0,
+   "email_offered": 0.0,
+   "share_offered": 0.986
+  },
+  "thailand: bangkok": {
+   "n": 207,
+   "sites": 73,
+   "contestants": 2161.0,
+   "conversion": 0.329,
+   "entries_per_entrant": 4.896,
+   "days": 10.0,
+   "methods": 8.0,
+   "email_offered": 0.28,
+   "share_offered": 0.705
+  },
+  "india: coimbatore": {
+   "n": 206,
+   "sites": 5,
+   "contestants": 4964.0,
+   "conversion": 0.405,
+   "entries_per_entrant": 5.507,
+   "days": 8.0,
+   "methods": 9.0,
+   "email_offered": 0.0,
+   "share_offered": 0.927
+  },
+  "germany: hamburg": {
+   "n": 200,
+   "sites": 7,
+   "contestants": 2190.5,
+   "conversion": 0.425,
+   "entries_per_entrant": 4.526,
+   "days": 1.0,
+   "methods": 7.0,
+   "email_offered": 0.045,
+   "share_offered": 0.325
+  },
+  "united states: aurora": {
+   "n": 192,
+   "sites": 6,
+   "contestants": 2180.0,
+   "conversion": 0.599,
+   "entries_per_entrant": 1.0,
+   "days": 4.0,
+   "methods": 1.0,
+   "email_offered": 0.995,
+   "share_offered": 0.099
+  },
+  "united states: san jose": {
+   "n": 189,
+   "sites": 47,
+   "contestants": 2176.0,
+   "conversion": 0.218,
+   "entries_per_entrant": 5.132,
+   "days": 21.0,
+   "methods": 8.0,
+   "email_offered": 0.381,
+   "share_offered": 0.651
+  }
+ },
+ "share_click_curve_by_duration": {
+  "7_day": {
+   "0": {
+    "share_click_share_p50": 0.0595,
+    "campaigns": 2271,
+    "sites": 787
+   },
+   "1": {
+    "share_click_share_p50": 0.1789,
+    "campaigns": 6380,
+    "sites": 1727
+   },
+   "2": {
+    "share_click_share_p50": 0.1674,
+    "campaigns": 7666,
+    "sites": 1923
+   },
+   "3": {
+    "share_click_share_p50": 0.1193,
+    "campaigns": 7824,
+    "sites": 1959
+   },
+   "4": {
+    "share_click_share_p50": 0.0979,
+    "campaigns": 7870,
+    "sites": 1973
+   },
+   "5": {
+    "share_click_share_p50": 0.091,
+    "campaigns": 7888,
+    "sites": 1980
+   },
+   "6": {
+    "share_click_share_p50": 0.0813,
+    "campaigns": 7335,
+    "sites": 1874
+   },
+   "7": {
+    "share_click_share_p50": 0.0755,
+    "campaigns": 6187,
+    "sites": 1680
+   },
+   "8": {
+    "share_click_share_p50": 0.0624,
+    "campaigns": 4132,
+    "sites": 1268
+   },
+   "9": {
+    "share_click_share_p50": 0.0401,
+    "campaigns": 1911,
+    "sites": 726
+   }
+  },
+  "14_day": {
+   "0": {
+    "share_click_share_p50": 0.0242,
+    "campaigns": 1198,
+    "sites": 610
+   },
+   "1": {
+    "share_click_share_p50": 0.1147,
+    "campaigns": 3447,
+    "sites": 1512
+   },
+   "2": {
+    "share_click_share_p50": 0.1062,
+    "campaigns": 4045,
+    "sites": 1728
+   },
+   "3": {
+    "share_click_share_p50": 0.0771,
+    "campaigns": 4210,
+    "sites": 1781
+   },
+   "4": {
+    "share_click_share_p50": 0.0629,
+    "campaigns": 4278,
+    "sites": 1814
+   },
+   "5": {
+    "share_click_share_p50": 0.0552,
+    "campaigns": 4336,
+    "sites": 1840
+   },
+   "6": {
+    "share_click_share_p50": 0.049,
+    "campaigns": 4388,
+    "sites": 1854
+   },
+   "7": {
+    "share_click_share_p50": 0.0462,
+    "campaigns": 4419,
+    "sites": 1869
+   },
+   "8": {
+    "share_click_share_p50": 0.0451,
+    "campaigns": 4436,
+    "sites": 1875
+   },
+   "9": {
+    "share_click_share_p50": 0.0434,
+    "campaigns": 4453,
+    "sites": 1877
+   },
+   "10": {
+    "share_click_share_p50": 0.0424,
+    "campaigns": 4462,
+    "sites": 1880
+   },
+   "11": {
+    "share_click_share_p50": 0.0448,
+    "campaigns": 4467,
+    "sites": 1882
+   },
+   "12": {
+    "share_click_share_p50": 0.0446,
+    "campaigns": 4474,
+    "sites": 1880
+   },
+   "13": {
+    "share_click_share_p50": 0.0455,
+    "campaigns": 4084,
+    "sites": 1734
+   },
+   "14": {
+    "share_click_share_p50": 0.0496,
+    "campaigns": 3495,
+    "sites": 1522
+   },
+   "15": {
+    "share_click_share_p50": 0.0426,
+    "campaigns": 2351,
+    "sites": 1175
+   },
+   "16": {
+    "share_click_share_p50": 0.0363,
+    "campaigns": 884,
+    "sites": 592
+   }
+  },
+  "30_day": {
+   "0": {
+    "share_click_share_p50": 0.0083,
+    "campaigns": 924,
+    "sites": 480
+   },
+   "1": {
+    "share_click_share_p50": 0.0612,
+    "campaigns": 3752,
+    "sites": 1369
+   },
+   "2": {
+    "share_click_share_p50": 0.0662,
+    "campaigns": 4566,
+    "sites": 1635
+   },
+   "3": {
+    "share_click_share_p50": 0.0507,
+    "campaigns": 4820,
+    "sites": 1719
+   },
+   "4": {
+    "share_click_share_p50": 0.0407,
+    "campaigns": 4959,
+    "sites": 1762
+   },
+   "5": {
+    "share_click_share_p50": 0.0356,
+    "campaigns": 5048,
+    "sites": 1795
+   },
+   "6": {
+    "share_click_share_p50": 0.0318,
+    "campaigns": 5123,
+    "sites": 1824
+   },
+   "7": {
+    "share_click_share_p50": 0.0298,
+    "campaigns": 5170,
+    "sites": 1832
+   },
+   "8": {
+    "share_click_share_p50": 0.0282,
+    "campaigns": 5216,
+    "sites": 1865
+   },
+   "9": {
+    "share_click_share_p50": 0.0265,
+    "campaigns": 5255,
+    "sites": 1875
+   },
+   "10": {
+    "share_click_share_p50": 0.0254,
+    "campaigns": 5275,
+    "sites": 1881
+   },
+   "11": {
+    "share_click_share_p50": 0.024,
+    "campaigns": 5309,
+    "sites": 1888
+   },
+   "12": {
+    "share_click_share_p50": 0.0238,
+    "campaigns": 5336,
+    "sites": 1898
+   },
+   "13": {
+    "share_click_share_p50": 0.0232,
+    "campaigns": 5351,
+    "sites": 1906
+   },
+   "14": {
+    "share_click_share_p50": 0.0225,
+    "campaigns": 5378,
+    "sites": 1912
+   },
+   "15": {
+    "share_click_share_p50": 0.0229,
+    "campaigns": 5383,
+    "sites": 1918
+   },
+   "16": {
+    "share_click_share_p50": 0.0217,
+    "campaigns": 5397,
+    "sites": 1923
+   },
+   "17": {
+    "share_click_share_p50": 0.0215,
+    "campaigns": 5406,
+    "sites": 1925
+   },
+   "18": {
+    "share_click_share_p50": 0.0212,
+    "campaigns": 5414,
+    "sites": 1934
+   },
+   "19": {
+    "share_click_share_p50": 0.0208,
+    "campaigns": 5428,
+    "sites": 1936
+   },
+   "20": {
+    "share_click_share_p50": 0.0212,
+    "campaigns": 5430,
+    "sites": 1938
+   },
+   "21": {
+    "share_click_share_p50": 0.0215,
+    "campaigns": 5437,
+    "sites": 1942
+   },
+   "22": {
+    "share_click_share_p50": 0.0215,
+    "campaigns": 5443,
+    "sites": 1942
+   },
+   "23": {
+    "share_click_share_p50": 0.0217,
+    "campaigns": 5446,
+    "sites": 1945
+   },
+   "24": {
+    "share_click_share_p50": 0.0225,
+    "campaigns": 5433,
+    "sites": 1939
+   },
+   "25": {
+    "share_click_share_p50": 0.0227,
+    "campaigns": 5447,
+    "sites": 1938
+   },
+   "26": {
+    "share_click_share_p50": 0.0239,
+    "campaigns": 5461,
+    "sites": 1947
+   },
+   "27": {
+    "share_click_share_p50": 0.0251,
+    "campaigns": 5267,
+    "sites": 1885
+   },
+   "28": {
+    "share_click_share_p50": 0.0253,
+    "campaigns": 4992,
+    "sites": 1803
+   },
+   "29": {
+    "share_click_share_p50": 0.0265,
+    "campaigns": 4499,
+    "sites": 1666
+   },
+   "30": {
+    "share_click_share_p50": 0.028,
+    "campaigns": 3912,
+    "sites": 1500
+   },
+   "31": {
+    "share_click_share_p50": 0.0266,
+    "campaigns": 3027,
+    "sites": 1256
+   },
+   "32": {
+    "share_click_share_p50": 0.0243,
+    "campaigns": 1568,
+    "sites": 812
+   },
+   "33": {
+    "share_click_share_p50": 0.0251,
+    "campaigns": 859,
+    "sites": 494
+   },
+   "34": {
+    "share_click_share_p50": 0.0265,
+    "campaigns": 514,
+    "sites": 323
+   },
+   "35": {
+    "share_click_share_p50": 0.0242,
+    "campaigns": 266,
+    "sites": 183
+   }
+  }
+ },
+ "share_clicks": {
+  "by_share_action": {
+   "share_action": {
+    "n": 29207,
+    "sites": 6547,
+    "share_click_ratio": 0.47,
+    "share_clicks_per_contestant": 1.743
+   },
+   "no_share_action": {
+    "n": 25453,
+    "sites": 5441,
+    "share_click_ratio": 0.014,
+    "share_clicks_per_contestant": 0.06
+   }
+  },
+  "by_share_worth": {
+   "worth_10_plus": {
+    "n": 11904,
+    "sites": 2553,
+    "share_click_ratio": 0.595,
+    "share_clicks_per_contestant": 1.903
+   },
+   "worth_1": {
+    "n": 7655,
+    "sites": 2274,
+    "share_click_ratio": 0.379,
+    "share_clicks_per_contestant": 1.463
+   },
+   "worth_2_4": {
+    "n": 4933,
+    "sites": 1566,
+    "share_click_ratio": 0.39,
+    "share_clicks_per_contestant": 1.628
+   },
+   "worth_5_9": {
+    "n": 4715,
+    "sites": 1655,
+    "share_click_ratio": 0.48,
+    "share_clicks_per_contestant": 1.828
+   }
+  }
+ },
+ "landing_kind_share": {
+  "embed": 0.364,
+  "directory": 0.004,
+  "hosted": 0.632
+ },
+ "by_hosted_share": {
+  "hosted_90_plus": {
+   "n": 36817,
+   "sites": 8400,
+   "contestants": 2509.0,
+   "conversion": 0.343,
+   "entries_per_entrant": 4.996,
+   "days": 10.0,
+   "methods": 8.0,
+   "email_offered": 0.156,
+   "share_offered": 0.519
+  },
+  "embed_mostly": {
+   "n": 7444,
+   "sites": 1568,
+   "contestants": 2296.5,
+   "conversion": 0.236,
+   "entries_per_entrant": 3.662,
+   "days": 18.0,
+   "methods": 6.0,
+   "email_offered": 0.573,
+   "share_offered": 0.389
+  },
+  "hosted_10_50": {
+   "n": 7125,
+   "sites": 1660,
+   "contestants": 2488.0,
+   "conversion": 0.208,
+   "entries_per_entrant": 5.298,
+   "days": 27.0,
+   "methods": 9.0,
+   "email_offered": 0.665,
+   "share_offered": 0.711
+  },
+  "hosted_50_90": {
+   "n": 3274,
+   "sites": 1271,
+   "contestants": 2209.0,
+   "conversion": 0.243,
+   "entries_per_entrant": 5.166,
+   "days": 25.0,
+   "methods": 9.0,
+   "email_offered": 0.523,
+   "share_offered": 0.654
+  }
+ },
+ "referrer_share": {
+  "direct": 0.5163,
+  "other_sites": 0.1732,
+  "gleam": 0.0744,
+  "facebook": 0.058,
+  "youtube": 0.0472,
+  "twitter_x": 0.0369,
+  "giveaway_directories": 0.0296,
+  "google": 0.0257,
+  "instagram": 0.0178,
+  "linktree": 0.0072,
+  "tiktok": 0.0066,
+  "reddit": 0.0019,
+  "telegram": 0.0017,
+  "email": 0.0016,
+  "bing_duckduckgo": 0.0011,
+  "twitch": 0.0004,
+  "pinterest": 0.0003,
+  "discord": 0.0002
+ },
+ "referrer_channel_share": {
+  "direct": 0.5163,
+  "organizer_site": 0.0777,
+  "social_meta": 0.0758,
+  "gleam": 0.0752,
+  "social_youtube": 0.0472,
+  "social_x": 0.047,
+  "giveaway_directory": 0.0329,
+  "search": 0.0265,
+  "gaming_community": 0.0218,
+  "deals_forum": 0.0135,
+  "unclassified_tail": 0.0134,
+  "news_media": 0.0133,
+  "other": 0.0132,
+  "crypto_web3": 0.0126,
+  "social_tiktok": 0.0066,
+  "chat_discord_telegram_whatsapp": 0.002,
+  "email_newsletter": 0.0014,
+  "ad_network": 0.001,
+  "social_other": 0.0007,
+  "video_twitch_kick": 0.0006,
+  "giveaway_directories": 0.0003,
+  "email": 0.0003,
+  "google": 0.0003,
+  "app_store_or_push": 0.0001,
+  "social_linkedin": 0.0001,
+  "telegram": 0.0001,
+  "facebook": 0.0001,
+  "social_reddit": 0.0001,
+  "social_pinterest": 0.0,
+  "twitter_x": 0.0,
+  "reddit": 0.0,
+  "bing_duckduckgo": 0.0,
+  "pinterest": 0.0,
+  "twitch": 0.0,
+  "youtube": 0.0,
+  "tiktok": 0.0,
+  "linktree": 0.0,
+  "discord": 0.0,
+  "instagram": 0.0
+ },
+ "promotion_sites": {
+  "app_store_or_push": [
+   {
+    "host": "appassets.androidplatform.net",
+    "impressions": 23470,
+    "campaigns_reached": 1755,
+    "organizers_reached": 648
+   },
+   {
+    "host": "appleid.apple.com",
+    "impressions": 17968,
+    "campaigns_reached": 1452,
+    "organizers_reached": 652
+   },
+   {
+    "host": "app.raindrop.io",
+    "impressions": 17679,
+    "campaigns_reached": 2119,
+    "organizers_reached": 838
+   },
+   {
+    "host": "accounts.spotify.com",
+    "impressions": 16559,
+    "campaigns_reached": 1279,
+    "organizers_reached": 524
+   },
+   {
+    "host": "www.newsbreakapp.com",
+    "impressions": 14258,
+    "campaigns_reached": 232,
+    "organizers_reached": 45
+   }
+  ],
+  "chat_discord_telegram_whatsapp": [
+   {
+    "host": "web.telegram.org",
+    "impressions": 906115,
+    "campaigns_reached": 19227,
+    "organizers_reached": 4948
+   },
+   {
+    "host": "org.telegram.plus",
+    "impressions": 615293,
+    "campaigns_reached": 15260,
+    "organizers_reached": 3934
+   },
+   {
+    "host": "org.telegram.biftogram",
+    "impressions": 376144,
+    "campaigns_reached": 12515,
+    "organizers_reached": 3276
+   },
+   {
+    "host": "t.me",
+    "impressions": 235013,
+    "campaigns_reached": 12278,
+    "organizers_reached": 3484
+   },
+   {
+    "host": "discord.com",
+    "impressions": 175380,
+    "campaigns_reached": 10891,
+    "organizers_reached": 3615
+   },
+   {
+    "host": "org.telegram.messenges",
+    "impressions": 73536,
+    "campaigns_reached": 8629,
+    "organizers_reached": 2585
+   },
+   {
+    "host": "mail.contestgirl.com",
+    "impressions": 52561,
+    "campaigns_reached": 5020,
+    "organizers_reached": 1554
+   },
+   {
+    "host": "telegram.org",
+    "impressions": 35638,
+    "campaigns_reached": 23,
+    "organizers_reached": 21
+   },
+   {
+    "host": "org.vidogram.messenger",
+    "impressions": 27457,
+    "campaigns_reached": 5657,
+    "organizers_reached": 1990
+   },
+   {
+    "host": "chat.zalo.me",
+    "impressions": 24446,
+    "campaigns_reached": 4157,
+    "organizers_reached": 1683
+   },
+   {
+    "host": "oauth.telegram.org",
+    "impressions": 24351,
+    "campaigns_reached": 1498,
+    "organizers_reached": 647
+   },
+   {
+    "host": "com.xplus.messenger",
+    "impressions": 22485,
+    "campaigns_reached": 4609,
+    "organizers_reached": 1839
+   },
+   {
+    "host": "org.telegram.messenget",
+    "impressions": 22178,
+    "campaigns_reached": 6183,
+    "organizers_reached": 2003
+   },
+   {
+    "host": "org.aka.messenger",
+    "impressions": 19721,
+    "campaigns_reached": 2023,
+    "organizers_reached": 1019
+   },
+   {
+    "host": "com.slack",
+    "impressions": 13003,
+    "campaigns_reached": 2839,
+    "organizers_reached": 1322
+   }
+  ],
+  "crypto_web3": [
+   {
+    "host": "www.coinpayu.com",
+    "impressions": 1860566,
+    "campaigns_reached": 84,
+    "organizers_reached": 64
+   },
+   {
+    "host": "doge.click",
+    "impressions": 998416,
+    "campaigns_reached": 179,
+    "organizers_reached": 121
+   },
+   {
+    "host": "rollercoin.com",
+    "impressions": 902487,
+    "campaigns_reached": 140,
+    "organizers_reached": 70
+   },
+   {
+    "host": "galaxy.eco",
+    "impressions": 624268,
+    "campaigns_reached": 399,
+    "organizers_reached": 165
+   },
+   {
+    "host": "airdrops.io",
+    "impressions": 610138,
+    "campaigns_reached": 197,
+    "organizers_reached": 107
+   },
+   {
+    "host": "adbtc.top",
+    "impressions": 536160,
+    "campaigns_reached": 120,
+    "organizers_reached": 94
+   },
+   {
+    "host": "cointiply.com",
+    "impressions": 475681,
+    "campaigns_reached": 45,
+    "organizers_reached": 30
+   },
+   {
+    "host": "faucetcrypto.com",
+    "impressions": 385733,
+    "campaigns_reached": 44,
+    "organizers_reached": 32
+   },
+   {
+    "host": "seosprint.net",
+    "impressions": 381639,
+    "campaigns_reached": 1703,
+    "organizers_reached": 758
+   },
+   {
+    "host": "timebucks.com",
+    "impressions": 313094,
+    "campaigns_reached": 822,
+    "organizers_reached": 415
+   },
+   {
+    "host": "playtoearn.net",
+    "impressions": 268942,
+    "campaigns_reached": 56,
+    "organizers_reached": 17
+   },
+   {
+    "host": "bingx.com",
+    "impressions": 250638,
+    "campaigns_reached": 16,
+    "organizers_reached": 9
+   },
+   {
+    "host": "firefaucet.win",
+    "impressions": 227076,
+    "campaigns_reached": 37,
+    "organizers_reached": 23
+   },
+   {
+    "host": "hub.gamefi.org",
+    "impressions": 210270,
+    "campaigns_reached": 65,
+    "organizers_reached": 20
+   },
+   {
+    "host": "viefaucet.com",
+    "impressions": 190024,
+    "campaigns_reached": 40,
+    "organizers_reached": 34
+   },
+   {
+    "host": "pipeflare.io",
+    "impressions": 151949,
+    "campaigns_reached": 39,
+    "organizers_reached": 15
+   },
+   {
+    "host": "coinstats.app",
+    "impressions": 151873,
+    "campaigns_reached": 14,
+    "organizers_reached": 13
+   },
+   {
+    "host": "earnbitmoon.club",
+    "impressions": 144243,
+    "campaigns_reached": 20,
+    "organizers_reached": 15
+   },
+   {
+    "host": "www.iplocate.io",
+    "impressions": 144072,
+    "campaigns_reached": 120,
+    "organizers_reached": 39
+   },
+   {
+    "host": "faucetpay.io",
+    "impressions": 143666,
+    "campaigns_reached": 44,
+    "organizers_reached": 35
+   },
+   {
+    "host": "redkite.polkafoundry.com",
+    "impressions": 143416,
+    "campaigns_reached": 83,
+    "organizers_reached": 21
+   },
+   {
+    "host": "request-global.czilladx.com",
+    "impressions": 142331,
+    "campaigns_reached": 40,
+    "organizers_reached": 37
+   },
+   {
+    "host": "autofaucet.dutchycorp.space",
+    "impressions": 137948,
+    "campaigns_reached": 38,
+    "organizers_reached": 34
+   },
+   {
+    "host": "fitmint.io",
+    "impressions": 137023,
+    "campaigns_reached": 13,
+    "organizers_reached": 10
+   },
+   {
+    "host": "freecash.com",
+    "impressions": 130317,
+    "campaigns_reached": 93,
+    "organizers_reached": 5
+   }
+  ],
+  "deals_forum": [
+   {
+    "host": "www.loquax.co.uk",
+    "impressions": 1089609,
+    "campaigns_reached": 2744,
+    "organizers_reached": 396
+   },
+   {
+    "host": "hip2save.com",
+    "impressions": 332892,
+    "campaigns_reached": 56,
+    "organizers_reached": 9
+   },
+   {
+    "host": "www.einfach-sparsam.de",
+    "impressions": 297001,
+    "campaigns_reached": 116,
+    "organizers_reached": 29
+   },
+   {
+    "host": "gg.deals",
+    "impressions": 280329,
+    "campaigns_reached": 39,
+    "organizers_reached": 10
+   },
+   {
+    "host": "www.netzwelt.de",
+    "impressions": 274697,
+    "campaigns_reached": 18,
+    "organizers_reached": 5
+   },
+   {
+    "host": "www.lottos.com.au",
+    "impressions": 243549,
+    "campaigns_reached": 1503,
+    "organizers_reached": 501
+   },
+   {
+    "host": "www.mysavings.com",
+    "impressions": 222689,
+    "campaigns_reached": 208,
+    "organizers_reached": 112
+   },
+   {
+    "host": "gatdeals.com",
+    "impressions": 203117,
+    "campaigns_reached": 99,
+    "organizers_reached": 8
+   },
+   {
+    "host": "travelscoop.co.uk",
+    "impressions": 171642,
+    "campaigns_reached": 46,
+    "organizers_reached": 17
+   },
+   {
+    "host": "forums.redflagdeals.com",
+    "impressions": 121708,
+    "campaigns_reached": 68,
+    "organizers_reached": 44
+   },
+   {
+    "host": "gun.deals",
+    "impressions": 89995,
+    "campaigns_reached": 46,
+    "organizers_reached": 19
+   },
+   {
+    "host": "slickdeals.net",
+    "impressions": 80102,
+    "campaigns_reached": 1731,
+    "organizers_reached": 633
+   },
+   {
+    "host": "win.gadgetuser.com",
+    "impressions": 60752,
+    "campaigns_reached": 481,
+    "organizers_reached": 285
+   },
+   {
+    "host": "absolute-forum.com",
+    "impressions": 43244,
+    "campaigns_reached": 151,
+    "organizers_reached": 82
+   },
+   {
+    "host": "www.microcenter.com",
+    "impressions": 34330,
+    "campaigns_reached": 17,
+    "organizers_reached": 6
+   },
+   {
+    "host": "www.topcashback.co.uk",
+    "impressions": 33910,
+    "campaigns_reached": 9,
+    "organizers_reached": 6
+   },
+   {
+    "host": "www.competitorscompanion.com",
+    "impressions": 33668,
+    "campaigns_reached": 310,
+    "organizers_reached": 54
+   },
+   {
+    "host": "lowcygier.pl",
+    "impressions": 27300,
+    "campaigns_reached": 10,
+    "organizers_reached": 7
+   },
+   {
+    "host": "likeshop.me",
+    "impressions": 26721,
+    "campaigns_reached": 92,
+    "organizers_reached": 42
+   },
+   {
+    "host": "www.hotukdeals.com",
+    "impressions": 25031,
+    "campaigns_reached": 132,
+    "organizers_reached": 24
+   },
+   {
+    "host": "www.canadiansavers.ca",
+    "impressions": 23468,
+    "campaigns_reached": 140,
+    "organizers_reached": 45
+   },
+   {
+    "host": "www.ar15.com",
+    "impressions": 23170,
+    "campaigns_reached": 188,
+    "organizers_reached": 30
+   },
+   {
+    "host": "ofertar.pt",
+    "impressions": 21626,
+    "campaigns_reached": 1116,
+    "organizers_reached": 440
+   },
+   {
+    "host": "www.hardprize.ru",
+    "impressions": 21008,
+    "campaigns_reached": 1792,
+    "organizers_reached": 713
+   },
+   {
+    "host": "www.shareasale.com",
+    "impressions": 17456,
+    "campaigns_reached": 43,
+    "organizers_reached": 11
+   }
+  ],
+  "gaming_community": [
+   {
+    "host": "hellcase.com",
+    "impressions": 7365877,
+    "campaigns_reached": 149,
+    "organizers_reached": 14
+   },
+   {
+    "host": "steamcommunity.com",
+    "impressions": 1403251,
+    "campaigns_reached": 2488,
+    "organizers_reached": 692
+   },
+   {
+    "host": "www.wowhead.com",
+    "impressions": 1308359,
+    "campaigns_reached": 44,
+    "organizers_reached": 19
+   },
+   {
+    "host": "game.intel.com",
+    "impressions": 494029,
+    "campaigns_reached": 172,
+    "organizers_reached": 18
+   },
+   {
+    "host": "www.allkeyshop.com",
+    "impressions": 322481,
+    "campaigns_reached": 25,
+    "organizers_reached": 5
+   },
+   {
+    "host": "www.oneesports.gg",
+    "impressions": 319721,
+    "campaigns_reached": 16,
+    "organizers_reached": 6
+   },
+   {
+    "host": "gununiversity.com",
+    "impressions": 212522,
+    "campaigns_reached": 424,
+    "organizers_reached": 81
+   },
+   {
+    "host": "gaming.lenovo.com",
+    "impressions": 191283,
+    "campaigns_reached": 188,
+    "organizers_reached": 83
+   },
+   {
+    "host": "na.alienwarearena.com",
+    "impressions": 180716,
+    "campaigns_reached": 60,
+    "organizers_reached": 12
+   },
+   {
+    "host": "fortnitetracker.com",
+    "impressions": 164073,
+    "campaigns_reached": 23,
+    "organizers_reached": 9
+   },
+   {
+    "host": "gamerdays.intel.com",
+    "impressions": 114125,
+    "campaigns_reached": 31,
+    "organizers_reached": 10
+   },
+   {
+    "host": "gemly.gg",
+    "impressions": 102535,
+    "campaigns_reached": 12,
+    "organizers_reached": 8
+   },
+   {
+    "host": "www.pcgamesn.com",
+    "impressions": 99899,
+    "campaigns_reached": 56,
+    "organizers_reached": 34
+   },
+   {
+    "host": "progameguides.com",
+    "impressions": 94354,
+    "campaigns_reached": 25,
+    "organizers_reached": 16
+   },
+   {
+    "host": "www.cowcotland.com",
+    "impressions": 79301,
+    "campaigns_reached": 40,
+    "organizers_reached": 15
+   },
+   {
+    "host": "www.summonersleague.net",
+    "impressions": 78391,
+    "campaigns_reached": 6,
+    "organizers_reached": 5
+   },
+   {
+    "host": "www.recoilweb.com",
+    "impressions": 77927,
+    "campaigns_reached": 84,
+    "organizers_reached": 6
+   },
+   {
+    "host": "www.ledemondujeu.com",
+    "impressions": 77224,
+    "campaigns_reached": 218,
+    "organizers_reached": 81
+   },
+   {
+    "host": "forum.xda-developers.com",
+    "impressions": 74334,
+    "campaigns_reached": 21,
+    "organizers_reached": 17
+   },
+   {
+    "host": "tracker.gg",
+    "impressions": 48484,
+    "campaigns_reached": 16,
+    "organizers_reached": 9
+   },
+   {
+    "host": "store.steampowered.com",
+    "impressions": 43408,
+    "campaigns_reached": 254,
+    "organizers_reached": 106
+   },
+   {
+    "host": "www.gog.com",
+    "impressions": 36570,
+    "campaigns_reached": 12,
+    "organizers_reached": 7
+   },
+   {
+    "host": "app.questn.com",
+    "impressions": 31053,
+    "campaigns_reached": 69,
+    "organizers_reached": 38
+   },
+   {
+    "host": "www.gamingtribe.com",
+    "impressions": 31002,
+    "campaigns_reached": 1946,
+    "organizers_reached": 597
+   },
+   {
+    "host": "totalcsgo.com",
+    "impressions": 26916,
+    "campaigns_reached": 170,
+    "organizers_reached": 20
+   }
+  ],
+  "giveaway_directory": [
+   {
+    "host": "www.contestgirl.com",
+    "impressions": 16721404,
+    "campaigns_reached": 14186,
+    "organizers_reached": 3253
+   },
+   {
+    "host": "sweepstakesfanatics.com",
+    "impressions": 4871951,
+    "campaigns_reached": 1490,
+    "organizers_reached": 443
+   },
+   {
+    "host": "giveawaybase.com",
+    "impressions": 3615998,
+    "campaigns_reached": 7839,
+    "organizers_reached": 2245
+   },
+   {
+    "host": "www.sweepsadvantage.com",
+    "impressions": 3409200,
+    "campaigns_reached": 11929,
+    "organizers_reached": 3080
+   },
+   {
+    "host": "www.sweepstakestoday.com",
+    "impressions": 2749385,
+    "campaigns_reached": 2280,
+    "organizers_reached": 516
+   },
+   {
+    "host": "www.ozbargain.com.au",
+    "impressions": 2441424,
+    "campaigns_reached": 6411,
+    "organizers_reached": 1661
+   },
+   {
+    "host": "www.freestufftimes.com",
+    "impressions": 952981,
+    "campaigns_reached": 14638,
+    "organizers_reached": 3403
+   },
+   {
+    "host": "freeprizesonline.com",
+    "impressions": 939918,
+    "campaigns_reached": 7610,
+    "organizers_reached": 1469
+   },
+   {
+    "host": "www.winprizesonline.com",
+    "impressions": 914512,
+    "campaigns_reached": 3927,
+    "organizers_reached": 1286
+   },
+   {
+    "host": "www.freebieshark.com",
+    "impressions": 593028,
+    "campaigns_reached": 1145,
+    "organizers_reached": 324
+   },
+   {
+    "host": "www.competitiondatabase.co.uk",
+    "impressions": 457324,
+    "campaigns_reached": 2154,
+    "organizers_reached": 363
+   },
+   {
+    "host": "freebiemom.com",
+    "impressions": 419883,
+    "campaigns_reached": 3024,
+    "organizers_reached": 1130
+   },
+   {
+    "host": "www.theprizefinder.com",
+    "impressions": 384077,
+    "campaigns_reached": 1326,
+    "organizers_reached": 215
+   },
+   {
+    "host": "www.competitionsguide.com.au",
+    "impressions": 330689,
+    "campaigns_reached": 787,
+    "organizers_reached": 293
+   },
+   {
+    "host": "www.latestfreestuff.co.uk",
+    "impressions": 287285,
+    "campaigns_reached": 47,
+    "organizers_reached": 9
+   },
+   {
+    "host": "truesweepstakes.com",
+    "impressions": 286952,
+    "campaigns_reached": 2132,
+    "organizers_reached": 943
+   },
+   {
+    "host": "www.latestdeals.co.uk",
+    "impressions": 274816,
+    "campaigns_reached": 1448,
+    "organizers_reached": 246
+   },
+   {
+    "host": "www.contestcanada.net",
+    "impressions": 256786,
+    "campaigns_reached": 605,
+    "organizers_reached": 240
+   },
+   {
+    "host": "nikkisfreebiejeebies.com",
+    "impressions": 224774,
+    "campaigns_reached": 1855,
+    "organizers_reached": 629
+   },
+   {
+    "host": "www.sweepstake.com",
+    "impressions": 208750,
+    "campaigns_reached": 2487,
+    "organizers_reached": 1022
+   },
+   {
+    "host": "sweeps.gg",
+    "impressions": 207862,
+    "campaigns_reached": 154,
+    "organizers_reached": 8
+   },
+   {
+    "host": "todoconcurso.com",
+    "impressions": 188620,
+    "campaigns_reached": 425,
+    "organizers_reached": 221
+   },
+   {
+    "host": "sweepgrab.com",
+    "impressions": 172075,
+    "campaigns_reached": 1523,
+    "organizers_reached": 773
+   },
+   {
+    "host": "www.gewinn-portal.de",
+    "impressions": 168825,
+    "campaigns_reached": 1688,
+    "organizers_reached": 535
+   },
+   {
+    "host": "wintheguns.com",
+    "impressions": 138236,
+    "campaigns_reached": 514,
+    "organizers_reached": 196
+   }
+  ],
+  "news_media": [
+   {
+    "host": "www.macrumors.com",
+    "impressions": 4327308,
+    "campaigns_reached": 151,
+    "organizers_reached": 12
+   },
+   {
+    "host": "linkin.bio",
+    "impressions": 1329768,
+    "campaigns_reached": 2268,
+    "organizers_reached": 621
+   },
+   {
+    "host": "www.idropnews.com",
+    "impressions": 1123199,
+    "campaigns_reached": 24,
+    "organizers_reached": 6
+   },
+   {
+    "host": "www.dailymail.co.uk",
+    "impressions": 1018446,
+    "campaigns_reached": 108,
+    "organizers_reached": 84
+   },
+   {
+    "host": "www.hardwaredealz.com",
+    "impressions": 962091,
+    "campaigns_reached": 104,
+    "organizers_reached": 5
+   },
+   {
+    "host": "www.premierguitar.com",
+    "impressions": 950529,
+    "campaigns_reached": 283,
+    "organizers_reached": 7
+   },
+   {
+    "host": "forums.macrumors.com",
+    "impressions": 704450,
+    "campaigns_reached": 145,
+    "organizers_reached": 8
+   },
+   {
+    "host": "www.jeu-concours.biz",
+    "impressions": 442749,
+    "campaigns_reached": 240,
+    "organizers_reached": 88
+   },
+   {
+    "host": "basic-tutorials.de",
+    "impressions": 415834,
+    "campaigns_reached": 185,
+    "organizers_reached": 6
+   },
+   {
+    "host": "medium.com",
+    "impressions": 390666,
+    "campaigns_reached": 3834,
+    "organizers_reached": 1440
+   },
+   {
+    "host": "manofmany.com",
+    "impressions": 340668,
+    "campaigns_reached": 109,
+    "organizers_reached": 8
+   },
+   {
+    "host": "www.ladbible.com",
+    "impressions": 179233,
+    "campaigns_reached": 14,
+    "organizers_reached": 12
+   },
+   {
+    "host": "flipboard.com",
+    "impressions": 152210,
+    "campaigns_reached": 1130,
+    "organizers_reached": 296
+   },
+   {
+    "host": "sallysbakingaddiction.com",
+    "impressions": 119695,
+    "campaigns_reached": 17,
+    "organizers_reached": 5
+   },
+   {
+    "host": "www.androidauthority.com",
+    "impressions": 107108,
+    "campaigns_reached": 33,
+    "organizers_reached": 19
+   },
+   {
+    "host": "9to5mac.com",
+    "impressions": 97318,
+    "campaigns_reached": 67,
+    "organizers_reached": 25
+   },
+   {
+    "host": "www.sammobile.com",
+    "impressions": 82460,
+    "campaigns_reached": 50,
+    "organizers_reached": 10
+   },
+   {
+    "host": "m.blog.naver.com",
+    "impressions": 77853,
+    "campaigns_reached": 3931,
+    "organizers_reached": 1523
+   },
+   {
+    "host": "rosemaryandporkbelly.co.uk",
+    "impressions": 76083,
+    "campaigns_reached": 246,
+    "organizers_reached": 35
+   },
+   {
+    "host": "blog.naver.com",
+    "impressions": 75936,
+    "campaigns_reached": 3743,
+    "organizers_reached": 1421
+   },
+   {
+    "host": "www.thearmorylife.com",
+    "impressions": 53436,
+    "campaigns_reached": 96,
+    "organizers_reached": 42
+   },
+   {
+    "host": "chromeunboxed.com",
+    "impressions": 51701,
+    "campaigns_reached": 23,
+    "organizers_reached": 5
+   },
+   {
+    "host": "apsolyamov.ru",
+    "impressions": 46781,
+    "campaigns_reached": 269,
+    "organizers_reached": 93
+   },
+   {
+    "host": "www.guntalk.com",
+    "impressions": 45582,
+    "campaigns_reached": 64,
+    "organizers_reached": 7
+   },
+   {
+    "host": "www.makeuseof.com",
+    "impressions": 40376,
+    "campaigns_reached": 105,
+    "organizers_reached": 18
+   }
+  ],
+  "social_other": [
+   {
+    "host": "away.vk.com",
+    "impressions": 646657,
+    "campaigns_reached": 18652,
+    "organizers_reached": 4767
+   },
+   {
+    "host": "www.snapchat.com",
+    "impressions": 66020,
+    "campaigns_reached": 6055,
+    "organizers_reached": 2124
+   },
+   {
+    "host": "m.vk.com",
+    "impressions": 33330,
+    "campaigns_reached": 2852,
+    "organizers_reached": 1287
+   },
+   {
+    "host": "go.bsky.app",
+    "impressions": 28349,
+    "campaigns_reached": 1400,
+    "organizers_reached": 586
+   },
+   {
+    "host": "usa.life",
+    "impressions": 27328,
+    "campaigns_reached": 1490,
+    "organizers_reached": 205
+   },
+   {
+    "host": "weibo.cn",
+    "impressions": 21863,
+    "campaigns_reached": 595,
+    "organizers_reached": 377
+   },
+   {
+    "host": "web.flow.opera.com",
+    "impressions": 20715,
+    "campaigns_reached": 2706,
+    "organizers_reached": 866
+   },
+   {
+    "host": "vk.com",
+    "impressions": 18703,
+    "campaigns_reached": 4087,
+    "organizers_reached": 1555
+   },
+   {
+    "host": "cafe.naver.com",
+    "impressions": 16400,
+    "campaigns_reached": 1119,
+    "organizers_reached": 468
+   }
+  ],
+  "social_reddit": [
+   {
+    "host": "com.reddit.frontpage",
+    "impressions": 52191,
+    "campaigns_reached": 1731,
+    "organizers_reached": 636
+   },
+   {
+    "host": "reddit.com",
+    "impressions": 17499,
+    "campaigns_reached": 960,
+    "organizers_reached": 419
+   }
+  ]
+ },
+ "outcomes_when_channel_over_10pct": {
+  "direct": {
+   "n": 50700,
+   "sites": 10376,
+   "conversion": 0.29,
+   "entries_per_entrant": 5.006,
+   "contestants": 2484.0,
+   "email_uptake": 0.985,
+   "referral_uptake": 0.32
+  },
+  "gleam": {
+   "n": 10785,
+   "sites": 3322,
+   "conversion": 0.308,
+   "entries_per_entrant": 5.637,
+   "contestants": 3704.0,
+   "email_uptake": 0.906,
+   "referral_uptake": 0.972
+  },
+  "social_x": {
+   "n": 10195,
+   "sites": 2941,
+   "conversion": 0.337,
+   "entries_per_entrant": 5.226,
+   "contestants": 2024.0,
+   "email_uptake": 0.968,
+   "referral_uptake": 0.684
+  },
+  "social_meta": {
+   "n": 8391,
+   "sites": 3139,
+   "conversion": 0.274,
+   "entries_per_entrant": 3.582,
+   "contestants": 2237.0,
+   "email_uptake": 1.0,
+   "referral_uptake": 0.125
+  },
+  "giveaway_directory": {
+   "n": 6768,
+   "sites": 2254,
+   "conversion": 0.317,
+   "entries_per_entrant": 4.567,
+   "contestants": 1827.0,
+   "email_uptake": 0.924,
+   "referral_uptake": 0.14
+  },
+  "social_youtube": {
+   "n": 5131,
+   "sites": 1217,
+   "conversion": 0.413,
+   "entries_per_entrant": 4.165,
+   "contestants": 2383.0,
+   "email_uptake": 0.867,
+   "referral_uptake": 0.142
+  },
+  "organizer_site": {
+   "n": 4789,
+   "sites": 883,
+   "conversion": 0.266,
+   "entries_per_entrant": 4.244,
+   "contestants": 2830.0,
+   "email_uptake": 0.975,
+   "referral_uptake": 0.098
+  },
+  "news_media": {
+   "n": 2038,
+   "sites": 257,
+   "conversion": 0.347,
+   "entries_per_entrant": 3.712,
+   "contestants": 1980.5,
+   "email_uptake": 1.055,
+   "referral_uptake": 0.1
+  },
+  "gaming_community": {
+   "n": 1615,
+   "sites": 208,
+   "conversion": 0.221,
+   "entries_per_entrant": 5.866,
+   "contestants": 2695.0,
+   "email_uptake": 0.881,
+   "referral_uptake": 0.147
+  },
+  "other": {
+   "n": 1601,
+   "sites": 204,
+   "conversion": 0.184,
+   "entries_per_entrant": 9.363,
+   "contestants": 2925.0,
+   "email_uptake": 1.002,
+   "referral_uptake": 0.097
+  },
+  "deals_forum": {
+   "n": 1383,
+   "sites": 173,
+   "conversion": 0.472,
+   "entries_per_entrant": 1.863,
+   "contestants": 1507.5,
+   "email_uptake": 0.975,
+   "referral_uptake": 0.071
+  },
+  "search": {
+   "n": 1019,
+   "sites": 407,
+   "conversion": 0.185,
+   "entries_per_entrant": 4.026,
+   "contestants": 2157.0,
+   "email_uptake": 1.033,
+   "referral_uptake": 0.122
+  },
+  "crypto_web3": {
+   "n": 711,
+   "sites": 287,
+   "conversion": 0.211,
+   "entries_per_entrant": 6.27,
+   "contestants": 2762.5,
+   "email_uptake": 0.908,
+   "referral_uptake": 0.631
+  },
+  "social_tiktok": {
+   "n": 178,
+   "sites": 102,
+   "conversion": 0.149,
+   "entries_per_entrant": 4.308,
+   "contestants": 2372.0,
+   "email_uptake": 0.88,
+   "referral_uptake": 0.127
+  },
+  "ad_network": {
+   "n": 96,
+   "sites": 25,
+   "conversion": 0.402,
+   "entries_per_entrant": 5.536,
+   "contestants": 4058.0,
+   "email_uptake": 0.936,
+   "referral_uptake": 0.101
+  },
+  "video_twitch_kick": {
+   "n": 78,
+   "sites": 40,
+   "conversion": 0.346,
+   "entries_per_entrant": 4.163,
+   "contestants": 2088.0,
+   "email_uptake": 1.001,
+   "referral_uptake": 0.259
+  },
+  "email_newsletter": {
+   "n": 51,
+   "sites": 12,
+   "conversion": 0.19,
+   "entries_per_entrant": 5.525,
+   "contestants": 1309.0,
+   "email_uptake": 0.825,
+   "referral_uptake": 0.083
+  }
+ },
+ "channel_quantity_vs_quality": {
+  "direct": {
+   "n": 50700,
+   "sites": 10376,
+   "conversion": 0.29,
+   "entries_per_entrant": 5.006,
+   "contestants": 2484.0,
+   "email_uptake": 0.985,
+   "referral_uptake": 0.32,
+   "quantity_share_of_all_impressions": 0.5163
+  },
+  "gleam": {
+   "n": 10785,
+   "sites": 3322,
+   "conversion": 0.308,
+   "entries_per_entrant": 5.637,
+   "contestants": 3704.0,
+   "email_uptake": 0.906,
+   "referral_uptake": 0.972,
+   "quantity_share_of_all_impressions": 0.0752
+  },
+  "social_x": {
+   "n": 10195,
+   "sites": 2941,
+   "conversion": 0.337,
+   "entries_per_entrant": 5.226,
+   "contestants": 2024.0,
+   "email_uptake": 0.968,
+   "referral_uptake": 0.684,
+   "quantity_share_of_all_impressions": 0.047
+  },
+  "social_meta": {
+   "n": 8391,
+   "sites": 3139,
+   "conversion": 0.274,
+   "entries_per_entrant": 3.582,
+   "contestants": 2237.0,
+   "email_uptake": 1.0,
+   "referral_uptake": 0.125,
+   "quantity_share_of_all_impressions": 0.0758
+  },
+  "giveaway_directory": {
+   "n": 6768,
+   "sites": 2254,
+   "conversion": 0.317,
+   "entries_per_entrant": 4.567,
+   "contestants": 1827.0,
+   "email_uptake": 0.924,
+   "referral_uptake": 0.14,
+   "quantity_share_of_all_impressions": 0.0329
+  },
+  "social_youtube": {
+   "n": 5131,
+   "sites": 1217,
+   "conversion": 0.413,
+   "entries_per_entrant": 4.165,
+   "contestants": 2383.0,
+   "email_uptake": 0.867,
+   "referral_uptake": 0.142,
+   "quantity_share_of_all_impressions": 0.0472
+  },
+  "organizer_site": {
+   "n": 4789,
+   "sites": 883,
+   "conversion": 0.266,
+   "entries_per_entrant": 4.244,
+   "contestants": 2830.0,
+   "email_uptake": 0.975,
+   "referral_uptake": 0.098,
+   "quantity_share_of_all_impressions": 0.0777
+  },
+  "news_media": {
+   "n": 2038,
+   "sites": 257,
+   "conversion": 0.347,
+   "entries_per_entrant": 3.712,
+   "contestants": 1980.5,
+   "email_uptake": 1.055,
+   "referral_uptake": 0.1,
+   "quantity_share_of_all_impressions": 0.0133
+  },
+  "gaming_community": {
+   "n": 1615,
+   "sites": 208,
+   "conversion": 0.221,
+   "entries_per_entrant": 5.866,
+   "contestants": 2695.0,
+   "email_uptake": 0.881,
+   "referral_uptake": 0.147,
+   "quantity_share_of_all_impressions": 0.0218
+  },
+  "other": {
+   "n": 1601,
+   "sites": 204,
+   "conversion": 0.184,
+   "entries_per_entrant": 9.363,
+   "contestants": 2925.0,
+   "email_uptake": 1.002,
+   "referral_uptake": 0.097,
+   "quantity_share_of_all_impressions": 0.0132
+  },
+  "deals_forum": {
+   "n": 1383,
+   "sites": 173,
+   "conversion": 0.472,
+   "entries_per_entrant": 1.863,
+   "contestants": 1507.5,
+   "email_uptake": 0.975,
+   "referral_uptake": 0.071,
+   "quantity_share_of_all_impressions": 0.0135
+  },
+  "search": {
+   "n": 1019,
+   "sites": 407,
+   "conversion": 0.185,
+   "entries_per_entrant": 4.026,
+   "contestants": 2157.0,
+   "email_uptake": 1.033,
+   "referral_uptake": 0.122,
+   "quantity_share_of_all_impressions": 0.0265
+  },
+  "crypto_web3": {
+   "n": 711,
+   "sites": 287,
+   "conversion": 0.211,
+   "entries_per_entrant": 6.27,
+   "contestants": 2762.5,
+   "email_uptake": 0.908,
+   "referral_uptake": 0.631,
+   "quantity_share_of_all_impressions": 0.0126
+  },
+  "social_tiktok": {
+   "n": 178,
+   "sites": 102,
+   "conversion": 0.149,
+   "entries_per_entrant": 4.308,
+   "contestants": 2372.0,
+   "email_uptake": 0.88,
+   "referral_uptake": 0.127,
+   "quantity_share_of_all_impressions": 0.0066
+  },
+  "ad_network": {
+   "n": 96,
+   "sites": 25,
+   "conversion": 0.402,
+   "entries_per_entrant": 5.536,
+   "contestants": 4058.0,
+   "email_uptake": 0.936,
+   "referral_uptake": 0.101,
+   "quantity_share_of_all_impressions": 0.001
+  },
+  "video_twitch_kick": {
+   "n": 78,
+   "sites": 40,
+   "conversion": 0.346,
+   "entries_per_entrant": 4.163,
+   "contestants": 2088.0,
+   "email_uptake": 1.001,
+   "referral_uptake": 0.259,
+   "quantity_share_of_all_impressions": 0.0006
+  },
+  "email_newsletter": {
+   "n": 51,
+   "sites": 12,
+   "conversion": 0.19,
+   "entries_per_entrant": 5.525,
+   "contestants": 1309.0,
+   "email_uptake": 0.825,
+   "referral_uptake": 0.083,
+   "quantity_share_of_all_impressions": 0.0014
+  }
+ },
+ "channel_quality_by_size_band": {
+  "ad_network": {
+   "1k-2.5k": {
+    "n": 34,
+    "sites": 13,
+    "conversion": 0.136,
+    "entries_per_entrant": 6.213
+   },
+   "2.5k-10k": {
+    "n": 58,
+    "sites": 13,
+    "conversion": 0.432,
+    "entries_per_entrant": 5.464
+   }
+  },
+  "crypto_web3": {
+   "10k+": {
+    "n": 103,
+    "sites": 74,
+    "conversion": 0.218,
+    "entries_per_entrant": 6.266
+   },
+   "1k-2.5k": {
+    "n": 330,
+    "sites": 143,
+    "conversion": 0.217,
+    "entries_per_entrant": 6.085
+   },
+   "2.5k-10k": {
+    "n": 278,
+    "sites": 139,
+    "conversion": 0.203,
+    "entries_per_entrant": 6.378
+   }
+  },
+  "deals_forum": {
+   "10k+": {
+    "n": 58,
+    "sites": 15,
+    "conversion": 0.163,
+    "entries_per_entrant": 5.687
+   },
+   "1k-2.5k": {
+    "n": 1084,
+    "sites": 145,
+    "conversion": 0.511,
+    "entries_per_entrant": 1.825
+   },
+   "2.5k-10k": {
+    "n": 241,
+    "sites": 60,
+    "conversion": 0.309,
+    "entries_per_entrant": 2.161
+   }
+  },
+  "direct": {
+   "10k+": {
+    "n": 5929,
+    "sites": 1927,
+    "conversion": 0.328,
+    "entries_per_entrant": 5.493
+   },
+   "1k-2.5k": {
+    "n": 25494,
+    "sites": 7126,
+    "conversion": 0.281,
+    "entries_per_entrant": 4.858
+   },
+   "2.5k-10k": {
+    "n": 19277,
+    "sites": 5216,
+    "conversion": 0.292,
+    "entries_per_entrant": 5.067
+   }
+  },
+  "gaming_community": {
+   "10k+": {
+    "n": 198,
+    "sites": 65,
+    "conversion": 0.248,
+    "entries_per_entrant": 5.185
+   },
+   "1k-2.5k": {
+    "n": 765,
+    "sites": 123,
+    "conversion": 0.225,
+    "entries_per_entrant": 5.605
+   },
+   "2.5k-10k": {
+    "n": 652,
+    "sites": 124,
+    "conversion": 0.208,
+    "entries_per_entrant": 6.393
+   }
+  },
+  "giveaway_directory": {
+   "10k+": {
+    "n": 78,
+    "sites": 56,
+    "conversion": 0.268,
+    "entries_per_entrant": 5.44
+   },
+   "1k-2.5k": {
+    "n": 4582,
+    "sites": 1819,
+    "conversion": 0.321,
+    "entries_per_entrant": 4.417
+   },
+   "2.5k-10k": {
+    "n": 2108,
+    "sites": 798,
+    "conversion": 0.303,
+    "entries_per_entrant": 4.803
+   }
+  },
+  "gleam": {
+   "10k+": {
+    "n": 2482,
+    "sites": 1021,
+    "conversion": 0.363,
+    "entries_per_entrant": 5.562
+   },
+   "1k-2.5k": {
+    "n": 3889,
+    "sites": 1641,
+    "conversion": 0.274,
+    "entries_per_entrant": 5.574
+   },
+   "2.5k-10k": {
+    "n": 4414,
+    "sites": 1744,
+    "conversion": 0.31,
+    "entries_per_entrant": 5.736
+   }
+  },
+  "news_media": {
+   "10k+": {
+    "n": 62,
+    "sites": 28,
+    "conversion": 0.293,
+    "entries_per_entrant": 4.557
+   },
+   "1k-2.5k": {
+    "n": 1239,
+    "sites": 184,
+    "conversion": 0.356,
+    "entries_per_entrant": 3.569
+   },
+   "2.5k-10k": {
+    "n": 737,
+    "sites": 135,
+    "conversion": 0.335,
+    "entries_per_entrant": 3.89
+   }
+  },
+  "organizer_site": {
+   "10k+": {
+    "n": 814,
+    "sites": 180,
+    "conversion": 0.228,
+    "entries_per_entrant": 5.483
+   },
+   "1k-2.5k": {
+    "n": 2160,
+    "sites": 596,
+    "conversion": 0.304,
+    "entries_per_entrant": 3.989
+   },
+   "2.5k-10k": {
+    "n": 1815,
+    "sites": 451,
+    "conversion": 0.244,
+    "entries_per_entrant": 4.326
+   }
+  },
+  "other": {
+   "10k+": {
+    "n": 171,
+    "sites": 52,
+    "conversion": 0.216,
+    "entries_per_entrant": 10.685
+   },
+   "1k-2.5k": {
+    "n": 682,
+    "sites": 128,
+    "conversion": 0.184,
+    "entries_per_entrant": 6.068
+   },
+   "2.5k-10k": {
+    "n": 748,
+    "sites": 102,
+    "conversion": 0.181,
+    "entries_per_entrant": 10.953
+   }
+  },
+  "search": {
+   "10k+": {
+    "n": 114,
+    "sites": 69,
+    "conversion": 0.318,
+    "entries_per_entrant": 3.638
+   },
+   "1k-2.5k": {
+    "n": 587,
+    "sites": 249,
+    "conversion": 0.174,
+    "entries_per_entrant": 4.019
+   },
+   "2.5k-10k": {
+    "n": 318,
+    "sites": 162,
+    "conversion": 0.187,
+    "entries_per_entrant": 4.138
+   }
+  },
+  "social_meta": {
+   "10k+": {
+    "n": 898,
+    "sites": 503,
+    "conversion": 0.292,
+    "entries_per_entrant": 4.654
+   },
+   "1k-2.5k": {
+    "n": 4347,
+    "sites": 1970,
+    "conversion": 0.27,
+    "entries_per_entrant": 3.35
+   },
+   "2.5k-10k": {
+    "n": 3146,
+    "sites": 1482,
+    "conversion": 0.276,
+    "entries_per_entrant": 3.752
+   }
+  },
+  "social_tiktok": {
+   "1k-2.5k": {
+    "n": 96,
+    "sites": 67,
+    "conversion": 0.125,
+    "entries_per_entrant": 4.332
+   },
+   "2.5k-10k": {
+    "n": 64,
+    "sites": 43,
+    "conversion": 0.152,
+    "entries_per_entrant": 4.181
+   }
+  },
+  "social_x": {
+   "10k+": {
+    "n": 613,
+    "sites": 324,
+    "conversion": 0.318,
+    "entries_per_entrant": 5.929
+   },
+   "1k-2.5k": {
+    "n": 6160,
+    "sites": 2093,
+    "conversion": 0.348,
+    "entries_per_entrant": 5.111
+   },
+   "2.5k-10k": {
+    "n": 3422,
+    "sites": 1328,
+    "conversion": 0.324,
+    "entries_per_entrant": 5.273
+   }
+  },
+  "social_youtube": {
+   "10k+": {
+    "n": 700,
+    "sites": 200,
+    "conversion": 0.408,
+    "entries_per_entrant": 4.37
+   },
+   "1k-2.5k": {
+    "n": 2669,
+    "sites": 813,
+    "conversion": 0.436,
+    "entries_per_entrant": 4.072
+   },
+   "2.5k-10k": {
+    "n": 1762,
+    "sites": 589,
+    "conversion": 0.396,
+    "entries_per_entrant": 4.103
+   }
+  }
+ },
+ "utm_source_share": {
+  "tagged_share_of_impressions": 0.1119,
+  "buckets": {
+   "email_newsletter": 0.3506,
+   "social_meta": 0.1964,
+   "promotional_other": 0.1098,
+   "ad_network": 0.045,
+   "other": 0.0436,
+   "organizer_site": 0.0369,
+   "social_tiktok": 0.0348,
+   "gaming_community": 0.0304,
+   "deals_forum": 0.0213,
+   "social_x": 0.0171,
+   "email": 0.0155,
+   "gleam": 0.0152,
+   "search": 0.0151,
+   "giveaway_directory": 0.0148,
+   "social_youtube": 0.0126,
+   "crypto_web3": 0.0103,
+   "social_other": 0.0078,
+   "meta": 0.006,
+   "news_media": 0.0038,
+   "app_store_or_push": 0.0027,
+   "chat_discord_telegram_whatsapp": 0.0026,
+   "push_app": 0.0019,
+   "video_twitch_kick": 0.0015,
+   "influencer_affiliate": 0.0012,
+   "twitter_x": 0.0011,
+   "google": 0.001,
+   "social_reddit": 0.0007,
+   "tiktok": 0.0001
+  }
+ },
+ "email_traffic_by_provider": {
+  "other or unnamed": {
+   "campaigns": 6965,
+   "organizers": 1910,
+   "share_of_tagged_email_impressions": 0.437
+  },
+  "Listrak": {
+   "campaigns": 551,
+   "organizers": 74,
+   "share_of_tagged_email_impressions": 0.181
+  },
+  "named newsletter": {
+   "campaigns": 2783,
+   "organizers": 748,
+   "share_of_tagged_email_impressions": 0.124
+  },
+  "Klaviyo": {
+   "campaigns": 2215,
+   "organizers": 804,
+   "share_of_tagged_email_impressions": 0.113
+  },
+  "HubSpot": {
+   "campaigns": 734,
+   "organizers": 217,
+   "share_of_tagged_email_impressions": 0.035
+  },
+  "Attentive or SMS": {
+   "campaigns": 510,
+   "organizers": 170,
+   "share_of_tagged_email_impressions": 0.024
+  },
+  "ActiveCampaign": {
+   "campaigns": 318,
+   "organizers": 71,
+   "share_of_tagged_email_impressions": 0.017
+  },
+  "ConvertKit": {
+   "campaigns": 93,
+   "organizers": 30,
+   "share_of_tagged_email_impressions": 0.014
+  },
+  "Salesforce or ExactTarget": {
+   "campaigns": 204,
+   "organizers": 51,
+   "share_of_tagged_email_impressions": 0.013
+  },
+  "Sailthru": {
+   "campaigns": 293,
+   "organizers": 23,
+   "share_of_tagged_email_impressions": 0.01
+  },
+  "Omnisend": {
+   "campaigns": 277,
+   "organizers": 119,
+   "share_of_tagged_email_impressions": 0.008
+  },
+  "Iterable": {
+   "campaigns": 146,
+   "organizers": 36,
+   "share_of_tagged_email_impressions": 0.007
+  },
+  "MailChimp": {
+   "campaigns": 116,
+   "organizers": 44,
+   "share_of_tagged_email_impressions": 0.007
+  },
+  "Brevo or Sendinblue": {
+   "campaigns": 250,
+   "organizers": 103,
+   "share_of_tagged_email_impressions": 0.005
+  },
+  "Braze": {
+   "campaigns": 42,
+   "organizers": 19,
+   "share_of_tagged_email_impressions": 0.003
+  }
+ },
+ "outcomes_when_email_over_10pct": {
+  "n": 6696,
+  "organizers": 1584,
+  "conversion": 0.267,
+  "entries_per_entrant": 3.919,
+  "contestants": 2452,
+  "campaigns_without_email_traffic": {
+   "n": 43782,
+   "conversion": 0.316,
+   "entries_per_entrant": 5.006,
+   "contestants": 2419.0
+  }
+ },
+ "viral_click_conversion": {
+  "n": 29151,
+  "organizers": 6536,
+  "clicks": 4663.0,
+  "referrals": 868.0,
+  "referrals_per_click_p25": 0.116,
+  "referrals_per_click": 0.221,
+  "referrals_per_click_p75": 0.435,
+  "clicks_share_of_impressions": 0.473,
+  "clicks_per_contestant": 1.745,
+  "referrals_per_contestant": 0.312,
+  "campaign_conversion_same_campaigns": 0.269,
+  "campaigns_with_clicks_above_impressions": 1692
+ },
+ "viral_click_conversion_excluding_crypto": {
+  "n": 18461,
+  "organizers": 4011,
+  "referrals_per_click": 0.158,
+  "clicks_per_contestant": 1.142,
+  "referrals_per_contestant": 0.147,
+  "campaign_conversion_same_campaigns": 0.243
+ },
+ "viral_click_conversion_by_worth": {
+  "10+": {
+   "n": 11903,
+   "organizers": 2555,
+   "referrals_per_click": 0.281,
+   "clicks_per_contestant": 1.904,
+   "referrals_per_contestant": 0.56
+  },
+  "5-9": {
+   "n": 4719,
+   "organizers": 1653,
+   "referrals_per_click": 0.196,
+   "clicks_per_contestant": 1.824,
+   "referrals_per_contestant": 0.283
+  },
+  "1": {
+   "n": 7619,
+   "organizers": 2267,
+   "referrals_per_click": 0.195,
+   "clicks_per_contestant": 1.468,
+   "referrals_per_contestant": 0.187
+  },
+  "2": {
+   "n": 1912,
+   "organizers": 782,
+   "referrals_per_click": 0.191,
+   "clicks_per_contestant": 1.592,
+   "referrals_per_contestant": 0.225
+  },
+  "3-4": {
+   "n": 2998,
+   "organizers": 920,
+   "referrals_per_click": 0.187,
+   "clicks_per_contestant": 1.665,
+   "referrals_per_contestant": 0.22
+  }
+ },
+ "viral_click_conversion_by_industry": {
+  "software_saas": {
+   "n": 918,
+   "organizers": 181,
+   "referrals_per_click": 0.58,
+   "clicks_per_contestant": 1.828,
+   "referrals_per_contestant": 1.039
+  },
+  "finance_crypto": {
+   "n": 10690,
+   "organizers": 2590,
+   "referrals_per_click": 0.444,
+   "clicks_per_contestant": 2.451,
+   "referrals_per_contestant": 1.035
+  },
+  "marketing_agency": {
+   "n": 235,
+   "organizers": 37,
+   "referrals_per_click": 0.232,
+   "clicks_per_contestant": 1.649,
+   "referrals_per_contestant": 0.317
+  },
+  "gaming_esports": {
+   "n": 2992,
+   "organizers": 808,
+   "referrals_per_click": 0.186,
+   "clicks_per_contestant": 1.634,
+   "referrals_per_contestant": 0.244
+  },
+  "baby_kids": {
+   "n": 219,
+   "organizers": 44,
+   "referrals_per_click": 0.183,
+   "clicks_per_contestant": 0.522,
+   "referrals_per_contestant": 0.095
+  },
+  "travel_events": {
+   "n": 901,
+   "organizers": 178,
+   "referrals_per_click": 0.18,
+   "clicks_per_contestant": 0.517,
+   "referrals_per_contestant": 0.086
+  },
+  "art_crafts": {
+   "n": 210,
+   "organizers": 66,
+   "referrals_per_click": 0.177,
+   "clicks_per_contestant": 0.819,
+   "referrals_per_contestant": 0.111
+  },
+  "apparel_fashion": {
+   "n": 631,
+   "organizers": 208,
+   "referrals_per_click": 0.174,
+   "clicks_per_contestant": 0.714,
+   "referrals_per_contestant": 0.116
+  },
+  "other": {
+   "n": 243,
+   "organizers": 116,
+   "referrals_per_click": 0.168,
+   "clicks_per_contestant": 0.927,
+   "referrals_per_contestant": 0.1
+  },
+  "local_services": {
+   "n": 161,
+   "organizers": 26,
+   "referrals_per_click": 0.16,
+   "clicks_per_contestant": 0.737,
+   "referrals_per_contestant": 0.127
+  },
+  "education": {
+   "n": 168,
+   "organizers": 82,
+   "referrals_per_click": 0.16,
+   "clicks_per_contestant": 0.949,
+   "referrals_per_contestant": 0.13
+  },
+  "home_garden": {
+   "n": 1177,
+   "organizers": 221,
+   "referrals_per_click": 0.159,
+   "clicks_per_contestant": 0.777,
+   "referrals_per_contestant": 0.111
+  },
+  "health_wellness_fitness": {
+   "n": 483,
+   "organizers": 167,
+   "referrals_per_click": 0.145,
+   "clicks_per_contestant": 1.072,
+   "referrals_per_contestant": 0.172
+  },
+  "beauty_personal_care": {
+   "n": 213,
+   "organizers": 80,
+   "referrals_per_click": 0.144,
+   "clicks_per_contestant": 0.672,
+   "referrals_per_contestant": 0.103
+  },
+  "media_entertainment": {
+   "n": 2213,
+   "organizers": 331,
+   "referrals_per_click": 0.143,
+   "clicks_per_contestant": 0.802,
+   "referrals_per_contestant": 0.106
+  },
+  "food_drink": {
+   "n": 1058,
+   "organizers": 276,
+   "referrals_per_click": 0.141,
+   "clicks_per_contestant": 0.777,
+   "referrals_per_contestant": 0.109
+  },
+  "electronics_tech": {
+   "n": 2557,
+   "organizers": 508,
+   "referrals_per_click": 0.137,
+   "clicks_per_contestant": 1.55,
+   "referrals_per_contestant": 0.202
+  },
+  "retail_marketplace": {
+   "n": 402,
+   "organizers": 79,
+   "referrals_per_click": 0.129,
+   "clicks_per_contestant": 0.902,
+   "referrals_per_contestant": 0.091
+  },
+  "sports_outdoors": {
+   "n": 1533,
+   "organizers": 353,
+   "referrals_per_click": 0.128,
+   "clicks_per_contestant": 1.388,
+   "referrals_per_contestant": 0.164
+  },
+  "pets": {
+   "n": 287,
+   "organizers": 63,
+   "referrals_per_click": 0.119,
+   "clicks_per_contestant": 1.015,
+   "referrals_per_contestant": 0.11
+  },
+  "automotive": {
+   "n": 808,
+   "organizers": 91,
+   "referrals_per_click": 0.106,
+   "clicks_per_contestant": 1.196,
+   "referrals_per_contestant": 0.114
+  },
+  "toys_hobbies_collectibles": {
+   "n": 431,
+   "organizers": 108,
+   "referrals_per_click": 0.104,
+   "clicks_per_contestant": 1.149,
+   "referrals_per_contestant": 0.118
+  }
+ },
+ "terms": {
+  "draw_days": {
+   "7": 51887,
+   "3": 705,
+   "1": 389,
+   "2": 363,
+   "14": 290,
+   "5": 178,
+   "10": 123,
+   "30": 121
+  },
+  "response_days": {
+   "7": 51632,
+   "3": 545,
+   "14": 528,
+   "2": 499,
+   "1": 309,
+   "30": 243,
+   "5": 157,
+   "10": 82
+  },
+  "fully_custom_share": 0.372,
+  "selection_method": {
+   "random draw": 53660,
+   "lottery": 36,
+   "random draw, higher points = more chance": 31,
+   "quality selection": 19,
+   "top ranking and random draw": 18,
+   "random draw to select finalists and then judged": 17
+  },
+  "governing_law_top": {
+   "US": 19658,
+   "GB": 4240,
+   "IN": 3163,
+   "AU": 2846,
+   "CA": 2489,
+   "HK": 2110,
+   "VN": 1812,
+   "BR": 1508,
+   "KR": 1466,
+   "DE": 1294
+  }
+ },
+ "by_response_days": {
+  "4_7_days": {
+   "n": 51881,
+   "sites": 10205,
+   "contestants": 2443.0,
+   "conversion": 0.3,
+   "entries_per_entrant": 4.867,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.301,
+   "share_offered": 0.535
+  },
+  "1_3_days": {
+   "n": 1353,
+   "sites": 389,
+   "contestants": 2446.0,
+   "conversion": 0.314,
+   "entries_per_entrant": 4.367,
+   "days": 11.0,
+   "methods": 7.0,
+   "email_offered": 0.261,
+   "share_offered": 0.47
+  },
+  "8_14_days": {
+   "n": 622,
+   "sites": 190,
+   "contestants": 2433.5,
+   "conversion": 0.302,
+   "entries_per_entrant": 5.727,
+   "days": 14.0,
+   "methods": 9.0,
+   "email_offered": 0.193,
+   "share_offered": 0.574
+  },
+  "15_plus_days": {
+   "n": 404,
+   "sites": 190,
+   "contestants": 3258.5,
+   "conversion": 0.259,
+   "entries_per_entrant": 5.409,
+   "days": 20.0,
+   "methods": 8.0,
+   "email_offered": 0.428,
+   "share_offered": 0.495
+  }
+ },
+ "build_lead_days": {
+  "negative_share": 0.236,
+  "percentiles": {
+   "p25": 0.0,
+   "p50": 1.0,
+   "p75": 5.0,
+   "p90": 15.0
+  }
+ },
+ "by_build_lead": {
+  "same_day": {
+   "n": 17907,
+   "sites": 5031,
+   "contestants": 2313.0,
+   "conversion": 0.303,
+   "entries_per_entrant": 5.08,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.281,
+   "share_offered": 0.512
+  },
+  "backdated": {
+   "n": 12927,
+   "sites": 3776,
+   "contestants": 2474.0,
+   "conversion": 0.327,
+   "entries_per_entrant": 5.016,
+   "days": 14.0,
+   "methods": 8.0,
+   "email_offered": 0.17,
+   "share_offered": 0.601
+  },
+  "1_2_days": {
+   "n": 8762,
+   "sites": 3280,
+   "contestants": 2464.0,
+   "conversion": 0.292,
+   "entries_per_entrant": 4.966,
+   "days": 12.0,
+   "methods": 8.0,
+   "email_offered": 0.33,
+   "share_offered": 0.547
+  },
+  "8_plus_days": {
+   "n": 7753,
+   "sites": 2704,
+   "contestants": 2591.0,
+   "conversion": 0.278,
+   "entries_per_entrant": 4.211,
+   "days": 15.0,
+   "methods": 7.0,
+   "email_offered": 0.413,
+   "share_offered": 0.477
+  },
+  "3_7_days": {
+   "n": 7437,
+   "sites": 2892,
+   "contestants": 2581.0,
+   "conversion": 0.282,
+   "entries_per_entrant": 4.665,
+   "days": 14.0,
+   "methods": 7.0,
+   "email_offered": 0.419,
+   "share_offered": 0.51
+  }
+ },
+ "prize_currency_inference": {
+  "null_currency_share": 0.0,
+  "inferred_share_of_null": 0,
+  "top_inferred": {}
+ },
+ "prize_values": {
+  "rows_with_value_share": 0.388,
+  "currency_share": {
+   "USD": 0.999,
+   "EUR": 0.0,
+   "GBP": 0.0,
+   "CAD": 0.0,
+   "AUD": 0.0,
+   "USDT": 0.0,
+   "EURO": 0.0,
+   "TRY": 0.0
+  },
+  "usd_pool_percentiles": {
+   "p25": 350,
+   "p50": 1000,
+   "p75": 2500,
+   "p90": 6250
+  }
+ },
+ "loyalty_tiers": {
+  "1": 905,
+  "2": 513,
+  "3": 446,
+  "5": 66,
+  "4": 56
+ },
+ "uptake_by_family_and_position": {
+  "content|1st": {
+   "n": 378,
+   "sites": 209,
+   "completions_per_contestant": 0.825
+  },
+  "content|2nd-4th": {
+   "n": 1050,
+   "sites": 469,
+   "completions_per_contestant": 0.287
+  },
+  "content|5th+": {
+   "n": 2897,
+   "sites": 852,
+   "completions_per_contestant": 0.163
+  },
+  "email|1st": {
+   "n": 9521,
+   "sites": 2222,
+   "completions_per_contestant": 1.006
+  },
+  "email|2nd-4th": {
+   "n": 4595,
+   "sites": 1128,
+   "completions_per_contestant": 0.749
+  },
+  "email|5th+": {
+   "n": 4470,
+   "sites": 1007,
+   "completions_per_contestant": 0.666
+  },
+  "follow|1st": {
+   "n": 15548,
+   "sites": 4037,
+   "completions_per_contestant": 1.002
+  },
+  "follow|2nd-4th": {
+   "n": 49352,
+   "sites": 7110,
+   "completions_per_contestant": 0.783
+  },
+  "follow|5th+": {
+   "n": 66981,
+   "sites": 5534,
+   "completions_per_contestant": 0.484
+  },
+  "share|1st": {
+   "n": 492,
+   "sites": 241,
+   "completions_per_contestant": 0.187
+  },
+  "share|2nd-4th": {
+   "n": 6050,
+   "sites": 1937,
+   "completions_per_contestant": 0.144
+  },
+  "share|5th+": {
+   "n": 22774,
+   "sites": 5246,
+   "completions_per_contestant": 0.467
+  },
+  "visit|1st": {
+   "n": 4447,
+   "sites": 1412,
+   "completions_per_contestant": 0.979
+  },
+  "visit|2nd-4th": {
+   "n": 27832,
+   "sites": 4596,
+   "completions_per_contestant": 0.839
+  },
+  "visit|5th+": {
+   "n": 53229,
+   "sites": 5045,
+   "completions_per_contestant": 0.711
+  }
+ },
+ "by_method_count_clean": {
+  "6-8": {
+   "n": 7321,
+   "sites": 2068,
+   "contestants": 2563.0,
+   "conversion": 0.354,
+   "entries_per_entrant": 4.991,
+   "days": 7.0,
+   "methods": 7.0,
+   "email_offered": 0.155,
+   "share_offered": 0.595
+  },
+  "1-3": {
+   "n": 3964,
+   "sites": 959,
+   "contestants": 2195.5,
+   "conversion": 0.491,
+   "entries_per_entrant": 1.36,
+   "days": 4.0,
+   "methods": 2.0,
+   "email_offered": 0.176,
+   "share_offered": 0.121
+  },
+  "4-5": {
+   "n": 3882,
+   "sites": 1351,
+   "contestants": 2409.0,
+   "conversion": 0.401,
+   "entries_per_entrant": 3.5,
+   "days": 6.0,
+   "methods": 4.0,
+   "email_offered": 0.242,
+   "share_offered": 0.26
+  },
+  "9-10": {
+   "n": 3821,
+   "sites": 1064,
+   "contestants": 2664.0,
+   "conversion": 0.344,
+   "entries_per_entrant": 6.575,
+   "days": 7.0,
+   "methods": 9.0,
+   "email_offered": 0.108,
+   "share_offered": 0.763
+  },
+  "11+": {
+   "n": 3750,
+   "sites": 956,
+   "contestants": 2256.0,
+   "conversion": 0.314,
+   "entries_per_entrant": 8.866,
+   "days": 7.0,
+   "methods": 13.0,
+   "email_offered": 0.165,
+   "share_offered": 0.681
+  }
+ },
+ "by_description_length": {
+  "26-75 words": {
+   "n": 8451,
+   "sites": 2263,
+   "contestants": 2399.0,
+   "conversion": 0.359,
+   "entries_per_entrant": 4.561,
+   "days": 7.0,
+   "methods": 7.0,
+   "email_offered": 0.172,
+   "share_offered": 0.468
+  },
+  "76-150 words": {
+   "n": 6924,
+   "sites": 1721,
+   "contestants": 2637.5,
+   "conversion": 0.367,
+   "entries_per_entrant": 5.356,
+   "days": 7.0,
+   "methods": 8.0,
+   "email_offered": 0.113,
+   "share_offered": 0.619
+  },
+  "151+ words": {
+   "n": 2705,
+   "sites": 829,
+   "contestants": 2585.0,
+   "conversion": 0.343,
+   "entries_per_entrant": 5.276,
+   "days": 7.0,
+   "methods": 8.0,
+   "email_offered": 0.173,
+   "share_offered": 0.657
+  },
+  "1-25 words": {
+   "n": 2643,
+   "sites": 856,
+   "contestants": 2123.0,
+   "conversion": 0.402,
+   "entries_per_entrant": 3.883,
+   "days": 7.0,
+   "methods": 6.0,
+   "email_offered": 0.222,
+   "share_offered": 0.362
+  },
+  "none": {
+   "n": 2015,
+   "sites": 436,
+   "contestants": 2333.0,
+   "conversion": 0.413,
+   "entries_per_entrant": 2.97,
+   "days": 4.0,
+   "methods": 4.0,
+   "email_offered": 0.255,
+   "share_offered": 0.167
+  }
+ }
+}

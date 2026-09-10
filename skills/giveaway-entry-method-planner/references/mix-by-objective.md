@@ -1,6 +1,6 @@
 # Mix by objective
 
-Advice unless marked as extracted. Uptake throughout this file means entries recorded on an action divided by the campaign's contestants, so 0.75 is three completions for every four entrants.
+Advice unless marked as extracted. Completion throughout this file means entries recorded on an action divided by the campaign's Entrants, shown here as a count % of Entrants: about 75 per 100 is three completions for every four Entrants.
 
 ## Patterns
 
@@ -15,161 +15,500 @@ Advice unless marked as extracted. Uptake throughout this file means entries rec
 | Reach or launch awareness | Visit the launch page | Follow, engage with the launch post | Share, weighted highest | Long questions, content tasks |
 | Local foot traffic | In-store code or visit | Follow, tag a local friend | Share to story | Email if the business cannot send to it |
 
+## What the Gleam library templates ship (extracted)
+
+Each Gleam library template ships a different default mix of methods, email and sharing. Refer A Friend leans hardest into sharing, the platform's own referral shape. E-Commerce Giveaway carries the most methods. [Scope: 100 or more Entrants, finance and crypto businesses excluded.]
+
+| Template | Methods | Email offered | Share offered |
+|---|---|---|---|
+| Email Signup | 4 | 92% | 61% |
+| Refer A Friend | 5 | 33% | 92% |
+| E-Commerce Giveaway | 9 | 78% | 80% |
+| Gleam Sweepstakes | 7 | 57% | 60% |
+| Instant Entry | 1 | 6% | 7% |
+| YouTube Contest | 7 | 8% | 46% |
+
+Each template's default mix is a starting point, not a fixed one, so weight and add actions against the objective table above.
+
+Source: `analysis/output/templates.json` (`by_template`).
+
 ### Every action has a job (advice, from Gleam's campaign team)
 
 Five jobs, and every action in a recommended list carries exactly one of these labels. Acquire: email signup, SMS or messaging opt-in, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. A normal campaign has one of each, with a second social channel only when the audience is really there. Judge an amplify action by referrals, never by completion rate.
 
 ## Weighting
 
-- Give the asset-producing action 3 to 5 entries and sharing 3 to 5 per verified referral.
+- Give the asset-producing action 3 to 5 entries. For sharing, weight it at the high end of what the platform allows unless the Prize is small enough that a high weight invites abuse: the share click rate (viral share clicks over Impressions) rises with the entries offered per referral.
+
+| Weight offered | Share click rate |
+|---|---|
+| 1 | 38 per 100 Impressions |
+| 2 to 4 | 39 per 100 |
+| 5 to 9 | 48 per 100 |
+| 10 or more | 60 per 100 |
+
+[Campaigns/businesses: 7,655/2,274 (weight 1), 4,933/1,566 (2-4), 4,715/1,655 (5-9), 11,904/2,553 (10+). Extracted from `analysis/output/field_cuts.json`, share_clicks.by_share_worth.] This shows businesses who weight sharing higher see a higher click rate, not that raising the weight on one campaign would raise its clicks, since the businesses who choose a high weight may also run a more shareable campaign.
 - One entry for visits and views. Two for follows and joins.
-- Daily repeatable actions keep a long campaign alive and inflate entries per contestant. Extracted: median entries per contestant is 4.3 across the data, and campaigns with more repeatable bonus actions sit well above that.
-- If the platform allows, make the asset action mandatory before other actions unlock.
+- Daily repeatable actions keep a long campaign alive and inflate the entries recorded per Entrant. Extracted: a typical campaign records 430 entries for every 100 Entrants, and campaigns with more repeatable bonus actions sit well above that.
+- If the platform allows, make the asset action required before other actions unlock.
+- Boosting worth pays off on the referral share action and mostly does nothing for follow or join actions, so put the worth budget where it pays. This is correlation, not causation, in both directions: businesses likely reach for worth-boosting on actions that are already underperforming, so the Telegram, YouTube and UGC numbers below may just reflect a response to that weakness, not an effect of the setting itself, and the same question applies to the referral result, since businesses who most want shares may both boost worth and write better share copy. Leave Telegram, YouTube and UGC worth at default: boosting it is not a fix for low completion there.
+
+| Action | Effect of boosted worth |
+|---|---|
+| Referral share, 1,000-10,000 Entrants | +34-36% entries, 19-36% cheaper per completion |
+| Referral share, 10,000+ Entrants | +7% entries |
+| Follow (X, Twitch, TikTok) | within 15% either way, no consistent direction |
+| Telegram Channel Members | 0.55x-0.70x completions |
+| YouTube Entries | 0.53x-0.94x completions |
+| UGC submissions | 0.20x-0.62x completions |
+
+[Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_worth_tier`.]
 
 ## Actions that came with more people (extracted)
 
-Clean subset (the campaigns with no repeatable action and a run of 14 days or less, which is what makes impressions comparable), campaigns offering the action against those without it, medians. A secret code (a code shown on a stream, in a newsletter or in store) came with 16% more contestants and no conversion cost, the only action with that shape. An app download came with 21% more contestants, likely because app campaigns that reached 1,000 entrants are large apps. Actions that pull a single-channel audience converted far better on arrival: Telegram join +46%, YouTube sign-in +76%, Twitch follow +13%, each with fewer contestants overall. Every social follow, retweet, Discord join and Facebook like came with fewer contestants and lower conversion. These describe organizers' choices and audiences, never an action's effect.
+Among the campaigns we can compare fairly (no repeatable action, a run of 14 days or less, which is what makes Impressions comparable), Secret Code (a code shown on a stream, in a newsletter or in store) is the standout: it comes with more Entrants at no conversion cost, the only action with that shape. Actions that pull a single-channel audience convert far better on arrival, with fewer Entrants overall. These describe businesses' choices and audiences, never an action's effect.
 
-## What high referral uptake looks like (extracted)
+| Action | Entrants vs baseline | Conversion vs baseline |
+|---|---|---|
+| Secret Code | +16% | no cost |
+| App Downloads | +21% (likely large, established apps) | - |
+| Telegram Channel Members | fewer | +46% |
+| YouTube Entries | fewer | +76% |
+| Twitch Follows | fewer | +13% |
+| Other social follows, X Reposts, Chat Members, Facebook Likes | fewer | lower |
 
-A share action's value is the people it brings, which the export does not count. Campaigns offering one had fewer contestants and lower conversion at the median, so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
+An app-download action's payoff depends heavily on the Prize. Match the action to a Prize the Entrant already wants the app for, and expect it to cost you against a cash or gift-card Prize or in gaming and esports specifically. These counts are small, down to 33 businesses, near this skill's floor for a cut this fine, so state the count every time and don't extend the pattern beyond these three cells.
 
-Among 16,745 campaigns offering a share action, the median records 0.13 referral entries per contestant and the top tenth 0.65 or more (each referral entry is a referred entrant times an entry worth the export does not carry). The top tenth is a Twitter-centred gaming and hardware audience: tech hardware prizes in a third of them, Twitter follow offered in three quarters and retweet in 40%, email signup offered in only a third, a slightly cheaper first prize, fewer contestants than the median campaign and lower conversion. High referral uptake in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the export lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
+| Context | Effect on conversion (against what the action and Prize predict separately) |
+|---|---|
+| Prize is tech hardware | 1.54x, earns its place (203 campaigns, 33 businesses) |
+| Prize is a gift card or cash | 0.585x, costs conversion (64 campaigns, 36 businesses) |
+| Gaming and esports vertical | 0.588x, costs conversion (89 campaigns, 27 businesses) |
+
+[Extracted from `analysis/output/success_profiles.json`, `interactions.entry_method_by_prize_type` and `.entry_method_by_industry`.]
+
+## What it looks like when many Entrants were referred (extracted)
+
+A share action's value is the people it brings, which the export does not count. Campaigns offering one had fewer Entrants and lower conversion typically, so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
+
+Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (each referral entry is a referred Entrant times an entry worth the export does not carry). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the export lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
+
+**A share action is a design tradeoff, not a free addition.** When reach or new people is the objective, its reach and referral gain is worth the completion it costs elsewhere, and it's the case where a share action clearly earns its place. When the objective is a tight, high-completion list, that same cost is the reason to leave sharing out or push it to the bottom of the list. Consistent at every campaign size tested. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
+
+What it buys:
+
+| Metric | Change with a share action |
+|---|---|
+| Impressions per Entrant | +30-60% (1.34x-1.57x) |
+| Entries per Entrant | +20-26% |
+| Visits to the business's own site | +19-75% |
+| Referral entries from people the campaign didn't already reach | 13 per 100 Entrants typical, 65+ in the top tenth (see above) |
+
+What it costs (completion on other actions running beside it, all directionally consistent at every size tested):
+
+| Action | Completion multiplier |
+|---|---|
+| X Follows | 0.42x-0.71x |
+| Twitch Follows | 0.20x-0.66x |
+| Chat Members | 0.66x-0.83x |
+| Telegram Channel Members | 0.50x-0.70x |
+| YouTube Entries | 0.68x-0.75x |
+| App Downloads | 0.74x-0.96x |
+| UGC submissions | 0.20x-0.27x |
+
+Sharing's effect on email specifically depends on campaign size and is unsettled (cheaper and lower-yield at the smallest size, roughly flat to worse at 2,500-10,000 and 10,000+ Entrants), so don't claim sharing makes email cheaper or higher-yield as a general rule. [1,202 to 10,779 campaigns per group, 376 to 2,845 businesses. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_sharing`.] For the reach-side framing (what a share action brings in, weighed against what it costs elsewhere), see giveaway-promotion-plan.
+
+**A few action pairs cluster well above chance, and they're the effort-heavy ones.** As with the family table above, this describes what businesses choose to run together, not what pairing two actions would do to either one's completion.
+
+| Action pair | Co-occurrence lift |
+|---|---|
+| Content + account-connection | 1.87x (1,151 campaigns, 284 businesses) |
+| Content + engagement | 1.67x (1,040 campaigns, 398 businesses) |
+| Email + follow, the most common pair in the data | 0.95x, the only common pair below 1.0 (9,603 campaigns, 1,838 businesses) |
+
+[Extracted from `analysis/output/method_mix.json`, `family_pair_lift`.]
 
 ## Actions more common in top campaigns, by vertical (extracted)
 
-Within each vertical (a regex on organizer, campaign and prize names, so rough), campaigns split into fifths by contestants. The ratio is how much more often an action appears in the top fifth than the bottom fifth. Association only: bigger organizers choose differently.
+Within each vertical (a regex on business, campaign and Prize names, so rough), campaigns split into fifths by Entrants. The ratio is how much more often an action appears in the top fifth than the bottom fifth. Association only: bigger businesses choose differently.
 
-| Vertical | n | Actions over-represented in the top fifth |
+| Vertical | Campaigns | Actions over-represented in the top fifth |
 |---|---|---|
-| Gaming | 6,503 | Twitch Subscribers 1.7x, custom actions 1.7x, secret code 1.5x, Twitch Follows 1.3x, bonus 1.2x |
-| Technology | 1,717 | Single choice question 7.2x, Facebook visits 1.4x, YouTube channel visits 1.3x, Instagram profile visits 1.3x |
-| Home | 883 | YouTube channel visits 2.3x, custom actions 1.7x, X posts 1.6x, Pinterest visits 1.4x, Viral Shares 1.3x |
-| Food and drink | 989 | YouTube channel visits 2.2x, Facebook visits 1.4x, Instagram profile visits 1.2x |
-| Fitness and outdoor | 878 | Answer a question 1.6x, bonus 1.2x |
-| Travel | 1,758 | Secret code 1.5x, answer a question 1.4x, Instagram profile visits 1.2x |
-| Software | 363 | X reposts 1.7x, bonus 1.4x, YouTube channel visits 1.3x, Viral Shares 1.3x |
-| Fashion and beauty | 359 | YouTube channel visits 1.8x, Instagram profile visits 1.3x, bonus 1.3x |
+| Gaming | 6,503 | Twitch Subscribers 1.7x, Custom Actions 1.7x, Secret Code 1.5x, Twitch Follows 1.3x, Bonus 1.2x |
+| Technology | 1,717 | Single Choice List 7.2x, Facebook visits 1.4x, YouTube Channel Visits 1.3x, Instagram Profile Visits 1.3x |
+| Home | 883 | YouTube Channel Visits 2.3x, Custom Actions 1.7x, X Posts 1.6x, Pinterest Visits 1.4x, Viral Shares 1.3x |
+| Food and drink | 989 | YouTube Channel Visits 2.2x, Facebook visits 1.4x, Instagram Profile Visits 1.2x |
+| Fitness and outdoor | 878 | Answer a Question 1.6x, Bonus 1.2x |
+| Travel | 1,758 | Secret Code 1.5x, Answer a Question 1.4x, Instagram Profile Visits 1.2x |
+| Software | 363 | X Reposts 1.7x, Bonus 1.4x, YouTube Channel Visits 1.3x, Viral Shares 1.3x |
+| Fashion and beauty | 359 | YouTube Channel Visits 1.8x, Instagram Profile Visits 1.3x, Bonus 1.3x |
 
 Gleam's internal analysis of the same export, with its own industry labels, found the same shape: questions and single-choice actions over-represented in technology and food, Twitch and custom actions in gaming, Pinterest and YouTube in home. Two readings of one dataset agreeing is still one dataset.
 
-On action count: the top fifth and bottom fifth both ran a median of 7 actions, so count alone does not separate them. The clean-subset finding stands: eleven or more actions came with a fifth fewer contestants and lower conversion. Keep the list purposeful and short.
+On action count: the top fifth and bottom fifth both ran a typical 7 actions, so count alone does not separate them. The finding from the campaigns we can compare fairly stands: eleven or more actions came with a fifth fewer Entrants and lower conversion. Keep the list purposeful and short.
+
+**The exact combination businesses reach for differs by vertical, beyond what the per-family table above shows.** In electronics and tech and gaming and esports, the single most common exact action set skips email entirely, anchored on follow plus visit instead. In food and drink, sports and outdoors and media and entertainment, the most common sets are all built around email, visit and share together, with an extra action or two layered on. This is consistent with, not independent of, the per-family email-offered shares already in the sections above. [Campaigns, all clearing the size floor comfortably (334 to 1,840 businesses overall): electronics and tech 7,289, gaming and esports 6,328, food and drink 1,787, sports and outdoors 2,268, media and entertainment 5,019. Extracted from `analysis/output/method_mix.json`, `top_combinations_by_industry`.]
+
+**Gaming and esports campaigns lean on Discord, Twitch and Telegram over the baseline, and underuse email.** Email is the weak spot in this vertical: offered less often than the baseline, and where it is offered it completes worse than any other action tested here. Don't lean on email as the primary acquisition action for a gaming campaign.
+
+| Action | Gaming and esports | All-industry baseline | Ratio |
+|---|---|---|---|
+| Chat Members offered | 38.0% | 16.1% | 2.4x |
+| Twitch Follows offered | 38.6% | 16.8% | 2.3x |
+| Telegram Channel Members offered | 7.9% | 4.5% | 1.7x (completion 1.20x baseline) |
+| Referral share offered | 31.6% | 45.1% | completion 1.16x baseline |
+| Email offered | 20.8% | 43.5% | completion 0.77x baseline |
+
+[6,327 gaming and esports campaigns, 1,413 businesses. Extracted from `analysis/output/vertical_profiles.json`, `action_index_by_industry`.]
+
+## Mix by the kind of business running it (extracted)
+
+From `analysis/output/industries.json`. Every group listed clears 30 campaigns and 10 businesses.
+
+By audience (by_audience), typical values:
+
+| Audience | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email offered |
+|---|---|---|---|---|---|
+| B2C | 39,320 | 8,130 | 7 | 21 | 37% |
+| B2B | 6,138 | 1,023 | 9 | 87 | 17% |
+| Both | 2,170 | 330 | 8 | 89 | 20% |
+
+B2B and mixed-audience businesses run more methods than B2C and lean far more on referrals, with email offered less often.
+
+By stage (by_org_stage), typical values:
+
+| Stage | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email offered |
+|---|---|---|---|---|---|
+| Startup | 14,661 | 4,088 | 9 | 91 | 14% |
+| Small business | 20,470 | 3,580 | 7 | 14 | 51% |
+| Mid market | 6,813 | 815 | 6 | 20 | 30% |
+| Enterprise | 2,902 | 280 | 7 | 24 | 31% |
+| Individual | 1,792 | 426 | 8 | 17 | 16% |
+
+Startups run the most referral-heavy mix of any stage and offer email least often next to individuals. Small businesses sit at the other end, email offered in half of campaigns and referrals a small fraction of a startup's.
+
+By business type (by_business_type), email offered, lowest to highest:
+
+| Business type | Campaigns | Businesses | Email offered | Referral entries % of Entrants |
+|---|---|---|---|---|
+| Community | 1,923 | 490 | 5% | 103 |
+| Creator | 4,175 | 1,026 | 8% | 16 |
+| Software | 18,311 | 4,205 | 12% | 95 |
+| Agency | 1,374 | 171 | 23% | 63 |
+| Other | 2,236 | 551 | 24% | 25 |
+| Service business | 1,157 | 255 | 39% | 10 |
+| Nonprofit | 265 | 94 | 40% | 11 |
+| Media or publisher | 5,556 | 703 | 49% | 14 |
+| Retailer | 7,952 | 996 | 50% | 11 |
+| Brand | 11,380 | 2,578 | 50% | 15 |
+
+Community businesses offer email least, creators next. Community and software are the two most referral-heavy business types in the data, both above 90 referral entries % of Entrants, well ahead of agency in third place at 63.
+
+## Mix by country (extracted)
+
+Action shares among campaigns with 100 or more Entrants, by the business's country. Source: `analysis/output/country_cuts.json`, by_country.
+
+| Country | Campaigns | Businesses | Notable action shares |
+|---|---|---|---|
+| Japan | 6,505 | 291 | Telegram Channel Members 51%, Email Subscriptions 5% |
+| India | 6,010 | 873 | Wallet address 48%, Telegram Channel Members 61% |
+| Brazil | 5,860 | 563 | Instagram Profile Visits 70%, typical run 1 day, typically 10 methods |
+| Australia | 6,433 | 1,406 | Email Subscriptions 47%, Facebook 54% |
+| United Kingdom | 15,716 | 1,847 | Share or refer 24% |
+| United States | 58,843 | 9,105 | Instagram Profile Visits 50%, Facebook 49% |
+
+Japan and India both lean on Telegram. India adds a wallet-address action, the crypto marker this skill's default figures exclude elsewhere, in close to half its campaigns. Brazil's campaigns run a typical one day and carry more methods than any other country in this table. Australia and the US split their most common single action between email or Instagram and Facebook. The UK's most common reach action is sharing or referring.
+
+**How often actions are required.** Malaysia requires at least one action in the large majority of its campaigns, India follows, and also asks for the most required actions once it asks for any. Germany and the US sit at the other end.
+
+| Country | Campaigns with 1+ required action | Typical required actions (where 1+) |
+|---|---|---|
+| Malaysia | 90% (2,345 campaigns, 160 businesses) | - |
+| India | 79% (6,010 campaigns, 873 businesses) | 6 |
+| Germany | 31% (3,530 campaigns, 472 businesses) | - |
+| United States | - | 1 (58,839 campaigns, 9,104 businesses) |
+
+[Source: `analysis/output/indicators.json`, mandatory_actions_by_country.]
+
+**Question actions.** A question action is closer to routine in East and Southeast Asia than elsewhere. Answer validation stays rarely on wherever the question action runs, under a tenth of question actions in every country in this table.
+
+| Country | Share of campaigns with a question action |
+|---|---|
+| China | 61% (2,613 campaigns, 166 businesses) |
+| Vietnam | 56% (3,762 campaigns, 773 businesses) |
+| United States | 13% (58,843 campaigns, 9,105 businesses) |
+| Canada | 8% (7,276 campaigns, 1,156 businesses) |
+
+[Source: `analysis/output/indicators.json`, question_action_by_country.]
+
+**Worth settings, crypto and SaaS businesses removed.** Poland's typical top worth on a campaign runs well above the other countries measured here.
+
+| Country | Typical top worth |
+|---|---|
+| Poland | 25 (1,956 campaigns, 145 businesses) |
+| United States | 5 (54,208 campaigns, 7,941 businesses) |
+| United Kingdom | 3 (13,988 campaigns, 1,481 businesses) |
+| Australia | 3 (5,943 campaigns, 1,247 businesses) |
+
+[Source: `analysis/output/indicators.json`, mechanics_by_country_excluding_crypto.]
+
+These describe businesses' choices in each country, never a country's effect on a campaign.
 
 ## What each action produced per campaign (extracted)
 
-Median completions per campaign among campaigns that offered the action, completions per contestant, and stated USD of prize per completion where the pool was valued. A completion is a signup, follow or join at that moment. Full table with quartiles and size bands in the results-review skill.
+Typical completions per campaign among campaigns that offered the action, completions % of Entrants, and stated USD of Prize per completion where the pool was valued. A completion is a signup, follow or join at that moment. Full table with quarter-by-quarter detail and campaigns by size in the results-review skill.
 
-| Asset | Campaigns | Median per campaign | Per contestant | Stated USD per completion |
+| Asset | Campaigns | Typical per campaign | Share of Entrants | Stated USD per completion |
 |---|---|---|---|---|
-| Email signups | 16,015 | 2,054 | 0.98 | 0.31 |
-| X follows | 20,440 | 1,448 | 0.59 | 0.51 |
-| Instagram follows | 2,750 | 1,472 | 0.61 | 0.62 |
-| TikTok follows | 5,300 | 868 | 0.37 | 0.92 |
-| Twitch follows | 6,084 | 1,733 | 0.68 | 0.43 |
-| YouTube subscribes | 1,173 | 1,445 | 0.74 | 0.54 |
-| Discord joins | 6,145 | 999 | 0.43 | 0.67 |
-| Telegram joins | 2,041 | 1,963 | 0.87 | 0.51 |
-| App downloads | 1,592 | 1,009 | 0.36 | 0.90 |
-| Referral entries (Viral Share) | 16,708 | 349 | 0.13 | 2.10 |
-| Content submissions | 1,109 | 186 | 0.06 | 20.00 |
+| Email Subscriptions | 15,799 | 2,053 | 98 | 0.31 |
+| X Follows | 19,433 | 1,405 | 57 | 0.51 |
+| Instagram Follows | 2,750 | 1,456 | 61 | 0.62 |
+| TikTok Follows | 5,276 | 862 | 37 | 0.92 |
+| Twitch Follows | 5,998 | 1,738 | 68 | 0.43 |
+| YouTube Entries | 1,111 | 1,494 | 80 | 0.47 |
+| Chat Members | 5,734 | 955 | 41 | 0.65 |
+| Telegram Channel Members | 1,622 | 1,697 | 84 | 0.68 |
+| App Downloads | 1,501 | 943 | 36 | 0.90 |
+| Referral entries (Viral Shares) | 16,018 | 337 | 12 | 2.14 |
+| Content submissions | 1,024 | 202 | 6 | 16.67 |
 
-Stated prize value per email signup and per follow by vertical sits in the prize picker's `roi-benchmarks.md`. An email action in the median campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 350 referral entries, and a content action under 200 submissions.
+Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 340 referral entries, and a content action about 200 submissions.
 
 ## Wording and destinations (extracted)
 
-Completions per contestant for the action, median across campaigns offering it.
+Completions % of Entrants for the action, typical value across campaigns offering it.
 
-Uptake by position in the action list, campaigns with four or more actions, from `analysis/output/gleam_settings.json`:
+Completions % of Entrants by position in the action list, analysis, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
 
-| Family | 1st | 2nd | 3rd to 4th | 5th or later |
-|---|---|---|---|---|
-| Email signup | 1.00 (n=7,537) | 0.76 (n=2,105) | 0.70 (n=1,928) | 0.66 (n=3,644) |
-| Visit a page | 0.97 (n=7,311) | 0.88 (n=12,772) | 0.80 (n=28,118) | 0.68 (n=86,044) |
-| Follow or subscribe | 0.74 (n=4,436) | 0.62 (n=7,006) | 0.52 (n=15,131) | 0.39 (n=43,308) |
-| Other actions | 1.00 (n=10,424) | 0.53 (n=6,354) | 0.45 (n=12,605) | 0.36 (n=47,238) |
-| Share or refer | 0.16 (n=365) | 0.12 (n=1,836) | 0.12 (n=2,364) | 0.13 (n=11,191) |
+| Family | 1st | 2nd to 4th | 5th or later |
+|---|---|---|---|
+| Email signup | 101 (9,521 campaigns) | 75 (4,595 campaigns) | 67 (4,470 campaigns) |
+| Visit a page | 98 (4,447 campaigns) | 84 (27,832 campaigns) | 71 (53,229 campaigns) |
+| Follow or subscribe | 100 (15,548 campaigns) | 78 (49,352 campaigns) | 48 (66,981 campaigns) |
+| Content upload | 82 (378 campaigns) | 29 (1,050 campaigns) | 16 (2,897 campaigns) |
+| Share or refer | 19 (492 campaigns) | 14 (6,050 campaigns) | 47 (22,774 campaigns) |
 
-Everything except sharing falls down the list, and a follow loses about half its uptake between first place and fifth. Put the action that captures the asset at the top. Sharing sits flat at about 0.13 wherever it goes, so its position is free and it can take the bottom slot. Organizers who put an action first chose to, so this describes their lists and cannot show that moving an action would move its uptake.
+Everything except sharing falls down the list, and a follow loses half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 19 % of Entrants in first and 14 in the next three, then 47 fifth or later, where long action lists with a required share sit, so its position is free and it can take the bottom slot.
+
+The position advantage extends past email and follow, and holds by campaign size. The ratio below is the asset's completions per Entrant in the first list position over the same asset later in the list, split into three groups by campaign size. [Scope: 1,000+ Entrant campaigns. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_position`.]
+
+| Asset | 1,000-2,500 | 2,500-10,000 | 10,000+ |
+|---|---|---|---|
+| Email Subscriptions | 1.42x | 1.45x | 1.28x |
+| X Follows | 1.43x | 1.57x | 1.60x |
+| Instagram Follows | 1.40x | 1.76x | 1.99x |
+| Twitch Follows | 1.68x | 1.76x | 1.98x |
+| Chat Members | 1.61x | 1.90x | too few campaigns to report |
+| YouTube Entries | 2.09x | 2.23x | too few campaigns to report |
+| Visit the business's own site | 1.36x | 1.51x | 1.51x |
+
+Every asset with enough volume to test held its position advantage at every size. Chat Members and YouTube Entries don't clear enough campaigns at 10,000+ Entrants to report. [Campaign counts behind the ratios above range from 31 (Instagram Follows, first position, 10,000+ Entrants, 15 businesses) to 26,147 (visits to the business's own site, later position, 1,000-2,500 Entrants, 2,564 businesses).]
+
+**Which asset goes first, when the objective is reach.** The advice above is to put the asset action first, but that has a direction when the asset is sharing. In campaigns offering both an email action and a share action, listing share before email records far more share completions than listing email first, at every method count. So when reach or share is the objective, lead with share and expect fewer completed email signups, not the other way round. This is about order within a fixed list, not list length, which is the separate friction effect further down this file.
+
+| Method count | Share completion, share-first | Share completion, email-first |
+|---|---|---|
+| 1-6 methods | 16 per 100 | 12 per 100 |
+| 7-10 methods | 32 per 100 | 13 per 100 |
+| 11+ methods | 52 per 100 | 17 per 100 |
+
+Email pays for it: it completes about 72 to 74 per 100 Entrants when it follows a share action, against roughly 91 to 101 when it leads. [Share-first campaigns/businesses: 235/118 (1-6), 410/188 (7-10), 1,595/253 (11+). Email-first: 2,718/901 (1-6), 2,987/1,003 (7-10), 3,353/726 (11+). Extracted from `analysis/output/method_mix.json`, `share_position_relative_to_email`.]
+
+A cross-check on exact combinations agrees: follow, visit and share with no email completes about 45 per 100 Entrants on share [1,007 campaigns, 381 businesses]. Add email to the same shape and share drops to between about 11 and 18 per 100 across the four combinations tested (`top_combinations`).
+
+**What leads the list and overall conversion.** Campaigns led by different action families show different conversion, pooled across every method count, not split by list length. This is an association across the whole dataset, not a comparison within a fixed list length, and businesses who lead with a quick connect-account step or a single question may already be running a leaner campaign in every other respect. Treat it as a pattern to weigh, not a rule to follow.
+
+| Lead action family | Conversion Rate |
+|---|---|
+| Account connection | 38.9% (1,152 campaigns, 305 businesses) |
+| Question | 34.2% (2,431 campaigns, 489 businesses) |
+| Visit, follow, email or bonus | 25.7% to 28.6% (3,564 to 9,164 campaigns, 1,142 to 2,083 businesses) |
+| Content (lowest, only family below a fifth) | 16.5% (381 campaigns, 195 businesses) |
+
+[Source: `analysis/output/method_mix.json`, `lead_action_family`.]
 
 Question actions by what they ask (regex on the question text):
 
-| Question type | Actions | Median uptake |
+| Question type | Actions | Share who completed it (typical) |
 |---|---|---|
-| other | 2,668 | 0.83 |
-| detail capture | 1,411 | 0.97 |
-| preference | 930 | 0.75 |
-| trivia | 381 | 0.84 |
-| feedback or open | 307 | 0.82 |
+| other | 2,282 | 78 |
+| detail capture | 1,089 | 92 |
+| preference | 909 | 75 |
+| trivia | 362 | 84 |
+| feedback or open | 287 | 77 |
 
-A detail capture (name, order id, account) is completed by nearly everyone. A preference question is completed least, at three quarters. Trivia and open questions sit between. Ask a preference question for what it collects, and expect a quarter of entrants to skip it.
+A detail capture (name, order id, account) is completed by nearly everyone. A preference question is completed least, at three quarters. Trivia and open questions sit between. Ask a preference question for what it collects, and expect a quarter of Entrants to skip it.
 
-Share copy on Viral Share and X post actions (20,818 actions with custom text): medium (60 to 140) 0.16 (n=14,414) | long (over 140) 0.15 (n=5,938) | short (under 60) 0.20 (n=466). Hashtag: no hashtag 0.14 (n=17,787) | with hashtag 0.31 (n=3,031). First person: not first person 0.15 (n=17,584) | first person 0.21 (n=3,234). Emoji: no emoji 0.15 (n=19,843) | with emoji 0.25 (n=975). Most of the hashtag gap is the action type, since X post actions carry hashtags and record more completions than Viral Share (0.29 against 0.13). First person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
+Share copy on Viral Share and X Posts actions (19,991 actions with custom text): shorter copy, a hashtag, first person and an emoji all complete higher. Most of the hashtag gap is the action type, since X Posts actions carry hashtags and record more completions than Viral Share (about 29 against 12 per 100 Entrants), first person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
+
+| Copy trait | Completion (per 100 Entrants) |
+|---|---|
+| Short, under 60 characters | 19 (435 campaigns) |
+| Medium, 60-140 characters | 15 (13,889 campaigns) |
+| Long, over 140 characters | 15 (5,667 campaigns) |
+| No hashtag | 13 (17,126 campaigns) |
+| With hashtag | 30 (2,865 campaigns) |
+| Not first person | 14 (16,839 campaigns) |
+| First person | 21 (3,152 campaigns) |
+| No emoji | 15 (19,097 campaigns) |
+| With emoji | 23 (894 campaigns) |
 
 Visit actions by where they send people:
 
-| Destination | Actions | Median uptake |
+| Destination | Actions | Share who completed it (typical) |
 |---|---|---|
-| another site | 46,931 | 0.70 |
-| YouTube | 17,400 | 0.81 |
-| organizer's own site | 3,202 | 0.96 |
-| another Gleam campaign | 255 | 0.84 |
+| another site | 45,256 | 69 |
+| YouTube | 17,126 | 81 |
+| the business's own site | 3,147 | 96 |
+| another Gleam campaign | 245 | 84 |
 
-A visit to the organizer's own site is completed by almost everyone, a YouTube channel by four in five, and any other site by seven in ten.
+A visit to the business's own site is completed by almost everyone, a YouTube channel by four in five, and any other site by seven in ten.
 
-Email signup by the description under the action:
+Email Subscriptions by the description under the action:
 
-| Newsletter description | Actions | Median uptake |
+| Newsletter description | Actions | Share who completed it (typical) |
 |---|---|---|
-| no description | 9,534 | 0.95 |
-| description without those | 5,540 | 0.84 |
-| mentions frequency or unsubscribe | 2,224 | 0.84 |
+| no description | 9,429 | 95 |
+| description without those | 5,476 | 84 |
+| mentions frequency or unsubscribe | 2,169 | 85 |
 
 No description at all ran highest. A description, with or without frequency and unsubscribe wording, went with about a tenth fewer completions. More words under the checkbox give people more to think about. Write the frequency line anyway where the law asks for it, and keep it to one line.
 
 ## Friction
 
-Every required action removes some entrants. Extracted: the median campaign offers 7 methods and the top decile offers 17 or more. Nothing in the data shows the effect of adding a method, so keep the count tied to the number of assets you can use. Three assets, five to eight methods.
+Every required action removes some Entrants. Extracted: a typical campaign offers 7 methods and the top tenth offers 17 or more. Nothing in the data shows the effect of adding a method, so keep the count tied to the number of assets you can use. Three assets, five to eight methods.
 
 Actions that cost the most: account connections (sign in with a social account), app installs, anything that leaves the entry page, and content creation. Keep those optional unless they are the objective.
 
+**A single well-chosen action beats most combinations.** Among campaigns running exactly one action family, a question-only campaign gets more Entrants through than any other single-family or multi-family combination tested. This ranks the leanest campaigns against each other and does not repeat the method-count table below, it says which single action to reach for when the campaign only needs one.
+
+| Single-family campaign | Conversion Rate |
+|---|---|
+| Question-only | 54.9% (862 campaigns, 135 businesses) |
+| Bonus-only | 44.2% (437 campaigns, 184 businesses) |
+| Email-only | 44.2% (1,017 campaigns, 223 businesses) |
+| Visit-only | 42.6% (1,160 campaigns, 286 businesses) |
+| Any 2+ family combination | below 40% |
+
+[Extracted from `analysis/output/method_mix.json`, `top_combinations`.]
+
+**More required actions costs completion on the optional ones, not overall conversion.** Holding total method count fixed, adding required actions lowers completion on whatever stays optional, while the campaign's conversion barely moves. Whether this is fatigue or businesses routing their lower-appeal actions into optional slots when they require more elsewhere can't be told apart in this data.
+
+| Methods | Required actions | Optional-action completion | Conversion Rate |
+|---|---|---|---|
+| 7-10 | 0 | 67 per 100 | 25.1%-27.4% |
+| 7-10 | 1 | 50 per 100 | 25.1%-27.4% |
+| 7-10 | 2 | 49 per 100 | 25.1%-27.4% |
+| 7-10 | 3+ | 43 per 100 | 25.1%-27.4% |
+| 11+ | 0 | 58 per 100 | 18.6%-21.1% |
+| 11+ | 3+ | 36 per 100 | 18.6%-21.1% |
+
+[7-10 methods: 553 to 5,493 campaigns, 275 to 1,660 businesses per group. 11+ methods: 503 to 6,107 campaigns, 174 to 1,226 businesses per group. Extracted from `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`.]
+
+**The conversion decline slows past roughly 10 to 14 actions.** Conversion falls steadily as action count rises, then the decline slows down (the elbow), consistently in the 10 to 14 action range regardless of campaign size. State it as a range, not a single number, since it shifts within that range by group. [All 12 action-count-by-size groups checked, for both conversion and engagement, stayed within about 10% of what action count and size predict separately.]
+
+| Actions | Conversion Rate |
+|---|---|
+| 1 | 54% (1,589 campaigns, 275 businesses) |
+| 7 | 35% (1,047 campaigns, 398 businesses) |
+| 10 | 29% (435 campaigns, 227 businesses) |
+| 13 | 27% (233 campaigns, 106 businesses) |
+| 17-20 | 40%-61%, small samples (61 to 109 campaigns, 20 to 47 businesses) |
+
+A two-segment fit on the pooled curve (10,550 campaigns) puts the elbow at 12-13 actions, accounting for 85% of the decline's shape. The best-powered groups put it in this range too, without moving with campaign size:
+
+| Segment | Elbow point |
+|---|---|
+| 1,000-2,500 Entrants | 11-12 actions (6,175 campaigns, 341 businesses) |
+| 2,500-10,000 Entrants | 8-9 actions (3,509 campaigns, 191 businesses) |
+| Pro tier | 10-11 actions (5,616 campaigns, 303 businesses) |
+| Business tier | 11-12 actions (3,325 campaigns, 130 businesses) |
+| Gaming and esports | 13-14 actions (2,245 campaigns, 125 businesses) |
+| Electronics and tech | 13-14 actions (2,387 campaigns, 101 businesses) |
+
+Past 16 actions conversion climbs back up, likely a handful of unusually well-optimized businesses still clearing 1,000 Entrants at that length. Don't read the climb as evidence that more actions help past 14. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
+
+**Every action past the first has a measurable conversion cost, and it holds inside each industry, not just pooled across all of them.** Inside every industry tested, the top quarter by conversion runs fewer actions and far less social or referral friction than the rest of that same industry, a like-for-like version of the pattern above.
+
+| Metric | Top quarter vs rest of industry | Industries showing this direction |
+|---|---|---|
+| Actions run | 0.75x | 10 of 13 |
+| Referral share offered | 0.45x | 11 of 13 |
+| Secret code offered | 0.44x | 10 of 13 |
+| Platform follow offered | 0.61x | 12 of 13 |
+
+Two examples:
+
+| Industry | Top quarter actions | Rest actions | Top quarter referral offered | Rest referral offered |
+|---|---|---|---|---|
+| Electronics and tech | 3.5 | 7 | 0.2% | 29% |
+| Apparel and fashion | 1 | 4 | 1.7% | 29% |
+
+[Electronics and tech: 632 campaigns/47 businesses top quarter, 1,896/400 rest. Apparel and fashion: 230/18 top quarter, 681/125 rest.]
+
+A tenth-level check strengthens toward the extremes, it does not flatten out, consistent with a real relationship, not an artifact of one cutoff:
+
+| Metric | Top tenth vs bottom tenth | Ratio | Quarter-level ratio (above) |
+|---|---|---|---|
+| Referral offered | 11.9% against 39.2% | 0.30 | 0.45 |
+| Secret code offered | - | 0.27 | 0.44 |
+| Platform follow offered | - | 0.50 | 0.61 |
+
+This prices the fourth and fifth action, it is not an instruction to cut down to one. A campaign that needs three assets cannot run a one-action campaign, and nothing here says it should. What each added action, especially a referral or a secret code, costs on this specific completion measure is the number to weigh against what that action collects, so add it when the campaign needs that asset and budget for this rate to move. Conversion here is Entrants over Impressions, and a lean single-action entry form structurally has less friction between an Impression and a completed entry, so part of the pattern may describe how the metric is built as much as business choice. It does not mean a heavier campaign performs worse on total entries or reach, only on this completion rate. The top quarter itself is defined by conversion, one objective among several (an email list, followers, UGC and reach are the others), so an industry's top quarter by conversion is not automatically the shape to copy when the campaign's objective is one of those. Cite this finding with both caveats every time. Email offered and completion did not survive this same check (mixed direction, completion flat at a typical ratio of 0.995 across industries) and neither did community-join actions or question actions, so none of those are a vertical-strength signal here. [Extracted from `analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry` and `threshold_check_top_vs_bottom_decile_pooled`.]
+
 ## Invalid entries (extracted)
 
-Gleam marks an entry invalid when its check fails: a follow that was undone, a duplicate account, a rejected answer, a referral that did not verify. Across 37,123 ordinary campaigns the median campaign had 3.8% of its entries marked invalid. 43% of campaigns had 5% or more, and 7% had 20% or more. Campaigns with a share or referral action ran a median 4.6% invalid against 3.1% without one. Discord join ran 4.8% against 3.7%, retweet 4.5% against 3.7%, email signup 4.3% against 3.4%. Twitch follow went the other way, 2.6% against 4.0%. Campaigns whose question action validated the answer had a median 17% invalid, because wrong answers count as invalid, so a quiz-style action inflates the figure without any fraud. These are medians of what organizers saw, and invalid entries were already excluded from every other figure in these references. Plan for a few percent of entries to fall away at verification, more when the mix leans on referrals, and say so in the terms.
+Gleam marks an entry invalid when its check fails: a follow that was undone, a duplicate account, a rejected answer, a referral that did not verify. Plan for a few percent of entries to fall away at verification, more when the mix leans on referrals, and say so in the terms. These are typical values of what businesses saw, and invalid entries were already excluded from every other figure in these references.
+
+| Context | Invalid entry rate |
+|---|---|
+| Typical campaign | 3.8% |
+| With a share or referral action | 4.5% |
+| Without one | 3.2% |
+| Chat Members offered | 4.5% (3.7% without) |
+| X Reposts offered | 4.2% (3.7% without) |
+| Email Subscriptions offered | 4.3% (3.4% without) |
+| Twitch Follows offered | 2.6% (3.9% without) |
+| Question action validated the answer | 3.2% |
+| Question action did not validate | 3.2%, the same |
+
+[Across 35,668 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 58 campaigns validated, 10,665 did not.]
 
 ## Consent and rules
 
-Entry consent and marketing consent are two separate things, and a campaign needs both collected in the right place. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the entrant accepts. Marketing consent is agreement to be contacted afterwards, and it is collected at the email or messaging action itself, in its own wording, with its own checkbox. One does not imply the other, and an entrant who declines the second is still a valid entrant.
+Entry consent and marketing consent are two separate things, and a campaign needs both collected in the right place. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the Entrant accepts. Marketing consent is agreement to be contacted afterwards, and it is collected at the email or messaging action itself, in its own wording, with its own checkbox. One does not imply the other, and an Entrant who declines the second is still a valid Entrant.
 
-- Email entries need opt-in wording that says what the entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
-- Where the region requires double opt-in (Germany and much of the EU for email, and most regimes for SMS), the confirmation goes out at the moment of capture and only confirmed contacts join the list. Plan for a share of entrants never confirming.
-- Retention is a legal question this skill cannot answer. How long entry data, contact details and winner records may be held, and what has to be deleted at the end, goes to the business's privacy counsel before the campaign opens.
+- Email entries need opt-in wording that says what the Entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
+- Where the region requires double opt-in (Germany and much of the EU for email, and most regimes for SMS), the confirmation goes out at the moment of capture and only confirmed contacts join the list. Plan for a share of Entrants never confirming.
+- Retention is a legal question this skill cannot answer. How long entry data, contact details and Winner records may be held, and what has to be deleted at the end, goes to the business's privacy counsel before the campaign opens.
 - Follow-to-enter, tag-a-friend and share-to-enter are governed by each network's promotion rules, which change. Read the current rules for each network you name.
 - Do not require a purchase to enter where sweepstakes law forbids it. Discount codes as entries count as a purchase condition in most readings.
 - Age and region limits belong in the terms and on the entry form.
 
 This skill does not give legal advice.
 
-Extracted: 28% of email signup actions in the ordinary campaigns showed an explicit opt-in checkbox. Where the checkbox was on, the median email action recorded 0.89 entries per contestant against 1.01 where it was off (clean subset, n=821 and 2,655). Expect roughly one in ten entrants to skip a visible checkbox. Those who tick it are the list you can mail.
+Extracted: 28% of Email Subscriptions actions in the ordinary campaigns showed an explicit opt-in checkbox. Expect roughly one in ten Entrants to skip a visible checkbox, those who tick it are the list you can mail. [Where the checkbox was on, the typical Email Subscriptions action recorded 89 entries per 100 Entrants against 101 where it was off, the campaigns we can compare fairly, 812 campaigns/227 businesses with the checkbox on, 2,612/758 without.]
 
 ## Store campaigns
 
-The actions a store wants send the entrant into the catalogue and bring something back.
+The actions a store wants send the Entrant into the catalogue and bring something back.
 
-- **Visit a product or collection page.** The visit action is in four out of five campaigns at a median 0.72 completions per contestant (n=20,205). Point it at the page the campaign is about, not the home page.
-- **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the mandatory action. Question templates ran near 0.9 completions per contestant. The answers are the wishlist data a cart campaign exists to collect.
-- **Pick your prize.** A choice action with the three prize options, so the preference is recorded on entry.
-- **Subscribe with the store tag.** The email action synced to the store's customer list with the campaign name as the tag, so the non-winner code and the welcome series go to the right segment.
-- **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
+- **Visit a product or collection page.** The Visit a Page action is in four out of five campaigns at a typical 71 completions % of Entrants (19,348 campaigns). Point it at the page the campaign is about, not the home page.
+- **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the required action. Question templates ran a typical 81 completions % of Entrants (4,875 campaigns, 976 businesses). The answers are the wishlist data a cart campaign exists to collect.
+- **Pick your Prize.** A choice action with the three Prize options, so the preference is recorded on entry.
+- **Subscribe with the store tag.** The Email Subscriptions action synced to the store's customer list with the campaign name as the tag, so the non-Winner code and the welcome series go to the right segment.
+- **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the export.
 - **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
 
 ## Using what you built (advice)
 
-The list is the point of the campaign, and it decays from the day the winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the export to support it.
+The list is the point of the campaign, and it decays from the day the Winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the export to support it.
 
 - **Welcome series.** Four messages: a welcome with the referral link within a day of entry, sent by the email provider when the sync lands, then the result and two brand messages over the fortnight after the draw. The first names the giveaway so nobody wonders who is writing. The rest do the job the giveaway could not: what the business sells, why anyone buys it, one reason to come back.
-- **A separate segment.** Tag the giveaway cohort and keep it apart from customers and organic signups for at least 90 days. Its open and complaint rates run differently and will distort the reporting on the rest of the list if they are mixed.
+- **A separate segment.** Tag the giveaway group and keep it apart from customers and organic signups for at least 90 days. Its open and complaint rates run differently and will distort the reporting on the rest of the list if they are mixed.
 - **A sunset rule.** Set it before the campaign opens. No opens in 60 or 90 days, one re-permission message, then out of the sending list. A giveaway list that is never pruned quietly damages deliverability for every other campaign.
-- **Consent noted at capture.** Store what the entrant agreed to, in what wording, on what date, alongside the address. That record is what answers a complaint or an audit later, and it cannot be reconstructed after the fact.
+- **Consent noted at capture.** Store what the Entrant agreed to, in what wording, on what date, alongside the address. That record is what answers a complaint or an audit later, and it cannot be reconstructed after the fact.
 - **Followers and community members get the same treatment.** A first post that welcomes the new arrivals and says what the channel is for, then the normal cadence. A community with nothing happening in it loses the people a giveaway just brought.
 
-The messages themselves, including the winner announcement and the consolation offer to everyone who did not win, belong to giveaway-winner-communications.
+The messages themselves, including the Winner announcement and the consolation offer to everyone who did not win, belong to giveaway-winner-communications.
+</content>

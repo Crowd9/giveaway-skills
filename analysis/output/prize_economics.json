@@ -1,0 +1,1847 @@
+{
+ "ordinary_n": 35604,
+ "ordinary_organizers": 6390,
+ "valued_n": 13976,
+ "valued_organizers": 3445,
+ "definitions": {
+  "value_index": "a valued campaign's contestants divided by the median contestants of every valued campaign in the same stated-USD value band, so it already controls for value band",
+  "value_band": "the eleven stated-USD prize pool bands used throughout the prize skills",
+  "size_band": "contestant count band (1k-2.5k, 2.5k-10k, 10k+), the standard organizer-scale proxy used across analysis scripts",
+  "email/referral/follow_per_contestant": "completions of email-subscribe, share-action and any follow or subscribe-type action, summed per campaign and divided by contestants",
+  "own_product": "word overlap between organizer name and prize name (analyze_export.own_product_signal, carried from the classification file), true for any prize on the campaign",
+  "generic_prize": "prize category is gift card or cash, bundle or box, subscription or membership, or a discount, all of which suit any audience",
+  "audience_specific_prize": "prize category matches the weak industry-to-category fit map (a gaming item on a gaming site, tech hardware on an electronics site, and so on)",
+  "niche_mismatch": "a definite (non-generic, non-placeholder) prize category that does not match the organizer's industry in the fit map",
+  "bundle": "campaign lists two or more prize rows, or its top-counted category is bundle_or_box",
+  "collab": "the campaign or prize name matches an x/collaboration/partner wording pattern, same regex as verify_context.py",
+  "scope": "ordinary segment, 1,000+ contestants, valid_entries > 0; every published group needs 30 campaigns and 5 organizers, 10 organizers for a cut finer than one industry or tier group",
+  "elasticity_vs_prior_band": "percent change in median contestants divided by percent change in the band midpoint value versus the previous band; near zero or negative means more prize money bought no more entrants between those two bands"
+ },
+ "value_curve": {
+  "under 50": {
+   "n": 246,
+   "organizers": 82,
+   "contestants": 1754.5,
+   "conversion": 0.21225891878121028,
+   "entries_per_entrant": 4.922346790476628,
+   "email_per_contestant": 0.6805432446622901,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.3336567005282907,
+   "usd_per_contestant": 0.013668233673706095
+  },
+  "50-99": {
+   "n": 538,
+   "organizers": 158,
+   "contestants": 1337.5,
+   "conversion": 0.21759498054676846,
+   "entries_per_entrant": 7.894266955663269,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.03413532445630961,
+   "follow_per_contestant": 0.7802010171871958,
+   "usd_per_contestant": 0.046008763574014094,
+   "elasticity_vs_prior_band": -0.247
+  },
+  "100-249": {
+   "n": 1730,
+   "organizers": 590,
+   "contestants": 1492.0,
+   "conversion": 0.25631895885996214,
+   "entries_per_entrant": 4.5451067418463715,
+   "email_per_contestant": 0.6569234680905162,
+   "referral_per_contestant": 0.06843929915971195,
+   "follow_per_contestant": 0.45990915443745634,
+   "usd_per_contestant": 0.0977855748547034,
+   "elasticity_vs_prior_band": 0.129
+  },
+  "250-499": {
+   "n": 2132,
+   "organizers": 820,
+   "contestants": 1795.0,
+   "conversion": 0.25387876982884583,
+   "entries_per_entrant": 4.680019534582817,
+   "email_per_contestant": 0.6878218328229819,
+   "referral_per_contestant": 0.07106214819376232,
+   "follow_per_contestant": 0.4287644770868172,
+   "usd_per_contestant": 0.18907313585497626,
+   "elasticity_vs_prior_band": 0.243
+  },
+  "500-999": {
+   "n": 2646,
+   "organizers": 1081,
+   "contestants": 2159.0,
+   "conversion": 0.23882895739580998,
+   "entries_per_entrant": 4.8742095947701225,
+   "email_per_contestant": 0.6785828635767119,
+   "referral_per_contestant": 0.058017711814578744,
+   "follow_per_contestant": 0.44441281763340157,
+   "usd_per_contestant": 0.30123002470131577,
+   "elasticity_vs_prior_band": 0.266
+  },
+  "1000-2499": {
+   "n": 3675,
+   "organizers": 1364,
+   "contestants": 2652,
+   "conversion": 0.2399199313697455,
+   "entries_per_entrant": 4.868900936421882,
+   "email_per_contestant": 0.6835799859055673,
+   "referral_per_contestant": 0.05434782608695652,
+   "follow_per_contestant": 0.4539249146757679,
+   "usd_per_contestant": 0.5520446096654275,
+   "elasticity_vs_prior_band": 0.243
+  },
+  "2500-4999": {
+   "n": 1831,
+   "organizers": 707,
+   "contestants": 3974,
+   "conversion": 0.2284891598915989,
+   "entries_per_entrant": 5.435174561547288,
+   "email_per_contestant": 0.6645422943221321,
+   "referral_per_contestant": 0.03372531617483914,
+   "follow_per_contestant": 0.4750420639371845,
+   "usd_per_contestant": 0.8383233532934131,
+   "elasticity_vs_prior_band": 0.531
+  },
+  "5000-9999": {
+   "n": 710,
+   "organizers": 378,
+   "contestants": 4138.5,
+   "conversion": 0.21565069999050845,
+   "entries_per_entrant": 5.00187445479345,
+   "email_per_contestant": 0.5807518969514927,
+   "referral_per_contestant": 0.06554356524352735,
+   "follow_per_contestant": 0.40553506958192215,
+   "usd_per_contestant": 1.4720969713403727,
+   "elasticity_vs_prior_band": 0.059
+  },
+  "10000-24999": {
+   "n": 313,
+   "organizers": 218,
+   "contestants": 4411,
+   "conversion": 0.19460157402852926,
+   "entries_per_entrant": 4.732732732732733,
+   "email_per_contestant": 0.560530679933665,
+   "referral_per_contestant": 0.014037985136251032,
+   "follow_per_contestant": 0.3250919143842449,
+   "usd_per_contestant": 3.0248033877797944,
+   "elasticity_vs_prior_band": 0.075
+  },
+  "25000-49999": {
+   "n": 83,
+   "organizers": 66,
+   "contestants": 4462,
+   "conversion": 0.20206678623281238,
+   "entries_per_entrant": 3.980417754569191,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.019700332963374027,
+   "follow_per_contestant": 0.32903111739745405,
+   "usd_per_contestant": 7.518796992481203,
+   "elasticity_vs_prior_band": 0.015
+  },
+  "50000+": {
+   "n": 72,
+   "organizers": 49,
+   "contestants": 4811.5,
+   "conversion": 0.13368197374655322,
+   "entries_per_entrant": 5.0932803772842075,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.4602354211063827,
+   "usd_per_contestant": 30.350689069625897,
+   "elasticity_vs_prior_band": 0.109
+  }
+ },
+ "value_curve_by_industry": {
+  "electronics_tech": {
+   "50-99": {
+    "n": 121,
+    "organizers": 24,
+    "contestants": 1293,
+    "conversion": 0.24450435503940274,
+    "entries_per_entrant": 9.285266457680251,
+    "email_per_contestant": 0.6350789692435578,
+    "referral_per_contestant": 0.20430107526881722,
+    "follow_per_contestant": 1.634796238244514,
+    "usd_per_contestant": 0.054528650646950096
+   },
+   "100-249": {
+    "n": 230,
+    "organizers": 73,
+    "contestants": 1393.0,
+    "conversion": 0.2536366794622037,
+    "entries_per_entrant": 6.242207411133467,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.15525039230434878,
+    "follow_per_contestant": 1.2543619568359106,
+    "usd_per_contestant": 0.09966928923374803,
+    "elasticity_vs_prior_band": 0.088
+   },
+   "250-499": {
+    "n": 289,
+    "organizers": 130,
+    "contestants": 1723,
+    "conversion": 0.2768701633705933,
+    "entries_per_entrant": 4.898882113821138,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.7756110244409776,
+    "usd_per_contestant": 0.209487825356843,
+    "elasticity_vs_prior_band": 0.279
+   },
+   "500-999": {
+    "n": 459,
+    "organizers": 195,
+    "contestants": 2080,
+    "conversion": 0.21851441241685143,
+    "entries_per_entrant": 5.520156774916013,
+    "email_per_contestant": 0.4638186573670445,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.6263318112633182,
+    "usd_per_contestant": 0.34825688073394495,
+    "elasticity_vs_prior_band": 0.272
+   },
+   "1000-2499": {
+    "n": 658,
+    "organizers": 236,
+    "contestants": 2259.0,
+    "conversion": 0.2079164719087659,
+    "entries_per_entrant": 5.6722810700148365,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.042717403873102106,
+    "follow_per_contestant": 0.6614301949097323,
+    "usd_per_contestant": 0.6533352195462638,
+    "elasticity_vs_prior_band": 0.097
+   },
+   "2500-4999": {
+    "n": 350,
+    "organizers": 130,
+    "contestants": 3528.5,
+    "conversion": 0.23631008805160958,
+    "entries_per_entrant": 5.5290222936393825,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.8191200818459135,
+    "usd_per_contestant": 0.9643598507905292,
+    "elasticity_vs_prior_band": 0.585
+   },
+   "5000-9999": {
+    "n": 139,
+    "organizers": 71,
+    "contestants": 2852,
+    "conversion": 0.20489891135303265,
+    "entries_per_entrant": 5.218531468531468,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.42217484008528783,
+    "usd_per_contestant": 2.09364633835162,
+    "elasticity_vs_prior_band": -0.307
+   },
+   "10000-24999": {
+    "n": 42,
+    "organizers": 30,
+    "contestants": 3332.0,
+    "conversion": 0.18260110943598207,
+    "entries_per_entrant": 6.252442544650628,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.5417009736831104,
+    "usd_per_contestant": 4.022058823529411,
+    "elasticity_vs_prior_band": 0.184
+   }
+  },
+  "media_entertainment": {
+   "under 50": {
+    "n": 119,
+    "organizers": 18,
+    "contestants": 2230,
+    "conversion": 0.1841447565730281,
+    "entries_per_entrant": 5.817921440261866,
+    "email_per_contestant": 0.7410049627791563,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.3167655786350148,
+    "usd_per_contestant": 0.010407993338884263
+   },
+   "50-99": {
+    "n": 116,
+    "organizers": 29,
+    "contestants": 1342.0,
+    "conversion": 0.16689521577691802,
+    "entries_per_entrant": 8.121190157865708,
+    "email_per_contestant": 1.0001742767514814,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.9928811798043258,
+    "usd_per_contestant": 0.045372050816696916,
+    "elasticity_vs_prior_band": -0.462
+   },
+   "100-249": {
+    "n": 357,
+    "organizers": 67,
+    "contestants": 1519,
+    "conversion": 0.19418358073311118,
+    "entries_per_entrant": 5.8526764566556135,
+    "email_per_contestant": 1.0543293718166384,
+    "referral_per_contestant": 0.07237354085603113,
+    "follow_per_contestant": 0.5518046709129512,
+    "usd_per_contestant": 0.09426811937470393,
+    "elasticity_vs_prior_band": 0.146
+   },
+   "250-499": {
+    "n": 420,
+    "organizers": 78,
+    "contestants": 2257.5,
+    "conversion": 0.1971189679270196,
+    "entries_per_entrant": 6.386892743365025,
+    "email_per_contestant": 1.0107344071947122,
+    "referral_per_contestant": 0.08795931403021506,
+    "follow_per_contestant": 0.6921090219546132,
+    "usd_per_contestant": 0.1494651503209098,
+    "elasticity_vs_prior_band": 0.52
+   },
+   "500-999": {
+    "n": 359,
+    "organizers": 90,
+    "contestants": 3125,
+    "conversion": 0.20784361862092246,
+    "entries_per_entrant": 6.7557677008751,
+    "email_per_contestant": 1.0006153846153847,
+    "referral_per_contestant": 0.050505050505050504,
+    "follow_per_contestant": 0.8143097901026505,
+    "usd_per_contestant": 0.20177562550443906,
+    "elasticity_vs_prior_band": 0.469
+   },
+   "1000-2499": {
+    "n": 412,
+    "organizers": 102,
+    "contestants": 4267.0,
+    "conversion": 0.21661478405943918,
+    "entries_per_entrant": 7.695406197592424,
+    "email_per_contestant": 1.0013041244988914,
+    "referral_per_contestant": 0.05161135717700588,
+    "follow_per_contestant": 0.8207115392873541,
+    "usd_per_contestant": 0.355232518082635,
+    "elasticity_vs_prior_band": 0.368
+   },
+   "2500-4999": {
+    "n": 213,
+    "organizers": 42,
+    "contestants": 5201,
+    "conversion": 0.2100843364809342,
+    "entries_per_entrant": 9.189640997533571,
+    "email_per_contestant": 1.0603403816400205,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.3497448213749625,
+    "usd_per_contestant": 0.6002290950744559,
+    "elasticity_vs_prior_band": 0.26
+   },
+   "5000-9999": {
+    "n": 47,
+    "organizers": 30,
+    "contestants": 3891,
+    "conversion": 0.22957983193277312,
+    "entries_per_entrant": 5.130850047755492,
+    "email_per_contestant": 0.897122021096497,
+    "referral_per_contestant": 0.03889432485322896,
+    "follow_per_contestant": 0.5393544733861835,
+    "usd_per_contestant": 1.7632266492488569,
+    "elasticity_vs_prior_band": -0.419
+   }
+  },
+  "gaming_esports": {
+   "under 50": {
+    "n": 36,
+    "organizers": 21,
+    "contestants": 1442.5,
+    "conversion": 0.21851635907232908,
+    "entries_per_entrant": 4.947785937054864,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.0268586946843559,
+    "usd_per_contestant": 0.015841646276428884
+   },
+   "50-99": {
+    "n": 127,
+    "organizers": 43,
+    "contestants": 1437,
+    "conversion": 0.16530862819511105,
+    "entries_per_entrant": 8.919,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.08516746411483253,
+    "follow_per_contestant": 0.866877971473851,
+    "usd_per_contestant": 0.03912363067292645,
+    "elasticity_vs_prior_band": -0.003
+   },
+   "100-249": {
+    "n": 240,
+    "organizers": 130,
+    "contestants": 1583.5,
+    "conversion": 0.2633721883462974,
+    "entries_per_entrant": 4.825186380350315,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.4009324040979065,
+    "usd_per_contestant": 0.0904569734103138,
+    "elasticity_vs_prior_band": 0.115
+   },
+   "250-499": {
+    "n": 292,
+    "organizers": 147,
+    "contestants": 1662.5,
+    "conversion": 0.24006063816045722,
+    "entries_per_entrant": 5.826163914826312,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.9947761654775675,
+    "usd_per_contestant": 0.19819802545297252,
+    "elasticity_vs_prior_band": 0.064
+   },
+   "500-999": {
+    "n": 369,
+    "organizers": 189,
+    "contestants": 2217,
+    "conversion": 0.2556856672795897,
+    "entries_per_entrant": 5.239142091152815,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.1068702290076335,
+    "usd_per_contestant": 0.27932960893854747,
+    "elasticity_vs_prior_band": 0.415
+   },
+   "1000-2499": {
+    "n": 535,
+    "organizers": 207,
+    "contestants": 2974,
+    "conversion": 0.22377009254749147,
+    "entries_per_entrant": 6.763074677693992,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.5468845760980592,
+    "usd_per_contestant": 0.4930966469428008,
+    "elasticity_vs_prior_band": 0.347
+   },
+   "2500-4999": {
+    "n": 278,
+    "organizers": 107,
+    "contestants": 4984.5,
+    "conversion": 0.18331715917030167,
+    "entries_per_entrant": 6.348005581010875,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.3147301963974374,
+    "usd_per_contestant": 0.6967894825397599,
+    "elasticity_vs_prior_band": 0.678
+   },
+   "5000-9999": {
+    "n": 83,
+    "organizers": 42,
+    "contestants": 7296,
+    "conversion": 0.18931844358756073,
+    "entries_per_entrant": 7.477306675858899,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.07383266176819152,
+    "follow_per_contestant": 1.0497121925693353,
+    "usd_per_contestant": 0.8586068411577343,
+    "elasticity_vs_prior_band": 0.55
+   },
+   "10000-24999": {
+    "n": 35,
+    "organizers": 25,
+    "contestants": 8140,
+    "conversion": 0.21604817202548185,
+    "entries_per_entrant": 5.938981733385154,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.766711051930759,
+    "usd_per_contestant": 1.5149678826808872,
+    "elasticity_vs_prior_band": 0.129
+   }
+  },
+  "sports_outdoors": {
+   "100-249": {
+    "n": 104,
+    "organizers": 38,
+    "contestants": 1795.5,
+    "conversion": 0.2686108543906709,
+    "entries_per_entrant": 3.9056598138554937,
+    "email_per_contestant": 1.0086649799874168,
+    "referral_per_contestant": 0.07172095607675986,
+    "follow_per_contestant": 0.24847329149209296,
+    "usd_per_contestant": 0.09608972103106847
+   },
+   "250-499": {
+    "n": 175,
+    "organizers": 75,
+    "contestants": 1694,
+    "conversion": 0.2480296708391284,
+    "entries_per_entrant": 4.899521531100478,
+    "email_per_contestant": 0.8434622467771639,
+    "referral_per_contestant": 0.10752688172043011,
+    "follow_per_contestant": 0.3288834951456311,
+    "usd_per_contestant": 0.21743869209809263,
+    "elasticity_vs_prior_band": -0.076
+   },
+   "500-999": {
+    "n": 273,
+    "organizers": 116,
+    "contestants": 2069,
+    "conversion": 0.2223144612319442,
+    "entries_per_entrant": 5.148706457526991,
+    "email_per_contestant": 0.7522058823529412,
+    "referral_per_contestant": 0.10583893502042968,
+    "follow_per_contestant": 0.2270763322131541,
+    "usd_per_contestant": 0.311262026032824,
+    "elasticity_vs_prior_band": 0.288
+   },
+   "1000-2499": {
+    "n": 325,
+    "organizers": 160,
+    "contestants": 2554,
+    "conversion": 0.22132337689276083,
+    "entries_per_entrant": 4.487623762376238,
+    "email_per_contestant": 0.7503067484662577,
+    "referral_per_contestant": 0.12471264367816091,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 0.5962309542902967,
+    "elasticity_vs_prior_band": 0.249
+   },
+   "2500-4999": {
+    "n": 153,
+    "organizers": 80,
+    "contestants": 3437,
+    "conversion": 0.18636977058029688,
+    "entries_per_entrant": 5.388242315726648,
+    "email_per_contestant": 0.6295060080106809,
+    "referral_per_contestant": 0.10474755086661643,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 0.9829159840861221,
+    "elasticity_vs_prior_band": 0.39
+   },
+   "5000-9999": {
+    "n": 66,
+    "organizers": 46,
+    "contestants": 3927.0,
+    "conversion": 0.20170236501761796,
+    "entries_per_entrant": 4.045004134168886,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.060611369790959393,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 1.5648694759705686,
+    "elasticity_vs_prior_band": 0.192
+   },
+   "10000-24999": {
+    "n": 41,
+    "organizers": 28,
+    "contestants": 4886,
+    "conversion": 0.22430682384193923,
+    "entries_per_entrant": 3.8276299112801015,
+    "email_per_contestant": 0.43566440256385724,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 2.720471548401723,
+    "elasticity_vs_prior_band": 0.258
+   }
+  }
+ },
+ "value_curve_by_tier": {
+  "Pro": {
+   "under 50": {
+    "n": 166,
+    "organizers": 45,
+    "contestants": 1892.0,
+    "conversion": 0.19949712575497297,
+    "entries_per_entrant": 6.125141819832085,
+    "email_per_contestant": 0.7199486211596938,
+    "referral_per_contestant": 0.0014191106906338694,
+    "follow_per_contestant": 0.48205670210707485,
+    "usd_per_contestant": 0.013437866795076293
+   },
+   "50-99": {
+    "n": 313,
+    "organizers": 106,
+    "contestants": 1315,
+    "conversion": 0.23546273546273547,
+    "entries_per_entrant": 7.180079681274901,
+    "email_per_contestant": 0.38495575221238937,
+    "referral_per_contestant": 0.11069558713537771,
+    "follow_per_contestant": 0.8271186440677966,
+    "usd_per_contestant": 0.04838709677419355,
+    "elasticity_vs_prior_band": -0.331
+   },
+   "100-249": {
+    "n": 1111,
+    "organizers": 401,
+    "contestants": 1469,
+    "conversion": 0.2655323536994071,
+    "entries_per_entrant": 4.3854875283446715,
+    "email_per_contestant": 0.6649076517150396,
+    "referral_per_contestant": 0.10261374636979671,
+    "follow_per_contestant": 0.4300341296928328,
+    "usd_per_contestant": 0.09855453350854139,
+    "elasticity_vs_prior_band": 0.131
+   },
+   "250-499": {
+    "n": 1345,
+    "organizers": 594,
+    "contestants": 1708,
+    "conversion": 0.26951219512195124,
+    "entries_per_entrant": 4.4671346522016595,
+    "email_per_contestant": 0.6793134598012647,
+    "referral_per_contestant": 0.08277216610549944,
+    "follow_per_contestant": 0.3375862068965517,
+    "usd_per_contestant": 0.20376974019358127,
+    "elasticity_vs_prior_band": 0.198
+   },
+   "500-999": {
+    "n": 1712,
+    "organizers": 791,
+    "contestants": 2047.5,
+    "conversion": 0.24963491406015736,
+    "entries_per_entrant": 4.748561071199218,
+    "email_per_contestant": 0.6880577367559045,
+    "referral_per_contestant": 0.07557438761870008,
+    "follow_per_contestant": 0.4034928119651329,
+    "usd_per_contestant": 0.3230167960277629,
+    "elasticity_vs_prior_band": 0.262
+   },
+   "1000-2499": {
+    "n": 1876,
+    "organizers": 905,
+    "contestants": 2276.5,
+    "conversion": 0.24324441483029885,
+    "entries_per_entrant": 4.7658251519401595,
+    "email_per_contestant": 0.638629030537012,
+    "referral_per_contestant": 0.08317552831773711,
+    "follow_per_contestant": 0.4180596293616192,
+    "usd_per_contestant": 0.609570309597063,
+    "elasticity_vs_prior_band": 0.125
+   },
+   "2500-4999": {
+    "n": 835,
+    "organizers": 429,
+    "contestants": 3433,
+    "conversion": 0.26364132411786106,
+    "entries_per_entrant": 4.973273273273273,
+    "email_per_contestant": 0.2450255827174531,
+    "referral_per_contestant": 0.04227825868774307,
+    "follow_per_contestant": 0.43913612565445026,
+    "usd_per_contestant": 0.9615384615384616,
+    "elasticity_vs_prior_band": 0.539
+   },
+   "5000-9999": {
+    "n": 284,
+    "organizers": 181,
+    "contestants": 3428.0,
+    "conversion": 0.23119351981671116,
+    "entries_per_entrant": 4.713203285751337,
+    "email_per_contestant": 0.1225019465351674,
+    "referral_per_contestant": 0.04791870877677519,
+    "follow_per_contestant": 0.41132312212267796,
+    "usd_per_contestant": 1.8289356961239451,
+    "elasticity_vs_prior_band": -0.002
+   },
+   "10000-24999": {
+    "n": 106,
+    "organizers": 77,
+    "contestants": 3805.5,
+    "conversion": 0.23350330531890467,
+    "entries_per_entrant": 3.8041906439215527,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.37102385700663165,
+    "usd_per_contestant": 3.3849873290500008,
+    "elasticity_vs_prior_band": 0.123
+   }
+  },
+  "Business": {
+   "under 50": {
+    "n": 38,
+    "organizers": 15,
+    "contestants": 1648.0,
+    "conversion": 0.21396748555490736,
+    "entries_per_entrant": 4.003025108955974,
+    "email_per_contestant": 0.7741865339271679,
+    "referral_per_contestant": 0.008635004981733644,
+    "follow_per_contestant": 0.48710302648978376,
+    "usd_per_contestant": 0.010941032253956123
+   },
+   "50-99": {
+    "n": 124,
+    "organizers": 20,
+    "contestants": 1364.0,
+    "conversion": 0.1534265349974188,
+    "entries_per_entrant": 16.626555008034707,
+    "email_per_contestant": 0.8362968612392103,
+    "referral_per_contestant": 0.008877005347593583,
+    "follow_per_contestant": 0.8303089818820061,
+    "usd_per_contestant": 0.04046115701641794,
+    "elasticity_vs_prior_band": -0.172
+   },
+   "100-249": {
+    "n": 361,
+    "organizers": 101,
+    "contestants": 1566,
+    "conversion": 0.2215075045357084,
+    "entries_per_entrant": 4.590933052187665,
+    "email_per_contestant": 0.854221635883905,
+    "referral_per_contestant": 0.04625735912531539,
+    "follow_per_contestant": 0.4365953769712681,
+    "usd_per_contestant": 0.10638297872340426,
+    "elasticity_vs_prior_band": 0.163
+   },
+   "250-499": {
+    "n": 569,
+    "organizers": 181,
+    "contestants": 1960,
+    "conversion": 0.23365440747227087,
+    "entries_per_entrant": 5.167326963411792,
+    "email_per_contestant": 0.8788546255506607,
+    "referral_per_contestant": 0.08606313281715307,
+    "follow_per_contestant": 0.5108499095840868,
+    "usd_per_contestant": 0.16759776536312848,
+    "elasticity_vs_prior_band": 0.294
+   },
+   "500-999": {
+    "n": 734,
+    "organizers": 266,
+    "contestants": 2529.0,
+    "conversion": 0.22011488052129147,
+    "entries_per_entrant": 5.27889708298132,
+    "email_per_contestant": 0.7498131438699926,
+    "referral_per_contestant": 0.05003293807641634,
+    "follow_per_contestant": 0.4600279353875777,
+    "usd_per_contestant": 0.26461391957060865,
+    "elasticity_vs_prior_band": 0.368
+   },
+   "1000-2499": {
+    "n": 1567,
+    "organizers": 481,
+    "contestants": 3269,
+    "conversion": 0.23956723338485317,
+    "entries_per_entrant": 4.933758978451716,
+    "email_per_contestant": 0.7865461498348688,
+    "referral_per_contestant": 0.0054233536247924735,
+    "follow_per_contestant": 0.4252233587983944,
+    "usd_per_contestant": 0.4745762711864407,
+    "elasticity_vs_prior_band": 0.303
+   },
+   "2500-4999": {
+    "n": 846,
+    "organizers": 317,
+    "contestants": 4208.0,
+    "conversion": 0.21005524583418986,
+    "entries_per_entrant": 5.879365196984726,
+    "email_per_contestant": 0.8028318005104274,
+    "referral_per_contestant": 0.011882614292323436,
+    "follow_per_contestant": 0.5340941243432256,
+    "usd_per_contestant": 0.7963185373350969,
+    "elasticity_vs_prior_band": 0.331
+   },
+   "5000-9999": {
+    "n": 329,
+    "organizers": 207,
+    "contestants": 3991,
+    "conversion": 0.21554606420192104,
+    "entries_per_entrant": 4.395429362880886,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.05230789578098135,
+    "follow_per_contestant": 0.3857388316151203,
+    "usd_per_contestant": 1.4997000599880024,
+    "elasticity_vs_prior_band": -0.076
+   },
+   "10000-24999": {
+    "n": 182,
+    "organizers": 137,
+    "contestants": 4314.5,
+    "conversion": 0.18610358081699008,
+    "entries_per_entrant": 4.738488974614768,
+    "email_per_contestant": 0.6238544527046637,
+    "referral_per_contestant": 0.00444779159087923,
+    "follow_per_contestant": 0.2227404158751779,
+    "usd_per_contestant": 3.2053628658459097,
+    "elasticity_vs_prior_band": 0.092
+   },
+   "25000-49999": {
+    "n": 49,
+    "organizers": 45,
+    "contestants": 5054,
+    "conversion": 0.20206678623281238,
+    "entries_per_entrant": 3.2054511278195488,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.017203107658157604,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 6.903523974581167,
+    "elasticity_vs_prior_band": 0.208
+   },
+   "50000+": {
+    "n": 43,
+    "organizers": 25,
+    "contestants": 7978,
+    "conversion": 0.09980765531833045,
+    "entries_per_entrant": 6.032148900169204,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 18.191740949608878,
+    "elasticity_vs_prior_band": 0.659
+   }
+  },
+  "Hobby": {
+   "50-99": {
+    "n": 62,
+    "organizers": 17,
+    "contestants": 1461.5,
+    "conversion": 0.1298942289062346,
+    "entries_per_entrant": 8.30662921060058,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.0,
+    "usd_per_contestant": 0.04244182974512686
+   },
+   "100-249": {
+    "n": 126,
+    "organizers": 64,
+    "contestants": 1510.0,
+    "conversion": 0.2542597708502966,
+    "entries_per_entrant": 5.296768321961787,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.4623848263083278,
+    "usd_per_contestant": 0.08622596444270964,
+    "elasticity_vs_prior_band": 0.039
+   },
+   "250-499": {
+    "n": 111,
+    "organizers": 69,
+    "contestants": 1623,
+    "conversion": 0.2996120561026559,
+    "entries_per_entrant": 4.7603369065849925,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.0775434243176178,
+    "usd_per_contestant": 0.21843434343434343,
+    "elasticity_vs_prior_band": 0.095
+   },
+   "500-999": {
+    "n": 113,
+    "organizers": 72,
+    "contestants": 1883,
+    "conversion": 0.3373466606088142,
+    "entries_per_entrant": 3.936173223889046,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.8449053201082056,
+    "usd_per_contestant": 0.3429061294470639,
+    "elasticity_vs_prior_band": 0.214
+   },
+   "1000-2499": {
+    "n": 94,
+    "organizers": 72,
+    "contestants": 1636.5,
+    "conversion": 0.31164961791836965,
+    "entries_per_entrant": 3.162275857588358,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.612692385188859,
+    "usd_per_contestant": 0.9043113146898103,
+    "elasticity_vs_prior_band": -0.166
+   },
+   "2500-4999": {
+    "n": 30,
+    "organizers": 29,
+    "contestants": 2947.0,
+    "conversion": 0.2271881566818907,
+    "entries_per_entrant": 3.7852686061674166,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.1557836768236975,
+    "usd_per_contestant": 1.309557567214583,
+    "elasticity_vs_prior_band": 0.772
+   }
+  }
+ },
+ "own_product": {
+  "own_product": {
+   "n": 7845,
+   "organizers": 2266,
+   "contestants": 2279,
+   "conversion": 0.27657406395522266,
+   "entries_per_entrant": 4.218263205013429,
+   "email_per_contestant": 0.17011875724739095,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.4434429923388914,
+   "value_index": 0.9596530920060332,
+   "valued_n": 3104,
+   "stated_pool_usd": 1010.0
+  },
+  "other_prize": {
+   "n": 27652,
+   "organizers": 5106,
+   "contestants": 2198.5,
+   "conversion": 0.27829355125208854,
+   "entries_per_entrant": 4.3784849038624705,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.4635273546967948,
+   "value_index": 1.016822429906542,
+   "valued_n": 10819,
+   "stated_pool_usd": 800.0
+  }
+ },
+ "own_product_by_industry": {
+  "electronics_tech": {
+   "own_product": {
+    "n": 2356,
+    "organizers": 408,
+    "contestants": 2334.5,
+    "conversion": 0.2778939365139707,
+    "entries_per_entrant": 4.8734535695518355,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.1287321772639691,
+    "value_index": 0.942803738317757,
+    "valued_n": 723,
+    "stated_pool_usd": 1121.0
+   },
+   "other_prize": {
+    "n": 4916,
+    "organizers": 820,
+    "contestants": 2235.5,
+    "conversion": 0.30264877431424875,
+    "entries_per_entrant": 4.974067273305203,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.7834202042623629,
+    "value_index": 0.8976377952755905,
+    "valued_n": 1619,
+    "stated_pool_usd": 1000.0
+   }
+  },
+  "media_entertainment": {
+   "own_product": {
+    "n": 382,
+    "organizers": 136,
+    "contestants": 2008.0,
+    "conversion": 0.24962409345614997,
+    "entries_per_entrant": 6.0267998973777885,
+    "email_per_contestant": 0.7165791485025195,
+    "referral_per_contestant": 0.021142852649834808,
+    "follow_per_contestant": 0.6959530122048424,
+    "value_index": 1.007576750033159,
+    "valued_n": 142,
+    "stated_pool_usd": 883.5
+   },
+   "other_prize": {
+    "n": 4616,
+    "organizers": 512,
+    "contestants": 2064.5,
+    "conversion": 0.2608824504827556,
+    "entries_per_entrant": 4.459258703546844,
+    "email_per_contestant": 0.8683025750810018,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.42905004488721,
+    "value_index": 1.2576601671309193,
+    "valued_n": 1938,
+    "stated_pool_usd": 499.0
+   }
+  },
+  "gaming_esports": {
+   "own_product": {
+    "n": 864,
+    "organizers": 273,
+    "contestants": 2401.0,
+    "conversion": 0.2685975056838342,
+    "entries_per_entrant": 5.9874043135470885,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.3720686544991512,
+    "value_index": 1.013895321908291,
+    "valued_n": 259,
+    "stated_pool_usd": 1420.0
+   },
+   "other_prize": {
+    "n": 5442,
+    "organizers": 1287,
+    "contestants": 2180.5,
+    "conversion": 0.27063804019311155,
+    "entries_per_entrant": 5.035041059058564,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.2735797044657746,
+    "value_index": 1.0720211161387632,
+    "valued_n": 1747,
+    "stated_pool_usd": 750.0
+   }
+  },
+  "sports_outdoors": {
+   "own_product": {
+    "n": 512,
+    "organizers": 232,
+    "contestants": 2385.5,
+    "conversion": 0.26406740112513083,
+    "entries_per_entrant": 3.5011659469546235,
+    "email_per_contestant": 0.8907206742346061,
+    "referral_per_contestant": 0.0667710438032858,
+    "follow_per_contestant": 0.0,
+    "value_index": 0.9669762929795762,
+    "valued_n": 300,
+    "stated_pool_usd": 1205.0
+   },
+   "other_prize": {
+    "n": 1753,
+    "organizers": 412,
+    "contestants": 2487,
+    "conversion": 0.2274007983094623,
+    "entries_per_entrant": 4.927034611786716,
+    "email_per_contestant": 0.5073129962390305,
+    "referral_per_contestant": 0.09581730172520789,
+    "follow_per_contestant": 0.13499392466585663,
+    "value_index": 0.9765415549597856,
+    "valued_n": 877,
+    "stated_pool_usd": 900.0
+   }
+  }
+ },
+ "own_product_by_size_band": {
+  "1k-2.5k": {
+   "own_product": {
+    "n": 4244,
+    "organizers": 1627,
+    "contestants": 1510.0,
+    "conversion": 0.2702102651168865,
+    "entries_per_entrant": 4.294473058852433,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.01845700921042733,
+    "follow_per_contestant": 0.4896125100920576,
+    "value_index": 0.6859657248726262,
+    "valued_n": 1689,
+    "stated_pool_usd": 808.0
+   },
+   "other_prize": {
+    "n": 15558,
+    "organizers": 3970,
+    "contestants": 1480.0,
+    "conversion": 0.2840258079217368,
+    "entries_per_entrant": 4.312548600311041,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.5147234021555014,
+    "value_index": 0.7479892761394102,
+    "valued_n": 6004,
+    "stated_pool_usd": 500.0
+   }
+  },
+  "2.5k-10k": {
+   "own_product": {
+    "n": 2891,
+    "organizers": 1017,
+    "contestants": 3955,
+    "conversion": 0.27994023160254017,
+    "entries_per_entrant": 4.190385349103396,
+    "email_per_contestant": 0.5139560848529959,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.3772474664923178,
+    "value_index": 1.513091922005571,
+    "valued_n": 1195,
+    "stated_pool_usd": 1485.0
+   },
+   "other_prize": {
+    "n": 9684,
+    "organizers": 2334,
+    "contestants": 4005.0,
+    "conversion": 0.2696545587229656,
+    "entries_per_entrant": 4.4212443103608745,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.41697152255546743,
+    "value_index": 1.6641793366996604,
+    "valued_n": 3898,
+    "stated_pool_usd": 1200.0
+   }
+  },
+  "10k+": {
+   "own_product": {
+    "n": 710,
+    "organizers": 258,
+    "contestants": 16298.0,
+    "conversion": 0.30899372592572427,
+    "entries_per_entrant": 3.883074611513763,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.39193279866091046,
+    "value_index": 5.287052063383294,
+    "valued_n": 220,
+    "stated_pool_usd": 3000.0
+   },
+   "other_prize": {
+    "n": 2410,
+    "organizers": 562,
+    "contestants": 16088.0,
+    "conversion": 0.2788930460948656,
+    "entries_per_entrant": 4.824697812407566,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.38043212357131395,
+    "value_index": 5.688536953242836,
+    "valued_n": 917,
+    "stated_pool_usd": 3000.0
+   }
+  }
+ },
+ "audience_fit": {
+  "generic": {
+   "n": 9313,
+   "organizers": 2955,
+   "contestants": 2045,
+   "conversion": 0.2737379922909827,
+   "entries_per_entrant": 4.154944473823374,
+   "email_per_contestant": 0.21246707638279191,
+   "referral_per_contestant": 0.017427385892116183,
+   "follow_per_contestant": 0.33943833943833945,
+   "value_index": 0.9200201004872546,
+   "valued_n": 4354,
+   "stated_pool_usd": 891.5
+  },
+  "audience_specific": {
+   "n": 10694,
+   "organizers": 2147,
+   "contestants": 2305.0,
+   "conversion": 0.289673753274089,
+   "entries_per_entrant": 4.183527434738523,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.6166156088331218,
+   "value_index": 0.981569488733998,
+   "valued_n": 3388,
+   "stated_pool_usd": 802.5
+  },
+  "niche_mismatch": {
+   "n": 11859,
+   "organizers": 2811,
+   "contestants": 2297,
+   "conversion": 0.2637238256932654,
+   "entries_per_entrant": 4.717849044379657,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.47381546134663344,
+   "value_index": 1.0958497240933527,
+   "valued_n": 5144,
+   "stated_pool_usd": 942.0
+  }
+ },
+ "audience_fit_by_industry": {
+  "electronics_tech": {
+   "generic": {
+    "n": 1155,
+    "organizers": 340,
+    "contestants": 1981,
+    "conversion": 0.24948336278415048,
+    "entries_per_entrant": 5.573205741626794,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.7947161727954302,
+    "value_index": 0.755656108597285,
+    "valued_n": 468,
+    "stated_pool_usd": 1696.0
+   },
+   "audience_specific": {
+    "n": 4832,
+    "organizers": 783,
+    "contestants": 2415.0,
+    "conversion": 0.30160642570281126,
+    "entries_per_entrant": 4.9689497370607825,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.0469120268428227,
+    "value_index": 0.9711796246648794,
+    "valued_n": 1473,
+    "stated_pool_usd": 836.0
+   },
+   "niche_mismatch": {
+    "n": 697,
+    "organizers": 215,
+    "contestants": 1941,
+    "conversion": 0.30950172276702886,
+    "entries_per_entrant": 4.143191116306253,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.4897546167467746,
+    "value_index": 0.8371040723981901,
+    "valued_n": 277,
+    "stated_pool_usd": 1000.0
+   }
+  },
+  "media_entertainment": {
+   "generic": {
+    "n": 1434,
+    "organizers": 276,
+    "contestants": 1743.0,
+    "conversion": 0.27038206894251454,
+    "entries_per_entrant": 4.600670022745477,
+    "email_per_contestant": 0.8224052017192982,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.3842295846011564,
+    "value_index": 1.0462466487935658,
+    "valued_n": 611,
+    "stated_pool_usd": 300.0
+   },
+   "audience_specific": {
+    "n": 613,
+    "organizers": 109,
+    "contestants": 2169,
+    "conversion": 0.23605539019024202,
+    "entries_per_entrant": 3.9128763613068545,
+    "email_per_contestant": 1.1071878940731399,
+    "referral_per_contestant": 0.07112375533428165,
+    "follow_per_contestant": 0.0,
+    "value_index": 1.0734349857363128,
+    "valued_n": 360,
+    "stated_pool_usd": 450.0
+   },
+   "niche_mismatch": {
+    "n": 2604,
+    "organizers": 318,
+    "contestants": 2406.0,
+    "conversion": 0.2556423730727375,
+    "entries_per_entrant": 4.897067575452057,
+    "email_per_contestant": 0.7552169039682008,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.5616722562729709,
+    "value_index": 1.5147058823529411,
+    "valued_n": 1043,
+    "stated_pool_usd": 509.0
+   }
+  },
+  "gaming_esports": {
+   "generic": {
+    "n": 1317,
+    "organizers": 485,
+    "contestants": 2155,
+    "conversion": 0.25368468066100935,
+    "entries_per_entrant": 5.433202357563851,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.2173020327150776,
+    "value_index": 1.0513221862934725,
+    "valued_n": 534,
+    "stated_pool_usd": 500.0
+   },
+   "audience_specific": {
+    "n": 1840,
+    "organizers": 504,
+    "contestants": 2144.0,
+    "conversion": 0.23331165563376577,
+    "entries_per_entrant": 4.685239261810823,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.1930558793473378,
+    "value_index": 1.076434801596448,
+    "valued_n": 478,
+    "stated_pool_usd": 965.5
+   },
+   "niche_mismatch": {
+    "n": 2492,
+    "organizers": 753,
+    "contestants": 2414.0,
+    "conversion": 0.2803990410263316,
+    "entries_per_entrant": 5.269091455860967,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.3318551350812875,
+    "value_index": 1.0707520891364903,
+    "valued_n": 915,
+    "stated_pool_usd": 987.0
+   }
+  },
+  "sports_outdoors": {
+   "generic": {
+    "n": 612,
+    "organizers": 257,
+    "contestants": 2430.0,
+    "conversion": 0.2575237260507691,
+    "entries_per_entrant": 4.231304123677161,
+    "email_per_contestant": 0.7507953017759853,
+    "referral_per_contestant": 0.09169089327245436,
+    "follow_per_contestant": 0.0,
+    "value_index": 0.8966436092074203,
+    "valued_n": 352,
+    "stated_pool_usd": 1100.0
+   },
+   "audience_specific": {
+    "n": 326,
+    "organizers": 135,
+    "contestants": 1949.5,
+    "conversion": 0.2917463757659574,
+    "entries_per_entrant": 3.2590713056232365,
+    "email_per_contestant": 0.7613510978704623,
+    "referral_per_contestant": 0.0777884253372945,
+    "follow_per_contestant": 0.0,
+    "value_index": 0.8814817581895396,
+    "valued_n": 162,
+    "stated_pool_usd": 657.0
+   },
+   "niche_mismatch": {
+    "n": 1092,
+    "organizers": 297,
+    "contestants": 2664.0,
+    "conversion": 0.19935218111502123,
+    "entries_per_entrant": 5.273669413717274,
+    "email_per_contestant": 0.749316068101678,
+    "referral_per_contestant": 0.10487781102751956,
+    "follow_per_contestant": 0.23661065392133337,
+    "value_index": 1.0317276516905975,
+    "valued_n": 560,
+    "stated_pool_usd": 1000.0
+   }
+  }
+ },
+ "bundles": {
+  "bundle_2_plus_prizes": {
+   "n": 7463,
+   "organizers": 2555,
+   "contestants": 2265,
+   "conversion": 0.24716009601911465,
+   "entries_per_entrant": 4.96268221574344,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0260938323668951,
+   "follow_per_contestant": 0.6120867768595041,
+   "value_index": 0.8703103288559518,
+   "valued_n": 3073,
+   "stated_pool_usd": 1598.0
+  },
+  "single_prize": {
+   "n": 28141,
+   "organizers": 5000,
+   "contestants": 2197,
+   "conversion": 0.2877030162412993,
+   "entries_per_entrant": 4.191450933172788,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.42399593289273,
+   "value_index": 1.0347383047707273,
+   "valued_n": 10903,
+   "stated_pool_usd": 700.0
+  }
+ },
+ "bundles_by_value_band": {
+  "under 50": {
+   "bundle_2_plus_prizes": null,
+   "single_prize": {
+    "n": 237,
+    "organizers": 79,
+    "contestants": 1854,
+    "conversion": 0.2118571253222045,
+    "entries_per_entrant": 5.010658914728682,
+    "email_per_contestant": 0.6932773109243697,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.3167655786350148,
+    "value_index": 1.0567113137646054,
+    "valued_n": 237,
+    "stated_pool_usd": 25.0
+   }
+  },
+  "50-99": {
+   "bundle_2_plus_prizes": null,
+   "single_prize": {
+    "n": 521,
+    "organizers": 150,
+    "contestants": 1335,
+    "conversion": 0.21761505660932215,
+    "entries_per_entrant": 7.912863070539419,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.03628617599529896,
+    "follow_per_contestant": 0.7249417249417249,
+    "value_index": 0.9981308411214953,
+    "valued_n": 521,
+    "stated_pool_usd": 64.0
+   }
+  },
+  "100-249": {
+   "bundle_2_plus_prizes": {
+    "n": 150,
+    "organizers": 90,
+    "contestants": 1676.0,
+    "conversion": 0.28139497149876413,
+    "entries_per_entrant": 4.304281686813886,
+    "email_per_contestant": 0.5330448181640884,
+    "referral_per_contestant": 0.03916914978250155,
+    "follow_per_contestant": 0.4762282748360046,
+    "value_index": 1.123324396782842,
+    "valued_n": 150,
+    "stated_pool_usd": 175.0
+   },
+   "single_prize": {
+    "n": 1580,
+    "organizers": 533,
+    "contestants": 1477.5,
+    "conversion": 0.2531176524602642,
+    "entries_per_entrant": 4.5572472827830115,
+    "email_per_contestant": 0.6635788500764916,
+    "referral_per_contestant": 0.06981816231481897,
+    "follow_per_contestant": 0.4496257439556549,
+    "value_index": 0.9902815013404827,
+    "valued_n": 1580,
+    "stated_pool_usd": 159.0
+   }
+  },
+  "250-499": {
+   "bundle_2_plus_prizes": {
+    "n": 307,
+    "organizers": 169,
+    "contestants": 1672,
+    "conversion": 0.25922116091109476,
+    "entries_per_entrant": 4.614089775561097,
+    "email_per_contestant": 0.6036697247706422,
+    "referral_per_contestant": 0.07000864304235091,
+    "follow_per_contestant": 0.5070267896354853,
+    "value_index": 0.9314763231197771,
+    "valued_n": 307,
+    "stated_pool_usd": 362.0
+   },
+   "single_prize": {
+    "n": 1825,
+    "organizers": 706,
+    "contestants": 1830,
+    "conversion": 0.25331099409605873,
+    "entries_per_entrant": 4.691421254801536,
+    "email_per_contestant": 0.7124542124542125,
+    "referral_per_contestant": 0.07114308553157474,
+    "follow_per_contestant": 0.4134815844336345,
+    "value_index": 1.0194986072423398,
+    "valued_n": 1825,
+    "stated_pool_usd": 340.0
+   }
+  },
+  "500-999": {
+   "bundle_2_plus_prizes": {
+    "n": 517,
+    "organizers": 346,
+    "contestants": 1879,
+    "conversion": 0.23877739167434933,
+    "entries_per_entrant": 4.910817506193228,
+    "email_per_contestant": 0.5207547169811321,
+    "referral_per_contestant": 0.08638583638583638,
+    "follow_per_contestant": 0.5058777429467085,
+    "value_index": 0.8703103288559518,
+    "valued_n": 517,
+    "stated_pool_usd": 700.0
+   },
+   "single_prize": {
+    "n": 2129,
+    "organizers": 842,
+    "contestants": 2234,
+    "conversion": 0.23883836200950867,
+    "entries_per_entrant": 4.863751051303616,
+    "email_per_contestant": 0.7245527940478075,
+    "referral_per_contestant": 0.050389184760344125,
+    "follow_per_contestant": 0.42058796759807043,
+    "value_index": 1.0347383047707273,
+    "valued_n": 2129,
+    "stated_pool_usd": 625.0
+   }
+  },
+  "1000-2499": {
+   "bundle_2_plus_prizes": {
+    "n": 1009,
+    "organizers": 508,
+    "contestants": 2194,
+    "conversion": 0.21450261780104712,
+    "entries_per_entrant": 5.4348171701112875,
+    "email_per_contestant": 0.48220893822943356,
+    "referral_per_contestant": 0.09991105840498073,
+    "follow_per_contestant": 0.5468204053109713,
+    "value_index": 0.8273001508295625,
+    "valued_n": 1009,
+    "stated_pool_usd": 1550.0
+   },
+   "single_prize": {
+    "n": 2666,
+    "organizers": 983,
+    "contestants": 2869.5,
+    "conversion": 0.24853534306080755,
+    "entries_per_entrant": 4.59507605746463,
+    "email_per_contestant": 0.7635456815841292,
+    "referral_per_contestant": 0.017733867086803398,
+    "follow_per_contestant": 0.4204546707780412,
+    "value_index": 1.0820135746606334,
+    "valued_n": 2666,
+    "stated_pool_usd": 1500.0
+   }
+  },
+  "2500-4999": {
+   "bundle_2_plus_prizes": {
+    "n": 610,
+    "organizers": 301,
+    "contestants": 3234.5,
+    "conversion": 0.23259054092027281,
+    "entries_per_entrant": 5.30339984528544,
+    "email_per_contestant": 0.43082147740336685,
+    "referral_per_contestant": 0.08704046905807172,
+    "follow_per_contestant": 0.4290790450272143,
+    "value_index": 0.8139154504277806,
+    "valued_n": 610,
+    "stated_pool_usd": 3240.5
+   },
+   "single_prize": {
+    "n": 1221,
+    "organizers": 473,
+    "contestants": 4445,
+    "conversion": 0.22707501638562833,
+    "entries_per_entrant": 5.610824163485291,
+    "email_per_contestant": 0.7564196625091709,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.5042414128772076,
+    "value_index": 1.11852038248616,
+    "valued_n": 1221,
+    "stated_pool_usd": 3200.0
+   }
+  },
+  "5000-9999": {
+   "bundle_2_plus_prizes": {
+    "n": 265,
+    "organizers": 198,
+    "contestants": 3399,
+    "conversion": 0.21838074398249452,
+    "entries_per_entrant": 4.597129186602871,
+    "email_per_contestant": 0.2790636159238196,
+    "referral_per_contestant": 0.07543008381120424,
+    "follow_per_contestant": 0.39039929477290486,
+    "value_index": 0.8213120695904313,
+    "valued_n": 265,
+    "stated_pool_usd": 6300.0
+   },
+   "single_prize": {
+    "n": 445,
+    "organizers": 206,
+    "contestants": 4870,
+    "conversion": 0.21487419283010464,
+    "entries_per_entrant": 5.335270805812417,
+    "email_per_contestant": 0.6336359439913833,
+    "referral_per_contestant": 0.05742875788557755,
+    "follow_per_contestant": 0.41102421558466035,
+    "value_index": 1.1767548628730216,
+    "valued_n": 445,
+    "stated_pool_usd": 5800.0
+   }
+  },
+  "10000-24999": {
+   "bundle_2_plus_prizes": {
+    "n": 134,
+    "organizers": 102,
+    "contestants": 4314.5,
+    "conversion": 0.21336311251455226,
+    "entries_per_entrant": 4.936863676686342,
+    "email_per_contestant": 0.18478591510438927,
+    "referral_per_contestant": 0.026126037146334023,
+    "follow_per_contestant": 0.35986055358116464,
+    "value_index": 0.9781228746316029,
+    "valued_n": 134,
+    "stated_pool_usd": 12318.0
+   },
+   "single_prize": {
+    "n": 179,
+    "organizers": 127,
+    "contestants": 4440,
+    "conversion": 0.19078352132215454,
+    "entries_per_entrant": 4.421300659754948,
+    "email_per_contestant": 0.6395065270405967,
+    "referral_per_contestant": 0.008215426745778184,
+    "follow_per_contestant": 0.30602502520310737,
+    "value_index": 1.0065744729086374,
+    "valued_n": 179,
+    "stated_pool_usd": 12000.0
+   }
+  },
+  "25000-49999": {
+   "bundle_2_plus_prizes": {
+    "n": 34,
+    "organizers": 30,
+    "contestants": 4416.0,
+    "conversion": 0.20162808571603066,
+    "entries_per_entrant": 4.386942255888846,
+    "email_per_contestant": 0.7368323861396774,
+    "referral_per_contestant": 0.07514813074208203,
+    "follow_per_contestant": 0.3820007006135906,
+    "value_index": 0.9896907216494846,
+    "valued_n": 34,
+    "stated_pool_usd": 29274.5
+   },
+   "single_prize": {
+    "n": 49,
+    "organizers": 41,
+    "contestants": 4827,
+    "conversion": 0.20206678623281238,
+    "entries_per_entrant": 3.7286047717842323,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.31563820794590025,
+    "value_index": 1.0818018825638727,
+    "valued_n": 49,
+    "stated_pool_usd": 31000.0
+   }
+  },
+  "50000+": {
+   "bundle_2_plus_prizes": null,
+   "single_prize": {
+    "n": 51,
+    "organizers": 33,
+    "contestants": 5119,
+    "conversion": 0.13278008298755187,
+    "entries_per_entrant": 5.035686876438987,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.3111279333838001,
+    "value_index": 1.0639093837680558,
+    "valued_n": 51,
+    "stated_pool_usd": 104500.0
+   }
+  }
+ },
+ "bundle_box_category": {
+  "bundle_or_box_category": {
+   "n": 4106,
+   "organizers": 1570,
+   "contestants": 2057.0,
+   "conversion": 0.2808577922719636,
+   "entries_per_entrant": 4.168590050792318,
+   "email_per_contestant": 0.6475545933275274,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.2736275146009085,
+   "value_index": 0.920911528150134,
+   "valued_n": 1773,
+   "stated_pool_usd": 960.0
+  },
+  "other_category": {
+   "n": 31391,
+   "organizers": 5808,
+   "contestants": 2235,
+   "conversion": 0.2774933543369105,
+   "entries_per_entrant": 4.36068530207394,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.4904580152671756,
+   "value_index": 1.0148340894834487,
+   "valued_n": 12150,
+   "stated_pool_usd": 900.0
+  }
+ },
+ "collaboration": {
+  "collab": {
+   "n": 2989,
+   "organizers": 1021,
+   "contestants": 2510,
+   "conversion": 0.2760837619397502,
+   "entries_per_entrant": 4.985503560528993,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 1.0917496443812233,
+   "value_index": 1.1462821796983778,
+   "valued_n": 1138,
+   "stated_pool_usd": 1250.0
+  },
+  "other": {
+   "n": 32615,
+   "organizers": 6048,
+   "contestants": 2188,
+   "conversion": 0.278500896548612,
+   "entries_per_entrant": 4.286103542234333,
+   "email_per_contestant": 0.0,
+   "referral_per_contestant": 0.0,
+   "follow_per_contestant": 0.4328147100424328,
+   "value_index": 0.9909502262443439,
+   "valued_n": 12838,
+   "stated_pool_usd": 867.5
+  }
+ },
+ "collaboration_by_industry": {
+  "electronics_tech": {
+   "collab": {
+    "n": 780,
+    "organizers": 219,
+    "contestants": 2695.5,
+    "conversion": 0.26932905127668727,
+    "entries_per_entrant": 5.458026008090387,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.540073237756036,
+    "value_index": 1.1258178158027177,
+    "valued_n": 231,
+    "stated_pool_usd": 1379.0
+   },
+   "other": {
+    "n": 6508,
+    "organizers": 984,
+    "contestants": 2222.5,
+    "conversion": 0.30099745746137296,
+    "entries_per_entrant": 4.889624220750703,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.8337097655100751,
+    "value_index": 0.89026878049943,
+    "valued_n": 2120,
+    "stated_pool_usd": 1000.0
+   }
+  },
+  "media_entertainment": {
+   "collab": {
+    "n": 422,
+    "organizers": 88,
+    "contestants": 2485.5,
+    "conversion": 0.22333729945142194,
+    "entries_per_entrant": 6.796955950725097,
+    "email_per_contestant": 0.9294019933554818,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.4365658483066084,
+    "value_index": 2.0001890424142434,
+    "valued_n": 210,
+    "stated_pool_usd": 1100.0
+   },
+   "other": {
+    "n": 4596,
+    "organizers": 562,
+    "contestants": 2025.0,
+    "conversion": 0.2656616644182742,
+    "entries_per_entrant": 4.385714776585786,
+    "email_per_contestant": 0.8246033118595701,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 0.4149992221854617,
+    "value_index": 1.1722576272231904,
+    "valued_n": 1874,
+    "stated_pool_usd": 479.0
+   }
+  },
+  "gaming_esports": {
+   "collab": {
+    "n": 728,
+    "organizers": 303,
+    "contestants": 2385.0,
+    "conversion": 0.27803687790593734,
+    "entries_per_entrant": 5.537804020632027,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.7401238680385915,
+    "value_index": 1.0585919407132933,
+    "valued_n": 270,
+    "stated_pool_usd": 1000.0
+   },
+   "other": {
+    "n": 5599,
+    "organizers": 1302,
+    "contestants": 2180,
+    "conversion": 0.2689843303939605,
+    "entries_per_entrant": 5.100079428117554,
+    "email_per_contestant": 0.0,
+    "referral_per_contestant": 0.0,
+    "follow_per_contestant": 1.2177713037144937,
+    "value_index": 1.069200810631032,
+    "valued_n": 1742,
+    "stated_pool_usd": 800.0
+   }
+  },
+  "sports_outdoors": {
+   "collab": {
+    "n": 121,
+    "organizers": 75,
+    "contestants": 2369,
+    "conversion": 0.3119935170178282,
+    "entries_per_entrant": 3.452087161984773,
+    "email_per_contestant": 0.9414049854321787,
+    "referral_per_contestant": 0.07571560480147738,
+    "follow_per_contestant": 0.0,
+    "value_index": 0.8706434316353887,
+    "valued_n": 55,
+    "stated_pool_usd": 906.0
+   },
+   "other": {
+    "n": 2147,
+    "organizers": 509,
+    "contestants": 2471,
+    "conversion": 0.23337837837837838,
+    "entries_per_entrant": 4.5495283018867925,
+    "email_per_contestant": 0.7164295458974859,
+    "referral_per_contestant": 0.08870056497175141,
+    "follow_per_contestant": 0.10952012383900929,
+    "value_index": 0.9768495218922999,
+    "valued_n": 1125,
+    "stated_pool_usd": 1000.0
+   }
+  }
+ },
+ "tier_prize_pool": {
+  "Pro": {
+   "n": 7796,
+   "organizers": 2333,
+   "stated_pool_usd_p50": 699.0,
+   "value_index": 0.9297010247961182
+  },
+  "Business": {
+   "n": 4842,
+   "organizers": 1097,
+   "stated_pool_usd_p50": 1493.0,
+   "value_index": 1.1133793489457173
+  },
+  "Hobby": {
+   "n": 563,
+   "organizers": 269,
+   "stated_pool_usd_p50": 400.0,
+   "value_index": 0.8971746178786475
+  }
+ },
+ "beats_band_share_by_value": {
+  "under 50": 0.293,
+  "50-99": 0.151,
+  "100-249": 0.22,
+  "250-499": 0.265,
+  "500-999": 0.288,
+  "1000-2499": 0.327,
+  "2500-4999": 0.347,
+  "5000-9999": 0.368,
+  "10000-24999": 0.387,
+  "25000-49999": 0.349,
+  "50000+": 0.403
+ },
+ "misses_band_share_by_value": {
+  "under 50": 0.199,
+  "50-99": 0.0,
+  "100-249": 0.0,
+  "250-499": 0.174,
+  "500-999": 0.25,
+  "1000-2499": 0.291,
+  "2500-4999": 0.33,
+  "5000-9999": 0.323,
+  "10000-24999": 0.377,
+  "25000-49999": 0.361,
+  "50000+": 0.444
+ },
+ "cheap_beaters_profile": {
+  "n": 533,
+  "organizers": 222,
+  "own_product_share": 0.109,
+  "own_product_share_base": 0.136,
+  "generic_share": 0.326,
+  "generic_share_base": 0.368,
+  "bundle_share": 0.077,
+  "bundle_share_base": 0.07,
+  "collab_share": 0.069,
+  "collab_share_base": 0.041,
+  "top_industries": {
+   "media_entertainment": 149,
+   "gaming_esports": 95,
+   "sports_outdoors": 47
+  }
+ },
+ "expensive_missers_profile": {
+  "n": 180,
+  "organizers": 138,
+  "own_product_share": 0.322,
+  "own_product_share_base": 0.284,
+  "generic_share": 0.4,
+  "generic_share_base": 0.376,
+  "bundle_share": 0.4,
+  "bundle_share_base": 0.404,
+  "collab_share": 0.106,
+  "collab_share_base": 0.081,
+  "top_industries": {
+   "electronics_tech": 31,
+   "media_entertainment": 19,
+   "sports_outdoors": 19
+  }
+ }
+}

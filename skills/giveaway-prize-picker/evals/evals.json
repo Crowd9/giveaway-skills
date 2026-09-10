@@ -133,7 +133,9 @@
     "assistant_opener == 0 and assistant_closer == 0",
     "question_headings == 0",
     "shortest_sentence <= 6 and longest_sentence >= 25",
-    "contrast_sentences reported, target 0"
+    "contrast_sentences reported, target 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
   }

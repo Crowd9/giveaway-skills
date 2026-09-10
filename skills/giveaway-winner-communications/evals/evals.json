@@ -1,17 +1,60 @@
 {
-  "skill_name": "giveaway-winner-communications",
-  "evals": [
-    {"id": 1, "prompt": "We drew a winner for our $600 espresso machine giveaway. She entered by email. Terms give 72 hours to reply. Write everything we need to send.",
-     "expected_output": "Notification with deadline and time zone and the no-payment line, verification and address request with a privacy line, delivery update, announcement with consent, non-winner message, in send order with channels and timing, plus a contact log format. First name only in public copy.",
-     "assertions": ["Notification includes the deadline with time zone", "States no payment or card details will be requested", "Address request has a privacy and deletion line", "Announcement uses first name and city or handle with consent", "Includes a non-winner message", "Contact log format present"], "files": []},
-    {"id": 2, "prompt": "A guy is furious in our DMs saying his cousin should have won and we cheated. What do I reply?",
-     "expected_output": "A short, calm reply that cites the draw method, date, entrant count and where the record is, offers to walk through it, and does not redraw or argue. Advises logging the exchange and not engaging further after one factual reply.",
-     "assertions": ["Reply cites the draw record", "Does not offer a redraw", "One factual reply then stop", "Logs the exchange"], "files": []},
-    {"id": 3, "prompt": "Our giveaway just closed with 3,200 email addresses collected. We have written the winner emails. What do we send everyone else, and what do we do with the list?",
-     "expected_output": "Treats the non-winner message as email one of a three-message welcome series, gives what each email does and when it sends, puts the giveaway sends on their own stream or segment so the core list's sender reputation is not dragged down, names the unsubscribe, complaint and bounce figures to read after the winners email, gives the sunset rule before addresses join the core list, separates entry consent from marketing consent and says where each is collected with double opt-in where the region requires it, and adds one feedback question to the result email. No invented benchmark figures.",
-     "assertions": ["Non-winner message framed as email one of a three-message series", "Each message has a job and a send time", "Separate stream or segment for the giveaway sends, with the reputation reason", "Names unsubscribe and complaint rates to read after the send", "Gives the sunset or hygiene rule before the core list", "Distinguishes entry consent from marketing consent and names where each is collected", "Includes one feedback question to entrants", "Invents no dataset numbers"], "files": []},
-    {"id": 4, "prompt": "Style check applied to every conversational reply above.",
-     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
-     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
-  ]
+ "skill_name": "giveaway-winner-communications",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "We drew a winner for our $600 espresso machine giveaway. She entered by email. Terms give 72 hours to reply. Write everything we need to send.",
+   "expected_output": "Notification with deadline and time zone and the no-payment line, verification and address request with a privacy line, delivery update, announcement with consent, non-winner message, in send order with channels and timing, plus a contact log format. First name only in public copy.",
+   "assertions": [
+    "Notification includes the deadline with time zone",
+    "States no payment or card details will be requested",
+    "Address request has a privacy and deletion line",
+    "Announcement uses first name and city or handle with consent",
+    "Includes a non-winner message",
+    "Contact log format present"
+   ],
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "A guy is furious in our DMs saying his cousin should have won and we cheated. What do I reply?",
+   "expected_output": "A short, calm reply that cites the draw method, date, entrant count and where the record is, offers to walk through it, and does not redraw or argue. Advises logging the exchange and not engaging further after one factual reply.",
+   "assertions": [
+    "Reply cites the draw record",
+    "Does not offer a redraw",
+    "One factual reply then stop",
+    "Logs the exchange"
+   ],
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "Our giveaway just closed with 3,200 email addresses collected. We have written the winner emails. What do we send everyone else, and what do we do with the list?",
+   "expected_output": "Treats the non-winner message as email one of a three-message welcome series, gives what each email does and when it sends, puts the giveaway sends on their own stream or segment so the core list's sender reputation is not dragged down, names the unsubscribe, complaint and bounce figures to read after the winners email, gives the sunset rule before addresses join the core list, separates entry consent from marketing consent and says where each is collected with double opt-in where the region requires it, and adds one feedback question to the result email. No invented benchmark figures.",
+   "assertions": [
+    "Non-winner message framed as email one of a three-message series",
+    "Each message has a job and a send time",
+    "Separate stream or segment for the giveaway sends, with the reputation reason",
+    "Names unsubscribe and complaint rates to read after the send",
+    "Gives the sunset or hygiene rule before the core list",
+    "Distinguishes entry consent from marketing consent and names where each is collected",
+    "Includes one feedback question to entrants",
+    "Invents no dataset numbers"
+   ],
+   "files": []
+  },
+  {
+   "id": 4,
+   "prompt": "Style check applied to every conversational reply above.",
+   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "assertions": [
+    "em_dashes == 0",
+    "semicolons == 0",
+    "assistant_opener == 0 and assistant_closer == 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
+   ],
+   "files": []
+  }
+ ]
 }

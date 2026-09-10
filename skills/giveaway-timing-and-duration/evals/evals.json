@@ -40,7 +40,7 @@
   },
   {
    "prompt": "We want to run a Black Friday giveaway this year. When should we launch and how long should it run?",
-   "expected_output": "Quotes the Black Friday row (364 campaigns, 8 days, launch 8 days out with an IQR of 3 to 16, 46% closed by the day) from holiday-benchmarks.md, gives the date and launch window from the calendar table, warns that a prize tied to the sale needs a close before the day, gives a dated timeline.",
+   "expected_output": "Quotes the Black Friday row (352 campaigns, 8 days, launch 8 days out with an IQR of 3 to 16, 46% closed by the day) from holiday-benchmarks.md, gives the date and launch window from the calendar table, warns that a prize tied to the sale needs a close before the day, gives a dated timeline.",
    "assertions": [
     "Cites the Black Friday benchmark row with n",
     "Gives a launch window from the calendar",
@@ -53,11 +53,13 @@
   {
    "id": 5,
    "prompt": "Style check applied to every conversational reply above.",
-   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "expected_output": "Run the repo-root evals/style_check.py on the saved reply.",
    "assertions": [
     "em_dashes == 0",
     "semicolons == 0",
-    "assistant_opener == 0 and assistant_closer == 0"
+    "assistant_opener == 0 and assistant_closer == 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
   }

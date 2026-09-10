@@ -2,10 +2,25 @@
 
 The terms the skills and their references use, in one place. Each skill defines the ones it needs on first use, and this page is the long form.
 
+## Gleam's Own Words
+
+These are the terms the Gleam dashboard uses. The skills write them exactly as the app writes them, with capitals, so a reader can match the advice to what is on their screen.
+
+- **Impressions.** Individual views of the campaign, counted once per person per 24 hours.
+- **Actions.** Entry Methods completed.
+- **Entries.** Actions completed multiplied by entry worth. A Viral Shares action worth 3 gives 3 Entries for 1 Action.
+- **Users.** Unique people who entered. These pages usually say entrants, and say Users when pointing at the dashboard figure.
+- **Conversion Rate.** Users who entered after viewing.
+- **Events.** Optional metrics outside the incentivised Actions.
+- **Entry Method.** One thing an entrant is asked to do. The app names each one, from Email Subscriptions to Viral Shares, and the skills use those names unchanged.
+
+Everything the app does not name is written plainly: entrants, businesses, campaigns, and every rate as a count per 100 entrants.
+
 ## Campaign Counts
 
-- **Ordinary segment.** The 37,180 campaigns the benchmarks describe: every campaign in the private export that reached 1,000 unique valid entrants, after removing token airdrops, buy-to-enter raffles and campaigns whose purpose could not be classified. Where a table shows n=37,123 it is the same segment with the 57 campaigns that carry no entries figure left out.
-- **Clean subset.** Ordinary campaigns with no repeatable action (daily bonus, loyalty, timed bonus) and a run of 14 days or less. Impressions count once per visitor per day, so long runs and daily actions inflate impressions and depress conversion. Every comparison that depends on conversion uses this subset.
+- **The export.** Every figure in these skills is extracted from Gleam's own campaign records. The analysis, pulled on 10 September 2026, covers 167,072 campaigns from 25,483 organizers with 100 or more entrants, and carries per action worth and mandatory flags, plan tier, language, country rules, terms settings, organizer location, daily impressions and referrers. It replaced a first export of campaigns with 1,000 or more entrants. Where a table still comes from the first export it says so.
+- **Ordinary segment.** The 35,668 campaigns the benchmarks describe: every campaign in the analysis that reached 1,000 unique valid entrants, after removing organizers whose homepage label is finance_crypto, token airdrops, buy-to-enter raffles and campaigns whose purpose could not be classified. Tables built with `analysis/frame.py` show n between 35,614 and 35,668 depending on which fields a cut needs.
+- **Clean subset.** The 10,719 ordinary campaigns with no repeatable action (daily bonus, loyalty, timed bonus) and a run of 14 days or less. Impressions count once per visitor per day, so long runs and daily actions inflate impressions and depress conversion. Every comparison that depends on conversion uses this subset.
 - **n.** The number of campaigns, prize records or actions behind a figure. A figure with a small n is reported as thin.
 
 ## Entrants and Entries
@@ -14,7 +29,8 @@ The terms the skills and their references use, in one place. Each skill defines 
 - **Entry.** One completed action multiplied by its entry worth. A follow worth 3 entries is 3 entries from 1 action.
 - **Entries per contestant.** Total entries divided by contestants. Rises with more actions and with repeatable actions, so it measures how much each person did, never how many people came.
 - **Action.** One thing an entrant is asked to do: follow, subscribe, share, answer, visit, join. Gleam calls these entry methods.
-- **Completion.** One action done by one entrant. A signup, follow or join at that moment.
+- **Completion.** One action done by one entrant. A signup, follow or join at that moment. The export counts completions per action, not entries, so a completion figure is never divided by worth.
+- **Entry worth.** The number of entries an organizer assigns to one completion of an action. The default is 1. Worth changes the entry total and the odds, never the completion count, and only Viral Share completions rise as worth rises.
 - **Uptake.** Completions of an action divided by contestants, in the campaigns that offered it. Above 1.0 means the campaign offered more than one action of that kind.
 - **Invalid entry.** An entry the platform rejected after a check: an undone follow, a duplicate account, a wrong answer, a referral that never entered. Reported, never benchmarked.
 - **Referral entry.** An entry credited to a sharer when the person they referred enters.

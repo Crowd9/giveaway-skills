@@ -1,55 +1,57 @@
 {
-  "skill_name": "giveaway-promotion-plan",
-  "evals": [
-    {
-      "id": 1,
-      "prompt": "Giveaway runs 1 to 14 October for a coffee subscription, prize is a year of coffee plus a grinder. We have Instagram (8k), a Klaviyo list (5k), and a roaster partner who will post once. No paid budget. Plan the promotion.",
-      "expected_output": "Three pushes with dates, a schedule table by channel, Instagram and email copy with prize first and deadline with time zone, the partner brief for the roaster's post, a reason there is no paid, an after-campaign step, risks, next decision.",
-      "assertions": [
-        "Schedule table with dates and channels",
-        "Copy leads with prize and deadline",
-        "Partner brief present",
-        "Email sequence with four emails",
-        "No entrant-number promise",
-        "No platform pitch"
-      ],
-      "files": []
-    },
-    {
-      "id": 2,
-      "prompt": "Nobody is entering our giveaway and it closes in 5 days. Help.",
-      "expected_output": "Asks or assumes the missing channel inventory, prescribes an immediate last-call style push on every channel, a referral reward mention, a partner ask, an optional small boost with a cap, and checks the entry page works on mobile and the link is right. Says the data cannot say what volume to expect.",
-      "assertions": [
-        "Immediate actions for the remaining days",
-        "Checks the entry page and link",
-        "Optional paid with a cap",
-        "No promise of entrant numbers"
-      ],
-      "files": []
-    },
-    {
-      "id": 3,
-      "prompt": "Our Instagram giveaway launched this morning. Comments are full of 'is this real', 'open in Canada?' and someone with a copy of our handle is DMing people that they won and need to pay shipping. What do we post and reply?",
-      "expected_output": "A pinned comment with how to enter, eligibility and close time, a reply for each question quoting the eligibility line, a pinned warning naming the official account and that no payment is ever asked, report and screenshot the fake account, answer in the first hour, and keep the rest of the feed running.",
-      "assertions": [
-        "Pinned comment covering entry, eligibility and close time",
-        "Impersonation warning names the official account and says no payment",
-        "Report and screenshot the fake account",
-        "Eligibility never widened in a reply",
-        "No promise of entrant numbers"
-      ],
-      "files": []
-    },
-    {
-      "id": 4,
-      "prompt": "Style check applied to every conversational reply above.",
-      "expected_output": "Run evals/style_check.py at the repo root on the saved reply.",
-      "assertions": [
-        "em_dashes == 0",
-        "semicolons == 0",
-        "assistant_opener == 0 and assistant_closer == 0"
-      ],
-      "files": []
-    }
-  ]
+ "skill_name": "giveaway-promotion-plan",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "Giveaway runs 1 to 14 October for a coffee subscription, prize is a year of coffee plus a grinder. We have Instagram (8k), a Klaviyo list (5k), and a roaster partner who will post once. No paid budget. Plan the promotion.",
+   "expected_output": "Three pushes with dates, a schedule table by channel, Instagram and email copy with prize first and deadline with time zone, the partner brief for the roaster's post, a reason there is no paid, an after-campaign step, risks, next decision.",
+   "assertions": [
+    "Schedule table with dates and channels",
+    "Copy leads with prize and deadline",
+    "Partner brief present",
+    "Email sequence with four emails",
+    "No entrant-number promise",
+    "No platform pitch"
+   ],
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "Nobody is entering our giveaway and it closes in 5 days. Help.",
+   "expected_output": "Asks or assumes the missing channel inventory, prescribes an immediate last-call style push on every channel, a referral reward mention, a partner ask, an optional small boost with a cap, and checks the entry page works on mobile and the link is right. Says the data cannot say what volume to expect.",
+   "assertions": [
+    "Immediate actions for the remaining days",
+    "Checks the entry page and link",
+    "Optional paid with a cap",
+    "No promise of entrant numbers"
+   ],
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "Our Instagram giveaway launched this morning. Comments are full of 'is this real', 'open in Canada?' and someone with a copy of our handle is DMing people that they won and need to pay shipping. What do we post and reply?",
+   "expected_output": "A pinned comment with how to enter, eligibility and close time, a reply for each question quoting the eligibility line, a pinned warning naming the official account and that no payment is ever asked, report and screenshot the fake account, answer in the first hour, and keep the rest of the feed running.",
+   "assertions": [
+    "Pinned comment covering entry, eligibility and close time",
+    "Impersonation warning names the official account and says no payment",
+    "Report and screenshot the fake account",
+    "Eligibility never widened in a reply",
+    "No promise of entrant numbers"
+   ],
+   "files": []
+  },
+  {
+   "id": 4,
+   "prompt": "Style check applied to every conversational reply above.",
+   "expected_output": "Run evals/style_check.py at the repo root on the saved reply.",
+   "assertions": [
+    "em_dashes == 0",
+    "semicolons == 0",
+    "assistant_opener == 0 and assistant_closer == 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
+   ],
+   "files": []
+  }
+ ]
 }

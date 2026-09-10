@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Provably fair random draw with an audit record. Python 3.8+, no dependencies.
 
-Input: CSV or TSV with a header, one id per line, or a JSON export of comments or entrants (a list, or an object holding one,
+Input: CSV or TSV with a header, one id per line, or a JSON export of comments or Entrants (a list, or an object holding one,
 with the person named by a field such as username, author, handle, email or owner.username). Pass --id-column to override.
 
-  python3 draw.py commit  entries.csv --tiers "Grand prize:1,Runner-up:5" [--backups 2] [--id-column email]
-                          [--weight-column entries] [--exclude staff.txt] [--draw-at "2026-09-12T09:00:00+10:00"]
+  python3 draw.py commit  entries.csv --tiers "Grand Prize:1,Runner-up:5" [--backups 2] [--id-column email]
+                          [--weight-column Entries] [--exclude staff.txt] [--draw-at "2026-09-12T09:00:00+10:00"]
   python3 draw.py draw    entries.csv --tiers ... [same options] (--seed TEXT | --seed-drand ROUND | --seed-nist UNIXTIME)
                           [--audit draw.json] [--winners-csv winners.csv] [--mask]
   python3 draw.py verify  draw.json [--input entries.csv]
@@ -21,10 +21,10 @@ How the draw works (documented so anyone can recheck it in any language):
      exclusions removed, invalid or zero weights dropped.
   2. The seed is a public string: text you published in advance, or the randomness of a drand round or NIST beacon
      pulse chosen in advance and fetched after it existed.
-  3. Each entrant gets key = u ** (1 / weight), where u = SHA-256(seed + "|" + id) read as a number in (0, 1).
+  3. Each Entrant gets key = u ** (1 / weight), where u = SHA-256(seed + "|" + id) read as a number in (0, 1).
      This is Efraimidis-Spirakis weighted sampling without replacement. With no weights it is a uniform draw.
   4. Entrants are sorted by key, highest first. Tiers and backups are filled in that order.
-  The audit record holds the SHA-256 of the input, the rules, the seed and its source, and every winner's key,
+  The audit record holds the SHA-256 of the input, the rules, the seed and its source, and every Winner's key,
   so `verify` (or a few lines in any language) reproduces the result exactly.
 
 commit prints a commitment (hash of the input plus the rules) to publish before the seed exists. With --draw-at it
@@ -42,7 +42,7 @@ def norm(s): return (s or "").strip().lower()
 ID_KEYS = ("email", "Email", "username", "user_name", "handle", "authorChannelId.value", "authorDisplayName", "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name", "id", "ID")
 
 def _flatten_json(obj):
-    """Best-effort: find the list of comment or entrant objects inside a JSON export and the field that names the person."""
+    """Best-effort: find the list of comment or Entrant objects inside a JSON export and the field that names the person."""
     if isinstance(obj, dict):
         for k in ("comments", "data", "entries", "items", "results", "comments_media_comments", "rows"):
             if isinstance(obj.get(k), list): obj = obj[k]; break
@@ -77,10 +77,10 @@ def load_entries(path, id_column):
     stripped = text.lstrip()
     if stripped.startswith("[") or stripped.startswith("{"):
         rows = _flatten_json(json.loads(text))
-        if not rows: sys.exit("no entries found in the JSON export")
+        if not rows: sys.exit("no Entries found in the JSON export")
         return rows, pick_id_column(rows, id_column), sha(raw)
     lines = [l for l in text.splitlines() if l.strip()]
-    if not lines: sys.exit("no entries in input")
+    if not lines: sys.exit("no Entries in input")
     if "," in lines[0] or "\t" in lines[0]:
         dialect = csv.excel_tab if "\t" in lines[0] and "," not in lines[0] else csv.excel
         rows = list(csv.DictReader(io.StringIO(text), dialect=dialect))
@@ -245,7 +245,7 @@ def cmd_verify(a):
             else: print(f"ok   drand round {src['round']} randomness matches the public beacon")
         except Exception as ex: print(f"warn could not refetch drand round ({ex}); checked the recorded value only")
     entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude)
-    if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL entrant counts differ from the audit record"); ok = False
+    if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL Entrant counts differ from the audit record"); ok = False
     got = [e["id"] for e in rank(entrants, audit["seed"])[:len(audit["results"])]]
     if got == [norm(r["id"]) for r in audit["results"]]: print(f"ok   recomputed the top {len(got)} entrants and they match the audit record")
     else: print("FAIL recomputed ranking differs from the audit record"); ok = False
@@ -263,7 +263,7 @@ def self_test():
     heavy = [{"id": "h", "weight": 3.0}, {"id": "l", "weight": 1.0}]; wins = sum(1 for i in range(4000) if rank(list(heavy), str(i))[0]["id"] == "h")
     assert 0.70 < wins / 4000 < 0.80, wins       # weight 3 vs 1 should win about 75%
     assert drand_round_at(drand_round_time(1000)) == 1000 and drand_round_at(DRAND["genesis_time"]) == 1
-    assert parse_tiers("Grand prize:1,Runner-up:5", 9) == [["Grand prize", 1], ["Runner-up", 5]]
+    assert parse_tiers("Grand Prize:1,Runner-up:5", 9) == [["Grand Prize", 1], ["Runner-up", 5]]
     assert mask("someone@example.com") == "so***@example.com"
     pj = os.path.join(d, "c.json"); open(pj, "w").write(json.dumps({"comments": [{"owner": {"username": "ann"}, "text": "hi"}, {"owner": {"username": "Ann"}, "text": "again"}, {"owner": {"username": "bob"}, "text": "x"}]}))
     rows, col, _ = load_entries(pj, None); assert col == "owner.username" and len(rows) == 3, (col, rows)
@@ -275,10 +275,10 @@ def self_test():
     sc = scan([{"id": f"ava_k_{2290+i}@example.com"} for i in range(6)] + [{"id": "x@mailinator.com"}])
     assert any("trailing number" in n for n in sc) and any("disposable" in n for n in sc), sc
     rp = os.path.join(d, "rules.json")
-    open(rp, "w").write(json.dumps({"tiers": "Grand prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}))
+    open(rp, "w").write(json.dumps({"tiers": "Grand Prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}))
     class R: rules = rp; tiers = None; backups = None; winners = None; id_column = None; weight_column = None; exclude = None
     apply_rules(R)
-    assert (R.tiers, R.backups, R.winners, R.id_column, R.weight_column, R.exclude) == ("Grand prize:1,Runner-up:5", 2, 1, "email", "entries", "staff.txt"), vars(R)
+    assert (R.tiers, R.backups, R.winners, R.id_column, R.weight_column, R.exclude) == ("Grand Prize:1,Runner-up:5", 2, 1, "email", "entries", "staff.txt"), vars(R)
     class O: rules = rp; tiers = "Only:1"; backups = 0; winners = None; id_column = None; weight_column = None; exclude = None
     apply_rules(O); assert O.tiers == "Only:1" and O.backups == 0 and O.id_column == "email", vars(O)
     class N: rules = None; tiers = None; backups = None; winners = None

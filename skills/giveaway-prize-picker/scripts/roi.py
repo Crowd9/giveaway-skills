@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """Giveaway ROI, before or after the campaign. No dependencies.
 
-Before the campaign, pricing a plan: we will spend 1,400 USD all in on a food and drink campaign we expect to draw 2,000 entrants, and an email address is worth 4 USD to us.
+Before the campaign, pricing a plan: we will spend 1,400 USD all in on a food and drink campaign we expect to draw 2,000 Entrants, and an email address is worth 4 USD to us.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --vertical food_drink --value-per-email 4
-After the campaign, pricing what actually happened: the same spend drew 1,800 entrants, 1,500 addresses, 900 follows and 200 referral entries.
+After the campaign, pricing what actually happened: the same spend drew 1,800 Entrants, 1,500 addresses, 900 follows and 200 referral Entries.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --contestants 1800 --emails 1500 --follows 900 --referrals 200 --value-per-email 4
 
 Costs are what you pay. --stated-value is the retail figure you advertise, which is what the benchmarks below use, because the
 export records what organizers stated, never what they paid. Benchmarks are medians from the ordinary segment of the campaign
-export (37,123 campaigns that reached 1,000 entrants). Value per email or follow is yours to supply: expected revenue per
+export (35,668 campaigns that reached 1,000 Entrants). Value per email or follow is yours to supply: expected revenue per
 subscriber over the period you care about, or what you would pay a channel for the same list. The script reports the breakeven
-value if you give none. Nothing here predicts entrants. Give the number you expect and the script prices it.
+value if you give none. Nothing here predicts Entrants. Give the number you expect and the script prices it.
+
+These benchmarks do not split by single-prize versus split-prize campaigns. Cost per Entrant runs meaningfully higher for a
+split-prize campaign than a single Prize of matched value and vertical, see giveaway-winner-structure for the numbers.
 """
 import argparse, json, sys
 
@@ -128,7 +131,7 @@ BENCH = {
   }
  }
 }
-UPTAKE = {"email": 0.89, "follow": 0.47, "referral": 0.13}   # median completions per contestant when the action is offered
+UPTAKE = {"email": 0.89, "follow": 0.47, "referral": 0.13}   # median completions per Entrant when the action is offered
 
 def band(n): return "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2.5k"
 
@@ -144,8 +147,8 @@ def run(a):
     bench = BENCH["by_vertical"].get(a.vertical) or BENCH["by_band"][band(a.contestants)]
     label = a.vertical if a.vertical in BENCH["by_vertical"] else f"band {band(a.contestants)}"
     rows = [("Total cost (what you pay)", money(cost), "", ""),
-            ("Cost per contestant", money(cost / a.contestants), "", ""),
-            ("Stated value per contestant", money(stated / a.contestants), money(bench["usd_per_contestant"]), label)]
+            ("Cost per Entrant", money(cost / a.contestants), "", ""),
+            ("Stated value per Entrant", money(stated / a.contestants), money(bench["usd_per_contestant"]), label)]
     if emails: rows += [("Cost per email signup", money(cost / emails), "", ""), ("Stated value per email signup", money(stated / emails), money(bench["usd_per_email"]), label)]
     if follows: rows += [("Cost per follow", money(cost / follows), "", ""), ("Stated value per follow", money(stated / follows), money(bench["usd_per_follow"]), label)]
     if refs: rows += [("Cost per referral entry", money(cost / refs), "", ""), ("Stated value per referral entry", money(stated / refs), money(bench.get("usd_per_referral_entry")), label)]
@@ -154,7 +157,7 @@ def run(a):
         rows += [("Value of what was produced", money(value), "", "your per-unit values"), ("Return per dollar", f"{value / cost:.2f}" if cost else "-", "", "")]
     elif emails and cost:
         rows += [("Breakeven value per email", money(cost / emails), "", "what each address must be worth for the campaign to pay for itself, with follows and referrals valued at zero")]
-    note = "estimated from median uptake for the actions you named, given your expected contestants" if est else "from the counts you gave"
+    note = "estimated from median uptake for the actions you named, given your expected Contestants" if est else "from the counts you gave"
     return rows, note
 
 def print_table(rows, header):
@@ -172,11 +175,11 @@ def self_test():
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true")
-    ap.add_argument("--prize-cost", type=float, help="what the prizes cost you"); ap.add_argument("--stated-value", type=float, help="retail value you advertise")
+    ap.add_argument("--prize-cost", type=float, help="what the Prizes cost you"); ap.add_argument("--stated-value", type=float, help="retail value you advertise")
     ap.add_argument("--promotion", type=float, default=0); ap.add_argument("--admin", type=float, default=0); ap.add_argument("--shipping", type=float, default=0)
-    ap.add_argument("--contestants", type=int, help="expected or actual unique entrants"); ap.add_argument("--vertical", help="one of: " + ", ".join(BENCH["by_vertical"]))
+    ap.add_argument("--contestants", type=int, help="expected or actual unique Entrants"); ap.add_argument("--vertical", help="one of: " + ", ".join(BENCH["by_vertical"]))
     ap.add_argument("--emails", type=int); ap.add_argument("--follows", type=int); ap.add_argument("--referrals", type=int)
-    ap.add_argument("--email-action", action="store_true", help="estimate emails from contestants"); ap.add_argument("--follow-action", action="store_true"); ap.add_argument("--share-action", action="store_true")
+    ap.add_argument("--email-action", action="store_true", help="estimate emails from Contestants"); ap.add_argument("--follow-action", action="store_true"); ap.add_argument("--share-action", action="store_true")
     ap.add_argument("--value-per-email", type=float); ap.add_argument("--value-per-follow", type=float); ap.add_argument("--value-per-referral", type=float)
     a = ap.parse_args(argv)
     if a.self_test: return self_test()

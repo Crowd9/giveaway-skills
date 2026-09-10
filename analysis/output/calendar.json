@@ -1,620 +1,678 @@
 {
- "ordinary_n": 37123,
+ "ordinary_n": 38934,
  "all": {
-  "n": 37123,
-  "contestants": 2203,
-  "conv_clean": 0.37548964745383323,
-  "clean_n": 11652,
-  "entries_per_entrant": 4.344638949671772,
-  "duration": 16,
-  "email_uptake": 0.9823468328141225
+  "n": 38934,
+  "organizers": 7133,
+  "contestants": 2271.5,
+  "conv_clean": 0.3749733725085586,
+  "clean_n": 12767,
+  "entries_per_entrant": 4.466846633712178,
+  "duration": 15.0,
+  "email_uptake": 0.9830866807610994
  },
  "definitions": {
   "week": "ISO week of the start date, UTC",
   "conv_clean": "contestants per impression on campaigns with no repeatable action and 14 days or less",
   "live_over": "start on or before the holiday date and end on or after it; the comparison group is drawn from campaigns not spanning it with the same duration mix",
-  "holiday dates": "2026 dates used to place holidays in weeks; live-over uses each campaign's own year"
+  "holiday dates": "2026 dates used to place holidays in weeks; live-over uses each campaign's own year",
+  "by_close_day_type": "close_type from the organizer's own country and Nager.Date public holidays: an end date that is a public holiday in that country counts as holiday even if it also falls on a weekend; the rest split weekday against weekend. Stratified by run-length band because holiday closes cluster in December, which also carries longer advent-style runs",
+  "last_days_impression_curve_by_duration": "median share of a campaign's impressions landing on each day before the end (0 is the final day, the mirror of impression_curve_by_duration in prize_timing_cuts.json which is anchored to the start)",
+  "seasonal_crowding": "weeks split into the busiest and quietest quarter by share of starts (by campaign count, not by a duration-matched sample), campaigns pooled within each group and again within the three largest industries",
+  "per_day_by_length_industry": "contestants and entries-per-entrant scaled by the run's own length, so a 30-day campaign is compared to a 7-day one on a daily rate rather than a cumulative total",
+  "per_day_by_type": "campaign type from the same title and description wording used in campaign_types.json, contestants per day of the run"
  },
  "by_start_week": {
   "1": {
-   "n": 554,
-   "contestants": 2072.0,
-   "conv_clean": 0.36216222915365204,
-   "clean_n": 131,
-   "entries_per_entrant": 4.415029945444551,
-   "duration": 27.0,
-   "email_uptake": 0.9956474428726877,
-   "share_of_starts": 0.014923362874767664,
+   "n": 581,
+   "organizers": 386,
+   "contestants": 2190,
+   "conv_clean": 0.34692560385311305,
+   "clean_n": 147,
+   "entries_per_entrant": 4.522506619593998,
+   "duration": 26,
+   "email_uptake": 0.9959330131090722,
+   "share_of_starts": 0.014922689679971233,
    "holidays": []
   },
   "2": {
-   "n": 528,
-   "contestants": 2244.0,
-   "conv_clean": 0.3417006589268905,
-   "clean_n": 135,
-   "entries_per_entrant": 4.572094496327531,
-   "duration": 20.0,
-   "email_uptake": 0.9965897693079238,
-   "share_of_starts": 0.01422298844382189,
+   "n": 566,
+   "organizers": 413,
+   "contestants": 2361.0,
+   "conv_clean": 0.3500280243689612,
+   "clean_n": 160,
+   "entries_per_entrant": 4.7741872499689695,
+   "duration": 19.0,
+   "email_uptake": 0.9959657085224407,
+   "share_of_starts": 0.014537422304412595,
    "holidays": []
   },
   "3": {
-   "n": 528,
-   "contestants": 2177.5,
-   "conv_clean": 0.32946302351492196,
-   "clean_n": 150,
-   "entries_per_entrant": 4.417409704393448,
-   "duration": 17.0,
-   "email_uptake": 0.9892257134489355,
-   "share_of_starts": 0.01422298844382189,
+   "n": 552,
+   "organizers": 394,
+   "contestants": 2241.5,
+   "conv_clean": 0.34819864300958814,
+   "clean_n": 167,
+   "entries_per_entrant": 4.639655751217376,
+   "duration": 16.0,
+   "email_uptake": 0.9910712461043274,
+   "share_of_starts": 0.014177839420557867,
    "holidays": []
   },
   "4": {
-   "n": 577,
-   "contestants": 2163,
-   "conv_clean": 0.3506574827802129,
-   "clean_n": 197,
-   "entries_per_entrant": 4.456981664315938,
-   "duration": 15,
-   "email_uptake": 0.9521975026573304,
-   "share_of_starts": 0.015542924871373542,
+   "n": 600,
+   "organizers": 442,
+   "contestants": 2201.0,
+   "conv_clean": 0.3526225769669327,
+   "clean_n": 219,
+   "entries_per_entrant": 4.5276021080368904,
+   "duration": 14.0,
+   "email_uptake": 0.9504476368936081,
+   "share_of_starts": 0.015410695022345508,
    "holidays": []
   },
   "5": {
-   "n": 844,
-   "contestants": 2146.5,
-   "conv_clean": 0.34271042643447197,
-   "clean_n": 216,
-   "entries_per_entrant": 4.419030217371588,
-   "duration": 23.0,
+   "n": 856,
+   "organizers": 566,
+   "contestants": 2180.5,
+   "conv_clean": 0.33767709380752103,
+   "clean_n": 227,
+   "entries_per_entrant": 4.593905948558207,
+   "duration": 22.0,
    "email_uptake": 0.9954669084315503,
-   "share_of_starts": 0.022735231527624383,
+   "share_of_starts": 0.02198592489854626,
    "holidays": []
   },
   "6": {
-   "n": 673,
-   "contestants": 2250,
-   "conv_clean": 0.3269574685450243,
-   "clean_n": 201,
-   "entries_per_entrant": 4.348623853211009,
-   "duration": 16,
+   "n": 712,
+   "organizers": 498,
+   "contestants": 2392.5,
+   "conv_clean": 0.33686684890758906,
+   "clean_n": 223,
+   "entries_per_entrant": 4.502734749432497,
+   "duration": 15.5,
    "email_uptake": 0.9961568024596464,
-   "share_of_starts": 0.018128922770250248,
+   "share_of_starts": 0.018287358093183336,
    "holidays": [
     "Super Bowl (US)"
    ]
   },
   "7": {
-   "n": 665,
-   "contestants": 2202,
-   "conv_clean": 0.349370253681323,
-   "clean_n": 212,
-   "entries_per_entrant": 4.332697972621729,
-   "duration": 15,
-   "email_uptake": 0.9968875345106006,
-   "share_of_starts": 0.017913422945343857,
+   "n": 696,
+   "organizers": 501,
+   "contestants": 2343.5,
+   "conv_clean": 0.3406550828514105,
+   "clean_n": 228,
+   "entries_per_entrant": 4.479772697823373,
+   "duration": 15.0,
+   "email_uptake": 1.0,
+   "share_of_starts": 0.01787640622592079,
    "holidays": [
     "Valentine's Day"
    ]
   },
   "8": {
-   "n": 611,
-   "contestants": 2149,
-   "conv_clean": 0.374894322230206,
-   "clean_n": 178,
-   "entries_per_entrant": 4.18515205724508,
-   "duration": 15,
-   "email_uptake": 1.0018558184143223,
-   "share_of_starts": 0.01645879912722571,
+   "n": 634,
+   "organizers": 443,
+   "contestants": 2184.5,
+   "conv_clean": 0.36571415413263814,
+   "clean_n": 198,
+   "entries_per_entrant": 4.308580802443009,
+   "duration": 15.0,
+   "email_uptake": 1.0013586956521738,
+   "share_of_starts": 0.01628396774027842,
    "holidays": [
     "Lunar New Year"
    ]
   },
   "9": {
-   "n": 941,
-   "contestants": 2305,
-   "conv_clean": 0.38437607874727464,
-   "clean_n": 222,
-   "entries_per_entrant": 4.613004236507644,
-   "duration": 26,
-   "email_uptake": 0.9868147120055517,
-   "share_of_starts": 0.02534816690461439,
+   "n": 970,
+   "organizers": 621,
+   "contestants": 2390.0,
+   "conv_clean": 0.37922801437543474,
+   "clean_n": 236,
+   "entries_per_entrant": 4.692775909192173,
+   "duration": 24.0,
+   "email_uptake": 0.9897358051805438,
+   "share_of_starts": 0.024913956952791905,
    "holidays": []
   },
   "10": {
-   "n": 704,
-   "contestants": 2184.0,
-   "conv_clean": 0.38161370938950373,
-   "clean_n": 198,
-   "entries_per_entrant": 4.316133720930233,
-   "duration": 20.0,
+   "n": 746,
+   "organizers": 501,
+   "contestants": 2364.0,
+   "conv_clean": 0.37296915469743347,
+   "clean_n": 222,
+   "entries_per_entrant": 4.456085358107593,
+   "duration": 18.5,
    "email_uptake": 1.0,
-   "share_of_starts": 0.01896398459176252,
+   "share_of_starts": 0.01916063081111625,
    "holidays": []
   },
   "11": {
-   "n": 690,
-   "contestants": 2169.0,
-   "conv_clean": 0.3731301157211403,
-   "clean_n": 217,
-   "entries_per_entrant": 4.4836269487756475,
-   "duration": 15.0,
-   "email_uptake": 0.9469306930693069,
-   "share_of_starts": 0.018586859898176333,
+   "n": 748,
+   "organizers": 524,
+   "contestants": 2262.5,
+   "conv_clean": 0.3734048138492623,
+   "clean_n": 256,
+   "entries_per_entrant": 4.722276882988521,
+   "duration": 14.0,
+   "email_uptake": 0.9423955195007008,
+   "share_of_starts": 0.019211999794524065,
    "holidays": []
   },
   "12": {
-   "n": 620,
-   "contestants": 2159.5,
-   "conv_clean": 0.33159361840934704,
-   "clean_n": 211,
-   "entries_per_entrant": 4.273629503836602,
-   "duration": 15.0,
-   "email_uptake": 0.9929196186261751,
-   "share_of_starts": 0.0167012364302454,
+   "n": 662,
+   "organizers": 485,
+   "contestants": 2318.0,
+   "conv_clean": 0.34885308625356104,
+   "clean_n": 240,
+   "entries_per_entrant": 4.415756182221783,
+   "duration": 14.0,
+   "email_uptake": 0.9893030890192169,
+   "share_of_starts": 0.017003133507987878,
    "holidays": []
   },
   "13": {
-   "n": 780,
-   "contestants": 2145.5,
-   "conv_clean": 0.3615511468094431,
-   "clean_n": 208,
-   "entries_per_entrant": 4.615753177510307,
-   "duration": 21.5,
-   "email_uptake": 0.9742937983236878,
-   "share_of_starts": 0.021011232928373244,
+   "n": 812,
+   "organizers": 580,
+   "contestants": 2234.0,
+   "conv_clean": 0.36644114323633165,
+   "clean_n": 224,
+   "entries_per_entrant": 4.755383010465337,
+   "duration": 21.0,
+   "email_uptake": 0.9711896176588357,
+   "share_of_starts": 0.020855807263574253,
    "holidays": []
   },
   "14": {
-   "n": 794,
-   "contestants": 2220.5,
+   "n": 822,
+   "organizers": 568,
+   "contestants": 2334.5,
    "conv_clean": 0.35836803366006126,
-   "clean_n": 212,
-   "entries_per_entrant": 4.428618697181231,
+   "clean_n": 230,
+   "entries_per_entrant": 4.578422217763007,
    "duration": 22.0,
-   "email_uptake": 0.946520618556701,
-   "share_of_starts": 0.021388357621959432,
+   "email_uptake": 0.9552263630265825,
+   "share_of_starts": 0.021112652180613346,
    "holidays": [
     "Easter"
    ]
   },
   "15": {
-   "n": 621,
-   "contestants": 2017,
-   "conv_clean": 0.3529253167969803,
-   "clean_n": 202,
-   "entries_per_entrant": 4.386755427793328,
+   "n": 647,
+   "organizers": 474,
+   "contestants": 2053,
+   "conv_clean": 0.3505907960199005,
+   "clean_n": 210,
+   "entries_per_entrant": 4.528082633957392,
    "duration": 15,
-   "email_uptake": 0.9694304447382242,
-   "share_of_starts": 0.0167281739083587,
+   "email_uptake": 0.9596588289534348,
+   "share_of_starts": 0.01661786613242924,
    "holidays": []
   },
   "16": {
-   "n": 636,
-   "contestants": 2267.5,
-   "conv_clean": 0.36527070305756737,
-   "clean_n": 236,
-   "entries_per_entrant": 4.415601076234006,
+   "n": 664,
+   "organizers": 458,
+   "contestants": 2373.0,
+   "conv_clean": 0.3551599275799638,
+   "clean_n": 249,
+   "entries_per_entrant": 4.606020003119509,
    "duration": 14.0,
-   "email_uptake": 0.9973432518597237,
-   "share_of_starts": 0.017132236080058184,
+   "email_uptake": 0.9964547778847188,
+   "share_of_starts": 0.017054502491395694,
    "holidays": []
   },
   "17": {
-   "n": 669,
-   "contestants": 2074,
-   "conv_clean": 0.3802058347019809,
-   "clean_n": 187,
-   "entries_per_entrant": 4.684870550161812,
-   "duration": 20,
-   "email_uptake": 0.9678259469335979,
-   "share_of_starts": 0.018021172857797054,
+   "n": 712,
+   "organizers": 496,
+   "contestants": 2278.0,
+   "conv_clean": 0.36237920351258746,
+   "clean_n": 220,
+   "entries_per_entrant": 4.841202312917458,
+   "duration": 17.5,
+   "email_uptake": 0.9810017271157168,
+   "share_of_starts": 0.018287358093183336,
    "holidays": []
   },
   "18": {
-   "n": 800,
-   "contestants": 2159.5,
-   "conv_clean": 0.3751392811591677,
-   "clean_n": 185,
-   "entries_per_entrant": 4.248150754496541,
-   "duration": 26.0,
-   "email_uptake": 0.9345724907063196,
-   "share_of_starts": 0.021549982490639226,
+   "n": 823,
+   "organizers": 575,
+   "contestants": 2236,
+   "conv_clean": 0.3644859813084112,
+   "clean_n": 198,
+   "entries_per_entrant": 4.399035240519898,
+   "duration": 26,
+   "email_uptake": 0.9367582055131075,
+   "share_of_starts": 0.021138336672317255,
    "holidays": []
   },
   "19": {
-   "n": 680,
-   "contestants": 2195.5,
-   "conv_clean": 0.3663735819444113,
-   "clean_n": 212,
-   "entries_per_entrant": 4.000805455336462,
-   "duration": 16.0,
-   "email_uptake": 0.9616829451540195,
-   "share_of_starts": 0.01831748511704334,
+   "n": 707,
+   "organizers": 495,
+   "contestants": 2294,
+   "conv_clean": 0.36776607213452733,
+   "clean_n": 238,
+   "entries_per_entrant": 4.21060382916053,
+   "duration": 15,
+   "email_uptake": 0.967699406723797,
+   "share_of_starts": 0.01815893563466379,
    "holidays": [
     "Mother's Day"
    ]
   },
   "20": {
-   "n": 660,
-   "contestants": 2227.5,
-   "conv_clean": 0.3987359164605661,
-   "clean_n": 201,
-   "entries_per_entrant": 4.276266846055074,
+   "n": 678,
+   "organizers": 482,
+   "contestants": 2297.5,
+   "conv_clean": 0.3854614067180556,
+   "clean_n": 210,
+   "entries_per_entrant": 4.412768338399507,
    "duration": 15.0,
-   "email_uptake": 0.9914092861525874,
-   "share_of_starts": 0.017778735554777363,
+   "email_uptake": 0.9946458067865402,
+   "share_of_starts": 0.017414085375250424,
    "holidays": []
   },
   "21": {
-   "n": 577,
-   "contestants": 2212,
-   "conv_clean": 0.41948649067520793,
-   "clean_n": 205,
-   "entries_per_entrant": 4.517744287797764,
+   "n": 607,
+   "organizers": 418,
+   "contestants": 2307,
+   "conv_clean": 0.42189679218967924,
+   "clean_n": 225,
+   "entries_per_entrant": 4.687680740312319,
    "duration": 15,
-   "email_uptake": 0.9367400520281337,
-   "share_of_starts": 0.015542924871373542,
+   "email_uptake": 0.9519500107735401,
+   "share_of_starts": 0.015590486464272873,
    "holidays": []
   },
   "22": {
-   "n": 848,
-   "contestants": 2222.0,
-   "conv_clean": 0.3825726141078838,
-   "clean_n": 232,
-   "entries_per_entrant": 4.496447992017959,
-   "duration": 21.0,
-   "email_uptake": 0.935226706527155,
-   "share_of_starts": 0.02284298144007758,
+   "n": 879,
+   "organizers": 597,
+   "contestants": 2285,
+   "conv_clean": 0.38073750264401046,
+   "clean_n": 262,
+   "entries_per_entrant": 4.627709190672154,
+   "duration": 19,
+   "email_uptake": 0.9393775372124492,
+   "share_of_starts": 0.02257666820773617,
    "holidays": []
   },
   "23": {
-   "n": 785,
-   "contestants": 2224,
-   "conv_clean": 0.3609057368994561,
-   "clean_n": 222,
-   "entries_per_entrant": 4.359353507565337,
-   "duration": 19,
-   "email_uptake": 0.9542586750788643,
-   "share_of_starts": 0.02114592031893974,
+   "n": 817,
+   "organizers": 570,
+   "contestants": 2306,
+   "conv_clean": 0.36924571078542034,
+   "clean_n": 248,
+   "entries_per_entrant": 4.5074931880108995,
+   "duration": 16,
+   "email_uptake": 0.9681278511223226,
+   "share_of_starts": 0.0209842297220938,
    "holidays": []
   },
   "24": {
-   "n": 663,
-   "contestants": 2076,
-   "conv_clean": 0.3676213343740149,
-   "clean_n": 224,
-   "entries_per_entrant": 4.273491406348011,
-   "duration": 15,
-   "email_uptake": 0.9533163929629274,
-   "share_of_starts": 0.01785954798911726,
+   "n": 694,
+   "organizers": 500,
+   "contestants": 2176.5,
+   "conv_clean": 0.3735594471750189,
+   "clean_n": 244,
+   "entries_per_entrant": 4.447437227019805,
+   "duration": 15.0,
+   "email_uptake": 0.9516240497581202,
+   "share_of_starts": 0.01782503724251297,
    "holidays": []
   },
   "25": {
-   "n": 616,
-   "contestants": 2268.5,
-   "conv_clean": 0.3464092445459363,
-   "clean_n": 210,
-   "entries_per_entrant": 4.3566535878167185,
-   "duration": 14.5,
-   "email_uptake": 1.0002149613069649,
-   "share_of_starts": 0.016593486517792206,
+   "n": 652,
+   "organizers": 444,
+   "contestants": 2326.5,
+   "conv_clean": 0.3562066315145864,
+   "clean_n": 230,
+   "entries_per_entrant": 4.4953530973008515,
+   "duration": 14.0,
+   "email_uptake": 1.0,
+   "share_of_starts": 0.016746288590948784,
    "holidays": [
     "Father's Day"
    ]
   },
   "26": {
-   "n": 782,
-   "contestants": 2240.5,
-   "conv_clean": 0.36619723127008863,
-   "clean_n": 222,
-   "entries_per_entrant": 4.670591871320228,
-   "duration": 19.0,
-   "email_uptake": 0.9996194824961948,
-   "share_of_starts": 0.021065107884599844,
+   "n": 805,
+   "organizers": 522,
+   "contestants": 2274,
+   "conv_clean": 0.37203146555534505,
+   "clean_n": 238,
+   "entries_per_entrant": 4.711477987421383,
+   "duration": 18,
+   "email_uptake": 1.0002201673271687,
+   "share_of_starts": 0.02067601582164689,
    "holidays": []
   },
   "27": {
-   "n": 738,
-   "contestants": 2293.0,
-   "conv_clean": 0.3343551565579155,
-   "clean_n": 167,
-   "entries_per_entrant": 4.280908057002705,
+   "n": 766,
+   "organizers": 537,
+   "contestants": 2398.0,
+   "conv_clean": 0.334382226439061,
+   "clean_n": 188,
+   "entries_per_entrant": 4.55229079087508,
    "duration": 24.0,
-   "email_uptake": 0.9744595982086959,
-   "share_of_starts": 0.019879858847614687,
+   "email_uptake": 0.9742380261248186,
+   "share_of_starts": 0.01967432064519443,
    "holidays": [
     "Independence Day (US)"
    ]
   },
   "28": {
-   "n": 608,
-   "contestants": 2061.5,
-   "conv_clean": 0.3676080135167753,
-   "clean_n": 171,
-   "entries_per_entrant": 4.438852088000731,
+   "n": 640,
+   "organizers": 446,
+   "contestants": 2181.5,
+   "conv_clean": 0.4094874706463356,
+   "clean_n": 198,
+   "entries_per_entrant": 4.446201930292986,
    "duration": 16.0,
-   "email_uptake": 0.9345023207839093,
-   "share_of_starts": 0.016377986692885812,
+   "email_uptake": 0.9479813664596274,
+   "share_of_starts": 0.016438074690501875,
    "holidays": [
     "Prime Day (mid July, varies)"
    ]
   },
   "29": {
-   "n": 655,
-   "contestants": 2273,
-   "conv_clean": 0.3723654093971598,
-   "clean_n": 188,
-   "entries_per_entrant": 4.347649186256781,
+   "n": 701,
+   "organizers": 490,
+   "contestants": 2276,
+   "conv_clean": 0.37985082693762834,
+   "clean_n": 215,
+   "entries_per_entrant": 4.463427800269906,
    "duration": 15,
-   "email_uptake": 0.9634195338552467,
-   "share_of_starts": 0.017644048164210866,
+   "email_uptake": 0.9588962013624293,
+   "share_of_starts": 0.018004828684440335,
    "holidays": []
   },
   "30": {
-   "n": 570,
-   "contestants": 2189.5,
+   "n": 597,
+   "organizers": 461,
+   "contestants": 2252,
    "conv_clean": 0.36950054798810084,
-   "clean_n": 171,
-   "entries_per_entrant": 4.586091544403073,
-   "duration": 16.0,
-   "email_uptake": 0.9023520853540252,
-   "share_of_starts": 0.015354362524580448,
+   "clean_n": 189,
+   "entries_per_entrant": 4.778395552025417,
+   "duration": 15,
+   "email_uptake": 0.9047041707080504,
+   "share_of_starts": 0.01533364154723378,
    "holidays": []
   },
   "31": {
-   "n": 793,
-   "contestants": 2102,
-   "conv_clean": 0.36051159072741806,
-   "clean_n": 188,
-   "entries_per_entrant": 4.456988764044944,
+   "n": 825,
+   "organizers": 570,
+   "contestants": 2106,
+   "conv_clean": 0.35397196261682246,
+   "clean_n": 202,
+   "entries_per_entrant": 4.492757660167131,
    "duration": 27,
-   "email_uptake": 0.9549365146413067,
-   "share_of_starts": 0.021361420143846132,
+   "email_uptake": 0.9615340586117602,
+   "share_of_starts": 0.021189705655725075,
    "holidays": []
   },
   "32": {
-   "n": 653,
-   "contestants": 2239,
-   "conv_clean": 0.37612978053196167,
-   "clean_n": 198,
-   "entries_per_entrant": 4.501918859649122,
+   "n": 713,
+   "organizers": 498,
+   "contestants": 2270,
+   "conv_clean": 0.36944770857814335,
+   "clean_n": 227,
+   "entries_per_entrant": 4.64141765114663,
    "duration": 16,
-   "email_uptake": 0.916483860858665,
-   "share_of_starts": 0.01759017320798427,
+   "email_uptake": 0.9149518871392892,
+   "share_of_starts": 0.018313042584887244,
    "holidays": []
   },
   "33": {
-   "n": 636,
-   "contestants": 2209.5,
-   "conv_clean": 0.3835616438356164,
-   "clean_n": 205,
-   "entries_per_entrant": 4.586262287876687,
-   "duration": 15.0,
-   "email_uptake": 1.0064027939464493,
-   "share_of_starts": 0.017132236080058184,
+   "n": 685,
+   "organizers": 459,
+   "contestants": 2230,
+   "conv_clean": 0.3887330528284245,
+   "clean_n": 241,
+   "entries_per_entrant": 4.6655546288573815,
+   "duration": 15,
+   "email_uptake": 1.0053361792956244,
+   "share_of_starts": 0.01759387681717779,
    "holidays": []
   },
   "34": {
-   "n": 621,
-   "contestants": 2409,
-   "conv_clean": 0.3685600951496061,
-   "clean_n": 230,
-   "entries_per_entrant": 4.54037766171153,
+   "n": 661,
+   "organizers": 442,
+   "contestants": 2458,
+   "conv_clean": 0.3659768277604327,
+   "clean_n": 252,
+   "entries_per_entrant": 4.603252032520325,
    "duration": 14,
-   "email_uptake": 0.9889690908405643,
-   "share_of_starts": 0.0167281739083587,
+   "email_uptake": 0.9841229110615036,
+   "share_of_starts": 0.01697744901628397,
    "holidays": []
   },
   "35": {
-   "n": 833,
-   "contestants": 2193,
+   "n": 859,
+   "organizers": 549,
+   "contestants": 2270,
    "conv_clean": 0.37559129612109743,
-   "clean_n": 233,
-   "entries_per_entrant": 4.446303291958985,
-   "duration": 21,
-   "email_uptake": 0.9768331631718108,
-   "share_of_starts": 0.022438919268378096,
+   "clean_n": 255,
+   "entries_per_entrant": 4.637943519188993,
+   "duration": 20,
+   "email_uptake": 0.9913696259243117,
+   "share_of_starts": 0.022062978373657987,
    "holidays": [
     "Back to school"
    ]
   },
   "36": {
-   "n": 632,
-   "contestants": 2188.5,
-   "conv_clean": 0.34042978664709,
-   "clean_n": 161,
-   "entries_per_entrant": 4.588456723998893,
-   "duration": 20.0,
-   "email_uptake": 1.0012678653757492,
-   "share_of_starts": 0.017024486167604987,
+   "n": 660,
+   "organizers": 464,
+   "contestants": 2305.5,
+   "conv_clean": 0.3424577751892836,
+   "clean_n": 176,
+   "entries_per_entrant": 4.7067914171125835,
+   "duration": 19.0,
+   "email_uptake": 1.000512040577489,
+   "share_of_starts": 0.016951764524580058,
    "holidays": []
   },
   "37": {
-   "n": 639,
-   "contestants": 2275,
-   "conv_clean": 0.3328262853665957,
-   "clean_n": 202,
-   "entries_per_entrant": 4.242146996035377,
+   "n": 685,
+   "organizers": 468,
+   "contestants": 2464,
+   "conv_clean": 0.3464950937187849,
+   "clean_n": 234,
+   "entries_per_entrant": 4.3720256387742555,
    "duration": 15,
-   "email_uptake": 0.9888832491432098,
-   "share_of_starts": 0.01721304851439808,
+   "email_uptake": 0.986833855799373,
+   "share_of_starts": 0.01759387681717779,
    "holidays": []
   },
   "38": {
-   "n": 605,
-   "contestants": 2228,
-   "conv_clean": 0.3728686285968985,
-   "clean_n": 230,
-   "entries_per_entrant": 4.354383358098068,
+   "n": 651,
+   "organizers": 443,
+   "contestants": 2335,
+   "conv_clean": 0.35185185185185186,
+   "clean_n": 259,
+   "entries_per_entrant": 4.558975377283558,
    "duration": 14,
-   "email_uptake": 1.0015082956259427,
-   "share_of_starts": 0.016297174258545915,
+   "email_uptake": 1.0012173233772925,
+   "share_of_starts": 0.016720604099244876,
    "holidays": []
   },
   "39": {
-   "n": 746,
-   "contestants": 2226.5,
-   "conv_clean": 0.3824454491351372,
-   "clean_n": 164,
-   "entries_per_entrant": 4.377596457223415,
-   "duration": 26.0,
-   "email_uptake": 1.0013586956521738,
-   "share_of_starts": 0.020095358672521078,
+   "n": 794,
+   "organizers": 514,
+   "contestants": 2257.0,
+   "conv_clean": 0.38508999233734403,
+   "clean_n": 204,
+   "entries_per_entrant": 4.536433659188914,
+   "duration": 23.0,
+   "email_uptake": 1.001525848954755,
+   "share_of_starts": 0.020393486412903887,
    "holidays": []
   },
   "40": {
-   "n": 776,
-   "contestants": 2099.0,
-   "conv_clean": 0.37651145229009386,
-   "clean_n": 182,
-   "entries_per_entrant": 4.273984428802446,
-   "duration": 24.0,
+   "n": 818,
+   "organizers": 538,
+   "contestants": 2119.0,
+   "conv_clean": 0.37821307301871115,
+   "clean_n": 200,
+   "entries_per_entrant": 4.381597595933547,
+   "duration": 23.0,
    "email_uptake": 0.9829787234042553,
-   "share_of_starts": 0.02090348301592005,
+   "share_of_starts": 0.02100991421379771,
    "holidays": []
   },
   "41": {
-   "n": 691,
-   "contestants": 2162,
-   "conv_clean": 0.37218578266264846,
-   "clean_n": 219,
-   "entries_per_entrant": 4.015394912985275,
-   "duration": 16,
-   "email_uptake": 1.0023547880690737,
-   "share_of_starts": 0.018613797376289633,
+   "n": 725,
+   "organizers": 496,
+   "contestants": 2202,
+   "conv_clean": 0.3802326729759576,
+   "clean_n": 238,
+   "entries_per_entrant": 4.208338328737561,
+   "duration": 15,
+   "email_uptake": 1.003616636528029,
+   "share_of_starts": 0.018621256485334154,
    "holidays": []
   },
   "42": {
-   "n": 599,
-   "contestants": 2008,
+   "n": 630,
+   "organizers": 458,
+   "contestants": 2133.5,
    "conv_clean": 0.3322942643391521,
-   "clean_n": 195,
-   "entries_per_entrant": 4.238302867684052,
-   "duration": 14,
-   "email_uptake": 0.9967781967225342,
-   "share_of_starts": 0.01613554938986612,
+   "clean_n": 205,
+   "entries_per_entrant": 4.438560336090813,
+   "duration": 15.0,
+   "email_uptake": 0.9983688644072548,
+   "share_of_starts": 0.016181229773462782,
    "holidays": []
   },
   "43": {
-   "n": 636,
-   "contestants": 2005.0,
-   "conv_clean": 0.3594414086217365,
-   "clean_n": 218,
-   "entries_per_entrant": 4.206701571718796,
-   "duration": 14.0,
-   "email_uptake": 1.0069817400644467,
-   "share_of_starts": 0.017132236080058184,
+   "n": 654,
+   "organizers": 472,
+   "contestants": 2066.0,
+   "conv_clean": 0.35119438965592814,
+   "clean_n": 214,
+   "entries_per_entrant": 4.309824584053892,
+   "duration": 15.0,
+   "email_uptake": 1.0065897858319606,
+   "share_of_starts": 0.016797657574356605,
    "holidays": []
   },
   "44": {
-   "n": 842,
-   "contestants": 2092.0,
+   "n": 862,
+   "organizers": 572,
+   "contestants": 2143.0,
    "conv_clean": 0.3674033149171271,
-   "clean_n": 172,
-   "entries_per_entrant": 4.429493072427605,
+   "clean_n": 176,
+   "entries_per_entrant": 4.646336003951898,
    "duration": 27.0,
-   "email_uptake": 1.001762632197415,
-   "share_of_starts": 0.022681356571397786,
+   "email_uptake": 1.002256204562547,
+   "share_of_starts": 0.022140031848769712,
    "holidays": [
     "Halloween"
    ]
   },
   "45": {
-   "n": 677,
-   "contestants": 2180,
-   "conv_clean": 0.3480269056302116,
-   "clean_n": 192,
-   "entries_per_entrant": 4.3317829457364345,
-   "duration": 16,
-   "email_uptake": 0.9802037209181308,
-   "share_of_starts": 0.018236672682703445,
+   "n": 729,
+   "organizers": 534,
+   "contestants": 2285,
+   "conv_clean": 0.3619271445358402,
+   "clean_n": 225,
+   "entries_per_entrant": 4.327557755775578,
+   "duration": 15,
+   "email_uptake": 0.9871781291284971,
+   "share_of_starts": 0.01872399445214979,
    "holidays": [
     "Diwali"
    ]
   },
   "46": {
-   "n": 688,
-   "contestants": 2094.0,
-   "conv_clean": 0.34560714769189116,
-   "clean_n": 219,
-   "entries_per_entrant": 4.442411188579017,
-   "duration": 15.0,
-   "email_uptake": 0.9883772944437581,
-   "share_of_starts": 0.018532984941949736,
+   "n": 719,
+   "organizers": 496,
+   "contestants": 2209,
+   "conv_clean": 0.33144315282109443,
+   "clean_n": 235,
+   "entries_per_entrant": 4.588151320485368,
+   "duration": 15,
+   "email_uptake": 0.9862005519779209,
+   "share_of_starts": 0.0184671495351107,
    "holidays": [
     "Singles Day"
    ]
   },
   "47": {
-   "n": 696,
-   "contestants": 2306.0,
-   "conv_clean": 0.3287461773700306,
-   "clean_n": 285,
-   "entries_per_entrant": 4.290090798071228,
-   "duration": 12.0,
-   "email_uptake": 1.0051020408163265,
-   "share_of_starts": 0.018748484766856126,
+   "n": 733,
+   "organizers": 471,
+   "contestants": 2373,
+   "conv_clean": 0.31983533783029766,
+   "clean_n": 300,
+   "entries_per_entrant": 4.408757549611734,
+   "duration": 12,
+   "email_uptake": 1.004041764904008,
+   "share_of_starts": 0.018826732418965427,
    "holidays": []
   },
   "48": {
-   "n": 1022,
-   "contestants": 2491.0,
-   "conv_clean": 0.39764126034148917,
-   "clean_n": 402,
-   "entries_per_entrant": 4.205344970501506,
-   "duration": 15.0,
-   "email_uptake": 0.9309671711922498,
-   "share_of_starts": 0.027530102631791613,
+   "n": 1049,
+   "organizers": 571,
+   "contestants": 2568,
+   "conv_clean": 0.3929422275163788,
+   "clean_n": 414,
+   "entries_per_entrant": 4.238514173998045,
+   "duration": 15,
+   "email_uptake": 0.9308550185873606,
+   "share_of_starts": 0.026943031797400728,
    "holidays": [
     "Black Friday and Cyber Monday",
     "Thanksgiving"
    ]
   },
   "49": {
-   "n": 1239,
-   "contestants": 2372,
-   "conv_clean": 0.45614076191368724,
-   "clean_n": 615,
-   "entries_per_entrant": 3.934232026143791,
-   "duration": 9,
-   "email_uptake": 0.9121855933299716,
-   "share_of_starts": 0.0333755353823775,
+   "n": 1282,
+   "organizers": 610,
+   "contestants": 2372.0,
+   "conv_clean": 0.45425905731249244,
+   "clean_n": 645,
+   "entries_per_entrant": 4.070749251977648,
+   "duration": 9.0,
+   "email_uptake": 0.915418076365394,
+   "share_of_starts": 0.032927518364411566,
    "holidays": [
     "Cyber Monday"
    ]
   },
   "50": {
-   "n": 1182,
-   "contestants": 2240.5,
-   "conv_clean": 0.4665694140530027,
-   "clean_n": 526,
-   "entries_per_entrant": 4.133890483036159,
-   "duration": 8.0,
-   "email_uptake": 0.9487138189436299,
-   "share_of_starts": 0.031840099129919454,
+   "n": 1249,
+   "organizers": 582,
+   "contestants": 2238,
+   "conv_clean": 0.46499910437187286,
+   "clean_n": 565,
+   "entries_per_entrant": 4.253128555176337,
+   "duration": 8,
+   "email_uptake": 0.946533267551087,
+   "share_of_starts": 0.03207993013818256,
    "holidays": []
   },
   "51": {
-   "n": 956,
-   "contestants": 2233.5,
-   "conv_clean": 0.531023102310231,
-   "clean_n": 493,
-   "entries_per_entrant": 3.9094175355472496,
+   "n": 1010,
+   "organizers": 507,
+   "contestants": 2223.0,
+   "conv_clean": 0.5288835677940736,
+   "clean_n": 531,
+   "entries_per_entrant": 4.040532628708333,
    "duration": 8.0,
-   "email_uptake": 0.9433808553971487,
-   "share_of_starts": 0.025752229076313877,
+   "email_uptake": 0.938812437984216,
+   "share_of_starts": 0.02594133662094827,
    "holidays": []
   },
   "52": {
-   "n": 531,
-   "contestants": 2375,
-   "conv_clean": 0.4070113530792048,
-   "clean_n": 196,
-   "entries_per_entrant": 4.421103769918383,
-   "duration": 14,
-   "email_uptake": 0.9294632317757796,
-   "share_of_starts": 0.014303800878161787,
+   "n": 582,
+   "organizers": 399,
+   "contestants": 2431.5,
+   "conv_clean": 0.39966955577089003,
+   "clean_n": 226,
+   "entries_per_entrant": 4.537256100118018,
+   "duration": 13.0,
+   "email_uptake": 0.9375814504173499,
+   "share_of_starts": 0.014948374171675143,
    "holidays": [
     "Christmas and advent"
    ]
@@ -622,467 +680,1943 @@
  },
  "by_start_day_of_month": {
   "1-7": {
-   "n": 10760,
-   "contestants": 2235.0,
-   "conv_clean": 0.37244952552056343,
-   "clean_n": 2669,
-   "entries_per_entrant": 4.35131366351675,
-   "duration": 24.0,
-   "email_uptake": 0.9687688897844046
+   "n": 11087,
+   "organizers": 3322,
+   "contestants": 2305,
+   "conv_clean": 0.3705275924802911,
+   "clean_n": 2892,
+   "entries_per_entrant": 4.4397114393679145,
+   "duration": 23,
+   "email_uptake": 0.9715031262810137
   },
   "15-21": {
-   "n": 8039,
-   "contestants": 2201,
-   "conv_clean": 0.37281879194630874,
-   "clean_n": 2825,
-   "entries_per_entrant": 4.356046065259117,
+   "n": 8467,
+   "organizers": 3001,
+   "contestants": 2268,
+   "conv_clean": 0.3729454768505333,
+   "clean_n": 3090,
+   "entries_per_entrant": 4.50533902829685,
    "duration": 14,
-   "email_uptake": 0.9874224283267118
+   "email_uptake": 0.9867425227923157
   },
   "22-31": {
-   "n": 10035,
-   "contestants": 2168,
-   "conv_clean": 0.37804117280099814,
-   "clean_n": 3457,
-   "entries_per_entrant": 4.332503113325031,
-   "duration": 15,
-   "email_uptake": 0.9928073981048064
+   "n": 10604,
+   "organizers": 3416,
+   "contestants": 2239.5,
+   "conv_clean": 0.37638640429338105,
+   "clean_n": 3799,
+   "entries_per_entrant": 4.462782078949539,
+   "duration": 15.0,
+   "email_uptake": 0.9933135215453195
   },
   "8-14": {
-   "n": 8289,
-   "contestants": 2207,
-   "conv_clean": 0.3765971755211836,
-   "clean_n": 2701,
-   "entries_per_entrant": 4.341576506955178,
-   "duration": 15,
-   "email_uptake": 0.9784790668234018
+   "n": 8776,
+   "organizers": 3066,
+   "contestants": 2280.0,
+   "conv_clean": 0.37888791417199175,
+   "clean_n": 2986,
+   "entries_per_entrant": 4.478771237593007,
+   "duration": 15.0,
+   "email_uptake": 0.9783225672110366
   }
  },
  "live_over_holiday": {
   "Christmas and advent": {
    "over": {
-    "n": 2874,
-    "contestants": 2335.0,
-    "conv_clean": 0.3598042486931376,
-    "clean_n": 358,
-    "entries_per_entrant": 4.337312005848219,
-    "duration": 31.0,
-    "email_uptake": 0.9648029901884442
+    "n": 3005,
+    "organizers": 1454,
+    "contestants": 2338,
+    "conv_clean": 0.36793214862681745,
+    "clean_n": 400,
+    "entries_per_entrant": 4.405752753977969,
+    "duration": 31,
+    "email_uptake": 0.963932107496464
    },
    "same_length_not_over": {
-    "n": 14107,
-    "contestants": 2288,
-    "conv_clean": 0.3369123475992173,
-    "clean_n": 1821,
-    "entries_per_entrant": 4.6753530932962,
+    "n": 14701,
+    "organizers": 4255,
+    "contestants": 2340,
+    "conv_clean": 0.35286834502682624,
+    "clean_n": 2031,
+    "entries_per_entrant": 4.679651162790698,
     "duration": 31,
-    "email_uptake": 0.996047377656992
+    "email_uptake": 0.9967409016838674
    },
-   "contestants_ratio": 1.0205419580419581,
-   "conv_ratio": 1.067946162427837,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 148,
-   "closed_on_holiday_contestants": 2491.0
+   "contestants_ratio": 0.9991452991452991,
+   "conv_ratio": 1.042689586108513,
+   "closed_on_holiday_n": 154,
+   "closed_on_holiday_contestants": 2547.0
   },
   "New Year": {
    "over": {
-    "n": 2405,
-    "contestants": 2335,
-    "conv_clean": 0.35690707212163647,
-    "clean_n": 231,
-    "entries_per_entrant": 4.3998025666337615,
+    "n": 2521,
+    "organizers": 1271,
+    "contestants": 2344,
+    "conv_clean": 0.354755284027541,
+    "clean_n": 256,
+    "entries_per_entrant": 4.465006729475101,
     "duration": 32,
-    "email_uptake": 0.967072463768116
+    "email_uptake": 0.9670044411084006
    },
    "same_length_not_over": {
-    "n": 12025,
-    "contestants": 2316,
-    "conv_clean": 0.33170885107403114,
-    "clean_n": 1133,
-    "entries_per_entrant": 4.680599727396638,
+    "n": 12605,
+    "organizers": 3854,
+    "contestants": 2352,
+    "conv_clean": 0.350243484832164,
+    "clean_n": 1271,
+    "entries_per_entrant": 4.7275693311582385,
     "duration": 31,
-    "email_uptake": 0.996230479267636
+    "email_uptake": 0.9973410684070583
    },
-   "contestants_ratio": 1.008203799654577,
-   "conv_ratio": 1.0759648739128205,
-   "closed_on_holiday_share": null,
+   "contestants_ratio": 0.9965986394557823,
+   "conv_ratio": 1.0128818932850072,
    "closed_on_holiday_n": 0,
    "closed_on_holiday_contestants": null
   },
   "Black Friday and Cyber Monday": {
    "over": {
-    "n": 2866,
-    "contestants": 2256.5,
-    "conv_clean": 0.30912136686075614,
-    "clean_n": 322,
-    "entries_per_entrant": 4.3460749900279225,
+    "n": 2972,
+    "organizers": 1505,
+    "contestants": 2279.0,
+    "conv_clean": 0.30659465210389314,
+    "clean_n": 336,
+    "entries_per_entrant": 4.437918295967091,
     "duration": 31.0,
-    "email_uptake": 0.9868010165721437
+    "email_uptake": 0.9849397590361446
    },
    "same_length_not_over": {
-    "n": 14330,
-    "contestants": 2291.5,
-    "conv_clean": 0.362838318741885,
-    "clean_n": 1607,
-    "entries_per_entrant": 4.680171249564124,
+    "n": 14782,
+    "organizers": 4243,
+    "contestants": 2344.0,
+    "conv_clean": 0.3686186186186186,
+    "clean_n": 1698,
+    "entries_per_entrant": 4.7058138765331705,
     "duration": 31.0,
-    "email_uptake": 0.9952774498229043
+    "email_uptake": 0.9964998380435575
    },
-   "contestants_ratio": 0.9847261619026838,
-   "conv_ratio": 0.8519534759520758,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 144,
-   "closed_on_holiday_contestants": 2480.0
+   "contestants_ratio": 0.9722696245733788,
+   "conv_ratio": 0.831739463548647,
+   "closed_on_holiday_n": 143,
+   "closed_on_holiday_contestants": 2625
   },
   "Thanksgiving": {
    "over": {
-    "n": 2851,
-    "contestants": 2254,
-    "conv_clean": 0.30912136686075614,
-    "clean_n": 314,
-    "entries_per_entrant": 4.323734001112966,
-    "duration": 31,
-    "email_uptake": 0.988306947374566
+    "n": 2990,
+    "organizers": 1506,
+    "contestants": 2301.5,
+    "conv_clean": 0.3127675648451272,
+    "clean_n": 363,
+    "entries_per_entrant": 4.381331444231092,
+    "duration": 31.0,
+    "email_uptake": 0.9874551971326165
    },
    "same_length_not_over": {
-    "n": 14250,
-    "contestants": 2300.5,
-    "conv_clean": 0.3556295941629986,
-    "clean_n": 1549,
-    "entries_per_entrant": 4.69677851569082,
+    "n": 14848,
+    "organizers": 4265,
+    "contestants": 2348.0,
+    "conv_clean": 0.36536846679724955,
+    "clean_n": 1761,
+    "entries_per_entrant": 4.718406178085434,
     "duration": 31.0,
-    "email_uptake": 0.9948416751787539
+    "email_uptake": 0.9962828988184262
    },
-   "contestants_ratio": 0.9797870028254727,
-   "conv_ratio": 0.8692228429084955,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 110,
-   "closed_on_holiday_contestants": 2253.5
+   "contestants_ratio": 0.9801959114139693,
+   "conv_ratio": 0.8560332739899208,
+   "closed_on_holiday_n": 145,
+   "closed_on_holiday_contestants": 3003
   },
   "Halloween": {
    "over": {
-    "n": 2798,
-    "contestants": 2236.5,
-    "conv_clean": 0.33496766823199653,
-    "clean_n": 233,
-    "entries_per_entrant": 4.235525762302496,
-    "duration": 32.0,
-    "email_uptake": 0.9837691614066727
+    "n": 2897,
+    "organizers": 1525,
+    "contestants": 2269,
+    "conv_clean": 0.33351815913501526,
+    "clean_n": 246,
+    "entries_per_entrant": 4.319115676641358,
+    "duration": 32,
+    "email_uptake": 0.9842898014374737
    },
    "same_length_not_over": {
-    "n": 12497,
-    "contestants": 2313,
-    "conv_clean": 0.3471384190839139,
-    "clean_n": 1274,
-    "entries_per_entrant": 4.706224549156486,
+    "n": 12859,
+    "organizers": 3895,
+    "contestants": 2354,
+    "conv_clean": 0.3587878961677857,
+    "clean_n": 1365,
+    "entries_per_entrant": 4.738428417653391,
     "duration": 31,
-    "email_uptake": 0.9964242991037573
+    "email_uptake": 0.9966133209376452
    },
-   "contestants_ratio": 0.9669260700389105,
-   "conv_ratio": 0.9649397756548078,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 228,
-   "closed_on_holiday_contestants": 2148.5
+   "contestants_ratio": 0.963891248937978,
+   "conv_ratio": 0.9295691485061882,
+   "closed_on_holiday_n": 246,
+   "closed_on_holiday_contestants": 2220.5
   },
   "Valentine's Day": {
    "over": {
-    "n": 2507,
-    "contestants": 2235,
-    "conv_clean": 0.31438587885057023,
-    "clean_n": 274,
-    "entries_per_entrant": 4.3317829457364345,
-    "duration": 31,
-    "email_uptake": 0.9911575249282432
+    "n": 2598,
+    "organizers": 1345,
+    "contestants": 2296.0,
+    "conv_clean": 0.322961423391964,
+    "clean_n": 298,
+    "entries_per_entrant": 4.465710035219926,
+    "duration": 31.0,
+    "email_uptake": 0.9893961942179098
    },
    "same_length_not_over": {
-    "n": 12535,
-    "contestants": 2303,
-    "conv_clean": 0.33820169581045445,
-    "clean_n": 1419,
-    "entries_per_entrant": 4.686915887850467,
-    "duration": 31,
-    "email_uptake": 0.9953679876479671
+    "n": 12990,
+    "organizers": 4012,
+    "contestants": 2339.0,
+    "conv_clean": 0.3529419551301155,
+    "clean_n": 1553,
+    "entries_per_entrant": 4.711484714982085,
+    "duration": 31.0,
+    "email_uptake": 0.9964335890775983
    },
-   "contestants_ratio": 0.9704732957012592,
-   "conv_ratio": 0.9295810244155848,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 106,
-   "closed_on_holiday_contestants": 2537.5
+   "contestants_ratio": 0.9816160752458315,
+   "conv_ratio": 0.9150553474802992,
+   "closed_on_holiday_n": 98,
+   "closed_on_holiday_contestants": 2183.0
   },
   "Mother's Day": {
    "over": {
-    "n": 2578,
-    "contestants": 2347.5,
-    "conv_clean": 0.32371119760544614,
-    "clean_n": 214,
-    "entries_per_entrant": 4.355016843807391,
+    "n": 2658,
+    "organizers": 1382,
+    "contestants": 2368.0,
+    "conv_clean": 0.3312091503267974,
+    "clean_n": 241,
+    "entries_per_entrant": 4.467777595966916,
     "duration": 32.0,
-    "email_uptake": 0.9783094098883572
+    "email_uptake": 0.975103734439834
    },
    "same_length_not_over": {
-    "n": 12477,
-    "contestants": 2290,
-    "conv_clean": 0.347257256482001,
-    "clean_n": 1202,
-    "entries_per_entrant": 4.670775924583031,
-    "duration": 31,
-    "email_uptake": 0.9983443708609272
+    "n": 12972,
+    "organizers": 3937,
+    "contestants": 2341.0,
+    "conv_clean": 0.366361071932299,
+    "clean_n": 1328,
+    "entries_per_entrant": 4.699764618832875,
+    "duration": 31.0,
+    "email_uptake": 0.9983104860481261
    },
-   "contestants_ratio": 1.025109170305677,
-   "conv_ratio": 0.9321941919512479,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 96,
-   "closed_on_holiday_contestants": 2172.5
+   "contestants_ratio": 1.0115335326783426,
+   "conv_ratio": 0.9040511552712198,
+   "closed_on_holiday_n": 95,
+   "closed_on_holiday_contestants": 2280
   },
   "Father's Day": {
    "over": {
-    "n": 2781,
-    "contestants": 2316,
-    "conv_clean": 0.30693625386127493,
-    "clean_n": 229,
-    "entries_per_entrant": 4.362204724409449,
+    "n": 2847,
+    "organizers": 1507,
+    "contestants": 2344,
+    "conv_clean": 0.3175609038376308,
+    "clean_n": 260,
+    "entries_per_entrant": 4.454090869902577,
     "duration": 32,
-    "email_uptake": 0.9523729544091504
+    "email_uptake": 0.9530710835058661
    },
    "same_length_not_over": {
-    "n": 13690,
-    "contestants": 2293.0,
-    "conv_clean": 0.3432471950334863,
-    "clean_n": 1256,
-    "entries_per_entrant": 4.695437486109937,
-    "duration": 31.0,
-    "email_uptake": 0.9977477477477478
+    "n": 14127,
+    "organizers": 4150,
+    "contestants": 2343,
+    "conv_clean": 0.35423218467714956,
+    "clean_n": 1386,
+    "entries_per_entrant": 4.716742439217237,
+    "duration": 31,
+    "email_uptake": 0.9992381919756221
    },
-   "contestants_ratio": 1.0100305276929786,
-   "conv_ratio": 0.8942134365623324,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 90,
-   "closed_on_holiday_contestants": 2403.0
+   "contestants_ratio": 1.0004268032437047,
+   "conv_ratio": 0.8964767109658844,
+   "closed_on_holiday_n": 88,
+   "closed_on_holiday_contestants": 2639.0
   },
   "Easter": {
    "over": {
-    "n": 2671,
-    "contestants": 2292,
-    "conv_clean": 0.33077942487912937,
-    "clean_n": 246,
-    "entries_per_entrant": 4.4678935003915425,
+    "n": 2753,
+    "organizers": 1394,
+    "contestants": 2349,
+    "conv_clean": 0.33040527051307644,
+    "clean_n": 263,
+    "entries_per_entrant": 4.6075845012366035,
     "duration": 32,
-    "email_uptake": 0.9769704984408418
+    "email_uptake": 0.9711684370257967
    },
    "same_length_not_over": {
-    "n": 13320,
-    "contestants": 2302.0,
-    "conv_clean": 0.34185873605947953,
-    "clean_n": 1277,
-    "entries_per_entrant": 4.677385818312446,
-    "duration": 31.0,
-    "email_uptake": 0.996394361467091
+    "n": 13735,
+    "organizers": 4125,
+    "contestants": 2344,
+    "conv_clean": 0.35166956693689133,
+    "clean_n": 1393,
+    "entries_per_entrant": 4.700058338194849,
+    "duration": 31,
+    "email_uptake": 0.9981522542498152
    },
-   "contestants_ratio": 0.9956559513466551,
-   "conv_ratio": 0.9675909666429514,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 115,
-   "closed_on_holiday_contestants": 2025
+   "contestants_ratio": 1.0021331058020477,
+   "conv_ratio": 0.9395333050595451,
+   "closed_on_holiday_n": 112,
+   "closed_on_holiday_contestants": 2143.0
   },
   "Back to school": {
    "over": {
-    "n": 2794,
-    "contestants": 2442.0,
-    "conv_clean": 0.3039419831981044,
-    "clean_n": 269,
-    "entries_per_entrant": 4.350138750244216,
-    "duration": 32.0,
-    "email_uptake": 0.9704482439432127
+    "n": 2941,
+    "organizers": 1486,
+    "contestants": 2447,
+    "conv_clean": 0.3265183403487673,
+    "clean_n": 311,
+    "entries_per_entrant": 4.3801601971657425,
+    "duration": 32,
+    "email_uptake": 0.967492944057066
    },
    "same_length_not_over": {
-    "n": 13017,
-    "contestants": 2291,
-    "conv_clean": 0.34567361721917866,
-    "clean_n": 1382,
-    "entries_per_entrant": 4.686085343228201,
+    "n": 13619,
+    "organizers": 4045,
+    "contestants": 2336,
+    "conv_clean": 0.35505542492442055,
+    "clean_n": 1566,
+    "entries_per_entrant": 4.737839651123784,
     "duration": 31,
-    "email_uptake": 0.9972444561081223
+    "email_uptake": 0.997260291580673
    },
-   "contestants_ratio": 1.0659100829332169,
-   "conv_ratio": 0.8792744602356685,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 92,
-   "closed_on_holiday_contestants": 2133.0
+   "contestants_ratio": 1.0475171232876712,
+   "conv_ratio": 0.9196263947192813,
+   "closed_on_holiday_n": 99,
+   "closed_on_holiday_contestants": 2170
   },
   "Diwali": {
    "over": {
-    "n": 2706,
-    "contestants": 2263.0,
-    "conv_clean": 0.3162771110891214,
-    "clean_n": 232,
-    "entries_per_entrant": 4.281181012274296,
+    "n": 2804,
+    "organizers": 1463,
+    "contestants": 2293.5,
+    "conv_clean": 0.32627202534151656,
+    "clean_n": 253,
+    "entries_per_entrant": 4.3698694976690415,
     "duration": 32.0,
-    "email_uptake": 0.9932666305498447
+    "email_uptake": 0.9932088285229203
    },
    "same_length_not_over": {
-    "n": 12883,
-    "contestants": 2311,
-    "conv_clean": 0.34567361721917866,
-    "clean_n": 1276,
-    "entries_per_entrant": 4.697445972495088,
-    "duration": 31,
-    "email_uptake": 0.9960726558664703
+    "n": 13234,
+    "organizers": 3976,
+    "contestants": 2366.0,
+    "conv_clean": 0.35727190605239384,
+    "clean_n": 1368,
+    "entries_per_entrant": 4.724420229240613,
+    "duration": 31.0,
+    "email_uptake": 0.9957908369758782
    },
-   "contestants_ratio": 0.9792297706620511,
-   "conv_ratio": 0.914958780000216,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 152,
-   "closed_on_holiday_contestants": 2078.0
+   "contestants_ratio": 0.9693575655114116,
+   "conv_ratio": 0.9132316866069756,
+   "closed_on_holiday_n": 149,
+   "closed_on_holiday_contestants": 2087
   },
   "Lunar New Year": {
    "over": {
-    "n": 2470,
-    "contestants": 2281.0,
-    "conv_clean": 0.31184834531877836,
-    "clean_n": 234,
-    "entries_per_entrant": 4.382493214863414,
-    "duration": 31.0,
-    "email_uptake": 0.9896429750020626
+    "n": 2533,
+    "organizers": 1311,
+    "contestants": 2299,
+    "conv_clean": 0.3215665612925887,
+    "clean_n": 241,
+    "entries_per_entrant": 4.523043944265809,
+    "duration": 31,
+    "email_uptake": 0.9894080996884735
    },
    "same_length_not_over": {
-    "n": 12350,
-    "contestants": 2304.0,
-    "conv_clean": 0.3372443701589505,
-    "clean_n": 1242,
-    "entries_per_entrant": 4.691352406679003,
-    "duration": 31.0,
-    "email_uptake": 0.9948760893430885
+    "n": 12665,
+    "organizers": 3960,
+    "contestants": 2340,
+    "conv_clean": 0.3558116723884257,
+    "clean_n": 1300,
+    "entries_per_entrant": 4.718597063621534,
+    "duration": 31,
+    "email_uptake": 0.9953679876479671
    },
-   "contestants_ratio": 0.9900173611111112,
-   "conv_ratio": 0.9246954817119633,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 134,
-   "closed_on_holiday_contestants": 2338.0
+   "contestants_ratio": 0.9824786324786324,
+   "conv_ratio": 0.9037549531021204,
+   "closed_on_holiday_n": 136,
+   "closed_on_holiday_contestants": 2395.0
   },
   "Prime Day (mid July, varies)": {
    "over": {
-    "n": 2655,
-    "contestants": 2356,
-    "conv_clean": 0.3137455210999146,
-    "clean_n": 198,
-    "entries_per_entrant": 4.3353174603174605,
-    "duration": 33,
-    "email_uptake": 0.9780252043231257
+    "n": 2740,
+    "organizers": 1423,
+    "contestants": 2402.0,
+    "conv_clean": 0.3219577159980023,
+    "clean_n": 231,
+    "entries_per_entrant": 4.422530684410549,
+    "duration": 33.0,
+    "email_uptake": 0.977859778597786
    },
    "same_length_not_over": {
-    "n": 12454,
-    "contestants": 2296.0,
-    "conv_clean": 0.3416868796674884,
-    "clean_n": 1096,
-    "entries_per_entrant": 4.6957111089573775,
+    "n": 12980,
+    "organizers": 3940,
+    "contestants": 2343.0,
+    "conv_clean": 0.35885673959068454,
+    "clean_n": 1242,
+    "entries_per_entrant": 4.735676577260021,
     "duration": 31.0,
-    "email_uptake": 0.9981972428419936
+    "email_uptake": 0.9977226843113259
    },
-   "contestants_ratio": 1.0261324041811846,
-   "conv_ratio": 0.9182252517428681,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 67,
-   "closed_on_holiday_contestants": 1947
+   "contestants_ratio": 1.0251813913785746,
+   "conv_ratio": 0.8971761722107557,
+   "closed_on_holiday_n": 72,
+   "closed_on_holiday_contestants": 1941.0
   },
   "Cyber Monday": {
    "over": {
-    "n": 2821,
-    "contestants": 2280,
-    "conv_clean": 0.327925020195146,
-    "clean_n": 296,
-    "entries_per_entrant": 4.295506473724296,
-    "duration": 31,
-    "email_uptake": 0.9895889603301703
+    "n": 2940,
+    "organizers": 1496,
+    "contestants": 2301.5,
+    "conv_clean": 0.32743158479526974,
+    "clean_n": 330,
+    "entries_per_entrant": 4.365305569579015,
+    "duration": 31.0,
+    "email_uptake": 0.9890941403218944
    },
    "same_length_not_over": {
-    "n": 14010,
-    "contestants": 2294.5,
-    "conv_clean": 0.35178557874762806,
-    "clean_n": 1529,
-    "entries_per_entrant": 4.695957411374971,
+    "n": 14550,
+    "organizers": 4215,
+    "contestants": 2350.5,
+    "conv_clean": 0.36443841194435017,
+    "clean_n": 1692,
+    "entries_per_entrant": 4.7162970108770015,
     "duration": 31.0,
-    "email_uptake": 0.9951397326852977
+    "email_uptake": 0.9966771113107563
    },
-   "contestants_ratio": 0.99368054042275,
-   "conv_ratio": 0.9321730053931526,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 181,
-   "closed_on_holiday_contestants": 2115
+   "contestants_ratio": 0.9791533716230589,
+   "conv_ratio": 0.8984551958954003,
+   "closed_on_holiday_n": 188,
+   "closed_on_holiday_contestants": 2113.5
   },
   "Singles Day": {
    "over": {
-    "n": 2706,
-    "contestants": 2237.5,
-    "conv_clean": 0.3020363536968703,
-    "clean_n": 214,
-    "entries_per_entrant": 4.212888195780405,
+    "n": 2822,
+    "organizers": 1476,
+    "contestants": 2269.0,
+    "conv_clean": 0.31149593568705036,
+    "clean_n": 237,
+    "entries_per_entrant": 4.312442101936964,
     "duration": 32.0,
     "email_uptake": 0.9932666305498447
    },
    "same_length_not_over": {
-    "n": 13411,
-    "contestants": 2309,
-    "conv_clean": 0.3434084473756229,
-    "clean_n": 1250,
-    "entries_per_entrant": 4.732182597839657,
-    "duration": 31,
-    "email_uptake": 0.9953952417498081
+    "n": 13876,
+    "organizers": 4092,
+    "contestants": 2366.5,
+    "conv_clean": 0.3583294877711121,
+    "clean_n": 1356,
+    "entries_per_entrant": 4.745824969331995,
+    "duration": 31.0,
+    "email_uptake": 0.997060984570169
    },
-   "contestants_ratio": 0.9690342139454309,
-   "conv_ratio": 0.8795251136222066,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 91,
-   "closed_on_holiday_contestants": 2096
+   "contestants_ratio": 0.9587999154870062,
+   "conv_ratio": 0.8693003124711374,
+   "closed_on_holiday_n": 98,
+   "closed_on_holiday_contestants": 2235.0
   },
   "Independence Day (US)": {
    "over": {
-    "n": 2627,
-    "contestants": 2351,
-    "conv_clean": 0.3100802851869485,
-    "clean_n": 213,
-    "entries_per_entrant": 4.380461251969632,
-    "duration": 33,
-    "email_uptake": 0.9792535051155741
+    "n": 2690,
+    "organizers": 1373,
+    "contestants": 2393.0,
+    "conv_clean": 0.3128367679158228,
+    "clean_n": 231,
+    "entries_per_entrant": 4.4576844260559145,
+    "duration": 33.0,
+    "email_uptake": 0.9790660149143862
    },
    "same_length_not_over": {
-    "n": 12440,
-    "contestants": 2302.0,
-    "conv_clean": 0.34281650071123754,
-    "clean_n": 1149,
-    "entries_per_entrant": 4.686741526014785,
+    "n": 12886,
+    "organizers": 3918,
+    "contestants": 2340.5,
+    "conv_clean": 0.35559840242390856,
+    "clean_n": 1256,
+    "entries_per_entrant": 4.728687620623104,
     "duration": 31.0,
-    "email_uptake": 0.9982289912856273
+    "email_uptake": 0.9981549815498155
    },
-   "contestants_ratio": 1.02128583840139,
-   "conv_ratio": 0.9045080518108913,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 77,
+   "contestants_ratio": 1.022431104464858,
+   "conv_ratio": 0.8797473942047984,
+   "closed_on_holiday_n": 79,
    "closed_on_holiday_contestants": 2161
   },
   "Super Bowl (US)": {
    "over": {
-    "n": 2425,
-    "contestants": 2245,
-    "conv_clean": 0.3115115501746439,
-    "clean_n": 258,
-    "entries_per_entrant": 4.3317829457364345,
-    "duration": 31,
-    "email_uptake": 0.9878213802435724
+    "n": 2506,
+    "organizers": 1303,
+    "contestants": 2292.0,
+    "conv_clean": 0.3218247005145964,
+    "clean_n": 280,
+    "entries_per_entrant": 4.423254898767844,
+    "duration": 31.0,
+    "email_uptake": 0.9872420405501112
    },
    "same_length_not_over": {
-    "n": 12125,
-    "contestants": 2303,
-    "conv_clean": 0.33915622940013185,
-    "clean_n": 1347,
-    "entries_per_entrant": 4.686915887850467,
-    "duration": 31,
-    "email_uptake": 0.9960726558664703
+    "n": 12530,
+    "organizers": 3920,
+    "contestants": 2345.0,
+    "conv_clean": 0.35195794522910434,
+    "clean_n": 1477,
+    "entries_per_entrant": 4.7058138765331705,
+    "duration": 31.0,
+    "email_uptake": 0.9968827930174564
    },
-   "contestants_ratio": 0.9748154580981329,
-   "conv_ratio": 0.9184898379299024,
-   "closed_on_holiday_share": null,
-   "closed_on_holiday_n": 63,
-   "closed_on_holiday_contestants": 2234
+   "contestants_ratio": 0.9773987206823028,
+   "conv_ratio": 0.9143839622802293,
+   "closed_on_holiday_n": 62,
+   "closed_on_holiday_contestants": 2239.0
+  }
+ },
+ "by_close_day_type": {
+  "31+": {
+   "weekday": {
+    "n": 6362,
+    "organizers": 2171,
+    "contestants": 2447.0,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.785782685335065,
+    "duration": 37.0,
+    "email_uptake": 1.0
+   },
+   "weekend": {
+    "n": 2605,
+    "organizers": 1223,
+    "contestants": 2393,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.880255130338325,
+    "duration": 37,
+    "email_uptake": 1.0007113499841922
+   },
+   "holiday": {
+    "n": 573,
+    "organizers": 342,
+    "contestants": 2324,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.507145950627978,
+    "duration": 35,
+    "email_uptake": 0.9795519343160288
+   }
+  },
+  "8-14": {
+   "weekday": {
+    "n": 5977,
+    "organizers": 2117,
+    "contestants": 2281,
+    "conv_clean": 0.32074907507224193,
+    "clean_n": 3985,
+    "entries_per_entrant": 4.631171345595353,
+    "duration": 11,
+    "email_uptake": 0.9024830699774267
+   },
+   "weekend": {
+    "n": 1796,
+    "organizers": 972,
+    "contestants": 2142.0,
+    "conv_clean": 0.3231543624161074,
+    "clean_n": 1307,
+    "entries_per_entrant": 4.5118617481929135,
+    "duration": 10.0,
+    "email_uptake": 0.9441371681415929
+   },
+   "holiday": {
+    "n": 387,
+    "organizers": 287,
+    "contestants": 2463,
+    "conv_clean": 0.3183344526527871,
+    "clean_n": 270,
+    "entries_per_entrant": 4.495785201373712,
+    "duration": 11,
+    "email_uptake": 0.9362024602270481
+   }
+  },
+  "15-30": {
+   "weekday": {
+    "n": 8005,
+    "organizers": 2784,
+    "contestants": 2328,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.604957397366382,
+    "duration": 22,
+    "email_uptake": 0.967165586890834
+   },
+   "weekend": {
+    "n": 2908,
+    "organizers": 1429,
+    "contestants": 2379.0,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.708558308310166,
+    "duration": 23.0,
+    "email_uptake": 0.992646525690154
+   },
+   "holiday": {
+    "n": 546,
+    "organizers": 381,
+    "contestants": 2180.0,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 5.211128502752277,
+    "duration": 22.0,
+    "email_uptake": 0.9446064139941691
+   }
+  },
+  "1-7": {
+   "weekend": {
+    "n": 2406,
+    "organizers": 712,
+    "contestants": 2129.5,
+    "conv_clean": 0.43830369357045146,
+    "clean_n": 1664,
+    "entries_per_entrant": 4.304965774671393,
+    "duration": 4.0,
+    "email_uptake": 0.9840645486636409
+   },
+   "weekday": {
+    "n": 6936,
+    "organizers": 1477,
+    "contestants": 2090.5,
+    "conv_clean": 0.43608766743308347,
+    "clean_n": 5228,
+    "entries_per_entrant": 3.897691797469334,
+    "duration": 4.0,
+    "email_uptake": 1.0
+   },
+   "holiday": {
+    "n": 433,
+    "organizers": 239,
+    "contestants": 2087,
+    "conv_clean": 0.42003567181926277,
+    "clean_n": 313,
+    "entries_per_entrant": 4.14529272380512,
+    "duration": 5,
+    "email_uptake": 0.9919202305987276
+   }
+  }
+ },
+ "last_days_impression_curve_by_duration": {
+  "7_day": {
+   "0": {
+    "impression_share_p50": 0.0773,
+    "campaigns": 7735,
+    "sites": 2156
+   },
+   "1": {
+    "impression_share_p50": 0.0846,
+    "campaigns": 7732,
+    "sites": 2156
+   },
+   "2": {
+    "impression_share_p50": 0.0819,
+    "campaigns": 7717,
+    "sites": 2149
+   },
+   "3": {
+    "impression_share_p50": 0.0908,
+    "campaigns": 7697,
+    "sites": 2148
+   },
+   "4": {
+    "impression_share_p50": 0.1083,
+    "campaigns": 7606,
+    "sites": 2133
+   },
+   "5": {
+    "impression_share_p50": 0.1254,
+    "campaigns": 7026,
+    "sites": 2020
+   },
+   "6": {
+    "impression_share_p50": 0.1579,
+    "campaigns": 6036,
+    "sites": 1837
+   },
+   "7": {
+    "impression_share_p50": 0.12,
+    "campaigns": 3896,
+    "sites": 1442
+   },
+   "8": {
+    "impression_share_p50": 0.0326,
+    "campaigns": 1438,
+    "sites": 830
+   },
+   "9": {
+    "impression_share_p50": 0.0014,
+    "campaigns": 358,
+    "sites": 296
+   }
+  },
+  "14_day": {
+   "0": {
+    "impression_share_p50": 0.0493,
+    "campaigns": 5657,
+    "sites": 2143
+   },
+   "1": {
+    "impression_share_p50": 0.0523,
+    "campaigns": 5652,
+    "sites": 2139
+   },
+   "2": {
+    "impression_share_p50": 0.0449,
+    "campaigns": 5648,
+    "sites": 2137
+   },
+   "3": {
+    "impression_share_p50": 0.0437,
+    "campaigns": 5647,
+    "sites": 2136
+   },
+   "4": {
+    "impression_share_p50": 0.0438,
+    "campaigns": 5645,
+    "sites": 2133
+   },
+   "5": {
+    "impression_share_p50": 0.0453,
+    "campaigns": 5645,
+    "sites": 2135
+   },
+   "6": {
+    "impression_share_p50": 0.0477,
+    "campaigns": 5631,
+    "sites": 2132
+   },
+   "7": {
+    "impression_share_p50": 0.049,
+    "campaigns": 5613,
+    "sites": 2126
+   },
+   "8": {
+    "impression_share_p50": 0.0512,
+    "campaigns": 5576,
+    "sites": 2115
+   },
+   "9": {
+    "impression_share_p50": 0.0548,
+    "campaigns": 5564,
+    "sites": 2104
+   },
+   "10": {
+    "impression_share_p50": 0.0591,
+    "campaigns": 5546,
+    "sites": 2095
+   },
+   "11": {
+    "impression_share_p50": 0.0661,
+    "campaigns": 5456,
+    "sites": 2068
+   },
+   "12": {
+    "impression_share_p50": 0.0743,
+    "campaigns": 4955,
+    "sites": 1924
+   },
+   "13": {
+    "impression_share_p50": 0.0898,
+    "campaigns": 4270,
+    "sites": 1721
+   },
+   "14": {
+    "impression_share_p50": 0.0575,
+    "campaigns": 3114,
+    "sites": 1391
+   },
+   "15": {
+    "impression_share_p50": 0.0085,
+    "campaigns": 1167,
+    "sites": 756
+   },
+   "16": {
+    "impression_share_p50": 0.0007,
+    "campaigns": 326,
+    "sites": 275
+   }
+  },
+  "30_day": {
+   "0": {
+    "impression_share_p50": 0.0287,
+    "campaigns": 8462,
+    "sites": 2367
+   },
+   "1": {
+    "impression_share_p50": 0.0313,
+    "campaigns": 8456,
+    "sites": 2362
+   },
+   "2": {
+    "impression_share_p50": 0.027,
+    "campaigns": 8455,
+    "sites": 2359
+   },
+   "3": {
+    "impression_share_p50": 0.0251,
+    "campaigns": 8447,
+    "sites": 2360
+   },
+   "4": {
+    "impression_share_p50": 0.0242,
+    "campaigns": 8447,
+    "sites": 2354
+   },
+   "5": {
+    "impression_share_p50": 0.0238,
+    "campaigns": 8444,
+    "sites": 2355
+   },
+   "6": {
+    "impression_share_p50": 0.0234,
+    "campaigns": 8451,
+    "sites": 2356
+   },
+   "7": {
+    "impression_share_p50": 0.0228,
+    "campaigns": 8440,
+    "sites": 2352
+   },
+   "8": {
+    "impression_share_p50": 0.0227,
+    "campaigns": 8444,
+    "sites": 2352
+   },
+   "9": {
+    "impression_share_p50": 0.0226,
+    "campaigns": 8442,
+    "sites": 2352
+   },
+   "10": {
+    "impression_share_p50": 0.0225,
+    "campaigns": 8425,
+    "sites": 2350
+   },
+   "11": {
+    "impression_share_p50": 0.0224,
+    "campaigns": 8417,
+    "sites": 2347
+   },
+   "12": {
+    "impression_share_p50": 0.0226,
+    "campaigns": 8416,
+    "sites": 2344
+   },
+   "13": {
+    "impression_share_p50": 0.0232,
+    "campaigns": 8400,
+    "sites": 2336
+   },
+   "14": {
+    "impression_share_p50": 0.0234,
+    "campaigns": 8387,
+    "sites": 2332
+   },
+   "15": {
+    "impression_share_p50": 0.0235,
+    "campaigns": 8377,
+    "sites": 2327
+   },
+   "16": {
+    "impression_share_p50": 0.0241,
+    "campaigns": 8370,
+    "sites": 2324
+   },
+   "17": {
+    "impression_share_p50": 0.0242,
+    "campaigns": 8364,
+    "sites": 2325
+   },
+   "18": {
+    "impression_share_p50": 0.0244,
+    "campaigns": 8357,
+    "sites": 2329
+   },
+   "19": {
+    "impression_share_p50": 0.0248,
+    "campaigns": 8340,
+    "sites": 2319
+   },
+   "20": {
+    "impression_share_p50": 0.0257,
+    "campaigns": 8305,
+    "sites": 2303
+   },
+   "21": {
+    "impression_share_p50": 0.0266,
+    "campaigns": 8277,
+    "sites": 2295
+   },
+   "22": {
+    "impression_share_p50": 0.0275,
+    "campaigns": 8256,
+    "sites": 2294
+   },
+   "23": {
+    "impression_share_p50": 0.0287,
+    "campaigns": 8237,
+    "sites": 2291
+   },
+   "24": {
+    "impression_share_p50": 0.03,
+    "campaigns": 8204,
+    "sites": 2278
+   },
+   "25": {
+    "impression_share_p50": 0.031,
+    "campaigns": 8139,
+    "sites": 2269
+   },
+   "26": {
+    "impression_share_p50": 0.0324,
+    "campaigns": 7809,
+    "sites": 2195
+   },
+   "27": {
+    "impression_share_p50": 0.0349,
+    "campaigns": 7388,
+    "sites": 2094
+   },
+   "28": {
+    "impression_share_p50": 0.0374,
+    "campaigns": 6633,
+    "sites": 1954
+   },
+   "29": {
+    "impression_share_p50": 0.0393,
+    "campaigns": 5684,
+    "sites": 1725
+   },
+   "30": {
+    "impression_share_p50": 0.0348,
+    "campaigns": 4473,
+    "sites": 1463
+   },
+   "31": {
+    "impression_share_p50": 0.0152,
+    "campaigns": 2387,
+    "sites": 978
+   },
+   "32": {
+    "impression_share_p50": 0.0167,
+    "campaigns": 1146,
+    "sites": 601
+   },
+   "33": {
+    "impression_share_p50": 0.0085,
+    "campaigns": 746,
+    "sites": 453
+   },
+   "34": {
+    "impression_share_p50": 0.0027,
+    "campaigns": 463,
+    "sites": 288
+   },
+   "35": {
+    "impression_share_p50": 0.0003,
+    "campaigns": 220,
+    "sites": 165
+   }
+  }
+ },
+ "seasonal_crowding": {
+  "all": {
+   "busiest_quartile_weeks": [
+    5,
+    9,
+    14,
+    18,
+    22,
+    31,
+    35,
+    40,
+    44,
+    48,
+    49,
+    50,
+    51
+   ],
+   "quietest_quartile_weeks": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    15,
+    21,
+    25,
+    28,
+    30,
+    38,
+    42,
+    52
+   ],
+   "busiest": {
+    "n": 12304,
+    "organizers": 3548,
+    "contestants": 2273.0,
+    "conv_clean": 0.40115784661497,
+    "clean_n": 4141,
+    "entries_per_entrant": 4.373287757772664,
+    "duration": 16.0,
+    "email_uptake": 0.9600438983067076
+   },
+   "quietest": {
+    "n": 7939,
+    "organizers": 2921,
+    "contestants": 2239,
+    "conv_clean": 0.36859122401847577,
+    "clean_n": 2633,
+    "entries_per_entrant": 4.533551554828151,
+    "duration": 15,
+    "email_uptake": 0.9863013698630136
+   }
+  },
+  "gaming_esports": {
+   "busiest": {
+    "n": 2359,
+    "organizers": 913,
+    "contestants": 2250,
+    "conv_clean": 0.37620616863353523,
+    "clean_n": 910,
+    "entries_per_entrant": 5.357648339684268,
+    "duration": 14,
+    "email_uptake": 0.7395640930919838
+   },
+   "quietest": {
+    "n": 1676,
+    "organizers": 735,
+    "contestants": 2374.5,
+    "conv_clean": 0.35692864727502693,
+    "clean_n": 718,
+    "entries_per_entrant": 5.415228007391091,
+    "duration": 14.0,
+    "email_uptake": 0.790206265594269
+   }
+  },
+  "electronics_tech": {
+   "busiest": {
+    "n": 2486,
+    "organizers": 570,
+    "contestants": 2300.0,
+    "conv_clean": 0.5353373840741925,
+    "clean_n": 937,
+    "entries_per_entrant": 4.7161051871715625,
+    "duration": 15.0,
+    "email_uptake": 0.8742318721835314
+   },
+   "quietest": {
+    "n": 1462,
+    "organizers": 449,
+    "contestants": 2231.0,
+    "conv_clean": 0.4079601990049751,
+    "clean_n": 495,
+    "entries_per_entrant": 4.969855819504212,
+    "duration": 15.0,
+    "email_uptake": 0.792955650812446
+   }
+  },
+  "media_entertainment": {
+   "busiest": {
+    "n": 1649,
+    "organizers": 311,
+    "contestants": 2169,
+    "conv_clean": 0.429020429544264,
+    "clean_n": 457,
+    "entries_per_entrant": 4.486545682102628,
+    "duration": 19,
+    "email_uptake": 1.0113711284855094
+   },
+   "quietest": {
+    "n": 1055,
+    "organizers": 240,
+    "contestants": 2028,
+    "conv_clean": 0.2810595405532114,
+    "clean_n": 225,
+    "entries_per_entrant": 4.486875965002573,
+    "duration": 22,
+    "email_uptake": 1.0079748413876064
+   }
+  }
+ },
+ "per_day_by_length_industry": {
+  "31+": {
+   "electronics_tech": {
+    "n": 1550,
+    "sites": 446,
+    "contestants_per_day": 64.64,
+    "entries_per_entrant_per_day": 0.139,
+    "conv_clean": null
+   },
+   "media_entertainment": {
+    "n": 1764,
+    "sites": 245,
+    "contestants_per_day": 51.07,
+    "entries_per_entrant_per_day": 0.15,
+    "conv_clean": null
+   },
+   "sports_outdoors": {
+    "n": 666,
+    "sites": 250,
+    "contestants_per_day": 66.68,
+    "entries_per_entrant_per_day": 0.124,
+    "conv_clean": null
+   },
+   "health_wellness_fitness": {
+    "n": 313,
+    "sites": 91,
+    "contestants_per_day": 40.61,
+    "entries_per_entrant_per_day": 0.095,
+    "conv_clean": null
+   },
+   "food_drink": {
+    "n": 466,
+    "sites": 186,
+    "contestants_per_day": 49.69,
+    "entries_per_entrant_per_day": 0.068,
+    "conv_clean": null
+   },
+   "automotive": {
+    "n": 330,
+    "sites": 97,
+    "contestants_per_day": 73.87,
+    "entries_per_entrant_per_day": 0.166,
+    "conv_clean": null
+   },
+   "software_saas": {
+    "n": 252,
+    "sites": 93,
+    "contestants_per_day": 63.68,
+    "entries_per_entrant_per_day": 0.113,
+    "conv_clean": null
+   },
+   "education": {
+    "n": 93,
+    "sites": 46,
+    "contestants_per_day": 54.24,
+    "entries_per_entrant_per_day": 0.095,
+    "conv_clean": null
+   },
+   "apparel_fashion": {
+    "n": 287,
+    "sites": 114,
+    "contestants_per_day": 57.57,
+    "entries_per_entrant_per_day": 0.069,
+    "conv_clean": null
+   },
+   "art_crafts": {
+    "n": 103,
+    "sites": 50,
+    "contestants_per_day": 51.54,
+    "entries_per_entrant_per_day": 0.124,
+    "conv_clean": null
+   },
+   "toys_hobbies_collectibles": {
+    "n": 273,
+    "sites": 87,
+    "contestants_per_day": 33.32,
+    "entries_per_entrant_per_day": 0.091,
+    "conv_clean": null
+   },
+   "travel_events": {
+    "n": 481,
+    "sites": 128,
+    "contestants_per_day": 55.76,
+    "entries_per_entrant_per_day": 0.052,
+    "conv_clean": null
+   },
+   "retail_marketplace": {
+    "n": 150,
+    "sites": 60,
+    "contestants_per_day": 52.87,
+    "entries_per_entrant_per_day": 0.08,
+    "conv_clean": null
+   },
+   "pets": {
+    "n": 89,
+    "sites": 42,
+    "contestants_per_day": 57.84,
+    "entries_per_entrant_per_day": 0.074,
+    "conv_clean": null
+   },
+   "gaming_esports": {
+    "n": 1652,
+    "sites": 601,
+    "contestants_per_day": 60.55,
+    "entries_per_entrant_per_day": 0.139,
+    "conv_clean": null
+   },
+   "jewelry_watches": {
+    "n": 45,
+    "sites": 27,
+    "contestants_per_day": 44.81,
+    "entries_per_entrant_per_day": 0.076,
+    "conv_clean": null
+   },
+   "home_garden": {
+    "n": 360,
+    "sites": 145,
+    "contestants_per_day": 55.95,
+    "entries_per_entrant_per_day": 0.106,
+    "conv_clean": null
+   },
+   "marketing_agency": {
+    "n": 126,
+    "sites": 29,
+    "contestants_per_day": 58.71,
+    "entries_per_entrant_per_day": 0.07,
+    "conv_clean": null
+   },
+   "baby_kids": {
+    "n": 76,
+    "sites": 21,
+    "contestants_per_day": 169.98,
+    "entries_per_entrant_per_day": 0.089,
+    "conv_clean": null
+   },
+   "beauty_personal_care": {
+    "n": 118,
+    "sites": 42,
+    "contestants_per_day": 36.71,
+    "entries_per_entrant_per_day": 0.124,
+    "conv_clean": null
+   },
+   "local_services": {
+    "n": 79,
+    "sites": 26,
+    "contestants_per_day": 52.81,
+    "entries_per_entrant_per_day": 0.085,
+    "conv_clean": null
+   },
+   "other": {
+    "n": 142,
+    "sites": 87,
+    "contestants_per_day": 35.63,
+    "entries_per_entrant_per_day": 0.049,
+    "conv_clean": null
+   }
+  },
+  "8-14": {
+   "gaming_esports": {
+    "n": 1986,
+    "sites": 788,
+    "contestants_per_day": 233.88,
+    "entries_per_entrant_per_day": 0.5,
+    "conv_clean": 0.3105626382231459
+   },
+   "automotive": {
+    "n": 250,
+    "sites": 34,
+    "contestants_per_day": 235.19,
+    "entries_per_entrant_per_day": 0.624,
+    "conv_clean": 0.39860551900225866
+   },
+   "electronics_tech": {
+    "n": 1488,
+    "sites": 419,
+    "contestants_per_day": 201.39,
+    "entries_per_entrant_per_day": 0.477,
+    "conv_clean": 0.3072210065645514
+   },
+   "sports_outdoors": {
+    "n": 434,
+    "sites": 181,
+    "contestants_per_day": 225.91,
+    "entries_per_entrant_per_day": 0.387,
+    "conv_clean": 0.3152678194854492
+   },
+   "art_crafts": {
+    "n": 114,
+    "sites": 35,
+    "contestants_per_day": 206.03,
+    "entries_per_entrant_per_day": 0.511,
+    "conv_clean": 0.3095608302947963
+   },
+   "travel_events": {
+    "n": 229,
+    "sites": 88,
+    "contestants_per_day": 264.0,
+    "entries_per_entrant_per_day": 0.33,
+    "conv_clean": 0.3342731829573935
+   },
+   "other": {
+    "n": 108,
+    "sites": 81,
+    "contestants_per_day": 231.86,
+    "entries_per_entrant_per_day": 0.392,
+    "conv_clean": 0.3519785611618943
+   },
+   "marketing_agency": {
+    "n": 149,
+    "sites": 33,
+    "contestants_per_day": 358.0,
+    "entries_per_entrant_per_day": 0.448,
+    "conv_clean": 0.3584833206846441
+   },
+   "retail_marketplace": {
+    "n": 103,
+    "sites": 41,
+    "contestants_per_day": 170.67,
+    "entries_per_entrant_per_day": 0.464,
+    "conv_clean": 0.18056955804116065
+   },
+   "beauty_personal_care": {
+    "n": 63,
+    "sites": 35,
+    "contestants_per_day": 243.0,
+    "entries_per_entrant_per_day": 0.278,
+    "conv_clean": 0.3499489482582359
+   },
+   "food_drink": {
+    "n": 389,
+    "sites": 152,
+    "contestants_per_day": 227.5,
+    "entries_per_entrant_per_day": 0.312,
+    "conv_clean": 0.3684564510705078
+   },
+   "software_saas": {
+    "n": 385,
+    "sites": 84,
+    "contestants_per_day": 284.44,
+    "entries_per_entrant_per_day": 0.592,
+    "conv_clean": 0.3969016952500465
+   },
+   "pets": {
+    "n": 108,
+    "sites": 29,
+    "contestants_per_day": 135.18,
+    "entries_per_entrant_per_day": 0.544,
+    "conv_clean": 0.3510758516552078
+   },
+   "media_entertainment": {
+    "n": 724,
+    "sites": 209,
+    "contestants_per_day": 174.7,
+    "entries_per_entrant_per_day": 0.414,
+    "conv_clean": 0.3006158583525789
+   },
+   "home_garden": {
+    "n": 469,
+    "sites": 119,
+    "contestants_per_day": 213.25,
+    "entries_per_entrant_per_day": 0.367,
+    "conv_clean": 0.3455843409735892
+   },
+   "apparel_fashion": {
+    "n": 251,
+    "sites": 126,
+    "contestants_per_day": 218.29,
+    "entries_per_entrant_per_day": 0.321,
+    "conv_clean": 0.3128577411699009
+   },
+   "education": {
+    "n": 151,
+    "sites": 42,
+    "contestants_per_day": 183.14,
+    "entries_per_entrant_per_day": 0.535,
+    "conv_clean": 0.2592681478076346
+   },
+   "toys_hobbies_collectibles": {
+    "n": 149,
+    "sites": 63,
+    "contestants_per_day": 172.88,
+    "entries_per_entrant_per_day": 0.365,
+    "conv_clean": 0.25416613752499456
+   },
+   "health_wellness_fitness": {
+    "n": 142,
+    "sites": 71,
+    "contestants_per_day": 180.26,
+    "entries_per_entrant_per_day": 0.298,
+    "conv_clean": 0.312606764605398
+   },
+   "baby_kids": {
+    "n": 67,
+    "sites": 34,
+    "contestants_per_day": 199.75,
+    "entries_per_entrant_per_day": 0.254,
+    "conv_clean": 0.26815976039487577
+   },
+   "local_services": {
+    "n": 62,
+    "sites": 16,
+    "contestants_per_day": 211.22,
+    "entries_per_entrant_per_day": 0.452,
+    "conv_clean": 0.2653287266703784
+   },
+   "creator_influencer": {
+    "n": 56,
+    "sites": 25,
+    "contestants_per_day": 705.74,
+    "entries_per_entrant_per_day": 0.342,
+    "conv_clean": 0.36446511551725225
+   }
+  },
+  "15-30": {
+   "media_entertainment": {
+    "n": 1633,
+    "sites": 304,
+    "contestants_per_day": 97.21,
+    "entries_per_entrant_per_day": 0.209,
+    "conv_clean": null
+   },
+   "electronics_tech": {
+    "n": 2385,
+    "sites": 580,
+    "contestants_per_day": 118.76,
+    "entries_per_entrant_per_day": 0.241,
+    "conv_clean": null
+   },
+   "gaming_esports": {
+    "n": 1971,
+    "sites": 810,
+    "contestants_per_day": 120.05,
+    "entries_per_entrant_per_day": 0.263,
+    "conv_clean": null
+   },
+   "health_wellness_fitness": {
+    "n": 231,
+    "sites": 109,
+    "contestants_per_day": 79.2,
+    "entries_per_entrant_per_day": 0.166,
+    "conv_clean": null
+   },
+   "home_garden": {
+    "n": 620,
+    "sites": 178,
+    "contestants_per_day": 97.1,
+    "entries_per_entrant_per_day": 0.175,
+    "conv_clean": null
+   },
+   "software_saas": {
+    "n": 275,
+    "sites": 108,
+    "contestants_per_day": 92.17,
+    "entries_per_entrant_per_day": 0.191,
+    "conv_clean": null
+   },
+   "sports_outdoors": {
+    "n": 882,
+    "sites": 294,
+    "contestants_per_day": 108.63,
+    "entries_per_entrant_per_day": 0.249,
+    "conv_clean": null
+   },
+   "apparel_fashion": {
+    "n": 386,
+    "sites": 157,
+    "contestants_per_day": 114.49,
+    "entries_per_entrant_per_day": 0.153,
+    "conv_clean": null
+   },
+   "baby_kids": {
+    "n": 82,
+    "sites": 36,
+    "contestants_per_day": 79.72,
+    "entries_per_entrant_per_day": 0.137,
+    "conv_clean": null
+   },
+   "retail_marketplace": {
+    "n": 171,
+    "sites": 63,
+    "contestants_per_day": 98.25,
+    "entries_per_entrant_per_day": 0.23,
+    "conv_clean": null
+   },
+   "toys_hobbies_collectibles": {
+    "n": 338,
+    "sites": 98,
+    "contestants_per_day": 82.52,
+    "entries_per_entrant_per_day": 0.163,
+    "conv_clean": null
+   },
+   "food_drink": {
+    "n": 617,
+    "sites": 208,
+    "contestants_per_day": 107.6,
+    "entries_per_entrant_per_day": 0.183,
+    "conv_clean": null
+   },
+   "other": {
+    "n": 148,
+    "sites": 99,
+    "contestants_per_day": 111.18,
+    "entries_per_entrant_per_day": 0.231,
+    "conv_clean": null
+   },
+   "travel_events": {
+    "n": 421,
+    "sites": 136,
+    "contestants_per_day": 115.57,
+    "entries_per_entrant_per_day": 0.165,
+    "conv_clean": null
+   },
+   "education": {
+    "n": 114,
+    "sites": 59,
+    "contestants_per_day": 95.35,
+    "entries_per_entrant_per_day": 0.172,
+    "conv_clean": null
+   },
+   "pets": {
+    "n": 149,
+    "sites": 41,
+    "contestants_per_day": 92.21,
+    "entries_per_entrant_per_day": 0.162,
+    "conv_clean": null
+   },
+   "art_crafts": {
+    "n": 219,
+    "sites": 65,
+    "contestants_per_day": 84.93,
+    "entries_per_entrant_per_day": 0.219,
+    "conv_clean": null
+   },
+   "beauty_personal_care": {
+    "n": 76,
+    "sites": 51,
+    "contestants_per_day": 83.93,
+    "entries_per_entrant_per_day": 0.149,
+    "conv_clean": null
+   },
+   "automotive": {
+    "n": 296,
+    "sites": 67,
+    "contestants_per_day": 182.17,
+    "entries_per_entrant_per_day": 0.356,
+    "conv_clean": null
+   },
+   "local_services": {
+    "n": 76,
+    "sites": 22,
+    "contestants_per_day": 96.59,
+    "entries_per_entrant_per_day": 0.153,
+    "conv_clean": null
+   },
+   "marketing_agency": {
+    "n": 193,
+    "sites": 41,
+    "contestants_per_day": 140.65,
+    "entries_per_entrant_per_day": 0.285,
+    "conv_clean": null
+   },
+   "jewelry_watches": {
+    "n": 41,
+    "sites": 23,
+    "contestants_per_day": 88.05,
+    "entries_per_entrant_per_day": 0.172,
+    "conv_clean": null
+   }
+  },
+  "1-3": {
+   "other": {
+    "n": 102,
+    "sites": 30,
+    "contestants_per_day": 1177.5,
+    "entries_per_entrant_per_day": 7.914,
+    "conv_clean": 0.6305372290292177
+   },
+   "media_entertainment": {
+    "n": 527,
+    "sites": 59,
+    "contestants_per_day": 1951.0,
+    "entries_per_entrant_per_day": 3.846,
+    "conv_clean": 0.5321471896482005
+   },
+   "electronics_tech": {
+    "n": 1098,
+    "sites": 87,
+    "contestants_per_day": 1540.0,
+    "entries_per_entrant_per_day": 3.182,
+    "conv_clean": 0.6446952595936795
+   },
+   "gaming_esports": {
+    "n": 858,
+    "sites": 213,
+    "contestants_per_day": 1426.0,
+    "entries_per_entrant_per_day": 3.329,
+    "conv_clean": 0.555230669265757
+   },
+   "apparel_fashion": {
+    "n": 622,
+    "sites": 25,
+    "contestants_per_day": 3481.83,
+    "entries_per_entrant_per_day": 2.675,
+    "conv_clean": 0.3711333576796664
+   },
+   "travel_events": {
+    "n": 87,
+    "sites": 16,
+    "contestants_per_day": 2055.0,
+    "entries_per_entrant_per_day": 1.174,
+    "conv_clean": 0.35610034207525654
+   },
+   "retail_marketplace": {
+    "n": 347,
+    "sites": 14,
+    "contestants_per_day": 2750.0,
+    "entries_per_entrant_per_day": 0.999,
+    "conv_clean": 0.3990503867054746
+   },
+   "home_garden": {
+    "n": 98,
+    "sites": 12,
+    "contestants_per_day": 2254.0,
+    "entries_per_entrant_per_day": 2.438,
+    "conv_clean": 0.7121751025991792
+   },
+   "sports_outdoors": {
+    "n": 52,
+    "sites": 19,
+    "contestants_per_day": 1084.83,
+    "entries_per_entrant_per_day": 1.823,
+    "conv_clean": 0.5377551014166898
+   },
+   "toys_hobbies_collectibles": {
+    "n": 102,
+    "sites": 20,
+    "contestants_per_day": 1063.0,
+    "entries_per_entrant_per_day": 1.0,
+    "conv_clean": 0.41458658346333854
+   },
+   "automotive": {
+    "n": 97,
+    "sites": 13,
+    "contestants_per_day": 1915.0,
+    "entries_per_entrant_per_day": 9.648,
+    "conv_clean": 0.46869631515212756
+   },
+   "software_saas": {
+    "n": 55,
+    "sites": 23,
+    "contestants_per_day": 670.0,
+    "entries_per_entrant_per_day": 2.225,
+    "conv_clean": 0.4499534841159694
+   },
+   "food_drink": {
+    "n": 103,
+    "sites": 19,
+    "contestants_per_day": 1768.0,
+    "entries_per_entrant_per_day": 1.849,
+    "conv_clean": 0.34212034383954154
+   }
+  },
+  "4-7": {
+   "gaming_esports": {
+    "n": 1330,
+    "sites": 521,
+    "contestants_per_day": 390.57,
+    "entries_per_entrant_per_day": 0.837,
+    "conv_clean": 0.36576576576576575
+   },
+   "food_drink": {
+    "n": 226,
+    "sites": 77,
+    "contestants_per_day": 479.55,
+    "entries_per_entrant_per_day": 0.662,
+    "conv_clean": 0.366361071932299
+   },
+   "software_saas": {
+    "n": 311,
+    "sites": 54,
+    "contestants_per_day": 381.0,
+    "entries_per_entrant_per_day": 0.966,
+    "conv_clean": 0.39125107217252786
+   },
+   "electronics_tech": {
+    "n": 825,
+    "sites": 245,
+    "contestants_per_day": 314.5,
+    "entries_per_entrant_per_day": 0.722,
+    "conv_clean": 0.3764255594058029
+   },
+   "pets": {
+    "n": 42,
+    "sites": 16,
+    "contestants_per_day": 209.71,
+    "entries_per_entrant_per_day": 0.2,
+    "conv_clean": 0.4574468085106383
+   },
+   "local_services": {
+    "n": 86,
+    "sites": 11,
+    "contestants_per_day": 398.2,
+    "entries_per_entrant_per_day": 0.657,
+    "conv_clean": 0.2613800795327883
+   },
+   "education": {
+    "n": 52,
+    "sites": 20,
+    "contestants_per_day": 364.96,
+    "entries_per_entrant_per_day": 0.534,
+    "conv_clean": 0.5882823673232015
+   },
+   "home_garden": {
+    "n": 237,
+    "sites": 57,
+    "contestants_per_day": 364.29,
+    "entries_per_entrant_per_day": 0.625,
+    "conv_clean": 0.46939131509900567
+   },
+   "sports_outdoors": {
+    "n": 266,
+    "sites": 105,
+    "contestants_per_day": 368.7,
+    "entries_per_entrant_per_day": 0.657,
+    "conv_clean": 0.36816100644386096
+   },
+   "media_entertainment": {
+    "n": 465,
+    "sites": 117,
+    "contestants_per_day": 318.71,
+    "entries_per_entrant_per_day": 0.664,
+    "conv_clean": 0.22296650717703348
+   },
+   "baby_kids": {
+    "n": 76,
+    "sites": 22,
+    "contestants_per_day": 313.16,
+    "entries_per_entrant_per_day": 0.308,
+    "conv_clean": 0.3491552695092518
+   },
+   "automotive": {
+    "n": 160,
+    "sites": 22,
+    "contestants_per_day": 328.78,
+    "entries_per_entrant_per_day": 0.608,
+    "conv_clean": 0.5768051562200498
+   },
+   "apparel_fashion": {
+    "n": 269,
+    "sites": 86,
+    "contestants_per_day": 410.29,
+    "entries_per_entrant_per_day": 0.423,
+    "conv_clean": 0.35115427102504815
+   },
+   "creator_influencer": {
+    "n": 51,
+    "sites": 18,
+    "contestants_per_day": 635.43,
+    "entries_per_entrant_per_day": 0.768,
+    "conv_clean": 0.33151134189669307
+   },
+   "toys_hobbies_collectibles": {
+    "n": 136,
+    "sites": 43,
+    "contestants_per_day": 373.02,
+    "entries_per_entrant_per_day": 0.729,
+    "conv_clean": 0.2936013590033975
+   },
+   "health_wellness_fitness": {
+    "n": 209,
+    "sites": 34,
+    "contestants_per_day": 281.33,
+    "entries_per_entrant_per_day": 0.722,
+    "conv_clean": 0.3859172308499421
+   },
+   "beauty_personal_care": {
+    "n": 68,
+    "sites": 20,
+    "contestants_per_day": 411.4,
+    "entries_per_entrant_per_day": 0.388,
+    "conv_clean": 0.47586766556422033
+   },
+   "other": {
+    "n": 86,
+    "sites": 61,
+    "contestants_per_day": 417.2,
+    "entries_per_entrant_per_day": 0.775,
+    "conv_clean": 0.4053677033513764
+   },
+   "travel_events": {
+    "n": 165,
+    "sites": 54,
+    "contestants_per_day": 425.25,
+    "entries_per_entrant_per_day": 0.542,
+    "conv_clean": 0.44534622718877903
+   },
+   "marketing_agency": {
+    "n": 68,
+    "sites": 22,
+    "contestants_per_day": 408.36,
+    "entries_per_entrant_per_day": 0.82,
+    "conv_clean": 0.3941018766756032
+   },
+   "retail_marketplace": {
+    "n": 81,
+    "sites": 30,
+    "contestants_per_day": 265.33,
+    "entries_per_entrant_per_day": 0.636,
+    "conv_clean": 0.2667024742273204
+   }
+  }
+ },
+ "per_day_by_type": {
+  "Advent or daily calendar": {
+   "n": 1090,
+   "sites": 290,
+   "contestants_per_day": 1204.5,
+   "entries_per_entrant": 3.889,
+   "duration": 5.0
+  },
+  "Voting contest": {
+   "n": 115,
+   "sites": 73,
+   "contestants_per_day": 196.22,
+   "entries_per_entrant": 3.326,
+   "duration": 12
+  },
+  "Scavenger hunt or secret code": {
+   "n": 185,
+   "sites": 93,
+   "contestants_per_day": 166.13,
+   "entries_per_entrant": 4.694,
+   "duration": 14
+  },
+  "Product launch": {
+   "n": 1522,
+   "sites": 850,
+   "contestants_per_day": 150.62,
+   "entries_per_entrant": 5.191,
+   "duration": 15.0
+  },
+  "Collaboration or partner": {
+   "n": 7408,
+   "sites": 2055,
+   "contestants_per_day": 203.07,
+   "entries_per_entrant": 5.073,
+   "duration": 14.0
+  },
+  "Bundle, mega or ultimate": {
+   "n": 6285,
+   "sites": 2191,
+   "contestants_per_day": 149.52,
+   "entries_per_entrant": 4.803,
+   "duration": 18
+  },
+  "Cash prize": {
+   "n": 1430,
+   "sites": 505,
+   "contestants_per_day": 167.62,
+   "entries_per_entrant": 6.602,
+   "duration": 21.0
+  },
+  "Gift card or voucher": {
+   "n": 2704,
+   "sites": 1032,
+   "contestants_per_day": 115.64,
+   "entries_per_entrant": 4.148,
+   "duration": 21.0
+  },
+  "Cart, wishlist or spree": {
+   "n": 374,
+   "sites": 159,
+   "contestants_per_day": 108.53,
+   "entries_per_entrant": 3.879,
+   "duration": 28.0
+  },
+  "Flash (24 to 72 hours)": {
+   "n": 109,
+   "sites": 76,
+   "contestants_per_day": 169.67,
+   "entries_per_entrant": 5.336,
+   "duration": 11
+  },
+  "Weekly or monthly series": {
+   "n": 1000,
+   "sites": 370,
+   "contestants_per_day": 153.25,
+   "entries_per_entrant": 4.61,
+   "duration": 14.0
+  },
+  "Charity or fundraiser": {
+   "n": 236,
+   "sites": 35,
+   "contestants_per_day": 257.81,
+   "entries_per_entrant": 1.0,
+   "duration": 0.0
+  },
+  "Quiz or trivia": {
+   "n": 125,
+   "sites": 62,
+   "contestants_per_day": 224.94,
+   "entries_per_entrant": 4.061,
+   "duration": 10
+  },
+  "Creator or streamer": {
+   "n": 1419,
+   "sites": 563,
+   "contestants_per_day": 148.42,
+   "entries_per_entrant": 5.505,
+   "duration": 18
+  },
+  "Community or Discord": {
+   "n": 1992,
+   "sites": 801,
+   "contestants_per_day": 199.13,
+   "entries_per_entrant": 5.088,
+   "duration": 13.0
+  },
+  "Milestone": {
+   "n": 2810,
+   "sites": 1246,
+   "contestants_per_day": 216.18,
+   "entries_per_entrant": 5.348,
+   "duration": 15.0
+  },
+  "Anniversary or birthday": {
+   "n": 861,
+   "sites": 505,
+   "contestants_per_day": 175.51,
+   "entries_per_entrant": 4.161,
+   "duration": 14
+  },
+  "Holiday themed": {
+   "n": 3751,
+   "sites": 1460,
+   "contestants_per_day": 161.12,
+   "entries_per_entrant": 4.264,
+   "duration": 15
+  },
+  "Free or no purchase": {
+   "n": 1751,
+   "sites": 319,
+   "contestants_per_day": 153.86,
+   "entries_per_entrant": 8.456,
+   "duration": 31
+  },
+  "Sweepstakes wording (US)": {
+   "n": 1785,
+   "sites": 550,
+   "contestants_per_day": 158.77,
+   "entries_per_entrant": 4.473,
+   "duration": 22
+  },
+  "Competition wording (UK)": {
+   "n": 1565,
+   "sites": 573,
+   "contestants_per_day": 120.09,
+   "entries_per_entrant": 3.85,
+   "duration": 20
+  },
+  "Sorteo (Spanish)": {
+   "n": 542,
+   "sites": 141,
+   "contestants_per_day": 230.5,
+   "entries_per_entrant": 4.894,
+   "duration": 16.0
+  },
+  "Gewinnspiel (German)": {
+   "n": 297,
+   "sites": 37,
+   "contestants_per_day": 1386.5,
+   "entries_per_entrant": 4.311,
+   "duration": 1
+  },
+  "Concours (French)": {
+   "n": 350,
+   "sites": 97,
+   "contestants_per_day": 326.66,
+   "entries_per_entrant": 3.015,
+   "duration": 11.0
   }
  }
 }

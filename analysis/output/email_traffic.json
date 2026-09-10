@@ -1,0 +1,543 @@
+{
+ "definitions": {
+  "scope": "every campaign in the export with location rows, organizer country and labels joined where known",
+  "mail_client_referrer": "the referring host is a mail client, a webmail domain or a provider's hosted campaign page. It says the click came out of an email, never which email, so a forwarded link counts the same as a newsletter blast",
+  "utm_tagged": "the landing URL carries an email UTM tag, which names the provider but rides on only the tagged 11% of impressions",
+  "share_of_all_impressions": "email-client impressions over all impressions in the export",
+  "day": "days since the campaign started, from the daily location rows",
+  "by_client": "campaigns and organizers are the largest single host in the group, never a sum, because one campaign reaches several hosts",
+  "day_curve": "day 0 is the start date and day 29 holds day 29 and everything after it. Email traffic against all traffic, each as a share of its own total, so a day above the all-traffic line is a day when mail lands harder than the campaign as a whole",
+  "outcomes_by_email_share": "email-client impressions as a share of the campaign's impressions. The bands hold different organizers, larger ones mail more, so the rows describe who mails and never what mailing does",
+  "days_mail_landed": "distinct days on which a campaign received any mail-client click, a proxy for one send against a sequence. A single day of clicks is one send, several days is either a sequence or a long tail from one send"
+ },
+ "totals": {
+  "impressions": 13527852,
+  "share_of_all_impressions": 0.0083,
+  "campaigns": 114965,
+  "organizers": 18733
+ },
+ "by_client": {
+  "Gmail app": {
+   "impressions": 11193333,
+   "campaigns": 104961,
+   "organizers": 17468,
+   "hosts": 1,
+   "share_of_email_impressions": 0.827
+  },
+  "Gmail web": {
+   "impressions": 1032067,
+   "campaigns": 66268,
+   "organizers": 12886,
+   "hosts": 1,
+   "share_of_email_impressions": 0.076
+  },
+  "ISP or carrier webmail": {
+   "impressions": 774737,
+   "campaigns": 7130,
+   "organizers": 1938,
+   "hosts": 3773,
+   "share_of_email_impressions": 0.057
+  },
+  "AOL, GMX, Mail.ru and other free webmail": {
+   "impressions": 217846,
+   "campaigns": 11583,
+   "organizers": 2616,
+   "hosts": 261,
+   "share_of_email_impressions": 0.016
+  },
+  "Outlook": {
+   "impressions": 133052,
+   "campaigns": 20277,
+   "organizers": 4948,
+   "hosts": 25,
+   "share_of_email_impressions": 0.01
+  },
+  "provider hosted campaign page": {
+   "impressions": 120454,
+   "campaigns": 4476,
+   "organizers": 935,
+   "hosts": 334,
+   "share_of_email_impressions": 0.009
+  },
+  "Yahoo Mail": {
+   "impressions": 56363,
+   "campaigns": 6715,
+   "organizers": 2215,
+   "hosts": 23,
+   "share_of_email_impressions": 0.004
+  }
+ },
+ "day_curve": {
+  "0": {
+   "share_of_email_impressions": 0.0109,
+   "share_of_all_impressions": 0.0203
+  },
+  "1": {
+   "share_of_email_impressions": 0.1371,
+   "share_of_all_impressions": 0.1422
+  },
+  "2": {
+   "share_of_email_impressions": 0.09,
+   "share_of_all_impressions": 0.107
+  },
+  "3": {
+   "share_of_email_impressions": 0.0631,
+   "share_of_all_impressions": 0.0794
+  },
+  "4": {
+   "share_of_email_impressions": 0.0532,
+   "share_of_all_impressions": 0.0606
+  },
+  "5": {
+   "share_of_email_impressions": 0.0467,
+   "share_of_all_impressions": 0.0496
+  },
+  "6": {
+   "share_of_email_impressions": 0.0414,
+   "share_of_all_impressions": 0.0433
+  },
+  "7": {
+   "share_of_email_impressions": 0.0403,
+   "share_of_all_impressions": 0.0403
+  },
+  "8": {
+   "share_of_email_impressions": 0.0369,
+   "share_of_all_impressions": 0.0349
+  },
+  "9": {
+   "share_of_email_impressions": 0.0302,
+   "share_of_all_impressions": 0.0294
+  },
+  "10": {
+   "share_of_email_impressions": 0.0284,
+   "share_of_all_impressions": 0.0265
+  },
+  "11": {
+   "share_of_email_impressions": 0.0252,
+   "share_of_all_impressions": 0.0242
+  },
+  "12": {
+   "share_of_email_impressions": 0.0236,
+   "share_of_all_impressions": 0.0222
+  },
+  "13": {
+   "share_of_email_impressions": 0.022,
+   "share_of_all_impressions": 0.0206
+  },
+  "14": {
+   "share_of_email_impressions": 0.0219,
+   "share_of_all_impressions": 0.0198
+  },
+  "15": {
+   "share_of_email_impressions": 0.0206,
+   "share_of_all_impressions": 0.017
+  },
+  "16": {
+   "share_of_email_impressions": 0.0208,
+   "share_of_all_impressions": 0.0144
+  },
+  "17": {
+   "share_of_email_impressions": 0.0161,
+   "share_of_all_impressions": 0.0129
+  },
+  "18": {
+   "share_of_email_impressions": 0.0149,
+   "share_of_all_impressions": 0.0123
+  },
+  "19": {
+   "share_of_email_impressions": 0.014,
+   "share_of_all_impressions": 0.0114
+  },
+  "20": {
+   "share_of_email_impressions": 0.0139,
+   "share_of_all_impressions": 0.011
+  },
+  "21": {
+   "share_of_email_impressions": 0.013,
+   "share_of_all_impressions": 0.0107
+  },
+  "22": {
+   "share_of_email_impressions": 0.013,
+   "share_of_all_impressions": 0.0101
+  },
+  "23": {
+   "share_of_email_impressions": 0.0124,
+   "share_of_all_impressions": 0.0093
+  },
+  "24": {
+   "share_of_email_impressions": 0.0121,
+   "share_of_all_impressions": 0.0089
+  },
+  "25": {
+   "share_of_email_impressions": 0.0116,
+   "share_of_all_impressions": 0.0086
+  },
+  "26": {
+   "share_of_email_impressions": 0.0113,
+   "share_of_all_impressions": 0.0083
+  },
+  "27": {
+   "share_of_email_impressions": 0.0114,
+   "share_of_all_impressions": 0.0083
+  },
+  "28": {
+   "share_of_email_impressions": 0.0124,
+   "share_of_all_impressions": 0.0085
+  },
+  "29": {
+   "share_of_email_impressions": 0.132,
+   "share_of_all_impressions": 0.128
+  }
+ },
+ "outcomes_by_email_share": {
+  "under 2%": {
+   "n": 98447,
+   "organizers": 17546,
+   "contestants": 766.0,
+   "conversion": 0.258,
+   "entries_per_entrant": 5.027
+  },
+  "2 to 10%": {
+   "n": 14632,
+   "organizers": 3290,
+   "contestants": 746.0,
+   "conversion": 0.251,
+   "entries_per_entrant": 4.249
+  },
+  "10 to 25%": {
+   "n": 1570,
+   "organizers": 431,
+   "contestants": 516.0,
+   "conversion": 0.25,
+   "entries_per_entrant": 4.354
+  },
+  "a quarter or more": {
+   "n": 316,
+   "organizers": 56,
+   "contestants": 439.5,
+   "conversion": 0.275,
+   "entries_per_entrant": 4.843
+  },
+  "no email traffic at all": {
+   "n": 33699,
+   "organizers": 8495,
+   "contestants": 238.0,
+   "conversion": 0.347,
+   "entries_per_entrant": 4.082
+  }
+ },
+ "email_share_by_industry": {
+  "health_wellness_fitness": {
+   "n": 3192,
+   "organizers": 509,
+   "median_email_share": 0.0046,
+   "share_of_campaigns_over_10pct": 0.115
+  },
+  "jewelry_watches": {
+   "n": 467,
+   "organizers": 173,
+   "median_email_share": 0.0027,
+   "share_of_campaigns_over_10pct": 0.096
+  },
+  "local_services": {
+   "n": 927,
+   "organizers": 182,
+   "median_email_share": 0.0021,
+   "share_of_campaigns_over_10pct": 0.033
+  },
+  "media_entertainment": {
+   "n": 21848,
+   "organizers": 2115,
+   "median_email_share": 0.004,
+   "share_of_campaigns_over_10pct": 0.022
+  },
+  "education": {
+   "n": 1901,
+   "organizers": 370,
+   "median_email_share": 0.001,
+   "share_of_campaigns_over_10pct": 0.017
+  },
+  "art_crafts": {
+   "n": 1668,
+   "organizers": 428,
+   "median_email_share": 0.0045,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "nonprofit_community": {
+   "n": 536,
+   "organizers": 203,
+   "median_email_share": 0.0016,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "retail_marketplace": {
+   "n": 2907,
+   "organizers": 391,
+   "median_email_share": 0.0028,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "automotive": {
+   "n": 2337,
+   "organizers": 387,
+   "median_email_share": 0.0049,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "toys_hobbies_collectibles": {
+   "n": 4735,
+   "organizers": 770,
+   "median_email_share": 0.0027,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "sports_outdoors": {
+   "n": 4643,
+   "organizers": 1023,
+   "median_email_share": 0.0059,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "food_drink": {
+   "n": 4760,
+   "organizers": 910,
+   "median_email_share": 0.0037,
+   "share_of_campaigns_over_10pct": 0.008
+  },
+  "software_saas": {
+   "n": 2338,
+   "organizers": 616,
+   "median_email_share": 0.0015,
+   "share_of_campaigns_over_10pct": 0.008
+  },
+  "creator_influencer": {
+   "n": 3459,
+   "organizers": 1075,
+   "median_email_share": 0.0,
+   "share_of_campaigns_over_10pct": 0.007
+  },
+  "other": {
+   "n": 4792,
+   "organizers": 1591,
+   "median_email_share": 0.0006,
+   "share_of_campaigns_over_10pct": 0.007
+  },
+  "electronics_tech": {
+   "n": 15674,
+   "organizers": 2092,
+   "median_email_share": 0.0025,
+   "share_of_campaigns_over_10pct": 0.007
+  },
+  "beauty_personal_care": {
+   "n": 1424,
+   "organizers": 354,
+   "median_email_share": 0.0084,
+   "share_of_campaigns_over_10pct": 0.006
+  },
+  "gaming_esports": {
+   "n": 25999,
+   "organizers": 4989,
+   "median_email_share": 0.0007,
+   "share_of_campaigns_over_10pct": 0.006
+  },
+  "baby_kids": {
+   "n": 1186,
+   "organizers": 137,
+   "median_email_share": 0.0036,
+   "share_of_campaigns_over_10pct": 0.004
+  },
+  "home_garden": {
+   "n": 3724,
+   "organizers": 600,
+   "median_email_share": 0.0042,
+   "share_of_campaigns_over_10pct": 0.004
+  },
+  "marketing_agency": {
+   "n": 1243,
+   "organizers": 165,
+   "median_email_share": 0.001,
+   "share_of_campaigns_over_10pct": 0.004
+  },
+  "travel_events": {
+   "n": 4028,
+   "organizers": 669,
+   "median_email_share": 0.0034,
+   "share_of_campaigns_over_10pct": 0.004
+  },
+  "pets": {
+   "n": 971,
+   "organizers": 211,
+   "median_email_share": 0.005,
+   "share_of_campaigns_over_10pct": 0.003
+  },
+  "apparel_fashion": {
+   "n": 4594,
+   "organizers": 834,
+   "median_email_share": 0.0015,
+   "share_of_campaigns_over_10pct": 0.002
+  }
+ },
+ "email_share_by_plan_tier": {
+  "Premium": {
+   "n": 2036,
+   "organizers": 222,
+   "median_email_share": 0.007,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "Business": {
+   "n": 30835,
+   "organizers": 3737,
+   "median_email_share": 0.0035,
+   "share_of_campaigns_over_10pct": 0.011
+  },
+  "Pro": {
+   "n": 64431,
+   "organizers": 10604,
+   "median_email_share": 0.0029,
+   "share_of_campaigns_over_10pct": 0.016
+  },
+  "Hobby": {
+   "n": 10954,
+   "organizers": 2619,
+   "median_email_share": 0.0,
+   "share_of_campaigns_over_10pct": 0.014
+  },
+  "Free": {
+   "n": 12210,
+   "organizers": 4296,
+   "median_email_share": 0.0,
+   "share_of_campaigns_over_10pct": 0.004
+  }
+ },
+ "email_share_by_email_action": {
+  "offers an email action": {
+   "n": 39739,
+   "organizers": 6019,
+   "median_email_share": 0.005,
+   "share_of_campaigns_over_10pct": 0.007
+  },
+  "no email action": {
+   "n": 80732,
+   "organizers": 13913,
+   "median_email_share": 0.0012,
+   "share_of_campaigns_over_10pct": 0.016
+  }
+ },
+ "days_mail_landed": {
+  "8 days or more": {
+   "n": 39445,
+   "organizers": 8682,
+   "contestants": 1489.0,
+   "conversion": 0.201,
+   "median_email_share": 0.0083
+  },
+  "4 to 7 days": {
+   "n": 27768,
+   "organizers": 7867,
+   "contestants": 782.0,
+   "conversion": 0.27,
+   "median_email_share": 0.0039
+  },
+  "2 to 3 days": {
+   "n": 24817,
+   "organizers": 7487,
+   "contestants": 515.0,
+   "conversion": 0.291,
+   "median_email_share": 0.0019
+  },
+  "1 day": {
+   "n": 22679,
+   "organizers": 6749,
+   "contestants": 378.0,
+   "conversion": 0.32,
+   "median_email_share": 0.001
+  }
+ },
+ "email_share_by_country": {
+  "argentina": {
+   "n": 318,
+   "organizers": 80,
+   "median_email_share": 0.0012,
+   "share_of_campaigns_over_10pct": 0.097
+  },
+  "italy": {
+   "n": 446,
+   "organizers": 68,
+   "median_email_share": 0.0009,
+   "share_of_campaigns_over_10pct": 0.031
+  },
+  "romania": {
+   "n": 338,
+   "organizers": 92,
+   "median_email_share": 0.0015,
+   "share_of_campaigns_over_10pct": 0.027
+  },
+  "germany": {
+   "n": 3050,
+   "organizers": 348,
+   "median_email_share": 0.0016,
+   "share_of_campaigns_over_10pct": 0.023
+  },
+  "united states": {
+   "n": 55074,
+   "organizers": 8194,
+   "median_email_share": 0.0035,
+   "share_of_campaigns_over_10pct": 0.017
+  },
+  "mexico": {
+   "n": 612,
+   "organizers": 162,
+   "median_email_share": 0.0005,
+   "share_of_campaigns_over_10pct": 0.013
+  },
+  "south africa": {
+   "n": 558,
+   "organizers": 135,
+   "median_email_share": 0.0035,
+   "share_of_campaigns_over_10pct": 0.013
+  },
+  "portugal": {
+   "n": 412,
+   "organizers": 117,
+   "median_email_share": 0.0023,
+   "share_of_campaigns_over_10pct": 0.012
+  },
+  "canada": {
+   "n": 6587,
+   "organizers": 981,
+   "median_email_share": 0.0029,
+   "share_of_campaigns_over_10pct": 0.01
+  },
+  "china": {
+   "n": 872,
+   "organizers": 84,
+   "median_email_share": 0.0052,
+   "share_of_campaigns_over_10pct": 0.009
+  },
+  "finland": {
+   "n": 358,
+   "organizers": 53,
+   "median_email_share": 0.0,
+   "share_of_campaigns_over_10pct": 0.008
+  },
+  "australia": {
+   "n": 5947,
+   "organizers": 1250,
+   "median_email_share": 0.0024,
+   "share_of_campaigns_over_10pct": 0.008
+  },
+  "united kingdom": {
+   "n": 14125,
+   "organizers": 1533,
+   "median_email_share": 0.0026,
+   "share_of_campaigns_over_10pct": 0.008
+  },
+  "france": {
+   "n": 1992,
+   "organizers": 292,
+   "median_email_share": 0.0,
+   "share_of_campaigns_over_10pct": 0.007
+  },
+  "malaysia": {
+   "n": 501,
+   "organizers": 67,
+   "median_email_share": 0.0023,
+   "share_of_campaigns_over_10pct": 0.006
+  }
+ }
+}

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Giveaway budget calculator. Python 3.8+, no dependencies. Every number in is an estimate and every number out is one.
 
-Price one 500 USD grand prize and five 60 USD runner-up prizes that cost us 60% of retail, where one entrant in five is overseas.
-  python3 budget.py --currency USD --prize "Grand prize" 500 1 --prize "Runner-up" 60 5 \
+Price one 500 USD grand Prize and five 60 USD runner-up Prizes that cost us 60% of retail, where one Entrant in five is overseas.
+  python3 budget.py --currency USD --prize "Grand Prize" 500 1 --prize "Runner-up" 60 5 \
      --cost-ratio 0.6 --shipping 25 --international-share 0.2 --international-shipping 60 \
      --duty-rate 0.1 --tax-on-prize 0 --substitute-reserve 1 --admin-hours 6 --hourly 50 --promotion 300 --contingency 0.08
 Check the arithmetic still works after an edit.
   python3 budget.py --self-test
 
 --cost-ratio is what a unit costs you as a fraction of retail (1.0 for bought at retail, 0.5 for own product at half).
-Shipping and duty apply to physical units only (add --digital to a prize to skip them).
-Every figure is in one currency. For a prize bought or shipped in another, convert before you enter it and pass --rate
+Shipping and duty apply to physical units only (add --digital to a Prize to skip them).
+Every figure is in one currency. For a Prize bought or shipped in another, convert before you enter it and pass --rate
 "1 USD = 0.92 EUR, 9 Sep 2026" so the rate and the date it was taken sit on the printed breakdown.
 """
 import argparse, json, sys
@@ -44,7 +44,7 @@ def main(argv):
     ap.add_argument("--cost-ratio", type=float, default=1.0); ap.add_argument("--shipping", type=float, default=0.0)
     ap.add_argument("--international-share", type=float, default=0.0); ap.add_argument("--international-shipping", type=float, default=0.0)
     ap.add_argument("--duty-rate", type=float, default=0.0); ap.add_argument("--tax-on-prize", type=float, default=0.0)
-    ap.add_argument("--substitute-reserve", type=float, default=0.0, help="units of the most expensive prize held back at cost")
+    ap.add_argument("--substitute-reserve", type=float, default=0.0, help="units of the most expensive Prize held back at cost")
     ap.add_argument("--admin-hours", type=float, default=0.0); ap.add_argument("--hourly", type=float, default=0.0)
     ap.add_argument("--promotion", type=float, default=0.0); ap.add_argument("--contingency", type=float, default=0.08)
     ap.add_argument("--rate", help='exchange rate and the date you took it, e.g. "1 USD = 0.92 EUR, 9 Sep 2026"')

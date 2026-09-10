@@ -1,0 +1,6065 @@
+{
+ "definitions": {
+  "scope": "ordinary campaigns (1,000+ contestants, plausible dates, finance_crypto and the crypto/ambiguous/purchase-opportunity segments removed)",
+  "gate": "every group needs 30 campaigns and 5 organizers; a cut finer than an industry (prize category, action, campaign type, or the top-quartile split inside one industry) needs 30 campaigns and 10 organizers on both sides of the split it appears in",
+  "conversion_clean": "contestants over impressions, clean campaigns only (no repeatable action, 14 days or less), so runs of different length and cadence are comparable",
+  "value_index": "contestants divided by the median contestants of every valued ordinary campaign in the same stated-USD prize pool band, independent of industry",
+  "prize_category": "analyze_export.classify_prize applied to the lowest-position prize, full coverage (not the first-export classification file)",
+  "campaign_type": "title/incentive-name/description regex from campaign_types.py; a campaign can match more than one type",
+  "action_uptake": "completions of that action over contestants, median among campaigns offering it; never divided by worth",
+  "top_quartile_vs_rest": "within one industry's clean subset, campaigns ranked by conversion; the top quarter compared with the remaining three quarters of the SAME industry, never against another industry",
+  "repeat_organizer_share": "share of the industry's organizers who ran two or more ordinary campaigns in that industry",
+  "nth_campaign": "this campaign's position among every campaign the site has run in the export (all industries), median across the group"
+ },
+ "scope_counts": {
+  "ordinary_n": 35604,
+  "ordinary_organizers": 6390,
+  "valued_n": 13976,
+  "industries_qualifying": 23
+ },
+ "baseline": {
+  "prize_category_index": {
+   "sports_outdoor_gear": {
+    "n": 251,
+    "organizers": 131,
+    "index": 0.8825
+   },
+   "food_drink_consumables": {
+    "n": 175,
+    "organizers": 101,
+    "index": 0.9087
+   },
+   "tech_hardware": {
+    "n": 3721,
+    "organizers": 1026,
+    "index": 1.1085
+   },
+   "gift_card_or_cash": {
+    "n": 1899,
+    "organizers": 752,
+    "index": 0.9745
+   },
+   "beauty_wellness": {
+    "n": 71,
+    "organizers": 36,
+    "index": 0.7627
+   },
+   "vehicle": {
+    "n": 191,
+    "organizers": 79,
+    "index": 0.8424
+   },
+   "toys_collectibles": {
+    "n": 42,
+    "organizers": 30,
+    "index": 1.3005
+   },
+   "music_gear": {
+    "n": 110,
+    "organizers": 35,
+    "index": 1.1332
+   },
+   "game_item_or_skin": {
+    "n": 691,
+    "organizers": 216,
+    "index": 1.0017
+   },
+   "merch_apparel_collectible": {
+    "n": 264,
+    "organizers": 125,
+    "index": 0.9833
+   },
+   "other_unclassified": {
+    "n": 2848,
+    "organizers": 1090,
+    "index": 0.906
+   },
+   "placeholder_name": {
+    "n": 419,
+    "organizers": 201,
+    "index": 1.1422
+   },
+   "regulated_goods_firearm": {
+    "n": 690,
+    "organizers": 104,
+    "index": 1.3991
+   },
+   "tools_craft_diy": {
+    "n": 75,
+    "organizers": 41,
+    "index": 0.9047
+   },
+   "subscription_membership": {
+    "n": 116,
+    "organizers": 86,
+    "index": 0.7907
+   },
+   "home_garden_appliance": {
+    "n": 380,
+    "organizers": 182,
+    "index": 1.0775
+   },
+   "bundle_or_box": {
+    "n": 1434,
+    "organizers": 627,
+    "index": 0.9465
+   },
+   "experience_travel_tickets": {
+    "n": 562,
+    "organizers": 285,
+    "index": 0.9436
+   }
+  },
+  "action": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "offer_rate": 0.4345,
+    "uptake": 0.9868
+   },
+   "share_action": {
+    "label": "Referral share",
+    "offer_rate": 0.4507,
+    "uptake": 0.1248
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "offer_rate": 0.1068,
+    "uptake": 0.3235
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "offer_rate": 0.161,
+    "uptake": 0.4128
+   },
+   "telegram_join": {
+    "label": "Telegram join",
+    "offer_rate": 0.0454,
+    "uptake": 0.8351
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "offer_rate": 0.3959,
+    "uptake": 0.9048
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "offer_rate": 0.1685,
+    "uptake": 0.6843
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "offer_rate": 0.0772,
+    "uptake": 0.6148
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "offer_rate": 0.5067,
+    "uptake": 0.8977
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "offer_rate": 0.1482,
+    "uptake": 0.3659
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "offer_rate": 0.5455,
+    "uptake": 0.573
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "offer_rate": 0.2015,
+    "uptake": 0.4636
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "offer_rate": 0.4111,
+    "uptake": 0.8365
+   }
+  },
+  "campaign_type_share": {
+   "Advent or daily calendar": {
+    "n": 1029,
+    "organizers": 280,
+    "share": 0.0289
+   },
+   "Photo or video contest (UGC)": {
+    "n": 36,
+    "organizers": 28,
+    "share": 0.001
+   },
+   "Voting contest": {
+    "n": 95,
+    "organizers": 59,
+    "share": 0.0027
+   },
+   "Scavenger hunt or secret code": {
+    "n": 171,
+    "organizers": 82,
+    "share": 0.0048
+   },
+   "Product launch": {
+    "n": 1229,
+    "organizers": 655,
+    "share": 0.0345
+   },
+   "Collaboration or partner": {
+    "n": 6152,
+    "organizers": 1848,
+    "share": 0.1728
+   },
+   "Bundle, mega or ultimate": {
+    "n": 5717,
+    "organizers": 2031,
+    "share": 0.1606
+   },
+   "Cash prize": {
+    "n": 1305,
+    "organizers": 458,
+    "share": 0.0367
+   },
+   "Gift card or voucher": {
+    "n": 2694,
+    "organizers": 1025,
+    "share": 0.0757
+   },
+   "Cart, wishlist or spree": {
+    "n": 373,
+    "organizers": 158,
+    "share": 0.0105
+   },
+   "Flash (24 to 72 hours)": {
+    "n": 103,
+    "organizers": 73,
+    "share": 0.0029
+   },
+   "Weekly or monthly series": {
+    "n": 931,
+    "organizers": 325,
+    "share": 0.0261
+   },
+   "Charity or fundraiser": {
+    "n": 231,
+    "organizers": 31,
+    "share": 0.0065
+   },
+   "Quiz or trivia": {
+    "n": 97,
+    "organizers": 50,
+    "share": 0.0027
+   },
+   "Creator or streamer": {
+    "n": 1380,
+    "organizers": 537,
+    "share": 0.0388
+   },
+   "Community or Discord": {
+    "n": 1326,
+    "organizers": 521,
+    "share": 0.0372
+   },
+   "Milestone": {
+    "n": 1827,
+    "organizers": 928,
+    "share": 0.0513
+   },
+   "Anniversary or birthday": {
+    "n": 837,
+    "organizers": 490,
+    "share": 0.0235
+   },
+   "Holiday themed": {
+    "n": 3653,
+    "organizers": 1397,
+    "share": 0.1026
+   },
+   "Free or no purchase": {
+    "n": 1739,
+    "organizers": 315,
+    "share": 0.0488
+   },
+   "Sweepstakes wording (US)": {
+    "n": 1759,
+    "organizers": 542,
+    "share": 0.0494
+   },
+   "Competition wording (UK)": {
+    "n": 1408,
+    "organizers": 488,
+    "share": 0.0395
+   },
+   "Sorteo (Spanish)": {
+    "n": 536,
+    "organizers": 138,
+    "share": 0.0151
+   },
+   "Gewinnspiel (German)": {
+    "n": 297,
+    "organizers": 37,
+    "share": 0.0083
+   },
+   "Concours (French)": {
+    "n": 345,
+    "organizers": 96,
+    "share": 0.0097
+   }
+  }
+ },
+ "by_industry": {
+  "electronics_tech": {
+   "n": 7288,
+   "organizers": 1036,
+   "contestants": 2259.0,
+   "conversion_clean": 0.435,
+   "clean_n": 2528,
+   "entries_per_entrant": 4.9313,
+   "duration_days": 15.0,
+   "actions": 7.0,
+   "email_offered": 0.2444,
+   "email_uptake": 0.8687,
+   "referral_offered": 0.3488,
+   "referral_uptake": 0.2015,
+   "stated_pool_usd": 1000.0,
+   "repeat_organizer_share": 0.8578,
+   "median_nth_campaign_overall": 19.0
+  },
+  "gaming_esports": {
+   "n": 6327,
+   "organizers": 1413,
+   "contestants": 2197,
+   "conversion_clean": 0.3662,
+   "clean_n": 2364,
+   "entries_per_entrant": 5.1661,
+   "duration_days": 14,
+   "actions": 9,
+   "email_offered": 0.2075,
+   "email_uptake": 0.7591,
+   "referral_offered": 0.3158,
+   "referral_uptake": 0.1445,
+   "stated_pool_usd": 827.5,
+   "repeat_organizer_share": 0.7767,
+   "median_nth_campaign_overall": 10
+  },
+  "media_entertainment": {
+   "n": 5018,
+   "organizers": 593,
+   "contestants": 2054.0,
+   "conversion_clean": 0.3234,
+   "clean_n": 1109,
+   "entries_per_entrant": 4.515,
+   "duration_days": 22.0,
+   "actions": 7.0,
+   "email_offered": 0.6528,
+   "email_uptake": 1.0095,
+   "referral_offered": 0.4283,
+   "referral_uptake": 0.1041,
+   "stated_pool_usd": 500.0,
+   "repeat_organizer_share": 0.8818,
+   "median_nth_campaign_overall": 50.0
+  },
+  "sports_outdoors": {
+   "n": 2268,
+   "organizers": 537,
+   "contestants": 2465.5,
+   "conversion_clean": 0.3497,
+   "clean_n": 365,
+   "entries_per_entrant": 4.4028,
+   "duration_days": 22.0,
+   "actions": 7.0,
+   "email_offered": 0.5608,
+   "email_uptake": 0.9994,
+   "referral_offered": 0.664,
+   "referral_uptake": 0.1614,
+   "stated_pool_usd": 1000.0,
+   "repeat_organizer_share": 0.7632,
+   "median_nth_campaign_overall": 6.0
+  },
+  "food_drink": {
+   "n": 1787,
+   "organizers": 419,
+   "contestants": 2399,
+   "conversion_clean": 0.3637,
+   "clean_n": 460,
+   "entries_per_entrant": 3.5368,
+   "duration_days": 18,
+   "actions": 6,
+   "email_offered": 0.6295,
+   "email_uptake": 0.8787,
+   "referral_offered": 0.5887,
+   "referral_uptake": 0.1093,
+   "stated_pool_usd": 750.0,
+   "repeat_organizer_share": 0.7655,
+   "median_nth_campaign_overall": 8
+  },
+  "home_garden": {
+   "n": 1777,
+   "organizers": 328,
+   "contestants": 2237,
+   "conversion_clean": 0.3955,
+   "clean_n": 467,
+   "entries_per_entrant": 3.8079,
+   "duration_days": 16,
+   "actions": 7,
+   "email_offered": 0.5943,
+   "email_uptake": 0.9023,
+   "referral_offered": 0.6685,
+   "referral_uptake": 0.1097,
+   "stated_pool_usd": 849.5,
+   "repeat_organizer_share": 0.8154,
+   "median_nth_campaign_overall": 9
+  },
+  "apparel_fashion": {
+   "n": 1717,
+   "organizers": 321,
+   "contestants": 2635,
+   "conversion_clean": 0.3609,
+   "clean_n": 911,
+   "entries_per_entrant": 2.712,
+   "duration_days": 8,
+   "actions": 4,
+   "email_offered": 0.7437,
+   "email_uptake": 1.0282,
+   "referral_offered": 0.3623,
+   "referral_uptake": 0.1159,
+   "stated_pool_usd": 1000.0,
+   "repeat_organizer_share": 0.813,
+   "median_nth_campaign_overall": 13
+  },
+  "travel_events": {
+   "n": 1347,
+   "organizers": 261,
+   "contestants": 2736,
+   "conversion_clean": 0.3568,
+   "clean_n": 228,
+   "entries_per_entrant": 3.0096,
+   "duration_days": 23,
+   "actions": 6,
+   "email_offered": 0.565,
+   "email_uptake": 1.0088,
+   "referral_offered": 0.6548,
+   "referral_uptake": 0.0857,
+   "stated_pool_usd": 1156.0,
+   "repeat_organizer_share": 0.8062,
+   "median_nth_campaign_overall": 13
+  },
+  "automotive": {
+   "n": 1124,
+   "organizers": 142,
+   "contestants": 2775.5,
+   "conversion_clean": 0.4585,
+   "clean_n": 323,
+   "entries_per_entrant": 6.3995,
+   "duration_days": 18.0,
+   "actions": 10.0,
+   "email_offered": 0.6806,
+   "email_uptake": 0.9344,
+   "referral_offered": 0.7162,
+   "referral_uptake": 0.1134,
+   "stated_pool_usd": 1725.0,
+   "repeat_organizer_share": 0.8737,
+   "median_nth_campaign_overall": 22.0
+  },
+  "toys_hobbies_collectibles": {
+   "n": 987,
+   "organizers": 201,
+   "contestants": 1836,
+   "conversion_clean": 0.2929,
+   "clean_n": 201,
+   "entries_per_entrant": 3.5501,
+   "duration_days": 20,
+   "actions": 6,
+   "email_offered": 0.4265,
+   "email_uptake": 0.9165,
+   "referral_offered": 0.4316,
+   "referral_uptake": 0.1174,
+   "stated_pool_usd": 500.0,
+   "repeat_organizer_share": 0.7964,
+   "median_nth_campaign_overall": 17
+  },
+  "health_wellness_fitness": {
+   "n": 883,
+   "organizers": 203,
+   "contestants": 1752,
+   "conversion_clean": 0.3539,
+   "clean_n": 132,
+   "entries_per_entrant": 4.1018,
+   "duration_days": 21,
+   "actions": 8,
+   "email_offered": 0.3873,
+   "email_uptake": 1.0066,
+   "referral_offered": 0.5074,
+   "referral_uptake": 0.1571,
+   "stated_pool_usd": 893.0,
+   "repeat_organizer_share": 0.7701,
+   "median_nth_campaign_overall": 11
+  },
+  "retail_marketplace": {
+   "n": 821,
+   "organizers": 133,
+   "contestants": 2327,
+   "conversion_clean": 0.3627,
+   "clean_n": 420,
+   "entries_per_entrant": 2.1933,
+   "duration_days": 8,
+   "actions": 3,
+   "email_offered": 0.2619,
+   "email_uptake": 1.0081,
+   "referral_offered": 0.4531,
+   "referral_uptake": 0.0844,
+   "stated_pool_usd": 600.0,
+   "repeat_organizer_share": 0.838,
+   "median_nth_campaign_overall": 20
+  },
+  "software_saas": {
+   "n": 550,
+   "organizers": 163,
+   "contestants": 1980.5,
+   "conversion_clean": 0.3155,
+   "clean_n": 124,
+   "entries_per_entrant": 4.3377,
+   "duration_days": 26.0,
+   "actions": 7.0,
+   "email_offered": 0.5745,
+   "email_uptake": 1.0167,
+   "referral_offered": 0.4655,
+   "referral_uptake": 0.2134,
+   "stated_pool_usd": 1600.0,
+   "repeat_organizer_share": 0.7036,
+   "median_nth_campaign_overall": 8.0
+  },
+  "education": {
+   "n": 435,
+   "organizers": 117,
+   "contestants": 1865,
+   "conversion_clean": 0.3212,
+   "clean_n": 176,
+   "entries_per_entrant": 4.1238,
+   "duration_days": 14,
+   "actions": 8,
+   "email_offered": 0.3724,
+   "email_uptake": 0.9999,
+   "referral_offered": 0.3609,
+   "referral_uptake": 0.1251,
+   "stated_pool_usd": 1187.5,
+   "repeat_organizer_share": 0.731,
+   "median_nth_campaign_overall": 7
+  },
+  "art_crafts": {
+   "n": 426,
+   "organizers": 100,
+   "contestants": 1809.0,
+   "conversion_clean": 0.285,
+   "clean_n": 59,
+   "entries_per_entrant": 4.9326,
+   "duration_days": 19.0,
+   "actions": 7.0,
+   "email_offered": 0.4789,
+   "email_uptake": 0.895,
+   "referral_offered": 0.3732,
+   "referral_uptake": 0.0779,
+   "stated_pool_usd": 250.0,
+   "repeat_organizer_share": 0.7653,
+   "median_nth_campaign_overall": 12.0
+  },
+  "marketing_agency": {
+   "n": 425,
+   "organizers": 67,
+   "contestants": 2764,
+   "conversion_clean": 0.3695,
+   "clean_n": 147,
+   "entries_per_entrant": 4.8067,
+   "duration_days": 15,
+   "actions": 9,
+   "email_offered": 0.3271,
+   "email_uptake": 0.774,
+   "referral_offered": 0.3435,
+   "referral_uptake": 0.0777,
+   "stated_pool_usd": 1400.0,
+   "repeat_organizer_share": 0.8424,
+   "median_nth_campaign_overall": 20
+  },
+  "pets": {
+   "n": 371,
+   "organizers": 80,
+   "contestants": 1728,
+   "conversion_clean": 0.3907,
+   "clean_n": 78,
+   "entries_per_entrant": 3.5432,
+   "duration_days": 17,
+   "actions": 7,
+   "email_offered": 0.8221,
+   "email_uptake": 1.0209,
+   "referral_offered": 0.7439,
+   "referral_uptake": 0.1067,
+   "stated_pool_usd": 600.0,
+   "repeat_organizer_share": 0.7844,
+   "median_nth_campaign_overall": 7
+  },
+  "beauty_personal_care": {
+   "n": 338,
+   "organizers": 112,
+   "contestants": 1701.0,
+   "conversion_clean": 0.4828,
+   "clean_n": 86,
+   "entries_per_entrant": 3.1789,
+   "duration_days": 19.0,
+   "actions": 6.0,
+   "email_offered": 0.5414,
+   "email_uptake": 0.9367,
+   "referral_offered": 0.6243,
+   "referral_uptake": 0.1033,
+   "stated_pool_usd": 375.0,
+   "repeat_organizer_share": 0.6686,
+   "median_nth_campaign_overall": 5.0
+  },
+  "local_services": {
+   "n": 317,
+   "organizers": 56,
+   "contestants": 2203,
+   "conversion_clean": 0.2653,
+   "clean_n": 16,
+   "entries_per_entrant": 4.2166,
+   "duration_days": 14,
+   "actions": 7,
+   "email_offered": 0.1356,
+   "email_uptake": 1.0024,
+   "referral_offered": 0.5174,
+   "referral_uptake": 0.1273,
+   "stated_pool_usd": 500.0,
+   "repeat_organizer_share": 0.8233,
+   "median_nth_campaign_overall": 30
+  },
+  "baby_kids": {
+   "n": 306,
+   "organizers": 69,
+   "contestants": 2003.5,
+   "conversion_clean": 0.2901,
+   "clean_n": 99,
+   "entries_per_entrant": 3.1667,
+   "duration_days": 15.0,
+   "actions": 6.0,
+   "email_offered": 0.5327,
+   "email_uptake": 1.0055,
+   "referral_offered": 0.7059,
+   "referral_uptake": 0.0958,
+   "stated_pool_usd": 1000.0,
+   "repeat_organizer_share": 0.7745,
+   "median_nth_campaign_overall": 10.0
+  },
+  "creator_influencer": {
+   "n": 209,
+   "organizers": 76,
+   "contestants": 3377,
+   "conversion_clean": 0.4208,
+   "clean_n": 104,
+   "entries_per_entrant": 4.4035,
+   "duration_days": 10,
+   "actions": 7,
+   "email_offered": 0.2727,
+   "email_uptake": 0.8754,
+   "referral_offered": 0.3732,
+   "referral_uptake": 0.0639,
+   "stated_pool_usd": 940.0,
+   "repeat_organizer_share": 0.6364,
+   "median_nth_campaign_overall": 7
+  },
+  "nonprofit_community": {
+   "n": 124,
+   "organizers": 49,
+   "contestants": 2034.0,
+   "conversion_clean": 0.5937,
+   "clean_n": 29,
+   "entries_per_entrant": 2.3104,
+   "duration_days": 16.0,
+   "actions": 5.0,
+   "email_offered": 0.4355,
+   "email_uptake": 1.0015,
+   "referral_offered": 0.4839,
+   "referral_uptake": 0.143,
+   "stated_pool_usd": 1698.0,
+   "repeat_organizer_share": 0.6048,
+   "median_nth_campaign_overall": 3.0
+  },
+  "jewelry_watches": {
+   "n": 123,
+   "organizers": 57,
+   "contestants": 2250,
+   "conversion_clean": 0.3081,
+   "clean_n": 37,
+   "entries_per_entrant": 3.5571,
+   "duration_days": 22,
+   "actions": 7,
+   "email_offered": 0.7886,
+   "email_uptake": 0.9794,
+   "referral_offered": 0.6423,
+   "referral_uptake": 0.1959,
+   "stated_pool_usd": 1119.0,
+   "repeat_organizer_share": 0.5366,
+   "median_nth_campaign_overall": 2
+  }
+ },
+ "prize_category_index_by_industry": {
+  "electronics_tech": {
+   "placeholder_name": {
+    "n": 57,
+    "organizers": 23,
+    "index": 1.2162,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 1.0648
+   },
+   "vehicle": {
+    "n": 43,
+    "organizers": 11,
+    "index": 0.8388,
+    "baseline_index": 0.8424,
+    "ratio_to_baseline": 0.9958
+   },
+   "game_item_or_skin": {
+    "n": 35,
+    "organizers": 22,
+    "index": 0.9502,
+    "baseline_index": 1.0017,
+    "ratio_to_baseline": 0.9486
+   },
+   "other_unclassified": {
+    "n": 501,
+    "organizers": 203,
+    "index": 0.811,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.8951
+   },
+   "bundle_or_box": {
+    "n": 136,
+    "organizers": 62,
+    "index": 0.8331,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.8802
+   },
+   "tech_hardware": {
+    "n": 1360,
+    "organizers": 331,
+    "index": 0.9747,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.8793
+   },
+   "gift_card_or_cash": {
+    "n": 109,
+    "organizers": 41,
+    "index": 0.7564,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.7762
+   }
+  },
+  "gaming_esports": {
+   "game_item_or_skin": {
+    "n": 420,
+    "organizers": 117,
+    "index": 1.1934,
+    "baseline_index": 1.0017,
+    "ratio_to_baseline": 1.1914
+   },
+   "gift_card_or_cash": {
+    "n": 316,
+    "organizers": 118,
+    "index": 1.0805,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.1088
+   },
+   "bundle_or_box": {
+    "n": 78,
+    "organizers": 55,
+    "index": 0.9685,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.0233
+   },
+   "tech_hardware": {
+    "n": 840,
+    "organizers": 290,
+    "index": 1.099,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.9915
+   },
+   "other_unclassified": {
+    "n": 199,
+    "organizers": 120,
+    "index": 0.8869,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.9789
+   },
+   "experience_travel_tickets": {
+    "n": 44,
+    "organizers": 24,
+    "index": 0.8991,
+    "baseline_index": 0.9436,
+    "ratio_to_baseline": 0.9528
+   },
+   "placeholder_name": {
+    "n": 39,
+    "organizers": 27,
+    "index": 1.0567,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 0.9252
+   }
+  },
+  "media_entertainment": {
+   "tech_hardware": {
+    "n": 786,
+    "organizers": 95,
+    "index": 1.7463,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 1.5754
+   },
+   "music_gear": {
+    "n": 73,
+    "organizers": 15,
+    "index": 1.4997,
+    "baseline_index": 1.1332,
+    "ratio_to_baseline": 1.3235
+   },
+   "placeholder_name": {
+    "n": 30,
+    "organizers": 16,
+    "index": 1.4517,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 1.271
+   },
+   "gift_card_or_cash": {
+    "n": 287,
+    "organizers": 82,
+    "index": 1.108,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.137
+   },
+   "bundle_or_box": {
+    "n": 252,
+    "organizers": 70,
+    "index": 1.024,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.0819
+   },
+   "other_unclassified": {
+    "n": 394,
+    "organizers": 81,
+    "index": 0.9593,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.0589
+   },
+   "game_item_or_skin": {
+    "n": 52,
+    "organizers": 25,
+    "index": 1.0277,
+    "baseline_index": 1.0017,
+    "ratio_to_baseline": 1.026
+   },
+   "experience_travel_tickets": {
+    "n": 76,
+    "organizers": 35,
+    "index": 0.8712,
+    "baseline_index": 0.9436,
+    "ratio_to_baseline": 0.9232
+   },
+   "home_garden_appliance": {
+    "n": 30,
+    "organizers": 19,
+    "index": 0.9401,
+    "baseline_index": 1.0775,
+    "ratio_to_baseline": 0.8725
+   }
+  },
+  "sports_outdoors": {
+   "vehicle": {
+    "n": 49,
+    "organizers": 13,
+    "index": 0.9962,
+    "baseline_index": 0.8424,
+    "ratio_to_baseline": 1.1826
+   },
+   "placeholder_name": {
+    "n": 36,
+    "organizers": 12,
+    "index": 1.2577,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 1.1011
+   },
+   "bundle_or_box": {
+    "n": 163,
+    "organizers": 81,
+    "index": 0.9625,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.0169
+   },
+   "other_unclassified": {
+    "n": 298,
+    "organizers": 141,
+    "index": 0.9174,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.0126
+   },
+   "home_garden_appliance": {
+    "n": 37,
+    "organizers": 18,
+    "index": 1.0858,
+    "baseline_index": 1.0775,
+    "ratio_to_baseline": 1.0077
+   },
+   "tech_hardware": {
+    "n": 53,
+    "organizers": 39,
+    "index": 1.1085,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 1.0
+   },
+   "sports_outdoor_gear": {
+    "n": 95,
+    "organizers": 55,
+    "index": 0.8546,
+    "baseline_index": 0.8825,
+    "ratio_to_baseline": 0.9684
+   },
+   "gift_card_or_cash": {
+    "n": 89,
+    "organizers": 49,
+    "index": 0.9417,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.9663
+   },
+   "merch_apparel_collectible": {
+    "n": 44,
+    "organizers": 24,
+    "index": 0.8834,
+    "baseline_index": 0.9833,
+    "ratio_to_baseline": 0.8984
+   },
+   "experience_travel_tickets": {
+    "n": 40,
+    "organizers": 29,
+    "index": 0.7778,
+    "baseline_index": 0.9436,
+    "ratio_to_baseline": 0.8243
+   },
+   "regulated_goods_firearm": {
+    "n": 242,
+    "organizers": 73,
+    "index": 1.0837,
+    "baseline_index": 1.3991,
+    "ratio_to_baseline": 0.7746
+   }
+  },
+  "food_drink": {
+   "placeholder_name": {
+    "n": 33,
+    "organizers": 16,
+    "index": 1.9273,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 1.6873
+   },
+   "home_garden_appliance": {
+    "n": 74,
+    "organizers": 38,
+    "index": 1.3522,
+    "baseline_index": 1.0775,
+    "ratio_to_baseline": 1.2549
+   },
+   "bundle_or_box": {
+    "n": 143,
+    "organizers": 76,
+    "index": 1.1736,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.24
+   },
+   "gift_card_or_cash": {
+    "n": 168,
+    "organizers": 68,
+    "index": 1.1227,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.1521
+   },
+   "food_drink_consumables": {
+    "n": 73,
+    "organizers": 39,
+    "index": 0.9571,
+    "baseline_index": 0.9087,
+    "ratio_to_baseline": 1.0532
+   },
+   "other_unclassified": {
+    "n": 159,
+    "organizers": 65,
+    "index": 0.8921,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.9847
+   },
+   "experience_travel_tickets": {
+    "n": 58,
+    "organizers": 32,
+    "index": 0.9024,
+    "baseline_index": 0.9436,
+    "ratio_to_baseline": 0.9563
+   },
+   "tech_hardware": {
+    "n": 87,
+    "organizers": 42,
+    "index": 1.0523,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.9493
+   }
+  },
+  "home_garden": {
+   "placeholder_name": {
+    "n": 49,
+    "organizers": 13,
+    "index": 1.753,
+    "baseline_index": 1.1422,
+    "ratio_to_baseline": 1.5348
+   },
+   "gift_card_or_cash": {
+    "n": 108,
+    "organizers": 48,
+    "index": 1.0095,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.0358
+   },
+   "other_unclassified": {
+    "n": 320,
+    "organizers": 86,
+    "index": 0.928,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.0243
+   },
+   "bundle_or_box": {
+    "n": 133,
+    "organizers": 54,
+    "index": 0.9446,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.9981
+   },
+   "tech_hardware": {
+    "n": 140,
+    "organizers": 48,
+    "index": 1.0962,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.9889
+   },
+   "home_garden_appliance": {
+    "n": 140,
+    "organizers": 49,
+    "index": 0.9793,
+    "baseline_index": 1.0775,
+    "ratio_to_baseline": 0.9089
+   }
+  },
+  "apparel_fashion": {
+   "merch_apparel_collectible": {
+    "n": 97,
+    "organizers": 19,
+    "index": 1.8997,
+    "baseline_index": 0.9833,
+    "ratio_to_baseline": 1.932
+   },
+   "other_unclassified": {
+    "n": 126,
+    "organizers": 68,
+    "index": 1.1243,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.2409
+   },
+   "gift_card_or_cash": {
+    "n": 225,
+    "organizers": 58,
+    "index": 0.9667,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.9919
+   },
+   "bundle_or_box": {
+    "n": 64,
+    "organizers": 38,
+    "index": 0.8052,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.8508
+   }
+  },
+  "travel_events": {
+   "other_unclassified": {
+    "n": 68,
+    "organizers": 28,
+    "index": 0.9985,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.1021
+   },
+   "experience_travel_tickets": {
+    "n": 197,
+    "organizers": 68,
+    "index": 1.0005,
+    "baseline_index": 0.9436,
+    "ratio_to_baseline": 1.0603
+   },
+   "gift_card_or_cash": {
+    "n": 62,
+    "organizers": 27,
+    "index": 0.9559,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.9808
+   },
+   "bundle_or_box": {
+    "n": 35,
+    "organizers": 20,
+    "index": 0.7172,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.7577
+   }
+  },
+  "automotive": {
+   "regulated_goods_firearm": {
+    "n": 339,
+    "organizers": 10,
+    "index": 3.391,
+    "baseline_index": 1.3991,
+    "ratio_to_baseline": 2.4237
+   },
+   "other_unclassified": {
+    "n": 149,
+    "organizers": 38,
+    "index": 1.0811,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.1932
+   },
+   "bundle_or_box": {
+    "n": 49,
+    "organizers": 17,
+    "index": 1.0811,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.1422
+   },
+   "gift_card_or_cash": {
+    "n": 65,
+    "organizers": 34,
+    "index": 0.8694,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.8921
+   },
+   "vehicle": {
+    "n": 38,
+    "organizers": 17,
+    "index": 0.5882,
+    "baseline_index": 0.8424,
+    "ratio_to_baseline": 0.6982
+   }
+  },
+  "toys_hobbies_collectibles": {
+   "other_unclassified": {
+    "n": 61,
+    "organizers": 31,
+    "index": 0.9039,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.9977
+   },
+   "gift_card_or_cash": {
+    "n": 33,
+    "organizers": 14,
+    "index": 0.8134,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.8346
+   },
+   "bundle_or_box": {
+    "n": 56,
+    "organizers": 23,
+    "index": 0.778,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.8221
+   }
+  },
+  "health_wellness_fitness": {
+   "bundle_or_box": {
+    "n": 45,
+    "organizers": 31,
+    "index": 0.9662,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.0208
+   },
+   "gift_card_or_cash": {
+    "n": 75,
+    "organizers": 31,
+    "index": 0.9102,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.934
+   },
+   "other_unclassified": {
+    "n": 74,
+    "organizers": 45,
+    "index": 0.7185,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.7931
+   },
+   "tech_hardware": {
+    "n": 57,
+    "organizers": 27,
+    "index": 0.833,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.7515
+   }
+  },
+  "retail_marketplace": {
+   "gift_card_or_cash": {
+    "n": 95,
+    "organizers": 39,
+    "index": 0.9216,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 0.9457
+   }
+  },
+  "software_saas": {
+   "other_unclassified": {
+    "n": 52,
+    "organizers": 20,
+    "index": 0.8537,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.9423
+   },
+   "tech_hardware": {
+    "n": 104,
+    "organizers": 37,
+    "index": 0.9028,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.8144
+   }
+  },
+  "education": {
+   "other_unclassified": {
+    "n": 42,
+    "organizers": 20,
+    "index": 0.7667,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.8462
+   },
+   "tech_hardware": {
+    "n": 30,
+    "organizers": 18,
+    "index": 0.7825,
+    "baseline_index": 1.1085,
+    "ratio_to_baseline": 0.7059
+   }
+  },
+  "art_crafts": {
+   "other_unclassified": {
+    "n": 81,
+    "organizers": 20,
+    "index": 1.3705,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.5127
+   },
+   "gift_card_or_cash": {
+    "n": 39,
+    "organizers": 16,
+    "index": 1.1897,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.2208
+   },
+   "bundle_or_box": {
+    "n": 75,
+    "organizers": 15,
+    "index": 1.0083,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 1.0653
+   }
+  },
+  "marketing_agency": {
+   "other_unclassified": {
+    "n": 54,
+    "organizers": 11,
+    "index": 1.3424,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 1.4817
+   }
+  },
+  "pets": {
+   "other_unclassified": {
+    "n": 66,
+    "organizers": 24,
+    "index": 0.8932,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.9858
+   },
+   "bundle_or_box": {
+    "n": 32,
+    "organizers": 15,
+    "index": 0.8643,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.9132
+   }
+  },
+  "beauty_personal_care": {
+   "other_unclassified": {
+    "n": 49,
+    "organizers": 22,
+    "index": 0.8016,
+    "baseline_index": 0.906,
+    "ratio_to_baseline": 0.8848
+   },
+   "bundle_or_box": {
+    "n": 34,
+    "organizers": 20,
+    "index": 0.7984,
+    "baseline_index": 0.9465,
+    "ratio_to_baseline": 0.8435
+   }
+  },
+  "local_services": {
+   "gift_card_or_cash": {
+    "n": 32,
+    "organizers": 13,
+    "index": 1.0389,
+    "baseline_index": 0.9745,
+    "ratio_to_baseline": 1.066
+   }
+  }
+ },
+ "action_index_by_industry": {
+  "electronics_tech": {
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 976,
+    "organizers_offered": 170,
+    "offer_rate": 0.1339,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.6924,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 2.1399
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 2542,
+    "organizers_offered": 505,
+    "offer_rate": 0.3488,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.2015,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.6149
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 1733,
+    "organizers_offered": 252,
+    "offer_rate": 0.2378,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.5337,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 1.4585
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 804,
+    "organizers_offered": 199,
+    "offer_rate": 0.1103,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.7368,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 1.1984
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 4627,
+    "organizers_offered": 666,
+    "offer_rate": 0.6349,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.6861,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 1.1974
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 3314,
+    "organizers_offered": 616,
+    "offer_rate": 0.4547,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9854,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0891
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 3867,
+    "organizers_offered": 664,
+    "offer_rate": 0.5306,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.9755,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 1.0866
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 1582,
+    "organizers_offered": 345,
+    "offer_rate": 0.2171,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.4945,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 1.0668
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 3025,
+    "organizers_offered": 537,
+    "offer_rate": 0.4151,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8859,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0591
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 1645,
+    "organizers_offered": 234,
+    "offer_rate": 0.2257,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.6993,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 1.022
+   },
+   "telegram_join": {
+    "label": "Telegram join",
+    "n_offered": 724,
+    "organizers_offered": 33,
+    "offer_rate": 0.0993,
+    "offer_rate_baseline": 0.0454,
+    "uptake": 0.8423,
+    "uptake_baseline": 0.8351,
+    "uptake_ratio_to_baseline": 1.0086
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 1562,
+    "organizers_offered": 213,
+    "offer_rate": 0.2143,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.4127,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 0.9998
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1781,
+    "organizers_offered": 386,
+    "offer_rate": 0.2444,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.8687,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.8804
+   }
+  },
+  "gaming_esports": {
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 4911,
+    "organizers_offered": 1156,
+    "offer_rate": 0.7762,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.7247,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 1.2646
+   },
+   "telegram_join": {
+    "label": "Telegram join",
+    "n_offered": 498,
+    "organizers_offered": 83,
+    "offer_rate": 0.0787,
+    "offer_rate_baseline": 0.0454,
+    "uptake": 1.002,
+    "uptake_baseline": 0.8351,
+    "uptake_ratio_to_baseline": 1.1998
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 1998,
+    "organizers_offered": 491,
+    "offer_rate": 0.3158,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1445,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.1583
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 987,
+    "organizers_offered": 341,
+    "offer_rate": 0.156,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.4017,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 1.0977
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 2972,
+    "organizers_offered": 898,
+    "offer_rate": 0.4697,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9752,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0778
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 2321,
+    "organizers_offered": 550,
+    "offer_rate": 0.3668,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8893,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0632
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 2393,
+    "organizers_offered": 747,
+    "offer_rate": 0.3782,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.4917,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 1.0607
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 2441,
+    "organizers_offered": 664,
+    "offer_rate": 0.3858,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.7206,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 1.0531
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 3065,
+    "organizers_offered": 793,
+    "offer_rate": 0.4844,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.933,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 1.0393
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 495,
+    "organizers_offered": 210,
+    "offer_rate": 0.0782,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.6323,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 1.0284
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 2406,
+    "organizers_offered": 684,
+    "offer_rate": 0.3803,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.4169,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 1.0101
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 681,
+    "organizers_offered": 225,
+    "offer_rate": 0.1076,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2978,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.9204
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1313,
+    "organizers_offered": 270,
+    "offer_rate": 0.2075,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.7591,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.7693
+   }
+  },
+  "media_entertainment": {
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 1332,
+    "organizers_offered": 168,
+    "offer_rate": 0.2654,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.5278,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 1.1386
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 973,
+    "organizers_offered": 82,
+    "offer_rate": 0.1939,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.4249,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 1.0295
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 1813,
+    "organizers_offered": 278,
+    "offer_rate": 0.3613,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8584,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0262
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 3276,
+    "organizers_offered": 262,
+    "offer_rate": 0.6528,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0095,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0231
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 458,
+    "organizers_offered": 77,
+    "offer_rate": 0.0913,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.3301,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 1.0203
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 2128,
+    "organizers_offered": 344,
+    "offer_rate": 0.4241,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8878,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.989
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 2175,
+    "organizers_offered": 308,
+    "offer_rate": 0.4334,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.8862,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.9794
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 2828,
+    "organizers_offered": 341,
+    "offer_rate": 0.5636,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.5516,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.9625
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 890,
+    "organizers_offered": 90,
+    "offer_rate": 0.1774,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.642,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 0.9382
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 2149,
+    "organizers_offered": 302,
+    "offer_rate": 0.4283,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1041,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.8346
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 513,
+    "organizers_offered": 119,
+    "offer_rate": 0.1022,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2906,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.794
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 247,
+    "organizers_offered": 85,
+    "offer_rate": 0.0492,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.4869,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.792
+   },
+   "telegram_join": {
+    "label": "Telegram join",
+    "n_offered": 195,
+    "organizers_offered": 21,
+    "offer_rate": 0.0389,
+    "offer_rate_baseline": 0.0454,
+    "uptake": 0.3324,
+    "uptake_baseline": 0.8351,
+    "uptake_ratio_to_baseline": 0.398
+   }
+  },
+  "sports_outdoors": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 1506,
+    "organizers_offered": 344,
+    "offer_rate": 0.664,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1614,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.2937
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1272,
+    "organizers_offered": 342,
+    "offer_rate": 0.5608,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9994,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0128
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 1239,
+    "organizers_offered": 282,
+    "offer_rate": 0.5463,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8061,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9637
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 1431,
+    "organizers_offered": 358,
+    "offer_rate": 0.631,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8354,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9306
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 180,
+    "organizers_offered": 78,
+    "offer_rate": 0.0794,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5692,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.9259
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 967,
+    "organizers_offered": 266,
+    "offer_rate": 0.4264,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.8108,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8961
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 149,
+    "organizers_offered": 65,
+    "offer_rate": 0.0657,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.261,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7131
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 273,
+    "organizers_offered": 87,
+    "offer_rate": 0.1204,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2251,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.6956
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 239,
+    "organizers_offered": 64,
+    "offer_rate": 0.1054,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3061,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.6603
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 965,
+    "organizers_offered": 212,
+    "offer_rate": 0.4255,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3651,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.6371
+   }
+  },
+  "food_drink": {
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 65,
+    "organizers_offered": 17,
+    "offer_rate": 0.0364,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.8872,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 1.2965
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 777,
+    "organizers_offered": 210,
+    "offer_rate": 0.4348,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7858,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9394
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 961,
+    "organizers_offered": 249,
+    "offer_rate": 0.5378,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8281,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9224
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 95,
+    "organizers_offered": 63,
+    "offer_rate": 0.0532,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5618,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.9139
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1125,
+    "organizers_offered": 286,
+    "offer_rate": 0.6295,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.8787,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.8904
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 1052,
+    "organizers_offered": 273,
+    "offer_rate": 0.5887,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1093,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.8756
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 470,
+    "organizers_offered": 116,
+    "offer_rate": 0.263,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7208,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.7967
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 281,
+    "organizers_offered": 90,
+    "offer_rate": 0.1572,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2849,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7787
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 143,
+    "organizers_offered": 44,
+    "offer_rate": 0.08,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3063,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.6608
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 601,
+    "organizers_offered": 128,
+    "offer_rate": 0.3363,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3581,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.625
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 108,
+    "organizers_offered": 43,
+    "offer_rate": 0.0604,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.1989,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.6148
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 57,
+    "organizers_offered": 11,
+    "offer_rate": 0.0319,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.1239,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 0.3003
+   }
+  },
+  "home_garden": {
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 989,
+    "organizers_offered": 190,
+    "offer_rate": 0.5566,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8786,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0503
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 1147,
+    "organizers_offered": 209,
+    "offer_rate": 0.6455,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8408,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9365
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1056,
+    "organizers_offered": 216,
+    "offer_rate": 0.5943,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9023,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.9144
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 1188,
+    "organizers_offered": 221,
+    "offer_rate": 0.6685,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1097,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.8792
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 579,
+    "organizers_offered": 125,
+    "offer_rate": 0.3258,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7348,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8121
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 155,
+    "organizers_offered": 54,
+    "offer_rate": 0.0872,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.4678,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.7609
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 291,
+    "organizers_offered": 71,
+    "offer_rate": 0.1638,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2746,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7505
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 789,
+    "organizers_offered": 115,
+    "offer_rate": 0.444,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.4052,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.7072
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 188,
+    "organizers_offered": 42,
+    "offer_rate": 0.1058,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3056,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.6592
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 112,
+    "organizers_offered": 49,
+    "offer_rate": 0.063,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.0927,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.2865
+   }
+  },
+  "apparel_fashion": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 1277,
+    "organizers_offered": 244,
+    "offer_rate": 0.7437,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0282,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.042
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 82,
+    "organizers_offered": 42,
+    "offer_rate": 0.0478,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.6031,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.981
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 622,
+    "organizers_offered": 202,
+    "offer_rate": 0.3623,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1159,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.9291
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 746,
+    "organizers_offered": 166,
+    "offer_rate": 0.4345,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7356,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.8794
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 629,
+    "organizers_offered": 208,
+    "offer_rate": 0.3663,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7773,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8658
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 192,
+    "organizers_offered": 68,
+    "offer_rate": 0.1118,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2809,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7675
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 292,
+    "organizers_offered": 92,
+    "offer_rate": 0.1701,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.6694,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.7399
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 56,
+    "organizers_offered": 24,
+    "offer_rate": 0.0326,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.2821,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.6086
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 526,
+    "organizers_offered": 79,
+    "offer_rate": 0.3063,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3299,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.5757
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 92,
+    "organizers_offered": 26,
+    "offer_rate": 0.0536,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.1658,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.5125
+   }
+  },
+  "travel_events": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 761,
+    "organizers_offered": 151,
+    "offer_rate": 0.565,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0088,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0223
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 633,
+    "organizers_offered": 141,
+    "offer_rate": 0.4699,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7599,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8465
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 70,
+    "organizers_offered": 40,
+    "offer_rate": 0.052,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.4812,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.7827
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 590,
+    "organizers_offered": 122,
+    "offer_rate": 0.438,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.6004,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.7177
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 53,
+    "organizers_offered": 30,
+    "offer_rate": 0.0393,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3206,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.6916
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 882,
+    "organizers_offered": 169,
+    "offer_rate": 0.6548,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0857,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.6864
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 350,
+    "organizers_offered": 82,
+    "offer_rate": 0.2598,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.6195,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.6847
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 159,
+    "organizers_offered": 40,
+    "offer_rate": 0.118,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.1908,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.5897
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 138,
+    "organizers_offered": 43,
+    "offer_rate": 0.1024,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2123,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.5802
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 436,
+    "organizers_offered": 93,
+    "offer_rate": 0.3237,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.2411,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.4208
+   }
+  },
+  "automotive": {
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 202,
+    "organizers_offered": 23,
+    "offer_rate": 0.1797,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.489,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 1.5114
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 99,
+    "organizers_offered": 20,
+    "offer_rate": 0.0881,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.901,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 1.4656
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 630,
+    "organizers_offered": 77,
+    "offer_rate": 0.5605,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9254,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0228
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 647,
+    "organizers_offered": 83,
+    "offer_rate": 0.5756,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8021,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9589
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 765,
+    "organizers_offered": 86,
+    "offer_rate": 0.6806,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9344,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.947
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 805,
+    "organizers_offered": 92,
+    "offer_rate": 0.7162,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1134,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.9085
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 846,
+    "organizers_offered": 96,
+    "offer_rate": 0.7527,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8127,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9052
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 60,
+    "organizers_offered": 26,
+    "offer_rate": 0.0534,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.3143,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.859
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 76,
+    "organizers_offered": 17,
+    "offer_rate": 0.0676,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.378,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.8155
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 687,
+    "organizers_offered": 56,
+    "offer_rate": 0.6112,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.4128,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.7203
+   }
+  },
+  "toys_hobbies_collectibles": {
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 374,
+    "organizers_offered": 95,
+    "offer_rate": 0.3789,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8765,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0479
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 515,
+    "organizers_offered": 113,
+    "offer_rate": 0.5218,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9131,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0092
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 550,
+    "organizers_offered": 120,
+    "offer_rate": 0.5572,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8944,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9963
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 426,
+    "organizers_offered": 104,
+    "offer_rate": 0.4316,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1174,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.9412
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 68,
+    "organizers_offered": 25,
+    "offer_rate": 0.0689,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5732,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.9324
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 421,
+    "organizers_offered": 97,
+    "offer_rate": 0.4265,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9165,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.9288
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 573,
+    "organizers_offered": 108,
+    "offer_rate": 0.5805,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.5233,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.9131
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 160,
+    "organizers_offered": 40,
+    "offer_rate": 0.1621,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3813,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.8226
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 99,
+    "organizers_offered": 32,
+    "offer_rate": 0.1003,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2614,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.808
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 138,
+    "organizers_offered": 38,
+    "offer_rate": 0.1398,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2886,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7887
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 93,
+    "organizers_offered": 36,
+    "offer_rate": 0.0942,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.2653,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 0.6428
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 137,
+    "organizers_offered": 39,
+    "offer_rate": 0.1388,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.2959,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 0.4325
+   }
+  },
+  "health_wellness_fitness": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 448,
+    "organizers_offered": 155,
+    "offer_rate": 0.5074,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1571,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.2589
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 342,
+    "organizers_offered": 141,
+    "offer_rate": 0.3873,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0066,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0201
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 392,
+    "organizers_offered": 104,
+    "offer_rate": 0.4439,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7687,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9189
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 127,
+    "organizers_offered": 34,
+    "offer_rate": 0.1438,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.3261,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.8911
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 151,
+    "organizers_offered": 40,
+    "offer_rate": 0.171,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.4074,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.8788
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 498,
+    "organizers_offered": 132,
+    "offer_rate": 0.564,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7652,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8524
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 54,
+    "organizers_offered": 32,
+    "offer_rate": 0.0612,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5182,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.8429
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 292,
+    "organizers_offered": 64,
+    "offer_rate": 0.3307,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7426,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8208
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 460,
+    "organizers_offered": 74,
+    "offer_rate": 0.521,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3672,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.6408
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 54,
+    "organizers_offered": 29,
+    "offer_rate": 0.0612,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.1375,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.425
+   }
+  },
+  "retail_marketplace": {
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 98,
+    "organizers_offered": 28,
+    "offer_rate": 0.1194,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.7078,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 2.1877
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 37,
+    "organizers_offered": 18,
+    "offer_rate": 0.0451,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 1.0286,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 1.6731
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 215,
+    "organizers_offered": 55,
+    "offer_rate": 0.2619,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0081,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0216
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 232,
+    "organizers_offered": 70,
+    "offer_rate": 0.2826,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7872,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8769
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 198,
+    "organizers_offered": 62,
+    "offer_rate": 0.2412,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7077,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.846
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 97,
+    "organizers_offered": 37,
+    "offer_rate": 0.1181,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7384,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8161
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 43,
+    "organizers_offered": 28,
+    "offer_rate": 0.0524,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3514,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.7581
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 42,
+    "organizers_offered": 22,
+    "offer_rate": 0.0512,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2483,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.6784
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 372,
+    "organizers_offered": 78,
+    "offer_rate": 0.4531,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0844,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.676
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 230,
+    "organizers_offered": 72,
+    "offer_rate": 0.2801,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3688,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.6436
+   }
+  },
+  "software_saas": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 256,
+    "organizers_offered": 107,
+    "offer_rate": 0.4655,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.2134,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.7104
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 360,
+    "organizers_offered": 115,
+    "offer_rate": 0.6545,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.7574,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 1.3217
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 316,
+    "organizers_offered": 57,
+    "offer_rate": 0.5745,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0167,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0303
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 243,
+    "organizers_offered": 65,
+    "offer_rate": 0.4418,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9173,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0138
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 178,
+    "organizers_offered": 75,
+    "offer_rate": 0.3236,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8819,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9824
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 67,
+    "organizers_offered": 26,
+    "offer_rate": 0.1218,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.3569,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.9753
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 129,
+    "organizers_offered": 65,
+    "offer_rate": 0.2345,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8111,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9697
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 53,
+    "organizers_offered": 16,
+    "offer_rate": 0.0964,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5934,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.9652
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 161,
+    "organizers_offered": 75,
+    "offer_rate": 0.2927,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.443,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.9556
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 128,
+    "organizers_offered": 50,
+    "offer_rate": 0.2327,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.3421,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 0.8288
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 72,
+    "organizers_offered": 20,
+    "offer_rate": 0.1309,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.5479,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 0.8007
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 52,
+    "organizers_offered": 31,
+    "offer_rate": 0.0945,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2508,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.7752
+   }
+  },
+  "education": {
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 43,
+    "organizers_offered": 10,
+    "offer_rate": 0.0989,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.9837,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 1.4375
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 162,
+    "organizers_offered": 61,
+    "offer_rate": 0.3724,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9999,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0133
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 157,
+    "organizers_offered": 75,
+    "offer_rate": 0.3609,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1251,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.0028
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 45,
+    "organizers_offered": 16,
+    "offer_rate": 0.1034,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.4446,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.9591
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 131,
+    "organizers_offered": 57,
+    "offer_rate": 0.3011,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.8423,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.9309
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 195,
+    "organizers_offered": 68,
+    "offer_rate": 0.4483,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8294,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9239
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 127,
+    "organizers_offered": 43,
+    "offer_rate": 0.292,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.518,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.9039
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 56,
+    "organizers_offered": 25,
+    "offer_rate": 0.1287,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.279,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.8622
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 124,
+    "organizers_offered": 56,
+    "offer_rate": 0.2851,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7196,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.8603
+   }
+  },
+  "art_crafts": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 204,
+    "organizers_offered": 57,
+    "offer_rate": 0.4789,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.895,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.907
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 53,
+    "organizers_offered": 18,
+    "offer_rate": 0.1244,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2887,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.8924
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 182,
+    "organizers_offered": 52,
+    "offer_rate": 0.4272,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7446,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.8902
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 182,
+    "organizers_offered": 55,
+    "offer_rate": 0.4272,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7614,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8415
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 65,
+    "organizers_offered": 34,
+    "offer_rate": 0.1526,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.4688,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.818
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 210,
+    "organizers_offered": 57,
+    "offer_rate": 0.493,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7126,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.7938
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 35,
+    "organizers_offered": 15,
+    "offer_rate": 0.0822,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.4778,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.7771
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 159,
+    "organizers_offered": 51,
+    "offer_rate": 0.3732,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0779,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.6245
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 60,
+    "organizers_offered": 26,
+    "offer_rate": 0.1408,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.1955,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.5342
+   }
+  },
+  "marketing_agency": {
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 105,
+    "organizers_offered": 13,
+    "offer_rate": 0.2471,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.8836,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 1.2913
+   },
+   "discord_join_server": {
+    "label": "Discord join",
+    "n_offered": 124,
+    "organizers_offered": 14,
+    "offer_rate": 0.2918,
+    "offer_rate_baseline": 0.161,
+    "uptake": 0.5317,
+    "uptake_baseline": 0.4128,
+    "uptake_ratio_to_baseline": 1.2881
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 271,
+    "organizers_offered": 34,
+    "offer_rate": 0.6376,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.7046,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 1.2296
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 133,
+    "organizers_offered": 14,
+    "offer_rate": 0.3129,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.4272,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 1.1673
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 103,
+    "organizers_offered": 24,
+    "offer_rate": 0.2424,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.5295,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 1.1422
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 174,
+    "organizers_offered": 26,
+    "offer_rate": 0.4094,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8458,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0112
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 229,
+    "organizers_offered": 32,
+    "offer_rate": 0.5388,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8812,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9816
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 175,
+    "organizers_offered": 25,
+    "offer_rate": 0.4118,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7743,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8558
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 64,
+    "organizers_offered": 10,
+    "offer_rate": 0.1506,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.2725,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.8423
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 46,
+    "organizers_offered": 10,
+    "offer_rate": 0.1082,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.4893,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.7959
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 139,
+    "organizers_offered": 22,
+    "offer_rate": 0.3271,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.774,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.7843
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 146,
+    "organizers_offered": 24,
+    "offer_rate": 0.3435,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0777,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.6226
+   }
+  },
+  "pets": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 305,
+    "organizers_offered": 57,
+    "offer_rate": 0.8221,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0209,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0346
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 190,
+    "organizers_offered": 41,
+    "offer_rate": 0.5121,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.793,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9481
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 228,
+    "organizers_offered": 48,
+    "offer_rate": 0.6146,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8034,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8949
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 276,
+    "organizers_offered": 58,
+    "offer_rate": 0.7439,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1067,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.8551
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 70,
+    "organizers_offered": 26,
+    "offer_rate": 0.1887,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.6752,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.7463
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 38,
+    "organizers_offered": 13,
+    "offer_rate": 0.1024,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3303,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.7126
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 30,
+    "organizers_offered": 21,
+    "offer_rate": 0.0809,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2543,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.695
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 139,
+    "organizers_offered": 25,
+    "offer_rate": 0.3747,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3824,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.6673
+   }
+  },
+  "beauty_personal_care": {
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 70,
+    "organizers_offered": 16,
+    "offer_rate": 0.2071,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.3217,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.9941
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 183,
+    "organizers_offered": 74,
+    "offer_rate": 0.5414,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9367,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.9493
+   },
+   "instagram_follow": {
+    "label": "Instagram follow",
+    "n_offered": 87,
+    "organizers_offered": 20,
+    "offer_rate": 0.2574,
+    "offer_rate_baseline": 0.0772,
+    "uptake": 0.5835,
+    "uptake_baseline": 0.6148,
+    "uptake_ratio_to_baseline": 0.9492
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 177,
+    "organizers_offered": 66,
+    "offer_rate": 0.5237,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8358,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9311
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 211,
+    "organizers_offered": 78,
+    "offer_rate": 0.6243,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1033,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.8278
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 98,
+    "organizers_offered": 36,
+    "offer_rate": 0.2899,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7479,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8266
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 124,
+    "organizers_offered": 49,
+    "offer_rate": 0.3669,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.6619,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.7913
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 109,
+    "organizers_offered": 26,
+    "offer_rate": 0.3225,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2797,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.7644
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 121,
+    "organizers_offered": 27,
+    "offer_rate": 0.358,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.3783,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.6602
+   }
+  },
+  "local_services": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 164,
+    "organizers_offered": 26,
+    "offer_rate": 0.5174,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1273,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.0201
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 43,
+    "organizers_offered": 15,
+    "offer_rate": 0.1356,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0024,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0158
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 137,
+    "organizers_offered": 28,
+    "offer_rate": 0.4322,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.5682,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.6793
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 124,
+    "organizers_offered": 30,
+    "offer_rate": 0.3912,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.6011,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.6695
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 51,
+    "organizers_offered": 17,
+    "offer_rate": 0.1609,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.5403,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.5971
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 102,
+    "organizers_offered": 18,
+    "offer_rate": 0.3218,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.2974,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.519
+   },
+   "secret_code": {
+    "label": "Secret code",
+    "n_offered": 62,
+    "organizers_offered": 12,
+    "offer_rate": 0.1956,
+    "offer_rate_baseline": 0.1068,
+    "uptake": 0.1406,
+    "uptake_baseline": 0.3235,
+    "uptake_ratio_to_baseline": 0.4346
+   }
+  },
+  "baby_kids": {
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 163,
+    "organizers_offered": 50,
+    "offer_rate": 0.5327,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0055,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.019
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 154,
+    "organizers_offered": 43,
+    "offer_rate": 0.5033,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7959,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8865
+   },
+   "tiktok_follow": {
+    "label": "TikTok follow",
+    "n_offered": 61,
+    "organizers_offered": 14,
+    "offer_rate": 0.1993,
+    "offer_rate_baseline": 0.1482,
+    "uptake": 0.2947,
+    "uptake_baseline": 0.3659,
+    "uptake_ratio_to_baseline": 0.8054
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 216,
+    "organizers_offered": 43,
+    "offer_rate": 0.7059,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0958,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.7676
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 138,
+    "organizers_offered": 29,
+    "offer_rate": 0.451,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.6272,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.7498
+   }
+  },
+  "creator_influencer": {
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 154,
+    "organizers_offered": 50,
+    "offer_rate": 0.7368,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 1.7495,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 1.9488
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 105,
+    "organizers_offered": 42,
+    "offer_rate": 0.5024,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.6966,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 1.2157
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 98,
+    "organizers_offered": 52,
+    "offer_rate": 0.4689,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.9497,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 1.0496
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 58,
+    "organizers_offered": 26,
+    "offer_rate": 0.2775,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.8709,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 1.0411
+   },
+   "twitchtv_follow": {
+    "label": "Twitch follow",
+    "n_offered": 74,
+    "organizers_offered": 23,
+    "offer_rate": 0.3541,
+    "offer_rate_baseline": 0.1685,
+    "uptake": 0.6773,
+    "uptake_baseline": 0.6843,
+    "uptake_ratio_to_baseline": 0.9897
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 57,
+    "organizers_offered": 21,
+    "offer_rate": 0.2727,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.8754,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.8872
+   },
+   "twitter_retweet": {
+    "label": "X repost",
+    "n_offered": 44,
+    "organizers_offered": 25,
+    "offer_rate": 0.2105,
+    "offer_rate_baseline": 0.2015,
+    "uptake": 0.3993,
+    "uptake_baseline": 0.4636,
+    "uptake_ratio_to_baseline": 0.8615
+   },
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 78,
+    "organizers_offered": 23,
+    "offer_rate": 0.3732,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.0639,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 0.5122
+   }
+  },
+  "nonprofit_community": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 60,
+    "organizers_offered": 30,
+    "offer_rate": 0.4839,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.143,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.1462
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 54,
+    "organizers_offered": 29,
+    "offer_rate": 0.4355,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 1.0015,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 1.0149
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 50,
+    "organizers_offered": 23,
+    "offer_rate": 0.4032,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.8312,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.9259
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 45,
+    "organizers_offered": 23,
+    "offer_rate": 0.3629,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.6653,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.7954
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 39,
+    "organizers_offered": 19,
+    "offer_rate": 0.3145,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.2816,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.4914
+   }
+  },
+  "jewelry_watches": {
+   "share_action": {
+    "label": "Referral share",
+    "n_offered": 79,
+    "organizers_offered": 44,
+    "offer_rate": 0.6423,
+    "offer_rate_baseline": 0.4507,
+    "uptake": 0.1959,
+    "uptake_baseline": 0.1248,
+    "uptake_ratio_to_baseline": 1.5701
+   },
+   "email_subscribe": {
+    "label": "Email signup",
+    "n_offered": 97,
+    "organizers_offered": 39,
+    "offer_rate": 0.7886,
+    "offer_rate_baseline": 0.4345,
+    "uptake": 0.9794,
+    "uptake_baseline": 0.9868,
+    "uptake_ratio_to_baseline": 0.9925
+   },
+   "facebook_visit": {
+    "label": "Facebook visit",
+    "n_offered": 62,
+    "organizers_offered": 29,
+    "offer_rate": 0.5041,
+    "offer_rate_baseline": 0.4111,
+    "uptake": 0.7646,
+    "uptake_baseline": 0.8365,
+    "uptake_ratio_to_baseline": 0.9141
+   },
+   "instagram_visit_profile": {
+    "label": "Instagram profile visit",
+    "n_offered": 70,
+    "organizers_offered": 35,
+    "offer_rate": 0.5691,
+    "offer_rate_baseline": 0.5067,
+    "uptake": 0.7771,
+    "uptake_baseline": 0.8977,
+    "uptake_ratio_to_baseline": 0.8656
+   },
+   "youtube_visit_channel": {
+    "label": "YouTube channel visit",
+    "n_offered": 37,
+    "organizers_offered": 20,
+    "offer_rate": 0.3008,
+    "offer_rate_baseline": 0.3959,
+    "uptake": 0.7414,
+    "uptake_baseline": 0.9048,
+    "uptake_ratio_to_baseline": 0.8195
+   },
+   "twitter_follow": {
+    "label": "X follow",
+    "n_offered": 51,
+    "organizers_offered": 23,
+    "offer_rate": 0.4146,
+    "offer_rate_baseline": 0.5455,
+    "uptake": 0.4156,
+    "uptake_baseline": 0.573,
+    "uptake_ratio_to_baseline": 0.7252
+   }
+  }
+ },
+ "campaign_types_by_industry": {
+  "electronics_tech": {
+   "Collaboration or partner": {
+    "n": 1541,
+    "organizers": 359,
+    "share": 0.2114,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.2237
+   },
+   "Bundle, mega or ultimate": {
+    "n": 1033,
+    "organizers": 294,
+    "share": 0.1417,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.8827
+   },
+   "Holiday themed": {
+    "n": 685,
+    "organizers": 230,
+    "share": 0.094,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.9161
+   },
+   "Milestone": {
+    "n": 515,
+    "organizers": 211,
+    "share": 0.0707,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 1.3771
+   },
+   "Community or Discord": {
+    "n": 402,
+    "organizers": 116,
+    "share": 0.0552,
+    "baseline_share": 0.0372,
+    "ratio_to_baseline": 1.4811
+   },
+   "Creator or streamer": {
+    "n": 376,
+    "organizers": 138,
+    "share": 0.0516,
+    "baseline_share": 0.0388,
+    "ratio_to_baseline": 1.3311
+   },
+   "Product launch": {
+    "n": 341,
+    "organizers": 143,
+    "share": 0.0468,
+    "baseline_share": 0.0345,
+    "ratio_to_baseline": 1.3555
+   },
+   "Weekly or monthly series": {
+    "n": 271,
+    "organizers": 63,
+    "share": 0.0372,
+    "baseline_share": 0.0261,
+    "ratio_to_baseline": 1.422
+   }
+  },
+  "gaming_esports": {
+   "Collaboration or partner": {
+    "n": 1311,
+    "organizers": 463,
+    "share": 0.2072,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.1992
+   },
+   "Bundle, mega or ultimate": {
+    "n": 874,
+    "organizers": 365,
+    "share": 0.1381,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.8603
+   },
+   "Creator or streamer": {
+    "n": 558,
+    "organizers": 224,
+    "share": 0.0882,
+    "baseline_share": 0.0388,
+    "ratio_to_baseline": 2.2754
+   },
+   "Milestone": {
+    "n": 473,
+    "organizers": 243,
+    "share": 0.0748,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 1.4569
+   },
+   "Holiday themed": {
+    "n": 420,
+    "organizers": 179,
+    "share": 0.0664,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.647
+   },
+   "Community or Discord": {
+    "n": 417,
+    "organizers": 179,
+    "share": 0.0659,
+    "baseline_share": 0.0372,
+    "ratio_to_baseline": 1.7697
+   },
+   "Sweepstakes wording (US)": {
+    "n": 358,
+    "organizers": 104,
+    "share": 0.0566,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 1.1453
+   },
+   "Gift card or voucher": {
+    "n": 331,
+    "organizers": 126,
+    "share": 0.0523,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 0.6914
+   }
+  },
+  "media_entertainment": {
+   "Collaboration or partner": {
+    "n": 1014,
+    "organizers": 156,
+    "share": 0.2021,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.1695
+   },
+   "Bundle, mega or ultimate": {
+    "n": 958,
+    "organizers": 168,
+    "share": 0.1909,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.189
+   },
+   "Free or no purchase": {
+    "n": 788,
+    "organizers": 30,
+    "share": 0.157,
+    "baseline_share": 0.0488,
+    "ratio_to_baseline": 3.2151
+   },
+   "Gift card or voucher": {
+    "n": 377,
+    "organizers": 102,
+    "share": 0.0751,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 0.9929
+   },
+   "Holiday themed": {
+    "n": 360,
+    "organizers": 105,
+    "share": 0.0717,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.6992
+   },
+   "Competition wording (UK)": {
+    "n": 304,
+    "organizers": 44,
+    "share": 0.0606,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 1.5319
+   },
+   "Advent or daily calendar": {
+    "n": 285,
+    "organizers": 35,
+    "share": 0.0568,
+    "baseline_share": 0.0289,
+    "ratio_to_baseline": 1.9652
+   },
+   "Cash prize": {
+    "n": 202,
+    "organizers": 42,
+    "share": 0.0403,
+    "baseline_share": 0.0367,
+    "ratio_to_baseline": 1.0983
+   }
+  },
+  "sports_outdoors": {
+   "Bundle, mega or ultimate": {
+    "n": 401,
+    "organizers": 198,
+    "share": 0.1768,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.1011
+   },
+   "Collaboration or partner": {
+    "n": 333,
+    "organizers": 171,
+    "share": 0.1468,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8497
+   },
+   "Holiday themed": {
+    "n": 254,
+    "organizers": 136,
+    "share": 0.112,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.0915
+   },
+   "Gift card or voucher": {
+    "n": 182,
+    "organizers": 73,
+    "share": 0.0802,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.0605
+   },
+   "Sweepstakes wording (US)": {
+    "n": 121,
+    "organizers": 57,
+    "share": 0.0534,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 1.0799
+   },
+   "Milestone": {
+    "n": 88,
+    "organizers": 59,
+    "share": 0.0388,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.7561
+   },
+   "Weekly or monthly series": {
+    "n": 86,
+    "organizers": 31,
+    "share": 0.0379,
+    "baseline_share": 0.0261,
+    "ratio_to_baseline": 1.4501
+   },
+   "Competition wording (UK)": {
+    "n": 66,
+    "organizers": 30,
+    "share": 0.0291,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 0.7359
+   }
+  },
+  "food_drink": {
+   "Bundle, mega or ultimate": {
+    "n": 386,
+    "organizers": 168,
+    "share": 0.216,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.3452
+   },
+   "Holiday themed": {
+    "n": 332,
+    "organizers": 130,
+    "share": 0.1858,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.8108
+   },
+   "Gift card or voucher": {
+    "n": 244,
+    "organizers": 109,
+    "share": 0.1365,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.8045
+   },
+   "Collaboration or partner": {
+    "n": 237,
+    "organizers": 122,
+    "share": 0.1326,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.7675
+   },
+   "Sweepstakes wording (US)": {
+    "n": 156,
+    "organizers": 74,
+    "share": 0.0873,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 1.767
+   },
+   "Competition wording (UK)": {
+    "n": 87,
+    "organizers": 39,
+    "share": 0.0487,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 1.2311
+   },
+   "Free or no purchase": {
+    "n": 83,
+    "organizers": 28,
+    "share": 0.0464,
+    "baseline_share": 0.0488,
+    "ratio_to_baseline": 0.9509
+   },
+   "Advent or daily calendar": {
+    "n": 82,
+    "organizers": 21,
+    "share": 0.0459,
+    "baseline_share": 0.0289,
+    "ratio_to_baseline": 1.5877
+   }
+  },
+  "home_garden": {
+   "Holiday themed": {
+    "n": 338,
+    "organizers": 115,
+    "share": 0.1902,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.8539
+   },
+   "Bundle, mega or ultimate": {
+    "n": 321,
+    "organizers": 112,
+    "share": 0.1806,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.125
+   },
+   "Collaboration or partner": {
+    "n": 235,
+    "organizers": 82,
+    "share": 0.1322,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.7654
+   },
+   "Gift card or voucher": {
+    "n": 154,
+    "organizers": 60,
+    "share": 0.0867,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.1453
+   },
+   "Sweepstakes wording (US)": {
+    "n": 65,
+    "organizers": 22,
+    "share": 0.0366,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 0.7404
+   },
+   "Competition wording (UK)": {
+    "n": 62,
+    "organizers": 35,
+    "share": 0.0349,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 0.8823
+   },
+   "Anniversary or birthday": {
+    "n": 58,
+    "organizers": 20,
+    "share": 0.0326,
+    "baseline_share": 0.0235,
+    "ratio_to_baseline": 1.3884
+   },
+   "Milestone": {
+    "n": 57,
+    "organizers": 33,
+    "share": 0.0321,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.6251
+   }
+  },
+  "apparel_fashion": {
+   "Collaboration or partner": {
+    "n": 311,
+    "organizers": 101,
+    "share": 0.1811,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.0483
+   },
+   "Gift card or voucher": {
+    "n": 276,
+    "organizers": 94,
+    "share": 0.1607,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 2.1244
+   },
+   "Bundle, mega or ultimate": {
+    "n": 259,
+    "organizers": 118,
+    "share": 0.1508,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.9394
+   },
+   "Holiday themed": {
+    "n": 171,
+    "organizers": 92,
+    "share": 0.0996,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.9707
+   },
+   "Cash prize": {
+    "n": 84,
+    "organizers": 36,
+    "share": 0.0489,
+    "baseline_share": 0.0367,
+    "ratio_to_baseline": 1.3347
+   },
+   "Cart, wishlist or spree": {
+    "n": 80,
+    "organizers": 19,
+    "share": 0.0466,
+    "baseline_share": 0.0105,
+    "ratio_to_baseline": 4.4474
+   },
+   "Sweepstakes wording (US)": {
+    "n": 79,
+    "organizers": 25,
+    "share": 0.046,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 0.9313
+   },
+   "Competition wording (UK)": {
+    "n": 61,
+    "organizers": 38,
+    "share": 0.0355,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 0.8984
+   }
+  },
+  "travel_events": {
+   "Bundle, mega or ultimate": {
+    "n": 241,
+    "organizers": 90,
+    "share": 0.1789,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.1142
+   },
+   "Holiday themed": {
+    "n": 194,
+    "organizers": 63,
+    "share": 0.144,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.4037
+   },
+   "Collaboration or partner": {
+    "n": 191,
+    "organizers": 56,
+    "share": 0.1418,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8206
+   },
+   "Gift card or voucher": {
+    "n": 147,
+    "organizers": 54,
+    "share": 0.1091,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.4423
+   },
+   "Competition wording (UK)": {
+    "n": 146,
+    "organizers": 25,
+    "share": 0.1084,
+    "baseline_share": 0.0395,
+    "ratio_to_baseline": 2.7408
+   },
+   "Sweepstakes wording (US)": {
+    "n": 107,
+    "organizers": 36,
+    "share": 0.0794,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 1.6079
+   },
+   "Cash prize": {
+    "n": 91,
+    "organizers": 21,
+    "share": 0.0676,
+    "baseline_share": 0.0367,
+    "ratio_to_baseline": 1.8432
+   },
+   "Milestone": {
+    "n": 48,
+    "organizers": 24,
+    "share": 0.0356,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.6944
+   }
+  },
+  "automotive": {
+   "Holiday themed": {
+    "n": 126,
+    "organizers": 42,
+    "share": 0.1121,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.0926
+   },
+   "Gift card or voucher": {
+    "n": 107,
+    "organizers": 35,
+    "share": 0.0952,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.2581
+   },
+   "Collaboration or partner": {
+    "n": 103,
+    "organizers": 38,
+    "share": 0.0916,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.5303
+   },
+   "Bundle, mega or ultimate": {
+    "n": 88,
+    "organizers": 35,
+    "share": 0.0783,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.4876
+   },
+   "Milestone": {
+    "n": 55,
+    "organizers": 22,
+    "share": 0.0489,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.9536
+   },
+   "Weekly or monthly series": {
+    "n": 47,
+    "organizers": 12,
+    "share": 0.0418,
+    "baseline_share": 0.0261,
+    "ratio_to_baseline": 1.5991
+   },
+   "Free or no purchase": {
+    "n": 37,
+    "organizers": 11,
+    "share": 0.0329,
+    "baseline_share": 0.0488,
+    "ratio_to_baseline": 0.674
+   },
+   "Sweepstakes wording (US)": {
+    "n": 34,
+    "organizers": 15,
+    "share": 0.0302,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 0.6123
+   }
+  },
+  "toys_hobbies_collectibles": {
+   "Bundle, mega or ultimate": {
+    "n": 135,
+    "organizers": 64,
+    "share": 0.1368,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.8518
+   },
+   "Gift card or voucher": {
+    "n": 89,
+    "organizers": 25,
+    "share": 0.0902,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.1917
+   },
+   "Collaboration or partner": {
+    "n": 64,
+    "organizers": 35,
+    "share": 0.0648,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.3753
+   },
+   "Product launch": {
+    "n": 47,
+    "organizers": 26,
+    "share": 0.0476,
+    "baseline_share": 0.0345,
+    "ratio_to_baseline": 1.3795
+   },
+   "Holiday themed": {
+    "n": 47,
+    "organizers": 30,
+    "share": 0.0476,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.4641
+   },
+   "Milestone": {
+    "n": 38,
+    "organizers": 29,
+    "share": 0.0385,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.7503
+   },
+   "Creator or streamer": {
+    "n": 36,
+    "organizers": 24,
+    "share": 0.0365,
+    "baseline_share": 0.0388,
+    "ratio_to_baseline": 0.941
+   },
+   "Anniversary or birthday": {
+    "n": 33,
+    "organizers": 19,
+    "share": 0.0334,
+    "baseline_share": 0.0235,
+    "ratio_to_baseline": 1.4222
+   }
+  },
+  "health_wellness_fitness": {
+   "Bundle, mega or ultimate": {
+    "n": 173,
+    "organizers": 83,
+    "share": 0.1959,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.2202
+   },
+   "Collaboration or partner": {
+    "n": 127,
+    "organizers": 49,
+    "share": 0.1438,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8324
+   },
+   "Gift card or voucher": {
+    "n": 111,
+    "organizers": 48,
+    "share": 0.1257,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.6614
+   },
+   "Holiday themed": {
+    "n": 81,
+    "organizers": 53,
+    "share": 0.0917,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.8941
+   },
+   "Product launch": {
+    "n": 66,
+    "organizers": 22,
+    "share": 0.0747,
+    "baseline_share": 0.0345,
+    "ratio_to_baseline": 2.1654
+   },
+   "Sweepstakes wording (US)": {
+    "n": 42,
+    "organizers": 22,
+    "share": 0.0476,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 0.9628
+   },
+   "Cash prize": {
+    "n": 39,
+    "organizers": 17,
+    "share": 0.0442,
+    "baseline_share": 0.0367,
+    "ratio_to_baseline": 1.205
+   }
+  },
+  "retail_marketplace": {
+   "Holiday themed": {
+    "n": 200,
+    "organizers": 42,
+    "share": 0.2436,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 2.3743
+   },
+   "Gift card or voucher": {
+    "n": 121,
+    "organizers": 47,
+    "share": 0.1474,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.9478
+   },
+   "Sweepstakes wording (US)": {
+    "n": 81,
+    "organizers": 12,
+    "share": 0.0987,
+    "baseline_share": 0.0494,
+    "ratio_to_baseline": 1.997
+   },
+   "Bundle, mega or ultimate": {
+    "n": 73,
+    "organizers": 33,
+    "share": 0.0889,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.5537
+   },
+   "Collaboration or partner": {
+    "n": 60,
+    "organizers": 21,
+    "share": 0.0731,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.423
+   },
+   "Advent or daily calendar": {
+    "n": 39,
+    "organizers": 14,
+    "share": 0.0475,
+    "baseline_share": 0.0289,
+    "ratio_to_baseline": 1.6436
+   },
+   "Milestone": {
+    "n": 36,
+    "organizers": 19,
+    "share": 0.0438,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 0.8545
+   },
+   "Cash prize": {
+    "n": 33,
+    "organizers": 14,
+    "share": 0.0402,
+    "baseline_share": 0.0367,
+    "ratio_to_baseline": 1.0966
+   }
+  },
+  "software_saas": {
+   "Bundle, mega or ultimate": {
+    "n": 72,
+    "organizers": 46,
+    "share": 0.1309,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.8153
+   },
+   "Collaboration or partner": {
+    "n": 50,
+    "organizers": 25,
+    "share": 0.0909,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.5261
+   },
+   "Holiday themed": {
+    "n": 39,
+    "organizers": 25,
+    "share": 0.0709,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 0.6911
+   },
+   "Milestone": {
+    "n": 38,
+    "organizers": 29,
+    "share": 0.0691,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 1.3464
+   },
+   "Community or Discord": {
+    "n": 37,
+    "organizers": 22,
+    "share": 0.0673,
+    "baseline_share": 0.0372,
+    "ratio_to_baseline": 1.8063
+   },
+   "Gift card or voucher": {
+    "n": 36,
+    "organizers": 24,
+    "share": 0.0655,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 0.865
+   }
+  },
+  "education": {
+   "Collaboration or partner": {
+    "n": 66,
+    "organizers": 20,
+    "share": 0.1517,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8781
+   },
+   "Bundle, mega or ultimate": {
+    "n": 66,
+    "organizers": 40,
+    "share": 0.1517,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.9449
+   },
+   "Gift card or voucher": {
+    "n": 36,
+    "organizers": 18,
+    "share": 0.0828,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.0937
+   },
+   "Milestone": {
+    "n": 31,
+    "organizers": 18,
+    "share": 0.0713,
+    "baseline_share": 0.0513,
+    "ratio_to_baseline": 1.3888
+   }
+  },
+  "art_crafts": {
+   "Bundle, mega or ultimate": {
+    "n": 139,
+    "organizers": 28,
+    "share": 0.3263,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 2.0321
+   },
+   "Collaboration or partner": {
+    "n": 59,
+    "organizers": 20,
+    "share": 0.1385,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8015
+   }
+  },
+  "marketing_agency": {
+   "Collaboration or partner": {
+    "n": 108,
+    "organizers": 21,
+    "share": 0.2541,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.4707
+   },
+   "Bundle, mega or ultimate": {
+    "n": 74,
+    "organizers": 19,
+    "share": 0.1741,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.0844
+   },
+   "Holiday themed": {
+    "n": 72,
+    "organizers": 17,
+    "share": 0.1694,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.6512
+   }
+  },
+  "pets": {
+   "Bundle, mega or ultimate": {
+    "n": 79,
+    "organizers": 40,
+    "share": 0.2129,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.3261
+   },
+   "Collaboration or partner": {
+    "n": 60,
+    "organizers": 30,
+    "share": 0.1617,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.936
+   },
+   "Holiday themed": {
+    "n": 50,
+    "organizers": 28,
+    "share": 0.1348,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.3135
+   },
+   "Gift card or voucher": {
+    "n": 36,
+    "organizers": 20,
+    "share": 0.097,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 1.2824
+   }
+  },
+  "beauty_personal_care": {
+   "Bundle, mega or ultimate": {
+    "n": 90,
+    "organizers": 49,
+    "share": 0.2663,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.6583
+   },
+   "Holiday themed": {
+    "n": 63,
+    "organizers": 27,
+    "share": 0.1864,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.8167
+   },
+   "Collaboration or partner": {
+    "n": 33,
+    "organizers": 21,
+    "share": 0.0976,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.565
+   }
+  },
+  "local_services": {
+   "Gift card or voucher": {
+    "n": 84,
+    "organizers": 18,
+    "share": 0.265,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 3.502
+   },
+   "Holiday themed": {
+    "n": 52,
+    "organizers": 16,
+    "share": 0.164,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.5988
+   },
+   "Bundle, mega or ultimate": {
+    "n": 45,
+    "organizers": 10,
+    "share": 0.142,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.8841
+   }
+  },
+  "baby_kids": {
+   "Bundle, mega or ultimate": {
+    "n": 84,
+    "organizers": 31,
+    "share": 0.2745,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 1.7096
+   },
+   "Collaboration or partner": {
+    "n": 76,
+    "organizers": 26,
+    "share": 0.2484,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 1.4374
+   },
+   "Gift card or voucher": {
+    "n": 57,
+    "organizers": 22,
+    "share": 0.1863,
+    "baseline_share": 0.0757,
+    "ratio_to_baseline": 2.4618
+   },
+   "Holiday themed": {
+    "n": 45,
+    "organizers": 19,
+    "share": 0.1471,
+    "baseline_share": 0.1026,
+    "ratio_to_baseline": 1.4333
+   }
+  },
+  "creator_influencer": {
+   "Collaboration or partner": {
+    "n": 31,
+    "organizers": 10,
+    "share": 0.1483,
+    "baseline_share": 0.1728,
+    "ratio_to_baseline": 0.8584
+   },
+   "Bundle, mega or ultimate": {
+    "n": 31,
+    "organizers": 17,
+    "share": 0.1483,
+    "baseline_share": 0.1606,
+    "ratio_to_baseline": 0.9237
+   }
+  }
+ },
+ "top_quartile_vs_rest_by_industry": {
+  "electronics_tech": {
+   "n_top": 632,
+   "organizers_top": 47,
+   "n_rest": 1896,
+   "organizers_rest": 400,
+   "conversion_top": 0.713,
+   "conversion_rest": 0.3584,
+   "features": {
+    "actions_offered": {
+     "top": 3.5,
+     "rest": 7.0,
+     "ratio": 0.5
+    },
+    "duration_days": {
+     "top": 1.0,
+     "rest": 8.0,
+     "ratio": 0.125
+    },
+    "contestants": {
+     "top": 2275.5,
+     "rest": 2064.5,
+     "ratio": 1.1022
+    },
+    "nth_campaign_overall": {
+     "top": 84.0,
+     "rest": 21.0,
+     "ratio": 4.0
+    },
+    "stated_pool_usd": {
+     "top": 1099.0,
+     "rest": 600.0,
+     "ratio": 1.8317
+    },
+    "email_offered": {
+     "top": 0.0079,
+     "rest": 0.2073,
+     "ratio": 0.0382
+    },
+    "referral_offered": {
+     "top": 0.0016,
+     "rest": 0.2927,
+     "ratio": 0.0054
+    },
+    "secret_code_offered": {
+     "top": 0.0554,
+     "rest": 0.1261,
+     "ratio": 0.4393
+    },
+    "question_offered": {
+     "top": 0.1408,
+     "rest": 0.0992,
+     "ratio": 1.4202
+    },
+    "community_join_offered": {
+     "top": 0.2991,
+     "rest": 0.3534,
+     "ratio": 0.8463
+    },
+    "platform_follow_offered": {
+     "top": 0.4446,
+     "rest": 0.7252,
+     "ratio": 0.6131
+    },
+    "email_uptake": {
+     "top": 0.5821,
+     "rest": 0.8451,
+     "ratio": 0.6888
+    },
+    "referral_uptake": {
+     "top": null,
+     "rest": 0.2202,
+     "ratio": null
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "tech_hardware": {
+     "top_share": 0.6155,
+     "rest_share": 0.6097,
+     "ratio": 1.0095
+    },
+    "other_unclassified": {
+     "top_share": 0.1472,
+     "rest_share": 0.2199,
+     "ratio": 0.6691
+    },
+    "bundle_or_box": {
+     "top_share": 0.0538,
+     "rest_share": 0.0506,
+     "ratio": 1.0625
+    },
+    "tools_craft_diy": {
+     "top_share": 0.0411,
+     "rest_share": 0.0021,
+     "ratio": 19.5
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.0237,
+     "rest_share": 0.0237,
+     "ratio": 1.0
+    },
+    "game_item_or_skin": {
+     "top_share": 0.0158,
+     "rest_share": 0.0185,
+     "ratio": 0.8571
+    },
+    "placeholder_name": {
+     "top_share": 0.0759,
+     "rest_share": 0.0274,
+     "ratio": 2.7692
+    }
+   }
+  },
+  "gaming_esports": {
+   "n_top": 591,
+   "organizers_top": 126,
+   "n_rest": 1773,
+   "organizers_rest": 622,
+   "conversion_top": 0.6136,
+   "conversion_rest": 0.3076,
+   "features": {
+    "actions_offered": {
+     "top": 7,
+     "rest": 7,
+     "ratio": 1.0
+    },
+    "duration_days": {
+     "top": 1,
+     "rest": 8,
+     "ratio": 0.125
+    },
+    "contestants": {
+     "top": 1830,
+     "rest": 1984,
+     "ratio": 0.9224
+    },
+    "nth_campaign_overall": {
+     "top": 28,
+     "rest": 8,
+     "ratio": 3.5
+    },
+    "stated_pool_usd": {
+     "top": 329.0,
+     "rest": 500.0,
+     "ratio": 0.658
+    },
+    "email_offered": {
+     "top": 0.0846,
+     "rest": 0.1512,
+     "ratio": 0.5597
+    },
+    "referral_offered": {
+     "top": 0.1218,
+     "rest": 0.2279,
+     "ratio": 0.5347
+    },
+    "secret_code_offered": {
+     "top": 0.0102,
+     "rest": 0.0485,
+     "ratio": 0.2093
+    },
+    "question_offered": {
+     "top": 0.2047,
+     "rest": 0.1596,
+     "ratio": 1.2827
+    },
+    "community_join_offered": {
+     "top": 0.4433,
+     "rest": 0.3672,
+     "ratio": 1.2074
+    },
+    "platform_follow_offered": {
+     "top": 0.7834,
+     "rest": 0.8105,
+     "ratio": 0.9666
+    },
+    "email_uptake": {
+     "top": 0.3993,
+     "rest": 0.8036,
+     "ratio": 0.4968
+    },
+    "referral_uptake": {
+     "top": 0.015,
+     "rest": 0.129,
+     "ratio": 0.1166
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "tech_hardware": {
+     "top_share": 0.2453,
+     "rest_share": 0.3125,
+     "ratio": 0.7852
+    },
+    "experience_travel_tickets": {
+     "top_share": 0.0609,
+     "rest_share": 0.0209,
+     "ratio": 2.9189
+    },
+    "other_unclassified": {
+     "top_share": 0.4349,
+     "rest_share": 0.2104,
+     "ratio": 2.067
+    },
+    "game_item_or_skin": {
+     "top_share": 0.1506,
+     "rest_share": 0.2092,
+     "ratio": 0.7197
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.0254,
+     "rest_share": 0.0722,
+     "ratio": 0.3516
+    },
+    "bundle_or_box": {
+     "top_share": 0.0288,
+     "rest_share": 0.0784,
+     "ratio": 0.3669
+    },
+    "placeholder_name": {
+     "top_share": 0.0305,
+     "rest_share": 0.0367,
+     "ratio": 0.8308
+    }
+   }
+  },
+  "media_entertainment": {
+   "n_top": 278,
+   "organizers_top": 36,
+   "n_rest": 831,
+   "organizers_rest": 179,
+   "conversion_top": 0.7094,
+   "conversion_rest": 0.2717,
+   "features": {
+    "actions_offered": {
+     "top": 1.0,
+     "rest": 7,
+     "ratio": 0.1429
+    },
+    "duration_days": {
+     "top": 1.0,
+     "rest": 7,
+     "ratio": 0.1429
+    },
+    "contestants": {
+     "top": 4360.0,
+     "rest": 1993,
+     "ratio": 2.1877
+    },
+    "nth_campaign_overall": {
+     "top": 55.0,
+     "rest": 28,
+     "ratio": 1.9643
+    },
+    "stated_pool_usd": {
+     "top": 442.0,
+     "rest": 500.0,
+     "ratio": 0.884
+    },
+    "email_offered": {
+     "top": 0.1547,
+     "rest": 0.5824,
+     "ratio": 0.2656
+    },
+    "referral_offered": {
+     "top": 0.0935,
+     "rest": 0.4236,
+     "ratio": 0.2208
+    },
+    "secret_code_offered": {
+     "top": 0.0,
+     "rest": 0.0229,
+     "ratio": 0.0
+    },
+    "question_offered": {
+     "top": 0.5683,
+     "rest": 0.1661,
+     "ratio": 3.4224
+    },
+    "community_join_offered": {
+     "top": 0.1007,
+     "rest": 0.2286,
+     "ratio": 0.4405
+    },
+    "platform_follow_offered": {
+     "top": 0.295,
+     "rest": 0.7064,
+     "ratio": 0.4176
+    },
+    "email_uptake": {
+     "top": 1.0347,
+     "rest": 0.968,
+     "ratio": 1.0689
+    },
+    "referral_uptake": {
+     "top": 0.0526,
+     "rest": 0.0898,
+     "ratio": 0.5856
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "bundle_or_box": {
+     "top_share": 0.1007,
+     "rest_share": 0.1167,
+     "ratio": 0.8629
+    },
+    "other_unclassified": {
+     "top_share": 0.2014,
+     "rest_share": 0.2563,
+     "ratio": 0.7859
+    },
+    "tech_hardware": {
+     "top_share": 0.482,
+     "rest_share": 0.2948,
+     "ratio": 1.6349
+    },
+    "game_item_or_skin": {
+     "top_share": 0.0432,
+     "rest_share": 0.1143,
+     "ratio": 0.3776
+    },
+    "experience_travel_tickets": {
+     "top_share": 0.0288,
+     "rest_share": 0.0301,
+     "ratio": 0.9565
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.0719,
+     "rest_share": 0.0722,
+     "ratio": 0.9964
+    }
+   }
+  },
+  "sports_outdoors": {
+   "n_top": 92,
+   "organizers_top": 49,
+   "n_rest": 273,
+   "organizers_rest": 127,
+   "conversion_top": 0.5368,
+   "conversion_rest": 0.2982,
+   "features": {
+    "actions_offered": {
+     "top": 5.0,
+     "rest": 6,
+     "ratio": 0.8333
+    },
+    "duration_days": {
+     "top": 7.0,
+     "rest": 8,
+     "ratio": 0.875
+    },
+    "contestants": {
+     "top": 1907.0,
+     "rest": 2007,
+     "ratio": 0.9502
+    },
+    "nth_campaign_overall": {
+     "top": 4.0,
+     "rest": 5,
+     "ratio": 0.8
+    },
+    "stated_pool_usd": {
+     "top": 602.5,
+     "rest": 695.0,
+     "ratio": 0.8669
+    },
+    "email_offered": {
+     "top": 0.6848,
+     "rest": 0.6923,
+     "ratio": 0.9891
+    },
+    "referral_offered": {
+     "top": 0.2717,
+     "rest": 0.5458,
+     "ratio": 0.4979
+    },
+    "secret_code_offered": {
+     "top": 0.0326,
+     "rest": 0.0549,
+     "ratio": 0.5935
+    },
+    "question_offered": {
+     "top": 0.0435,
+     "rest": 0.0842,
+     "ratio": 0.5161
+    },
+    "community_join_offered": {
+     "top": 0.0652,
+     "rest": 0.0147,
+     "ratio": 4.4511
+    },
+    "platform_follow_offered": {
+     "top": 0.2065,
+     "rest": 0.3846,
+     "ratio": 0.537
+    },
+    "email_uptake": {
+     "top": 1.0031,
+     "rest": 1.0083,
+     "ratio": 0.9948
+    },
+    "referral_uptake": {
+     "top": 0.1539,
+     "rest": 0.1342,
+     "ratio": 1.1468
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "sports_outdoor_gear": {
+     "top_share": 0.2174,
+     "rest_share": 0.0952,
+     "ratio": 2.2826
+    },
+    "other_unclassified": {
+     "top_share": 0.3478,
+     "rest_share": 0.2491,
+     "ratio": 1.3964
+    },
+    "bundle_or_box": {
+     "top_share": 0.1196,
+     "rest_share": 0.1355,
+     "ratio": 0.8822
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.1087,
+     "rest_share": 0.1026,
+     "ratio": 1.0598
+    }
+   }
+  },
+  "food_drink": {
+   "n_top": 115,
+   "organizers_top": 35,
+   "n_rest": 345,
+   "organizers_rest": 111,
+   "conversion_top": 0.5438,
+   "conversion_rest": 0.318,
+   "features": {
+    "actions_offered": {
+     "top": 4,
+     "rest": 5,
+     "ratio": 0.8
+    },
+    "duration_days": {
+     "top": 8,
+     "rest": 8,
+     "ratio": 1.0
+    },
+    "contestants": {
+     "top": 3127,
+     "rest": 2466,
+     "ratio": 1.268
+    },
+    "nth_campaign_overall": {
+     "top": 12,
+     "rest": 11,
+     "ratio": 1.0909
+    },
+    "stated_pool_usd": {
+     "top": 500.0,
+     "rest": 860.0,
+     "ratio": 0.5814
+    },
+    "email_offered": {
+     "top": 0.3304,
+     "rest": 0.6319,
+     "ratio": 0.5229
+    },
+    "referral_offered": {
+     "top": 0.1739,
+     "rest": 0.4493,
+     "ratio": 0.3871
+    },
+    "secret_code_offered": {
+     "top": 0.0522,
+     "rest": 0.0754,
+     "ratio": 0.6923
+    },
+    "question_offered": {
+     "top": 0.3652,
+     "rest": 0.1362,
+     "ratio": 2.6809
+    },
+    "community_join_offered": {
+     "top": 0.0087,
+     "rest": 0.0203,
+     "ratio": 0.4286
+    },
+    "platform_follow_offered": {
+     "top": 0.3391,
+     "rest": 0.5275,
+     "ratio": 0.6429
+    },
+    "email_uptake": {
+     "top": 0.8566,
+     "rest": 0.9777,
+     "ratio": 0.8761
+    },
+    "referral_uptake": {
+     "top": 0.0857,
+     "rest": 0.1122,
+     "ratio": 0.764
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "tech_hardware": {
+     "top_share": 0.1826,
+     "rest_share": 0.1594,
+     "ratio": 1.1455
+    },
+    "other_unclassified": {
+     "top_share": 0.2696,
+     "rest_share": 0.1797,
+     "ratio": 1.5
+    },
+    "bundle_or_box": {
+     "top_share": 0.1217,
+     "rest_share": 0.2,
+     "ratio": 0.6087
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.1565,
+     "rest_share": 0.0986,
+     "ratio": 1.5882
+    },
+    "home_garden_appliance": {
+     "top_share": 0.1304,
+     "rest_share": 0.0406,
+     "ratio": 3.2143
+    }
+   }
+  },
+  "home_garden": {
+   "n_top": 119,
+   "organizers_top": 14,
+   "n_rest": 348,
+   "organizers_rest": 91,
+   "conversion_top": 0.6403,
+   "conversion_rest": 0.3436,
+   "features": {
+    "actions_offered": {
+     "top": 4,
+     "rest": 5.0,
+     "ratio": 0.8
+    },
+    "duration_days": {
+     "top": 5,
+     "rest": 8.0,
+     "ratio": 0.625
+    },
+    "contestants": {
+     "top": 2589,
+     "rest": 1915.0,
+     "ratio": 1.352
+    },
+    "nth_campaign_overall": {
+     "top": 56,
+     "rest": 12.0,
+     "ratio": 4.6667
+    },
+    "stated_pool_usd": {
+     "top": 1600.0,
+     "rest": 914.5,
+     "ratio": 1.7496
+    },
+    "email_offered": {
+     "top": 0.7143,
+     "rest": 0.569,
+     "ratio": 1.2554
+    },
+    "referral_offered": {
+     "top": 0.4706,
+     "rest": 0.5517,
+     "ratio": 0.8529
+    },
+    "secret_code_offered": {
+     "top": 0.0,
+     "rest": 0.0086,
+     "ratio": 0.0
+    },
+    "question_offered": {
+     "top": 0.0252,
+     "rest": 0.092,
+     "ratio": 0.2742
+    },
+    "community_join_offered": {
+     "top": 0.0,
+     "rest": 0.0057,
+     "ratio": 0.0
+    },
+    "platform_follow_offered": {
+     "top": 0.3697,
+     "rest": 0.4799,
+     "ratio": 0.7705
+    },
+    "email_uptake": {
+     "top": 0.8892,
+     "rest": 0.9978,
+     "ratio": 0.8911
+    },
+    "referral_uptake": {
+     "top": 0.0901,
+     "rest": 0.106,
+     "ratio": 0.85
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "other_unclassified": {
+     "top_share": 0.2353,
+     "rest_share": 0.2213,
+     "ratio": 1.0634
+    },
+    "placeholder_name": {
+     "top_share": 0.0672,
+     "rest_share": 0.0632,
+     "ratio": 1.0634
+    },
+    "home_garden_appliance": {
+     "top_share": 0.395,
+     "rest_share": 0.296,
+     "ratio": 1.3344
+    },
+    "bundle_or_box": {
+     "top_share": 0.1345,
+     "rest_share": 0.1523,
+     "ratio": 0.8828
+    }
+   }
+  },
+  "apparel_fashion": {
+   "n_top": 230,
+   "organizers_top": 18,
+   "n_rest": 681,
+   "organizers_rest": 125,
+   "conversion_top": 0.6304,
+   "conversion_rest": 0.3069,
+   "features": {
+    "actions_offered": {
+     "top": 1.0,
+     "rest": 4,
+     "ratio": 0.25
+    },
+    "duration_days": {
+     "top": 2.0,
+     "rest": 3,
+     "ratio": 0.6667
+    },
+    "contestants": {
+     "top": 2823.0,
+     "rest": 3203,
+     "ratio": 0.8814
+    },
+    "nth_campaign_overall": {
+     "top": 146.5,
+     "rest": 25,
+     "ratio": 5.86
+    },
+    "stated_pool_usd": {
+     "top": 1980.0,
+     "rest": 1378.5,
+     "ratio": 1.4363
+    },
+    "email_offered": {
+     "top": 0.7174,
+     "rest": 0.7019,
+     "ratio": 1.0221
+    },
+    "referral_offered": {
+     "top": 0.0174,
+     "rest": 0.2893,
+     "ratio": 0.0601
+    },
+    "secret_code_offered": {
+     "top": 0.0,
+     "rest": 0.0132,
+     "ratio": 0.0
+    },
+    "question_offered": {
+     "top": 0.0348,
+     "rest": 0.0455,
+     "ratio": 0.7641
+    },
+    "community_join_offered": {
+     "top": 0.0,
+     "rest": 0.0059,
+     "ratio": 0.0
+    },
+    "platform_follow_offered": {
+     "top": 0.2304,
+     "rest": 0.4112,
+     "ratio": 0.5605
+    },
+    "email_uptake": {
+     "top": 1.0544,
+     "rest": 1.0453,
+     "ratio": 1.0087
+    },
+    "referral_uptake": {
+     "top": 0.0763,
+     "rest": 0.1011,
+     "ratio": 0.7548
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "merch_apparel_collectible": {
+     "top_share": 0.8652,
+     "rest_share": 0.4978,
+     "ratio": 1.7381
+    },
+    "gift_card_or_cash": {
+     "top_share": 0.0522,
+     "rest_share": 0.1424,
+     "ratio": 0.3663
+    }
+   }
+  },
+  "travel_events": {
+   "n_top": 57,
+   "organizers_top": 14,
+   "n_rest": 171,
+   "organizers_rest": 52,
+   "conversion_top": 0.5285,
+   "conversion_rest": 0.3155,
+   "features": {
+    "actions_offered": {
+     "top": 6,
+     "rest": 4,
+     "ratio": 1.5
+    },
+    "duration_days": {
+     "top": 7,
+     "rest": 7,
+     "ratio": 1.0
+    },
+    "contestants": {
+     "top": 6707,
+     "rest": 2531,
+     "ratio": 2.6499
+    },
+    "nth_campaign_overall": {
+     "top": 59,
+     "rest": 9,
+     "ratio": 6.5556
+    },
+    "stated_pool_usd": {
+     "top": 547.5,
+     "rest": 2641.0,
+     "ratio": 0.2073
+    },
+    "email_offered": {
+     "top": 0.4386,
+     "rest": 0.3801,
+     "ratio": 1.1538
+    },
+    "referral_offered": {
+     "top": 0.6316,
+     "rest": 0.6374,
+     "ratio": 0.9908
+    },
+    "secret_code_offered": {
+     "top": 0.4211,
+     "rest": 0.0936,
+     "ratio": 4.5
+    },
+    "question_offered": {
+     "top": 0.7193,
+     "rest": 0.5848,
+     "ratio": 1.23
+    },
+    "community_join_offered": {
+     "top": 0.0,
+     "rest": 0.0526,
+     "ratio": 0.0
+    },
+    "platform_follow_offered": {
+     "top": 0.1579,
+     "rest": 0.3216,
+     "ratio": 0.4909
+    },
+    "email_uptake": {
+     "top": 0.634,
+     "rest": 0.8829,
+     "ratio": 0.718
+    },
+    "referral_uptake": {
+     "top": 0.0538,
+     "rest": 0.0821,
+     "ratio": 0.655
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "other_unclassified": {
+     "top_share": 0.1754,
+     "rest_share": 0.2339,
+     "ratio": 0.75
+    },
+    "experience_travel_tickets": {
+     "top_share": 0.614,
+     "rest_share": 0.3216,
+     "ratio": 1.9091
+    }
+   }
+  },
+  "toys_hobbies_collectibles": {
+   "n_top": 51,
+   "organizers_top": 27,
+   "n_rest": 150,
+   "organizers_rest": 41,
+   "conversion_top": 0.5952,
+   "conversion_rest": 0.2407,
+   "features": {
+    "actions_offered": {
+     "top": 1,
+     "rest": 4.0,
+     "ratio": 0.25
+    },
+    "duration_days": {
+     "top": 6,
+     "rest": 8.0,
+     "ratio": 0.75
+    },
+    "contestants": {
+     "top": 1821,
+     "rest": 1838.0,
+     "ratio": 0.9908
+    },
+    "nth_campaign_overall": {
+     "top": 7,
+     "rest": 51.0,
+     "ratio": 0.1373
+    },
+    "stated_pool_usd": {
+     "top": 158.0,
+     "rest": 337.5,
+     "ratio": 0.4681
+    },
+    "email_offered": {
+     "top": 0.1765,
+     "rest": 0.3467,
+     "ratio": 0.509
+    },
+    "referral_offered": {
+     "top": 0.1373,
+     "rest": 0.3067,
+     "ratio": 0.4476
+    },
+    "secret_code_offered": {
+     "top": 0.0392,
+     "rest": 0.02,
+     "ratio": 1.9608
+    },
+    "question_offered": {
+     "top": 0.2941,
+     "rest": 0.1067,
+     "ratio": 2.7574
+    },
+    "community_join_offered": {
+     "top": 0.0588,
+     "rest": 0.08,
+     "ratio": 0.7353
+    },
+    "platform_follow_offered": {
+     "top": 0.3529,
+     "rest": 0.8333,
+     "ratio": 0.4235
+    },
+    "email_uptake": {
+     "top": 1.0296,
+     "rest": 0.9278,
+     "ratio": 1.1097
+    },
+    "referral_uptake": {
+     "top": 0.088,
+     "rest": 0.1304,
+     "ratio": 0.6748
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "toys_collectibles": {
+     "top_share": 0.1569,
+     "rest_share": 0.5267,
+     "ratio": 0.2978
+    },
+    "bundle_or_box": {
+     "top_share": 0.1569,
+     "rest_share": 0.1,
+     "ratio": 1.5686
+    },
+    "other_unclassified": {
+     "top_share": 0.4314,
+     "rest_share": 0.1733,
+     "ratio": 2.4887
+    }
+   }
+  },
+  "health_wellness_fitness": {
+   "n_top": 33,
+   "organizers_top": 12,
+   "n_rest": 99,
+   "organizers_rest": 52,
+   "conversion_top": 0.4926,
+   "conversion_rest": 0.3043,
+   "features": {
+    "actions_offered": {
+     "top": 2,
+     "rest": 6,
+     "ratio": 0.3333
+    },
+    "duration_days": {
+     "top": 7,
+     "rest": 8,
+     "ratio": 0.875
+    },
+    "contestants": {
+     "top": 1422,
+     "rest": 1495,
+     "ratio": 0.9512
+    },
+    "nth_campaign_overall": {
+     "top": 8,
+     "rest": 6,
+     "ratio": 1.3333
+    },
+    "stated_pool_usd": {
+     "top": 500.0,
+     "rest": 1075.0,
+     "ratio": 0.4651
+    },
+    "email_offered": {
+     "top": 0.1818,
+     "rest": 0.5758,
+     "ratio": 0.3158
+    },
+    "referral_offered": {
+     "top": 0.2121,
+     "rest": 0.6364,
+     "ratio": 0.3333
+    },
+    "secret_code_offered": {
+     "top": 0.0,
+     "rest": 0.0202,
+     "ratio": 0.0
+    },
+    "question_offered": {
+     "top": 0.3333,
+     "rest": 0.1111,
+     "ratio": 3.0
+    },
+    "community_join_offered": {
+     "top": 0.0303,
+     "rest": 0.0303,
+     "ratio": 1.0
+    },
+    "platform_follow_offered": {
+     "top": 0.1818,
+     "rest": 0.5455,
+     "ratio": 0.3333
+    },
+    "email_uptake": {
+     "top": 1.0051,
+     "rest": 1.0092,
+     "ratio": 0.996
+    },
+    "referral_uptake": {
+     "top": 0.2002,
+     "rest": 0.1099,
+     "ratio": 1.8224
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "gift_card_or_cash": {
+     "top_share": 0.303,
+     "rest_share": 0.1717,
+     "ratio": 1.7647
+    },
+    "beauty_wellness": {
+     "top_share": 0.2727,
+     "rest_share": 0.0606,
+     "ratio": 4.5
+    }
+   }
+  },
+  "retail_marketplace": {
+   "n_top": 105,
+   "organizers_top": 10,
+   "n_rest": 315,
+   "organizers_rest": 46,
+   "conversion_top": 0.6302,
+   "conversion_rest": 0.3053,
+   "features": {
+    "actions_offered": {
+     "top": 1,
+     "rest": 1,
+     "ratio": 1.0
+    },
+    "duration_days": {
+     "top": 1,
+     "rest": 1,
+     "ratio": 1.0
+    },
+    "contestants": {
+     "top": 2722,
+     "rest": 2222,
+     "ratio": 1.225
+    },
+    "nth_campaign_overall": {
+     "top": 125,
+     "rest": 81,
+     "ratio": 1.5432
+    },
+    "stated_pool_usd": {
+     "top": null,
+     "rest": 575.0,
+     "ratio": null
+    },
+    "email_offered": {
+     "top": 0.1238,
+     "rest": 0.1397,
+     "ratio": 0.8864
+    },
+    "referral_offered": {
+     "top": 0.1048,
+     "rest": 0.2222,
+     "ratio": 0.4714
+    },
+    "secret_code_offered": {
+     "top": 0.0,
+     "rest": 0.0508,
+     "ratio": 0.0
+    },
+    "question_offered": {
+     "top": 0.0857,
+     "rest": 0.0635,
+     "ratio": 1.35
+    },
+    "community_join_offered": {
+     "top": 0.0571,
+     "rest": 0.0222,
+     "ratio": 2.5714
+    },
+    "platform_follow_offered": {
+     "top": 0.0571,
+     "rest": 0.0857,
+     "ratio": 0.6667
+    },
+    "email_uptake": {
+     "top": 1.0068,
+     "rest": 1.0088,
+     "ratio": 0.9981
+    },
+    "referral_uptake": {
+     "top": 0.0599,
+     "rest": 0.0758,
+     "ratio": 0.7902
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "gift_card_or_cash": {
+     "top_share": 0.6952,
+     "rest_share": 0.5873,
+     "ratio": 1.1838
+    },
+    "home_garden_appliance": {
+     "top_share": 0.1238,
+     "rest_share": 0.0063,
+     "ratio": 19.5
+    }
+   }
+  },
+  "software_saas": {
+   "n_top": 31,
+   "organizers_top": 13,
+   "n_rest": 93,
+   "organizers_rest": 44,
+   "conversion_top": 0.5038,
+   "conversion_rest": 0.2695,
+   "features": {
+    "actions_offered": {
+     "top": 4,
+     "rest": 8,
+     "ratio": 0.5
+    },
+    "duration_days": {
+     "top": 3,
+     "rest": 8,
+     "ratio": 0.375
+    },
+    "contestants": {
+     "top": 1561,
+     "rest": 1749,
+     "ratio": 0.8925
+    },
+    "nth_campaign_overall": {
+     "top": 59,
+     "rest": 6,
+     "ratio": 9.8333
+    },
+    "stated_pool_usd": {
+     "top": 2226.0,
+     "rest": 1984.0,
+     "ratio": 1.122
+    },
+    "email_offered": {
+     "top": 0.3548,
+     "rest": 0.3118,
+     "ratio": 1.1379
+    },
+    "referral_offered": {
+     "top": 0.0968,
+     "rest": 0.3978,
+     "ratio": 0.2432
+    },
+    "secret_code_offered": {
+     "top": 0.129,
+     "rest": 0.1613,
+     "ratio": 0.8
+    },
+    "question_offered": {
+     "top": 0.129,
+     "rest": 0.2258,
+     "ratio": 0.5714
+    },
+    "community_join_offered": {
+     "top": 0.1613,
+     "rest": 0.3763,
+     "ratio": 0.4286
+    },
+    "platform_follow_offered": {
+     "top": 0.5484,
+     "rest": 0.8387,
+     "ratio": 0.6538
+    },
+    "email_uptake": {
+     "top": 1.0349,
+     "rest": 1.0,
+     "ratio": 1.0349
+    },
+    "referral_uptake": {
+     "top": 1.0082,
+     "rest": 0.2905,
+     "ratio": 3.4701
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "tech_hardware": {
+     "top_share": 0.3548,
+     "rest_share": 0.3978,
+     "ratio": 0.8919
+    },
+    "subscription_membership": {
+     "top_share": 0.2903,
+     "rest_share": 0.0323,
+     "ratio": 9.0
+    }
+   }
+  },
+  "marketing_agency": {
+   "n_top": 39,
+   "organizers_top": 11,
+   "n_rest": 108,
+   "organizers_rest": 26,
+   "conversion_top": 0.4875,
+   "conversion_rest": 0.3368,
+   "features": {
+    "actions_offered": {
+     "top": 6,
+     "rest": 8.0,
+     "ratio": 0.75
+    },
+    "duration_days": {
+     "top": 7,
+     "rest": 9.0,
+     "ratio": 0.7778
+    },
+    "contestants": {
+     "top": 4423,
+     "rest": 3079.0,
+     "ratio": 1.4365
+    },
+    "nth_campaign_overall": {
+     "top": 25,
+     "rest": 23.0,
+     "ratio": 1.087
+    },
+    "stated_pool_usd": {
+     "top": 2000.0,
+     "rest": 2396.0,
+     "ratio": 0.8347
+    },
+    "email_offered": {
+     "top": 0.3077,
+     "rest": 0.3056,
+     "ratio": 1.007
+    },
+    "referral_offered": {
+     "top": 0.2564,
+     "rest": 0.25,
+     "ratio": 1.0256
+    },
+    "secret_code_offered": {
+     "top": 0.0513,
+     "rest": 0.0556,
+     "ratio": 0.9231
+    },
+    "question_offered": {
+     "top": 0.2564,
+     "rest": 0.1574,
+     "ratio": 1.629
+    },
+    "community_join_offered": {
+     "top": 0.2308,
+     "rest": 0.3333,
+     "ratio": 0.6923
+    },
+    "platform_follow_offered": {
+     "top": 0.6923,
+     "rest": 0.8241,
+     "ratio": 0.8401
+    },
+    "email_uptake": {
+     "top": 0.5394,
+     "rest": 0.8435,
+     "ratio": 0.6394
+    },
+    "referral_uptake": {
+     "top": 0.0641,
+     "rest": 0.0757,
+     "ratio": 0.8466
+    }
+   },
+   "prize_category_top_vs_rest": {
+    "bundle_or_box": {
+     "top_share": 0.3077,
+     "rest_share": 0.1019,
+     "ratio": 3.021
+    },
+    "tech_hardware": {
+     "top_share": 0.2564,
+     "rest_share": 0.3981,
+     "ratio": 0.644
+    },
+    "placeholder_name": {
+     "top_share": 0.2308,
+     "rest_share": 0.0648,
+     "ratio": 3.5604
+    }
+   }
+  }
+ },
+ "robust_features_across_industries": {
+  "actions_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 1,
+   "industries_rest_higher": 10,
+   "median_ratio": 0.75,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "referral_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 0,
+   "industries_rest_higher": 11,
+   "median_ratio": 0.4476,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "secret_code_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 2,
+   "industries_rest_higher": 10,
+   "median_ratio": 0.4393,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "platform_follow_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 0,
+   "industries_rest_higher": 12,
+   "median_ratio": 0.6131,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "referral_uptake": {
+   "industries_tested": 12,
+   "industries_top_higher": 2,
+   "industries_rest_higher": 9,
+   "median_ratio": 0.7771,
+   "industries": [
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  }
+ },
+ "features_that_did_not_generalize": {
+  "duration_days": {
+   "industries_tested": 13,
+   "industries_top_higher": 0,
+   "industries_rest_higher": 8,
+   "median_ratio": 0.75,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "contestants": {
+   "industries_tested": 13,
+   "industries_top_higher": 6,
+   "industries_rest_higher": 0,
+   "median_ratio": 1.1022,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "nth_campaign_overall": {
+   "industries_tested": 13,
+   "industries_top_higher": 9,
+   "industries_rest_higher": 2,
+   "median_ratio": 1.9643,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "stated_pool_usd": {
+   "industries_tested": 12,
+   "industries_top_higher": 3,
+   "industries_rest_higher": 7,
+   "median_ratio": 0.8508,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "email_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 2,
+   "industries_rest_higher": 6,
+   "median_ratio": 0.8864,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "question_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 9,
+   "industries_rest_higher": 4,
+   "median_ratio": 1.35,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "community_join_offered": {
+   "industries_tested": 13,
+   "industries_top_higher": 3,
+   "industries_rest_higher": 9,
+   "median_ratio": 0.6923,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  },
+  "email_uptake": {
+   "industries_tested": 13,
+   "industries_top_higher": 0,
+   "industries_rest_higher": 4,
+   "median_ratio": 0.9948,
+   "industries": [
+    "electronics_tech",
+    "gaming_esports",
+    "media_entertainment",
+    "sports_outdoors",
+    "food_drink",
+    "home_garden",
+    "apparel_fashion",
+    "travel_events",
+    "toys_hobbies_collectibles",
+    "health_wellness_fitness",
+    "retail_marketplace",
+    "software_saas",
+    "marketing_agency"
+   ]
+  }
+ },
+ "threshold_check_top_vs_bottom_decile_pooled": {
+  "secret_code_offered": {
+   "pooled_quartile_median_ratio": 0.4393,
+   "pooled_decile_top": 0.0172,
+   "pooled_decile_bottom": 0.0631,
+   "pooled_decile_ratio": 0.2727,
+   "note": "pooled across every qualifying industry's clean subset, top decile vs bottom decile by conversion, for a threshold check against the per-industry quartile ratio above"
+  },
+  "referral_offered": {
+   "pooled_quartile_median_ratio": 0.4476,
+   "pooled_decile_top": 0.1185,
+   "pooled_decile_bottom": 0.392,
+   "pooled_decile_ratio": 0.3024,
+   "note": "pooled across every qualifying industry's clean subset, top decile vs bottom decile by conversion, for a threshold check against the per-industry quartile ratio above"
+  },
+  "platform_follow_offered": {
+   "pooled_quartile_median_ratio": 0.6131,
+   "pooled_decile_top": 0.326,
+   "pooled_decile_bottom": 0.6472,
+   "pooled_decile_ratio": 0.5037,
+   "note": "pooled across every qualifying industry's clean subset, top decile vs bottom decile by conversion, for a threshold check against the per-industry quartile ratio above"
+  }
+ }
+}

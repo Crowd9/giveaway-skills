@@ -29,7 +29,7 @@
   },
   {
    "prompt": "We're launching a new mechanical keyboard next month, pre-orders open the same day. Budget $600. Ideas?",
-   "expected_output": "Three concepts with a launch or early-access hook, quotes the launch subtype row (launches below the median on contestants and conversion, above on referrals, early access at index 1.09) as extracted with n, makes the product the prize in at least one concept, recommends promotion and a referral action first, hands off.",
+   "expected_output": "Three concepts with a launch or early-access hook, quotes the launch subtype row (launches below the median on contestants and conversion, above on referrals, early access at index 1.08) as extracted with n, makes the product the prize in at least one concept, recommends promotion and a referral action first, hands off.",
    "assertions": [
     "Quotes the launch subtype data with n",
     "At least one concept uses the product itself as the prize",
@@ -46,7 +46,9 @@
    "assertions": [
     "em_dashes == 0",
     "semicolons == 0",
-    "assistant_opener == 0 and assistant_closer == 0"
+    "assistant_opener == 0 and assistant_closer == 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
   }

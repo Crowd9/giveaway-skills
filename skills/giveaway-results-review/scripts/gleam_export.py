@@ -6,11 +6,11 @@
   python3 gleam_export.py --self-test
 
 Columns read: Email (the person), Status (Valid, Invalid, Winner), Action, Entries (worth), Country, When, Referring URL.
-Contestants are unique emails with at least one valid row. Actions completed are valid rows. Entries are the sum of the
+Entrants are unique emails with at least one valid row. Actions completed are valid rows. Entries are the sum of the
 Entries column on valid rows. Impressions are not in this export: pass them from the Reporting tab. Nothing leaves the
 machine and no row is printed: the summary is aggregates only.
 
-The review.py command printed at the end passes --invalid as invalid entries worth, the Entries column summed over rows
+The review.py command printed at the end passes --invalid as invalid Entries worth, the Entries column summed over rows
 whose Status is Invalid. The row count is printed separately as "invalid rows".
 """
 import argparse, collections, csv, datetime as dt, sys
@@ -81,7 +81,7 @@ def review_command(s, args):
     for k in ("emails", "referrals", "x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"):
         if s["assets"].get(k): cmd += f" --{k.replace('_', '-')} {s['assets'][k]}"
     if args.actions_csv: cmd += f" --actions {args.actions_csv}"
-    return cmd + " --impressions N   # impressions from the Reporting tab"
+    return cmd + " --impressions N   # Impressions from the Reporting tab"
 
 def self_test():
     import os, tempfile
@@ -96,6 +96,7 @@ def self_test():
     assert s["contestants"] == 2 and s["entries"] == 8 and s["invalid_rows"] == 1 and s["invalid_entries"] == 4 and s["assets"] == {"emails": 1, "x_follows": 1, "referrals": 1} and s["days_covered"] == 3, s
     class A: actions_csv = None
     assert "--invalid 4" in review_command(s, A), review_command(s, A)
+    assert "# Impressions from the Reporting tab" in review_command(s, A) and "views" not in review_command(s, A).lower(), review_command(s, A)
     assert generic_name("Follow @Gleamapp on Instagram:") == "Instagram Follows" and generic_name("Read Our Ideas:") == "Visit a Page" and generic_name("Subscribe to Our Giveaway List") == "Email Subscriptions", "generic"
     assert kind("Follow @Gleamapp on Instagram:") == "instagram_follows" and kind("Follow Gleamapp on X") == "x_follows" and kind("Subscribe to Our Giveaway List") == "emails"
     print("self-test passed"); return 0
@@ -104,12 +105,12 @@ def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--actions-csv", help="write action,completions for review.py --actions")
-    ap.add_argument("--entrants-csv", help="write email,entries for valid people, for the draw script")
+    ap.add_argument("--entrants-csv", help="write email,Entries for valid people, for the draw script")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")
     s = load(a.export)
-    print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid rows {s['invalid_rows']:,}  invalid entries {s['invalid_entries']:,}  contestants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  days {s['days_covered']}")
+    print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid rows {s['invalid_rows']:,}  invalid entries {s['invalid_entries']:,}  entrants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  days {s['days_covered']}")
     print("assets", {k: f"{v:,}" for k, v in s["assets"].items()})
     print("per action"); [print(f"  {n:>7,}  {name}") for name, n in s["per_action"].items()]
     print("top countries", {k: f"{v / s['valid_rows']:.0%}" for k, v in list(s["countries"].items())[:6]})

@@ -3,9 +3,9 @@
 [![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 37,180 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 35,668 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
 
-Behind the advice sit 6,817 organizers, 60,282 prizes and 325,000 entry actions, from campaigns that all reached at least 1,000 entrants.
+Behind the advice sit 6,402 organizers, 58,000 prizes and 314,000 entry actions, from campaigns that all reached at least 1,000 entrants.
 Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
 
 ## Install
@@ -44,7 +44,7 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, the emails for people who entered and people who have not, the replies for comments and DMs, a partner brief, and the retargeting audiences to build once it closes |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
 | [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification through the welcome series and list hygiene for everyone who did not win |
-| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against 37,000 others and your industry, the actions that pulled their weight, and three changes for next time |
+| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against 35,000 others and your industry, the actions that pulled their weight, and three changes for next time |
 | [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
 ### Idea Generator
@@ -71,7 +71,7 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Preferred option, two alternatives from different categories, and the tradeoffs between them
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
 - ROI script: cost per contestant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
-- Prize values by category and campaign size from 60,282 real prizes, with sample sizes shown
+- Prize values by category and campaign size from 58,000 real prizes, with sample sizes shown
 - A prize description you can paste, and Gleam setup help only when you ask for it
 
 > "Is a PS5 a good prize for our accounting software?"
@@ -84,7 +84,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Uptake by action family from 325,000 real entry actions, and the friction finding that every extra action costs entrants
+- Uptake by action family from 314,000 real entry actions, and the friction finding that every extra action costs entrants
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 
@@ -101,7 +101,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 - Holiday benchmarks: contestants, conversion and launch lead time for Christmas, Black Friday, the family days, Easter, Halloween, back to school and more, with a dated calendar of launch windows
 - Every week of the year benchmarked: share of launches, contestants and conversion, and whether being live over each holiday helped or hurt
 - Seasonal calendar by region, with December's peak and carrier cut-offs flagged
-- The recency finding: a campaign within 30 days of your last one drew 16% more entrants and converted a third better
+- The recency finding: a campaign within 30 days of your last one converted at 41% against 32% for a first campaign
 - Risks named in advance: the quiet middle, holiday gaps, the wrong time zone on the close
 - The season plan for a store: list build before Black Friday, the gift guide campaign in early December, the New Year restart, with the weeks that convert best behind each
 
@@ -173,7 +173,7 @@ Every message after the draw, in send order, in your voice.
 
 ### Results Review
 
-Your finished campaign read against 37,180 others of the same size, and what to change next time.
+Your finished campaign read against 35,668 others of the same size, and what to change next time.
 
 - A script that ranks contestants, impressions, conversion, actions and entries per entrant, pace per day, duration, prize value per contestant, email signups, referrals and follows by network against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - Your own history: this campaign beside your previous ones, the change, and how many it beat
@@ -199,7 +199,7 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 - Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
 - Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
 - The Shopify app: page creation, Open Graph tags, syncing entrants to the customer list with a campaign tag, and the test before launch
-- What entrants did with every Gleam action across 37,123 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
+- What entrants did with every Gleam action across 35,668 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
 - Gleam's own tips library, attributed, beside that evidence
 
 > "We use Gleam. Email mandatory, Instagram follow optional, US and Canada, 18+, one grand prize and five runner-ups. Walk me through the settings."
@@ -224,7 +224,7 @@ An abbreviated version of what comes back:
 >
 > Start day makes no measurable difference on any measure. Monday is the most common choice at 18.7% of campaigns and Saturday the rarest at 6.4%, which is a habit worth copying only because your own week is easier that way. Close day is flat too, so set the close for the hours you can answer questions in.
 >
-> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 16% more entrants and converted a third better than a first campaign. Book the second one before you launch this one.
+> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one converted at 41% against 32% for a first campaign. Book the second one before you launch this one.
 >
 > Next decision: the exact close date and time zone, which the promotion pushes hang off.
 
@@ -240,18 +240,18 @@ Ask for a plan or ask it to check yours. Every answer states its assumptions, la
 
 ## Evidence Behind the Advice
 
-Most giveaway advice is somebody's opinion. These skills are built on 37,180 real giveaways from 6,817 organizers, every one of which reached at least 1,000 entrants, with 60,282 prizes and 325,000 entry actions. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
+Most giveaway advice is somebody's opinion. These skills are built on 35,668 real giveaways from 6,402 organizers, every one of which reached at least 1,000 entrants, with 58,000 prizes and 314,000 entry actions. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
 
 That data is what lets the skills say things like:
 
-- A campaign that starts within 30 days of the organizer's previous one draws 16% more entrants and converts a third better, in every industry we could separate.
-- Every extra entry action costs people. Campaigns with 11 or more actions convert at 31% against 50% for one to three, and lose a fifth of their entrants.
-- Half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 525 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
-- Start weekday makes no difference at all. December is the busiest month and its campaigns still drew more entrants and converted better. The first week of December is the best-converting week of the year at 46%, and being live over Christmas or New Year came with 7% to 8% better conversion, while Black Friday week came with 15% worse.
-- A secret code is the only action that came with more entrants at no cost to conversion. Sharing actions, in this data, fed entries and left audiences where they were.
-- The top fifth of campaigns had nine times the impressions of the bottom fifth at the same conversion. Reach separates them, and the organizer's history does too: after a campaign over 5,000 entrants the next one got there 57% of the time, after a smaller one 11%.
+- A campaign that starts within 30 days of the organizer's previous one converts at 41% against 32% for a first campaign, on the clean subset (n=7,007 and 1,103).
+- Every extra entry action costs people. Campaigns with 11 or more actions convert at 32% against 48% for one to three, and draw a quarter fewer entrants (1,760 against 2,305).
+- More than half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 520 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
+- Start weekday makes no difference at all. December is the busiest month (n=4,253) and its campaigns still drew more entrants and converted better, 2,342 at 33% against 2,211 at 28% overall. The week before Christmas converts best of any week in the year at 54%, being live over Christmas or New Year came with 6% to 7% better conversion than matched campaigns, and Black Friday week came with 16% worse.
+- A secret code is the only action that came with more entrants at no cost to conversion (2,380 against 2,102, both at 38%, n=588). Sharing actions, in this data, fed entries and left audiences where they were.
+- The top fifth of campaigns had nine times the impressions of the bottom fifth at the same conversion (35,505 against 4,047, both 28%). Reach separates them. History compounds too: after a campaign over 5,000 entrants, 61% of an organizer's next campaigns reached 5,000 again, against 12% after a smaller one.
 - Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.
-- Gaming gets the most for its prize money, music and media the cheapest addresses, technology the most referrals, and UK organizers the highest conversion on the smallest campaigns.
+- Music and media organizers declared the least prize money per entrant and per address captured, gaming the least per referred entry, and software the most on every count. Brazil and Sweden convert highest of the large organizer countries, the UK sits at 31%.
 
 Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the export holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 

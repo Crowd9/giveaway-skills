@@ -1,34 +1,185 @@
 # Structure findings
 
-Extracted from the ordinary segment of the export (crypto, ambiguous and purchase-only campaigns removed). A prize record is one line in the organizer's prize list. Units are the quantities on those lines added up. Tiered means the prize list has more than one position (a first prize and a second prize, for example).
+These figures come from the campaigns we can compare fairly (crypto, unclear listings and purchase-only campaigns removed). A Prize record is one line in the business's Prize list. Units are the quantities on those lines added up. Tiered means the Prize list has more than one position (a first Prize and a second Prize, for example).
 
 <!-- generated:structure_detail -->
 | Prize records per campaign | Share |
 |---|---|
-| 1 | 79.2% |
-| 2 | 6.9% |
-| 3 | 6.7% |
+| 1 | 79.1% |
+| 2 | 7.0% |
+| 3 | 6.8% |
 | 4 | 2.2% |
 | 5 | 1.4% |
-| 6+ | 3.5% |
+| 6+ | 3.6% |
 
-Total prize units per campaign: median 1, 75th percentile 4, 90th percentile 12, maximum 1,133 (n=37,180). 41% of campaigns list more than one unit and 21% list tiered prizes (more than one position).
+Total Prize units per campaign follow the same lopsided shape as Prize records (table below, 35,668 campaigns). 40% of campaigns list more than one unit and 21% list tiered Prizes (more than one position).
 
-| Band | Single unit | Tiered prizes | Ten or more units |
+| Total Prize units per campaign | Value |
+|---|---|
+| Typical | 1 |
+| Top quarter | 3 or more |
+| Top tenth | 11 or more |
+| Largest | 1,133 |
+
+| Campaign size (Entrants) | Single unit | Tiered Prizes | Ten or more units |
 |---|---|---|---|
-| 1k-2.5k | 59% | 20% | 14% |
-| 2.5k-10k | 60% | 22% | 16% |
-| 10k+ | 61% | 20% | 19% |
+| 1k-2.5k | 60% | 20% | 12% |
+| 2.5k-10k | 60% | 22% | 15% |
+| 10k+ | 62% | 20% | 18% |
 <!-- /generated -->
 
 ## Reading the tables
 
-- Four in five campaigns list a single prize record, and three in five give away exactly one unit. One winner is the default choice at every size.
-- Two in five campaigns give away more than one unit, and one in five list tiered prizes. Ten or more units appears in about one campaign in seven, rising slightly with campaign size.
-- Contestant medians for single-unit and multi-unit campaigns are almost identical in the prize-picker findings, which describes the structure people chose and nothing about what it did.
+- Four in five campaigns list a single Prize record, and three in five give away exactly one unit. One Winner is the default choice at every size.
+- Two in five campaigns give away more than one unit, and one in five list tiered Prizes. Ten or more units appears in about one campaign in seven, rising slightly with campaign size.
+- The typical number of Entrants for single-unit and multi-unit campaigns is almost identical in the Prize-picker findings, which describes the structure people chose and nothing about what it did.
+
+## Entrants and Conversion Rate by Prize count (extracted)
+
+This compares campaigns with one Prize record against campaigns with several, showing the Entrants, the Conversion Rate (the share of people who saw it and entered) and the Actions per Entrant, for each count. Every group below is at least 30 campaigns from 10 businesses.
+
+| Prize records | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
+|---|---|---|---|---|---|---|---|
+| 1 | 28,189 | 5,007 | 2,194 | 29% | 4.19 | 16 | 7 |
+| 2-3 | 4,902 | 1,898 | 2,130 | 26% | 4.77 | 16 | 8 |
+| 4-9 | 2,045 | 929 | 2,440 | 23% | 5.30 | 17 | 9 |
+| 10+ | 522 | 261 | 3,504 | 18% | 6.36 | 20 | 12 |
+
+Conversion Rate falls steadily from 29% at one Prize record to 18% at ten or more. Entrants dip slightly at two to three Prize records, then climb to 3,504 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
+
+In plain terms, splitting a Prize into several draws a smaller crowd for the same money, even once you allow for campaign size and industry. What you get instead is more reach and more referrals, so the trade only pays off when reach is what you need.
+
+Four newer cuts allow for other differences that could explain the pattern on their own, and all four show the same shape. Even matched to the same stated Prize value, a single Prize still beats a split Prize on crowd-per-dollar, across every price range tested (table below). Only the smallest bundle range reverses this, and it rests on a thin sample.
+
+| Cut (matched to stated Prize value) | Crowd-per-dollar score | Campaigns | Businesses |
+|---|---|---|---|
+| Single Prize, by price range | 1.01 to 1.18 | — | — |
+| Split Prize (2+), by price range | 0.81 to 0.99 | — | — |
+| Single Prize, all price ranges combined | 1.03 | 28,141 | 5,000 |
+| Split Prize, all price ranges combined | 0.87 | 7,463 | 2,555 |
+| Smallest bundle range (100-249 USD), reverses | — | 150 | 90 |
+| Ranges tested | 7, from 250-499 USD to 25,000-49,999 USD | — | — |
+
+Once we allow for campaign size and industry together, so neither one explains the gap on its own, a single Prize unit still beats a split Prize on three separate measures, among the campaigns we can compare fairly, at close to the same ratios as before that adjustment (table below).
+
+| Metric (single Prize vs split) | Advantage | Campaigns | Businesses |
+|---|---|---|---|
+| Conversion Rate | 1.245x | 2,113 | 326 |
+| Crowd per dollar spent | 1.117x | 2,795 | 749 |
+| Cost % of Entrants | 1.379x | 2,781 | 831 |
+
+That is what splitting one Prize into several costs. What it buys: more Prize records lift reach and referrals per 100 Entrants, going from one Prize record to five or more, consistent across three campaign sizes, though not more follows or joins, which stay close to flat for the two smaller sizes and fall for the largest (table below).
+
+| Effect of 1 Prize record to 5+ | Lift per 100 Entrants |
+|---|---|
+| Reach | 30% to 57% |
+| Referrals | 8% to 28% |
+
+A campaign built to turn a fixed audience into Entrants at the lowest cost per person wants the single Prize. A campaign built to reach new people or push referrals gets that lift, for the Conversion Rate and crowd-per-dollar cost above.
+
+A separate look at Actions per Entrant against Prize unit count shows a possible flattening point in the four largest groups (table below), but the two metrics only loosely track each other there, and smaller groups scatter the flattening point far more widely, so treat that last point as worth testing again with a cleaner measure, not a settled number.
+
+| Group | Flattening point (Prize units) |
+|---|---|
+| Four largest groups (1,000-2,500 and 2,500-10,000 Entrants; Pro and Business plans) | about 14 to 15 |
+| Smaller groups | 3 to 15 (wide scatter) |
+
+Each of the four largest groups has more than 11,000 campaigns and 1,100 businesses. Correlation between unit count and Actions per Entrant there: 28%.
+
+None of this is a causal claim about what splitting one business's next campaign would do. It is that the gap between a single Prize and a split Prize, in Conversion Rate, the crowd-per-dollar score and the cost per Entrant, holds up once we remove the most obvious other explanations: value range, campaign size and industry, which the raw table above could not do by itself.
+
+Source: `analysis/output/success_profiles.json` (success_cohorts.clean_conversion, .prize_value_adjusted_performance, .cost_per_contestant), `analysis/output/prize_economics.json` (bundles, bundles_by_value_band), `analysis/output/asset_yield.json` (yield_by_asset_and_prize_structure), `analysis/output/thresholds.json` (winner_units, moderate confidence).
+
+The same campaigns cut by stated Prize pool, not by Prize count:
+
+| Prize pool, USD | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
+|---|---|---|---|---|---|---|---|
+| under 250 | 2,586 | 749 | 1,470 | 24% | 4.96 | 18 | 8 |
+| 250 to 1k | 4,915 | 1,603 | 1,977 | 24% | 4.78 | 21 | 8 |
+| 1k to 5k | 5,611 | 1,782 | 3,025 | 24% | 5.06 | 22 | 9 |
+| 5k+ | 1,229 | 627 | 4,287 | 21% | 4.86 | 23 | 8 |
+
+Bigger pools bring more Entrants and a longer run. Conversion Rate stays flat at 24% through the first three pool sizes and drops only at 5k and up (21%). A bigger pool and more Prize records tend to travel together with a bigger business and a longer campaign, so read both tables as who ran what, not as what a structure change would do to a given campaign.
+
+Source: `analysis/output/prize_timing_cuts.json` (by_prize_count, by_pool_band).
+
+## Winners by Prize category (extracted)
+
+This looks at each Prize row: the typical number of Winners on a category's rows, how often a row names more than one Winner, and the stated USD value per Winner among rows that state one. Every category below has at least 30 campaigns from 10 businesses.
+
+| Category | Campaigns | Businesses | Typical Winners | Multi-Winner share | USD per Winner (typical) | Conversion Rate | Actions per Entrant | Typical Entrants |
+|---|---|---|---|---|---|---|---|---|
+| Game items or skins | 2,531 | 752 | 1 | 46% | 60 | 15% | 6.34 | 2,408 |
+| Merch, apparel, collectibles | 1,646 | 583 | 1 | 40% | 110 | 28% | 3.07 | 2,557 |
+| Gift card or cash | 4,480 | 1,560 | 1 | 34% | 150 | 25% | 4.10 | 2,125 |
+| Tech hardware | 10,392 | 2,335 | 1 | 21% | 473 | 26% | 5.44 | 2,616 |
+| Experience, travel, tickets | 1,895 | 699 | 1 | 15% | 599 | 29% | 2.81 | 2,388 |
+| Regulated goods (firearms) | 1,107 | 172 | 1 | 3% | 1,596 | 18% | 9.47 | 3,403 |
+
+One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest pays the least on the highest. That highest-value category, firearms, also carries the lowest Conversion Rate and the most Actions per Entrant of the six, in line with the extra eligibility steps it carries elsewhere in this repository.
+
+Within experience, travel, tickets, flights or hotel packages alone return 1,810 USD per Winner, well above the category's 599 USD typical figure, because the category mixes cheap tickets with priced-out travel.
+
+Source: `analysis/output/prize_timing_cuts.json` (winners_by_prize_category, winners_by_ticket_kind).
+
+## Winner count against Prize value (extracted, campaigns that stated a value)
+
+One Winner pulls a bigger crowd for the same stated Prize value than a large pool of Winners does, and the gap widens as the pool grows, even after allowing for the plain "bigger Prize, more Entrants" effect on its own (table below). The gap is widest at the top of the price range tested.
+
+| Winner count | Ratio to predicted crowd, by price range | Ratio, all price ranges combined | Campaigns (combined) | Businesses (combined) |
+|---|---|---|---|---|
+| Single Winner | 1.09 to 1.53x | 1.07x | 8,640 | 2,149 |
+| 21 or more Winners | 0.53 to 0.68x | 0.84x | 769 | 343 |
+
+| Winner count | First price tier | Last price tier | Campaigns per tier | Businesses per tier |
+|---|---|---|---|---|
+| Single Winner | 500-999 USD | 10,000-24,999 USD | 112 to 2,013 | 78 to 761 |
+| Pool (21+) | 500-999 USD | 25,000-49,999 USD | 36 to 263 | 29 to 93 |
+
+That is a cost on this one crowd-per-dollar measure. It does not weigh what a large pool buys: many Winners who each felt something good happened, many small wins worth posting about, and a Prize spread further across a community than one big Winner reaches. A campaign built to get the most Entrants for its stated Prize value wants the single Winner. A campaign built to spread a goodwill moment across a community, reward loyalty broadly, or run a low-stakes recurring series wants the large pool, and pays this crowd-per-dollar cost for it.
+
+Do not use this below 500 USD or above 49,999 USD, where it was not tested.
+
+Source: `analysis/output/success_profiles.json` (interactions.prize_value_by_winner_count), `analysis/output/context_checks.json` (winner_count_index_value_adjusted).
+
+## Winners by Prize position (extracted)
+
+A record-level look at position within a campaign's Prize list: first Prize, second or third, and fourth or later. Every position below has at least 30 campaigns from 10 businesses.
+
+| Position | Campaigns | Businesses | Multi-Winner share | USD per Winner (typical) | Conversion Rate | Actions per Entrant | Typical Entrants |
+|---|---|---|---|---|---|---|---|
+| First Prize | 12,834 | 3,603 | 34% | 225 | 28% | 4.19 | 2,184 |
+| Second or third | 29,906 | 5,823 | 25% | 400 | 26% | 4.70 | 2,263 |
+| Fourth or later | 2,016 | 851 | 36% | 90 | 19% | 6.05 | 3,282 |
+
+First and fourth-plus Prizes go multi-Winner more often than second or third place (table above). USD per Winner runs highest at second or third, above first Prize, which reads as product tiers: a second or third Prize often repeats the same product line at a smaller size, lifting its per-Winner value above the headline Prize. Fourth-plus Prizes settle at the lowest per-Winner value, in line with a consolation tier, on the lowest Conversion Rate and highest Actions per Entrant of the three.
+
+Source: `analysis/output/prize_timing_cuts.json` (winners_by_position).
+
+## Prize structure by country (extracted, business's country, 100+ Entrants)
+
+This group is not the same as the campaigns behind the numbers above. It groups every campaign with 100 or more Entrants by the business's country, all industries and crypto businesses included. Read it beside the tables above as a separate check on country patterns. Every country below clears its 30-campaign, 10-business floor by a wide margin.
+
+| Country | Campaigns | Businesses | Prize units (typical) | Single-unit share | Pool USD (typical) | Pool stated share |
+|---|---|---|---|---|---|---|
+| Japan | 6,505 | 291 | 15 | 16% | 1,250 | 46% |
+| Singapore | 4,743 | 351 | 15 | 17% | 500 | 29% |
+| South Korea | 4,521 | 537 | 10 | 31% | 1,000 | 17% |
+| Vietnam | 3,762 | 773 | 10 | 39% | 500 | 34% |
+| Malaysia | 2,345 | 160 | 10 | 35% | 700 | 33% |
+| United States | 58,843 | 9,105 | 1 | 61% | 300 | 50% |
+| United Kingdom | 15,716 | 1,847 | 1 | 66% | 200 | 27% |
+| Australia | 6,433 | 1,406 | 1 | 62% | 769 | 32% |
+| Brazil | 5,860 | 563 | 1 | 73% | 90 | 7% |
+
+Japan and Singapore list the most Prize units, the US, UK, Brazil and Australia the fewest, and single-unit Prizes are rare in the first pair and common in the second group (table above). South Korea, Vietnam and Malaysia sit between the two groups. Typical pool USD follows no simple pattern against unit counts, and it rests on a much thinner slice of campaigns in some countries than others: Pool stated share ranges widely by country (table above), so read a country's typical pool figure alongside its stated share, not on its own.
+
+Source: `analysis/output/indicators.json` (prize_structure_by_country), `analysis/output/country_cuts.json` (by_country).
 
 ## Limits
 
-- Quantity is what the organizer typed. A record with quantity 100 may be 100 winners, or 100 codes for one winner.
-- Recurring draws (daily or weekly winners) appear as high quantities on one record and cannot be separated from a single bulk draw.
-- Every campaign passed the 1,000-contestant floor. Nothing here shows a structure changed participation.
+- Quantity is what the business typed. A record with quantity 100 may be 100 Winners, or 100 codes for one Winner. That applies to the country group's typical Prize-unit figures too.
+
+- Recurring draws (daily or weekly Winners) appear as high quantities on one record and cannot be separated from a single bulk draw.
+
+- Every campaign in the tables above passed the 1,000-Entrant floor. Nothing here shows a structure changed participation. The country group uses a lower, 100-Entrant floor and does not exclude crypto businesses, so its figures are not directly comparable to the tables above.

@@ -1,0 +1,2658 @@
+{
+ "definitions": {
+  "curve": "median outcomes at each exact value of k (action count, duration in days, prize units, description word count or share worth), only where the group has at least the stated campaigns and organizers",
+  "conversion": "valid_contestants / impressions, median across campaigns in the group",
+  "epe": "entries per entrant, valid_entries / valid_contestants, median across campaigns in the group",
+  "breakpoint": "a two-segment straight-line fit tried at every possible split of the curve; the split with the lowest combined error is reported, with the slope on each side and how much that split beats a single straight line through the whole curve (near 0 means the data does not support a break at all)",
+  "by_stratum": "the same breakpoint search repeated within each industry (at least ten organizers), size band and plan tier. A breakpoint that lands in a different place per stratum is not a rule, it is stratification noise",
+  "winner_units": "sum of prize quantity per campaign, the closest available proxy to a winner count. wins and all_winners_drawn are never used by repo rule",
+  "n_units_scope": "ordinary campaigns (1,000+ contestants), not restricted to clean",
+  "duration_scope": "ordinary campaigns with no repeatable action (loyalty, timed bonus or bonus custom action), not restricted to 14 days or fewer, so the elbow can be seen past the clean cutoff",
+  "action_count_scope": "clean campaigns only (no repeatable action, 14 days or fewer), to avoid conflating action count with the drip mechanics of long-running campaigns",
+  "description_length_scope": "clean campaigns, word count of the campaign description",
+  "share_worth_scope": "ordinary campaigns with a share action carrying a fixed (non-variable) worth",
+  "size_deciles": "ordinary campaigns split into ten equal-count groups by contestants, from smallest to largest, to see whether entries per entrant or conversion bend at a particular size rather than sliding smoothly"
+ },
+ "action_count": {
+  "metric": "conversion",
+  "curve": [
+   {
+    "k": 1,
+    "n": 1589,
+    "sites": 275,
+    "conversion": 0.5386,
+    "epe": 1.0,
+    "contestants": 2336.0
+   },
+   {
+    "k": 2,
+    "n": 777,
+    "sites": 269,
+    "conversion": 0.4286,
+    "epe": 1.692,
+    "contestants": 2305.0
+   },
+   {
+    "k": 3,
+    "n": 846,
+    "sites": 322,
+    "conversion": 0.4458,
+    "epe": 2.417,
+    "contestants": 2222.5
+   },
+   {
+    "k": 4,
+    "n": 1086,
+    "sites": 376,
+    "conversion": 0.3989,
+    "epe": 2.878,
+    "contestants": 2432.5
+   },
+   {
+    "k": 5,
+    "n": 1069,
+    "sites": 482,
+    "conversion": 0.3831,
+    "epe": 3.483,
+    "contestants": 2141.0
+   },
+   {
+    "k": 6,
+    "n": 1036,
+    "sites": 456,
+    "conversion": 0.3558,
+    "epe": 4.091,
+    "contestants": 2042.0
+   },
+   {
+    "k": 7,
+    "n": 1047,
+    "sites": 398,
+    "conversion": 0.3548,
+    "epe": 4.56,
+    "contestants": 2169.0
+   },
+   {
+    "k": 8,
+    "n": 639,
+    "sites": 338,
+    "conversion": 0.3136,
+    "epe": 5.047,
+    "contestants": 2063.0
+   },
+   {
+    "k": 9,
+    "n": 512,
+    "sites": 284,
+    "conversion": 0.3148,
+    "epe": 5.543,
+    "contestants": 1946.0
+   },
+   {
+    "k": 10,
+    "n": 435,
+    "sites": 227,
+    "conversion": 0.2921,
+    "epe": 5.916,
+    "contestants": 2090.0
+   },
+   {
+    "k": 11,
+    "n": 276,
+    "sites": 150,
+    "conversion": 0.3032,
+    "epe": 6.674,
+    "contestants": 1881.0
+   },
+   {
+    "k": 12,
+    "n": 236,
+    "sites": 129,
+    "conversion": 0.2766,
+    "epe": 7.703,
+    "contestants": 1571.5
+   },
+   {
+    "k": 13,
+    "n": 233,
+    "sites": 106,
+    "conversion": 0.2745,
+    "epe": 8.351,
+    "contestants": 1617.0
+   },
+   {
+    "k": 14,
+    "n": 184,
+    "sites": 72,
+    "conversion": 0.3073,
+    "epe": 7.98,
+    "contestants": 1612.5
+   },
+   {
+    "k": 15,
+    "n": 125,
+    "sites": 67,
+    "conversion": 0.3217,
+    "epe": 9.71,
+    "contestants": 1948.0
+   },
+   {
+    "k": 16,
+    "n": 109,
+    "sites": 47,
+    "conversion": 0.4523,
+    "epe": 10.045,
+    "contestants": 2074.0
+   },
+   {
+    "k": 17,
+    "n": 105,
+    "sites": 37,
+    "conversion": 0.4012,
+    "epe": 12.021,
+    "contestants": 1649.0
+   },
+   {
+    "k": 18,
+    "n": 83,
+    "sites": 28,
+    "conversion": 0.4203,
+    "epe": 12.14,
+    "contestants": 1602.0
+   },
+   {
+    "k": 19,
+    "n": 61,
+    "sites": 20,
+    "conversion": 0.4495,
+    "epe": 12.006,
+    "contestants": 1711.0
+   },
+   {
+    "k": 20,
+    "n": 102,
+    "sites": 21,
+    "conversion": 0.6056,
+    "epe": 11.673,
+    "contestants": 1265.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 12,
+   "first_k_of_upper_segment": 13,
+   "slope_before": -0.01999,
+   "slope_after": 0.03897,
+   "sse_improvement_over_one_line": 0.854,
+   "points_fitted": 20
+  },
+  "breakpoint_other_metrics": {
+   "epe": {
+    "last_k_of_lower_segment": 16,
+    "first_k_of_upper_segment": 17,
+    "slope_before": 0.58438,
+    "slope_after": -0.1178,
+    "sse_improvement_over_one_line": 0.736,
+    "points_fitted": 20
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": -60.09231,
+    "slope_after": -130.02857,
+    "sse_improvement_over_one_line": 0.473,
+    "points_fitted": 20
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 2387,
+    "total_sites": 101,
+    "last_k_of_lower_segment": 13,
+    "first_k_of_upper_segment": 14,
+    "slope_before": -0.03066,
+    "slope_after": 0.01647,
+    "sse_improvement_over_one_line": 0.643,
+    "points_fitted": 16
+   },
+   "industry=gaming_esports": {
+    "total_n": 2245,
+    "total_sites": 125,
+    "last_k_of_lower_segment": 13,
+    "first_k_of_upper_segment": 14,
+    "slope_before": -0.00965,
+    "slope_after": -0.03173,
+    "sse_improvement_over_one_line": 0.874,
+    "points_fitted": 16
+   },
+   "industry=media_entertainment": {
+    "total_n": 964,
+    "total_sites": 40,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.1783,
+    "slope_after": -0.02108,
+    "sse_improvement_over_one_line": 0.602,
+    "points_fitted": 10
+   },
+   "industry=sports_outdoors": {
+    "total_n": 251,
+    "total_sites": 31,
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 6,
+    "slope_before": -0.0146,
+    "slope_after": -0.0196,
+    "sse_improvement_over_one_line": 0.01,
+    "points_fitted": 6
+   },
+   "industry=food_drink": {
+    "total_n": 413,
+    "total_sites": 29,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.07745,
+    "slope_after": -0.0079,
+    "sse_improvement_over_one_line": 0.678,
+    "points_fitted": 8
+   },
+   "industry=apparel_fashion": {
+    "total_n": 835,
+    "total_sites": 33,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.093,
+    "slope_after": -0.02607,
+    "sse_improvement_over_one_line": 0.967,
+    "points_fitted": 7
+   },
+   "band=1k-2.5k": {
+    "total_n": 6175,
+    "total_sites": 341,
+    "last_k_of_lower_segment": 11,
+    "first_k_of_upper_segment": 12,
+    "slope_before": -0.02141,
+    "slope_after": 0.04001,
+    "sse_improvement_over_one_line": 0.864,
+    "points_fitted": 20
+   },
+   "band=2.5k-10k": {
+    "total_n": 3509,
+    "total_sites": 191,
+    "last_k_of_lower_segment": 8,
+    "first_k_of_upper_segment": 9,
+    "slope_before": -0.02509,
+    "slope_after": -0.01219,
+    "sse_improvement_over_one_line": 0.592,
+    "points_fitted": 16
+   },
+   "band=10k+": {
+    "total_n": 701,
+    "total_sites": 44,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.1261,
+    "slope_after": -9e-05,
+    "sse_improvement_over_one_line": 0.445,
+    "points_fitted": 9
+   },
+   "tier=Pro": {
+    "total_n": 5616,
+    "total_sites": 303,
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 11,
+    "slope_before": -0.02368,
+    "slope_after": 0.03181,
+    "sse_improvement_over_one_line": 0.812,
+    "points_fitted": 20
+   },
+   "tier=Business": {
+    "total_n": 3325,
+    "total_sites": 130,
+    "last_k_of_lower_segment": 11,
+    "first_k_of_upper_segment": 12,
+    "slope_before": -0.01361,
+    "slope_after": 0.02355,
+    "sse_improvement_over_one_line": 0.511,
+    "points_fitted": 15
+   },
+   "tier=Hobby": {
+    "total_n": 729,
+    "total_sites": 48,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.05674,
+    "slope_after": 0.00197,
+    "sse_improvement_over_one_line": 0.45,
+    "points_fitted": 8
+   }
+  }
+ },
+ "duration_days": {
+  "metric": "conversion",
+  "curve": [
+   {
+    "k": 1,
+    "n": 1854,
+    "sites": 124,
+    "conversion": 0.5585,
+    "epe": 2.908,
+    "contestants": 2354.0
+   },
+   {
+    "k": 2,
+    "n": 384,
+    "sites": 132,
+    "conversion": 0.5922,
+    "epe": 2.106,
+    "contestants": 2004.5
+   },
+   {
+    "k": 3,
+    "n": 429,
+    "sites": 184,
+    "conversion": 0.4342,
+    "epe": 2.759,
+    "contestants": 1972.0
+   },
+   {
+    "k": 4,
+    "n": 448,
+    "sites": 235,
+    "conversion": 0.4016,
+    "epe": 3.215,
+    "contestants": 1953.0
+   },
+   {
+    "k": 5,
+    "n": 499,
+    "sites": 293,
+    "conversion": 0.3898,
+    "epe": 2.991,
+    "contestants": 2103.0
+   },
+   {
+    "k": 6,
+    "n": 606,
+    "sites": 312,
+    "conversion": 0.3775,
+    "epe": 3.637,
+    "contestants": 1850.5
+   },
+   {
+    "k": 7,
+    "n": 1380,
+    "sites": 567,
+    "conversion": 0.3367,
+    "epe": 4.065,
+    "contestants": 1970.0
+   },
+   {
+    "k": 8,
+    "n": 1271,
+    "sites": 601,
+    "conversion": 0.326,
+    "epe": 3.883,
+    "contestants": 2109.0
+   },
+   {
+    "k": 9,
+    "n": 562,
+    "sites": 368,
+    "conversion": 0.3379,
+    "epe": 3.765,
+    "contestants": 2114.0
+   },
+   {
+    "k": 10,
+    "n": 462,
+    "sites": 330,
+    "conversion": 0.3096,
+    "epe": 3.78,
+    "contestants": 2167.0
+   },
+   {
+    "k": 11,
+    "n": 513,
+    "sites": 346,
+    "conversion": 0.3205,
+    "epe": 3.584,
+    "contestants": 2277.0
+   },
+   {
+    "k": 12,
+    "n": 424,
+    "sites": 316,
+    "conversion": 0.2956,
+    "epe": 3.987,
+    "contestants": 2158.5
+   },
+   {
+    "k": 13,
+    "n": 419,
+    "sites": 303,
+    "conversion": 0.2967,
+    "epe": 4.171,
+    "contestants": 1997.0
+   },
+   {
+    "k": 14,
+    "n": 909,
+    "sites": 512,
+    "conversion": 0.2845,
+    "epe": 4.109,
+    "contestants": 2176.0
+   },
+   {
+    "k": 15,
+    "n": 997,
+    "sites": 535,
+    "conversion": 0.2883,
+    "epe": 4.032,
+    "contestants": 2251.0
+   },
+   {
+    "k": 16,
+    "n": 436,
+    "sites": 313,
+    "conversion": 0.2837,
+    "epe": 4.239,
+    "contestants": 2045.0
+   },
+   {
+    "k": 17,
+    "n": 344,
+    "sites": 249,
+    "conversion": 0.2831,
+    "epe": 3.729,
+    "contestants": 2088.0
+   },
+   {
+    "k": 18,
+    "n": 301,
+    "sites": 224,
+    "conversion": 0.3007,
+    "epe": 3.605,
+    "contestants": 2516.0
+   },
+   {
+    "k": 19,
+    "n": 296,
+    "sites": 226,
+    "conversion": 0.2749,
+    "epe": 4.021,
+    "contestants": 2382.5
+   },
+   {
+    "k": 20,
+    "n": 284,
+    "sites": 207,
+    "conversion": 0.2902,
+    "epe": 3.684,
+    "contestants": 2281.0
+   },
+   {
+    "k": 21,
+    "n": 498,
+    "sites": 266,
+    "conversion": 0.3214,
+    "epe": 3.518,
+    "contestants": 1943.5
+   },
+   {
+    "k": 22,
+    "n": 429,
+    "sites": 288,
+    "conversion": 0.2681,
+    "epe": 3.692,
+    "contestants": 2315.0
+   },
+   {
+    "k": 23,
+    "n": 222,
+    "sites": 175,
+    "conversion": 0.2652,
+    "epe": 4.232,
+    "contestants": 2068.0
+   },
+   {
+    "k": 24,
+    "n": 290,
+    "sites": 180,
+    "conversion": 0.2983,
+    "epe": 3.544,
+    "contestants": 2338.5
+   },
+   {
+    "k": 25,
+    "n": 258,
+    "sites": 178,
+    "conversion": 0.2747,
+    "epe": 3.611,
+    "contestants": 2058.0
+   },
+   {
+    "k": 26,
+    "n": 257,
+    "sites": 181,
+    "conversion": 0.2646,
+    "epe": 4.319,
+    "contestants": 2480.0
+   },
+   {
+    "k": 27,
+    "n": 277,
+    "sites": 180,
+    "conversion": 0.2594,
+    "epe": 4.348,
+    "contestants": 2406.0
+   },
+   {
+    "k": 28,
+    "n": 552,
+    "sites": 312,
+    "conversion": 0.2486,
+    "epe": 4.007,
+    "contestants": 2300.5
+   },
+   {
+    "k": 29,
+    "n": 518,
+    "sites": 298,
+    "conversion": 0.273,
+    "epe": 3.948,
+    "contestants": 2255.5
+   },
+   {
+    "k": 30,
+    "n": 922,
+    "sites": 434,
+    "conversion": 0.2912,
+    "epe": 4.086,
+    "contestants": 2172.0
+   },
+   {
+    "k": 31,
+    "n": 1138,
+    "sites": 538,
+    "conversion": 0.2559,
+    "epe": 4.207,
+    "contestants": 1956.5
+   },
+   {
+    "k": 32,
+    "n": 391,
+    "sites": 246,
+    "conversion": 0.2261,
+    "epe": 4.507,
+    "contestants": 2190.0
+   },
+   {
+    "k": 33,
+    "n": 229,
+    "sites": 167,
+    "conversion": 0.2474,
+    "epe": 3.95,
+    "contestants": 2177.0
+   },
+   {
+    "k": 34,
+    "n": 154,
+    "sites": 115,
+    "conversion": 0.2207,
+    "epe": 4.492,
+    "contestants": 2349.0
+   },
+   {
+    "k": 35,
+    "n": 193,
+    "sites": 123,
+    "conversion": 0.2282,
+    "epe": 3.677,
+    "contestants": 2389.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 6,
+   "first_k_of_upper_segment": 7,
+   "slope_before": -0.04414,
+   "slope_after": -0.00314,
+   "sse_improvement_over_one_line": 0.807,
+   "points_fitted": 35
+  },
+  "breakpoint_other_metrics": {
+   "epe": {
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 6,
+    "slope_before": 0.1275,
+    "slope_after": 0.0107,
+    "sse_improvement_over_one_line": 0.493,
+    "points_fitted": 35
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 30,
+    "first_k_of_upper_segment": 31,
+    "slope_before": 9.2376,
+    "slope_after": 102.4,
+    "sse_improvement_over_one_line": 0.163,
+    "points_fitted": 35
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 4362,
+    "total_sites": 115,
+    "last_k_of_lower_segment": 8,
+    "first_k_of_upper_segment": 9,
+    "slope_before": -0.05123,
+    "slope_after": -0.00407,
+    "sse_improvement_over_one_line": 0.655,
+    "points_fitted": 35
+   },
+   "industry=gaming_esports": {
+    "total_n": 3788,
+    "total_sites": 172,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.09965,
+    "slope_after": -0.0042,
+    "sse_improvement_over_one_line": 0.734,
+    "points_fitted": 34
+   },
+   "industry=media_entertainment": {
+    "total_n": 2378,
+    "total_sites": 61,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": -0.07065,
+    "slope_after": -0.00251,
+    "sse_improvement_over_one_line": 0.472,
+    "points_fitted": 30
+   },
+   "industry=sports_outdoors": {
+    "total_n": 521,
+    "total_sites": 38,
+    "last_k_of_lower_segment": 16,
+    "first_k_of_upper_segment": 28,
+    "slope_before": -0.01314,
+    "slope_after": 0.00501,
+    "sse_improvement_over_one_line": 0.684,
+    "points_fitted": 11
+   },
+   "industry=food_drink": {
+    "total_n": 626,
+    "total_sites": 36,
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 11,
+    "slope_before": -0.00686,
+    "slope_after": -0.00499,
+    "sse_improvement_over_one_line": 0.205,
+    "points_fitted": 13
+   },
+   "industry=home_garden": {
+    "total_n": 531,
+    "total_sites": 30,
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": -0.02726,
+    "slope_after": -0.00404,
+    "sse_improvement_over_one_line": 0.717,
+    "points_fitted": 11
+   },
+   "industry=apparel_fashion": {
+    "total_n": 574,
+    "total_sites": 39,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.0452,
+    "slope_after": -0.00126,
+    "sse_improvement_over_one_line": 0.918,
+    "points_fitted": 12
+   },
+   "band=1k-2.5k": {
+    "total_n": 11026,
+    "total_sites": 402,
+    "last_k_of_lower_segment": 6,
+    "first_k_of_upper_segment": 7,
+    "slope_before": -0.04499,
+    "slope_after": -0.00286,
+    "sse_improvement_over_one_line": 0.716,
+    "points_fitted": 35
+   },
+   "band=2.5k-10k": {
+    "total_n": 6549,
+    "total_sites": 275,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": -0.04349,
+    "slope_after": -0.00387,
+    "sse_improvement_over_one_line": 0.768,
+    "points_fitted": 35
+   },
+   "band=10k+": {
+    "total_n": 1319,
+    "total_sites": 63,
+    "last_k_of_lower_segment": 11,
+    "first_k_of_upper_segment": 12,
+    "slope_before": -0.03074,
+    "slope_after": -0.0033,
+    "sse_improvement_over_one_line": 0.441,
+    "points_fitted": 22
+   },
+   "tier=Pro": {
+    "total_n": 10459,
+    "total_sites": 376,
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 6,
+    "slope_before": -0.0643,
+    "slope_after": -0.0033,
+    "sse_improvement_over_one_line": 0.842,
+    "points_fitted": 35
+   },
+   "tier=Business": {
+    "total_n": 6068,
+    "total_sites": 165,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.01615,
+    "slope_after": -0.00327,
+    "sse_improvement_over_one_line": 0.782,
+    "points_fitted": 35
+   },
+   "tier=Hobby": {
+    "total_n": 913,
+    "total_sites": 63,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.1293,
+    "slope_after": -0.00202,
+    "sse_improvement_over_one_line": 0.252,
+    "points_fitted": 14
+   },
+   "tier=Free": {
+    "total_n": 620,
+    "total_sites": 47,
+    "last_k_of_lower_segment": 6,
+    "first_k_of_upper_segment": 7,
+    "slope_before": -0.06869,
+    "slope_after": 0.00089,
+    "sse_improvement_over_one_line": 0.869,
+    "points_fitted": 9
+   }
+  }
+ },
+ "prize_count": {
+  "metric": "conversion",
+  "curve": [
+   {
+    "k": 1,
+    "n": 28189,
+    "sites": 5007,
+    "conversion": 0.2879,
+    "epe": 4.191,
+    "contestants": 2194.0
+   },
+   {
+    "k": 2,
+    "n": 2482,
+    "sites": 1137,
+    "conversion": 0.271,
+    "epe": 4.776,
+    "contestants": 2133.5
+   },
+   {
+    "k": 3,
+    "n": 2420,
+    "sites": 1124,
+    "conversion": 0.2557,
+    "epe": 4.762,
+    "contestants": 2125.5
+   },
+   {
+    "k": 4,
+    "n": 783,
+    "sites": 486,
+    "conversion": 0.2494,
+    "epe": 4.955,
+    "contestants": 2187.0
+   },
+   {
+    "k": 5,
+    "n": 505,
+    "sites": 325,
+    "conversion": 0.2203,
+    "epe": 5.508,
+    "contestants": 2525.0
+   },
+   {
+    "k": 6,
+    "n": 283,
+    "sites": 185,
+    "conversion": 0.2256,
+    "epe": 5.098,
+    "contestants": 2888.0
+   },
+   {
+    "k": 7,
+    "n": 263,
+    "sites": 124,
+    "conversion": 0.1742,
+    "epe": 6.99,
+    "contestants": 2592.0
+   },
+   {
+    "k": 8,
+    "n": 116,
+    "sites": 85,
+    "conversion": 0.2108,
+    "epe": 5.89,
+    "contestants": 3172.5
+   },
+   {
+    "k": 9,
+    "n": 95,
+    "sites": 69,
+    "conversion": 0.2347,
+    "epe": 5.545,
+    "contestants": 2580.0
+   },
+   {
+    "k": 10,
+    "n": 210,
+    "sites": 126,
+    "conversion": 0.1797,
+    "epe": 6.315,
+    "contestants": 2755.0
+   },
+   {
+    "k": 11,
+    "n": 49,
+    "sites": 32,
+    "conversion": 0.243,
+    "epe": 6.886,
+    "contestants": 3368.0
+   },
+   {
+    "k": 12,
+    "n": 105,
+    "sites": 49,
+    "conversion": 0.1535,
+    "epe": 7.127,
+    "contestants": 5097.0
+   },
+   {
+    "k": 13,
+    "n": 36,
+    "sites": 19,
+    "conversion": 0.1614,
+    "epe": 5.523,
+    "contestants": 4411.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 7,
+   "first_k_of_upper_segment": 8,
+   "slope_before": -0.01669,
+   "slope_after": -0.01221,
+   "sse_improvement_over_one_line": 0.326,
+   "points_fitted": 13
+  },
+  "breakpoint_other_metrics": {
+   "epe": {
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 11,
+    "slope_before": 0.21718,
+    "slope_after": -0.6815,
+    "sse_improvement_over_one_line": 0.359,
+    "points_fitted": 13
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 8,
+    "first_k_of_upper_segment": 9,
+    "slope_before": 140.08929,
+    "slope_after": 600.4,
+    "sse_improvement_over_one_line": 0.573,
+    "points_fitted": 13
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 7161,
+    "total_sites": 790,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.02729,
+    "slope_after": 0.0126,
+    "sse_improvement_over_one_line": 0.683,
+    "points_fitted": 7
+   },
+   "industry=gaming_esports": {
+    "total_n": 6252,
+    "total_sites": 1077,
+    "last_k_of_lower_segment": 8,
+    "first_k_of_upper_segment": 9,
+    "slope_before": -0.0225,
+    "slope_after": -0.04674,
+    "sse_improvement_over_one_line": 0.276,
+    "points_fitted": 11
+   },
+   "band=1k-2.5k": {
+    "total_n": 19854,
+    "total_sites": 3931,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": -0.01988,
+    "slope_after": -0.0334,
+    "sse_improvement_over_one_line": 0.78,
+    "points_fitted": 10
+   },
+   "band=2.5k-10k": {
+    "total_n": 12486,
+    "total_sites": 2291,
+    "last_k_of_lower_segment": 8,
+    "first_k_of_upper_segment": 9,
+    "slope_before": -0.01451,
+    "slope_after": -0.01979,
+    "sse_improvement_over_one_line": 0.234,
+    "points_fitted": 11
+   },
+   "band=10k+": {
+    "total_n": 2992,
+    "total_sites": 531,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.01305,
+    "slope_after": -0.0194,
+    "sse_improvement_over_one_line": 0.06,
+    "points_fitted": 6
+   },
+   "tier=Pro": {
+    "total_n": 18690,
+    "total_sites": 3254,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": -0.00612,
+    "slope_after": -0.0173,
+    "sse_improvement_over_one_line": 0.82,
+    "points_fitted": 10
+   },
+   "tier=Business": {
+    "total_n": 12116,
+    "total_sites": 1474,
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 11,
+    "slope_before": -0.01404,
+    "slope_after": -0.04085,
+    "sse_improvement_over_one_line": 0.476,
+    "points_fitted": 13
+   }
+  }
+ },
+ "winner_units": {
+  "metric": "epe",
+  "curve": [
+   {
+    "k": 1,
+    "n": 21462,
+    "sites": 4073,
+    "conversion": 0.2856,
+    "epe": 4.36,
+    "contestants": 2232.5
+   },
+   {
+    "k": 2,
+    "n": 2188,
+    "sites": 901,
+    "conversion": 0.3179,
+    "epe": 4.183,
+    "contestants": 1960.0
+   },
+   {
+    "k": 3,
+    "n": 3190,
+    "sites": 1248,
+    "conversion": 0.274,
+    "epe": 4.178,
+    "contestants": 2115.0
+   },
+   {
+    "k": 4,
+    "n": 864,
+    "sites": 529,
+    "conversion": 0.2896,
+    "epe": 4.417,
+    "contestants": 2011.5
+   },
+   {
+    "k": 5,
+    "n": 1658,
+    "sites": 766,
+    "conversion": 0.2653,
+    "epe": 4.016,
+    "contestants": 1993.0
+   },
+   {
+    "k": 6,
+    "n": 666,
+    "sites": 411,
+    "conversion": 0.2553,
+    "epe": 4.731,
+    "contestants": 2232.5
+   },
+   {
+    "k": 7,
+    "n": 309,
+    "sites": 206,
+    "conversion": 0.2608,
+    "epe": 4.701,
+    "contestants": 1995.0
+   },
+   {
+    "k": 8,
+    "n": 244,
+    "sites": 183,
+    "conversion": 0.2589,
+    "epe": 4.166,
+    "contestants": 2221.5
+   },
+   {
+    "k": 9,
+    "n": 154,
+    "sites": 126,
+    "conversion": 0.2618,
+    "epe": 4.059,
+    "contestants": 2074.5
+   },
+   {
+    "k": 10,
+    "n": 1308,
+    "sites": 638,
+    "conversion": 0.2739,
+    "epe": 4.189,
+    "contestants": 2121.0
+   },
+   {
+    "k": 11,
+    "n": 242,
+    "sites": 167,
+    "conversion": 0.238,
+    "epe": 5.429,
+    "contestants": 2473.5
+   },
+   {
+    "k": 12,
+    "n": 239,
+    "sites": 141,
+    "conversion": 0.2563,
+    "epe": 5.056,
+    "contestants": 2128.0
+   },
+   {
+    "k": 13,
+    "n": 128,
+    "sites": 87,
+    "conversion": 0.1886,
+    "epe": 5.769,
+    "contestants": 2442.5
+   },
+   {
+    "k": 14,
+    "n": 92,
+    "sites": 68,
+    "conversion": 0.2132,
+    "epe": 5.467,
+    "contestants": 2293.5
+   },
+   {
+    "k": 15,
+    "n": 199,
+    "sites": 141,
+    "conversion": 0.257,
+    "epe": 4.029,
+    "contestants": 2310.0
+   },
+   {
+    "k": 16,
+    "n": 117,
+    "sites": 87,
+    "conversion": 0.2103,
+    "epe": 4.625,
+    "contestants": 1888.0
+   },
+   {
+    "k": 17,
+    "n": 37,
+    "sites": 31,
+    "conversion": 0.2809,
+    "epe": 4.425,
+    "contestants": 2793.0
+   },
+   {
+    "k": 18,
+    "n": 274,
+    "sites": 40,
+    "conversion": 0.3645,
+    "epe": 2.914,
+    "contestants": 5775.5
+   },
+   {
+    "k": 20,
+    "n": 299,
+    "sites": 165,
+    "conversion": 0.2064,
+    "epe": 4.802,
+    "contestants": 2473.0
+   },
+   {
+    "k": 21,
+    "n": 76,
+    "sites": 64,
+    "conversion": 0.2196,
+    "epe": 5.25,
+    "contestants": 2565.0
+   },
+   {
+    "k": 22,
+    "n": 35,
+    "sites": 28,
+    "conversion": 0.2096,
+    "epe": 5.143,
+    "contestants": 2437.0
+   },
+   {
+    "k": 23,
+    "n": 41,
+    "sites": 37,
+    "conversion": 0.2259,
+    "epe": 4.211,
+    "contestants": 2836.0
+   },
+   {
+    "k": 24,
+    "n": 49,
+    "sites": 42,
+    "conversion": 0.1812,
+    "epe": 5.633,
+    "contestants": 2549.0
+   },
+   {
+    "k": 25,
+    "n": 206,
+    "sites": 127,
+    "conversion": 0.2387,
+    "epe": 4.406,
+    "contestants": 2408.0
+   },
+   {
+    "k": 26,
+    "n": 43,
+    "sites": 37,
+    "conversion": 0.2235,
+    "epe": 4.527,
+    "contestants": 2330.0
+   },
+   {
+    "k": 30,
+    "n": 111,
+    "sites": 77,
+    "conversion": 0.2221,
+    "epe": 5.142,
+    "contestants": 2090.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 14,
+   "first_k_of_upper_segment": 15,
+   "slope_before": 0.0992,
+   "slope_after": 0.07015,
+   "sse_improvement_over_one_line": 0.281,
+   "points_fitted": 26
+  },
+  "breakpoint_other_metrics": {
+   "conversion": {
+    "last_k_of_lower_segment": 16,
+    "first_k_of_upper_segment": 17,
+    "slope_before": -0.0053,
+    "slope_after": -0.00691,
+    "sse_improvement_over_one_line": 0.228,
+    "points_fitted": 26
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 17,
+    "first_k_of_upper_segment": 18,
+    "slope_before": 21.81618,
+    "slope_after": -202.22484,
+    "sse_improvement_over_one_line": 0.466,
+    "points_fitted": 26
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 6936,
+    "total_sites": 652,
+    "last_k_of_lower_segment": 11,
+    "first_k_of_upper_segment": 12,
+    "slope_before": -0.03233,
+    "slope_after": -0.06815,
+    "sse_improvement_over_one_line": 0.246,
+    "points_fitted": 16
+   },
+   "industry=gaming_esports": {
+    "total_n": 5727,
+    "total_sites": 809,
+    "last_k_of_lower_segment": 13,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.06423,
+    "slope_after": 0.14822,
+    "sse_improvement_over_one_line": 0.122,
+    "points_fitted": 17
+   },
+   "industry=media_entertainment": {
+    "total_n": 4751,
+    "total_sites": 381,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.0001,
+    "slope_after": 0.42131,
+    "sse_improvement_over_one_line": 0.264,
+    "points_fitted": 8
+   },
+   "industry=sports_outdoors": {
+    "total_n": 2111,
+    "total_sites": 401,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.0049,
+    "slope_after": -0.50607,
+    "sse_improvement_over_one_line": 0.901,
+    "points_fitted": 7
+   },
+   "industry=food_drink": {
+    "total_n": 1577,
+    "total_sites": 256,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.1165,
+    "slope_after": 0.04046,
+    "sse_improvement_over_one_line": 0.266,
+    "points_fitted": 7
+   },
+   "industry=home_garden": {
+    "total_n": 1633,
+    "total_sites": 233,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.0663,
+    "slope_after": -0.3175,
+    "sse_improvement_over_one_line": 0.602,
+    "points_fitted": 7
+   },
+   "industry=apparel_fashion": {
+    "total_n": 1329,
+    "total_sites": 223,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": 0.026,
+    "slope_after": -0.04711,
+    "sse_improvement_over_one_line": 0.855,
+    "points_fitted": 6
+   },
+   "band=1k-2.5k": {
+    "total_n": 19217,
+    "total_sites": 3124,
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.08605,
+    "slope_after": 0.08524,
+    "sse_improvement_over_one_line": 0.284,
+    "points_fitted": 21
+   },
+   "band=2.5k-10k": {
+    "total_n": 11912,
+    "total_sites": 1877,
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.13169,
+    "slope_after": 0.08765,
+    "sse_improvement_over_one_line": 0.443,
+    "points_fitted": 21
+   },
+   "band=10k+": {
+    "total_n": 2596,
+    "total_sites": 420,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.1092,
+    "slope_after": 0.11388,
+    "sse_improvement_over_one_line": 0.406,
+    "points_fitted": 7
+   },
+   "tier=Pro": {
+    "total_n": 18116,
+    "total_sites": 2669,
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.05513,
+    "slope_after": -0.00578,
+    "sse_improvement_over_one_line": 0.393,
+    "points_fitted": 20
+   },
+   "tier=Business": {
+    "total_n": 11232,
+    "total_sites": 1171,
+    "last_k_of_lower_segment": 14,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.1777,
+    "slope_after": 0.12276,
+    "sse_improvement_over_one_line": 0.334,
+    "points_fitted": 20
+   },
+   "tier=Hobby": {
+    "total_n": 2078,
+    "total_sites": 447,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": -0.5795,
+    "slope_after": 0.02,
+    "sse_improvement_over_one_line": 0.889,
+    "points_fitted": 7
+   },
+   "tier=Free": {
+    "total_n": 1440,
+    "total_sites": 323,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 4,
+    "slope_before": 0.1095,
+    "slope_after": 0.01942,
+    "sse_improvement_over_one_line": 0.549,
+    "points_fitted": 6
+   }
+  }
+ },
+ "description_words": {
+  "metric": "conversion",
+  "curve": [
+   {
+    "k": 1,
+    "n": 39,
+    "sites": 16,
+    "conversion": 0.3064,
+    "epe": 2.953,
+    "contestants": 2496.0
+   },
+   {
+    "k": 4,
+    "n": 46,
+    "sites": 18,
+    "conversion": 0.5251,
+    "epe": 2.922,
+    "contestants": 1838.0
+   },
+   {
+    "k": 5,
+    "n": 50,
+    "sites": 27,
+    "conversion": 0.5055,
+    "epe": 2.671,
+    "contestants": 2105.5
+   },
+   {
+    "k": 6,
+    "n": 57,
+    "sites": 26,
+    "conversion": 0.6143,
+    "epe": 2.72,
+    "contestants": 2177.0
+   },
+   {
+    "k": 7,
+    "n": 42,
+    "sites": 31,
+    "conversion": 0.4134,
+    "epe": 3.812,
+    "contestants": 1668.0
+   },
+   {
+    "k": 8,
+    "n": 58,
+    "sites": 30,
+    "conversion": 0.4546,
+    "epe": 2.849,
+    "contestants": 2165.5
+   },
+   {
+    "k": 9,
+    "n": 43,
+    "sites": 26,
+    "conversion": 0.4238,
+    "epe": 3.872,
+    "contestants": 1764.0
+   },
+   {
+    "k": 10,
+    "n": 38,
+    "sites": 30,
+    "conversion": 0.3572,
+    "epe": 2.706,
+    "contestants": 2326.5
+   },
+   {
+    "k": 11,
+    "n": 49,
+    "sites": 31,
+    "conversion": 0.3813,
+    "epe": 3.114,
+    "contestants": 2440.0
+   },
+   {
+    "k": 12,
+    "n": 64,
+    "sites": 41,
+    "conversion": 0.4685,
+    "epe": 3.431,
+    "contestants": 2072.0
+   },
+   {
+    "k": 13,
+    "n": 82,
+    "sites": 47,
+    "conversion": 0.37,
+    "epe": 3.465,
+    "contestants": 1619.0
+   },
+   {
+    "k": 14,
+    "n": 87,
+    "sites": 51,
+    "conversion": 0.3547,
+    "epe": 3.132,
+    "contestants": 2059.0
+   },
+   {
+    "k": 15,
+    "n": 82,
+    "sites": 54,
+    "conversion": 0.3519,
+    "epe": 2.836,
+    "contestants": 2052.5
+   },
+   {
+    "k": 16,
+    "n": 93,
+    "sites": 58,
+    "conversion": 0.3486,
+    "epe": 3.572,
+    "contestants": 1853.0
+   },
+   {
+    "k": 17,
+    "n": 94,
+    "sites": 55,
+    "conversion": 0.4554,
+    "epe": 3.019,
+    "contestants": 2546.0
+   },
+   {
+    "k": 18,
+    "n": 96,
+    "sites": 63,
+    "conversion": 0.2761,
+    "epe": 3.667,
+    "contestants": 2258.0
+   },
+   {
+    "k": 19,
+    "n": 196,
+    "sites": 58,
+    "conversion": 0.5701,
+    "epe": 7.446,
+    "contestants": 1306.0
+   },
+   {
+    "k": 20,
+    "n": 79,
+    "sites": 53,
+    "conversion": 0.3266,
+    "epe": 3.584,
+    "contestants": 1903.0
+   },
+   {
+    "k": 21,
+    "n": 86,
+    "sites": 58,
+    "conversion": 0.3619,
+    "epe": 3.329,
+    "contestants": 2107.5
+   },
+   {
+    "k": 22,
+    "n": 82,
+    "sites": 65,
+    "conversion": 0.3616,
+    "epe": 3.702,
+    "contestants": 2081.5
+   },
+   {
+    "k": 23,
+    "n": 82,
+    "sites": 57,
+    "conversion": 0.352,
+    "epe": 3.34,
+    "contestants": 1894.0
+   },
+   {
+    "k": 24,
+    "n": 137,
+    "sites": 50,
+    "conversion": 0.5475,
+    "epe": 2.454,
+    "contestants": 2657.0
+   },
+   {
+    "k": 25,
+    "n": 73,
+    "sites": 52,
+    "conversion": 0.3286,
+    "epe": 3.637,
+    "contestants": 2260.0
+   },
+   {
+    "k": 26,
+    "n": 88,
+    "sites": 67,
+    "conversion": 0.3283,
+    "epe": 3.883,
+    "contestants": 1768.0
+   },
+   {
+    "k": 27,
+    "n": 88,
+    "sites": 71,
+    "conversion": 0.3462,
+    "epe": 3.899,
+    "contestants": 1963.0
+   },
+   {
+    "k": 28,
+    "n": 75,
+    "sites": 58,
+    "conversion": 0.3514,
+    "epe": 3.44,
+    "contestants": 3001.0
+   },
+   {
+    "k": 29,
+    "n": 81,
+    "sites": 56,
+    "conversion": 0.328,
+    "epe": 3.833,
+    "contestants": 2189.0
+   },
+   {
+    "k": 30,
+    "n": 96,
+    "sites": 75,
+    "conversion": 0.3326,
+    "epe": 3.392,
+    "contestants": 2080.5
+   },
+   {
+    "k": 31,
+    "n": 139,
+    "sites": 79,
+    "conversion": 0.3554,
+    "epe": 3.017,
+    "contestants": 2559.0
+   },
+   {
+    "k": 32,
+    "n": 103,
+    "sites": 65,
+    "conversion": 0.3728,
+    "epe": 3.78,
+    "contestants": 2660.0
+   },
+   {
+    "k": 33,
+    "n": 99,
+    "sites": 67,
+    "conversion": 0.3307,
+    "epe": 4.017,
+    "contestants": 2088.0
+   },
+   {
+    "k": 34,
+    "n": 103,
+    "sites": 75,
+    "conversion": 0.3086,
+    "epe": 4.112,
+    "contestants": 2269.0
+   },
+   {
+    "k": 35,
+    "n": 75,
+    "sites": 63,
+    "conversion": 0.3362,
+    "epe": 3.552,
+    "contestants": 1955.0
+   },
+   {
+    "k": 36,
+    "n": 87,
+    "sites": 69,
+    "conversion": 0.3326,
+    "epe": 4.128,
+    "contestants": 2269.0
+   },
+   {
+    "k": 37,
+    "n": 105,
+    "sites": 79,
+    "conversion": 0.3516,
+    "epe": 3.837,
+    "contestants": 1976.0
+   },
+   {
+    "k": 38,
+    "n": 95,
+    "sites": 72,
+    "conversion": 0.3432,
+    "epe": 3.681,
+    "contestants": 2063.0
+   },
+   {
+    "k": 39,
+    "n": 99,
+    "sites": 78,
+    "conversion": 0.3647,
+    "epe": 3.571,
+    "contestants": 2477.0
+   },
+   {
+    "k": 40,
+    "n": 80,
+    "sites": 64,
+    "conversion": 0.3392,
+    "epe": 3.822,
+    "contestants": 2082.0
+   },
+   {
+    "k": 41,
+    "n": 100,
+    "sites": 60,
+    "conversion": 0.3341,
+    "epe": 3.583,
+    "contestants": 3049.5
+   },
+   {
+    "k": 42,
+    "n": 85,
+    "sites": 64,
+    "conversion": 0.3126,
+    "epe": 4.154,
+    "contestants": 1888.0
+   },
+   {
+    "k": 43,
+    "n": 84,
+    "sites": 68,
+    "conversion": 0.3721,
+    "epe": 3.632,
+    "contestants": 2270.5
+   },
+   {
+    "k": 44,
+    "n": 103,
+    "sites": 74,
+    "conversion": 0.3511,
+    "epe": 3.992,
+    "contestants": 2004.0
+   },
+   {
+    "k": 45,
+    "n": 88,
+    "sites": 65,
+    "conversion": 0.3499,
+    "epe": 3.842,
+    "contestants": 2193.5
+   },
+   {
+    "k": 46,
+    "n": 69,
+    "sites": 55,
+    "conversion": 0.3121,
+    "epe": 4.174,
+    "contestants": 1789.0
+   },
+   {
+    "k": 47,
+    "n": 88,
+    "sites": 61,
+    "conversion": 0.3362,
+    "epe": 4.281,
+    "contestants": 1833.0
+   },
+   {
+    "k": 48,
+    "n": 66,
+    "sites": 52,
+    "conversion": 0.3366,
+    "epe": 4.306,
+    "contestants": 2106.0
+   },
+   {
+    "k": 49,
+    "n": 65,
+    "sites": 61,
+    "conversion": 0.332,
+    "epe": 4.206,
+    "contestants": 1919.0
+   },
+   {
+    "k": 50,
+    "n": 76,
+    "sites": 65,
+    "conversion": 0.3411,
+    "epe": 3.999,
+    "contestants": 2168.0
+   },
+   {
+    "k": 51,
+    "n": 61,
+    "sites": 56,
+    "conversion": 0.318,
+    "epe": 4.519,
+    "contestants": 2298.0
+   },
+   {
+    "k": 52,
+    "n": 71,
+    "sites": 64,
+    "conversion": 0.3462,
+    "epe": 3.845,
+    "contestants": 2008.0
+   },
+   {
+    "k": 53,
+    "n": 51,
+    "sites": 43,
+    "conversion": 0.3642,
+    "epe": 3.77,
+    "contestants": 1984.0
+   },
+   {
+    "k": 54,
+    "n": 73,
+    "sites": 57,
+    "conversion": 0.3793,
+    "epe": 3.229,
+    "contestants": 2209.0
+   },
+   {
+    "k": 55,
+    "n": 73,
+    "sites": 60,
+    "conversion": 0.3313,
+    "epe": 3.089,
+    "contestants": 1882.0
+   },
+   {
+    "k": 56,
+    "n": 73,
+    "sites": 62,
+    "conversion": 0.2775,
+    "epe": 3.666,
+    "contestants": 2121.0
+   },
+   {
+    "k": 57,
+    "n": 57,
+    "sites": 52,
+    "conversion": 0.3065,
+    "epe": 3.571,
+    "contestants": 1723.0
+   },
+   {
+    "k": 58,
+    "n": 53,
+    "sites": 48,
+    "conversion": 0.3193,
+    "epe": 3.988,
+    "contestants": 2374.0
+   },
+   {
+    "k": 59,
+    "n": 68,
+    "sites": 57,
+    "conversion": 0.372,
+    "epe": 3.839,
+    "contestants": 2122.5
+   },
+   {
+    "k": 60,
+    "n": 67,
+    "sites": 59,
+    "conversion": 0.3201,
+    "epe": 4.463,
+    "contestants": 1924.0
+   },
+   {
+    "k": 61,
+    "n": 57,
+    "sites": 57,
+    "conversion": 0.3125,
+    "epe": 3.678,
+    "contestants": 2129.0
+   },
+   {
+    "k": 62,
+    "n": 51,
+    "sites": 47,
+    "conversion": 0.3326,
+    "epe": 3.674,
+    "contestants": 1960.0
+   },
+   {
+    "k": 63,
+    "n": 49,
+    "sites": 43,
+    "conversion": 0.3034,
+    "epe": 4.371,
+    "contestants": 2273.0
+   },
+   {
+    "k": 64,
+    "n": 61,
+    "sites": 52,
+    "conversion": 0.375,
+    "epe": 3.564,
+    "contestants": 2027.0
+   },
+   {
+    "k": 65,
+    "n": 47,
+    "sites": 40,
+    "conversion": 0.3514,
+    "epe": 5.292,
+    "contestants": 1853.0
+   },
+   {
+    "k": 66,
+    "n": 64,
+    "sites": 49,
+    "conversion": 0.2771,
+    "epe": 4.385,
+    "contestants": 1860.0
+   },
+   {
+    "k": 67,
+    "n": 60,
+    "sites": 51,
+    "conversion": 0.3408,
+    "epe": 3.539,
+    "contestants": 2543.0
+   },
+   {
+    "k": 68,
+    "n": 91,
+    "sites": 60,
+    "conversion": 0.2774,
+    "epe": 4.172,
+    "contestants": 1875.0
+   },
+   {
+    "k": 69,
+    "n": 43,
+    "sites": 33,
+    "conversion": 0.4022,
+    "epe": 4.273,
+    "contestants": 2451.0
+   },
+   {
+    "k": 70,
+    "n": 69,
+    "sites": 37,
+    "conversion": 0.4403,
+    "epe": 5.394,
+    "contestants": 1407.0
+   },
+   {
+    "k": 71,
+    "n": 66,
+    "sites": 59,
+    "conversion": 0.3438,
+    "epe": 3.969,
+    "contestants": 1813.5
+   },
+   {
+    "k": 72,
+    "n": 60,
+    "sites": 53,
+    "conversion": 0.3061,
+    "epe": 3.94,
+    "contestants": 2101.5
+   },
+   {
+    "k": 73,
+    "n": 60,
+    "sites": 52,
+    "conversion": 0.3288,
+    "epe": 4.339,
+    "contestants": 2328.5
+   },
+   {
+    "k": 74,
+    "n": 60,
+    "sites": 48,
+    "conversion": 0.3851,
+    "epe": 4.312,
+    "contestants": 1901.5
+   },
+   {
+    "k": 75,
+    "n": 56,
+    "sites": 45,
+    "conversion": 0.3267,
+    "epe": 4.015,
+    "contestants": 1721.0
+   },
+   {
+    "k": 76,
+    "n": 54,
+    "sites": 44,
+    "conversion": 0.3132,
+    "epe": 4.355,
+    "contestants": 1956.5
+   },
+   {
+    "k": 77,
+    "n": 58,
+    "sites": 39,
+    "conversion": 0.4885,
+    "epe": 5.266,
+    "contestants": 2296.0
+   },
+   {
+    "k": 78,
+    "n": 80,
+    "sites": 49,
+    "conversion": 0.3987,
+    "epe": 6.518,
+    "contestants": 1574.5
+   },
+   {
+    "k": 79,
+    "n": 68,
+    "sites": 44,
+    "conversion": 0.4341,
+    "epe": 4.885,
+    "contestants": 1746.5
+   },
+   {
+    "k": 80,
+    "n": 46,
+    "sites": 42,
+    "conversion": 0.3682,
+    "epe": 4.253,
+    "contestants": 2322.0
+   },
+   {
+    "k": 81,
+    "n": 57,
+    "sites": 32,
+    "conversion": 0.4948,
+    "epe": 5.726,
+    "contestants": 1844.0
+   },
+   {
+    "k": 82,
+    "n": 74,
+    "sites": 49,
+    "conversion": 0.448,
+    "epe": 4.401,
+    "contestants": 1926.0
+   },
+   {
+    "k": 83,
+    "n": 40,
+    "sites": 33,
+    "conversion": 0.4048,
+    "epe": 3.673,
+    "contestants": 1955.5
+   },
+   {
+    "k": 84,
+    "n": 57,
+    "sites": 43,
+    "conversion": 0.3542,
+    "epe": 3.559,
+    "contestants": 2109.0
+   },
+   {
+    "k": 85,
+    "n": 79,
+    "sites": 39,
+    "conversion": 0.461,
+    "epe": 4.405,
+    "contestants": 1928.0
+   },
+   {
+    "k": 86,
+    "n": 121,
+    "sites": 33,
+    "conversion": 0.5724,
+    "epe": 5.046,
+    "contestants": 2153.0
+   },
+   {
+    "k": 87,
+    "n": 65,
+    "sites": 39,
+    "conversion": 0.3493,
+    "epe": 3.573,
+    "contestants": 2075.0
+   },
+   {
+    "k": 88,
+    "n": 66,
+    "sites": 28,
+    "conversion": 0.5858,
+    "epe": 4.807,
+    "contestants": 2736.0
+   },
+   {
+    "k": 89,
+    "n": 80,
+    "sites": 42,
+    "conversion": 0.4555,
+    "epe": 4.98,
+    "contestants": 2197.5
+   },
+   {
+    "k": 90,
+    "n": 54,
+    "sites": 36,
+    "conversion": 0.4106,
+    "epe": 2.818,
+    "contestants": 2995.5
+   },
+   {
+    "k": 91,
+    "n": 80,
+    "sites": 35,
+    "conversion": 0.5669,
+    "epe": 3.97,
+    "contestants": 2112.5
+   },
+   {
+    "k": 92,
+    "n": 38,
+    "sites": 30,
+    "conversion": 0.4191,
+    "epe": 4.411,
+    "contestants": 1939.0
+   },
+   {
+    "k": 93,
+    "n": 63,
+    "sites": 35,
+    "conversion": 0.4564,
+    "epe": 2.664,
+    "contestants": 2554.0
+   },
+   {
+    "k": 94,
+    "n": 64,
+    "sites": 31,
+    "conversion": 0.516,
+    "epe": 3.035,
+    "contestants": 2842.0
+   },
+   {
+    "k": 95,
+    "n": 72,
+    "sites": 35,
+    "conversion": 0.5101,
+    "epe": 2.039,
+    "contestants": 3142.0
+   },
+   {
+    "k": 96,
+    "n": 42,
+    "sites": 30,
+    "conversion": 0.3965,
+    "epe": 3.381,
+    "contestants": 2976.0
+   },
+   {
+    "k": 97,
+    "n": 33,
+    "sites": 24,
+    "conversion": 0.3519,
+    "epe": 3.627,
+    "contestants": 2209.0
+   },
+   {
+    "k": 98,
+    "n": 39,
+    "sites": 31,
+    "conversion": 0.3533,
+    "epe": 2.991,
+    "contestants": 1794.0
+   },
+   {
+    "k": 99,
+    "n": 41,
+    "sites": 30,
+    "conversion": 0.3489,
+    "epe": 3.059,
+    "contestants": 2060.0
+   },
+   {
+    "k": 100,
+    "n": 36,
+    "sites": 26,
+    "conversion": 0.417,
+    "epe": 2.138,
+    "contestants": 2720.5
+   },
+   {
+    "k": 101,
+    "n": 40,
+    "sites": 30,
+    "conversion": 0.4092,
+    "epe": 3.795,
+    "contestants": 1848.0
+   },
+   {
+    "k": 102,
+    "n": 33,
+    "sites": 23,
+    "conversion": 0.3695,
+    "epe": 3.124,
+    "contestants": 2124.0
+   },
+   {
+    "k": 103,
+    "n": 30,
+    "sites": 25,
+    "conversion": 0.3981,
+    "epe": 2.876,
+    "contestants": 2201.5
+   },
+   {
+    "k": 104,
+    "n": 30,
+    "sites": 22,
+    "conversion": 0.3041,
+    "epe": 3.507,
+    "contestants": 1986.5
+   },
+   {
+    "k": 110,
+    "n": 32,
+    "sites": 29,
+    "conversion": 0.3329,
+    "epe": 3.546,
+    "contestants": 2286.5
+   },
+   {
+    "k": 111,
+    "n": 30,
+    "sites": 28,
+    "conversion": 0.3633,
+    "epe": 3.505,
+    "contestants": 1688.0
+   },
+   {
+    "k": 114,
+    "n": 33,
+    "sites": 27,
+    "conversion": 0.3169,
+    "epe": 3.6,
+    "contestants": 2139.0
+   },
+   {
+    "k": 125,
+    "n": 38,
+    "sites": 23,
+    "conversion": 0.4719,
+    "epe": 5.516,
+    "contestants": 1881.0
+   },
+   {
+    "k": 154,
+    "n": 60,
+    "sites": 18,
+    "conversion": 0.5951,
+    "epe": 1.0,
+    "contestants": 1962.0
+   },
+   {
+    "k": 155,
+    "n": 92,
+    "sites": 11,
+    "conversion": 0.6099,
+    "epe": 1.0,
+    "contestants": 2973.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 68,
+   "first_k_of_upper_segment": 69,
+   "slope_before": -0.00186,
+   "slope_after": 0.00157,
+   "sse_improvement_over_one_line": 0.271,
+   "points_fitted": 108
+  },
+  "breakpoint_other_metrics": {
+   "epe": {
+    "last_k_of_lower_segment": 89,
+    "first_k_of_upper_segment": 90,
+    "slope_before": 0.01677,
+    "slope_after": -0.02446,
+    "sse_improvement_over_one_line": 0.351,
+    "points_fitted": 108
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 87,
+    "first_k_of_upper_segment": 88,
+    "slope_before": -1.76788,
+    "slope_after": -3.06704,
+    "sse_improvement_over_one_line": 0.085,
+    "points_fitted": 108
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 436,
+    "total_sites": 24,
+    "last_k_of_lower_segment": 33,
+    "first_k_of_upper_segment": 34,
+    "slope_before": -0.01265,
+    "slope_after": 0.00495,
+    "sse_improvement_over_one_line": 0.822,
+    "points_fitted": 12
+   },
+   "industry=gaming_esports": {
+    "total_n": 220,
+    "total_sites": 31,
+    "last_k_of_lower_segment": 22,
+    "first_k_of_upper_segment": 34,
+    "slope_before": 0.00781,
+    "slope_after": 0.00872,
+    "sse_improvement_over_one_line": 0.702,
+    "points_fitted": 6
+   },
+   "band=1k-2.5k": {
+    "total_n": 3624,
+    "total_sites": 52,
+    "last_k_of_lower_segment": 68,
+    "first_k_of_upper_segment": 70,
+    "slope_before": -0.002,
+    "slope_after": 0.00413,
+    "sse_improvement_over_one_line": 0.328,
+    "points_fitted": 76
+   },
+   "band=2.5k-10k": {
+    "total_n": 962,
+    "total_sites": 41,
+    "last_k_of_lower_segment": 24,
+    "first_k_of_upper_segment": 25,
+    "slope_before": 0.03159,
+    "slope_after": 0.0035,
+    "sse_improvement_over_one_line": 0.401,
+    "points_fitted": 24
+   },
+   "tier=Pro": {
+    "total_n": 3579,
+    "total_sites": 52,
+    "last_k_of_lower_segment": 76,
+    "first_k_of_upper_segment": 77,
+    "slope_before": 1e-05,
+    "slope_after": 0.00891,
+    "sse_improvement_over_one_line": 0.329,
+    "points_fitted": 75
+   },
+   "tier=Business": {
+    "total_n": 333,
+    "total_sites": 25,
+    "last_k_of_lower_segment": 30,
+    "first_k_of_upper_segment": 31,
+    "slope_before": 0.00586,
+    "slope_after": -0.00237,
+    "sse_improvement_over_one_line": 0.311,
+    "points_fitted": 8
+   }
+  }
+ },
+ "share_worth": {
+  "metric": "epe",
+  "curve": [
+   {
+    "k": 1,
+    "n": 4783,
+    "sites": 1286,
+    "conversion": 0.2541,
+    "epe": 4.228,
+    "contestants": 2382.0
+   },
+   {
+    "k": 2,
+    "n": 1196,
+    "sites": 470,
+    "conversion": 0.2583,
+    "epe": 4.178,
+    "contestants": 1951.0
+   },
+   {
+    "k": 3,
+    "n": 1770,
+    "sites": 472,
+    "conversion": 0.2412,
+    "epe": 4.535,
+    "contestants": 2022.0
+   },
+   {
+    "k": 4,
+    "n": 264,
+    "sites": 70,
+    "conversion": 0.1916,
+    "epe": 6.397,
+    "contestants": 1667.0
+   },
+   {
+    "k": 5,
+    "n": 2471,
+    "sites": 859,
+    "conversion": 0.2367,
+    "epe": 4.684,
+    "contestants": 2055.0
+   },
+   {
+    "k": 6,
+    "n": 78,
+    "sites": 32,
+    "conversion": 0.2361,
+    "epe": 3.878,
+    "contestants": 1489.0
+   },
+   {
+    "k": 7,
+    "n": 92,
+    "sites": 26,
+    "conversion": 0.2436,
+    "epe": 8.297,
+    "contestants": 1566.0
+   },
+   {
+    "k": 8,
+    "n": 76,
+    "sites": 39,
+    "conversion": 0.2391,
+    "epe": 4.867,
+    "contestants": 1719.5
+   },
+   {
+    "k": 10,
+    "n": 1813,
+    "sites": 611,
+    "conversion": 0.2208,
+    "epe": 5.458,
+    "contestants": 2211.0
+   },
+   {
+    "k": 15,
+    "n": 409,
+    "sites": 126,
+    "conversion": 0.192,
+    "epe": 5.127,
+    "contestants": 1900.0
+   },
+   {
+    "k": 20,
+    "n": 608,
+    "sites": 194,
+    "conversion": 0.2221,
+    "epe": 5.383,
+    "contestants": 2233.5
+   },
+   {
+    "k": 25,
+    "n": 416,
+    "sites": 118,
+    "conversion": 0.1595,
+    "epe": 7.584,
+    "contestants": 2545.0
+   }
+  ],
+  "breakpoint": {
+   "last_k_of_lower_segment": 7,
+   "first_k_of_upper_segment": 8,
+   "slope_before": 0.41986,
+   "slope_after": 0.12345,
+   "sse_improvement_over_one_line": 0.25,
+   "points_fitted": 12
+  },
+  "breakpoint_other_metrics": {
+   "conversion": {
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.02046,
+    "slope_after": -0.0034,
+    "sse_improvement_over_one_line": 0.448,
+    "points_fitted": 12
+   },
+   "contestants": {
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": -119.25,
+    "slope_after": 36.31136,
+    "sse_improvement_over_one_line": 0.625,
+    "points_fitted": 12
+   }
+  },
+  "by_stratum": {
+   "industry=electronics_tech": {
+    "total_n": 2235,
+    "total_sites": 202,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.1328,
+    "slope_after": -0.08902,
+    "sse_improvement_over_one_line": 0.62,
+    "points_fitted": 8
+   },
+   "industry=gaming_esports": {
+    "total_n": 1533,
+    "total_sites": 170,
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 10,
+    "slope_before": -0.08809,
+    "slope_after": 0.09422,
+    "sse_improvement_over_one_line": 0.489,
+    "points_fitted": 8
+   },
+   "industry=media_entertainment": {
+    "total_n": 1994,
+    "total_sites": 119,
+    "last_k_of_lower_segment": 4,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.9014,
+    "slope_after": -0.10415,
+    "sse_improvement_over_one_line": 0.374,
+    "points_fitted": 7
+   },
+   "industry=sports_outdoors": {
+    "total_n": 1159,
+    "total_sites": 124,
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 10,
+    "slope_before": 0.18989,
+    "slope_after": 0.2543,
+    "sse_improvement_over_one_line": 0.203,
+    "points_fitted": 7
+   },
+   "industry=home_garden": {
+    "total_n": 1023,
+    "total_sites": 88,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 5,
+    "slope_before": 0.149,
+    "slope_after": 0.12832,
+    "sse_improvement_over_one_line": 0.413,
+    "points_fitted": 7
+   },
+   "industry=travel_events": {
+    "total_n": 599,
+    "total_sites": 71,
+    "last_k_of_lower_segment": 3,
+    "first_k_of_upper_segment": 5,
+    "slope_before": -0.6025,
+    "slope_after": -0.08596,
+    "sse_improvement_over_one_line": 0.483,
+    "points_fitted": 6
+   },
+   "band=1k-2.5k": {
+    "total_n": 7988,
+    "total_sites": 919,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": 0.56632,
+    "slope_after": 0.02151,
+    "sse_improvement_over_one_line": 0.431,
+    "points_fitted": 12
+   },
+   "band=2.5k-10k": {
+    "total_n": 5000,
+    "total_sites": 579,
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.10998,
+    "slope_after": 0.1732,
+    "sse_improvement_over_one_line": 0.134,
+    "points_fitted": 9
+   },
+   "band=10k+": {
+    "total_n": 893,
+    "total_sites": 136,
+    "last_k_of_lower_segment": 5,
+    "first_k_of_upper_segment": 10,
+    "slope_before": -0.26369,
+    "slope_after": 0.67234,
+    "sse_improvement_over_one_line": 0.39,
+    "points_fitted": 7
+   },
+   "tier=Pro": {
+    "total_n": 8412,
+    "total_sites": 921,
+    "last_k_of_lower_segment": 7,
+    "first_k_of_upper_segment": 8,
+    "slope_before": 0.61907,
+    "slope_after": 0.02776,
+    "sse_improvement_over_one_line": 0.508,
+    "points_fitted": 12
+   },
+   "tier=Business": {
+    "total_n": 5110,
+    "total_sites": 462,
+    "last_k_of_lower_segment": 10,
+    "first_k_of_upper_segment": 15,
+    "slope_before": 0.11505,
+    "slope_after": 0.4749,
+    "sse_improvement_over_one_line": 0.425,
+    "points_fitted": 11
+   }
+  }
+ },
+ "size_deciles": [
+  {
+   "decile": 1,
+   "n": 3566,
+   "sites": 1718,
+   "contestants": 1064.0,
+   "methods": 7.0,
+   "epe": 4.444,
+   "conversion": 0.281
+  },
+  {
+   "decile": 2,
+   "n": 3566,
+   "sites": 1730,
+   "contestants": 1218.0,
+   "methods": 7.0,
+   "epe": 4.355,
+   "conversion": 0.2853
+  },
+  {
+   "decile": 3,
+   "n": 3566,
+   "sites": 1725,
+   "contestants": 1417.0,
+   "methods": 7.0,
+   "epe": 4.264,
+   "conversion": 0.2788
+  },
+  {
+   "decile": 4,
+   "n": 3566,
+   "sites": 1689,
+   "contestants": 1670.0,
+   "methods": 7.0,
+   "epe": 4.287,
+   "conversion": 0.2806
+  },
+  {
+   "decile": 5,
+   "n": 3566,
+   "sites": 1648,
+   "contestants": 2004.0,
+   "methods": 7.0,
+   "epe": 4.192,
+   "conversion": 0.2841
+  },
+  {
+   "decile": 6,
+   "n": 3566,
+   "sites": 1559,
+   "contestants": 2450.0,
+   "methods": 7.0,
+   "epe": 4.336,
+   "conversion": 0.2721
+  },
+  {
+   "decile": 7,
+   "n": 3566,
+   "sites": 1465,
+   "contestants": 3097.0,
+   "methods": 7.0,
+   "epe": 4.437,
+   "conversion": 0.2664
+  },
+  {
+   "decile": 8,
+   "n": 3566,
+   "sites": 1375,
+   "contestants": 4181.5,
+   "methods": 7.0,
+   "epe": 4.401,
+   "conversion": 0.2732
+  },
+  {
+   "decile": 9,
+   "n": 3565,
+   "sites": 1217,
+   "contestants": 6532.0,
+   "methods": 7.0,
+   "epe": 4.303,
+   "conversion": 0.2743
+  },
+  {
+   "decile": 10,
+   "n": 3565,
+   "sites": 838,
+   "contestants": 14715.0,
+   "methods": 7.0,
+   "epe": 4.379,
+   "conversion": 0.2863
+  }
+ ]
+}

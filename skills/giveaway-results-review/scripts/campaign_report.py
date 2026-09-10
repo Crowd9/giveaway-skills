@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Full report from a campaign export, in the order of Gleam's reporting tabs. Reads a Gleam Actions export (one row per
 completed action) as is, and exports from other platforms through --map or the built-in column synonyms, including wide
-exports with one column per entry method. No dependencies. Aggregates only: no email, name, IP or row ever prints. Top entrants show a display name (first
+exports with one column per entry method. No dependencies. Aggregates only: no email, name, IP or row ever prints. Top Entrants show a display name (first
 name and last initial) only.
 
   python3 campaign_report.py export.csv [--impressions N] [--prize-value USD] [--plan-cost USD] [--benchmark-cpl USD]
@@ -9,10 +9,10 @@ name and last initial) only.
                                         [--markdown report.md]
   python3 campaign_report.py --self-test
 
-Parsing rules. ID is per row: entrants are keyed by lower-cased Email, with Name as the fallback. When is in the account's
+Parsing rules. ID is per row: Entrants are keyed by lower-cased Email, with Name as the fallback. When is in the account's
 timezone, so every time figure is account time. Status Invalid rows are counted and excluded from engagement metrics.
-Details on a refer action holds the referred person's email: that is the referral graph. Actions and entries are outputs,
-never funnel stages. The only funnel is impressions to entrants, and impressions are not in the export.
+Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
+never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the export.
 """
 import argparse, collections, csv, datetime as dt, statistics as st, sys, urllib.parse
 
@@ -87,7 +87,7 @@ def load(path, mapping=None):
     with open(path, newline="", encoding="utf-8-sig") as f: raw = list(csv.DictReader(f))
     if not raw: sys.exit("empty file")
     cols = resolve_columns(list(raw[0].keys()), mapping or {})
-    if "who" not in cols: sys.exit("no column names the entrant. Pass --map who=<column>")
+    if "who" not in cols: sys.exit("no column names the Entrant. Pass --map who=<column>")
     rows = []
     if "action" not in cols:
         # wide export: one row per person, one column per entry method holding a count or a yes
@@ -235,20 +235,20 @@ def render(R, a):
     info = getattr(load, "last", None)
     if info:
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
-    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the export" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no view-to-entry funnel here."))
+    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the export" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
-    w(f"| Metric | Value |\n|---|---|\n| Entrants | {n:,} |\n| Actions completed | {T['actions']:,} |\n| Entries | {T['entries']:,} |\n| Actions per entrant | {T['actions_per_entrant']:.2f} |\n| Entries per entrant | {T['entries_per_entrant']:.2f} |\n| Invalid actions | {T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows) |"
-      + (f"\n| Impressions to entrants | {n / a.impressions:.1%} |" if a.impressions else ""))
-    E = R["engagement"]; w("\nEngagement by actions per entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
+    w(f"| Metric | Value |\n|---|---|\n| Users | {n:,} |\n| Actions completed | {T['actions']:,} |\n| Entries | {T['entries']:,} |\n| Actions per entrant | {T['actions_per_entrant']:.2f} |\n| Entries per entrant | {T['entries_per_entrant']:.2f} |\n| Invalid actions | {T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows) |"
+      + (f"\n| Conversion Rate | {n / a.impressions:.1%} |" if a.impressions else ""))
+    E = R["engagement"]; w("\nEngagement by actions per Entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
     S = R["speed"]
     if S["multi"]:
-        w(f"Speed: of {S['multi']:,} multi-action entrants, median first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
+        w(f"Speed: of {S['multi']:,} multi-action entrants, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
     # insights
     ins = []
     ch = [c for c in R["channels"] if c[1] >= 30 and c[4]]
     if ch:
         best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
-        ins.append(f"Best converting source by depth: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Worst: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
+        ins.append(f"Source whose entrants went deepest: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
     if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of all actions happened in the first 48 hours.")
     V = R["viral"]
     if V["top_share"] is not None: ins.append(f"Top sharer accounts for {V['top_share']:.0%} of referral completions" + (" (over 40%, review before crediting)." if V["top_share"] > 0.4 else "."))
@@ -263,46 +263,46 @@ def render(R, a):
         w("\nHour | " + " | ".join(DAYS) + "\n---|" + "---|" * 7)
         for h in range(24): w(f"{h:02d} | " + " | ".join(f"{R['heat'][(d, h)]:,}" if R["heat"][(d, h)] else "" for d in range(7)))
     if R["sends"]:
-        w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New entrants in 48h | Lift |\n|---|---|---|---|---|")
+        w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New Entrants in 48h | Lift |\n|---|---|---|---|---|")
         for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
     if R.get("roi"):
         r = R["roi"]; w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {r['per_entry']:.4f} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
-        w("A real revenue figure comes from joining entrant email against store orders over a fixed window and summing order value. The export carries no order data, so nothing here is revenue.")
-    else: w("\nROI needs prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
-    w("\n## Traffic\n\nFirst-touch channel per entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
+        w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The export carries no order data, so nothing here is revenue.")
+    else: w("\nROI needs Prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
+    w("\n## Traffic\n\nFirst-touch channel per Entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
     w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {h} | {k:,} |" for h, k in R["hosts"]))
     w("\nLanding page at first touch: " + ", ".join(f"{k} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
     if R.get("featured"):
-        F = R["featured"]; w(f"\nFeatured on gleam.io/giveaways: {F['entrants']:,} entrants ({F['share']:.0%}) came from browsing the directory (landed on the listing with gleam.io as the referrer)" + (f", at {F['depth']:.2f}x the average actions per entrant" if F["depth"] else "") + f". {F['landed']:,} entrants ({F['landed_share']:.0%}) landed on the listing URL from any source, at {F['landed_depth']:.2f}x, since the listing link also gets shared by aggregators, email and social. Listing traffic is people browsing giveaways, so read its depth and email uptake apart from your own channels.")
+        F = R["featured"]; w(f"\nFeatured on gleam.io/giveaways: {F['entrants']:,} entrants ({F['share']:.0%}) came from browsing the directory (landed on the listing with gleam.io as the referrer)" + (f", at {F['depth']:.2f}x the average actions per entrant" if F["depth"] else "") + f". {F['landed']:,} entrants ({F['landed_share']:.0%}) landed on the listing URL from any source, at {F['landed_depth']:.2f}x, since the listing link also gets shared by aggregators, email and social. Listing traffic is people browsing giveaways, so read its depth and email signups apart from your own channels.")
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
     if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ".")
     else: w("\nPartner contribution needs --partners with the hosts or UTM values that identify them. Without tagging it is not attributable.")
-    w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Median seconds | Invalid |\n|---|---|---|---|---|---|---|")
+    w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         flag = " (slow)" if sec and sec > 120 else ""
         w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
-    w("\nMedian seconds is the gap from the entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
-    w(f"\n## Viral\n\nReferral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants), referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)" + (f", referrals per sharer {V['referrals_per_sharer']:.1f}" if V["referrals_per_sharer"] else "") + (f", referral conversion {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)" if V["referral_conversion"] is not None else "") + (f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)." if V["lift"] is not None else "."))
+    w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
+    w(f"\n## Viral\n\nReferral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants), referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)" + (f", referrals per sharer {V['referrals_per_sharer']:.1f}" if V["referrals_per_sharer"] else "") + (f", share of referrals who joined {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)" if V["referral_conversion"] is not None else "") + (f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)." if V["lift"] is not None else "."))
     if V["top"]:
         w("\n| Sharer | Referral completions | Referred who entered | Entries brought | Connected accounts | Referred doing one action |\n|---|---|---|---|---|---|")
         for s in V["top"]:
             tell = " (signal: no connected accounts, outsized referrals)" if s[4] == 0 and s[1] >= 10 else ""
             w(f"| {s[0]}{tell} | {s[1]:,} | {s[2]:,} | {s[3]:,} | {s[4]} | {s[5]:,} |")
-        w("\nSignals, never verdicts: a sharer with many referrals, no connected accounts and referred entrants who mostly do one action deserves a look before any prize.")
+        w("\nSignals, never verdicts: a sharer with many referrals, no connected accounts and referred Entrants who mostly do one action deserves a look before any Prize.")
     w("\n## Audience\n\n| Country | Entrants | Share |\n|---|---|---|" + "".join(f"\n| {c} | {k:,} | {k / n:.0%} |" for c, k in R["countries"]))
     if R["cities"]: w("\n| City | Entrants |\n|---|---|" + "".join(f"\n| {c}, {co} | {k:,} |" for (c, co), k in R["cities"]))
     if R["handles"]: w("\nConnected accounts: " + ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) + ".")
     Rt = R["retention"]; w("\nRetention by distinct active days: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in Rt.items()) + f". {1 - Rt['1'][1]:.0%} returned on a later day. One-day dominance is normal for a giveaway.")
-    w("\nMost engaged entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {t[0]} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
+    w("\nMost engaged Entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {t[0]} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
     w("""
 ## Outcomes
 
 Nothing in this section is in the export. Pull each figure from the email provider and the store, then record it beside this report.
 
-- Unsubscribes and spam complaints in the 7 days after the winners email, from the email provider, for the giveaway segment on its own.
+- Unsubscribes and spam complaints in the 7 days after the Winners email, from the email provider, for the giveaway segment on its own.
 - Addresses synced to the email provider against addresses collected here, so the gap between the two is visible.
-- Customers and revenue from a join of entrant email against order data at 30, 60 and 90 days after close.
+- Customers and revenue from a join of Entrant email against order data at 30, 60 and 90 days after close.
 - Open share of the new subscribers in their first 30 days, which says how much of the list is worth keeping.
 
 Run the same four again after the next campaign and the pair becomes a trend.""")
@@ -327,6 +327,10 @@ def self_test():
     assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
     assert R["channels"][0][0] in ("Email (webmail)", "Competition directories") and R["utm"][0][1] == 1 and R["roi"]["emails"] == 1 and R["partners"][0][1] == 1, (R["channels"], R["utm"], R["roi"])
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
+    assert "| Users | 2 |" in out and "Impressions are not in the export" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
+    class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
+    out2 = render(analyze(load(p), C), C)
+    assert "| Conversion Rate | 20.0% |" in out2 and "supplied from the Reporting tab" in out2 and "Views" not in out2 and "share who entered" not in out2.lower(), out2[:400]
     q = os.path.join(d, "wide.csv")
     with open(q, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["Email Address", "Date", "Country", "Follow on Instagram", "Join newsletter", "Share with friends"])
@@ -342,7 +346,7 @@ def main(argv):
     ap.add_argument("--impressions", type=int); ap.add_argument("--prize-value", type=float); ap.add_argument("--plan-cost", type=float); ap.add_argument("--benchmark-cpl", type=float)
     ap.add_argument("--sends", help='comma list of date=label, e.g. "2026-04-20=Launch email,2026-05-01=Last call"'); ap.add_argument("--partners", help="comma list of referrer hosts or UTM values that identify partners")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
-    ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,entries=Points,when=Date,status=Verified,referrer=Source\"")
+    ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")

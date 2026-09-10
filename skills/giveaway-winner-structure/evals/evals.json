@@ -1,17 +1,57 @@
 {
-  "skill_name": "giveaway-winner-structure",
-  "evals": [
-    {"id": 1, "prompt": "Budget $1,500 for a giveaway of our meal-prep containers (they retail at $60 a set). Want reviews and photos. How many winners?",
-     "expected_output": "Recommends several equal winners of own product at cost (for example 10 to 15 sets after shipping), explains that product trial and photos favour count over headline, gives draw, contact, redraw and announcement rules, includes a terms snippet, cites the structure findings as extracted with n, and ends with a next decision.",
-     "assertions": ["Recommends multiple winners with a count and reasoning", "Accounts for shipping in the count", "Includes contact deadline and redraw rule", "Includes a terms snippet", "Cites a dataset figure with sample size", "No platform pitch"], "files": []},
-    {"id": 2, "prompt": "Our winner hasn't replied in 5 days. What do we do?",
-     "expected_output": "Advises a second documented attempt, a stated deadline, then forfeiture and redraw per the terms, keeping a log, and announcing the replacement winner. Notes that if the terms had no deadline, set one now in writing and apply it consistently.",
-     "assertions": ["Recommends a second attempt and a deadline", "Recommends redraw after forfeiture", "Recommends keeping a written log", "Handles the case of terms with no deadline"], "files": []},
-    {"id": 3, "prompt": "We use Gleam. Set up a grand prize plus five runner-ups. How does the draw work?",
-     "expected_output": "Maps to two prize entries (grand prize with 1 winner, runner-up with 5), explains drawing All Prizes assigns in list order or drawing per prize, notes Gleam does not contact winners, links the official pages, and quotes no plan limits.",
-     "assertions": ["Two prize entries with winner counts", "Explains All Prizes draw order", "States Gleam does not contact winners automatically", "Links official docs", "No invented plan limits"], "files": []},
-    {"id": 4, "prompt": "Style check applied to every conversational reply above.",
-     "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
-     "assertions": ["em_dashes == 0", "semicolons == 0", "assistant_opener == 0 and assistant_closer == 0"], "files": []}
-  ]
+ "skill_name": "giveaway-winner-structure",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "Budget $1,500 for a giveaway of our meal-prep containers (they retail at $60 a set). Want reviews and photos. How many winners?",
+   "expected_output": "Recommends several equal winners of own product at cost (for example 10 to 15 sets after shipping), explains that product trial and photos favour count over headline, gives draw, contact, redraw and announcement rules, includes a terms snippet, cites the structure findings as extracted with n, and ends with a next decision.",
+   "assertions": [
+    "Recommends multiple winners with a count and reasoning",
+    "Accounts for shipping in the count",
+    "Includes contact deadline and redraw rule",
+    "Includes a terms snippet",
+    "Cites a dataset figure with sample size",
+    "No platform pitch"
+   ],
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "Our winner hasn't replied in 5 days. What do we do?",
+   "expected_output": "Advises a second documented attempt, a stated deadline, then forfeiture and redraw per the terms, keeping a log, and announcing the replacement winner. Notes that if the terms had no deadline, set one now in writing and apply it consistently.",
+   "assertions": [
+    "Recommends a second attempt and a deadline",
+    "Recommends redraw after forfeiture",
+    "Recommends keeping a written log",
+    "Handles the case of terms with no deadline"
+   ],
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "We use Gleam. Set up a grand prize plus five runner-ups. How does the draw work?",
+   "expected_output": "Maps to two prize entries (grand prize with 1 winner, runner-up with 5), explains drawing All Prizes assigns in list order or drawing per prize, notes Gleam does not contact winners, links the official pages, and quotes no plan limits.",
+   "assertions": [
+    "Two prize entries with winner counts",
+    "Explains All Prizes draw order",
+    "States Gleam does not contact winners automatically",
+    "Links official docs",
+    "No invented plan limits"
+   ],
+   "files": []
+  },
+  {
+   "id": 4,
+   "prompt": "Style check applied to every conversational reply above.",
+   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "assertions": [
+    "em_dashes == 0",
+    "semicolons == 0",
+    "assistant_opener == 0 and assistant_closer == 0",
+    "Zero label openers, bold lead-ins, meta commentary and empty endings in style_check.py output",
+    "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
+   ],
+   "files": []
+  }
+ ]
 }

@@ -1,6 +1,6 @@
 # Calendar by region
 
-Advice. The timing findings are in UTC and skew to northern-hemisphere organizers. Use the audience's calendar.
+Advice. The timing findings are in UTC and skew to northern-hemisphere businesses. Use the audience's calendar.
 
 ## Seasons
 
@@ -28,6 +28,9 @@ Advice. The timing findings are in UTC and skew to northern-hemisphere organizer
 ## Using it
 
 - Close and draw on a working day for the audience's region, at a time the team is at work.
-- A seasonal prize goes live in the audience's season: a barbecue in November for Australia, in May for the UK.
+- A seasonal Prize goes live in the audience's season: a barbecue in November for Australia, in May for the UK.
 - December is the busiest month for starts in the data. In the southern hemisphere it is also the start of the long summer holiday, so audiences thin out from about 20 December.
 - Ramadan (dates move about 11 days earlier each year) and Lunar New Year (January or February) change daily rhythms for large audiences. Check the year's dates.
+- Brazil and the wider South American region show the shortest runs and the highest Conversion Rate in the data, see the Region finding in `timing-findings.md`. That pattern belongs to the businesses who run there, an audience used to a fast giveaway, and is not a duration setting to copy for a different region.
+- Local start hour and weekend-start shares by country are in `timing-findings.md` (Start hour and weekend starts by country), with the same single-offset caveat as this page.
+- A business relaunching about a year after a previous campaign lands in the same calendar month 56.6% of the time, far above the 8.3% baseline if timing were random. Plan a recurring annual campaign for the same month it ran last time. [Relaunches 330 to 400 days after a previous campaign, 1,198 pairs across 1,008 businesses.]

@@ -17,9 +17,9 @@ Source: https://www.facebook.com/policies_center/pages_groups_events
 
 ## Instagram (Promotion guidelines, Instagram Help Centre)
 
-- If you use Instagram to communicate or administer a promotion, you are responsible for its lawful operation: the official rules, offer terms and eligibility requirements (age and residency among them), and compliance with the rules and regulations governing the promotion and its prizes, including registration and regulatory approvals.
+- If you use Instagram to communicate or administer a promotion, you are responsible for its lawful operation: the official rules, offer terms and eligibility requirements (age and residency among them), and compliance with the rules and regulations governing the promotion and its Prizes, including registration and regulatory approvals.
 - You must not inaccurately tag content or encourage users to inaccurately tag content, with the example of tagging themselves in photos they are not in.
-- Promotions must include a complete release of Instagram by each entrant and an acknowledgement that the promotion is in no way sponsored, endorsed or administered by, or associated with, Instagram.
+- Promotions must include a complete release of Instagram by each Entrant and an acknowledgement that the promotion is in no way sponsored, endorsed or administered by, or associated with, Instagram.
 - Instagram will not assist in administering the promotion and cannot advise on consent for use of user content. Using the service to administer a promotion is at your own risk.
 - A Brazil-specific line: promotions communicated or managed on Instagram in Brazil must comply with the Secretariat of Prizes and Bets (SPA) in the Ministry of Finance.
 
@@ -30,7 +30,7 @@ Source: https://help.instagram.com/179379842258600
 ## X (Guidelines for Promotions on X, X Help)
 
 - Discourage the creation of multiple accounts. Include a rule that anyone found using multiple accounts to enter is ineligible, since X may suspend all of those accounts.
-- Discourage posting the same post repeatedly. Duplicate or near-duplicate posts violate the X Rules and can get entrants filtered out of search. X recommends stating that multiple entries in a single day will not be accepted, and warns against mechanics like "whoever reposts this the most wins".
+- Discourage posting the same post repeatedly. Duplicate or near-duplicate posts violate the X Rules and can get Entrants filtered out of search. X recommends stating that multiple entries in a single day will not be accepted, and warns against mechanics like "whoever reposts this the most wins".
 - Ask people to mention you in their post so you can see every entry in Notifications, because a public search may not show all of them.
 - Encourage hashtags relevant to the contest. Adding your hashtag to unrelated posts can violate the X Rules.
 - Follow the X Rules and search best practices, and comply with applicable laws. X says compliance is your responsibility and suggests consulting an attorney.
@@ -42,8 +42,8 @@ Source: https://help.x.com/en/rules-and-policies/x-contest-rules
 ## YouTube (contest policies and guidelines)
 
 - Creators are solely responsible for the contest and it must comply with all applicable laws.
-- Official rules must state that YouTube is not a sponsor and require entrants to release YouTube from liability, link to the Community Guidelines, carry the required legal disclosures and a privacy notice covering data collection.
-- Contests must be free to enter, must not ask entrants to transfer ownership of their submissions, and must not associate YouTube with the contest without written consent.
+- Official rules must state that YouTube is not a sponsor and require Entrants to release YouTube from liability, link to the Community Guidelines, carry the required legal disclosures and a privacy notice covering data collection.
+- Contests must be free to enter, must not ask Entrants to transfer ownership of their submissions, and must not associate YouTube with the contest without written consent.
 - Contests cannot be run through ad units.
 - The page prohibits manipulating metrics such as views, likes or subscribers. It does not say in plain words whether asking for a subscribe as an entry condition counts. Treat subscribe-to-enter on YouTube as a risk and prefer a visit, a comment or your own entry page.
 
@@ -58,7 +58,7 @@ TikTok has no single promotion page. Two sections apply.
 - Integrity and Authenticity, "Deceptive Behaviors and Fake Engagement": TikTok does not allow accounts that mislead or manipulate the platform, or "the trade of services that artificially boost engagement or trick the recommendation system". Multiple accounts are allowed for legitimate purposes but not to deceive or break the rules. Automation tools and scripts are prohibited. Inauthentic likes and followers are removed, and "content that tries to manipulate people into giving gifts or inflating likes or follows isn't eligible for the FYF" (the For You feed).
 - Regulated Goods, Services, and Commercial Activities: promoting your own business, product or service, or posting branded content for any incentive, requires the content disclosure setting. Undisclosed commercial content is ineligible for the For You feed and repeat failures can restrict or ban the account. Regulated and high-risk goods and services (gambling among them) cannot be traded, marketed or given access to, with limited exceptions for registered business accounts.
 
-What it means: a giveaway post is commercial content, so use the disclosure setting. "Follow and like to enter" sits close to the fake-engagement line and can cost the post its For You reach. Prefer a comment, a question, or your own entry page, and never a mechanic that rewards mass follows or likes. Gambling-style prizes are out.
+What it means: a giveaway post is commercial content, so use the disclosure setting. "Follow and like to enter" sits close to the fake-engagement line and can cost the post its For You reach. Prefer a comment, a question, or your own entry page, and never a mechanic that rewards mass follows or likes. Gambling-style Prizes are out.
 
 Sources: https://www.tiktok.com/community-guidelines/en/integrity-authenticity and https://www.tiktok.com/community-guidelines/en/regulated-commercial-activities
 
@@ -76,7 +76,7 @@ Source: https://discord.com/guidelines
 - Prohibited Gambling Content: no links or affiliate codes to sites with slots, roulette or dice games, and named sites (stake.com among them) cannot be streamed or linked. Skins gambling promotion is prohibited. Fantasy sports, sports betting and poker broadcasts are permitted.
 - Breaking the Law: content that solicits illegal activity is prohibited.
 
-What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest uptake of any action family in the data, at a median 0.05 entries recorded per contestant, so it costs entrants and gains little. Keep gambling sites and skins sites out of the prize and the chat.
+What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest completion of any action family in the data, at a typical 5 entries recorded % of Entrants, so it costs Entrants and gains little. Keep gambling sites and skins sites out of the Prize and the chat.
 
 Source: https://safety.twitch.tv/s/article/Community-Guidelines
 
@@ -84,7 +84,7 @@ Source: https://safety.twitch.tv/s/article/Community-Guidelines
 
 Telegram has a built-in giveaway feature: "Channel admins can organize giveaways at their expense, purchasing a number of premium subscriptions to be distributed among present or future subscribers." Admins bear sole responsibility for complying with the laws governing giveaways in their jurisdiction, purchases are non-refundable, and channels that mislead users into joining through giveaways later refunded by third parties may be terminated or given a scam label. Spam and scams are prohibited.
 
-What it means: join-to-enter is expected on Telegram. Legal compliance is entirely yours. Because so many crypto campaigns use Telegram, a plain product giveaway benefits from stating clearly what the prize is.
+What it means: join-to-enter is expected on Telegram. Legal compliance is entirely yours. Because so many crypto campaigns use Telegram, a plain product giveaway benefits from stating clearly what the Prize is.
 
 Source: https://telegram.org/tos
 
@@ -124,7 +124,7 @@ Sources: https://help.snapchat.com/hc/articles/7047502545044 and https://values.
 
 Steam's conduct rules list "running contests" alongside gambling, account selling and begging under prohibited commercial activity on Steam, and prohibit automatically generating accounts.
 
-What it means: run the giveaway off Steam and send people to your own entry page. Game keys as prizes are fine to deliver. Do not run the contest inside Steam Community features.
+What it means: run the giveaway off Steam and send people to your own entry page. Game keys as Prizes are fine to deliver. Do not run the contest inside Steam Community features.
 
 Source: https://store.steampowered.com/online_conduct
 
@@ -182,4 +182,4 @@ Source: https://help.instagram.com/769983657850450
 | Spotify | Not applicable | Not applicable | Follow or save as a light optional action | Not applicable | Genuine listening intent |
 | Threads | As Instagram | As Instagram | As Instagram | Yes | As Instagram, by incorporation |
 
-Every platform expects the organizer's own official rules, a "not sponsored by" line, and free entry. Verifiable actions on your own entry page survive rule changes better than actions the platform cannot see. Two networks ban the giveaway itself in their own policy: LinkedIn and Steam.
+Every platform expects the business's own official rules, a "not sponsored by" line, and free entry. Verifiable actions on your own entry page survive rule changes better than actions the platform cannot see. Two networks ban the giveaway itself in their own policy: LinkedIn and Steam.

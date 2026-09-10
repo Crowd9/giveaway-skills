@@ -1,102 +1,293 @@
 {
  "name_date_agreement": {
   "Christmas and advent": {
-   "n": 1806,
-   "window_within_60_before_to_14_after": 0.6738648947951273
+   "n": 1817,
+   "organizers": 661,
+   "window_within_60_before_to_14_after": 0.8492019812878371
   },
   "New Year": {
-   "n": 411,
-   "window_within_60_before_to_14_after": 0.9537712895377128
+   "n": 426,
+   "organizers": 299,
+   "window_within_60_before_to_14_after": 0.36619718309859156
   },
   "Black Friday and Cyber Monday": {
-   "n": 364,
-   "window_within_60_before_to_14_after": 0.967032967032967
+   "n": 362,
+   "organizers": 179,
+   "window_within_60_before_to_14_after": 0.8149171270718232
   },
   "Thanksgiving": {
-   "n": 111,
-   "window_within_60_before_to_14_after": 0.8018018018018018
+   "n": 113,
+   "organizers": 81,
+   "window_within_60_before_to_14_after": 0.8938053097345132
   },
   "Halloween": {
-   "n": 256,
-   "window_within_60_before_to_14_after": 0.8046875
+   "n": 259,
+   "organizers": 185,
+   "window_within_60_before_to_14_after": 0.7953667953667953
   },
   "Valentine's Day": {
-   "n": 223,
-   "window_within_60_before_to_14_after": 0.968609865470852
+   "n": 217,
+   "organizers": 168,
+   "window_within_60_before_to_14_after": 0.815668202764977
   },
   "Mother's Day": {
-   "n": 141,
-   "window_within_60_before_to_14_after": 0.900709219858156
+   "n": 135,
+   "organizers": 112,
+   "window_within_60_before_to_14_after": 0.8740740740740741
   },
   "Father's Day": {
-   "n": 155,
-   "window_within_60_before_to_14_after": 0.9032258064516129
+   "n": 152,
+   "organizers": 112,
+   "window_within_60_before_to_14_after": 0.8355263157894737
   },
   "Easter": {
-   "n": 157,
-   "window_within_60_before_to_14_after": 0.8980891719745223
+   "n": 151,
+   "organizers": 105,
+   "window_within_60_before_to_14_after": 0.847682119205298
   },
   "Back to school": {
-   "n": 211,
-   "window_within_60_before_to_14_after": 0.8388625592417062
+   "n": 217,
+   "organizers": 124,
+   "window_within_60_before_to_14_after": 0.6451612903225806
   },
   "Lunar New Year": {
-   "n": 40,
-   "window_within_60_before_to_14_after": 0.825
+   "n": 45,
+   "organizers": 31,
+   "window_within_60_before_to_14_after": 0.6666666666666666
   }
  },
  "holiday_named_share_by_week": {
-  "35": 0.058823529411764705,
-  "45": 0.17872968980797638,
-  "44": 0.16389548693586697,
-  "31": 0.0403530895334174,
-  "47": 0.31563845050215206,
-  "49": 0.3252623083131558,
-  "7": 0.06766917293233082,
-  "13": 0.056265984654731455,
-  "26": 0.017902813299232736,
-  "23": 0.06743002544529263,
-  "25": 0.022653721682847898,
-  "27": 0.016260162601626018,
-  "28": 0.02631578947368421,
-  "33": 0.05345911949685535,
-  "30": 0.03508771929824561,
-  "34": 0.04830917874396135,
-  "41": 0.0955137481910275,
-  "39": 0.054959785522788206,
-  "40": 0.07345360824742268,
-  "42": 0.11686143572621036,
-  "43": 0.139937106918239,
-  "46": 0.22093023255813954,
-  "2": 0.11553030303030302,
-  "48": 0.350293542074364,
-  "5": 0.12559241706161137,
-  "6": 0.10401188707280833,
-  "24": 0.040419161676646706,
-  "50": 0.33727810650887574,
-  "8": 0.016366612111292964,
-  "12": 0.04508856682769726,
-  "15": 0.03508771929824561,
-  "16": 0.0436817472698908,
-  "21": 0.017271157167530225,
-  "22": 0.03985932004689332,
-  "36": 0.03955696202531646,
-  "37": 0.03755868544600939,
-  "1": 0.19494584837545126,
-  "9": 0.022316684378320937,
-  "4": 0.07625649913344887,
-  "10": 0.02556818181818182,
-  "19": 0.05417276720351391,
-  "52": 0.23452157598499063,
-  "3": 0.10416666666666667,
-  "11": 0.03170028818443804,
-  "14": 0.06030150753768844,
-  "38": 0.03305785123966942,
-  "29": 0.04573170731707317,
-  "17": 0.05200594353640416,
-  "18": 0.03850931677018633,
-  "20": 0.019548872180451128,
-  "51": 0.3200836820083682,
-  "32": 0.05666156202143951
+  "26": 0.15403726708074533,
+  "31": 0.14303030303030304,
+  "28": 0.2,
+  "29": 0.19543509272467904,
+  "30": 0.1407035175879397,
+  "35": 0.10826542491268917,
+  "36": 0.08484848484848485,
+  "37": 0.0905109489051095,
+  "41": 0.1489655172413793,
+  "42": 0.1634920634920635,
+  "44": 0.20301624129930396,
+  "50": 0.33146517213771015,
+  "47": 0.30286493860845837,
+  "51": 0.31683168316831684,
+  "6": 0.11797752808988764,
+  "5": 0.12850467289719625,
+  "7": 0.09770114942528736,
+  "8": 0.061514195583596214,
+  "11": 0.06684491978609626,
+  "16": 0.10090361445783133,
+  "19": 0.16265912305516267,
+  "20": 0.12536873156342182,
+  "22": 0.16040955631399317,
+  "25": 0.16411042944785276,
+  "39": 0.08690176322418136,
+  "40": 0.1100244498777506,
+  "46": 0.23226703755215578,
+  "49": 0.33853354134165364,
+  "2": 0.12190812720848057,
+  "13": 0.09852216748768473,
+  "12": 0.0755287009063444,
+  "33": 0.12554744525547445,
+  "48": 0.34509056244041947,
+  "10": 0.064343163538874,
+  "21": 0.1515650741350906,
+  "52": 0.23539518900343642,
+  "4": 0.09333333333333334,
+  "15": 0.06646058732612056,
+  "17": 0.09129213483146068,
+  "23": 0.189718482252142,
+  "24": 0.19452449567723343,
+  "27": 0.15535248041775457,
+  "9": 0.058762886597938144,
+  "14": 0.09732360097323602,
+  "38": 0.06144393241167435,
+  "45": 0.19615912208504802,
+  "1": 0.19965576592082615,
+  "43": 0.1529051987767584,
+  "18": 0.10328068043742406,
+  "32": 0.14866760168302945,
+  "34": 0.10892586989409984,
+  "3": 0.11956521739130435,
+  "53": 0.3076923076923077
+ },
+ "smaller_themes": {
+  "Halloween (narrow match)": {
+   "n": 231,
+   "organizers": 164,
+   "contestants": 1971,
+   "start_months": {
+    "Oct": 157,
+    "Sep": 41
+   }
+  },
+  "New Year's resolutions": {
+   "n": 96,
+   "organizers": 55,
+   "contestants": 2423.5,
+   "start_months": {
+    "Jan": 21,
+    "Dec": 13
+   }
+  },
+  "National days": {
+   "n": 73,
+   "organizers": 43,
+   "contestants": 2040,
+   "start_months": {
+    "Jan": 12,
+    "Sep": 12
+   }
+  },
+  "Independence Day (US)": {
+   "n": 58,
+   "organizers": 47,
+   "contestants": 3158.5,
+   "start_months": {
+    "Jun": 29,
+    "Jul": 20
+   }
+  },
+  "Wedding season": {
+   "n": 61,
+   "organizers": 15,
+   "contestants": 2370,
+   "start_months": {
+    "Jan": 11,
+    "Apr": 7
+   }
+  },
+  "St Patrick's Day": {
+   "n": 42,
+   "organizers": 30,
+   "contestants": 2449.5,
+   "start_months": {
+    "Mar": 35,
+    "Feb": 7
+   }
+  },
+  "Earth Day": {
+   "n": 38,
+   "organizers": 34,
+   "contestants": 1915.0,
+   "start_months": {
+    "Apr": 32,
+    "Mar": 5
+   }
+  },
+  "Labor Day (US)": {
+   "n": 32,
+   "organizers": 25,
+   "contestants": 1767.0,
+   "start_months": {
+    "Aug": 21,
+    "Sep": 5
+   }
+  },
+  "Gamescom, E3, Summer Game Fest, The Game Awards": {
+   "n": 34,
+   "organizers": 20,
+   "contestants": 2801.5,
+   "start_months": {
+    "Aug": 15,
+    "Dec": 11
+   }
+  },
+  "Amazon Prime Day": {
+   "n": 33,
+   "organizers": 26,
+   "contestants": 1686,
+   "start_months": {
+    "Jul": 16,
+    "Jun": 13
+   }
+  },
+  "World days": {
+   "n": 29,
+   "organizers": 21,
+   "contestants": 2406,
+   "start_months": {
+    "Aug": 8,
+    "Mar": 7
+   }
+  },
+  "Chinese or Lunar New Year": {
+   "n": 11,
+   "organizers": 6,
+   "contestants": 1747,
+   "start_months": {
+    "Feb": 8,
+    "Jan": 3
+   }
+  },
+  "World Cup": {
+   "n": 34,
+   "organizers": 29,
+   "contestants": 1800.5,
+   "start_months": {
+    "Jun": 9,
+    "May": 6
+   }
+  },
+  "International Women's Day": {
+   "n": 9,
+   "organizers": 9,
+   "contestants": 1448,
+   "start_months": {
+    "Mar": 8,
+    "Apr": 1
+   }
+  },
+  "March Madness": {
+   "n": 19,
+   "organizers": 17,
+   "contestants": 2582,
+   "start_months": {
+    "Mar": 15,
+    "Feb": 4
+   }
+  },
+  "Super Bowl": {
+   "n": 14,
+   "organizers": 11,
+   "contestants": 3463.0,
+   "start_months": {
+    "Feb": 8,
+    "Jan": 3
+   }
+  },
+  "April Fools": {
+   "n": 18,
+   "organizers": 15,
+   "contestants": 1788.0,
+   "start_months": {
+    "Apr": 10,
+    "Mar": 7
+   }
+  },
+  "Canada Day": {
+   "n": 16,
+   "organizers": 5,
+   "contestants": 4774.5,
+   "start_months": {
+    "Jun": 15,
+    "Jul": 1
+   }
+  },
+  "Pride": {
+   "n": 36,
+   "organizers": 26,
+   "contestants": 1784.5,
+   "start_months": {
+    "Mar": 7,
+    "Jun": 6
+   }
+  }
+ },
+ "named_days": {},
+ "definitions": {
+  "window_within_60_before_to_14_after": "share of the theme's text-matched campaigns that started within 60 days before their nearest holiday date and ended no more than 14 days after it",
+  "smaller_themes": "broader or looser regex matches than the main holiday table, five distinct organizers minimum, no campaign-count floor",
+  "named_days": "exact-phrase match count on title, incentive name and description, five distinct organizers minimum"
  }
 }

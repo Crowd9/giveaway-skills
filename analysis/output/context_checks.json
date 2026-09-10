@@ -1,720 +1,874 @@
 {
- "ordinary_n": 37123,
- "valued_n": 14521,
+ "ordinary_n": 35614,
+ "ordinary_organizers": 6394,
+ "valued_n": 13977,
+ "valued_organizers": 3446,
  "value_bands": {
-  "1000-2499": {
-   "n": 3823,
-   "contestants": 2604,
-   "entries_per_entrant": 4.911381930339276,
-   "prize_cost_per_contestant": 0.5577244841048522
-  },
-  "2500-4999": {
-   "n": 1880,
-   "contestants": 3905.5,
-   "entries_per_entrant": 5.488129757107826,
-   "prize_cost_per_contestant": 0.8508815357853061
-  },
-  "500-999": {
-   "n": 2756,
-   "contestants": 2148.5,
-   "entries_per_entrant": 4.906488994389297,
-   "prize_cost_per_contestant": 0.30221727327405434
-  },
   "50-99": {
-   "n": 551,
-   "contestants": 1341,
-   "entries_per_entrant": 7.558380414312618,
-   "prize_cost_per_contestant": 0.045627376425855515
+   "n": 538,
+   "organizers": 158,
+   "contestants": 1337.5,
+   "entries_per_entrant": 7.894266955663269,
+   "prize_cost_per_contestant": 0.046008763574014094
   },
   "250-499": {
-   "n": 2210,
-   "contestants": 1798.0,
-   "entries_per_entrant": 4.670668997926057,
-   "prize_cost_per_contestant": 0.18875049877443995
+   "n": 2132,
+   "organizers": 820,
+   "contestants": 1795.0,
+   "entries_per_entrant": 4.680019534582817,
+   "prize_cost_per_contestant": 0.18907313585497626
   },
-  "10000-24999": {
-   "n": 333,
-   "contestants": 4345,
-   "entries_per_entrant": 4.736849390919159,
-   "prize_cost_per_contestant": 3.0807147258163896
+  "2500-4999": {
+   "n": 1832,
+   "organizers": 708,
+   "contestants": 3975.0,
+   "entries_per_entrant": 5.442395532558885,
+   "prize_cost_per_contestant": 0.83731567970637
   },
   "100-249": {
-   "n": 1786,
-   "contestants": 1495.5,
-   "entries_per_entrant": 4.456635459732167,
-   "prize_cost_per_contestant": 0.0979038956120418
+   "n": 1730,
+   "organizers": 590,
+   "contestants": 1492.0,
+   "entries_per_entrant": 4.5451067418463715,
+   "prize_cost_per_contestant": 0.0977855748547034
   },
   "5000-9999": {
-   "n": 741,
-   "contestants": 4139,
-   "entries_per_entrant": 4.994298745724059,
-   "prize_cost_per_contestant": 1.4705882352941178
+   "n": 710,
+   "organizers": 378,
+   "contestants": 4138.5,
+   "entries_per_entrant": 5.00187445479345,
+   "prize_cost_per_contestant": 1.4720969713403727
+  },
+  "1000-2499": {
+   "n": 3675,
+   "organizers": 1364,
+   "contestants": 2652,
+   "entries_per_entrant": 4.868900936421882,
+   "prize_cost_per_contestant": 0.5520446096654275
+  },
+  "500-999": {
+   "n": 2646,
+   "organizers": 1081,
+   "contestants": 2159.0,
+   "entries_per_entrant": 4.8742095947701225,
+   "prize_cost_per_contestant": 0.30123002470131577
+  },
+  "10000-24999": {
+   "n": 313,
+   "organizers": 218,
+   "contestants": 4411,
+   "entries_per_entrant": 4.732732732732733,
+   "prize_cost_per_contestant": 3.0248033877797944
   },
   "under 50": {
-   "n": 255,
-   "contestants": 1854,
-   "entries_per_entrant": 4.8430948419301165,
-   "prize_cost_per_contestant": 0.013125512715340444
+   "n": 246,
+   "organizers": 82,
+   "contestants": 1754.5,
+   "entries_per_entrant": 4.922346790476628,
+   "prize_cost_per_contestant": 0.013668233673706095
   },
   "25000-49999": {
-   "n": 96,
-   "contestants": 4806.0,
-   "entries_per_entrant": 4.377079822401116,
-   "prize_cost_per_contestant": 6.6295696738465875
+   "n": 83,
+   "organizers": 66,
+   "contestants": 4462,
+   "entries_per_entrant": 3.980417754569191,
+   "prize_cost_per_contestant": 7.518796992481203
   },
   "50000+": {
-   "n": 90,
-   "contestants": 3909.0,
-   "entries_per_entrant": 5.3820113874562665,
-   "prize_cost_per_contestant": 32.199588474469365
+   "n": 72,
+   "organizers": 49,
+   "contestants": 4811.5,
+   "entries_per_entrant": 5.0932803772842075,
+   "prize_cost_per_contestant": 30.350689069625897
   }
  },
  "value_regression": {
-  "log_log_slope": 0.2321025842288384,
-  "contestants_multiplier_per_10x_value": 1.7064854284738908,
-  "r_squared": 0.15384357104223134,
-  "n": 14521,
-  "share_under_1000_usd": 0.5616004407409958,
-  "share_under_250_usd": 0.1785001032986709
+  "log_log_slope": 0.24012760940059832,
+  "contestants_multiplier_per_10x_value": 1.738311524405308,
+  "r_squared": 0.16084256456387863,
+  "n": 13977,
+  "organizers": 3446,
+  "share_under_1000_usd": 0.5594905916863419,
+  "share_under_250_usd": 0.17986692423266795
  },
  "prize_category_index_value_adjusted": {
   "tech_hardware": {
-   "n": 4468,
-   "contestants": 2419.0,
-   "index": 1.065764052511183,
-   "entries_per_entrant": 6.1935872612397045
+   "n": 4449,
+   "organizers": 1235,
+   "contestants": 2432,
+   "index": 1.0621383647798741,
+   "entries_per_entrant": 6.21326164874552
   },
   "gift_card_or_cash": {
-   "n": 2535,
-   "contestants": 1972,
-   "index": 0.9416282642089093,
-   "entries_per_entrant": 4.400651465798045
+   "n": 2359,
+   "organizers": 971,
+   "contestants": 1999,
+   "index": 0.9435514018691589,
+   "entries_per_entrant": 4.465006729475101
   },
   "bundle_or_box": {
-   "n": 1804,
-   "contestants": 2032.0,
-   "index": 0.9236055935166058,
-   "entries_per_entrant": 4.524556767134001
+   "n": 1773,
+   "organizers": 817,
+   "contestants": 2031,
+   "index": 0.920911528150134,
+   "entries_per_entrant": 4.590819348469892
   },
   "game_item_or_skin": {
-   "n": 945,
-   "contestants": 2186,
-   "index": 0.9775956983740878,
-   "entries_per_entrant": 5.483462637811352
-  },
-  "other_unclassified": {
-   "n": 892,
-   "contestants": 1989.5,
-   "index": 0.8392332520983476,
-   "entries_per_entrant": 4.509843978043143
+   "n": 936,
+   "organizers": 329,
+   "contestants": 2191.0,
+   "index": 0.9793019817031039,
+   "entries_per_entrant": 5.483184310358667
   },
   "regulated_goods_firearm": {
-   "n": 887,
-   "contestants": 3270,
-   "index": 1.248463901689708,
-   "entries_per_entrant": 9.618923157344485
+   "n": 877,
+   "organizers": 138,
+   "contestants": 3278,
+   "index": 1.2360482654600302,
+   "entries_per_entrant": 9.6226254607315
   },
   "home_garden_appliance": {
-   "n": 809,
-   "contestants": 2309,
-   "index": 1.013904338153504,
-   "entries_per_entrant": 4.409104986063797
+   "n": 800,
+   "organizers": 310,
+   "contestants": 2303.5,
+   "index": 1.003910286101115,
+   "entries_per_entrant": 4.437408988189796
   },
-  "placeholder_name": {
-   "n": 747,
-   "contestants": 2779,
-   "index": 1.1148233486943164,
-   "entries_per_entrant": 4.673745173745174
+  "other_unclassified": {
+   "n": 781,
+   "organizers": 478,
+   "contestants": 1983,
+   "index": 0.8536953242835595,
+   "entries_per_entrant": 4.131051752921536
   },
   "experience_travel_tickets": {
-   "n": 681,
-   "contestants": 2478,
-   "index": 0.9066820276497696,
-   "entries_per_entrant": 3.5922374429223742
+   "n": 670,
+   "organizers": 358,
+   "contestants": 2473.5,
+   "index": 0.9060034199387674,
+   "entries_per_entrant": 3.602834212366839
+  },
+  "placeholder_name": {
+   "n": 619,
+   "organizers": 289,
+   "contestants": 2785,
+   "index": 1.1368778280542986,
+   "entries_per_entrant": 4.49377990430622
   },
   "merch_apparel_collectible": {
-   "n": 582,
-   "contestants": 2128.5,
-   "index": 0.9408257658874475,
-   "entries_per_entrant": 4.0625966495743935
+   "n": 575,
+   "organizers": 320,
+   "contestants": 2128,
+   "index": 0.940125786163522,
+   "entries_per_entrant": 4.035146443514645
   },
   "sports_outdoor_gear": {
-   "n": 469,
-   "contestants": 1985,
-   "index": 0.8587386548754945,
-   "entries_per_entrant": 4.487623762376238
+   "n": 460,
+   "organizers": 243,
+   "contestants": 1983.0,
+   "index": 0.8562630661668669,
+   "entries_per_entrant": 4.453655386227752
   },
   "music_gear": {
    "n": 391,
+   "organizers": 63,
    "contestants": 2255,
-   "index": 1.0723025583982202,
+   "index": 1.0599547511312217,
    "entries_per_entrant": 4.013438735177866
   },
   "vehicle": {
-   "n": 278,
-   "contestants": 2371.0,
-   "index": 0.848272529596521,
+   "n": 276,
+   "organizers": 113,
+   "contestants": 2368.0,
+   "index": 0.842948717948718,
    "entries_per_entrant": 4.834502795237958
   },
   "food_drink_consumables": {
-   "n": 278,
-   "contestants": 1932.5,
-   "index": 0.8958946000465666,
-   "entries_per_entrant": 3.956989247311828
+   "n": 271,
+   "organizers": 173,
+   "contestants": 1937,
+   "index": 0.8945270025371511,
+   "entries_per_entrant": 3.9714993804213137
   },
   "subscription_membership": {
-   "n": 243,
-   "contestants": 1858,
-   "index": 0.7780337941628265,
-   "entries_per_entrant": 4.069474401180611
+   "n": 238,
+   "organizers": 157,
+   "contestants": 1859.5,
+   "index": 0.769419306184012,
+   "entries_per_entrant": 4.088876088537119
   },
   "tools_craft_diy": {
-   "n": 228,
-   "contestants": 1873.5,
-   "index": 0.9000173490437944,
-   "entries_per_entrant": 4.1104067210786575
+   "n": 227,
+   "organizers": 91,
+   "contestants": 1879,
+   "index": 0.9008356545961003,
+   "entries_per_entrant": 4.126721763085399
   },
   "discount_or_coupon": {
-   "n": 181,
-   "contestants": 2013,
-   "index": 0.7767576709350085,
-   "entries_per_entrant": 5.08605577689243
+   "n": 157,
+   "organizers": 62,
+   "contestants": 2035,
+   "index": 0.709685534591195,
+   "entries_per_entrant": 5.8844375963020035
   },
   "beauty_wellness": {
-   "n": 151,
-   "contestants": 1395,
-   "index": 0.7609495152123036,
-   "entries_per_entrant": 3.9748334566987418
+   "n": 132,
+   "organizers": 77,
+   "contestants": 1380.0,
+   "index": 0.7350255956295124,
+   "entries_per_entrant": 4.178503390992914
   },
   "toys_collectibles": {
-   "n": 105,
-   "contestants": 1752,
-   "index": 0.9406562718175471,
+   "n": 101,
+   "organizers": 77,
+   "contestants": 2050,
+   "index": 0.9606299212598425,
    "entries_per_entrant": 4.828627069133399
   }
  },
  "winner_count_index_value_adjusted": {
-  "6-20": {
-   "n": 1674,
-   "index": 0.8474241776455573,
-   "contestants": 2178.0
+  "1": {
+   "n": 8640,
+   "organizers": 2149,
+   "index": 1.0670716420203883,
+   "contestants": 2239.5
   },
   "2-5": {
-   "n": 3136,
-   "index": 0.9301156156641969,
-   "contestants": 2076.5
-  },
-  "1": {
-   "n": 8802,
-   "index": 1.0699770799234933,
-   "contestants": 2241.5
+   "n": 3015,
+   "organizers": 1203,
+   "index": 0.9276018099547512,
+   "contestants": 2091
   },
   "21+": {
-   "n": 909,
-   "index": 0.8302611367127496,
-   "contestants": 2728
+   "n": 769,
+   "organizers": 343,
+   "index": 0.8417592382679664,
+   "contestants": 2847
+  },
+  "6-20": {
+   "n": 1553,
+   "organizers": 742,
+   "index": 0.8440256131448592,
+   "contestants": 2219
   }
  },
  "top_vs_bottom_quintile": {
   "top": {
-   "n": 7424,
-   "impressions": 35098.5,
-   "conversion": 0.2828796733631651,
-   "prize_value_usd": 2000,
+   "n": 7122,
+   "organizers": 1591,
+   "impressions": 35504.5,
+   "conversion": 0.28087220968146476,
+   "prize_value_usd": 2016.0,
    "winners": 1.0,
    "methods": 7.0,
-   "previous_campaigns": 10.0,
-   "contestants": 9015.0
+   "previous_campaigns": 13.0,
+   "contestants": 9097.5
   },
   "bottom": {
-   "n": 7424,
-   "impressions": 4028,
-   "conversion": 0.28443337484433373,
-   "prize_value_usd": 409,
+   "n": 7122,
+   "organizers": 2757,
+   "impressions": 4047,
+   "conversion": 0.2831454643048846,
+   "prize_value_usd": 400.0,
    "winners": 1.0,
    "methods": 7.0,
-   "previous_campaigns": 5.0,
+   "previous_campaigns": 13.0,
    "contestants": 1138.0
   }
  },
  "cadence": {
+  "121-365": {
+   "n": 2692,
+   "organizers": 1676,
+   "contestants": 2404.0,
+   "entries_per_entrant": 4.128020306937598,
+   "conversion": 0.25580627384384536
+  },
   "monthly or faster": {
-   "n": 18252,
-   "contestants": 2266.0,
-   "entries_per_entrant": 4.5074592054353815,
-   "conversion": 0.3082792814453458
+   "n": 20359,
+   "organizers": 2157,
+   "contestants": 2162,
+   "entries_per_entrant": 4.501291989664082,
+   "conversion": 0.29668780176394394
   },
   "61-120": {
-   "n": 3644,
-   "contestants": 2272.5,
-   "entries_per_entrant": 4.468426509403837,
-   "conversion": 0.2560533565318254
-  },
-  "first": {
-   "n": 6578,
-   "contestants": 1953.5,
-   "entries_per_entrant": 3.9388808593992652,
-   "conversion": 0.2711465314254664
+   "n": 3107,
+   "organizers": 1559,
+   "contestants": 2399,
+   "entries_per_entrant": 4.303501945525292,
+   "conversion": 0.26242620453247
   },
   "31-60": {
-   "n": 4134,
-   "contestants": 2337.5,
-   "entries_per_entrant": 4.648665599220802,
-   "conversion": 0.25721601489757917
+   "n": 4040,
+   "organizers": 1563,
+   "contestants": 2268.5,
+   "entries_per_entrant": 4.517123704531107,
+   "conversion": 0.2559409367069138
   },
-  "121-365": {
-   "n": 3419,
-   "contestants": 2237,
-   "entries_per_entrant": 4.133608815426998,
-   "conversion": 0.2578222979124743
+  "first": {
+   "n": 4659,
+   "organizers": 4659,
+   "contestants": 2148,
+   "entries_per_entrant": 3.851721094439541,
+   "conversion": 0.2673083464841067
   },
   "over a year": {
-   "n": 1096,
-   "contestants": 1978.0,
-   "entries_per_entrant": 3.843520092526185,
-   "conversion": 0.25241526789521274
+   "n": 757,
+   "organizers": 689,
+   "contestants": 2229,
+   "entries_per_entrant": 3.727240014393667,
+   "conversion": 0.2543591312327929
   }
  },
  "persistence": {
-  "pairs": 29897,
+  "pairs": 21284,
+  "organizers": 2721,
   "prev_5k_next_5k": {
-   "n": 6537,
-   "next_reaches": 0.5704451583295089
+   "n": 5464,
+   "organizers": 973,
+   "next_reaches": 0.6052342606149341
   },
   "prev_under_5k_next_5k": {
-   "n": 23360,
-   "next_reaches": 0.11142979452054795
+   "n": 15820,
+   "organizers": 2482,
+   "next_reaches": 0.12471554993678888
   },
   "prev_10k_next_10k": {
-   "n": 2842,
-   "next_reaches": 0.5320197044334976
+   "n": 2461,
+   "organizers": 488,
+   "next_reaches": 0.5652173913043478
   },
   "prev_under_10k_next_10k": {
-   "n": 27055,
-   "next_reaches": 0.045647754574015896
+   "n": 18823,
+   "organizers": 2619,
+   "next_reaches": 0.051479572862986774
   },
-  "log_correlation": 0.6027663955363906
+  "log_correlation": 0.6303655966735829
  },
  "collaboration_signal": {
-  "collab_n": 1195,
-  "index_collab": 1.1333488480335117,
-  "index_other": 0.9923102641257104,
-  "top_quintile_rate_collab": 0.2895397489539749,
-  "top_quintile_rate_other": 0.19195557556656162,
-  "note": "collaboration detected by 'x', '\u00d7', collab or partner in the campaign name, a rough proxy"
+  "collab_n": 1138,
+  "collab_organizers": 448,
+  "index_collab": 1.146138003559766,
+  "index_other": 0.9909502262443439,
+  "top_quintile_rate_collab": 0.29964850615114236,
+  "top_quintile_rate_other": 0.19113638133811045,
+  "note": "collaboration detected by x, times sign, collab or partner in the campaign name, a rough proxy"
  },
  "method_prevalence_top_vs_bottom_by_vertical": {
-  "travel": {
-   "n": 1758,
-   "quintile": 351,
-   "methods": {
-    "Secret Code": {
-     "top": 0.1282051282051282,
-     "bottom": 0.08831908831908832,
-     "ratio": 1.4516129032258065
-    },
-    "Answer a Question": {
-     "top": 0.24216524216524216,
-     "bottom": 0.1794871794871795,
-     "ratio": 1.349206349206349
-    },
-    "Instagram Profile Visits": {
-     "top": 0.5270655270655271,
-     "bottom": 0.4358974358974359,
-     "ratio": 1.2091503267973858
-    },
-    "Custom Actions": {
-     "top": 0.21937321937321938,
-     "bottom": 0.1908831908831909,
-     "ratio": 1.1492537313432836
-    },
-    "X Posts": {
-     "top": 0.1339031339031339,
-     "bottom": 0.11965811965811966,
-     "ratio": 1.119047619047619
-    },
-    "YouTube Channel Visits": {
-     "top": 0.2564102564102564,
-     "bottom": 0.23931623931623933,
-     "ratio": 1.0714285714285714
-    },
-    "Bonus": {
-     "top": 0.4672364672364672,
-     "bottom": 0.4672364672364672,
-     "ratio": 1.0
-    },
-    "Visit a Page": {
-     "top": 0.4928774928774929,
-     "bottom": 0.4985754985754986,
-     "ratio": 0.9885714285714285
-    }
-   }
-  },
   "home": {
-   "n": 883,
-   "quintile": 176,
+   "n": 1774,
+   "organizers": 328,
+   "quintile": 354,
    "methods": {
-    "YouTube Channel Visits": {
-     "top": 0.3409090909090909,
-     "bottom": 0.14772727272727273,
-     "ratio": 2.3076923076923075
-    },
-    "Custom Actions": {
-     "top": 0.26704545454545453,
-     "bottom": 0.1590909090909091,
-     "ratio": 1.6785714285714286
-    },
     "X Posts": {
-     "top": 0.13636363636363635,
-     "bottom": 0.08522727272727272,
-     "ratio": 1.6
+     "top": 0.14124293785310735,
+     "bottom": 0.0423728813559322,
+     "ratio": 3.3333333333333335
     },
     "Pinterest Visits": {
-     "top": 0.14772727272727273,
-     "bottom": 0.10227272727272728,
-     "ratio": 1.4444444444444444
+     "top": 0.21468926553672316,
+     "bottom": 0.10451977401129943,
+     "ratio": 2.054054054054054
     },
-    "Viral Shares": {
-     "top": 0.6590909090909091,
-     "bottom": 0.5,
-     "ratio": 1.3181818181818181
+    "YouTube Channel Visits": {
+     "top": 0.3926553672316384,
+     "bottom": 0.268361581920904,
+     "ratio": 1.463157894736842
+    },
+    "Bonus": {
+     "top": 0.4774011299435028,
+     "bottom": 0.3813559322033898,
+     "ratio": 1.2518518518518518
     },
     "Instagram Profile Visits": {
-     "top": 0.6761363636363636,
-     "bottom": 0.5170454545454546,
-     "ratio": 1.3076923076923077
+     "top": 0.7005649717514124,
+     "bottom": 0.5932203389830508,
+     "ratio": 1.180952380952381
     },
-    "X Follows": {
-     "top": 0.4034090909090909,
-     "bottom": 0.32954545454545453,
-     "ratio": 1.2241379310344827
+    "Custom Actions": {
+     "top": 0.1751412429378531,
+     "bottom": 0.15254237288135594,
+     "ratio": 1.1481481481481481
     },
     "Facebook visits": {
-     "top": 0.5284090909090909,
-     "bottom": 0.4943181818181818,
-     "ratio": 1.0689655172413794
+     "top": 0.5875706214689266,
+     "bottom": 0.5169491525423728,
+     "ratio": 1.1366120218579236
+    },
+    "Viral Shares": {
+     "top": 0.6892655367231638,
+     "bottom": 0.6242937853107344,
+     "ratio": 1.1040723981900453
     }
    }
   },
-  "fitness_outdoor": {
-   "n": 878,
-   "quintile": 175,
+  "music_media": {
+   "n": 5223,
+   "organizers": 654,
+   "quintile": 1044,
    "methods": {
-    "Answer a Question": {
-     "top": 0.14857142857142858,
-     "bottom": 0.09142857142857143,
-     "ratio": 1.625
+    "Twitch Follows": {
+     "top": 0.32567049808429116,
+     "bottom": 0.1331417624521073,
+     "ratio": 2.4460431654676253
     },
-    "Bonus": {
-     "top": 0.49714285714285716,
-     "bottom": 0.4057142857142857,
-     "ratio": 1.2253521126760565
+    "Chat Members": {
+     "top": 0.32471264367816094,
+     "bottom": 0.16091954022988506,
+     "ratio": 2.017857142857143
     },
-    "Viral Shares": {
-     "top": 0.6057142857142858,
-     "bottom": 0.5771428571428572,
-     "ratio": 1.0495049504950495
+    "Twitch Subscribers": {
+     "top": 0.1781609195402299,
+     "bottom": 0.09099616858237548,
+     "ratio": 1.9578947368421051
     },
-    "Email Subscriptions": {
-     "top": 0.5028571428571429,
-     "bottom": 0.5028571428571429,
-     "ratio": 1.0
+    "X Reposts": {
+     "top": 0.41475095785440613,
+     "bottom": 0.21455938697318008,
+     "ratio": 1.9330357142857142
     },
     "YouTube Channel Visits": {
-     "top": 0.2857142857142857,
-     "bottom": 0.3142857142857143,
-     "ratio": 0.9090909090909091
+     "top": 0.5181992337164751,
+     "bottom": 0.3448275862068966,
+     "ratio": 1.5027777777777778
+    },
+    "Bonus": {
+     "top": 0.44157088122605365,
+     "bottom": 0.3074712643678161,
+     "ratio": 1.4361370716510904
+    },
+    "Visit a Page": {
+     "top": 0.6235632183908046,
+     "bottom": 0.5220306513409961,
+     "ratio": 1.1944954128440368
+    },
+    "X Follows": {
+     "top": 0.6120689655172413,
+     "bottom": 0.5239463601532567,
+     "ratio": 1.1681901279707494
+    }
+   }
+  },
+  "kids_family_pets": {
+   "n": 1662,
+   "organizers": 350,
+   "quintile": 332,
+   "methods": {
+    "YouTube Channel Visits": {
+     "top": 0.5602409638554217,
+     "bottom": 0.3644578313253012,
+     "ratio": 1.537190082644628
+    },
+    "Custom Actions": {
+     "top": 0.25,
+     "bottom": 0.19879518072289157,
+     "ratio": 1.2575757575757576
+    },
+    "Reddit Visits": {
+     "top": 0.10240963855421686,
+     "bottom": 0.08433734939759036,
+     "ratio": 1.2142857142857144
+    },
+    "Bonus": {
+     "top": 0.5210843373493976,
+     "bottom": 0.45180722891566266,
+     "ratio": 1.1533333333333333
     },
     "TikTok Follows": {
-     "top": 0.09714285714285714,
-     "bottom": 0.10857142857142857,
-     "ratio": 0.8947368421052632
-    },
-    "Visit a Page": {
-     "top": 0.41714285714285715,
-     "bottom": 0.5085714285714286,
-     "ratio": 0.8202247191011236
+     "top": 0.14457831325301204,
+     "bottom": 0.12650602409638553,
+     "ratio": 1.1428571428571428
     },
     "Instagram Profile Visits": {
-     "top": 0.45714285714285713,
-     "bottom": 0.5657142857142857,
-     "ratio": 0.8080808080808081
-    }
-   }
-  },
-  "other": {
-   "n": 23673,
-   "quintile": 4734,
-   "methods": {
-    "Custom Actions": {
-     "top": 0.24630333755809042,
-     "bottom": 0.1850443599493029,
-     "ratio": 1.3310502283105023
+     "top": 0.6054216867469879,
+     "bottom": 0.5572289156626506,
+     "ratio": 1.0864864864864863
     },
-    "X Posts": {
-     "top": 0.11934938741022391,
-     "bottom": 0.09695817490494296,
-     "ratio": 1.2309368191721133
-    },
-    "Email Subscriptions": {
-     "top": 0.4866920152091255,
-     "bottom": 0.40811153358681873,
-     "ratio": 1.1925465838509317
-    },
-    "Bonus": {
-     "top": 0.3525559780312632,
-     "bottom": 0.3086185044359949,
-     "ratio": 1.1423682409308693
-    },
-    "YouTube Channel Visits": {
-     "top": 0.38994507815800594,
-     "bottom": 0.3650190114068441,
-     "ratio": 1.068287037037037
+    "Viral Shares": {
+     "top": 0.5903614457831325,
+     "bottom": 0.5873493975903614,
+     "ratio": 1.005128205128205
     },
     "Facebook visits": {
-     "top": 0.41613857203210813,
-     "bottom": 0.394169835234474,
-     "ratio": 1.0557341907824223
-    },
-    "Instagram Profile Visits": {
-     "top": 0.49978876214617657,
-     "bottom": 0.4767638360794254,
-     "ratio": 1.0482941958351795
-    },
-    "Viral Shares": {
-     "top": 0.46577946768060835,
-     "bottom": 0.4590198563582594,
-     "ratio": 1.014726184997699
-    }
-   }
-  },
-  "food_drink": {
-   "n": 989,
-   "quintile": 197,
-   "methods": {
-    "YouTube Channel Visits": {
-     "top": 0.4213197969543147,
-     "bottom": 0.18781725888324874,
-     "ratio": 2.243243243243243
-    },
-    "Facebook visits": {
-     "top": 0.5329949238578681,
-     "bottom": 0.38071065989847713,
-     "ratio": 1.4000000000000001
-    },
-    "Instagram Profile Visits": {
-     "top": 0.5685279187817259,
-     "bottom": 0.49238578680203043,
-     "ratio": 1.154639175257732
-    },
-    "Email Subscriptions": {
-     "top": 0.6954314720812182,
-     "bottom": 0.6345177664974619,
-     "ratio": 1.0959999999999999
-    },
-    "Viral Shares": {
-     "top": 0.5888324873096447,
-     "bottom": 0.5380710659898477,
-     "ratio": 1.0943396226415094
-    },
-    "Bonus": {
-     "top": 0.38578680203045684,
-     "bottom": 0.3553299492385787,
-     "ratio": 1.0857142857142856
-    },
-    "Visit a Page": {
-     "top": 0.467005076142132,
-     "bottom": 0.5329949238578681,
-     "ratio": 0.8761904761904762
-    },
-    "X Follows": {
-     "top": 0.28426395939086296,
-     "bottom": 0.3248730964467005,
-     "ratio": 0.8750000000000001
-    }
-   }
-  },
-  "software": {
-   "n": 363,
-   "quintile": 72,
-   "methods": {
-    "X Reposts": {
-     "top": 0.1388888888888889,
-     "bottom": 0.08333333333333333,
-     "ratio": 1.6666666666666667
-    },
-    "Bonus": {
-     "top": 0.3611111111111111,
-     "bottom": 0.2638888888888889,
-     "ratio": 1.368421052631579
-    },
-    "YouTube Channel Visits": {
-     "top": 0.4027777777777778,
-     "bottom": 0.3055555555555556,
-     "ratio": 1.3181818181818181
-    },
-    "Viral Shares": {
-     "top": 0.5416666666666666,
-     "bottom": 0.4305555555555556,
-     "ratio": 1.258064516129032
-    },
-    "Secret Code": {
-     "top": 0.1388888888888889,
-     "bottom": 0.1111111111111111,
-     "ratio": 1.2500000000000002
-    },
-    "Email Subscriptions": {
-     "top": 0.5277777777777778,
-     "bottom": 0.4583333333333333,
-     "ratio": 1.1515151515151516
-    },
-    "App Downloads": {
-     "top": 0.125,
-     "bottom": 0.1111111111111111,
-     "ratio": 1.125
-    },
-    "Custom Actions": {
-     "top": 0.19444444444444445,
-     "bottom": 0.18055555555555555,
-     "ratio": 1.0769230769230769
+     "top": 0.4578313253012048,
+     "bottom": 0.46686746987951805,
+     "ratio": 0.9806451612903225
     }
    }
   },
   "gaming": {
-   "n": 6503,
-   "quintile": 1300,
+   "n": 6294,
+   "organizers": 1409,
+   "quintile": 1258,
    "methods": {
-    "Twitch Subscribers": {
-     "top": 0.2076923076923077,
-     "bottom": 0.12,
-     "ratio": 1.7307692307692308
-    },
-    "Custom Actions": {
-     "top": 0.19923076923076924,
-     "bottom": 0.11692307692307692,
-     "ratio": 1.7039473684210527
-    },
     "Secret Code": {
-     "top": 0.1976923076923077,
-     "bottom": 0.13076923076923078,
-     "ratio": 1.511764705882353
+     "top": 0.14705882352941177,
+     "bottom": 0.0890302066772655,
+     "ratio": 1.6517857142857144
     },
-    "Twitch Follows": {
-     "top": 0.46,
-     "bottom": 0.3523076923076923,
-     "ratio": 1.3056768558951966
+    "Twitch Subscribers": {
+     "top": 0.20349761526232116,
+     "bottom": 0.13036565977742448,
+     "ratio": 1.5609756097560976
     },
     "Bonus": {
-     "top": 0.38384615384615384,
-     "bottom": 0.31,
-     "ratio": 1.2382133995037221
+     "top": 0.37201907790143085,
+     "bottom": 0.25675675675675674,
+     "ratio": 1.4489164086687307
     },
-    "YouTube Channel Visits": {
-     "top": 0.5476923076923077,
-     "bottom": 0.46384615384615385,
-     "ratio": 1.1807628524046434
-    },
-    "Visit a Page": {
-     "top": 0.6715384615384615,
-     "bottom": 0.6230769230769231,
-     "ratio": 1.0777777777777777
+    "Custom Actions": {
+     "top": 0.20985691573926868,
+     "bottom": 0.15580286168521462,
+     "ratio": 1.346938775510204
     },
     "TikTok Follows": {
-     "top": 0.23153846153846153,
-     "bottom": 0.22230769230769232,
-     "ratio": 1.041522491349481
+     "top": 0.1740858505564388,
+     "bottom": 0.15580286168521462,
+     "ratio": 1.1173469387755102
+    },
+    "YouTube Channel Visits": {
+     "top": 0.5087440381558028,
+     "bottom": 0.4626391096979332,
+     "ratio": 1.099656357388316
+    },
+    "Answer a Question": {
+     "top": 0.1383147853736089,
+     "bottom": 0.1271860095389507,
+     "ratio": 1.0875
+    },
+    "Email Subscriptions": {
+     "top": 0.19793322734499205,
+     "bottom": 0.18680445151033387,
+     "ratio": 1.0595744680851065
+    }
+   }
+  },
+  "travel_events": {
+   "n": 1347,
+   "organizers": 261,
+   "quintile": 269,
+   "methods": {
+    "Single Choice List": {
+     "top": 0.3382899628252788,
+     "bottom": 0.03717472118959108,
+     "ratio": 9.1
+    },
+    "Spotify follows": {
+     "top": 0.20074349442379183,
+     "bottom": 0.05204460966542751,
+     "ratio": 3.857142857142857
+    },
+    "Secret Code": {
+     "top": 0.2825278810408922,
+     "bottom": 0.08921933085501858,
+     "ratio": 3.166666666666667
+    },
+    "Answer a Question": {
+     "top": 0.2379182156133829,
+     "bottom": 0.13382899628252787,
+     "ratio": 1.777777777777778
+    },
+    "Custom Actions": {
+     "top": 0.26022304832713755,
+     "bottom": 0.17843866171003717,
+     "ratio": 1.4583333333333335
+    },
+    "Visit a Page": {
+     "top": 0.5427509293680297,
+     "bottom": 0.4052044609665427,
+     "ratio": 1.3394495412844036
+    },
+    "X Posts": {
+     "top": 0.08178438661710037,
+     "bottom": 0.06319702602230483,
+     "ratio": 1.2941176470588236
+    },
+    "TikTok Follows": {
+     "top": 0.11524163568773234,
+     "bottom": 0.10037174721189591,
+     "ratio": 1.1481481481481481
+    }
+   }
+  },
+  "software": {
+   "n": 548,
+   "organizers": 163,
+   "quintile": 109,
+   "methods": {
+    "X Posts": {
+     "top": 0.1559633027522936,
+     "bottom": 0.07339449541284404,
+     "ratio": 2.125
+    },
+    "Custom Actions": {
+     "top": 0.1834862385321101,
+     "bottom": 0.11009174311926606,
+     "ratio": 1.6666666666666667
+    },
+    "TikTok Follows": {
+     "top": 0.13761467889908258,
+     "bottom": 0.09174311926605505,
+     "ratio": 1.5
+    },
+    "LinkedIn Share": {
+     "top": 0.06422018348623854,
+     "bottom": 0.045871559633027525,
+     "ratio": 1.4
+    },
+    "Email Subscriptions": {
+     "top": 0.6513761467889908,
+     "bottom": 0.46788990825688076,
+     "ratio": 1.392156862745098
+    },
+    "Viral Shares": {
+     "top": 0.5045871559633027,
+     "bottom": 0.3761467889908257,
+     "ratio": 1.3414634146341462
+    },
+    "Bonus": {
+     "top": 0.30275229357798167,
+     "bottom": 0.22935779816513763,
+     "ratio": 1.32
+    },
+    "Visit a Page": {
+     "top": 0.6238532110091743,
+     "bottom": 0.5045871559633027,
+     "ratio": 1.2363636363636366
+    }
+   }
+  },
+  "fitness_outdoor": {
+   "n": 3147,
+   "organizers": 738,
+   "quintile": 629,
+   "methods": {
+    "Bonus": {
+     "top": 0.5643879173290938,
+     "bottom": 0.4483306836248013,
+     "ratio": 1.2588652482269502
+    },
+    "Secret Code": {
+     "top": 0.10333863275039745,
+     "bottom": 0.08426073131955485,
+     "ratio": 1.2264150943396226
+    },
+    "Viral Shares": {
+     "top": 0.643879173290938,
+     "bottom": 0.548489666136725,
+     "ratio": 1.1739130434782608
+    },
+    "Email Subscriptions": {
+     "top": 0.5151033386327504,
+     "bottom": 0.4562798092209857,
+     "ratio": 1.1289198606271775
+    },
+    "Instagram Profile Visits": {
+     "top": 0.5882352941176471,
+     "bottom": 0.5786963434022258,
+     "ratio": 1.0164835164835164
+    },
+    "Facebook visits": {
+     "top": 0.4594594594594595,
+     "bottom": 0.48012718600953896,
+     "ratio": 0.956953642384106
+    },
+    "Visit a Page": {
+     "top": 0.5119236883942766,
+     "bottom": 0.6200317965023847,
+     "ratio": 0.8256410256410256
+    },
+    "YouTube Channel Visits": {
+     "top": 0.32909379968203495,
+     "bottom": 0.40858505564387915,
+     "ratio": 0.8054474708171206
+    }
+   }
+  },
+  "other": {
+   "n": 4423,
+   "organizers": 968,
+   "quintile": 884,
+   "methods": {
+    "X Posts": {
+     "top": 0.3755656108597285,
+     "bottom": 0.10067873303167421,
+     "ratio": 3.730337078651685
+    },
+    "Secret Code": {
+     "top": 0.29638009049773756,
+     "bottom": 0.09389140271493213,
+     "ratio": 3.1566265060240966
+    },
+    "Twitch Follows": {
+     "top": 0.26018099547511314,
+     "bottom": 0.1074660633484163,
+     "ratio": 2.4210526315789473
+    },
+    "Email Subscriptions": {
+     "top": 0.5882352941176471,
+     "bottom": 0.3416289592760181,
+     "ratio": 1.7218543046357615
+    },
+    "X Follows": {
+     "top": 0.5588235294117647,
+     "bottom": 0.38461538461538464,
+     "ratio": 1.4529411764705882
+    },
+    "Facebook visits": {
+     "top": 0.4830316742081448,
+     "bottom": 0.3427601809954751,
+     "ratio": 1.4092409240924093
+    },
+    "Visit a Page": {
+     "top": 0.6979638009049773,
+     "bottom": 0.5147058823529411,
+     "ratio": 1.3560439560439561
+    },
+    "Custom Actions": {
+     "top": 0.29411764705882354,
+     "bottom": 0.21832579185520362,
+     "ratio": 1.3471502590673576
     }
    }
   },
   "technology": {
-   "n": 1717,
-   "quintile": 343,
+   "n": 7236,
+   "organizers": 1032,
+   "quintile": 1447,
    "methods": {
-    "Single Choice List": {
-     "top": 0.2303206997084548,
-     "bottom": 0.03206997084548105,
-     "ratio": 7.181818181818182
-    },
-    "Facebook visits": {
-     "top": 0.4956268221574344,
-     "bottom": 0.3673469387755102,
-     "ratio": 1.3492063492063493
-    },
     "YouTube Channel Visits": {
-     "top": 0.5364431486880467,
-     "bottom": 0.40233236151603496,
-     "ratio": 1.3333333333333335
+     "top": 0.5549412577747063,
+     "bottom": 0.4568071872840359,
+     "ratio": 1.2148260211800304
     },
-    "Instagram Profile Visits": {
-     "top": 0.6005830903790087,
-     "bottom": 0.47230320699708456,
-     "ratio": 1.2716049382716048
+    "Twitch Follows": {
+     "top": 0.22460262612301313,
+     "bottom": 0.20041465100207326,
+     "ratio": 1.1206896551724137
     },
-    "X Follows": {
-     "top": 0.6151603498542274,
-     "bottom": 0.6326530612244898,
-     "ratio": 0.9723502304147464
-    },
-    "Bonus": {
-     "top": 0.20699708454810495,
-     "bottom": 0.282798833819242,
-     "ratio": 0.7319587628865979
-    },
-    "X Posts": {
-     "top": 0.0728862973760933,
-     "bottom": 0.13119533527696792,
-     "ratio": 0.5555555555555557
+    "Answer a Question": {
+     "top": 0.09536973047684866,
+     "bottom": 0.0884588804422944,
+     "ratio": 1.078125
     },
     "X Reposts": {
-     "top": 0.1457725947521866,
-     "bottom": 0.2886297376093295,
-     "ratio": 0.5050505050505051
+     "top": 0.2377332411886662,
+     "bottom": 0.22252937111264687,
+     "ratio": 1.0683229813664596
+    },
+    "Instagram Profile Visits": {
+     "top": 0.5570145127850725,
+     "bottom": 0.5224602626123013,
+     "ratio": 1.066137566137566
+    },
+    "X Follows": {
+     "top": 0.6440912232204561,
+     "bottom": 0.6537664132688321,
+     "ratio": 0.9852008456659618
+    },
+    "Secret Code": {
+     "top": 0.13614374568071874,
+     "bottom": 0.14512785072563925,
+     "ratio": 0.9380952380952382
+    },
+    "Custom Actions": {
+     "top": 0.14858327574291638,
+     "bottom": 0.16240497581202487,
+     "ratio": 0.9148936170212767
+    }
+   }
+  },
+  "food_drink": {
+   "n": 1785,
+   "organizers": 419,
+   "quintile": 357,
+   "methods": {
+    "Pinterest Visits": {
+     "top": 0.17086834733893558,
+     "bottom": 0.09523809523809523,
+     "ratio": 1.7941176470588236
+    },
+    "YouTube Channel Visits": {
+     "top": 0.35294117647058826,
+     "bottom": 0.23529411764705882,
+     "ratio": 1.5000000000000002
+    },
+    "Instagram Profile Visits": {
+     "top": 0.6022408963585434,
+     "bottom": 0.49019607843137253,
+     "ratio": 1.2285714285714286
+    },
+    "Facebook visits": {
+     "top": 0.46218487394957986,
+     "bottom": 0.38375350140056025,
+     "ratio": 1.2043795620437956
+    },
+    "X Follows": {
+     "top": 0.36134453781512604,
+     "bottom": 0.31092436974789917,
+     "ratio": 1.162162162162162
+    },
+    "Visit a Page": {
+     "top": 0.5070028011204482,
+     "bottom": 0.47619047619047616,
+     "ratio": 1.0647058823529412
+    },
+    "TikTok Follows": {
+     "top": 0.14285714285714285,
+     "bottom": 0.1484593837535014,
+     "ratio": 0.9622641509433961
+    },
+    "Bonus": {
+     "top": 0.3697478991596639,
+     "bottom": 0.4061624649859944,
+     "ratio": 0.9103448275862069
     }
    }
   },
   "fashion_beauty": {
-   "n": 359,
-   "quintile": 71,
+   "n": 2175,
+   "organizers": 487,
+   "quintile": 435,
    "methods": {
-    "YouTube Channel Visits": {
-     "top": 0.19718309859154928,
-     "bottom": 0.11267605633802817,
-     "ratio": 1.7499999999999998
-    },
-    "Instagram Profile Visits": {
-     "top": 0.39436619718309857,
-     "bottom": 0.29577464788732394,
-     "ratio": 1.3333333333333333
-    },
-    "Bonus": {
-     "top": 0.28169014084507044,
-     "bottom": 0.22535211267605634,
-     "ratio": 1.25
-    },
-    "Email Subscriptions": {
-     "top": 0.6619718309859155,
-     "bottom": 0.5774647887323944,
-     "ratio": 1.146341463414634
+    "Custom Actions": {
+     "top": 0.5563218390804597,
+     "bottom": 0.35402298850574715,
+     "ratio": 1.5714285714285712
     },
     "Facebook visits": {
-     "top": 0.23943661971830985,
-     "bottom": 0.23943661971830985,
-     "ratio": 1.0
+     "top": 0.5218390804597701,
+     "bottom": 0.34022988505747126,
+     "ratio": 1.5337837837837838
     },
-    "Custom Actions": {
-     "top": 0.28169014084507044,
-     "bottom": 0.323943661971831,
-     "ratio": 0.8695652173913043
+    "X Follows": {
+     "top": 0.4413793103448276,
+     "bottom": 0.32413793103448274,
+     "ratio": 1.3617021276595744
+    },
+    "Email Subscriptions": {
+     "top": 0.7816091954022989,
+     "bottom": 0.7195402298850575,
+     "ratio": 1.086261980830671
+    },
+    "Bonus": {
+     "top": 0.2206896551724138,
+     "bottom": 0.2413793103448276,
+     "ratio": 0.9142857142857143
+    },
+    "YouTube Channel Visits": {
+     "top": 0.15632183908045977,
+     "bottom": 0.1724137931034483,
+     "ratio": 0.9066666666666666
     },
     "Pinterest Visits": {
-     "top": 0.09859154929577464,
-     "bottom": 0.1267605633802817,
-     "ratio": 0.7777777777777778
+     "top": 0.08735632183908046,
+     "bottom": 0.1103448275862069,
+     "ratio": 0.7916666666666666
     },
-    "Visit a Page": {
-     "top": 0.3380281690140845,
-     "bottom": 0.43661971830985913,
-     "ratio": 0.7741935483870968
+    "Instagram Profile Visits": {
+     "top": 0.2942528735632184,
+     "bottom": 0.3931034482758621,
+     "ratio": 0.7485380116959064
     }
    }
   }
