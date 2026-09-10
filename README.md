@@ -5,7 +5,7 @@
 
 Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,072 real campaigns. Ten skills cover the whole job: the idea, the prize, the entry actions, the dates, the winners and terms, the promotion calendar, a draw anyone can verify, every message afterwards, a review of the results, and the Gleam settings when you run there. No code to write. Install once, then ask in plain English. Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by Crowd9 Pty Ltd, the company behind [Gleam](https://gleam.io), and the advice fits any giveaway platform, with Gleam raised only when you ask.
 
-The benchmarks come from the 35,668 of those that reached at least 1,000 Entrants, run by 6,402 businesses, holding 58,064 Prize records and 325,000 entry actions.
+Every campaign in it reached at least 100 Entrants, and 25,483 businesses ran them. The main benchmarks come from the 35,668 that reached 1,000 Entrants or more, run by 6,402 businesses, holding 58,064 Prize records and 313,206 entry actions, with a separate 100 to 1,000 band of 112,282 campaigns for a smaller campaign to be read against.
 Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
 
 ## Install
@@ -44,7 +44,7 @@ Someone asks for a giveaway by Friday. The last one pulled 400 addresses that ne
 | [Promotion Plan](#promotion-plan) | "How do I promote it with no ad budget?" | A channel schedule with the posts, the emails for people who entered and people who have not, the replies for comments and DMs, a partner brief, and the retargeting audiences to build once it closes |
 | [Random Draw](#random-draw) | "Pick 3 winners from this CSV" | Winners from a public randomness beacon with an audit record anyone can check |
 | [Winner Communications](#winner-communications) | "The winner hasn't replied" | Every message after the draw, from notification through the welcome series and list hygiene for everyone who did not win |
-| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against 35,000 others and your industry, the actions that pulled their weight, and three changes for next time |
+| [Results Review](#results-review) | "How did our giveaway do?" | Where your campaign ranks against campaigns its own size and your industry, the actions that pulled their weight, and three changes for next time |
 | [Gleam Campaign Setup](#gleam-campaign-setup) | "Walk me through the settings in Gleam" | A checklist in tab order with the documentation page beside every setting |
 
 ### Idea Generator
@@ -70,8 +70,8 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Recommend mode when you have nothing yet, evaluate mode when you want a prize checked or improved
 - Preferred option, two alternatives from different categories, and the tradeoffs between them
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
-- ROI script: cost per contestant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
-- Prize values by category and campaign size from 58,000 real prizes, with sample sizes shown
+- ROI script: cost per Entrant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
+- Prize values by category and campaign size from 58,064 real Prize records, with sample sizes shown
 - A prize description you can paste, and Gleam setup help only when you ask for it
 
 > "Is a PS5 a good prize for our accounting software?"
@@ -84,7 +84,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Uptake by action family from 314,000 real entry actions, and the friction finding that every extra action costs entrants
+- Completion rates by action family from 313,206 real entry actions, and the friction finding that every extra action costs Entrants
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 
@@ -173,7 +173,7 @@ Every message after the draw, in send order, in your voice.
 
 ### Results Review
 
-Your finished campaign read against 35,668 others of the same size, and what to change next time.
+Your finished campaign read against 35,668 others of the same size, or against the 100 to 1,000 band when it is smaller, and what to change next time.
 
 - A script that ranks contestants, impressions, conversion, actions and entries per entrant, pace per day, duration, prize value per contestant, email signups, referrals and follows by network against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - Your own history: this campaign beside your previous ones, the change, and how many it beat
@@ -199,7 +199,7 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 - Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
 - Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
 - The Shopify app: page creation, Open Graph tags, syncing entrants to the customer list with a campaign tag, and the test before launch
-- What entrants did with every Gleam action across 35,668 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
+- What Entrants did with every Gleam action across 35,668 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
 - Gleam's own tips library, attributed, beside that evidence
 
 > "We use Gleam. Email mandatory, Instagram follow optional, US and Canada, 18+, one grand prize and five runner-ups. Walk me through the settings."
@@ -238,9 +238,22 @@ Our giveaway closes Friday. Walk me through a draw our sponsor can verify.
 
 Ask for a plan or ask it to check yours. Every answer states its assumptions, labels what came from the data, and ends with the next decision. You never need the dataset: the skills ship with the findings and paraphrased examples, and the private export is not part of this repository.
 
+## New in 1.5
+
+The dataset behind the skills was rebuilt, and it carries per-action settings the earlier one did not.
+
+- **Entry weight and the mandatory flag.** The planner can now tell you what a weight is worth and what making an action required costs on everything left optional, because the data records both per action for the first time.
+- **Templates.** A campaign can be read against others built from the same Gleam template, and the idea generator can say which template to start from.
+- **Plan tier and business stage.** Benchmarks split by plan, by whether this is a first campaign or a fifteenth, and by the kind of business running it.
+- **Where the traffic came from.** The promotion plan carries a measured traffic mix: which channels sent Entrants, what a shared link is worth, where deals forums fit, what mass mail through Klaviyo and Listrak looks like arriving, and how the traffic falls across a run.
+- **Country and language.** Run length, start hour, weekend starts, Prize structure, opt-in wording and invalid-entry rates, each by the business's own country.
+- **Community size.** Whether a bigger Discord, Telegram or YouTube audience actually came with a bigger campaign, which mostly it did not.
+- **Build lead time.** How long businesses spent between creating a campaign and launching it.
+- **A smaller campaign has peers now.** The 100 to 1,000 Entrant band is published separately, so a 300-Entrant campaign is read against campaigns its own size.
+
 ## Evidence Behind the Advice
 
-Most giveaway advice is somebody's opinion. These skills are built on 35,668 real giveaways from 6,402 organizers, every one of which reached at least 1,000 entrants, with 58,000 prizes and 314,000 entry actions. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
+Most giveaway advice is somebody's opinion. These skills are built on 35,668 real giveaways from 6,402 businesses, every one of which reached at least 1,000 Entrants, with 58,064 Prize records and 313,206 entry actions. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count. Token airdrops and buy-to-enter raffles were set aside so the benchmarks describe ordinary businesses giving away ordinary things.
 
 That data is what lets the skills say things like:
 
@@ -248,10 +261,10 @@ That data is what lets the skills say things like:
 - Every extra entry action costs people. Campaigns with 11 or more actions convert at 32% against 48% for one to three, and draw a quarter fewer entrants (1,760 against 2,305).
 - More than half of all campaigns had between 1,000 and 2,500 entrants and declared a prize pool of about 520 USD. The 10,000-plus campaigns declared 3,000 USD. Small businesses do not need big-brand budgets.
 - Start weekday makes no difference at all. December is the busiest month (n=4,253) and its campaigns still drew more entrants and converted better, 2,342 at 33% against 2,211 at 28% overall. The week before Christmas converts best of any week in the year at 54%, being live over Christmas or New Year came with 6% to 7% better conversion than matched campaigns, and Black Friday week came with 16% worse.
-- A secret code is the only action that came with more entrants at no cost to conversion (2,380 against 2,102, both at 38%, n=588). Sharing actions, in this data, fed entries and left audiences where they were.
+- A Secret Code, shown on a stream, in a newsletter or in store, is the only action that came with more Entrants at no cost to Conversion Rate, about 16% more among campaigns we can compare fairly. Sharing actions, in this data, fed entries and left audiences where they were.
 - The top fifth of campaigns had nine times the impressions of the bottom fifth at the same conversion (35,505 against 4,047, both 28%). Reach separates them. History compounds too: after a campaign over 5,000 entrants, 61% of an organizer's next campaigns reached 5,000 again, against 12% after a smaller one.
-- Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 129 of them did it with a prize under 250 USD.
-- Music and media organizers declared the least prize money per entrant and per address captured, gaming the least per referred entry, and software the most on every count. Brazil and Sweden convert highest of the large organizer countries, the UK sits at 31%.
+- Advent calendars lead every campaign type on both size and conversion. Launches sit below the median and refer more. The campaigns that beat their prize money three times over were run by repeat organizers with a secret code, a Twitch or Discord audience and one hero prize, and 135 of them did it with a prize under 250 USD.
+- Music and media organizers declared the least prize money per entrant and per address captured, and gaming the least per referred entry. Software declared the most per entrant and per address captured, though travel and events pays more per follow and per referred entry. Brazil and Sweden convert highest of the large organizer countries, the UK sits at 32%.
 
 Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the dataset holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 
