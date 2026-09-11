@@ -333,11 +333,15 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 | 10,000+ Entrants | 16.3% | 1,144 |
 | Under 250 Entrants | 6.4% | 8,957 |
 
+<!-- generated:bm_seq_band -->
 | Position in sequence (1,000 to 2,499 Entrants) | Entrants | Entries per Entrant | Organizers |
 |---|---|---|---|
-| 1st | 1,483 | 3.94 | 2,658 |
-| 3rd to 10th | ~900 | — | — |
-| 11th or more | 662 | 6.10 | 377 |
+| 1st | 1,484 | 3.95 | 2,703 |
+| 2nd | 990 | 3.91 | 1,532 |
+| 3rd-5th | 928 | 4.12 | 1,117 |
+| 6th-10th | 900 | 4.30 | 649 |
+| 11th+ | 745 | 5.40 | 374 |
+<!-- /generated -->
 
 | Transition | Typical change in Entrants |
 |---|---|

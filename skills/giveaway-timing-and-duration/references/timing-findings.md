@@ -348,10 +348,22 @@ Entrants run from 2,116 to 2,287 and the Conversion Rate from 27.0% to 29.1% acr
 
 Month moves once, in December, and nowhere else:
 
+<!-- generated:tm_month -->
 | Start month | Conversion Rate | Entrants | Days |
 |---|---|---|---|
-| December (4,253 campaigns, 1,469 businesses) | 33.2% | 2,342 | 10 |
-| Every other month (2,312 to 3,151 campaigns per month, 1,195 to 1,506 businesses) | 26.5% to 28.0% | 2,066 to 2,256 | 15 to 20 |
+| December (12,161 campaigns, 3,987 businesses) | 30.8% | 560 | 10 |
+| November (10,529 campaigns, 3,972 businesses) | 26.9% | 487 | 14 |
+| May (10,114 campaigns, 3,991 businesses) | 26.7% | 477 | 15 |
+| January (7,804 campaigns, 3,390 businesses) | 26.7% | 479 | 15 |
+| March (10,722 campaigns, 4,106 businesses) | 26.6% | 484 | 14 |
+| February (9,352 campaigns, 3,878 businesses) | 26.6% | 474 | 14 |
+| April (9,756 campaigns, 3,928 businesses) | 26.5% | 471 | 14 |
+| October (9,741 campaigns, 3,899 businesses) | 26.5% | 472 | 14 |
+| July (9,229 campaigns, 3,862 businesses) | 26.5% | 499 | 15 |
+| June (9,914 campaigns, 3,867 businesses) | 26.4% | 502 | 15 |
+| August (9,289 campaigns, 3,814 businesses) | 26.3% | 508 | 15 |
+| September (8,737 campaigns, 3,662 businesses) | 25.6% | 494 | 15 |
+<!-- /generated -->
 
 Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 5.2 points and the furthest by 6.7, on a run half to two-thirds the length of the rest of the year.
 
