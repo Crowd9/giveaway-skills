@@ -36,7 +36,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Workflow
 
-1. **Map the plan to the tabs.** Load `references/campaign-setup.md`. Setup tab for name, dates, time zone, fraud level, terms, locations, language. User Details for login, age, verification, subscriber list. How to Enter for actions, mandatory, actions required, daily, entry interval, free entry alternatives. Prize tab for Prizes and Winner counts. Post Entry for the entry email, redirect, pixels.
+1. **Map the plan to the tabs.** Load `references/campaign-setup.md`. Setup tab for name, dates, time zone (set per competition, independent of the account default, so name the value the campaign will use), fraud level, terms, locations, language. User Details for login, age, verification, subscriber list. How to Enter for actions, mandatory, actions required, daily, entry interval, free entry alternatives. Prize tab for Prizes and Winner counts. Post Entry for the entry email, redirect, pixels.
 2. **Answer reporting questions** from `references/reporting-and-fraud.md`: what impressions, actions, entries, users and conversion mean, the Actions tab statuses, the fraud filter, admin entries.
 3. **Answer drawing questions** from `references/drawing-winners.md`: the Winners tab, All Prizes order, date-range draws, repeat Winners, manual Winners, Quick Draws.
 4. **Bring the evidence.** Load `references/settings-evidence.md` for what Entrants did with each Gleam action, the position effect, description length and the config switches, and quote it with the campaign count in brackets.

@@ -29,6 +29,11 @@ The filter analyses 20 or more attributes and marks suspicious entries Invalid f
 
 The documentation describes what the filter does to entries as they arrive. It does not say what happens to entries already collected when the level is changed part way through a campaign, so do not tell a user that raising the level will or will not re-screen what is already in. Say the docs do not cover it, and that the Actions tab is where the entries already collected get reviewed before the draw.
 
+The same holds for what an Entrant sees. The documentation says a flagged entry is marked Invalid, hidden from
+reporting, and that the Entrant is not told. It says nothing about whether the entry form lets them finish, what
+they see on screen, or whether a CAPTCHA appears at that moment. An answer that describes the Entrant's
+experience is inventing it. Describe what the business sees on the Actions tab and stop there.
+
 ## Admin and test entries
 
 [Admin / Test Entries](https://gleam.io/docs/competitions/post-campaign/test-entries)
