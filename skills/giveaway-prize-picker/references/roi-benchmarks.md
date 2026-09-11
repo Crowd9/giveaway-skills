@@ -26,18 +26,21 @@ Crowd per Prize dollar is Entrants against the typical for the stated Prize cost
 
 [All the campaigns behind these numbers: crowd per Prize dollar 1.00 (typical for the money), Conversion Rate 38%, email uptake 98%, referrals 12% of Entrants, repeat businesses 78%.]
 
-| Industry | Campaigns | Entrants | Conversion Rate | Email uptake | Referrals % of Entrants | Crowd per Prize dollar (valued campaigns) | For the money | Stated USD % of Entrants | Repeat businesses | Own product Prize |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Music and media | 5,223 | 2,072 | 33% | 101% | 10 | 1.23 (2,133) | 23% above typical | 17 | 87% | 8% |
-| Gaming | 6,294 | 2,198 | 37% | 76% | 14 | 1.07 (2,000) | 7% above typical | 27 | 74% | 14% |
-| Food and drink | 1,785 | 2,399 | 36% | 88% | 11 | 1.05 (867) | 5% above typical | 26 | 70% | 32% |
-| Home | 1,774 | 2,231 | 40% | 90% | 11 | 0.98 (1,016) | 2% below typical | 32 | 79% | 27% |
-| Travel and events | 1,347 | 2,736 | 36% | 101% | 9 | 0.97 (455) | 3% below typical | 46 | 76% | 33% |
-| Fashion and beauty | 2,175 | 2,440 | 36% | 102% | 12 | 0.95 (895) | 5% below typical | 30 | 72% | 25% |
-| Fitness and outdoor | 3,147 | 2,251 | 35% | 100% | 16 | 0.94 (1,516) | 6% below typical | 39 | 71% | 26% |
-| Technology | 7,236 | 2,261 | 43% | 84% | 20 | 0.91 (2,345) | 9% below typical | 39 | 84% | 32% |
-| Kids, family, pets | 1,662 | 1,825 | 31% | 100% | 11 | 0.89 (524) | 11% below typical | 28 | 73% | 32% |
-| Software | 548 | 1,990 | 31% | 102% | 21 | 0.84 (308) | 16% below typical | 68 | 62% | 20% |
+<!-- generated:roi_verticals -->
+| Industry | Campaigns | Entrants | Conversion Rate | Email uptake | Referrals % of Entrants | Crowd per Prize dollar |
+|---|---|---|---|---|---|---|
+| Music media | 24,965 | 384 | 36% | 1.05 | 8 | 1.15 |
+| Gaming | 24,651 | 397 | 35% | 0.83 | 14 | 0.81 |
+| Unclassified | 16,694 | 427 | 33% | 0.97 | 11 | 0.81 |
+| Technology | 15,589 | 904 | 40% | 0.86 | 20 | 1.20 |
+| Fitness outdoor | 7,801 | 702 | 31% | 1.00 | 14 | 0.99 |
+| Kids family pets | 6,837 | 477 | 29% | 0.95 | 11 | 0.79 |
+| Fashion beauty | 6,465 | 580 | 34% | 1.01 | 11 | 1.17 |
+| Food and drink | 4,682 | 634 | 35% | 0.99 | 12 | 1.17 |
+| Travel and events | 3,979 | 488 | 34% | 1.00 | 8 | 0.79 |
+| Home | 3,713 | 918 | 35% | 0.97 | 11 | 1.46 |
+| Software | 1,752 | 565 | 31% | 1.01 | 22 | 0.75 |
+<!-- /generated -->
 
 Music and media gets the most for its money (23% above typical on crowd per Prize dollar), buys the cheapest Entrants and addresses, and has the most repeat businesses. Gaming holds the second-highest figure, with the most Actions per campaign, Twitch and Discord audiences, and the lowest email uptake of the ten. Software has the highest referral rate and sits lowest on crowd per Prize dollar. Every row is a proxy industry from a homepage label, and none of it says an industry causes a result.
 
@@ -97,18 +100,20 @@ Home and garden and apparel and fashion have the highest Conversion Rate among t
 
 By business type, on the same scope:
 
+<!-- generated:roi_btype -->
 | Business type | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods | Email offered |
 |---|---|---|---|---|---|---|---|---|
-| Brand | 10,870 | 2,439 | 2,127 | 26% | 4.46 | 17 | 8 | 52% |
-| Retailer | 7,769 | 974 | 2,417 | 29% | 4.21 | 15 | 7 | 50% |
-| Media publisher | 4,997 | 584 | 2,006 | 28% | 4.10 | 21 | 6 | 54% |
-| Creator | 3,930 | 962 | 2,297 | 38% | 4.17 | 14 | 6 | 8% |
-| Software | 3,814 | 641 | 2,457 | 23% | 4.85 | 22 | 10 | 41% |
-| Other | 1,548 | 324 | 1,933 | 29% | 5.47 | 18 | 8 | 31% |
-| Service business | 1,056 | 237 | 2,208 | 28% | 3.11 | 16 | 7 | 42% |
-| Agency | 863 | 131 | 2,265 | 29% | 4.86 | 15 | 8 | 35% |
-| Community | 461 | 171 | 1,899 | 28% | 5.45 | 14 | 9 | 17% |
-| Nonprofit | 259 | 89 | 2,070 | 28% | 2.98 | 28 | 7 | 41% |
+| Brand | 30,310 | 5,508 | 595 | 26% | 4.3 | 14 | 7 | 42% |
+| Retailer | 21,600 | 2,251 | 650 | 28% | 4.4 | 14 | 7 | 44% |
+| Media or publisher | 19,995 | 1,447 | 418 | 24% | 4.9 | 18 | 7 | 44% |
+| Creator | 17,852 | 4,097 | 346 | 34% | 4.3 | 12 | 6 | 5% |
+| Software | 10,271 | 1,756 | 671 | 23% | 4.8 | 14 | 8 | 27% |
+| Other | 6,288 | 1,728 | 385 | 29% | 4.3 | 12 | 7 | 21% |
+| Service business | 3,802 | 760 | 364 | 24% | 3.4 | 12 | 7 | 33% |
+| Agency | 2,903 | 330 | 423 | 26% | 4.4 | 12 | 8 | 24% |
+| Community | 2,725 | 639 | 306 | 28% | 5.3 | 14 | 9 | 13% |
+| Nonprofit | 951 | 270 | 393 | 27% | 3.3 | 16 | 7 | 33% |
+<!-- /generated -->
 
 Creators have the highest Conversion Rate (38%), rarely offer email (8%), and run the shortest campaigns (14 days, tied with community). Nonprofits run the longest (28 days).
 

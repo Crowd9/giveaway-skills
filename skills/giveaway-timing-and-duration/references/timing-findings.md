@@ -35,13 +35,15 @@ Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=116,491). By campai
 
 Experience tracks a better Conversion Rate: businesses on their eleventh campaign or later get 41% of viewers to enter, against 32% on a first campaign, looking only at the campaigns we can compare fairly (no repeatable action, a run of 14 days or less).
 
+<!-- generated:tm_experience -->
 | Campaign number | Entrants | Conversion Rate |
 |---|---|---|
-| First (1,098 campaigns) | 2,028 | 32% |
-| Second | 2,000.5 | 34% |
-| Third to fifth | 2,094 | 34% |
-| Sixth to tenth | 2,067 | 35% |
-| Eleventh or later (6,516 campaigns) | 2,148.5 | 41% |
+| 11th+ | 514 | 27% |
+| 1st | 381 | 26% |
+| 2nd | 436 | 26% |
+| 3rd-5th | 500 | 27% |
+| 6th-10th | 546 | 27% |
+<!-- /generated -->
 
 These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
 
@@ -75,15 +77,17 @@ Running two campaigns at once did not hurt the typical case, and the momentum fi
 
 Close day of the week, all the campaigns behind these numbers:
 
+<!-- generated:tm_close_day -->
 | Close day | Campaigns | Entrants | Conversion Rate |
 |---|---|---|---|
-| Monday | 6,263 | 2,234 | 27% |
-| Friday | 5,553 | 2,197 | 28% |
-| Tuesday | 4,934 | 2,199 | 27% |
-| Thursday | 4,890 | 2,260 | 28% |
-| Wednesday | 4,881 | 2,194 | 28% |
-| Saturday | 4,673 | 2,228 | 28% |
-| Sunday | 4,420 | 2,162 | 28% |
+| Monday | 20,244 | 498 | 27% |
+| Friday | 17,857 | 504 | 27% |
+| Thursday | 16,144 | 509 | 27% |
+| Sunday | 16,085 | 454 | 27% |
+| Tuesday | 15,886 | 497 | 26% |
+| Wednesday | 15,685 | 505 | 27% |
+| Saturday | 15,227 | 475 | 26% |
+<!-- /generated -->
 
 Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the dataset, so pick the close time for your audience and your own working hours.
 
