@@ -432,7 +432,7 @@ and drops on either side, and the shape repeats three times:
 
 One required action goes with 25% to 33% more Entrants than requiring none, and 32% to 83% more than requiring
 two. Three separate bands landing on the same shape is worth more than any one of them, and the groups are large:
-the smallest cell holds 1,909 campaigns from 437 businesses.
+the smallest cell holds 1,908 campaigns from 436 businesses.
 
 Read it as the signature of a campaign built around one asset. A business that requires exactly one action has
 usually decided what the campaign is for and put a push behind it, where requiring none leaves the entry free and
