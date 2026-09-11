@@ -26,7 +26,7 @@ Every script reads the campaign analysis through `load.connect()` and most start
 
 | Question | Script | Output |
 |---|---|---|
-| Load and shared scope | `load.py`, `frame.py`, `convert.py`, `contestants.py`, `sources.py` | the the query engine views |
+| Load and shared scope | `load.py`, `frame.py` | the the query engine views and the shared `ordinary` scope |
 | Headline benchmarks | `analyze.py`, `percentiles.py`, `compare_groups.py`, `verify_context.py` | benchmarks, percentiles, comparisons, context_checks |
 | Prize | `prize_timing_cuts.py`, `prize_economics.py`, `prize_values.py`, `roi_benchmarks.py` | prize_timing_cuts, prize_economics, the prize picker's values file, roi_benchmarks |
 | Entry methods | `field_cuts.py`, `method_mix.py`, `gleam_settings.py`, `extra_cuts.py` | field_cuts, method_mix, gleam_settings, extra_cuts |
@@ -34,7 +34,7 @@ Every script reads the campaign analysis through `load.connect()` and most start
 | Organizer and industry | `industries.py`, `vertical_profiles.py`, `indicators.py`, `country_cuts.py`, `organizer_history.py` | industries, vertical_profiles, indicators, country_cuts, organizer_history |
 | Timing | `campaign_types.py`, `holidays.py`, `week_calendar.py` | campaign_types, holidays, calendar, calendar_names |
 | Traffic and text | `email_traffic.py`, `text_and_context.py`, `hook_patterns.py`, `template_cuts.py` | email_traffic, text_and_context, hook_patterns, templates |
-| Organizer enrichment | `build tooling.py`, `build tooling.py`, `build tooling.py` | the gitignored label and enrichment caches |
+| Organizer enrichment | not published | the gitignored label and enrichment caches |
 | Publishing | `render_reference_tables.py`, `defaults.py` | the generated tables in the skills and `defaults/*.json` |
 
 Before adding a script, check this table. A question that fits an existing row belongs in that script.
@@ -111,4 +111,6 @@ The inputs are private and are not distributed. Every script takes the converted
 
 ## Organizer Labels and Enrichment
 
-Every organizer host carries an industry, business type, niche, stage and audience, plus company facts from public sources keyed on the public pages of that host. The scripts behind them are not published, and every cache they write is gitignored.
+Every organizer host carries an industry, business type, niche, stage and audience. Company facts (organization scale, domain age, store platform, social channel size) come from public sources keyed on the host's own public homepage and public profile pages. The scripts that fetch and build these labels are not published, and every cache they write is gitignored.
+
+`industries.json` reports medians by industry, business type, store platform, niche, organizer stage, audience, organizer scale, plan tier, widget language, domain age, marketing stack, social channel size band, country and topic. Every row needs at least five distinct organizers, so no row describes one company.
