@@ -115,13 +115,15 @@ Every family sees fewer Entrants complete it the further down the list it sits, 
 
 Words in the campaign description, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
 
+<!-- generated:gs_desc_length -->
 | Words | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|---|
-| none | 2,015 | 436 | 2,333 | 41% | 2.97 |
-| 1-25 words | 2,643 | 856 | 2,123 | 40% | 3.88 |
-| 26-75 words | 8,451 | 2,263 | 2,399 | 36% | 4.56 |
-| 76-150 words | 6,924 | 1,721 | 2,638 | 37% | 5.36 |
-| 151+ words | 2,705 | 829 | 2,585 | 34% | 5.28 |
+| 0-25 | 14,906 | 2,986 | 418 | 39% | 3.47 |
+| 26-75 | 15,061 | 3,926 | 422 | 32% | 3.82 |
+| 76-150 | 7,227 | 2,054 | 590 | 33% | 3.95 |
+| 151-300 | 2,388 | 649 | 626 | 33% | 3.82 |
+| 301+ | 268 | 78 | 330 | 29% | 4.15 |
+<!-- /generated -->
 
 No description and short descriptions sit with the simplest campaigns, which also see the highest share of viewers enter, so the 41% says as much about the campaign as the copy. Longer descriptions run with more actions and more actions per Entrant. Source: `analysis/output/field_cuts.json` `by_description_length`.
 

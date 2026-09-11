@@ -53,14 +53,15 @@ A shorter first campaign is part of that pattern too: businesses that went on to
 
 Gap since the business's previous campaign, all the campaigns behind these numbers:
 
-| Cadence | Campaigns | Entrants | Actions per Entrant | Conversion Rate |
+<!-- generated:tm_cadence -->
+| Campaign number | Campaigns | Entrants | Actions per Entrant | Conversion Rate |
 |---|---|---|---|---|
-| first | 4,659 | 2,148 | 3.85 | 27% |
-| monthly or faster | 20,359 | 2,162 | 4.50 | 30% |
-| 31-60 | 4,040 | 2,269 | 4.52 | 26% |
-| 61-120 | 3,107 | 2,399 | 4.30 | 26% |
-| 121-365 | 2,692 | 2,404 | 4.13 | 26% |
-| over a year | 757 | 2,229 | 3.73 | 25% |
+| 1st | 17,384 | 381 | 3.68 | 26% |
+| 2nd | 8,509 | 436 | 3.86 | 26% |
+| 3rd-5th | 14,333 | 500 | 4.04 | 27% |
+| 6th-10th | 12,887 | 546 | 4.18 | 27% |
+| 11th+ | 64,235 | 514 | 4.91 | 27% |
+<!-- /generated -->
 
 Campaign size repeats: after a big campaign, the next one tends to be big too, across 21,284 consecutive pairs from the same business.
 
