@@ -438,6 +438,8 @@ Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/ind
 
 `field_cuts.json`'s `by_band_all` covers every campaign with a contestant count, so each band has its own benchmark row. Counts are exact: the contestant dump covers the 100 to 1,000 range, so nothing here is modelled.
 
+Read the campaign counts in this table on their own terms. `by_band_all` is the whole platform at the floor, before the crypto, ambiguous and purchase-only campaigns are set aside, so its rows add up to far more than the ordinary population every other table in this file describes. Use it to place a campaign in its band, and take the benchmark a campaign is judged against from the tables above.
+
 | Size | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
 | 100 to 250 | 47,150 | 13,254 | 160 | 27% | 4.46 | 9 | 6 | 17% | 30% |
