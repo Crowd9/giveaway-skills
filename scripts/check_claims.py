@@ -293,10 +293,13 @@ def self_test():
     src = os.path.join(ROOT, "skills", "giveaway-idea-generator", "references", "hooks-and-themes.md")
     assert not check(src), f"the live file should be clean: {check(src)}"
     text = open(src, encoding="utf-8").read()
-    planted = text.replace(
-        "- **Product launches** draw a little more crowd than typical at 547 Entrants against 492,",
-        "- **Product launches** sit below the typical figure on Entrants,", 1)
-    assert planted != text, "the planted fault did not apply, the sentence has moved"
+    # Anchor on the shape of the sentence, never on its figures. Pinning the exact numbers meant every honest
+    # correction to the prose broke this self-test, and it stayed broken through several pushes because the
+    # gate sweep ran the checks without running their self-tests.
+    planted, n_sub = re.subn(
+        r"- \*\*Product launches\*\* draw a little more crowd than typical at [\d,]+ Entrants against [\d,]+,",
+        "- **Product launches** sit below the typical figure on Entrants,", text, count=1)
+    assert n_sub == 1, "the planted fault did not apply, the sentence has moved"
     tmp = os.path.join(ROOT, ".planted-check.md")
     open(tmp, "w").write(planted)
     try:
