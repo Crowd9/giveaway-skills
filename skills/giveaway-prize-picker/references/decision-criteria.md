@@ -153,6 +153,33 @@ For campaigns with an email action and every Prize valued in USD, the stated poo
 | Home, garden, appliance | 604 | 0.49 |
 | Placeholder Prize name | 496 | 0.56 |
 
+## What another dollar of Prize money is worth (extracted)
+
+Split the campaigns that put a USD value on every Prize into ten equal groups by Prize pool and the crowd rises
+with the money, slowly:
+
+| Prize pool tenth | Campaigns | Typical pool USD | Typical Entrants |
+|---|---|---|---|
+| lowest | 4,301 | 20 | 272 |
+| third | 4,301 | 90 | 313 |
+| fifth | 4,300 | 227 | 522 |
+| seventh | 4,300 | 550 | 809 |
+| ninth | 4,300 | 1,850 | 1,518 |
+| highest | 4,300 | 4,600 | 2,020 |
+
+230 times the Prize money goes with 7.4 times the Entrants. Put another way, doubling the Prize budget goes with
+about 29% more Entrants. That is the weaker of the two levers this data can separate: doubling the traffic put in
+front of the page goes with about 40% more, which is the figure in the promotion reference. Neither is a promise,
+and the two are in different units. What the data supports is the ordering. Where a business is deciding
+between a bigger Prize and a bigger push, the Prize is the slower of the two.
+
+Three limits, all of which matter here. Only 38% of campaigns valued every Prize, so this describes the
+businesses organised enough to fill the field. A bigger Prize goes with a bigger business and a bigger audience,
+so the Prize money is not what bought the crowd. And the bottom tenth sits at a 20 USD pool. That is a different kind of campaign, and reading the range as one
+smooth curve overstates it.
+
+Source: `analysis/output/prize_elasticity.json`.
+
 ## Budget template
 
 Label every figure an estimate. Verify current prices when a tool is available and the number matters.

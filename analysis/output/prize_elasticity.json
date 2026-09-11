@@ -1,0 +1,75 @@
+{
+ "definitions": {
+  "scope": "campaigns with 100 or more Entrants that put a USD value on every Prize, ordinary population",
+  "method": "campaigns split into ten equal groups by stated Prize pool; the elasticity is the log ratio of the top group's Entrants to the bottom group's over the same ratio of Prize money",
+  "limit": "a bigger Prize goes with a bigger business and a bigger audience, so this describes campaigns at each Prize level and never what raising a Prize would do"
+ },
+ "by_pool_tenth": {
+  "1": {
+   "campaigns": 4301,
+   "businesses": 701,
+   "pool_usd": 20,
+   "contestants": 272
+  },
+  "2": {
+   "campaigns": 4301,
+   "businesses": 1060,
+   "pool_usd": 50,
+   "contestants": 298
+  },
+  "3": {
+   "campaigns": 4301,
+   "businesses": 1493,
+   "pool_usd": 90,
+   "contestants": 312
+  },
+  "4": {
+   "campaigns": 4301,
+   "businesses": 1551,
+   "pool_usd": 150,
+   "contestants": 371
+  },
+  "5": {
+   "campaigns": 4300,
+   "businesses": 1612,
+   "pool_usd": 227,
+   "contestants": 522
+  },
+  "6": {
+   "campaigns": 4300,
+   "businesses": 1839,
+   "pool_usd": 360,
+   "contestants": 648
+  },
+  "7": {
+   "campaigns": 4300,
+   "businesses": 1962,
+   "pool_usd": 550,
+   "contestants": 811
+  },
+  "8": {
+   "campaigns": 4300,
+   "businesses": 2012,
+   "pool_usd": 1000,
+   "contestants": 1046
+  },
+  "9": {
+   "campaigns": 4300,
+   "businesses": 1680,
+   "pool_usd": 1850,
+   "contestants": 1518
+  },
+  "10": {
+   "campaigns": 4300,
+   "businesses": 1775,
+   "pool_usd": 4600,
+   "contestants": 2020
+  }
+ },
+ "elasticity": {
+  "prize_money_multiple": 230.0,
+  "contestant_multiple": 7.42,
+  "log_elasticity": 0.369,
+  "entrants_from_doubling_the_prize": 1.291
+ }
+}
