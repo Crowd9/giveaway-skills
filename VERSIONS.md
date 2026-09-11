@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.28 |
-| giveaway-entry-method-planner | 1.2.28 |
-| giveaway-timing-and-duration | 1.4.26 |
-| giveaway-winner-structure | 1.3.24 |
-| giveaway-promotion-plan | 1.3.28 |
-| giveaway-random-draw | 1.3.22 |
-| giveaway-winner-communications | 1.2.22 |
-| giveaway-idea-generator | 1.3.25 |
-| giveaway-results-review | 1.5.29 |
-| gleam-campaign-setup | 1.2.26 |
+| giveaway-prize-picker | 1.3.29 |
+| giveaway-entry-method-planner | 1.2.29 |
+| giveaway-timing-and-duration | 1.4.27 |
+| giveaway-winner-structure | 1.3.25 |
+| giveaway-promotion-plan | 1.3.29 |
+| giveaway-random-draw | 1.3.23 |
+| giveaway-winner-communications | 1.2.23 |
+| giveaway-idea-generator | 1.3.26 |
+| giveaway-results-review | 1.5.30 |
+| gleam-campaign-setup | 1.2.27 |
 
 ## Skills
 
@@ -51,6 +51,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.28 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.3.29 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-entry-method-planner
 
@@ -85,6 +86,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.27 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do about follows that lapse after a campaign.
 - 1.2.28 (2026-09-12): Some Entrants leaving after a campaign is normal, and the two things that decide how many are the reason to stay and whether the Prize had anything to do with the business.
+- 1.2.29 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-timing-and-duration
 
@@ -120,6 +122,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.4.25 (2026-09-12): The Black Friday close date names the Wednesday, since closing on Thanksgiving puts the draw on Black Friday morning.
 - 1.4.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.4.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-winner-structure
 
@@ -148,6 +151,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.22 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.23 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.24 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.3.25 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-promotion-plan
 
@@ -179,6 +183,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.28 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do when almost nobody has entered.
+- 1.3.29 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-random-draw
 
@@ -204,6 +209,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.3.23 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-winner-communications
 
@@ -230,6 +236,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.2.23 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-idea-generator
 
@@ -263,6 +270,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.25 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.3.26 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### giveaway-results-review
 
@@ -303,6 +311,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.27 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.5.29 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.5.30 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
 ### gleam-campaign-setup
 
@@ -323,6 +332,21 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.24 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
+- 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 2.2.1 (2026-09-12)
+
+A number that belongs to somebody else no longer gets stored here. Permit thresholds, plan limits, platform
+rules, prices, fees and turnaround times all change without telling us, and a stale figure in a reference is
+worse than no figure, because it reads as checked.
+
+The repo was already proving the point. A set of plan name limits sat in three reference files, copied from a
+page dated 4 May 2025, sixteen months old, behind a note saying to re-check before quoting. That note does not
+work: the number is right there and gets quoted. The limits are gone and the reader is sent to the page.
+
+What these files are for is the campaign data, which is the one thing a reader's own assistant cannot look up.
+For anything external the reference now names the thing to check, says why it changes the plan, links the
+source and stops.
 
 ## 2.2.0 (2026-09-12)
 

@@ -2,7 +2,7 @@
 name: giveaway-promotion-plan
 description: "Plan how a giveaway gets seen: channel-by-channel schedule, post and story templates, the email sequence (launch, mid, last call, Winners), partner and creator briefs, paid boosts, and what to reuse afterwards. Use when the user asks 'how do I promote my giveaway', 'nobody is entering', 'promotion plan', 'launch posts', 'giveaway email sequence', 'what do I email people who entered', 'partner brief', 'should I boost the post', 'giveaway content calendar', 'what do I reply to comments', 'someone is impersonating us', or has a Prize and dates but no plan to reach people. Platform-neutral. For run length see giveaway-timing-and-duration. For what Entrants do see giveaway-entry-method-planner."
 metadata:
-  version: 1.3.28
+  version: 1.3.29
 ---
 
 # Giveaway Promotion Plan
@@ -77,6 +77,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 - A share is not a ranking, and a benchmark keeps the unit it was measured in. Direct traffic at 52% of Impressions says where Impressions came from across the campaigns measured, never that a front desk outdraws a social platform for this reader. Crowd per Prize dollar is a USD measure, so quoting it as crowd per pound or per euro changes what the number means. Say the unit, and where the reader's currency differs, convert and say the rate.
 - Before writing any superlative, the most, the largest, the best, the cheapest, sort the column in the table you have open and check. A superlative is the claim most likely to be wrong and the easiest to verify, and the table is already loaded.
 - Read the column header before quoting a cell. A rate per Entrant is not a share of campaigns. "Email signups per Entrant, where offered" at 0.96 means the campaigns offering it saw about 96 signups per 100 Entrants, never that 96% of campaigns offered it.
+- **Never store a number that belongs to somebody else.** A permit threshold, a plan limit, a platform's rule, a price, a fee, a turnaround: every one of these changes without telling us, and a stale figure in a reference is worse than no figure, because it reads as checked. The reader's own assistant can look up a current value in seconds. What it cannot look up is the campaign data, so that is what these files are for. Carry the shape of the question instead: that Australian trade promotion permits are state based, turn on the Prize value and take time to get, so a campaign open to Australia needs the current threshold for each state checked before the dates are set. Name the thing to look up, say why it changes the plan, link the source, and stop. A caveat next to a stored number does not work, because the number is right there and gets quoted.
 - **When the data cannot answer the question, answer it with practice.** Saying "the dataset does not cover 
   that" and stopping leaves the reader exactly where they started, holding a real problem. Give them what to 
   do, and label it: "common practice, nothing in the data covers it". An impersonator copying the campaign 

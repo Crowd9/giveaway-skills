@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Set up, run and report on a giveaway in Gleam Competitions, citing the official documentation: the Setup, User Details, How to Enter, Prize and Post Entry tabs, mandatory and daily actions, free entry alternatives, fraud filter levels, terms, allowed locations, reporting definitions, the Actions tab, drawing Winners, repeat Winners, admin entries and Quick Draws. Use when the user says they use Gleam and asks 'how do I set this up in Gleam', 'where is the fraud setting', 'how does the Gleam draw work', 'what does impressions mean in Gleam', 'Gleam terms and conditions', 'mandatory action', 'daily entries', 'export entries from Gleam', 'Gleam on Shopify', or wants a plan from the other giveaway skills translated into Gleam settings. For the plan itself use the platform-neutral skills first."
 metadata:
-  version: 1.2.26
+  version: 1.2.27
 ---
 
 # Gleam Campaign Setup
@@ -70,6 +70,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 - A share is not a ranking, and a benchmark keeps the unit it was measured in. Direct traffic at 52% of Impressions says where Impressions came from across the campaigns measured, never that a front desk outdraws a social platform for this reader. Crowd per Prize dollar is a USD measure, so quoting it as crowd per pound or per euro changes what the number means. Say the unit, and where the reader's currency differs, convert and say the rate.
 - Before writing any superlative, the most, the largest, the best, the cheapest, sort the column in the table you have open and check. A superlative is the claim most likely to be wrong and the easiest to verify, and the table is already loaded.
 - Read the column header before quoting a cell. A rate per Entrant is not a share of campaigns. "Email signups per Entrant, where offered" at 0.96 means the campaigns offering it saw about 96 signups per 100 Entrants, never that 96% of campaigns offered it.
+- **Never store a number that belongs to somebody else.** A permit threshold, a plan limit, a platform's rule, a price, a fee, a turnaround: every one of these changes without telling us, and a stale figure in a reference is worse than no figure, because it reads as checked. The reader's own assistant can look up a current value in seconds. What it cannot look up is the campaign data, so that is what these files are for. Carry the shape of the question instead: that Australian trade promotion permits are state based, turn on the Prize value and take time to get, so a campaign open to Australia needs the current threshold for each state checked before the dates are set. Name the thing to look up, say why it changes the plan, link the source, and stop. A caveat next to a stored number does not work, because the number is right there and gets quoted.
 - **When the data cannot answer the question, answer it with practice.** Saying "the dataset does not cover 
   that" and stopping leaves the reader exactly where they started, holding a real problem. Give them what to 
   do, and label it: "common practice, nothing in the data covers it". An impersonator copying the campaign 
