@@ -235,17 +235,17 @@ Most giveaway advice is somebody's opinion. These skills are built on 117,348 re
 
 Some of what that shows:
 
-- **Small is normal.** The biggest group of campaigns is the smallest one. 28% drew 100 to 250 Entrants, on a declared Prize pool of about 120 USD.
-- **Run the next one within 30 days.** A campaign starting within 30 days of the business's last one drew 470 Entrants against 333 for a first campaign. Both groups already run giveaways constantly.
-- **A long Action list costs Conversion Rate.** Campaigns carrying 11 or more entry Actions converted 31% of their viewers, against 44% for a campaign carrying one to three. They drew more Entrants anyway.
-- **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.
-- **Success compounds.** After a campaign over 5,000 Entrants, 61% of a business's next campaigns reached 5,000 again, against 12% after a smaller one.
-- **December is the busiest month and it converts best.** December campaigns converted 30.8% of their viewers, against 26.9% across the year, and drew more Entrants with it.
-- **The two weeks before Christmas convert best of any week, at 41%.** Black Friday week is the one to avoid, 11% below matched campaigns.
+- **Small is normal.** 28% of campaigns drew 100 to 250 Entrants, on a declared Prize pool of about 120 USD. That is the biggest group in the data.
+- **Run the next one within 30 days.** Businesses that did drew 41% more Entrants than a first campaign, and converted better with it, 38% of viewers against 31%. Both figures come from businesses that run giveaways often.
+- **A long Action list costs you Conversion Rate.** Campaigns carrying 11 or more entry Actions drew 17% more Entrants, and converted 31% of viewers against 44% for a short list.
+- **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, and converted about two points better. Getting seen is the lever.
+- **Success compounds.** After a campaign over 5,000 Entrants, 61% of a business's next campaigns reached 5,000 again. After a smaller one, 12% did.
+- **December is the busiest month, and it converts best.** Its campaigns converted 30.8% of viewers against 26.9% across the year, and drew more Entrants too.
+- **The two weeks before Christmas convert best of any week, at 41%.** Black Friday week is the one to avoid, 11% worse than comparable campaigns outside it.
 - **Start weekday makes no difference at all.** A weekend start draws about a tenth fewer Entrants.
-- **A Secret Code is the one Action that costs nothing.** Shown on a stream, in a newsletter or in store, it came with about 16% more Entrants and no drop in Conversion Rate. Sharing Actions fed Entries and left audiences where they were.
+- **A Secret Code costs you nothing.** Shown on a stream, in a newsletter or in store, it drew about 16% more Entrants at no cost to Conversion Rate, and it is the only Action that did. Sharing Actions fed Entries and left audiences where they were.
 - **Advent calendars draw a crowd, cash converts one.** An advent calendar drew 22% more Entrants than the typical campaign. Cash converted 61% of its viewers, the highest of any campaign type.
-- **Four traits mark the campaigns that beat their Prize money three times over.** An email Action, a repeatable Action, a long Action list and one hero Prize. A cheap Prize is the trait they carried least often, on 33% of them against 49% of everyone else.
+- **The campaigns that beat their Prize money three times over shared four traits.** An email Action, a repeatable Action, a long Action list and one hero Prize. A cheap Prize is the trait they carried least often, on 33% of them against 49% of everyone else.
 - **Read a country's Conversion Rate with care.** Brazil tops the table at 59%, and 90% of its campaigns are single-day repeats, so that rate follows automation. Among the countries with real volume the UK sits at 30.5%.
 
 Every finding describes what businesses chose, never what caused participation, because the dataset holds no failed campaigns to compare against. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count in the references. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md). `analysis/output/` holds the aggregate files every figure is drawn from, and the scripts that produced them are not published.
