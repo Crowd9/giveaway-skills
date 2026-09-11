@@ -30,7 +30,7 @@ The filter analyses 20 or more attributes and marks suspicious entries Invalid f
 **What an invalid share normally looks like (extracted).** The level a campaign ran on is not in the data, so
 nothing here says what any level produced. What it does give a reader is the yardstick for their own number:
 
-| Invalid entries as a share of all entries | |
+| Invalid entries as a share of all entries | Share |
 |---|---|
 | Lower quarter of campaigns | 1.1% |
 | Typical | 4.2% |

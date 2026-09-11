@@ -49,24 +49,24 @@
   "bundle_or_box": {
    "100-250": {
     "median": 100.0,
-    "n": 1624,
-    "organizers": 707,
+    "n": 1618,
+    "organizers": 706,
     "p25": 45,
     "p75": 230
    },
    "10k+": {
-    "median": 1000.0,
-    "n": 139,
-    "organizers": 65,
+    "median": 918.0,
+    "n": 138,
+    "organizers": 64,
     "p25": 208,
     "p75": 2693
    },
    "1k-2.5k": {
-    "median": 275.0,
-    "n": 1195,
-    "organizers": 548,
+    "median": 280.0,
+    "n": 1192,
+    "organizers": 545,
     "p25": 100,
-    "p75": 687
+    "p75": 695
    },
    "2.5k-10k": {
     "median": 398.0,
@@ -77,8 +77,8 @@
    },
    "250-500": {
     "median": 100.0,
-    "n": 1407,
-    "organizers": 614,
+    "n": 1404,
+    "organizers": 612,
     "p25": 50,
     "p75": 270
    },
@@ -92,9 +92,9 @@
   },
   "discount_or_coupon": {
    "100-250": {
-    "median": 60.0,
-    "n": 84,
-    "organizers": 50,
+    "median": 70.0,
+    "n": 83,
+    "organizers": 49,
     "p25": 20,
     "p75": 150
    },
@@ -139,15 +139,15 @@
   "experience_travel_tickets": {
    "100-250": {
     "median": 199.0,
-    "n": 622,
-    "organizers": 314,
+    "n": 618,
+    "organizers": 313,
     "p25": 99,
-    "p75": 520
+    "p75": 550
    },
    "10k+": {
     "median": 3000.0,
-    "n": 46,
-    "organizers": 36,
+    "n": 45,
+    "organizers": 35,
     "p25": 500,
     "p75": 5187
    },
@@ -227,29 +227,29 @@
    },
    "10k+": {
     "median": 53.0,
-    "n": 276,
-    "organizers": 39,
+    "n": 274,
+    "organizers": 38,
     "p25": 23,
-    "p75": 294
+    "p75": 290
    },
    "1k-2.5k": {
     "median": 60.0,
-    "n": 868,
-    "organizers": 204,
+    "n": 866,
+    "organizers": 202,
     "p25": 24,
     "p75": 200
    },
    "2.5k-10k": {
     "median": 60.0,
-    "n": 1004,
-    "organizers": 110,
+    "n": 1003,
+    "organizers": 109,
     "p25": 19,
-    "p75": 215
+    "p75": 212
    },
    "250-500": {
     "median": 55.0,
-    "n": 1235,
-    "organizers": 354,
+    "n": 1233,
+    "organizers": 352,
     "p25": 25,
     "p75": 120
    },
@@ -264,43 +264,43 @@
   "gift_card_or_cash": {
    "100-250": {
     "median": 50.0,
-    "n": 3391,
-    "organizers": 1243,
+    "n": 3350,
+    "organizers": 1235,
     "p25": 20,
     "p75": 100
    },
    "10k+": {
     "median": 500.0,
-    "n": 259,
-    "organizers": 85,
-    "p25": 239,
+    "n": 252,
+    "organizers": 83,
+    "p25": 250,
     "p75": 1000
    },
    "1k-2.5k": {
     "median": 100.0,
-    "n": 2002,
-    "organizers": 722,
+    "n": 1997,
+    "organizers": 720,
     "p25": 50,
     "p75": 300
    },
    "2.5k-10k": {
     "median": 250.0,
-    "n": 1076,
-    "organizers": 394,
+    "n": 1063,
+    "organizers": 391,
     "p25": 100,
-    "p75": 700
+    "p75": 659
    },
    "250-500": {
     "median": 50.0,
-    "n": 3732,
-    "organizers": 909,
+    "n": 3725,
+    "organizers": 905,
     "p25": 15,
     "p75": 100
    },
    "500-1k": {
     "median": 50.0,
-    "n": 2385,
-    "organizers": 741,
+    "n": 2382,
+    "organizers": 738,
     "p25": 25,
     "p75": 200
    }
@@ -352,8 +352,8 @@
   "merch_apparel_collectible": {
    "100-250": {
     "median": 40.0,
-    "n": 678,
-    "organizers": 301,
+    "n": 677,
+    "organizers": 300,
     "p25": 20,
     "p75": 100
    },
@@ -366,8 +366,8 @@
    },
    "1k-2.5k": {
     "median": 110.0,
-    "n": 285,
-    "organizers": 155,
+    "n": 283,
+    "organizers": 154,
     "p25": 40,
     "p75": 260
    },
@@ -426,43 +426,43 @@
   "other_unclassified": {
    "100-250": {
     "median": 60.0,
-    "n": 4792,
-    "organizers": 1754,
+    "n": 4719,
+    "organizers": 1718,
     "p25": 25,
     "p75": 200
    },
    "10k+": {
-    "median": 484.0,
-    "n": 249,
-    "organizers": 104,
-    "p25": 149,
-    "p75": 1300
+    "median": 500.0,
+    "n": 236,
+    "organizers": 97,
+    "p25": 150,
+    "p75": 1400
    },
    "1k-2.5k": {
-    "median": 200.0,
-    "n": 2878,
-    "organizers": 1038,
-    "p25": 79,
-    "p75": 500
+    "median": 204.0,
+    "n": 2832,
+    "organizers": 1016,
+    "p25": 80,
+    "p75": 506
    },
    "2.5k-10k": {
-    "median": 300.0,
-    "n": 2029,
-    "organizers": 596,
-    "p25": 140,
+    "median": 325.0,
+    "n": 1975,
+    "organizers": 574,
+    "p25": 149,
     "p75": 1000
    },
    "250-500": {
     "median": 99.0,
-    "n": 3140,
-    "organizers": 1211,
+    "n": 3088,
+    "organizers": 1185,
     "p25": 38,
     "p75": 250
    },
    "500-1k": {
     "median": 129.0,
-    "n": 2855,
-    "organizers": 1114,
+    "n": 2821,
+    "organizers": 1096,
     "p25": 50,
     "p75": 325
    }
@@ -470,22 +470,22 @@
   "placeholder_name": {
    "100-250": {
     "median": 100.0,
-    "n": 452,
-    "organizers": 182,
+    "n": 450,
+    "organizers": 180,
     "p25": 40,
     "p75": 483
    },
    "10k+": {
     "median": 800.0,
-    "n": 125,
-    "organizers": 32,
+    "n": 122,
+    "organizers": 31,
     "p25": 100,
     "p75": 2030
    },
    "1k-2.5k": {
-    "median": 199.0,
-    "n": 400,
-    "organizers": 140,
+    "median": 200.0,
+    "n": 399,
+    "organizers": 139,
     "p25": 50,
     "p75": 600
    },
@@ -497,9 +497,9 @@
     "p75": 950
    },
    "250-500": {
-    "median": 143.0,
-    "n": 304,
-    "organizers": 125,
+    "median": 150.0,
+    "n": 303,
+    "organizers": 124,
     "p25": 50,
     "p75": 500
    },
@@ -534,10 +534,10 @@
     "p75": 1500
    },
    "2.5k-10k": {
-    "median": 1154.0,
-    "n": 262,
-    "organizers": 66,
-    "p25": 630,
+    "median": 1200.0,
+    "n": 261,
+    "organizers": 65,
+    "p25": 635,
     "p75": 2000
    },
    "250-500": {
@@ -557,8 +557,8 @@
   },
   "sports_outdoor_gear": {
    "100-250": {
-    "median": 165.0,
-    "n": 148,
+    "median": 170.0,
+    "n": 147,
     "organizers": 95,
     "p25": 79,
     "p75": 360
@@ -616,8 +616,8 @@
    },
    "250-500": {
     "median": 124.0,
-    "n": 222,
-    "organizers": 122,
+    "n": 221,
+    "organizers": 121,
     "p25": 60,
     "p75": 399
    },
@@ -632,45 +632,45 @@
   "tech_hardware": {
    "100-250": {
     "median": 150.0,
-    "n": 1521,
-    "organizers": 725,
-    "p25": 64,
+    "n": 1520,
+    "organizers": 724,
+    "p25": 63,
     "p75": 350
    },
    "10k+": {
     "median": 1450.0,
-    "n": 576,
-    "organizers": 122,
-    "p25": 440,
-    "p75": 2500
+    "n": 559,
+    "organizers": 118,
+    "p25": 450,
+    "p75": 2600
    },
    "1k-2.5k": {
     "median": 300.0,
-    "n": 2623,
-    "organizers": 840,
+    "n": 2615,
+    "organizers": 837,
     "p25": 129,
-    "p75": 620
+    "p75": 619
    },
    "2.5k-10k": {
-    "median": 580.0,
-    "n": 2112,
-    "organizers": 522,
+    "median": 589.0,
+    "n": 2097,
+    "organizers": 519,
     "p25": 299,
     "p75": 1500
    },
    "250-500": {
     "median": 170.0,
-    "n": 1447,
-    "organizers": 642,
-    "p25": 84,
+    "n": 1442,
+    "organizers": 639,
+    "p25": 85,
     "p75": 400
    },
    "500-1k": {
     "median": 200.0,
-    "n": 1803,
-    "organizers": 681,
+    "n": 1799,
+    "organizers": 679,
     "p25": 89,
-    "p75": 420
+    "p75": 416
    }
   },
   "tools_craft_diy": {
@@ -792,6 +792,6 @@
    }
   }
  },
- "prizes": 65018,
- "source": "ordinary segment of the campaign analysis, stated USD prize values only, campaigns with 1,000 or more contestants, by primary category and campaign size band, cells with under 20 values or five organizers omitted"
+ "prizes": 64579,
+ "source": "ordinary segment of the second dataset, stated USD prize values only, campaigns with 1,000 or more contestants, by primary category and campaign size band, cells with under 20 values or five organizers omitted"
 }

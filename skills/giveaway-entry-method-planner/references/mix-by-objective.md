@@ -501,7 +501,7 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 | Question action validated the answer | 3.2% |
 | Question action did not validate | 3.2%, the same |
 
-[Across 117,348 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 516 campaigns validated, 39,334 did not.]
+[Across 116,499 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 516 campaigns validated, 39,334 did not.]
 
 ## Consent and rules
 

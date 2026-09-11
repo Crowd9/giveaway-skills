@@ -1,6 +1,6 @@
 {
  "definitions": {
-  "scope": "the ordinary segment (100 or more contestants, crypto and ambiguous segments removed), campaign_id count 117339, 17776 organizers",
+  "scope": "the ordinary segment (100 or more contestants, crypto and ambiguous segments removed), campaign_id count 116493, 17632 organizers",
   "family": "entry_type and custom_action template mapped by hand to eleven generic families plus bonus/question/custom_other/paid/other, the same mapping analyze.py uses on the earlier dataset. A campaign 'has' a family if any of its actions maps to it, regardless of how many actions or their worth",
   "family_pair_lift": "for each pair of families, how often they appear on the same campaign against what independence would predict. lift 1.0 is independence, above 1.0 means the two ship together more than chance, below 1.0 less. conditional_b_given_a is the share of campaigns with family a that also carry family b",
   "top_combinations": "the most common exact sets of families present on a campaign (order not counted, only presence), with outcomes for campaigns holding that exact set. email_completions_per_contestant and share_completions_per_contestant are medians across the campaigns in that combination that carry the family, not the whole row",
@@ -12,505 +12,505 @@
  },
  "family_pair_lift": {
   "follow+visit": {
-   "n_both": 70436,
-   "sites_both": 11052,
-   "n_follow": 78061,
-   "n_visit": 94591,
-   "lift": 1.119,
-   "conditional_visit_given_follow": 0.902,
-   "conditional_follow_given_visit": 0.745
+   "n_both": 70038,
+   "sites_both": 10961,
+   "n_follow": 77459,
+   "n_visit": 94082,
+   "lift": 1.12,
+   "conditional_visit_given_follow": 0.904,
+   "conditional_follow_given_visit": 0.744
   },
   "visit+share": {
-   "n_both": 54719,
-   "sites_both": 9426,
-   "n_visit": 94591,
-   "n_share": 61298,
-   "lift": 1.107,
+   "n_both": 54352,
+   "sites_both": 9340,
+   "n_visit": 94082,
+   "n_share": 60707,
+   "lift": 1.109,
    "conditional_share_given_visit": 0.578,
-   "conditional_visit_given_share": 0.893
+   "conditional_visit_given_share": 0.895
   },
   "follow+share": {
-   "n_both": 46934,
-   "sites_both": 8290,
-   "n_follow": 78061,
-   "n_share": 61298,
-   "lift": 1.151,
-   "conditional_share_given_follow": 0.601,
-   "conditional_follow_given_share": 0.766
+   "n_both": 46430,
+   "sites_both": 8168,
+   "n_follow": 77459,
+   "n_share": 60707,
+   "lift": 1.15,
+   "conditional_share_given_follow": 0.599,
+   "conditional_follow_given_share": 0.765
   },
   "visit+bonus": {
-   "n_both": 39431,
-   "sites_both": 7466,
-   "n_visit": 94591,
-   "n_bonus": 45912,
-   "lift": 1.065,
-   "conditional_bonus_given_visit": 0.417,
+   "n_both": 39176,
+   "sites_both": 7429,
+   "n_visit": 94082,
+   "n_bonus": 45593,
+   "lift": 1.064,
+   "conditional_bonus_given_visit": 0.416,
    "conditional_visit_given_bonus": 0.859
   },
   "email+visit": {
-   "n_both": 34399,
-   "sites_both": 5131,
-   "n_email": 40733,
-   "n_visit": 94591,
-   "lift": 1.048,
+   "n_both": 34222,
+   "sites_both": 5114,
+   "n_email": 40537,
+   "n_visit": 94082,
+   "lift": 1.045,
    "conditional_visit_given_email": 0.844,
    "conditional_email_given_visit": 0.364
   },
   "follow+bonus": {
-   "n_both": 32904,
-   "sites_both": 6081,
-   "n_follow": 78061,
-   "n_bonus": 45912,
-   "lift": 1.077,
+   "n_both": 32700,
+   "sites_both": 6029,
+   "n_follow": 77459,
+   "n_bonus": 45593,
+   "lift": 1.079,
    "conditional_bonus_given_follow": 0.422,
    "conditional_follow_given_bonus": 0.717
   },
   "share+bonus": {
-   "n_both": 27969,
-   "sites_both": 5773,
-   "n_share": 61298,
-   "n_bonus": 45912,
-   "lift": 1.166,
-   "conditional_bonus_given_share": 0.456,
+   "n_both": 27755,
+   "sites_both": 5721,
+   "n_share": 60707,
+   "n_bonus": 45593,
+   "lift": 1.168,
+   "conditional_bonus_given_share": 0.457,
    "conditional_share_given_bonus": 0.609
   },
   "email+share": {
-   "n_both": 27423,
-   "sites_both": 4486,
-   "n_email": 40733,
-   "n_share": 61298,
-   "lift": 1.289,
-   "conditional_share_given_email": 0.673,
-   "conditional_email_given_share": 0.447
+   "n_both": 27318,
+   "sites_both": 4469,
+   "n_email": 40537,
+   "n_share": 60707,
+   "lift": 1.293,
+   "conditional_share_given_email": 0.674,
+   "conditional_email_given_share": 0.45
   },
   "email+follow": {
-   "n_both": 25949,
-   "sites_both": 3662,
-   "n_email": 40733,
-   "n_follow": 78061,
-   "lift": 0.958,
-   "conditional_follow_given_email": 0.637,
-   "conditional_email_given_follow": 0.332
+   "n_both": 25855,
+   "sites_both": 3645,
+   "n_email": 40537,
+   "n_follow": 77459,
+   "lift": 0.959,
+   "conditional_follow_given_email": 0.638,
+   "conditional_email_given_follow": 0.334
   },
   "follow+join": {
-   "n_both": 21486,
-   "sites_both": 3722,
-   "n_follow": 78061,
-   "n_join": 23242,
-   "lift": 1.39,
-   "conditional_join_given_follow": 0.275,
-   "conditional_follow_given_join": 0.924
+   "n_both": 21095,
+   "sites_both": 3621,
+   "n_follow": 77459,
+   "n_join": 22804,
+   "lift": 1.391,
+   "conditional_join_given_follow": 0.272,
+   "conditional_follow_given_join": 0.925
   },
   "visit+join": {
-   "n_both": 20285,
-   "sites_both": 3460,
-   "n_visit": 94591,
-   "n_join": 23242,
-   "lift": 1.083,
-   "conditional_join_given_visit": 0.214,
-   "conditional_visit_given_join": 0.873
+   "n_both": 20015,
+   "sites_both": 3387,
+   "n_visit": 94082,
+   "n_join": 22804,
+   "lift": 1.087,
+   "conditional_join_given_visit": 0.213,
+   "conditional_visit_given_join": 0.878
   },
   "visit+content": {
-   "n_both": 19305,
-   "sites_both": 3324,
-   "n_visit": 94591,
-   "n_content": 21785,
-   "lift": 1.099,
+   "n_both": 19157,
+   "sites_both": 3290,
+   "n_visit": 94082,
+   "n_content": 21573,
+   "lift": 1.1,
    "conditional_content_given_visit": 0.204,
-   "conditional_visit_given_content": 0.886
+   "conditional_visit_given_content": 0.888
   },
   "follow+content": {
-   "n_both": 17487,
-   "sites_both": 3128,
-   "n_follow": 78061,
-   "n_content": 21785,
-   "lift": 1.207,
-   "conditional_content_given_follow": 0.224,
-   "conditional_follow_given_content": 0.803
+   "n_both": 17292,
+   "sites_both": 3071,
+   "n_follow": 77459,
+   "n_content": 21573,
+   "lift": 1.205,
+   "conditional_content_given_follow": 0.223,
+   "conditional_follow_given_content": 0.802
   },
   "visit+engage": {
-   "n_both": 16966,
-   "sites_both": 3523,
-   "n_visit": 94591,
-   "n_engage": 19841,
-   "lift": 1.061,
-   "conditional_engage_given_visit": 0.179,
+   "n_both": 16895,
+   "sites_both": 3508,
+   "n_visit": 94082,
+   "n_engage": 19750,
+   "lift": 1.059,
+   "conditional_engage_given_visit": 0.18,
    "conditional_visit_given_engage": 0.855
   },
   "email+bonus": {
-   "n_both": 16535,
-   "sites_both": 3080,
-   "n_email": 40733,
-   "n_bonus": 45912,
-   "lift": 1.037,
-   "conditional_bonus_given_email": 0.406,
-   "conditional_email_given_bonus": 0.36
+   "n_both": 16376,
+   "sites_both": 3070,
+   "n_email": 40537,
+   "n_bonus": 45593,
+   "lift": 1.032,
+   "conditional_bonus_given_email": 0.404,
+   "conditional_email_given_bonus": 0.359
   },
   "follow+engage": {
-   "n_both": 15708,
-   "sites_both": 3177,
-   "n_follow": 78061,
-   "n_engage": 19841,
-   "lift": 1.19,
-   "conditional_engage_given_follow": 0.201,
+   "n_both": 15640,
+   "sites_both": 3158,
+   "n_follow": 77459,
+   "n_engage": 19750,
+   "lift": 1.191,
+   "conditional_engage_given_follow": 0.202,
    "conditional_follow_given_engage": 0.792
   },
   "share+join": {
-   "n_both": 15240,
-   "sites_both": 2905,
-   "n_share": 61298,
-   "n_join": 23242,
-   "lift": 1.255,
-   "conditional_join_given_share": 0.249,
-   "conditional_share_given_join": 0.656
+   "n_both": 14888,
+   "sites_both": 2811,
+   "n_share": 60707,
+   "n_join": 22804,
+   "lift": 1.253,
+   "conditional_join_given_share": 0.245,
+   "conditional_share_given_join": 0.653
   },
   "visit+question": {
-   "n_both": 14368,
-   "sites_both": 2807,
-   "n_visit": 94591,
-   "n_question": 19474,
-   "lift": 0.915,
-   "conditional_question_given_visit": 0.152,
+   "n_both": 14214,
+   "sites_both": 2772,
+   "n_visit": 94082,
+   "n_question": 19254,
+   "lift": 0.914,
+   "conditional_question_given_visit": 0.151,
    "conditional_visit_given_question": 0.738
   },
   "share+content": {
-   "n_both": 13773,
-   "sites_both": 2886,
-   "n_share": 61298,
-   "n_content": 21785,
-   "lift": 1.21,
-   "conditional_content_given_share": 0.225,
-   "conditional_share_given_content": 0.632
+   "n_both": 13576,
+   "sites_both": 2829,
+   "n_share": 60707,
+   "n_content": 21573,
+   "lift": 1.208,
+   "conditional_content_given_share": 0.224,
+   "conditional_share_given_content": 0.629
   },
   "visit+connect_account": {
-   "n_both": 13056,
-   "sites_both": 2962,
-   "n_visit": 94591,
-   "n_connect_account": 15382,
-   "lift": 1.053,
+   "n_both": 13009,
+   "sites_both": 2942,
+   "n_visit": 94082,
+   "n_connect_account": 15306,
+   "lift": 1.052,
    "conditional_connect_account_given_visit": 0.138,
-   "conditional_visit_given_connect_account": 0.849
+   "conditional_visit_given_connect_account": 0.85
   },
   "share+engage": {
-   "n_both": 12608,
-   "sites_both": 2789,
-   "n_share": 61298,
-   "n_engage": 19841,
-   "lift": 1.216,
-   "conditional_engage_given_share": 0.206,
+   "n_both": 12540,
+   "sites_both": 2769,
+   "n_share": 60707,
+   "n_engage": 19750,
+   "lift": 1.218,
+   "conditional_engage_given_share": 0.207,
    "conditional_share_given_engage": 0.635
   },
   "bonus+content": {
-   "n_both": 11585,
-   "sites_both": 2135,
-   "n_bonus": 45912,
-   "n_content": 21785,
-   "lift": 1.359,
+   "n_both": 11486,
+   "sites_both": 2102,
+   "n_bonus": 45593,
+   "n_content": 21573,
+   "lift": 1.36,
    "conditional_content_given_bonus": 0.252,
    "conditional_bonus_given_content": 0.532
   },
   "follow+question": {
-   "n_both": 11290,
-   "sites_both": 2214,
-   "n_follow": 78061,
-   "n_question": 19474,
-   "lift": 0.871,
-   "conditional_question_given_follow": 0.145,
-   "conditional_follow_given_question": 0.58
+   "n_both": 11136,
+   "sites_both": 2170,
+   "n_follow": 77459,
+   "n_question": 19254,
+   "lift": 0.87,
+   "conditional_question_given_follow": 0.144,
+   "conditional_follow_given_question": 0.578
   },
   "follow+connect_account": {
-   "n_both": 10966,
-   "sites_both": 2488,
-   "n_follow": 78061,
-   "n_connect_account": 15382,
+   "n_both": 10910,
+   "sites_both": 2465,
+   "n_follow": 77459,
+   "n_connect_account": 15306,
    "lift": 1.072,
-   "conditional_connect_account_given_follow": 0.14,
+   "conditional_connect_account_given_follow": 0.141,
    "conditional_follow_given_connect_account": 0.713
   },
   "bonus+engage": {
-   "n_both": 10894,
-   "sites_both": 2120,
-   "n_bonus": 45912,
-   "n_engage": 19841,
-   "lift": 1.403,
-   "conditional_engage_given_bonus": 0.237,
+   "n_both": 10835,
+   "sites_both": 2109,
+   "n_bonus": 45593,
+   "n_engage": 19750,
+   "lift": 1.402,
+   "conditional_engage_given_bonus": 0.238,
    "conditional_bonus_given_engage": 0.549
   },
   "join+bonus": {
-   "n_both": 10358,
-   "sites_both": 1955,
-   "n_join": 23242,
-   "n_bonus": 45912,
-   "lift": 1.139,
-   "conditional_bonus_given_join": 0.446,
-   "conditional_join_given_bonus": 0.226
+   "n_both": 10231,
+   "sites_both": 1910,
+   "n_join": 22804,
+   "n_bonus": 45593,
+   "lift": 1.146,
+   "conditional_bonus_given_join": 0.449,
+   "conditional_join_given_bonus": 0.224
   },
   "share+question": {
-   "n_both": 9598,
-   "sites_both": 2098,
-   "n_share": 61298,
-   "n_question": 19474,
-   "lift": 0.943,
-   "conditional_question_given_share": 0.157,
-   "conditional_share_given_question": 0.493
+   "n_both": 9437,
+   "sites_both": 2052,
+   "n_share": 60707,
+   "n_question": 19254,
+   "lift": 0.941,
+   "conditional_question_given_share": 0.155,
+   "conditional_share_given_question": 0.49
   },
   "share+connect_account": {
-   "n_both": 9142,
-   "sites_both": 2048,
-   "n_share": 61298,
-   "n_connect_account": 15382,
-   "lift": 1.138,
-   "conditional_connect_account_given_share": 0.149,
-   "conditional_share_given_connect_account": 0.594
+   "n_both": 9082,
+   "sites_both": 2024,
+   "n_share": 60707,
+   "n_connect_account": 15306,
+   "lift": 1.139,
+   "conditional_connect_account_given_share": 0.15,
+   "conditional_share_given_connect_account": 0.593
   },
   "email+content": {
-   "n_both": 8140,
-   "sites_both": 1356,
-   "n_email": 40733,
-   "n_content": 21785,
-   "lift": 1.076,
+   "n_both": 8099,
+   "sites_both": 1346,
+   "n_email": 40537,
+   "n_content": 21573,
+   "lift": 1.079,
    "conditional_content_given_email": 0.2,
-   "conditional_email_given_content": 0.374
+   "conditional_email_given_content": 0.375
   },
   "question+bonus": {
-   "n_both": 7858,
-   "sites_both": 1685,
-   "n_question": 19474,
-   "n_bonus": 45912,
-   "lift": 1.031,
-   "conditional_bonus_given_question": 0.404,
-   "conditional_question_given_bonus": 0.171
+   "n_both": 7745,
+   "sites_both": 1669,
+   "n_question": 19254,
+   "n_bonus": 45593,
+   "lift": 1.028,
+   "conditional_bonus_given_question": 0.402,
+   "conditional_question_given_bonus": 0.17
   },
   "bonus+connect_account": {
-   "n_both": 7481,
-   "sites_both": 1683,
-   "n_bonus": 45912,
-   "n_connect_account": 15382,
-   "lift": 1.243,
+   "n_both": 7453,
+   "sites_both": 1671,
+   "n_bonus": 45593,
+   "n_connect_account": 15306,
+   "lift": 1.244,
    "conditional_connect_account_given_bonus": 0.163,
-   "conditional_bonus_given_connect_account": 0.486
+   "conditional_bonus_given_connect_account": 0.487
   },
   "content+engage": {
-   "n_both": 7245,
-   "sites_both": 1175,
-   "n_content": 21785,
-   "n_engage": 19841,
-   "lift": 1.967,
-   "conditional_engage_given_content": 0.333,
+   "n_both": 7210,
+   "sites_both": 1164,
+   "n_content": 21573,
+   "n_engage": 19750,
+   "lift": 1.971,
+   "conditional_engage_given_content": 0.334,
    "conditional_content_given_engage": 0.365
   },
   "email+engage": {
-   "n_both": 5760,
-   "sites_both": 1252,
-   "n_email": 40733,
-   "n_engage": 19841,
-   "lift": 0.836,
+   "n_both": 5715,
+   "sites_both": 1249,
+   "n_email": 40537,
+   "n_engage": 19750,
+   "lift": 0.832,
    "conditional_engage_given_email": 0.141,
-   "conditional_email_given_engage": 0.29
+   "conditional_email_given_engage": 0.289
   },
   "email+question": {
-   "n_both": 5753,
-   "sites_both": 1188,
-   "n_email": 40733,
-   "n_question": 19474,
-   "lift": 0.851,
-   "conditional_question_given_email": 0.141,
-   "conditional_email_given_question": 0.295
+   "n_both": 5693,
+   "sites_both": 1183,
+   "n_email": 40537,
+   "n_question": 19254,
+   "lift": 0.85,
+   "conditional_question_given_email": 0.14,
+   "conditional_email_given_question": 0.296
   },
   "email+join": {
-   "n_both": 5368,
-   "sites_both": 828,
-   "n_email": 40733,
-   "n_join": 23242,
-   "lift": 0.665,
-   "conditional_join_given_email": 0.132,
-   "conditional_email_given_join": 0.231
+   "n_both": 5317,
+   "sites_both": 816,
+   "n_email": 40537,
+   "n_join": 22804,
+   "lift": 0.67,
+   "conditional_join_given_email": 0.131,
+   "conditional_email_given_join": 0.233
   },
   "question+content": {
-   "n_both": 5284,
-   "sites_both": 1026,
-   "n_question": 19474,
-   "n_content": 21785,
+   "n_both": 5209,
+   "sites_both": 1007,
+   "n_question": 19254,
+   "n_content": 21573,
    "lift": 1.461,
    "conditional_content_given_question": 0.271,
-   "conditional_question_given_content": 0.243
+   "conditional_question_given_content": 0.241
   },
   "join+engage": {
-   "n_both": 5003,
-   "sites_both": 969,
-   "n_join": 23242,
-   "n_engage": 19841,
-   "lift": 1.273,
-   "conditional_engage_given_join": 0.215,
+   "n_both": 4973,
+   "sites_both": 958,
+   "n_join": 22804,
+   "n_engage": 19750,
+   "lift": 1.286,
+   "conditional_engage_given_join": 0.218,
    "conditional_join_given_engage": 0.252
   },
   "email+connect_account": {
-   "n_both": 4735,
-   "sites_both": 959,
-   "n_email": 40733,
-   "n_connect_account": 15382,
-   "lift": 0.887,
+   "n_both": 4715,
+   "sites_both": 955,
+   "n_email": 40537,
+   "n_connect_account": 15306,
+   "lift": 0.885,
    "conditional_connect_account_given_email": 0.116,
    "conditional_email_given_connect_account": 0.308
   },
-  "join+content": {
-   "n_both": 4079,
-   "sites_both": 1006,
-   "n_join": 23242,
-   "n_content": 21785,
-   "lift": 0.945,
-   "conditional_content_given_join": 0.176,
-   "conditional_join_given_content": 0.187
-  },
   "content+connect_account": {
-   "n_both": 4033,
-   "sites_both": 930,
-   "n_content": 21785,
-   "n_connect_account": 15382,
-   "lift": 1.412,
+   "n_both": 3998,
+   "sites_both": 915,
+   "n_content": 21573,
+   "n_connect_account": 15306,
+   "lift": 1.41,
    "conditional_connect_account_given_content": 0.185,
-   "conditional_content_given_connect_account": 0.262
+   "conditional_content_given_connect_account": 0.261
+  },
+  "join+content": {
+   "n_both": 3963,
+   "sites_both": 961,
+   "n_join": 22804,
+   "n_content": 21573,
+   "lift": 0.938,
+   "conditional_content_given_join": 0.174,
+   "conditional_join_given_content": 0.184
   },
   "join+connect_account": {
-   "n_both": 3588,
-   "sites_both": 783,
-   "n_join": 23242,
-   "n_connect_account": 15382,
-   "lift": 1.178,
-   "conditional_connect_account_given_join": 0.154,
-   "conditional_join_given_connect_account": 0.233
+   "n_both": 3540,
+   "sites_both": 760,
+   "n_join": 22804,
+   "n_connect_account": 15306,
+   "lift": 1.181,
+   "conditional_connect_account_given_join": 0.155,
+   "conditional_join_given_connect_account": 0.231
   },
   "visit+download": {
-   "n_both": 3548,
-   "sites_both": 843,
-   "n_visit": 94591,
-   "n_download": 4082,
+   "n_both": 3525,
+   "sites_both": 830,
+   "n_visit": 94082,
+   "n_download": 4048,
    "lift": 1.078,
-   "conditional_download_given_visit": 0.038,
-   "conditional_visit_given_download": 0.869
+   "conditional_download_given_visit": 0.037,
+   "conditional_visit_given_download": 0.871
   },
   "question+engage": {
-   "n_both": 3542,
-   "sites_both": 763,
-   "n_question": 19474,
-   "n_engage": 19841,
+   "n_both": 3512,
+   "sites_both": 755,
+   "n_question": 19254,
+   "n_engage": 19750,
    "lift": 1.076,
    "conditional_engage_given_question": 0.182,
-   "conditional_question_given_engage": 0.179
+   "conditional_question_given_engage": 0.178
   },
   "engage+connect_account": {
-   "n_both": 3287,
-   "sites_both": 934,
-   "n_engage": 19841,
-   "n_connect_account": 15382,
-   "lift": 1.264,
-   "conditional_connect_account_given_engage": 0.166,
-   "conditional_engage_given_connect_account": 0.214
+   "n_both": 3259,
+   "sites_both": 925,
+   "n_engage": 19750,
+   "n_connect_account": 15306,
+   "lift": 1.256,
+   "conditional_connect_account_given_engage": 0.165,
+   "conditional_engage_given_connect_account": 0.213
   },
   "follow+download": {
-   "n_both": 3234,
-   "sites_both": 763,
-   "n_follow": 78061,
-   "n_download": 4082,
-   "lift": 1.191,
+   "n_both": 3210,
+   "sites_both": 749,
+   "n_follow": 77459,
+   "n_download": 4048,
+   "lift": 1.193,
    "conditional_download_given_follow": 0.041,
-   "conditional_follow_given_download": 0.792
+   "conditional_follow_given_download": 0.793
   },
   "question+connect_account": {
-   "n_both": 2960,
-   "sites_both": 584,
-   "n_question": 19474,
-   "n_connect_account": 15382,
-   "lift": 1.159,
-   "conditional_connect_account_given_question": 0.152,
+   "n_both": 2941,
+   "sites_both": 575,
+   "n_question": 19254,
+   "n_connect_account": 15306,
+   "lift": 1.163,
+   "conditional_connect_account_given_question": 0.153,
    "conditional_question_given_connect_account": 0.192
   },
   "join+question": {
-   "n_both": 2927,
-   "sites_both": 744,
-   "n_join": 23242,
-   "n_question": 19474,
-   "lift": 0.759,
-   "conditional_question_given_join": 0.126,
-   "conditional_join_given_question": 0.15
+   "n_both": 2816,
+   "sites_both": 708,
+   "n_join": 22804,
+   "n_question": 19254,
+   "lift": 0.747,
+   "conditional_question_given_join": 0.123,
+   "conditional_join_given_question": 0.146
   },
   "share+download": {
-   "n_both": 2816,
-   "sites_both": 763,
-   "n_share": 61298,
-   "n_download": 4082,
+   "n_both": 2786,
+   "sites_both": 749,
+   "n_share": 60707,
+   "n_download": 4048,
    "lift": 1.321,
    "conditional_download_given_share": 0.046,
-   "conditional_share_given_download": 0.69
+   "conditional_share_given_download": 0.688
   },
   "bonus+download": {
-   "n_both": 1779,
-   "sites_both": 507,
-   "n_bonus": 45912,
-   "n_download": 4082,
+   "n_both": 1765,
+   "sites_both": 501,
+   "n_bonus": 45593,
+   "n_download": 4048,
    "lift": 1.114,
    "conditional_download_given_bonus": 0.039,
    "conditional_bonus_given_download": 0.436
   },
   "email+download": {
-   "n_both": 1705,
-   "sites_both": 390,
-   "n_email": 40733,
-   "n_download": 4082,
-   "lift": 1.203,
+   "n_both": 1698,
+   "sites_both": 385,
+   "n_email": 40537,
+   "n_download": 4048,
+   "lift": 1.205,
    "conditional_download_given_email": 0.042,
-   "conditional_email_given_download": 0.418
+   "conditional_email_given_download": 0.419
   },
   "join+download": {
-   "n_both": 1601,
-   "sites_both": 396,
-   "n_join": 23242,
-   "n_download": 4082,
-   "lift": 1.98,
+   "n_both": 1579,
+   "sites_both": 382,
+   "n_join": 22804,
+   "n_download": 4048,
+   "lift": 1.993,
    "conditional_download_given_join": 0.069,
-   "conditional_join_given_download": 0.392
+   "conditional_join_given_download": 0.39
   },
   "question+download": {
-   "n_both": 747,
-   "sites_both": 223,
-   "n_question": 19474,
-   "n_download": 4082,
-   "lift": 1.103,
+   "n_both": 733,
+   "sites_both": 216,
+   "n_question": 19254,
+   "n_download": 4048,
+   "lift": 1.096,
    "conditional_download_given_question": 0.038,
-   "conditional_question_given_download": 0.183
+   "conditional_question_given_download": 0.181
   },
   "content+download": {
-   "n_both": 744,
-   "sites_both": 282,
-   "n_content": 21785,
-   "n_download": 4082,
-   "lift": 0.982,
+   "n_both": 733,
+   "sites_both": 273,
+   "n_content": 21573,
+   "n_download": 4048,
+   "lift": 0.978,
    "conditional_download_given_content": 0.034,
-   "conditional_content_given_download": 0.182
+   "conditional_content_given_download": 0.181
   },
   "connect_account+download": {
-   "n_both": 559,
-   "sites_both": 187,
-   "n_connect_account": 15382,
-   "n_download": 4082,
-   "lift": 1.045,
+   "n_both": 552,
+   "sites_both": 182,
+   "n_connect_account": 15306,
+   "n_download": 4048,
+   "lift": 1.038,
    "conditional_download_given_connect_account": 0.036,
-   "conditional_connect_account_given_download": 0.137
+   "conditional_connect_account_given_download": 0.136
   },
   "engage+download": {
-   "n_both": 476,
-   "sites_both": 194,
-   "n_engage": 19841,
-   "n_download": 4082,
-   "lift": 0.69,
+   "n_both": 471,
+   "sites_both": 191,
+   "n_engage": 19750,
+   "n_download": 4048,
+   "lift": 0.686,
    "conditional_download_given_engage": 0.024,
-   "conditional_engage_given_download": 0.117
+   "conditional_engage_given_download": 0.116
   }
  },
  "top_combinations": {
   "follow+visit": {
-   "n": 6307,
-   "sites": 1676,
+   "n": 6298,
+   "sites": 1671,
    "contestants": 437.0,
    "conversion": 0.38,
    "entries_per_entrant": 3.417,
@@ -519,9 +519,9 @@
    "share_completions_per_contestant": null
   },
   "email+follow+visit+share": {
-   "n": 4153,
-   "sites": 572,
-   "contestants": 409.0,
+   "n": 4148,
+   "sites": 569,
+   "contestants": 409.5,
    "conversion": 0.2,
    "entries_per_entrant": 7.196,
    "methods": 10.0,
@@ -529,19 +529,19 @@
    "share_completions_per_contestant": 0.081
   },
   "visit": {
-   "n": 3814,
-   "sites": 1055,
-   "contestants": 435.0,
+   "n": 3810,
+   "sites": 1052,
+   "contestants": 435.5,
    "conversion": 0.396,
-   "entries_per_entrant": 1.872,
+   "entries_per_entrant": 1.873,
    "methods": 2.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
   "follow+visit+share": {
-   "n": 3802,
-   "sites": 1367,
-   "contestants": 407.0,
+   "n": 3790,
+   "sites": 1359,
+   "contestants": 406.5,
    "conversion": 0.268,
    "entries_per_entrant": 4.363,
    "methods": 6.0,
@@ -549,9 +549,9 @@
    "share_completions_per_contestant": 0.454
   },
   "email+visit+share": {
-   "n": 2830,
-   "sites": 689,
-   "contestants": 710.0,
+   "n": 2829,
+   "sites": 688,
+   "contestants": 711.0,
    "conversion": 0.257,
    "entries_per_entrant": 3.544,
    "methods": 6.0,
@@ -559,14 +559,14 @@
    "share_completions_per_contestant": 0.098
   },
   "follow+visit+share+join": {
-   "n": 2825,
-   "sites": 709,
-   "contestants": 434.0,
-   "conversion": 0.334,
-   "entries_per_entrant": 6.63,
+   "n": 2761,
+   "sites": 686,
+   "contestants": 429.0,
+   "conversion": 0.335,
+   "entries_per_entrant": 6.676,
    "methods": 10.0,
    "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.441
+   "share_completions_per_contestant": 0.435
   },
   "follow+visit+bonus": {
    "n": 2744,
@@ -579,8 +579,8 @@
    "share_completions_per_contestant": null
   },
   "follow+visit+share+bonus": {
-   "n": 2678,
-   "sites": 859,
+   "n": 2674,
+   "sites": 856,
    "contestants": 510.5,
    "conversion": 0.253,
    "entries_per_entrant": 4.998,
@@ -589,61 +589,61 @@
    "share_completions_per_contestant": 0.372
   },
   "email": {
-   "n": 2504,
-   "sites": 473,
-   "contestants": 712.5,
-   "conversion": 0.447,
+   "n": 2502,
+   "sites": 471,
+   "contestants": 712.0,
+   "conversion": 0.445,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": 1.021,
    "share_completions_per_contestant": null
   },
   "question": {
-   "n": 2466,
-   "sites": 404,
+   "n": 2464,
+   "sites": 403,
    "contestants": 623.5,
-   "conversion": 0.458,
+   "conversion": 0.456,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
   "email+follow+visit+share+bonus": {
-   "n": 2461,
-   "sites": 641,
-   "contestants": 883.0,
-   "conversion": 0.192,
-   "entries_per_entrant": 6.675,
+   "n": 2446,
+   "sites": 640,
+   "contestants": 889.0,
+   "conversion": 0.193,
+   "entries_per_entrant": 6.678,
    "methods": 10.0,
    "email_completions_per_contestant": 0.791,
-   "share_completions_per_contestant": 0.163
+   "share_completions_per_contestant": 0.162
   },
   "bonus": {
-   "n": 2435,
-   "sites": 642,
-   "contestants": 280.0,
-   "conversion": 0.525,
+   "n": 2428,
+   "sites": 639,
+   "contestants": 279.0,
+   "conversion": 0.522,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
   "email+follow+visit": {
-   "n": 2288,
-   "sites": 415,
-   "contestants": 750.0,
+   "n": 2287,
+   "sites": 414,
+   "contestants": 752.0,
    "conversion": 0.305,
-   "entries_per_entrant": 3.411,
+   "entries_per_entrant": 3.412,
    "methods": 5.0,
    "email_completions_per_contestant": 1.003,
    "share_completions_per_contestant": null
   },
   "follow+visit+join": {
-   "n": 2166,
-   "sites": 543,
-   "contestants": 683.0,
-   "conversion": 0.372,
-   "entries_per_entrant": 5.071,
+   "n": 2148,
+   "sites": 539,
+   "contestants": 680.5,
+   "conversion": 0.371,
+   "entries_per_entrant": 5.067,
    "methods": 7.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
@@ -662,7 +662,7 @@
    "n": 1468,
    "sites": 476,
    "contestants": 443.5,
-   "conversion": 0.302,
+   "conversion": 0.3,
    "entries_per_entrant": 3.291,
    "methods": 4.0,
    "email_completions_per_contestant": null,
@@ -672,38 +672,38 @@
    "n": 1373,
    "sites": 508,
    "contestants": 736.0,
-   "conversion": 0.311,
+   "conversion": 0.31,
    "entries_per_entrant": 2.988,
    "methods": 4.0,
    "email_completions_per_contestant": 1.0,
    "share_completions_per_contestant": null
   },
   "none_of_the_eleven": {
-   "n": 1234,
-   "sites": 203,
-   "contestants": 584.0,
-   "conversion": 0.419,
+   "n": 1200,
+   "sites": 199,
+   "contestants": 598.0,
+   "conversion": 0.401,
    "entries_per_entrant": 1.0,
    "methods": 1.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
   },
   "follow+visit+share+join+bonus": {
-   "n": 1207,
-   "sites": 476,
-   "contestants": 534.0,
+   "n": 1180,
+   "sites": 463,
+   "contestants": 536.5,
    "conversion": 0.234,
-   "entries_per_entrant": 6.803,
+   "entries_per_entrant": 6.794,
    "methods": 11.0,
    "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.415
+   "share_completions_per_contestant": 0.409
   },
   "follow+visit+join+bonus": {
-   "n": 1011,
-   "sites": 269,
-   "contestants": 878.0,
+   "n": 1008,
+   "sites": 266,
+   "contestants": 876.0,
    "conversion": 0.395,
-   "entries_per_entrant": 7.929,
+   "entries_per_entrant": 7.938,
    "methods": 11.0,
    "email_completions_per_contestant": null,
    "share_completions_per_contestant": null
@@ -719,34 +719,34 @@
    "share_completions_per_contestant": 0.246
   },
   "visit+share": {
-   "n": 994,
-   "sites": 308,
-   "contestants": 409.5,
+   "n": 993,
+   "sites": 307,
+   "contestants": 410.0,
    "conversion": 0.249,
-   "entries_per_entrant": 3.003,
+   "entries_per_entrant": 3.005,
    "methods": 4.0,
    "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.277
-  },
-  "follow+visit+share+content": {
-   "n": 949,
-   "sites": 297,
-   "contestants": 472.0,
-   "conversion": 0.231,
-   "entries_per_entrant": 5.529,
-   "methods": 9.0,
-   "email_completions_per_contestant": null,
-   "share_completions_per_contestant": 0.378
+   "share_completions_per_contestant": 0.278
   },
   "email+follow+visit+share+join+bonus": {
-   "n": 938,
-   "sites": 171,
-   "contestants": 1580.5,
+   "n": 936,
+   "sites": 169,
+   "contestants": 1592.5,
    "conversion": 0.186,
-   "entries_per_entrant": 12.579,
+   "entries_per_entrant": 12.665,
    "methods": 19.0,
    "email_completions_per_contestant": 1.001,
    "share_completions_per_contestant": 0.358
+  },
+  "follow+visit+share+content": {
+   "n": 934,
+   "sites": 295,
+   "contestants": 474.0,
+   "conversion": 0.231,
+   "entries_per_entrant": 5.528,
+   "methods": 9.0,
+   "email_completions_per_contestant": null,
+   "share_completions_per_contestant": 0.369
   },
   "visit+share+bonus": {
    "n": 921,
@@ -761,60 +761,60 @@
  },
  "top_combinations_by_size_band": {
   "100-250": {
-   "campaigns": 33335,
+   "campaigns": 33074,
    "top_combinations": {
     "follow+visit": {
-     "n": 1908,
-     "share_of_band": 0.057
+     "n": 1907,
+     "share_of_band": 0.058
     },
     "visit": {
-     "n": 1268,
+     "n": 1265,
      "share_of_band": 0.038
     },
     "follow+visit+share": {
-     "n": 1233,
+     "n": 1229,
      "share_of_band": 0.037
     },
     "bonus": {
-     "n": 1104,
+     "n": 1102,
      "share_of_band": 0.033
     },
-    "email+follow+visit+share": {
+    "follow+visit+bonus": {
      "n": 995,
      "share_of_band": 0.03
     }
    }
   },
   "250-500": {
-   "campaigns": 25891,
+   "campaigns": 25680,
    "top_combinations": {
     "follow+visit": {
-     "n": 1568,
+     "n": 1564,
      "share_of_band": 0.061
     },
     "email+follow+visit+share": {
-     "n": 1488,
-     "share_of_band": 0.057
+     "n": 1486,
+     "share_of_band": 0.058
     },
     "follow+visit+share": {
-     "n": 929,
+     "n": 927,
      "share_of_band": 0.036
     },
     "follow+visit+share+join": {
-     "n": 853,
+     "n": 843,
      "share_of_band": 0.033
     },
     "visit": {
      "n": 788,
-     "share_of_band": 0.03
+     "share_of_band": 0.031
     }
    }
   },
   "500-1k": {
-   "campaigns": 21931,
+   "campaigns": 21834,
    "top_combinations": {
     "follow+visit": {
-     "n": 1268,
+     "n": 1267,
      "share_of_band": 0.058
     },
     "email+follow+visit+share": {
@@ -822,24 +822,24 @@
      "share_of_band": 0.032
     },
     "follow+visit+share": {
-     "n": 633,
+     "n": 631,
      "share_of_band": 0.029
     },
     "email+follow+visit+share+bonus": {
-     "n": 632,
+     "n": 630,
      "share_of_band": 0.029
     },
     "visit": {
-     "n": 600,
+     "n": 599,
      "share_of_band": 0.027
     }
    }
   },
   "1k-2.5k": {
-   "campaigns": 20136,
+   "campaigns": 20020,
    "top_combinations": {
     "follow+visit": {
-     "n": 816,
+     "n": 815,
      "share_of_band": 0.041
     },
     "email+visit+share": {
@@ -847,89 +847,89 @@
      "share_of_band": 0.034
     },
     "email": {
-     "n": 672,
+     "n": 670,
      "share_of_band": 0.033
     },
     "email+follow+visit+share+bonus": {
-     "n": 608,
+     "n": 606,
      "share_of_band": 0.03
     },
-    "follow+visit+join": {
-     "n": 556,
+    "email+visit+share+bonus": {
+     "n": 552,
      "share_of_band": 0.028
     }
    }
   },
   "2.5k-10k": {
-   "campaigns": 12828,
+   "campaigns": 12714,
    "top_combinations": {
     "visit": {
      "n": 526,
      "share_of_band": 0.041
     },
     "follow+visit": {
-     "n": 525,
+     "n": 523,
      "share_of_band": 0.041
     },
     "email+follow+visit+share+bonus": {
-     "n": 467,
-     "share_of_band": 0.036
+     "n": 465,
+     "share_of_band": 0.037
     },
     "email+visit+share": {
      "n": 416,
-     "share_of_band": 0.032
+     "share_of_band": 0.033
     },
     "email+follow+visit": {
      "n": 378,
-     "share_of_band": 0.029
+     "share_of_band": 0.03
     }
    }
   },
   "10k+": {
-   "campaigns": 3218,
+   "campaigns": 3171,
    "top_combinations": {
     "follow+visit": {
      "n": 222,
-     "share_of_band": 0.069
+     "share_of_band": 0.07
     },
     "follow+visit+bonus": {
      "n": 190,
-     "share_of_band": 0.059
+     "share_of_band": 0.06
     },
     "email+follow+visit+share+bonus+content": {
-     "n": 175,
+     "n": 170,
      "share_of_band": 0.054
     },
     "question": {
      "n": 127,
-     "share_of_band": 0.039
+     "share_of_band": 0.04
     },
     "email+follow+visit": {
      "n": 123,
-     "share_of_band": 0.038
+     "share_of_band": 0.039
     }
    }
   }
  },
  "top_combinations_by_industry": {
   "gaming_esports": {
-   "campaigns": 24672,
+   "campaigns": 24250,
    "top_combinations": {
     "follow+visit": {
-     "n": 1771,
-     "share_of_band": 0.072
+     "n": 1770,
+     "share_of_band": 0.073
     },
     "follow+visit+share": {
-     "n": 1424,
+     "n": 1417,
      "share_of_band": 0.058
     },
     "follow+visit+join": {
-     "n": 1187,
+     "n": 1172,
      "share_of_band": 0.048
     },
     "follow+visit+share+join": {
-     "n": 1135,
-     "share_of_band": 0.046
+     "n": 1098,
+     "share_of_band": 0.045
     },
     "visit": {
      "n": 733,
@@ -938,10 +938,10 @@
    }
   },
   "media_entertainment": {
-   "campaigns": 21584,
+   "campaigns": 21549,
    "top_combinations": {
     "email+follow+visit+share": {
-     "n": 2337,
+     "n": 2335,
      "share_of_band": 0.108
     },
     "question": {
@@ -949,7 +949,7 @@
      "share_of_band": 0.049
     },
     "follow+visit": {
-     "n": 1010,
+     "n": 1008,
      "share_of_band": 0.047
     },
     "email": {
@@ -963,10 +963,10 @@
    }
   },
   "electronics_tech": {
-   "campaigns": 15591,
+   "campaigns": 15548,
    "top_combinations": {
     "follow+visit": {
-     "n": 1156,
+     "n": 1152,
      "share_of_band": 0.074
     },
     "visit": {
@@ -975,10 +975,10 @@
     },
     "follow+visit+share+bonus": {
      "n": 646,
-     "share_of_band": 0.041
+     "share_of_band": 0.042
     },
     "follow+visit+share": {
-     "n": 622,
+     "n": 621,
      "share_of_band": 0.04
     },
     "follow+visit+join": {
@@ -988,7 +988,7 @@
    }
   },
   "toys_hobbies_collectibles": {
-   "campaigns": 4710,
+   "campaigns": 4705,
    "top_combinations": {
     "follow+visit": {
      "n": 616,
@@ -1007,13 +1007,13 @@
      "share_of_band": 0.03
     },
     "email+follow+visit+share+bonus": {
-     "n": 139,
-     "share_of_band": 0.03
+     "n": 138,
+     "share_of_band": 0.029
     }
    }
   },
   "food_drink": {
-   "campaigns": 4686,
+   "campaigns": 4685,
    "top_combinations": {
     "email+visit+share": {
      "n": 257,
@@ -1038,11 +1038,11 @@
    }
   },
   "sports_outdoors": {
-   "campaigns": 4638,
+   "campaigns": 4636,
    "top_combinations": {
     "email+follow+visit+share+bonus": {
-     "n": 258,
-     "share_of_band": 0.056
+     "n": 257,
+     "share_of_band": 0.055
     },
     "email+visit+share": {
      "n": 246,
@@ -1065,41 +1065,41 @@
  },
  "reach_vs_deep": {
   "0-25% reach": {
-   "n": 6131,
-   "sites": 1512,
-   "contestants": 520.0,
-   "conversion": 0.348,
-   "entries_per_entrant": 1.073,
-   "email_offered": 0.154,
-   "share_offered": 0.178,
+   "n": 6089,
+   "sites": 1494,
+   "contestants": 521.0,
+   "conversion": 0.347,
+   "entries_per_entrant": 1.069,
+   "email_offered": 0.155,
+   "share_offered": 0.175,
    "methods": 2.0
   },
   "25-50% reach": {
-   "n": 5183,
-   "sites": 1446,
-   "contestants": 409.0,
-   "conversion": 0.222,
-   "entries_per_entrant": 5.163,
-   "email_offered": 0.295,
-   "share_offered": 0.611,
+   "n": 5060,
+   "sites": 1398,
+   "contestants": 407.0,
+   "conversion": 0.221,
+   "entries_per_entrant": 5.142,
+   "email_offered": 0.299,
+   "share_offered": 0.605,
    "methods": 9.0
   },
   "50-75% reach": {
-   "n": 43564,
-   "sites": 8244,
+   "n": 43110,
+   "sites": 8143,
    "contestants": 508.0,
    "conversion": 0.252,
-   "entries_per_entrant": 5.44,
+   "entries_per_entrant": 5.445,
    "email_offered": 0.324,
-   "share_offered": 0.614,
+   "share_offered": 0.613,
    "methods": 9.0
   },
   "75-100% reach": {
-   "n": 54830,
-   "sites": 10452,
-   "contestants": 481.0,
+   "n": 54694,
+   "sites": 10418,
+   "contestants": 482.0,
    "conversion": 0.27,
-   "entries_per_entrant": 4.242,
+   "entries_per_entrant": 4.243,
    "email_offered": 0.377,
    "share_offered": 0.529,
    "methods": 6.0
@@ -1107,134 +1107,134 @@
  },
  "lead_action_family": {
   "visit": {
-   "n": 31153,
-   "sites": 6209,
+   "n": 31064,
+   "sites": 6181,
    "contestants": 459.0,
    "conversion": 0.267,
    "entries_per_entrant": 5.018,
    "methods": 7.0
   },
   "email": {
-   "n": 21169,
-   "sites": 3832,
-   "contestants": 802.0,
+   "n": 21047,
+   "sites": 3825,
+   "contestants": 808.0,
    "conversion": 0.267,
-   "entries_per_entrant": 3.726,
+   "entries_per_entrant": 3.714,
    "methods": 7.0
   },
   "bonus": {
-   "n": 19139,
-   "sites": 3807,
-   "contestants": 480.0,
-   "conversion": 0.262,
-   "entries_per_entrant": 4.541,
+   "n": 19036,
+   "sites": 3776,
+   "contestants": 479.5,
+   "conversion": 0.261,
+   "entries_per_entrant": 4.533,
    "methods": 8.0
   },
   "follow": {
-   "n": 16473,
-   "sites": 4565,
-   "contestants": 355.0,
+   "n": 16266,
+   "sites": 4493,
+   "contestants": 354.0,
    "conversion": 0.282,
-   "entries_per_entrant": 4.337,
+   "entries_per_entrant": 4.326,
    "methods": 7.0
   },
   "question": {
-   "n": 7338,
-   "sites": 1257,
+   "n": 7315,
+   "sites": 1244,
    "contestants": 545.0,
    "conversion": 0.309,
-   "entries_per_entrant": 2.909,
+   "entries_per_entrant": 2.903,
    "methods": 5.0
   },
   "connect_account": {
-   "n": 4816,
-   "sites": 1343,
-   "contestants": 369.5,
-   "conversion": 0.305,
-   "entries_per_entrant": 3.971,
+   "n": 4780,
+   "sites": 1326,
+   "contestants": 368.0,
+   "conversion": 0.306,
+   "entries_per_entrant": 3.983,
    "methods": 6.0
   },
   "engage": {
-   "n": 2869,
-   "sites": 445,
+   "n": 2866,
+   "sites": 444,
    "contestants": 372.0,
    "conversion": 0.223,
-   "entries_per_entrant": 5.394,
+   "entries_per_entrant": 5.398,
    "methods": 10.0
   },
   "share": {
-   "n": 2753,
-   "sites": 927,
-   "contestants": 551.0,
-   "conversion": 0.239,
-   "entries_per_entrant": 4.863,
+   "n": 2692,
+   "sites": 916,
+   "contestants": 543.0,
+   "conversion": 0.237,
+   "entries_per_entrant": 4.865,
    "methods": 8.0
   },
   "join": {
-   "n": 2638,
-   "sites": 858,
-   "contestants": 470.0,
+   "n": 2576,
+   "sites": 826,
+   "contestants": 473.5,
    "conversion": 0.271,
-   "entries_per_entrant": 4.628,
+   "entries_per_entrant": 4.627,
    "methods": 7.0
   },
   "content": {
-   "n": 1765,
-   "sites": 654,
-   "contestants": 350.0,
-   "conversion": 0.147,
-   "entries_per_entrant": 3.474,
+   "n": 1756,
+   "sites": 649,
+   "contestants": 350.5,
+   "conversion": 0.143,
+   "entries_per_entrant": 3.48,
    "methods": 6.0
   },
   "download": {
-   "n": 656,
-   "sites": 259,
-   "contestants": 339.5,
+   "n": 649,
+   "sites": 255,
+   "contestants": 336.0,
    "conversion": 0.209,
-   "entries_per_entrant": 3.645,
+   "entries_per_entrant": 3.655,
    "methods": 7.0
   }
  },
  "share_position_relative_to_email": {
   "1-6": {
    "share_after_email": {
-    "n": 5877,
-    "sites": 1669,
+    "n": 5863,
+    "sites": 1666,
     "email_completions_per_contestant": 1.007,
     "share_completions_per_contestant": 0.118
    },
    "share_before_email": {
-    "n": 676,
-    "sites": 257,
+    "n": 672,
+    "sites": 256,
     "email_completions_per_contestant": 0.825,
-    "share_completions_per_contestant": 0.138
+    "share_completions_per_contestant": 0.137
    }
   },
   "11+": {
    "share_after_email": {
-    "n": 7511,
-    "sites": 1240,
-    "email_completions_per_contestant": 0.891,
-    "share_completions_per_contestant": 0.203
+    "n": 7463,
+    "sites": 1234,
+    "email_completions_per_contestant": 0.892,
+    "share_completions_per_contestant": 0.202
    },
    "share_before_email": {
-    "n": 4567,
-    "sites": 528,
-    "email_completions_per_contestant": 0.922,
+    "n": 4554,
+    "sites": 521,
+    "email_completions_per_contestant": 0.926,
     "share_completions_per_contestant": 0.343
    }
   },
   "7-10": {
    "share_after_email": {
-    "n": 6965,
-    "sites": 1893,
-    "email_completions_per_contestant": 0.954,
+    "n": 6945,
+    "sites": 1889,
+    "email_completions_per_contestant": 0.955,
     "share_completions_per_contestant": 0.133
    },
    "share_before_email": {
-    "n": 1827,
-    "sites": 424,
-    "email_completions_per_contestant": 1.039,
+    "n": 1821,
+    "sites": 421,
+    "email_completions_per_contestant": 1.041,
     "share_completions_per_contestant": 0.099
    }
   }
@@ -1242,92 +1242,92 @@
  "mandatory_count_vs_optional_completion": {
   "1-6": {
    "2": {
-    "n": 4518,
-    "sites": 1651,
-    "contestants": 412.5,
+    "n": 4497,
+    "sites": 1635,
+    "contestants": 412.0,
     "conversion": 0.335,
     "optional_completions_per_contestant": 0.664
    },
+   "3+": {
+    "n": 6095,
+    "sites": 2169,
+    "contestants": 390.0,
+    "conversion": 0.321,
+    "optional_completions_per_contestant": 0.511
+   },
    "1": {
-    "n": 13710,
-    "sites": 3707,
-    "contestants": 543.0,
-    "conversion": 0.323,
+    "n": 13690,
+    "sites": 3690,
+    "contestants": 543.5,
+    "conversion": 0.322,
     "optional_completions_per_contestant": 0.591
    },
-   "3+": {
-    "n": 6272,
-    "sites": 2215,
-    "contestants": 387.0,
-    "conversion": 0.317,
-    "optional_completions_per_contestant": 0.524
-   },
    "0": {
-    "n": 29499,
-    "sites": 6697,
-    "contestants": 433.0,
+    "n": 29309,
+    "sites": 6664,
+    "contestants": 436.0,
     "conversion": 0.332,
-    "optional_completions_per_contestant": 0.829
+    "optional_completions_per_contestant": 0.827
    }
   },
   "7-10": {
    "1": {
-    "n": 6208,
-    "sites": 1820,
+    "n": 6188,
+    "sites": 1807,
     "contestants": 644.0,
-    "conversion": 0.241,
-    "optional_completions_per_contestant": 0.544
+    "conversion": 0.24,
+    "optional_completions_per_contestant": 0.543
    },
    "3+": {
-    "n": 4994,
-    "sites": 1535,
-    "contestants": 415.5,
+    "n": 4848,
+    "sites": 1491,
+    "contestants": 408.5,
     "conversion": 0.26,
-    "optional_completions_per_contestant": 0.388
-   },
-   "2": {
-    "n": 2109,
-    "sites": 803,
-    "contestants": 388.0,
-    "conversion": 0.238,
-    "optional_completions_per_contestant": 0.525
+    "optional_completions_per_contestant": 0.384
    },
    "0": {
-    "n": 19076,
-    "sites": 4329,
-    "contestants": 485.0,
-    "conversion": 0.246,
+    "n": 18990,
+    "sites": 4297,
+    "contestants": 484.0,
+    "conversion": 0.245,
     "optional_completions_per_contestant": 0.7
+   },
+   "2": {
+    "n": 2095,
+    "sites": 799,
+    "contestants": 386.0,
+    "conversion": 0.237,
+    "optional_completions_per_contestant": 0.524
    }
   },
   "11+": {
    "2": {
-    "n": 1910,
-    "sites": 437,
-    "contestants": 408.0,
+    "n": 1908,
+    "sites": 436,
+    "contestants": 407.5,
     "conversion": 0.194,
     "optional_completions_per_contestant": 0.458
    },
-   "3+": {
-    "n": 3510,
-    "sites": 957,
-    "contestants": 552.0,
-    "conversion": 0.206,
-    "optional_completions_per_contestant": 0.395
-   },
    "1": {
-    "n": 5901,
-    "sites": 1005,
+    "n": 5890,
+    "sites": 1001,
     "contestants": 747.0,
-    "conversion": 0.208,
+    "conversion": 0.207,
     "optional_completions_per_contestant": 0.479
    },
+   "3+": {
+    "n": 3449,
+    "sites": 933,
+    "contestants": 546.0,
+    "conversion": 0.205,
+    "optional_completions_per_contestant": 0.394
+   },
    "0": {
-    "n": 19632,
-    "sites": 2577,
-    "contestants": 561.5,
+    "n": 19534,
+    "sites": 2562,
+    "contestants": 560.0,
     "conversion": 0.224,
-    "optional_completions_per_contestant": 0.606
+    "optional_completions_per_contestant": 0.607
    }
   }
  }

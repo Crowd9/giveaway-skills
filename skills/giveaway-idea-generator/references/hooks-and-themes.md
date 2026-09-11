@@ -72,7 +72,7 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`, `template
 
 Matches are on words in the campaign name and headline Prize name, and one title can match several hooks. Peak month is the month where the hook's share of that month's starts is highest. Conversion Rate is the typical share of viewers who entered for campaigns carrying the hook, against 27% for titles with no hook.
 
-(117,348 campaigns, 100 or more Entrants, 17,777 businesses, campaign analysis, 81,213 titles carry no hook.)
+(116,499 campaigns, 100 or more Entrants, 17,633 businesses, campaign analysis, 81,213 titles carry no hook.)
 
 | Hook | Campaigns | Share of titles | Peak month | Share of that month's starts | Conversion Rate |
 |---|---|---|---|---|---|
@@ -111,32 +111,32 @@ A type is declared by words in the title, incentive name or the start of the des
 <!-- generated:ig_types -->
 | Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) |
 |---|---|---|---|---|---|---|---|
-| All campaigns (baseline) | 117,128 | 17,747 | 492 | 35% | 4.4 | 12 | 1.00 |
-| Collaboration or partner | 16,813 | 4,368 | 604 | 30% (6,844) | 4.8 | 14 | 0.99 (5,799) |
-| Bundle, mega or ultimate | 14,598 | 4,544 | 682 | 32% (4,393) | 4.5 | 12 | 1.08 (6,521) |
-| Gift card or voucher | 11,100 | 2,939 | 432 | 32% (2,788) | 4.7 | 12 | 1.17 (6,791) |
-| Holiday themed | 10,047 | 3,293 | 608 | 32% (3,475) | 4.4 | 11 | 1.17 (4,922) |
-| Creator or streamer | 6,327 | 2,111 | 317 | 39% (2,288) | 4.9 | 13 | 0.68 (2,216) |
-| Community or Discord | 5,212 | 2,017 | 409 | 30% (1,884) | 4.6 | 20 | 0.74 (1,897) |
-| Competition wording (UK) | 4,874 | 1,318 | 508 | 31% (1,338) | 4.0 | 12 | 1.05 (1,534) |
-| Milestone | 4,465 | 2,121 | 730 | 32% (1,290) | 4.5 | 15 | 1.00 (1,681) |
-| Weekly or monthly series | 4,353 | 952 | 457 | 33% (1,348) | 4.6 | 17 | 0.99 (1,949) |
-| Cash prize | 4,049 | 1,148 | 570 | 61% (1,669) | 7.6 | 8 | 1.35 (1,495) |
-| Product launch | 4,017 | 1,754 | 547 | 29% (1,295) | 5.0 | 14 | 0.97 (1,583) |
-| Sweepstakes wording (US) | 3,867 | 986 | 804 | 22% (1,150) | 4.3 | 10 | 1.01 (2,121) |
-| Free or no purchase | 3,696 | 666 | 862 | 31% (834) | 5.6 | 9 | 2.17 (2,010) |
-| Advent or daily calendar | 2,826 | 591 | 600 | 44% (1,392) | 3.9 | 10 | 0.99 (1,015) |
-| Anniversary or birthday | 2,302 | 1,184 | 596 | 31% (775) | 4.2 | 12 | 0.97 (903) |
-| Sorteo (Spanish) | 1,763 | 561 | 407 | 34% (792) | 4.4 | 13 | 0.85 (437) |
+| All campaigns (baseline) | 116,283 | 17,603 | 492 | 35% | 4.4 | 11 | 1.00 |
+| Collaboration or partner | 16,645 | 4,328 | 603 | 30% (6,721) | 4.8 | 14 | 0.99 (5,767) |
+| Bundle, mega or ultimate | 14,536 | 4,516 | 681 | 32% (4,361) | 4.5 | 12 | 1.08 (6,500) |
+| Gift card or voucher | 11,095 | 2,935 | 432 | 32% (2,785) | 4.7 | 12 | 1.18 (6,787) |
+| Holiday themed | 10,015 | 3,280 | 608 | 32% (3,465) | 4.4 | 11 | 1.17 (4,909) |
+| Creator or streamer | 6,309 | 2,101 | 317 | 39% (2,277) | 4.9 | 13 | 0.68 (2,210) |
+| Community or Discord | 5,091 | 1,959 | 409 | 30% (1,814) | 4.6 | 19 | 0.75 (1,856) |
+| Competition wording (UK) | 4,833 | 1,299 | 507 | 31% (1,318) | 4.0 | 12 | 1.07 (1,523) |
+| Milestone | 4,410 | 2,092 | 726 | 32% (1,268) | 4.4 | 14 | 1.00 (1,661) |
+| Weekly or monthly series | 4,333 | 945 | 459 | 33% (1,339) | 4.6 | 17 | 0.99 (1,943) |
+| Cash prize | 4,017 | 1,143 | 567 | 61% (1,659) | 7.7 | 8 | 1.35 (1,485) |
+| Product launch | 3,976 | 1,724 | 546 | 29% (1,281) | 5.0 | 14 | 0.98 (1,570) |
+| Sweepstakes wording (US) | 3,856 | 982 | 806 | 22% (1,150) | 4.3 | 10 | 1.01 (2,116) |
+| Free or no purchase | 3,687 | 663 | 864 | 31% (831) | 5.6 | 9 | 2.18 (2,007) |
+| Advent or daily calendar | 2,814 | 589 | 602 | 44% (1,389) | 3.9 | 10 | 0.99 (1,013) |
+| Anniversary or birthday | 2,297 | 1,179 | 596 | 31% (774) | 4.2 | 12 | 0.98 (900) |
+| Sorteo (Spanish) | 1,761 | 559 | 407 | 34% (791) | 4.4 | 13 | 0.86 (436) |
 | Concours (French) | 1,146 | 222 | 428 | 35% (595) | 3.5 | 7 | 0.70 (236) |
-| Cart, wishlist or spree | 903 | 339 | 725 | 34% (270) | 3.7 | 10 | 1.43 (451) |
+| Cart, wishlist or spree | 902 | 338 | 724 | 34% (270) | 3.7 | 10 | 1.42 (450) |
 | Gewinnspiel (German) | 678 | 133 | 836 | 33% (317) | 4.4 | 6 | 0.67 (96) |
-| Scavenger hunt or secret code | 515 | 220 | 518 | 36% (176) | 5.0 | 25 | 0.85 (165) |
-| Charity or fundraiser | 473 | 130 | 969 | 34% (335) | 1.0 | 9 | 0.70 (87) |
-| Quiz or trivia | 424 | 182 | 368 | 37% (248) | 3.5 | 21 | 0.66 (132) |
+| Scavenger hunt or secret code | 510 | 217 | 512 | 36% (173) | 5.0 | 26 | 0.86 (164) |
+| Charity or fundraiser | 472 | 129 | 960 | 34% (334) | 1.0 | 9 | 0.70 (87) |
+| Quiz or trivia | 413 | 178 | 372 | 37% (238) | 3.4 | 20 | 0.65 (127) |
 | Voting contest | 364 | 178 | 394 | 28% (140) | 2.1 | 12 | 0.56 (107) |
-| Flash (24 to 72 hours) | 349 | 183 | 598 | 39% (124) | 4.9 | 23 | 0.98 (165) |
-| Photo or video contest (UGC) | 265 | 175 | 252 | 21% (71) | 2.1 | 6 | 0.27 (108) |
+| Flash (24 to 72 hours) | 346 | 181 | 602 | 39% (122) | 4.9 | 23 | 0.98 (165) |
+| Photo or video contest (UGC) | 263 | 173 | 249 | 21% (70) | 2.1 | 6 | 0.27 (108) |
 <!-- /generated -->
 
 Reading it:
@@ -206,12 +206,12 @@ Source: `analysis/output/shape_capture.json`.
 ### Launches, pre-orders and drops (extracted)
 
 <!-- generated:ig_launch -->
-| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email signups per Entrant, where offered | Referrals % of Entrants |
+| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email uptake | Referrals % of Entrants |
 |---|---|---|---|---|---|
-| Launch or new release | 3,349 | 588 | 30% (1,235) | 0.96 | 17 |
-| Limited edition or drop | 1,808 | 532 | 31% (659) | 1.00 | 14 |
-| Pre-order or crowdfunding | 984 | 456 | 29% (149) | 0.75 | 11 |
-| Early access, beta or waitlist | 800 | 401 | 34% (392) | 1.00 | 16 |
+| Launch or new release | 3,309 | 588 | 30% (1,222) | 0.96 | 17 |
+| Limited edition or drop | 1,801 | 531 | 31% (654) | 1.00 | 14 |
+| Pre-order or crowdfunding | 982 | 458 | 28% (149) | 0.75 | 11 |
+| Early access, beta or waitlist | 778 | 395 | 34% (384) | 1.00 | 15 |
 | Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
 <!-- /generated -->
 
@@ -317,7 +317,7 @@ A small Prize in front of an audience that already exists beats a large Prize in
 
 ## Hooks by business type (extracted)
 
-Where the business runs from and what it sells shapes which hook lands, ahead of industry. Wider in scope than the 117,348-campaign base above (it keeps crypto and applies no purchase-only exclusion), every row at least 10 businesses.
+Where the business runs from and what it sells shapes which hook lands, ahead of industry. Wider in scope than the 116,499-campaign base above (it keeps crypto and applies no purchase-only exclusion), every row at least 10 businesses.
 
 **Creator campaigns run from a platform page.** Businesses whose campaign is hosted from a shared platform page (YouTube, Twitch, X and the like) get a good share to enter over a short run and rarely ask for email. The hook is the audience already on the page, so lead with the creator's own moment (a stream milestone, a video drop) and treat email as a stretch goal, not the mandatory action.
 
@@ -406,13 +406,13 @@ What belongs to the concept is the collaboration test: same customer, different 
 <!-- generated:ig_title -->
 | Word in the title | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant | December starts |
 |---|---|---|---|---|---|---|
-| giveaway | 18,953 | 4,598 | 439 | 33% | 3.7 | 11% |
-| none of the usual words | 17,298 | 3,171 | 455 | 38% | 3.7 | 17% |
+| giveaway | 18,853 | 4,566 | 438 | 33% | 3.7 | 11% |
+| none of the usual words | 17,070 | 3,112 | 455 | 38% | 3.6 | 17% |
 | sweepstakes | 724 | 214 | 742 | 25% | 4.1 | 9% |
-| sorteo | 648 | 228 | 344 | 35% | 4.2 | 8% |
-| raffle | 537 | 52 | 718 | 46% | 1.0 | 11% |
-| competition | 487 | 137 | 342 | 23% | 3.7 | 8% |
-| contest | 483 | 201 | 368 | 23% | 3.1 | 5% |
+| sorteo | 647 | 227 | 342 | 35% | 4.2 | 8% |
+| raffle | 533 | 50 | 718 | 47% | 1.0 | 11% |
+| competition | 484 | 135 | 342 | 23% | 3.7 | 8% |
+| contest | 471 | 196 | 372 | 23% | 3.0 | 5% |
 | concours | 360 | 65 | 692 | 33% | 2.7 | 11% |
 | gewinnspiel | 286 | 44 | 1,332 | 36% | 4.3 | 34% |
 <!-- /generated -->
@@ -424,9 +424,9 @@ Titles that start with "Win" or state a value draw fewer Entrants than titles wi
 <!-- generated:ig_title_traits -->
 | Title feature | Campaigns (with) | Entrants (with) | Entrants (without) |
 |---|---|---|---|
-| Starts with "Win" | 2,385 | 374 | 456 |
-| Value stated in the title | 2,995 | 419 | 456 |
-| Emoji | 1,522 | 471 | 451 |
+| Starts with "Win" | 2,384 | 374 | 457 |
+| Value stated in the title | 2,984 | 419 | 456 |
+| Emoji | 1,495 | 471 | 451 |
 <!-- /generated -->
 
 Titles over 60 characters got the most to enter, at 42% (909 campaigns). The title reflects the business's market and habits more than it moves anyone.

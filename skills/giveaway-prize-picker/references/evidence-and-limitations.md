@@ -4,9 +4,9 @@
 
 A private dataset of 167,068 campaigns from one giveaway platform, each with at least 100 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
 
-The benchmarks below describe the 117,348 of those campaigns left after removing crypto, purchase-only and finance_crypto organizers.
+The benchmarks below describe the 116,499 of those campaigns left after removing crypto, purchase-only and finance_crypto organizers.
 
-| Entrant count | Share of the 117,348 campaigns |
+| Entrant count | Share of the 116,499 campaigns |
 |---|---|
 | 100 to 250 | 28% |
 | 250 to 500 | 22% |
@@ -54,11 +54,11 @@ The dataset's core counts are verified directly. Only USD has enough stated valu
 <!-- generated:segments -->
 | Segment | Campaigns | Handling |
 |---|---|---|
-| Ordinary | 117,348 (172,645 prize records, 17,777 organizers) | Basis for every default figure |
-| Crypto | 6,288 | Excluded. Described only when a user asks for crypto advice. 38% used a wallet-address entry method |
-| Purchase opportunity | 262 | Excluded. The prize is the right to buy something |
+| Ordinary | 116,499 (170,599 prize records, 17,633 organizers) | Basis for every default figure |
+| Crypto | 3,467 | Excluded. Described only when a user asks for crypto advice. 40% used a wallet-address entry method |
+| Purchase opportunity | 259 | Excluded. The prize is the right to buy something |
 
-Excluded campaigns are similar in size to ordinary ones (crypto median 732 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
+Excluded campaigns are similar in size to ordinary ones (crypto median 580 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
 <!-- /generated -->
 
 The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 732 Entrants versus 492 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
@@ -72,22 +72,22 @@ Two shorthands run through the tables below. The middle half is the middle half 
 <!-- generated:benchmark -->
 | Measure | Value | n or note |
 |---|---|---|
-| Valid contestants | median 492, IQR 225 to 1,292, 90th pct 3,345 | 117,348. Floor is 101 by selection |
-| Valid entries | median 2,320 | 117,128. Entries count actions, and one person makes many |
-| Entries per contestant | median 4.39, IQR 2.74 to 7.05 | 117,128 |
-| Impressions | median 2,029 | 117,258 with a non-zero value. Zeros treated as unknown |
-| Duration | median 14 days, IQR 7 to 29 | 116,491. Maximum 365 days (evergreen campaigns) |
-| One prize record | 82.4% of campaigns | quantity may still exceed 1 |
-| Any quantity above 1 | 31.8% of campaigns | units listed, which may differ from Winners |
-| Prize value stated | 37.7% of prize records | 62.3% unknown |
-| Stated USD values | median 125, IQR 50 to 424, 90th pct 1,199 | 65,018 records. Max 1,000,000 |
+| Valid contestants | median 492, IQR 225 to 1,290, 90th pct 3,334 | 116,499. Floor is 101 by selection |
+| Valid entries | median 2,322 | 116,283. Entries count actions, and one person makes many |
+| Entries per contestant | median 4.38, IQR 2.74 to 7.06 | 116,283 |
+| Impressions | median 2,033 | 116,119 with a non-zero value. Zeros treated as unknown |
+| Duration | median 14 days, IQR 7 to 29 | 115,754. Maximum 365 days (evergreen campaigns) |
+| One prize record | 82.6% of campaigns | quantity may still exceed 1 |
+| Any quantity above 1 | 31.5% of campaigns | units listed, which may differ from Winners |
+| Prize value stated | 37.9% of prize records | 62.1% unknown |
+| Stated USD values | median 125, IQR 50 to 425, 90th pct 1,199 | 64,579 records. Max 1,000,000 |
 | Stated EUR values | median 75, IQR 39 to 332, 90th pct 2,200 | 35 records. Max 9,100 |
 | Stated GBP values | median 62, IQR 25 to 400, 90th pct 450 | 34 records. Max 1,200 |
 | Stated CAD values | median 545, IQR 200 to 2,180, 90th pct 4,500 | 21 records. Too few to use. Max 35,000 |
 | Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use. Max 60,000 |
-| Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 43,109 campaigns. Max 10,000,000 |
-| Repeat organizers | 3,818 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
-| Plan tier | Business 29,966, Pro 62,493, Hobby 10,838, Free 12,039, Premium 2,007, Not Available 5 | tier at export time |
+| Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 42,892 campaigns. Max 10,000,000 |
+| Repeat organizers | 3,795 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
+| Plan tier | Business 29,645, Hobby 10,802, Free 11,993, Pro 62,061, Premium 1,993, Not Available 5 | tier at export time |
 <!-- /generated -->
 
 ## By campaign size
@@ -97,29 +97,29 @@ Every size group is still a selected sample with a floor, and bigger campaigns c
 <!-- generated:bands -->
 | Band (valid contestants) | Campaigns | Organizers | Value stated | Stated USD median (n) | Campaign total USD median (n) | One prize record | Entries per contestant | Duration median |
 |---|---|---|---|---|---|---|---|---|
-| 100-250 | 33,338 | 9,607 | 36% | 69 (16,411) | 120 (11,715) | 85% | 4.09 | 12 days |
-| 250-500 | 25,892 | 6,554 | 37% | 80 (13,293) | 149 (9,455) | 84% | 4.61 | 14 days |
-| 500-1k | 21,935 | 5,550 | 36% | 120 (11,515) | 260 (7,838) | 82% | 4.68 | 14 days |
-| 1k-2.5k | 20,137 | 5,123 | 40% | 210 (12,345) | 530 (7,794) | 79% | 4.32 | 15 days |
-| 2.5k-10k | 12,828 | 3,035 | 42% | 375 (9,313) | 1,299 (5,152) | 78% | 4.39 | 18 days |
-| 10k+ | 3,218 | 762 | 37% | 779 (2,141) | 3,000 (1,155) | 80% | 4.39 | 18 days |
+| 100-250 | 33,074 | 9,533 | 36% | 69 (16,280) | 120 (11,662) | 85% | 4.09 | 12 days |
+| 250-500 | 25,681 | 6,496 | 38% | 80 (13,221) | 147 (9,416) | 85% | 4.6 | 14 days |
+| 500-1k | 21,838 | 5,509 | 37% | 120 (11,474) | 259 (7,812) | 82% | 4.68 | 14 days |
+| 1k-2.5k | 20,021 | 5,077 | 40% | 210 (12,278) | 530 (7,761) | 79% | 4.32 | 15 days |
+| 2.5k-10k | 12,714 | 2,991 | 42% | 379 (9,229) | 1,299 (5,111) | 78% | 4.38 | 18 days |
+| 10k+ | 3,171 | 748 | 37% | 799 (2,097) | 3,000 (1,130) | 80% | 4.37 | 18 days |
 
 Primary prize category (first prize record) by band, share of campaigns:
 
 | Category | 100-250 | 250-500 | 500-1k | 1k-2.5k | 2.5k-10k | 10k+ |
 |---|---|---|---|---|---|---|
-| Tech hardware | 10.8% | 12.5% | 16.8% | 23.5% | 29.8% | 36.9% |
-| Gift card or cash | 13.0% | 18.4% | 13.7% | 11.0% | 9.8% | 8.1% |
-| Bundle or box | 9.7% | 10.9% | 11.1% | 9.9% | 8.7% | 4.9% |
-| Experience, travel, tickets | 6.4% | 4.6% | 4.0% | 4.4% | 5.4% | 5.4% |
-| Game items or skins | 11.9% | 8.9% | 7.9% | 6.5% | 5.3% | 5.0% |
-| Merch, apparel, collectibles | 3.8% | 3.6% | 3.8% | 3.1% | 3.7% | 4.6% |
-| Home, garden, appliance | 1.1% | 1.3% | 1.7% | 2.7% | 2.9% | 1.4% |
-| Regulated goods (firearms) | 0.3% | 0.5% | 0.8% | 2.0% | 2.9% | 9.1% |
+| Tech hardware | 10.9% | 12.6% | 16.9% | 23.6% | 29.9% | 36.9% |
+| Gift card or cash | 13.0% | 18.5% | 13.7% | 11.0% | 9.8% | 8.2% |
+| Bundle or box | 9.8% | 11.0% | 11.1% | 9.9% | 8.7% | 5.0% |
+| Experience, travel, tickets | 6.4% | 4.6% | 4.0% | 4.4% | 5.5% | 5.4% |
+| Game items or skins | 12.0% | 9.0% | 8.0% | 6.5% | 5.4% | 5.0% |
+| Merch, apparel, collectibles | 3.9% | 3.6% | 3.8% | 3.1% | 3.8% | 4.7% |
+| Home, garden, appliance | 1.1% | 1.3% | 1.7% | 2.7% | 3.0% | 1.4% |
+| Regulated goods (firearms) | 0.3% | 0.5% | 0.8% | 2.0% | 2.9% | 9.2% |
 | Sports and outdoor gear | 0.6% | 0.8% | 1.0% | 1.3% | 1.3% | 0.6% |
 | Food, drink, consumables | 0.8% | 1.0% | 1.2% | 1.5% | 1.1% | 0.4% |
 | Subscription or membership | 1.3% | 1.0% | 1.0% | 0.9% | 0.6% | 0.3% |
-| Discount or coupon | 0.6% | 0.3% | 0.5% | 0.6% | 0.3% | 0.1% |
+| Discount or coupon | 0.6% | 0.3% | 0.4% | 0.6% | 0.3% | 0.1% |
 <!-- /generated -->
 
 ## Plan tier, extended
@@ -178,17 +178,17 @@ Campaigns whose every Prize carried a stated USD value: 43,173, from 9,180 busin
 <!-- generated:ev_value_bands -->
 | Stated pool, USD | Campaigns | Entrants | Actions per Entrant | Stated USD per Entrant |
 |---|---|---|---|---|
-| under 50 | 6,066 | 266 | 6.05 | 0.07 |
-| 50-99 | 5,224 | 320 | 5.89 | 0.19 |
-| 100-249 | 8,628 | 403 | 4.42 | 0.37 |
-| 250-499 | 6,166 | 618 | 4.39 | 0.55 |
-| 500-999 | 5,888 | 850 | 4.39 | 0.77 |
-| 1000-2499 | 6,468 | 1,303 | 4.39 | 1.10 |
-| 2500-4999 | 2,777 | 2,133 | 4.96 | 1.57 |
-| 5000-9999 | 1,109 | 2,132 | 4.35 | 2.92 |
-| 10000-24999 | 559 | 1,545 | 4.49 | 9.23 |
-| 25000-49999 | 131 | 1,858 | 3.68 | 17.48 |
-| 50000+ | 157 | 1,095 | 4.25 | 108.93 |
+| under 50 | 6,063 | 266 | 6.05 | 0.07 |
+| 50-99 | 5,213 | 320 | 5.89 | 0.19 |
+| 100-249 | 8,573 | 403 | 4.42 | 0.37 |
+| 250-499 | 6,146 | 618 | 4.38 | 0.55 |
+| 500-999 | 5,839 | 849 | 4.38 | 0.77 |
+| 1000-2499 | 6,428 | 1,307 | 4.39 | 1.10 |
+| 2500-4999 | 2,763 | 2,107 | 4.95 | 1.58 |
+| 5000-9999 | 1,099 | 2,152 | 4.32 | 2.90 |
+| 10000-24999 | 553 | 1,521 | 4.49 | 9.36 |
+| 25000-49999 | 130 | 1,830 | 3.63 | 17.76 |
+| 50000+ | 146 | 1,128 | 4.27 | 114.55 |
 <!-- /generated -->
 
 Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 2.2 times the Entrants, and value accounts for about 23% of the variation in Entrant counts [the `value_regression` cut in `context_checks.json`, 43,173 campaigns from 9,180 businesses]. The table above rises through the middle bands and falls back at the largest pools.
@@ -277,27 +277,27 @@ Each campaign's Entrants divided by the typical Entrants for other campaigns at 
 <!-- generated:ev_crowd_category -->
 | Category | Campaigns | Entrants | Crowd per Prize dollar | For the money |
 |---|---|---|---|---|
-| Regulated goods (firearms) | 1,579 | 2,107 | 2.03 | 103% above typical |
-| Music gear | 452 | 1,306 | 1.90 | 90% above typical |
-| Tech hardware | 22,076 | 900 | 1.43 | 43% above typical |
+| Regulated goods (firearms) | 1,577 | 2,107 | 2.04 | 104% above typical |
+| Music gear | 452 | 1,306 | 1.91 | 91% above typical |
+| Tech hardware | 22,019 | 898 | 1.42 | 42% above typical |
 | Home, garden, appliance | 2,452 | 913 | 1.35 | 35% above typical |
 | Tools, craft, DIY | 581 | 941 | 1.16 | 16% above typical |
 | Food, drink, consumables | 1,467 | 694 | 1.14 | 14% above typical |
 | Beauty and wellness | 815 | 472 | 1.11 | 11% above typical |
-| Gift card or cash | 17,880 | 436 | 1.10 | 10% above typical |
-| Sports and outdoor gear | 1,366 | 776 | 1.04 | 4% above typical |
-| Vehicle | 733 | 805 | 1.04 | 4% above typical |
-| Art and custom | 185 | 397 | 1.02 | typical |
-| Placeholder name | 5,629 | 547 | 0.95 | 5% below typical |
-| Bundle or box | 13,409 | 499 | 0.89 | 11% below typical |
-| Toys and collectibles | 2,297 | 420 | 0.86 | 14% below typical |
-| Unclassified | 34,888 | 423 | 0.82 | 18% below typical |
-| Merch, apparel, collectibles | 5,548 | 497 | 0.79 | 21% below typical |
-| Game items or skins | 11,220 | 363 | 0.74 | 26% below typical |
-| Discount or coupon | 1,054 | 726 | 0.73 | 27% below typical |
-| Exclusive access | 535 | 380 | 0.61 | 39% below typical |
-| Experience, travel, tickets | 6,319 | 404 | 0.61 | 39% below typical |
-| Subscription or membership | 1,636 | 426 | 0.52 | 48% below typical |
+| Gift card or cash | 17,799 | 436 | 1.10 | 10% above typical |
+| Sports and outdoor gear | 1,363 | 777 | 1.04 | 4% above typical |
+| Vehicle | 728 | 802 | 1.04 | 4% above typical |
+| Art and custom | 184 | 399 | 1.02 | typical |
+| Placeholder name | 5,557 | 548 | 0.95 | 5% below typical |
+| Bundle or box | 13,369 | 499 | 0.89 | 11% below typical |
+| Toys and collectibles | 2,296 | 420 | 0.86 | 14% below typical |
+| Unclassified | 34,246 | 424 | 0.82 | 18% below typical |
+| Merch, apparel, collectibles | 5,538 | 497 | 0.79 | 21% below typical |
+| Game items or skins | 11,195 | 362 | 0.75 | 25% below typical |
+| Discount or coupon | 1,046 | 732 | 0.73 | 27% below typical |
+| Exclusive access | 524 | 378 | 0.61 | 39% below typical |
+| Experience, travel, tickets | 6,308 | 404 | 0.60 | 40% below typical |
+| Subscription or membership | 1,630 | 422 | 0.53 | 47% below typical |
 <!-- /generated -->
 
 Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little more than their price tag suggests at 1.10, broadly wanted and close to what the money buys. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
@@ -340,11 +340,11 @@ Region is the top-level domain of the business's site, so a .com business in Man
 <!-- generated:ev_region -->
 | Business domain | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|
-| global domain (.com, .io, .net and so on) | 99,919 | 488 | 26% | 4.45 |
-| United Kingdom | 4,572 | 468 | 36% | 3.82 |
-| other or none | 4,222 | 412 | 26% | 4.75 |
-| Australia | 3,030 | 566 | 32% | 3.24 |
-| Brazil | 1,231 | 1,076 | 54% | 4.70 |
+| global domain (.com, .io, .net and so on) | 99,225 | 488 | 26% | 4.44 |
+| United Kingdom | 4,570 | 469 | 36% | 3.82 |
+| other or none | 4,099 | 411 | 26% | 4.70 |
+| Australia | 3,028 | 566 | 32% | 3.24 |
+| Brazil | 1,227 | 1,077 | 54% | 4.69 |
 | Germany | 789 | 773 | 31% | 4.86 |
 | Sweden | 677 | 663 | 75% | 3.87 |
 | Canada | 612 | 612 | 23% | 3.26 |
@@ -352,9 +352,9 @@ Region is the top-level domain of the business's site, so a .com business in Man
 | Finland | 232 | 9,018 | 77% | 1.00 |
 | Belgium | 222 | 296 | 35% | 5.65 |
 | France | 207 | 224 | 20% | 3.98 |
-| Netherlands | 196 | 374 | 31% | 4.05 |
+| Netherlands | 195 | 372 | 31% | 4.05 |
 | Spain | 165 | 381 | 24% | 5.02 |
-| Japan | 143 | 280 | 29% | 3.73 |
+| Japan | 140 | 273 | 29% | 3.77 |
 <!-- /generated -->
 
 Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
@@ -362,15 +362,15 @@ Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
 <!-- generated:ev_language -->
 | Language guess | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|
-| English or unknown | 108,830 | 490 | 27% | 4.4 |
-| Indonesian | 2,480 | 556 | 24% | 4.9 |
-| Spanish | 1,890 | 465 | 29% | 4.9 |
-| Portuguese | 1,820 | 1,000 | 51% | 4.8 |
+| English or unknown | 108,016 | 491 | 27% | 4.4 |
+| Indonesian | 2,455 | 555 | 23% | 4.9 |
+| Spanish | 1,889 | 465 | 29% | 4.9 |
+| Portuguese | 1,818 | 1,002 | 51% | 4.8 |
 | French | 1,113 | 301 | 27% | 4.1 |
 | German | 521 | 339 | 25% | 4.3 |
-| Dutch | 185 | 267 | 34% | 6.1 |
 | Turkish | 185 | 581 | 32% | 2.9 |
-| Italian | 104 | 450 | 15% | 4.5 |
+| Dutch | 184 | 266 | 34% | 6.1 |
+| Italian | 102 | 428 | 15% | 4.5 |
 <!-- /generated -->
 
 ### Prize currency by country

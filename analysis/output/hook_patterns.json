@@ -1,119 +1,119 @@
 {
- "source": "ordinary campaigns with 100 or more contestants in the campaign analysis, regex on campaign name and headline prize name, one campaign can match several hooks",
- "campaigns": 117348,
- "organizers": 17777,
+ "source": "ordinary campaigns with 100 or more contestants in the second dataset, regex on campaign name and headline prize name, one campaign can match several hooks",
+ "campaigns": 116499,
+ "organizers": 17633,
  "hooks": {
   "no hook": {
-   "campaigns": 81213,
+   "campaigns": 80611,
    "conversion": 0.269
   },
   "collaboration or partner": {
-   "campaigns": 12426,
+   "campaigns": 12305,
    "share": 0.106,
    "peak_month": 3,
    "peak_month_share_of_that_months_campaigns": 0.11,
-   "organizers": 3278,
+   "organizers": 3245,
    "conversion": 0.263,
-   "entries_per_entrant": 4.938
+   "entries_per_entrant": 4.923
   },
   "gaming release tie-in": {
-   "campaigns": 5823,
+   "campaigns": 5807,
    "share": 0.05,
    "peak_month": 10,
    "peak_month_share_of_that_months_campaigns": 0.06,
-   "organizers": 1766,
+   "organizers": 1758,
    "conversion": 0.28,
-   "entries_per_entrant": 5.038
+   "entries_per_entrant": 5.037
   },
   "daily or weekly series": {
-   "campaigns": 5430,
+   "campaigns": 5402,
    "share": 0.046,
    "peak_month": 12,
    "peak_month_share_of_that_months_campaigns": 0.164,
-   "organizers": 775,
+   "organizers": 772,
    "conversion": 0.339,
-   "entries_per_entrant": 3.957
+   "entries_per_entrant": 3.944
   },
   "seasonal (summer, spring, back to school)": {
-   "campaigns": 4469,
+   "campaigns": 4459,
    "share": 0.038,
    "peak_month": 6,
    "peak_month_share_of_that_months_campaigns": 0.068,
-   "organizers": 1656,
-   "conversion": 0.241,
-   "entries_per_entrant": 4.416
+   "organizers": 1654,
+   "conversion": 0.24,
+   "entries_per_entrant": 4.415
   },
   "milestone or anniversary": {
-   "campaigns": 3737,
+   "campaigns": 3700,
    "share": 0.032,
    "peak_month": 5,
    "peak_month_share_of_that_months_campaigns": 0.038,
-   "organizers": 1940,
+   "organizers": 1918,
    "conversion": 0.259,
-   "entries_per_entrant": 4.405
+   "entries_per_entrant": 4.402
   },
   "holiday season": {
-   "campaigns": 3037,
+   "campaigns": 3023,
    "share": 0.026,
    "peak_month": 12,
-   "peak_month_share_of_that_months_campaigns": 0.149,
-   "organizers": 1243,
+   "peak_month_share_of_that_months_campaigns": 0.15,
+   "organizers": 1237,
    "conversion": 0.274,
-   "entries_per_entrant": 4.589
+   "entries_per_entrant": 4.588
   },
   "event or livestream tie-in": {
-   "campaigns": 1879,
+   "campaigns": 1872,
    "share": 0.016,
    "peak_month": 7,
    "peak_month_share_of_that_months_campaigns": 0.022,
-   "organizers": 737,
-   "conversion": 0.31,
-   "entries_per_entrant": 4.182
+   "organizers": 734,
+   "conversion": 0.309,
+   "entries_per_entrant": 4.184
   },
   "launch or new product": {
-   "campaigns": 1687,
+   "campaigns": 1667,
    "share": 0.014,
    "peak_month": 8,
    "peak_month_share_of_that_months_campaigns": 0.017,
-   "organizers": 818,
+   "organizers": 803,
    "conversion": 0.235,
-   "entries_per_entrant": 4.974
+   "entries_per_entrant": 4.94
   },
   "valentines, mothers, fathers day": {
-   "campaigns": 1118,
+   "campaigns": 1111,
    "share": 0.01,
    "peak_month": 2,
    "peak_month_share_of_that_months_campaigns": 0.029,
-   "organizers": 597,
+   "organizers": 594,
    "conversion": 0.27,
    "entries_per_entrant": 4.287
   },
   "black friday or sales event": {
-   "campaigns": 1072,
+   "campaigns": 1065,
    "share": 0.009,
    "peak_month": 11,
-   "peak_month_share_of_that_months_campaigns": 0.056,
-   "organizers": 436,
+   "peak_month_share_of_that_months_campaigns": 0.057,
+   "organizers": 431,
    "conversion": 0.248,
-   "entries_per_entrant": 4.287
+   "entries_per_entrant": 4.276
   },
   "halloween": {
-   "campaigns": 635,
+   "campaigns": 634,
    "share": 0.005,
    "peak_month": 10,
-   "peak_month_share_of_that_months_campaigns": 0.051,
-   "organizers": 383,
+   "peak_month_share_of_that_months_campaigns": 0.052,
+   "organizers": 382,
    "conversion": 0.244,
-   "entries_per_entrant": 5.006
+   "entries_per_entrant": 5.007
   },
   "charity or cause": {
-   "campaigns": 140,
+   "campaigns": 139,
    "share": 0.001,
    "peak_month": 2,
    "peak_month_share_of_that_months_campaigns": 0.002,
-   "organizers": 82,
+   "organizers": 81,
    "conversion": 0.233,
-   "entries_per_entrant": 3.581
+   "entries_per_entrant": 3.53
   }
  }
 }

@@ -1,6 +1,6 @@
 # What the data says about Gleam settings
 
-Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 100 or more unique Entrants, crypto and purchase-only campaigns removed. (117,348 campaigns.)
+Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 100 or more unique Entrants, crypto and purchase-only campaigns removed. (116,499 campaigns.)
 
 Every figure below is the share of a campaign's Entrants who completed a given action, worked out as completions of that action divided by Entrants, then taken as the typical value across every campaign that offered it, shown as a count % of Entrants with the decimal it came from in brackets. A figure of 51 per 100 means about half the Entrants did it. A figure above 100 per 100 means the action was completed more than once per Entrant on average, which happens on daily and repeatable actions.
 
@@ -143,10 +143,10 @@ Words in the campaign description, among the campaigns we can compare fairly: no
 <!-- generated:gs_desc_length -->
 | Words | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|---|
-| 0-25 | 14,906 | 2,986 | 418 | 39% | 3.47 |
-| 26-75 | 15,061 | 3,926 | 422 | 32% | 3.82 |
-| 76-150 | 7,227 | 2,054 | 590 | 33% | 3.95 |
-| 151-300 | 2,388 | 649 | 626 | 33% | 3.82 |
+| 0-25 | 14,787 | 2,954 | 420 | 39% | 3.46 |
+| 26-75 | 14,941 | 3,882 | 421 | 32% | 3.81 |
+| 76-150 | 7,151 | 2,027 | 589 | 33% | 3.94 |
+| 151-300 | 2,355 | 633 | 623 | 33% | 3.78 |
 | 301+ | 268 | 78 | 330 | 29% | 4.15 |
 <!-- /generated -->
 

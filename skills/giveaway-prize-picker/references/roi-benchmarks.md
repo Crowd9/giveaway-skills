@@ -1,6 +1,6 @@
 # Cost benchmarks and ROI
 
-From the campaigns behind these numbers (117,128 campaigns, 17,777 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 100 Entrants.
+From the campaigns behind these numbers (117,128 campaigns, 17,633 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 100 Entrants.
 
 ## By industry
 
@@ -29,17 +29,17 @@ Crowd per Prize dollar is Entrants against the typical for the stated Prize cost
 <!-- generated:roi_verticals -->
 | Industry | Campaigns | Entrants | Conversion Rate | Email uptake | Referrals % of Entrants | Crowd per Prize dollar |
 |---|---|---|---|---|---|---|
-| Music media | 24,965 | 384 | 36% | 1.05 | 8 | 1.15 |
-| Gaming | 24,651 | 397 | 35% | 0.83 | 14 | 0.81 |
-| Unclassified | 16,694 | 427 | 33% | 0.97 | 11 | 0.81 |
-| Technology | 15,589 | 904 | 40% | 0.86 | 20 | 1.20 |
-| Fitness outdoor | 7,801 | 702 | 31% | 1.00 | 14 | 0.99 |
-| Kids family pets | 6,837 | 477 | 29% | 0.95 | 11 | 0.79 |
-| Fashion beauty | 6,465 | 580 | 34% | 1.01 | 11 | 1.17 |
-| Food and drink | 4,682 | 634 | 35% | 0.99 | 12 | 1.17 |
-| Travel and events | 3,979 | 488 | 34% | 1.00 | 8 | 0.79 |
-| Home | 3,713 | 918 | 35% | 0.97 | 11 | 1.46 |
-| Software | 1,752 | 565 | 31% | 1.01 | 22 | 0.75 |
+| Music media | 24,929 | 384 | 36% | 1.05 | 8 | 1.15 |
+| Gaming | 24,229 | 398 | 34% | 0.82 | 14 | 0.81 |
+| Unclassified | 16,477 | 428 | 33% | 0.97 | 11 | 0.81 |
+| Technology | 15,543 | 901 | 40% | 0.86 | 20 | 1.19 |
+| Fitness outdoor | 7,795 | 702 | 31% | 1.00 | 14 | 0.99 |
+| Kids family pets | 6,831 | 476 | 29% | 0.95 | 11 | 0.79 |
+| Fashion beauty | 6,457 | 581 | 34% | 1.01 | 11 | 1.18 |
+| Food and drink | 4,681 | 635 | 35% | 0.99 | 12 | 1.18 |
+| Travel and events | 3,969 | 488 | 34% | 1.00 | 8 | 0.79 |
+| Home | 3,710 | 916 | 35% | 0.97 | 11 | 1.45 |
+| Software | 1,662 | 557 | 31% | 1.01 | 21 | 0.74 |
 <!-- /generated -->
 
 Home gets the most for its money at 46% above typical on crowd per Prize dollar, and technology comes next at 20% above. Music and media sits at 15% above while buying the cheapest Entrants and addresses, and it has the most repeat businesses. Gaming sits below typical for the money at 0.81, with Twitch and Discord audiences and the lowest email uptake of the ten. Software has the highest referral rate and sits lowest on crowd per Prize dollar. Every row is a proxy industry from a homepage label, and none of it says an industry causes a result.
@@ -70,30 +70,30 @@ Homepage labels read from each business's own site, across the campaigns behind 
 <!-- generated:roi_industries -->
 | Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions | Days | Emails per campaign |
 |---|---|---|---|---|---|---|---|
-| Gaming and esports | 24,651 | 4,725 | 397 | 27% | 8 | 12 | 478 |
-| Media and entertainment | 21,575 | 2,086 | 401 | 24% | 8 | 18 | 830 |
-| Electronics and tech | 15,589 | 2,068 | 904 | 30% | 7 | 14 | 768 |
-| Toys, hobbies, collectibles | 4,705 | 753 | 418 | 26% | 7 | 15 | 366 |
-| Food and drink | 4,682 | 890 | 634 | 27% | 6 | 20 | 712 |
-| Sports and outdoors | 4,637 | 1,015 | 967 | 24% | 6 | 16 | 1,060 |
-| Apparel and fashion | 4,634 | 816 | 613 | 31% | 4 | 8 | 1,183 |
-| Other | 4,426 | 1,505 | 312 | 28% | 6 | 10 | 356 |
-| Travel and events | 3,979 | 645 | 488 | 27% | 6 | 15 | 648 |
-| Home and garden | 3,713 | 595 | 918 | 29% | 7 | 15 | 868 |
-| Creator influencer | 3,390 | 1,046 | 316 | 37% | 7 | 8 | 414 |
-| Health wellness fitness | 3,164 | 500 | 472 | 22% | 8 | 16 | 462 |
-| Retail marketplace | 2,874 | 384 | 488 | 29% | 8 | 8 | 530 |
-| Automotive | 2,324 | 380 | 940 | 26% | 7 | 14 | 1,512 |
-| Education | 1,872 | 360 | 482 | 24% | 9 | 8 | 450 |
-| Software and SaaS | 1,752 | 571 | 565 | 23% | 7 | 16 | 979 |
-| Art and crafts | 1,616 | 405 | 432 | 26% | 6 | 15 | 482 |
+| Gaming and esports | 24,229 | 4,657 | 398 | 27% | 8 | 12 | 490 |
+| Media and entertainment | 21,540 | 2,074 | 401 | 24% | 8 | 18 | 831 |
+| Electronics and tech | 15,543 | 2,063 | 901 | 30% | 7 | 14 | 764 |
+| Toys, hobbies, collectibles | 4,700 | 750 | 417 | 26% | 7 | 15 | 367 |
+| Food and drink | 4,681 | 890 | 635 | 27% | 6 | 20 | 712 |
+| Sports and outdoors | 4,635 | 1,013 | 968 | 24% | 6 | 16 | 1,061 |
+| Apparel and fashion | 4,628 | 812 | 613 | 31% | 4 | 8 | 1,183 |
+| Other | 4,315 | 1,480 | 311 | 28% | 6 | 10 | 356 |
+| Travel and events | 3,969 | 638 | 488 | 27% | 6 | 15 | 650 |
+| Home and garden | 3,710 | 594 | 916 | 29% | 7 | 15 | 868 |
+| Creator influencer | 3,389 | 1,045 | 316 | 37% | 7 | 8 | 414 |
+| Health wellness fitness | 3,160 | 498 | 471 | 22% | 8 | 16 | 461 |
+| Retail marketplace | 2,860 | 382 | 488 | 29% | 8 | 8 | 530 |
+| Automotive | 2,310 | 379 | 950 | 26% | 7 | 14 | 1,521 |
+| Education | 1,868 | 357 | 482 | 24% | 9 | 8 | 450 |
+| Software and SaaS | 1,662 | 545 | 557 | 23% | 7 | 17 | 979 |
+| Art and crafts | 1,590 | 401 | 436 | 26% | 6 | 15 | 482 |
 | Beauty personal care | 1,411 | 351 | 552 | 32% | 7 | 19 | 576 |
-| Marketing agency | 1,220 | 159 | 540 | 28% | 7 | 15 | 471 |
+| Marketing agency | 1,201 | 157 | 540 | 27% | 7 | 15 | 471 |
 | Baby kids | 1,184 | 138 | 548 | 29% | 7 | 18 | 640 |
-| Pets | 948 | 206 | 744 | 25% | 6 | 15 | 776 |
+| Pets | 947 | 206 | 745 | 25% | 6 | 15 | 776 |
 | Local services | 917 | 181 | 532 | 25% | 7 | 11 | 342 |
-| Nonprofit community | 518 | 197 | 396 | 28% | 7 | 14 | 464 |
-| Jewelry watches | 420 | 163 | 492 | 21% | 7 | 20 | 701 |
+| Nonprofit community | 516 | 197 | 396 | 28% | 7 | 14 | 486 |
+| Jewelry watches | 418 | 162 | 492 | 21% | 7 | 20 | 701 |
 <!-- /generated -->
 
 Apparel and fashion has the highest Conversion Rate among the ten largest industries at 31%, with electronics and tech next at 30%, and education asks for the most Actions at 9.
@@ -103,16 +103,16 @@ By business type, on the same scope:
 <!-- generated:roi_btype -->
 | Business type | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods | Email offered |
 |---|---|---|---|---|---|---|---|---|
-| Brand | 30,310 | 5,508 | 595 | 26% | 4.3 | 14 | 7 | 42% |
-| Retailer | 21,600 | 2,251 | 650 | 28% | 4.4 | 14 | 7 | 44% |
-| Media or publisher | 19,995 | 1,447 | 418 | 24% | 4.9 | 18 | 7 | 44% |
-| Creator | 17,852 | 4,097 | 346 | 34% | 4.3 | 12 | 6 | 5% |
-| Software | 10,271 | 1,756 | 671 | 23% | 4.8 | 14 | 8 | 27% |
-| Other | 6,288 | 1,728 | 385 | 29% | 4.3 | 12 | 7 | 21% |
-| Service business | 3,802 | 760 | 364 | 24% | 3.4 | 12 | 7 | 33% |
-| Agency | 2,903 | 330 | 423 | 26% | 4.4 | 12 | 8 | 24% |
-| Community | 2,725 | 639 | 306 | 28% | 5.3 | 14 | 9 | 13% |
-| Nonprofit | 951 | 270 | 393 | 27% | 3.3 | 16 | 7 | 33% |
+| Brand | 30,187 | 5,482 | 594 | 26% | 4.3 | 14 | 7 | 42% |
+| Retailer | 21,569 | 2,245 | 650 | 28% | 4.4 | 14 | 7 | 44% |
+| Media or publisher | 19,974 | 1,440 | 418 | 24% | 4.9 | 18 | 7 | 44% |
+| Creator | 17,827 | 4,087 | 346 | 34% | 4.3 | 12 | 6 | 5% |
+| Software | 9,848 | 1,680 | 688 | 23% | 4.8 | 14 | 8 | 27% |
+| Other | 6,148 | 1,703 | 385 | 29% | 4.3 | 12 | 7 | 22% |
+| Service business | 3,798 | 757 | 364 | 24% | 3.4 | 12 | 7 | 33% |
+| Agency | 2,882 | 328 | 422 | 25% | 4.4 | 12 | 8 | 25% |
+| Community | 2,688 | 630 | 305 | 28% | 5.3 | 14 | 9 | 13% |
+| Nonprofit | 950 | 270 | 393 | 26% | 3.3 | 16 | 7 | 33% |
 <!-- /generated -->
 
 Creators have the highest Conversion Rate at 34%, rarely offer email at 5%, and run the shortest campaigns at 12 days, level with agencies, service businesses and the other group. Media and publishers run the longest at 18 days.

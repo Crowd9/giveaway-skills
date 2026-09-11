@@ -5,23 +5,23 @@ These figures come from the campaigns we can compare fairly (crypto, unclear lis
 <!-- generated:structure_detail -->
 | Prize records per campaign | Share |
 |---|---|
-| 1 | 82.4% |
+| 1 | 82.6% |
 | 2 | 6.2% |
 | 3 | 6.0% |
 | 4 | 1.8% |
 | 5 | 1.3% |
 | 6+ | 2.2% |
 
-Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10, maximum 1,133 (n=117,348). 40% of campaigns list more than one unit and 18% list tiered prizes (more than one position).
+Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10, maximum 1,133 (n=116,499). 40% of campaigns list more than one unit and 17% list tiered prizes (more than one position).
 
 | Band | Single unit | Tiered prizes | Ten or more units |
 |---|---|---|---|
-| 100-250 | 59% | 15% | 11% |
-| 250-500 | 61% | 16% | 12% |
+| 100-250 | 60% | 15% | 11% |
+| 250-500 | 61% | 15% | 12% |
 | 500-1k | 61% | 18% | 11% |
-| 1k-2.5k | 59% | 21% | 13% |
-| 2.5k-10k | 60% | 22% | 16% |
-| 10k+ | 62% | 20% | 19% |
+| 1k-2.5k | 60% | 21% | 13% |
+| 2.5k-10k | 60% | 22% | 15% |
+| 10k+ | 61% | 20% | 19% |
 <!-- /generated -->
 
 ## Reading the tables
@@ -37,10 +37,10 @@ This compares campaigns with one Prize record against campaigns with several, sh
 <!-- generated:st_prize_count -->
 | Prize records | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| 1 | 96,743 | 14,283 | 471 | 28% | 4.3 | 14 | 7 |
-| 10+ | 1,033 | 477 | 1,157 | 19% | 5.5 | 17 | 10 |
-| 2-3 | 14,326 | 5,207 | 582 | 24% | 4.6 | 14 | 8 |
-| 4-9 | 5,246 | 2,162 | 675 | 23% | 5.1 | 14 | 9 |
+| 1 | 96,177 | 14,183 | 471 | 28% | 4.3 | 14 | 7 |
+| 10+ | 988 | 472 | 1,340 | 19% | 5.6 | 18 | 10 |
+| 2-3 | 14,184 | 5,139 | 584 | 24% | 4.6 | 14 | 8 |
+| 4-9 | 5,150 | 2,134 | 688 | 23% | 5.1 | 15 | 9 |
 <!-- /generated -->
 
 Conversion Rate falls steadily from 28% at one Prize record to 19% at ten or more. Entrants rise at every step, from 471 at one record to 1,157 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
@@ -93,10 +93,10 @@ The same campaigns cut by stated Prize pool, not by Prize count:
 <!-- generated:st_pool_band -->
 | Prize pool, USD | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| under 250 | 20,307 | 4,246 | 328 | 24% | 5.13 | 16 | 8 |
-| 250 to 1k | 12,396 | 4,082 | 722 | 24% | 4.39 | 15 | 7 |
-| 1k to 5k | 9,459 | 3,158 | 1,470 | 23% | 4.55 | 18 | 8 |
-| 5k and up | 2,034 | 1,069 | 1,802 | 20% | 4.31 | 22 | 7 |
+| under 250 | 20,236 | 4,208 | 327 | 24% | 5.14 | 16 | 8 |
+| 250 to 1k | 12,324 | 4,051 | 721 | 24% | 4.38 | 15 | 7 |
+| 1k to 5k | 9,399 | 3,119 | 1,472 | 23% | 4.55 | 18 | 8 |
+| 5k and up | 1,998 | 1,051 | 1,823 | 20% | 4.29 | 22 | 7 |
 <!-- /generated -->
 
 Bigger pools bring more Entrants and a longer run. Conversion Rate holds near 24% through the first three pool sizes and drops to 20% at 5k and up. A bigger pool and more Prize records tend to travel together with a bigger business and a longer campaign, so read both tables as who ran what, not as what a structure change would do to a given campaign.
@@ -110,27 +110,27 @@ This looks at each Prize row: the typical number of Winners on a category's rows
 <!-- generated:st_winners_category -->
 | Category | Campaigns | Businesses | Typical Winners | Multi-Winner share | USD per Winner (typical) | Conversion Rate |
 |---|---|---|---|---|---|---|
-| Unclassified | 34,953 | 8,748 | 1 | 34% | 120 | 27% |
-| Tech hardware | 22,137 | 4,938 | 1 | 22% | 299 | 26% |
-| Gift card or cash | 17,927 | 4,514 | 1 | 27% | 50 | 23% |
-| Bundle or box | 13,410 | 3,944 | 1 | 25% | 175 | 26% |
-| Game items or skins | 11,228 | 2,730 | 1 | 38% | 56 | 21% |
-| Experience, travel, tickets | 6,321 | 1,925 | 1 | 26% | 400 | 25% |
-| Placeholder name | 5,696 | 1,292 | 1 | 34% | 200 | 28% |
-| Merch, apparel, collectibles | 5,548 | 1,838 | 1 | 35% | 50 | 26% |
+| Unclassified | 34,308 | 8,592 | 1 | 32% | 124 | 27% |
+| Tech hardware | 22,080 | 4,926 | 1 | 22% | 299 | 26% |
+| Gift card or cash | 17,846 | 4,491 | 1 | 27% | 50 | 23% |
+| Bundle or box | 13,370 | 3,929 | 1 | 25% | 175 | 26% |
+| Game items or skins | 11,203 | 2,722 | 1 | 38% | 56 | 21% |
+| Experience, travel, tickets | 6,310 | 1,920 | 1 | 26% | 400 | 25% |
+| Placeholder name | 5,623 | 1,277 | 1 | 34% | 200 | 28% |
+| Merch, apparel, collectibles | 5,538 | 1,831 | 1 | 35% | 50 | 26% |
 | Home, garden, appliance | 2,452 | 913 | 1 | 17% | 200 | 29% |
-| Toys and collectibles | 2,297 | 474 | 1 | 35% | 55 | 25% |
-| Subscription or membership | 1,637 | 882 | 1 | 42% | 150 | 23% |
-| Regulated goods (firearms) | 1,579 | 329 | 1 | 6% | 1,118 | 20% |
+| Toys and collectibles | 2,296 | 474 | 1 | 35% | 55 | 25% |
+| Subscription or membership | 1,631 | 877 | 1 | 42% | 150 | 23% |
+| Regulated goods (firearms) | 1,577 | 327 | 1 | 5% | 1,118 | 20% |
 | Food, drink, consumables | 1,468 | 608 | 1 | 17% | 190 | 29% |
-| Sports and outdoor gear | 1,366 | 654 | 1 | 20% | 299 | 26% |
-| Discount or coupon | 1,054 | 348 | 3 | 62% | 100 | 26% |
+| Sports and outdoor gear | 1,363 | 652 | 1 | 20% | 299 | 26% |
+| Discount or coupon | 1,046 | 344 | 3 | 61% | 100 | 26% |
 | Beauty and wellness | 815 | 310 | 1 | 20% | 150 | 28% |
-| Vehicle | 733 | 369 | 1 | 20% | 699 | 23% |
+| Vehicle | 728 | 368 | 1 | 20% | 699 | 22% |
 | Tools, craft, DIY | 581 | 203 | 1 | 28% | 209 | 28% |
-| Exclusive access | 535 | 332 | 1 | 48% | 200 | 27% |
+| Exclusive access | 524 | 325 | 1 | 48% | 200 | 27% |
 | Music gear | 452 | 175 | 1 | 9% | 399 | 26% |
-| Art and custom | 185 | 112 | 1 | 22% | 73 | 27% |
+| Art and custom | 184 | 111 | 1 | 21% | 73 | 27% |
 <!-- /generated -->
 
 One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest categories sit in the middle of the multi-Winner range. That highest-value category, firearms, also carries the lowest Conversion Rate at 20%, in line with the extra eligibility steps it carries elsewhere in this repository.
@@ -166,9 +166,9 @@ A record-level look at position within a campaign's Prize list: first Prize, sec
 <!-- generated:st_winners_position -->
 | Position | Campaigns | Businesses | Multi-Winner share | USD per Winner (typical) | Conversion Rate |
 |---|---|---|---|---|---|
-| Second or third | 95,702 | 15,970 | 27% | 150 | 26% |
-| First Prize | 41,061 | 9,857 | 34% | 100 | 27% |
-| Fourth plus | 4,932 | 1,841 | 33% | 69 | 20% |
+| Second or third | 94,954 | 15,834 | 27% | 150 | 26% |
+| First Prize | 40,691 | 9,761 | 34% | 100 | 27% |
+| Fourth plus | 4,810 | 1,819 | 32% | 69 | 20% |
 <!-- /generated -->
 
 First and fourth-plus Prizes go multi-Winner more often than second or third place (table above). USD per Winner runs highest at second or third, above first Prize, which reads as product tiers: a second or third Prize often repeats the same product line at a smaller size, lifting its per-Winner value above the headline Prize. Fourth-plus Prizes settle at the lowest per-Winner value at 69 USD, in line with a consolation tier, on the lowest Conversion Rate of the three at 20%.

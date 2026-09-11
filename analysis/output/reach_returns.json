@@ -22,13 +22,13 @@
     "campaigns": 6601,
     "impressions": 632,
     "contestants": 164,
-    "conversion": 0.2602
+    "conversion": 0.26
    },
    "4": {
     "campaigns": 6601,
     "impressions": 928,
-    "contestants": 175,
-    "conversion": 0.1876
+    "contestants": 176,
+    "conversion": 0.1877
    },
    "5": {
     "campaigns": 6601,
@@ -79,8 +79,8 @@
    "2": {
     "campaigns": 3988,
     "impressions": 3875,
-    "contestants": 1376,
-    "conversion": 0.3588
+    "contestants": 1377,
+    "conversion": 0.3589
    },
    "3": {
     "campaigns": 3988,
@@ -144,7 +144,7 @@
     "campaigns": 5122,
     "impressions": 949,
     "contestants": 340,
-    "conversion": 0.3597
+    "conversion": 0.3598
    },
    "3": {
     "campaigns": 5122,

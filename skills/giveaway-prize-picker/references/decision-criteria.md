@@ -35,9 +35,9 @@ A Prize that matches the business's own category draws no more crowd for the mon
 <!-- generated:ev_audience_fit -->
 | Prize fit | Campaigns | Businesses | Entrants | Crowd per Prize dollar |
 |---|---|---|---|---|
-| A definite category that does not match | 29,190 | 6,585 | 554 | 1.10 |
-| Matches the business's own category | 21,436 | 4,384 | 684 | 1.09 |
-| Generic (cash, gift card, bundle, subscription, discount) | 32,900 | 7,767 | 458 | 1.01 |
+| A definite category that does not match | 29,138 | 6,563 | 553 | 1.10 |
+| Matches the business's own category | 21,389 | 4,374 | 681 | 1.08 |
+| Generic (cash, gift card, bundle, subscription, discount) | 32,776 | 7,726 | 458 | 1.01 |
 <!-- /generated -->
 
 Splitting the same budget across records buys about a fifth less crowd per Prize dollar. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
@@ -132,7 +132,7 @@ Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns
 | Bundle around your product | Raises headline value cheaply with partners; teaches your category | Partner obligations; substitutes needed if items go out of stock |
 | Recurring (daily, weekly) | Keeps a long campaign alive; good for content series | Requires repeated draws and announcements |
 
-Looking at the campaigns behind these numbers: 82% listed one Prize, and 32% listed a quantity above one for at least one Prize [25,054 of 117,348 campaigns listed five or more Prize units].
+Looking at the campaigns behind these numbers: 82% listed one Prize, and 32% listed a quantity above one for at least one Prize [25,054 of 116,499 campaigns listed five or more Prize units].
 
 Typical Entrant counts for single-Winner and multi-unit structures were almost identical [492 against 510], which says nothing about effect because every campaign passed the dataset's 100-Entrant floor. Those raw Entrant counts and the crowd-per-Prize-dollar figures by number of Prize units are the same campaigns seen two ways: raw, one unit and many units drew the same crowd, and once the money is held constant, one unit sits above typical and six or more below. The crowd-per-Prize-dollar table in `references/evidence-and-limitations.md` carries the second view, and it is the one to quote when a budget is fixed.
 
@@ -196,7 +196,7 @@ Promotion                     (separate from the prize, and easy to starve)
 Contingency                   (5 to 10%)
 ```
 
-Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 65,018 of 172,645 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 43,109 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, never as a price of admission.
+Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 65,018 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 43,109 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, never as a price of admission.
 
 | Measure | Typical | Middle half | Note |
 |---|---|---|---|

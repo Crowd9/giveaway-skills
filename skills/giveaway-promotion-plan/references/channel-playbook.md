@@ -139,11 +139,11 @@ Campaigns that draw a tenth or more of their Impressions from their own tagged m
 <!-- generated:pp_mail_share -->
 | Group | Conversion Rate | Actions per Entrant | Entrants (typical) | Campaigns | Businesses |
 |---|---|---|---|---|---|
-| Under 2% | 25.8% | 5.03 | 766 | 98,447 | 17,546 |
-| No email traffic at all | 35.1% | 3.99 | 240 | 31,973 | 8,079 |
-| 2 to 10% | 25.1% | 4.25 | 746 | 14,632 | 3,290 |
-| 10 to 25% | 25.0% | 4.35 | 516 | 1,570 | 431 |
-| A quarter or more | 27.5% | 4.84 | 440 | 316 | 56 |
+| Under 2% | 25.8% | 5.03 | 765 | 98,367 | 17,539 |
+| No email traffic at all | 34.9% | 3.98 | 240 | 31,679 | 7,996 |
+| 2 to 10% | 25.0% | 4.26 | 744 | 14,594 | 3,276 |
+| 10 to 25% | 24.9% | 4.36 | 516 | 1,565 | 429 |
+| A quarter or more | 27.4% | 4.86 | 438 | 313 | 53 |
 <!-- /generated -->
 
 An organizer with a list should tag the campaign link with an email UTM before sending, so the send shows up in this report. Gleam's export cannot see a send with no tag on the link.

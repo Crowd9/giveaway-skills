@@ -5,22 +5,22 @@ Extracted from the campaigns we can compare fairly (crypto, ambiguous and purcha
 <!-- generated:entry_families -->
 | Action family | Campaigns using it | Share of campaigns | Uptake median (IQR) | n with uptake |
 |---|---|---|---|---|
-| Visit a page or profile | 94,591 | 81% | 0.80 (0.61 to 0.94) | 376,120 |
-| Follow or subscribe (free) | 78,061 | 66% | 0.51 (0.35 to 0.69) | 173,303 |
-| Share, repost or refer | 61,298 | 52% | 0.26 (0.10 to 0.47) | 81,916 |
-| Bonus, loyalty or code | 45,912 | 39% | 0.87 (0.33 to 1.22) | 64,921 |
-| Email or newsletter signup | 40,733 | 35% | 0.84 (0.70 to 1.01) | 49,688 |
-| Join a community | 23,242 | 20% | 0.49 (0.32 to 0.72) | 32,383 |
-| Custom action (other) | 23,057 | 20% | 0.51 (0.26 to 0.81) | 52,841 |
-| Post or create content | 21,785 | 19% | 0.31 (0.15 to 0.44) | 26,338 |
-| Engage with a post | 19,841 | 17% | 0.54 (0.29 to 0.80) | 36,525 |
-| Answer a question or poll | 19,474 | 17% | 0.76 (0.49 to 1.00) | 31,477 |
-| Connect an account to enter | 15,382 | 13% | 0.55 (0.39 to 0.74) | 24,194 |
-| Paid subscription | 7,529 | 6% | 0.11 (0.03 to 0.36) | 8,413 |
-| Download or play | 4,082 | 4% | 0.37 (0.23 to 0.58) | 4,392 |
-| Imported or offline entries | 1,190 | 1% | 0.08 (0.01 to 0.64) | 1,390 |
+| Visit a page or profile | 94,082 | 81% | 0.80 (0.61 to 0.94) | 374,795 |
+| Follow or subscribe (free) | 77,459 | 66% | 0.51 (0.35 to 0.69) | 172,265 |
+| Share, repost or refer | 60,707 | 52% | 0.26 (0.10 to 0.46) | 80,835 |
+| Bonus, loyalty or code | 45,593 | 39% | 0.88 (0.33 to 1.23) | 64,343 |
+| Email or newsletter signup | 40,537 | 35% | 0.84 (0.70 to 1.01) | 49,466 |
+| Custom action (other) | 22,828 | 20% | 0.50 (0.26 to 0.80) | 52,187 |
+| Join a community | 22,804 | 20% | 0.49 (0.32 to 0.71) | 31,662 |
+| Post or create content | 21,573 | 18% | 0.31 (0.14 to 0.44) | 26,035 |
+| Engage with a post | 19,750 | 17% | 0.54 (0.29 to 0.80) | 36,381 |
+| Answer a question or poll | 19,254 | 16% | 0.76 (0.49 to 1.00) | 31,180 |
+| Connect an account to enter | 15,306 | 13% | 0.55 (0.39 to 0.74) | 24,076 |
+| Paid subscription | 7,517 | 6% | 0.11 (0.03 to 0.36) | 8,404 |
+| Download or play | 4,048 | 4% | 0.37 (0.23 to 0.58) | 4,347 |
+| Imported or offline entries | 1,186 | 1% | 0.08 (0.01 to 0.64) | 1,387 |
 
-Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=117,348). uptake = entries recorded on the method divided by the campaign's valid contestants, capped at 5 (repeatable methods can exceed 1). Family names are generic, and platform types were mapped to them by hand.
+Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=116,499). uptake = entries recorded on the method divided by the campaign's valid contestants, capped at 5 (repeatable methods can exceed 1). Family names are generic, and platform types were mapped to them by hand.
 <!-- /generated -->
 
 ## Reading the table
@@ -165,13 +165,13 @@ Share of campaigns of each size that offered at least one action from the family
 | Action family | 100-250 | 250-500 | 500-1k | 1k-2.5k | 2.5k-10k | 10k+ |
 |---|---|---|---|---|---|---|
 | Visit a page or profile | 79% | 82% | 81% | 80% | 83% | 82% |
-| Follow or subscribe (free) | 68% | 68% | 67% | 64% | 64% | 66% |
-| Share, repost or refer | 45% | 53% | 56% | 57% | 57% | 52% |
-| Email or newsletter signup | 25% | 31% | 38% | 43% | 46% | 40% |
-| Bonus, loyalty or code | 40% | 37% | 38% | 39% | 42% | 44% |
-| Join a community | 18% | 19% | 22% | 21% | 20% | 17% |
+| Follow or subscribe (free) | 68% | 68% | 67% | 64% | 64% | 65% |
+| Share, repost or refer | 44% | 53% | 56% | 56% | 57% | 52% |
+| Email or newsletter signup | 25% | 31% | 38% | 44% | 46% | 41% |
+| Bonus, loyalty or code | 40% | 37% | 38% | 39% | 42% | 43% |
+| Join a community | 18% | 19% | 21% | 21% | 20% | 17% |
 | Answer a question or poll | 17% | 17% | 17% | 16% | 16% | 16% |
-| Post or create content | 21% | 20% | 18% | 16% | 15% | 18% |
+| Post or create content | 21% | 20% | 18% | 16% | 14% | 17% |
 | Connect an account to enter | 15% | 13% | 13% | 12% | 10% | 7% |
 | Download or play | 3% | 3% | 4% | 4% | 5% | 5% |
 | Methods per campaign (median) | 6 | 7 | 7 | 7 | 7 | 7 |

@@ -1,7 +1,7 @@
 {
- "ordinary_n": 117128,
- "sites_n": 17747,
- "clean_n": 39810,
+ "ordinary_n": 116283,
+ "sites_n": 17603,
+ "clean_n": 39462,
  "definitions": {
   "region": "TLD of the organizer's site host, a proxy",
   "clean": "no repeatable action and 14 days or less",
@@ -10,60 +10,60 @@
  },
  "region_all": {
   "global domain (.com, .io, .net and so on)": {
-   "n": 99919,
-   "sites": 15072,
+   "n": 99225,
+   "sites": 14963,
    "contestants": 488,
-   "contestants_per_impression": 0.2610943779573869,
-   "entries_per_entrant": 4.447899159663866,
-   "stated_usd_per_contestant": 0.41075133372851214,
-   "usd_per_email": 0.3855060034305317,
-   "december_share": 0.099290425244448
+   "contestants_per_impression": 0.2607288198885568,
+   "entries_per_entrant": 4.443514644351464,
+   "stated_usd_per_contestant": 0.4100294097889019,
+   "usd_per_email": 0.38571428571428573,
+   "december_share": 0.09926933736457547
   },
   "United Kingdom": {
-   "n": 4572,
+   "n": 4570,
    "sites": 344,
-   "contestants": 468.5,
-   "contestants_per_impression": 0.3568273810491409,
+   "contestants": 469.0,
+   "contestants_per_impression": 0.3567794409706871,
    "entries_per_entrant": 3.822586349168926,
    "stated_usd_per_contestant": 0.11583011583011583,
    "usd_per_email": 0.07241379310344828,
-   "december_share": 0.09317585301837271
+   "december_share": 0.09321663019693655
   },
   "other or none": {
-   "n": 4222,
-   "sites": 1024,
-   "contestants": 412.5,
-   "contestants_per_impression": 0.2590975254730713,
-   "entries_per_entrant": 4.7490000000000006,
-   "stated_usd_per_contestant": 0.5374077976817703,
-   "usd_per_email": 0.5977301387137453,
-   "december_share": 0.12482235907153008
+   "n": 4099,
+   "sites": 992,
+   "contestants": 411,
+   "contestants_per_impression": 0.25820566245863463,
+   "entries_per_entrant": 4.703180212014134,
+   "stated_usd_per_contestant": 0.5365853658536586,
+   "usd_per_email": 0.5955188679245284,
+   "december_share": 0.12368870456208832
   },
   "Australia": {
-   "n": 3030,
-   "sites": 602,
+   "n": 3028,
+   "sites": 601,
    "contestants": 565.5,
-   "contestants_per_impression": 0.31620553359683795,
+   "contestants_per_impression": 0.31584524558502935,
    "entries_per_entrant": 3.2361328066608865,
-   "stated_usd_per_contestant": 0.9474763667224593,
-   "usd_per_email": 0.8888128991669406,
-   "december_share": 0.08646864686468647
+   "stated_usd_per_contestant": 0.9467455621301775,
+   "usd_per_email": 0.8818342151675485,
+   "december_share": 0.08652575957727873
   },
   "Brazil": {
-   "n": 1231,
-   "sites": 70,
-   "contestants": 1076,
-   "contestants_per_impression": 0.5405541561712847,
-   "entries_per_entrant": 4.6975297671938865,
-   "stated_usd_per_contestant": 0.1721170395869191,
+   "n": 1227,
+   "sites": 69,
+   "contestants": 1077,
+   "contestants_per_impression": 0.5409760589318601,
+   "entries_per_entrant": 4.690685413005272,
+   "stated_usd_per_contestant": 0.11142061281337047,
    "usd_per_email": 0.4738624338624339,
-   "december_share": 0.06417546709991877
+   "december_share": 0.06438467807660962
   },
   "Germany": {
    "n": 789,
    "sites": 70,
    "contestants": 773,
-   "contestants_per_impression": 0.3095503226721814,
+   "contestants_per_impression": 0.3089430894308943,
    "entries_per_entrant": 4.863235294117647,
    "stated_usd_per_contestant": 0.6944444444444444,
    "usd_per_email": 0.9448828311812529,
@@ -83,7 +83,7 @@
    "n": 612,
    "sites": 150,
    "contestants": 612.5,
-   "contestants_per_impression": 0.2264027554145899,
+   "contestants_per_impression": 0.22623828647925034,
    "entries_per_entrant": 3.2574598730212987,
    "stated_usd_per_contestant": 0.7782210050011908,
    "usd_per_email": 0.7066666666666667,
@@ -130,14 +130,14 @@
    "december_share": 0.11594202898550725
   },
   "Netherlands": {
-   "n": 196,
-   "sites": 23,
-   "contestants": 374.5,
-   "contestants_per_impression": 0.3122214795008913,
-   "entries_per_entrant": 4.047372035858878,
+   "n": 195,
+   "sites": 22,
+   "contestants": 372,
+   "contestants_per_impression": 0.3125,
+   "entries_per_entrant": 4.050101214574899,
    "stated_usd_per_contestant": 0.41701461377870563,
    "usd_per_email": 1.321138211382114,
-   "december_share": 0.1683673469387755
+   "december_share": 0.16923076923076924
   },
   "Spain": {
    "n": 165,
@@ -150,66 +150,66 @@
    "december_share": 0.11515151515151516
   },
   "Japan": {
-   "n": 143,
+   "n": 140,
    "sites": 9,
-   "contestants": 280,
-   "contestants_per_impression": 0.29422169811320753,
-   "entries_per_entrant": 3.730909090909091,
+   "contestants": 273.0,
+   "contestants_per_impression": 0.29361290666977247,
+   "entries_per_entrant": 3.766095571095571,
    "stated_usd_per_contestant": 1.290442816183498,
    "usd_per_email": null,
-   "december_share": 0.09090909090909091
+   "december_share": 0.07857142857142857
   }
  },
  "region_clean": {
   "global domain (.com, .io, .net and so on)": {
-   "n": 33924,
-   "sites": 6141,
-   "contestants": 440.0,
-   "contestants_per_impression": 0.3397200706617747,
-   "entries_per_entrant": 3.72271022347723,
-   "stated_usd_per_contestant": 0.5302587276271487,
+   "n": 33656,
+   "sites": 6079,
+   "contestants": 441.0,
+   "contestants_per_impression": 0.33884297520661155,
+   "entries_per_entrant": 3.7093264053616477,
+   "stated_usd_per_contestant": 0.5294117647058824,
    "usd_per_email": 0.5667527993109388,
-   "december_share": 0.12085838934087961
+   "december_share": 0.12101854052769194
   },
   "other or none": {
-   "n": 1650,
-   "sites": 409,
-   "contestants": 438.0,
-   "contestants_per_impression": 0.3252361673414305,
-   "entries_per_entrant": 3.9515546450110666,
-   "stated_usd_per_contestant": 0.4993438320209974,
+   "n": 1593,
+   "sites": 394,
+   "contestants": 438,
+   "contestants_per_impression": 0.32469215813350616,
+   "entries_per_entrant": 3.8923076923076922,
+   "stated_usd_per_contestant": 0.49019607843137253,
    "usd_per_email": 0.9084848484848485,
-   "december_share": 0.14727272727272728
+   "december_share": 0.14940364092906466
   },
   "United Kingdom": {
-   "n": 992,
+   "n": 991,
    "sites": 123,
-   "contestants": 397.0,
-   "contestants_per_impression": 0.3921032926557788,
-   "entries_per_entrant": 2.659350034124212,
+   "contestants": 397,
+   "contestants_per_impression": 0.3917573783513677,
+   "entries_per_entrant": 2.6594202898550723,
    "stated_usd_per_contestant": 0.2510546395737744,
    "usd_per_email": 0.24953367875647667,
-   "december_share": 0.17943548387096775
+   "december_share": 0.17961654894046417
   },
   "Australia": {
-   "n": 909,
+   "n": 908,
    "sites": 232,
-   "contestants": 551,
-   "contestants_per_impression": 0.3339628394860953,
-   "entries_per_entrant": 2.7688819390148556,
+   "contestants": 550.0,
+   "contestants_per_impression": 0.3328313253012048,
+   "entries_per_entrant": 2.7718581880504742,
    "stated_usd_per_contestant": 1.35196034249662,
    "usd_per_email": 1.051046118583551,
-   "december_share": 0.1331133113311331
+   "december_share": 0.13325991189427314
   },
   "Brazil": {
-   "n": 684,
-   "sites": 34,
-   "contestants": 1288.0,
-   "contestants_per_impression": 0.5703324613125038,
-   "entries_per_entrant": 4.589724824355972,
-   "stated_usd_per_contestant": 0.003703556474267239,
+   "n": 680,
+   "sites": 33,
+   "contestants": 1289.0,
+   "contestants_per_impression": 0.5718394279595682,
+   "entries_per_entrant": 4.581888058814576,
+   "stated_usd_per_contestant": 0.0029270046130277384,
    "usd_per_email": 0.6514285714285715,
-   "december_share": 0.06432748538011696
+   "december_share": 0.06470588235294118
   },
   "Germany": {
    "n": 385,
@@ -255,7 +255,7 @@
    "n": 117,
    "sites": 46,
    "contestants": 326,
-   "contestants_per_impression": 0.3227320125130344,
+   "contestants_per_impression": 0.322249287013615,
    "entries_per_entrant": 1.8716814159292035,
    "stated_usd_per_contestant": 1.251700680272109,
    "usd_per_email": 0.8672646363509943,
@@ -294,50 +294,50 @@
  },
  "language_guess_all": {
   "English or unknown": {
-   "n": 108830,
-   "sites": 16774,
-   "contestants": 490.0,
-   "contestants_per_impression": 0.2670577338684779,
-   "entries_per_entrant": 4.365296803652968,
-   "stated_usd_per_contestant": 0.410958904109589,
-   "usd_per_email": 0.39708156374855386,
-   "december_share": 0.10462188734723882
+   "n": 108016,
+   "sites": 16635,
+   "contestants": 491.0,
+   "contestants_per_impression": 0.2666787286653398,
+   "entries_per_entrant": 4.360106050609669,
+   "stated_usd_per_contestant": 0.41025641025641024,
+   "usd_per_email": 0.39724259489333136,
+   "december_share": 0.10459561546437565
   },
   "Indonesian": {
-   "n": 2480,
-   "sites": 788,
-   "contestants": 556.5,
-   "contestants_per_impression": 0.23507130124777184,
-   "entries_per_entrant": 4.907222278820315,
-   "stated_usd_per_contestant": 0.5399188092016238,
+   "n": 2455,
+   "sites": 780,
+   "contestants": 555,
+   "contestants_per_impression": 0.2339748564333385,
+   "entries_per_entrant": 4.881748071979435,
+   "stated_usd_per_contestant": 0.5411564120821086,
    "usd_per_email": 0.513986013986014,
-   "december_share": 0.10201612903225807
+   "december_share": 0.10142566191446029
   },
   "Spanish": {
-   "n": 1890,
-   "sites": 544,
-   "contestants": 465.0,
-   "contestants_per_impression": 0.29211286171508444,
-   "entries_per_entrant": 4.918535910188331,
+   "n": 1889,
+   "sites": 543,
+   "contestants": 465,
+   "contestants_per_impression": 0.2921125644074514,
+   "entries_per_entrant": 4.918090748379493,
    "stated_usd_per_contestant": 0.37422110200938175,
    "usd_per_email": 0.2574006837516232,
-   "december_share": 0.08306878306878307
+   "december_share": 0.08258337744838538
   },
   "Portuguese": {
-   "n": 1820,
-   "sites": 295,
-   "contestants": 999.5,
-   "contestants_per_impression": 0.5087681582162,
+   "n": 1818,
+   "sites": 294,
+   "contestants": 1001.5,
+   "contestants_per_impression": 0.5095815569524383,
    "entries_per_entrant": 4.790929583228822,
    "stated_usd_per_contestant": 0.3198782390709334,
    "usd_per_email": 0.4683413346182017,
-   "december_share": 0.06648351648351648
+   "december_share": 0.06655665566556655
   },
   "French": {
    "n": 1113,
    "sites": 276,
    "contestants": 301,
-   "contestants_per_impression": 0.26992713865937645,
+   "contestants_per_impression": 0.2698667105758271,
    "entries_per_entrant": 4.12,
    "stated_usd_per_contestant": 0.764525993883792,
    "usd_per_email": 1.079136690647482,
@@ -347,171 +347,171 @@
    "n": 521,
    "sites": 163,
    "contestants": 339,
-   "contestants_per_impression": 0.2515182186234818,
+   "contestants_per_impression": 0.25113070097244894,
    "entries_per_entrant": 4.326086956521739,
    "stated_usd_per_contestant": 1.4977054651647894,
    "usd_per_email": 1.271753057658707,
    "december_share": 0.13051823416506717
   },
-  "Dutch": {
-   "n": 185,
-   "sites": 46,
-   "contestants": 267,
-   "contestants_per_impression": 0.3389830508474576,
-   "entries_per_entrant": 6.1179487179487175,
-   "stated_usd_per_contestant": 0.8627450980392157,
-   "usd_per_email": 0.27949531294385,
-   "december_share": 0.32972972972972975
-  },
   "Turkish": {
    "n": 185,
    "sites": 48,
    "contestants": 581,
-   "contestants_per_impression": 0.3203732503888025,
+   "contestants_per_impression": 0.31897927611303645,
    "entries_per_entrant": 2.8555956678700363,
    "stated_usd_per_contestant": 1.100994020346354,
    "usd_per_email": 103.03030303030303,
    "december_share": 0.06486486486486487
   },
+  "Dutch": {
+   "n": 184,
+   "sites": 45,
+   "contestants": 265.5,
+   "contestants_per_impression": 0.3399833287024173,
+   "entries_per_entrant": 6.12003046458492,
+   "stated_usd_per_contestant": 0.8627450980392157,
+   "usd_per_email": 0.27949531294385,
+   "december_share": 0.33152173913043476
+  },
   "Italian": {
-   "n": 104,
-   "sites": 35,
-   "contestants": 450.0,
-   "contestants_per_impression": 0.1531870308353918,
+   "n": 102,
+   "sites": 34,
+   "contestants": 428.5,
+   "contestants_per_impression": 0.14849809900924793,
    "entries_per_entrant": 4.4508486073701,
    "stated_usd_per_contestant": 0.7898894154818326,
    "usd_per_email": 0.2869081090730575,
-   "december_share": 0.04807692307692308
+   "december_share": 0.049019607843137254
   }
  },
  "question_types": {
   "other": {
-   "n": 8685,
-   "sites": 1666,
-   "median_uptake": 0.7127468581687613
+   "n": 8569,
+   "sites": 1641,
+   "median_uptake": 0.7099476439790576
   },
   "detail capture": {
-   "n": 5224,
-   "sites": 708,
-   "median_uptake": 0.7713680085146171
+   "n": 5123,
+   "sites": 681,
+   "median_uptake": 0.7610294117647058
   },
   "preference": {
-   "n": 3485,
-   "sites": 901,
-   "median_uptake": 0.7038258575197889
+   "n": 3475,
+   "sites": 898,
+   "median_uptake": 0.7044025157232704
   },
   "trivia": {
-   "n": 1647,
-   "sites": 330,
-   "median_uptake": 0.6203473945409429
+   "n": 1640,
+   "sites": 325,
+   "median_uptake": 0.6199173553719008
   },
   "feedback or open": {
-   "n": 844,
-   "sites": 375,
-   "median_uptake": 0.8514436190611956
+   "n": 839,
+   "sites": 374,
+   "median_uptake": 0.8556638246041413
   }
  },
  "share_copy": {
   "by_length": {
    "medium (60 to 140)": {
-    "n": 39841,
-    "sites": 6424,
-    "median_uptake": 0.16089613034623218
+    "n": 39435,
+    "sites": 6343,
+    "median_uptake": 0.15961945031712474
    },
    "long (over 140)": {
-    "n": 18568,
-    "sites": 2827,
-    "median_uptake": 0.19719403376782435
+    "n": 18454,
+    "sites": 2790,
+    "median_uptake": 0.1961642198179422
    },
    "short (under 60)": {
-    "n": 1139,
-    "sites": 403,
-    "median_uptake": 0.24305555555555555
+    "n": 1123,
+    "sites": 395,
+    "median_uptake": 0.24198250728862974
    }
   },
   "hashtag": {
    "no hashtag": {
-    "n": 46841,
-    "sites": 7355,
-    "median_uptake": 0.12871287128712872
+    "n": 46415,
+    "sites": 7264,
+    "median_uptake": 0.12794612794612795
    },
    "with hashtag": {
-    "n": 12707,
-    "sites": 1718,
-    "median_uptake": 0.35363457760314343
+    "n": 12597,
+    "sites": 1684,
+    "median_uptake": 0.35294117647058826
    }
   },
   "mentions_win": {
    "says win, giveaway or chance": {
-    "n": 52721,
-    "sites": 7401,
-    "median_uptake": 0.1702127659574468
+    "n": 52281,
+    "sites": 7319,
+    "median_uptake": 0.1691542288557214
    },
    "does not": {
-    "n": 6827,
-    "sites": 1359,
-    "median_uptake": 0.19270833333333334
+    "n": 6731,
+    "sites": 1320,
+    "median_uptake": 0.18931475029036005
    }
   },
   "first_person": {
    "not first person": {
-    "n": 49458,
-    "sites": 7197,
-    "median_uptake": 0.14781132886222173
+    "n": 48969,
+    "sites": 7107,
+    "median_uptake": 0.14676335573148827
    },
    "first person": {
-    "n": 10090,
-    "sites": 1774,
-    "median_uptake": 0.2880346841142536
+    "n": 10043,
+    "sites": 1751,
+    "median_uptake": 0.2876712328767123
    }
   },
   "emoji": {
    "no emoji": {
-    "n": 56701,
-    "sites": 7795,
-    "median_uptake": 0.1648675171736997
+    "n": 56264,
+    "sites": 7703,
+    "median_uptake": 0.164039129464997
    },
    "with emoji": {
-    "n": 2847,
-    "sites": 682,
-    "median_uptake": 0.3282051282051282
+    "n": 2748,
+    "sites": 663,
+    "median_uptake": 0.3237885260208534
    }
   },
-  "actions": 59548,
-  "sites": 8057,
+  "actions": 59012,
+  "sites": 7963,
   "by_action": {
    "Viral Shares": {
-    "n": 42534,
-    "sites": 6912,
-    "median_uptake": 0.11464528275328148
+    "n": 42174,
+    "sites": 6828,
+    "median_uptake": 0.11426659859188933
    },
    "X Posts": {
-    "n": 16179,
-    "sites": 2130,
-    "median_uptake": 0.3433962264150943
+    "n": 16028,
+    "sites": 2089,
+    "median_uptake": 0.34241769495225716
    },
    "X Hashtag Posts": {
-    "n": 835,
-    "sites": 340,
-    "median_uptake": 0.37521222410865873
+    "n": 810,
+    "sites": 329,
+    "median_uptake": 0.3721591568586485
    }
   }
  },
  "visit_destinations": {
   "another site": {
-   "n": 121815,
-   "sites": 6730,
-   "median_uptake": 0.7702349869451697
+   "n": 121345,
+   "sites": 6668,
+   "median_uptake": 0.7698170731707317
   },
   "YouTube": {
-   "n": 49522,
-   "sites": 7597,
-   "median_uptake": 0.8451327433628318
+   "n": 49326,
+   "sites": 7552,
+   "median_uptake": 0.8452405257733964
   },
   "organizer's own site": {
-   "n": 10333,
-   "sites": 2576,
-   "median_uptake": 0.9684065934065934
+   "n": 10195,
+   "sites": 2564,
+   "median_uptake": 0.9696969696969697
   },
   "another Gleam campaign": {
    "n": 583,
@@ -529,27 +529,27 @@
    "median_uptake": 0.9490133522391586
   },
   "Facebook": {
-   "n": 117,
-   "sites": 35,
-   "median_uptake": 0.5779816513761468
+   "n": 109,
+   "sites": 33,
+   "median_uptake": 0.5673076923076923
   },
   "Amazon": {
-   "n": 101,
-   "sites": 30,
-   "median_uptake": 0.6866310160427808
+   "n": 100,
+   "sites": 29,
+   "median_uptake": 0.6871852398221567
   }
  },
  "description_flags_clean": {
   "worldwide": {
    "absent": {
-    "n": 38766,
-    "sites": 7058,
-    "contestants": 451.0,
-    "contestants_per_impression": 0.3493312763041512,
-    "entries_per_entrant": 3.6641678321678324,
-    "stated_usd_per_contestant": 0.5411392405063291,
+    "n": 38418,
+    "sites": 6979,
+    "contestants": 452.0,
+    "contestants_per_impression": 0.34864657159935103,
+    "entries_per_entrant": 3.6510815815190636,
+    "stated_usd_per_contestant": 0.5404675142583817,
     "usd_per_email": 0.5797872340425532,
-    "december_share": 0.13217768147345613
+    "december_share": 0.13248997865583842
    },
    "present": {
     "n": 1044,
@@ -564,14 +564,14 @@
   },
   "us_only": {
    "absent": {
-    "n": 39248,
-    "sites": 7117,
-    "contestants": 452.0,
-    "contestants_per_impression": 0.34771823893466314,
-    "entries_per_entrant": 3.6912385705121933,
-    "stated_usd_per_contestant": 0.5317725752508361,
+    "n": 38900,
+    "sites": 7038,
+    "contestants": 453.0,
+    "contestants_per_impression": 0.3472022955523673,
+    "entries_per_entrant": 3.673624130965254,
+    "stated_usd_per_contestant": 0.5301248803201565,
     "usd_per_email": 0.5757487641756325,
-    "december_share": 0.1326946596004892
+    "december_share": 0.1330077120822622
    },
    "present": {
     "n": 562,
@@ -586,20 +586,20 @@
   },
   "age_18": {
    "absent": {
-    "n": 39255,
-    "sites": 7134,
+    "n": 38907,
+    "sites": 7055,
     "contestants": 450,
-    "contestants_per_impression": 0.3482749737959459,
-    "entries_per_entrant": 3.6781731279872543,
-    "stated_usd_per_contestant": 0.5300353356890459,
+    "contestants_per_impression": 0.34765590658028017,
+    "entries_per_entrant": 3.665389527458493,
+    "stated_usd_per_contestant": 0.528992900839931,
     "usd_per_email": 0.568713827520783,
-    "december_share": 0.1331040631766654
+    "december_share": 0.13342072120698076
    },
    "present": {
     "n": 555,
     "sites": 133,
     "contestants": 583,
-    "contestants_per_impression": 0.24678674535204087,
+    "contestants_per_impression": 0.24638247946812672,
     "entries_per_entrant": 4.363471971066907,
     "stated_usd_per_contestant": 0.8531836114625031,
     "usd_per_email": 1.2377433042307566,
@@ -608,20 +608,20 @@
   },
   "no_purchase": {
    "absent": {
-    "n": 38846,
-    "sites": 7101,
+    "n": 38498,
+    "sites": 7022,
     "contestants": 450.0,
-    "contestants_per_impression": 0.3480767767458155,
-    "entries_per_entrant": 3.676744610887833,
-    "stated_usd_per_contestant": 0.5281165311653117,
+    "contestants_per_impression": 0.3474576271186441,
+    "entries_per_entrant": 3.6639672131147543,
+    "stated_usd_per_contestant": 0.5263157894736842,
     "usd_per_email": 0.5736278139299593,
-    "december_share": 0.13301240796993255
+    "december_share": 0.13333160164164373
    },
    "present": {
     "n": 964,
     "sites": 196,
     "contestants": 547.0,
-    "contestants_per_impression": 0.3101091498105475,
+    "contestants_per_impression": 0.30938716828703927,
     "entries_per_entrant": 4.2372855801800595,
     "stated_usd_per_contestant": 0.8080279647111978,
     "usd_per_email": 0.5951407533009907,
@@ -630,142 +630,142 @@
   },
   "winners_stated": {
    "absent": {
-    "n": 37701,
-    "sites": 6924,
-    "contestants": 453,
-    "contestants_per_impression": 0.35209119212334644,
-    "entries_per_entrant": 3.6417910447761193,
-    "stated_usd_per_contestant": 0.5235602094240838,
+    "n": 37386,
+    "sites": 6852,
+    "contestants": 453.0,
+    "contestants_per_impression": 0.3513215859030837,
+    "entries_per_entrant": 3.6276826010868564,
+    "stated_usd_per_contestant": 0.5226480836236934,
     "usd_per_email": 0.5667097329888027,
-    "december_share": 0.13365693217686533
+    "december_share": 0.1339003905205157
    },
    "present": {
-    "n": 2109,
-    "sites": 732,
-    "contestants": 438,
-    "contestants_per_impression": 0.2695387062566278,
-    "entries_per_entrant": 4.8962655601659755,
-    "stated_usd_per_contestant": 0.7135678391959799,
+    "n": 2076,
+    "sites": 716,
+    "contestants": 437.0,
+    "contestants_per_impression": 0.2677368715702375,
+    "entries_per_entrant": 4.878344600264581,
+    "stated_usd_per_contestant": 0.7124749765085591,
     "usd_per_email": 0.7486105857635599,
-    "december_share": 0.11474632527264106
+    "december_share": 0.11608863198458574
    }
   },
   "value_stated": {
    "absent": {
-    "n": 32798,
-    "sites": 6032,
-    "contestants": 437.0,
-    "contestants_per_impression": 0.3541033434650456,
-    "entries_per_entrant": 3.699444081797589,
-    "stated_usd_per_contestant": 0.546875,
+    "n": 32549,
+    "sites": 5971,
+    "contestants": 438,
+    "contestants_per_impression": 0.35347432024169184,
+    "entries_per_entrant": 3.6849816849816848,
+    "stated_usd_per_contestant": 0.5469669117647059,
     "usd_per_email": 0.5949919117761429,
-    "december_share": 0.1286968717604732
+    "december_share": 0.1290362223109773
    },
    "present": {
-    "n": 7012,
-    "sites": 2135,
-    "contestants": 525.0,
-    "contestants_per_impression": 0.31839258114374036,
-    "entries_per_entrant": 3.6479642958534426,
-    "stated_usd_per_contestant": 0.5022215323722861,
+    "n": 6913,
+    "sites": 2103,
+    "contestants": 522,
+    "contestants_per_impression": 0.31810095612992517,
+    "entries_per_entrant": 3.623529411764706,
+    "stated_usd_per_contestant": 0.49504950495049505,
     "usd_per_email": 0.5451076992562527,
-    "december_share": 0.15116942384483742
+    "december_share": 0.15145378272819326
    }
   }
  },
  "description_flag_share_all": {
-  "worldwide": 0.03539717232429479,
-  "us_only": 0.014163991530633153,
-  "age_18": 0.01468478929034902,
-  "no_purchase": 0.03346765931288846,
-  "winners_stated": 0.04941602349566286,
-  "value_stated": 0.22601769004849395
+  "worldwide": 0.0352330091242916,
+  "us_only": 0.014258318068849272,
+  "age_18": 0.014782900337968577,
+  "no_purchase": 0.03364206289827404,
+  "winners_stated": 0.04925913504123561,
+  "value_stated": 0.2259143640944936
  },
  "terms_flag_share_of_custom_terms": {
-  "n": 45694,
-  "sites": 5387,
-  "worldwide": 0.2919201645730293,
-  "us_only": 0.03245502691819495,
-  "age_18": 0.2852234429027881,
-  "no_purchase": 0.6239112356108023,
+  "n": 45528,
+  "sites": 5363,
+  "worldwide": 0.29193024073097873,
+  "us_only": 0.03257336144790019,
+  "age_18": 0.28599982428395715,
+  "no_purchase": 0.6249780354946407,
   "median_words": 1249.0
  },
  "title_term_clean": {
   "giveaway": {
-   "n": 18953,
-   "sites": 4598,
-   "contestants": 439,
-   "contestants_per_impression": 0.3286290322580645,
-   "entries_per_entrant": 3.736450584484591,
-   "stated_usd_per_contestant": 0.5564516129032258,
+   "n": 18853,
+   "sites": 4566,
+   "contestants": 438,
+   "contestants_per_impression": 0.3280446599089173,
+   "entries_per_entrant": 3.7283236994219653,
+   "stated_usd_per_contestant": 0.5539859914859915,
    "usd_per_email": 0.6815542549238202,
-   "december_share": 0.10747638896216957
+   "december_share": 0.1071977934546226
   },
   "none of the usual words": {
-   "n": 17298,
-   "sites": 3171,
+   "n": 17070,
+   "sites": 3112,
    "contestants": 455.0,
-   "contestants_per_impression": 0.3844282238442822,
-   "entries_per_entrant": 3.6665273132664433,
+   "contestants_per_impression": 0.38413685847589424,
+   "entries_per_entrant": 3.6454974759811107,
    "stated_usd_per_contestant": 0.5012562814070352,
    "usd_per_email": 0.3682789098944267,
-   "december_share": 0.16522141288010175
+   "december_share": 0.1664323374340949
   },
   "sweepstakes": {
    "n": 724,
    "sites": 214,
    "contestants": 741.5,
-   "contestants_per_impression": 0.24579531126923918,
+   "contestants_per_impression": 0.2456768038163387,
    "entries_per_entrant": 4.1483109145945045,
    "stated_usd_per_contestant": 0.7046682721351905,
    "usd_per_email": 0.8378130016746193,
    "december_share": 0.0925414364640884
   },
   "sorteo": {
-   "n": 648,
-   "sites": 228,
-   "contestants": 343.5,
-   "contestants_per_impression": 0.3528646444148309,
-   "entries_per_entrant": 4.178568286863056,
+   "n": 647,
+   "sites": 227,
+   "contestants": 342,
+   "contestants_per_impression": 0.35276532137518685,
+   "entries_per_entrant": 4.177557851841071,
    "stated_usd_per_contestant": 0.28034847560633336,
    "usd_per_email": 1.114553241678058,
-   "december_share": 0.0787037037037037
+   "december_share": 0.07727975270479134
   },
   "raffle": {
-   "n": 537,
-   "sites": 52,
+   "n": 533,
+   "sites": 50,
    "contestants": 718,
-   "contestants_per_impression": 0.4636935794467146,
+   "contestants_per_impression": 0.4675324675324675,
    "entries_per_entrant": 1.0,
-   "stated_usd_per_contestant": 7.726618705035971,
+   "stated_usd_per_contestant": 8.436480084225302,
    "usd_per_email": 14.583333333333334,
-   "december_share": 0.10986964618249534
+   "december_share": 0.11069418386491557
   },
   "competition": {
-   "n": 487,
-   "sites": 137,
-   "contestants": 342,
-   "contestants_per_impression": 0.23388581952117865,
-   "entries_per_entrant": 3.716253443526171,
+   "n": 484,
+   "sites": 135,
+   "contestants": 342.5,
+   "contestants_per_impression": 0.23214285714285715,
+   "entries_per_entrant": 3.721116045606502,
    "stated_usd_per_contestant": 0.4580152671755725,
    "usd_per_email": 0.43795620437956206,
-   "december_share": 0.08213552361396304
+   "december_share": 0.08264462809917356
   },
   "contest": {
-   "n": 483,
-   "sites": 201,
-   "contestants": 368,
-   "contestants_per_impression": 0.2345513594477847,
-   "entries_per_entrant": 3.0588235294117645,
-   "stated_usd_per_contestant": 0.7146138532999846,
+   "n": 471,
+   "sites": 196,
+   "contestants": 372,
+   "contestants_per_impression": 0.23043478260869565,
+   "entries_per_entrant": 3.0172009382329947,
+   "stated_usd_per_contestant": 0.6985294117647058,
    "usd_per_email": 0.6198347107438017,
-   "december_share": 0.051759834368530024
+   "december_share": 0.05307855626326964
   },
   "concours": {
    "n": 360,
    "sites": 65,
    "contestants": 692.5,
-   "contestants_per_impression": 0.32603361142742326,
+   "contestants_per_impression": 0.3260278355463126,
    "entries_per_entrant": 2.736571987029568,
    "stated_usd_per_contestant": 0.3852327447833066,
    "usd_per_email": 0.8095201118186054,
@@ -775,7 +775,7 @@
    "n": 286,
    "sites": 44,
    "contestants": 1331.5,
-   "contestants_per_impression": 0.35996737940427653,
+   "contestants_per_impression": 0.3592615967182076,
    "entries_per_entrant": 4.327558256942206,
    "stated_usd_per_contestant": 1.4210917348884156,
    "usd_per_email": 8.559178963988584,
@@ -784,80 +784,80 @@
  },
  "title_term_all": {
   "giveaway": {
-   "n": 60191,
-   "sites": 11541,
-   "contestants": 512,
-   "contestants_per_impression": 0.2605162788126693,
-   "entries_per_entrant": 4.478260869565218,
-   "stated_usd_per_contestant": 0.44122726810931623,
-   "usd_per_email": 0.49839889372785295,
-   "december_share": 0.09574521107806815
+   "n": 59935,
+   "sites": 11474,
+   "contestants": 511,
+   "contestants_per_impression": 0.2601500865884164,
+   "entries_per_entrant": 4.473282442748092,
+   "stated_usd_per_contestant": 0.4411764705882353,
+   "usd_per_email": 0.4984025559105431,
+   "december_share": 0.09557020105113874
   },
   "none of the usual words": {
-   "n": 47756,
-   "sites": 7909,
-   "contestants": 463.0,
-   "contestants_per_impression": 0.28383978945854826,
-   "entries_per_entrant": 4.338485427615862,
-   "stated_usd_per_contestant": 0.32486284246387936,
-   "usd_per_email": 0.21367521367521367,
-   "december_share": 0.11636234190468213
+   "n": 47249,
+   "sites": 7812,
+   "contestants": 464,
+   "contestants_per_impression": 0.2835150737652341,
+   "entries_per_entrant": 4.326797385620915,
+   "stated_usd_per_contestant": 0.3241491085899514,
+   "usd_per_email": 0.21357017429686412,
+   "december_share": 0.11659506021291456
   },
   "sweepstakes": {
-   "n": 2722,
-   "sites": 757,
+   "n": 2712,
+   "sites": 753,
    "contestants": 886.0,
-   "contestants_per_impression": 0.23284842307419823,
-   "entries_per_entrant": 4.436051028653116,
-   "stated_usd_per_contestant": 0.9593024502516011,
+   "contestants_per_impression": 0.23230235277678232,
+   "entries_per_entrant": 4.439433398970971,
+   "stated_usd_per_contestant": 0.9537436599014693,
    "usd_per_email": 0.8815071679282784,
-   "december_share": 0.07090374724467303
+   "december_share": 0.07116519174041298
   },
   "contest": {
-   "n": 1711,
-   "sites": 659,
-   "contestants": 418,
-   "contestants_per_impression": 0.2080945558739255,
-   "entries_per_entrant": 3.48546511627907,
-   "stated_usd_per_contestant": 0.99609375,
-   "usd_per_email": 1.1695906432748537,
-   "december_share": 0.06838106370543542
+   "n": 1664,
+   "sites": 644,
+   "contestants": 416.5,
+   "contestants_per_impression": 0.20995670995670995,
+   "entries_per_entrant": 3.514943154741643,
+   "stated_usd_per_contestant": 0.9803921568627451,
+   "usd_per_email": 1.1847953216374267,
+   "december_share": 0.06610576923076923
   },
   "sorteo": {
-   "n": 1423,
-   "sites": 442,
+   "n": 1421,
+   "sites": 440,
    "contestants": 413,
    "contestants_per_impression": 0.3004765487835465,
    "entries_per_entrant": 4.376466753585397,
-   "stated_usd_per_contestant": 0.352112676056338,
+   "stated_usd_per_contestant": 0.3482326465681139,
    "usd_per_email": 1.1850828729281768,
-   "december_share": 0.08713984539704848
+   "december_share": 0.08585503166783955
   },
   "competition": {
-   "n": 1337,
-   "sites": 406,
-   "contestants": 464,
-   "contestants_per_impression": 0.24923780487804878,
-   "entries_per_entrant": 3.23546511627907,
-   "stated_usd_per_contestant": 0.5077860528097495,
+   "n": 1318,
+   "sites": 399,
+   "contestants": 460.0,
+   "contestants_per_impression": 0.24954128440366974,
+   "entries_per_entrant": 3.2460834599045967,
+   "stated_usd_per_contestant": 0.5055014430014431,
    "usd_per_email": 0.5309751146530336,
-   "december_share": 0.08526551982049364
+   "december_share": 0.08573596358118361
   },
   "raffle": {
-   "n": 703,
-   "sites": 121,
+   "n": 699,
+   "sites": 119,
    "contestants": 624,
-   "contestants_per_impression": 0.3810989010989011,
+   "contestants_per_impression": 0.3841429580306699,
    "entries_per_entrant": 1.0,
-   "stated_usd_per_contestant": 1.8716577540106951,
+   "stated_usd_per_contestant": 2.0295788770053473,
    "usd_per_email": 6.34315424610052,
-   "december_share": 0.10241820768136557
+   "december_share": 0.10300429184549356
   },
   "gewinnspiel": {
    "n": 610,
    "sites": 102,
    "contestants": 868.5,
-   "contestants_per_impression": 0.3051928332827209,
+   "contestants_per_impression": 0.30375579214587056,
    "entries_per_entrant": 4.5099000647390834,
    "stated_usd_per_contestant": 0.9367766559960601,
    "usd_per_email": 1.2376237623762376,
@@ -867,7 +867,7 @@
    "n": 575,
    "sites": 125,
    "contestants": 673,
-   "contestants_per_impression": 0.2859771133177607,
+   "contestants_per_impression": 0.28533664394498093,
    "entries_per_entrant": 3.5361702127659576,
    "stated_usd_per_contestant": 0.536674347158218,
    "usd_per_email": 0.8641686182669789,
@@ -877,7 +877,7 @@
    "n": 100,
    "sites": 23,
    "contestants": 163.0,
-   "contestants_per_impression": 0.15877410619785295,
+   "contestants_per_impression": 0.11858279103398409,
    "entries_per_entrant": 2.603669425704405,
    "stated_usd_per_contestant": 9.881423181152185,
    "usd_per_email": 3.6867469879518073,
@@ -887,476 +887,476 @@
  "title_traits_clean": {
   "win_a": {
    "other": {
-    "n": 37425,
-    "sites": 6878,
-    "contestants": 456,
-    "contestants_per_impression": 0.3487008257953203,
-    "entries_per_entrant": 3.75,
-    "stated_usd_per_contestant": 0.5325506937033084,
+    "n": 37078,
+    "sites": 6800,
+    "contestants": 457.0,
+    "contestants_per_impression": 0.3480793737484071,
+    "entries_per_entrant": 3.7352641667665027,
+    "stated_usd_per_contestant": 0.5319148936170213,
     "usd_per_email": 0.574184657785944,
-    "december_share": 0.13450901803607215
+    "december_share": 0.13485085495442042
    },
    "starts with win": {
-    "n": 2385,
-    "sites": 596,
-    "contestants": 374,
+    "n": 2384,
+    "sites": 595,
+    "contestants": 373.5,
     "contestants_per_impression": 0.3245396131425543,
-    "entries_per_entrant": 3.1769911504424777,
+    "entries_per_entrant": 3.1770331246283536,
     "stated_usd_per_contestant": 0.5791851156133996,
     "usd_per_email": 0.5703422053231939,
-    "december_share": 0.10356394129979035
+    "december_share": 0.10360738255033557
    }
   },
   "value_in_title": {
    "no value": {
-    "n": 36815,
-    "sites": 6887,
-    "contestants": 456,
-    "contestants_per_impression": 0.3412042502951594,
-    "entries_per_entrant": 3.606573705179283,
-    "stated_usd_per_contestant": 0.5474452554744526,
+    "n": 36478,
+    "sites": 6815,
+    "contestants": 456.0,
+    "contestants_per_impression": 0.3406193078324226,
+    "entries_per_entrant": 3.593070346482676,
+    "stated_usd_per_contestant": 0.546333287413326,
     "usd_per_email": 0.5724029730941236,
-    "december_share": 0.13535243786500067
+    "december_share": 0.13567081528592576
    },
    "value in title": {
-    "n": 2995,
-    "sites": 653,
-    "contestants": 419,
-    "contestants_per_impression": 0.4996953077391834,
-    "entries_per_entrant": 7.069375619425173,
-    "stated_usd_per_contestant": 0.43859649122807015,
+    "n": 2984,
+    "sites": 646,
+    "contestants": 419.0,
+    "contestants_per_impression": 0.5003267973856209,
+    "entries_per_entrant": 7.175483705943437,
+    "stated_usd_per_contestant": 0.4366812227074236,
     "usd_per_email": 0.6225714867104001,
-    "december_share": 0.0994991652754591
+    "december_share": 0.09986595174262734
    }
   },
   "emoji_in_title": {
    "no emoji": {
-    "n": 38288,
-    "sites": 7057,
-    "contestants": 451.0,
-    "contestants_per_impression": 0.35012723907370813,
-    "entries_per_entrant": 3.65,
-    "stated_usd_per_contestant": 0.5321428571428571,
+    "n": 37967,
+    "sites": 6983,
+    "contestants": 451,
+    "contestants_per_impression": 0.3492484954804247,
+    "entries_per_entrant": 3.6377952755905514,
+    "stated_usd_per_contestant": 0.5309734513274337,
     "usd_per_email": 0.5747241601489643,
-    "december_share": 0.1338800668616799
+    "december_share": 0.1341954855532436
    },
    "emoji": {
-    "n": 1522,
-    "sites": 325,
-    "contestants": 471.0,
-    "contestants_per_impression": 0.2775392508232212,
-    "entries_per_entrant": 4.463328729465552,
-    "stated_usd_per_contestant": 0.6787469287469288,
+    "n": 1495,
+    "sites": 317,
+    "contestants": 471,
+    "contestants_per_impression": 0.2769857433808554,
+    "entries_per_entrant": 4.447928331466965,
+    "stated_usd_per_contestant": 0.7018867924528301,
     "usd_per_email": 0.4862521959650912,
-    "december_share": 0.10183968462549277
+    "december_share": 0.10167224080267559
    }
   },
   "title_length": {
    "30 to 60": {
-    "n": 21095,
-    "sites": 4696,
-    "contestants": 472,
-    "contestants_per_impression": 0.33293502876882014,
-    "entries_per_entrant": 3.669019607843137,
-    "stated_usd_per_contestant": 0.5524861878453039,
+    "n": 20965,
+    "sites": 4651,
+    "contestants": 471,
+    "contestants_per_impression": 0.3327433628318584,
+    "entries_per_entrant": 3.6602521566025215,
+    "stated_usd_per_contestant": 0.5517241379310345,
     "usd_per_email": 0.6048387096774194,
-    "december_share": 0.14145532116615311
+    "december_share": 0.14142618650131172
    },
    "under 30 characters": {
-    "n": 15372,
-    "sites": 3961,
-    "contestants": 426.0,
-    "contestants_per_impression": 0.3698454992990527,
-    "entries_per_entrant": 3.7190186584079177,
-    "stated_usd_per_contestant": 0.5,
+    "n": 15160,
+    "sites": 3911,
+    "contestants": 427.5,
+    "contestants_per_impression": 0.36818181818181817,
+    "entries_per_entrant": 3.6943287946325416,
+    "stated_usd_per_contestant": 0.4980611954886206,
     "usd_per_email": 0.5263157894736842,
-    "december_share": 0.11865729898516784
+    "december_share": 0.11932717678100264
    },
    "over 60": {
-    "n": 3343,
-    "sites": 893,
+    "n": 3337,
+    "sites": 888,
     "contestants": 453,
-    "contestants_per_impression": 0.3574123858226347,
-    "entries_per_entrant": 3.6747116779958757,
+    "contestants_per_impression": 0.3575054387237128,
+    "entries_per_entrant": 3.67292817679558,
     "stated_usd_per_contestant": 0.581577246673552,
     "usd_per_email": 0.6228306754221389,
-    "december_share": 0.14148967992820818
+    "december_share": 0.14174408151033863
    }
   }
  },
  "overlap_all": {
   "no overlap": {
-   "n": 72911,
-   "sites": 17683,
-   "contestants": 508,
-   "contestants_per_impression": 0.2706156300465947,
-   "entries_per_entrant": 4.081967213114754,
-   "stated_usd_per_contestant": 0.5417311661506707,
-   "usd_per_email": 0.6050420168067226,
-   "december_share": 0.09969689072979386
+   "n": 72480,
+   "sites": 17538,
+   "contestants": 509.0,
+   "contestants_per_impression": 0.2702960840496657,
+   "entries_per_entrant": 4.076422540575999,
+   "stated_usd_per_contestant": 0.5409617651453522,
+   "usd_per_email": 0.6055050734514614,
+   "december_share": 0.09980684326710816
   },
   "overlaps the previous campaign": {
-   "n": 44217,
-   "sites": 3346,
+   "n": 43803,
+   "sites": 3312,
    "contestants": 473,
-   "contestants_per_impression": 0.2654125622150328,
-   "entries_per_entrant": 5.046070460704607,
-   "stated_usd_per_contestant": 0.2386911807567169,
-   "usd_per_email": 0.1724137931034483,
-   "december_share": 0.11050048623832463
+   "contestants_per_impression": 0.264771997430957,
+   "entries_per_entrant": 5.046511627906977,
+   "stated_usd_per_contestant": 0.23812358951677837,
+   "usd_per_email": 0.17182313958051396,
+   "december_share": 0.11022076113508207
   }
  },
  "overlap_clean": {
   "no overlap": {
-   "n": 25973,
-   "sites": 6961,
-   "contestants": 450,
-   "contestants_per_impression": 0.3427789427929617,
-   "entries_per_entrant": 3.5221745350500715,
-   "stated_usd_per_contestant": 0.5701477390729727,
-   "usd_per_email": 0.6854531607006854,
-   "december_share": 0.1211257844684865
+   "n": 25784,
+   "sites": 6893,
+   "contestants": 450.0,
+   "contestants_per_impression": 0.3424323389111301,
+   "entries_per_entrant": 3.5120870344397694,
+   "stated_usd_per_contestant": 0.5681818181818182,
+   "usd_per_email": 0.6790649470290189,
+   "december_share": 0.1211991932981694
   },
   "overlaps the previous campaign": {
-   "n": 13837,
-   "sites": 1533,
-   "contestants": 454,
-   "contestants_per_impression": 0.3592351450198624,
-   "entries_per_entrant": 4.170017680194071,
-   "stated_usd_per_contestant": 0.45528455284552843,
-   "usd_per_email": 0.3640040444893832,
-   "december_share": 0.1542964515429645
+   "n": 13678,
+   "sites": 1511,
+   "contestants": 455.0,
+   "contestants_per_impression": 0.3571194225721785,
+   "entries_per_entrant": 4.144429923970208,
+   "stated_usd_per_contestant": 0.45558086560364464,
+   "usd_per_email": 0.36995515695067266,
+   "december_share": 0.15513964029828922
   }
  },
  "close_weekday_all": {
   "Monday": {
-   "n": 20244,
-   "sites": 5972,
-   "contestants": 498.0,
-   "contestants_per_impression": 0.2696205133555927,
-   "entries_per_entrant": 4.412490722113027,
-   "stated_usd_per_contestant": 0.39582172050296094,
-   "usd_per_email": 0.40053475935828875,
-   "december_share": 0.09266943291839558
+   "n": 20127,
+   "sites": 5916,
+   "contestants": 498,
+   "contestants_per_impression": 0.2691306315133315,
+   "entries_per_entrant": 4.406901041666667,
+   "stated_usd_per_contestant": 0.39603960396039606,
+   "usd_per_email": 0.40106951871657753,
+   "december_share": 0.0927609678541263
   },
   "Friday": {
-   "n": 17857,
-   "sites": 5655,
-   "contestants": 504,
-   "contestants_per_impression": 0.26797287319861085,
-   "entries_per_entrant": 4.3620152844607984,
-   "stated_usd_per_contestant": 0.425531914893617,
+   "n": 17754,
+   "sites": 5614,
+   "contestants": 504.0,
+   "contestants_per_impression": 0.26719453405108795,
+   "entries_per_entrant": 4.353877809433365,
+   "stated_usd_per_contestant": 0.4247697031729785,
    "usd_per_email": 0.45871559633027525,
-   "december_share": 0.10494483955871647
+   "december_share": 0.10499042469302693
   },
   "Thursday": {
-   "n": 16144,
-   "sites": 5246,
-   "contestants": 509.0,
-   "contestants_per_impression": 0.27499490754303124,
-   "entries_per_entrant": 4.2328051927108525,
-   "stated_usd_per_contestant": 0.39893617021276595,
-   "usd_per_email": 0.39328849674327293,
-   "december_share": 0.10703666997026759
+   "n": 16043,
+   "sites": 5199,
+   "contestants": 509,
+   "contestants_per_impression": 0.2741494909361808,
+   "entries_per_entrant": 4.225625,
+   "stated_usd_per_contestant": 0.39832285115303984,
+   "usd_per_email": 0.39262205811451967,
+   "december_share": 0.10702487066010098
   },
   "Sunday": {
-   "n": 16085,
-   "sites": 5312,
-   "contestants": 454,
-   "contestants_per_impression": 0.2720897615708275,
-   "entries_per_entrant": 4.574566064470422,
-   "stated_usd_per_contestant": 0.4366812227074236,
-   "usd_per_email": 0.4283656241741527,
-   "december_share": 0.10599937830276655
+   "n": 15909,
+   "sites": 5276,
+   "contestants": 457,
+   "contestants_per_impression": 0.2726406101048618,
+   "entries_per_entrant": 4.557790453317322,
+   "stated_usd_per_contestant": 0.43772383605252685,
+   "usd_per_email": 0.42912873862158646,
+   "december_share": 0.1062291784524483
   },
   "Tuesday": {
-   "n": 15886,
-   "sites": 5376,
+   "n": 15800,
+   "sites": 5336,
    "contestants": 497.0,
-   "contestants_per_impression": 0.2599779867920753,
-   "entries_per_entrant": 4.369660570888724,
-   "stated_usd_per_contestant": 0.411214953271028,
-   "usd_per_email": 0.34943948057552543,
-   "december_share": 0.1039279869067103
+   "contestants_per_impression": 0.2593080692711689,
+   "entries_per_entrant": 4.362366887472748,
+   "stated_usd_per_contestant": 0.4095347701750715,
+   "usd_per_email": 0.34965034965034963,
+   "december_share": 0.1039873417721519
   },
   "Wednesday": {
-   "n": 15685,
-   "sites": 5021,
-   "contestants": 505,
-   "contestants_per_impression": 0.2713864306784661,
-   "entries_per_entrant": 4.343891402714932,
-   "stated_usd_per_contestant": 0.4166666666666667,
-   "usd_per_email": 0.38819875776397517,
-   "december_share": 0.10615237488045903
+   "n": 15606,
+   "sites": 4983,
+   "contestants": 506.0,
+   "contestants_per_impression": 0.2705909252030638,
+   "entries_per_entrant": 4.338031719059757,
+   "stated_usd_per_contestant": 0.4158291457286432,
+   "usd_per_email": 0.3893575600259572,
+   "december_share": 0.10617711136742279
   },
   "Saturday": {
-   "n": 15227,
-   "sites": 5549,
-   "contestants": 475,
-   "contestants_per_impression": 0.26446000903750566,
-   "entries_per_entrant": 4.392592592592592,
-   "stated_usd_per_contestant": 0.45154008592441564,
-   "usd_per_email": 0.4046242774566474,
-   "december_share": 0.10875418664214881
+   "n": 15044,
+   "sites": 5504,
+   "contestants": 475.0,
+   "contestants_per_impression": 0.2654618204390461,
+   "entries_per_entrant": 4.40492373330075,
+   "stated_usd_per_contestant": 0.45026525198938994,
+   "usd_per_email": 0.4031581228574806,
+   "december_share": 0.10795001329433661
   }
  },
  "close_hour_utc_all": {
   "06": {
-   "n": 20899,
-   "sites": 4293,
-   "contestants": 555,
-   "contestants_per_impression": 0.2301620361057727,
-   "entries_per_entrant": 5.084269662921348,
-   "stated_usd_per_contestant": 0.3672316384180791,
-   "usd_per_email": 0.25719919948418646,
-   "december_share": 0.016364419350208145
+   "n": 20849,
+   "sites": 4278,
+   "contestants": 554,
+   "contestants_per_impression": 0.22971048884670148,
+   "entries_per_entrant": 5.083044982698962,
+   "stated_usd_per_contestant": 0.36762385610602716,
+   "usd_per_email": 0.2575304744954498,
+   "december_share": 0.01621180871984268
   },
   "07": {
-   "n": 12287,
-   "sites": 3069,
-   "contestants": 551,
-   "contestants_per_impression": 0.24578684109272797,
-   "entries_per_entrant": 4.892221180880974,
-   "stated_usd_per_contestant": 0.32637098246878565,
-   "usd_per_email": 0.22123893805309736,
-   "december_share": 0.2514039228452836
+   "n": 12256,
+   "sites": 3058,
+   "contestants": 551.0,
+   "contestants_per_impression": 0.2453061224489796,
+   "entries_per_entrant": 4.892487867303725,
+   "stated_usd_per_contestant": 0.32608695652173914,
+   "usd_per_email": 0.2209135866736075,
+   "december_share": 0.2514686684073107
   },
   "22": {
-   "n": 11395,
-   "sites": 2355,
+   "n": 11363,
+   "sites": 2338,
    "contestants": 460,
-   "contestants_per_impression": 0.3001968503937008,
-   "entries_per_entrant": 4.3628318584070795,
-   "stated_usd_per_contestant": 0.3472222222222222,
+   "contestants_per_impression": 0.2996622978726592,
+   "entries_per_entrant": 4.361423220973783,
+   "stated_usd_per_contestant": 0.3446790816478066,
    "usd_per_email": 0.5963855421686747,
-   "december_share": 0.11382185168933742
+   "december_share": 0.11370236733257062
   },
   "03": {
-   "n": 10475,
-   "sites": 2627,
+   "n": 10445,
+   "sites": 2613,
    "contestants": 446,
-   "contestants_per_impression": 0.26011290434300754,
-   "entries_per_entrant": 4.085492227979275,
-   "stated_usd_per_contestant": 0.4045307443365696,
-   "usd_per_email": 0.48042277203939465,
-   "december_share": 0.010883054892601432
+   "contestants_per_impression": 0.2595432959214117,
+   "entries_per_entrant": 4.083665338645418,
+   "stated_usd_per_contestant": 0.40422187289467776,
+   "usd_per_email": 0.4809177057222995,
+   "december_share": 0.010914313068453805
   },
   "04": {
-   "n": 9483,
-   "sites": 2819,
-   "contestants": 509,
-   "contestants_per_impression": 0.2663654627102985,
-   "entries_per_entrant": 4.232876712328767,
-   "stated_usd_per_contestant": 0.4669777673996684,
-   "usd_per_email": 0.5019487370679605,
-   "december_share": 0.14320362754402616
+   "n": 9466,
+   "sites": 2811,
+   "contestants": 510.0,
+   "contestants_per_impression": 0.2660204888770932,
+   "entries_per_entrant": 4.225073080262421,
+   "stated_usd_per_contestant": 0.4666666666666667,
+   "usd_per_email": 0.5017561465127948,
+   "december_share": 0.14303824212972743
   },
   "23": {
-   "n": 7043,
-   "sites": 1684,
-   "contestants": 463,
-   "contestants_per_impression": 0.312807881773399,
-   "entries_per_entrant": 4.07516339869281,
-   "stated_usd_per_contestant": 0.3409090909090909,
+   "n": 6979,
+   "sites": 1669,
+   "contestants": 461,
+   "contestants_per_impression": 0.3128001967369335,
+   "entries_per_entrant": 4.065359477124183,
+   "stated_usd_per_contestant": 0.3362689828672163,
    "usd_per_email": 0.4753914988814318,
-   "december_share": 0.17265369870793695
+   "december_share": 0.1733772746811864
   },
   "21": {
-   "n": 6486,
-   "sites": 1762,
-   "contestants": 446.0,
-   "contestants_per_impression": 0.26441378735704013,
-   "entries_per_entrant": 4.270016865681711,
-   "stated_usd_per_contestant": 0.5820721769499418,
-   "usd_per_email": 0.8329864002220372,
-   "december_share": 0.04933703361085415
+   "n": 6442,
+   "sites": 1748,
+   "contestants": 444.5,
+   "contestants_per_impression": 0.26369934914969556,
+   "entries_per_entrant": 4.270725545055533,
+   "stated_usd_per_contestant": 0.5760399246104431,
+   "usd_per_email": 0.832639467110741,
+   "december_share": 0.04781123874573114
   },
   "05": {
-   "n": 4287,
-   "sites": 1496,
+   "n": 4283,
+   "sites": 1492,
    "contestants": 496,
-   "contestants_per_impression": 0.2583612040133779,
-   "entries_per_entrant": 4.537037037037037,
-   "stated_usd_per_contestant": 0.43687207988518034,
+   "contestants_per_impression": 0.2579306837523208,
+   "entries_per_entrant": 4.539130434782609,
+   "stated_usd_per_contestant": 0.4366812227074236,
    "usd_per_email": 0.531632110579479,
-   "december_share": 0.1894098437135526
+   "december_share": 0.18935325706280645
   },
   "15": {
-   "n": 3504,
-   "sites": 1229,
-   "contestants": 536.5,
-   "contestants_per_impression": 0.25245098039215685,
-   "entries_per_entrant": 4.505532554752401,
-   "stated_usd_per_contestant": 0.5157629255989912,
+   "n": 3451,
+   "sites": 1200,
+   "contestants": 542,
+   "contestants_per_impression": 0.25190839694656486,
+   "entries_per_entrant": 4.497732155645739,
+   "stated_usd_per_contestant": 0.5142857142857142,
    "usd_per_email": 0.2969613259668508,
-   "december_share": 0.10331050228310502
+   "december_share": 0.10315850478122283
   },
   "13": {
-   "n": 3488,
-   "sites": 1421,
-   "contestants": 520.5,
-   "contestants_per_impression": 0.2748221772985924,
-   "entries_per_entrant": 3.42174215860512,
-   "stated_usd_per_contestant": 0.746268656716418,
-   "usd_per_email": 0.9572192513368984,
-   "december_share": 0.059059633027522936
+   "n": 3446,
+   "sites": 1406,
+   "contestants": 525.0,
+   "contestants_per_impression": 0.2741407528641571,
+   "entries_per_entrant": 3.3920746419676213,
+   "stated_usd_per_contestant": 0.7484276729559748,
+   "usd_per_email": 0.981590386090514,
+   "december_share": 0.05803830528148578
   },
   "18": {
-   "n": 3132,
-   "sites": 1165,
-   "contestants": 489.5,
-   "contestants_per_impression": 0.3134715025906736,
-   "entries_per_entrant": 3.9783131846021824,
-   "stated_usd_per_contestant": 0.4247697031729785,
+   "n": 3056,
+   "sites": 1152,
+   "contestants": 479.0,
+   "contestants_per_impression": 0.31305903398926654,
+   "entries_per_entrant": 3.9288317182237247,
+   "stated_usd_per_contestant": 0.4245783759964748,
    "usd_per_email": 0.48974125755522235,
-   "december_share": 0.08620689655172414
+   "december_share": 0.08769633507853403
   },
   "12": {
-   "n": 2985,
-   "sites": 1259,
-   "contestants": 479,
-   "contestants_per_impression": 0.27811094452773616,
-   "entries_per_entrant": 3.4937611408199643,
-   "stated_usd_per_contestant": 0.6252747252747253,
-   "usd_per_email": 0.684931506849315,
-   "december_share": 0.13936348408710217
-  },
-  "14": {
-   "n": 2528,
-   "sites": 835,
-   "contestants": 487.5,
-   "contestants_per_impression": 0.2765573789083321,
-   "entries_per_entrant": 4.404279978789486,
-   "stated_usd_per_contestant": 0.6365372374283895,
-   "usd_per_email": 0.6319018404907976,
-   "december_share": 0.07555379746835443
+   "n": 2936,
+   "sites": 1244,
+   "contestants": 473.5,
+   "contestants_per_impression": 0.27664670658682633,
+   "entries_per_entrant": 3.4617899351887154,
+   "stated_usd_per_contestant": 0.6509331597222222,
+   "usd_per_email": 0.6982456140350877,
+   "december_share": 0.14032697547683923
   },
   "02": {
-   "n": 2524,
-   "sites": 712,
-   "contestants": 622.0,
-   "contestants_per_impression": 0.43750393086705497,
-   "entries_per_entrant": 5.041401474869216,
-   "stated_usd_per_contestant": 0.3219121304227687,
+   "n": 2509,
+   "sites": 705,
+   "contestants": 633,
+   "contestants_per_impression": 0.4378899602949518,
+   "entries_per_entrant": 5.034591194968553,
+   "stated_usd_per_contestant": 0.3191489361702128,
    "usd_per_email": 0.5235910878112713,
-   "december_share": 0.0812202852614897
+   "december_share": 0.0813072937425269
   },
   "20": {
-   "n": 2416,
-   "sites": 971,
-   "contestants": 389.5,
-   "contestants_per_impression": 0.2948907079725417,
-   "entries_per_entrant": 3.9426903941829314,
-   "stated_usd_per_contestant": 0.5909677419354838,
+   "n": 2384,
+   "sites": 962,
+   "contestants": 390.0,
+   "contestants_per_impression": 0.2952029520295203,
+   "entries_per_entrant": 3.936621485943775,
+   "stated_usd_per_contestant": 0.5879684080562675,
    "usd_per_email": 0.7486889544411668,
-   "december_share": 0.09188741721854304
+   "december_share": 0.09186241610738255
+  },
+  "14": {
+   "n": 2351,
+   "sites": 813,
+   "contestants": 502,
+   "contestants_per_impression": 0.2832310838445808,
+   "entries_per_entrant": 4.497648902821316,
+   "stated_usd_per_contestant": 0.629776091363259,
+   "usd_per_email": 0.6279450326294829,
+   "december_share": 0.07018290089323692
   },
   "19": {
-   "n": 2312,
-   "sites": 762,
-   "contestants": 485.0,
-   "contestants_per_impression": 0.2606667280843199,
-   "entries_per_entrant": 4.857974910394265,
-   "stated_usd_per_contestant": 0.5179584244409847,
+   "n": 2303,
+   "sites": 756,
+   "contestants": 485,
+   "contestants_per_impression": 0.2603036876355748,
+   "entries_per_entrant": 4.851111111111111,
+   "stated_usd_per_contestant": 0.5151871045082466,
    "usd_per_email": 0.3864766769727114,
-   "december_share": 0.10034602076124567
+   "december_share": 0.10073816760746852
   },
   "16": {
-   "n": 2204,
-   "sites": 936,
-   "contestants": 433.0,
-   "contestants_per_impression": 0.26587003294620937,
-   "entries_per_entrant": 4.491885393708676,
-   "stated_usd_per_contestant": 0.41310975609756095,
+   "n": 2143,
+   "sites": 925,
+   "contestants": 443,
+   "contestants_per_impression": 0.26713947990543735,
+   "entries_per_entrant": 4.438144329896907,
+   "stated_usd_per_contestant": 0.41071071571371454,
    "usd_per_email": 0.5254725085910653,
-   "december_share": 0.09482758620689655
+   "december_share": 0.0970601959869342
   },
   "08": {
-   "n": 1714,
-   "sites": 560,
-   "contestants": 523.0,
-   "contestants_per_impression": 0.309705997628028,
-   "entries_per_entrant": 4.5186335403726705,
-   "stated_usd_per_contestant": 0.6645569620253164,
-   "usd_per_email": 1.1639867018542003,
-   "december_share": 0.26662777129521587
+   "n": 1709,
+   "sites": 558,
+   "contestants": 522,
+   "contestants_per_impression": 0.30782761653474056,
+   "entries_per_entrant": 4.515527950310559,
+   "stated_usd_per_contestant": 0.6634043088272278,
+   "usd_per_email": 1.1492024539877301,
+   "december_share": 0.267407840842598
   },
   "17": {
-   "n": 1649,
-   "sites": 767,
+   "n": 1643,
+   "sites": 763,
    "contestants": 394,
-   "contestants_per_impression": 0.3092105263157895,
-   "entries_per_entrant": 4.176924877135502,
-   "stated_usd_per_contestant": 0.5691416469415722,
+   "contestants_per_impression": 0.3096590909090909,
+   "entries_per_entrant": 4.174757281553398,
+   "stated_usd_per_contestant": 0.5652173913043478,
    "usd_per_email": 0.80752567394095,
-   "december_share": 0.1322013341419042
+   "december_share": 0.1320754716981132
   },
   "00": {
-   "n": 1622,
-   "sites": 708,
-   "contestants": 462.5,
-   "contestants_per_impression": 0.3693379790940767,
-   "entries_per_entrant": 3.411244238670254,
-   "stated_usd_per_contestant": 0.602768051400097,
-   "usd_per_email": 0.9521794329242488,
-   "december_share": 0.11159062885326756
+   "n": 1611,
+   "sites": 703,
+   "contestants": 462,
+   "contestants_per_impression": 0.37006578947368424,
+   "entries_per_entrant": 3.4049586776859506,
+   "stated_usd_per_contestant": 0.5736137667304015,
+   "usd_per_email": 0.9507732607659218,
+   "december_share": 0.1111111111111111
   },
   "01": {
-   "n": 1416,
-   "sites": 494,
-   "contestants": 411.5,
-   "contestants_per_impression": 0.38917917113254735,
-   "entries_per_entrant": 3.919326241134752,
-   "stated_usd_per_contestant": 0.3090185676392573,
+   "n": 1412,
+   "sites": 491,
+   "contestants": 411.0,
+   "contestants_per_impression": 0.3885180240320427,
+   "entries_per_entrant": 3.913998357963875,
+   "stated_usd_per_contestant": 0.3103448275862069,
    "usd_per_email": 1.171806360920752,
-   "december_share": 0.0557909604519774
+   "december_share": 0.05594900849858357
   },
   "09": {
-   "n": 1170,
-   "sites": 389,
-   "contestants": 397.0,
-   "contestants_per_impression": 0.32765751415278127,
-   "entries_per_entrant": 5.201134250033213,
-   "stated_usd_per_contestant": 0.4052079399740588,
+   "n": 1164,
+   "sites": 384,
+   "contestants": 399.0,
+   "contestants_per_impression": 0.32767527675276753,
+   "entries_per_entrant": 5.194723993622958,
+   "stated_usd_per_contestant": 0.40816326530612246,
    "usd_per_email": 0.29381986358389167,
-   "december_share": 0.07948717948717948
+   "december_share": 0.07989690721649484
   },
   "10": {
-   "n": 1072,
-   "sites": 486,
-   "contestants": 458.5,
-   "contestants_per_impression": 0.28370786516853935,
-   "entries_per_entrant": 4.250155327037108,
-   "stated_usd_per_contestant": 0.3359683794466403,
+   "n": 1061,
+   "sites": 480,
+   "contestants": 476,
+   "contestants_per_impression": 0.28339140534262486,
+   "entries_per_entrant": 4.233511586452763,
+   "stated_usd_per_contestant": 0.3333333333333333,
    "usd_per_email": 0.24422140489017818,
-   "december_share": 0.1417910447761194
+   "december_share": 0.1423185673892554
   },
   "11": {
-   "n": 1037,
-   "sites": 444,
+   "n": 1021,
+   "sites": 437,
    "contestants": 359,
-   "contestants_per_impression": 0.2938705758421567,
-   "entries_per_entrant": 3.7523809523809524,
-   "stated_usd_per_contestant": 0.5621621621621622,
-   "usd_per_email": 0.7647058823529411,
-   "december_share": 0.10993249758919961
+   "contestants_per_impression": 0.29213661010034775,
+   "entries_per_entrant": 3.7214285714285715,
+   "stated_usd_per_contestant": 0.5684374029201615,
+   "usd_per_email": 0.7573529411764706,
+   "december_share": 0.11067580803134182
   }
  },
  "newsletter_wording": {
   "no description": {
-   "n": 20893,
-   "sites": 3563,
-   "median_uptake": 0.9481865284974094
+   "n": 20856,
+   "sites": 3554,
+   "median_uptake": 0.9482945388958259
   },
   "description without those": {
-   "n": 18830,
-   "sites": 2488,
-   "median_uptake": 0.8088296249261405
+   "n": 18701,
+   "sites": 2478,
+   "median_uptake": 0.8078172162151835
   },
   "mentions frequency or unsubscribe": {
-   "n": 7305,
-   "sites": 865,
-   "median_uptake": 0.8081264108352144
+   "n": 7301,
+   "sites": 863,
+   "median_uptake": 0.808135593220339
   }
  }
 }

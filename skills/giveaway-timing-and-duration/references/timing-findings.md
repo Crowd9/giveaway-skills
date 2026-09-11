@@ -3,25 +3,25 @@
 Built from the campaigns behind these numbers: crypto, ambiguous and purchase-only campaigns removed, and every one reached at least 100 Entrants. Duration is the end date minus the start date in days as recorded, so a campaign extended after launch shows its final length. The typical range given below covers the middle half of campaigns, from the lower quarter to the upper quarter. Where a figure says nine campaigns in ten sit below it, that's the top-tenth mark.
 
 <!-- generated:timing -->
-Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=116,491). By campaign size: 100-250 12 days, 250-500 14 days, 500-1k 14 days, 1k-2.5k 15 days, 2.5k-10k 18 days, 10k+ 18 days.
+Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=115,754). By campaign size: 100-250 12 days, 250-500 14 days, 500-1k 14 days, 1k-2.5k 15 days, 2.5k-10k 18 days, 10k+ 18 days.
 
 | Duration (days) | Share of campaigns | Entries per contestant, median |
 |---|---|---|
-| 1-3 | 13% | 3.53 |
-| 4-7 | 16% | 4.01 |
-| 8-14 | 22% | 4.42 |
-| 15-30 | 28% | 4.84 |
+| 1-3 | 13% | 3.52 |
+| 4-7 | 16% | 3.99 |
+| 8-14 | 22% | 4.41 |
+| 15-30 | 28% | 4.83 |
 | 31-60 | 16% | 5.14 |
-| 61-180 | 3% | 3.89 |
-| 181+ | 1% | 3.86 |
+| 61-180 | 3% | 3.84 |
+| 181+ | 0% | 3.86 |
 
 | Start month | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Share of campaigns | 6.7% | 8.0% | 9.1% | 8.3% | 8.6% | 8.4% | 7.9% | 7.9% | 7.4% | 8.3% | 9.0% | 10.4% |
+| Share of campaigns | 6.7% | 8.0% | 9.1% | 8.3% | 8.6% | 8.5% | 7.9% | 7.9% | 7.4% | 8.3% | 9.0% | 10.4% |
 
 | Start weekday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 |---|---|---|---|---|---|---|---|
-| Share of campaigns | 19.2% | 16.0% | 16.5% | 15.9% | 15.6% | 7.2% | 9.7% |
+| Share of campaigns | 19.2% | 16.0% | 16.5% | 15.9% | 15.6% | 7.2% | 9.6% |
 <!-- /generated -->
 
 ## Reading the tables
@@ -38,11 +38,11 @@ Experience tracks a slightly better Conversion Rate: businesses on their elevent
 <!-- generated:tm_experience -->
 | Campaign number | Entrants | Conversion Rate |
 |---|---|---|
-| 11th+ | 514 | 27% |
-| 1st | 382 | 26% |
-| 2nd | 438 | 26% |
-| 3rd-5th | 498 | 27% |
-| 6th-10th | 547 | 27% |
+| 11th+ | 515 | 27% |
+| 1st | 381 | 26% |
+| 2nd | 437 | 26% |
+| 3rd-5th | 500 | 27% |
+| 6th-10th | 548 | 27% |
 <!-- /generated -->
 
 These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
@@ -56,11 +56,11 @@ Gap since the business's previous campaign, all the campaigns behind these numbe
 <!-- generated:tm_cadence -->
 | Campaign number | Campaigns | Entrants | Actions per Entrant | Conversion Rate |
 |---|---|---|---|---|
-| 1st | 17,383 | 382 | 3.68 | 26% |
-| 2nd | 8,509 | 438 | 3.85 | 26% |
-| 3rd-5th | 14,332 | 498 | 4.05 | 27% |
-| 6th-10th | 12,888 | 547 | 4.18 | 27% |
-| 11th+ | 64,236 | 514 | 4.91 | 27% |
+| 1st | 17,245 | 381 | 3.67 | 26% |
+| 2nd | 8,448 | 437 | 3.85 | 26% |
+| 3rd-5th | 14,225 | 500 | 4.04 | 27% |
+| 6th-10th | 12,804 | 548 | 4.18 | 27% |
+| 11th+ | 63,777 | 515 | 4.91 | 27% |
 <!-- /generated -->
 
 Campaign size repeats: after a big campaign, the next one tends to be big too, across 21,284 consecutive pairs from the same business.
@@ -81,13 +81,13 @@ Close day of the week, all the campaigns behind these numbers:
 <!-- generated:tm_close_day -->
 | Close day | Campaigns | Entrants | Conversion Rate |
 |---|---|---|---|
-| Monday | 20,244 | 498 | 27% |
-| Friday | 17,857 | 504 | 27% |
-| Thursday | 16,144 | 509 | 27% |
-| Sunday | 16,085 | 454 | 27% |
-| Tuesday | 15,886 | 497 | 26% |
-| Wednesday | 15,685 | 505 | 27% |
-| Saturday | 15,227 | 475 | 26% |
+| Monday | 20,127 | 498 | 27% |
+| Friday | 17,754 | 504 | 27% |
+| Thursday | 16,043 | 509 | 27% |
+| Sunday | 15,909 | 457 | 27% |
+| Tuesday | 15,800 | 497 | 26% |
+| Wednesday | 15,606 | 506 | 27% |
+| Saturday | 15,044 | 475 | 27% |
 <!-- /generated -->
 
 Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the dataset, so pick the close time for your audience and your own working hours.
@@ -339,13 +339,13 @@ A separate check, using all runs at their actual length, for a second read on th
 <!-- generated:tm_weekday -->
 | Start weekday | Campaigns | Businesses | Entrants | Conversion Rate |
 |---|---|---|---|---|
-| Monday | 22,498 | 6,624 | 479 | 26% |
-| Tuesday | 18,754 | 6,011 | 499 | 26% |
-| Wednesday | 19,348 | 6,043 | 504 | 28% |
-| Thursday | 18,636 | 6,082 | 512 | 27% |
-| Friday | 18,276 | 5,744 | 521 | 27% |
-| Saturday | 8,425 | 3,516 | 438 | 28% |
-| Sunday | 11,411 | 4,226 | 449 | 27% |
+| Monday | 22,360 | 6,566 | 479 | 26% |
+| Tuesday | 18,606 | 5,960 | 500 | 26% |
+| Wednesday | 19,213 | 5,986 | 505 | 28% |
+| Thursday | 18,524 | 6,035 | 513 | 27% |
+| Friday | 18,193 | 5,705 | 520 | 27% |
+| Saturday | 8,372 | 3,483 | 438 | 28% |
+| Sunday | 11,231 | 4,192 | 454 | 27% |
 <!-- /generated -->
 
 Entrants run from 438 on Saturday to 521 on Friday and the Conversion Rate from 26% to 28% across the week, the same read as the duration-matched weekday table above: flat on Conversion Rate, with about a tenth fewer Entrants on a weekend start. Weekday still shows no usable difference on Conversion Rate.
@@ -355,18 +355,18 @@ Month moves once, in December, and nowhere else:
 <!-- generated:tm_month -->
 | Start month | Conversion Rate | Entrants | Days |
 |---|---|---|---|
-| December (12,161 campaigns, 3,987 businesses) | 30.8% | 560 | 10 |
-| November (10,529 campaigns, 3,972 businesses) | 26.9% | 487 | 14 |
-| May (10,114 campaigns, 3,991 businesses) | 26.7% | 477 | 15 |
-| January (7,804 campaigns, 3,390 businesses) | 26.7% | 479 | 15 |
-| March (10,722 campaigns, 4,106 businesses) | 26.6% | 484 | 14 |
-| February (9,352 campaigns, 3,878 businesses) | 26.6% | 474 | 14 |
-| April (9,756 campaigns, 3,928 businesses) | 26.5% | 471 | 14 |
-| October (9,741 campaigns, 3,899 businesses) | 26.5% | 472 | 14 |
-| July (9,229 campaigns, 3,862 businesses) | 26.5% | 499 | 15 |
-| June (9,914 campaigns, 3,867 businesses) | 26.4% | 502 | 15 |
-| August (9,289 campaigns, 3,814 businesses) | 26.3% | 508 | 15 |
-| September (8,737 campaigns, 3,662 businesses) | 25.6% | 494 | 15 |
+| December (12,068 campaigns, 3,958 businesses) | 30.9% | 560 | 10 |
+| November (10,433 campaigns, 3,944 businesses) | 26.9% | 490 | 15 |
+| January (7,751 campaigns, 3,368 businesses) | 26.7% | 479 | 15 |
+| March (10,641 campaigns, 4,073 businesses) | 26.6% | 485 | 14 |
+| May (10,049 campaigns, 3,965 businesses) | 26.6% | 477 | 15 |
+| February (9,286 campaigns, 3,839 businesses) | 26.6% | 474 | 14 |
+| April (9,675 campaigns, 3,888 businesses) | 26.5% | 471 | 14 |
+| July (9,173 campaigns, 3,840 businesses) | 26.5% | 498 | 15 |
+| October (9,671 campaigns, 3,867 businesses) | 26.4% | 474 | 15 |
+| June (9,856 campaigns, 3,839 businesses) | 26.3% | 502 | 15 |
+| August (9,221 campaigns, 3,780 businesses) | 26.2% | 508 | 15 |
+| September (8,675 campaigns, 3,640 businesses) | 25.6% | 494 | 15 |
 <!-- /generated -->
 
 Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 3.9 points and the furthest by 5.2, on a run about two thirds the length of the rest of the year.

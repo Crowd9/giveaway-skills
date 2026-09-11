@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (117,348 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
+Built from the campaigns behind these numbers (116,499 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
 Baseline for comparison across this page. The typical campaign draws 492 Entrants (117,130 campaigns) over 14 days (116,276). Read every Conversion Rate column on this page against 34.5%, the typical figure among the campaigns we can compare fairly (40,352), because those columns are counted on that group and carry its campaign count in brackets. The all-campaign Conversion Rate is 26.9% (117,041), lower because Impressions count once per visitor per day and a long run collects more of them for the same crowd. The public-holiday table below reads 492 Entrants for every other start across 91,439 campaigns, which is the same baseline arrived at on this page's own data.
 
@@ -11,18 +11,18 @@ These figures were wrong on this page until the benchmark floor moved from 1,000
 <!-- generated:hol_by_holiday -->
 | Theme | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Duration days | Lead days, typical (range) | Closed on or before the day | Start months |
 |---|---|---|---|---|---|---|---|---|
-| Christmas and advent | 4,911 | 586 | 39% (2,172) | 4.1 | 10 | 17 (9 to 26) | 75% | Dec, Nov |
-| Summer | 3,087 | 623 | 32% (869) | 4.2 | 16 | 27 (10 to 43) | 61% | Jun, Jul |
-| New Year | 934 | 774 | 31% (281) | 4.6 | 16 | 11 (4 to 25) | 42% | Jan, Dec |
-| Halloween | 838 | 482 | 29% (269) | 4.9 | 14 | 18 (8 to 30) | 52% | Oct, Sep |
-| Black Friday and Cyber Monday | 751 | 898 | 30% (360) | 3.8 | 8 | 7 (3 to 14) | 40% | Nov, Dec |
-| Valentine's Day | 684 | 551 | 30% (228) | 4.9 | 14 | 13 (6 to 21) | 49% | Feb, Jan |
+| Christmas and advent | 4,895 | 587 | 39% (2,165) | 4.1 | 10 | 17 (9 to 26) | 75% | Dec, Nov |
+| Summer | 3,085 | 623 | 32% (869) | 4.3 | 16 | 27 (10 to 43) | 61% | Jun, Jul |
+| New Year | 931 | 774 | 31% (278) | 4.6 | 16 | 11 (4 to 25) | 42% | Jan, Dec |
+| Halloween | 837 | 482 | 29% (268) | 4.9 | 14 | 18 (8 to 30) | 52% | Oct, Sep |
+| Black Friday and Cyber Monday | 747 | 898 | 30% (360) | 3.8 | 8 | 7 (3 to 14) | 40% | Nov, Dec |
+| Valentine's Day | 682 | 550 | 30% (228) | 4.9 | 14 | 13 (6 to 21) | 49% | Feb, Jan |
 | Back to school | 477 | 876 | 32% (151) | 3.9 | 14 | 18.5 (10 to 27) | 52% | Aug, Jul |
-| Easter | 453 | 602 | 30% (171) | 5.1 | 13 | 10 (4 to 21) | 37% | Mar, Apr |
-| Mother's Day | 371 | 601 | 30% (144) | 3.4 | 11 | 12 (6 to 22) | 54% | Apr, May |
-| Father's Day | 331 | 823 | 35% (131) | 3.9 | 12 | 12 (7 to 18) | 43% | Jun, May |
+| Easter | 449 | 605 | 30% (170) | 5.1 | 13 | 10 (4 to 21) | 38% | Mar, Apr |
+| Mother's Day | 367 | 601 | 30% (144) | 3.4 | 11 | 12 (6 to 21) | 55% | Apr, May |
+| Father's Day | 329 | 823 | 35% (131) | 3.9 | 12 | 12 (7 to 18) | 43% | Jun, May |
 | Thanksgiving | 264 | 718 | 27% (87) | 4.6 | 12 | 14 (7 to 24) | 47% | Nov, Oct |
-| Lunar New Year | 111 | 614 | 34% (49) | 5.2 | 12 | 5 (1 to 10) | 20% | Feb, Jan |
+| Lunar New Year | 108 | 584 | 34% (46) | 5.1 | 13 | 5 (1 to 10) | 20% | Feb, Jan |
 <!-- /generated -->
 
 Reading it:
@@ -41,19 +41,19 @@ A separate check, using all runs at their actual length, not the fair-comparison
 <!-- generated:hol_theme -->
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |
 |---|---|---|---|---|
-| Christmas and advent | 4,911 | 1,563 | 586 | 39.0% |
-| Father's Day | 331 | 236 | 823 | 34.7% |
-| Lunar New Year | 111 | 82 | 614 | 34.0% |
-| Milestone | 1,171 | 772 | 523 | 32.4% |
-| Summer | 3,087 | 1,348 | 623 | 32.1% |
-| Back to school | 477 | 284 | 876 | 31.9% |
-| New Year | 934 | 628 | 774 | 31.4% |
-| Anniversary or birthday | 2,191 | 1,155 | 599 | 31.1% |
-| Valentine's Day | 684 | 399 | 551 | 30.5% |
-| Black Friday and Cyber Monday | 751 | 383 | 898 | 30.5% |
-| Easter | 453 | 273 | 602 | 30.1% |
-| Mother's Day | 371 | 289 | 601 | 29.8% |
-| Halloween | 838 | 509 | 482 | 28.8% |
+| Christmas and advent | 4,895 | 1,559 | 587 | 39.1% |
+| Father's Day | 329 | 234 | 823 | 34.7% |
+| Lunar New Year | 108 | 81 | 584 | 33.8% |
+| Milestone | 1,159 | 765 | 527 | 32.5% |
+| Summer | 3,085 | 1,347 | 623 | 32.0% |
+| Back to school | 477 | 284 | 876 | 31.8% |
+| New Year | 931 | 627 | 774 | 31.3% |
+| Anniversary or birthday | 2,187 | 1,151 | 600 | 31.0% |
+| Valentine's Day | 682 | 397 | 550 | 30.5% |
+| Black Friday and Cyber Monday | 747 | 380 | 898 | 30.5% |
+| Mother's Day | 367 | 286 | 601 | 29.8% |
+| Easter | 449 | 269 | 605 | 29.6% |
+| Halloween | 837 | 508 | 482 | 28.8% |
 | Thanksgiving | 264 | 182 | 718 | 27.4% |
 | Prime Day and Singles Day | 99 | 60 | 794 | 27.1% |
 <!-- /generated -->
@@ -67,16 +67,16 @@ Lead time, days before the holiday date businesses started, for campaigns matche
 |---|---|---|---|---|
 | Summer | 1,628 | 10 days | 27 days | 43 days |
 | Back to school | 322 | 10 days | 18.5 days | 27 days |
-| Halloween | 777 | 8 days | 18 days | 30 days |
-| Christmas and advent | 4,607 | 9 days | 17 days | 26 days |
+| Halloween | 776 | 8 days | 18 days | 30 days |
+| Christmas and advent | 4,593 | 9 days | 17 days | 26 days |
 | Thanksgiving | 251 | 7 days | 14 days | 24 days |
-| Valentine's Day | 657 | 6 days | 13 days | 21 days |
-| Mother's Day | 364 | 6 days | 12 days | 22 days |
-| Father's Day | 294 | 7 days | 12 days | 18 days |
+| Valentine's Day | 655 | 6 days | 13 days | 21 days |
+| Mother's Day | 361 | 6 days | 12 days | 21 days |
+| Father's Day | 292 | 7 days | 12 days | 18 days |
 | New Year | 434 | 4 days | 11 days | 25 days |
-| Easter | 433 | 4 days | 10 days | 21 days |
-| Black Friday and Cyber Monday | 650 | 3 days | 7 days | 14 days |
-| Lunar New Year | 79 | 1 day | 5 days | 10 days |
+| Easter | 429 | 4 days | 10 days | 21 days |
+| Black Friday and Cyber Monday | 648 | 3 days | 7 days | 14 days |
+| Lunar New Year | 76 | 1 day | 5 days | 10 days |
 <!-- /generated -->
 
 Black Friday launches closest to its date, a typical 7 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
@@ -86,8 +86,8 @@ Starting near a public holiday, on its own, does not move the numbers (table bel
 <!-- generated:hol_public -->
 | Start | Entrants | Conversion Rate | Campaigns | Businesses |
 |---|---|---|---|---|
-| Every other start | 492 | 27.0% | 91,439 | 15,585 |
-| Started within 3 days of a public holiday (the organizer's own country) | 492 | 26.5% | 25,866 | 7,168 |
+| Every other start | 492 | 27.0% | 90,764 | 15,452 |
+| Started within 3 days of a public holiday (the organizer's own country) | 493 | 26.4% | 25,705 | 7,125 |
 <!-- /generated -->
 
 Source: `analysis/output/prize_timing_cuts.json` (`by_named_holiday`, `holiday_lead_days`, `by_public_holiday_start`).
@@ -165,58 +165,58 @@ All the campaigns behind these numbers, by the calendar week of their start date
 <!-- generated:hol_weeks -->
 | Week | Monday | Share of starts | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Holiday-named | Holidays in the week |
 |---|---|---|---|---|---|---|---|
-| 1 | 29 Dec | 1% | 512 | 38% (443) | 4.3 | 17% | - |
-| 2 | 05 Jan | 1% | 537 | 34% (449) | 4.4 | 11% | - |
-| 3 | 12 Jan | 2% | 454 | 35% (631) | 4.2 | 12% | - |
-| 4 | 19 Jan | 2% | 473 | 33% (660) | 4.3 | 10% | - |
-| 5 | 26 Jan | 2% | 470 | 33% (818) | 4.5 | 12% | - |
-| 6 | 02 Feb | 2% | 475 | 33% (781) | 4.2 | 11% | Super Bowl (US) |
-| 7 | 09 Feb | 2% | 482 | 34% (844) | 4.3 | 9% | Valentine's Day |
-| 8 | 16 Feb | 2% | 495 | 36% (686) | 4.3 | 5% | Lunar New Year |
-| 9 | 23 Feb | 3% | 474 | 36% (814) | 4.7 | 6% | - |
-| 10 | 02 Mar | 2% | 460 | 35% (745) | 4.5 | 6% | - |
-| 11 | 09 Mar | 2% | 477 | 33% (862) | 4.5 | 7% | - |
-| 12 | 16 Mar | 2% | 500 | 35% (771) | 4.4 | 7% | - |
-| 13 | 23 Mar | 2% | 484 | 36% (772) | 4.6 | 8% | - |
-| 14 | 30 Mar | 2% | 479 | 36% (798) | 4.5 | 9% | Easter |
-| 15 | 06 Apr | 2% | 437 | 36% (765) | 4.4 | 7% | - |
-| 16 | 13 Apr | 2% | 488 | 33% (826) | 4.4 | 8% | - |
-| 17 | 20 Apr | 2% | 480 | 35% (739) | 4.5 | 8% | - |
-| 18 | 27 Apr | 2% | 482 | 33% (766) | 4.4 | 10% | - |
-| 19 | 04 May | 2% | 470 | 34% (771) | 4.3 | 12% | Mother's Day |
-| 20 | 11 May | 2% | 488 | 34% (755) | 4.4 | 10% | - |
-| 21 | 18 May | 2% | 440 | 36% (750) | 4.5 | 14% | - |
-| 22 | 25 May | 2% | 471 | 34% (770) | 4.5 | 12% | - |
-| 23 | 01 Jun | 2% | 533 | 35% (789) | 4.3 | 15% | - |
-| 24 | 08 Jun | 2% | 495 | 34% (787) | 4.3 | 15% | - |
-| 25 | 15 Jun | 2% | 488 | 33% (741) | 4.4 | 17% | Father's Day |
-| 26 | 22 Jun | 2% | 492 | 34% (711) | 4.6 | 14% | - |
-| 27 | 29 Jun | 2% | 533 | 34% (632) | 4.4 | 13% | Independence Day (US) |
-| 28 | 06 Jul | 2% | 500 | 35% (650) | 4.2 | 14% | Prime Day (mid July, varies) |
-| 29 | 13 Jul | 2% | 518 | 33% (755) | 4.3 | 14% | - |
-| 30 | 20 Jul | 2% | 459 | 35% (621) | 4.3 | 12% | - |
-| 31 | 27 Jul | 2% | 508 | 33% (628) | 4.5 | 11% | - |
-| 32 | 03 Aug | 2% | 467 | 34% (672) | 4.3 | 13% | - |
-| 33 | 10 Aug | 2% | 512 | 33% (712) | 4.2 | 13% | - |
-| 34 | 17 Aug | 2% | 528 | 33% (759) | 4.3 | 10% | - |
-| 35 | 24 Aug | 2% | 512 | 35% (687) | 4.6 | 9% | Back to school |
-| 36 | 31 Aug | 2% | 502 | 32% (579) | 4.4 | 7% | - |
-| 37 | 07 Sep | 2% | 487 | 32% (671) | 4.4 | 7% | - |
-| 38 | 14 Sep | 2% | 492 | 33% (698) | 4.3 | 6% | - |
-| 39 | 21 Sep | 2% | 490 | 33% (646) | 4.5 | 9% | - |
-| 40 | 28 Sep | 2% | 486 | 35% (656) | 4.3 | 11% | - |
-| 41 | 05 Oct | 2% | 479 | 34% (702) | 4.4 | 14% | - |
-| 42 | 12 Oct | 2% | 445 | 32% (748) | 4.3 | 14% | - |
-| 43 | 19 Oct | 2% | 470 | 34% (762) | 4.3 | 15% | - |
-| 44 | 26 Oct | 2% | 508 | 34% (743) | 4.6 | 16% | Halloween |
-| 45 | 02 Nov | 2% | 467 | 35% (787) | 4.4 | 16% | Diwali |
-| 46 | 09 Nov | 2% | 437 | 34% (786) | 4.5 | 20% | Singles Day |
-| 47 | 16 Nov | 2% | 490 | 32% (853) | 4.6 | 26% | - |
-| 48 | 23 Nov | 3% | 508 | 35% (1,047) | 4.5 | 28% | Black Friday and Cyber Monday, Thanksgiving |
-| 49 | 30 Nov | 3% | 558 | 40% (1,573) | 4.1 | 32% | Cyber Monday |
-| 50 | 07 Dec | 3% | 571 | 41% (1,388) | 4.2 | 34% | - |
-| 51 | 14 Dec | 2% | 567 | 41% (1,200) | 4.2 | 36% | - |
-| 52 | 21 Dec | 1% | 558 | 37% (601) | 4.3 | 26% | Christmas and advent |
+| 1 | 29 Dec | 1% | 512 | 38% (438) | 4.3 | 17% | - |
+| 2 | 05 Jan | 1% | 537 | 33% (441) | 4.4 | 11% | - |
+| 3 | 12 Jan | 2% | 453 | 35% (627) | 4.2 | 12% | - |
+| 4 | 19 Jan | 2% | 473 | 33% (654) | 4.3 | 10% | - |
+| 5 | 26 Jan | 2% | 468 | 33% (810) | 4.5 | 12% | - |
+| 6 | 02 Feb | 2% | 475 | 33% (772) | 4.2 | 11% | Super Bowl (US) |
+| 7 | 09 Feb | 2% | 482 | 34% (838) | 4.3 | 9% | Valentine's Day |
+| 8 | 16 Feb | 2% | 496 | 36% (683) | 4.3 | 5% | Lunar New Year |
+| 9 | 23 Feb | 3% | 474 | 36% (809) | 4.7 | 6% | - |
+| 10 | 02 Mar | 2% | 457 | 35% (737) | 4.5 | 6% | - |
+| 11 | 09 Mar | 2% | 478 | 33% (855) | 4.5 | 7% | - |
+| 12 | 16 Mar | 2% | 500 | 35% (760) | 4.4 | 7% | - |
+| 13 | 23 Mar | 2% | 484 | 36% (770) | 4.6 | 8% | - |
+| 14 | 30 Mar | 2% | 480 | 36% (792) | 4.5 | 9% | Easter |
+| 15 | 06 Apr | 2% | 438 | 36% (757) | 4.4 | 7% | - |
+| 16 | 13 Apr | 2% | 486 | 33% (819) | 4.4 | 8% | - |
+| 17 | 20 Apr | 2% | 480 | 35% (728) | 4.5 | 8% | - |
+| 18 | 27 Apr | 2% | 480 | 33% (764) | 4.4 | 10% | - |
+| 19 | 04 May | 2% | 470 | 34% (765) | 4.3 | 12% | Mother's Day |
+| 20 | 11 May | 2% | 490 | 34% (749) | 4.4 | 10% | - |
+| 21 | 18 May | 2% | 442 | 36% (745) | 4.5 | 14% | - |
+| 22 | 25 May | 2% | 471 | 34% (764) | 4.5 | 12% | - |
+| 23 | 01 Jun | 2% | 533 | 35% (787) | 4.3 | 15% | - |
+| 24 | 08 Jun | 2% | 496 | 34% (777) | 4.3 | 15% | - |
+| 25 | 15 Jun | 2% | 488 | 33% (734) | 4.4 | 17% | Father's Day |
+| 26 | 22 Jun | 2% | 490 | 34% (708) | 4.6 | 14% | - |
+| 27 | 29 Jun | 2% | 534 | 34% (626) | 4.4 | 13% | Independence Day (US) |
+| 28 | 06 Jul | 2% | 500 | 35% (646) | 4.2 | 14% | Prime Day (mid July, varies) |
+| 29 | 13 Jul | 2% | 518 | 33% (749) | 4.3 | 14% | - |
+| 30 | 20 Jul | 2% | 459 | 35% (619) | 4.3 | 12% | - |
+| 31 | 27 Jul | 2% | 507 | 33% (627) | 4.5 | 11% | - |
+| 32 | 03 Aug | 2% | 467 | 34% (666) | 4.3 | 13% | - |
+| 33 | 10 Aug | 2% | 511 | 33% (709) | 4.2 | 13% | - |
+| 34 | 17 Aug | 2% | 525 | 33% (755) | 4.3 | 10% | - |
+| 35 | 24 Aug | 2% | 515 | 35% (683) | 4.6 | 9% | Back to school |
+| 36 | 31 Aug | 2% | 502 | 33% (577) | 4.4 | 7% | - |
+| 37 | 07 Sep | 2% | 485 | 32% (666) | 4.4 | 7% | - |
+| 38 | 14 Sep | 2% | 493 | 33% (689) | 4.3 | 6% | - |
+| 39 | 21 Sep | 2% | 493 | 33% (640) | 4.5 | 9% | - |
+| 40 | 28 Sep | 2% | 489 | 35% (652) | 4.3 | 11% | - |
+| 41 | 05 Oct | 2% | 480 | 34% (696) | 4.4 | 15% | - |
+| 42 | 12 Oct | 2% | 447 | 32% (736) | 4.3 | 15% | - |
+| 43 | 19 Oct | 2% | 472 | 33% (746) | 4.2 | 15% | - |
+| 44 | 26 Oct | 2% | 514 | 33% (727) | 4.6 | 16% | Halloween |
+| 45 | 02 Nov | 2% | 471 | 35% (772) | 4.3 | 16% | Diwali |
+| 46 | 09 Nov | 2% | 438 | 34% (776) | 4.4 | 20% | Singles Day |
+| 47 | 16 Nov | 2% | 491 | 33% (845) | 4.6 | 26% | - |
+| 48 | 23 Nov | 3% | 510 | 35% (1,040) | 4.5 | 28% | Black Friday and Cyber Monday, Thanksgiving |
+| 49 | 30 Nov | 3% | 557 | 40% (1,562) | 4.1 | 32% | Cyber Monday |
+| 50 | 07 Dec | 3% | 572 | 41% (1,381) | 4.2 | 34% | - |
+| 51 | 14 Dec | 2% | 567 | 41% (1,193) | 4.2 | 36% | - |
+| 52 | 21 Dec | 1% | 558 | 37% (591) | 4.3 | 26% | Christmas and advent |
 <!-- /generated -->
 
 Reading it:
@@ -247,23 +247,23 @@ Campaigns whose run included the holiday date, against campaigns that did not, d
 <!-- generated:hol_liveover -->
 | Holiday | Live over it, campaigns | Entrants | Conversion Rate | Not over it, Entrants | Conversion Rate | Entrant ratio | Conversion Rate ratio |
 |---|---|---|---|---|---|---|---|
-| Black Friday and Cyber Monday | 8,572 | 529 | 29% | 553 | 33% | 0.96 | 0.89 |
-| Thanksgiving | 8,547 | 534 | 30% | 552 | 33% | 0.97 | 0.92 |
-| Cyber Monday | 8,505 | 528 | 29% | 553 | 32% | 0.95 | 0.90 |
-| Halloween | 8,083 | 544 | 30% | 556 | 32% | 0.98 | 0.94 |
-| Christmas and advent | 8,005 | 557 | 32% | 547 | 32% | 1.02 | 1.00 |
-| Singles Day | 7,960 | 544 | 30% | 552 | 32% | 0.98 | 0.94 |
-| Diwali | 7,813 | 544 | 30% | 554 | 32% | 0.98 | 0.94 |
-| Father's Day | 7,756 | 562 | 30% | 548 | 32% | 1.03 | 0.94 |
-| Back to school | 7,637 | 598 | 28% | 551 | 33% | 1.09 | 0.87 |
-| Prime Day (mid July, varies) | 7,545 | 561 | 30% | 555 | 33% | 1.01 | 0.92 |
-| Easter | 7,541 | 556 | 30% | 549 | 32% | 1.01 | 0.92 |
-| Independence Day (US) | 7,379 | 568 | 30% | 556 | 32% | 1.02 | 0.94 |
-| Valentine's Day | 7,344 | 542 | 31% | 539 | 32% | 1.01 | 0.95 |
-| Mother's Day | 7,337 | 549 | 30% | 551 | 32% | 1.00 | 0.91 |
-| Lunar New Year | 7,227 | 548 | 31% | 544 | 32% | 1.01 | 0.96 |
-| Super Bowl (US) | 7,163 | 535 | 30% | 541 | 32% | 0.99 | 0.94 |
-| New Year | 6,597 | 575 | 30% | 558 | 31% | 1.03 | 0.98 |
+| Black Friday and Cyber Monday | 8,419 | 531 | 29% | 547 | 33% | 0.97 | 0.90 |
+| Thanksgiving | 8,394 | 535 | 30% | 546 | 32% | 0.98 | 0.92 |
+| Cyber Monday | 8,360 | 529 | 29% | 547 | 32% | 0.97 | 0.90 |
+| Halloween | 7,937 | 545 | 30% | 549 | 32% | 0.99 | 0.95 |
+| Christmas and advent | 7,862 | 558 | 31% | 543 | 31% | 1.03 | 1.01 |
+| Singles Day | 7,814 | 544 | 30% | 545 | 32% | 1.00 | 0.94 |
+| Diwali | 7,676 | 546 | 30% | 545 | 32% | 1.00 | 0.94 |
+| Father's Day | 7,599 | 566 | 30% | 541 | 32% | 1.05 | 0.95 |
+| Back to school | 7,506 | 597 | 28% | 543 | 32% | 1.10 | 0.87 |
+| Prime Day (mid July, varies) | 7,400 | 561 | 30% | 547 | 32% | 1.03 | 0.93 |
+| Easter | 7,391 | 557 | 30% | 543 | 32% | 1.03 | 0.93 |
+| Independence Day (US) | 7,224 | 568 | 30% | 547 | 32% | 1.04 | 0.95 |
+| Valentine's Day | 7,194 | 543 | 31% | 535 | 32% | 1.01 | 0.96 |
+| Mother's Day | 7,181 | 549 | 30% | 545 | 32% | 1.01 | 0.92 |
+| Lunar New Year | 7,076 | 549 | 31% | 537 | 32% | 1.02 | 0.96 |
+| Super Bowl (US) | 7,014 | 536 | 30% | 535 | 32% | 1.00 | 0.94 |
+| New Year | 6,444 | 576 | 30% | 554 | 31% | 1.04 | 0.98 |
 <!-- /generated -->
 
 Reading it:
@@ -297,20 +297,20 @@ Themes that fewer than 100 campaigns named, so the shape only: campaigns, typica
 <!-- generated:hol_smaller -->
 | Theme | Campaigns | Entrants | Start months |
 |---|---|---|---|
-| Halloween (narrow match) | 770 | 486 | Oct and Sep |
+| Halloween (narrow match) | 769 | 485 | Oct and Sep |
 | Wedding season | 249 | 408 | Jan and Mar |
-| Pride | 190 | 378 | Jun and May |
+| Pride | 189 | 380 | Jun and May |
 | New Year's resolutions | 173 | 1,168 | Jan and Dec |
 | National days | 158 | 918 | Aug and Jan |
-| Independence Day (US) | 139 | 681 | Jun and Jul |
-| World days | 115 | 442 | Mar and Dec |
+| Independence Day (US) | 138 | 708 | Jun and Jul |
+| World days | 113 | 456 | Mar and Dec |
 | St Patrick's Day | 109 | 591 | Mar and Feb |
 | World Cup | 88 | 457 | Jun and Nov |
 | Gamescom, E3, Summer Game Fest, The Game Awards | 87 | 742 | Aug and Dec |
 | Earth Day | 72 | 1,102 | Apr and Mar |
 | Amazon Prime Day | 70 | 946 | Jul and Jun |
 | Labor Day (US) | 69 | 925 | Aug and Sep |
-| International Women's Day | 46 | 308 | Mar and Feb |
+| International Women's Day | 46 | 308 | Mar and Apr |
 | March Madness | 46 | 474 | Mar and Feb |
 | Chinese or Lunar New Year | 35 | 538 | Feb and Jan |
 | Super Bowl | 32 | 821 | Feb and Jan |

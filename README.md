@@ -7,7 +7,7 @@ Plan, run and draw a giveaway your audience will trust, with an AI assistant tha
 
 Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by [Gleam](https://gleam.io), and the advice fits any giveaway platform.
 
-Benchmarks come from 117,348 campaigns run by 17,777 businesses, in six size bands from 100 Entrants up. Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
+Benchmarks come from 116,499 campaigns run by 17,633 businesses, in six size bands from 100 Entrants up. Every figure carries its sample size, and every finding describes what businesses chose, never what caused participation. The detail is in [Evidence Behind the Advice](#evidence-behind-the-advice).
 
 ## Install
 
@@ -70,7 +70,7 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Preferred option, two alternatives from different categories, and the tradeoffs between them
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
 - ROI script: cost per Entrant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
-- Prize values by category and campaign size from 172,645 real Prize records, with sample sizes shown
+- Prize values by category and campaign size from 170,599 real Prize records, with sample sizes shown
 
 > "Is a PS5 a good prize for our accounting software?"
 
@@ -165,7 +165,7 @@ Every message after the draw, in send order, in your voice.
 
 ### Results Review
 
-Your finished campaign read against 117,348 others in its own size band, from 100 Entrants up, and what to change next time.
+Your finished campaign read against 116,499 others in its own size band, from 100 Entrants up, and what to change next time.
 
 - A script that ranks twelve figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
@@ -190,7 +190,7 @@ For teams on Gleam: the plan from the other skills turned into settings, with th
 - Fraud filter levels, CAPTCHA modes, email and phone verification, allowed locations, age restriction, generated and custom terms
 - Reporting definitions, the Actions tab, drawing winners, repeat winners, Quick Draws
 - The Shopify app: page creation, Open Graph tags, syncing entrants to the customer list with a campaign tag, and the test before launch
-- What Entrants did with every Gleam action across 117,348 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
+- What Entrants did with every Gleam action across 116,499 campaigns, the drop-off down the action list, description length, and the config switches that showed up in the data
 - Gleam's own tips library, attributed, beside that evidence
 
 > "We use Gleam. Email mandatory, Instagram follow optional, US and Canada, 18+, one grand prize and five runner-ups. Walk me through the settings."
@@ -231,7 +231,7 @@ Ask for a plan or ask it to check yours. Every answer states its assumptions, la
 
 ## Evidence Behind the Advice
 
-Most giveaway advice is somebody's opinion. These skills are built on 117,348 real giveaways from 17,777 businesses, every one of which reached at least 100 Entrants, with 172,645 Prize records and 966,269 entry actions. Token airdrops and buy-to-enter raffles were set aside, so the benchmarks describe ordinary businesses giving away ordinary things.
+Most giveaway advice is somebody's opinion. These skills are built on 116,499 real giveaways from 17,633 businesses, every one of which reached at least 100 Entrants, with 170,599 Prize records and 966,269 entry actions. Token airdrops and buy-to-enter raffles were set aside, so the benchmarks describe ordinary businesses giving away ordinary things.
 
 Some of what that shows:
 

@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.18 |
-| giveaway-entry-method-planner | 1.2.17 |
-| giveaway-timing-and-duration | 1.4.15 |
-| giveaway-winner-structure | 1.3.14 |
-| giveaway-promotion-plan | 1.3.18 |
-| giveaway-random-draw | 1.3.11 |
-| giveaway-winner-communications | 1.2.11 |
-| giveaway-idea-generator | 1.3.15 |
-| giveaway-results-review | 1.5.19 |
-| gleam-campaign-setup | 1.2.16 |
+| giveaway-prize-picker | 1.3.19 |
+| giveaway-entry-method-planner | 1.2.18 |
+| giveaway-timing-and-duration | 1.4.16 |
+| giveaway-winner-structure | 1.3.15 |
+| giveaway-promotion-plan | 1.3.19 |
+| giveaway-random-draw | 1.3.12 |
+| giveaway-winner-communications | 1.2.12 |
+| giveaway-idea-generator | 1.3.16 |
+| giveaway-results-review | 1.5.20 |
+| gleam-campaign-setup | 1.2.17 |
 
 ## Skills
 
@@ -229,6 +229,55 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
 - 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
 - 1.2.2 (2026-09-10):  section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
+
+## 2.1.0 (2026-09-12)
+
+Forty-eight eval cases were run through the ten skills and graded, the faults that cost the most marks were
+fixed, and the population every figure describes was corrected and rebuilt.
+
+**One population, defined once.** Twenty-one scripts took the campaign population from `frame.ordinary` and seven
+built their own, so a correction applied to one definition left the other describing a different set of
+campaigns. The screens now sit in the loader, where every script inherits them, and the count moved from 117,348
+campaigns and 17,777 businesses to 116,499 and 17,633.
+
+**A campaign cannot convert more viewers than it had.** 397 campaigns recorded more Entrants than Impressions,
+one of them reading 1,881%, and every one sat inside the benchmarks and at the top of the percentile tables.
+Where Entrants exceed Impressions the Impression count is the wrong one, so it is withheld the way an implausible
+run length already was. The highest Conversion Rate in the data is now 100%.
+
+**Gleam's own demonstration accounts left the benchmarks.** Four accounts on a gleam.io address under the
+company's own country, 150 campaigns between them, one of them running since 2013. They are the platform showing
+the platform and they described nothing a business chose.
+
+**A Prize that is a token or a casino bonus is not an ordinary Prize.** The business-side screens miss the
+campaigns whose host looks ordinary, so 2,951 campaigns with a crypto or gambling Prize name sat inside figures
+meant to describe ordinary businesses giving away ordinary things. A deterministic screen on the Prize name
+removes them. It matters more than its size suggests: referral entries per 100 Entrants for community and Discord
+concepts read 35 before the screen and 18 after, because crypto campaigns run referral farms.
+
+**The style checker could not see half of what it was built to protect.** Four graders independently named the
+same most common fault, Gleam's product nouns arriving in lower case, and the checker only ever matched the
+dashboard names. Entrant, Contestant, Prize and Winner went unchecked, and 17 of 48 measured answers that passed
+the checker carried 84 of them. File names, flags and fenced code are excluded so an answer is never marked down
+for citing its source.
+
+**What the measured answers cost, and what was done about it.** The style-check case scored worst in three skills
+for the same reason: the answer said it had run the checker and reported a clean pass while failing it. Four more
+cases had correctness capped for a comparison the two figures in the same sentence contradicted. Both are now
+rules in the shared answer style, along with a grammar for the descriptive limit, because past tense with the
+campaigns as the subject carries it for four extra words.
+
+**New evidence in seven skills.** What extra reach is worth, and the same curve read as a misread guard on a low
+Conversion Rate. What each concept shape is wired to collect. What another dollar of Prize money buys, set
+against the reach figure so a reader weighing a bigger Prize against a bigger push can see which lever is slower.
+The Winner timetable the terms actually carry. Where the Entrant count peaks against the number of required
+actions. That most campaigns hold no address to write to. And what a draw does with a blank weight.
+
+**The Prize reclassification was abandoned on the evidence.** 31% of campaigns carry no usable Prize category,
+the unclassified names are a long tail of 37,143 distinct strings where the forty most repeated cover 7.2%, and a
+labelling pass was tested and measured: two independent passes over the same 200 names agreed on half of them,
+and 66% where both called themselves confident. The reference now says the third that does not classify cannot be
+classified from the name a business typed.
 
 ## 2.0.0 (2026-09-11)
 

@@ -10,38 +10,38 @@
  },
  "by_industry_ordinary": {
   "gaming_esports": {
-   "n": 24672,
-   "sites": 4731,
-   "contestants": 397.0,
+   "n": 24250,
+   "sites": 4663,
+   "contestants": 398.0,
    "conversion": 0.267,
-   "entries_per_entrant": 5.023,
+   "entries_per_entrant": 5.015,
    "days": 12.0,
    "methods": 8.0,
-   "email_offered": 0.164
+   "email_offered": 0.162
   },
   "media_entertainment": {
-   "n": 21584,
-   "sites": 2092,
+   "n": 21549,
+   "sites": 2080,
    "contestants": 401.0,
    "conversion": 0.242,
-   "entries_per_entrant": 4.981,
+   "entries_per_entrant": 4.983,
    "days": 18.0,
    "methods": 8.0,
    "email_offered": 0.432
   },
   "electronics_tech": {
-   "n": 15599,
-   "sites": 2075,
-   "contestants": 903.0,
+   "n": 15553,
+   "sites": 2070,
+   "contestants": 900.0,
    "conversion": 0.299,
-   "entries_per_entrant": 4.611,
+   "entries_per_entrant": 4.605,
    "days": 14.0,
    "methods": 7.0,
    "email_offered": 0.231
   },
   "toys_hobbies_collectibles": {
-   "n": 4710,
-   "sites": 754,
+   "n": 4705,
+   "sites": 751,
    "contestants": 418.0,
    "conversion": 0.259,
    "entries_per_entrant": 4.228,
@@ -50,134 +50,134 @@
    "email_offered": 0.394
   },
   "food_drink": {
-   "n": 4686,
+   "n": 4685,
    "sites": 892,
-   "contestants": 634.5,
-   "conversion": 0.268,
-   "entries_per_entrant": 3.614,
+   "contestants": 635.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 3.613,
    "days": 20.0,
    "methods": 6.0,
    "email_offered": 0.542
   },
   "sports_outdoors": {
-   "n": 4638,
-   "sites": 1016,
-   "contestants": 967.0,
+   "n": 4636,
+   "sites": 1014,
+   "contestants": 967.5,
    "conversion": 0.244,
-   "entries_per_entrant": 3.784,
+   "entries_per_entrant": 3.783,
    "days": 16.0,
    "methods": 6.0,
    "email_offered": 0.524
   },
   "apparel_fashion": {
-   "n": 4634,
-   "sites": 816,
+   "n": 4628,
+   "sites": 812,
    "contestants": 613.0,
    "conversion": 0.309,
-   "entries_per_entrant": 2.567,
+   "entries_per_entrant": 2.565,
    "days": 8.0,
    "methods": 4.0,
    "email_offered": 0.513
   },
   "other": {
-   "n": 4545,
-   "sites": 1514,
+   "n": 4430,
+   "sites": 1489,
    "contestants": 317.0,
-   "conversion": 0.281,
-   "entries_per_entrant": 4.331,
+   "conversion": 0.283,
+   "entries_per_entrant": 4.355,
    "days": 11.0,
    "methods": 6.0,
-   "email_offered": 0.109
+   "email_offered": 0.107
   },
   "travel_events": {
-   "n": 3979,
-   "sites": 645,
+   "n": 3969,
+   "sites": 638,
    "contestants": 488.0,
-   "conversion": 0.275,
+   "conversion": 0.273,
    "entries_per_entrant": 3.253,
    "days": 15.0,
    "methods": 6.0,
    "email_offered": 0.435
   },
   "home_garden": {
-   "n": 3713,
-   "sites": 595,
-   "contestants": 918.0,
+   "n": 3710,
+   "sites": 594,
+   "contestants": 916.0,
    "conversion": 0.293,
-   "entries_per_entrant": 3.578,
+   "entries_per_entrant": 3.575,
    "days": 15.0,
    "methods": 7.0,
    "email_offered": 0.579
   },
   "creator_influencer": {
-   "n": 3396,
-   "sites": 1048,
+   "n": 3395,
+   "sites": 1047,
    "contestants": 316.0,
    "conversion": 0.373,
-   "entries_per_entrant": 4.812,
+   "entries_per_entrant": 4.816,
    "days": 8.0,
    "methods": 7.0,
    "email_offered": 0.038
   },
   "health_wellness_fitness": {
-   "n": 3164,
-   "sites": 500,
-   "contestants": 472.0,
-   "conversion": 0.223,
-   "entries_per_entrant": 4.25,
+   "n": 3160,
+   "sites": 498,
+   "contestants": 471.0,
+   "conversion": 0.222,
+   "entries_per_entrant": 4.252,
    "days": 16.0,
    "methods": 8.0,
    "email_offered": 0.324
   },
   "retail_marketplace": {
-   "n": 2874,
-   "sites": 384,
+   "n": 2860,
+   "sites": 382,
    "contestants": 487.5,
    "conversion": 0.294,
-   "entries_per_entrant": 5.084,
+   "entries_per_entrant": 5.082,
    "days": 8.0,
    "methods": 8.0,
    "email_offered": 0.278
   },
   "automotive": {
-   "n": 2324,
-   "sites": 380,
-   "contestants": 940.5,
+   "n": 2310,
+   "sites": 379,
+   "contestants": 950.0,
    "conversion": 0.263,
-   "entries_per_entrant": 4.047,
+   "entries_per_entrant": 4.064,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.558
+   "email_offered": 0.561
   },
   "education": {
-   "n": 1872,
-   "sites": 360,
+   "n": 1868,
+   "sites": 357,
    "contestants": 482.0,
-   "conversion": 0.245,
+   "conversion": 0.244,
    "entries_per_entrant": 4.387,
    "days": 8.0,
    "methods": 9.0,
    "email_offered": 0.242
   },
   "software_saas": {
-   "n": 1752,
-   "sites": 571,
-   "contestants": 565.0,
-   "conversion": 0.234,
-   "entries_per_entrant": 4.37,
-   "days": 16.0,
+   "n": 1662,
+   "sites": 545,
+   "contestants": 557.0,
+   "conversion": 0.232,
+   "entries_per_entrant": 4.319,
+   "days": 17.0,
    "methods": 7.0,
-   "email_offered": 0.364
+   "email_offered": 0.381
   },
   "art_crafts": {
-   "n": 1616,
-   "sites": 405,
-   "contestants": 432.5,
-   "conversion": 0.26,
-   "entries_per_entrant": 4.385,
+   "n": 1590,
+   "sites": 401,
+   "contestants": 436.0,
+   "conversion": 0.257,
+   "entries_per_entrant": 4.363,
    "days": 15.0,
    "methods": 6.0,
-   "email_offered": 0.358
+   "email_offered": 0.364
   },
   "beauty_personal_care": {
    "n": 1411,
@@ -190,14 +190,14 @@
    "email_offered": 0.519
   },
   "marketing_agency": {
-   "n": 1220,
-   "sites": 159,
+   "n": 1201,
+   "sites": 157,
    "contestants": 540.0,
-   "conversion": 0.275,
-   "entries_per_entrant": 4.375,
+   "conversion": 0.272,
+   "entries_per_entrant": 4.368,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.317
+   "email_offered": 0.322
   },
   "baby_kids": {
    "n": 1184,
@@ -210,143 +210,143 @@
    "email_offered": 0.529
   },
   "pets": {
-   "n": 949,
+   "n": 948,
    "sites": 207,
-   "contestants": 745.0,
-   "conversion": 0.248,
-   "entries_per_entrant": 3.929,
+   "contestants": 746.0,
+   "conversion": 0.246,
+   "entries_per_entrant": 3.93,
    "days": 15.0,
    "methods": 6.0,
-   "email_offered": 0.745
+   "email_offered": 0.746
   },
   "local_services": {
    "n": 917,
    "sites": 181,
    "contestants": 532.0,
-   "conversion": 0.248,
+   "conversion": 0.247,
    "entries_per_entrant": 3.923,
    "days": 11.0,
    "methods": 7.0,
    "email_offered": 0.157
   },
   "nonprofit_community": {
-   "n": 522,
+   "n": 520,
    "sites": 198,
    "contestants": 389.0,
-   "conversion": 0.283,
-   "entries_per_entrant": 3.295,
+   "conversion": 0.28,
+   "entries_per_entrant": 3.278,
    "days": 14.0,
    "methods": 7.0,
    "email_offered": 0.331
   },
   "jewelry_watches": {
-   "n": 458,
-   "sites": 166,
+   "n": 456,
+   "sites": 165,
    "contestants": 493.0,
-   "conversion": 0.225,
+   "conversion": 0.223,
    "entries_per_entrant": 3.992,
    "days": 17.0,
    "methods": 7.0,
-   "email_offered": 0.476
+   "email_offered": 0.478
   }
  },
  "by_business_type_ordinary": {
   "brand": {
-   "n": 30310,
-   "sites": 5508,
-   "contestants": 595.0,
+   "n": 30187,
+   "sites": 5482,
+   "contestants": 594.0,
    "conversion": 0.261,
-   "entries_per_entrant": 4.255,
+   "entries_per_entrant": 4.253,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.419
+   "email_offered": 0.42
   },
   "retailer": {
-   "n": 21600,
-   "sites": 2251,
-   "contestants": 649.5,
+   "n": 21569,
+   "sites": 2245,
+   "contestants": 650.0,
    "conversion": 0.276,
    "entries_per_entrant": 4.361,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.435
+   "email_offered": 0.436
   },
   "media_publisher": {
-   "n": 19995,
-   "sites": 1447,
+   "n": 19974,
+   "sites": 1440,
    "contestants": 418.0,
-   "conversion": 0.242,
+   "conversion": 0.241,
    "entries_per_entrant": 4.857,
    "days": 18.0,
    "methods": 7.0,
-   "email_offered": 0.443
+   "email_offered": 0.444
   },
   "creator": {
-   "n": 17852,
-   "sites": 4097,
+   "n": 17827,
+   "sites": 4087,
    "contestants": 346.0,
    "conversion": 0.344,
-   "entries_per_entrant": 4.27,
+   "entries_per_entrant": 4.269,
    "days": 12.0,
    "methods": 6.0,
    "email_offered": 0.05
   },
   "software": {
-   "n": 10271,
-   "sites": 1756,
-   "contestants": 671.0,
-   "conversion": 0.229,
-   "entries_per_entrant": 4.806,
+   "n": 9848,
+   "sites": 1680,
+   "contestants": 688.5,
+   "conversion": 0.228,
+   "entries_per_entrant": 4.774,
    "days": 14.0,
    "methods": 8.0,
-   "email_offered": 0.269
+   "email_offered": 0.271
   },
   "other": {
-   "n": 6288,
-   "sites": 1728,
+   "n": 6148,
+   "sites": 1703,
    "contestants": 385.0,
-   "conversion": 0.286,
-   "entries_per_entrant": 4.337,
+   "conversion": 0.289,
+   "entries_per_entrant": 4.346,
    "days": 12.0,
    "methods": 7.0,
-   "email_offered": 0.214
+   "email_offered": 0.215
   },
   "service_business": {
-   "n": 3802,
-   "sites": 760,
+   "n": 3798,
+   "sites": 757,
    "contestants": 364.0,
-   "conversion": 0.245,
+   "conversion": 0.244,
    "entries_per_entrant": 3.425,
    "days": 12.0,
    "methods": 7.0,
    "email_offered": 0.327
   },
   "agency": {
-   "n": 2903,
-   "sites": 330,
-   "contestants": 423.0,
-   "conversion": 0.255,
-   "entries_per_entrant": 4.406,
+   "n": 2882,
+   "sites": 328,
+   "contestants": 422.5,
+   "conversion": 0.252,
+   "entries_per_entrant": 4.404,
    "days": 12.0,
    "methods": 8.0,
-   "email_offered": 0.244
+   "email_offered": 0.246
   },
   "community": {
-   "n": 2725,
-   "sites": 639,
-   "contestants": 306.0,
-   "conversion": 0.282,
-   "entries_per_entrant": 5.314,
+   "n": 2688,
+   "sites": 630,
+   "contestants": 305.0,
+   "conversion": 0.281,
+   "entries_per_entrant": 5.303,
    "days": 14.0,
    "methods": 9.0,
-   "email_offered": 0.128
+   "email_offered": 0.129
   },
   "nonprofit": {
-   "n": 951,
+   "n": 950,
    "sites": 270,
    "contestants": 393.0,
-   "conversion": 0.267,
-   "entries_per_entrant": 3.315,
+   "conversion": 0.264,
+   "entries_per_entrant": 3.312,
    "days": 16.0,
    "methods": 7.0,
    "email_offered": 0.331
@@ -354,78 +354,78 @@
  },
  "by_prize_category": {
   "other_unclassified": {
-   "n": 31365,
-   "sites": 7678,
-   "contestants": 403.0,
-   "conversion": 0.283,
-   "entries_per_entrant": 4.17,
+   "n": 30774,
+   "sites": 7537,
+   "contestants": 404.0,
+   "conversion": 0.282,
+   "entries_per_entrant": 4.148,
    "days": 14.0,
    "methods": 6.0,
-   "email_offered": 0.304
+   "email_offered": 0.306
   },
   "tech_hardware": {
-   "n": 20271,
-   "sites": 4514,
-   "contestants": 926.0,
+   "n": 20220,
+   "sites": 4504,
+   "contestants": 923.0,
    "conversion": 0.277,
-   "entries_per_entrant": 4.977,
+   "entries_per_entrant": 4.972,
    "days": 15.0,
    "methods": 8.0,
    "email_offered": 0.235
   },
   "gift_card_or_cash": {
-   "n": 15812,
-   "sites": 3747,
+   "n": 15754,
+   "sites": 3730,
    "contestants": 420.0,
-   "conversion": 0.244,
-   "entries_per_entrant": 4.717,
+   "conversion": 0.243,
+   "entries_per_entrant": 4.729,
    "days": 16.0,
    "methods": 8.0,
-   "email_offered": 0.363
+   "email_offered": 0.364
   },
   "bundle_or_box": {
-   "n": 11756,
-   "sites": 3317,
-   "contestants": 476.5,
-   "conversion": 0.267,
-   "entries_per_entrant": 4.375,
+   "n": 11732,
+   "sites": 3308,
+   "contestants": 476.0,
+   "conversion": 0.266,
+   "entries_per_entrant": 4.373,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.414
+   "email_offered": 0.415
   },
   "game_item_or_skin": {
-   "n": 10168,
-   "sites": 2427,
-   "contestants": 341.0,
+   "n": 10147,
+   "sites": 2421,
+   "contestants": 340.0,
    "conversion": 0.246,
-   "entries_per_entrant": 5.051,
+   "entries_per_entrant": 5.05,
    "days": 14.0,
    "methods": 8.0,
    "email_offered": 0.244
   },
   "experience_travel_tickets": {
-   "n": 5934,
-   "sites": 1736,
-   "contestants": 391.5,
+   "n": 5926,
+   "sites": 1733,
+   "contestants": 391.0,
    "conversion": 0.25,
-   "entries_per_entrant": 3.189,
+   "entries_per_entrant": 3.187,
    "days": 14.0,
    "methods": 6.0,
    "email_offered": 0.447
   },
   "placeholder_name": {
-   "n": 5199,
-   "sites": 1158,
+   "n": 5130,
+   "sites": 1145,
    "contestants": 544.0,
-   "conversion": 0.338,
-   "entries_per_entrant": 4.322,
+   "conversion": 0.34,
+   "entries_per_entrant": 4.345,
    "days": 9.0,
    "methods": 6.0,
-   "email_offered": 0.199
+   "email_offered": 0.197
   },
   "merch_apparel_collectible": {
-   "n": 4282,
-   "sites": 1232,
+   "n": 4279,
+   "sites": 1229,
    "contestants": 466.0,
    "conversion": 0.271,
    "entries_per_entrant": 3.565,
@@ -447,21 +447,21 @@
    "n": 2038,
    "sites": 696,
    "contestants": 895.0,
-   "conversion": 0.309,
+   "conversion": 0.308,
    "entries_per_entrant": 3.965,
    "days": 15.0,
    "methods": 7.0,
    "email_offered": 0.46
   },
   "regulated_goods_firearm": {
-   "n": 1473,
-   "sites": 276,
+   "n": 1471,
+   "sites": 274,
    "contestants": 2177.0,
-   "conversion": 0.193,
-   "entries_per_entrant": 8.187,
+   "conversion": 0.192,
+   "entries_per_entrant": 8.189,
    "days": 15.0,
-   "methods": 11.0,
-   "email_offered": 0.599
+   "methods": 12.0,
+   "email_offered": 0.6
   },
   "food_drink_consumables": {
    "n": 1269,
@@ -474,19 +474,19 @@
    "email_offered": 0.582
   },
   "subscription_membership": {
-   "n": 1176,
-   "sites": 616,
-   "contestants": 369.5,
-   "conversion": 0.243,
-   "entries_per_entrant": 3.813,
+   "n": 1173,
+   "sites": 613,
+   "contestants": 368.0,
+   "conversion": 0.242,
+   "entries_per_entrant": 3.791,
    "days": 13.0,
    "methods": 6.0,
    "email_offered": 0.379
   },
   "sports_outdoor_gear": {
-   "n": 1072,
-   "sites": 498,
-   "contestants": 763.5,
+   "n": 1070,
+   "sites": 496,
+   "contestants": 764.0,
    "conversion": 0.266,
    "entries_per_entrant": 3.992,
    "days": 17.0,
@@ -504,34 +504,34 @@
    "email_offered": 0.436
   },
   "vehicle": {
-   "n": 652,
-   "sites": 327,
+   "n": 647,
+   "sites": 326,
    "contestants": 854.0,
-   "conversion": 0.221,
-   "entries_per_entrant": 4.221,
+   "conversion": 0.217,
+   "entries_per_entrant": 4.203,
    "days": 22.0,
    "methods": 6.0,
-   "email_offered": 0.454
+   "email_offered": 0.457
   },
   "discount_or_coupon": {
-   "n": 539,
-   "sites": 141,
-   "contestants": 489.0,
-   "conversion": 0.403,
-   "entries_per_entrant": 4.486,
+   "n": 536,
+   "sites": 139,
+   "contestants": 490.0,
+   "conversion": 0.396,
+   "entries_per_entrant": 4.479,
    "days": 7.0,
    "methods": 7.0,
-   "email_offered": 0.111
+   "email_offered": 0.11
   },
   "exclusive_access": {
-   "n": 463,
-   "sites": 277,
-   "contestants": 346.0,
-   "conversion": 0.285,
-   "entries_per_entrant": 3.903,
+   "n": 454,
+   "sites": 272,
+   "contestants": 336.5,
+   "conversion": 0.283,
+   "entries_per_entrant": 3.852,
    "days": 7.0,
    "methods": 5.0,
-   "email_offered": 0.175
+   "email_offered": 0.178
   },
   "tools_craft_diy": {
    "n": 449,
@@ -567,104 +567,104 @@
  "prize_category_by_industry": {
   "gaming_esports": {
    "other_unclassified": {
-    "n": 6948,
-    "sites": 1912,
+    "n": 6618,
+    "sites": 1838,
     "contestants": 306.0,
-    "conversion": 0.293,
-    "entries_per_entrant": 4.9,
+    "conversion": 0.294,
+    "entries_per_entrant": 4.841,
     "days": 9.0,
     "methods": 7.0,
-    "email_offered": 0.156
+    "email_offered": 0.149
    },
    "game_item_or_skin": {
-    "n": 5758,
-    "sites": 1504,
-    "contestants": 378.5,
+    "n": 5742,
+    "sites": 1498,
+    "contestants": 377.0,
     "conversion": 0.234,
-    "entries_per_entrant": 5.161,
+    "entries_per_entrant": 5.156,
     "days": 13.0,
     "methods": 9.0,
     "email_offered": 0.174
    },
    "tech_hardware": {
-    "n": 5345,
-    "sites": 1538,
-    "contestants": 730.0,
+    "n": 5330,
+    "sites": 1531,
+    "contestants": 728.0,
     "conversion": 0.287,
-    "entries_per_entrant": 5.282,
+    "entries_per_entrant": 5.28,
     "days": 14.0,
     "methods": 8.0,
     "email_offered": 0.151
    },
    "gift_card_or_cash": {
-    "n": 2601,
-    "sites": 784,
-    "contestants": 368.0,
+    "n": 2586,
+    "sites": 780,
+    "contestants": 366.5,
     "conversion": 0.212,
-    "entries_per_entrant": 5.083,
+    "entries_per_entrant": 5.091,
     "days": 15.0,
     "methods": 8.0,
     "email_offered": 0.188
    },
    "bundle_or_box": {
-    "n": 1596,
-    "sites": 603,
-    "contestants": 325.0,
-    "conversion": 0.281,
-    "entries_per_entrant": 4.926,
+    "n": 1576,
+    "sites": 595,
+    "contestants": 324.0,
+    "conversion": 0.28,
+    "entries_per_entrant": 4.929,
     "days": 10.0,
     "methods": 7.0,
-    "email_offered": 0.128
+    "email_offered": 0.13
    },
    "placeholder_name": {
-    "n": 610,
-    "sites": 235,
+    "n": 602,
+    "sites": 231,
     "contestants": 577.5,
-    "conversion": 0.299,
-    "entries_per_entrant": 5.082,
+    "conversion": 0.298,
+    "entries_per_entrant": 5.071,
     "days": 10.0,
     "methods": 7.0,
-    "email_offered": 0.08
+    "email_offered": 0.081
    },
    "experience_travel_tickets": {
-    "n": 448,
-    "sites": 207,
-    "contestants": 460.5,
+    "n": 444,
+    "sites": 206,
+    "contestants": 453.5,
     "conversion": 0.272,
     "entries_per_entrant": 3.864,
     "days": 11.0,
     "methods": 6.0,
-    "email_offered": 0.337
+    "email_offered": 0.338
    },
    "merch_apparel_collectible": {
-    "n": 366,
-    "sites": 201,
-    "contestants": 263.5,
-    "conversion": 0.294,
-    "entries_per_entrant": 3.866,
+    "n": 365,
+    "sites": 200,
+    "contestants": 264.0,
+    "conversion": 0.293,
+    "entries_per_entrant": 3.852,
     "days": 9.0,
     "methods": 6.0,
     "email_offered": 0.148
    },
    "subscription_membership": {
-    "n": 233,
-    "sites": 105,
+    "n": 232,
+    "sites": 104,
     "contestants": 450.0,
-    "conversion": 0.227,
-    "entries_per_entrant": 5.076,
+    "conversion": 0.226,
+    "entries_per_entrant": 5.098,
     "days": 7.0,
     "methods": 8.0,
-    "email_offered": 0.275
+    "email_offered": 0.276
    },
    "exclusive_access": {
-    "n": 208,
-    "sites": 122,
-    "contestants": 301.5,
-    "conversion": 0.245,
-    "entries_per_entrant": 4.542,
-    "days": 10.0,
+    "n": 205,
+    "sites": 119,
+    "contestants": 290.0,
+    "conversion": 0.24,
+    "entries_per_entrant": 4.481,
+    "days": 10.5,
     "methods": 6.0,
-    "email_offered": 0.091
+    "email_offered": 0.093
    },
    "toys_collectibles": {
     "n": 188,
@@ -677,14 +677,14 @@
     "email_offered": 0.176
    },
    "discount_or_coupon": {
-    "n": 95,
-    "sites": 20,
-    "contestants": 219.0,
-    "conversion": 0.379,
-    "entries_per_entrant": 3.112,
+    "n": 93,
+    "sites": 19,
+    "contestants": 216.0,
+    "conversion": 0.384,
+    "entries_per_entrant": 3.093,
     "days": 14.0,
     "methods": 5.0,
-    "email_offered": 0.084
+    "email_offered": 0.086
    },
    "home_garden_appliance": {
     "n": 61,
@@ -697,24 +697,24 @@
     "email_offered": 0.393
    },
    "vehicle": {
-    "n": 48,
-    "sites": 38,
-    "contestants": 706.5,
-    "conversion": 0.287,
-    "entries_per_entrant": 4.978,
-    "days": 14.0,
+    "n": 44,
+    "sites": 37,
+    "contestants": 646.0,
+    "conversion": 0.272,
+    "entries_per_entrant": 4.952,
+    "days": 15.0,
     "methods": 8.0,
-    "email_offered": 0.167
+    "email_offered": 0.182
    },
    "sports_outdoor_gear": {
-    "n": 36,
-    "sites": 35,
-    "contestants": 351.0,
-    "conversion": 0.251,
-    "entries_per_entrant": 4.291,
+    "n": 35,
+    "sites": 34,
+    "contestants": 378.0,
+    "conversion": 0.255,
+    "entries_per_entrant": 4.432,
     "days": 15.0,
-    "methods": 6.5,
-    "email_offered": 0.083
+    "methods": 7.0,
+    "email_offered": 0.086
    },
    "food_drink_consumables": {
     "n": 30,
@@ -730,7 +730,7 @@
     "n": 30,
     "sites": 13,
     "contestants": 814.0,
-    "conversion": 0.159,
+    "conversion": 0.14,
     "entries_per_entrant": 7.532,
     "days": 30.0,
     "methods": 13.0,
@@ -739,8 +739,8 @@
   },
   "media_entertainment": {
    "other_unclassified": {
-    "n": 5737,
-    "sites": 878,
+    "n": 5720,
+    "sites": 870,
     "contestants": 332.0,
     "conversion": 0.265,
     "entries_per_entrant": 4.382,
@@ -749,21 +749,21 @@
     "email_offered": 0.318
    },
    "gift_card_or_cash": {
-    "n": 4300,
-    "sites": 414,
+    "n": 4295,
+    "sites": 411,
     "contestants": 390.0,
     "conversion": 0.198,
-    "entries_per_entrant": 8.292,
+    "entries_per_entrant": 8.297,
     "days": 21.0,
     "methods": 11.0,
-    "email_offered": 0.523
+    "email_offered": 0.524
    },
    "bundle_or_box": {
-    "n": 2858,
+    "n": 2857,
     "sites": 433,
-    "contestants": 476.5,
+    "contestants": 477.0,
     "conversion": 0.296,
-    "entries_per_entrant": 4.189,
+    "entries_per_entrant": 4.19,
     "days": 19.0,
     "methods": 7.0,
     "email_offered": 0.464
@@ -779,10 +779,10 @@
     "email_offered": 0.48
    },
    "game_item_or_skin": {
-    "n": 1635,
+    "n": 1633,
     "sites": 283,
-    "contestants": 272.0,
-    "conversion": 0.255,
+    "contestants": 271.0,
+    "conversion": 0.253,
     "entries_per_entrant": 4.963,
     "days": 15.0,
     "methods": 8.0,
@@ -809,14 +809,14 @@
     "email_offered": 0.417
    },
    "placeholder_name": {
-    "n": 425,
-    "sites": 124,
-    "contestants": 517.0,
-    "conversion": 0.315,
-    "entries_per_entrant": 4.694,
+    "n": 416,
+    "sites": 120,
+    "contestants": 538.0,
+    "conversion": 0.318,
+    "entries_per_entrant": 4.702,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.266
+    "email_offered": 0.26
    },
    "home_garden_appliance": {
     "n": 287,
@@ -849,14 +849,14 @@
     "email_offered": 0.246
    },
    "subscription_membership": {
-    "n": 172,
-    "sites": 83,
-    "contestants": 348.5,
+    "n": 171,
+    "sites": 82,
+    "contestants": 347.0,
     "conversion": 0.267,
-    "entries_per_entrant": 3.306,
-    "days": 17.5,
+    "entries_per_entrant": 3.272,
+    "days": 18.0,
     "methods": 5.0,
-    "email_offered": 0.448
+    "email_offered": 0.444
    },
    "music_gear": {
     "n": 162,
@@ -941,31 +941,31 @@
   },
   "electronics_tech": {
    "tech_hardware": {
-    "n": 7998,
-    "sites": 1358,
-    "contestants": 1168.0,
+    "n": 7970,
+    "sites": 1355,
+    "contestants": 1162.0,
     "conversion": 0.296,
-    "entries_per_entrant": 4.81,
+    "entries_per_entrant": 4.803,
     "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.178
+    "email_offered": 0.179
    },
    "other_unclassified": {
-    "n": 3699,
-    "sites": 892,
+    "n": 3686,
+    "sites": 889,
     "contestants": 704.0,
     "conversion": 0.295,
-    "entries_per_entrant": 4.218,
+    "entries_per_entrant": 4.221,
     "days": 14.0,
     "methods": 6.0,
     "email_offered": 0.314
    },
    "placeholder_name": {
-    "n": 874,
-    "sites": 105,
-    "contestants": 591.0,
-    "conversion": 0.621,
-    "entries_per_entrant": 3.914,
+    "n": 870,
+    "sites": 104,
+    "contestants": 592.0,
+    "conversion": 0.619,
+    "entries_per_entrant": 3.915,
     "days": 10.0,
     "methods": 5.0,
     "email_offered": 0.164
@@ -991,11 +991,11 @@
     "email_offered": 0.253
    },
    "game_item_or_skin": {
-    "n": 334,
-    "sites": 134,
-    "contestants": 506.5,
-    "conversion": 0.275,
-    "entries_per_entrant": 4.62,
+    "n": 333,
+    "sites": 133,
+    "contestants": 504.0,
+    "conversion": 0.273,
+    "entries_per_entrant": 4.617,
     "days": 13.0,
     "methods": 7.0,
     "email_offered": 0.243
@@ -1136,31 +1136,31 @@
     "n": 657,
     "sites": 195,
     "contestants": 407.0,
-    "conversion": 0.249,
+    "conversion": 0.246,
     "entries_per_entrant": 5.009,
     "days": 11.0,
     "methods": 9.0,
     "email_offered": 0.449
    },
    "game_item_or_skin": {
-    "n": 505,
+    "n": 504,
     "sites": 112,
-    "contestants": 313.0,
-    "conversion": 0.225,
-    "entries_per_entrant": 8.157,
+    "contestants": 312.5,
+    "conversion": 0.224,
+    "entries_per_entrant": 8.171,
     "days": 15.0,
     "methods": 17.0,
-    "email_offered": 0.648
+    "email_offered": 0.649
    },
    "gift_card_or_cash": {
-    "n": 401,
-    "sites": 160,
+    "n": 399,
+    "sites": 159,
     "contestants": 449.0,
-    "conversion": 0.297,
+    "conversion": 0.298,
     "entries_per_entrant": 3.005,
     "days": 16.0,
     "methods": 5.0,
-    "email_offered": 0.352
+    "email_offered": 0.351
    },
    "placeholder_name": {
     "n": 186,
@@ -1193,14 +1193,14 @@
     "email_offered": 0.244
    },
    "experience_travel_tickets": {
-    "n": 70,
-    "sites": 27,
-    "contestants": 332.5,
+    "n": 69,
+    "sites": 26,
+    "contestants": 336.0,
     "conversion": 0.223,
-    "entries_per_entrant": 2.358,
-    "days": 7.5,
+    "entries_per_entrant": 2.289,
+    "days": 7.0,
     "methods": 4.0,
-    "email_offered": 0.757
+    "email_offered": 0.754
    },
    "regulated_goods_firearm": {
     "n": 59,
@@ -1265,11 +1265,11 @@
   },
   "food_drink": {
    "other_unclassified": {
-    "n": 894,
+    "n": 893,
     "sites": 317,
-    "contestants": 595.0,
+    "contestants": 596.0,
     "conversion": 0.279,
-    "entries_per_entrant": 3.258,
+    "entries_per_entrant": 3.254,
     "days": 14.0,
     "methods": 5.0,
     "email_offered": 0.525
@@ -1288,7 +1288,7 @@
     "n": 702,
     "sites": 247,
     "contestants": 768.5,
-    "conversion": 0.273,
+    "conversion": 0.269,
     "entries_per_entrant": 4.26,
     "days": 15.0,
     "methods": 7.0,
@@ -1407,9 +1407,9 @@
   },
   "sports_outdoors": {
    "other_unclassified": {
-    "n": 1424,
-    "sites": 481,
-    "contestants": 777.0,
+    "n": 1423,
+    "sites": 480,
+    "contestants": 778.0,
     "conversion": 0.25,
     "entries_per_entrant": 3.586,
     "days": 16.0,
@@ -1437,14 +1437,14 @@
     "email_offered": 0.63
    },
    "sports_outdoor_gear": {
-    "n": 365,
-    "sites": 152,
-    "contestants": 1061.0,
+    "n": 364,
+    "sites": 151,
+    "contestants": 1061.5,
     "conversion": 0.284,
-    "entries_per_entrant": 3.546,
+    "entries_per_entrant": 3.543,
     "days": 15.0,
     "methods": 6.0,
-    "email_offered": 0.63
+    "email_offered": 0.629
    },
    "gift_card_or_cash": {
     "n": 347,
@@ -1500,7 +1500,7 @@
     "n": 101,
     "sites": 48,
     "contestants": 1253.0,
-    "conversion": 0.317,
+    "conversion": 0.316,
     "entries_per_entrant": 3.909,
     "days": 15.0,
     "methods": 6.0,
@@ -1559,34 +1559,34 @@
     "email_offered": 0.588
    },
    "other_unclassified": {
-    "n": 1102,
-    "sites": 330,
-    "contestants": 315.0,
-    "conversion": 0.355,
-    "entries_per_entrant": 1.948,
+    "n": 1100,
+    "sites": 328,
+    "contestants": 316.0,
+    "conversion": 0.357,
+    "entries_per_entrant": 1.938,
     "days": 8.0,
     "methods": 3.0,
-    "email_offered": 0.382
+    "email_offered": 0.383
    },
    "gift_card_or_cash": {
-    "n": 915,
-    "sites": 234,
-    "contestants": 726.0,
-    "conversion": 0.272,
-    "entries_per_entrant": 2.956,
+    "n": 913,
+    "sites": 233,
+    "contestants": 722.0,
+    "conversion": 0.271,
+    "entries_per_entrant": 2.955,
     "days": 22.0,
     "methods": 6.0,
-    "email_offered": 0.677
+    "email_offered": 0.676
    },
    "placeholder_name": {
-    "n": 383,
-    "sites": 38,
+    "n": 381,
+    "sites": 36,
     "contestants": 198.0,
     "conversion": 0.509,
     "entries_per_entrant": 1.0,
     "days": 2.0,
     "methods": 1.0,
-    "email_offered": 0.125
+    "email_offered": 0.123
    },
    "bundle_or_box": {
     "n": 354,
@@ -1622,7 +1622,7 @@
     "n": 74,
     "sites": 36,
     "contestants": 756.5,
-    "conversion": 0.282,
+    "conversion": 0.278,
     "entries_per_entrant": 2.655,
     "days": 27.5,
     "methods": 4.0,
@@ -1651,54 +1651,54 @@
   },
   "other": {
    "other_unclassified": {
-    "n": 1692,
-    "sites": 712,
-    "contestants": 300.0,
-    "conversion": 0.296,
-    "entries_per_entrant": 3.839,
+    "n": 1625,
+    "sites": 688,
+    "contestants": 301.0,
+    "conversion": 0.301,
+    "entries_per_entrant": 3.837,
     "days": 10.0,
     "methods": 5.0,
-    "email_offered": 0.089
+    "email_offered": 0.09
    },
    "gift_card_or_cash": {
-    "n": 700,
-    "sites": 270,
-    "contestants": 317.5,
-    "conversion": 0.34,
-    "entries_per_entrant": 4.901,
+    "n": 691,
+    "sites": 265,
+    "contestants": 317.0,
+    "conversion": 0.345,
+    "entries_per_entrant": 4.904,
     "days": 9.0,
     "methods": 7.0,
-    "email_offered": 0.131
+    "email_offered": 0.132
    },
    "bundle_or_box": {
-    "n": 691,
+    "n": 690,
     "sites": 179,
     "contestants": 350.0,
     "conversion": 0.183,
-    "entries_per_entrant": 7.294,
+    "entries_per_entrant": 7.317,
     "days": 12.0,
     "methods": 8.0,
-    "email_offered": 0.137
+    "email_offered": 0.138
    },
    "placeholder_name": {
-    "n": 451,
-    "sites": 182,
-    "contestants": 438.0,
-    "conversion": 0.39,
-    "entries_per_entrant": 3.494,
-    "days": 11.0,
+    "n": 416,
+    "sites": 178,
+    "contestants": 429.0,
+    "conversion": 0.41,
+    "entries_per_entrant": 3.688,
+    "days": 10.5,
     "methods": 6.0,
-    "email_offered": 0.091
+    "email_offered": 0.062
    },
    "tech_hardware": {
-    "n": 279,
-    "sites": 184,
+    "n": 278,
+    "sites": 183,
     "contestants": 331.0,
-    "conversion": 0.264,
-    "entries_per_entrant": 4.092,
+    "conversion": 0.263,
+    "entries_per_entrant": 4.068,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.093
+    "email_offered": 0.094
    },
    "game_item_or_skin": {
     "n": 270,
@@ -1741,14 +1741,14 @@
     "email_offered": 0.143
    },
    "experience_travel_tickets": {
-    "n": 48,
+    "n": 47,
     "sites": 40,
-    "contestants": 221.0,
-    "conversion": 0.241,
-    "entries_per_entrant": 3.397,
+    "contestants": 228.0,
+    "conversion": 0.235,
+    "entries_per_entrant": 3.355,
     "days": 12.0,
     "methods": 5.0,
-    "email_offered": 0.229
+    "email_offered": 0.234
    },
    "regulated_goods_firearm": {
     "n": 33,
@@ -1773,30 +1773,30 @@
   },
   "travel_events": {
    "experience_travel_tickets": {
-    "n": 2181,
-    "sites": 375,
+    "n": 2179,
+    "sites": 374,
     "contestants": 382.0,
-    "conversion": 0.27,
-    "entries_per_entrant": 3.104,
+    "conversion": 0.269,
+    "entries_per_entrant": 3.101,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.431
+    "email_offered": 0.432
    },
    "other_unclassified": {
-    "n": 662,
-    "sites": 204,
-    "contestants": 573.0,
-    "conversion": 0.291,
-    "entries_per_entrant": 3.287,
+    "n": 655,
+    "sites": 198,
+    "contestants": 568.0,
+    "conversion": 0.29,
+    "entries_per_entrant": 3.292,
     "days": 16.0,
     "methods": 6.0,
-    "email_offered": 0.412
+    "email_offered": 0.414
    },
    "gift_card_or_cash": {
     "n": 407,
     "sites": 146,
     "contestants": 648.0,
-    "conversion": 0.244,
+    "conversion": 0.242,
     "entries_per_entrant": 3.672,
     "days": 22.0,
     "methods": 6.0,
@@ -1813,14 +1813,14 @@
     "email_offered": 0.445
    },
    "placeholder_name": {
-    "n": 89,
-    "sites": 28,
-    "contestants": 1924.0,
-    "conversion": 0.307,
-    "entries_per_entrant": 2.215,
+    "n": 88,
+    "sites": 27,
+    "contestants": 1989.5,
+    "conversion": 0.308,
+    "entries_per_entrant": 2.058,
     "days": 4.0,
     "methods": 3.0,
-    "email_offered": 0.236
+    "email_offered": 0.227
    },
    "tech_hardware": {
     "n": 78,
@@ -1836,7 +1836,7 @@
     "n": 57,
     "sites": 28,
     "contestants": 290.0,
-    "conversion": 0.287,
+    "conversion": 0.28,
     "entries_per_entrant": 3.607,
     "days": 15.0,
     "methods": 6.0,
@@ -1865,20 +1865,20 @@
   },
   "home_garden": {
    "other_unclassified": {
-    "n": 1278,
-    "sites": 298,
-    "contestants": 735.0,
-    "conversion": 0.293,
-    "entries_per_entrant": 3.693,
+    "n": 1276,
+    "sites": 297,
+    "contestants": 732.5,
+    "conversion": 0.292,
+    "entries_per_entrant": 3.687,
     "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.608
+    "email_offered": 0.609
    },
    "home_garden_appliance": {
     "n": 608,
     "sites": 136,
     "contestants": 1844.5,
-    "conversion": 0.342,
+    "conversion": 0.341,
     "entries_per_entrant": 3.7,
     "days": 15.0,
     "methods": 6.0,
@@ -1888,7 +1888,7 @@
     "n": 449,
     "sites": 143,
     "contestants": 929.0,
-    "conversion": 0.304,
+    "conversion": 0.301,
     "entries_per_entrant": 3.125,
     "days": 13.0,
     "methods": 6.0,
@@ -1905,14 +1905,14 @@
     "email_offered": 0.613
    },
    "tech_hardware": {
-    "n": 344,
-    "sites": 100,
-    "contestants": 1117.0,
-    "conversion": 0.272,
-    "entries_per_entrant": 4.552,
+    "n": 343,
+    "sites": 99,
+    "contestants": 1116.0,
+    "conversion": 0.27,
+    "entries_per_entrant": 4.551,
     "days": 16.0,
     "methods": 8.0,
-    "email_offered": 0.477
+    "email_offered": 0.478
    },
    "experience_travel_tickets": {
     "n": 150,
@@ -1928,7 +1928,7 @@
     "n": 128,
     "sites": 33,
     "contestants": 1076.0,
-    "conversion": 0.44,
+    "conversion": 0.438,
     "entries_per_entrant": 3.906,
     "days": 8.0,
     "methods": 7.0,
@@ -1968,7 +1968,7 @@
     "n": 38,
     "sites": 21,
     "contestants": 262.0,
-    "conversion": 0.327,
+    "conversion": 0.326,
     "entries_per_entrant": 1.893,
     "days": 8.0,
     "methods": 3.0,
@@ -2047,11 +2047,11 @@
     "email_offered": 0.088
    },
    "placeholder_name": {
-    "n": 167,
-    "sites": 44,
-    "contestants": 596.0,
-    "conversion": 0.794,
-    "entries_per_entrant": 13.027,
+    "n": 166,
+    "sites": 43,
+    "contestants": 597.0,
+    "conversion": 0.795,
+    "entries_per_entrant": 13.028,
     "days": 1.0,
     "methods": 20.0,
     "email_offered": 0.012
@@ -2109,8 +2109,8 @@
   },
   "health_wellness_fitness": {
    "other_unclassified": {
-    "n": 1130,
-    "sites": 219,
+    "n": 1128,
+    "sites": 217,
     "contestants": 461.5,
     "conversion": 0.216,
     "entries_per_entrant": 4.616,
@@ -2129,14 +2129,14 @@
     "email_offered": 0.348
    },
    "gift_card_or_cash": {
-    "n": 395,
-    "sites": 128,
-    "contestants": 612.0,
-    "conversion": 0.243,
-    "entries_per_entrant": 3.979,
+    "n": 393,
+    "sites": 127,
+    "contestants": 611.0,
+    "conversion": 0.241,
+    "entries_per_entrant": 3.98,
     "days": 18.0,
     "methods": 8.0,
-    "email_offered": 0.453
+    "email_offered": 0.455
    },
    "tech_hardware": {
     "n": 210,
@@ -2162,7 +2162,7 @@
     "n": 117,
     "sites": 56,
     "contestants": 591.0,
-    "conversion": 0.216,
+    "conversion": 0.213,
     "entries_per_entrant": 2.695,
     "days": 21.0,
     "methods": 6.0,
@@ -2172,7 +2172,7 @@
     "n": 100,
     "sites": 43,
     "contestants": 427.5,
-    "conversion": 0.322,
+    "conversion": 0.318,
     "entries_per_entrant": 2.336,
     "days": 8.0,
     "methods": 5.0,
@@ -2192,7 +2192,7 @@
     "n": 83,
     "sites": 46,
     "contestants": 1199.0,
-    "conversion": 0.245,
+    "conversion": 0.241,
     "entries_per_entrant": 4.178,
     "days": 20.0,
     "methods": 8.0,
@@ -2242,7 +2242,7 @@
     "n": 38,
     "sites": 27,
     "contestants": 312.0,
-    "conversion": 0.183,
+    "conversion": 0.181,
     "entries_per_entrant": 3.195,
     "days": 24.5,
     "methods": 6.5,
@@ -2251,34 +2251,34 @@
   },
   "retail_marketplace": {
    "gift_card_or_cash": {
-    "n": 963,
-    "sites": 199,
-    "contestants": 538.0,
-    "conversion": 0.346,
-    "entries_per_entrant": 2.753,
+    "n": 959,
+    "sites": 198,
+    "contestants": 540.0,
+    "conversion": 0.348,
+    "entries_per_entrant": 2.774,
     "days": 4.0,
     "methods": 5.0,
-    "email_offered": 0.13
+    "email_offered": 0.128
    },
    "tech_hardware": {
-    "n": 441,
-    "sites": 72,
-    "contestants": 323.0,
+    "n": 440,
+    "sites": 71,
+    "contestants": 323.5,
     "conversion": 0.533,
-    "entries_per_entrant": 6.664,
+    "entries_per_entrant": 6.662,
     "days": 14.0,
     "methods": 10.0,
     "email_offered": 0.059
    },
    "other_unclassified": {
-    "n": 386,
-    "sites": 123,
-    "contestants": 404.5,
-    "conversion": 0.273,
-    "entries_per_entrant": 4.422,
+    "n": 380,
+    "sites": 121,
+    "contestants": 390.0,
+    "conversion": 0.274,
+    "entries_per_entrant": 4.382,
     "days": 12.0,
     "methods": 7.0,
-    "email_offered": 0.251
+    "email_offered": 0.253
    },
    "merch_apparel_collectible": {
     "n": 318,
@@ -2321,14 +2321,14 @@
     "email_offered": 0.205
    },
    "placeholder_name": {
-    "n": 39,
-    "sites": 24,
-    "contestants": 702.0,
-    "conversion": 0.308,
+    "n": 37,
+    "sites": 23,
+    "contestants": 708.0,
+    "conversion": 0.309,
     "entries_per_entrant": 2.85,
     "days": 23.0,
-    "methods": 5.0,
-    "email_offered": 0.231
+    "methods": 4.0,
+    "email_offered": 0.216
    },
    "home_garden_appliance": {
     "n": 36,
@@ -2346,7 +2346,7 @@
     "n": 526,
     "sites": 152,
     "contestants": 997.5,
-    "conversion": 0.225,
+    "conversion": 0.221,
     "entries_per_entrant": 4.213,
     "days": 15.0,
     "methods": 7.0,
@@ -2356,21 +2356,21 @@
     "n": 454,
     "sites": 16,
     "contestants": 5103.5,
-    "conversion": 0.196,
+    "conversion": 0.194,
     "entries_per_entrant": 14.703,
     "days": 14.0,
     "methods": 16.0,
     "email_offered": 0.786
    },
    "gift_card_or_cash": {
-    "n": 450,
-    "sites": 140,
-    "contestants": 488.5,
-    "conversion": 0.277,
-    "entries_per_entrant": 2.995,
+    "n": 437,
+    "sites": 138,
+    "contestants": 509.0,
+    "conversion": 0.278,
+    "entries_per_entrant": 3.073,
     "days": 16.0,
     "methods": 5.0,
-    "email_offered": 0.367
+    "email_offered": 0.375
    },
    "placeholder_name": {
     "n": 318,
@@ -2386,7 +2386,7 @@
     "n": 177,
     "sites": 68,
     "contestants": 918.0,
-    "conversion": 0.224,
+    "conversion": 0.223,
     "entries_per_entrant": 4.658,
     "days": 28.0,
     "methods": 7.0,
@@ -2396,27 +2396,27 @@
     "n": 111,
     "sites": 56,
     "contestants": 931.0,
-    "conversion": 0.325,
+    "conversion": 0.308,
     "entries_per_entrant": 3.0,
     "days": 20.0,
     "methods": 5.0,
     "email_offered": 0.27
    },
    "tech_hardware": {
-    "n": 80,
-    "sites": 49,
-    "contestants": 818.0,
-    "conversion": 0.257,
-    "entries_per_entrant": 4.186,
+    "n": 79,
+    "sites": 48,
+    "contestants": 832.0,
+    "conversion": 0.259,
+    "entries_per_entrant": 4.198,
     "days": 28.0,
     "methods": 7.0,
-    "email_offered": 0.5
+    "email_offered": 0.494
    },
    "experience_travel_tickets": {
     "n": 73,
     "sites": 34,
     "contestants": 311.0,
-    "conversion": 0.233,
+    "conversion": 0.231,
     "entries_per_entrant": 2.543,
     "days": 12.0,
     "methods": 5.0,
@@ -2435,34 +2435,34 @@
   },
   "education": {
    "placeholder_name": {
-    "n": 443,
-    "sites": 27,
-    "contestants": 510.0,
+    "n": 442,
+    "sites": 26,
+    "contestants": 510.5,
     "conversion": 0.236,
-    "entries_per_entrant": 5.225,
+    "entries_per_entrant": 5.227,
     "days": 8.0,
     "methods": 13.0,
     "email_offered": 0.05
    },
-   "other_unclassified": {
-    "n": 384,
-    "sites": 150,
-    "contestants": 408.5,
-    "conversion": 0.256,
-    "entries_per_entrant": 2.969,
-    "days": 11.0,
-    "methods": 5.0,
-    "email_offered": 0.315
-   },
    "tech_hardware": {
-    "n": 384,
+    "n": 383,
     "sites": 68,
-    "contestants": 577.0,
+    "contestants": 576.0,
     "conversion": 0.247,
     "entries_per_entrant": 4.877,
     "days": 8.0,
     "methods": 13.0,
-    "email_offered": 0.104
+    "email_offered": 0.102
+   },
+   "other_unclassified": {
+    "n": 383,
+    "sites": 149,
+    "contestants": 408.0,
+    "conversion": 0.255,
+    "entries_per_entrant": 2.971,
+    "days": 11.0,
+    "methods": 5.0,
+    "email_offered": 0.316
    },
    "bundle_or_box": {
     "n": 210,
@@ -2475,14 +2475,14 @@
     "email_offered": 0.562
    },
    "gift_card_or_cash": {
-    "n": 157,
-    "sites": 77,
-    "contestants": 394.0,
+    "n": 156,
+    "sites": 76,
+    "contestants": 394.5,
     "conversion": 0.238,
-    "entries_per_entrant": 2.65,
+    "entries_per_entrant": 2.621,
     "days": 14.0,
     "methods": 5.0,
-    "email_offered": 0.248
+    "email_offered": 0.25
    },
    "subscription_membership": {
     "n": 69,
@@ -2516,65 +2516,55 @@
    }
   },
   "software_saas": {
-   "other_unclassified": {
-    "n": 468,
-    "sites": 224,
-    "contestants": 426.5,
-    "conversion": 0.245,
-    "entries_per_entrant": 4.138,
-    "days": 12.5,
-    "methods": 6.0,
-    "email_offered": 0.186
-   },
    "tech_hardware": {
-    "n": 437,
-    "sites": 121,
-    "contestants": 972.0,
+    "n": 434,
+    "sites": 120,
+    "contestants": 973.0,
     "conversion": 0.211,
-    "entries_per_entrant": 5.199,
+    "entries_per_entrant": 5.212,
     "days": 22.0,
     "methods": 10.0,
-    "email_offered": 0.503
+    "email_offered": 0.505
+   },
+   "other_unclassified": {
+    "n": 396,
+    "sites": 200,
+    "contestants": 379.0,
+    "conversion": 0.239,
+    "entries_per_entrant": 3.905,
+    "days": 14.0,
+    "methods": 6.0,
+    "email_offered": 0.22
    },
    "gift_card_or_cash": {
-    "n": 229,
-    "sites": 116,
-    "contestants": 380.0,
+    "n": 227,
+    "sites": 115,
+    "contestants": 384.0,
     "conversion": 0.21,
     "entries_per_entrant": 4.161,
     "days": 17.5,
     "methods": 7.0,
-    "email_offered": 0.236
+    "email_offered": 0.238
    },
    "game_item_or_skin": {
-    "n": 210,
+    "n": 209,
     "sites": 46,
-    "contestants": 996.0,
+    "contestants": 995.0,
     "conversion": 0.3,
-    "entries_per_entrant": 4.524,
+    "entries_per_entrant": 4.528,
     "days": 25.0,
     "methods": 6.0,
-    "email_offered": 0.714
+    "email_offered": 0.718
    },
    "subscription_membership": {
-    "n": 116,
-    "sites": 54,
-    "contestants": 274.0,
+    "n": 115,
+    "sites": 53,
+    "contestants": 273.0,
     "conversion": 0.159,
-    "entries_per_entrant": 3.827,
+    "entries_per_entrant": 3.821,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.207
-   },
-   "placeholder_name": {
-    "n": 90,
-    "sites": 51,
-    "contestants": 576.5,
-    "conversion": 0.278,
-    "entries_per_entrant": 4.827,
-    "days": 12.0,
-    "methods": 7.0,
-    "email_offered": 0.256
+    "email_offered": 0.2
    },
    "bundle_or_box": {
     "n": 87,
@@ -2585,6 +2575,16 @@
     "days": 16.0,
     "methods": 7.0,
     "email_offered": 0.483
+   },
+   "placeholder_name": {
+    "n": 85,
+    "sites": 49,
+    "contestants": 558.0,
+    "conversion": 0.285,
+    "entries_per_entrant": 4.899,
+    "days": 12.0,
+    "methods": 7.0,
+    "email_offered": 0.247
    },
    "experience_travel_tickets": {
     "n": 37,
@@ -2597,52 +2597,52 @@
     "email_offered": 0.541
    },
    "merch_apparel_collectible": {
-    "n": 34,
-    "sites": 22,
-    "contestants": 249.0,
-    "conversion": 0.23,
-    "entries_per_entrant": 4.003,
-    "days": 11.5,
-    "methods": 6.5,
-    "email_offered": 0.206
+    "n": 33,
+    "sites": 21,
+    "contestants": 252.0,
+    "conversion": 0.241,
+    "entries_per_entrant": 4.171,
+    "days": 11.0,
+    "methods": 7.0,
+    "email_offered": 0.212
    }
   },
   "art_crafts": {
    "other_unclassified": {
-    "n": 562,
-    "sites": 210,
+    "n": 540,
+    "sites": 207,
     "contestants": 336.5,
     "conversion": 0.287,
-    "entries_per_entrant": 3.804,
-    "days": 14.0,
-    "methods": 6.0,
-    "email_offered": 0.295
+    "entries_per_entrant": 3.702,
+    "days": 15.0,
+    "methods": 5.0,
+    "email_offered": 0.307
    },
    "bundle_or_box": {
-    "n": 321,
-    "sites": 97,
-    "contestants": 565.0,
-    "conversion": 0.248,
-    "entries_per_entrant": 4.975,
+    "n": 320,
+    "sites": 96,
+    "contestants": 563.5,
+    "conversion": 0.247,
+    "entries_per_entrant": 4.954,
     "days": 15.0,
     "methods": 6.0,
-    "email_offered": 0.324
+    "email_offered": 0.325
    },
    "gift_card_or_cash": {
-    "n": 250,
-    "sites": 79,
-    "contestants": 410.0,
-    "conversion": 0.261,
-    "entries_per_entrant": 4.448,
-    "days": 17.5,
+    "n": 249,
+    "sites": 78,
+    "contestants": 409.0,
+    "conversion": 0.259,
+    "entries_per_entrant": 4.428,
+    "days": 18.0,
     "methods": 7.0,
-    "email_offered": 0.352
+    "email_offered": 0.353
    },
    "tech_hardware": {
     "n": 121,
     "sites": 44,
     "contestants": 576.0,
-    "conversion": 0.209,
+    "conversion": 0.208,
     "entries_per_entrant": 5.49,
     "days": 17.0,
     "methods": 9.0,
@@ -2669,14 +2669,14 @@
     "email_offered": 0.167
    },
    "merch_apparel_collectible": {
-    "n": 45,
-    "sites": 21,
+    "n": 44,
+    "sites": 20,
     "contestants": 240.0,
     "conversion": 0.181,
-    "entries_per_entrant": 5.244,
+    "entries_per_entrant": 5.333,
     "days": 13.0,
     "methods": 5.0,
-    "email_offered": 0.511
+    "email_offered": 0.523
    },
    "music_gear": {
     "n": 36,
@@ -2692,7 +2692,7 @@
     "n": 33,
     "sites": 17,
     "contestants": 321.0,
-    "conversion": 0.369,
+    "conversion": 0.353,
     "entries_per_entrant": 3.35,
     "days": 19.0,
     "methods": 5.0,
@@ -2760,16 +2760,6 @@
     "methods": 11.0,
     "email_offered": 0.662
    },
-   "tech_hardware": {
-    "n": 49,
-    "sites": 34,
-    "contestants": 472.0,
-    "conversion": 0.274,
-    "entries_per_entrant": 4.909,
-    "days": 19.0,
-    "methods": 8.0,
-    "email_offered": 0.408
-   },
    "experience_travel_tickets": {
     "n": 49,
     "sites": 30,
@@ -2778,6 +2768,16 @@
     "entries_per_entrant": 2.972,
     "days": 21.0,
     "methods": 6.0,
+    "email_offered": 0.408
+   },
+   "tech_hardware": {
+    "n": 49,
+    "sites": 34,
+    "contestants": 472.0,
+    "conversion": 0.274,
+    "entries_per_entrant": 4.909,
+    "days": 19.0,
+    "methods": 8.0,
     "email_offered": 0.408
    },
    "merch_apparel_collectible": {
@@ -2813,14 +2813,14 @@
   },
   "marketing_agency": {
    "other_unclassified": {
-    "n": 307,
-    "sites": 79,
-    "contestants": 688.0,
-    "conversion": 0.301,
-    "entries_per_entrant": 3.769,
-    "days": 21.0,
+    "n": 290,
+    "sites": 77,
+    "contestants": 686.5,
+    "conversion": 0.289,
+    "entries_per_entrant": 3.626,
+    "days": 19.0,
     "methods": 7.0,
-    "email_offered": 0.492
+    "email_offered": 0.521
    },
    "tech_hardware": {
     "n": 260,
@@ -2843,14 +2843,14 @@
     "email_offered": 0.069
    },
    "gift_card_or_cash": {
-    "n": 144,
-    "sites": 37,
+    "n": 142,
+    "sites": 36,
     "contestants": 311.5,
-    "conversion": 0.202,
-    "entries_per_entrant": 4.737,
-    "days": 20.5,
+    "conversion": 0.2,
+    "entries_per_entrant": 4.785,
+    "days": 21.0,
     "methods": 7.5,
-    "email_offered": 0.201
+    "email_offered": 0.204
    },
    "bundle_or_box": {
     "n": 127,
@@ -2866,7 +2866,7 @@
     "n": 75,
     "sites": 17,
     "contestants": 445.0,
-    "conversion": 0.111,
+    "conversion": 0.016,
     "entries_per_entrant": 7.357,
     "days": 27.0,
     "methods": 6.0,
@@ -2944,16 +2944,6 @@
     "methods": 8.0,
     "email_offered": 0.279
    },
-   "food_drink_consumables": {
-    "n": 39,
-    "sites": 14,
-    "contestants": 1401.0,
-    "conversion": 0.34,
-    "entries_per_entrant": 4.364,
-    "days": 10.0,
-    "methods": 8.0,
-    "email_offered": 0.615
-   },
    "home_garden_appliance": {
     "n": 39,
     "sites": 19,
@@ -2963,18 +2953,28 @@
     "days": 17.0,
     "methods": 6.0,
     "email_offered": 0.615
+   },
+   "food_drink_consumables": {
+    "n": 39,
+    "sites": 14,
+    "contestants": 1401.0,
+    "conversion": 0.34,
+    "entries_per_entrant": 4.364,
+    "days": 10.0,
+    "methods": 8.0,
+    "email_offered": 0.615
    }
   },
   "pets": {
    "other_unclassified": {
-    "n": 349,
+    "n": 348,
     "sites": 92,
-    "contestants": 756.0,
-    "conversion": 0.272,
-    "entries_per_entrant": 3.917,
+    "contestants": 757.5,
+    "conversion": 0.265,
+    "entries_per_entrant": 3.918,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.837
+    "email_offered": 0.839
    },
    "bundle_or_box": {
     "n": 146,
@@ -3000,7 +3000,7 @@
     "n": 100,
     "sites": 21,
     "contestants": 559.5,
-    "conversion": 0.183,
+    "conversion": 0.18,
     "entries_per_entrant": 5.114,
     "days": 30.0,
     "methods": 5.0,
@@ -3062,7 +3062,7 @@
     "n": 227,
     "sites": 38,
     "contestants": 459.0,
-    "conversion": 0.217,
+    "conversion": 0.216,
     "entries_per_entrant": 3.243,
     "days": 9.5,
     "methods": 5.0,
@@ -3072,7 +3072,7 @@
     "n": 155,
     "sites": 64,
     "contestants": 736.0,
-    "conversion": 0.236,
+    "conversion": 0.234,
     "entries_per_entrant": 3.063,
     "days": 16.0,
     "methods": 7.0,
@@ -3121,14 +3121,24 @@
     "email_offered": 0.413
    },
    "other_unclassified": {
-    "n": 90,
+    "n": 89,
     "sites": 58,
-    "contestants": 461.0,
-    "conversion": 0.289,
-    "entries_per_entrant": 2.97,
-    "days": 13.0,
+    "contestants": 460.0,
+    "conversion": 0.284,
+    "entries_per_entrant": 2.969,
+    "days": 14.0,
     "methods": 5.0,
-    "email_offered": 0.178
+    "email_offered": 0.18
+   },
+   "experience_travel_tickets": {
+    "n": 79,
+    "sites": 29,
+    "contestants": 668.0,
+    "conversion": 0.263,
+    "entries_per_entrant": 3.064,
+    "days": 14.0,
+    "methods": 12.0,
+    "email_offered": 0.646
    },
    "tech_hardware": {
     "n": 79,
@@ -3139,16 +3149,6 @@
     "days": 18.0,
     "methods": 7.0,
     "email_offered": 0.329
-   },
-   "experience_travel_tickets": {
-    "n": 79,
-    "sites": 29,
-    "contestants": 668.0,
-    "conversion": 0.264,
-    "entries_per_entrant": 3.064,
-    "days": 14.0,
-    "methods": 12.0,
-    "email_offered": 0.646
    },
    "placeholder_name": {
     "n": 46,
@@ -3161,14 +3161,14 @@
     "email_offered": 0.109
    },
    "bundle_or_box": {
-    "n": 44,
-    "sites": 33,
-    "contestants": 305.0,
+    "n": 43,
+    "sites": 32,
+    "contestants": 320.0,
     "conversion": 0.213,
-    "entries_per_entrant": 3.596,
-    "days": 13.5,
+    "entries_per_entrant": 3.543,
+    "days": 13.0,
     "methods": 7.0,
-    "email_offered": 0.341
+    "email_offered": 0.326
    },
    "game_item_or_skin": {
     "n": 31,
@@ -3183,14 +3183,14 @@
   },
   "jewelry_watches": {
    "other_unclassified": {
-    "n": 181,
-    "sites": 84,
+    "n": 179,
+    "sites": 83,
     "contestants": 405.0,
     "conversion": 0.198,
     "entries_per_entrant": 4.306,
     "days": 18.0,
     "methods": 8.0,
-    "email_offered": 0.608
+    "email_offered": 0.615
    },
    "gift_card_or_cash": {
     "n": 88,
@@ -3206,7 +3206,7 @@
     "n": 76,
     "sites": 37,
     "contestants": 557.5,
-    "conversion": 0.247,
+    "conversion": 0.243,
     "entries_per_entrant": 3.572,
     "days": 15.0,
     "methods": 6.0,
@@ -3226,80 +3226,80 @@
  },
  "prize_pool_by_industry": {
   "media_entertainment": {
-   "n": 9041,
-   "sites": 954,
-   "pool_usd_p50": 71.0,
+   "n": 9030,
+   "sites": 948,
+   "pool_usd_p50": 70.5,
    "pool_usd_p25": 25.0,
    "pool_usd_p75": 300.0,
-   "usd_per_contestant": 0.162,
+   "usd_per_contestant": 0.161,
    "share_with_value": 0.419
   },
   "gaming_esports": {
-   "n": 7834,
-   "sites": 2191,
+   "n": 7732,
+   "sites": 2147,
    "pool_usd_p50": 200.0,
    "pool_usd_p25": 70.0,
-   "pool_usd_p75": 750.0,
-   "usd_per_contestant": 0.42,
-   "share_with_value": 0.318
+   "pool_usd_p75": 740.0,
+   "usd_per_contestant": 0.417,
+   "share_with_value": 0.319
   },
   "electronics_tech": {
-   "n": 5197,
-   "sites": 1055,
+   "n": 5167,
+   "sites": 1051,
    "pool_usd_p50": 549.0,
    "pool_usd_p25": 199.0,
-   "pool_usd_p75": 1598.0,
-   "usd_per_contestant": 0.605,
-   "share_with_value": 0.333
+   "pool_usd_p75": 1599.0,
+   "usd_per_contestant": 0.607,
+   "share_with_value": 0.332
   },
   "sports_outdoors": {
-   "n": 2367,
-   "sites": 613,
-   "pool_usd_p50": 642.0,
+   "n": 2366,
+   "sites": 612,
+   "pool_usd_p50": 641.0,
    "pool_usd_p25": 300.0,
    "pool_usd_p75": 1798.0,
    "usd_per_contestant": 0.658,
    "share_with_value": 0.51
   },
   "food_drink": {
-   "n": 2043,
-   "sites": 526,
-   "pool_usd_p50": 436.0,
+   "n": 2042,
+   "sites": 525,
+   "pool_usd_p50": 438.0,
    "pool_usd_p25": 175.0,
-   "pool_usd_p75": 1214.5,
+   "pool_usd_p75": 1221.75,
    "usd_per_contestant": 0.5,
    "share_with_value": 0.436
   },
   "home_garden": {
-   "n": 1991,
-   "sites": 391,
+   "n": 1989,
+   "sites": 390,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 200.0,
    "pool_usd_p75": 1450.0,
-   "usd_per_contestant": 0.479,
+   "usd_per_contestant": 0.481,
    "share_with_value": 0.536
   },
   "apparel_fashion": {
-   "n": 1558,
-   "sites": 436,
+   "n": 1556,
+   "sites": 435,
    "pool_usd_p50": 531.0,
    "pool_usd_p25": 200.0,
-   "pool_usd_p75": 1520.25,
+   "pool_usd_p75": 1531.25,
    "usd_per_contestant": 0.535,
    "share_with_value": 0.336
   },
   "other": {
-   "n": 1497,
-   "sites": 658,
+   "n": 1471,
+   "sites": 643,
    "pool_usd_p50": 200.0,
    "pool_usd_p25": 80.0,
-   "pool_usd_p75": 599.0,
+   "pool_usd_p75": 599.5,
    "usd_per_contestant": 0.617,
-   "share_with_value": 0.329
+   "share_with_value": 0.332
   },
   "toys_hobbies_collectibles": {
-   "n": 1443,
-   "sites": 371,
+   "n": 1441,
+   "sites": 370,
    "pool_usd_p50": 200.0,
    "pool_usd_p25": 99.0,
    "pool_usd_p75": 500.0,
@@ -3307,58 +3307,58 @@
    "share_with_value": 0.306
   },
   "health_wellness_fitness": {
-   "n": 1435,
-   "sites": 341,
-   "pool_usd_p50": 350.0,
+   "n": 1434,
+   "sites": 340,
+   "pool_usd_p50": 354.0,
    "pool_usd_p25": 150.0,
    "pool_usd_p75": 1000.0,
-   "usd_per_contestant": 0.737,
+   "usd_per_contestant": 0.738,
    "share_with_value": 0.454
   },
   "travel_events": {
-   "n": 1285,
-   "sites": 330,
+   "n": 1282,
+   "sites": 327,
    "pool_usd_p50": 600.0,
-   "pool_usd_p25": 254.0,
+   "pool_usd_p25": 254.25,
    "pool_usd_p75": 1500.0,
-   "usd_per_contestant": 0.87,
+   "usd_per_contestant": 0.869,
    "share_with_value": 0.323
   },
   "automotive": {
-   "n": 1277,
-   "sites": 226,
+   "n": 1276,
+   "sites": 225,
    "pool_usd_p50": 999.0,
    "pool_usd_p25": 361.0,
    "pool_usd_p75": 2500.0,
-   "usd_per_contestant": 0.516,
-   "share_with_value": 0.549
+   "usd_per_contestant": 0.514,
+   "share_with_value": 0.552
   },
   "creator_influencer": {
-   "n": 923,
-   "sites": 382,
+   "n": 922,
+   "sites": 381,
    "pool_usd_p50": 75.0,
    "pool_usd_p25": 30.0,
    "pool_usd_p75": 240.0,
-   "usd_per_contestant": 0.274,
+   "usd_per_contestant": 0.272,
    "share_with_value": 0.272
   },
   "software_saas": {
-   "n": 888,
-   "sites": 319,
+   "n": 859,
+   "sites": 300,
    "pool_usd_p50": 1000.0,
    "pool_usd_p25": 250.0,
-   "pool_usd_p75": 2329.0,
-   "usd_per_contestant": 1.064,
-   "share_with_value": 0.507
+   "pool_usd_p75": 2420.0,
+   "usd_per_contestant": 1.087,
+   "share_with_value": 0.517
   },
   "art_crafts": {
-   "n": 827,
-   "sites": 215,
+   "n": 822,
+   "sites": 213,
    "pool_usd_p50": 230.0,
    "pool_usd_p25": 100.0,
-   "pool_usd_p75": 750.5,
-   "usd_per_contestant": 0.414,
-   "share_with_value": 0.512
+   "pool_usd_p75": 750.0,
+   "usd_per_contestant": 0.412,
+   "share_with_value": 0.517
   },
   "retail_marketplace": {
    "n": 802,
@@ -3367,7 +3367,7 @@
    "pool_usd_p25": 100.0,
    "pool_usd_p75": 575.0,
    "usd_per_contestant": 0.378,
-   "share_with_value": 0.279
+   "share_with_value": 0.28
   },
   "beauty_personal_care": {
    "n": 788,
@@ -3379,22 +3379,22 @@
    "share_with_value": 0.558
   },
   "education": {
-   "n": 617,
-   "sites": 227,
+   "n": 613,
+   "sites": 223,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 210.0,
    "pool_usd_p75": 1926.0,
-   "usd_per_contestant": 0.971,
-   "share_with_value": 0.33
+   "usd_per_contestant": 0.962,
+   "share_with_value": 0.328
   },
   "marketing_agency": {
-   "n": 523,
-   "sites": 96,
+   "n": 511,
+   "sites": 95,
    "pool_usd_p50": 899.0,
    "pool_usd_p25": 229.0,
    "pool_usd_p75": 2274.5,
-   "usd_per_contestant": 0.625,
-   "share_with_value": 0.429
+   "usd_per_contestant": 0.599,
+   "share_with_value": 0.425
   },
   "pets": {
    "n": 472,
@@ -3403,7 +3403,7 @@
    "pool_usd_p25": 119.75,
    "pool_usd_p75": 856.25,
    "usd_per_contestant": 0.446,
-   "share_with_value": 0.497
+   "share_with_value": 0.498
   },
   "baby_kids": {
    "n": 432,
@@ -3415,12 +3415,12 @@
    "share_with_value": 0.365
   },
   "jewelry_watches": {
-   "n": 226,
+   "n": 225,
    "sites": 88,
-   "pool_usd_p50": 510.5,
-   "pool_usd_p25": 178.75,
+   "pool_usd_p50": 505.0,
+   "pool_usd_p25": 175.0,
    "pool_usd_p75": 2800.0,
-   "usd_per_contestant": 0.832,
+   "usd_per_contestant": 0.83,
    "share_with_value": 0.493
   },
   "local_services": {
@@ -3433,19 +3433,19 @@
    "share_with_value": 0.227
   },
   "nonprofit_community": {
-   "n": 175,
+   "n": 174,
    "sites": 96,
-   "pool_usd_p50": 723.0,
-   "pool_usd_p25": 245.0,
-   "pool_usd_p75": 2325.0,
-   "usd_per_contestant": 1.16,
+   "pool_usd_p50": 711.0,
+   "pool_usd_p25": 242.5,
+   "pool_usd_p75": 2200.0,
+   "usd_per_contestant": 1.159,
    "share_with_value": 0.335
   }
  },
  "prize_pool_by_business_type": {
   "brand": {
-   "n": 12458,
-   "sites": 3249,
+   "n": 12407,
+   "sites": 3233,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 200.0,
    "pool_usd_p75": 1487.0,
@@ -3453,17 +3453,17 @@
    "share_with_value": 0.411
   },
   "media_publisher": {
-   "n": 8528,
-   "sites": 741,
+   "n": 8517,
+   "sites": 735,
    "pool_usd_p50": 70.0,
    "pool_usd_p25": 25.0,
-   "pool_usd_p75": 325.0,
+   "pool_usd_p75": 320.0,
    "usd_per_contestant": 0.176,
-   "share_with_value": 0.427
+   "share_with_value": 0.426
   },
   "retailer": {
-   "n": 8053,
-   "sites": 1267,
+   "n": 8050,
+   "sites": 1265,
    "pool_usd_p50": 300.0,
    "pool_usd_p25": 120.0,
    "pool_usd_p75": 1000.0,
@@ -3471,8 +3471,8 @@
    "share_with_value": 0.373
   },
   "creator": {
-   "n": 5373,
-   "sites": 1781,
+   "n": 5359,
+   "sites": 1775,
    "pool_usd_p50": 120.0,
    "pool_usd_p25": 50.0,
    "pool_usd_p75": 499.0,
@@ -3480,147 +3480,147 @@
    "share_with_value": 0.301
   },
   "software": {
-   "n": 3985,
-   "sites": 960,
+   "n": 3896,
+   "sites": 911,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 200.0,
-   "pool_usd_p75": 1755.0,
-   "usd_per_contestant": 0.504,
-   "share_with_value": 0.388
+   "pool_usd_p75": 1700.0,
+   "usd_per_contestant": 0.496,
+   "share_with_value": 0.396
   },
   "other": {
-   "n": 2324,
-   "sites": 795,
-   "pool_usd_p50": 249.0,
+   "n": 2286,
+   "sites": 779,
+   "pool_usd_p50": 250.0,
    "pool_usd_p25": 100.0,
-   "pool_usd_p75": 800.0,
+   "pool_usd_p75": 799.75,
    "usd_per_contestant": 0.557,
-   "share_with_value": 0.37
+   "share_with_value": 0.372
   },
   "service_business": {
-   "n": 1207,
-   "sites": 420,
+   "n": 1205,
+   "sites": 418,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 200.0,
-   "pool_usd_p75": 1397.0,
+   "pool_usd_p75": 1396.0,
    "usd_per_contestant": 1.064,
    "share_with_value": 0.317
   },
   "agency": {
-   "n": 882,
-   "sites": 189,
+   "n": 868,
+   "sites": 187,
    "pool_usd_p50": 567.5,
    "pool_usd_p25": 180.0,
-   "pool_usd_p75": 1661.25,
-   "usd_per_contestant": 0.746,
-   "share_with_value": 0.304
+   "pool_usd_p75": 1687.5,
+   "usd_per_contestant": 0.734,
+   "share_with_value": 0.301
   },
   "community": {
-   "n": 765,
-   "sites": 278,
+   "n": 753,
+   "sites": 273,
    "pool_usd_p50": 300.0,
    "pool_usd_p25": 100.0,
-   "pool_usd_p75": 649.0,
-   "usd_per_contestant": 0.544,
-   "share_with_value": 0.281
+   "pool_usd_p75": 627.0,
+   "usd_per_contestant": 0.54,
+   "share_with_value": 0.28
   },
   "nonprofit": {
-   "n": 383,
+   "n": 382,
    "sites": 133,
    "pool_usd_p50": 600.0,
-   "pool_usd_p25": 309.5,
-   "pool_usd_p75": 1987.5,
-   "usd_per_contestant": 1.136,
-   "share_with_value": 0.403
+   "pool_usd_p25": 309.25,
+   "pool_usd_p75": 1943.75,
+   "usd_per_contestant": 1.135,
+   "share_with_value": 0.402
   }
  },
  "prize_pool_by_tier": {
   "Pro": {
-   "n": 24590,
-   "sites": 5773,
-   "pool_usd_p50": 300.0,
+   "n": 24491,
+   "sites": 5712,
+   "pool_usd_p50": 299.0,
    "pool_usd_p25": 100.0,
-   "pool_usd_p75": 829.0,
-   "usd_per_contestant": 0.417,
-   "share_with_value": 0.393
+   "pool_usd_p75": 819.0,
+   "usd_per_contestant": 0.416,
+   "share_with_value": 0.395
   },
   "Business": {
-   "n": 11334,
-   "sites": 2024,
+   "n": 11227,
+   "sites": 1995,
    "pool_usd_p50": 700.0,
-   "pool_usd_p25": 177.25,
+   "pool_usd_p25": 175.0,
    "pool_usd_p75": 2000.0,
-   "usd_per_contestant": 0.557,
-   "share_with_value": 0.378
+   "usd_per_contestant": 0.558,
+   "share_with_value": 0.379
   },
   "Free": {
-   "n": 3953,
-   "sites": 1592,
+   "n": 3936,
+   "sites": 1580,
    "pool_usd_p50": 60.0,
    "pool_usd_p25": 25.0,
-   "pool_usd_p75": 169.0,
-   "usd_per_contestant": 0.25,
+   "pool_usd_p75": 168.25,
+   "usd_per_contestant": 0.249,
    "share_with_value": 0.328
   },
   "Hobby": {
-   "n": 3541,
-   "sites": 1263,
+   "n": 3527,
+   "sites": 1255,
    "pool_usd_p50": 149.0,
    "pool_usd_p25": 70.0,
    "pool_usd_p75": 399.0,
-   "usd_per_contestant": 0.409,
+   "usd_per_contestant": 0.408,
    "share_with_value": 0.327
   },
   "Premium": {
-   "n": 773,
-   "sites": 94,
+   "n": 771,
+   "sites": 93,
    "pool_usd_p50": 1499.0,
-   "pool_usd_p25": 249.0,
+   "pool_usd_p25": 244.5,
    "pool_usd_p75": 4000.0,
    "usd_per_contestant": 0.207,
-   "share_with_value": 0.385
+   "share_with_value": 0.387
   }
  },
  "prize_pool_by_category": {
   "other_unclassified": {
-   "n": 10548,
-   "sites": 3466,
+   "n": 10388,
+   "sites": 3383,
    "pool_usd_p50": 299.0,
-   "pool_usd_p25": 95.0,
-   "pool_usd_p75": 999.0,
-   "usd_per_contestant": 0.484,
-   "share_with_value": 0.336
+   "pool_usd_p25": 90.0,
+   "pool_usd_p75": 990.0,
+   "usd_per_contestant": 0.48,
+   "share_with_value": 0.338
   },
   "gift_card_or_cash": {
-   "n": 9099,
-   "sites": 2475,
+   "n": 9078,
+   "sites": 2464,
    "pool_usd_p50": 100.0,
    "pool_usd_p25": 30.0,
    "pool_usd_p75": 500.0,
-   "usd_per_contestant": 0.205,
-   "share_with_value": 0.575
+   "usd_per_contestant": 0.204,
+   "share_with_value": 0.576
   },
   "tech_hardware": {
-   "n": 7332,
-   "sites": 2134,
+   "n": 7294,
+   "sites": 2124,
    "pool_usd_p50": 500.0,
    "pool_usd_p25": 200.0,
    "pool_usd_p75": 1500.0,
-   "usd_per_contestant": 0.434,
-   "share_with_value": 0.362
+   "usd_per_contestant": 0.435,
+   "share_with_value": 0.361
   },
   "bundle_or_box": {
-   "n": 4665,
-   "sites": 1647,
+   "n": 4661,
+   "sites": 1644,
    "pool_usd_p50": 300.0,
    "pool_usd_p25": 105.0,
    "pool_usd_p75": 900.0,
-   "usd_per_contestant": 0.511,
+   "usd_per_contestant": 0.51,
    "share_with_value": 0.397
   },
   "game_item_or_skin": {
-   "n": 3545,
-   "sites": 994,
+   "n": 3539,
+   "sites": 991,
    "pool_usd_p50": 150.0,
    "pool_usd_p25": 60.0,
    "pool_usd_p75": 500.0,
@@ -3628,8 +3628,8 @@
    "share_with_value": 0.349
   },
   "experience_travel_tickets": {
-   "n": 1684,
-   "sites": 758,
+   "n": 1682,
+   "sites": 756,
    "pool_usd_p50": 800.0,
    "pool_usd_p25": 300.0,
    "pool_usd_p75": 2400.0,
@@ -3637,30 +3637,30 @@
    "share_with_value": 0.284
   },
   "merch_apparel_collectible": {
-   "n": 1243,
-   "sites": 472,
+   "n": 1242,
+   "sites": 471,
    "pool_usd_p50": 150.0,
    "pool_usd_p25": 50.0,
    "pool_usd_p75": 599.0,
-   "usd_per_contestant": 0.363,
+   "usd_per_contestant": 0.362,
    "share_with_value": 0.29
   },
   "placeholder_name": {
-   "n": 1053,
-   "sites": 499,
-   "pool_usd_p50": 510.0,
-   "pool_usd_p25": 153.0,
-   "pool_usd_p75": 2030.0,
-   "usd_per_contestant": 0.595,
-   "share_with_value": 0.203
+   "n": 1048,
+   "sites": 494,
+   "pool_usd_p50": 515.5,
+   "pool_usd_p25": 154.5,
+   "pool_usd_p75": 2039.0,
+   "usd_per_contestant": 0.597,
+   "share_with_value": 0.204
   },
   "regulated_goods_firearm": {
-   "n": 951,
-   "sites": 182,
+   "n": 950,
+   "sites": 181,
    "pool_usd_p50": 1300.0,
    "pool_usd_p25": 649.0,
-   "pool_usd_p75": 3002.0,
-   "usd_per_contestant": 0.46,
+   "pool_usd_p75": 3003.0,
+   "usd_per_contestant": 0.462,
    "share_with_value": 0.646
   },
   "home_garden_appliance": {
@@ -3679,15 +3679,15 @@
    "pool_usd_p25": 229.0,
    "pool_usd_p75": 1549.0,
    "usd_per_contestant": 0.65,
-   "share_with_value": 0.548
+   "share_with_value": 0.549
   },
   "subscription_membership": {
-   "n": 530,
-   "sites": 293,
-   "pool_usd_p50": 560.5,
-   "pool_usd_p25": 159.25,
+   "n": 529,
+   "sites": 292,
+   "pool_usd_p50": 546.0,
+   "pool_usd_p25": 159.0,
    "pool_usd_p75": 1500.0,
-   "usd_per_contestant": 1.03,
+   "usd_per_contestant": 1.029,
    "share_with_value": 0.451
   },
   "food_drink_consumables": {
@@ -3706,7 +3706,7 @@
    "pool_usd_p25": 486.75,
    "pool_usd_p75": 2799.0,
    "usd_per_contestant": 1.096,
-   "share_with_value": 0.589
+   "share_with_value": 0.594
   },
   "beauty_wellness": {
    "n": 327,
@@ -3751,7 +3751,7 @@
    "pool_usd_p25": 157.5,
    "pool_usd_p75": 1760.0,
    "usd_per_contestant": 0.913,
-   "share_with_value": 0.205
+   "share_with_value": 0.209
   },
   "discount_or_coupon": {
    "n": 85,
@@ -3760,188 +3760,188 @@
    "pool_usd_p25": 50.0,
    "pool_usd_p75": 750.0,
    "usd_per_contestant": 0.84,
-   "share_with_value": 0.158
+   "share_with_value": 0.159
   }
  },
  "by_prize_count": {
   "1": {
-   "n": 96743,
-   "sites": 14283,
+   "n": 96177,
+   "sites": 14183,
    "contestants": 471.0,
    "conversion": 0.277,
-   "entries_per_entrant": 4.302,
+   "entries_per_entrant": 4.298,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.329
+   "email_offered": 0.33
   },
   "2-3": {
-   "n": 14326,
-   "sites": 5207,
-   "contestants": 582.0,
+   "n": 14184,
+   "sites": 5139,
+   "contestants": 584.0,
    "conversion": 0.243,
-   "entries_per_entrant": 4.605,
+   "entries_per_entrant": 4.601,
    "days": 14.0,
    "methods": 8.0,
-   "email_offered": 0.324
+   "email_offered": 0.326
   },
   "4-9": {
-   "n": 5246,
-   "sites": 2162,
-   "contestants": 675.0,
-   "conversion": 0.227,
+   "n": 5150,
+   "sites": 2134,
+   "contestants": 688.0,
+   "conversion": 0.226,
    "entries_per_entrant": 5.147,
-   "days": 14.0,
+   "days": 15.0,
    "methods": 9.0,
-   "email_offered": 0.334
+   "email_offered": 0.33
   },
   "10+": {
-   "n": 1033,
-   "sites": 477,
-   "contestants": 1157.0,
-   "conversion": 0.187,
-   "entries_per_entrant": 5.496,
-   "days": 17.0,
+   "n": 988,
+   "sites": 472,
+   "contestants": 1340.5,
+   "conversion": 0.189,
+   "entries_per_entrant": 5.633,
+   "days": 18.0,
    "methods": 10.0,
-   "email_offered": 0.362
+   "email_offered": 0.336
   }
  },
  "by_pool_band": {
   "under_250": {
-   "n": 20307,
-   "sites": 4246,
-   "contestants": 328.0,
+   "n": 20236,
+   "sites": 4208,
+   "contestants": 327.0,
    "conversion": 0.236,
-   "entries_per_entrant": 5.135,
+   "entries_per_entrant": 5.136,
    "days": 16.0,
    "methods": 8.0,
-   "email_offered": 0.387
+   "email_offered": 0.388
   },
   "250-1k": {
-   "n": 12396,
-   "sites": 4082,
-   "contestants": 721.5,
+   "n": 12324,
+   "sites": 4051,
+   "contestants": 721.0,
    "conversion": 0.239,
-   "entries_per_entrant": 4.39,
+   "entries_per_entrant": 4.383,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.456
+   "email_offered": 0.459
   },
   "1k-5k": {
-   "n": 9459,
-   "sites": 3158,
-   "contestants": 1470.0,
-   "conversion": 0.233,
+   "n": 9399,
+   "sites": 3119,
+   "contestants": 1472.0,
+   "conversion": 0.232,
    "entries_per_entrant": 4.551,
    "days": 18.0,
    "methods": 8.0,
-   "email_offered": 0.518
+   "email_offered": 0.52
   },
   "5k+": {
-   "n": 2034,
-   "sites": 1069,
-   "contestants": 1802.5,
-   "conversion": 0.196,
-   "entries_per_entrant": 4.308,
+   "n": 1998,
+   "sites": 1051,
+   "contestants": 1823.0,
+   "conversion": 0.195,
+   "entries_per_entrant": 4.291,
    "days": 22.0,
    "methods": 7.0,
-   "email_offered": 0.437
+   "email_offered": 0.442
   }
  },
  "winners_by_prize_category": {
   "other_unclassified": {
-   "prizes": 46800,
-   "sites": 8748,
-   "campaigns": 34953,
+   "prizes": 45217,
+   "sites": 8592,
+   "campaigns": 34308,
    "winners_p50": 1.0,
    "winners_p75": 3.0,
-   "share_multi_winner": 0.337,
-   "usd_per_winner_p50": 120.0,
-   "conversion": 0.268,
-   "entries_per_entrant": 4.297,
-   "contestants": 441.5
+   "share_multi_winner": 0.325,
+   "usd_per_winner_p50": 124.0,
+   "conversion": 0.269,
+   "entries_per_entrant": 4.268,
+   "contestants": 452.0
   },
   "tech_hardware": {
-   "prizes": 30188,
-   "sites": 4938,
-   "campaigns": 22137,
+   "prizes": 30102,
+   "sites": 4926,
+   "campaigns": 22080,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
    "share_multi_winner": 0.215,
    "usd_per_winner_p50": 299.0,
    "conversion": 0.259,
-   "entries_per_entrant": 5.192,
-   "contestants": 925.0
+   "entries_per_entrant": 5.187,
+   "contestants": 923.0
   },
   "gift_card_or_cash": {
-   "prizes": 22963,
-   "sites": 4514,
-   "campaigns": 17927,
+   "prizes": 22806,
+   "sites": 4491,
+   "campaigns": 17846,
    "winners_p50": 1.0,
    "winners_p75": 2.0,
    "share_multi_winner": 0.271,
    "usd_per_winner_p50": 50.0,
    "conversion": 0.229,
-   "entries_per_entrant": 4.653,
-   "contestants": 441.0
+   "entries_per_entrant": 4.649,
+   "contestants": 442.0
   },
   "game_item_or_skin": {
-   "prizes": 17194,
-   "sites": 2730,
-   "campaigns": 11228,
+   "prizes": 17168,
+   "sites": 2722,
+   "campaigns": 11203,
    "winners_p50": 1.0,
    "winners_p75": 4.0,
    "share_multi_winner": 0.378,
-   "usd_per_winner_p50": 56.0,
+   "usd_per_winner_p50": 55.5,
    "conversion": 0.211,
-   "entries_per_entrant": 5.752,
-   "contestants": 508.0
+   "entries_per_entrant": 5.753,
+   "contestants": 507.0
   },
   "bundle_or_box": {
-   "prizes": 16071,
-   "sites": 3944,
-   "campaigns": 13410,
+   "prizes": 16026,
+   "sites": 3929,
+   "campaigns": 13370,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.248,
+   "share_multi_winner": 0.247,
    "usd_per_winner_p50": 175.0,
    "conversion": 0.259,
-   "entries_per_entrant": 4.503,
+   "entries_per_entrant": 4.496,
    "contestants": 529.0
   },
   "placeholder_name": {
-   "prizes": 7859,
-   "sites": 1292,
-   "campaigns": 5696,
+   "prizes": 7781,
+   "sites": 1277,
+   "campaigns": 5623,
    "winners_p50": 1.0,
    "winners_p75": 2.0,
-   "share_multi_winner": 0.336,
+   "share_multi_winner": 0.337,
    "usd_per_winner_p50": 200.0,
    "conversion": 0.285,
-   "entries_per_entrant": 4.505,
-   "contestants": 605.0
+   "entries_per_entrant": 4.523,
+   "contestants": 608.0
   },
   "experience_travel_tickets": {
-   "prizes": 7165,
-   "sites": 1925,
-   "campaigns": 6321,
+   "prizes": 7151,
+   "sites": 1920,
+   "campaigns": 6310,
    "winners_p50": 1.0,
    "winners_p75": 2.0,
    "share_multi_winner": 0.258,
    "usd_per_winner_p50": 400.0,
-   "conversion": 0.249,
-   "entries_per_entrant": 3.209,
+   "conversion": 0.248,
+   "entries_per_entrant": 3.204,
    "contestants": 430.0
   },
   "merch_apparel_collectible": {
-   "prizes": 6728,
-   "sites": 1838,
-   "campaigns": 5548,
+   "prizes": 6714,
+   "sites": 1831,
+   "campaigns": 5538,
    "winners_p50": 1.0,
    "winners_p75": 3.0,
    "share_multi_winner": 0.347,
    "usd_per_winner_p50": 50.0,
-   "conversion": 0.261,
-   "entries_per_entrant": 3.861,
+   "conversion": 0.26,
+   "entries_per_entrant": 3.858,
    "contestants": 504.0
   },
   "home_garden_appliance": {
@@ -3952,44 +3952,44 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.166,
    "usd_per_winner_p50": 200.0,
-   "conversion": 0.293,
+   "conversion": 0.29,
    "entries_per_entrant": 4.0,
    "contestants": 1013.0
   },
   "toys_collectibles": {
-   "prizes": 2524,
+   "prizes": 2523,
    "sites": 474,
-   "campaigns": 2297,
+   "campaigns": 2296,
    "winners_p50": 1.0,
    "winners_p75": 3.0,
    "share_multi_winner": 0.346,
    "usd_per_winner_p50": 55.0,
    "conversion": 0.254,
-   "entries_per_entrant": 4.199,
+   "entries_per_entrant": 4.195,
    "contestants": 445.0
   },
   "subscription_membership": {
-   "prizes": 2157,
-   "sites": 882,
-   "campaigns": 1637,
+   "prizes": 2150,
+   "sites": 877,
+   "campaigns": 1631,
    "winners_p50": 1.0,
    "winners_p75": 4.0,
    "share_multi_winner": 0.425,
    "usd_per_winner_p50": 150.0,
    "conversion": 0.228,
-   "entries_per_entrant": 4.055,
+   "entries_per_entrant": 4.053,
    "contestants": 494.0
   },
   "regulated_goods_firearm": {
-   "prizes": 1770,
-   "sites": 329,
-   "campaigns": 1579,
+   "prizes": 1768,
+   "sites": 327,
+   "campaigns": 1577,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.055,
-   "usd_per_winner_p50": 1117.5,
-   "conversion": 0.197,
-   "entries_per_entrant": 7.772,
+   "share_multi_winner": 0.054,
+   "usd_per_winner_p50": 1118.0,
+   "conversion": 0.195,
+   "entries_per_entrant": 7.783,
    "contestants": 2138.0
   },
   "food_drink_consumables": {
@@ -4000,33 +4000,33 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.172,
    "usd_per_winner_p50": 189.5,
-   "conversion": 0.294,
+   "conversion": 0.293,
    "entries_per_entrant": 3.683,
    "contestants": 722.0
   },
   "sports_outdoor_gear": {
-   "prizes": 1562,
-   "sites": 654,
-   "campaigns": 1366,
+   "prizes": 1558,
+   "sites": 652,
+   "campaigns": 1363,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
    "share_multi_winner": 0.205,
    "usd_per_winner_p50": 299.0,
    "conversion": 0.256,
-   "entries_per_entrant": 4.12,
-   "contestants": 812.5
+   "entries_per_entrant": 4.112,
+   "contestants": 815.0
   },
   "discount_or_coupon": {
-   "prizes": 1352,
-   "sites": 348,
-   "campaigns": 1054,
+   "prizes": 1344,
+   "sites": 344,
+   "campaigns": 1046,
    "winners_p50": 3.0,
    "winners_p75": 10.0,
-   "share_multi_winner": 0.615,
+   "share_multi_winner": 0.613,
    "usd_per_winner_p50": 100.0,
-   "conversion": 0.261,
-   "entries_per_entrant": 4.833,
-   "contestants": 752.0
+   "conversion": 0.26,
+   "entries_per_entrant": 4.811,
+   "contestants": 758.5
   },
   "beauty_wellness": {
    "prizes": 895,
@@ -4036,21 +4036,21 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.204,
    "usd_per_winner_p50": 150.0,
-   "conversion": 0.276,
+   "conversion": 0.275,
    "entries_per_entrant": 4.05,
    "contestants": 483.0
   },
   "vehicle": {
-   "prizes": 803,
-   "sites": 369,
-   "campaigns": 733,
+   "prizes": 798,
+   "sites": 368,
+   "campaigns": 728,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.196,
+   "share_multi_winner": 0.195,
    "usd_per_winner_p50": 699.0,
-   "conversion": 0.226,
-   "entries_per_entrant": 4.174,
-   "contestants": 834.0
+   "conversion": 0.223,
+   "entries_per_entrant": 4.157,
+   "contestants": 833.5
   },
   "tools_craft_diy": {
    "prizes": 790,
@@ -4065,16 +4065,16 @@
    "contestants": 1018.0
   },
   "exclusive_access": {
-   "prizes": 587,
-   "sites": 332,
-   "campaigns": 535,
+   "prizes": 576,
+   "sites": 325,
+   "campaigns": 524,
    "winners_p50": 1.0,
    "winners_p75": 10.0,
-   "share_multi_winner": 0.479,
+   "share_multi_winner": 0.481,
    "usd_per_winner_p50": 200.0,
-   "conversion": 0.268,
-   "entries_per_entrant": 4.143,
-   "contestants": 394.0
+   "conversion": 0.267,
+   "entries_per_entrant": 4.095,
+   "contestants": 392.5
   },
   "music_gear": {
    "prizes": 573,
@@ -4084,20 +4084,20 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.086,
    "usd_per_winner_p50": 399.0,
-   "conversion": 0.265,
+   "conversion": 0.263,
    "entries_per_entrant": 3.766,
    "contestants": 1447.0
   },
   "art_custom": {
-   "prizes": 217,
-   "sites": 112,
-   "campaigns": 185,
+   "prizes": 214,
+   "sites": 111,
+   "campaigns": 184,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.217,
+   "share_multi_winner": 0.206,
    "usd_per_winner_p50": 73.0,
    "conversion": 0.272,
-   "entries_per_entrant": 3.754,
+   "entries_per_entrant": 3.724,
    "contestants": 454.0
   }
  },
@@ -4110,33 +4110,33 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.095,
    "usd_per_winner_p50": 1000.0,
-   "conversion": 0.254,
+   "conversion": 0.252,
    "entries_per_entrant": 3.045,
    "contestants": 1092.0
   },
   "sports_tickets": {
-   "prizes": 673,
-   "sites": 380,
-   "campaigns": 599,
+   "prizes": 671,
+   "sites": 378,
+   "campaigns": 597,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.242,
+   "share_multi_winner": 0.243,
    "usd_per_winner_p50": 174.5,
-   "conversion": 0.255,
+   "conversion": 0.253,
    "entries_per_entrant": 3.874,
-   "contestants": 520.0
+   "contestants": 515.0
   },
   "concert_tickets": {
-   "prizes": 668,
-   "sites": 270,
-   "campaigns": 566,
+   "prizes": 664,
+   "sites": 268,
+   "campaigns": 563,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.223,
+   "share_multi_winner": 0.22,
    "usd_per_winner_p50": 500.0,
-   "conversion": 0.241,
+   "conversion": 0.239,
    "entries_per_entrant": 4.356,
-   "contestants": 651.0
+   "contestants": 636.0
   },
   "festival_tickets": {
    "prizes": 566,
@@ -4146,7 +4146,7 @@
    "winners_p75": 3.0,
    "share_multi_winner": 0.318,
    "usd_per_winner_p50": 500.0,
-   "conversion": 0.229,
+   "conversion": 0.227,
    "entries_per_entrant": 3.593,
    "contestants": 348.0
   },
@@ -4163,80 +4163,80 @@
    "contestants": 388.0
   },
   "theatre_or_show_tickets": {
-   "prizes": 140,
-   "sites": 74,
-   "campaigns": 128,
+   "prizes": 139,
+   "sites": 73,
+   "campaigns": 127,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.236,
+   "share_multi_winner": 0.237,
    "usd_per_winner_p50": 500.0,
    "conversion": 0.253,
-   "entries_per_entrant": 3.52,
-   "contestants": 357.0
+   "entries_per_entrant": 3.505,
+   "contestants": 360.0
   }
  },
  "winners_by_position": {
   "second_or_third": {
-   "prizes": 114929,
-   "sites": 15970,
-   "campaigns": 95702,
+   "prizes": 113840,
+   "sites": 15834,
+   "campaigns": 94954,
    "winners_p50": 1.0,
    "winners_p75": 2.0,
-   "share_multi_winner": 0.269,
+   "share_multi_winner": 0.266,
    "usd_per_winner_p50": 150.0,
-   "conversion": 0.256,
-   "entries_per_entrant": 4.688,
-   "contestants": 535.0
+   "conversion": 0.255,
+   "entries_per_entrant": 4.681,
+   "contestants": 537.0
   },
   "first_prize": {
-   "prizes": 41061,
-   "sites": 9857,
-   "campaigns": 41061,
+   "prizes": 40691,
+   "sites": 9761,
+   "campaigns": 40691,
    "winners_p50": 1.0,
    "winners_p75": 2.0,
-   "share_multi_winner": 0.344,
+   "share_multi_winner": 0.341,
    "usd_per_winner_p50": 100.0,
    "conversion": 0.268,
-   "entries_per_entrant": 4.1,
-   "contestants": 492.0
+   "entries_per_entrant": 4.092,
+   "contestants": 493.0
   },
   "fourth_plus": {
-   "prizes": 16655,
-   "sites": 1841,
-   "campaigns": 4932,
+   "prizes": 16068,
+   "sites": 1819,
+   "campaigns": 4810,
    "winners_p50": 1.0,
    "winners_p75": 3.0,
-   "share_multi_winner": 0.332,
+   "share_multi_winner": 0.319,
    "usd_per_winner_p50": 69.0,
    "conversion": 0.197,
-   "entries_per_entrant": 5.411,
-   "contestants": 994.0
+   "entries_per_entrant": 5.515,
+   "contestants": 1044.0
   }
  },
  "ticket_prizes_by_industry": {
   "travel_events": {
-   "prizes": 1105,
+   "prizes": 1103,
    "sites": 262,
-   "campaigns": 1035,
+   "campaigns": 1034,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.109,
+   "share_multi_winner": 0.107,
    "usd_per_winner_p50": 857.5,
-   "conversion": 0.263,
-   "entries_per_entrant": 3.005,
-   "contestants": 663.0
+   "conversion": 0.261,
+   "entries_per_entrant": 3.003,
+   "contestants": 659.0
   },
   "gaming_esports": {
-   "prizes": 611,
-   "sites": 259,
-   "campaigns": 521,
+   "prizes": 607,
+   "sites": 256,
+   "campaigns": 517,
    "winners_p50": 1.0,
    "winners_p75": 3.0,
    "share_multi_winner": 0.321,
    "usd_per_winner_p50": 130.0,
    "conversion": 0.237,
-   "entries_per_entrant": 4.664,
-   "contestants": 428.0
+   "entries_per_entrant": 4.653,
+   "contestants": 417.0
   },
   "media_entertainment": {
    "prizes": 538,
@@ -4258,7 +4258,7 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.212,
    "usd_per_winner_p50": 582.0,
-   "conversion": 0.259,
+   "conversion": 0.257,
    "entries_per_entrant": 4.392,
    "contestants": 1118.5
   },
@@ -4335,15 +4335,15 @@
    "contestants": 941.0
   },
   "nonprofit_community": {
-   "prizes": 71,
+   "prizes": 70,
    "sites": 25,
-   "campaigns": 66,
+   "campaigns": 65,
    "winners_p50": 1.0,
    "winners_p75": 1.0,
-   "share_multi_winner": 0.169,
-   "usd_per_winner_p50": 1750.0,
-   "conversion": 0.219,
-   "entries_per_entrant": 3.053,
+   "share_multi_winner": 0.171,
+   "usd_per_winner_p50": 2000.0,
+   "conversion": 0.223,
+   "entries_per_entrant": 3.04,
    "contestants": 415.0
   },
   "health_wellness_fitness": {
@@ -4354,18 +4354,18 @@
    "winners_p75": 1.0,
    "share_multi_winner": 0.246,
    "usd_per_winner_p50": 2500.0,
-   "conversion": 0.233,
+   "conversion": 0.229,
    "entries_per_entrant": 2.61,
    "contestants": 982.0
   }
  },
  "by_launch_wording": {
   "no_launch_wording": {
-   "n": 111144,
-   "sites": 16824,
-   "contestants": 489.0,
+   "n": 110374,
+   "sites": 16703,
+   "contestants": 490.0,
    "conversion": 0.27,
-   "entries_per_entrant": 4.369,
+   "entries_per_entrant": 4.363,
    "days": 14.0,
    "methods": 7.0,
    "email_offered": 0.325,
@@ -4374,54 +4374,54 @@
    "launch_action_share": 0.037
   },
   "launch_or_release": {
-   "n": 3649,
-   "sites": 1636,
-   "contestants": 607.0,
-   "conversion": 0.258,
-   "entries_per_entrant": 4.463,
+   "n": 3604,
+   "sites": 1600,
+   "contestants": 610.5,
+   "conversion": 0.257,
+   "entries_per_entrant": 4.436,
    "days": 13.0,
    "methods": 7.0,
-   "email_offered": 0.409,
-   "share_offered": 0.393,
-   "referrals_per_contestant": 0.154,
-   "launch_action_share": 0.069
+   "email_offered": 0.413,
+   "share_offered": 0.391,
+   "referrals_per_contestant": 0.15,
+   "launch_action_share": 0.068
   },
   "coming_soon_or_waitlist": {
-   "n": 1043,
-   "sites": 607,
-   "contestants": 474.0,
-   "conversion": 0.254,
-   "entries_per_entrant": 4.356,
-   "days": 12.0,
+   "n": 1014,
+   "sites": 588,
+   "contestants": 459.0,
+   "conversion": 0.255,
+   "entries_per_entrant": 4.309,
+   "days": 11.0,
    "methods": 7.0,
-   "email_offered": 0.306,
-   "share_offered": 0.401,
-   "referrals_per_contestant": 0.169,
-   "launch_action_share": 0.083
+   "email_offered": 0.311,
+   "share_offered": 0.396,
+   "referrals_per_contestant": 0.164,
+   "launch_action_share": 0.081
   },
   "crowdfunding": {
-   "n": 701,
-   "sites": 204,
+   "n": 699,
+   "sites": 203,
    "contestants": 501.0,
    "conversion": 0.23,
-   "entries_per_entrant": 11.522,
+   "entries_per_entrant": 11.551,
    "days": 15.0,
    "methods": 17.0,
-   "email_offered": 0.646,
-   "share_offered": 0.846,
+   "email_offered": 0.645,
+   "share_offered": 0.845,
    "referrals_per_contestant": 0.104,
-   "launch_action_share": 0.331
+   "launch_action_share": 0.329
   },
   "pre_order": {
-   "n": 447,
-   "sites": 191,
-   "contestants": 382.0,
+   "n": 444,
+   "sites": 188,
+   "contestants": 383.0,
    "conversion": 0.24,
-   "entries_per_entrant": 4.602,
-   "days": 17.0,
+   "entries_per_entrant": 4.601,
+   "days": 18.0,
    "methods": 7.0,
-   "email_offered": 0.407,
-   "share_offered": 0.414,
+   "email_offered": 0.408,
+   "share_offered": 0.417,
    "referrals_per_contestant": 0.139,
    "launch_action_share": 0.063
   },
@@ -4441,23 +4441,23 @@
  },
  "launch_wording_by_industry": {
   "launch_or_release": {
-   "gaming_esports": 1017,
-   "electronics_tech": 564,
-   "media_entertainment": 553,
+   "gaming_esports": 994,
+   "electronics_tech": 563,
+   "media_entertainment": 551,
    "apparel_fashion": 384,
    "health_wellness_fitness": 140,
    "sports_outdoors": 114,
-   "food_drink": 106,
-   "other": 99
+   "food_drink": 105,
+   "other": 96
   },
   "coming_soon_or_waitlist": {
-   "gaming_esports": 385,
-   "electronics_tech": 138,
+   "gaming_esports": 366,
+   "electronics_tech": 137,
    "media_entertainment": 99,
    "retail_marketplace": 51,
-   "software_saas": 44,
-   "toys_hobbies_collectibles": 41,
-   "other": 33,
+   "software_saas": 41,
+   "toys_hobbies_collectibles": 40,
+   "other": 31,
    "food_drink": 27
   },
   "crowdfunding": {
@@ -4465,12 +4465,12 @@
    "toys_hobbies_collectibles": 224,
    "electronics_tech": 51,
    "media_entertainment": 20,
-   "other": 17,
+   "other": 15,
    "art_crafts": 15
   },
   "pre_order": {
    "media_entertainment": 189,
-   "gaming_esports": 112,
+   "gaming_esports": 110,
    "toys_hobbies_collectibles": 42,
    "electronics_tech": 27
   },
@@ -4483,37 +4483,37 @@
  "campaign_start_against_release_date": {
   "spotify_presave": {
    "starts_30_plus_days_before_release": {
-    "n": 35,
-    "sites": 9,
-    "conversion": 0.161,
-    "entries_per_entrant": 5.841,
+    "n": 34,
+    "sites": 8,
+    "conversion": 0.168,
+    "entries_per_entrant": 5.958,
     "contestants": 3248.0,
-    "lead_days_p50": -58.0
+    "lead_days_p50": -56.5
    },
    "starts_under_30_days_before": {
-    "n": 51,
-    "sites": 25,
-    "conversion": 0.202,
-    "entries_per_entrant": 4.807,
-    "contestants": 1001.0,
+    "n": 50,
+    "sites": 24,
+    "conversion": 0.201,
+    "entries_per_entrant": 4.764,
+    "contestants": 996.0,
     "lead_days_p50": -10.0
    }
   },
   "steam_game": {
    "starts_30_plus_days_before_release": {
-    "n": 112,
-    "sites": 53,
+    "n": 111,
+    "sites": 52,
     "conversion": 0.181,
     "entries_per_entrant": 6.051,
-    "contestants": 409.5,
+    "contestants": 404.0,
     "lead_days_p50": -164.0
    },
    "starts_over_30_days_after": {
-    "n": 463,
-    "sites": 138,
-    "conversion": 0.214,
+    "n": 460,
+    "sites": 135,
+    "conversion": 0.215,
     "entries_per_entrant": 5.852,
-    "contestants": 482.0,
+    "contestants": 477.0,
     "lead_days_p50": 561.0
    },
    "starts_under_30_days_before": {
@@ -4536,131 +4536,131 @@
  },
  "by_named_holiday": {
   "none": {
-   "n": 105565,
-   "sites": 16641,
-   "contestants": 479.0,
+   "n": 104762,
+   "sites": 16503,
+   "contestants": 480.0,
    "conversion": 0.269,
-   "entries_per_entrant": 4.398,
+   "entries_per_entrant": 4.392,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.32
+   "email_offered": 0.321
   },
   "Christmas and advent": {
-   "n": 3569,
-   "sites": 1108,
-   "contestants": 569.0,
+   "n": 3556,
+   "sites": 1104,
+   "contestants": 570.0,
    "conversion": 0.316,
-   "entries_per_entrant": 4.115,
+   "entries_per_entrant": 4.111,
    "days": 9.0,
    "methods": 7.0,
    "email_offered": 0.366
   },
   "Summer": {
-   "n": 2041,
-   "sites": 963,
+   "n": 2039,
+   "sites": 962,
    "contestants": 630.0,
-   "conversion": 0.239,
-   "entries_per_entrant": 4.504,
+   "conversion": 0.238,
+   "entries_per_entrant": 4.507,
    "days": 17.0,
    "methods": 8.0,
-   "email_offered": 0.56
+   "email_offered": 0.561
   },
   "Anniversary or birthday": {
-   "n": 1364,
-   "sites": 788,
-   "contestants": 609.5,
+   "n": 1361,
+   "sites": 785,
+   "contestants": 610.0,
    "conversion": 0.243,
-   "entries_per_entrant": 4.322,
+   "entries_per_entrant": 4.32,
    "days": 13.0,
    "methods": 7.0,
-   "email_offered": 0.364
+   "email_offered": 0.365
   },
   "Black Friday and Cyber Monday": {
-   "n": 661,
-   "sites": 323,
-   "contestants": 932.0,
+   "n": 658,
+   "sites": 321,
+   "contestants": 937.5,
    "conversion": 0.256,
-   "entries_per_entrant": 3.73,
+   "entries_per_entrant": 3.715,
    "days": 8.0,
    "methods": 6.0,
-   "email_offered": 0.363
+   "email_offered": 0.362
   },
   "Halloween": {
-   "n": 631,
-   "sites": 382,
-   "contestants": 525.0,
+   "n": 630,
+   "sites": 381,
+   "contestants": 525.5,
    "conversion": 0.245,
-   "entries_per_entrant": 4.987,
+   "entries_per_entrant": 4.991,
    "days": 14.0,
    "methods": 8.0,
-   "email_offered": 0.409
-  },
-  "Milestone": {
-   "n": 597,
-   "sites": 412,
-   "contestants": 529.0,
-   "conversion": 0.275,
-   "entries_per_entrant": 4.112,
-   "days": 15.0,
-   "methods": 6.0,
-   "email_offered": 0.191
+   "email_offered": 0.41
   },
   "New Year": {
-   "n": 595,
-   "sites": 429,
-   "contestants": 730.0,
-   "conversion": 0.236,
+   "n": 592,
+   "sites": 428,
+   "contestants": 725.0,
+   "conversion": 0.235,
    "entries_per_entrant": 4.859,
    "days": 15.0,
    "methods": 8.0,
-   "email_offered": 0.383
+   "email_offered": 0.385
+  },
+  "Milestone": {
+   "n": 587,
+   "sites": 407,
+   "contestants": 546.0,
+   "conversion": 0.276,
+   "entries_per_entrant": 4.049,
+   "days": 15.0,
+   "methods": 6.0,
+   "email_offered": 0.194
   },
   "Valentine's Day": {
-   "n": 539,
-   "sites": 321,
-   "contestants": 505.0,
+   "n": 538,
+   "sites": 320,
+   "contestants": 499.0,
    "conversion": 0.249,
-   "entries_per_entrant": 4.933,
+   "entries_per_entrant": 4.934,
    "days": 14.0,
    "methods": 8.0,
-   "email_offered": 0.506
+   "email_offered": 0.507
   },
   "Easter": {
-   "n": 404,
-   "sites": 247,
-   "contestants": 629.5,
-   "conversion": 0.248,
-   "entries_per_entrant": 5.191,
-   "days": 14.0,
+   "n": 400,
+   "sites": 243,
+   "contestants": 632.5,
+   "conversion": 0.249,
+   "entries_per_entrant": 5.149,
+   "days": 13.5,
    "methods": 8.0,
-   "email_offered": 0.413
+   "email_offered": 0.415
   },
   "Back to school": {
    "n": 394,
    "sites": 244,
    "contestants": 894.5,
-   "conversion": 0.266,
+   "conversion": 0.264,
    "entries_per_entrant": 3.891,
    "days": 14.0,
    "methods": 7.0,
    "email_offered": 0.429
   },
   "Mother's Day": {
-   "n": 339,
-   "sites": 265,
-   "contestants": 598.0,
+   "n": 335,
+   "sites": 262,
+   "contestants": 595.0,
    "conversion": 0.286,
-   "entries_per_entrant": 3.474,
+   "entries_per_entrant": 3.437,
    "days": 11.0,
    "methods": 6.0,
-   "email_offered": 0.466
+   "email_offered": 0.469
   },
   "Father's Day": {
-   "n": 306,
-   "sites": 220,
+   "n": 304,
+   "sites": 218,
    "contestants": 842.0,
    "conversion": 0.303,
-   "entries_per_entrant": 3.919,
+   "entries_per_entrant": 3.915,
    "days": 12.0,
    "methods": 7.0,
    "email_offered": 0.49
@@ -4688,40 +4688,32 @@
  },
  "holiday_lead_days": {
   "Easter": {
-   "n": 397,
-   "sites": 242,
+   "n": 394,
+   "sites": 239,
    "start_days_before_p25": 4.0,
    "start_days_before_p50": 10.0,
    "start_days_before_p75": 19.0,
    "conversion": 0.25
   },
   "Mother's Day": {
-   "n": 337,
-   "sites": 263,
+   "n": 334,
+   "sites": 261,
    "start_days_before_p25": 6.0,
    "start_days_before_p50": 11.0,
    "start_days_before_p75": 20.0,
-   "conversion": 0.288
+   "conversion": 0.286
   },
-  "Black Friday and Cyber Monday": {
-   "n": 654,
-   "sites": 320,
-   "start_days_before_p25": 2.0,
-   "start_days_before_p50": 6.0,
-   "start_days_before_p75": 12.0,
-   "conversion": 0.257
-  },
-  "Father's Day": {
-   "n": 286,
-   "sites": 204,
-   "start_days_before_p25": 6.0,
-   "start_days_before_p50": 12.0,
-   "start_days_before_p75": 18.0,
-   "conversion": 0.296
+  "Back to school": {
+   "n": 386,
+   "sites": 238,
+   "start_days_before_p25": -3.75,
+   "start_days_before_p50": 10.0,
+   "start_days_before_p75": 23.0,
+   "conversion": 0.266
   },
   "Halloween": {
-   "n": 607,
-   "sites": 375,
+   "n": 606,
+   "sites": 374,
    "start_days_before_p25": 7.0,
    "start_days_before_p50": 16.0,
    "start_days_before_p75": 27.0,
@@ -4735,33 +4727,17 @@
    "start_days_before_p75": 20.0,
    "conversion": 0.214
   },
-  "Summer": {
-   "n": 1884,
-   "sites": 880,
-   "start_days_before_p25": -17.0,
-   "start_days_before_p50": 5.0,
-   "start_days_before_p75": 29.0,
-   "conversion": 0.235
-  },
-  "Valentine's Day": {
-   "n": 525,
-   "sites": 316,
-   "start_days_before_p25": 5.0,
-   "start_days_before_p50": 13.0,
-   "start_days_before_p75": 19.0,
-   "conversion": 0.25
-  },
-  "Back to school": {
-   "n": 386,
-   "sites": 238,
-   "start_days_before_p25": -3.75,
-   "start_days_before_p50": 10.0,
-   "start_days_before_p75": 23.0,
-   "conversion": 0.267
+  "Father's Day": {
+   "n": 284,
+   "sites": 202,
+   "start_days_before_p25": 6.0,
+   "start_days_before_p50": 12.0,
+   "start_days_before_p75": 18.0,
+   "conversion": 0.295
   },
   "Christmas and advent": {
-   "n": 3433,
-   "sites": 1083,
+   "n": 3420,
+   "sites": 1079,
    "start_days_before_p25": 9.0,
    "start_days_before_p50": 16.0,
    "start_days_before_p75": 25.0,
@@ -4774,25 +4750,49 @@
    "start_days_before_p50": 13.0,
    "start_days_before_p75": 24.0,
    "conversion": 0.243
+  },
+  "Summer": {
+   "n": 1882,
+   "sites": 879,
+   "start_days_before_p25": -17.0,
+   "start_days_before_p50": 5.0,
+   "start_days_before_p75": 29.0,
+   "conversion": 0.234
+  },
+  "Valentine's Day": {
+   "n": 524,
+   "sites": 315,
+   "start_days_before_p25": 5.0,
+   "start_days_before_p50": 13.0,
+   "start_days_before_p75": 19.0,
+   "conversion": 0.25
+  },
+  "Black Friday and Cyber Monday": {
+   "n": 651,
+   "sites": 318,
+   "start_days_before_p25": 2.0,
+   "start_days_before_p50": 6.0,
+   "start_days_before_p75": 12.0,
+   "conversion": 0.26
   }
  },
  "by_public_holiday_start": {
   "other_start": {
-   "n": 91439,
-   "sites": 15585,
+   "n": 90764,
+   "sites": 15452,
    "contestants": 492.0,
    "conversion": 0.27,
-   "entries_per_entrant": 4.382,
+   "entries_per_entrant": 4.377,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.324
+   "email_offered": 0.325
   },
   "starts_within_3_days_of_public_holiday": {
-   "n": 25866,
-   "sites": 7168,
-   "contestants": 491.5,
-   "conversion": 0.265,
-   "entries_per_entrant": 4.402,
+   "n": 25705,
+   "sites": 7125,
+   "contestants": 493.0,
+   "conversion": 0.264,
+   "entries_per_entrant": 4.396,
    "days": 14.0,
    "methods": 7.0,
    "email_offered": 0.345
@@ -4800,415 +4800,415 @@
  },
  "by_start_weekday": {
   "1": {
-   "n": 22498,
-   "sites": 6624,
+   "n": 22360,
+   "sites": 6566,
    "contestants": 479.0,
-   "conversion": 0.261,
-   "entries_per_entrant": 4.395,
+   "conversion": 0.26,
+   "entries_per_entrant": 4.392,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.357
+   "email_offered": 0.359
   },
   "3": {
-   "n": 19348,
-   "sites": 6043,
-   "contestants": 504.5,
-   "conversion": 0.276,
-   "entries_per_entrant": 4.235,
+   "n": 19213,
+   "sites": 5986,
+   "contestants": 505.0,
+   "conversion": 0.275,
+   "entries_per_entrant": 4.23,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.334
+   "email_offered": 0.336
   },
   "2": {
-   "n": 18754,
-   "sites": 6011,
-   "contestants": 499.0,
+   "n": 18606,
+   "sites": 5960,
+   "contestants": 500.0,
    "conversion": 0.265,
-   "entries_per_entrant": 4.257,
+   "entries_per_entrant": 4.256,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.312
+   "email_offered": 0.313
   },
   "4": {
-   "n": 18636,
-   "sites": 6082,
-   "contestants": 512.0,
-   "conversion": 0.27,
-   "entries_per_entrant": 4.431,
+   "n": 18524,
+   "sites": 6035,
+   "contestants": 513.0,
+   "conversion": 0.269,
+   "entries_per_entrant": 4.427,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.345
+   "email_offered": 0.347
   },
   "5": {
-   "n": 18276,
-   "sites": 5744,
-   "contestants": 521.0,
-   "conversion": 0.268,
-   "entries_per_entrant": 4.532,
+   "n": 18193,
+   "sites": 5705,
+   "contestants": 520.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 4.522,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.333
+   "email_offered": 0.335
   },
   "7": {
-   "n": 11411,
-   "sites": 4226,
-   "contestants": 449.0,
-   "conversion": 0.271,
-   "entries_per_entrant": 4.521,
+   "n": 11231,
+   "sites": 4192,
+   "contestants": 454.0,
+   "conversion": 0.272,
+   "entries_per_entrant": 4.503,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.311
+   "email_offered": 0.307
   },
   "6": {
-   "n": 8425,
-   "sites": 3516,
+   "n": 8372,
+   "sites": 3483,
    "contestants": 438.0,
-   "conversion": 0.285,
-   "entries_per_entrant": 4.44,
+   "conversion": 0.284,
+   "entries_per_entrant": 4.439,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.256
+   "email_offered": 0.258
   }
  },
  "by_start_month": {
   "12": {
-   "n": 12161,
-   "sites": 3987,
+   "n": 12068,
+   "sites": 3958,
    "contestants": 560.0,
-   "conversion": 0.308,
-   "entries_per_entrant": 4.231,
+   "conversion": 0.309,
+   "entries_per_entrant": 4.224,
    "days": 10.0,
    "methods": 7.0,
    "email_offered": 0.287
   },
   "3": {
-   "n": 10722,
-   "sites": 4106,
-   "contestants": 484.0,
+   "n": 10641,
+   "sites": 4073,
+   "contestants": 485.0,
    "conversion": 0.266,
-   "entries_per_entrant": 4.529,
+   "entries_per_entrant": 4.523,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.328
+   "email_offered": 0.329
   },
   "11": {
-   "n": 10529,
-   "sites": 3972,
-   "contestants": 487.0,
+   "n": 10433,
+   "sites": 3944,
+   "contestants": 490.0,
    "conversion": 0.269,
-   "entries_per_entrant": 4.503,
-   "days": 14.0,
+   "entries_per_entrant": 4.48,
+   "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.326
+   "email_offered": 0.327
   },
   "5": {
-   "n": 10114,
-   "sites": 3991,
+   "n": 10049,
+   "sites": 3965,
    "contestants": 477.0,
-   "conversion": 0.267,
-   "entries_per_entrant": 4.399,
+   "conversion": 0.266,
+   "entries_per_entrant": 4.398,
    "days": 15.0,
    "methods": 7.0,
    "email_offered": 0.329
   },
   "6": {
-   "n": 9914,
-   "sites": 3867,
+   "n": 9856,
+   "sites": 3839,
    "contestants": 502.0,
-   "conversion": 0.264,
-   "entries_per_entrant": 4.434,
+   "conversion": 0.263,
+   "entries_per_entrant": 4.427,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.336
+   "email_offered": 0.337
   },
   "4": {
-   "n": 9756,
-   "sites": 3928,
+   "n": 9675,
+   "sites": 3888,
    "contestants": 471.0,
    "conversion": 0.265,
-   "entries_per_entrant": 4.485,
+   "entries_per_entrant": 4.472,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.332
+   "email_offered": 0.334
   },
   "10": {
-   "n": 9741,
-   "sites": 3899,
-   "contestants": 472.0,
-   "conversion": 0.265,
-   "entries_per_entrant": 4.333,
-   "days": 14.5,
+   "n": 9671,
+   "sites": 3867,
+   "contestants": 474.0,
+   "conversion": 0.264,
+   "entries_per_entrant": 4.32,
+   "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.348
+   "email_offered": 0.349
   },
   "2": {
-   "n": 9352,
-   "sites": 3878,
+   "n": 9286,
+   "sites": 3839,
    "contestants": 474.0,
    "conversion": 0.266,
-   "entries_per_entrant": 4.335,
+   "entries_per_entrant": 4.339,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.336
+   "email_offered": 0.337
   },
   "8": {
-   "n": 9289,
-   "sites": 3814,
+   "n": 9221,
+   "sites": 3780,
    "contestants": 508.0,
-   "conversion": 0.263,
+   "conversion": 0.262,
    "entries_per_entrant": 4.311,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.339
+   "email_offered": 0.34
   },
   "7": {
-   "n": 9229,
-   "sites": 3862,
-   "contestants": 499.0,
+   "n": 9173,
+   "sites": 3840,
+   "contestants": 498.0,
    "conversion": 0.265,
-   "entries_per_entrant": 4.341,
+   "entries_per_entrant": 4.34,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.327
+   "email_offered": 0.328
   },
   "9": {
-   "n": 8737,
-   "sites": 3662,
+   "n": 8675,
+   "sites": 3640,
    "contestants": 494.0,
    "conversion": 0.256,
-   "entries_per_entrant": 4.435,
+   "entries_per_entrant": 4.436,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.35
+   "email_offered": 0.351
   },
   "1": {
-   "n": 7804,
-   "sites": 3390,
+   "n": 7751,
+   "sites": 3368,
    "contestants": 479.0,
    "conversion": 0.267,
-   "entries_per_entrant": 4.327,
+   "entries_per_entrant": 4.313,
    "days": 15.0,
    "methods": 7.0,
-   "email_offered": 0.322
+   "email_offered": 0.323
   }
  },
  "by_start_month_and_industry": {
   "gaming_esports": {
    "12": {
-    "n": 2639,
-    "sites": 1126,
-    "contestants": 490.0,
+    "n": 2591,
+    "sites": 1109,
+    "contestants": 488.0,
     "conversion": 0.288,
-    "entries_per_entrant": 4.911,
+    "entries_per_entrant": 4.903,
     "days": 9.0,
     "methods": 8.0,
-    "email_offered": 0.171
+    "email_offered": 0.17
    },
    "3": {
-    "n": 2281,
-    "sites": 1070,
+    "n": 2244,
+    "sites": 1050,
     "contestants": 371.0,
     "conversion": 0.267,
-    "entries_per_entrant": 5.298,
+    "entries_per_entrant": 5.28,
     "days": 13.0,
     "methods": 8.0,
     "email_offered": 0.175
    },
    "5": {
-    "n": 2125,
-    "sites": 1010,
-    "contestants": 403.0,
-    "conversion": 0.262,
-    "entries_per_entrant": 5.158,
+    "n": 2098,
+    "sites": 995,
+    "contestants": 404.0,
+    "conversion": 0.263,
+    "entries_per_entrant": 5.171,
     "days": 13.0,
     "methods": 8.0,
-    "email_offered": 0.17
+    "email_offered": 0.168
    },
    "2": {
-    "n": 2106,
-    "sites": 1058,
-    "contestants": 344.5,
+    "n": 2076,
+    "sites": 1037,
+    "contestants": 342.5,
     "conversion": 0.262,
-    "entries_per_entrant": 5.011,
+    "entries_per_entrant": 5.015,
     "days": 12.0,
     "methods": 8.0,
-    "email_offered": 0.159
+    "email_offered": 0.16
    },
    "10": {
-    "n": 2084,
-    "sites": 1028,
-    "contestants": 374.0,
+    "n": 2036,
+    "sites": 1011,
+    "contestants": 376.5,
     "conversion": 0.267,
-    "entries_per_entrant": 4.947,
-    "days": 12.0,
-    "methods": 7.0,
-    "email_offered": 0.156
+    "entries_per_entrant": 4.916,
+    "days": 13.0,
+    "methods": 8.0,
+    "email_offered": 0.155
+   },
+   "6": {
+    "n": 2012,
+    "sites": 959,
+    "contestants": 424.5,
+    "conversion": 0.261,
+    "entries_per_entrant": 4.992,
+    "days": 13.0,
+    "methods": 8.0,
+    "email_offered": 0.172
    },
    "11": {
-    "n": 2056,
-    "sites": 968,
-    "contestants": 367.0,
-    "conversion": 0.264,
-    "entries_per_entrant": 4.97,
+    "n": 2000,
+    "sites": 954,
+    "contestants": 382.0,
+    "conversion": 0.262,
+    "entries_per_entrant": 4.898,
     "days": 12.0,
     "methods": 7.0,
     "email_offered": 0.154
    },
-   "6": {
-    "n": 2035,
-    "sites": 971,
-    "contestants": 421.0,
-    "conversion": 0.261,
-    "entries_per_entrant": 4.993,
-    "days": 12.0,
-    "methods": 8.0,
-    "email_offered": 0.175
-   },
    "4": {
-    "n": 2030,
-    "sites": 976,
-    "contestants": 416.5,
+    "n": 1998,
+    "sites": 958,
+    "contestants": 415.5,
     "conversion": 0.269,
-    "entries_per_entrant": 5.261,
+    "entries_per_entrant": 5.246,
     "days": 12.0,
     "methods": 8.0,
     "email_offered": 0.152
    },
    "8": {
-    "n": 1947,
-    "sites": 992,
-    "contestants": 392.0,
+    "n": 1914,
+    "sites": 976,
+    "contestants": 391.5,
     "conversion": 0.256,
-    "entries_per_entrant": 4.909,
+    "entries_per_entrant": 4.916,
     "days": 13.0,
     "methods": 8.0,
-    "email_offered": 0.142
+    "email_offered": 0.138
    },
    "7": {
-    "n": 1878,
-    "sites": 942,
-    "contestants": 409.5,
-    "conversion": 0.276,
-    "entries_per_entrant": 4.83,
+    "n": 1853,
+    "sites": 931,
+    "contestants": 411.0,
+    "conversion": 0.278,
+    "entries_per_entrant": 4.827,
     "days": 12.0,
-    "methods": 7.5,
-    "email_offered": 0.161
+    "methods": 8.0,
+    "email_offered": 0.158
    },
    "9": {
-    "n": 1834,
-    "sites": 902,
-    "contestants": 400.5,
-    "conversion": 0.255,
-    "entries_per_entrant": 4.985,
+    "n": 1804,
+    "sites": 890,
+    "contestants": 402.0,
+    "conversion": 0.256,
+    "entries_per_entrant": 4.989,
     "days": 13.0,
     "methods": 8.0,
-    "email_offered": 0.187
+    "email_offered": 0.184
    },
    "1": {
-    "n": 1657,
-    "sites": 883,
-    "contestants": 381.0,
-    "conversion": 0.263,
-    "entries_per_entrant": 4.994,
+    "n": 1624,
+    "sites": 869,
+    "contestants": 378.5,
+    "conversion": 0.262,
+    "entries_per_entrant": 4.966,
     "days": 13.0,
     "methods": 7.0,
-    "email_offered": 0.157
+    "email_offered": 0.155
    }
   },
   "media_entertainment": {
    "12": {
-    "n": 2152,
-    "sites": 452,
+    "n": 2149,
+    "sites": 451,
     "contestants": 485.0,
-    "conversion": 0.258,
-    "entries_per_entrant": 5.301,
+    "conversion": 0.259,
+    "entries_per_entrant": 5.303,
     "days": 14.0,
     "methods": 8.0,
     "email_offered": 0.319
    },
    "3": {
-    "n": 2008,
-    "sites": 486,
+    "n": 2001,
+    "sites": 484,
     "contestants": 400.0,
     "conversion": 0.245,
-    "entries_per_entrant": 5.011,
+    "entries_per_entrant": 5.016,
     "days": 17.0,
     "methods": 8.0,
-    "email_offered": 0.434
+    "email_offered": 0.433
    },
    "11": {
-    "n": 1933,
-    "sites": 445,
-    "contestants": 370.0,
-    "conversion": 0.246,
-    "entries_per_entrant": 5.339,
+    "n": 1930,
+    "sites": 444,
+    "contestants": 369.0,
+    "conversion": 0.245,
+    "entries_per_entrant": 5.338,
     "days": 21.0,
     "methods": 8.0,
     "email_offered": 0.383
    },
    "10": {
-    "n": 1896,
-    "sites": 403,
-    "contestants": 407.0,
+    "n": 1894,
+    "sites": 402,
+    "contestants": 405.5,
     "conversion": 0.245,
-    "entries_per_entrant": 4.547,
-    "days": 15.0,
+    "entries_per_entrant": 4.543,
+    "days": 16.0,
     "methods": 7.0,
     "email_offered": 0.476
    },
    "6": {
-    "n": 1830,
-    "sites": 429,
-    "contestants": 391.0,
+    "n": 1827,
+    "sites": 426,
+    "contestants": 390.0,
     "conversion": 0.238,
-    "entries_per_entrant": 5.37,
+    "entries_per_entrant": 5.372,
     "days": 19.0,
     "methods": 8.0,
-    "email_offered": 0.472
+    "email_offered": 0.473
    },
    "4": {
-    "n": 1818,
-    "sites": 430,
-    "contestants": 382.5,
+    "n": 1815,
+    "sites": 428,
+    "contestants": 383.0,
     "conversion": 0.238,
-    "entries_per_entrant": 5.078,
+    "entries_per_entrant": 5.082,
     "days": 17.0,
     "methods": 8.0,
     "email_offered": 0.431
    },
    "5": {
-    "n": 1780,
-    "sites": 437,
+    "n": 1776,
+    "sites": 434,
     "contestants": 371.0,
     "conversion": 0.245,
-    "entries_per_entrant": 4.956,
+    "entries_per_entrant": 4.965,
     "days": 18.0,
     "methods": 8.0,
     "email_offered": 0.427
    },
    "2": {
-    "n": 1773,
-    "sites": 450,
+    "n": 1769,
+    "sites": 447,
     "contestants": 423.0,
     "conversion": 0.241,
-    "entries_per_entrant": 4.711,
+    "entries_per_entrant": 4.721,
     "days": 16.5,
     "methods": 7.0,
     "email_offered": 0.457
    },
    "8": {
-    "n": 1681,
-    "sites": 412,
-    "contestants": 396.0,
-    "conversion": 0.237,
-    "entries_per_entrant": 5.017,
+    "n": 1680,
+    "sites": 411,
+    "contestants": 396.5,
+    "conversion": 0.236,
+    "entries_per_entrant": 5.019,
     "days": 19.0,
     "methods": 8.0,
-    "email_offered": 0.462
+    "email_offered": 0.463
    },
    "7": {
-    "n": 1667,
-    "sites": 453,
+    "n": 1665,
+    "sites": 451,
     "contestants": 387.0,
     "conversion": 0.24,
     "entries_per_entrant": 4.86,
@@ -5217,9 +5217,9 @@
     "email_offered": 0.422
    },
    "9": {
-    "n": 1563,
-    "sites": 405,
-    "contestants": 402.0,
+    "n": 1561,
+    "sites": 403,
+    "contestants": 404.0,
     "conversion": 0.225,
     "entries_per_entrant": 4.961,
     "days": 21.0,
@@ -5227,11 +5227,11 @@
     "email_offered": 0.477
    },
    "1": {
-    "n": 1483,
-    "sites": 399,
-    "contestants": 421.0,
+    "n": 1482,
+    "sites": 398,
+    "contestants": 420.5,
     "conversion": 0.236,
-    "entries_per_entrant": 4.927,
+    "entries_per_entrant": 4.923,
     "days": 18.0,
     "methods": 8.0,
     "email_offered": 0.464
@@ -5239,21 +5239,21 @@
   },
   "electronics_tech": {
    "12": {
-    "n": 2120,
-    "sites": 559,
+    "n": 2114,
+    "sites": 557,
     "contestants": 1006.0,
     "conversion": 0.385,
-    "entries_per_entrant": 4.093,
+    "entries_per_entrant": 4.086,
     "days": 8.0,
     "methods": 6.0,
     "email_offered": 0.191
    },
    "11": {
-    "n": 1410,
-    "sites": 539,
-    "contestants": 896.5,
+    "n": 1406,
+    "sites": 537,
+    "contestants": 893.5,
     "conversion": 0.282,
-    "entries_per_entrant": 4.835,
+    "entries_per_entrant": 4.834,
     "days": 13.0,
     "methods": 7.0,
     "email_offered": 0.249
@@ -5262,36 +5262,36 @@
     "n": 1375,
     "sites": 500,
     "contestants": 845.0,
-    "conversion": 0.289,
+    "conversion": 0.288,
     "entries_per_entrant": 4.544,
     "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.248
    },
    "8": {
-    "n": 1336,
-    "sites": 491,
-    "contestants": 1083.5,
-    "conversion": 0.285,
+    "n": 1332,
+    "sites": 488,
+    "contestants": 1077.5,
+    "conversion": 0.283,
     "entries_per_entrant": 4.731,
     "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.219
    },
    "6": {
-    "n": 1299,
-    "sites": 485,
-    "contestants": 823.0,
+    "n": 1294,
+    "sites": 483,
+    "contestants": 822.0,
     "conversion": 0.303,
-    "entries_per_entrant": 4.617,
+    "entries_per_entrant": 4.593,
     "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.212
+    "email_offered": 0.213
    },
    "5": {
-    "n": 1254,
-    "sites": 497,
-    "contestants": 849.0,
+    "n": 1250,
+    "sites": 495,
+    "contestants": 847.5,
     "conversion": 0.279,
     "entries_per_entrant": 4.648,
     "days": 15.0,
@@ -5299,60 +5299,60 @@
     "email_offered": 0.23
    },
    "10": {
-    "n": 1217,
-    "sites": 497,
-    "contestants": 768.0,
-    "conversion": 0.291,
-    "entries_per_entrant": 4.509,
+    "n": 1213,
+    "sites": 496,
+    "contestants": 770.0,
+    "conversion": 0.29,
+    "entries_per_entrant": 4.51,
     "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.245
+    "email_offered": 0.246
    },
-   "4": {
-    "n": 1188,
-    "sites": 483,
-    "contestants": 870.0,
-    "conversion": 0.273,
-    "entries_per_entrant": 4.86,
-    "days": 14.0,
+   "9": {
+    "n": 1180,
+    "sites": 473,
+    "contestants": 893.5,
+    "conversion": 0.277,
+    "entries_per_entrant": 4.945,
+    "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.244
    },
-   "9": {
-    "n": 1186,
-    "sites": 475,
-    "contestants": 902.0,
-    "conversion": 0.277,
-    "entries_per_entrant": 4.952,
-    "days": 15.0,
+   "4": {
+    "n": 1179,
+    "sites": 481,
+    "contestants": 861.0,
+    "conversion": 0.274,
+    "entries_per_entrant": 4.847,
+    "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.245
+    "email_offered": 0.246
    },
    "7": {
-    "n": 1174,
-    "sites": 470,
-    "contestants": 944.0,
-    "conversion": 0.299,
-    "entries_per_entrant": 4.709,
+    "n": 1171,
+    "sites": 469,
+    "contestants": 943.0,
+    "conversion": 0.3,
+    "entries_per_entrant": 4.702,
     "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.239
    },
    "2": {
-    "n": 1127,
-    "sites": 444,
-    "contestants": 820.0,
+    "n": 1126,
+    "sites": 443,
+    "contestants": 817.5,
     "conversion": 0.295,
     "entries_per_entrant": 4.583,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.257
+    "email_offered": 0.258
    },
    "1": {
     "n": 913,
     "sites": 417,
     "contestants": 990.0,
-    "conversion": 0.298,
+    "conversion": 0.296,
     "entries_per_entrant": 4.455,
     "days": 15.0,
     "methods": 7.0,
@@ -5384,21 +5384,21 @@
     "n": 414,
     "sites": 159,
     "contestants": 373.5,
-    "conversion": 0.256,
+    "conversion": 0.255,
     "entries_per_entrant": 3.709,
     "days": 12.0,
     "methods": 6.0,
     "email_offered": 0.42
    },
    "3": {
-    "n": 411,
-    "sites": 153,
+    "n": 410,
+    "sites": 152,
     "contestants": 403.0,
     "conversion": 0.26,
-    "entries_per_entrant": 3.913,
+    "entries_per_entrant": 3.914,
     "days": 13.5,
     "methods": 6.0,
-    "email_offered": 0.416
+    "email_offered": 0.417
    },
    "6": {
     "n": 407,
@@ -5421,54 +5421,44 @@
     "email_offered": 0.312
    },
    "4": {
-    "n": 391,
-    "sites": 162,
-    "contestants": 435.0,
+    "n": 390,
+    "sites": 161,
+    "contestants": 434.5,
     "conversion": 0.248,
-    "entries_per_entrant": 4.222,
+    "entries_per_entrant": 4.213,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.391
+    "email_offered": 0.39
    },
    "2": {
-    "n": 390,
-    "sites": 150,
-    "contestants": 439.0,
+    "n": 389,
+    "sites": 149,
+    "contestants": 438.0,
     "conversion": 0.258,
-    "entries_per_entrant": 3.752,
+    "entries_per_entrant": 3.742,
     "days": 15.0,
     "methods": 6.0,
-    "email_offered": 0.367
+    "email_offered": 0.368
    },
    "10": {
     "n": 380,
     "sites": 154,
     "contestants": 430.0,
-    "conversion": 0.246,
+    "conversion": 0.245,
     "entries_per_entrant": 4.466,
     "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.445
    },
    "8": {
-    "n": 337,
-    "sites": 146,
-    "contestants": 416.0,
-    "conversion": 0.254,
-    "entries_per_entrant": 3.994,
+    "n": 336,
+    "sites": 145,
+    "contestants": 414.5,
+    "conversion": 0.253,
+    "entries_per_entrant": 3.995,
     "days": 14.0,
     "methods": 7.0,
-    "email_offered": 0.398
-   },
-   "1": {
-    "n": 320,
-    "sites": 134,
-    "contestants": 412.0,
-    "conversion": 0.246,
-    "entries_per_entrant": 4.099,
-    "days": 16.0,
-    "methods": 6.0,
-    "email_offered": 0.372
+    "email_offered": 0.399
    },
    "9": {
     "n": 320,
@@ -5479,6 +5469,16 @@
     "days": 15.0,
     "methods": 7.0,
     "email_offered": 0.412
+   },
+   "1": {
+    "n": 319,
+    "sites": 133,
+    "contestants": 413.0,
+    "conversion": 0.245,
+    "entries_per_entrant": 4.05,
+    "days": 16.0,
+    "methods": 6.0,
+    "email_offered": 0.37
    }
   },
   "food_drink": {
@@ -5502,6 +5502,16 @@
     "methods": 6.0,
     "email_offered": 0.512
    },
+   "3": {
+    "n": 408,
+    "sites": 183,
+    "contestants": 668.0,
+    "conversion": 0.276,
+    "entries_per_entrant": 3.578,
+    "days": 21.0,
+    "methods": 6.0,
+    "email_offered": 0.527
+   },
    "12": {
     "n": 408,
     "sites": 163,
@@ -5511,16 +5521,6 @@
     "days": 12.0,
     "methods": 6.0,
     "email_offered": 0.51
-   },
-   "3": {
-    "n": 408,
-    "sites": 183,
-    "contestants": 668.0,
-    "conversion": 0.28,
-    "entries_per_entrant": 3.578,
-    "days": 21.0,
-    "methods": 6.0,
-    "email_offered": 0.527
    },
    "4": {
     "n": 405,
@@ -5536,7 +5536,7 @@
     "n": 393,
     "sites": 210,
     "contestants": 681.0,
-    "conversion": 0.244,
+    "conversion": 0.243,
     "entries_per_entrant": 3.459,
     "days": 22.0,
     "methods": 6.0,
@@ -5546,7 +5546,7 @@
     "n": 392,
     "sites": 215,
     "contestants": 736.0,
-    "conversion": 0.266,
+    "conversion": 0.263,
     "entries_per_entrant": 3.34,
     "days": 22.0,
     "methods": 6.0,
@@ -5573,14 +5573,14 @@
     "email_offered": 0.541
    },
    "8": {
-    "n": 355,
-    "sites": 189,
-    "contestants": 662.0,
-    "conversion": 0.283,
-    "entries_per_entrant": 3.34,
+    "n": 354,
+    "sites": 188,
+    "contestants": 666.5,
+    "conversion": 0.282,
+    "entries_per_entrant": 3.339,
     "days": 18.0,
     "methods": 6.0,
-    "email_offered": 0.563
+    "email_offered": 0.565
    },
    "2": {
     "n": 333,
@@ -5615,14 +5615,14 @@
     "email_offered": 0.535
    },
    "5": {
-    "n": 445,
-    "sites": 246,
-    "contestants": 818.0,
+    "n": 444,
+    "sites": 245,
+    "contestants": 830.5,
     "conversion": 0.247,
     "entries_per_entrant": 3.716,
     "days": 17.0,
     "methods": 6.0,
-    "email_offered": 0.569
+    "email_offered": 0.568
    },
    "6": {
     "n": 411,
@@ -5668,21 +5668,21 @@
     "n": 395,
     "sites": 237,
     "contestants": 1047.0,
-    "conversion": 0.241,
+    "conversion": 0.24,
     "entries_per_entrant": 3.639,
     "days": 16.0,
     "methods": 6.0,
     "email_offered": 0.514
    },
    "8": {
-    "n": 373,
-    "sites": 241,
-    "contestants": 970.0,
-    "conversion": 0.244,
-    "entries_per_entrant": 4.103,
+    "n": 372,
+    "sites": 240,
+    "contestants": 981.5,
+    "conversion": 0.243,
+    "entries_per_entrant": 4.083,
     "days": 18.0,
     "methods": 6.0,
-    "email_offered": 0.509
+    "email_offered": 0.511
    },
    "11": {
     "n": 366,
@@ -5727,24 +5727,24 @@
   },
   "apparel_fashion": {
    "11": {
-    "n": 439,
-    "sites": 181,
-    "contestants": 538.0,
+    "n": 438,
+    "sites": 180,
+    "contestants": 540.0,
     "conversion": 0.293,
-    "entries_per_entrant": 2.557,
+    "entries_per_entrant": 2.549,
     "days": 8.0,
     "methods": 4.0,
-    "email_offered": 0.499
+    "email_offered": 0.5
    },
    "3": {
-    "n": 426,
+    "n": 425,
     "sites": 167,
-    "contestants": 856.0,
+    "contestants": 854.0,
     "conversion": 0.323,
-    "entries_per_entrant": 2.398,
+    "entries_per_entrant": 2.393,
     "days": 7.0,
     "methods": 4.0,
-    "email_offered": 0.491
+    "email_offered": 0.489
    },
    "2": {
     "n": 415,
@@ -5760,7 +5760,7 @@
     "n": 412,
     "sites": 167,
     "contestants": 688.0,
-    "conversion": 0.344,
+    "conversion": 0.342,
     "entries_per_entrant": 2.568,
     "days": 7.0,
     "methods": 4.0,
@@ -5770,47 +5770,47 @@
     "n": 392,
     "sites": 166,
     "contestants": 548.0,
-    "conversion": 0.309,
+    "conversion": 0.308,
     "entries_per_entrant": 2.661,
     "days": 9.0,
     "methods": 4.0,
     "email_offered": 0.515
    },
    "9": {
-    "n": 391,
-    "sites": 182,
+    "n": 390,
+    "sites": 181,
     "contestants": 636.0,
     "conversion": 0.31,
-    "entries_per_entrant": 2.719,
+    "entries_per_entrant": 2.723,
     "days": 9.0,
     "methods": 4.0,
-    "email_offered": 0.524
+    "email_offered": 0.526
    },
    "12": {
-    "n": 387,
-    "sites": 148,
-    "contestants": 659.0,
-    "conversion": 0.319,
-    "entries_per_entrant": 1.989,
+    "n": 386,
+    "sites": 147,
+    "contestants": 661.0,
+    "conversion": 0.317,
+    "entries_per_entrant": 1.985,
     "days": 5.0,
     "methods": 3.0,
-    "email_offered": 0.442
+    "email_offered": 0.44
    },
    "6": {
-    "n": 381,
-    "sites": 149,
-    "contestants": 655.0,
-    "conversion": 0.301,
-    "entries_per_entrant": 2.781,
+    "n": 380,
+    "sites": 148,
+    "contestants": 662.5,
+    "conversion": 0.302,
+    "entries_per_entrant": 2.777,
     "days": 7.0,
     "methods": 4.0,
-    "email_offered": 0.556
+    "email_offered": 0.558
    },
    "4": {
     "n": 374,
     "sites": 154,
     "contestants": 721.0,
-    "conversion": 0.313,
+    "conversion": 0.312,
     "entries_per_entrant": 2.171,
     "days": 8.0,
     "methods": 4.0,
@@ -5827,20 +5827,20 @@
     "email_offered": 0.524
    },
    "7": {
-    "n": 338,
-    "sites": 160,
-    "contestants": 519.0,
-    "conversion": 0.297,
+    "n": 337,
+    "sites": 159,
+    "contestants": 514.0,
+    "conversion": 0.298,
     "entries_per_entrant": 2.643,
     "days": 9.0,
     "methods": 4.0,
-    "email_offered": 0.527
+    "email_offered": 0.525
    },
    "1": {
     "n": 328,
     "sites": 146,
     "contestants": 478.0,
-    "conversion": 0.313,
+    "conversion": 0.312,
     "entries_per_entrant": 2.569,
     "days": 11.0,
     "methods": 4.0,
@@ -5849,141 +5849,141 @@
   },
   "other": {
    "4": {
-    "n": 457,
-    "sites": 242,
-    "contestants": 321.0,
-    "conversion": 0.301,
-    "entries_per_entrant": 4.292,
+    "n": 441,
+    "sites": 234,
+    "contestants": 324.0,
+    "conversion": 0.298,
+    "entries_per_entrant": 4.255,
     "days": 10.0,
     "methods": 6.0,
-    "email_offered": 0.112
+    "email_offered": 0.113
    },
    "3": {
-    "n": 441,
-    "sites": 259,
-    "contestants": 360.0,
-    "conversion": 0.285,
-    "entries_per_entrant": 4.761,
+    "n": 423,
+    "sites": 251,
+    "contestants": 358.0,
+    "conversion": 0.29,
+    "entries_per_entrant": 4.811,
     "days": 11.0,
     "methods": 7.0,
-    "email_offered": 0.111
+    "email_offered": 0.113
    },
    "5": {
-    "n": 425,
-    "sites": 237,
+    "n": 415,
+    "sites": 233,
     "contestants": 319.0,
-    "conversion": 0.293,
-    "entries_per_entrant": 4.734,
+    "conversion": 0.292,
+    "entries_per_entrant": 4.711,
     "days": 12.0,
     "methods": 6.0,
-    "email_offered": 0.104
+    "email_offered": 0.099
    },
    "6": {
-    "n": 405,
-    "sites": 215,
+    "n": 401,
+    "sites": 211,
     "contestants": 343.0,
-    "conversion": 0.282,
+    "conversion": 0.283,
     "entries_per_entrant": 4.744,
     "days": 12.0,
     "methods": 7.0,
-    "email_offered": 0.114
+    "email_offered": 0.115
    },
    "12": {
-    "n": 400,
-    "sites": 244,
-    "contestants": 299.5,
-    "conversion": 0.304,
-    "entries_per_entrant": 3.723,
+    "n": 385,
+    "sites": 242,
+    "contestants": 298.0,
+    "conversion": 0.315,
+    "entries_per_entrant": 3.734,
     "days": 10.0,
     "methods": 5.0,
-    "email_offered": 0.087
+    "email_offered": 0.07
    },
    "11": {
-    "n": 393,
-    "sites": 232,
+    "n": 379,
+    "sites": 227,
     "contestants": 298.0,
     "conversion": 0.289,
-    "entries_per_entrant": 4.229,
+    "entries_per_entrant": 4.204,
     "days": 10.0,
     "methods": 6.0,
-    "email_offered": 0.12
+    "email_offered": 0.119
    },
    "2": {
-    "n": 365,
-    "sites": 233,
+    "n": 353,
+    "sites": 228,
     "contestants": 303.0,
-    "conversion": 0.271,
-    "entries_per_entrant": 4.031,
+    "conversion": 0.277,
+    "entries_per_entrant": 4.134,
     "days": 11.0,
     "methods": 6.0,
     "email_offered": 0.088
    },
    "7": {
-    "n": 353,
-    "sites": 205,
-    "contestants": 318.0,
+    "n": 345,
+    "sites": 202,
+    "contestants": 317.0,
     "conversion": 0.264,
-    "entries_per_entrant": 4.6,
+    "entries_per_entrant": 4.643,
     "days": 9.0,
     "methods": 7.0,
     "email_offered": 0.119
    },
    "8": {
-    "n": 347,
-    "sites": 207,
-    "contestants": 347.0,
-    "conversion": 0.262,
-    "entries_per_entrant": 4.398,
+    "n": 342,
+    "sites": 205,
+    "contestants": 342.5,
+    "conversion": 0.264,
+    "entries_per_entrant": 4.419,
     "days": 10.0,
     "methods": 7.0,
-    "email_offered": 0.15
+    "email_offered": 0.146
    },
    "10": {
-    "n": 339,
-    "sites": 220,
-    "contestants": 291.0,
+    "n": 336,
+    "sites": 217,
+    "contestants": 294.0,
     "conversion": 0.281,
-    "entries_per_entrant": 4.197,
+    "entries_per_entrant": 4.231,
     "days": 10.0,
     "methods": 6.0,
-    "email_offered": 0.133
+    "email_offered": 0.131
    },
    "1": {
-    "n": 312,
-    "sites": 209,
-    "contestants": 305.0,
-    "conversion": 0.272,
-    "entries_per_entrant": 3.821,
-    "days": 11.5,
-    "methods": 6.0,
-    "email_offered": 0.08
-   },
-   "9": {
-    "n": 308,
-    "sites": 189,
-    "contestants": 302.0,
-    "conversion": 0.269,
-    "entries_per_entrant": 4.415,
+    "n": 307,
+    "sites": 205,
+    "contestants": 304.0,
+    "conversion": 0.273,
+    "entries_per_entrant": 3.826,
     "days": 12.0,
     "methods": 6.0,
-    "email_offered": 0.088
+    "email_offered": 0.081
+   },
+   "9": {
+    "n": 303,
+    "sites": 184,
+    "contestants": 302.0,
+    "conversion": 0.271,
+    "entries_per_entrant": 4.429,
+    "days": 12.0,
+    "methods": 6.0,
+    "email_offered": 0.086
    }
   },
   "travel_events": {
    "7": {
-    "n": 366,
+    "n": 365,
     "sites": 148,
-    "contestants": 494.0,
-    "conversion": 0.26,
-    "entries_per_entrant": 3.267,
+    "contestants": 490.0,
+    "conversion": 0.25,
+    "entries_per_entrant": 3.269,
     "days": 17.0,
     "methods": 6.0,
-    "email_offered": 0.454
+    "email_offered": 0.455
    },
    "5": {
-    "n": 349,
-    "sites": 133,
-    "contestants": 449.0,
+    "n": 347,
+    "sites": 131,
+    "contestants": 448.0,
     "conversion": 0.255,
     "entries_per_entrant": 3.254,
     "days": 15.0,
@@ -5994,87 +5994,87 @@
     "n": 341,
     "sites": 145,
     "contestants": 528.0,
-    "conversion": 0.263,
+    "conversion": 0.262,
     "entries_per_entrant": 3.215,
     "days": 15.0,
     "methods": 6.0,
     "email_offered": 0.469
    },
    "3": {
-    "n": 340,
-    "sites": 133,
-    "contestants": 450.5,
+    "n": 338,
+    "sites": 131,
+    "contestants": 456.5,
     "conversion": 0.262,
-    "entries_per_entrant": 3.304,
+    "entries_per_entrant": 3.296,
     "days": 16.0,
     "methods": 6.0,
     "email_offered": 0.429
    },
    "12": {
-    "n": 338,
-    "sites": 120,
-    "contestants": 609.0,
+    "n": 337,
+    "sites": 119,
+    "contestants": 610.0,
     "conversion": 0.322,
-    "entries_per_entrant": 3.307,
+    "entries_per_entrant": 3.316,
     "days": 11.0,
     "methods": 6.0,
-    "email_offered": 0.37
+    "email_offered": 0.368
    },
    "6": {
-    "n": 335,
-    "sites": 132,
-    "contestants": 507.0,
-    "conversion": 0.271,
-    "entries_per_entrant": 3.274,
+    "n": 334,
+    "sites": 131,
+    "contestants": 503.0,
+    "conversion": 0.27,
+    "entries_per_entrant": 3.277,
     "days": 17.0,
     "methods": 6.0,
-    "email_offered": 0.504
+    "email_offered": 0.506
    },
    "8": {
-    "n": 332,
-    "sites": 146,
-    "contestants": 475.5,
-    "conversion": 0.266,
-    "entries_per_entrant": 3.307,
+    "n": 331,
+    "sites": 145,
+    "contestants": 478.0,
+    "conversion": 0.265,
+    "entries_per_entrant": 3.311,
     "days": 16.0,
     "methods": 6.0,
-    "email_offered": 0.494
+    "email_offered": 0.495
    },
    "10": {
     "n": 327,
     "sites": 125,
     "contestants": 476.0,
-    "conversion": 0.29,
+    "conversion": 0.288,
     "entries_per_entrant": 3.18,
     "days": 15.0,
     "methods": 6.0,
     "email_offered": 0.382
    },
    "4": {
-    "n": 326,
-    "sites": 140,
-    "contestants": 399.0,
+    "n": 325,
+    "sites": 139,
+    "contestants": 394.0,
     "conversion": 0.259,
-    "entries_per_entrant": 3.233,
+    "entries_per_entrant": 3.24,
     "days": 15.0,
     "methods": 6.0,
-    "email_offered": 0.433
+    "email_offered": 0.434
    },
    "9": {
-    "n": 322,
-    "sites": 128,
+    "n": 321,
+    "sites": 127,
     "contestants": 427.0,
-    "conversion": 0.275,
-    "entries_per_entrant": 3.331,
+    "conversion": 0.273,
+    "entries_per_entrant": 3.322,
     "days": 16.0,
     "methods": 6.0,
-    "email_offered": 0.413
+    "email_offered": 0.414
    },
    "11": {
     "n": 313,
     "sites": 119,
     "contestants": 496.0,
-    "conversion": 0.282,
+    "conversion": 0.28,
     "entries_per_entrant": 3.23,
     "days": 15.0,
     "methods": 6.0,
@@ -6084,7 +6084,7 @@
     "n": 290,
     "sites": 113,
     "contestants": 490.5,
-    "conversion": 0.301,
+    "conversion": 0.298,
     "entries_per_entrant": 3.199,
     "days": 15.0,
     "methods": 6.0,
@@ -6106,7 +6106,7 @@
     "n": 399,
     "sites": 162,
     "contestants": 793.0,
-    "conversion": 0.274,
+    "conversion": 0.273,
     "entries_per_entrant": 3.769,
     "days": 14.0,
     "methods": 6.0,
@@ -6116,7 +6116,7 @@
     "n": 334,
     "sites": 167,
     "contestants": 939.5,
-    "conversion": 0.261,
+    "conversion": 0.257,
     "entries_per_entrant": 3.354,
     "days": 16.0,
     "methods": 6.0,
@@ -6126,7 +6126,7 @@
     "n": 323,
     "sites": 150,
     "contestants": 920.0,
-    "conversion": 0.297,
+    "conversion": 0.295,
     "entries_per_entrant": 3.049,
     "days": 15.0,
     "methods": 6.0,
@@ -6156,21 +6156,21 @@
     "n": 305,
     "sites": 165,
     "contestants": 832.0,
-    "conversion": 0.287,
+    "conversion": 0.286,
     "entries_per_entrant": 3.576,
     "days": 16.0,
     "methods": 7.0,
     "email_offered": 0.584
    },
    "6": {
-    "n": 291,
-    "sites": 159,
-    "contestants": 1088.0,
+    "n": 289,
+    "sites": 158,
+    "contestants": 1086.0,
     "conversion": 0.305,
-    "entries_per_entrant": 3.618,
+    "entries_per_entrant": 3.609,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.577
+    "email_offered": 0.581
    },
    "9": {
     "n": 278,
@@ -6183,14 +6183,14 @@
     "email_offered": 0.665
    },
    "7": {
-    "n": 278,
-    "sites": 149,
-    "contestants": 1065.5,
-    "conversion": 0.281,
-    "entries_per_entrant": 3.725,
+    "n": 277,
+    "sites": 148,
+    "contestants": 1057.0,
+    "conversion": 0.28,
+    "entries_per_entrant": 3.724,
     "days": 17.0,
     "methods": 7.0,
-    "email_offered": 0.622
+    "email_offered": 0.625
    },
    "2": {
     "n": 277,
@@ -6325,11 +6325,11 @@
     "email_offered": 0.048
    },
    "10": {
-    "n": 249,
-    "sites": 141,
+    "n": 248,
+    "sites": 140,
     "contestants": 248.0,
     "conversion": 0.369,
-    "entries_per_entrant": 4.169,
+    "entries_per_entrant": 4.235,
     "days": 9.0,
     "methods": 6.0,
     "email_offered": 0.04
@@ -6347,14 +6347,14 @@
     "email_offered": 0.28
    },
    "12": {
-    "n": 306,
-    "sites": 111,
-    "contestants": 455.5,
-    "conversion": 0.271,
-    "entries_per_entrant": 4.226,
-    "days": 11.0,
+    "n": 305,
+    "sites": 110,
+    "contestants": 458.0,
+    "conversion": 0.269,
+    "entries_per_entrant": 4.227,
+    "days": 10.5,
     "methods": 8.0,
-    "email_offered": 0.346
+    "email_offered": 0.348
    },
    "1": {
     "n": 301,
@@ -6377,14 +6377,14 @@
     "email_offered": 0.37
    },
    "5": {
-    "n": 274,
-    "sites": 125,
-    "contestants": 622.0,
-    "conversion": 0.213,
-    "entries_per_entrant": 3.964,
+    "n": 273,
+    "sites": 124,
+    "contestants": 611.0,
+    "conversion": 0.209,
+    "entries_per_entrant": 3.947,
     "days": 21.0,
     "methods": 8.0,
-    "email_offered": 0.321
+    "email_offered": 0.322
    },
    "6": {
     "n": 259,
@@ -6396,16 +6396,6 @@
     "methods": 7.0,
     "email_offered": 0.328
    },
-   "10": {
-    "n": 253,
-    "sites": 107,
-    "contestants": 412.0,
-    "conversion": 0.192,
-    "entries_per_entrant": 4.323,
-    "days": 22.0,
-    "methods": 8.0,
-    "email_offered": 0.364
-   },
    "4": {
     "n": 253,
     "sites": 111,
@@ -6415,6 +6405,16 @@
     "days": 13.0,
     "methods": 7.0,
     "email_offered": 0.312
+   },
+   "10": {
+    "n": 252,
+    "sites": 106,
+    "contestants": 408.5,
+    "conversion": 0.192,
+    "entries_per_entrant": 4.334,
+    "days": 22.5,
+    "methods": 8.0,
+    "email_offered": 0.365
    },
    "9": {
     "n": 236,
@@ -6437,14 +6437,14 @@
     "email_offered": 0.357
    },
    "8": {
-    "n": 223,
-    "sites": 98,
-    "contestants": 438.0,
-    "conversion": 0.213,
-    "entries_per_entrant": 4.628,
+    "n": 222,
+    "sites": 97,
+    "contestants": 437.5,
+    "conversion": 0.212,
+    "entries_per_entrant": 4.634,
     "days": 14.0,
     "methods": 8.0,
-    "email_offered": 0.318
+    "email_offered": 0.32
    },
    "2": {
     "n": 211,
@@ -6461,323 +6461,323 @@
  "impression_curve_by_duration": {
   "7_day": {
    "0": {
-    "impression_share_p50": 0.0344,
-    "campaigns": 8445,
-    "sites": 2708
+    "impression_share_p50": 0.0343,
+    "campaigns": 8384,
+    "sites": 2679
    },
    "1": {
-    "impression_share_p50": 0.2051,
-    "campaigns": 24115,
-    "sites": 5799
+    "impression_share_p50": 0.2058,
+    "campaigns": 23879,
+    "sites": 5739
    },
    "2": {
     "impression_share_p50": 0.1498,
-    "campaigns": 25790,
-    "sites": 6062
+    "campaigns": 25519,
+    "sites": 6004
    },
    "3": {
-    "impression_share_p50": 0.1134,
-    "campaigns": 25981,
-    "sites": 6084
+    "impression_share_p50": 0.1132,
+    "campaigns": 25703,
+    "sites": 6026
    },
    "4": {
-    "impression_share_p50": 0.0931,
-    "campaigns": 26084,
-    "sites": 6101
+    "impression_share_p50": 0.0928,
+    "campaigns": 25802,
+    "sites": 6043
    },
    "5": {
-    "impression_share_p50": 0.0835,
-    "campaigns": 26112,
-    "sites": 6110
+    "impression_share_p50": 0.0832,
+    "campaigns": 25829,
+    "sites": 6052
    },
    "6": {
-    "impression_share_p50": 0.078,
-    "campaigns": 24021,
-    "sites": 5781
+    "impression_share_p50": 0.0778,
+    "campaigns": 23755,
+    "sites": 5724
    },
    "7": {
-    "impression_share_p50": 0.0759,
-    "campaigns": 20597,
-    "sites": 5217
+    "impression_share_p50": 0.0757,
+    "campaigns": 20361,
+    "sites": 5156
    },
    "8": {
-    "impression_share_p50": 0.0623,
-    "campaigns": 13407,
-    "sites": 4196
+    "impression_share_p50": 0.0626,
+    "campaigns": 13228,
+    "sites": 4152
    },
    "9": {
-    "impression_share_p50": 0.0443,
-    "campaigns": 5189,
-    "sites": 2226
+    "impression_share_p50": 0.0442,
+    "campaigns": 5129,
+    "sites": 2201
    }
   },
   "14_day": {
    "0": {
     "impression_share_p50": 0.0156,
-    "campaigns": 6266,
-    "sites": 2157
+    "campaigns": 6248,
+    "sites": 2145
    },
    "1": {
     "impression_share_p50": 0.1068,
-    "campaigns": 16046,
-    "sites": 4845
+    "campaigns": 15997,
+    "sites": 4817
    },
    "2": {
-    "impression_share_p50": 0.0899,
-    "campaigns": 16872,
-    "sites": 5063
+    "impression_share_p50": 0.09,
+    "campaigns": 16818,
+    "sites": 5031
    },
    "3": {
     "impression_share_p50": 0.067,
-    "campaigns": 16991,
-    "sites": 5077
+    "campaigns": 16935,
+    "sites": 5045
    },
    "4": {
     "impression_share_p50": 0.0557,
-    "campaigns": 17110,
-    "sites": 5114
+    "campaigns": 17055,
+    "sites": 5083
    },
    "5": {
     "impression_share_p50": 0.0503,
-    "campaigns": 17216,
-    "sites": 5137
+    "campaigns": 17161,
+    "sites": 5107
    },
    "6": {
     "impression_share_p50": 0.0472,
-    "campaigns": 17303,
-    "sites": 5165
+    "campaigns": 17246,
+    "sites": 5134
    },
    "7": {
     "impression_share_p50": 0.0458,
-    "campaigns": 17387,
-    "sites": 5180
+    "campaigns": 17330,
+    "sites": 5148
    },
    "8": {
     "impression_share_p50": 0.0457,
-    "campaigns": 17475,
-    "sites": 5203
+    "campaigns": 17419,
+    "sites": 5172
    },
    "9": {
-    "impression_share_p50": 0.0446,
-    "campaigns": 17505,
-    "sites": 5210
+    "impression_share_p50": 0.0447,
+    "campaigns": 17448,
+    "sites": 5178
    },
    "10": {
     "impression_share_p50": 0.0438,
-    "campaigns": 17501,
-    "sites": 5208
+    "campaigns": 17443,
+    "sites": 5176
    },
    "11": {
     "impression_share_p50": 0.0454,
-    "campaigns": 17516,
-    "sites": 5211
+    "campaigns": 17459,
+    "sites": 5179
    },
    "12": {
     "impression_share_p50": 0.0473,
-    "campaigns": 17526,
-    "sites": 5217
+    "campaigns": 17468,
+    "sites": 5185
    },
    "13": {
     "impression_share_p50": 0.0513,
-    "campaigns": 15973,
-    "sites": 4816
+    "campaigns": 15919,
+    "sites": 4785
    },
    "14": {
-    "impression_share_p50": 0.0536,
-    "campaigns": 13830,
-    "sites": 4307
+    "impression_share_p50": 0.0537,
+    "campaigns": 13789,
+    "sites": 4280
    },
    "15": {
-    "impression_share_p50": 0.0507,
-    "campaigns": 9316,
-    "sites": 3466
+    "impression_share_p50": 0.0508,
+    "campaigns": 9288,
+    "sites": 3446
    },
    "16": {
-    "impression_share_p50": 0.0456,
-    "campaigns": 3467,
-    "sites": 1796
+    "impression_share_p50": 0.0457,
+    "campaigns": 3453,
+    "sites": 1784
    }
   },
   "30_day": {
    "0": {
-    "impression_share_p50": 0.0052,
-    "campaigns": 6198,
-    "sites": 2005
+    "impression_share_p50": 0.0053,
+    "campaigns": 6184,
+    "sites": 1992
    },
    "1": {
-    "impression_share_p50": 0.0402,
-    "campaigns": 20400,
-    "sites": 5055
+    "impression_share_p50": 0.0403,
+    "campaigns": 20348,
+    "sites": 5030
    },
    "2": {
     "impression_share_p50": 0.049,
-    "campaigns": 21829,
-    "sites": 5291
+    "campaigns": 21783,
+    "sites": 5270
    },
    "3": {
     "impression_share_p50": 0.0387,
-    "campaigns": 22209,
-    "sites": 5295
+    "campaigns": 22156,
+    "sites": 5271
    },
    "4": {
     "impression_share_p50": 0.0333,
-    "campaigns": 22494,
-    "sites": 5316
+    "campaigns": 22440,
+    "sites": 5292
    },
    "5": {
     "impression_share_p50": 0.0302,
-    "campaigns": 22722,
-    "sites": 5358
+    "campaigns": 22666,
+    "sites": 5334
    },
    "6": {
     "impression_share_p50": 0.0283,
-    "campaigns": 22844,
-    "sites": 5373
+    "campaigns": 22783,
+    "sites": 5349
    },
    "7": {
     "impression_share_p50": 0.027,
-    "campaigns": 22994,
-    "sites": 5421
+    "campaigns": 22932,
+    "sites": 5397
    },
    "8": {
     "impression_share_p50": 0.0263,
-    "campaigns": 23108,
-    "sites": 5446
+    "campaigns": 23043,
+    "sites": 5421
    },
    "9": {
     "impression_share_p50": 0.0254,
-    "campaigns": 23110,
-    "sites": 5435
+    "campaigns": 23044,
+    "sites": 5411
    },
    "10": {
     "impression_share_p50": 0.0243,
-    "campaigns": 23132,
-    "sites": 5446
+    "campaigns": 23066,
+    "sites": 5422
    },
    "11": {
     "impression_share_p50": 0.0237,
-    "campaigns": 23125,
-    "sites": 5425
+    "campaigns": 23058,
+    "sites": 5400
    },
    "12": {
     "impression_share_p50": 0.0234,
-    "campaigns": 23201,
-    "sites": 5466
+    "campaigns": 23133,
+    "sites": 5442
    },
    "13": {
     "impression_share_p50": 0.0231,
-    "campaigns": 23183,
-    "sites": 5438
+    "campaigns": 23114,
+    "sites": 5413
    },
    "14": {
     "impression_share_p50": 0.023,
-    "campaigns": 23227,
-    "sites": 5446
+    "campaigns": 23158,
+    "sites": 5422
    },
    "15": {
     "impression_share_p50": 0.0233,
-    "campaigns": 23275,
-    "sites": 5458
+    "campaigns": 23206,
+    "sites": 5433
    },
    "16": {
     "impression_share_p50": 0.0227,
-    "campaigns": 23303,
-    "sites": 5473
+    "campaigns": 23235,
+    "sites": 5449
    },
    "17": {
     "impression_share_p50": 0.0224,
-    "campaigns": 23336,
-    "sites": 5484
+    "campaigns": 23265,
+    "sites": 5459
    },
    "18": {
     "impression_share_p50": 0.0221,
-    "campaigns": 23325,
-    "sites": 5483
+    "campaigns": 23255,
+    "sites": 5458
    },
    "19": {
     "impression_share_p50": 0.0221,
-    "campaigns": 23319,
-    "sites": 5468
+    "campaigns": 23250,
+    "sites": 5444
    },
    "20": {
     "impression_share_p50": 0.0222,
-    "campaigns": 23331,
-    "sites": 5475
+    "campaigns": 23262,
+    "sites": 5451
    },
    "21": {
     "impression_share_p50": 0.0225,
-    "campaigns": 23403,
-    "sites": 5498
+    "campaigns": 23334,
+    "sites": 5474
    },
    "22": {
     "impression_share_p50": 0.0232,
-    "campaigns": 23431,
-    "sites": 5489
+    "campaigns": 23360,
+    "sites": 5464
    },
    "23": {
     "impression_share_p50": 0.0232,
-    "campaigns": 23415,
-    "sites": 5490
+    "campaigns": 23345,
+    "sites": 5466
    },
    "24": {
     "impression_share_p50": 0.0236,
-    "campaigns": 23412,
-    "sites": 5490
+    "campaigns": 23343,
+    "sites": 5466
    },
    "25": {
     "impression_share_p50": 0.0245,
-    "campaigns": 23424,
-    "sites": 5492
+    "campaigns": 23355,
+    "sites": 5469
    },
    "26": {
     "impression_share_p50": 0.0256,
-    "campaigns": 23442,
-    "sites": 5487
+    "campaigns": 23373,
+    "sites": 5464
    },
    "27": {
     "impression_share_p50": 0.0264,
-    "campaigns": 22671,
-    "sites": 5332
+    "campaigns": 22605,
+    "sites": 5308
    },
    "28": {
     "impression_share_p50": 0.0277,
-    "campaigns": 21624,
-    "sites": 5105
+    "campaigns": 21562,
+    "sites": 5085
    },
    "29": {
     "impression_share_p50": 0.0298,
-    "campaigns": 19657,
-    "sites": 4724
+    "campaigns": 19596,
+    "sites": 4704
    },
    "30": {
     "impression_share_p50": 0.032,
-    "campaigns": 17087,
-    "sites": 4289
+    "campaigns": 17035,
+    "sites": 4272
    },
    "31": {
     "impression_share_p50": 0.0312,
-    "campaigns": 13415,
-    "sites": 3639
+    "campaigns": 13370,
+    "sites": 3626
    },
    "32": {
-    "impression_share_p50": 0.0315,
-    "campaigns": 6716,
-    "sites": 2293
+    "impression_share_p50": 0.0314,
+    "campaigns": 6693,
+    "sites": 2284
    },
    "33": {
-    "impression_share_p50": 0.031,
-    "campaigns": 3355,
-    "sites": 1366
+    "impression_share_p50": 0.0309,
+    "campaigns": 3347,
+    "sites": 1363
    },
    "34": {
-    "impression_share_p50": 0.0302,
-    "campaigns": 1886,
-    "sites": 919
+    "impression_share_p50": 0.0303,
+    "campaigns": 1882,
+    "sites": 916
    },
    "35": {
-    "impression_share_p50": 0.0285,
-    "campaigns": 1003,
-    "sites": 550
+    "impression_share_p50": 0.0284,
+    "campaigns": 1001,
+    "sites": 549
    }
   }
  }

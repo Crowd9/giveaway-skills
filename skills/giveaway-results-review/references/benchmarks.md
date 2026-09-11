@@ -2,7 +2,7 @@
 
 The script ranks a campaign against every fifth percentile of twelve figures in `percentiles.json` (Entrants, Impressions (views of the campaign page), Conversion Rate, actions and entries per Entrant, entries, Entrants per day, action count, duration, stated Prize value per Entrant, email signups, share who signed up for email, referral entries per Entrant, follows by network), plus completions per Entrant for 51 Gleam actions, for all campaigns, the campaigns we can compare fairly, campaigns your size, and your vertical. The tables below give the typical figure and the reading guide.
 
-Every figure is drawn from the campaigns behind these numbers (117,348 campaigns that reached 100 unique Entrants, crypto and purchase-only campaigns removed). Typical figures unless stated. The campaigns we can compare fairly have no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.
+Every figure is drawn from the campaigns behind these numbers (116,499 campaigns that reached 100 unique Entrants, crypto and purchase-only campaigns removed). Typical figures unless stated. The campaigns we can compare fairly have no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.
 
 ## Campaign size
 
@@ -61,7 +61,7 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 ## What campaigns produced (extracted)
 
-Completions of the acquire and amplify actions, summed per campaign, across the 117,348 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
+Completions of the acquire and amplify actions, summed per campaign, across the 116,499 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
 Reading it: cost per completion varies widely by asset, from about $0.40 for an email signup to about $16 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.6 to $1.2 on most networks, with Snapchat at $2.30 and LinkedIn at $4.63 above that.
 
@@ -118,13 +118,13 @@ Stated USD per email signup by Prize category, campaigns with an email action:
 <!-- generated:bm_year -->
 | Year | Campaigns | Entrants | Conversion Rate |
 |---|---|---|---|
-| 2021 | 27,979 | 498 | 28% |
-| 2022 | 26,239 | 473 | 29% |
-| 2023 | 20,374 | 490 | 26% |
-| 2024 | 16,815 | 473 | 24% |
-| 2025 | 16,404 | 512 | 25% |
-| 2026 | 8,021 | 528 | 27% |
-| 2020 | 1,185 | 598 | 26% |
+| 2021 | 27,806 | 501 | 28% |
+| 2022 | 25,956 | 475 | 29% |
+| 2023 | 20,237 | 489 | 26% |
+| 2024 | 16,725 | 472 | 24% |
+| 2025 | 16,359 | 512 | 25% |
+| 2026 | 7,992 | 528 | 27% |
+| 2020 | 1,156 | 611 | 26% |
 <!-- /generated -->
 
 The typical campaign has held between 473 and 528 Entrants since 2021 while the Conversion Rate held steady. A campaign run this year sits a little above the typical figures across the whole export, at the same quality. The 2020 row rests on 1,185 campaigns against several thousand in every later year, so treat it as a rough marker.
@@ -145,17 +145,17 @@ Typical figures for the library templates with the most campaigns at this size:
 <!-- generated:bm_template -->
 | Template | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
-| Gleam Sweepstakes | 3,123 | 2,332 | 747 | 24% | 4.25 | 15 | 7 | 58% | 60% |
-| Instant Entry | 1,728 | 927 | 248 | 47% | 1.00 | 8 | 1 | 7% | 6% |
-| YouTube Contest | 625 | 495 | 471 | 28% | 3.78 | 16 | 6 | 9% | 40% |
+| Gleam Sweepstakes | 3,097 | 2,310 | 748 | 24% | 4.23 | 15 | 7 | 58% | 60% |
+| Instant Entry | 1,717 | 924 | 248 | 47% | 1.00 | 8 | 1 | 7% | 6% |
+| YouTube Contest | 603 | 493 | 437 | 27% | 3.72 | 18 | 6 | 9% | 38% |
 | Email Signup | 420 | 343 | 742 | 30% | 1.92 | 15 | 4 | 92% | 61% |
-| Refer A Friend | 292 | 257 | 596 | 23% | 2.46 | 18 | 4 | 35% | 92% |
-| E-Commerce Giveaway | 275 | 249 | 610 | 23% | 4.47 | 17 | 9 | 79% | 80% |
+| Refer A Friend | 286 | 251 | 606 | 23% | 2.44 | 19 | 4 | 35% | 92% |
+| E-Commerce Giveaway | 273 | 248 | 618 | 23% | 4.45 | 17 | 9 | 79% | 80% |
 | Instagram Contest | 244 | 219 | 500 | 23% | 3.49 | 14 | 6 | 29% | 58% |
-| Contest Entry Form | 182 | 156 | 745 | 24% | 1.98 | 17 | 3 | 37% | 17% |
-| Social Media Giveaway | 172 | 160 | 284 | 26% | 4.51 | 14 | 7 | 16% | 22% |
-| Twitter / X Contest | 170 | 140 | 284 | 22% | 4.56 | 9 | 6 | 7% | 31% |
-| Photo Contest | 158 | 139 | 332 | 10% | 2.20 | 21 | 3 | 23% | 22% |
+| Contest Entry Form | 181 | 155 | 765 | 24% | 1.94 | 17 | 3 | 37% | 17% |
+| Social Media Giveaway | 171 | 159 | 285 | 26% | 4.50 | 14 | 7 | 16% | 22% |
+| Twitter / X Contest | 159 | 131 | 282 | 22% | 4.43 | 10 | 6 | 8% | 31% |
+| Photo Contest | 157 | 138 | 345 | 10% | 2.26 | 21 | 3 | 24% | 22% |
 | Email Signup Referrals | 149 | 113 | 666 | 27% | 1.91 | 16 | 3 | 97% | 94% |
 <!-- /generated -->
 
@@ -163,36 +163,36 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`).
 
 ## Benchmarks by plan tier
 
-A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`'s own scope (100 or more Entrants, plausible start dates, no crypto or purchase-only exclusion), which is wider than the 117,348 campaigns behind the numbers above, so treat these as tier comparisons, not a restatement of the campaign-size table. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
+A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`'s own scope (100 or more Entrants, plausible start dates, no crypto or purchase-only exclusion), which is wider than the 116,499 campaigns behind the numbers above, so treat these as tier comparisons, not a restatement of the campaign-size table. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
 
 <!-- generated:bm_tier -->
 | Tier | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
-| Pro | 89,858 | 15,115 | 530 | 28% | 5.13 | 11 | 8 | 28% | 52% |
-| Business | 46,880 | 5,877 | 692 | 26% | 4.94 | 11 | 7 | 31% | 50% |
-| Free | 14,364 | 5,423 | 239 | 34% | 3.35 | 11 | 4 | 0% | 0% |
-| Hobby | 12,892 | 3,164 | 299 | 32% | 3.90 | 10 | 6 | 0% | 1% |
-| Premium | 3,068 | 550 | 1,381 | 24% | 5.81 | 18 | 9 | 42% | 49% |
+| Pro | 77,145 | 13,057 | 530 | 27% | 4.99 | 13 | 8 | 32% | 50% |
+| Business | 39,766 | 4,902 | 696 | 26% | 4.77 | 12 | 7 | 35% | 48% |
+| Free | 13,337 | 4,888 | 238 | 34% | 3.31 | 12 | 4 | 0% | 0% |
+| Hobby | 12,115 | 2,940 | 303 | 32% | 3.83 | 10 | 6 | 0% | 1% |
+| Premium | 2,510 | 395 | 1,283 | 24% | 5.67 | 20 | 9 | 50% | 44% |
 <!-- /generated -->
 
 Free campaigns carry no email or share action at all and Hobby campaigns carry almost none, so their Conversion Rate sits above Pro and Business on a smaller ask, not a stronger landing page. Premium campaigns run the most methods over the longest window and the lowest Conversion Rate follows from the duration and repeatable-action caveat, not from a weaker campaign.
 
 ## Benchmarks by organizer stage, scale and business type
 
-For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, also wider than the 117,348 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
+For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, also wider than the 116,499 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
 
 By organizer stage (`by_org_stage`), read from the homepage:
 
 <!-- generated:bm_stage -->
 | Stage | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Email offered |
 |---|---|---|---|---|---|---|---|
-| Small business | 62,403 | 8,011 | 540 | 26% | 4.48 | 14 | 44% |
-| Startup | 36,106 | 7,812 | 639 | 27% | 5.52 | 9 | 11% |
-| Mid market | 19,688 | 1,428 | 547 | 28% | 4.35 | 7 | 20% |
-| Individual | 10,591 | 1,845 | 309 | 26% | 5.48 | 16 | 10% |
-| Enterprise | 7,106 | 555 | 710 | 32% | 3.85 | 13 | 24% |
-| Unknown | 2,870 | 869 | 334 | 26% | 4.39 | 12 | 20% |
-| Public body | 1,116 | 300 | 438 | 28% | 3.37 | 14 | 44% |
+| Small business | 60,935 | 7,897 | 540 | 26% | 4.44 | 14 | 45% |
+| Startup | 23,190 | 5,227 | 635 | 26% | 5.34 | 10 | 15% |
+| Mid market | 17,126 | 1,384 | 616 | 28% | 4.29 | 8 | 22% |
+| Individual | 10,371 | 1,808 | 309 | 26% | 5.49 | 16 | 10% |
+| Enterprise | 6,675 | 507 | 716 | 32% | 3.68 | 14 | 25% |
+| Unknown | 2,436 | 755 | 325 | 26% | 4.25 | 13 | 22% |
+| Public body | 1,109 | 294 | 445 | 27% | 3.35 | 14 | 44% |
 <!-- /generated -->
 
 By organization scale (`by_org_scale`, from revenue, employee and traffic-rank signals):
@@ -200,12 +200,12 @@ By organization scale (`by_org_scale`, from revenue, employee and traffic-rank s
 <!-- generated:bm_scale -->
 | Scale | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days |
 |---|---|---|---|---|---|---|
-| Small | 45,486 | 3,844 | 504 | 25% | 5.18 | 14 |
-| Micro | 42,132 | 14,110 | 426 | 28% | 4.89 | 13 |
-| Mid | 27,944 | 1,832 | 747 | 27% | 4.33 | 13 |
-| Shared host | 25,685 | 4,324 | 402 | 34% | 4.68 | 8 |
-| Large | 19,667 | 683 | 563 | 31% | 4.51 | 7 |
-| Enterprise | 4,764 | 449 | 666 | 30% | 4.94 | 9 |
+| Small | 40,576 | 3,663 | 495 | 25% | 5.03 | 14 |
+| Micro | 33,465 | 11,488 | 401 | 27% | 4.70 | 14 |
+| Mid | 26,886 | 1,770 | 756 | 27% | 4.29 | 13 |
+| Shared host | 21,907 | 4,076 | 382 | 34% | 4.42 | 9 |
+| Large | 16,918 | 658 | 627 | 30% | 4.31 | 7 |
+| Enterprise | 4,105 | 387 | 648 | 30% | 4.69 | 10 |
 <!-- /generated -->
 
 By business type (`by_business_type`, from what the organizer's homepage sells):
@@ -213,16 +213,16 @@ By business type (`by_business_type`, from what the organizer's homepage sells):
 <!-- generated:bm_btype -->
 | Type | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Email offered |
 |---|---|---|---|---|---|---|---|
-| Software | 46,614 | 7,727 | 616 | 29% | 5.35 | 8 | 9% |
-| Brand | 31,990 | 5,887 | 584 | 26% | 4.33 | 14 | 40% |
-| Retailer | 21,807 | 2,282 | 649 | 28% | 4.36 | 14 | 44% |
-| Media or publisher | 21,751 | 1,733 | 418 | 25% | 4.99 | 16 | 41% |
-| Creator | 18,532 | 4,265 | 347 | 34% | 4.32 | 11 | 5% |
-| Other | 9,287 | 2,387 | 382 | 29% | 4.72 | 9 | 16% |
-| Community | 6,790 | 1,386 | 377 | 31% | 5.56 | 8 | 6% |
-| Service business | 4,160 | 812 | 367 | 25% | 3.46 | 12 | 32% |
-| Agency | 3,769 | 387 | 534 | 27% | 4.65 | 11 | 19% |
-| Nonprofit | 978 | 289 | 386 | 26% | 3.34 | 16 | 32% |
+| Brand | 31,193 | 5,708 | 587 | 26% | 4.29 | 14 | 41% |
+| Software | 30,426 | 5,133 | 633 | 28% | 5.18 | 8 | 12% |
+| Retailer | 21,733 | 2,266 | 651 | 28% | 4.36 | 14 | 44% |
+| Media or publisher | 21,108 | 1,645 | 418 | 24% | 4.94 | 17 | 42% |
+| Creator | 18,168 | 4,187 | 348 | 34% | 4.28 | 12 | 5% |
+| Other | 7,846 | 2,149 | 388 | 29% | 4.60 | 10 | 18% |
+| Community | 4,999 | 1,128 | 343 | 30% | 5.45 | 9 | 8% |
+| Service business | 4,092 | 803 | 365 | 25% | 3.43 | 12 | 32% |
+| Agency | 3,324 | 368 | 484 | 26% | 4.52 | 12 | 22% |
+| Nonprofit | 968 | 280 | 390 | 26% | 3.33 | 16 | 33% |
 <!-- /generated -->
 
 By industry (`by_industry_excluding_crypto`), finance_crypto (43,194 campaigns) held out on the same crypto exclusion as the rest of this page:
@@ -230,24 +230,24 @@ By industry (`by_industry_excluding_crypto`), finance_crypto (43,194 campaigns) 
 <!-- generated:bm_industry -->
 | Industry | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Email offered |
 |---|---|---|---|---|---|---|---|
-| Gaming and esports | 27,488 | 5,207 | 415 | 27% | 5.13 | 12 | 15% |
-| Media and entertainment | 21,951 | 2,143 | 400 | 24% | 4.98 | 17 | 43% |
-| Electronics and tech | 15,749 | 2,102 | 899 | 30% | 4.60 | 14 | 23% |
-| Other | 4,879 | 1,632 | 318 | 28% | 4.44 | 10 | 11% |
-| Food and drink | 4,778 | 914 | 620 | 27% | 3.60 | 19 | 54% |
-| Toys, hobbies, collectibles | 4,751 | 773 | 416 | 26% | 4.24 | 15 | 39% |
-| Apparel and fashion | 4,692 | 840 | 608 | 31% | 2.58 | 8 | 51% |
-| Sports and outdoors | 4,675 | 1,028 | 967 | 24% | 3.80 | 16 | 52% |
-| Travel and events | 4,087 | 673 | 488 | 28% | 3.29 | 15 | 43% |
-| Home and garden | 3,744 | 605 | 916 | 29% | 3.59 | 15 | 58% |
-| Creator influencer | 3,466 | 1,077 | 312 | 37% | 4.87 | 8 | 4% |
-| Health wellness fitness | 3,237 | 516 | 475 | 22% | 4.29 | 16 | 32% |
-| Software and SaaS | 3,070 | 692 | 715 | 29% | 5.29 | 11 | 22% |
-| Retail marketplace | 2,943 | 391 | 489 | 29% | 5.18 | 8 | 27% |
-| Automotive | 2,350 | 389 | 932 | 26% | 4.05 | 14 | 55% |
+| Gaming and esports | 25,711 | 4,943 | 404 | 27% | 5.06 | 12 | 16% |
+| Media and entertainment | 21,745 | 2,111 | 400 | 24% | 4.98 | 18 | 43% |
+| Electronics and tech | 15,683 | 2,091 | 897 | 30% | 4.60 | 14 | 23% |
+| Food and drink | 4,763 | 909 | 622 | 27% | 3.60 | 19 | 54% |
+| Toys, hobbies, collectibles | 4,730 | 763 | 416 | 26% | 4.24 | 15 | 39% |
+| Other | 4,694 | 1,589 | 319 | 28% | 4.47 | 10 | 11% |
+| Apparel and fashion | 4,670 | 828 | 613 | 31% | 2.57 | 8 | 51% |
+| Sports and outdoors | 4,655 | 1,022 | 966 | 24% | 3.78 | 16 | 52% |
+| Travel and events | 4,049 | 661 | 488 | 27% | 3.28 | 15 | 43% |
+| Home and garden | 3,739 | 602 | 916 | 29% | 3.58 | 15 | 58% |
+| Creator influencer | 3,429 | 1,067 | 315 | 37% | 4.84 | 8 | 4% |
+| Health wellness fitness | 3,209 | 509 | 474 | 22% | 4.26 | 16 | 32% |
+| Retail marketplace | 2,880 | 389 | 488 | 29% | 5.10 | 8 | 28% |
+| Software and SaaS | 2,513 | 615 | 647 | 28% | 5.08 | 12 | 26% |
+| Automotive | 2,331 | 387 | 949 | 26% | 4.06 | 14 | 56% |
 <!-- /generated -->
 
-This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the  rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 117,348 campaigns). Say which cut a rank came from.
+This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the  rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 116,499 campaigns). Say which cut a rank came from.
 
 | Vertical | Conversion Rate |
 |---|---|
@@ -304,17 +304,17 @@ Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s
 <!-- generated:bm_sequence -->
 | Sequence | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| 11th plus | 91,694 | 2,531 | 520 | 30% | 9 |
-| 4th to 10th | 29,232 | 6,452 | 538 | 28% | 12 |
-| 1st campaign | 25,482 | 25,482 | 434 | 26% | 15 |
-| 2nd to 3rd | 20,660 | 12,314 | 483 | 27% | 13 |
+| 11th plus | 78,922 | 2,239 | 521 | 29% | 10 |
+| 4th to 10th | 25,742 | 5,647 | 541 | 28% | 13 |
+| 1st campaign | 22,273 | 22,273 | 411 | 26% | 15 |
+| 2nd to 3rd | 17,941 | 10,667 | 470 | 27% | 14 |
 <!-- /generated -->
 
 <!-- generated:bm_activity -->
 | Activity | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| Has not | 93,301 | 21,527 | 484 | 28% | 10 |
-| Ran another campaign in the last 12 months | 73,767 | 3,955 | 536 | 28% | 13 |
+| Has not | 75,913 | 18,401 | 474 | 28% | 11 |
+| Ran another campaign in the last 12 months | 68,965 | 3,872 | 537 | 28% | 14 |
 <!-- /generated -->
 
 Later campaigns see a higher Conversion Rate over a shorter run than a 1st campaign. Read this as which organizers kept going before reading it as improvement: an organizer whose first campaign did poorly is less likely to be in the file with a 2nd, so the 11th-plus row describes organizers who kept going, not the same organizer's own campaign 1 through campaign 11.
@@ -337,11 +337,11 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 <!-- generated:bm_seq_band -->
 | Position in sequence (1,000 to 2,499 Entrants) | Entrants | Entries per Entrant | Organizers |
 |---|---|---|---|
-| 1st | 1,486 | 3.94 | 2,707 |
-| 2nd | 988 | 3.91 | 1,536 |
-| 3rd-5th | 922 | 4.12 | 1,120 |
-| 6th-10th | 891 | 4.29 | 653 |
-| 11th+ | 737 | 5.51 | 374 |
+| 1st | 1,480 | 3.94 | 2,683 |
+| 2nd | 1,008 | 3.92 | 1,530 |
+| 3rd-5th | 930 | 4.10 | 1,111 |
+| 6th-10th | 896 | 4.28 | 647 |
+| 11th+ | 695 | 5.94 | 374 |
 <!-- /generated -->
 
 | Transition | Typical change in Entrants |
@@ -422,14 +422,14 @@ Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business
 <!-- generated:bm_city -->
 | City | Campaigns | Businesses | Entrants | Conversion Rate | Entries/Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| Tokyo, Japan | 5,020 | 123 | 339 | 30% | 5.48 | 6 | 7 |
-| Singapore | 3,892 | 301 | 687 | 32% | 4.80 | 6 | 6 |
-| Los Angeles, United States | 3,345 | 456 | 632 | 24% | 4.75 | 12 | 7 |
-| Plano, United States | 2,442 | 11 | 336 | 15% | 12.36 | 31 | 11 |
-| Sydney, Australia | 2,029 | 422 | 570 | 28% | 3.16 | 17 | 5 |
-| Melbourne, Australia | 1,804 | 380 | 666 | 28% | 3.30 | 15 | 6 |
-| Ho Chi Minh City, Vietnam | 1,750 | 308 | 616 | 33% | 5.71 | 8 | 7 |
-| Taipei, Taiwan | 1,567 | 78 | 908 | 35% | 6.08 | 7 | 8 |
+| Tokyo, Japan | 3,624 | 103 | 424 | 32% | 5.45 | 5 | 7 |
+| Los Angeles, United States | 3,200 | 423 | 635 | 24% | 4.75 | 12 | 7 |
+| Singapore | 2,942 | 231 | 719 | 31% | 4.87 | 6 | 6 |
+| Plano, United States | 2,440 | 11 | 336 | 15% | 12.36 | 31 | 11 |
+| Sydney, Australia | 1,966 | 406 | 574 | 28% | 3.08 | 18 | 5 |
+| Melbourne, Australia | 1,597 | 360 | 666 | 29% | 3.24 | 15 | 6 |
+| London, United Kingdom | 1,506 | 59 | 587 | 43% | 1.72 | 19 | 2 |
+| Chicago, United States | 1,402 | 156 | 569 | 26% | 7.01 | 15 | 11 |
 <!-- /generated -->
 
 Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/indicators.json` (`impressions_per_contestant_by_country`, `plan_tier_by_country`), `analysis/output/field_cuts.json` (`by_organizer_city`).
@@ -501,7 +501,7 @@ The share-action line and the top-fifth line answer different questions and cann
 
 [Extracted from `analysis/output/organizer_history.json`, `sequence_curve_all`, `reach_rate_by_first_band`, `ordinary_n` and `ordinary_organizers`. The shares below are worked from those counts and are not stored figures.]
 
-Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 64,236 of the 117,348, which is 55%, come from the 1,984 businesses on their eleventh campaign or later, 11% of the 17,777. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
+Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 64,236 of the 116,499, which is 55%, come from the 1,984 businesses on their eleventh campaign or later, 11% of the 17,633. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
 
 The first row below is one campaign per business, which is the business-weighted view of the same data.
 
@@ -512,7 +512,7 @@ The first row below is one campaign per business, which is the business-weighted
 | 3rd to 5th | 14,332 | 6,028 | 498 | 26.8% | 4.05 |
 | 6th to 10th | 12,888 | 3,326 | 547 | 27.0% | 4.18 |
 | 11th or later | 64,236 | 1,984 | 514 | 27.5% | 4.91 |
-| All campaigns | 117,348 | 17,777 | 492 | 26.9% | 4.39 |
+| All campaigns | 116,499 | 17,633 | 492 | 26.9% | 4.39 |
 
 A first campaign drew 382 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 382 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.68 against 4.39, because a business on its eleventh campaign runs more actions.
 

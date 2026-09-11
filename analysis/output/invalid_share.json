@@ -1,0 +1,30 @@
+{
+ "definitions": {
+  "scope": "campaigns with 100 or more Entrants that recorded at least one entry, ordinary population",
+  "invalid_share": "invalid entries over all entries, per campaign, then the distribution across campaigns",
+  "limit": "the filter level a campaign ran is not in the data, so this says what the invalid share looked like and never what any level produced"
+ },
+ "distribution": {
+  "campaigns": 107109,
+  "businesses": 16490,
+  "lower_quarter": 0.0113,
+  "typical": 0.042,
+  "upper_quarter": 0.1038,
+  "top_tenth": 0.1771,
+  "top_hundredth": 0.3843
+ },
+ "by_share_action": {
+  "offers a share action": {
+   "campaigns": 41355,
+   "businesses": 6739,
+   "typical": 0.0464,
+   "top_tenth": 0.1738
+  },
+  "no share action": {
+   "campaigns": 65754,
+   "businesses": 11634,
+   "typical": 0.039,
+   "top_tenth": 0.1799
+  }
+ }
+}
