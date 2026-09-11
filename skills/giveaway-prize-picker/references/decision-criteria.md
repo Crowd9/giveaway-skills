@@ -38,8 +38,8 @@ Before allowing for size, own product shows up in about a fifth of Prize names, 
 
 | | Own product | Bought-in |
 |---|---|---|
-| Share of Prize names | 22% [2,365 campaigns] | |
-| Typical Entrant count | 2,023 | 2,141 |
+| Share of campaigns | 17% [19,671 campaigns, 5,168 businesses] | 83% [97,457 campaigns, 14,966 businesses] |
+| Typical Entrant count | 695 | 464 |
 | Actions per Entrant | 4.1 | 3.3 |
 | Conversion Rate | 34% | 39% |
 
@@ -47,12 +47,12 @@ Once compared like with like by size and industry, using your own product as the
 
 | Measure (top performers) | Ratio, compared like with like | Ratio, before allowing for size | Campaigns | Businesses |
 |---|---|---|---|---|
-| Raw Entrant count | 1.00 | | | |
+| Raw Entrant count | 1.00 | - | - | - |
 | Conversion Rate | 0.77 | 0.83 | 2,113 | 326 |
-| Crowd per Prize dollar | 0.93 | 0.84 | 2,795 | 749 |
+| Crowd per Prize dollar | 0.93 | 1.01 | 19,671 | 5,168 |
 | Cost % of Entrants | 0.73 | 0.61 | 2,781 | 831 |
 | Engagement | 0.88 | 0.78 | 7,113 | 1,425 |
-| Email signups | 1.002 | 0.799 | | |
+| Email signups | 1.002 | 0.799 | - | - |
 
 What own product buys back is fit: the Entrant who wanted it is closer to a buyer than an Entrant chasing a generic Prize, and the cost to you is wholesale, not the retail figure stated to Entrants. That trade is the right call when the objective is a qualified list or a repeat customer, not the largest crowd at any quality, and it reverses by industry and flattens by campaign size, covered next.
 
@@ -162,10 +162,10 @@ Typical Prize values across the campaigns behind these numbers, and by campaign 
 | Measure | Typical | Middle half | Note |
 |---|---|---|---|
 | Per-listing stated value | 299 | 100 to 899 | nine in ten declared less than 2,070 |
-| Fully valued campaign total | 900 | 328 to 2,000 | |
-| Campaign total, 1,000-2,500 Entrants | 511 | | |
-| Campaign total, 2,500-10,000 Entrants | 1,298 | | |
-| Campaign total, 10,000+ Entrants | 3,000 | | |
+| Fully valued campaign total | 900 | 328 to 2,000 | - |
+| Campaign total, 1,000-2,500 Entrants | 511 | - | - |
+| Campaign total, 2,500-10,000 Entrants | 1,298 | - | - |
+| Campaign total, 10,000+ Entrants | 3,000 | - | - |
 
 Entrants rise with the stated pool at every spend level [13,977 campaigns with a full value stated, from 3,446 businesses].
 
@@ -180,7 +180,7 @@ Below 5,000 USD, extra spend buys Entrants roughly in proportion to the money. P
 
 | Spend level (USD) | Extra Entrants per 1% bigger Prize | Campaigns | Businesses |
 |---|---|---|---|
-| 250 to 4,999 (four bands) | 0.24 to 0.53 | | |
+| 250 to 4,999 (four bands) | 0.24 to 0.53 | - | - |
 | 5,000 and up (four bands) | 0.06, 0.08, 0.02, 0.11 | 710 down to 72 | 378 down to 49 |
 
 The same flattening shows up within plan tier and within some industries, at the 5,000-9,999 USD spend level. It does not hold in gaming and esports or sports and outdoors, where value kept predicting more Entrants through this dataset's biggest campaigns, so a campaign in either industry is not up against this ceiling.
@@ -192,7 +192,7 @@ The same flattening shows up within plan tier and within some industries, at the
 | Electronics and tech | -0.31 | 139 | 71 |
 | Media and entertainment | -0.42 | 47 | 30 |
 | Gaming and esports (exception, still rising) | 0.55, and 0.13 at 10,000-24,999 | 83 | 42 |
-| Sports and outdoors (exception, still rising) | 0.19, then 0.26 at 10,000-24,999 | | |
+| Sports and outdoors (exception, still rising) | 0.19, then 0.26 at 10,000-24,999 | - | - |
 
 A cheap Prize is not a mark against a campaign on this measure: at the cheaper spend levels, campaigns beat their own typical Entrant count for the money by 50% or more more often than they miss it by as much. That margin is what a small budget buys here, a real chance of outperforming its own price tag, and it is the right call when the audience in front of the campaign already wants what's on offer and the objective does not need the largest possible crowd. It reverses at the top, so the same margin does not carry into the largest budgets. This describes campaigns that already cleared this reference's 100-Entrant floor, two things happening together and not a test of what a cheap Prize would do in front of a smaller audience.
 

@@ -261,7 +261,7 @@ Every Entrant who did not win is a shopper who just browsed the store, so the no
 
 Cheap Prizes that drew crowds: a small set of campaigns with a tiny stated pool still reached thousands of Entrants, mostly from repeat businesses running few actions over a short run, with Prizes in tech hardware, game items and gift cards in gaming, music and media, and technology industries.
 
-| Cheap Prizes that drew crowds | |
+| Cheap Prizes that drew crowds | - |
 |---|---|
 | Campaigns | 114 |
 | Businesses | 60 |

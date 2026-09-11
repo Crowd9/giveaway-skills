@@ -31,8 +31,8 @@ Bigger stores, pricier stores and Australian-currency stores offer email more th
 | | 50 to 199 products | 48.8% | 12-day run | 443 (127) |
 | Price | 200 USD and over | 76.4% | 28-day run, the longest and highest of the four price groups | 144 (60) |
 | | Under 20 USD | 67.3% | 26-day run | 98 (36) |
-| Country | Australian-currency | 91.3% | | 126 (55) |
-| | US-currency | 54.3% | | 1,332 (268) |
+| Country | Australian-currency | 91.3% | - | 126 (55) |
+|  | US-currency | 54.3% | - | 1,332 (268) |
 | Platform | Shopify | 59.0% | 3.20 actions per Entrant | 1,689 (423) |
 | | WooCommerce | 44.7% | 4.72 actions per Entrant | 2,309 (468) |
 

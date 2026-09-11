@@ -62,11 +62,11 @@ Extracted: outcomes for campaigns where one traffic source supplies over 10% of 
 |---|---|---|---|---|
 | Giveaway directories | 31.7% | 1,827 Entrants at the typical campaign | 6,768 | 2,254 |
 | Deals forums | 47% | 1.9 Actions each, 7 referrals per 100 Entrants | 1,383 | 173 |
-| YouTube | 41% | | 5,131 | 1,217 |
+| YouTube | 41% | - | 5,131 | 1,217 |
 | X | 34% | 5.23 actions per Entrant | 10,195 | 2,941 |
 | Meta | 27% | 3.58 actions per Entrant | 8,391 | 3,139 |
-| Search | 18.5% | | 1,019 | 407 |
-| TikTok | 15% | | 178 | 102 |
+| Search | 18.5% | - | 1,019 | 407 |
+| TikTok | 15% | - | 178 | 102 |
 
 Deals-forum traffic sees the highest Conversion Rate of any well-populated traffic source above, worth the spot on the promotion list for that alone. The audience does the minimum once it lands and rarely refers a friend, well below every other channel on both measures. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
 
@@ -74,8 +74,8 @@ Deals-forum traffic sees the highest Conversion Rate of any well-populated traff
 |---|---|---|
 | Actions per Entrant | 1.9 | 3.6 to 5.9 |
 | Referrals per 100 Entrants | 7 (lowest of any source measured) | direct: 32 |
-| Actions per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.8 [1,084 campaigns, 145 businesses] | |
-| Actions per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.2 [241 campaigns, 60 businesses] | |
+| Actions per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.8 [1,084 campaigns, 145 businesses] | - |
+| Actions per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.2 [241 campaigns, 60 businesses] | - |
 
 Meta sees a Conversion Rate close to X's and carries the bigger traffic share of the two. Where it lags is follow-through: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
 
@@ -191,8 +191,8 @@ Plan tier tracks the same way, with Premium businesses drawing the most from mai
 | Country | Share of campaigns drawing a tenth of traffic from mail | Campaigns |
 |---|---|---|
 | Argentina | 9.7% | 318 |
-| Italy | 3.1% | |
-| Germany | 2.3% | |
+| Italy | 3.1% | - |
+| Germany | 2.3% | - |
 | United States | 1.7% | 55,074 |
 
 Source: `analysis/output/email_traffic.json`, keys `totals`, `by_client`, `day_curve`, `days_mail_landed`, `email_share_by_industry`, `email_share_by_plan_tier`, `email_share_by_country`, built by the analysis behind it.
@@ -237,7 +237,7 @@ Pooled with crypto organizers back in, the referral rate rises well above the cr
 | Referral-rate figure | Value | Campaigns | Businesses |
 |---|---|---|---|
 | Pooled (crypto included) | 22.1% | 29,151 | 6,536 |
-| Spread on the pooled figure | lower quarter 11.6%, upper quarter 43.5% | | |
+| Spread on the pooled figure | lower quarter 11.6%, upper quarter 43.5% | - | - |
 
 | By industry | Referrals per click | Campaigns | Businesses |
 |---|---|---|---|
@@ -288,7 +288,7 @@ YouTube supplies far more of India's and Brazil's Impressions than the United St
 
 | Country | YouTube share of Impressions | Gleam-hosted landing share | Campaigns | Businesses |
 |---|---|---|---|---|
-| India | 16% | | 6,007 | 872 |
+| India | 16% | - | 6,007 | 872 |
 | Brazil | 19% | 97% | 5,857 | 562 |
 | United States | 2.5% | 44% | 58,742 | 9,091 |
 
@@ -400,15 +400,15 @@ A worked example for a two-week run on Instagram plus email, with a partner on d
 |---|---|---|---|---|---|
 | -1 | Prep | Pin ready | Highlight created | Segment built, link tested | Bio link set, partner brief sent |
 | 1 | Launch | Carousel: Prize, how to enter, eligibility | Link sticker, "just launched" | Launch email within two hours | Pin the post, answer comments for the first hour |
-| 2 | | Usual content | Poll about the Prize | | |
-| 3 | | Usual content | Link sticker reminder | | |
-| 5 | Mid | Reel of the Prize in use | Entries so far, referral reward | Mid email | |
-| 6 | | Usual content | Question sticker, answer three | | |
-| 8 | Partner | Collab post with the partner (appears on both feeds) | Repost the partner's story | | Partner posts in their morning |
-| 10 | | Usual content | Link sticker reminder | | |
-| 12 | | Usual content | Countdown sticker set to the close | | |
-| 13 | Last call | "Closes tomorrow" feed post with the time zone | Countdown reminder | Last call email | |
-| 14 | Close | | "Closing in [hours]" story at the audience's peak hour | | Take the banner down the day after |
+| 2 | - | Usual content | Poll about the Prize | - | - |
+| 3 | - | Usual content | Link sticker reminder | - | - |
+| 5 | Mid | Reel of the Prize in use | Entries so far, referral reward | Mid email | - |
+| 6 | - | Usual content | Question sticker, answer three | - | - |
+| 8 | Partner | Collab post with the partner (appears on both feeds) | Repost the partner's story | - | Partner posts in their morning |
+| 10 | - | Usual content | Link sticker reminder | - | - |
+| 12 | - | Usual content | Countdown sticker set to the close | - | - |
+| 13 | Last call | "Closes tomorrow" feed post with the time zone | Countdown reminder | Last call email | - |
+| 14 | Close | - | "Closing in [hours]" story at the audience's peak hour | - | Take the banner down the day after |
 | 15 to 21 | Draw | Winner post, once the Winner has agreed | Winner story, tag the partner | Winners email | Bio back to normal, highlight stays |
 
 Three feed posts and one collab in fourteen days, with stories carrying the reminders. The feed stays a feed.

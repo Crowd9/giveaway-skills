@@ -75,7 +75,7 @@ Half of ordinary campaigns write their own terms in place of the platform defaul
 
 Custom terms run long, and the generated draft below is far shorter, which is the point.
 
-| Custom terms (18,308 campaigns) | |
+| Custom terms (18,308 campaigns) | - |
 |---|---|
 | Typical length | 1,444 words |
 | Carry a no-purchase line | 66% |

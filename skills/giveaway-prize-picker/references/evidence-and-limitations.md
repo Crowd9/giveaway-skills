@@ -78,7 +78,7 @@ Two shorthands run through the tables below. The middle half is the middle half 
 | Impressions | median 2,029 | 117,258 with a non-zero value. Zeros treated as unknown |
 | Duration | median 14 days, IQR 7 to 29 | 116,491. Maximum 365 days (evergreen campaigns) |
 | One prize record | 82.4% of campaigns | quantity may still exceed 1 |
-| Any quantity above 1 | 31.8% of campaigns | |
+| Any quantity above 1 | 31.8% of campaigns | units listed, which may differ from Winners |
 | Prize value stated | 37.7% of prize records | 62.3% unknown |
 | Stated USD values | median 125, IQR 50 to 424, 90th pct 1,199 | 65,018 records. Max 1,000,000 |
 | Stated EUR values | median 75, IQR 39 to 332, 90th pct 2,200 | 35 records. Max 9,100 |
@@ -399,9 +399,9 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 | States the value | 26% | 33% / 2,101 / 2,130 | 39% / 2,121 / 8,589 |
 | States the Winner count | 5% | — / 1,864 / 429 | — / 2,127 / 10,290 |
 | No-purchase line | 6% | — / 2,405 / 287 | — / 2,109 / 10,432 |
-| Worldwide mentioned | 4% | | |
-| US only mentioned | 2% | | |
-| Age line included | 2% | | |
+| Worldwide mentioned | 4% | - | - |
+| US only mentioned | 2% | - | - |
+| Age line included | 2% | - | - |
 
 ## What the data cannot support
 
