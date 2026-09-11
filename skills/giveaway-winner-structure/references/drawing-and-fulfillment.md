@@ -42,7 +42,16 @@ A drawn name has a real chance of failing verification. The typical campaign has
 
 ## Contact and redraw
 
-- Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline. On a seven-day deadline that puts the attempts about 72 hours apart.
+- Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline. The
+  schedule is written out here so nobody has to work it out mid-answer:
+
+| Reply deadline in the terms | First message | Second message | Forfeit at |
+|---|---|---|---|
+| 7 days (the platform default) | day 0 | day 3 or day 4 | end of day 7 |
+| 72 hours | hour 0 | hour 36 | hour 72 |
+| 48 hours | hour 0 | hour 24 | hour 48 |
+
+  Halfway means halfway. On a seven-day deadline the second message goes on day 3 or 4, never on day 5.
 - Reply deadline in the terms. When it passes, the Prize is forfeited and redrawn.
 - Keep a written log of draws, contacts and responses. Disputes are settled by the log.
 - Never publish a Winner's full details without consent. First name and city, or a handle, with permission.
