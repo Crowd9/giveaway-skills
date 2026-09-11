@@ -274,7 +274,7 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_industry_ordinary`), `anal
 
 Source: `analysis/output/industries.json` (`by_employee_band`, `by_founded_band`, `enrichment_coverage`).
 
-`industries.json`'s `by_employee_band` and `by_founded_band` add a company headcount and company age cut, matched against Apollo's own organization data, not read from the homepage. Apollo matched 3,609 businesses [`analysis/output/industries.json`, `enrichment_coverage`, `by_employee_band`, `by_founded_band`]. How many carry an industry label is not a figure the outputs hold, so read both cuts for direction and never as coverage of the whole set. The match skews toward companies with a public web presence, and the match skews toward companies with a public web presence, so read this as a lean on the larger and more established end, not a full comparison across every business.
+`industries.json`'s `by_employee_band` and `by_founded_band` add a company headcount and company age cut, matched against company records, where the other industry cuts read the homepage. That match covers 3,609 businesses [`analysis/output/industries.json`, `enrichment_coverage`, `by_employee_band`, `by_founded_band`]. How many carry an industry label is not a figure the outputs hold, so read both cuts for direction and never as coverage of the whole set. The match skews toward companies with a public web presence, and the match skews toward companies with a public web presence, so read this as a lean on the larger and more established end, not a full comparison across every business.
 
 | Employee count | Campaigns | Businesses | Conversion Rate | Email offered |
 |---|---|---|---|---|

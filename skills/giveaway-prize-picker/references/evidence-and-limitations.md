@@ -433,14 +433,14 @@ Categorization draws on 49,511 listings from name-pattern rules plus 8,553 more 
 
 ## Company profile data (thin)
 
-Apollo organization matches cover about a sixth of the businesses in the source count [3,609 of 22,273].
+A company-records match covers about a sixth of the businesses in the source count [3,609 of 22,273].
 
-Industry and country cuts on this match (`by_apollo_industry`, `by_apollo_country`) carry many thin cells. Quote nothing from either cut without its campaign count and business count next to it.
+The industry and country cuts on this match carry many thin cells. Quote nothing from either cut without its campaign count and business count next to it.
 
 | Cut | Cells under 10 businesses |
 |---|---|
-| Industry (`by_apollo_industry`) | 13 of 51 |
-| Country (`by_apollo_country`) | 2 of 31 |
+| Industry (company records) | 13 of 51 |
+| Country (company records) | 2 of 31 |
 
 ## Text safety
 

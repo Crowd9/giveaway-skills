@@ -121,6 +121,25 @@ for base, _, files in os.walk(os.path.join(ROOT, "skills")):
                 where = "elsewhere in" if whole and _matches(num, whole, pct == "%") else "nowhere in"
                 warns.append(f"{os.path.relpath(fp, ROOT)}:{n}: {num_s}{pct} is {where} {CURRENT}, not under the keys this section names")
 
+# Words that say where the data came from or how it is stored. They reached the public tree twice: an
+# enrichment vendor named in three reference files, and a phrase naming a second source in four shipped
+# outputs. The scripts that write those outputs are not in this repository, so a rewrite there can put
+# them back, and only a gate here would notice.
+PRIVATE = re.compile(r"\b(apollo|rdap|parquet|duckdb|second dataset|shard)\b", re.I)
+for dirpath, dirnames, filenames in os.walk(ROOT):
+    dirnames[:] = [d for d in dirnames if d not in (".git", "node_modules", "evals", "bench", ".omc")
+                   and not d.startswith(".")]
+    for fn in filenames:
+        if not fn.endswith((".md", ".json", ".py", ".txt", ".yml", ".yaml")): continue
+        fp = os.path.join(dirpath, fn)
+        if os.path.abspath(fp) == os.path.abspath(__file__): continue
+        try: body = open(fp, encoding="utf-8").read()
+        except (UnicodeDecodeError, OSError): continue
+        for m in PRIVATE.finditer(body):
+            line = body[:m.start()].count("\n") + 1
+            fails.append(f"{os.path.relpath(fp, ROOT)}:{line}: names where the data came from ({m.group(0)}), "
+                         "which never goes in the public tree")
+
 for w in warns:
     print("  note: " + w)
 
