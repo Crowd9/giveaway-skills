@@ -1,112 +1,107 @@
 {
  "definitions": {
-  "scope": "campaigns with 100 or more Entrants, ordinary population, Gleam's own demonstration accounts excluded",
+  "scope": "campaigns with 100 or more Entrants, ordinary population",
   "terms_settings": "the values written into the campaign's terms; 7 days is the platform default for both timings"
  },
  "terms_timetable": {
   "draw_days": {
-   "total": 122595,
+   "total": 115365,
    "values": {
     "7": {
-     "campaigns": 115799,
-     "businesses": 17623,
-     "share": 0.9446
+     "campaigns": 108817,
+     "businesses": 16570,
+     "share": 0.9432
     },
     "1": {
-     "campaigns": 1737,
-     "businesses": 510,
-     "share": 0.0142
+     "campaigns": 1646,
+     "businesses": 500,
+     "share": 0.0143
     },
     "3": {
-     "campaigns": 1350,
-     "businesses": 353,
-     "share": 0.011
+     "campaigns": 1311,
+     "businesses": 326,
+     "share": 0.0114
     },
     "2": {
-     "campaigns": 1243,
-     "businesses": 355,
-     "share": 0.0101
+     "campaigns": 1222,
+     "businesses": 343,
+     "share": 0.0106
     },
     "14": {
-     "campaigns": 832,
-     "businesses": 185,
-     "share": 0.0068
+     "campaigns": 797,
+     "businesses": 170,
+     "share": 0.0069
     },
     "5": {
-     "campaigns": 400,
-     "businesses": 142,
+     "campaigns": 386,
+     "businesses": 138,
      "share": 0.0033
     },
     "21": {
-     "campaigns": 304,
-     "businesses": 13,
-     "share": 0.0025
+     "campaigns": 298,
+     "businesses": 11,
+     "share": 0.0026
     },
     "30": {
-     "campaigns": 267,
-     "businesses": 72,
+     "campaigns": 255,
+     "businesses": 66,
      "share": 0.0022
     }
    }
   },
   "reply_days": {
-   "total": 122595,
+   "total": 115365,
    "values": {
     "7": {
-     "campaigns": 114647,
-     "businesses": 17618,
-     "share": 0.9352
+     "campaigns": 107698,
+     "businesses": 16559,
+     "share": 0.9335
     },
     "2": {
-     "campaigns": 2414,
-     "businesses": 395,
-     "share": 0.0197
+     "campaigns": 2390,
+     "businesses": 385,
+     "share": 0.0207
     },
     "1": {
-     "campaigns": 1452,
-     "businesses": 348,
+     "campaigns": 1365,
+     "businesses": 340,
      "share": 0.0118
     },
     "3": {
-     "campaigns": 1412,
-     "businesses": 413,
-     "share": 0.0115
+     "campaigns": 1354,
+     "businesses": 388,
+     "share": 0.0117
     },
     "14": {
-     "campaigns": 833,
-     "businesses": 202,
+     "campaigns": 786,
+     "businesses": 188,
      "share": 0.0068
     },
     "28": {
-     "campaigns": 482,
-     "businesses": 27,
-     "share": 0.0039
+     "campaigns": 480,
+     "businesses": 26,
+     "share": 0.0042
     },
     "5": {
-     "campaigns": 375,
-     "businesses": 176,
-     "share": 0.0031
+     "campaigns": 369,
+     "businesses": 173,
+     "share": 0.0032
     },
     "30": {
-     "campaigns": 308,
-     "businesses": 125,
+     "campaigns": 291,
+     "businesses": 115,
      "share": 0.0025
     }
    }
   }
  },
  "selection_method": {
-  "total": 122595,
+  "total": 115365,
   "values": {
    "Random Draw": {
-    "campaigns": 121501,
-    "businesses": 18317,
-    "share": 0.9911
-   },
-   "Bốc thăm ngẫu nhiên": {
-    "campaigns": 85,
-    "businesses": 1,
-    "share": 0.0007
+    "campaigns": 114448,
+    "businesses": 17248,
+    "share": 0.9921
    },
    "Tirage au sort": {
     "campaigns": 47,
@@ -120,6 +115,11 @@
    },
    "Jurering": {
     "campaigns": 32,
+    "businesses": 1,
+    "share": 0.0003
+   },
+   "Random draw to select finalists & then finalists judged": {
+    "campaigns": 31,
     "businesses": 1,
     "share": 0.0003
    }

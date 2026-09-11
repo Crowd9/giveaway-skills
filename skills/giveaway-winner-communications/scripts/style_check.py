@@ -8,7 +8,9 @@ Hard fails: em dashes, semicolons, curly quotes, an assistant opener or closer, 
 the answer commenting on itself, a closing sentence that carries no number and asks for nothing, a mechanic banned
 on the strength of an average when no platform rule, law or money risk is named nearby, a raw pair of decimals the reader
 has to divide themselves, analysis jargon that belongs in the reference files, a literary join nobody says out loud,
-an answer over sixty words that never once says "you", and any of Gleam's own words written without its capital.
+an answer over sixty words that never once says "you", and any of Gleam's own words written without its capital,
+which covers the dashboard names and the product nouns Entrant, Contestant, Prize and Winner. "entries" stays out:
+the repo's own prose uses it as a common noun 194 times, so flagging it would fail the references it is drawn from.
 Sentence variety is the soft gate: something short, something long, so the answer does not read as one template rhythm.
 """
 import re, sys
@@ -59,11 +61,22 @@ METADISCOURSE = r"\b(each worth naming|worth naming|the key point is|that last p
 RHETORICAL = r"\b(what if i told you|think about it:|plot twist:|here is the thing|here's the thing|let me be clear|the uncomfortable truth)\b"
 RECAP = r"(?i)\b(in conclusion|to recap|ultimately,|overall,|to sum up|all in all)\b"
 # Gleam's own words must arrive capitalised, because the reader has the dashboard open beside the answer.
-APP_LOWER = r"(?<![A-Za-z`\-])(impressions|conversion rate|entry methods?|viral shares?|email subscriptions?|secret code|visit a page|answer a question|chat members?|custom actions?|app downloads?|loyalty bonus(es)?|file uploads?)\b"
+APP_LOWER = r"(?<![A-Za-z`\-])(impressions|conversion rate|entry methods?|viral shares?|email subscriptions?|secret code|visit a page|answer a question|chat members?|custom actions?|app downloads?|loyalty bonus(es)?|file uploads?|entrants?|contestants?|prizes?|winners?)\b"
 STIFF = r"\b(works the other way|pulls? in the opposite direction|the picture reverses|comes at a cost|on the other hand|that said|conversely|by contrast|it is worth (noting|remembering)|bear in mind|one thing to note)\b"
 JARGON = r"\b(contestant band|size band|per contestant|n\s*=\s*\d|stratified|cohort|controlled for|unstratified|clean subset|ordinary segment|uptake|extracted)\b"
 BAN = r"\b(so (skip|avoid|drop|do not add|don't add|do not use|don't use)|(skip|avoid) (the|a|an|any) \w+ action|not worth (adding|offering|running|using)|(do not|don't) (bother|add|offer) [a-z]|leave (it|that|the \w+) out)\b"
 META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(i|we) (sent|gave|listed|showed) (you|above)|as (i|we) (said|noted) above|the (list|table|numbers) above (is|are|shows)|to summari[sz]e|in short,|in summary)\b"
+
+
+
+# Gleam's product nouns are checked on prose only. A file name, a flag or a URL carries the word in lower case by
+# necessity (`references/prize-taxonomy.md`, `--winners-csv`, /setup/prizes), and flagging those would teach an
+# answer to stop citing its sources.
+CODEISH = re.compile(r"`[^`]*`|https?://\S+|\B--[a-z][\w-]*|\b[\w./-]+\.(?:md|json|csv|py|txt)\b")
+
+
+def prose_only(text):
+    return CODEISH.sub(" ", text)
 
 
 def check(text):
@@ -98,7 +111,7 @@ def check(text):
         "metadiscourse": len(re.findall(METADISCOURSE, text, re.I)),
         "rhetorical_setups": len(re.findall(RHETORICAL, text, re.I)),
         "recap_endings": len(re.findall(RECAP, text)),
-        "lowercase_app_terms": len(re.findall(APP_LOWER, text)),
+        "lowercase_app_terms": len(re.findall(APP_LOWER, prose_only(text))),
         "stiff_phrases": len(re.findall(STIFF, text, re.I)),
         "no_second_person": int(len(re.findall(r"\byou(r|'ll|'re|'ve)?\b", text, re.I)) == 0 and len(text.split()) > 60),
         "reader_facing_jargon": len(re.findall(JARGON, text, re.I)),
