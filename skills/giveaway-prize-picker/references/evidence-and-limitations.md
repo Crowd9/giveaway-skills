@@ -417,7 +417,7 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 
 ## Classification limits
 
-- Prize categories come from name-pattern rules plus a private AI-assisted label pass on the names the rules missed. 6.7% remain unclassified and 6.0% are placeholders ("1st Prize", or a campaign title reused as the Prize name). Label-pass categories are an AI model's inference over business-typed text in many languages, spot-checked but not systematically measured for accuracy.
+- Prize categories come from name-pattern rules plus an AI-assisted label pass on the names the rules missed. 6.7% of Prize listings remain unclassified and 6.0% are placeholders ("1st Prize", or a campaign title reused as the Prize name). Per campaign the gap is wider, because a campaign takes its category from its Prize listings and many have none that classify: 31,365 of the 117,329 campaigns sit in other or unclassified and 5,199 in placeholder names, so 31% of campaigns carry no usable Prize category and other or unclassified is the largest category in the data, ahead of tech hardware at 20,271. Label-pass categories are an AI model's inference over business-typed text in many languages, spot-checked but not systematically measured for accuracy.
 - The own-product flag is a word-overlap heuristic with both false positives and false negatives.
 - Crypto detection is conservative on purpose. The ambiguous campaigns probably include some regular giveaways and some crypto ones [1,251 of them]. The label pass caught token names the rules had missed, but non-English crypto campaigns (an Arabic-language token airdrop, an NFT platform's mystery box) were seen among the campaigns behind these numbers during spot checks, so a small residual remains.
 

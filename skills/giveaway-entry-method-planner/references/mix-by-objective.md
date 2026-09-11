@@ -371,12 +371,16 @@ Visit actions by where they send people:
 
 | Destination | Actions | Share who completed it (typical) |
 |---|---|---|
-| another site | 45,256 | 69 |
-| YouTube | 17,126 | 81 |
-| the business's own site | 3,147 | 96 |
-| another Gleam campaign | 245 | 84 |
+| another site | 121,815 | 77 |
+| YouTube | 49,522 | 85 |
+| the business's own site | 10,333 | 97 |
+| another Gleam campaign | 583 | 85 |
+| Steam | 303 | 79 |
+| Instagram | 194 | 95 |
+| Facebook | 117 | 58 |
+| Amazon | 101 | 69 |
 
-A visit to the business's own site is completed by almost everyone, a YouTube channel by four in five, and any other site by seven in ten.
+A visit to the business's own site is completed by almost everyone at 97 per 100 Entrants, a YouTube channel by 85 and any other site by 77. Two thirds of visit actions land in that last row, which is every destination the rules do not name, so it carries no one kind of page. [Source: `analysis/output/text_and_context.json`, `visit_destinations`.]
 
 Email Subscriptions by the description under the action:
 
