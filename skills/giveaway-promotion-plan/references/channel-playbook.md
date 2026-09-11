@@ -32,6 +32,8 @@ Source: analysis/output/field_cuts.json (referrer_channel_share, landing_kind_sh
 
 Extracted: the giveaway directories, deals forums and gaming communities that reached the most organizers. These are public third-party sites, so the host names are published.
 
+What this table is, and what it is not. It counts the traffic these sites sent, which says they are worth submitting to and nothing more. How a site takes a submission, what it charges, how long it sits in a queue and whether it accepts a campaign at all are not in this data and not on any page read here. Tell the reader to check the site's own submission page, and never put a turnaround time in an answer.
+
 | Giveaway directories | Businesses reached | Impressions |
 |---|---|---|
 | freestufftimes.com | 3,403 | 952,981 |
