@@ -6,7 +6,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.27 |
 | giveaway-entry-method-planner | 1.2.26 |
-| giveaway-timing-and-duration | 1.4.24 |
+| giveaway-timing-and-duration | 1.4.25 |
 | giveaway-winner-structure | 1.3.23 |
 | giveaway-promotion-plan | 1.3.27 |
 | giveaway-random-draw | 1.3.21 |
@@ -115,6 +115,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.4.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.4.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.4.25 (2026-09-12): The Black Friday close date names the Wednesday, since closing on Thanksgiving puts the draw on Black Friday morning.
 
 ### giveaway-winner-structure
 
