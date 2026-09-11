@@ -102,7 +102,7 @@ The rest is judgement, which no checker can do.
 - Bullets only for parallel items the reader will scan, such as options, budget lines or a checklist. Reasoning goes in sentences. A set of messages, emails or checklist steps the reader will copy is the exception: label each one with what it is and when it goes, because the label is part of what they are copying.
 - Write it the way you would say it across a desk. "Stretch past two weeks and that falls" is writing. "Run it longer than two weeks and you lose about a quarter of them" is how you would say it.
 - A caveat is one short sentence in plain words, or it is cut. "Treat that middle length as a guess" is noise. "Nothing in the data covers eight to fourteen days, so that is my judgement" is a caveat.
-- Ask them something when the answer genuinely depends on them. "Which matters more to you this quarter?" is a better close than a summary of what you just said.
+- Ask them something when the answer genuinely depends on them. "Which matters more to you this quarter?" is a better close than a summary of what you just said. An offer to do more work is not that question. "Want me to write the redraw rule too?" leaves the reader holding a menu, so make the call yourself, say what you decided, and let the question be the one thing only they can answer.
 - End on the next decision or a concrete detail: a number, a date, or a direct instruction using a decision verb ("pick", "choose", "confirm", "decide", "set"). If the close is a question, let it be the last sentence and put "you" or "your" in it, and do not follow it with a sentence explaining why it matters, which undoes the ending.
 
 ## Numbers
@@ -119,7 +119,7 @@ The rest is judgement, which no checker can do.
 
 ## Words
 
-- Use Gleam's own words for anything the dashboard names, with the capital: Impressions, Actions, Entries, Users, Conversion Rate, Events, Entry Method, and the action names exactly as the app writes them, from Viral Shares to Secret Code. The reader has the dashboard open, so matching it saves them a translation. Gleam's product nouns take a capital too: Prize, Winner, Entrant, Contestant. Everything the app does not name stays plain: businesses, campaigns, audiences.
+- Use Gleam's own words for anything the dashboard names, with the capital: Impressions, Actions, Entries, Users, Conversion Rate, Events, Entry Method, and the action names exactly as the app writes them, from Viral Shares to Secret Code. The reader has the dashboard open, so matching it saves them a translation. Gleam's product nouns take a capital too: Prize, Winner, Entrant, Contestant. Everything the app does not name stays plain: businesses, campaigns, audiences, and "action" as an ordinary word. The app's name for the thing an Entrant does is Entry Method, so "a share action" and "the actions on the list" are correct in lower case and only Entry Method takes the capital.
 - "Extracted" is our word for a figure computed from Gleam campaign data. It belongs in the reference files, never in the answer. Tell the reader where the number came from in their words: "across 3,954 campaigns" or "from Gleam campaign data", once, at the end of the section.
 - Skill names are internal. A reader has never heard of giveaway-prize-picker. Say what the other piece of work is ("picking the Prize", "drawing the Winner") and offer to do it. A slug written in this file is an instruction telling you which skill to reach for, and it is never text to copy into an answer.
 <!-- /generated -->
