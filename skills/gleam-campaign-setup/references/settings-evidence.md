@@ -42,60 +42,85 @@ Actions offered by at least 300 campaigns, in order of how many campaigns offere
 
 | Action | Campaigns | Typical share who did it, % of Entrants | Typical range, % of Entrants |
 |---|---|---|---|
-| X Follows | 19,433 | 50 (0.50) | 36 to 66 (0.36 to 0.66) |
-| Visit a Page | 19,348 | 71 (0.71) | 48 to 99 (0.48 to 0.99) |
-| Instagram Profile Visits | 18,044 | 79 (0.79) | 63 to 90 (0.63 to 0.90) |
-| Viral Shares | 16,018 | 12 (0.12) | 7 to 23 (0.07 to 0.23) |
-| Email Subscriptions | 15,463 | 90 (0.90) | 71 to 102 (0.71 to 1.02) |
-| Facebook visits | 14,640 | 76 (0.76) | 60 to 88 (0.60 to 0.88) |
-| YouTube Channel Visits | 14,099 | 83 (0.83) | 66 to 95 (0.66 to 0.95) |
-| Bonus | 12,328 | 101 (1.01) | 41 to 195 (0.41 to 1.95) |
-| X Reposts | 7,182 | 39 (0.39) | 27 to 53 (0.27 to 0.53) |
-| Custom Actions | 6,695 | 47 (0.47) | 22 to 81 (0.22 to 0.81) |
-| Twitch Follows | 5,998 | 55 (0.55) | 41 to 73 (0.41 to 0.73) |
-| Chat Members | 5,734 | 36 (0.36) | 25 to 50 (0.25 to 0.50) |
-| TikTok Follows | 5,276 | 34 (0.34) | 25 to 46 (0.25 to 0.46) |
-| Secret Code | 3,803 | 25 (0.25) | 8 to 54 (0.08 to 0.54) |
-| Answer a Question | 3,695 | 81 (0.81) | 47 to 101 (0.47 to 1.01) |
-| X Posts | 3,655 | 29 (0.29) | 19 to 39 (0.19 to 0.39) |
-| Instagram Follows | 2,750 | 48 (0.48) | 39 to 62 (0.39 to 0.62) |
-| TikTok Video Views | 2,353 | 48 (0.48) | 35 to 63 (0.35 to 0.63) |
-| Pinterest Visits | 1,972 | 63 (0.63) | 49 to 72 (0.49 to 0.72) |
-| Twitch Subscribers | 1,884 | 5 (0.05) | 2 to 15 (0.02 to 0.15) |
-| Facebook Entries | 1,842 | 49 (0.49) | 37 to 64 (0.37 to 0.64) |
-| Loyalty Bonuses | 1,780 | 47 (0.47) | 29 to 66 (0.29 to 0.66) |
-| Single Choice List | 1,659 | 93 (0.93) | 67 to 103 (0.67 to 1.03) |
-| Telegram Channel Members | 1,622 | 83 (0.83) | 55 to 89 (0.55 to 0.89) |
-| Instagram Post Views | 1,545 | 62 (0.62) | 40 to 79 (0.40 to 0.79) |
-| App Downloads | 1,501 | 35 (0.35) | 26 to 49 (0.26 to 0.49) |
-| Facebook Likes | 1,281 | 37 (0.37) | 29 to 44 (0.29 to 0.44) |
-| YouTube Entries | 1,111 | 77 (0.77) | 47 to 102 (0.47 to 1.02) |
-| Reddit Visits | 1,061 | 71 (0.71) | 51 to 83 (0.51 to 0.83) |
-| Facebook Post Views | 947 | 62 (0.62) | 38 to 79 (0.38 to 0.79) |
-| Instagram Entries | 925 | 47 (0.47) | 32 to 59 (0.32 to 0.59) |
-| Spotify follows | 899 | 29 (0.29) | 18 to 42 (0.18 to 0.42) |
-| Podcast Subscriptions | 865 | 29 (0.29) | 24 to 36 (0.24 to 0.36) |
-| LinkedIn Follow | 767 | 25 (0.25) | 19 to 31 (0.19 to 0.31) |
-| Media Submits | 683 | 4 (0.04) | 1 to 16 (0.01 to 0.16) |
-| Group Members | 682 | 41 (0.41) | 28 to 58 (0.28 to 0.58) |
-| Multiple Choice Checkboxes | 657 | 90 (0.90) | 64 to 102 (0.64 to 1.02) |
-| Blog Comment | 592 | 24 (0.24) | 16 to 37 (0.16 to 0.37) |
-| X Hashtag Posts | 508 | 34 (0.34) | 21 to 51 (0.21 to 0.51) |
-| Pinterest Entries | 506 | 38 (0.38) | 18 to 44 (0.18 to 0.44) |
-| csv_import | 495 | 5 (0.05) | 0 to 71 (0.00 to 0.71) |
-| Instagram Comments | 484 | 33 (0.33) | 23 to 44 (0.23 to 0.44) |
-| X Entries | 456 | 40 (0.40) | 28 to 59 (0.28 to 0.59) |
-| Snapchat | 430 | 26 (0.26) | 16 to 38 (0.16 to 0.38) |
-| Gleam Subscriber | 423 | 61 (0.61) | 52 to 68 (0.52 to 0.68) |
-| X Post Views | 392 | 59 (0.59) | 49 to 71 (0.49 to 0.71) |
-| File Uploads | 383 | 9 (0.09) | 2 to 33 (0.02 to 0.33) |
-| Submit URL | 373 | 14 (0.14) | 5 to 38 (0.05 to 0.38) |
-| Spotify listen | 370 | 70 (0.70) | 31 to 133 (0.31 to 1.33) |
-| Bluesky Follows | 340 | 24 (0.24) | 17 to 33 (0.17 to 0.33) |
-| Threads Follows | 315 | 27 (0.27) | 21 to 32 (0.21 to 0.32) |
-| Patreon Visits | 304 | 59 (0.59) | 24 to 75 (0.24 to 0.75) |
+| X Follows | 66,279 | 54 (0.54) | 39 to 70 (0.39 to 0.70) |
+| Visit a Page | 63,172 | 78 (0.78) | 56 to 100 (0.56 to 1.00) |
+| Instagram Profile Visits | 59,199 | 82 (0.82) | 68 to 92 (0.68 to 0.92) |
+| Facebook visits | 46,762 | 82 (0.82) | 65 to 92 (0.65 to 0.92) |
+| YouTube Channel Visits | 44,796 | 86 (0.86) | 71 to 97 (0.71 to 0.97) |
+| Viral Shares | 42,900 | 11 (0.11) | 6 to 23 (0.06 to 0.23) |
+| Bonus | 39,454 | 102 (1.02) | 60 to 200 (0.60 to 2.00) |
+| Email Subscriptions | 38,554 | 85 (0.85) | 72 to 101 (0.72 to 1.01) |
+| X Reposts | 27,878 | 44 (0.44) | 31 to 60 (0.31 to 0.60) |
+| Custom Actions | 22,972 | 51 (0.51) | 26 to 81 (0.26 to 0.81) |
+| Twitch Follows | 22,521 | 68 (0.68) | 48 to 88 (0.48 to 0.88) |
+| Chat Members | 19,190 | 45 (0.45) | 29 to 64 (0.29 to 0.64) |
+| X Posts | 15,558 | 34 (0.34) | 25 to 44 (0.25 to 0.44) |
+| TikTok Follows | 14,329 | 35 (0.35) | 25 to 49 (0.25 to 0.49) |
+| Answer a Question | 14,035 | 73 (0.73) | 41 to 100 (0.41 to 1.00) |
+| Secret Code | 9,122 | 28 (0.28) | 9 to 57 (0.09 to 0.57) |
+| Instagram Follows | 8,234 | 51 (0.51) | 40 to 67 (0.40 to 0.67) |
+| Pinterest Visits | 7,863 | 66 (0.66) | 51 to 76 (0.51 to 0.76) |
+| Facebook Entries | 7,591 | 54 (0.54) | 41 to 68 (0.41 to 0.68) |
+| Twitch Subscribers | 7,374 | 11 (0.11) | 3 to 36 (0.03 to 0.36) |
+| Instagram Post Views | 7,204 | 74 (0.74) | 58 to 84 (0.58 to 0.84) |
+| TikTok Video Views | 6,756 | 53 (0.53) | 38 to 68 (0.38 to 0.68) |
+| Loyalty Bonuses | 6,152 | 56 (0.56) | 34 to 72 (0.34 to 0.72) |
+| Blog Comment | 6,102 | 22 (0.22) | 13 to 41 (0.13 to 0.41) |
+| Single Choice List | 4,869 | 77 (0.77) | 57 to 101 (0.57 to 1.01) |
+| Telegram Channel Members | 4,153 | 86 (0.86) | 61 to 98 (0.61 to 0.98) |
+| Facebook Post Views | 4,068 | 71 (0.71) | 52 to 83 (0.52 to 0.83) |
+| Facebook Likes | 3,971 | 39 (0.39) | 30 to 47 (0.30 to 0.47) |
+| Instagram Entries | 3,810 | 53 (0.53) | 38 to 67 (0.38 to 0.67) |
+| YouTube Entries | 3,503 | 81 (0.81) | 53 to 97 (0.53 to 0.97) |
+| App Downloads | 3,495 | 41 (0.41) | 28 to 62 (0.28 to 0.62) |
+| Group Members | 3,325 | 54 (0.54) | 36 to 66 (0.36 to 0.66) |
+| Reddit Visits | 2,754 | 77 (0.77) | 58 to 88 (0.58 to 0.88) |
+| X Entries | 2,633 | 59 (0.59) | 42 to 79 (0.42 to 0.79) |
+| Podcast Subscriptions | 2,489 | 35 (0.35) | 28 to 44 (0.28 to 0.44) |
+| Media Submits | 2,204 | 10 (0.10) | 3 to 63 (0.03 to 0.63) |
+| Multiple Choice Checkboxes | 2,191 | 82 (0.82) | 59 to 101 (0.59 to 1.01) |
+| Spotify follows | 2,186 | 32 (0.32) | 22 to 48 (0.22 to 0.48) |
+| Goodreads Follows | 2,057 | 48 (0.48) | 41 to 52 (0.41 to 0.52) |
+| Twitch Channel Rewards | 2,009 | 48 (0.48) | 12 to 138 (0.12 to 1.38) |
+| Bluesky Follows | 1,913 | 29 (0.29) | 19 to 41 (0.19 to 0.41) |
+| LinkedIn Follow | 1,737 | 28 (0.28) | 20 to 39 (0.20 to 0.39) |
+| Submit URL | 1,619 | 20 (0.20) | 8 to 43 (0.08 to 0.43) |
+| Pinterest Entries | 1,608 | 40 (0.40) | 26 to 48 (0.26 to 0.48) |
+| Instagram Comments | 1,568 | 35 (0.35) | 27 to 48 (0.27 to 0.48) |
+| Patreon Visits | 1,525 | 43 (0.43) | 8 to 73 (0.08 to 0.73) |
+| X Hashtag Posts | 1,509 | 37 (0.37) | 24 to 56 (0.24 to 0.56) |
+| Twitch Entries | 1,497 | 75 (0.75) | 54 to 96 (0.54 to 0.96) |
+| X Post Views | 1,462 | 66 (0.66) | 51 to 83 (0.51 to 0.83) |
+| File Uploads | 1,236 | 17 (0.17) | 4 to 73 (0.04 to 0.73) |
+| Threads Follows | 1,219 | 24 (0.24) | 19 to 31 (0.19 to 0.31) |
+| Promote Entries | 1,215 | 49 (0.49) | 37 to 57 (0.37 to 0.57) |
+| Gleam Subscriber | 1,206 | 62 (0.62) | 51 to 71 (0.51 to 0.71) |
+| RSS Feed | 1,174 | 50 (0.50) | 25 to 61 (0.25 to 0.61) |
+| Snapchat | 983 | 21 (0.21) | 15 to 34 (0.15 to 0.34) |
+| Spotify listen | 926 | 58 (0.58) | 33 to 123 (0.33 to 1.23) |
+| Facebook Join Group | 884 | 35 (0.35) | 31 to 41 (0.31 to 0.41) |
+| Kick Follow | 760 | 45 (0.45) | 32 to 61 (0.32 to 0.61) |
+| csv_import | 725 | 5 (0.05) | 0 to 79 (0.00 to 0.79) |
+| Discord Entries | 685 | 61 (0.61) | 43 to 82 (0.43 to 0.82) |
+| Choose Image | 680 | 96 (0.96) | 81 to 102 (0.81 to 1.02) |
+| SoundCloud Follows | 670 | 21 (0.21) | 12 to 32 (0.12 to 0.32) |
+| Bluesky Reposts | 667 | 25 (0.25) | 19 to 33 (0.19 to 0.33) |
+| Crypto Wallet Address | 663 | 109 (1.09) | 87 to 145 (0.87 to 1.45) |
+| Steam Entries | 604 | 70 (0.70) | 46 to 91 (0.46 to 0.91) |
+| Instagram Uploads | 597 | 3 (0.03) | 1 to 6 (0.01 to 0.06) |
+| Game Players | 576 | 11 (0.11) | 3 to 28 (0.03 to 0.28) |
+| Watch a Video | 499 | 47 (0.47) | 35 to 70 (0.35 to 0.70) |
+| Facebook Uploads | 497 | 3 (0.03) | 1 to 6 (0.01 to 0.06) |
+| Spotify saves | 488 | 41 (0.41) | 25 to 64 (0.25 to 0.64) |
+| Kickstarter visits | 437 | 79 (0.79) | 59 to 96 (0.59 to 0.96) |
+| Blog Post | 401 | 1 (0.01) | 0 to 2 (0.00 to 0.02) |
+| Tumblr Follows | 375 | 16 (0.16) | 8 to 23 (0.08 to 0.23) |
+| LinkedIn Share | 341 | 4 (0.04) | 2 to 9 (0.02 to 0.09) |
+| Facebook check-ins | 305 | 29 (0.29) | 12 to 42 (0.12 to 0.42) |
 
-Reading it: visits and email signups are completed by most Entrants (see table above). Follows sit near half. Viral Shares are the exception, a small share of Entrants refer someone, and a Viral Share entry is a referred person multiplied by entry worth, so the share of Entrants who actually shared is lower still. Twitch Subscribers, a paid action, and Media Submits sit lowest of all the actions measured. Bonus and Answer a Question run highest, because they are quick and often gated at the top.
+Source: `analysis/output/gleam_settings.json` key `uptake_by_gleam_action`.
+
+Reading it: visits and email signups are completed by most Entrants, and follows run from about a third to two thirds. Viral Shares are the exception, a small share of Entrants refer someone, and a Viral Share entry is a referred person multiplied by entry worth, so the share of Entrants who actually shared is lower still. Uploads, blog posts and a paid Twitch subscription sit lowest, some of them under 5 in every 100 Entrants. Bonus reads above 100 because one Entrant can complete a repeatable action more than once.
 
 ## Position in the action list
 

@@ -500,7 +500,7 @@ Extracted: 28% of Email Subscriptions actions in the ordinary campaigns showed a
 
 The actions a store wants send the Entrant into the catalogue and bring something back.
 
-- **Visit a product or collection page.** The Visit a Page action is in four out of five campaigns at a typical 71 completions % of Entrants (19,348 campaigns). Point it at the page the campaign is about, not the home page.
+- **Visit a product or collection page.** The Visit a Page action is in four out of five campaigns at a typical 78 completions % of Entrants (63,172 campaigns). Point it at the page the campaign is about, not the home page.
 - **Answer a question with the product.** "Which item would you pick" or "paste the link to your cart or wishlist" as the required action. Question templates ran a typical 81 completions % of Entrants (4,875 campaigns, 976 businesses). The answers are the wishlist data a cart campaign exists to collect.
 - **Pick your Prize.** A choice action with the three Prize options, so the preference is recorded on entry.
 - **Subscribe with the store tag.** The Email Subscriptions action synced to the store's customer list with the campaign name as the tag, so the non-Winner code and the welcome series go to the right segment.
