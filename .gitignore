@@ -1,18 +1,8 @@
 # Private build inputs: never commit source campaign data or record-level analysis
-build-inputs
+analysis/*.py
 the analysis notes
-# data-loading and enrichment scripts: kept locally, not published
-analysis/convert.py
-analysis/contestants.py
-analysis/sources.py
-analysis/build tooling.py
-analysis/build tooling.py
-analysis/build tooling.py
 analysis/private/
 build-inputs/
-*contestants*.json
-*.jsonl
-*.tables
 .remember/
 .claude/settings.local.json
 .DS_Store

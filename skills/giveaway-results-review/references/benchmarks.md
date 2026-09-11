@@ -242,7 +242,7 @@ By industry (`by_industry`), finance_crypto (15,796 campaigns) held out on the s
 | Jewelry and watches | 137 | 65 | 2,225 | 26% | 3.51 | 22 | 71% |
 | Nonprofit or community | 134 | 57 | 2,069 | 32% | 2.57 | 16 | 42% |
 
-This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the analysis rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 117,348 campaigns). Say which cut a rank came from.
+This industry cut reads the organizer's own homepage, and so do `percentiles.json`'s groups since the  rebuild: the ten vertical names `review.py` accepts (gaming, technology, fashion_beauty and the rest) fold the homepage labels together (fashion_beauty is apparel, beauty and jewellery, kids_family_pets is baby, pets and toys), and every label with five organizers also has its own `industry:` group. Conversion Rate by vertical sits in a narrow band (table below, 117,348 campaigns). Say which cut a rank came from.
 
 | Vertical | Conversion Rate |
 |---|---|

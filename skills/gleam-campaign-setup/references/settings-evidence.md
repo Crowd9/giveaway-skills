@@ -4,7 +4,7 @@ Extracted from the campaigns we could compare fairly in the dataset: campaigns t
 
 Every figure below is the share of a campaign's Entrants who completed a given action, worked out as completions of that action divided by Entrants, then taken as the typical value across every campaign that offered it, shown as a count % of Entrants with the decimal it came from in brackets. A figure of 51 per 100 means about half the Entrants did it. A figure above 100 per 100 means the action was completed more than once per Entrant on average, which happens on daily and repeatable actions.
 
-Action names are the dataset's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. (Reproduce with `analysis/gleam_settings.py`.)
+Action names are the dataset's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. ()
 
 ## Starting point (extracted)
 
@@ -99,7 +99,7 @@ Reading it: visits and email signups are completed by most Entrants (see table a
 
 ## Position in the action list
 
-Typical share of Entrants who completed an action, by the action's list position, split by family, campaign analysis. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice.
+Typical share of Entrants who completed an action, by the action's list position, split by family. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice.
 
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Every family sees fewer Entrants complete it the further down the list it sits, 
 
 ## Description length
 
-Words in the campaign description, campaign analysis, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
+Words in the campaign description, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
 
 | Words | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|---|

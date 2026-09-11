@@ -125,7 +125,7 @@ Primary prize category (first prize record) by band, share of campaigns:
 
 ## Plan tier, extended
 
-The plan tier row above comes from the dataset at large. A analysis cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free converts best and never offers an email action, and neither does Hobby. Premium runs longest and offers the most Entry Methods, but converts worst. Business and Pro sit in the middle on every measure. Reproduce with `analysis/field_cuts.py`.
+The plan tier row above comes from the dataset at large. A  cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free converts best and never offers an email action, and neither does Hobby. Premium runs longest and offers the most Entry Methods, but converts worst. Business and Pro sit in the middle on every measure.
 
 | Tier | Conversion Rate | Campaigns | Businesses | Notable |
 |---|---|---|---|---|
@@ -137,7 +137,7 @@ The plan tier row above comes from the dataset at large. A analysis cut on the s
 
 ## Business scale
 
-Homepage labels also split businesses into listed and private companies. Private businesses run shorter campaigns with a higher referral rate, listed businesses run longer campaigns with a lower one. Revenue cuts inside this data, matched against Fortune-500-like companies, sit below the ten-business floor for anything but advice [7 to 20 businesses per group]. Reproduce with `analysis/industries.py`.
+Homepage labels also split businesses into listed and private companies. Private businesses run shorter campaigns with a higher referral rate, listed businesses run longer campaigns with a lower one. Revenue cuts inside this data, matched against Fortune-500-like companies, sit below the ten-business floor for anything but advice [7 to 20 businesses per group].
 
 | Business type | Duration | Referrals % of Entrants | Campaigns | Businesses |
 |---|---|---|---|---|
@@ -146,7 +146,7 @@ Homepage labels also split businesses into listed and private companies. Private
 
 ## Repeat businesses
 
-Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it: businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them. Reproduce with `analysis/field_cuts.py`.
+Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it: businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them.
 
 | Campaign sequence | Conversion Rate | Duration | Campaigns | Businesses |
 |---|---|---|---|---|
@@ -172,7 +172,7 @@ Category typical figures for stated values are given in the taxonomy as referenc
 
 ## Prize value, adjusted
 
-A analysis field cut confirms the coverage gap holds at scale: 38.8% of Prize listings carry a stated value, and 99.9% of those are USD. Every typical figure below rests on that self-selected minority.
+A  field cut confirms the coverage gap holds at scale: 38.8% of Prize listings carry a stated value, and 99.9% of those are USD. Every typical figure below rests on that self-selected minority.
 
 Campaigns whose every Prize carried a stated USD value: 13,977. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
 
@@ -424,7 +424,7 @@ Conversion Rate means Entrants per Impression: the share of unique daily Impress
 
 Verified from the platform's reporting terms page on 9 September 2026: Impressions count one view per user per 24 hours, an Action is one Entry Method completed, Entries are Actions completed times Entry Worth, Users are unique Entrants, and the platform quotes an average Conversion Rate of about 34%. The dataset's valid Entrants are Users, valid entries are Entries, and Entry Worth is absent, so Actions per Entrant mixes how many Actions people did with how much each was worth.
 
-Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by `analysis/compare_groups.py`.
+Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by the analysis behind it.
 
 <!-- generated:cmp_vertical -->
 | Vertical, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |

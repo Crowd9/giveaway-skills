@@ -1,6 +1,6 @@
 # Cost benchmarks and ROI
 
-From the campaigns behind these numbers (117,128 campaigns, 17,777 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 100 Entrants. Reproduce with `analysis/roi_benchmarks.py`.
+From the campaigns behind these numbers (117,128 campaigns, 17,777 businesses). Cost figures use the stated USD Prize pool, which is what businesses wrote and the only cost the dataset holds. Real cost is usually lower (own product at cost, sponsored Prizes) and promotion spend is invisible, so treat these as stated value per result. The industry names below fold homepage labels into the ten names this skill uses throughout (gaming is gaming_esports, technology is electronics_tech, fashion_beauty is apparel_fashion, beauty_personal_care and jewelry_watches, and so on). Every figure describes campaigns that reached 100 Entrants.
 
 ## By industry
 
@@ -77,7 +77,7 @@ Homepage labels read from each business's own site, across the campaigns behind 
 | Automotive | 1,124 | 142 | 2,776 | 23% | 6.40 | 18 | 10 | 68% |
 | Toys, hobbies and collectibles | 989 | 202 | 1,832 | 26% | 3.55 | 20 | 6 | 43% |
 
-Home and garden and apparel and fashion have the highest Conversion Rate among the largest industries (both 31%), apparel and fashion also offers email most often (74%), and automotive asks for the most Entry Methods (10). Reproduce with `analysis/industries.py`.
+Home and garden and apparel and fashion have the highest Conversion Rate among the largest industries (both 31%), apparel and fashion also offers email most often (74%), and automotive asks for the most Entry Methods (10).
 
 By business type, on the same scope:
 

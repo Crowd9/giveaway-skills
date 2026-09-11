@@ -1,5 +1,5 @@
 {
- "definitions": "Descriptive group comparisons for the skill references, from the campaign analysis. Writes analysis/output/comparisons.json.\n\n  python3 analysis/compare_groups.py [build-inputs/tables] [--classification FILE]\n\nImpressions in the dataset are unique per day, so a returning visitor counts once per day. Repeatable actions\n(daily bonus, loyalty, timed bonus) and long runs inflate impressions and depress contestants per impression.\nConversion comparisons therefore use a CLEAN subset: campaigns with no repeatable action and a run of 14 days\nor less. Every figure is a median and describes what organizers chose. Every campaign is in the ordinary frame\nfrom frame.py, 100 or more contestants, and every published group needs five distinct organizers. Verticals\nfold the homepage-label industry into the ten names the skill references already use, industry rows carry the\nlabel as reported.",
+ "definitions": "Descriptive group comparisons for the skill references. Campaigns of 100 or more Entrants, crypto and purchase-only campaigns removed, and every published group needs five distinct businesses. The clean subset has no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.",
  "ordinary_n": 117128,
  "ordinary_organizers": 17747,
  "clean_n": 39810,

@@ -228,7 +228,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.1.1 (2026-09-09): connect and test the email provider integration before launch so entrant emails trigger during the run.
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
 - 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
-- 1.2.2 (2026-09-10): analysis section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
+- 1.2.2 (2026-09-10):  section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
 
 ## 1.5.1 (2026-09-11)
 

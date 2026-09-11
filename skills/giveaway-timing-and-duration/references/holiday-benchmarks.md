@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (117,348 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose. Reproduce with `analysis/holidays.py`.
+Built from the campaigns behind these numbers (117,348 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
 Baseline for comparison across this page, all the campaigns behind these numbers:
 

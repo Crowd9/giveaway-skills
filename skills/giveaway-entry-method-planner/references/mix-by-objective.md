@@ -278,7 +278,7 @@ Stated Prize value per email signup and per follow by vertical sits in the Prize
 
 Completions % of Entrants for the action, typical value across campaigns offering it.
 
-Completions % of Entrants by position in the action list, campaign analysis, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
+Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
 
 | Family | 1st | 2nd to 4th | 5th or later |
 |---|---|---|---|

@@ -72,7 +72,7 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`, `template
 
 Matches are on words in the campaign name and headline Prize name, and one title can match several hooks. Peak month is the month where the hook's share of that month's starts is highest. Conversion Rate is the typical share of viewers who entered for campaigns carrying the hook, against 27% for titles with no hook.
 
-(117,348 campaigns, 100 or more Entrants, 17,777 businesses, campaign analysis, 81,213 titles carry no hook. Rebuilt by `analysis/hook_patterns.py`.)
+(117,348 campaigns, 100 or more Entrants, 17,777 businesses, campaign analysis, 81,213 titles carry no hook.)
 
 | Hook | Campaigns | Share of titles | Peak month | Share of that month's starts | Conversion Rate |
 |---|---|---|---|---|---|
@@ -106,7 +106,7 @@ The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, dura
 
 ## Campaign types (extracted)
 
-A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical for the money. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. (Reproduce with `analysis/campaign_types.py`.)
+A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical for the money. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
 
 | Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) | Duration | Actions |
 |---|---|---|---|---|---|---|---|---|---|

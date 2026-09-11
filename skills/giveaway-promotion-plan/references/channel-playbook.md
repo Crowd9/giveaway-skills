@@ -190,7 +190,7 @@ Plan tier tracks the same way, with Premium businesses drawing the most from mai
 | Germany | 2.3% | |
 | United States | 1.7% | 55,074 |
 
-Source: `analysis/output/email_traffic.json`, keys `totals`, `by_client`, `day_curve`, `days_mail_landed`, `email_share_by_industry`, `email_share_by_plan_tier`, `email_share_by_country`, built by `analysis/email_traffic.py`.
+Source: `analysis/output/email_traffic.json`, keys `totals`, `by_client`, `day_curve`, `days_mail_landed`, `email_share_by_industry`, `email_share_by_plan_tier`, `email_share_by_country`, built by the analysis behind it.
 
 
 Source: analysis/output/field_cuts.json (email_traffic_by_provider, outcomes_when_email_over_10pct).
