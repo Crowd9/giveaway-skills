@@ -15,11 +15,11 @@ def draft(a):
          f"Entry period. Entries open at {a.open} and close at {a.close}. Entries received outside this period are invalid.",
          f"Eligibility. Entry is open to {a.eligible}. The following are not eligible: {a.exclude}.",
          "How to enter. Entrants complete the entry steps shown on the entry page. No purchase is necessary to enter. Where an optional step involves a purchase, a free entry route of equal weight is available. Entries that are incomplete, duplicated, automated, or made through multiple accounts are void.",
-         f"Prize. {a.prize}. There " + ("is 1 winner" if a.winners == 1 else f"are {a.winners} winners") + ". The prize is " + ("not transferable and no cash alternative is offered" if a.cash_alternative == "no" else "transferable and a cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
+         f"Prize. {a.prize}. There " + ("is 1 Winner" if a.winners == 1 else f"are {a.winners} Winners") + ". The Prize is " + ("not transferable and no cash alternative is offered" if a.cash_alternative == "no" else "transferable and a cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
          "Winner selection. Winners are selected " + ("at random from all valid Entries" if a.method == "random" else "by the Promoter's judges on the published criteria, and the judges' decision is final") + f" on {a.draw}." + (" The draw method is published in advance and the result can be verified from the published record." if a.method == "random" else ""),
-         f"Notification. Winners are notified by {a.notify} within 3 days of selection and must respond within {a.reply_days} day{'s' if a.reply_days != 1 else ''} of notification. If a winner does not respond, cannot be verified as eligible, or declines the prize, the prize is forfeited and a replacement winner is selected the same way.",
+         f"Notification. Winners are notified by {a.notify} within 3 days of selection and must respond within {a.reply_days} day{'s' if a.reply_days != 1 else ''} of notification. If a Winner does not respond, cannot be verified as eligible, or declines the Prize, the Prize is forfeited and a replacement Winner is selected the same way.",
          "Verification. Winners may be asked to provide proof of identity, age and residence before the Prize is released.",
-         f"Delivery. Prizes are {a.delivery}. The Promoter is not responsible for prizes lost or damaged in transit once dispatched to the address the winner supplied." + (" Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise." if a.region.lower() != "none" else ""),
+         f"Delivery. Prizes are {a.delivery}. The Promoter is not responsible for Prizes lost or damaged in transit once dispatched to the address the Winner supplied." + (" Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise." if a.region.lower() != "none" else ""),
          f"Publicity. Winners consent to the Promoter publishing their {a.publish} for the purpose of announcing the result, and may withdraw that consent by contacting the Promoter.",
          "Personal information. Personal information collected is used to run the promotion, contact Winners and deliver Prizes, and is handled in accordance with the Promoter's privacy policy. Entrants may request access to or correction of their information by contacting the Promoter."]
     if a.marketing_consent:
@@ -65,9 +65,9 @@ def main(argv):
         assert ";" not in t and "\u2014" not in t
         a.region = "UK,DE,JP"
         m = draft(a)
-        assert "There is 1 winner" in t, "one Winner must not read as \"There are 1 winner\""
+        assert "There is 1 Winner" in t, "one Winner must not read as \"There are 1 Winner\""
         a2 = _Copy(a); a2.winners = 3
-        assert "There are 3 winners" in draft(a2)
+        assert "There are 3 Winners" in draft(a2)
         assert "Gambling Act 2005" in m, "a known region in a list must still get its note"
         assert "No note here covers DE, JP" in m, "an uncovered country must be named, never passed over in silence"
         assert "permit" not in m, "only the regions asked for get a note"
