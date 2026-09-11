@@ -90,12 +90,14 @@ Source: `analysis/output/success_profiles.json` (success_cohorts.clean_conversio
 
 The same campaigns cut by stated Prize pool, not by Prize count:
 
+<!-- generated:st_pool_band -->
 | Prize pool, USD | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| under 250 | 2,586 | 749 | 1,470 | 24% | 4.96 | 18 | 8 |
-| 250 to 1k | 4,915 | 1,603 | 1,977 | 24% | 4.78 | 21 | 8 |
-| 1k to 5k | 5,611 | 1,782 | 3,025 | 24% | 5.06 | 22 | 9 |
-| 5k+ | 1,229 | 627 | 4,287 | 21% | 4.86 | 23 | 8 |
+| under 250 | 20,307 | 4,246 | 328 | 24% | 5.13 | 16 | 8 |
+| 250 to 1k | 12,396 | 4,082 | 722 | 24% | 4.39 | 15 | 7 |
+| 1k to 5k | 9,459 | 3,158 | 1,470 | 23% | 4.55 | 18 | 8 |
+| 5k and up | 2,034 | 1,069 | 1,802 | 20% | 4.31 | 22 | 7 |
+<!-- /generated -->
 
 Bigger pools bring more Entrants and a longer run. Conversion Rate stays flat at 24% through the first three pool sizes and drops only at 5k and up (21%). A bigger pool and more Prize records tend to travel together with a bigger business and a longer campaign, so read both tables as who ran what, not as what a structure change would do to a given campaign.
 
@@ -161,11 +163,13 @@ Source: `analysis/output/success_profiles.json` (interactions.prize_value_by_win
 
 A record-level look at position within a campaign's Prize list: first Prize, second or third, and fourth or later. Every position below has at least 30 campaigns from 10 businesses.
 
-| Position | Campaigns | Businesses | Multi-Winner share | USD per Winner (typical) | Conversion Rate | Actions per Entrant | Typical Entrants |
-|---|---|---|---|---|---|---|---|
-| First Prize | 12,834 | 3,603 | 34% | 225 | 28% | 4.19 | 2,184 |
-| Second or third | 29,906 | 5,823 | 25% | 400 | 26% | 4.70 | 2,263 |
-| Fourth or later | 2,016 | 851 | 36% | 90 | 19% | 6.05 | 3,282 |
+<!-- generated:st_winners_position -->
+| Position | Campaigns | Businesses | Multi-Winner share | USD per Winner (typical) | Conversion Rate |
+|---|---|---|---|---|---|
+| Second or third | 95,702 | 15,970 | 27% | 150 | 26% |
+| First Prize | 41,061 | 9,857 | 34% | 100 | 27% |
+| Fourth plus | 4,932 | 1,841 | 33% | 69 | 20% |
+<!-- /generated -->
 
 First and fourth-plus Prizes go multi-Winner more often than second or third place (table above). USD per Winner runs highest at second or third, above first Prize, which reads as product tiers: a second or third Prize often repeats the same product line at a smaller size, lifting its per-Winner value above the headline Prize. Fourth-plus Prizes settle at the lowest per-Winner value, in line with a consolation tier, on the lowest Conversion Rate and highest Actions per Entrant of the three.
 

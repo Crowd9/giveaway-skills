@@ -127,10 +127,15 @@ Extracted: among Impressions that carry an email UTM tag, share by provider name
 
 Campaigns that draw a tenth or more of their Impressions from their own tagged mass mail behave differently from campaigns with no tagged email traffic at all, though the two groups are not alike: the businesses that tag their email traffic are larger and run longer campaigns, so the gap describes who mails, not what mailing does.
 
+<!-- generated:pp_mail_share -->
 | Group | Conversion Rate | Actions per Entrant | Entrants (typical) | Campaigns | Businesses |
 |---|---|---|---|---|---|
-| Tenth+ of Impressions from tagged mail | 26.7% | 3.92 | 2,452 | 6,696 | 1,584 |
-| No tagged email traffic | 31.6% | 5.01 | 2,419 | 43,782 | |
+| Under 2% | 25.8% | 5.03 | 766 | 98,447 | 17,546 |
+| No email traffic at all | 35.1% | 3.99 | 240 | 31,973 | 8,079 |
+| 2 to 10% | 25.1% | 4.25 | 746 | 14,632 | 3,290 |
+| 10 to 25% | 25.0% | 4.35 | 516 | 1,570 | 431 |
+| A quarter or more | 27.5% | 4.84 | 440 | 316 | 56 |
+<!-- /generated -->
 
 An organizer with a list should tag the campaign link with an email UTM before sending, so the send shows up in this report. Gleam's export cannot see a send with no tag on the link.
 
