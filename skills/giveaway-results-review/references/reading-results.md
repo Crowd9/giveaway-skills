@@ -44,6 +44,11 @@ A visitor who returns every day for a daily bonus counts as a new Impression eac
 | 31 to 60 days | 24% |
 | 61 days or more | 23% |
 
+Those three rows are a summary of the shape. Quote the five-row table in `references/benchmarks.md` when you put
+a duration figure in front of a reader, because it is cut differently, carries its campaign counts, and reads a
+point lower at the long end. Two tables on the same subject disagree by a point here for that reason, so name the
+one you used.
+
 ## What extra reach is worth (extracted)
 
 Split the campaigns in one size band into five equal groups by Impressions and both the reach and the Conversion
