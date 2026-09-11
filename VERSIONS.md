@@ -9,7 +9,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-timing-and-duration | 1.4.18 |
 | giveaway-winner-structure | 1.3.17 |
 | giveaway-promotion-plan | 1.3.21 |
-| giveaway-random-draw | 1.3.14 |
+| giveaway-random-draw | 1.3.15 |
 | giveaway-winner-communications | 1.2.14 |
 | giveaway-idea-generator | 1.3.18 |
 | giveaway-results-review | 1.5.22 |
@@ -159,6 +159,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.7 (2026-09-11): density pass on the draw procedure, doc links repaired.
 - 1.3.13 (2026-09-12): A missing rule no longer holds the draw up, the rules applied are stated above the Winner list, and the tier example capitalises Prize.
 - 1.3.14 (2026-09-12): The verify step documents the exclusion file it needs, which otherwise fails on any draw that used one.
+- 1.3.15 (2026-09-12): The rules a draw ran under are printed above the names, a hash says what was removed before it was taken, and the plan limit cites the page it is printed on.
 
 ### giveaway-winner-communications
 

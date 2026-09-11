@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a provably fair random draw for a giveaway: commit to the Entrant list and rules before the seed exists, take the seed from a public randomness beacon (drand or NIST) or a published value, pick Winners from a list, CSV, spreadsheet or comment export with deduplication, exclusions, entry weights, tiers and backups, and produce an audit record anyone can verify. Use when the user asks 'pick a Winner', 'draw the Winner', 'random Winner from this list', 'choose 3 Winners from these comments', 'how do I prove the draw was fair', 'redraw', 'backup Winners', 'weighted draw', or pastes a list of Entrants. Platform-neutral. For deciding how many Winners and the terms see giveaway-winner-structure."
 metadata:
-  version: 1.3.14
+  version: 1.3.15
 ---
 
 # Giveaway Random Draw
@@ -46,8 +46,10 @@ For a "how do I make my draw fair" question without a list, give the procedure f
 
 ## Output
 
+- The rules the draw ran under, first, above the names. A draw cannot be taken back, so rules printed under the
+  result read as a disclosure the reader had no chance to correct. Measured answers put them last twice.
 - Winners by tier, backups in order.
-- Audit summary: rows read, unique eligible Entrants, duplicates merged, exclusions applied, plus-address clusters flagged, weighting, commitment, seed and its source (beacon round or published value), input hash, timestamp, method.
+- Audit summary: rows read, unique eligible Entrants, duplicates merged, exclusions applied, plus-address clusters flagged, weighting, commitment, seed and its source (beacon round or published value), input hash, timestamp, method. Where anything was removed from the pasted list before hashing, say so beside the hash. A sceptic recomputing it from what they can see will otherwise get a different value and conclude the draw was rigged.
 - Verification and contact steps, with the reminder that a drawn Entrant is a Winner only after the entry is checked against the terms.
 - Where the record lives and what to publish: the commitment, the seed and its source, the method and the audit record go public, and the Entrant list stays private.
 
