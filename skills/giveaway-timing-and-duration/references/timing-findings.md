@@ -15,6 +15,8 @@ Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=115,754). By campai
 | 61-180 | 3% | 3.84 |
 | 181+ | 0% | 3.86 |
 
+The two tables below are shares of every campaign carrying a start date. They hold no campaign count of their own, so never borrow one from another table on this page: measured answers attached both 116,499 and 115,754 to these rows and neither is theirs.
+
 | Start month | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Share of campaigns | 6.7% | 8.0% | 9.1% | 8.3% | 8.6% | 8.5% | 7.9% | 7.9% | 7.4% | 8.3% | 9.0% | 10.4% |

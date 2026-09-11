@@ -74,6 +74,28 @@ Matches are on words in the campaign name and headline Prize name, and one title
 
 (116,499 campaigns, 100 or more Entrants, 17,633 businesses, campaign analysis, 80,611 titles carry no hook.)
 
+When a concept turns on a month, read its share of starts here before calling any month busy or quiet. The
+figure an answer needs most often is December at the top of the table.
+
+<!-- generated:ig_months -->
+| Start month | Share of all campaign starts |
+|---|---|
+| January | 6.7% |
+| February | 8.0% |
+| March | 9.1% |
+| April | 8.3% |
+| May | 8.6% |
+| June | 8.5% |
+| July | 7.9% |
+| August | 7.9% |
+| September | 7.4% |
+| October | 8.3% |
+| November | 9.0% |
+| December | 10.4% |
+<!-- /generated -->
+
+Source: `analysis/output/benchmarks.json` (`ordinary_benchmark.timing.start_month_share`).
+
 <!-- generated:ig_hooks -->
 | Hook | Campaigns | Share of titles | Peak month | Share of that month's starts | Conversion Rate |
 |---|---|---|---|---|---|

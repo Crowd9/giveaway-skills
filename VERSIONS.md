@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.23 |
-| giveaway-entry-method-planner | 1.2.22 |
-| giveaway-timing-and-duration | 1.4.20 |
-| giveaway-winner-structure | 1.3.19 |
-| giveaway-promotion-plan | 1.3.23 |
-| giveaway-random-draw | 1.3.17 |
-| giveaway-winner-communications | 1.2.16 |
-| giveaway-idea-generator | 1.3.20 |
-| giveaway-results-review | 1.5.24 |
-| gleam-campaign-setup | 1.2.21 |
+| giveaway-prize-picker | 1.3.24 |
+| giveaway-entry-method-planner | 1.2.23 |
+| giveaway-timing-and-duration | 1.4.21 |
+| giveaway-winner-structure | 1.3.20 |
+| giveaway-promotion-plan | 1.3.24 |
+| giveaway-random-draw | 1.3.18 |
+| giveaway-winner-communications | 1.2.17 |
+| giveaway-idea-generator | 1.3.21 |
+| giveaway-results-review | 1.5.25 |
+| gleam-campaign-setup | 1.2.22 |
 
 ## Skills
 
@@ -46,6 +46,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.21 (2026-09-12): The raw-scope and parsing tables are generated, so the campaign, Prize-record and parsed-value counts read what the source holds.
 - 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.3.23 (2026-09-12): The Prize-value table says which population it covers, after its scope line named a floor its own cells sit below.
+- 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 
 ### giveaway-entry-method-planner
 
@@ -74,6 +75,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.20 (2026-09-12): The position figures in the skill body match the table they cite.
 - 1.2.21 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.2.22 (2026-09-12): Shared answer-style rules on pasting a real checker run.
+- 1.2.23 (2026-09-12): A figure passing 100 is explained by the unknown entry worth, which is what the reference says.
 
 ### giveaway-timing-and-duration
 
@@ -103,6 +105,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.18 (2026-09-12): The sixteen-row launch calendar is generated, after every row had drifted from its own lead-day quartiles.
 - 1.4.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.4.20 (2026-09-12): The Conversion Rate bend says it compares whole runs of different lengths, which answers had read as a drop inside one run.
+- 1.4.21 (2026-09-12): The start month and weekday shares say they carry no campaign count, after answers borrowed two different ones.
 
 ### giveaway-winner-structure
 
@@ -126,6 +129,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.17 (2026-09-12): The Winner-timetable table prints the population its shares are out of.
 - 1.3.18 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.3.19 (2026-09-12): Shared answer-style rules on pasting a real checker run.
+- 1.3.20 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 
 ### giveaway-promotion-plan
 
@@ -152,6 +156,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.21 (2026-09-12): The directory rows carry their share of Impressions, so they can no longer be called the largest source of anything.
 - 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.3.23 (2026-09-12): The copy step no longer calls directory listings the largest free reach, which its own reference contradicts.
+- 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 
 ### giveaway-random-draw
 
@@ -172,6 +177,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.15 (2026-09-12): The rules a draw ran under are printed above the names, a hash says what was removed before it was taken, and the plan limit cites the page it is printed on.
 - 1.3.16 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.3.17 (2026-09-12): Shared answer-style rules on pasting a real checker run.
+- 1.3.18 (2026-09-12): Answering first no longer reads as putting the names first, so the rules sit above them.
 
 ### giveaway-winner-communications
 
@@ -192,6 +198,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.14 (2026-09-12): Shared answer-style rules: a closing question comes after the next step, and an uncited claim between two cited figures is still a claim.
 - 1.2.15 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.2.16 (2026-09-12): Shared answer-style rules on pasting a real checker run.
+- 1.2.17 (2026-09-12): A stated reply deadline now requires the messages it can force, the close-out and the reserve notification.
 
 ### giveaway-idea-generator
 
@@ -220,6 +227,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.18 (2026-09-12): A superlative in the campaign-type reading is corrected, since two types sit below the row it named.
 - 1.3.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.3.20 (2026-09-12): Shared answer-style rules on pasting a real checker run.
+- 1.3.21 (2026-09-12): The start month shares are a table in the reference, so a month claim has a row behind it.
 
 ### giveaway-results-review
 
@@ -255,6 +263,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.22 (2026-09-12): Shared answer-style rules, and review.py no longer prints a line the style checker fails.
 - 1.5.23 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.5.24 (2026-09-12): review.py says which distribution a percentile came from, so a band figure and an all-campaign one can no longer be read as the same rank.
+- 1.5.25 (2026-09-12): Only Impressions are missing from an export, and the skill says so where answers were generalising.
 
 ### gleam-campaign-setup
 
@@ -270,6 +279,30 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.19 (2026-09-12): Shared answer-style rules on closing questions and uncited claims.
 - 1.2.20 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.2.21 (2026-09-12): The plan question names all five plans, so a Pro reader can answer it.
+- 1.2.22 (2026-09-12): The position table carries its own warning into the sentence that uses it.
+
+## 2.1.5 (2026-09-12)
+
+Every defect the fourth round of eval cases turned up, fixed.
+
+**Three skills stated something their own reference does not.** A figure passing 100 was explained by an Entrant
+repeating a step, where the reference says it is the unknown entry worth. An export was described as missing the
+Entrant count, which it computes from its own rows. And the position table's warning that it mixes ordering with
+choice now travels into the sentence that uses the table.
+
+**A figure with no table behind it.** December's share of starts lived in one skill's body and nowhere a reader
+could check. The month shares are a generated table now. The start-weekday and start-month shares also say they
+carry no campaign count of their own, after answers attached two different ones borrowed from elsewhere.
+
+**A reply deadline now requires the messages it can force.** Answers threatened a reserve Winner and then wrote
+neither the close-out nor the reserve notification, which leaves the reader holding a clock and no copy.
+
+**Answering first was pushing the Winner names above the rules they were drawn under.** A draw cannot be taken
+back, so the rules sit two or three lines above the names, and the skill now says the two instructions agree.
+
+**The checker fails a paragraph buried in figures**, where one measured paragraph carried sixteen across six
+denominators. The pass fixture also stopped passing its own checker some versions ago, because the self-test
+asserted a hand-picked list of counters and never the verdict. It asserts the verdict now.
 
 ## 2.1.4 (2026-09-12)
 

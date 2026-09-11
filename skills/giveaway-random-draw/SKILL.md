@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a provably fair random draw for a giveaway: commit to the Entrant list and rules before the seed exists, take the seed from a public randomness beacon (drand or NIST) or a published value, pick Winners from a list, CSV, spreadsheet or comment export with deduplication, exclusions, entry weights, tiers and backups, and produce an audit record anyone can verify. Use when the user asks 'pick a Winner', 'draw the Winner', 'random Winner from this list', 'choose 3 Winners from these comments', 'how do I prove the draw was fair', 'redraw', 'backup Winners', 'weighted draw', or pastes a list of Entrants. Platform-neutral. For deciding how many Winners and the terms see giveaway-winner-structure."
 metadata:
-  version: 1.3.17
+  version: 1.3.18
 ---
 
 # Giveaway Random Draw
@@ -46,8 +46,10 @@ For a "how do I make my draw fair" question without a list, give the procedure f
 
 ## Output
 
-- The rules the draw ran under, first, above the names. A draw cannot be taken back, so rules printed under the
-  result read as a disclosure the reader had no chance to correct. Measured answers put them last twice.
+- The rules the draw ran under, first, two or three lines above the names. A draw cannot be taken back, so rules
+  printed under the result read as a disclosure the reader had no chance to correct. Measured answers put them
+  last three times. Answering first does not mean the names come first: the draw is already done, and the rules
+  line is part of the answer, not an interview question delaying it. Three lines of rules, then the Winners.
 - Winners by tier, backups in order.
 - Audit summary: rows read, unique eligible Entrants, duplicates merged, exclusions applied, plus-address clusters flagged, weighting, commitment, seed and its source (beacon round or published value), input hash, timestamp, method. Where anything was removed from the pasted list before hashing, say so beside the hash. A sceptic recomputing it from what they can see will otherwise get a different value and conclude the draw was rigged.
 - Verification and contact steps, with the reminder that a drawn Entrant is a Winner only after the entry is checked against the terms.
@@ -104,7 +106,7 @@ The rest is judgement, which no checker can do.
 
 - Translate every rate before it reaches the reader. "0.52 joins per Entrant" means nothing to a person. "About 52% of Entrants joined" does.
 - Pick the shape that fits the number. Something each person either did or did not do is a percentage: 48% of Entrants followed on Instagram. A count that usually runs above one per person is written as a count: 2.5 Entries each. A count that usually runs below one per person reads better per hundred: 7 referrals per 100 Entrants. "250 Entries per 100 Entrants" is nonsense where "2.5 Entries each" is the plain fact.
-- Two figures a paragraph, three at the outside, and one denominator. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
+- Two figures a paragraph, three at the outside, and one denominator. The checker fails a paragraph carrying more than six, so it catches the blizzard and leaves the rule to you: one measured paragraph held sixteen across six denominators and buried the number that decided the call. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
 - One comparison, not three. Pick the figure for the reader's own size. If their size is unknown, ask, or give the middle case and say which one it is. Never print the same finding once for every size.
 - Sample sizes never sit in the sentence. Put counts in the table, in brackets at the end of a section, or in the Source line.
 - A figure and the limit on it travel together. These numbers show what businesses chose and never what a choice caused, so the sentence carrying a number into a recommendation carries that limit in the same breath. A limit parked in a different section is one the reader never reads. The grammar does most of the work. Write "campaigns that gave away tech hardware drew 42% more crowd for the money" and the limit is already in the sentence. Write "tech hardware draws 42% more" and you have promised the reader a result. Past tense, and a subject that names the campaigns. This was the most common fault in the measured answers for two skills, so it is worth the extra four words every time.

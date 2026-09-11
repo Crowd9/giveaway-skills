@@ -96,6 +96,22 @@ def sentences(text):
     return out
 
 
+# Figures with a denominator behind them: percentages, decimals and thousands-separated counts. Dates, times
+# and small bare integers are left alone, because a schedule paragraph is meant to carry them. The house rule is
+# two to a paragraph; this gate only catches the blizzard, where one measured paragraph held sixteen across six
+# denominators and buried the number that decided the call.
+STAT = re.compile(r"\d+(?:\.\d+)?%|\b\d{1,3}(?:,\d{3})+\b|\b\d+\.\d+\b")
+
+
+def blizzards(text):
+    body = re.sub(r"```.*?```", " ", text, flags=re.S)
+    out = 0
+    for para in body.split("\n\n"):
+        prose = "\n".join(l for l in para.split("\n") if not l.lstrip().startswith("|"))
+        if len(STAT.findall(prose)) > 6: out += 1
+    return out
+
+
 def check(text):
     sents = sentences(text)
     lens = [len(s.split()) for s in sents]
@@ -144,6 +160,7 @@ def check(text):
         # Past about forty-five words the reader has lost the subject. The variety gate only asks for one
         # long sentence, so with no ceiling it rewarded the runaway it should have caught.
         "runaway_sentences": sum(1 for n in lens if n > 45),
+        "figure_blizzards": blizzards(text),
     }
 
 # Same patterns, keyed by the counter they feed, so --show can quote what tripped each one.
@@ -200,6 +217,12 @@ def self_test():
                                       "question_headings", "label_openers", "bold_lead_ins", "meta_commentary",
                                       "bans_without_a_reason", "empty_ending")), good
     assert good["shortest_sentence"] <= 8 and good["longest_sentence"] >= 18, good
+    # The pass fixture must actually print PASS. Asserting a hand-picked list of counters let a lowercase
+    # product noun sit in it unnoticed once "entrants" joined the checked words, so assert the verdict itself.
+    import subprocess as _s0, os as _o0
+    _v = _s0.run([sys.executable, _o0.path.abspath(__file__), _o0.path.join(d, "passes.txt")],
+                 capture_output=True, text=True).stdout
+    assert "PASS" in _v, f"the pass fixture must pass its own checker: {_v}"
     # the verdict must block on the two commonest faults, which it silently did not for a long time
     import subprocess as _sp, tempfile as _tf, os as _os
     with _tf.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
@@ -242,7 +265,7 @@ if __name__ == "__main__":
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
-                + r["runaway_sentences"] + r["offer_endings"])
+                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         if verbose:

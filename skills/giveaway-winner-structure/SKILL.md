@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Decide how many Winners a giveaway has, whether Prizes are tiered, how and when Winners are drawn, verified, contacted and announced, and what the redraw and fulfillment rules are. Use when the user asks 'how many Winners', 'should I have runner-up Prizes', 'one Winner or several', 'how do I pick the Winner', 'how to announce Winners', 'what if the Winner doesn't reply' (answered here as the deadline and redraw rule, with the message itself in giveaway-winner-communications), 'daily Winners', 'tiered Prizes', or 'Winner terms'. Platform-neutral. For what the Prize is see giveaway-prize-picker. For the run length see giveaway-timing-and-duration."
 metadata:
-  version: 1.3.19
+  version: 1.3.20
 ---
 
 # Giveaway Winner Structure
@@ -102,7 +102,7 @@ The rest is judgement, which no checker can do.
 
 - Translate every rate before it reaches the reader. "0.52 joins per Entrant" means nothing to a person. "About 52% of Entrants joined" does.
 - Pick the shape that fits the number. Something each person either did or did not do is a percentage: 48% of Entrants followed on Instagram. A count that usually runs above one per person is written as a count: 2.5 Entries each. A count that usually runs below one per person reads better per hundred: 7 referrals per 100 Entrants. "250 Entries per 100 Entrants" is nonsense where "2.5 Entries each" is the plain fact.
-- Two figures a paragraph, three at the outside, and one denominator. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
+- Two figures a paragraph, three at the outside, and one denominator. The checker fails a paragraph carrying more than six, so it catches the blizzard and leaves the rule to you: one measured paragraph held sixteen across six denominators and buried the number that decided the call. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
 - One comparison, not three. Pick the figure for the reader's own size. If their size is unknown, ask, or give the middle case and say which one it is. Never print the same finding once for every size.
 - Sample sizes never sit in the sentence. Put counts in the table, in brackets at the end of a section, or in the Source line.
 - A figure and the limit on it travel together. These numbers show what businesses chose and never what a choice caused, so the sentence carrying a number into a recommendation carries that limit in the same breath. A limit parked in a different section is one the reader never reads. The grammar does most of the work. Write "campaigns that gave away tech hardware drew 42% more crowd for the money" and the limit is already in the sentence. Write "tech hardware draws 42% more" and you have promised the reader a result. Past tense, and a subject that names the campaigns. This was the most common fault in the measured answers for two skills, so it is worth the extra four words every time.

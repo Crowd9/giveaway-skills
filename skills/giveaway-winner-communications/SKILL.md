@@ -2,7 +2,7 @@
 name: giveaway-winner-communications
 description: "Write every message after the draw: Winner notification, verification request, address collection with a privacy note, shipping and delivery updates, the reply to a Winner who disputes or stalls, the public announcement, and the message to everyone who did not win. Use when the user asks 'how do I tell the Winner', 'Winner email', 'announce the Winner', 'what do I send non-Winners', 'Winner won't reply' (answered here as the message to send, with the redraw rule in giveaway-winner-structure), 'someone says they should have won', 'ask the Winner for a photo', or 'what do I email Entrants after the giveaway'. Platform-neutral. For the draw itself see giveaway-random-draw. For deadlines and the redraw rule see giveaway-winner-structure."
 metadata:
-  version: 1.2.16
+  version: 1.2.17
 ---
 
 # Giveaway Winner Communications
@@ -45,6 +45,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Output
 
+- Every message the stated deadline can force, written out. A reply deadline means the Winner can miss it, so the set carries the close-out to the lapsed Winner and the notification to the reserve alongside the ones that run when everything goes right. Measured answers threatened a reserve Winner in the notification and then never wrote either message, which leaves the reader holding a clock and no copy.
 - The messages in send order, each with channel, timing and the fields to fill. Label each one the way `references/message-templates.md` does, name and timing in parentheses, never a dash.
 - Consent and privacy lines called out so they are not deleted.
 - A short contact log format (date, channel, message, response).
@@ -102,7 +103,7 @@ The rest is judgement, which no checker can do.
 
 - Translate every rate before it reaches the reader. "0.52 joins per Entrant" means nothing to a person. "About 52% of Entrants joined" does.
 - Pick the shape that fits the number. Something each person either did or did not do is a percentage: 48% of Entrants followed on Instagram. A count that usually runs above one per person is written as a count: 2.5 Entries each. A count that usually runs below one per person reads better per hundred: 7 referrals per 100 Entrants. "250 Entries per 100 Entrants" is nonsense where "2.5 Entries each" is the plain fact.
-- Two figures a paragraph, three at the outside, and one denominator. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
+- Two figures a paragraph, three at the outside, and one denominator. The checker fails a paragraph carrying more than six, so it catches the blizzard and leaves the rule to you: one measured paragraph held sixteen across six denominators and buried the number that decided the call. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
 - One comparison, not three. Pick the figure for the reader's own size. If their size is unknown, ask, or give the middle case and say which one it is. Never print the same finding once for every size.
 - Sample sizes never sit in the sentence. Put counts in the table, in brackets at the end of a section, or in the Source line.
 - A figure and the limit on it travel together. These numbers show what businesses chose and never what a choice caused, so the sentence carrying a number into a recommendation carries that limit in the same breath. A limit parked in a different section is one the reader never reads. The grammar does most of the work. Write "campaigns that gave away tech hardware drew 42% more crowd for the money" and the limit is already in the sentence. Write "tech hardware draws 42% more" and you have promised the reader a result. Past tense, and a subject that names the campaigns. This was the most common fault in the measured answers for two skills, so it is worth the extra four words every time.

@@ -124,7 +124,7 @@ Reading it: visits and email signups are completed by most Entrants, and follows
 
 ## Position in the action list
 
-Typical share of Entrants who completed an action, by the action's list position, split by family. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice.
+Typical share of Entrants who completed an action, by the action's list position, split by family. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice. Carry that into the sentence that uses the table. "Position does most of the work here" is the claim this cut cannot make, because the action a business put first is the one it cared about most, and a caveat added at the end of the answer does not undo a causal sentence in the body. Measured answers made this exact claim twice.
 
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
 |---|---|---|---|
