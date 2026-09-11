@@ -188,7 +188,7 @@ Pick the run length by what the campaign needs to produce, not by a single "long
 | Telegram join | 1,000-2,500 | 89 per 100 (560 campaigns, 58 businesses) | 49 per 100 (335 campaigns, 107 businesses) |
 | Telegram join | 2,500-10,000 | 83 per 100 (201 campaigns, 23 businesses) | 77 per 100 (264 campaigns, 60 businesses) |
 
-A community you want people to join before they leave the page favours a short run: Discord and Telegram joins land higher in shorter campaigns at every size above, from a few points to double the rate. A campaign chasing reach, engagement, referrals or traffic favours a long one instead. Both directions hold across all three campaign sizes with enough data, so this is a genuine split by objective, not a slope in one direction. A campaign that wants both, a community built fast and the widest reach, has to pick which one the run length serves, since a shorter run and a longer one cannot both be the answer on the same clock.
+A community you want people to join before they leave the page favours a short run: Discord and Telegram joins land higher in shorter campaigns at every size above, from a few points to double the rate. A campaign chasing reach, engagement, referrals or traffic favours a long one. Both directions hold across all three campaign sizes with enough data, so this is a genuine split by objective, not a slope in one direction. A campaign that wants both, a community built fast and the widest reach, has to pick which one the run length serves, since a shorter run and a longer one cannot both be the answer on the same clock.
 
 ## No late rush, only a launch spike (extracted)
 

@@ -103,7 +103,7 @@ Entries and completions are the same count, worth only changes the credit.
 
 - **A low Conversion Rate with a long run or daily action.** Usually the caveat above. Compare against the duration row, not the overall typical figure.
 - **A low Conversion Rate at a normal run length.** Usually reach. Campaigns in the top fifth of their size band by Impressions convert at about 11% where the bottom fifth convert at about 55%, and they drew more Entrants doing it. Check the Impression count before calling the page or the Prize weak.
-- **High entries, ordinary Entrant count.** Entry worth on share or bonus actions. Look at Entrants and actions instead.
+- **High entries, ordinary Entrant count.** Entry worth on share or bonus actions. Look at Entrants and actions.
 - **One action at 90%, the rest under 20%.** Normal: each action family completes at a different typical rate (table below), so a high top action and much lower others do not mean the others are broken. Rank against the typical figure for that family, not against the top action.
 - **A fifth or more of entries invalid.** Check for a validated-answer question first (wrong answers count as invalid), then referral and Discord actions. Invalid entries are otherwise left out of the benchmarks.
 - **Fewer Entrants than last time.** Check the gap since the previous campaign, the Prize category, the month, and the number of actions before blaming promotion.

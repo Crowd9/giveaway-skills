@@ -42,7 +42,7 @@ The official-account line matters. Fake accounts DM Entrants during and after gi
 
 One message. No second offer chasing.
 
-For a store, the offer is a code. Subject "You did not win, but here is [X]% off until [date]", preview "A thank-you from [Brand], one use, [N] days." Body: the Winner line, the code on its own line, what it applies to, the expiry, one button to the collection the Prize came from. Read the code mechanics in `references/after-the-draw.md` before sending.
+For a store, the offer is a code. Subject "A thank-you from [Brand]: [X]% off until [date]", preview "A thank-you from [Brand], one use, [N] days." Body: the Winner line, the code on its own line, what it applies to, the expiry, one button to the collection the Prize came from. Read the code mechanics in `references/after-the-draw.md` before sending.
 
 ## 6. Photo or review request (a week after delivery, optional)
 
