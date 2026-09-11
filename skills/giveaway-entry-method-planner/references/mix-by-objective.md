@@ -265,19 +265,19 @@ Typical completions per campaign among campaigns that offered the action, comple
 
 | Asset | Campaigns | Typical per campaign | Share of Entrants | Stated USD per completion |
 |---|---|---|---|---|
-| Email Subscriptions | 15,799 | 2,053 | 98 | 0.31 |
-| X Follows | 19,433 | 1,405 | 57 | 0.51 |
-| Instagram Follows | 2,750 | 1,456 | 61 | 0.62 |
-| TikTok Follows | 5,276 | 862 | 37 | 0.92 |
-| Twitch Follows | 5,998 | 1,738 | 68 | 0.43 |
-| YouTube Entries | 1,111 | 1,494 | 80 | 0.47 |
-| Chat Members | 5,734 | 955 | 41 | 0.65 |
-| Telegram Channel Members | 1,622 | 1,697 | 84 | 0.68 |
-| App Downloads | 1,501 | 943 | 36 | 0.90 |
-| Referral entries (Viral Shares) | 16,018 | 337 | 12 | 2.14 |
-| Content submissions | 1,024 | 202 | 6 | 16.67 |
+| Email Subscriptions | 39,532 | 712 | 99 | 0.40 |
+| X Follows | 66,279 | 309 | 61 | 0.64 |
+| Instagram Follows | 8,234 | 372 | 61 | 0.81 |
+| TikTok Follows | 14,329 | 230 | 38 | 1.22 |
+| Twitch Follows | 22,521 | 335 | 77 | 0.57 |
+| YouTube Entries | 3,506 | 374 | 83 | 0.70 |
+| Chat Members | 19,190 | 268 | 48 | 1.15 |
+| Telegram Channel Members | 4,153 | 640 | 88 | 0.77 |
+| App Downloads | 3,495 | 339 | 41 | 1.31 |
+| Referral entries (Viral Shares) | 42,900 | 88 | 12 | 2.89 |
+| Content submissions | 3,308 | 112 | 18 | 15.89 |
 
-Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 2,000 addresses. The same campaign's Viral Share produced about 340 referral entries, and a content action about 200 submissions.
+Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 addresses. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions.
 
 ## Wording and destinations (extracted)
 

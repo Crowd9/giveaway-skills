@@ -63,32 +63,29 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 Completions of the acquire and amplify actions, summed per campaign, across the 117,348 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
-Reading it: cost per completion varies widely by asset, from under $0.50 for an email signup to about $17 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.4 to $0.9 on most networks, with Snapchat at $1.56 and LinkedIn at $2.07 above that.
+Reading it: cost per completion varies widely by asset, from about $0.40 for an email signup to about $16 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.6 to $1.2 on most networks, with Snapchat at $2.30 and LinkedIn at $4.63 above that.
 
 A subscribe asset's Share of Entrants column can read over 100: a campaign can offer more than one subscribe action, such as a newsletter and an SMS list, and every completion counts.
 
 | Asset | Campaigns | Lower quarter | Typical | Upper quarter | Top tenth | Share of Entrants | Stated USD per completion (Campaigns) |
 |---|---|---|---|---|---|---|---|
-| X follows | 19,433 | 752 | 1,405 | 3,035 | 7,846 | 57 (0.57) | 0.51 (7,954) |
-| Referral entries (Viral Share) | 16,018 | 168 | 337 | 718 | 1,334 | 12 (0.12) | 2.14 (8,013) |
-| Email signups | 15,799 | 1,269 | 2,053 | 3,960 | 8,294 | 98 (0.98) | 0.31 (8,082) |
-| Twitch follows | 5,998 | 973 | 1,738 | 3,557 | 9,187 | 68 (0.68) | 0.43 (2,327) |
-| Discord joins | 5,734 | 552 | 955 | 1,796 | 3,842 | 41 (0.41) | 0.65 (2,379) |
-| TikTok follows | 5,276 | 477 | 862 | 1,613 | 3,187 | 37 (0.37) | 0.92 (2,221) |
-| Instagram follows | 2,750 | 800 | 1,456 | 2,828 | 6,354 | 61 (0.61) | 0.62 (1,309) |
-| Telegram joins | 1,622 | 976 | 1,697 | 3,057 | 4,857 | 84 (0.84) | 0.68 (372) |
-| App downloads | 1,501 | 550 | 943 | 1,860 | 3,950 | 36 (0.36) | 0.90 (645) |
-| Facebook likes | 1,281 | 482 | 746 | 1,334 | 2,499 | 39 (0.39) | 0.79 (680) |
-| YouTube subscribes | 1,111 | 915 | 1,494 | 2,365 | 3,994 | 80 (0.80) | 0.47 (312) |
-| Comments | 1,060 | 347 | 547 | 1,063 | 2,557 | 32 (0.32) | 0.74 (526) |
-| Content submissions | 1,024 | 40 | 202 | 810 | 1,935 | 6 (0.06) | 16.67 (432) |
-| Spotify follows | 899 | 523 | 896 | 1,533 | 2,758 | 31 (0.31) | 0.80 (349) |
-| Podcast subscribes | 865 | 458 | 873 | 1,833 | 3,713 | 35 (0.35) | 0.94 (313) |
-| LinkedIn follows | 767 | 393 | 641 | 1,229 | 2,326 | 26 (0.26) | 2.07 (323) |
-| Pinterest follows | 506 | 410 | 557 | 748 | 1,266 | 38 (0.38) | 0.50 (369) |
-| Snapchat follows | 430 | 408 | 728 | 1,948 | 3,511 | 25 (0.25) | 1.56 (272) |
-| Bluesky follows | 340 | 347 | 534 | 899 | 1,470 | 25 (0.25) | 0.85 (144) |
-| Threads follows | 315 | 307 | 502 | 725 | 1,132 | 27 (0.27) | 0.61 (197) |
+| X follows | 66,279 | 134 | 309 | 841 | 2,382 | 61 (0.61) | 0.64 (24,490) |
+| Referral entries (Viral Share) | 42,900 | 26 | 88 | 277 | 728 | 12 (0.12) | 2.89 (20,168) |
+| Email signups | 39,532 | 306 | 712 | 1,648 | 4,009 | 99 (0.99) | 0.40 (19,518) |
+| Twitch follows | 22,521 | 141 | 335 | 925 | 2,394 | 77 (0.77) | 0.57 (7,287) |
+| Discord joins | 19,190 | 117 | 268 | 650 | 1,498 | 48 (0.48) | 1.15 (6,503) |
+| TikTok follows | 14,329 | 103 | 230 | 638 | 1,519 | 38 (0.38) | 1.22 (5,631) |
+| Instagram follows | 8,234 | 143 | 372 | 985 | 2,479 | 61 (0.61) | 0.81 (3,625) |
+| Telegram joins | 4,153 | 226 | 640 | 1,740 | 3,724 | 88 (0.88) | 0.77 (1,165) |
+| Facebook likes | 3,971 | 102 | 243 | 515 | 1,166 | 41 (0.41) | 0.83 (1,875) |
+| YouTube subscribes | 3,506 | 160 | 374 | 920 | 2,022 | 83 (0.83) | 0.70 (1,080) |
+| App downloads | 3,495 | 141 | 339 | 846 | 2,060 | 41 (0.41) | 1.31 (1,493) |
+| Content submissions | 3,308 | 21 | 112 | 368 | 970 | 18 (0.18) | 15.89 (1,285) |
+| Bluesky follows | 1,913 | 53 | 90 | 191 | 487 | 30 (0.30) | 1.00 (627) |
+| LinkedIn follows | 1,737 | 92 | 229 | 571 | 1,410 | 28 (0.28) | 4.63 (657) |
+| Pinterest follows | 1,608 | 112 | 240 | 430 | 669 | 40 (0.40) | 0.64 (971) |
+| Threads follows | 1,219 | 57 | 148 | 279 | 577 | 24 (0.24) | 0.56 (684) |
+| Snapchat follows | 983 | 55 | 154 | 591 | 2,065 | 21 (0.21) | 2.30 (548) |
 
 Email signups and referral entries both scale with campaign size:
 
@@ -105,16 +102,16 @@ Stated USD per email signup by Prize category, campaigns with an email action:
 
 | Prize category | Campaigns | Typical USD per signup |
 |---|---|---|
-| Tech hardware | 2,658 | 0.37 |
-| Gift card or cash | 1,644 | 0.35 |
-| Game items or skins | 1,455 | 0.96 |
-| Bundle or box | 1,416 | 0.42 |
-| Home, garden, appliance | 721 | 0.40 |
-| Regulated goods (firearms) | 685 | 0.36 |
-| Placeholder Prize name | 673 | 0.38 |
-| Other or unclassified | 572 | 0.50 |
-| Experience, travel, tickets | 565 | 0.78 |
-| Music gear | 528 | 0.14 |
+| Other or unclassified | 5,142 | 0.59 |
+| Gift card or cash | 4,398 | 0.16 |
+| Tech hardware | 3,000 | 0.42 |
+| Bundle or box | 2,666 | 0.60 |
+| Game items or skins | 1,465 | 0.42 |
+| Experience, travel, tickets | 930 | 1.16 |
+| Merch, apparel, collectibles | 828 | 0.49 |
+| Regulated goods (firearms) | 606 | 0.39 |
+| Home, garden, appliance | 604 | 0.49 |
+| Placeholder Prize name | 496 | 0.56 |
 
 ## By start year
 

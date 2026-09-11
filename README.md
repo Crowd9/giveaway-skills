@@ -209,13 +209,13 @@ An abbreviated version of what comes back:
 
 > Two weeks, opening on a Monday and closing on a weekday evening in your customers' time zone.
 >
-> Half of all campaigns run between 7 and 29 days and the median is 14. Campaigns that finished under 250 Entrants ran 12 days, the ones over 10,000 ran 19. As a first campaign with no list to warm, plan for the shorter end.
+> Half of all campaigns run between 7 and 29 days and the median is 14. Campaigns that finished under 250 Entrants ran 12 days, the ones over 10,000 ran 18. As a first campaign with no list to warm, plan for the shorter end.
 >
-> Entries per Entrant sit at 4.42 for an 8 to 14 day run and 4.84 for 15 to 30, so the second week buys repeat entries and little after that. Past two months the figure falls.
+> Entries per Entrant sit at 3.92 for an 8 to 14 day run and 4.07 for 15 to 30, so the second week buys repeat entries and little after that. Past two months the figure falls.
 >
 > Start day makes no measurable difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only because your own week is easier that way.
 >
-> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one converted at 41% against 32% for a first campaign. Book the second before you launch this one.
+> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 41% more Entrants than a first campaign, and 38% of viewers entered against 31%. Book the second before you launch this one.
 >
 > Next decision: the exact close date and time zone, which the promotion pushes hang off.
 

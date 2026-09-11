@@ -10,21 +10,21 @@ Direct traffic supplies over half of all Impressions, well ahead of any single c
 
 | Traffic source | Share of Impressions |
 |---|---|
-| Direct | 52% |
-| Organizer's own site | 7.8% |
-| Meta | 7.6% |
-| Gleam's own pages | 7.5% |
-| YouTube | 4.7% |
-| X | 4.7% |
+| Direct | 51.7% |
+| Meta | 7.8% |
+| The business's own site | 7.2% |
+| Gleam's own pages | 6.9% |
+| X | 5.0% |
+| YouTube | 4.4% |
 | Giveaway directories | 3.3% |
-| Search | 2.6% |
+| Search | 3.0% |
 | Gaming communities | 2.2% |
-| Deals forums | 1.4% |
-| TikTok | 0.7% |
+| Deals forums | 1.3% |
+| TikTok | 0.6% |
 
 Direct is the largest single line by far. A giveaway link travels through DMs, texts and QR codes that do not show where the click came from, so a large direct share is what real word-of-mouth reach looks like in the data, not a gap in the channel plan.
 
-Hosted pages carried 63% of Impressions and embeds 36%. Even inside a campaign built to sit on the organizer's own site, most of the traffic still lands on the Gleam-hosted page, so the profile-prep and per-channel steps below apply whichever way the campaign is set up.
+Hosted pages carried 62% of Impressions and embeds 37%. Even inside a campaign built to sit on the organizer's own site, most of the traffic still lands on the Gleam-hosted page, so the profile-prep and per-channel steps below apply whichever way the campaign is set up.
 
 Source: analysis/output/field_cuts.json (referrer_channel_share, landing_kind_share).
 
@@ -89,7 +89,7 @@ Meta sees a Conversion Rate nearly six points under X's, 25.5% against 31.3%, an
 | Measure | Meta | X |
 |---|---|---|
 | Conversion Rate | 25.5% | 31.3% |
-| Share of all Impressions | 7.6% | 4.7% |
+| Share of all Impressions | 7.8% | 5.0% |
 | Actions per Entrant, overall | 3.58 | 5.23 |
 | Actions per Entrant, 1,000-2,500 Entrants | 3.35 [4,347 campaigns, 1,970 businesses] | 5.11 [6,160 campaigns, 2,093 businesses] |
 | Actions per Entrant, 2,500-10,000 Entrants | 3.75 [3,146 campaigns, 1,482 businesses] | 5.27 [3,422 campaigns, 1,328 businesses] |

@@ -138,20 +138,20 @@ Typical Entrant counts for single-Winner and multi-unit structures were almost i
 
 ## Stated Prize cost per email signup (extracted)
 
-For campaigns with an email action and every Prize valued in USD, the stated pool divided by email signups. Music gear and cash sit lowest, experiences and game items highest. Use it to sanity-check a budget against the list it is meant to build, and remember the stated value is what the organizer wrote.
+For campaigns with an email action and every Prize valued in USD, the stated pool divided by email signups. Of the categories with the most campaigns, cash and gift cards sit lowest at 0.16 and experiences highest at 1.16. Use it to sanity-check a budget against the list it is meant to build, and remember the stated value is what the organizer wrote.
 
 | Prize category | Campaigns | Typical USD per signup |
 |---|---|---|
-| Tech hardware | 2,658 | 0.37 |
-| Gift card or cash | 1,644 | 0.35 |
-| Bundle or box | 1,416 | 0.42 |
-| Regulated goods (firearms) | 685 | 0.36 |
-| Home, garden, appliance | 721 | 0.40 |
-| Game items or skins | 1,455 | 0.96 |
-| Experience, travel, tickets | 565 | 0.78 |
-| Merch, apparel, collectibles | 483 | 0.45 |
-| Music gear | 528 | 0.14 |
-| Sports and outdoor gear | 414 | 0.50 |
+| Other or unclassified | 5,142 | 0.59 |
+| Gift card or cash | 4,398 | 0.16 |
+| Tech hardware | 3,000 | 0.42 |
+| Bundle or box | 2,666 | 0.60 |
+| Game items or skins | 1,465 | 0.42 |
+| Experience, travel, tickets | 930 | 1.16 |
+| Merch, apparel, collectibles | 828 | 0.49 |
+| Regulated goods (firearms) | 606 | 0.39 |
+| Home, garden, appliance | 604 | 0.49 |
+| Placeholder Prize name | 496 | 0.56 |
 
 ## Budget template
 
