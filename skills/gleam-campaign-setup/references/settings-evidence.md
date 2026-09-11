@@ -318,12 +318,12 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Businesses | 444 | 5,054 |
   | Offers email | 63% | 46% |
   | On Shopify | 29% | 4% |
-- Country rules: 24% of campaigns restrict entry by country. Restricted campaigns offer email far more often, and restricting costs little on the share who enter.
+- Country rules: 19% of campaigns restrict entry by country. Restricted campaigns offer email far more often, and restricting costs little on the share who enter.
 
   | | Restricted by country | Open |
   |---|---|---|
-  | Campaigns | 12,990 | 41,796 |
-  | Businesses | 2,736 | 8,862 |
+  | Campaigns | 32,289 | 134,779 |
+  | Businesses | 5,524 | 22,028 |
   | Offers email | 52% | 23% |
   | Entry rate | 29% | 30% |
 - Paid actions: campaigns that carry a paid action run more methods and more actions per Entrant than campaigns without one, with a lower share of viewers entering.

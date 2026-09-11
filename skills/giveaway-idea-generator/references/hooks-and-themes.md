@@ -190,9 +190,9 @@ Source: `analysis/output/standouts.json` (`launch_subtypes`), `analysis/output/p
 
 ### Campaigns that beat their Prize money (extracted)
 
-Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.11 USD per Entrant:
+Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.13 USD per Entrant:
 
-(1,528 valued campaigns, 11% of the set, 383 businesses. Typical 13,496 Entrants on a 1,650 USD pool.)
+(6,683 valued campaigns, 15% of the set, 1,688 businesses. Typical 3,976 Entrants on a 500 USD pool.)
 
 | Feature | Standouts | The rest |
 |---|---|---|
