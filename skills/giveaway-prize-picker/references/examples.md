@@ -1,6 +1,6 @@
 # Example library
 
-Paraphrased and anonymized from the campaigns behind these numbers. Business identities, campaign names, links and exact wording are removed. Values are as stated in the listing unless marked "parsed" (taken from the Prize text) or "not stated". Every example is a real campaign that reached at least 1,000 Entrants, which says nothing about whether the Prize worked. These were picked before the benchmarks widened to 100 Entrants, so they all sit in the upper half of the size bands. Examples marked (small) come from campaigns of 1,000 to 2,500 Entrants, which is the fourth of six bands and not the small end any more. Listing-level provenance lives in a private analysis file outside this repository.
+Paraphrased and anonymized from the campaigns behind these numbers. Business identities, campaign names, links and exact wording are removed. Values are as stated in the listing unless marked "parsed" (taken from the Prize text) or "not stated". Every example is a real campaign that reached at least 1,000 Entrants, which says nothing about whether the Prize worked. These were picked before the benchmarks widened to 100 Entrants, so they all sit in the upper half of the size bands. Examples marked (small) come from campaigns of 1,000 to 2,500 Entrants, which is the fourth of six bands, so it is no longer the small end. Listing-level provenance lives in a private analysis file outside this repository.
 
 Labels: **extracted** means fields from the record, **inferred** means our classification or reading, **advice** means how to use it.
 

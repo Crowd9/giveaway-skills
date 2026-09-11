@@ -6,7 +6,7 @@ import os, re, sys
 # Kept in step with CONTRAST in evals/style_check.py. These drifted apart once, and the repo shipped a
 # subject line ("You did not win, but here is X% off") that the answer checker fails. A rule the prose
 # breaks is a rule the answers learn to break.
-CONTRAST = re.compile(r"\b(rather than|instead of)\b|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\binstead\b\s*[.,]", re.I)
+CONTRAST = re.compile(r"\b(rather than|instead of)\b|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\binstead\b\s*[.,]|, and (?:it|that|this|they) (?:is|are)? ?not\b|\band not (?:as|a|an|the|your|to)\b|\bnever as a\b", re.I)
 # Two rates under one in one sentence is arithmetic homework. A single price (0.79 USD) reads fine.
 BARE_RATE = re.compile(r"(?<![\w.`$])0\.\d+(?![\w%`])[^|\n]{0,80}?(?<![\w.`$])0\.\d+(?![\w%`])")
 

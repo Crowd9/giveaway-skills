@@ -23,7 +23,7 @@ Start: [Competitions overview](https://gleam.io/docs/competitions/setup/overview
 | High | The default |
 | Very High | Adds more aggressive Cloudflare challenges |
 
-Gleam may adjust a campaign's level if it blocks legitimate Entrants or lets too many suspicious ones through.
+Gleam may adjust a campaign's level if it blocks legitimate Entrants or lets too many suspicious ones through. The plans are Free, Hobby, Pro, Business and Premium, so a question asking the reader which plan they are on names all five. An answer offering four sent a Pro reader looking for their own.
 
 Answer a question about the levels with this table, one row at a time, so the reader can judge whether to move off the default. Naming the five levels without saying what each adds leaves them exactly where they started, which is how a measured answer scored worst in this skill. The docs do not record what High adds over Medium, so say that and leave the gap open. Say nothing at all about what a flagged Entrant sees on screen or whether the form still lets them finish. That is not documented anywhere, and inventing a reassurance about it was the other measured failure here.
 - **Terms and Conditions** are generated automatically from the campaign setup with editable fields: sponsor name and address, governing law country, privacy policy link, selection method (Random Draw by default, or Judges Panel, Popular Vote, Most Entries, other), contact window (7 days by default), claim window (7 days by default), additional terms. **Custom terms** written from scratch are available on Hobby and above. A "read the terms" checkbox can be added to the User Details form.

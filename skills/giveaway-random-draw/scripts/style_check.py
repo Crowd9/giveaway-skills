@@ -30,7 +30,7 @@ CLOSERS = r"(hope this helps|let me know if|feel free to|happy to elaborate)"
 # A closing question that offers to do more work. Distinct from a question that asks for a missing fact.
 OFFER = (r"\b(want (me|the|a|an|that|one)|shall i|should i|would you like|do you want|can i (draft|write|put|run|send|do)"
          r"|happy to|i can (also )?(draft|write|put together|run|send)|(need|like) (me|anything else))\b")
-CONTRAST = r"(, not \w|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\brather than\b|\binstead of\b|\binstead\b\s*[.,]|, don't \w)"
+CONTRAST = r"(, not \w|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\brather than\b|\binstead of\b|\binstead\b\s*[.,]|\band not (?:as|a|an|the|your|to)\b|\bnever as a\b|, and (?:it|that|this|they) (?:is|are)? ?not\b|, don't \w)"
 # A sentence that announces the next block rather than saying the thing. The commonest slop tell after punctuation.
 LABEL_OPENER = ("^(the (reasoning|caveat|point|upshot|short version|catch|tradeoff|takeaway|rule|logic|thinking|context"
                 r"|detail|numbers?|figures?|evidence)\b[^.!?]{0,60}[.:]"

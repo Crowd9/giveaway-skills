@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.22 |
-| giveaway-entry-method-planner | 1.2.21 |
-| giveaway-timing-and-duration | 1.4.19 |
-| giveaway-winner-structure | 1.3.18 |
-| giveaway-promotion-plan | 1.3.22 |
-| giveaway-random-draw | 1.3.16 |
-| giveaway-winner-communications | 1.2.15 |
-| giveaway-idea-generator | 1.3.19 |
-| giveaway-results-review | 1.5.23 |
-| gleam-campaign-setup | 1.2.20 |
+| giveaway-prize-picker | 1.3.23 |
+| giveaway-entry-method-planner | 1.2.22 |
+| giveaway-timing-and-duration | 1.4.20 |
+| giveaway-winner-structure | 1.3.19 |
+| giveaway-promotion-plan | 1.3.23 |
+| giveaway-random-draw | 1.3.17 |
+| giveaway-winner-communications | 1.2.16 |
+| giveaway-idea-generator | 1.3.20 |
+| giveaway-results-review | 1.5.24 |
+| gleam-campaign-setup | 1.2.21 |
 
 ## Skills
 
@@ -45,6 +45,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.20 (2026-09-12): The raw-dataset table names its own scope, so its 167,068 campaigns can no longer be read as the benchmark population.
 - 1.3.21 (2026-09-12): The raw-scope and parsing tables are generated, so the campaign, Prize-record and parsed-value counts read what the source holds.
 - 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.3.23 (2026-09-12): The Prize-value table says which population it covers, after its scope line named a floor its own cells sit below.
 
 ### giveaway-entry-method-planner
 
@@ -72,6 +73,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.19 (2026-09-12): The steps-inside-one-Action cut is relabelled and says what it does not measure, after answers read it as a count of Entry Methods.
 - 1.2.20 (2026-09-12): The position figures in the skill body match the table they cite.
 - 1.2.21 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.2.22 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 
 ### giveaway-timing-and-duration
 
@@ -100,6 +102,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.17 (2026-09-12): The Black Friday rule (close before the sale, nothing live 27 to 30 November) is stated in plain sight above the season table.
 - 1.4.18 (2026-09-12): The sixteen-row launch calendar is generated, after every row had drifted from its own lead-day quartiles.
 - 1.4.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.4.20 (2026-09-12): The Conversion Rate bend says it compares whole runs of different lengths, which answers had read as a drop inside one run.
 
 ### giveaway-winner-structure
 
@@ -122,6 +125,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.16 (2026-09-12): The seven-day windows carry "Gleam's default" in the table row, and the count-is-the-share trap is named.
 - 1.3.17 (2026-09-12): The Winner-timetable table prints the population its shares are out of.
 - 1.3.18 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.3.19 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 
 ### giveaway-promotion-plan
 
@@ -147,6 +151,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.20 (2026-09-12): Directory rows carry the price and turnaround limits, the traffic curve says traffic and never Entries, and the quiet-middle row is read as days since launch.
 - 1.3.21 (2026-09-12): The directory rows carry their share of Impressions, so they can no longer be called the largest source of anything.
 - 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.3.23 (2026-09-12): The copy step no longer calls directory listings the largest free reach, which its own reference contradicts.
 
 ### giveaway-random-draw
 
@@ -166,6 +171,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.14 (2026-09-12): The verify step documents the exclusion file it needs, which otherwise fails on any draw that used one.
 - 1.3.15 (2026-09-12): The rules a draw ran under are printed above the names, a hash says what was removed before it was taken, and the plan limit cites the page it is printed on.
 - 1.3.16 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.3.17 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 
 ### giveaway-winner-communications
 
@@ -185,6 +191,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.13 (2026-09-12): Shared answer-style rules: copy every figure out of the table, and close on a next step in place of an offer.
 - 1.2.14 (2026-09-12): Shared answer-style rules: a closing question comes after the next step, and an uncited claim between two cited figures is still a claim.
 - 1.2.15 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.2.16 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 
 ### giveaway-idea-generator
 
@@ -212,6 +219,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.17 (2026-09-12): Hook counts are generated from the source, the standouts and launch-subtype figures are refreshed, and the hand-off is a required part of the output.
 - 1.3.18 (2026-09-12): A superlative in the campaign-type reading is corrected, since two types sit below the row it named.
 - 1.3.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.3.20 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 
 ### giveaway-results-review
 
@@ -246,6 +254,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.21 (2026-09-12): Campaign size and campaign sequence are generated tables, so the stale 117,130 population is gone from both.
 - 1.5.22 (2026-09-12): Shared answer-style rules, and review.py no longer prints a line the style checker fails.
 - 1.5.23 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.5.24 (2026-09-12): review.py says which distribution a percentile came from, so a band figure and an all-campaign one can no longer be read as the same rank.
 
 ### gleam-campaign-setup
 
@@ -260,6 +269,26 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.18 (2026-09-12): The post entry email and the Post Entry Redirect are separated, and the Fraud Level table says what to do with the gap in the docs.
 - 1.2.19 (2026-09-12): Shared answer-style rules on closing questions and uncited claims.
 - 1.2.20 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+- 1.2.21 (2026-09-12): The plan question names all five plans, so a Pro reader can answer it.
+
+## 2.1.4 (2026-09-12)
+
+A fourth run of the eval cases, graded harder than the third: the grader was told to treat an unsupported claim
+about how a channel or a platform behaves the same as an invented figure. On that stricter reading the skills
+average 78, and promotion plan, which had not moved in three rounds, reaches 85.8.
+
+**The style report was fabricating its own evidence.** Three skills pasted a counter the script does not
+produce, because the draft changed after the run. The rule now says to redirect the output to a file, paste that
+file, and never retype a counter.
+
+**The contrast rule was missing three shapes**, all of them in use: a trailing negation after a comma, a pivot
+built on "and not", and one built on "never as". Both gates carry them now, which found twenty-four in the
+repo's own prose.
+
+**Two cuts were being read as something they do not measure.** The Conversion Rate bend compares whole runs of
+different lengths, where answers read it as a drop inside one run and scheduled pushes against it. And review.py
+printed a percentile against all campaigns beside a rank against the size band, so an answer quoted a band figure
+the band could not hold. Both now say which distribution they came from.
 
 ## 2.1.3 (2026-09-12)
 

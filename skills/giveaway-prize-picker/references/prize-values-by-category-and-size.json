@@ -793,5 +793,5 @@
   }
  },
  "prizes": 64579,
- "source": "ordinary segment of the second dataset, stated USD prize values only, campaigns with 1,000 or more contestants, by primary category and campaign size band, cells with under 20 values or five organizers omitted"
+ "source": "ordinary segment of the second dataset, stated USD prize values only, campaigns with 100 or more contestants, by primary category and campaign size band, cells with under 20 values or five organizers omitted"
 }

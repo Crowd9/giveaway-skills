@@ -138,7 +138,7 @@ Impressions in the data are counted once per day, so a visitor who returns count
 
 Longer runs collect two thirds more Entrants by 61 days and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
 
-The day-to-day view sharpens this. The typical Conversion Rate bends sharply between day 6 and day 7 of a campaign, the point that best explains the shape of the curve (accounting for 81% of it), stronger than any other day tested, in the same fairly-compared set (no repeatable action, durations 1 to 35 days).
+The day-to-day view sharpens this. Each row is a different campaign's whole run, grouped by how long that run was, so the curve compares a 1-day campaign with a 14-day one and never tracks a single campaign day by day. The typical Conversion Rate bends sharply between a 6-day and a 7-day run, the point that best explains the shape of the curve (accounting for 81% of it), stronger than any other length tested, in the same fairly-compared set (no repeatable action, durations 1 to 35 days). Measured answers read it as a within-run drop and scheduled pushes against it, which this cut cannot support.
 
 | Day | Conversion Rate |
 |---|---|
@@ -305,7 +305,7 @@ Source: analysis/output/field_cuts.json (by_tier, by_hosted_share), analysis/out
 
 ## Region (extracted)
 
-A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at close to double the typical Conversion Rate. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them. The Brazilian YouTube cut is 2,543 campaigns from 88 sites, so it describes those accounts and not a market.
+A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at close to double the typical Conversion Rate. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them. The Brazilian YouTube cut is 2,543 campaigns from 88 sites, so it describes those accounts, never a market.
 
 | Group | Campaigns | Businesses | Typical duration | Conversion Rate |
 |---|---|---|---|---|
@@ -441,7 +441,7 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_launch_wording`, `launch_w
 
 ## Run length by country (extracted)
 
-Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose 25th percentile and median are the same value, both 1 day, which marks a spike of automated repeat draws and not a choice spread across its 563 businesses. Every other country in the table starts at 3 days or more.
+Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose 25th percentile and median are the same value, both 1 day, which marks a spike of automated repeat draws, never a choice spread across its 563 businesses. Every other country in the table starts at 3 days or more.
 
 | Country | Typical duration | Campaigns | Businesses |
 |---|---|---|---|

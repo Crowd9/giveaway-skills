@@ -26,7 +26,7 @@ of this. Where there is no email Action:
   follower count on someone else's platform.
 - The public announcement carries more weight, because it is the only message that reaches the people who did not
   win.
-- Say plainly that the campaign captured reach and not a list, and that an email Action is the change that would
+- Say plainly that the campaign captured reach, with no list to show for it, and that an email Action is the change that would
   alter it next time.
 
 Source: `analysis/output/benchmarks.json` (`ordinary_benchmark.entry_methods.by_band.share_with_family`).

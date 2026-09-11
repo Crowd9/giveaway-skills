@@ -110,7 +110,7 @@ Collaborations work when they pass one test: same customer, different product. C
 
 Crowd per Prize dollar means a campaign's Entrants divided by the typical Entrants for other campaigns at the same stated Prize cost, so 1.00 is typical for the money.
 
-A wider definition of collaboration, matching the campaign or Prize name and not the title alone, puts the figure on a much larger base, and on that base the lift disappears: collaborations sit at 0.94 against 1.00 for everything else. The one industry where it survives is media and entertainment, where collaborations reach 2.57 against 1.18 for the rest of that industry. Elsewhere a collaboration lands level with its own industry or a little below. Read the pooled row, not the title-only figure above it, when a partner is the question. Counts in brackets are campaigns with a stated Prize value, the only ones a value index can be computed on.
+A wider definition of collaboration, matching the campaign or Prize name, with the title alone excluded, puts the figure on a much larger base, and on that base the lift disappears: collaborations sit at 0.94 against 1.00 for everything else. The one industry where it survives is media and entertainment, where collaborations reach 2.57 against 1.18 for the rest of that industry. Elsewhere a collaboration lands level with its own industry or a little below. Read the pooled row, not the title-only figure above it, when a partner is the question. Counts in brackets are campaigns with a stated Prize value, the only ones a value index can be computed on.
 
 | Industry | Wider collaboration | Rest |
 |---|---|---|
@@ -196,7 +196,7 @@ Promotion                     (separate from the prize, and easy to starve)
 Contingency                   (5 to 10%)
 ```
 
-Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 65,018 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 43,109 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, never as a price of admission.
+Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 65,018 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 43,109 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, with no price of admission implied.
 
 | Measure | Typical | Middle half | Note |
 |---|---|---|---|
@@ -233,7 +233,7 @@ The same flattening shows up within plan tier and within some industries, at the
 | Gaming and esports (exception, still rising) | 0.55, and 0.13 at 10,000-24,999 | 83 | 42 |
 | Sports and outdoors (exception, still rising) | 0.19, then 0.26 at 10,000-24,999 | - | - |
 
-A cheap Prize is not a mark against a campaign on this measure: at the cheaper spend levels, campaigns beat their own typical Entrant count for the money by 50% or more more often than they miss it by as much. That margin is what a small budget buys here, a real chance of outperforming its own price tag, and it is the right call when the audience in front of the campaign already wants what's on offer and the objective does not need the largest possible crowd. It reverses at the top, so the same margin does not carry into the largest budgets. This describes campaigns that already cleared this reference's 100-Entrant floor, two things happening together and not a test of what a cheap Prize would do in front of a smaller audience.
+A cheap Prize is not a mark against a campaign on this measure: at the cheaper spend levels, campaigns beat their own typical Entrant count for the money by 50% or more more often than they miss it by as much. That margin is what a small budget buys here, a real chance of outperforming its own price tag, and it is the right call when the audience in front of the campaign already wants what's on offer and the objective does not need the largest possible crowd. It reverses at the top, so the same margin does not carry into the largest budgets. This describes campaigns that already cleared this reference's 100-Entrant floor, two things happening together, never a test of what a cheap Prize would do in front of a smaller audience.
 
 | Spend level (USD) | Beat by 50%+ (crowd/$ 1.5+) | Missed by 50%+ (crowd/$ below 0.667) | Campaigns |
 |---|---|---|---|

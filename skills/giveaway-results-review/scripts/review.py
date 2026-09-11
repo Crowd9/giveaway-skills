@@ -94,12 +94,15 @@ def band_rank(metric, value, contestants, lower_is_better=False):
             else f"{word} than {r[0]}% of campaigns of {band_label(contestants)}") + f" (across {r[1]:,} campaigns)"
 
 def position(value, dist):
-    if value < dist["p25"]: return "bottom quarter"
-    if value < dist["median"]: return "below typical"
-    if value == dist["median"]: return "typical"
-    if value < dist["p75"]: return "above typical"
-    if value < dist["p90"]: return "top quarter"
-    return "top tenth"
+    # Ranked against every campaign, where the sentence beside it in the same cell ranks against the size band.
+    # An answer read "top quarter" as the band's top quarter and printed a figure the band could not hold, so the
+    # phrase now says which distribution it came from.
+    if value < dist["p25"]: return "bottom quarter of all campaigns"
+    if value < dist["median"]: return "below typical for all campaigns"
+    if value == dist["median"]: return "typical for all campaigns"
+    if value < dist["p75"]: return "above typical for all campaigns"
+    if value < dist["p90"]: return "top quarter of all campaigns"
+    return "top tenth of all campaigns"
 
 def band(c): return "10k+" if c >= 10000 else "2.5k-10k" if c >= 2500 else "1k-2.5k" if c >= 1000 else "500-1k" if c >= 500 else "250-500" if c >= 250 else "100-250"
 

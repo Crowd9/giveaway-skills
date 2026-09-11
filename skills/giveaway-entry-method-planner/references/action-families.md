@@ -126,7 +126,7 @@ Share who completed it by settings read from the action config, campaigns with 1
 | With hashtag | 22 per 100 (665 campaigns, 175 businesses) |
 | With link | 44 per 100 (4,753 campaigns, 552 businesses) |
 
-Share text carrying a link completes twice as often as plain text, and a hashtag makes no difference either way. Read the link row with care: 40% of those actions were mandatory against 15% of the plain ones, so the gap is partly who was made to complete them and not the link itself.
+Share text carrying a link completes twice as often as plain text, and a hashtag makes no difference either way. Read the link row with care: 40% of those actions were mandatory against 15% of the plain ones, so the gap is partly who was made to complete them, with the link's own effect unknown.
 
 **Steps inside one Action.** Completion holds steady through a few steps, then falls hard from eight steps on. This cut counts the steps configured inside a single Entry Method, and its denominator is Actions, not campaigns. It says nothing about how many Entry Methods a campaign should carry, which is the `cmp_methods` table further up this file. A measured answer quoted this row to judge a ten-method entry list and built its whole recommendation on a figure about something else.
 
