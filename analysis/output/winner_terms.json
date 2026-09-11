@@ -5,11 +5,11 @@
  },
  "terms_timetable": {
   "draw_days": {
-   "total": 115365,
+   "total": 115361,
    "values": {
     "7": {
-     "campaigns": 108817,
-     "businesses": 16570,
+     "campaigns": 108813,
+     "businesses": 16567,
      "share": 0.9432
     },
     "1": {
@@ -50,11 +50,11 @@
    }
   },
   "reply_days": {
-   "total": 115365,
+   "total": 115361,
    "values": {
     "7": {
-     "campaigns": 107698,
-     "businesses": 16559,
+     "campaigns": 107694,
+     "businesses": 16556,
      "share": 0.9335
     },
     "2": {
@@ -96,11 +96,11 @@
   }
  },
  "selection_method": {
-  "total": 115365,
+  "total": 115361,
   "values": {
    "Random Draw": {
-    "campaigns": 114448,
-    "businesses": 17248,
+    "campaigns": 114444,
+    "businesses": 17245,
     "share": 0.9921
    },
    "Tirage au sort": {

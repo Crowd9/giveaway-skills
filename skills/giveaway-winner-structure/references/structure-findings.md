@@ -201,16 +201,16 @@ Two settings decide the Winner timetable, and almost nobody changes either.
 
 | Setting | Value | Campaigns | Share |
 |---|---|---|---|
-| Days after close before the draw | 7 | 115,799 | 94.5% |
-| Days a Winner has to reply | 7 | 114,647 | 93.5% |
-| Selection method | Random Draw | 121,501 | 98.2% |
+| Days after close before the draw | 7 | 108,813 | 94.3% |
+| Days a Winner has to reply | 7 | 107,694 | 93.3% |
+| Selection method | Random Draw | 114,444 | 99.2% |
 
 Seven days is Gleam's default for both, so this describes what campaigns end up with and never what businesses
-weighed up. The next most common reply window is two days on 2,153 campaigns, then one day on 1,254. A 72-hour
+weighed up. The next most common reply window is two days on 2,390 campaigns, then one day on 1,365. A 72-hour
 deadline, which trade advice often recommends, is written into fewer than one campaign in a hundred here.
 
-Judging is close to non-existent. 98.2% name a random draw, and every other method together covers about 300
-campaigns, most of them one business running the same wording repeatedly.
+Judging is close to non-existent. 99.2% name a random draw, and every other method together covers a few
+hundred campaigns, most of them one business running the same wording repeatedly.
 
 The practical reading: 7 days is what a reader's Entrants will expect because it is what almost every Gleam
 campaign says, and a shorter deadline is a deliberate choice to defend in the terms. Pick a shorter one when the
