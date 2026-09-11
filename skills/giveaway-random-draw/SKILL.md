@@ -42,7 +42,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 7. **Verify** with `scripts/draw.py verify audit.json` and tell the user anyone with the file, the audit record and a few lines of code can do the same. The method is documented in the script header so it can be redone in any language.
 8. **Deliver** the Winners, the audit summary, and what to do next (verify eligibility with the Winner-verification reference in giveaway-winner-structure, contact with a deadline, keep the audit file, the input file and the exclusion file together).
 
-For a "how do I make my draw fair" question without a list, give the procedure from `references/draw-procedure.md` and the audit note template.
+For a "how do I make my draw fair" question without a list, give the procedure from `references/draw-procedure.md` and the audit note template. Land something concrete in the same reply even so. Where the user has named a close or draw time, run the commit with `--draw-at` and give them the drand round number for that moment, which they can publish today. Where they have not, give the exact command they will run with their file name in it. An answer that describes a procedure and produces nothing leaves the reader with homework.
 
 ## Output
 
