@@ -161,11 +161,11 @@ with the money, slowly:
 | Prize pool tenth | Campaigns | Typical pool USD | Typical Entrants |
 |---|---|---|---|
 | lowest | 4,301 | 20 | 272 |
-| third | 4,301 | 90 | 313 |
-| fifth | 4,300 | 227 | 522 |
+| third | 4,301 | 90 | 310 |
+| fifth | 4,300 | 227 | 523 |
 | seventh | 4,300 | 550 | 809 |
-| ninth | 4,300 | 1,850 | 1,518 |
-| highest | 4,300 | 4,600 | 2,020 |
+| ninth | 4,300 | 1,850 | 1,516 |
+| highest | 4,300 | 4,600 | 2,022 |
 
 230 times the Prize money goes with 7.4 times the Entrants. Put another way, doubling the Prize budget goes with
 about 29% more Entrants. That is the weaker of the two levers this data can separate: doubling the traffic put in

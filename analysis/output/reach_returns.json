@@ -7,194 +7,194 @@
  "by_band_impression_fifth": {
   "100-250": {
    "1": {
-    "campaigns": 6971,
-    "impressions": 272,
+    "campaigns": 6601,
+    "impressions": 274,
     "contestants": 132,
-    "conversion": 0.5375
+    "conversion": 0.5351
    },
    "2": {
-    "campaigns": 6971,
-    "impressions": 440,
-    "contestants": 147,
-    "conversion": 0.3367
+    "campaigns": 6601,
+    "impressions": 441,
+    "contestants": 148,
+    "conversion": 0.337
    },
    "3": {
-    "campaigns": 6971,
-    "impressions": 630,
+    "campaigns": 6601,
+    "impressions": 632,
     "contestants": 164,
-    "conversion": 0.2609
+    "conversion": 0.2602
    },
    "4": {
-    "campaigns": 6971,
-    "impressions": 923,
-    "contestants": 176,
-    "conversion": 0.1894
+    "campaigns": 6601,
+    "impressions": 928,
+    "contestants": 175,
+    "conversion": 0.1876
    },
    "5": {
-    "campaigns": 6970,
-    "impressions": 1756,
-    "contestants": 186,
-    "conversion": 0.098
+    "campaigns": 6601,
+    "impressions": 1764,
+    "contestants": 187,
+    "conversion": 0.0979
    }
   },
   "10k+": {
    "1": {
-    "campaigns": 714,
-    "impressions": 23473,
-    "contestants": 12034,
-    "conversion": 0.5567
+    "campaigns": 623,
+    "impressions": 23160,
+    "contestants": 12158,
+    "conversion": 0.5781
    },
    "2": {
-    "campaigns": 713,
-    "impressions": 40162,
-    "contestants": 13867,
-    "conversion": 0.3489
+    "campaigns": 623,
+    "impressions": 41399,
+    "contestants": 13834,
+    "conversion": 0.3407
    },
    "3": {
-    "campaigns": 713,
-    "impressions": 60023,
-    "contestants": 15805,
-    "conversion": 0.2644
+    "campaigns": 623,
+    "impressions": 62315,
+    "contestants": 15778,
+    "conversion": 0.2537
    },
    "4": {
-    "campaigns": 713,
-    "impressions": 104751,
-    "contestants": 21046,
-    "conversion": 0.2133
+    "campaigns": 622,
+    "impressions": 109844,
+    "contestants": 21530,
+    "conversion": 0.2036
    },
    "5": {
-    "campaigns": 713,
-    "impressions": 240597,
-    "contestants": 37924,
-    "conversion": 0.1478
+    "campaigns": 622,
+    "impressions": 246976,
+    "contestants": 38600,
+    "conversion": 0.1457
    }
   },
   "1k-2.5k": {
    "1": {
-    "campaigns": 4234,
-    "impressions": 2505,
-    "contestants": 1236,
-    "conversion": 0.544
+    "campaigns": 3988,
+    "impressions": 2504,
+    "contestants": 1232,
+    "conversion": 0.5409
    },
    "2": {
-    "campaigns": 4233,
-    "impressions": 3869,
-    "contestants": 1380,
-    "conversion": 0.3607
+    "campaigns": 3988,
+    "impressions": 3875,
+    "contestants": 1376,
+    "conversion": 0.3588
    },
    "3": {
-    "campaigns": 4233,
-    "impressions": 5391,
-    "contestants": 1525,
-    "conversion": 0.2821
+    "campaigns": 3988,
+    "impressions": 5416,
+    "contestants": 1516,
+    "conversion": 0.2801
    },
    "4": {
-    "campaigns": 4233,
-    "impressions": 7797,
-    "contestants": 1670,
-    "conversion": 0.2117
+    "campaigns": 3988,
+    "impressions": 7874,
+    "contestants": 1669,
+    "conversion": 0.2098
    },
    "5": {
-    "campaigns": 4233,
-    "impressions": 14648,
-    "contestants": 1790,
-    "conversion": 0.112
+    "campaigns": 3988,
+    "impressions": 14836,
+    "contestants": 1788,
+    "conversion": 0.111
    }
   },
   "2.5k-10k": {
    "1": {
-    "campaigns": 2799,
-    "impressions": 6778,
-    "contestants": 3031,
-    "conversion": 0.4918
+    "campaigns": 2533,
+    "impressions": 6905,
+    "contestants": 3030,
+    "conversion": 0.4843
    },
    "2": {
-    "campaigns": 2799,
-    "impressions": 10971,
-    "contestants": 3613,
-    "conversion": 0.334
+    "campaigns": 2533,
+    "impressions": 11147,
+    "contestants": 3611,
+    "conversion": 0.3275
    },
    "3": {
-    "campaigns": 2798,
-    "impressions": 15562,
-    "contestants": 4220,
-    "conversion": 0.2737
+    "campaigns": 2533,
+    "impressions": 15922,
+    "contestants": 4201,
+    "conversion": 0.2653
    },
    "4": {
-    "campaigns": 2798,
-    "impressions": 23452,
-    "contestants": 5002,
-    "conversion": 0.2131
+    "campaigns": 2532,
+    "impressions": 24126,
+    "contestants": 4931,
+    "conversion": 0.2023
    },
    "5": {
-    "campaigns": 2798,
-    "impressions": 44376,
-    "contestants": 5646,
-    "conversion": 0.1118
+    "campaigns": 2532,
+    "impressions": 46236,
+    "contestants": 5560,
+    "conversion": 0.107
    }
   },
   "250-500": {
    "1": {
-    "campaigns": 5399,
-    "impressions": 595,
-    "contestants": 314,
-    "conversion": 0.5741
+    "campaigns": 5122,
+    "impressions": 593,
+    "contestants": 315,
+    "conversion": 0.5762
    },
    "2": {
-    "campaigns": 5398,
-    "impressions": 950,
-    "contestants": 339,
-    "conversion": 0.3592
+    "campaigns": 5122,
+    "impressions": 949,
+    "contestants": 340,
+    "conversion": 0.3597
    },
    "3": {
-    "campaigns": 5398,
-    "impressions": 1339,
-    "contestants": 355,
-    "conversion": 0.2644
+    "campaigns": 5122,
+    "impressions": 1341,
+    "contestants": 354,
+    "conversion": 0.2637
    },
    "4": {
-    "campaigns": 5398,
-    "impressions": 1910,
-    "contestants": 372,
-    "conversion": 0.1927
+    "campaigns": 5122,
+    "impressions": 1922,
+    "contestants": 370,
+    "conversion": 0.1912
    },
    "5": {
-    "campaigns": 5398,
-    "impressions": 3320,
+    "campaigns": 5121,
+    "impressions": 3322,
     "contestants": 385,
     "conversion": 0.1097
    }
   },
   "500-1k": {
    "1": {
-    "campaigns": 4557,
-    "impressions": 1164,
+    "campaigns": 4358,
+    "impressions": 1153,
     "contestants": 611,
-    "conversion": 0.5696
+    "conversion": 0.5737
    },
    "2": {
-    "campaigns": 4557,
-    "impressions": 1830,
+    "campaigns": 4358,
+    "impressions": 1820,
     "contestants": 662,
-    "conversion": 0.3656
+    "conversion": 0.3686
    },
    "3": {
-    "campaigns": 4557,
-    "impressions": 2510,
-    "contestants": 701,
-    "conversion": 0.2803
+    "campaigns": 4358,
+    "impressions": 2509,
+    "contestants": 698,
+    "conversion": 0.2799
    },
    "4": {
-    "campaigns": 4556,
-    "impressions": 3520,
-    "contestants": 740,
-    "conversion": 0.2069
+    "campaigns": 4358,
+    "impressions": 3529,
+    "contestants": 738,
+    "conversion": 0.2063
    },
    "5": {
-    "campaigns": 4556,
-    "impressions": 6242,
-    "contestants": 766,
-    "conversion": 0.1164
+    "campaigns": 4357,
+    "impressions": 6292,
+    "contestants": 765,
+    "conversion": 0.1157
    }
   }
  }

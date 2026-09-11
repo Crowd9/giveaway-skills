@@ -51,16 +51,16 @@ Rate move a long way, while the Entrant count barely does. In the 1,000 to 2,500
 
 | Impressions group | Campaigns | Impressions | Entrants | Conversion Rate |
 |---|---|---|---|---|
-| lowest fifth | 4,234 | 2,505 | 1,236 | 54% |
-| second | 4,233 | 3,869 | 1,380 | 36% |
-| middle | 4,233 | 5,391 | 1,525 | 28% |
-| fourth | 4,233 | 7,797 | 1,670 | 21% |
-| highest fifth | 4,233 | 14,648 | 1,790 | 11% |
+| lowest fifth | 3,988 | 2,504 | 1,232 | 54% |
+| second | 3,988 | 3,875 | 1,376 | 36% |
+| middle | 3,988 | 5,416 | 1,516 | 28% |
+| fourth | 3,988 | 7,874 | 1,669 | 21% |
+| highest fifth | 3,988 | 14,836 | 1,788 | 11% |
 
-Nearly six times the Impressions goes with about 45% more Entrants. The same shape holds in every band, from 5.4
-to 10.2 times the reach for 1.23 to 3.15 times the crowd, and the Conversion Rate falls from about 55% to about
-11% in all six. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.2 times the
-Impressions goes with 3.15 times the Entrants, which is close to the square root of the reach multiple.
+Nearly six times the Impressions goes with about 45% more Entrants. The same shape holds in every band, from 5.5
+to 10.7 times the reach for 1.22 to 3.17 times the crowd, and the Conversion Rate falls from about 55% to about
+11% in all six. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.7 times the
+Impressions goes with 3.17 times the Entrants, which is close to the square root of the reach multiple.
 
 The working rule that falls out: doubling the traffic you put in front of a page goes with roughly 40% more
 Entrants, not twice as many. Read it as a description of campaigns at each reach level and never as what adding a

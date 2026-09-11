@@ -362,8 +362,8 @@ Entrants who comment before they enter are the ones to answer first. A reply tha
 
 Reach pays, and it pays less each time. Splitting one size band into five equal groups by Impressions, the
 campaigns with nearly six times the traffic drew about 45% more Entrants, and the pattern holds in every band
-(5.4 to 10.2 times the Impressions for 1.23 to 3.15 times the Entrants). In the 10,000-plus band, the one with no
-ceiling on Entrant counts, 10.2 times the reach goes with 3.15 times the crowd, close to the square root of the
+(5.5 to 10.7 times the Impressions for 1.22 to 3.17 times the Entrants). In the 10,000-plus band, the one with no
+ceiling on Entrant counts, 10.7 times the reach goes with 3.17 times the crowd, close to the square root of the
 reach multiple.
 
 Plan against that curve. Doubling the traffic in front of the page goes with roughly 40% more Entrants, so the

@@ -7,115 +7,115 @@
  },
  "by_shape": {
   "Collaboration or partner": {
-   "campaigns": 10985,
-   "businesses": 2736,
-   "email_offered": 0.2645,
-   "share_offered": 0.3842,
-   "referral_entries_per_100_entrants_where_offered": 27
+   "campaigns": 8921,
+   "businesses": 2473,
+   "email_offered": 0.318,
+   "share_offered": 0.3048,
+   "referral_entries_per_100_entrants_where_offered": 16
   },
   "Holiday themed": {
-   "campaigns": 7651,
-   "businesses": 2652,
-   "email_offered": 0.4744,
-   "share_offered": 0.5261,
+   "campaigns": 7519,
+   "businesses": 2584,
+   "email_offered": 0.4806,
+   "share_offered": 0.5268,
    "referral_entries_per_100_entrants_where_offered": 11
   },
   "Bundle, mega or ultimate": {
-   "campaigns": 6048,
-   "businesses": 2327,
-   "email_offered": 0.4084,
-   "share_offered": 0.4024,
-   "referral_entries_per_100_entrants_where_offered": 13
+   "campaigns": 5635,
+   "businesses": 2220,
+   "email_offered": 0.4327,
+   "share_offered": 0.3725,
+   "referral_entries_per_100_entrants_where_offered": 11
   },
   "Gift card or voucher": {
-   "campaigns": 5582,
-   "businesses": 1475,
-   "email_offered": 0.3782,
-   "share_offered": 0.426,
+   "campaigns": 5555,
+   "businesses": 1464,
+   "email_offered": 0.3784,
+   "share_offered": 0.4266,
    "referral_entries_per_100_entrants_where_offered": 11
   },
   "Sweepstakes wording (US)": {
-   "campaigns": 3137,
-   "businesses": 879,
-   "email_offered": 0.5222,
-   "share_offered": 0.4651,
+   "campaigns": 3085,
+   "businesses": 863,
+   "email_offered": 0.5261,
+   "share_offered": 0.4639,
    "referral_entries_per_100_entrants_where_offered": 10
   },
   "Weekly or monthly series": {
-   "campaigns": 2843,
-   "businesses": 474,
-   "email_offered": 0.4316,
-   "share_offered": 0.4179,
+   "campaigns": 2700,
+   "businesses": 436,
+   "email_offered": 0.4396,
+   "share_offered": 0.403,
    "referral_entries_per_100_entrants_where_offered": 19
   },
   "Milestone": {
-   "campaigns": 2534,
-   "businesses": 1342,
-   "email_offered": 0.2032,
-   "share_offered": 0.3623,
-   "referral_entries_per_100_entrants_where_offered": 28
+   "campaigns": 2089,
+   "businesses": 1163,
+   "email_offered": 0.2355,
+   "share_offered": 0.2796,
+   "referral_entries_per_100_entrants_where_offered": 14
   },
   "Cash prize": {
-   "campaigns": 2029,
-   "businesses": 350,
-   "email_offered": 0.1424,
-   "share_offered": 0.6856,
+   "campaigns": 1982,
+   "businesses": 332,
+   "email_offered": 0.1418,
+   "share_offered": 0.6837,
    "referral_entries_per_100_entrants_where_offered": 4
   },
   "Advent or daily calendar": {
-   "campaigns": 1878,
-   "businesses": 340,
-   "email_offered": 0.3456,
-   "share_offered": 0.3786,
+   "campaigns": 1865,
+   "businesses": 338,
+   "email_offered": 0.3458,
+   "share_offered": 0.3753,
    "referral_entries_per_100_entrants_where_offered": 9
   },
   "Competition wording (UK)": {
-   "campaigns": 1738,
-   "businesses": 591,
-   "email_offered": 0.4597,
-   "share_offered": 0.3878,
-   "referral_entries_per_100_entrants_where_offered": 15
+   "campaigns": 1565,
+   "businesses": 511,
+   "email_offered": 0.4997,
+   "share_offered": 0.3629,
+   "referral_entries_per_100_entrants_where_offered": 13
   },
   "Sorteo (Spanish)": {
-   "campaigns": 1539,
-   "businesses": 489,
-   "email_offered": 0.0728,
-   "share_offered": 0.1391,
+   "campaigns": 1512,
+   "businesses": 477,
+   "email_offered": 0.0741,
+   "share_offered": 0.1356,
    "referral_entries_per_100_entrants_where_offered": 11
   },
   "Anniversary or birthday": {
-   "campaigns": 1413,
-   "businesses": 818,
-   "email_offered": 0.3715,
-   "share_offered": 0.3815,
+   "campaigns": 1383,
+   "businesses": 793,
+   "email_offered": 0.376,
+   "share_offered": 0.3782,
    "referral_entries_per_100_entrants_where_offered": 13
   },
   "Product launch": {
-   "campaigns": 1410,
-   "businesses": 756,
-   "email_offered": 0.3532,
-   "share_offered": 0.4872,
-   "referral_entries_per_100_entrants_where_offered": 20
+   "campaigns": 1272,
+   "businesses": 653,
+   "email_offered": 0.3781,
+   "share_offered": 0.478,
+   "referral_entries_per_100_entrants_where_offered": 17
   },
   "Creator or streamer": {
-   "campaigns": 1270,
-   "businesses": 614,
-   "email_offered": 0.126,
-   "share_offered": 0.1843,
+   "campaigns": 1239,
+   "businesses": 592,
+   "email_offered": 0.1275,
+   "share_offered": 0.1768,
    "referral_entries_per_100_entrants_where_offered": 20
   },
   "Community or Discord": {
-   "campaigns": 999,
-   "businesses": 423,
-   "email_offered": 0.1241,
-   "share_offered": 0.3463,
-   "referral_entries_per_100_entrants_where_offered": 35
+   "campaigns": 775,
+   "businesses": 326,
+   "email_offered": 0.1394,
+   "share_offered": 0.2555,
+   "referral_entries_per_100_entrants_where_offered": 18
   },
   "Concours (French)": {
-   "campaigns": 659,
-   "businesses": 152,
-   "email_offered": 0.305,
-   "share_offered": 0.2519,
+   "campaigns": 658,
+   "businesses": 151,
+   "email_offered": 0.3055,
+   "share_offered": 0.2508,
    "referral_entries_per_100_entrants_where_offered": 7
   },
   "Gewinnspiel (German)": {
@@ -126,10 +126,10 @@
    "referral_entries_per_100_entrants_where_offered": 6
   },
   "Cart, wishlist or spree": {
-   "campaigns": 417,
-   "businesses": 143,
-   "email_offered": 0.7122,
-   "share_offered": 0.5084,
+   "campaigns": 373,
+   "businesses": 138,
+   "email_offered": 0.7882,
+   "share_offered": 0.555,
    "referral_entries_per_100_entrants_where_offered": 9
   }
  }
