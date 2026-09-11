@@ -380,11 +380,13 @@ What belongs to the concept is the collaboration test: same customer, different 
 
 Titles that add a specific feature draw fewer Entrants than titles without it:
 
+<!-- generated:ig_title_traits -->
 | Title feature | Campaigns (with) | Entrants (with) | Entrants (without) |
 |---|---|---|---|
-| Starts with "Win" | 519 | 1,897 | 2,126 |
-| Value stated in the title | 504 | 1,761 | 2,136 |
-| Emoji | 283 | 1,666 | 2,134 |
+| Starts with "Win" | 2,385 | 374 | 456 |
+| Value stated in the title | 2,995 | 419 | 456 |
+| Emoji | 1,522 | 471 | 451 |
+<!-- /generated -->
 
 Titles over 60 characters got the most to enter, at 42% (909 campaigns). The title reflects the business's market and habits more than it moves anyone.
 

@@ -167,12 +167,12 @@ Typical Prize values across the campaigns behind these numbers, and by campaign 
 | Campaign total, 2,500-10,000 Entrants | 1,298 | - | - |
 | Campaign total, 10,000+ Entrants | 3,000 | - | - |
 
-Entrants rise with the stated pool at every spend level [13,977 campaigns with a full value stated, from 3,446 businesses].
+Entrants rise with the stated pool at every spend level [43,173 campaigns with a full value stated, from 9,180 businesses].
 
 | Stated Prize pool | Typical Entrants |
 |---|---|
-| Under 50 USD | 1,755 |
-| 50,000 USD and up | 4,812 |
+| Under 50 USD | 266 |
+| 50,000 USD and up | 1,095 |
 
 Prize value and Entrant count move together only loosely: ten times the stated pool comes with about 1.74 times the Entrants, and value accounts for about 16% of the spread in Entrant counts, so most of what separates a big campaign from a small one is something other than the money. All of it describes what businesses chose and who they were. A bigger Prize comes with a bigger business, so none of it says a bigger Prize would lift a given campaign.
 
