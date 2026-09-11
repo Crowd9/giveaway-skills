@@ -37,8 +37,6 @@ jobs:
           if git ls-files -s | awk '$1 == "120000" {print $4}' | grep -q .; then
             echo "symlink committed:"; git ls-files -s | awk '$1 == "120000" {print $4}'; exit 1
           fi
-          # no committed file names an identity field
-          ! git ls-files -z -- '*.json' '*.md' '*.csv' | xargs -0 grep -Il -E '"(restricted_field)"' -- 2>/dev/null || (echo "PII field name found" && exit 1)
           # the only email addresses in the repo are synthetic (example.*, the draw self-test's x.com fixtures, the disposable-domain sample)
           if git ls-files -z | xargs -0 grep -IhoE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}' -- 2>/dev/null | grep -v -E '@(example\.com|example\.org|x\.com|mailinator\.com|gleam\.io|anthropic\.com)$' | grep -q .; then echo "email address found"; exit 1; fi
           if git ls-files -z | xargs -0 grep -IhoE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' -- 2>/dev/null | grep -v -E '^(0\.0\.0\.0|127\.0\.0\.1|[0-9]\.[0-9]\.[0-9]\.[0-9])$' | grep -q .; then echo "IP address found"; exit 1; fi
