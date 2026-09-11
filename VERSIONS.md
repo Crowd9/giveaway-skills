@@ -10,7 +10,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-winner-structure | 1.3.20 |
 | giveaway-promotion-plan | 1.3.24 |
 | giveaway-random-draw | 1.3.18 |
-| giveaway-winner-communications | 1.2.17 |
+| giveaway-winner-communications | 1.2.18 |
 | giveaway-idea-generator | 1.3.21 |
 | giveaway-results-review | 1.5.25 |
 | gleam-campaign-setup | 1.2.22 |
@@ -199,6 +199,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.15 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 - 1.2.16 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 - 1.2.17 (2026-09-12): A stated reply deadline now requires the messages it can force, the close-out and the reserve notification.
+- 1.2.18 (2026-09-12): The email-Action table carries its campaign and business counts, so a figure can be quoted with the count the house style demands.
 
 ### giveaway-idea-generator
 

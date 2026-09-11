@@ -7,14 +7,16 @@ Advice from practice. Nothing here carries a dataset figure. The campaign emails
 Everything on this page runs on email, and the majority of campaigns never collected one. The share of campaigns
 offering an email or newsletter Action rises with size and stays a minority at every size:
 
-| Campaign size | Offered an email Action |
-|---|---|
-| 100 to 250 Entrants | 25% |
-| 250 to 500 | 31% |
-| 500 to 1,000 | 38% |
-| 1,000 to 2,500 | 43% |
-| 2,500 to 10,000 | 46% |
-| 10,000 or more | 40% |
+<!-- generated:wc_email_band -->
+| Campaign size | Offered an email Action | Campaigns | Businesses |
+|---|---|---|---|
+| 100 to 250 Entrants | 25% | 33,074 | 9,533 |
+| 250 to 500 | 31% | 25,681 | 6,496 |
+| 500 to 1,000 | 38% | 21,838 | 5,509 |
+| 1,000 to 2,500 | 44% | 20,021 | 5,077 |
+| 2,500 to 10,000 | 46% | 12,714 | 2,991 |
+| 10,000 or more | 41% | 3,171 | 748 |
+<!-- /generated -->
 
 So in three campaigns out of four at the small end, and in more than half at every size, the business holds no
 address for the Winner or for anyone else who entered. Check which Actions the campaign ran before planning any
