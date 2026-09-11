@@ -27,6 +27,24 @@ Real-time list of every action with Who, Action, Details (form answers, tweet UR
 
 The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and Entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions and email or phone verification live on the User Details tab, Allowed Locations on the Setup tab.
 
+**What an invalid share normally looks like (extracted).** The level a campaign ran on is not in the data, so
+nothing here says what any level produced. What it does give a reader is the yardstick for their own number:
+
+| Invalid entries as a share of all entries | |
+|---|---|
+| Lower quarter of campaigns | 1.1% |
+| Typical | 4.2% |
+| Upper quarter | 10.4% |
+| Top tenth | 17.7% |
+| Top hundredth | 38.4% |
+
+So roughly one entry in twenty is marked Invalid in a typical campaign, and a campaign above about 18% is in the
+noisiest tenth. Use it to answer "is my invalid rate bad" and to decide whether raising the level from the High
+default is worth the risk of catching real Entrants. A share action makes almost no difference to it, 4.6%
+typical against 3.9% without one, so a campaign that offers sharing is not thereby inviting fraud.
+
+Source: `analysis/output/invalid_share.json`.
+
 The documentation describes what the filter does to entries as they arrive. It does not say what happens to entries already collected when the level is changed part way through a campaign, so do not tell a user that raising the level will or will not re-screen what is already in. Say the docs do not cover it, and that the Actions tab is where the entries already collected get reviewed before the draw.
 
 The same holds for what an Entrant sees. The documentation says a flagged entry is marked Invalid, hidden from
