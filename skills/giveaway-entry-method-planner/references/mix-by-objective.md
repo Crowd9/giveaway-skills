@@ -430,7 +430,7 @@ and drops on either side, and the shape repeats three times:
 | 7 to 10 | 484 | 644 | 386 | 408 |
 | 11 or more | 560 | 747 | 408 | 546 |
 
-One required action goes with 25% to 33% more Entrants than requiring none, and 58% to 83% more than requiring
+One required action goes with 25% to 33% more Entrants than requiring none, and 32% to 83% more than requiring
 two. Three separate bands landing on the same shape is worth more than any one of them, and the groups are large:
 the smallest cell holds 1,909 campaigns from 437 businesses.
 
