@@ -70,7 +70,7 @@ META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(
 # Gleam's product nouns are checked on prose only. A file name, a flag or a URL carries the word in lower case by
 # necessity (`references/prize-taxonomy.md`, `--winners-csv`, /setup/prizes), and flagging those would teach an
 # answer to stop citing its sources.
-CODEISH = re.compile(r"`[^`]*`|https?://\S+|\B--[a-z][\w-]*|\b[\w./-]+\.(?:md|json|csv|py|txt)\b")
+CODEISH = re.compile(r"```.*?```|`[^`]*`|https?://\S+|\B--[a-z][\w-]*|\b[\w./-]+\.(?:md|json|csv|py|txt)\b", re.S)
 
 
 def prose_only(text):
