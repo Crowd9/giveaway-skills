@@ -108,33 +108,36 @@ The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, dura
 
 A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical for the money. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
 
-| Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) | Duration | Actions |
-|---|---|---|---|---|---|---|---|---|---|
-| All campaigns (baseline) | 117,128 | 17,747 | 492 | 35% | 4.4 | 12 | 1.00 | – | – |
-| Advent or daily calendar | 1,029 | 280 | 3,325 | 50% (612) | 3.5 | 9 | 1.02 (282) | 5 | 5 |
-| Charity or fundraiser | 231 | 31 | 3,108 | 34% (200) | 1.0 | 14 | 0.74 (14) | 0 | 1 |
-| Free or no purchase | 1,739 | 315 | 3,097 | 38% (256) | 8.5 | 10 | 1.56 (1,145) | 31 | 13 |
-| Sweepstakes wording (US) | 1,759 | 542 | 2,937 | 29% (364) | 4.5 | 10 | 1.21 (1,073) | 22 | 8 |
-| Sorteo (Spanish) | 536 | 138 | 2,860 | 38% (214) | 4.9 | 11 | 1.01 (99) | 16 | 7 |
-| Milestone | 1,829 | 929 | 2,661 | 31% (438) | 4.8 | 14 | 0.94 (739) | 21 | 8 |
-| Concours (French) | 345 | 96 | 2,633 | 36% (199) | 3.0 | 7 | 1.57 (72) | 11 | 5 |
-| Gewinnspiel (German) | 297 | 37 | 2,600 | 37% (193) | 4.3 | 5 | 0.63 (16) | 1 | 6 |
-| Collaboration or partner | 6,153 | 1,849 | 2,404 | 32% (2,104) | 4.8 | 12 | 1.03 (2,316) | 15 | 8 |
-| Bundle, mega or ultimate | 5,718 | 2,031 | 2,341 | 32% (1,332) | 4.7 | 12 | 0.96 (2,636) | 20 | 8 |
-| Creator or streamer | 1,381 | 537 | 2,308 | 40% (436) | 5.4 | 16 | 0.97 (534) | 18 | 8 |
-| Anniversary or birthday | 838 | 491 | 2,250 | 32% (262) | 4.2 | 13 | 0.96 (362) | 14 | 7 |
-| Voting contest | 95 | 59 | 2,169 | 31% (46) | 2.7 | 15 | 0.73 (29) | 13 | 5 |
-| Scavenger hunt or secret code | 171 | 82 | 2,149 | 38% (62) | 4.6 | 14 | 0.91 (60) | 14 | 8 |
-| Holiday themed | 3,653 | 1,397 | 2,125 | 35% (1,134) | 4.2 | 12 | 0.94 (1,741) | 15 | 7 |
-| Quiz or trivia | 100 | 52 | 2,023 | 38% (51) | 3.6 | 12 | 0.75 (25) | 12 | 5 |
-| Community or Discord | 1,329 | 522 | 2,004 | 34% (454) | 4.8 | 28 | 0.91 (491) | 14 | 7 |
-| Product launch | 1,229 | 655 | 2,000 | 29% (325) | 5.1 | 20 | 0.88 (546) | 16 | 8 |
-| Gift card or voucher | 2,695 | 1,026 | 1,966 | 33% (583) | 4.1 | 14 | 0.98 (1,504) | 21 | 7 |
-| Cash Prize | 1,305 | 458 | 1,966 | 41% (256) | 6.9 | 18 | 0.99 (657) | 23 | 11 |
-| Cart, wishlist or spree | 373 | 158 | 1,953 | 26% (81) | 3.9 | 10 | 0.94 (208) | 28 | 7 |
-| Competition wording (UK) | 1,410 | 489 | 1,866 | 34% (339) | 3.6 | 10 | 0.83 (454) | 21 | 7 |
-| Flash (24 to 72 hours) | 103 | 73 | 1,693 | 40% (28) | 5.3 | 18 | 0.73 (52) | 13 | 8 |
-| Weekly or monthly series | 931 | 325 | 1,644 | 36% (221) | 4.5 | 17 | 0.85 (431) | 15 | 8 |
+<!-- generated:ig_types -->
+| Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) |
+|---|---|---|---|---|---|---|---|
+| All campaigns (baseline) | 117,128 | 17,747 | 492 | 35% | 4.4 | 12 | 1.00 |
+| Collaboration or partner | 16,813 | 4,368 | 604 | 30% (6,844) | 4.8 | 14 | 0.99 (5,799) |
+| Bundle, mega or ultimate | 14,598 | 4,544 | 682 | 32% (4,393) | 4.5 | 12 | 1.08 (6,521) |
+| Gift card or voucher | 11,100 | 2,939 | 432 | 32% (2,788) | 4.7 | 12 | 1.17 (6,791) |
+| Holiday themed | 10,047 | 3,293 | 608 | 32% (3,475) | 4.4 | 11 | 1.17 (4,922) |
+| Creator or streamer | 6,327 | 2,111 | 317 | 39% (2,288) | 4.9 | 13 | 0.68 (2,216) |
+| Community or Discord | 5,212 | 2,017 | 409 | 30% (1,884) | 4.6 | 20 | 0.74 (1,897) |
+| Competition wording (UK) | 4,874 | 1,318 | 508 | 31% (1,338) | 4.0 | 12 | 1.05 (1,534) |
+| Milestone | 4,465 | 2,121 | 730 | 32% (1,290) | 4.5 | 15 | 1.00 (1,681) |
+| Weekly or monthly series | 4,353 | 952 | 457 | 33% (1,348) | 4.6 | 17 | 0.99 (1,949) |
+| Cash prize | 4,049 | 1,148 | 570 | 61% (1,669) | 7.6 | 8 | 1.35 (1,495) |
+| Product launch | 4,017 | 1,754 | 547 | 29% (1,295) | 5.0 | 14 | 0.97 (1,583) |
+| Sweepstakes wording (US) | 3,867 | 986 | 804 | 22% (1,150) | 4.3 | 10 | 1.01 (2,121) |
+| Free or no purchase | 3,696 | 666 | 862 | 31% (834) | 5.6 | 9 | 2.17 (2,010) |
+| Advent or daily calendar | 2,826 | 591 | 600 | 44% (1,392) | 3.9 | 10 | 0.99 (1,015) |
+| Anniversary or birthday | 2,302 | 1,184 | 596 | 31% (775) | 4.2 | 12 | 0.97 (903) |
+| Sorteo (Spanish) | 1,763 | 561 | 407 | 34% (792) | 4.4 | 13 | 0.85 (437) |
+| Concours (French) | 1,146 | 222 | 428 | 35% (595) | 3.5 | 7 | 0.70 (236) |
+| Cart, wishlist or spree | 903 | 339 | 725 | 34% (270) | 3.7 | 10 | 1.43 (451) |
+| Gewinnspiel (German) | 678 | 133 | 836 | 33% (317) | 4.4 | 6 | 0.67 (96) |
+| Scavenger hunt or secret code | 515 | 220 | 518 | 36% (176) | 5.0 | 25 | 0.85 (165) |
+| Charity or fundraiser | 473 | 130 | 969 | 34% (335) | 1.0 | 9 | 0.70 (87) |
+| Quiz or trivia | 424 | 182 | 368 | 37% (248) | 3.5 | 21 | 0.66 (132) |
+| Voting contest | 364 | 178 | 394 | 28% (140) | 2.1 | 12 | 0.56 (107) |
+| Flash (24 to 72 hours) | 349 | 183 | 598 | 39% (124) | 4.9 | 23 | 0.98 (165) |
+| Photo or video contest (UGC) | 265 | 175 | 252 | 21% (71) | 2.1 | 6 | 0.27 (108) |
+<!-- /generated -->
 
 Reading it:
 
@@ -161,12 +164,15 @@ Nothing here says the type caused the number. Businesses who run advent calendar
 
 ### Launches, pre-orders and drops (extracted)
 
-| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email uptake | Referrals % of Entrants | Value index (campaigns) | Own product Prize | Repeat business |
-|---|---|---|---|---|---|---|---|---|
-| Pre-order or crowdfunding | 177 | 1,514 | 35% (31) | 0.88 | 19 | 0.87 (105) | 23% | 51% |
-| Limited edition or drop | 596 | 2,105 | 32% (150) | 0.98 | 14 | 0.89 (256) | 27% | 75% |
-| Early access, beta or waitlist | 191 | 2,327 | 30% (74) | 1.01 | 16 | 1.08 (79) | 21% | 63% |
-| Launch or new release | 1,151 | 2,022 | 29% (330) | 0.90 | 20 | 0.88 (498) | 32% | 66% |
+<!-- generated:ig_launch -->
+| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email uptake | Referrals % of Entrants |
+|---|---|---|---|---|---|
+| Launch or new release | 3,349 | 588 | 30% (1,235) | 0.96 | 17 |
+| Limited edition or drop | 1,808 | 532 | 31% (659) | 1.00 | 14 |
+| Pre-order or crowdfunding | 984 | 456 | 29% (149) | 0.75 | 11 |
+| Early access, beta or waitlist | 800 | 401 | 34% (392) | 1.00 | 16 |
+| Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
+<!-- /generated -->
 
 Launch campaigns run below the all-campaign typical figures on Entrants and Conversion Rate, and above them on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception, with a value index above the rest and a referral rate above the all-campaign typical figure: a promise of first access is a reason to bring a friend. Pre-order and crowdfunding campaigns are the smallest, and around half come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
 
@@ -356,17 +362,19 @@ What belongs to the concept is the collaboration test: same customer, different 
 
 ## Title wording (extracted, campaigns we can compare fairly)
 
+<!-- generated:ig_title -->
 | Word in the title | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant | December starts |
 |---|---|---|---|---|---|---|
-| giveaway | 4,948 | 1,493 | 2,034 | 34% | 3.74 | 11% |
-| none of the usual words | 4,591 | 925 | 2,153 | 45% | 3.30 | 26% |
-| sweepstakes | 301 | 125 | 2,655 | 29% | 4.07 | 12% |
-| gewinnspiel | 179 | 13 | 2,188 | 39% | 4.31 | 48% |
-| sorteo | 173 | 59 | 2,604 | 39% | 4.59 | 5% |
-| raffle | 156 | 10 | 2,494 | 60% | 1.00 | 10% |
-| concours | 148 | 27 | 2,042 | 36% | 1.00 | 16% |
-| competition | 121 | 43 | 1,757 | 31% | 2.68 | 14% |
-| contest | 96 | 40 | 1,644 | 25% | 2.98 | 4% |
+| giveaway | 18,953 | 4,598 | 439 | 33% | 3.7 | 11% |
+| none of the usual words | 17,298 | 3,171 | 455 | 38% | 3.7 | 17% |
+| sweepstakes | 724 | 214 | 742 | 25% | 4.1 | 9% |
+| sorteo | 648 | 228 | 344 | 35% | 4.2 | 8% |
+| raffle | 537 | 52 | 718 | 46% | 1.0 | 11% |
+| competition | 487 | 137 | 342 | 23% | 3.7 | 8% |
+| contest | 483 | 201 | 368 | 23% | 3.1 | 5% |
+| concours | 360 | 65 | 692 | 33% | 2.7 | 11% |
+| gewinnspiel | 286 | 44 | 1,332 | 36% | 4.3 | 34% |
+<!-- /generated -->
 
 "Raffle" is a UK word and still carries the UK pattern: small, one action, a high share entering (see table above). "Competition" carried the same pattern in the first data pull and has since fallen to a smaller base with a lower Conversion Rate, so it no longer stands out the same way. "Sweepstakes" is the US word and carries the largest campaigns. Titles with none of the usual words are about a quarter December starts, which is the advent calendar pattern.
 

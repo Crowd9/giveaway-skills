@@ -64,18 +64,34 @@ Electronics and tech is the largest label behind the technology industry name, a
 
 Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. The ten largest industries by campaign count:
 
-| Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods | Email offered |
-|---|---|---|---|---|---|---|---|---|
-| Electronics and tech | 7,289 | 1,037 | 2,259 | 30% | 4.93 | 15 | 7 | 24% |
-| Gaming and esports | 6,328 | 1,414 | 2,197 | 27% | 5.17 | 14 | 9 | 21% |
-| Media and entertainment | 5,019 | 594 | 2,054 | 26% | 4.52 | 22 | 7 | 65% |
-| Sports and outdoors | 2,268 | 537 | 2,466 | 24% | 4.40 | 22 | 7 | 56% |
-| Food and drink | 1,787 | 419 | 2,399 | 29% | 3.54 | 18 | 6 | 63% |
-| Home and garden | 1,777 | 328 | 2,237 | 31% | 3.81 | 16 | 7 | 59% |
-| Apparel and fashion | 1,717 | 321 | 2,635 | 31% | 2.71 | 8 | 4 | 74% |
-| Travel and events | 1,347 | 261 | 2,736 | 29% | 3.01 | 23 | 6 | 57% |
-| Automotive | 1,124 | 142 | 2,776 | 23% | 6.40 | 18 | 10 | 68% |
-| Toys, hobbies and collectibles | 989 | 202 | 1,832 | 26% | 3.55 | 20 | 6 | 43% |
+<!-- generated:roi_industries -->
+| Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions | Days | Emails per campaign |
+|---|---|---|---|---|---|---|---|
+| Gaming and esports | 24,651 | 4,725 | 397 | 27% | 8 | 12 | 478 |
+| Media and entertainment | 21,575 | 2,086 | 401 | 24% | 8 | 18 | 830 |
+| Electronics and tech | 15,589 | 2,068 | 904 | 30% | 7 | 14 | 768 |
+| Toys, hobbies, collectibles | 4,705 | 753 | 418 | 26% | 7 | 15 | 366 |
+| Food and drink | 4,682 | 890 | 634 | 27% | 6 | 20 | 712 |
+| Sports and outdoors | 4,637 | 1,015 | 967 | 24% | 6 | 16 | 1,060 |
+| Apparel and fashion | 4,634 | 816 | 613 | 31% | 4 | 8 | 1,183 |
+| Other | 4,426 | 1,505 | 312 | 28% | 6 | 10 | 356 |
+| Travel and events | 3,979 | 645 | 488 | 27% | 6 | 15 | 648 |
+| Home and garden | 3,713 | 595 | 918 | 29% | 7 | 15 | 868 |
+| Creator influencer | 3,390 | 1,046 | 316 | 37% | 7 | 8 | 414 |
+| Health wellness fitness | 3,164 | 500 | 472 | 22% | 8 | 16 | 462 |
+| Retail marketplace | 2,874 | 384 | 488 | 29% | 8 | 8 | 530 |
+| Automotive | 2,324 | 380 | 940 | 26% | 7 | 14 | 1,512 |
+| Education | 1,872 | 360 | 482 | 24% | 9 | 8 | 450 |
+| Software and SaaS | 1,752 | 571 | 565 | 23% | 7 | 16 | 979 |
+| Art and crafts | 1,616 | 405 | 432 | 26% | 6 | 15 | 482 |
+| Beauty personal care | 1,411 | 351 | 552 | 32% | 7 | 19 | 576 |
+| Marketing agency | 1,220 | 159 | 540 | 28% | 7 | 15 | 471 |
+| Baby kids | 1,184 | 138 | 548 | 29% | 7 | 18 | 640 |
+| Pets | 948 | 206 | 744 | 25% | 6 | 15 | 776 |
+| Local services | 917 | 181 | 532 | 25% | 7 | 11 | 342 |
+| Nonprofit community | 518 | 197 | 396 | 28% | 7 | 14 | 464 |
+| Jewelry watches | 420 | 163 | 492 | 21% | 7 | 20 | 701 |
+<!-- /generated -->
 
 Home and garden and apparel and fashion have the highest Conversion Rate among the largest industries (both 31%), apparel and fashion also offers email most often (74%), and automotive asks for the most Entry Methods (10).
 

@@ -175,19 +175,21 @@ A  field cut confirms the coverage gap holds at scale: 38.8% of Prize listings c
 
 Campaigns whose every Prize carried a stated USD value: 13,977. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
 
-| Stated pool, USD | Campaigns | Entrants | Actions per Entrant | Stated USD % of Entrants |
+<!-- generated:ev_value_bands -->
+| Stated pool, USD | Campaigns | Entrants | Actions per Entrant | Stated USD per Entrant |
 |---|---|---|---|---|
-| under 50 | 246 | 1,755 | 4.92 | 1 |
-| 50 to 99 | 538 | 1,338 | 7.89 | 5 |
-| 100 to 249 | 1,730 | 1,492 | 4.55 | 10 |
-| 250 to 499 | 2,132 | 1,795 | 4.68 | 19 |
-| 500 to 999 | 2,646 | 2,159 | 4.87 | 30 |
-| 1000 to 2499 | 3,675 | 2,652 | 4.87 | 55 |
-| 2500 to 4999 | 1,832 | 3,975 | 5.44 | 84 |
-| 5000 to 9999 | 710 | 4,139 | 5.00 | 147 |
-| 10000 to 24999 | 313 | 4,411 | 4.73 | 302 |
-| 25000 to 49999 | 83 | 4,462 | 3.98 | 752 |
-| 50000+ | 72 | 4,812 | 5.09 | 3,035 |
+| under 50 | 6,066 | 266 | 6.05 | 0.07 |
+| 50-99 | 5,224 | 320 | 5.89 | 0.19 |
+| 100-249 | 8,628 | 403 | 4.42 | 0.37 |
+| 250-499 | 6,166 | 618 | 4.39 | 0.55 |
+| 500-999 | 5,888 | 850 | 4.39 | 0.77 |
+| 1000-2499 | 6,468 | 1,303 | 4.39 | 1.10 |
+| 2500-4999 | 2,777 | 2,133 | 4.96 | 1.57 |
+| 5000-9999 | 1,109 | 2,132 | 4.35 | 2.92 |
+| 10000-24999 | 559 | 1,545 | 4.49 | 9.23 |
+| 25000-49999 | 131 | 1,858 | 3.68 | 17.48 |
+| 50000+ | 157 | 1,095 | 4.25 | 108.93 |
+<!-- /generated -->
 
 Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 1.74 times the Entrants, and value accounts for about 16% of the variation in Entrant counts.
 
@@ -272,29 +274,31 @@ Source: `analysis/output/prize_timing_cuts.json` (prize_pool_by_industry, prize_
 
 Each campaign's Entrants divided by the typical Entrants for other campaigns at the same stated Prize cost, then the typical of that ratio per category. That ratio is crowd per Prize dollar: how much crowd a category draws once you strip out how much was spent. 1.00 means typical for the money, above 1.00 means the category draws more crowd than its price tag suggests, and below 1.00 means less. Categories with at least 100 valued campaigns.
 
+<!-- generated:ev_crowd_category -->
 | Category | Campaigns | Entrants | Crowd per Prize dollar | For the money |
 |---|---|---|---|---|
-| Gaming PC or GPU (within tech hardware) | 661 | | 1.93 | 93% above typical |
-| Console or handheld (within tech hardware) | 450 | | 1.25 | 25% above typical |
-| Phone or tablet (within tech hardware) | 304 | | 1.00 | typical |
-| Peripherals (within tech hardware) | 731 | | 0.96 | 4% below typical |
-| Tech hardware (all) | 4,449 | 2,432 | 1.06 | 6% above typical |
-| Gift card or cash | 2,359 | 1,999 | 0.94 | 6% below typical |
-| Bundle or box | 1,773 | 2,031 | 0.92 | 8% below typical |
-| Game items or skins | 936 | 2,191 | 0.98 | 2% below typical |
-| Regulated goods (firearms) | 877 | 3,278 | 1.24 | 24% above typical |
-| Home, garden, appliance | 800 | 2,304 | 1.00 | typical |
-| Experience, travel, tickets | 670 | 2,474 | 0.91 | 9% below typical |
-| Merch, apparel, collectibles | 575 | 2,128 | 0.94 | 6% below typical |
-| Sports and outdoor gear | 460 | 1,983 | 0.86 | 14% below typical |
-| Music gear | 391 | 2,255 | 1.06 | 6% above typical |
-| Vehicle | 276 | 2,368 | 0.84 | 16% below typical |
-| Food, drink, consumables | 271 | 1,937 | 0.89 | 11% below typical |
-| Subscription or membership | 238 | 1,860 | 0.77 | 23% below typical |
-| Tools, craft, DIY | 227 | 1,879 | 0.90 | 10% below typical |
-| Discount or coupon | 157 | 2,035 | 0.71 | 29% below typical |
-| Beauty and wellness | 132 | 1,380 | 0.74 | 26% below typical |
-| Toys and collectibles | 101 | 2,050 | 0.96 | 4% below typical |
+| Regulated goods (firearms) | 1,579 | 2,107 | 2.03 | 103% above typical |
+| Music gear | 452 | 1,306 | 1.90 | 90% above typical |
+| Tech hardware | 22,076 | 900 | 1.43 | 43% above typical |
+| Home, garden, appliance | 2,452 | 913 | 1.35 | 35% above typical |
+| Tools, craft, DIY | 581 | 941 | 1.16 | 16% above typical |
+| Food, drink, consumables | 1,467 | 694 | 1.14 | 14% above typical |
+| Beauty and wellness | 815 | 472 | 1.11 | 11% above typical |
+| Gift card or cash | 17,880 | 436 | 1.10 | 10% above typical |
+| Sports and outdoor gear | 1,366 | 776 | 1.04 | 4% above typical |
+| Vehicle | 733 | 805 | 1.04 | 4% above typical |
+| Art and custom | 185 | 397 | 1.02 | typical |
+| Placeholder name | 5,629 | 547 | 0.95 | 5% below typical |
+| Bundle or box | 13,409 | 499 | 0.89 | 11% below typical |
+| Toys and collectibles | 2,297 | 420 | 0.86 | 14% below typical |
+| Unclassified | 34,888 | 423 | 0.82 | 18% below typical |
+| Merch, apparel, collectibles | 5,548 | 497 | 0.79 | 21% below typical |
+| Game items or skins | 11,220 | 363 | 0.74 | 26% below typical |
+| Discount or coupon | 1,054 | 726 | 0.73 | 27% below typical |
+| Exclusive access | 535 | 380 | 0.61 | 39% below typical |
+| Experience, travel, tickets | 6,319 | 404 | 0.61 | 39% below typical |
+| Subscription or membership | 1,636 | 426 | 0.52 | 48% below typical |
+<!-- /generated -->
 
 Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little less than their price tag suggests: broadly wanted, and no better than the money suggests. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
 
@@ -331,14 +335,25 @@ Nearly nine times the Impressions at the same Conversion Rate. Reach separates t
 
 Region is the top-level domain of the business's site, so a .com business in Manchester reads as global. Language is a word-pattern count on the description and title. Figures are typical values on the campaigns we can compare fairly, the 10,719 campaigns with no repeatable action and a run of 14 days or less, which is the cut that makes Impressions comparable between campaigns. A row below the five-business floor goes unpublished, which is why the Nordic advent-calendar rows seen in earlier cuts of this export no longer appear here.
 
-| Business domain | Campaigns | Entrants | Conversion Rate | Actions per Entrant | Stated USD % of Entrants | December starts |
-|---|---|---|---|---|---|---|
-| global domain (.com, .io, .net and so on) | 8,942 | 2,093 | 36% | 3.50 | 29 | 16% |
-| other or none | 373 | 2,055 | 32% | 4.11 | 25 | 20% |
-| United Kingdom | 178 | 1,602 | 36% | 3.17 | 30 | 13% |
-| Brazil | 394 | 2,117 | 60% | 5.17 | 17 | 9% |
-| Australia | 291 | 1,973 | 32% | 2.78 | 55 | 11% |
-| Germany | 163 | 2,075 | 41% | 4.37 | 30 | 53% |
+<!-- generated:ev_region -->
+| Business domain | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
+|---|---|---|---|---|
+| global domain (.com, .io, .net and so on) | 99,919 | 488 | 26% | 4.45 |
+| United Kingdom | 4,572 | 468 | 36% | 3.82 |
+| other or none | 4,222 | 412 | 26% | 4.75 |
+| Australia | 3,030 | 566 | 32% | 3.24 |
+| Brazil | 1,231 | 1,076 | 54% | 4.70 |
+| Germany | 789 | 773 | 31% | 4.86 |
+| Sweden | 677 | 663 | 75% | 3.87 |
+| Canada | 612 | 612 | 23% | 3.26 |
+| South Africa | 301 | 432 | 22% | 4.47 |
+| Finland | 232 | 9,018 | 77% | 1.00 |
+| Belgium | 222 | 296 | 35% | 5.65 |
+| France | 207 | 224 | 20% | 3.98 |
+| Netherlands | 196 | 374 | 31% | 4.05 |
+| Spain | 165 | 381 | 24% | 5.02 |
+| Japan | 143 | 280 | 29% | 3.73 |
+<!-- /generated -->
 
 Australian businesses spend the most % of Entrants on the stated figure. Brazil has twice the Conversion Rate of the global rate.
 

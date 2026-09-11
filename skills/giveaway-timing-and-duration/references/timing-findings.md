@@ -327,15 +327,17 @@ Source: analysis/output/field_cuts.json (terms, by_response_days).
 
 A separate check, using all runs at their actual length, for a second read on the weekday and month findings above.
 
+<!-- generated:tm_weekday -->
 | Start weekday | Campaigns | Businesses | Entrants | Conversion Rate |
 |---|---|---|---|---|
-| Monday | 6,694 | 2,472 | 2,192.5 | 27.2% |
-| Tuesday | 5,872 | 2,198 | 2,151 | 27.8% |
-| Wednesday | 6,037 | 2,236 | 2,254 | 28.9% |
-| Thursday | 5,754 | 2,239 | 2,188 | 27.1% |
-| Friday | 5,822 | 2,093 | 2,280 | 27.0% |
-| Saturday | 2,290 | 1,118 | 2,287 | 29.1% |
-| Sunday | 3,189 | 1,375 | 2,116 | 28.9% |
+| Monday | 22,498 | 6,624 | 479 | 26% |
+| Tuesday | 18,754 | 6,011 | 499 | 26% |
+| Wednesday | 19,348 | 6,043 | 504 | 28% |
+| Thursday | 18,636 | 6,082 | 512 | 27% |
+| Friday | 18,276 | 5,744 | 521 | 27% |
+| Saturday | 8,425 | 3,516 | 438 | 28% |
+| Sunday | 11,411 | 4,226 | 449 | 27% |
+<!-- /generated -->
 
 Entrants run from 2,116 to 2,287 and the Conversion Rate from 27.0% to 29.1% across the week, the same flat read as the duration-matched weekday table above. Weekday still shows no usable difference.
 
