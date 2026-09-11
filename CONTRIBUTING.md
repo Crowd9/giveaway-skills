@@ -9,7 +9,7 @@ Keep it small and self-contained:
 - `skills/<skill-name>/SKILL.md` with `name`, `description` and `metadata.version` frontmatter. The description quotes the phrases users say and names what is out of scope. The body stays under 200 lines: workflow, questions to ask, output shape, guardrails.
 - `skills/<skill-name>/references/` for material the skill loads only when relevant (taxonomies, criteria, examples, limitations). Name the file for what it contains.
 - `skills/<skill-name>/evals/evals.json` (prompt, expected output, assertions) plus `cases.md` with the last run's results. Run `python3 scripts/validate.py` and `python3 scripts/style_lint.py` and the evals before merging, and bump the version in `VERSIONS.md`.
-- If a skill derives numbers from data, put the reproducible script in `analysis/` and commit only aggregates. Raw exports, customer names, emails, account ids and record-level outputs stay out of git (see `.gitignore`).
+- If a skill quotes a figure, cite the file under `analysis/output/` it came from. Only aggregates belong here, and no published group describes fewer than five businesses (see `.gitignore`).
 - Generic advice stays platform-neutral. Platform-specific help lives in a separate reference loaded only when the user asks for that platform.
 - Write every file, and every answer a skill produces, the way a practitioner would. No em dashes, no semicolons, straight quotes. No "X, not Y" contrast sentences, no question or slogan headings, no assistant openers or closers, no filler vocabulary (leverage, robust, comprehensive, streamline, furthermore). Lead with the answer, ground claims in numbers or examples, vary sentence length, and stop when the content stops. The style section in `skills/giveaway-prize-picker/SKILL.md` is the reference wording; copy it into new skills.
 
@@ -58,9 +58,7 @@ skills/
   giveaway-results-review/  includes scripts/review.py and examples/sample-actions-export.csv
   gleam-campaign-setup/
 analysis/
-  analyze.py     regenerates analysis/output from a private dataset
-  render_reference_tables.py  rewrites generated tables in every skill's references
-  output/               committed aggregates (no customer data)
+  output/               the aggregate findings the skills quote
 ```
 
 ## Before Opening a Pull Request
@@ -73,7 +71,9 @@ The validator checks frontmatter, name rules, file size, reference links, prose 
 
 ## What Never Goes In
 
-Personal data of any kind: organizer or entrant names, email addresses, IP addresses and the locations derived from them, billing details, campaign keys and landing URLs that identify a customer, raw exports, record-level analysis. Only aggregates with sample sizes. The `.gitignore` blocks the usual paths, and the validator will not catch a pasted name, so look before you commit.
+Personal data of any kind, and anything at record level. Only aggregates with their sample sizes belong here, and no published group describes fewer than five businesses, so no row describes one company.
+
+CI fails on an email address, an IP address, a committed link or a file type that does not belong here.
 
 ## Licence
 

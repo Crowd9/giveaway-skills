@@ -125,15 +125,15 @@ Primary prize category (first prize record) by band, share of campaigns:
 
 ## Plan tier, extended
 
-The plan tier row above comes from the dataset at large. A  cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free converts best and never offers an email action, and neither does Hobby. Premium runs longest and offers the most Entry Methods, but converts worst. Business and Pro sit in the middle on every measure.
+The plan tier row above comes from the campaigns at large. A cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free and Hobby convert best and neither offers an email action. Premium runs longest and offers the most Entry Methods, and converts worst. Business and Pro sit in the middle on every measure.
 
-| Tier | Conversion Rate | Campaigns | Businesses | Notable |
-|---|---|---|---|---|
-| Free | 45% | 1,936 | 804 | No email action offered |
-| Hobby | | | | No email action offered |
-| Business | 28% | 19,383 | | |
-| Pro | 30% | 29,173 | | |
-| Premium | 23% | 1,788 | 418 | Runs longest (22 days), most Entry Methods (13) |
+| Tier | Conversion Rate | Campaigns | Businesses | Days | Entry Methods | Email offered |
+|---|---|---|---|---|---|---|
+| Free | 34% | 14,233 | 5,360 | 11 | 4 | 0% |
+| Hobby | 32% | 12,725 | 3,133 | 10 | 6 | 0% |
+| Pro | 28% | 88,816 | 14,971 | 11 | 8 | 28% |
+| Business | 26% | 46,822 | 5,852 | 11 | 7 | 31% |
+| Premium | 24% | 3,076 | 547 | 18 | 9 | 42% |
 
 ## Business scale
 
