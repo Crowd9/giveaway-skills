@@ -4708,7 +4708,103 @@
    "median": 190
   }
  },
- "usd_per_email_by_prize_category": {},
+ "usd_per_email_by_prize_category": {
+  "other_unclassified": {
+   "campaigns": 5142,
+   "organizers": 1569,
+   "median": 0.5948661239471084
+  },
+  "gift_card_or_cash": {
+   "campaigns": 4398,
+   "organizers": 1073,
+   "median": 0.1589404085042171
+  },
+  "tech_hardware": {
+   "campaigns": 3000,
+   "organizers": 798,
+   "median": 0.420574986044891
+  },
+  "bundle_or_box": {
+   "campaigns": 2666,
+   "organizers": 1020,
+   "median": 0.5951542588866532
+  },
+  "game_item_or_skin": {
+   "campaigns": 1465,
+   "organizers": 230,
+   "median": 0.423728813559322
+  },
+  "experience_travel_tickets": {
+   "campaigns": 930,
+   "organizers": 409,
+   "median": 1.1612629794447975
+  },
+  "merch_apparel_collectible": {
+   "campaigns": 828,
+   "organizers": 328,
+   "median": 0.4884855825871819
+  },
+  "regulated_goods_firearm": {
+   "campaigns": 606,
+   "organizers": 121,
+   "median": 0.39128114501679734
+  },
+  "home_garden_appliance": {
+   "campaigns": 604,
+   "organizers": 287,
+   "median": 0.4923824515294829
+  },
+  "placeholder_name": {
+   "campaigns": 496,
+   "organizers": 177,
+   "median": 0.5642403657927275
+  },
+  "sports_outdoor_gear": {
+   "campaigns": 396,
+   "organizers": 200,
+   "median": 0.5729320113314447
+  },
+  "food_drink_consumables": {
+   "campaigns": 331,
+   "organizers": 190,
+   "median": 0.527027027027027
+  },
+  "subscription_membership": {
+   "campaigns": 319,
+   "organizers": 199,
+   "median": 1.1904761904761905
+  },
+  "beauty_wellness": {
+   "campaigns": 208,
+   "organizers": 84,
+   "median": 0.381941964817063
+  },
+  "vehicle": {
+   "campaigns": 202,
+   "organizers": 90,
+   "median": 0.9006112699182006
+  },
+  "discount_or_coupon": {
+   "campaigns": 158,
+   "organizers": 69,
+   "median": 2.057017543859649
+  },
+  "music_gear": {
+   "campaigns": 147,
+   "organizers": 47,
+   "median": 0.3155274978754401
+  },
+  "toys_collectibles": {
+   "campaigns": 118,
+   "organizers": 68,
+   "median": 0.396857707259627
+  },
+  "tools_craft_diy": {
+   "campaigns": 113,
+   "organizers": 55,
+   "median": 0.3682266009852217
+  }
+ },
  "yield_by_asset_and_mandatory": {
   "app_download|mandatory|100-250": {
    "campaigns": 111,

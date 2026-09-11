@@ -21,6 +21,7 @@ A library of Agent Skills for running giveaways, following the [Agent Skills spe
 
 ```bash
 python3 scripts/validate.py                                  # frontmatter, size, links, style, evals
+python3 scripts/check_data.py                                # empty blocks, blank cells, generated tables
 python3 evals/style_check.py reply.txt   # score a saved reply
 ```
 

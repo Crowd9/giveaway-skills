@@ -39,10 +39,10 @@ Experience tracks a better Conversion Rate: businesses on their eleventh campaig
 | Campaign number | Entrants | Conversion Rate |
 |---|---|---|
 | 11th+ | 514 | 27% |
-| 1st | 381 | 26% |
-| 2nd | 436 | 26% |
-| 3rd-5th | 500 | 27% |
-| 6th-10th | 546 | 27% |
+| 1st | 382 | 26% |
+| 2nd | 438 | 26% |
+| 3rd-5th | 498 | 27% |
+| 6th-10th | 547 | 27% |
 <!-- /generated -->
 
 These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
@@ -56,11 +56,11 @@ Gap since the business's previous campaign, all the campaigns behind these numbe
 <!-- generated:tm_cadence -->
 | Campaign number | Campaigns | Entrants | Actions per Entrant | Conversion Rate |
 |---|---|---|---|---|
-| 1st | 17,384 | 381 | 3.68 | 26% |
-| 2nd | 8,509 | 436 | 3.86 | 26% |
-| 3rd-5th | 14,333 | 500 | 4.04 | 27% |
-| 6th-10th | 12,887 | 546 | 4.18 | 27% |
-| 11th+ | 64,235 | 514 | 4.91 | 27% |
+| 1st | 17,383 | 382 | 3.68 | 26% |
+| 2nd | 8,509 | 438 | 3.85 | 26% |
+| 3rd-5th | 14,332 | 498 | 4.05 | 27% |
+| 6th-10th | 12,888 | 547 | 4.18 | 27% |
+| 11th+ | 64,236 | 514 | 4.91 | 27% |
 <!-- /generated -->
 
 Campaign size repeats: after a big campaign, the next one tends to be big too, across 21,284 consecutive pairs from the same business.

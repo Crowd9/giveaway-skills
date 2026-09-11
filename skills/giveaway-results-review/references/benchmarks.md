@@ -336,11 +336,11 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 <!-- generated:bm_seq_band -->
 | Position in sequence (1,000 to 2,499 Entrants) | Entrants | Entries per Entrant | Organizers |
 |---|---|---|---|
-| 1st | 1,484 | 3.95 | 2,703 |
-| 2nd | 990 | 3.91 | 1,532 |
-| 3rd-5th | 928 | 4.12 | 1,117 |
-| 6th-10th | 900 | 4.30 | 649 |
-| 11th+ | 745 | 5.40 | 374 |
+| 1st | 1,486 | 3.94 | 2,707 |
+| 2nd | 988 | 3.91 | 1,536 |
+| 3rd-5th | 922 | 4.12 | 1,120 |
+| 6th-10th | 891 | 4.29 | 653 |
+| 11th+ | 737 | 5.51 | 374 |
 <!-- /generated -->
 
 | Transition | Typical change in Entrants |

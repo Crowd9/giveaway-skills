@@ -27,6 +27,8 @@ jobs:
           python3 evals/style_check.py --self-test
       - name: Style rules on prose
         run: python3 scripts/style_lint.py
+      - name: Committed figures
+        run: python3 scripts/check_data.py
       - name: Aggregates only
         run: |
           # allowlist: this repository holds documentation, aggregate JSON, scripts and sample CSVs, nothing else

@@ -19,15 +19,15 @@
   "entrants": {
    "definition": "top 20% of valid_contestants, stratified by vertical only since size band would make this circular",
    "n_top_stratified": 23425,
-   "organizers_top_stratified": 4531,
+   "organizers_top_stratified": 4530,
    "strata_used": 11,
    "n_top_raw": 23426,
    "organizers_top_raw": 4602,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1972,
+     "rest": 0.1606,
+     "ratio": 1.228
     },
     "collaboration_in_title": {
      "top": 0.1809,
@@ -35,9 +35,9 @@
      "ratio": 1.348
     },
     "repeat_organizer_5plus": {
-     "top": 0.8627,
+     "top": 0.8628,
      "rest": 0.8029,
-     "ratio": 1.074
+     "ratio": 1.075
     },
     "secret_code_action": {
      "top": 0.1122,
@@ -60,7 +60,7 @@
      "ratio": 0.935
     },
     "question_action": {
-     "top": 0.1055,
+     "top": 0.1056,
      "rest": 0.1236,
      "ratio": 0.854
     },
@@ -82,17 +82,17 @@
     "11_plus_actions": {
      "top": 0.298,
      "rest": 0.2557,
-     "ratio": 1.165
+     "ratio": 1.166
     },
     "repeatable_action": {
-     "top": 0.3654,
+     "top": 0.3655,
      "rest": 0.3541,
      "ratio": 1.032
     },
     "december_start": {
      "top": 0.1232,
      "rest": 0.0989,
-     "ratio": 1.246
+     "ratio": 1.245
     },
     "worth_5_plus_on_an_action": {
      "top": 0.5071,
@@ -102,9 +102,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.2259,
+     "rest": 0.1535,
+     "ratio": 1.472
     },
     "collaboration_in_title": {
      "top": 0.1836,
@@ -127,7 +127,7 @@
      "ratio": 1.418
     },
     "referral_action": {
-     "top": 0.452,
+     "top": 0.4521,
      "rest": 0.3516,
      "ratio": 1.286
     },
@@ -162,7 +162,7 @@
      "ratio": 1.136
     },
     "repeatable_action": {
-     "top": 0.3651,
+     "top": 0.3652,
      "rest": 0.3542,
      "ratio": 1.031
     },
@@ -187,9 +187,9 @@
    "organizers_top_raw": 935,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1364,
+     "rest": 0.1788,
+     "ratio": 0.763
     },
     "collaboration_in_title": {
      "top": 0.0796,
@@ -264,9 +264,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1303,
+     "rest": 0.1811,
+     "ratio": 0.719
     },
     "collaboration_in_title": {
      "top": 0.0739,
@@ -349,9 +349,9 @@
    "organizers_top_raw": 2818,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1425,
+     "rest": 0.1743,
+     "ratio": 0.818
     },
     "collaboration_in_title": {
      "top": 0.1398,
@@ -426,9 +426,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.122,
+     "rest": 0.1794,
+     "ratio": 0.68
     },
     "collaboration_in_title": {
      "top": 0.1276,
@@ -505,15 +505,15 @@
   "email_yield_per_contestant": {
    "definition": "campaigns running an email action only, stratified by band and vertical",
    "n_top_stratified": 7903,
-   "organizers_top_stratified": 1657,
+   "organizers_top_stratified": 1658,
    "strata_used": 65,
    "n_top_raw": 7906,
    "organizers_top_raw": 1246,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.2341,
+     "rest": 0.2234,
+     "ratio": 1.048
     },
     "collaboration_in_title": {
      "top": 0.1745,
@@ -521,7 +521,7 @@
      "ratio": 1.125
     },
     "repeat_organizer_5plus": {
-     "top": 0.8699,
+     "top": 0.8698,
      "rest": 0.8354,
      "ratio": 1.041
     },
@@ -536,8 +536,8 @@
      "ratio": 1.0
     },
     "referral_action": {
-     "top": 0.6568,
-     "rest": 0.618,
+     "top": 0.6567,
+     "rest": 0.6181,
      "ratio": 1.063
     },
     "social_action": {
@@ -556,9 +556,9 @@
      "ratio": 1.399
     },
     "single_prize_unit": {
-     "top": 0.6648,
+     "top": 0.6647,
      "rest": 0.621,
-     "ratio": 1.071
+     "ratio": 1.07
     },
     "stated_pool_under_250usd": {
      "top": 0.2548,
@@ -588,9 +588,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1522,
+     "rest": 0.244,
+     "ratio": 0.624
     },
     "collaboration_in_title": {
      "top": 0.1413,
@@ -673,9 +673,9 @@
    "organizers_top_raw": 2666,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1922,
+     "rest": 0.1927,
+     "ratio": 0.997
     },
     "collaboration_in_title": {
      "top": 0.1662,
@@ -750,9 +750,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.2107,
+     "rest": 0.1886,
+     "ratio": 1.117
     },
     "collaboration_in_title": {
      "top": 0.1741,
@@ -835,9 +835,9 @@
    "organizers_top_raw": 3273,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1457,
+     "rest": 0.1643,
+     "ratio": 0.887
     },
     "collaboration_in_title": {
      "top": 0.2051,
@@ -912,9 +912,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1416,
+     "rest": 0.1654,
+     "ratio": 0.856
     },
     "collaboration_in_title": {
      "top": 0.2227,
@@ -997,9 +997,9 @@
    "organizers_top_raw": 2104,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1773,
+     "rest": 0.1735,
+     "ratio": 1.022
     },
     "collaboration_in_title": {
      "top": 0.1524,
@@ -1074,9 +1074,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1856,
+     "rest": 0.1714,
+     "ratio": 1.083
     },
     "collaboration_in_title": {
      "top": 0.149,
@@ -1159,9 +1159,9 @@
    "organizers_top_raw": 1554,
    "stratified": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.1024,
+     "rest": 0.192,
+     "ratio": 0.533
     },
     "collaboration_in_title": {
      "top": 0.0812,
@@ -1236,9 +1236,9 @@
    },
    "raw_unmatched": {
     "own_product_prize": {
-     "top": 0.0,
-     "rest": 0.0,
-     "ratio": null
+     "top": 0.0755,
+     "rest": 0.199,
+     "ratio": 0.379
     },
     "collaboration_in_title": {
      "top": 0.0747,
@@ -1727,16 +1727,6 @@
      "expected_from_main_effects": 1.5831,
      "interaction_ratio": 0.503
     },
-    "other_unclassified | art_crafts": {
-     "n": 273,
-     "sites": 103,
-     "cell_median": 1.0123,
-     "row_median": 0.8188,
-     "col_median": 0.9739,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.8156,
-     "interaction_ratio": 1.241
-    },
     "home_garden_appliance | home_garden": {
      "n": 273,
      "sites": 89,
@@ -1746,6 +1736,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 1.9603,
      "interaction_ratio": 0.906
+    },
+    "other_unclassified | art_crafts": {
+     "n": 273,
+     "sites": 103,
+     "cell_median": 1.0123,
+     "row_median": 0.8188,
+     "col_median": 0.9739,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.8156,
+     "interaction_ratio": 1.241
     },
     "other_unclassified | travel_events": {
      "n": 267,
@@ -1957,16 +1957,6 @@
      "expected_from_main_effects": 0.5008,
      "interaction_ratio": 1.226
     },
-    "other_unclassified | pets": {
-     "n": 164,
-     "sites": 57,
-     "cell_median": 1.3387,
-     "row_median": 0.8188,
-     "col_median": 1.2607,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 1.0558,
-     "interaction_ratio": 1.268
-    },
     "gift_card_or_cash | software_saas": {
      "n": 164,
      "sites": 100,
@@ -1976,6 +1966,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.792,
      "interaction_ratio": 0.828
+    },
+    "other_unclassified | pets": {
+     "n": 164,
+     "sites": 57,
+     "cell_median": 1.3387,
+     "row_median": 0.8188,
+     "col_median": 1.2607,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 1.0558,
+     "interaction_ratio": 1.268
     },
     "experience_travel_tickets | food_drink": {
      "n": 163,
@@ -2137,16 +2137,6 @@
      "expected_from_main_effects": 0.399,
      "interaction_ratio": 1.03
     },
-    "tech_hardware | other": {
-     "n": 115,
-     "sites": 79,
-     "cell_median": 0.5388,
-     "row_median": 1.4333,
-     "col_median": 0.515,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.755,
-     "interaction_ratio": 0.714
-    },
     "other_unclassified | baby_kids": {
      "n": 115,
      "sites": 30,
@@ -2157,15 +2147,15 @@
      "expected_from_main_effects": 0.6214,
      "interaction_ratio": 0.876
     },
-    "subscription_membership | gaming_esports": {
-     "n": 113,
-     "sites": 56,
-     "cell_median": 0.6823,
-     "row_median": 0.5211,
-     "col_median": 0.8074,
+    "tech_hardware | other": {
+     "n": 115,
+     "sites": 79,
+     "cell_median": 0.5388,
+     "row_median": 1.4333,
+     "col_median": 0.515,
      "grand_median": 0.9777,
-     "expected_from_main_effects": 0.4303,
-     "interaction_ratio": 1.586
+     "expected_from_main_effects": 0.755,
+     "interaction_ratio": 0.714
     },
     "bundle_or_box | baby_kids": {
      "n": 113,
@@ -2176,6 +2166,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.6789,
      "interaction_ratio": 1.193
+    },
+    "subscription_membership | gaming_esports": {
+     "n": 113,
+     "sites": 56,
+     "cell_median": 0.6823,
+     "row_median": 0.5211,
+     "col_median": 0.8074,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.4303,
+     "interaction_ratio": 1.586
     },
     "other_unclassified | jewelry_watches": {
      "n": 112,
@@ -2317,6 +2317,16 @@
      "expected_from_main_effects": 0.6263,
      "interaction_ratio": 0.932
     },
+    "gift_card_or_cash | baby_kids": {
+     "n": 83,
+     "sites": 33,
+     "cell_median": 0.8795,
+     "row_median": 1.1111,
+     "col_median": 0.742,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.8433,
+     "interaction_ratio": 1.043
+    },
     "toys_collectibles | toys_hobbies_collectibles": {
      "n": 83,
      "sites": 48,
@@ -2336,16 +2346,6 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.6534,
      "interaction_ratio": 1.501
-    },
-    "gift_card_or_cash | baby_kids": {
-     "n": 83,
-     "sites": 33,
-     "cell_median": 0.8795,
-     "row_median": 1.1111,
-     "col_median": 0.742,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.8433,
-     "interaction_ratio": 1.043
     },
     "game_item_or_skin | creator_influencer": {
      "n": 82,
@@ -2407,16 +2407,6 @@
      "expected_from_main_effects": 0.8159,
      "interaction_ratio": 0.71
     },
-    "subscription_membership | education": {
-     "n": 74,
-     "sites": 50,
-     "cell_median": 0.4978,
-     "row_median": 0.5211,
-     "col_median": 0.5565,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.2966,
-     "interaction_ratio": 1.678
-    },
     "merch_apparel_collectible | health_wellness_fitness": {
      "n": 74,
      "sites": 30,
@@ -2426,6 +2416,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.5878,
      "interaction_ratio": 0.897
+    },
+    "subscription_membership | education": {
+     "n": 74,
+     "sites": 50,
+     "cell_median": 0.4978,
+     "row_median": 0.5211,
+     "col_median": 0.5565,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.2966,
+     "interaction_ratio": 1.678
     },
     "home_garden_appliance | sports_outdoors": {
      "n": 72,
@@ -2477,6 +2477,16 @@
      "expected_from_main_effects": 0.6376,
      "interaction_ratio": 0.733
     },
+    "gift_card_or_cash | beauty_personal_care": {
+     "n": 68,
+     "sites": 42,
+     "cell_median": 0.956,
+     "row_median": 1.1111,
+     "col_median": 1.3648,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 1.5511,
+     "interaction_ratio": 0.616
+    },
     "beauty_wellness | health_wellness_fitness": {
      "n": 68,
      "sites": 29,
@@ -2487,15 +2497,15 @@
      "expected_from_main_effects": 0.8196,
      "interaction_ratio": 0.982
     },
-    "gift_card_or_cash | beauty_personal_care": {
-     "n": 68,
-     "sites": 42,
-     "cell_median": 0.956,
-     "row_median": 1.1111,
-     "col_median": 1.3648,
+    "vehicle | sports_outdoors": {
+     "n": 67,
+     "sites": 26,
+     "cell_median": 1.5635,
+     "row_median": 1.0829,
+     "col_median": 1.2023,
      "grand_median": 0.9777,
-     "expected_from_main_effects": 1.5511,
-     "interaction_ratio": 0.616
+     "expected_from_main_effects": 1.3317,
+     "interaction_ratio": 1.174
     },
     "toys_collectibles | gaming_esports": {
      "n": 67,
@@ -2516,16 +2526,6 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.6072,
      "interaction_ratio": 0.689
-    },
-    "vehicle | sports_outdoors": {
-     "n": 67,
-     "sites": 26,
-     "cell_median": 1.5635,
-     "row_median": 1.0829,
-     "col_median": 1.2023,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 1.3317,
-     "interaction_ratio": 1.174
     },
     "tech_hardware | apparel_fashion": {
      "n": 65,
@@ -2577,16 +2577,6 @@
      "expected_from_main_effects": 1.3319,
      "interaction_ratio": 1.293
     },
-    "food_drink_consumables | health_wellness_fitness": {
-     "n": 53,
-     "sites": 27,
-     "cell_median": 0.8015,
-     "row_median": 1.1402,
-     "col_median": 0.7232,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.8434,
-     "interaction_ratio": 0.95
-    },
     "tech_hardware | automotive": {
      "n": 53,
      "sites": 36,
@@ -2596,6 +2586,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 2.0421,
      "interaction_ratio": 0.814
+    },
+    "food_drink_consumables | health_wellness_fitness": {
+     "n": 53,
+     "sites": 27,
+     "cell_median": 0.8015,
+     "row_median": 1.1402,
+     "col_median": 0.7232,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.8434,
+     "interaction_ratio": 0.95
     },
     "game_item_or_skin | beauty_personal_care": {
      "n": 52,
@@ -2647,6 +2647,16 @@
      "expected_from_main_effects": 0.5559,
      "interaction_ratio": 0.9
     },
+    "other_unclassified | local_services": {
+     "n": 46,
+     "sites": 24,
+     "cell_median": 0.4313,
+     "row_median": 0.8188,
+     "col_median": 0.5749,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.4815,
+     "interaction_ratio": 0.896
+    },
     "tech_hardware | toys_hobbies_collectibles": {
      "n": 46,
      "sites": 29,
@@ -2666,16 +2676,6 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.6635,
      "interaction_ratio": 1.165
-    },
-    "other_unclassified | local_services": {
-     "n": 46,
-     "sites": 24,
-     "cell_median": 0.4313,
-     "row_median": 0.8188,
-     "col_median": 0.5749,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.4815,
-     "interaction_ratio": 0.896
     },
     "experience_travel_tickets | home_garden": {
      "n": 45,
@@ -2707,16 +2707,6 @@
      "expected_from_main_effects": 0.8986,
      "interaction_ratio": 1.659
     },
-    "subscription_membership | other": {
-     "n": 42,
-     "sites": 16,
-     "cell_median": 0.2559,
-     "row_median": 0.5211,
-     "col_median": 0.515,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.2745,
-     "interaction_ratio": 0.932
-    },
     "merch_apparel_collectible | other": {
      "n": 42,
      "sites": 21,
@@ -2736,6 +2726,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 1.4812,
      "interaction_ratio": 1.098
+    },
+    "subscription_membership | other": {
+     "n": 42,
+     "sites": 16,
+     "cell_median": 0.2559,
+     "row_median": 0.5211,
+     "col_median": 0.515,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.2745,
+     "interaction_ratio": 0.932
     },
     "tech_hardware | jewelry_watches": {
      "n": 41,
@@ -2777,16 +2777,6 @@
      "expected_from_main_effects": 1.3475,
      "interaction_ratio": 0.533
     },
-    "home_garden_appliance | electronics_tech": {
-     "n": 37,
-     "sites": 30,
-     "cell_median": 0.9432,
-     "row_median": 1.3538,
-     "col_median": 1.1393,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 1.5776,
-     "interaction_ratio": 0.598
-    },
     "vehicle | media_entertainment": {
      "n": 37,
      "sites": 16,
@@ -2796,6 +2786,16 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 1.3016,
      "interaction_ratio": 0.676
+    },
+    "home_garden_appliance | electronics_tech": {
+     "n": 37,
+     "sites": 30,
+     "cell_median": 0.9432,
+     "row_median": 1.3538,
+     "col_median": 1.1393,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 1.5776,
+     "interaction_ratio": 0.598
     },
     "subscription_membership | sports_outdoors": {
      "n": 36,
@@ -2867,6 +2867,16 @@
      "expected_from_main_effects": 1.4867,
      "interaction_ratio": 0.523
     },
+    "gift_card_or_cash | jewelry_watches": {
+     "n": 33,
+     "sites": 25,
+     "cell_median": 0.8786,
+     "row_median": 1.1111,
+     "col_median": 0.5875,
+     "grand_median": 0.9777,
+     "expected_from_main_effects": 0.6677,
+     "interaction_ratio": 1.316
+    },
     "game_item_or_skin | sports_outdoors": {
      "n": 33,
      "sites": 16,
@@ -2886,16 +2896,6 @@
      "grand_median": 0.9777,
      "expected_from_main_effects": 0.7171,
      "interaction_ratio": 0.787
-    },
-    "gift_card_or_cash | jewelry_watches": {
-     "n": 33,
-     "sites": 25,
-     "cell_median": 0.8786,
-     "row_median": 1.1111,
-     "col_median": 0.5875,
-     "grand_median": 0.9777,
-     "expected_from_main_effects": 0.6677,
-     "interaction_ratio": 1.316
     },
     "vehicle | travel_events": {
      "n": 32,
@@ -2927,15 +2927,15 @@
      "expected_from_main_effects": 0.7545,
      "interaction_ratio": 1.163
     },
-    "exclusive_access | gaming_esports": {
+    "home_garden_appliance | art_crafts": {
      "n": 30,
-     "sites": 24,
-     "cell_median": 0.4783,
-     "row_median": 0.6124,
-     "col_median": 0.8074,
+     "sites": 15,
+     "cell_median": 0.8826,
+     "row_median": 1.3538,
+     "col_median": 0.9739,
      "grand_median": 0.9777,
-     "expected_from_main_effects": 0.5057,
-     "interaction_ratio": 0.946
+     "expected_from_main_effects": 1.3486,
+     "interaction_ratio": 0.654
     },
     "other_unclassified | nonprofit_community": {
      "n": 30,
@@ -2947,15 +2947,15 @@
      "expected_from_main_effects": 0.4096,
      "interaction_ratio": 1.129
     },
-    "home_garden_appliance | art_crafts": {
+    "exclusive_access | gaming_esports": {
      "n": 30,
-     "sites": 15,
-     "cell_median": 0.8826,
-     "row_median": 1.3538,
-     "col_median": 0.9739,
+     "sites": 24,
+     "cell_median": 0.4783,
+     "row_median": 0.6124,
+     "col_median": 0.8074,
      "grand_median": 0.9777,
-     "expected_from_main_effects": 1.3486,
-     "interaction_ratio": 0.654
+     "expected_from_main_effects": 0.5057,
+     "interaction_ratio": 0.946
     },
     "sports_outdoor_gear | apparel_fashion": {
      "n": 30,
@@ -3172,16 +3172,6 @@
      "expected_from_main_effects": 1974.0954,
      "interaction_ratio": 0.65
     },
-    "100-249 | other": {
-     "n": 424,
-     "sites": 191,
-     "cell_median": 239.0,
-     "row_median": 404.0,
-     "col_median": 270.0,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 210.1734,
-     "interaction_ratio": 1.137
-    },
     "2500-4999 | gaming_esports": {
      "n": 424,
      "sites": 166,
@@ -3191,6 +3181,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1620.0308,
      "interaction_ratio": 1.703
+    },
+    "100-249 | other": {
+     "n": 424,
+     "sites": 191,
+     "cell_median": 239.0,
+     "row_median": 404.0,
+     "col_median": 270.0,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 210.1734,
+     "interaction_ratio": 1.137
     },
     "100-249 | home_garden": {
      "n": 416,
@@ -3422,16 +3422,6 @@
      "expected_from_main_effects": 1289.9133,
      "interaction_ratio": 0.823
     },
-    "1000-2499 | software_saas": {
-     "n": 234,
-     "sites": 79,
-     "cell_median": 950.0,
-     "row_median": 1308.5,
-     "col_median": 672,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 1694.2428,
-     "interaction_ratio": 0.561
-    },
     "500-999 | automotive": {
      "n": 234,
      "sites": 63,
@@ -3441,6 +3431,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 2097.1387,
      "interaction_ratio": 0.509
+    },
+    "1000-2499 | software_saas": {
+     "n": 234,
+     "sites": 79,
+     "cell_median": 950.0,
+     "row_median": 1308.5,
+     "col_median": 672,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 1694.2428,
+     "interaction_ratio": 0.561
     },
     "250-499 | travel_events": {
      "n": 231,
@@ -3472,16 +3472,6 @@
      "expected_from_main_effects": 4292.6705,
      "interaction_ratio": 0.557
     },
-    "250-499 | toys_hobbies_collectibles": {
-     "n": 224,
-     "sites": 97,
-     "cell_median": 391.0,
-     "row_median": 619.0,
-     "col_median": 340.5,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 406.1069,
-     "interaction_ratio": 0.963
-    },
     "100-249 | art_crafts": {
      "n": 224,
      "sites": 78,
@@ -3491,6 +3481,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 431.2447,
      "interaction_ratio": 1.111
+    },
+    "250-499 | toys_hobbies_collectibles": {
+     "n": 224,
+     "sites": 97,
+     "cell_median": 391.0,
+     "row_median": 619.0,
+     "col_median": 340.5,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 406.1069,
+     "interaction_ratio": 0.963
     },
     "500-999 | health_wellness_fitness": {
      "n": 218,
@@ -3502,16 +3502,6 @@
      "expected_from_main_effects": 675.4335,
      "interaction_ratio": 0.79
     },
-    "1000-2499 | health_wellness_fitness": {
-     "n": 214,
-     "sites": 107,
-     "cell_median": 806.5,
-     "row_median": 1308.5,
-     "col_median": 410.0,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 1033.6898,
-     "interaction_ratio": 0.78
-    },
     "100-249 | beauty_personal_care": {
      "n": 214,
      "sites": 54,
@@ -3521,6 +3511,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 473.6686,
      "interaction_ratio": 1.425
+    },
+    "1000-2499 | health_wellness_fitness": {
+     "n": 214,
+     "sites": 107,
+     "cell_median": 806.5,
+     "row_median": 1308.5,
+     "col_median": 410.0,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 1033.6898,
+     "interaction_ratio": 0.78
     },
     "500-999 | toys_hobbies_collectibles": {
      "n": 213,
@@ -3792,16 +3792,6 @@
      "expected_from_main_effects": 478.0983,
      "interaction_ratio": 0.812
     },
-    "100-249 | baby_kids": {
-     "n": 123,
-     "sites": 12,
-     "cell_median": 416,
-     "row_median": 404.0,
-     "col_median": 469,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 365.079,
-     "interaction_ratio": 1.139
-    },
     "50-99 | beauty_personal_care": {
      "n": 123,
      "sites": 23,
@@ -3811,6 +3801,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 376.3555,
      "interaction_ratio": 1.557
+    },
+    "100-249 | baby_kids": {
+     "n": 123,
+     "sites": 12,
+     "cell_median": 416,
+     "row_median": 404.0,
+     "col_median": 469,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 365.079,
+     "interaction_ratio": 1.139
     },
     "50-99 | retail_marketplace": {
      "n": 122,
@@ -3822,16 +3822,6 @@
      "expected_from_main_effects": 321.9277,
      "interaction_ratio": 0.503
     },
-    "50-99 | home_garden": {
-     "n": 120,
-     "sites": 46,
-     "cell_median": 357.0,
-     "row_median": 321,
-     "col_median": 1066.5,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 659.6272,
-     "interaction_ratio": 0.541
-    },
     "100-249 | software_saas": {
      "n": 120,
      "sites": 71,
@@ -3842,15 +3832,15 @@
      "expected_from_main_effects": 523.0983,
      "interaction_ratio": 0.764
     },
-    "2500-4999 | software_saas": {
-     "n": 114,
-     "sites": 35,
-     "cell_median": 1321.5,
-     "row_median": 2134,
-     "col_median": 672,
+    "50-99 | home_garden": {
+     "n": 120,
+     "sites": 46,
+     "cell_median": 357.0,
+     "row_median": 321,
+     "col_median": 1066.5,
      "grand_median": 519.0,
-     "expected_from_main_effects": 2763.0983,
-     "interaction_ratio": 0.478
+     "expected_from_main_effects": 659.6272,
+     "interaction_ratio": 0.541
     },
     "500-999 | retail_marketplace": {
      "n": 114,
@@ -3861,6 +3851,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 857.4711,
      "interaction_ratio": 1.2
+    },
+    "2500-4999 | software_saas": {
+     "n": 114,
+     "sites": 35,
+     "cell_median": 1321.5,
+     "row_median": 2134,
+     "col_median": 672,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 2763.0983,
+     "interaction_ratio": 0.478
     },
     "250-499 | art_crafts": {
      "n": 110,
@@ -3882,16 +3882,6 @@
      "expected_from_main_effects": 344.0617,
      "interaction_ratio": 0.731
     },
-    "100-249 | pets": {
-     "n": 108,
-     "sites": 38,
-     "cell_median": 560.0,
-     "row_median": 404.0,
-     "col_median": 765.5,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 595.8805,
-     "interaction_ratio": 0.94
-    },
     "5000-9999 | automotive": {
      "n": 108,
      "sites": 29,
@@ -3901,6 +3891,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 5229.3565,
      "interaction_ratio": 4.841
+    },
+    "100-249 | pets": {
+     "n": 108,
+     "sites": 38,
+     "cell_median": 560.0,
+     "row_median": 404.0,
+     "col_median": 765.5,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 595.8805,
+     "interaction_ratio": 0.94
     },
     "50-99 | art_crafts": {
      "n": 106,
@@ -3972,16 +3972,6 @@
      "expected_from_main_effects": 3219.5029,
      "interaction_ratio": 0.877
     },
-    "500-999 | education": {
-     "n": 92,
-     "sites": 48,
-     "cell_median": 540.0,
-     "row_median": 855,
-     "col_median": 442,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 728.1503,
-     "interaction_ratio": 0.742
-    },
     "under 50 | health_wellness_fitness": {
      "n": 92,
      "sites": 18,
@@ -4001,6 +3991,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 3175.4066,
      "interaction_ratio": 1.051
+    },
+    "500-999 | education": {
+     "n": 92,
+     "sites": 48,
+     "cell_median": 540.0,
+     "row_median": 855,
+     "col_median": 442,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 728.1503,
+     "interaction_ratio": 0.742
     },
     "under 50 | travel_events": {
      "n": 90,
@@ -4052,16 +4052,6 @@
      "expected_from_main_effects": 333.9499,
      "interaction_ratio": 1.102
     },
-    "50-99 | sports_outdoors": {
-     "n": 82,
-     "sites": 37,
-     "cell_median": 312.5,
-     "row_median": 321,
-     "col_median": 1044.0,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 645.711,
-     "interaction_ratio": 0.484
-    },
     "5000-9999 | media_entertainment": {
      "n": 82,
      "sites": 47,
@@ -4071,6 +4061,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1676.0231,
      "interaction_ratio": 0.863
+    },
+    "50-99 | sports_outdoors": {
+     "n": 82,
+     "sites": 37,
+     "cell_median": 312.5,
+     "row_median": 321,
+     "col_median": 1044.0,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 645.711,
+     "interaction_ratio": 0.484
     },
     "2500-4999 | health_wellness_fitness": {
      "n": 80,
@@ -4082,16 +4082,6 @@
      "expected_from_main_effects": 1685.8189,
      "interaction_ratio": 0.744
     },
-    "500-999 | pets": {
-     "n": 78,
-     "sites": 34,
-     "cell_median": 1034.0,
-     "row_median": 855,
-     "col_median": 765.5,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 1261.0838,
-     "interaction_ratio": 0.82
-    },
     "500-999 | baby_kids": {
      "n": 78,
      "sites": 33,
@@ -4101,6 +4091,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 772.6301,
      "interaction_ratio": 0.74
+    },
+    "500-999 | pets": {
+     "n": 78,
+     "sites": 34,
+     "cell_median": 1034.0,
+     "row_median": 855,
+     "col_median": 765.5,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 1261.0838,
+     "interaction_ratio": 0.82
     },
     "100-249 | marketing_agency": {
      "n": 77,
@@ -4242,16 +4242,6 @@
      "expected_from_main_effects": 4381.0751,
      "interaction_ratio": 0.446
     },
-    "under 50 | retail_marketplace": {
-     "n": 59,
-     "sites": 28,
-     "cell_median": 208,
-     "row_median": 272.0,
-     "col_median": 520.5,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 272.7861,
-     "interaction_ratio": 0.763
-    },
     "2500-4999 | marketing_agency": {
      "n": 59,
      "sites": 17,
@@ -4271,6 +4261,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1400.052,
      "interaction_ratio": 0.257
+    },
+    "under 50 | retail_marketplace": {
+     "n": 59,
+     "sites": 28,
+     "cell_median": 208,
+     "row_median": 272.0,
+     "col_median": 520.5,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 272.7861,
+     "interaction_ratio": 0.763
     },
     "500-999 | creator_influencer": {
      "n": 57,
@@ -4372,6 +4372,16 @@
      "expected_from_main_effects": 738.0347,
      "interaction_ratio": 0.514
     },
+    "under 50 | software_saas": {
+     "n": 44,
+     "sites": 29,
+     "cell_median": 182.5,
+     "row_median": 272.0,
+     "col_median": 672,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 352.185,
+     "interaction_ratio": 0.518
+    },
     "50-99 | pets": {
      "n": 44,
      "sites": 11,
@@ -4381,16 +4391,6 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 473.4595,
      "interaction_ratio": 1.335
-    },
-    "100-249 | local_services": {
-     "n": 44,
-     "sites": 15,
-     "cell_median": 637.5,
-     "row_median": 404.0,
-     "col_median": 448,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 348.7322,
-     "interaction_ratio": 1.828
     },
     "100-249 | jewelry_watches": {
      "n": 44,
@@ -4402,25 +4402,15 @@
      "expected_from_main_effects": 309.0328,
      "interaction_ratio": 0.812
     },
-    "under 50 | software_saas": {
+    "100-249 | local_services": {
      "n": 44,
-     "sites": 29,
-     "cell_median": 182.5,
-     "row_median": 272.0,
-     "col_median": 672,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 352.185,
-     "interaction_ratio": 0.518
-    },
-    "250-499 | local_services": {
-     "n": 42,
-     "sites": 25,
-     "cell_median": 477.5,
-     "row_median": 619.0,
+     "sites": 15,
+     "cell_median": 637.5,
+     "row_median": 404.0,
      "col_median": 448,
      "grand_median": 519.0,
-     "expected_from_main_effects": 534.3198,
-     "interaction_ratio": 0.894
+     "expected_from_main_effects": 348.7322,
+     "interaction_ratio": 1.828
     },
     "2500-4999 | other": {
      "n": 42,
@@ -4431,6 +4421,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1110.1734,
      "interaction_ratio": 0.332
+    },
+    "250-499 | local_services": {
+     "n": 42,
+     "sites": 25,
+     "cell_median": 477.5,
+     "row_median": 619.0,
+     "col_median": 448,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 534.3198,
+     "interaction_ratio": 0.894
     },
     "50-99 | software_saas": {
      "n": 41,
@@ -4452,16 +4452,6 @@
      "expected_from_main_effects": 273.3757,
      "interaction_ratio": 0.9
     },
-    "5000-9999 | travel_events": {
-     "n": 40,
-     "sites": 33,
-     "cell_median": 2661.0,
-     "row_median": 2132,
-     "col_median": 556,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 2283.9923,
-     "interaction_ratio": 1.165
-    },
     "under 50 | home_garden": {
      "n": 40,
      "sites": 20,
@@ -4471,6 +4461,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 558.9364,
      "interaction_ratio": 0.386
+    },
+    "5000-9999 | travel_events": {
+     "n": 40,
+     "sites": 33,
+     "cell_median": 2661.0,
+     "row_median": 2132,
+     "col_median": 556,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 2283.9923,
+     "interaction_ratio": 1.165
     },
     "2500-4999 | art_crafts": {
      "n": 39,
@@ -4482,16 +4482,6 @@
      "expected_from_main_effects": 2277.9114,
      "interaction_ratio": 1.793
     },
-    "1000-2499 | nonprofit_community": {
-     "n": 38,
-     "sites": 27,
-     "cell_median": 996.5,
-     "row_median": 1308.5,
-     "col_median": 382,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 963.0963,
-     "interaction_ratio": 1.035
-    },
     "5000-9999 | health_wellness_fitness": {
      "n": 38,
      "sites": 30,
@@ -4501,6 +4491,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1684.2389,
      "interaction_ratio": 0.324
+    },
+    "1000-2499 | nonprofit_community": {
+     "n": 38,
+     "sites": 27,
+     "cell_median": 996.5,
+     "row_median": 1308.5,
+     "col_median": 382,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 963.0963,
+     "interaction_ratio": 1.035
     },
     "50-99 | marketing_agency": {
      "n": 36,
@@ -4522,16 +4522,6 @@
      "expected_from_main_effects": 3364.3699,
      "interaction_ratio": 0.503
     },
-    "5000-9999 | education": {
-     "n": 35,
-     "sites": 29,
-     "cell_median": 828,
-     "row_median": 2132,
-     "col_median": 442,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 1815.6917,
-     "interaction_ratio": 0.456
-    },
     "1000-2499 | local_services": {
      "n": 35,
      "sites": 27,
@@ -4541,6 +4531,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1129.4952,
      "interaction_ratio": 0.358
+    },
+    "5000-9999 | education": {
+     "n": 35,
+     "sites": 29,
+     "cell_median": 828,
+     "row_median": 2132,
+     "col_median": 442,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 1815.6917,
+     "interaction_ratio": 0.456
     },
     "500-999 | nonprofit_community": {
      "n": 33,
@@ -4572,16 +4572,6 @@
      "expected_from_main_effects": 815.3295,
      "interaction_ratio": 1.207
     },
-    "under 50 | automotive": {
-     "n": 31,
-     "sites": 24,
-     "cell_median": 238,
-     "row_median": 272.0,
-     "col_median": 1273,
-     "grand_median": 519.0,
-     "expected_from_main_effects": 667.1599,
-     "interaction_ratio": 0.357
-    },
     "1000-2499 | jewelry_watches": {
      "n": 31,
      "sites": 22,
@@ -4591,6 +4581,16 @@
      "grand_median": 519.0,
      "expected_from_main_effects": 1000.9143,
      "interaction_ratio": 0.675
+    },
+    "under 50 | automotive": {
+     "n": 31,
+     "sites": 24,
+     "cell_median": 238,
+     "row_median": 272.0,
+     "col_median": 1273,
+     "grand_median": 519.0,
+     "expected_from_main_effects": 667.1599,
+     "interaction_ratio": 0.357
     },
     "50-99 | travel_events": {
      "n": 31,
@@ -5342,16 +5342,6 @@
      "expected_from_main_effects": 0.2578,
      "interaction_ratio": 1.147
     },
-    "8-14 | art_crafts": {
-     "n": 198,
-     "sites": 88,
-     "cell_median": 0.3018,
-     "row_median": 0.2847,
-     "col_median": 0.3659,
-     "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3006,
-     "interaction_ratio": 1.004
-    },
     "8-14 | baby_kids": {
      "n": 198,
      "sites": 56,
@@ -5361,6 +5351,16 @@
      "grand_median": 0.3465,
      "expected_from_main_effects": 0.2396,
      "interaction_ratio": 1.143
+    },
+    "8-14 | art_crafts": {
+     "n": 198,
+     "sites": 88,
+     "cell_median": 0.3018,
+     "row_median": 0.2847,
+     "col_median": 0.3659,
+     "grand_median": 0.3465,
+     "expected_from_main_effects": 0.3006,
+     "interaction_ratio": 1.004
     },
     "7 or fewer | baby_kids": {
      "n": 181,
@@ -6472,16 +6472,6 @@
      "expected_from_main_effects": 0.3067,
      "interaction_ratio": 0.976
     },
-    "question_or_skill | other": {
-     "n": 240,
-     "sites": 93,
-     "cell_median": 0.2949,
-     "row_median": 0.2953,
-     "col_median": 0.2901,
-     "grand_median": 0.3173,
-     "expected_from_main_effects": 0.27,
-     "interaction_ratio": 1.092
-    },
     "referral_share | health_wellness_fitness": {
      "n": 240,
      "sites": 89,
@@ -6491,6 +6481,16 @@
      "grand_median": 0.3173,
      "expected_from_main_effects": 0.2289,
      "interaction_ratio": 1.257
+    },
+    "question_or_skill | other": {
+     "n": 240,
+     "sites": 93,
+     "cell_median": 0.2949,
+     "row_median": 0.2953,
+     "col_median": 0.2901,
+     "grand_median": 0.3173,
+     "expected_from_main_effects": 0.27,
+     "interaction_ratio": 1.092
     },
     "app_download | electronics_tech": {
      "n": 232,
@@ -6582,16 +6582,6 @@
      "expected_from_main_effects": 0.3566,
      "interaction_ratio": 0.956
     },
-    "email | beauty_personal_care": {
-     "n": 160,
-     "sites": 64,
-     "cell_median": 0.3534,
-     "row_median": 0.3047,
-     "col_median": 0.333,
-     "grand_median": 0.3173,
-     "expected_from_main_effects": 0.3198,
-     "interaction_ratio": 1.105
-    },
     "email | education": {
      "n": 160,
      "sites": 41,
@@ -6601,6 +6591,16 @@
      "grand_median": 0.3173,
      "expected_from_main_effects": 0.2737,
      "interaction_ratio": 1.076
+    },
+    "email | beauty_personal_care": {
+     "n": 160,
+     "sites": 64,
+     "cell_median": 0.3534,
+     "row_median": 0.3047,
+     "col_median": 0.333,
+     "grand_median": 0.3173,
+     "expected_from_main_effects": 0.3198,
+     "interaction_ratio": 1.105
     },
     "question_or_skill | travel_events": {
      "n": 150,
@@ -6692,16 +6692,6 @@
      "expected_from_main_effects": 0.5826,
      "interaction_ratio": 0.954
     },
-    "app_download | apparel_fashion": {
-     "n": 106,
-     "sites": 27,
-     "cell_median": 0.2331,
-     "row_median": 0.2507,
-     "col_median": 0.3178,
-     "grand_median": 0.3173,
-     "expected_from_main_effects": 0.2511,
-     "interaction_ratio": 0.928
-    },
     "secret_code | media_entertainment": {
      "n": 106,
      "sites": 55,
@@ -6711,6 +6701,16 @@
      "grand_median": 0.3173,
      "expected_from_main_effects": 0.2985,
      "interaction_ratio": 0.964
+    },
+    "app_download | apparel_fashion": {
+     "n": 106,
+     "sites": 27,
+     "cell_median": 0.2331,
+     "row_median": 0.2507,
+     "col_median": 0.3178,
+     "grand_median": 0.3173,
+     "expected_from_main_effects": 0.2511,
+     "interaction_ratio": 0.928
     },
     "email | other": {
      "n": 102,
@@ -6922,16 +6922,6 @@
      "expected_from_main_effects": 0.2666,
      "interaction_ratio": 1.488
     },
-    "email | local_services": {
-     "n": 49,
-     "sites": 10,
-     "cell_median": 0.2771,
-     "row_median": 0.3047,
-     "col_median": 0.2582,
-     "grand_median": 0.3173,
-     "expected_from_main_effects": 0.248,
-     "interaction_ratio": 1.117
-    },
     "secret_code | software_saas": {
      "n": 49,
      "sites": 15,
@@ -6942,15 +6932,15 @@
      "expected_from_main_effects": 0.317,
      "interaction_ratio": 1.218
     },
-    "referral_share | local_services": {
-     "n": 47,
-     "sites": 11,
-     "cell_median": 0.2582,
-     "row_median": 0.2891,
+    "email | local_services": {
+     "n": 49,
+     "sites": 10,
+     "cell_median": 0.2771,
+     "row_median": 0.3047,
      "col_median": 0.2582,
      "grand_median": 0.3173,
-     "expected_from_main_effects": 0.2353,
-     "interaction_ratio": 1.098
+     "expected_from_main_effects": 0.248,
+     "interaction_ratio": 1.117
     },
     "secret_code | home_garden": {
      "n": 47,
@@ -6962,15 +6952,15 @@
      "expected_from_main_effects": 0.3522,
      "interaction_ratio": 0.891
     },
-    "social_follow_or_join | local_services": {
-     "n": 46,
-     "sites": 20,
-     "cell_median": 0.23,
-     "row_median": 0.3397,
+    "referral_share | local_services": {
+     "n": 47,
+     "sites": 11,
+     "cell_median": 0.2582,
+     "row_median": 0.2891,
      "col_median": 0.2582,
      "grand_median": 0.3173,
-     "expected_from_main_effects": 0.2764,
-     "interaction_ratio": 0.832
+     "expected_from_main_effects": 0.2353,
+     "interaction_ratio": 1.098
     },
     "app_download | other": {
      "n": 46,
@@ -6981,6 +6971,16 @@
      "grand_median": 0.3173,
      "expected_from_main_effects": 0.2292,
      "interaction_ratio": 0.839
+    },
+    "social_follow_or_join | local_services": {
+     "n": 46,
+     "sites": 20,
+     "cell_median": 0.23,
+     "row_median": 0.3397,
+     "col_median": 0.2582,
+     "grand_median": 0.3173,
+     "expected_from_main_effects": 0.2764,
+     "interaction_ratio": 0.832
     },
     "referral_share | nonprofit_community": {
      "n": 44,
@@ -7817,16 +7817,6 @@
      "expected_from_main_effects": 0.2691,
      "interaction_ratio": 1.239
     },
-    "email | vehicle": {
-     "n": 52,
-     "sites": 35,
-     "cell_median": 0.3205,
-     "row_median": 0.3053,
-     "col_median": 0.2934,
-     "grand_median": 0.3115,
-     "expected_from_main_effects": 0.2875,
-     "interaction_ratio": 1.115
-    },
     "email | music_gear": {
      "n": 52,
      "sites": 30,
@@ -7837,15 +7827,15 @@
      "expected_from_main_effects": 0.2846,
      "interaction_ratio": 0.981
     },
-    "email | tools_craft_diy": {
-     "n": 48,
-     "sites": 23,
-     "cell_median": 0.2985,
+    "email | vehicle": {
+     "n": 52,
+     "sites": 35,
+     "cell_median": 0.3205,
      "row_median": 0.3053,
-     "col_median": 0.3648,
+     "col_median": 0.2934,
      "grand_median": 0.3115,
-     "expected_from_main_effects": 0.3575,
-     "interaction_ratio": 0.835
+     "expected_from_main_effects": 0.2875,
+     "interaction_ratio": 1.115
     },
     "referral_share | vehicle": {
      "n": 48,
@@ -7856,6 +7846,16 @@
      "grand_median": 0.3115,
      "expected_from_main_effects": 0.2624,
      "interaction_ratio": 1.02
+    },
+    "email | tools_craft_diy": {
+     "n": 48,
+     "sites": 23,
+     "cell_median": 0.2985,
+     "row_median": 0.3053,
+     "col_median": 0.3648,
+     "grand_median": 0.3115,
+     "expected_from_main_effects": 0.3575,
+     "interaction_ratio": 0.835
     },
     "referral_share | exclusive_access": {
      "n": 44,
@@ -8548,29 +8548,29 @@
    "definition": "clean conversion by organizer sequence band (1st, 2nd-5th, 6th-20th, 21st+ campaign on the dataset by that site, all campaigns not just ordinary) crossed with contestant band",
    "cells": {
     "21st+ | 100-250": {
-     "n": 4530,
-     "sites": 434,
-     "cell_median": 0.3452,
+     "n": 4527,
+     "sites": 433,
+     "cell_median": 0.3455,
      "row_median": 0.3887,
      "col_median": 0.3212,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3595,
-     "interaction_ratio": 0.96
+     "interaction_ratio": 0.961
     },
     "21st+ | 250-500": {
-     "n": 4503,
+     "n": 4508,
      "sites": 391,
-     "cell_median": 0.3681,
+     "cell_median": 0.3668,
      "row_median": 0.3887,
      "col_median": 0.3409,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3816,
-     "interaction_ratio": 0.965
+     "interaction_ratio": 0.961
     },
     "21st+ | 500-1k": {
-     "n": 3806,
-     "sites": 369,
-     "cell_median": 0.3875,
+     "n": 3803,
+     "sites": 366,
+     "cell_median": 0.3878,
      "row_median": 0.3887,
      "col_median": 0.3545,
      "grand_median": 0.3472,
@@ -8578,9 +8578,9 @@
      "interaction_ratio": 0.977
     },
     "21st+ | 1k-2.5k": {
-     "n": 3080,
+     "n": 3079,
      "sites": 301,
-     "cell_median": 0.435,
+     "cell_median": 0.4351,
      "row_median": 0.3887,
      "col_median": 0.373,
      "grand_median": 0.3472,
@@ -8588,48 +8588,48 @@
      "interaction_ratio": 1.042
     },
     "6th-20th | 100-250": {
-     "n": 2884,
-     "sites": 968,
+     "n": 2882,
+     "sites": 967,
      "cell_median": 0.3333,
-     "row_median": 0.3454,
+     "row_median": 0.3455,
      "col_median": 0.3212,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3196,
      "interaction_ratio": 1.043
     },
     "2nd-5th | 100-250": {
-     "n": 2668,
-     "sites": 1767,
-     "cell_median": 0.3115,
-     "row_median": 0.3259,
+     "n": 2673,
+     "sites": 1769,
+     "cell_median": 0.3114,
+     "row_median": 0.3256,
      "col_median": 0.3212,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3015,
-     "interaction_ratio": 1.033
+     "expected_from_main_effects": 0.3012,
+     "interaction_ratio": 1.034
     },
     "1st | 100-250": {
      "n": 2059,
      "sites": 2059,
-     "cell_median": 0.2952,
-     "row_median": 0.3082,
+     "cell_median": 0.2953,
+     "row_median": 0.3081,
      "col_median": 0.3212,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.2851,
-     "interaction_ratio": 1.035
+     "expected_from_main_effects": 0.285,
+     "interaction_ratio": 1.036
     },
     "6th-20th | 250-500": {
-     "n": 1902,
-     "sites": 838,
-     "cell_median": 0.3397,
-     "row_median": 0.3454,
+     "n": 1895,
+     "sites": 837,
+     "cell_median": 0.3403,
+     "row_median": 0.3455,
      "col_median": 0.3409,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3391,
-     "interaction_ratio": 1.002
+     "expected_from_main_effects": 0.3392,
+     "interaction_ratio": 1.003
     },
     "21st+ | 2.5k-10k": {
-     "n": 1769,
-     "sites": 213,
+     "n": 1772,
+     "sites": 214,
      "cell_median": 0.4247,
      "row_median": 0.3887,
      "col_median": 0.3756,
@@ -8638,154 +8638,154 @@
      "interaction_ratio": 1.01
     },
     "6th-20th | 500-1k": {
-     "n": 1652,
-     "sites": 758,
+     "n": 1658,
+     "sites": 761,
      "cell_median": 0.3532,
-     "row_median": 0.3454,
+     "row_median": 0.3455,
      "col_median": 0.3545,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3527,
-     "interaction_ratio": 1.002
+     "interaction_ratio": 1.001
     },
     "2nd-5th | 250-500": {
-     "n": 1609,
-     "sites": 1225,
-     "cell_median": 0.3263,
-     "row_median": 0.3259,
+     "n": 1612,
+     "sites": 1224,
+     "cell_median": 0.3262,
+     "row_median": 0.3256,
      "col_median": 0.3409,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.32,
+     "expected_from_main_effects": 0.3197,
      "interaction_ratio": 1.02
     },
     "6th-20th | 1k-2.5k": {
-     "n": 1502,
-     "sites": 648,
-     "cell_median": 0.3527,
-     "row_median": 0.3454,
+     "n": 1507,
+     "sites": 651,
+     "cell_median": 0.3522,
+     "row_median": 0.3455,
      "col_median": 0.373,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3711,
-     "interaction_ratio": 0.951
+     "interaction_ratio": 0.949
     },
     "2nd-5th | 500-1k": {
-     "n": 1285,
-     "sites": 987,
-     "cell_median": 0.3305,
-     "row_median": 0.3259,
+     "n": 1280,
+     "sites": 986,
+     "cell_median": 0.3303,
+     "row_median": 0.3256,
      "col_median": 0.3545,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3328,
-     "interaction_ratio": 0.993
+     "expected_from_main_effects": 0.3324,
+     "interaction_ratio": 0.994
     },
     "2nd-5th | 1k-2.5k": {
-     "n": 1151,
-     "sites": 877,
+     "n": 1148,
+     "sites": 873,
      "cell_median": 0.3427,
-     "row_median": 0.3259,
+     "row_median": 0.3256,
      "col_median": 0.373,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3501,
-     "interaction_ratio": 0.979
+     "expected_from_main_effects": 0.3498,
+     "interaction_ratio": 0.98
     },
     "1st | 250-500": {
-     "n": 1035,
-     "sites": 1035,
-     "cell_median": 0.3112,
-     "row_median": 0.3082,
+     "n": 1034,
+     "sites": 1034,
+     "cell_median": 0.3109,
+     "row_median": 0.3081,
      "col_median": 0.3409,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3026,
-     "interaction_ratio": 1.029
+     "expected_from_main_effects": 0.3024,
+     "interaction_ratio": 1.028
     },
     "6th-20th | 2.5k-10k": {
-     "n": 949,
+     "n": 944,
      "sites": 373,
-     "cell_median": 0.3575,
-     "row_median": 0.3454,
+     "cell_median": 0.3574,
+     "row_median": 0.3455,
      "col_median": 0.3756,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.3737,
-     "interaction_ratio": 0.957
+     "interaction_ratio": 0.956
     },
     "1st | 500-1k": {
-     "n": 771,
-     "sites": 771,
+     "n": 773,
+     "sites": 773,
      "cell_median": 0.3132,
-     "row_median": 0.3082,
+     "row_median": 0.3081,
      "col_median": 0.3545,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3147,
-     "interaction_ratio": 0.995
+     "expected_from_main_effects": 0.3145,
+     "interaction_ratio": 0.996
     },
     "2nd-5th | 2.5k-10k": {
-     "n": 664,
+     "n": 665,
      "sites": 483,
-     "cell_median": 0.3456,
-     "row_median": 0.3259,
+     "cell_median": 0.3458,
+     "row_median": 0.3256,
      "col_median": 0.3756,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3526,
-     "interaction_ratio": 0.98
+     "expected_from_main_effects": 0.3522,
+     "interaction_ratio": 0.982
     },
     "1st | 1k-2.5k": {
-     "n": 663,
-     "sites": 663,
-     "cell_median": 0.3171,
-     "row_median": 0.3082,
+     "n": 662,
+     "sites": 662,
+     "cell_median": 0.3179,
+     "row_median": 0.3081,
      "col_median": 0.373,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3311,
-     "interaction_ratio": 0.958
+     "expected_from_main_effects": 0.3309,
+     "interaction_ratio": 0.961
     },
     "21st+ | 10k+": {
      "n": 449,
      "sites": 60,
-     "cell_median": 0.4927,
+     "cell_median": 0.4937,
      "row_median": 0.3887,
      "col_median": 0.4122,
      "grand_median": 0.3472,
      "expected_from_main_effects": 0.4614,
-     "interaction_ratio": 1.068
+     "interaction_ratio": 1.07
     },
     "1st | 2.5k-10k": {
-     "n": 405,
-     "sites": 405,
-     "cell_median": 0.3353,
-     "row_median": 0.3082,
+     "n": 406,
+     "sites": 406,
+     "cell_median": 0.3349,
+     "row_median": 0.3081,
      "col_median": 0.3756,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3334,
-     "interaction_ratio": 1.006
+     "expected_from_main_effects": 0.3332,
+     "interaction_ratio": 1.005
     },
     "6th-20th | 10k+": {
-     "n": 201,
-     "sites": 90,
+     "n": 203,
+     "sites": 91,
      "cell_median": 0.3774,
-     "row_median": 0.3454,
+     "row_median": 0.3455,
      "col_median": 0.4122,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.4101,
+     "expected_from_main_effects": 0.4102,
      "interaction_ratio": 0.92
     },
     "2nd-5th | 10k+": {
-     "n": 144,
-     "sites": 111,
-     "cell_median": 0.3289,
-     "row_median": 0.3259,
+     "n": 142,
+     "sites": 108,
+     "cell_median": 0.3254,
+     "row_median": 0.3256,
      "col_median": 0.4122,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3869,
-     "interaction_ratio": 0.85
+     "expected_from_main_effects": 0.3866,
+     "interaction_ratio": 0.842
     },
     "1st | 10k+": {
      "n": 81,
      "sites": 81,
      "cell_median": 0.3031,
-     "row_median": 0.3082,
+     "row_median": 0.3081,
      "col_median": 0.4122,
      "grand_median": 0.3472,
-     "expected_from_main_effects": 0.3659,
-     "interaction_ratio": 0.828
+     "expected_from_main_effects": 0.3657,
+     "interaction_ratio": 0.829
     }
    }
   },
@@ -9377,16 +9377,6 @@
      "expected_from_main_effects": 535.8884,
      "interaction_ratio": 1.026
     },
-    "Christmas and advent | Collaboration or partner": {
-     "n": 588,
-     "sites": 325,
-     "cell_median": 599.0,
-     "row_median": 599.0,
-     "col_median": 745,
-     "grand_median": 645.0,
-     "expected_from_main_effects": 691.8682,
-     "interaction_ratio": 0.866
-    },
     "Christmas and advent | Gift card or voucher": {
      "n": 588,
      "sites": 267,
@@ -9396,6 +9386,16 @@
      "grand_median": 645.0,
      "expected_from_main_effects": 499.631,
      "interaction_ratio": 0.982
+    },
+    "Christmas and advent | Collaboration or partner": {
+     "n": 588,
+     "sites": 325,
+     "cell_median": 599.0,
+     "row_median": 599.0,
+     "col_median": 745,
+     "grand_median": 645.0,
+     "expected_from_main_effects": 691.8682,
+     "interaction_ratio": 0.866
     },
     "Summer | Gift card or voucher": {
      "n": 529,
@@ -9797,16 +9797,6 @@
      "expected_from_main_effects": 738.186,
      "interaction_ratio": 1.099
     },
-    "Valentine's Day | Gift card or voucher": {
-     "n": 99,
-     "sites": 52,
-     "cell_median": 585,
-     "row_median": 568.5,
-     "col_median": 538,
-     "grand_median": 645.0,
-     "expected_from_main_effects": 474.1907,
-     "interaction_ratio": 1.234
-    },
     "Summer | Free or no purchase": {
      "n": 99,
      "sites": 54,
@@ -9816,6 +9806,16 @@
      "grand_median": 645.0,
      "expected_from_main_effects": 867.593,
      "interaction_ratio": 0.962
+    },
+    "Valentine's Day | Gift card or voucher": {
+     "n": 99,
+     "sites": 52,
+     "cell_median": 585,
+     "row_median": 568.5,
+     "col_median": 538,
+     "grand_median": 645.0,
+     "expected_from_main_effects": 474.1907,
+     "interaction_ratio": 1.234
     },
     "Valentine's Day | Bundle, mega or ultimate": {
      "n": 98,
@@ -9857,16 +9857,6 @@
      "expected_from_main_effects": 553.9535,
      "interaction_ratio": 0.886
     },
-    "Anniversary or birthday | Competition wording (UK)": {
-     "n": 89,
-     "sites": 63,
-     "cell_median": 498,
-     "row_median": 595.5,
-     "col_median": 732.0,
-     "grand_median": 645.0,
-     "expected_from_main_effects": 675.8233,
-     "interaction_ratio": 0.737
-    },
     "Back to school | Bundle, mega or ultimate": {
      "n": 89,
      "sites": 68,
@@ -9876,6 +9866,16 @@
      "grand_median": 645.0,
      "expected_from_main_effects": 1332.3256,
      "interaction_ratio": 0.94
+    },
+    "Anniversary or birthday | Competition wording (UK)": {
+     "n": 89,
+     "sites": 63,
+     "cell_median": 498,
+     "row_median": 595.5,
+     "col_median": 732.0,
+     "grand_median": 645.0,
+     "expected_from_main_effects": 675.8233,
+     "interaction_ratio": 0.737
     },
     "Valentine's Day | Collaboration or partner": {
      "n": 82,
@@ -9937,16 +9937,6 @@
      "expected_from_main_effects": 501.4884,
      "interaction_ratio": 1.171
     },
-    "Mother's Day | Bundle, mega or ultimate": {
-     "n": 75,
-     "sites": 62,
-     "cell_median": 689,
-     "row_median": 647,
-     "col_median": 842.5,
-     "grand_median": 645.0,
-     "expected_from_main_effects": 845.1124,
-     "interaction_ratio": 0.815
-    },
     "Summer | Product launch": {
      "n": 75,
      "sites": 51,
@@ -9956,6 +9946,16 @@
      "grand_median": 645.0,
      "expected_from_main_effects": 580.186,
      "interaction_ratio": 0.772
+    },
+    "Mother's Day | Bundle, mega or ultimate": {
+     "n": 75,
+     "sites": 62,
+     "cell_median": 689,
+     "row_median": 647,
+     "col_median": 842.5,
+     "grand_median": 645.0,
+     "expected_from_main_effects": 845.1124,
+     "interaction_ratio": 0.815
     },
     "Summer | Milestone": {
      "n": 73,
@@ -10087,16 +10087,6 @@
      "expected_from_main_effects": 789.0667,
      "interaction_ratio": 1.132
     },
-    "Halloween | Sweepstakes wording (US)": {
-     "n": 46,
-     "sites": 27,
-     "cell_median": 2097.5,
-     "row_median": 509.5,
-     "col_median": 1273.0,
-     "grand_median": 645.0,
-     "expected_from_main_effects": 1005.5713,
-     "interaction_ratio": 2.086
-    },
     "Christmas and advent | Sorteo (Spanish)": {
      "n": 46,
      "sites": 35,
@@ -10106,6 +10096,16 @@
      "grand_median": 645.0,
      "expected_from_main_effects": 406.7628,
      "interaction_ratio": 1.553
+    },
+    "Halloween | Sweepstakes wording (US)": {
+     "n": 46,
+     "sites": 27,
+     "cell_median": 2097.5,
+     "row_median": 509.5,
+     "col_median": 1273.0,
+     "grand_median": 645.0,
+     "expected_from_main_effects": 1005.5713,
+     "interaction_ratio": 2.086
     },
     "Anniversary or birthday | Cash prize": {
      "n": 45,
@@ -10157,15 +10157,15 @@
      "expected_from_main_effects": 585.3442,
      "interaction_ratio": 0.774
     },
-    "Easter | Competition wording (UK)": {
+    "Halloween | Competition wording (UK)": {
      "n": 39,
-     "sites": 24,
-     "cell_median": 732,
-     "row_median": 631,
+     "sites": 23,
+     "cell_median": 514,
+     "row_median": 509.5,
      "col_median": 732.0,
      "grand_median": 645.0,
-     "expected_from_main_effects": 716.1116,
-     "interaction_ratio": 1.022
+     "expected_from_main_effects": 578.2233,
+     "interaction_ratio": 0.889
     },
     "Easter | Gift card or voucher": {
      "n": 39,
@@ -10177,15 +10177,15 @@
      "expected_from_main_effects": 526.3225,
      "interaction_ratio": 0.948
     },
-    "Halloween | Competition wording (UK)": {
+    "Easter | Competition wording (UK)": {
      "n": 39,
-     "sites": 23,
-     "cell_median": 514,
-     "row_median": 509.5,
+     "sites": 24,
+     "cell_median": 732,
+     "row_median": 631,
      "col_median": 732.0,
      "grand_median": 645.0,
-     "expected_from_main_effects": 578.2233,
-     "interaction_ratio": 0.889
+     "expected_from_main_effects": 716.1116,
+     "interaction_ratio": 1.022
     },
     "New Year | Competition wording (UK)": {
      "n": 37,
@@ -10257,15 +10257,15 @@
      "expected_from_main_effects": 637.8624,
      "interaction_ratio": 1.272
     },
-    "New Year | Sweepstakes wording (US)": {
+    "Back to school | Holiday themed": {
      "n": 31,
-     "sites": 28,
-     "cell_median": 2567,
-     "row_median": 885,
-     "col_median": 1273.0,
+     "sites": 31,
+     "cell_median": 761,
+     "row_median": 1020,
+     "col_median": 608,
      "grand_median": 645.0,
-     "expected_from_main_effects": 1746.6744,
-     "interaction_ratio": 1.47
+     "expected_from_main_effects": 961.4884,
+     "interaction_ratio": 0.791
     },
     "Valentine's Day | Competition wording (UK)": {
      "n": 31,
@@ -10277,15 +10277,15 @@
      "expected_from_main_effects": 645.1814,
      "interaction_ratio": 0.789
     },
-    "Back to school | Holiday themed": {
+    "New Year | Sweepstakes wording (US)": {
      "n": 31,
-     "sites": 31,
-     "cell_median": 761,
-     "row_median": 1020,
-     "col_median": 608,
+     "sites": 28,
+     "cell_median": 2567,
+     "row_median": 885,
+     "col_median": 1273.0,
      "grand_median": 645.0,
-     "expected_from_main_effects": 961.4884,
-     "interaction_ratio": 0.791
+     "expected_from_main_effects": 1746.6744,
+     "interaction_ratio": 1.47
     }
    }
   }

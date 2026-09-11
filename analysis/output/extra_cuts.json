@@ -32,14 +32,6 @@
    "contestants_per_impression": 0.2818,
    "invalid_share": 0.0043
   },
-  "1-5%": {
-   "n": 34102,
-   "organizers": 8010,
-   "contestants": 569.0,
-   "entries_per_entrant": 4.1539,
-   "contestants_per_impression": 0.2756,
-   "invalid_share": 0.0255
-  },
   "5-20%": {
    "n": 40728,
    "organizers": 9407,
@@ -47,6 +39,14 @@
    "entries_per_entrant": 4.3921,
    "contestants_per_impression": 0.2608,
    "invalid_share": 0.0991
+  },
+  "1-5%": {
+   "n": 34102,
+   "organizers": 8010,
+   "contestants": 569.0,
+   "entries_per_entrant": 4.1539,
+   "contestants_per_impression": 0.2756,
+   "invalid_share": 0.0255
   }
  },
  "invalid_share_campaigns_5pct_plus": 0.419,
@@ -144,85 +144,85 @@
   }
  },
  "nth_campaign_clean": {
+  "2nd": {
+   "n": 2740,
+   "organizers": 2740,
+   "contestants": 377.5,
+   "entries_per_entrant": 3.3442,
+   "contestants_per_impression": 0.3211,
+   "invalid_share": 0.0267
+  },
   "3rd-5th": {
-   "n": 4793,
-   "organizers": 2615,
-   "contestants": 399.0,
-   "entries_per_entrant": 3.4605,
-   "contestants_per_impression": 0.3307,
+   "n": 4796,
+   "organizers": 2614,
+   "contestants": 397.5,
+   "entries_per_entrant": 3.4523,
+   "contestants_per_impression": 0.3305,
    "invalid_share": 0.0321
   },
-  "2nd": {
-   "n": 2743,
-   "organizers": 2743,
-   "contestants": 373.0,
-   "entries_per_entrant": 3.3433,
-   "contestants_per_impression": 0.32,
-   "invalid_share": 0.027
-  },
   "1st": {
-   "n": 5020,
-   "organizers": 5020,
+   "n": 5024,
+   "organizers": 5024,
    "contestants": 332.0,
-   "entries_per_entrant": 3.1853,
-   "contestants_per_impression": 0.3085,
-   "invalid_share": 0.0255
+   "entries_per_entrant": 3.1878,
+   "contestants_per_impression": 0.308,
+   "invalid_share": 0.0256
   },
   "6th-10th": {
-   "n": 4392,
+   "n": 4388,
    "organizers": 1634,
-   "contestants": 445.5,
+   "contestants": 448.5,
    "entries_per_entrant": 3.5432,
-   "contestants_per_impression": 0.3398,
+   "contestants_per_impression": 0.3399,
    "invalid_share": 0.0322
   },
   "11th+": {
    "n": 22902,
-   "organizers": 1155,
+   "organizers": 1156,
    "contestants": 496.0,
-   "entries_per_entrant": 4.0317,
+   "entries_per_entrant": 4.0311,
    "contestants_per_impression": 0.3783,
    "invalid_share": 0.0398
   }
  },
  "nth_campaign_all": {
-  "3rd-5th": {
-   "n": 14335,
-   "organizers": 6026,
-   "contestants": 501.0,
-   "entries_per_entrant": 4.0435,
-   "contestants_per_impression": 0.2684,
-   "invalid_share": 0.0334
-  },
   "2nd": {
-   "n": 8505,
-   "organizers": 8505,
-   "contestants": 435.0,
-   "entries_per_entrant": 3.8561,
-   "contestants_per_impression": 0.2642,
-   "invalid_share": 0.0294
+   "n": 8506,
+   "organizers": 8506,
+   "contestants": 437.0,
+   "entries_per_entrant": 3.8553,
+   "contestants_per_impression": 0.2644,
+   "invalid_share": 0.0293
   },
-  "6th-10th": {
-   "n": 12888,
-   "organizers": 3327,
-   "contestants": 545.0,
-   "entries_per_entrant": 4.1879,
-   "contestants_per_impression": 0.2698,
-   "invalid_share": 0.0354
+  "3rd-5th": {
+   "n": 14329,
+   "organizers": 6025,
+   "contestants": 499.0,
+   "entries_per_entrant": 4.0435,
+   "contestants_per_impression": 0.2683,
+   "invalid_share": 0.0333
   },
   "1st": {
-   "n": 17384,
-   "organizers": 17384,
+   "n": 17387,
+   "organizers": 17387,
    "contestants": 382.0,
-   "entries_per_entrant": 3.6753,
-   "contestants_per_impression": 0.2556,
+   "entries_per_entrant": 3.6762,
+   "contestants_per_impression": 0.2557,
    "invalid_share": 0.0303
+  },
+  "6th-10th": {
+   "n": 12890,
+   "organizers": 3326,
+   "contestants": 547.5,
+   "entries_per_entrant": 4.1837,
+   "contestants_per_impression": 0.2701,
+   "invalid_share": 0.0356
   },
   "11th+": {
    "n": 64236,
-   "organizers": 1983,
+   "organizers": 1984,
    "contestants": 514.0,
-   "entries_per_entrant": 4.9097,
+   "entries_per_entrant": 4.91,
    "contestants_per_impression": 0.2748,
    "invalid_share": 0.0378
   }
@@ -247,24 +247,24 @@
  },
  "custom_terms_share_all": 0.393,
  "own_product_clean": {
+  "True": {
+   "n": 6825,
+   "organizers": 1921,
+   "contestants": 594.0,
+   "entries_per_entrant": 3.65,
+   "contestants_per_impression": 0.3173,
+   "invalid_share": 0.0369
+  },
   "False": {
-   "n": 39850,
-   "organizers": 7200,
-   "contestants": 452.0,
-   "entries_per_entrant": 3.6863,
-   "contestants_per_impression": 0.3474,
-   "invalid_share": 0.0357
+   "n": 33025,
+   "organizers": 6103,
+   "contestants": 428.0,
+   "entries_per_entrant": 3.6978,
+   "contestants_per_impression": 0.3539,
+   "invalid_share": 0.0353
   }
  },
  "optin_checkbox_clean_email_campaigns": {
-  "On": {
-   "n": 2726,
-   "organizers": 529,
-   "contestants": 435.0,
-   "entries_per_entrant": 4.3746,
-   "contestants_per_impression": 0.2816,
-   "invalid_share": 0.0282
-  },
   "Auto": {
    "n": 377,
    "organizers": 85,
@@ -272,6 +272,14 @@
    "entries_per_entrant": 5.3942,
    "contestants_per_impression": 0.2501,
    "invalid_share": 0.012
+  },
+  "On": {
+   "n": 2726,
+   "organizers": 529,
+   "contestants": 435.0,
+   "entries_per_entrant": 4.3746,
+   "contestants_per_impression": 0.2816,
+   "invalid_share": 0.0282
   },
   "Off": {
    "n": 7742,

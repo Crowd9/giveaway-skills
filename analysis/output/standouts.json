@@ -13,7 +13,7 @@
   "stated_pool_usd": 299.0,
   "usd_per_contestant": 0.41720043903118265,
   "repeat_organizer_share": 0.8148777405914897,
-  "own_product_share": 0.0,
+  "own_product_share": 0.16794447100607882,
   "duration": 14.0,
   "actions": 7.0
  },
@@ -40,7 +40,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.4065040650406504,
    "repeat_organizer_share": 0.7632113821138211,
-   "own_product_share": 0.0,
+   "own_product_share": 0.12296747967479675,
    "duration": 15.0,
    "actions": 10.0
   },
@@ -58,7 +58,7 @@
    "stated_pool_usd": 475.0,
    "usd_per_contestant": 0.61557478368356,
    "repeat_organizer_share": 0.7992256637168141,
-   "own_product_share": 0.0,
+   "own_product_share": 0.19911504424778761,
    "duration": 14.0,
    "actions": 7.0
   },
@@ -76,7 +76,7 @@
    "stated_pool_usd": 500.0,
    "usd_per_contestant": 0.6516888305051196,
    "repeat_organizer_share": 0.6375,
-   "own_product_share": 0.0,
+   "own_product_share": 0.1525,
    "duration": 9,
    "actions": 7.0
   },
@@ -94,7 +94,7 @@
    "stated_pool_usd": 450.0,
    "usd_per_contestant": 0.5738261323282827,
    "repeat_organizer_share": 0.6900567333532398,
-   "own_product_share": 0.0,
+   "own_product_share": 0.23230815168707078,
    "duration": 14.0,
    "actions": 8
   },
@@ -112,7 +112,7 @@
    "stated_pool_usd": 596.5,
    "usd_per_contestant": 0.31530999210865357,
    "repeat_organizer_share": 0.9361702127659575,
-   "own_product_share": 0.0,
+   "own_product_share": 0.10638297872340426,
    "duration": 12,
    "actions": 5
   }
@@ -126,8 +126,8 @@
   "usd_per_contestant": 0.12783053323593865,
   "features": {
    "own product prize": {
-    "standouts": 0.0,
-    "rest": 0.0
+    "standouts": 0.18778991470896303,
+    "rest": 0.17179578526211942
    },
    "collaboration in title": {
     "standouts": 0.14230136166392338,
@@ -190,7 +190,68 @@
     "rest": 0.12625030829519607
    }
   },
-  "prize_categories": {},
+  "prize_categories": {
+   "tech_hardware": {
+    "standouts": 0.3028579979051324,
+    "rest": 0.15502452659559893,
+    "ratio": 1.9536134349577843
+   },
+   "other_unclassified": {
+    "standouts": 0.2058955558880742,
+    "rest": 0.282480611657669,
+    "ratio": 0.7288838503988859
+   },
+   "gift_card_or_cash": {
+    "standouts": 0.16818793954810712,
+    "rest": 0.23792167931818806,
+    "ratio": 0.7069046420237246
+   },
+   "bundle_or_box": {
+    "standouts": 0.10833458027831812,
+    "rest": 0.12389356279630594,
+    "ratio": 0.8744165381411427
+   },
+   "game_item_or_skin": {
+    "standouts": 0.05551399072272931,
+    "rest": 0.09443424406017922,
+    "ratio": 0.5878586870177351
+   },
+   "regulated_goods_firearm": {
+    "standouts": 0.05461619033368248,
+    "rest": 0.017237126962812748,
+    "ratio": 3.1685205110753696
+   },
+   "placeholder_name": {
+    "standouts": 0.038455783330839446,
+    "rest": 0.023786687128333015,
+    "ratio": 1.6166935363198873
+   },
+   "home_garden_appliance": {
+    "standouts": 0.03411641478377974,
+    "rest": 0.02290975857060645,
+    "ratio": 1.4891651816685485
+   },
+   "experience_travel_tickets": {
+    "standouts": 0.033966781385605264,
+    "rest": 0.04280507522402784,
+    "ratio": 0.7935222916402828
+   },
+   "merch_apparel_collectible": {
+    "standouts": 0.02768217866227742,
+    "rest": 0.04083198596914308,
+    "ratio": 0.6779532762182316
+   },
+   "food_drink_consumables": {
+    "standouts": 0.014364806224749364,
+    "rest": 0.011783727494450686,
+    "ratio": 1.219037544063556
+   },
+   "sports_outdoor_gear": {
+    "standouts": 0.014364806224749364,
+    "rest": 0.01633279438765723,
+    "ratio": 0.8795069529317602
+   }
+  },
   "verticals": {
    "music_media": {
     "standouts": 0.21113272482418075,
@@ -250,17 +311,24 @@
  "cheap_and_big": {
   "n": 118,
   "sites": 63,
-  "prize_categories": {},
+  "prize_categories": {
+   "tech_hardware": 32,
+   "other_unclassified": 23,
+   "gift_card_or_cash": 14,
+   "game_item_or_skin": 14,
+   "bundle_or_box": 13,
+   "placeholder_name": 11
+  },
   "verticals": {
    "gaming": 36,
    "music_media": 23,
-   "unclassified": 16,
    "technology": 16,
+   "unclassified": 16,
    "food_drink": 8,
    "fitness_outdoor": 6
   },
   "repeat_organizer_share": 0.8559322033898306,
-  "own_product_share": 0.0,
+  "own_product_share": 0.11864406779661017,
   "december_share": 0.0423728813559322,
   "median_actions": 7.0,
   "median_duration": 21
@@ -280,7 +348,7 @@
    "stated_pool_usd": 70.0,
    "usd_per_contestant": 0.1685012701100762,
    "repeat_organizer_share": 0.8860004005607851,
-   "own_product_share": 0.0,
+   "own_product_share": 0.062247146004406166,
    "duration": 16.0,
    "actions": 8
   },
@@ -298,7 +366,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.41976165523665937,
    "repeat_organizer_share": 0.786621232404365,
-   "own_product_share": 0.0,
+   "own_product_share": 0.10940732627479616,
    "duration": 12,
    "actions": 8
   },
@@ -316,7 +384,7 @@
    "stated_pool_usd": 379.5,
    "usd_per_contestant": 0.5496486959086504,
    "repeat_organizer_share": 0.7653048999640589,
-   "own_product_share": 0.0,
+   "own_product_share": 0.14705882352941177,
    "duration": 12.0,
    "actions": 7.0
   },
@@ -334,7 +402,7 @@
    "stated_pool_usd": 540.0,
    "usd_per_contestant": 0.6012084898542023,
    "repeat_organizer_share": 0.8597729168003079,
-   "own_product_share": 0.0,
+   "own_product_share": 0.27589967284623773,
    "duration": 14.0,
    "actions": 7
   },
@@ -352,7 +420,7 @@
    "stated_pool_usd": 540.0,
    "usd_per_contestant": 0.6866542845759851,
    "repeat_organizer_share": 0.7768234841686963,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2425330085886425,
    "duration": 16,
    "actions": 7
   },
@@ -370,7 +438,7 @@
    "stated_pool_usd": 249.0,
    "usd_per_contestant": 0.520618556701031,
    "repeat_organizer_share": 0.8271171566476525,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2395787626151821,
    "duration": 15,
    "actions": 7
   },
@@ -388,7 +456,7 @@
    "stated_pool_usd": 368.0,
    "usd_per_contestant": 0.4366812227074236,
    "repeat_organizer_share": 0.7693735498839908,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2108275328692962,
    "duration": 11.0,
    "actions": 5
   },
@@ -406,7 +474,7 @@
    "stated_pool_usd": 426.0,
    "usd_per_contestant": 0.49988098071887643,
    "repeat_organizer_share": 0.7823579666809056,
-   "own_product_share": 0.0,
+   "own_product_share": 0.30435711234515167,
    "duration": 20,
    "actions": 6.0
   },
@@ -424,7 +492,7 @@
    "stated_pool_usd": 599.0,
    "usd_per_contestant": 0.8635578583765112,
    "repeat_organizer_share": 0.8147775823071124,
-   "own_product_share": 0.0,
+   "own_product_share": 0.24905755214878111,
    "duration": 15,
    "actions": 6
   },
@@ -442,7 +510,7 @@
    "stated_pool_usd": 510.0,
    "usd_per_contestant": 0.4834624716583329,
    "repeat_organizer_share": 0.8349043899811474,
-   "own_product_share": 0.0,
+   "own_product_share": 0.257204416913547,
    "duration": 15.0,
    "actions": 7
   },
@@ -460,7 +528,7 @@
    "stated_pool_usd": 1000.0,
    "usd_per_contestant": 1.0869565217391304,
    "repeat_organizer_share": 0.6061643835616438,
-   "own_product_share": 0.0,
+   "own_product_share": 0.228310502283105,
    "duration": 16,
    "actions": 7.0
   }
@@ -480,7 +548,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.41976165523665937,
    "repeat_organizer_share": 0.786621232404365,
-   "own_product_share": 0.0,
+   "own_product_share": 0.10940732627479616,
    "duration": 12,
    "actions": 8
   },
@@ -498,7 +566,7 @@
    "stated_pool_usd": 70.0,
    "usd_per_contestant": 0.16126431220770843,
    "repeat_organizer_share": 0.9066975666280417,
-   "own_product_share": 0.0,
+   "own_product_share": 0.06451911935110081,
    "duration": 18,
    "actions": 8
   },
@@ -516,7 +584,7 @@
    "stated_pool_usd": 540.0,
    "usd_per_contestant": 0.6012084898542023,
    "repeat_organizer_share": 0.8597729168003079,
-   "own_product_share": 0.0,
+   "own_product_share": 0.27589967284623773,
    "duration": 14.0,
    "actions": 7
   },
@@ -534,7 +602,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.5006265664160401,
    "repeat_organizer_share": 0.8316684378320935,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2414452709883103,
    "duration": 15,
    "actions": 7
   },
@@ -552,7 +620,7 @@
    "stated_pool_usd": 426.0,
    "usd_per_contestant": 0.49988098071887643,
    "repeat_organizer_share": 0.7823579666809056,
-   "own_product_share": 0.0,
+   "own_product_share": 0.30435711234515167,
    "duration": 20,
    "actions": 6.0
   },
@@ -570,7 +638,7 @@
    "stated_pool_usd": 648.5,
    "usd_per_contestant": 0.6637168141592921,
    "repeat_organizer_share": 0.7554453310329955,
-   "own_product_share": 0.0,
+   "own_product_share": 0.23635971533318956,
    "duration": 16,
    "actions": 6
   },
@@ -588,7 +656,7 @@
    "stated_pool_usd": 531.0,
    "usd_per_contestant": 0.5309734513274337,
    "repeat_organizer_share": 0.8068623219680622,
-   "own_product_share": 0.0,
+   "own_product_share": 0.19464825205006475,
    "duration": 8,
    "actions": 4.0
   },
@@ -606,7 +674,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.6451612903225806,
    "repeat_organizer_share": 0.6744238590149119,
-   "own_product_share": 0.0,
+   "own_product_share": 0.10732037957523724,
    "duration": 10.0,
    "actions": 6.0
   },
@@ -624,7 +692,7 @@
    "stated_pool_usd": 599.0,
    "usd_per_contestant": 0.8635578583765112,
    "repeat_organizer_share": 0.8147775823071124,
-   "own_product_share": 0.0,
+   "own_product_share": 0.24905755214878111,
    "duration": 15,
    "actions": 6
   },
@@ -642,7 +710,7 @@
    "stated_pool_usd": 510.0,
    "usd_per_contestant": 0.4834624716583329,
    "repeat_organizer_share": 0.8349043899811474,
-   "own_product_share": 0.0,
+   "own_product_share": 0.257204416913547,
    "duration": 15.0,
    "actions": 7
   },
@@ -660,7 +728,7 @@
    "stated_pool_usd": 75.0,
    "usd_per_contestant": 0.2751146788990826,
    "repeat_organizer_share": 0.7542772861356932,
-   "own_product_share": 0.0,
+   "own_product_share": 0.047787610619469026,
    "duration": 8,
    "actions": 7.0
   },
@@ -678,7 +746,7 @@
    "stated_pool_usd": 350.0,
    "usd_per_contestant": 0.7355810443245743,
    "repeat_organizer_share": 0.8081542351453855,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2515802781289507,
    "duration": 16.0,
    "actions": 8.0
   },
@@ -696,7 +764,7 @@
    "stated_pool_usd": 200.0,
    "usd_per_contestant": 0.37636693297070656,
    "repeat_organizer_share": 0.8865692414752957,
-   "own_product_share": 0.0,
+   "own_product_share": 0.1906750173973556,
    "duration": 8,
    "actions": 8.0
   },
@@ -714,7 +782,7 @@
    "stated_pool_usd": 999.0,
    "usd_per_contestant": 0.509683995922528,
    "repeat_organizer_share": 0.8192771084337349,
-   "own_product_share": 0.0,
+   "own_product_share": 0.18459552495697074,
    "duration": 14,
    "actions": 7.0
   },
@@ -732,7 +800,7 @@
    "stated_pool_usd": 500.0,
    "usd_per_contestant": 0.9615384615384616,
    "repeat_organizer_share": 0.782051282051282,
-   "own_product_share": 0.0,
+   "own_product_share": 0.14423076923076922,
    "duration": 8.0,
    "actions": 9.0
   },
@@ -750,7 +818,7 @@
    "stated_pool_usd": 1000.0,
    "usd_per_contestant": 1.0869565217391304,
    "repeat_organizer_share": 0.6061643835616438,
-   "own_product_share": 0.0,
+   "own_product_share": 0.228310502283105,
    "duration": 16,
    "actions": 7.0
   },
@@ -768,7 +836,7 @@
    "stated_pool_usd": 229.0,
    "usd_per_contestant": 0.4093205485101557,
    "repeat_organizer_share": 0.7512376237623762,
-   "own_product_share": 0.0,
+   "own_product_share": 0.20235148514851486,
    "duration": 15,
    "actions": 6.0
   },
@@ -786,7 +854,7 @@
    "stated_pool_usd": 170.0,
    "usd_per_contestant": 0.2518907669661439,
    "repeat_organizer_share": 0.6952515946137491,
-   "own_product_share": 0.0,
+   "own_product_share": 0.23883770375620128,
    "duration": 19,
    "actions": 7
   },
@@ -804,7 +872,7 @@
    "stated_pool_usd": 962.0,
    "usd_per_contestant": 0.6354466298289293,
    "repeat_organizer_share": 0.8557377049180328,
-   "own_product_share": 0.0,
+   "own_product_share": 0.11639344262295082,
    "duration": 15.0,
    "actions": 7.0
   },
@@ -822,7 +890,7 @@
    "stated_pool_usd": 280.0,
    "usd_per_contestant": 0.7026647966339411,
    "repeat_organizer_share": 0.8716216216216216,
-   "own_product_share": 0.0,
+   "own_product_share": 0.21030405405405406,
    "duration": 18.0,
    "actions": 7.0
   },
@@ -840,7 +908,7 @@
    "stated_pool_usd": 341.0,
    "usd_per_contestant": 0.450020182216584,
    "repeat_organizer_share": 0.7489451476793249,
-   "own_product_share": 0.0,
+   "own_product_share": 0.2668776371308017,
    "duration": 15.0,
    "actions": 6.0
   },
@@ -858,7 +926,7 @@
    "stated_pool_usd": 500.0,
    "usd_per_contestant": 1.25,
    "repeat_organizer_share": 0.742639040348964,
-   "own_product_share": 0.0,
+   "own_product_share": 0.0806979280261723,
    "duration": 11.0,
    "actions": 7
   },
@@ -876,7 +944,7 @@
    "stated_pool_usd": 688.0,
    "usd_per_contestant": 1.1583011583011582,
    "repeat_organizer_share": 0.5598455598455598,
-   "own_product_share": 0.0,
+   "own_product_share": 0.13513513513513514,
    "duration": 14.0,
    "actions": 7.0
   },
@@ -894,7 +962,7 @@
    "stated_pool_usd": 502.5,
    "usd_per_contestant": 0.8163768551421404,
    "repeat_organizer_share": 0.6047619047619047,
-   "own_product_share": 0.0,
+   "own_product_share": 0.29523809523809524,
    "duration": 20.0,
    "actions": 7.0
   }
