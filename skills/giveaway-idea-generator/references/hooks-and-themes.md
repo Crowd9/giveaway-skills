@@ -133,6 +133,11 @@ The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, dura
 A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical for the money. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
 
 <!-- generated:ig_types -->
+Three columns here carry three different counts. The campaign and business counts cover the whole type, the
+Conversion Rate rests on the fair-comparison count in its own brackets, and the value index on the count in
+its brackets. Carry the right one with each figure. Measured answers put the campaign count behind all three
+in the sentence that made the recommendation, three rounds running.
+
 | Type | Campaigns | Businesses | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Referrals % of Entrants | Value index (campaigns) |
 |---|---|---|---|---|---|---|---|
 | All campaigns (baseline) | 116,283 | 17,603 | 492 | 35% | 4.4 | 11 | 1.00 |

@@ -250,8 +250,15 @@ def plain_reading(rows):
         this_v, bench_v = float(row[1]), float(row[2])
     except ValueError:
         return ""
-    diff = f", about {abs(this_v - bench_v) / bench_v:.0%} {'above' if this_v > bench_v else 'below'} typical" if bench_v else ""
-    return f"\nEach person took about {this_v:.1f} Entries, against about {bench_v:.1f} for campaigns this size{diff}."
+    # benchmarks.md bans a raw pair of decimals set side by side, and this line printed one, so an answer
+    # pasting the script's own reading broke the rule the same file states two lines under its table. The gap
+    # goes as a percentage, which is what that page asks for.
+    if not bench_v:
+        return f"\nEach person took about {this_v:.1f} Entries."
+    gap = abs(this_v - bench_v) / bench_v
+    where = "above" if this_v > bench_v else "below"
+    return (f"\nEach person took about {this_v:.1f} Entries, about {gap:.0%} {where} typical "
+            f"for campaigns this size.")
 
 def self_test():
     class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False; vertical = "food_drink"; emails = 1500; referrals = 200; actions_completed = 5400; prize_value = 1500; x_follows = 900
@@ -277,8 +284,8 @@ def self_test():
     srows = review(Small); sd = {r[0]: r for r in srows}
     assert sd["Users"][1] == "300" and "250 to 500 Entrants" in sd["Users"][3], srows
     assert "Conversion Rate" in sd and "better than" in sd["Conversion Rate"][3], srows
-    assert plain_reading(rows) == "\nEach person took about 5.0 Entries, against about 4.3 for campaigns this size, about 16% above typical.", plain_reading(rows)
-    assert plain_reading(srows) == "\nEach person took about 4.0 Entries, against about 4.6 for campaigns this size, about 13% below typical.", plain_reading(srows)
+    assert plain_reading(rows) == "\nEach person took about 5.0 Entries, about 16% above typical for campaigns this size.", plain_reading(rows)
+    assert plain_reading(srows) == "\nEach person took about 4.0 Entries, about 13% below typical for campaigns this size.", plain_reading(srows)
     # the column says "for campaigns your size", so the two sizes must not be handed the same figure
     assert d["Entries per Entrant"][2] != sd["Entries per Entrant"][2], "a band typical that does not move with the band is the all-campaign median wearing the band's name"
     assert d["Users"][2] == "1,484" and sd["Users"][2] == "352", (d["Users"][2], sd["Users"][2])

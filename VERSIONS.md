@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.26 |
-| giveaway-entry-method-planner | 1.2.25 |
-| giveaway-timing-and-duration | 1.4.23 |
-| giveaway-winner-structure | 1.3.22 |
-| giveaway-promotion-plan | 1.3.26 |
-| giveaway-random-draw | 1.3.20 |
-| giveaway-winner-communications | 1.2.20 |
-| giveaway-idea-generator | 1.3.23 |
-| giveaway-results-review | 1.5.27 |
-| gleam-campaign-setup | 1.2.24 |
+| giveaway-prize-picker | 1.3.27 |
+| giveaway-entry-method-planner | 1.2.26 |
+| giveaway-timing-and-duration | 1.4.24 |
+| giveaway-winner-structure | 1.3.23 |
+| giveaway-promotion-plan | 1.3.27 |
+| giveaway-random-draw | 1.3.21 |
+| giveaway-winner-communications | 1.2.21 |
+| giveaway-idea-generator | 1.3.24 |
+| giveaway-results-review | 1.5.28 |
+| gleam-campaign-setup | 1.2.25 |
 
 ## Skills
 
@@ -49,6 +49,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-entry-method-planner
 
@@ -80,6 +81,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.23 (2026-09-12): A figure passing 100 is explained by the unknown entry worth, which is what the reference says.
 - 1.2.24 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.25 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.2.26 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-timing-and-duration
 
@@ -112,6 +114,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.21 (2026-09-12): The start month and weekday shares say they carry no campaign count, after answers borrowed two different ones.
 - 1.4.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.4.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.4.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-winner-structure
 
@@ -138,6 +141,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.20 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.21 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.22 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.3.23 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-promotion-plan
 
@@ -167,6 +171,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-random-draw
 
@@ -190,6 +195,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.18 (2026-09-12): Answering first no longer reads as putting the names first, so the rules sit above them.
 - 1.3.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.3.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-winner-communications
 
@@ -214,6 +220,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.18 (2026-09-12): The email-Action table carries its campaign and business counts, so a figure can be quoted with the count the house style demands.
 - 1.2.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.2.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-idea-generator
 
@@ -245,6 +252,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.21 (2026-09-12): The start month shares are a table in the reference, so a month claim has a row behind it.
 - 1.3.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.3.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### giveaway-results-review
 
@@ -283,6 +291,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.25 (2026-09-12): Only Impressions are missing from an export, and the skill says so where answers were generalising.
 - 1.5.26 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.5.27 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 
 ### gleam-campaign-setup
 
@@ -301,6 +310,26 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.22 (2026-09-12): The position table carries its own warning into the sentence that uses it.
 - 1.2.23 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.24 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+- 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+
+## 2.1.8 (2026-09-12)
+
+A fifth run of the eval cases, graded against the rubric frozen after the fourth, so the two are comparable.
+The mean holds at about 80 and correctness at about 16 out of 25. The reference work is done: across five
+rounds the graders now find almost no figure that fails a grep against the file it came from.
+
+What is left is one fault, and it is the same one in every skill. A sentence that carries no number, asserting
+how a channel or a platform or a person behaves, written in the same confident register as the figures beside
+it. "Impersonators delete themselves once reported." "A brand account lands in a folder plenty of people never
+open." None of them have a source and all of them read like findings.
+
+The figure discipline works because it has a mechanical step: grep each number. There was no equivalent for a
+claim, so the answers moved their inventions into the sentences nothing checked. The claim pass is that step,
+and it is untested, because it was written after this round's answers were.
+
+Also fixed this round: review.py printed a raw pair of decimals its own reference bans two lines under the
+table, the campaign-type table's three different denominators are named where the table sits, and a style
+report now runs the checker over itself as well as the replies it is reporting on.
 
 ## 2.1.7 (2026-09-12)
 
