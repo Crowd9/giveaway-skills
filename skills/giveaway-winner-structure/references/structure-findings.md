@@ -34,12 +34,14 @@ Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10,
 
 This compares campaigns with one Prize record against campaigns with several, showing the Entrants, the Conversion Rate (the share of people who saw it and entered) and the Actions per Entrant, for each count. Every group below is at least 30 campaigns from 10 businesses.
 
+<!-- generated:st_prize_count -->
 | Prize records | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| 1 | 28,189 | 5,007 | 2,194 | 29% | 4.19 | 16 | 7 |
-| 2-3 | 4,902 | 1,898 | 2,130 | 26% | 4.77 | 16 | 8 |
-| 4-9 | 2,045 | 929 | 2,440 | 23% | 5.30 | 17 | 9 |
-| 10+ | 522 | 261 | 3,504 | 18% | 6.36 | 20 | 12 |
+| 1 | 96,743 | 14,283 | 471 | 28% | 4.3 | 14 | 7 |
+| 10+ | 1,033 | 477 | 1,157 | 19% | 5.5 | 17 | 10 |
+| 2-3 | 14,326 | 5,207 | 582 | 24% | 4.6 | 14 | 8 |
+| 4-9 | 5,246 | 2,162 | 675 | 23% | 5.1 | 14 | 9 |
+<!-- /generated -->
 
 Conversion Rate falls steadily from 29% at one Prize record to 18% at ten or more. Entrants dip slightly at two to three Prize records, then climb to 3,504 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
 
@@ -103,14 +105,31 @@ Source: `analysis/output/prize_timing_cuts.json` (by_prize_count, by_pool_band).
 
 This looks at each Prize row: the typical number of Winners on a category's rows, how often a row names more than one Winner, and the stated USD value per Winner among rows that state one. Every category below has at least 30 campaigns from 10 businesses.
 
-| Category | Campaigns | Businesses | Typical Winners | Multi-Winner share | USD per Winner (typical) | Conversion Rate | Actions per Entrant | Typical Entrants |
-|---|---|---|---|---|---|---|---|---|
-| Game items or skins | 2,531 | 752 | 1 | 46% | 60 | 15% | 6.34 | 2,408 |
-| Merch, apparel, collectibles | 1,646 | 583 | 1 | 40% | 110 | 28% | 3.07 | 2,557 |
-| Gift card or cash | 4,480 | 1,560 | 1 | 34% | 150 | 25% | 4.10 | 2,125 |
-| Tech hardware | 10,392 | 2,335 | 1 | 21% | 473 | 26% | 5.44 | 2,616 |
-| Experience, travel, tickets | 1,895 | 699 | 1 | 15% | 599 | 29% | 2.81 | 2,388 |
-| Regulated goods (firearms) | 1,107 | 172 | 1 | 3% | 1,596 | 18% | 9.47 | 3,403 |
+<!-- generated:st_winners_category -->
+| Category | Campaigns | Businesses | Typical Winners | Multi-Winner share | USD per Winner (typical) | Conversion Rate |
+|---|---|---|---|---|---|---|
+| Unclassified | 34,953 | 8,748 | 1 | 34% | 120 | 27% |
+| Tech hardware | 22,137 | 4,938 | 1 | 22% | 299 | 26% |
+| Gift card or cash | 17,927 | 4,514 | 1 | 27% | 50 | 23% |
+| Bundle or box | 13,410 | 3,944 | 1 | 25% | 175 | 26% |
+| Game items or skins | 11,228 | 2,730 | 1 | 38% | 56 | 21% |
+| Experience, travel, tickets | 6,321 | 1,925 | 1 | 26% | 400 | 25% |
+| Placeholder name | 5,696 | 1,292 | 1 | 34% | 200 | 28% |
+| Merch, apparel, collectibles | 5,548 | 1,838 | 1 | 35% | 50 | 26% |
+| Home, garden, appliance | 2,452 | 913 | 1 | 17% | 200 | 29% |
+| Toys and collectibles | 2,297 | 474 | 1 | 35% | 55 | 25% |
+| Subscription or membership | 1,637 | 882 | 1 | 42% | 150 | 23% |
+| Regulated goods (firearms) | 1,579 | 329 | 1 | 6% | 1,118 | 20% |
+| Food, drink, consumables | 1,468 | 608 | 1 | 17% | 190 | 29% |
+| Sports and outdoor gear | 1,366 | 654 | 1 | 20% | 299 | 26% |
+| Discount or coupon | 1,054 | 348 | 3 | 62% | 100 | 26% |
+| Beauty and wellness | 815 | 310 | 1 | 20% | 150 | 28% |
+| Vehicle | 733 | 369 | 1 | 20% | 699 | 23% |
+| Tools, craft, DIY | 581 | 203 | 1 | 28% | 209 | 28% |
+| Exclusive access | 535 | 332 | 1 | 48% | 200 | 27% |
+| Music gear | 452 | 175 | 1 | 9% | 399 | 26% |
+| Art and custom | 185 | 112 | 1 | 22% | 73 | 27% |
+<!-- /generated -->
 
 One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest pays the least on the highest. That highest-value category, firearms, also carries the lowest Conversion Rate and the most Actions per Entrant of the six, in line with the extra eligibility steps it carries elsewhere in this repository.
 

@@ -35,28 +35,31 @@ Categories were assigned in two passes: name-pattern rules (172,645 records) and
 
 A campaign-level cut on the same campaigns behind these numbers, one row per campaign. The counts below sit a little under the listing-level counts in the table above. Every category here clears 30 campaigns and 10 businesses. Conversion Rate (the share of people who saw it and entered) is one of the columns.
 
+<!-- generated:px_category -->
 | Category | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Methods | Email offered |
 |---|---|---|---|---|---|---|---|
-| Tech hardware | 9,693 | 2,128 | 2,580 | 27% | 5.17 | 8 | 29% |
-| Other or unclassified | 7,588 | 2,383 | 1,948 | 29% | 4.11 | 7 | 45% |
-| Gift card or cash | 3,710 | 1,231 | 2,052 | 28% | 3.82 | 7 | 47% |
-| Bundle or box | 3,267 | 1,215 | 1,992 | 29% | 3.94 | 7 | 59% |
-| Game items or skins | 2,146 | 600 | 2,086 | 25% | 4.67 | 9 | 31% |
-| Experience, travel, tickets | 1,751 | 621 | 2,490 | 29% | 2.76 | 6 | 55% |
-| Placeholder name | 1,487 | 490 | 2,380 | 29% | 4.40 | 7 | 34% |
-| Merch, apparel, collectibles | 1,194 | 324 | 2,391 | 30% | 2.73 | 4 | 58% |
-| Regulated goods (firearms) | 1,058 | 148 | 3,270 | 17% | 9.83 | 13 | 67% |
-| Home, garden, appliance | 966 | 335 | 2,246 | 34% | 3.92 | 6 | 50% |
-| Toys and collectibles | 493 | 101 | 1,688 | 25% | 3.36 | 4 | 39% |
-| Food, drink, consumables | 460 | 193 | 1,859 | 33% | 3.59 | 7 | 76% |
-| Sports and outdoor gear | 442 | 218 | 2,167 | 28% | 4.22 | 7 | 61% |
-| Vehicle | 283 | 139 | 2,421 | 20% | 4.81 | 7 | 56% |
-| Subscription or membership | 265 | 163 | 1,792 | 29% | 3.50 | 6 | 49% |
-| Music gear | 230 | 84 | 2,722 | 22% | 4.09 | 7 | 77% |
-| Tools, craft, DIY | 195 | 74 | 1,748 | 32% | 3.51 | 7 | 52% |
-| Discount or coupon | 169 | 45 | 1,446 | 50% | 11.21 | 13 | 12% |
-| Beauty and wellness | 143 | 75 | 1,526 | 32% | 3.20 | 6 | 55% |
-| Exclusive access | 81 | 64 | 2,402 | 26% | 4.29 | 7 | 36% |
+| Unclassified | 31,365 | 7,678 | 403 | 28% | 4.2 | 6 | 30% |
+| Tech hardware | 20,271 | 4,514 | 926 | 28% | 5.0 | 8 | 24% |
+| Gift card or cash | 15,812 | 3,747 | 420 | 24% | 4.7 | 8 | 36% |
+| Bundle or box | 11,756 | 3,317 | 476 | 27% | 4.4 | 7 | 41% |
+| Game items or skins | 10,168 | 2,427 | 341 | 25% | 5.1 | 8 | 24% |
+| Experience, travel, tickets | 5,934 | 1,736 | 392 | 25% | 3.2 | 6 | 45% |
+| Placeholder name | 5,199 | 1,158 | 544 | 34% | 4.3 | 6 | 20% |
+| Merch, apparel, collectibles | 4,282 | 1,232 | 466 | 27% | 3.6 | 6 | 45% |
+| Toys and collectibles | 2,120 | 391 | 406 | 26% | 4.0 | 7 | 37% |
+| Home, garden, appliance | 2,038 | 696 | 895 | 31% | 4.0 | 7 | 46% |
+| Regulated goods (firearms) | 1,473 | 276 | 2,177 | 19% | 8.2 | 11 | 60% |
+| Food, drink, consumables | 1,269 | 503 | 655 | 30% | 3.6 | 6 | 58% |
+| Subscription or membership | 1,176 | 616 | 370 | 24% | 3.8 | 6 | 38% |
+| Sports and outdoor gear | 1,072 | 498 | 764 | 27% | 4.0 | 6 | 50% |
+| Beauty and wellness | 748 | 257 | 472 | 28% | 4.3 | 8 | 44% |
+| Vehicle | 652 | 327 | 854 | 22% | 4.2 | 6 | 45% |
+| Discount or coupon | 539 | 141 | 489 | 40% | 4.5 | 7 | 11% |
+| Exclusive access | 463 | 277 | 346 | 28% | 3.9 | 5 | 18% |
+| Tools, craft, DIY | 449 | 155 | 793 | 28% | 3.9 | 7 | 39% |
+| Music gear | 402 | 155 | 1,277 | 27% | 3.6 | 6 | 61% |
+| Art and custom | 141 | 80 | 355 | 32% | 3.1 | 5 | 42% |
+<!-- /generated -->
 
 Home, garden, appliance and food, drink, consumables lead the categories with real size on Conversion Rate. Music gear and food, drink, consumables offer email most often. Regulated goods ties for the most Entry Methods but has the lowest Conversion Rate (17%), consistent with the eligibility friction that category carries. Discount or coupon has the highest Conversion Rate of all (50%), on a typical two-day run that fits a promotion with a form more than a Prize people wait for.
 

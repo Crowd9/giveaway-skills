@@ -357,15 +357,19 @@ Region is the top-level domain of the business's site, so a .com business in Man
 
 Australian businesses spend the most % of Entrants on the stated figure. Brazil has twice the Conversion Rate of the global rate.
 
+<!-- generated:ev_language -->
 | Language guess | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
 |---|---|---|---|---|
-| English or unknown | 32,915 | 2,222 | 27% | 4.28 |
-| Portuguese | 908 | 1,912 | 59% | 5.35 |
-| Indonesian | 738 | 1,921 | 24% | 5.39 |
-| Spanish | 580 | 2,105 | 37% | 5.32 |
-| French | 222 | 2,627 | 31% | 3.97 |
-| German | 135 | 3,276 | 29% | 3.76 |
-| Turkish | 65 | 3,075 | 40% | 2.84 |
+| English or unknown | 108,830 | 490 | 27% | 4.4 |
+| Indonesian | 2,480 | 556 | 24% | 4.9 |
+| Spanish | 1,890 | 465 | 29% | 4.9 |
+| Portuguese | 1,820 | 1,000 | 51% | 4.8 |
+| French | 1,113 | 301 | 27% | 4.1 |
+| German | 521 | 339 | 25% | 4.3 |
+| Dutch | 185 | 267 | 34% | 6.1 |
+| Turkish | 185 | 581 | 32% | 2.9 |
+| Italian | 104 | 450 | 15% | 4.5 |
+<!-- /generated -->
 
 ### Prize currency by country
 
