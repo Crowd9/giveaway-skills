@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.21 |
-| giveaway-entry-method-planner | 1.2.20 |
-| giveaway-timing-and-duration | 1.4.18 |
-| giveaway-winner-structure | 1.3.17 |
-| giveaway-promotion-plan | 1.3.21 |
-| giveaway-random-draw | 1.3.15 |
-| giveaway-winner-communications | 1.2.14 |
-| giveaway-idea-generator | 1.3.18 |
-| giveaway-results-review | 1.5.22 |
-| gleam-campaign-setup | 1.2.19 |
+| giveaway-prize-picker | 1.3.22 |
+| giveaway-entry-method-planner | 1.2.21 |
+| giveaway-timing-and-duration | 1.4.19 |
+| giveaway-winner-structure | 1.3.18 |
+| giveaway-promotion-plan | 1.3.22 |
+| giveaway-random-draw | 1.3.16 |
+| giveaway-winner-communications | 1.2.15 |
+| giveaway-idea-generator | 1.3.19 |
+| giveaway-results-review | 1.5.23 |
+| gleam-campaign-setup | 1.2.20 |
 
 ## Skills
 
@@ -44,6 +44,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.14 (2026-09-11): density pass on evidence, criteria and taxonomy, readable industry labels in tables, no "extracted" in the answer.
 - 1.3.20 (2026-09-12): The raw-dataset table names its own scope, so its 167,068 campaigns can no longer be read as the benchmark population.
 - 1.3.21 (2026-09-12): The raw-scope and parsing tables are generated, so the campaign, Prize-record and parsed-value counts read what the source holds.
+- 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-entry-method-planner
 
@@ -70,6 +71,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.13 (2026-09-11): density pass on the mix and action families, Viral Share section rewritten, "16 to52%" repaired.
 - 1.2.19 (2026-09-12): The steps-inside-one-Action cut is relabelled and says what it does not measure, after answers read it as a count of Entry Methods.
 - 1.2.20 (2026-09-12): The position figures in the skill body match the table they cite.
+- 1.2.21 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-timing-and-duration
 
@@ -97,6 +99,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.11 (2026-09-11): density pass on timing and holiday findings, readable industry labels, sample sizes out of the sentence.
 - 1.4.17 (2026-09-12): The Black Friday rule (close before the sale, nothing live 27 to 30 November) is stated in plain sight above the season table.
 - 1.4.18 (2026-09-12): The sixteen-row launch calendar is generated, after every row had drifted from its own lead-day quartiles.
+- 1.4.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-winner-structure
 
@@ -118,6 +121,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.10 (2026-09-11): density pass on structure findings and fulfillment, Winner-count ratios moved into tables.
 - 1.3.16 (2026-09-12): The seven-day windows carry "Gleam's default" in the table row, and the count-is-the-share trap is named.
 - 1.3.17 (2026-09-12): The Winner-timetable table prints the population its shares are out of.
+- 1.3.18 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-promotion-plan
 
@@ -142,6 +146,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.14 (2026-09-11): density pass on the channel playbook, the "(below)" tic dropped.
 - 1.3.20 (2026-09-12): Directory rows carry the price and turnaround limits, the traffic curve says traffic and never Entries, and the quiet-middle row is read as days since launch.
 - 1.3.21 (2026-09-12): The directory rows carry their share of Impressions, so they can no longer be called the largest source of anything.
+- 1.3.22 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-random-draw
 
@@ -160,6 +165,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.13 (2026-09-12): A missing rule no longer holds the draw up, the rules applied are stated above the Winner list, and the tier example capitalises Prize.
 - 1.3.14 (2026-09-12): The verify step documents the exclusion file it needs, which otherwise fails on any draw that used one.
 - 1.3.15 (2026-09-12): The rules a draw ran under are printed above the names, a hash says what was removed before it was taken, and the plan limit cites the page it is printed on.
+- 1.3.16 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-winner-communications
 
@@ -178,6 +184,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.7 (2026-09-11): says what to do when no reserve Winner was drawn.
 - 1.2.13 (2026-09-12): Shared answer-style rules: copy every figure out of the table, and close on a next step in place of an offer.
 - 1.2.14 (2026-09-12): Shared answer-style rules: a closing question comes after the next step, and an uncited claim between two cited figures is still a claim.
+- 1.2.15 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-idea-generator
 
@@ -204,6 +211,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.11 (2026-09-11): density pass on hooks and themes, stops labelling figures "extracted".
 - 1.3.17 (2026-09-12): Hook counts are generated from the source, the standouts and launch-subtype figures are refreshed, and the hand-off is a required part of the output.
 - 1.3.18 (2026-09-12): A superlative in the campaign-type reading is corrected, since two types sit below the row it named.
+- 1.3.19 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### giveaway-results-review
 
@@ -237,6 +245,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.15 (2026-09-11): density pass on benchmarks and reading results, so a row that matches the reader's campaign is findable.
 - 1.5.21 (2026-09-12): Campaign size and campaign sequence are generated tables, so the stale 117,130 population is gone from both.
 - 1.5.22 (2026-09-12): Shared answer-style rules, and review.py no longer prints a line the style checker fails.
+- 1.5.23 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
 
 ### gleam-campaign-setup
 
@@ -250,6 +259,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.2 (2026-09-10):  section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
 - 1.2.18 (2026-09-12): The post entry email and the Post Entry Redirect are separated, and the Fraud Level table says what to do with the gap in the docs.
 - 1.2.19 (2026-09-12): Shared answer-style rules on closing questions and uncited claims.
+- 1.2.20 (2026-09-12): The style checker ends a sentence at a line break, so a template's subject line is no longer read as part of the paragraph under it.
+
+## 2.1.3 (2026-09-12)
+
+The style checker was reading a template's subject line as the opening of the paragraph beneath it, because a
+subject line carries no full stop. That merged sentence then tripped the runaway-length rule, so an answer
+following the reference's own template was told its writing had failed. A line break ends a sentence now.
 
 ## 2.1.2 (2026-09-12)
 

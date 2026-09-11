@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate or score giveaway concepts: the hook (launch, milestone, season, holiday, collaboration, daily series), the theme, the mechanic and the Prize direction, matched to the business, the calendar and the objective. Use when the user asks 'giveaway ideas', 'Instagram giveaway ideas', 'win your cart', 'giveaway ideas for my Shopify store', 'what kind of giveaway should we run', 'themes for a Christmas giveaway', 'ideas for our 10k follower milestone', 'something different from a standard giveaway', wants three concepts to choose from, or brings an idea of their own for a verdict. Platform-neutral. Hands off to giveaway-prize-picker for the Prize and giveaway-entry-method-planner for the mechanics."
 metadata:
-  version: 1.3.18
+  version: 1.3.19
 ---
 
 # Giveaway Idea Generator

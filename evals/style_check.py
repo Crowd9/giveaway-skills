@@ -84,9 +84,16 @@ def prose_only(text):
 # sentence" of 234 words into a report that then stamped itself PASS, so the variety gate was reading a
 # code block as prose and waving through answers that had no long sentence at all.
 def sentences(text):
+    # A line break ends a sentence here. Answers are markdown, where a paragraph, a bullet, a heading and a
+    # template's "Subject:" line each occupy one line, and a subject line carries no full stop. Without this,
+    # a subject line merged into the sentence under it and the runaway counter fired on the reference's own
+    # template. Wrapped prose would be undercounted, and nothing in this repo wraps a paragraph.
     body = re.sub(r"```.*?```", " ", text, flags=re.S)
-    body = "\n".join(l for l in body.split("\n") if not l.lstrip().startswith("|"))
-    return [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", body)) if s.strip()]
+    out = []
+    for line in body.split("\n"):
+        if line.lstrip().startswith("|"): continue
+        out += [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", line).strip()) if s]
+    return out
 
 
 def check(text):
@@ -212,6 +219,8 @@ def self_test():
     out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
     assert "FAIL" in out, f"an offer ending must block the verdict, got: {out}"
     # a pasted code block must not be read as a long sentence, and a real runaway must fail
+    subj = "# Winner notification\n\nSubject: You have won the coffee machine\n\nReply by Friday.\n"
+    assert check(subj)["runaway_sentences"] == 0, check(subj)
     fenced = "Pick it. " + "```\n" + " ".join(["word"] * 80) + "\n```\n"
     assert check(fenced)["longest_sentence"] < 45, check(fenced)
     assert check("You " + " ".join(["run"] * 60) + " today.")["runaway_sentences"] == 1
