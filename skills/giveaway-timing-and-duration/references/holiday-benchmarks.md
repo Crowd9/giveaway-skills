@@ -96,24 +96,26 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_named_holiday`, `holiday_l
 
 Dates for the next sixteen months. The launch window is the holiday date minus the typical range of lead days businesses used, and the typical launch is the midpoint of that range. Dates for Mother's Day and Father's Day are the US convention (second Sunday in May, third Sunday in June). The UK Mother's Day is the fourth Sunday of Lent and Australia's Father's Day is the first Sunday of September, so shift those for those audiences. Diwali and Lunar New Year dates are entered by hand for each year.
 
+<!-- generated:hol_calendar -->
 | Holiday | Date | Launch window | Typical launch | What that week looked like |
 |---|---|---|---|---|
-| Halloween | Sat 31 Oct 2026 | 30 Sep to 22 Oct | 10 Oct | Halloween week: 2% of starts, 34% entered |
-| Thanksgiving | Thu 26 Nov 2026 | 30 Oct to 17 Nov | 09 Nov | Thanksgiving week: 3% of starts, 35% entered |
-| Black Friday and Cyber Monday | Fri 27 Nov 2026 | 11 Nov to 24 Nov | 19 Nov | Black Friday week: 3% of starts, 35% entered |
-| Christmas and advent | Fri 25 Dec 2026 | 29 Nov to 14 Dec | 07 Dec | Christmas week: 1% of starts, 37% entered |
-| New Year | Fri 01 Jan 2027 | 09 Dec to 27 Dec | 20 Dec | - |
-| Lunar New Year | Mon 01 Feb 2027 | 24 Jan to 31 Jan | 27 Jan | Lunar New Year week: 2% of starts, 36% entered |
-| Valentine's Day | Sun 14 Feb 2027 | 26 Jan to 08 Feb | 02 Feb | Valentine's week: 2% of starts, 34% entered |
-| Easter | Sun 28 Mar 2027 | 06 Mar to 24 Mar | 16 Mar | Easter week: 2% of starts, 36% entered |
-| Mother's Day | Sun 09 May 2027 | 16 Apr to 02 May | 26 Apr | Mother's Day week: 2% of starts, 34% entered |
-| Father's Day | Sun 20 Jun 2027 | 01 Jun to 11 Jun | 07 Jun | Father's Day week: 2% of starts, 33% entered |
-| Back to school | Wed 25 Aug 2027 | 24 Jul to 14 Aug | 04 Aug | Back to school week: 2% of starts, 35% entered |
-| Halloween | Sun 31 Oct 2027 | 30 Sep to 22 Oct | 10 Oct | Halloween week: 2% of starts, 34% entered |
-| Thanksgiving | Thu 25 Nov 2027 | 29 Oct to 16 Nov | 08 Nov | Thanksgiving week: 3% of starts, 35% entered |
-| Black Friday and Cyber Monday | Fri 26 Nov 2027 | 10 Nov to 23 Nov | 18 Nov | Black Friday week: 3% of starts, 35% entered |
-| Christmas and advent | Sat 25 Dec 2027 | 29 Nov to 14 Dec | 07 Dec | Christmas week: 1% of starts, 37% entered |
-| New Year | Sat 01 Jan 2028 | 09 Dec to 27 Dec | 20 Dec | The week after Christmas: 1% of starts, 38% entered |
+| Halloween | Sat 31 Oct 2026 | 01 Oct to 23 Oct | 12 Oct | Halloween week: 2% of starts, 34% entered |
+| Thanksgiving | Thu 26 Nov 2026 | 02 Nov to 19 Nov | 10 Nov | Thanksgiving week: 3% of starts, 35% entered |
+| Black Friday and Cyber Monday | Fri 27 Nov 2026 | 13 Nov to 24 Nov | 18 Nov | Black Friday week: 3% of starts, 35% entered |
+| Christmas and advent | Fri 25 Dec 2026 | 29 Nov to 16 Dec | 07 Dec | Christmas week: 1% of starts, 37% entered |
+| New Year | Fri 01 Jan 2027 | 07 Dec to 28 Dec | 17 Dec | - |
+| Lunar New Year | Mon 01 Feb 2027 | 22 Jan to 31 Jan | 26 Jan | Lunar New Year week: 2% of starts, 36% entered |
+| Valentine's Day | Sun 14 Feb 2027 | 24 Jan to 08 Feb | 31 Jan | Valentine's week: 2% of starts, 34% entered |
+| Easter | Sun 28 Mar 2027 | 07 Mar to 24 Mar | 15 Mar | Easter week: 2% of starts, 36% entered |
+| Mother's Day | Sun 09 May 2027 | 18 Apr to 03 May | 25 Apr | Mother's Day week: 2% of starts, 34% entered |
+| Father's Day | Sun 20 Jun 2027 | 02 Jun to 13 Jun | 07 Jun | Father's Day week: 2% of starts, 33% entered |
+| Back to school | Wed 25 Aug 2027 | 29 Jul to 15 Aug | 06 Aug | Back to school week: 2% of starts, 35% entered |
+| Halloween | Sun 31 Oct 2027 | 01 Oct to 23 Oct | 12 Oct | Halloween week: 2% of starts, 34% entered |
+| Thanksgiving | Thu 25 Nov 2027 | 01 Nov to 18 Nov | 09 Nov | Thanksgiving week: 3% of starts, 35% entered |
+| Black Friday and Cyber Monday | Fri 26 Nov 2027 | 12 Nov to 23 Nov | 17 Nov | Black Friday week: 3% of starts, 35% entered |
+| Christmas and advent | Sat 25 Dec 2027 | 29 Nov to 16 Dec | 07 Dec | Christmas week: 1% of starts, 37% entered |
+| New Year | Sat 01 Jan 2028 | 07 Dec to 28 Dec | 17 Dec | The week after Christmas: 1% of starts, 38% entered |
+<!-- /generated -->
 
 The last column names the holiday's own row in the weekly table, never a week number. Week numbers move between years, and this calendar carries both 2026 and 2027 dates, so citing one by number pointed three rows at the wrong week and quoted the wrong figures with them.
 
@@ -127,7 +129,7 @@ One rule off this table gets missed most often, so it is stated here in plain si
 
 | Slot | Window (2026) | What the data says | What the giveaway does for the store |
 |---|---|---|---|
-| Pre-sale list build | Launch 11 to 24 Nov, close before 27 Nov | Black Friday campaigns run 8 days and launch 7 days out (650 campaigns with a lead figure). Campaigns live over Black Friday get 11% fewer to enter than matched campaigns (Cyber Monday alone 10% fewer), and week 47, the week before Thanksgiving, sits level with the year's quietest weeks at 32% entered | Build the list that receives the sale. Close the giveaway the day before the sale, send the Winners email with early access as the non-Winner offer, then the sale email to the same segment |
+| Pre-sale list build | Launch 13 to 24 Nov, close before 27 Nov | Black Friday campaigns run 8 days and launch 7 days out (648 campaigns with a lead figure). Campaigns live over Black Friday get 11% fewer to enter than matched campaigns (Cyber Monday alone 10% fewer), and week 47, the week before Thanksgiving, sits level with the year's quietest weeks at 32% entered | Build the list that receives the sale. Close the giveaway the day before the sale, send the Winners email with early access as the non-Winner offer, then the sale email to the same segment |
 | The sale itself | 27 to 30 Nov | Week 48, Thanksgiving and Black Friday week, holds 3% of starts at 35% entered and week 49, the first week of December, 40% | No giveaway live. The store is selling, the audience is being sold to from every direction, and a Prize on the same page splits the click |
 | December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent sits above the typical figures on both Entrants (586) and Conversion Rate (39%) on 4,911 campaigns, and weeks 50 and 51, the two weeks before Christmas, get the most to enter of any week in the data at 41% each (1,388 and 1,200 fair-comparison campaigns), with week 49, the first week of December, just behind at 40% on the largest count (1,573). Advent calendars: 600 Entrants, 44% entered, six days, six actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero Prize from the gift guide, closing before the shipping cutoff so the Winner has it by the day |
 | Shipping cutoff | Set by the carrier, usually mid December for domestic | 75% of Christmas campaigns close on or before the day | The Prize ships as an order through the store with tracking. Close the draw a week before the cutoff, or make the Prize a gift card |

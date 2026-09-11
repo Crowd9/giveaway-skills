@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Decide how long a giveaway should run, when to start it, and how to plan the lead-up and wrap-up. Use when the user asks 'how long should my giveaway run', 'when should I launch it', 'best day to start', 'best time to launch an Instagram giveaway', 'should it run over Christmas', 'Black Friday giveaway timing', 'when should a store run a giveaway', 'giveaway timeline', 'giveaway calendar', 'evergreen giveaway', or wants a launch schedule for a contest or sweepstakes. Platform-neutral. For the Prize see giveaway-prize-picker. For entry actions see giveaway-entry-method-planner."
 metadata:
-  version: 1.4.17
+  version: 1.4.18
 ---
 
 # Giveaway Timing and Duration
@@ -108,12 +108,14 @@ The rest is judgement, which no checker can do.
 - Every figure is copied, never recalled. Across two measured rounds the same fault came back a dozen times: a number a few percent off the table, in the right direction, plausible enough to survive a read. 3,737 for 3,700. 730 for 726. 93.5% for 93.3%. Nobody invented these, they were remembered. Open the reference, find the row, copy the digits. Before sending, grep the reference for each figure in the answer, and the ones that come back empty are the ones that were remembered.
 - A figure lifted from the row next door survives that grep, so the row matters as much as the number. Check that the label on the line you copied from is the thing the sentence is about.
 - Read the column header before the cell. The most common correctness fault in the measured answers was a real figure attached to the wrong thing: a config cut counting steps inside one Action quoted as the number of Entry Methods on a campaign, a Prize-value-per-email median quoted as what a business paid, an action-count row quoted as if it also held the size band and the run length. The number was in the file and the sentence around it was not. Name the cut in the sentence that carries the figure, and the mismatch becomes visible while you are writing it.
+- The sentence between two cited figures is the one that invents. Graders found it in every answer for one skill: the numbers all traced to a reference and the prose joining them did not. "The last call is the second biggest send of the run" and "a plain reshare gets less reach than a fresh one" both read like findings and neither is in any reference. A claim about how a channel behaves needs a source the same way a number does, and where none exists the sentence goes.
 - A comparison needs both sides from the same table. Stitching a figure from one cut to a figure from another gives a gap that exists in neither. When the reference offers a like-for-like row, use that row, even when the more striking pair sits two lines away.
 - Before writing any comparison, read both cells. A sentence saying one group did better is checkable in the table already open, and the comparisons that went wrong in measured answers were contradicted by the two figures quoted in the same sentence. This is the same pass as the superlative check and it costs one look.
 - Only three things get a flat do not: what breaks a platform rule, what breaks a law, and what puts the business's own money or data at risk. Everything else is a tradeoff with a condition attached, so say what it costs, what it buys, and the case where it is still the right call.
 - Specifics over adjectives: a number, a product, a date, a place. "Desirable" says nothing. "A $50 voucher three Winners can spend in your shop" does.
 
-- End on the next thing the reader does, never on an offer. "Want the DM template?" hands the work back and reads as touting for another turn. A closing question earns its place only when it asks for the one missing fact that would change the recommendation, and then it names the fact. Everything else closes on a date, a number or an instruction. The checker fails an offer ending.
+- End on the next thing the reader does, never on an offer. "Want the DM template?" hands the work back and reads as touting for another turn. Everything else closes on a date, a number or an instruction. The checker fails an offer ending.
+- A closing question comes after the next step, never in place of it. Asking for the one missing fact that would change the recommendation is fair, and the question names that fact. A reader who gets only the question has been handed the work back in a politer form, which is how measured answers for three skills lost marks on being useful while every assertion passed.
 
 ## Words
 

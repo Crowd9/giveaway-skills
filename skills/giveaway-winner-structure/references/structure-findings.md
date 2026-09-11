@@ -199,16 +199,21 @@ Source: `analysis/output/indicators.json` (prize_structure_by_country), `analysi
 
 Two settings decide the Winner timetable, and almost nobody changes either.
 
+<!-- generated:st_terms -->
+Every share below is out of the 115,361 campaigns whose terms record these settings.
+
 | Setting | Value | Campaigns | Share |
 |---|---|---|---|
 | Days after close before the draw | 7 (Gleam's default) | 108,813 | 94.3% |
 | Days a Winner has to reply | 7 (Gleam's default) | 107,694 | 93.3% |
 | Selection method | Random Draw | 114,444 | 99.2% |
+<!-- /generated -->
 
 Seven days is Gleam's default for both, so this describes what campaigns end up with and never what businesses
 weighed up. Never write that 93% of businesses chose seven days: 93% of them left the setting alone, and the two
-readings point a reader in opposite directions. The count is also the share, so "93.3% of the 107,694 campaigns"
-invents a larger population than exists. Three measured answers made the first mistake and one made the second. The next most common reply window is two days on 2,390 campaigns, then one day on 1,365. A 72-hour
+readings point a reader in opposite directions. The count is also the share, and the population is the line printed above the table. Answers have reached for the
+116,499-campaign figure from elsewhere on this page, which reconciles with no share here. Six measured answers
+across two rounds got this pair wrong, so read the line above the table before quoting a share from it. The next most common reply window is two days on 2,390 campaigns, then one day on 1,365. A 72-hour
 deadline, which trade advice often recommends, is written into fewer than one campaign in a hundred here.
 
 Judging is close to non-existent. 99.2% name a random draw, and every other method together covers a few
