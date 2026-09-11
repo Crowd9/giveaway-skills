@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Decide how long a giveaway should run, when to start it, and how to plan the lead-up and wrap-up. Use when the user asks 'how long should my giveaway run', 'when should I launch it', 'best day to start', 'best time to launch an Instagram giveaway', 'should it run over Christmas', 'Black Friday giveaway timing', 'when should a store run a giveaway', 'giveaway timeline', 'giveaway calendar', 'evergreen giveaway', or wants a launch schedule for a contest or sweepstakes. Platform-neutral. For the Prize see giveaway-prize-picker. For entry actions see giveaway-entry-method-planner."
 metadata:
-  version: 1.4.22
+  version: 1.4.23
 ---
 
 # Giveaway Timing and Duration

@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.25 |
-| giveaway-entry-method-planner | 1.2.24 |
-| giveaway-timing-and-duration | 1.4.22 |
-| giveaway-winner-structure | 1.3.21 |
-| giveaway-promotion-plan | 1.3.25 |
-| giveaway-random-draw | 1.3.19 |
-| giveaway-winner-communications | 1.2.19 |
-| giveaway-idea-generator | 1.3.22 |
-| giveaway-results-review | 1.5.26 |
-| gleam-campaign-setup | 1.2.23 |
+| giveaway-prize-picker | 1.3.26 |
+| giveaway-entry-method-planner | 1.2.25 |
+| giveaway-timing-and-duration | 1.4.23 |
+| giveaway-winner-structure | 1.3.22 |
+| giveaway-promotion-plan | 1.3.26 |
+| giveaway-random-draw | 1.3.20 |
+| giveaway-winner-communications | 1.2.20 |
+| giveaway-idea-generator | 1.3.23 |
+| giveaway-results-review | 1.5.27 |
+| gleam-campaign-setup | 1.2.24 |
 
 ## Skills
 
@@ -48,6 +48,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.23 (2026-09-12): The Prize-value table says which population it covers, after its scope line named a floor its own cells sit below.
 - 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-entry-method-planner
 
@@ -78,6 +79,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.22 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 - 1.2.23 (2026-09-12): A figure passing 100 is explained by the unknown entry worth, which is what the reference says.
 - 1.2.24 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.2.25 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-timing-and-duration
 
@@ -109,6 +111,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.20 (2026-09-12): The Conversion Rate bend says it compares whole runs of different lengths, which answers had read as a drop inside one run.
 - 1.4.21 (2026-09-12): The start month and weekday shares say they carry no campaign count, after answers borrowed two different ones.
 - 1.4.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.4.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-winner-structure
 
@@ -134,6 +137,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.19 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 - 1.3.20 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.21 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.3.22 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-promotion-plan
 
@@ -162,6 +166,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.23 (2026-09-12): The copy step no longer calls directory listings the largest free reach, which its own reference contradicts.
 - 1.3.24 (2026-09-12): Shared answer-style rules, and the checker fails a paragraph buried in figures.
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-random-draw
 
@@ -184,6 +189,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.17 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 - 1.3.18 (2026-09-12): Answering first no longer reads as putting the names first, so the rules sit above them.
 - 1.3.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.3.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-winner-communications
 
@@ -207,6 +213,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.17 (2026-09-12): A stated reply deadline now requires the messages it can force, the close-out and the reserve notification.
 - 1.2.18 (2026-09-12): The email-Action table carries its campaign and business counts, so a figure can be quoted with the count the house style demands.
 - 1.2.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.2.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-idea-generator
 
@@ -237,6 +244,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.20 (2026-09-12): Shared answer-style rules on pasting a real checker run.
 - 1.3.21 (2026-09-12): The start month shares are a table in the reference, so a month claim has a row behind it.
 - 1.3.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.3.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### giveaway-results-review
 
@@ -274,6 +282,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.24 (2026-09-12): review.py says which distribution a percentile came from, so a band figure and an all-campaign one can no longer be read as the same rank.
 - 1.5.25 (2026-09-12): Only Impressions are missing from an export, and the skill says so where answers were generalising.
 - 1.5.26 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.5.27 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 
 ### gleam-campaign-setup
 
@@ -291,6 +300,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.21 (2026-09-12): The plan question names all five plans, so a Pro reader can answer it.
 - 1.2.22 (2026-09-12): The position table carries its own warning into the sentence that uses it.
 - 1.2.23 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
+- 1.2.24 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
+
+## 2.1.7 (2026-09-12)
+
+A style report could not name the phrase it had removed. Writing the fault down re-tripped the counter that was
+reporting it, so reports went vague and then lost marks for vagueness, which is a trap of the checker's own
+making. A phrase in backticks is a quotation and now scores as one, the way file names and flags already did.
+Bare in a sentence it still counts as usage, and the self-test holds both halves.
 
 ## 2.1.6 (2026-09-12)
 

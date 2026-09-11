@@ -81,6 +81,9 @@ CODEISH = re.compile(r"```.*?```|`[^`]*`|https?://\S+|\B--[a-z][\w-]*|\b[\w./-]+
 
 
 def prose_only(text):
+    # Backticks mark a quotation, never usage. A style report has to name the phrase it removed, and scoring the
+    # raw text made that impossible: naming the fault re-tripped the counter reporting it, so reports went vague
+    # and lost marks for vagueness. `rather than` in backticks is a citation.
     return CODEISH.sub(" ", text)
 
 
@@ -135,27 +138,27 @@ def check(text):
         "em_dashes": text.count("—"),
         "semicolons": sum(1 for l in text.split("\n") if ";" in l and not l.startswith("|")),
         "curly_quotes": len(re.findall("[“”‘’]", text)),
-        "filler_words": len(re.findall(FILLER, text, re.I)),
+        "filler_words": len(re.findall(FILLER, prose_only(text), re.I)),
         "assistant_opener": int(bool(re.search(OPENERS, text.strip(), re.I))),
         "assistant_closer": len(re.findall(CLOSERS, text, re.I)),
-        "contrast_sentences": len(re.findall(CONTRAST, text, re.I)),
+        "contrast_sentences": len(re.findall(CONTRAST, prose_only(text), re.I)),
         "question_headings": len(re.findall(r"^#+ .*\?$|^\*\*[^*]*\?\*\*$", text, re.M)),
         "label_openers": label,
         "bold_lead_ins": bold_leads if bold_leads >= 3 else 0,
         "meta_commentary": len(re.findall(META, text, re.I)),
         "raw_metric_pairs": len(re.findall(RAW_PAIR, text, re.I)),
-        "faux_insight": len(re.findall(FAUX_INSIGHT, text, re.I)),
+        "faux_insight": len(re.findall(FAUX_INSIGHT, prose_only(text), re.I)),
         "colon_reveals": len(re.findall(COLON_REVEAL, prose_only(text))),
-        "puffery": len(re.findall(PUFFERY, text, re.I)),
-        "weasel_attribution": len(re.findall(WEASEL, text, re.I)),
-        "superficial_analysis": len(re.findall(SUPERFICIAL, text, re.I)),
-        "metadiscourse": len(re.findall(METADISCOURSE, text, re.I)),
-        "rhetorical_setups": len(re.findall(RHETORICAL, text, re.I)),
-        "recap_endings": len(re.findall(RECAP, text)),
+        "puffery": len(re.findall(PUFFERY, prose_only(text), re.I)),
+        "weasel_attribution": len(re.findall(WEASEL, prose_only(text), re.I)),
+        "superficial_analysis": len(re.findall(SUPERFICIAL, prose_only(text), re.I)),
+        "metadiscourse": len(re.findall(METADISCOURSE, prose_only(text), re.I)),
+        "rhetorical_setups": len(re.findall(RHETORICAL, prose_only(text), re.I)),
+        "recap_endings": len(re.findall(RECAP, prose_only(text))),
         "lowercase_app_terms": len(re.findall(APP_LOWER, prose_only(text))),
-        "stiff_phrases": len(re.findall(STIFF, text, re.I)),
+        "stiff_phrases": len(re.findall(STIFF, prose_only(text), re.I)),
         "no_second_person": int(len(re.findall(r"\byou(r|'ll|'re|'ve)?\b", text, re.I)) == 0 and len(text.split()) > 60),
-        "reader_facing_jargon": len(re.findall(JARGON, text, re.I)),
+        "reader_facing_jargon": len(re.findall(JARGON, prose_only(text), re.I)),
         "bans_without_a_reason": len([m for m in re.finditer(BAN, text, re.I) if not re.search(r"(rule|law|legal|jurisdiction|terms of service|platform|prohibit|forbid|fraud|risk|purchase to enter|lottery)", text[max(0,m.start()-260):m.end()+260], re.I)]),
         "empty_ending": empty_end,
         "offer_endings": offer,
@@ -227,6 +230,11 @@ def self_test():
     _v = _s0.run([sys.executable, _o0.path.abspath(__file__), _o0.path.join(d, "passes.txt")],
                  capture_output=True, text=True).stdout
     assert "PASS" in _v, f"the pass fixture must pass its own checker: {_v}"
+    # A report has to be able to name what it removed. Backticked, the phrase is a citation; bare, it is usage.
+    quoted = check("The draft used `rather than` twice and one `actually`, both now gone.")
+    assert quoted["contrast_sentences"] == 0 and quoted["filler_words"] == 0, quoted
+    bare = check("The draft used rather than twice and one actually, both now gone.")
+    assert bare["contrast_sentences"] == 1 and bare["filler_words"] == 1, bare
     # the verdict must block on the two commonest faults, which it silently did not for a long time
     import subprocess as _sp, tempfile as _tf, os as _os
     with _tf.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
