@@ -82,40 +82,34 @@ Gaming and esports splits its Prizes three ways (hardware, game items, other) wh
 
 Source: `analysis/output/prize_timing_cuts.json` (by_prize_category, prize_category_by_industry).
 
-## Ticket Prizes
+## Crowd per Prize dollar, by category
 
-Experience, travel, tickets is one category in the table above, but the ticket types inside it price and draw viewers differently enough to choose between. A listing-level cut on Prizes classified as a specific ticket kind. Every row below clears 30 campaigns and 10 businesses.
+How much crowd a category draws for the money, against the typical campaign at the same stated value. 1.00 is typical for the money, so a category above it draws more crowd per dollar spent and one below it draws less.
 
-| Ticket kind | Campaigns | Businesses | Typical USD per Winner | Conversion Rate | Multi-Winner share | Actions per Entrant |
-|---|---|---|---|---|---|---|
-| Concert tickets | 222 | 105 | 774 | 28% | 16% | 4.33 |
-| Festival tickets | 115 | 59 | 950 | 24.6% | 24% | 4.27 |
-| Sports tickets | 179 | 122 | 329 | 25% | 26% | 3.93 |
-| Event passes | 95 | 22 | 1,500 | 24% | 12% | 3.11 |
-| Flights or hotel | 695 | 313 | 1,810 | 29% | 7% | 2.97 |
-
-Flights or hotel packages are the priciest ticket Prize (1,810 USD per Winner) and the least likely to go to more than one Winner. Sports tickets sit at the other end on price and are the most likely of the five to go multi-Winner. Concert and flights or hotel Prizes have the highest Conversion Rate of the group, festival and event passes the lowest. Actions per Entrant falls as the Prize gets more expensive and travel-shaped, highest for concert tickets and lowest for flights or hotel, in line with the low actions-per-Entrant pattern for the wider experience, travel, tickets category.
-
-Source: `analysis/output/prize_timing_cuts.json` (winners_by_ticket_kind).
-
-## Cross-cutting flags
-
-- **Own product** (inferred): a Prize name sharing a distinctive word with the business's name. 18.5% of Prize listings across the campaigns behind these numbers carry this weak signal. It under-counts (a bakery giving away "a cake" does not match) and over-counts (a channel named after a phone brand), so treat it as directional only.
-- **Complementary or partner product**: undetectable from names alone, but visible in descriptions as "teamed up with", "courtesy of", "sponsored by". Common in bundles and streamer campaigns.
-- **Digital rewards**: game items, subscriptions and gift codes overlap. Digital delivery removes shipping cost and adds region-lock and account questions.
-
-## Segments kept out of the benchmark
-
-The crypto rule needs two or more strong signals among: wallet-address Entry Method, a crypto currency code on a Prize, crypto terms in the Prize or campaign name (airdrop, NFT, whitelist, IDO, token sale, exchange and chain names, stablecoin symbols), "$N in NAME" wording, amount plus a known ticker, or dense crypto terms in the description. One strong signal alone, weak signals only, or a label-pass flag put a campaign in the ambiguous bucket. Purchase opportunity covers sneaker raffles whose Prize is the right to buy (by wording, or Prize listings that are shoe sizes).
-
-<!-- generated:segments -->
-| Segment | Campaigns | Handling |
-|---|---|---|
-| Ordinary | 117,348 (172,645 prize records, 17,777 organizers) | Basis for every default figure |
-| Crypto | 6,288 | Excluded. Described only when a user asks for crypto advice. 38% used a wallet-address entry method |
-| Purchase opportunity | 262 | Excluded. The prize is the right to buy something |
-
-Excluded campaigns are similar in size to ordinary ones (crypto median 732 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
+<!-- generated:ev_crowd_category -->
+| Category | Campaigns | Entrants | Crowd per Prize dollar | For the money |
+|---|---|---|---|---|
+| Regulated goods (firearms) | 1,579 | 2,107 | 2.03 | 103% above typical |
+| Music gear | 452 | 1,306 | 1.90 | 90% above typical |
+| Tech hardware | 22,076 | 900 | 1.43 | 43% above typical |
+| Home, garden, appliance | 2,452 | 913 | 1.35 | 35% above typical |
+| Tools, craft, DIY | 581 | 941 | 1.16 | 16% above typical |
+| Food, drink, consumables | 1,467 | 694 | 1.14 | 14% above typical |
+| Beauty and wellness | 815 | 472 | 1.11 | 11% above typical |
+| Gift card or cash | 17,880 | 436 | 1.10 | 10% above typical |
+| Sports and outdoor gear | 1,366 | 776 | 1.04 | 4% above typical |
+| Vehicle | 733 | 805 | 1.04 | 4% above typical |
+| Art and custom | 185 | 397 | 1.02 | typical |
+| Placeholder name | 5,629 | 547 | 0.95 | 5% below typical |
+| Bundle or box | 13,409 | 499 | 0.89 | 11% below typical |
+| Toys and collectibles | 2,297 | 420 | 0.86 | 14% below typical |
+| Unclassified | 34,888 | 423 | 0.82 | 18% below typical |
+| Merch, apparel, collectibles | 5,548 | 497 | 0.79 | 21% below typical |
+| Game items or skins | 11,220 | 363 | 0.74 | 26% below typical |
+| Discount or coupon | 1,054 | 726 | 0.73 | 27% below typical |
+| Exclusive access | 535 | 380 | 0.61 | 39% below typical |
+| Experience, travel, tickets | 6,319 | 404 | 0.61 | 39% below typical |
+| Subscription or membership | 1,636 | 426 | 0.52 | 48% below typical |
 <!-- /generated -->
 
 Any claim that crypto campaigns inflate a benchmark remains a hypothesis.

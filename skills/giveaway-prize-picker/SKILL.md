@@ -121,7 +121,7 @@ Advice is platform-neutral by default. Do not pitch Gleam. When the user says th
 ## References (load only when needed)
 
 - `references/decision-criteria.md`: criteria, structure tradeoffs, budget template, fulfillment checklist.
-- `references/prize-taxonomy.md`: Prize categories with what the data shows for each.
+- `references/prize-taxonomy.md`: Prize categories with what the data shows for each, including how much crowd each category draws for the money.
 - `references/examples.md`: anonymized example Prizes by category and objective.
 - `references/evidence-and-limitations.md`: what the dataset can and cannot support, with the numbers.
 - `references/gleam-setup.md`: only for explicit Gleam requests.

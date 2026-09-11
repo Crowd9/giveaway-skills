@@ -30,6 +30,18 @@ Rate each candidate Prize on all six. A Prize that fails accessibility or fulfil
 
 Broad appeal (cash, gift cards, phones, consoles) is appropriate when the objective genuinely is reach: awareness for a mass-market product, a launch where the product itself is the broad Prize, or list-building where you accept churn and will qualify later. Specialized appeal (own product, category-specific gear, expert experiences, access) fits lead generation for a defined niche, retention, community growth and UGC, where the value of an Entrant depends on who they are. For own product specifically, weigh that fit against a measured quality cost on Conversion Rate (the share of people who saw it and entered), cost % of Entrants and crowd per Prize dollar, not just headline Entrant count, see the own-product finding below.
 
+A Prize that matches the business's own category draws no more crowd for the money than one that plainly does not. Both sit a little above a generic Prize, and the gap between them is within noise.
+
+<!-- generated:ev_audience_fit -->
+| Prize fit | Campaigns | Businesses | Entrants | Crowd per Prize dollar |
+|---|---|---|---|---|
+| A definite category that does not match | 29,190 | 6,585 | 554 | 1.10 |
+| Matches the business's own category | 21,436 | 4,384 | 684 | 1.09 |
+| Generic (cash, gift card, bundle, subscription, discount) | 32,900 | 7,767 | 458 | 1.01 |
+<!-- /generated -->
+
+Splitting the same budget across records buys about a fifth less crowd per Prize dollar. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
+
 Expect a broad Prize to bring Entrants who never buy. That is acceptable when the objective needs reach and the follow-up handles the mismatch. It becomes a problem when the leads go straight to a sales team.
 
 For a foot-traffic or local objective, name the reason directly: cash, electronics or a gift card to somewhere else can be won and used without the Winner ever visiting, so a broad Prize buys reach, not the visit the objective needs. Own product or in-store credit fixes this because redemption in person is the filter.
