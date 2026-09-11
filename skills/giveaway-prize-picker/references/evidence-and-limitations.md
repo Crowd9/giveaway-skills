@@ -2,7 +2,7 @@
 
 ## The source
 
-A private dataset of 167,068 campaigns from one giveaway platform, each with at least 100 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
+A private dataset of 144,878 campaigns from one giveaway platform, each with at least 100 valid (unique) Entrants. Fields: Entrant, entry and Impressions (views of the campaign page) counts, dates and duration, nested Prize records (name, value, currency, quantity, position), the campaign's public title and description, Entry Methods with counts, plan tier, and organizer contact details. Organizer details, ids, links and raw text are never reproduced in this repository.
 
 The benchmarks below describe the 116,499 of those campaigns left after removing crypto, purchase-only and finance_crypto organizers.
 
@@ -38,18 +38,20 @@ That sums to 966,269, rounded to 966,000.
 
 The dataset's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
 
-The table below counts the whole dataset before any filter, so its 167,068 campaigns and 243,835 Prize records are larger than the 116,499 campaigns and 170,599 Prize records every benchmark on this page describes. Quote a row here only to say what the raw data holds. Within the benchmark population the share of Prize records carrying a stated value is 37.9%.
+The table below counts every campaign that cleared the 100-Entrant floor, before the crypto, ambiguous and purchase-opportunity segments are set aside. It is therefore larger than the 116,499 campaigns and 170,599 Prize records every benchmark on this page describes. Quote a row here only to say what the raw data holds. Within the benchmark population the share of Prize records carrying a stated value is 37.9%.
 
+<!-- generated:ev_dataset -->
 | Field | Value |
 |---|---|
-| Campaigns | 167,068 |
-| Prize records | 243,835 |
-| Businesses | 25,482 |
-| Prize value missing | 62.0% of Prize records (149,102 null, 2,099 zero) |
-| Stated-value currencies | USD 94,611, GBP 38, EUR 38, AUD 22, CAD 21, plus a handful of others |
-| Campaign start years | 2013 to 2026, 68% between 2021 and 2023 |
-| Missing fields | 259 campaigns with no entry count, 16,432 with no description |
+| Campaigns | 144,878 |
+| Prize records | 211,916 |
+| Businesses | 22,273 |
+| Prize value missing | 60.6% of Prize records (126,889 null, 1,620 zero) |
+| Stated-value currencies | USD 84,990, GBP 38, EUR 38, AUD 22, CAD 21, plus a handful of others |
+| Campaign start years | 2015 to 2026, 66% between 2021 and 2023 |
+| Missing fields | 245 campaigns with no entry count, 15,702 with no description |
 | Data-entry errors | negative values, and a stated value of 250 million |
+<!-- /generated -->
 
 ## Segmenting before any benchmark
 
@@ -147,12 +149,14 @@ Homepage labels also split businesses into listed and private companies. Private
 
 ## Repeat businesses
 
-Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it: businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them.
+Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it, since businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them.
 
+<!-- generated:ev_sequence -->
 | Campaign sequence | Conversion Rate | Duration | Campaigns | Businesses |
 |---|---|---|---|---|
-| First campaign | 26% | 15 days | 25,482 | 25,482 |
-| Eleventh or later | 30% | 9 days | 91,694 | 2,531 |
+| First campaign | 26% | 15 days | 22,273 | 22,273 |
+| Eleventh or later | 29% | 10 days | 78,922 | 2,239 |
+<!-- /generated -->
 
 ## Inferred Prize values from text
 
@@ -160,12 +164,14 @@ To reduce the 61% gap we parsed explicit amounts from Prize names ("$4,000 RTX P
 
 Coverage rises from 40.5% to 48.5% of listings.
 
+<!-- generated:ev_parsing -->
 | Parsing measure | Value |
 |---|---|
-| Listings with a parsed value | 9,847 (7,127 from Prize names, 823 from campaign titles, 1,897 from description phrases) |
-| Listings gaining a value with none stated | 4,634 |
-| Listings with both a stated and a parsed value | 4,824, agreeing within ±20% for 81% |
-| Parsed-only "$" values | 3,342 listings, typical 399, middle half 100 to 1,000, max 2.4 million (a campaign-wide total an organizer typed into one Prize listing) |
+| Listings with a parsed value | 30,590 (23,695 from Prize names, 2,743 from campaign titles, 4,152 from description phrases) |
+| Listings gaining a value with none stated | 15,033 |
+| Listings with both a stated and a parsed value | 14,112, agreeing within ±20% for 80% |
+| Parsed-only "$" values | 9,624 listings, typical 120, middle half 50 to 500, max 2.4 million (a campaign-wide total an organizer typed into one Prize listing) |
+<!-- /generated -->
 
 Parsed values are what organizers wrote, never what they paid.
 
@@ -427,7 +433,7 @@ Categorization draws on 49,511 listings from name-pattern rules plus 8,553 more 
 
 ## Company profile data (thin)
 
-Apollo organization matches cover about a seventh of the businesses in the source count [3,609 of 25,482].
+Apollo organization matches cover about a sixth of the businesses in the source count [3,609 of 22,273].
 
 Industry and country cuts on this match (`by_apollo_industry`, `by_apollo_country`) carry many thin cells. Quote nothing from either cut without its campaign count and business count next to it.
 

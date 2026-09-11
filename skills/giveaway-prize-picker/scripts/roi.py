@@ -210,7 +210,7 @@ def run(a):
         rows += [("Value of what was produced", money(value), "", "your per-unit values"), ("Return per dollar", f"{value / cost:.2f}" if cost else "-", "", "")]
     elif emails and cost:
         rows += [("Breakeven value per email", money(cost / emails), "", "what each address must be worth for the campaign to pay for itself, with follows and referrals valued at zero")]
-    note = "estimated from median uptake for the actions you named, given your expected Contestants" if est else "from the counts you gave"
+    note = "estimated from how often the actions you named are completed, given your expected Contestants" if est else "from the counts you gave"
     return rows, note
 
 def print_table(rows, header):

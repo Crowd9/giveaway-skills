@@ -254,7 +254,7 @@ A campaign that starts within 30 days of the business's previous one draws more 
 
 ## Build lead time (extracted)
 
-A wider set than the campaigns behind the numbers above (167,068 campaigns, 25,482 businesses, crypto and token formats included): the recorded create date sits after the campaign's start date in 27% of them. That is not a business building after launch. The field also updates on a later edit, so for about a quarter of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
+A wider set than the campaigns behind the numbers above (144,878 campaigns, 22,273 businesses, crypto and token formats included): the recorded create date sits after the campaign's start date in 27% of them. That is not a business building after launch. The field also updates on a later edit, so for about a quarter of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
 
 Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 4 days, the top tenth 12 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
 
@@ -271,7 +271,7 @@ Source: analysis/output/field_cuts.json (build_lead_days, by_build_lead).
 
 ## Duration by plan tier and hosting mix (extracted)
 
-Premium accounts run the longest campaigns with the most methods, Hobby accounts run the shortest and Free accounts use the fewest. [167,068 campaigns, 25,482 businesses total.]
+Premium accounts run the longest campaigns with the most methods, Hobby accounts run the shortest and Free accounts use the fewest. [144,878 campaigns, 22,273 businesses total.]
 
 | Plan tier | Campaigns | Businesses | Typical duration | Methods |
 |---|---|---|---|---|
