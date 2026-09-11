@@ -421,6 +421,24 @@ Actions that cost the most: account connections (sign in with a social account),
 | 11+ | 0 | 58 per 100 | 18.6%-21.1% |
 | 11+ | 3+ | 36 per 100 | 18.6%-21.1% |
 
+**Exactly one required action goes with the biggest crowd, in every method band.** The Entrant count peaks at one
+and drops on either side, and the shape repeats three times:
+
+| Methods | 0 required | 1 required | 2 required | 3 or more |
+|---|---|---|---|---|
+| 1 to 6 | 436 | 544 | 412 | 390 |
+| 7 to 10 | 484 | 644 | 386 | 408 |
+| 11 or more | 560 | 747 | 408 | 546 |
+
+One required action goes with 25% to 33% more Entrants than requiring none, and 58% to 83% more than requiring
+two. Three separate bands landing on the same shape is worth more than any one of them, and the groups are large:
+the smallest cell holds 1,909 campaigns from 437 businesses.
+
+Read it as the signature of a campaign built around one asset. A business that requires exactly one action has
+usually decided what the campaign is for and put a push behind it, where requiring none leaves the entry free and
+requiring three makes the reader work before they are in. Nothing here shows that switching an action to required
+would add Entrants to this campaign.
+
 [7-10 methods: 553 to 5,493 campaigns, 275 to 1,660 businesses per group. 11+ methods: 503 to 6,107 campaigns, 174 to 1,226 businesses per group. Extracted from `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`.]
 
 **Conversion falls steadily with every action added, and there is no reliable point where it stops.** The curve halves between one action and thirteen, and quoting a single turning point to a reader overstates what the data holds.
