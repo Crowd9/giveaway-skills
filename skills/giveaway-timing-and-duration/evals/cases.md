@@ -2,24 +2,51 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
-## Last run
+## The 40-Prompt Evaluation, 11 September 2026
 
-10 September 2026, Claude Sonnet reading only the skill folder.
+Four of the forty prompts in `.omc/skill-loop/evalset.json` were run against this skill on 11 September 2026. Scoring was by an independent grader against `.omc/skill-loop/rubric.md`. Types are S straightforward, U underspecified, H hard realistic, T trap.
 
-| Case | Result | Notes |
-|---|---|---|
-| 1 Launch anchor | Pass 6/6 | Three-week run, 21 Sep to 12 Oct, closing two days before the 14 Oct launch, Monday start, dated timeline, draw plus announce with a reply deadline, duration figure cited with n, no platform pitch. Reasoning called the 15-30 day band "the highest" entries-per-contestant band, but the table's own 31-60 day row (5.06) is higher, an agent misread of the table rather than an ambiguity in it. |
-| 2 Three-month giveaway | Pass 4/4 | Named the quiet-middle problem in its own words, offered a shorter run or a monthly recurring draw, cited the duration distribution with n, said the data cannot say which length converts best. No causal slip this time. Four contrast-pattern sentences ("not as", "not because", "instead of", "rather than") the skill's own style section asks the writer to catch, noted but not scored against any case assertion. |
-| 3 Best weekday | Pass 3/3 | Monday at 18.8% cited as extracted with n, said flat across weekdays and shows organizer choice not outcomes, tied the pick to audience and team availability. |
-| 4 Black Friday | Pass 4/4 | Quoted the Black Friday row (n=352, 8 days, lead 8 with IQR 3 to 16) correctly. The eval's expected_output said 364 campaigns, stale against the current table (352), corrected in evals.json. Gave 19 Nov launch and 25 Nov close (trimmed from 8 to 6 days to close before Thanksgiving), dated timeline, seasonal week note. |
-| 5 Style check | Pass 3/3 | Ran style_check.py on all four replies: em_dashes, semicolons, assistant_opener and assistant_closer all 0 across the board. The eval's expected_output pointed at a prize-picker evals/style_check.py that has never existed, the script lives only at the repo root, corrected in evals.json. The script's own stricter PASS/FAIL label (which also checks sentence-length floor and contrast sentences) flagged case 2 and case 4, not part of this case's graded assertions. |
+These forty prompts are additional to the cases in `evals.json`, which are a different set and were not re-scored in this round. The last recorded run of those cases was 10 September 2026, before this round of corrections landed, so their results are no longer reported here.
 
-20 of 20 assertions passed. Two stale figures in evals.json corrected: the Black Friday n was 364, now 352 to match holiday-benchmarks.md, and the style-check script path was pointed at a file that does not exist, now points to the repo root. No SKILL.md or reference changes were needed this run.
+| Prompt | Type | Baseline | Latest | Latest graded run |
+|---|---|---|---|---|
+| timing-1 | S | 78 | 78 | iteration 3 |
+| timing-2 | T | 66 | 74 | iteration 2 |
+| timing-3 | H | 80 | 87 | iteration 2 |
+| timing-4 | U | 86 | 90 | iteration 2 |
 
-## 11 September 2026 run
+### timing-1 (S)
 
-One fresh reader, Claude Sonnet, given only this skill folder and a realistic message, scored with `evals/style_check.py`.
+```
+How long should our giveaway run? Cosmetics brand, US, launching a new serum in six weeks, we want signups before launch day.
+```
 
-| Case | Result | Notes |
-|---|---|---|
-| UK garden centre, wants to run before spring planting season. | Pass | Three weeks, 8 February to 1 March 2027, with the voucher out before Mothering Sunday on 7 March. Every weekday in the plan checks out against the calendar. |
+The baseline used a causal verb on observational data and dropped the column that argued the other way. The latest answer spends its argument on the gap between close and launch day, which is the decision that changes whether the list is usable, and it quotes the wrong calendar week and mislabels the 762-campaign comparison base.
+
+Deduction standing in the latest grade, unsupported precision: "470 Entrants and 34% Conversion Rate for campaigns that size [762 campaigns started that week]"
+
+### timing-2 (T)
+
+```
+A friend said longer giveaways always get more entrants, so we're going to run ours for 90 days. Any reason not to? We're a small board game publisher with 1,200 Instagram followers.
+```
+
+The baseline contradicted itself on Entries per person inside four paragraphs. The latest answer lands the launch-spike evidence exactly, 15.8% of Impressions on launch day against 7.7% at close, and it carries the Impressions counting artifact over onto a real Entrant count and tells the reader those extra Entrants are not real people.
+
+Deduction standing in the latest grade, wrong population: "That's more repeat visits being counted on a similar-sized crowd. It isn't two thirds more people newly deciding to enter."
+
+### timing-3 (H)
+
+```
+We sell to teachers, US K-12. Our busy season is August back-to-school and everything dies over summer break. We also have a conference booth in late June. We want one giveaway this year and we need it to feed the August push. When do we run it and for how long, and what do we do in the dead weeks?
+```
+
+The baseline moved the plan into 2027 without saying so. The latest answer anchors on back to school, demotes the June conference to a list build with a QR code and takes its window from the calendar table, and it reads 876 Entrants at 32% as though both figures sat above typical.
+
+### timing-4 (U)
+
+```
+best day to launch a giveaway?
+```
+
+The baseline repeated the reference prose over the reference table and flattened a weekday spread that runs Friday 521 against Saturday 438. The latest answer refuses to manufacture a finding out of a null result and hands the decision back with the spread shown, and it calls 19.2% a majority when it is only the most common choice.

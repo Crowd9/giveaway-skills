@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.15 |
-| giveaway-entry-method-planner | 1.2.14 |
-| giveaway-timing-and-duration | 1.4.12 |
-| giveaway-winner-structure | 1.3.11 |
-| giveaway-promotion-plan | 1.3.15 |
-| giveaway-random-draw | 1.3.8 |
-| giveaway-winner-communications | 1.2.8 |
-| giveaway-idea-generator | 1.3.12 |
-| giveaway-results-review | 1.5.16 |
-| gleam-campaign-setup | 1.2.13 |
+| giveaway-prize-picker | 1.3.18 |
+| giveaway-entry-method-planner | 1.2.17 |
+| giveaway-timing-and-duration | 1.4.15 |
+| giveaway-winner-structure | 1.3.14 |
+| giveaway-promotion-plan | 1.3.18 |
+| giveaway-random-draw | 1.3.11 |
+| giveaway-winner-communications | 1.2.11 |
+| giveaway-idea-generator | 1.3.15 |
+| giveaway-results-review | 1.5.19 |
+| gleam-campaign-setup | 1.2.16 |
 
 ## Skills
 
@@ -229,6 +229,66 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
 - 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
 - 1.2.2 (2026-09-10):  section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
+
+## 1.7.0 (2026-09-11)
+
+Three follow-ups from the evaluation round, and two defects in the checker that the follow-ups exposed.
+
+**The style checker was not enforcing its two most important rules.** `evals/style_check.py` built its PASS or FAIL from a hand-listed sum of rule counts, and `contrast_sentences` and `filler_words` were missing from it. Across the forty answers scored in 1.6.0 those two accounted for 132 of 188 faults, every one reported and none of them blocking. The house style bans contrast sentences twice over, once as a rule and once in a mandatory last pass, and the script meant to back that up returned PASS regardless. Both now block, and the self-test plants one of each and requires a failure.
+
+**The checker banned two words the product uses literally.** A randomness beacon is the published public value a provable draw rests on, from drand or NIST, and Mandatory actions unlock the rest, which is what `campaign-setup.md` calls it. Both sat on the filler-word list, so measured runs caught one answer swapping "NIST randomness beacon" for something vaguer and another rewording "unlock" to "open up", each to get a pass. The whole list was checked against the repo's own vocabulary and only these two collided in text a reader sees. A checker that bans the product's own words teaches the skill to be vague about its subject.
+
+**The answer style is now split by who enforces it.** The mechanical rules went from forty-four prose bullets to one paragraph naming what the checker catches and the command that catches it, and the judgement rules that no script can check keep their worked examples. `evals/style_check.py` is generated in whole into every skill at `scripts/style_check.py`, so a skill folder installed on its own can still lint a draft. That takes 51 KB out of the text every skill loads on every run.
+
+**A skill body is checked against the reference it cites.** `SKILL.md` is in context on every run and nothing checked it, which is how a line reading "campaigns with 11 or more methods drew a quarter fewer Entrants and about 32 of every 100 entered, against about 48" survived for months against a table saying 17% more at 31 against 44. A bare number carries no identity, so `scripts/check_claims.py` gates on the two forms that do: a pair, where both values must sit in one column of one table in the file that line names, and a distinctive value, which must appear in it. A figure on a line naming no source is reported and never fails, so the habit can be adopted a line at a time. It found two miscitations on its first run.
+
+**Benchmarks are published business weighted as well as campaign weighted.** 55% of the campaigns come from the 1,984 businesses on their eleventh or later, 11% of the 17,777, while the median business ran one or two. A first campaign, counted one per business across 17,383 of them, drew 382 Entrants at 25.6%, where the campaign-weighted figure of 492 sits about 29% above it. The results-review skill asks whether this is a first campaign and reads it against 382, and `review.py --first-campaign` makes that mechanical. Of businesses whose first campaign drew under 250 Entrants, 39% ran a second and 6% reached an eleventh, which is a reason to treat a first campaign as the start of a list the business keeps.
+
+**Three guardrails the measured answers asked for.** A share is not a ranking: direct traffic at 52% of Impressions says where Impressions came from, never that a front desk outdraws a social platform for one reader, and an answer used it that way. A benchmark keeps its unit, because crowd per Prize dollar is a USD measure and an answer re-denominated it as crowd per pound. A superlative gets checked against the open table before it is written, since the claim most likely to be wrong is also the easiest to verify. The Prize picker now states outright that gift card and cash campaigns drew a typical 420 Entrants against 2,177 for regulated goods and 1,277 for music gear, because the cash default was being sold on a superlative its own table refutes. The entry-method planner shows the friction figures whenever it states a method count.
+
+**The citation notes went from 45 to 3, and closing them found two published claims that were false.** "Listing share before email records far more share completions than listing email first, at every method count" does not hold, since at seven to ten methods share-first is lower. "Shorter copy completes higher" runs neither way. The action-position table was stale in every cell, the share-copy table in all nine rows, and the counts under both were roughly a third of the real ones.
+
+**The elbow finding is withdrawn.** The reference told a reader the Conversion Rate decline eases somewhere around 10 to 14 actions and to quote their own group's figure. The pooled breakpoint is at 15 to 16, and that is the fitter finding where the curve turns back up past sixteen on a few hundred campaigns, never where the decline eases. Repeated inside each industry, size band and plan tier it lands anywhere from 3 to 17 across eighteen groups, with the 10,000-plus band at 3 and the 500 to 1,000 band at 17, which the source itself calls stratification noise. What survives is the shape: 49.9% of viewers enter at one action, 31.3% at seven and 26.0% at thirteen. Both the reference and the skill body now say there is no count where the cost stops.
+
+**Three more hand-kept tables rebuilt, two of them carrying a false claim.** The lead-action-family table had every cell wrong and its counts at roughly a quarter of the real ones, and the eleven families now sit within twelve points of each other where the file showed a 22 point spread. The question-type table was wrong in every cell and its reading was backwards: an open question is completed most at 85 per 100 Entrants and trivia least at 62, where the file said a preference question came last. The deals-forum table mislabelled Entries per Entrant as Actions per Entrant, and the claim that deals forums trail every channel on both measures held on referrals at 5.3 per 100 and failed on the other, where they sit mid-table at 4.75. Deals forums are also second on Conversion Rate, behind YouTube, never first.
+
+**Two faults in the figure checker.** A figure written as "45 per 100 Entrants" could never match its own key, because the denominator is stripped before the number is read and only one direction of division was tried. And an inline citation reset a section's scope to the single key it named, so adding a source could hide the figures below it. Both fixed, and a planted fault still fails.
+
+**The README's evidence section carried five more wrong claims.** Being live over Christmas was said to lift conversion 6% to 7% against matched campaigns, where the ratios are 1.00 for Christmas and 0.98 for New Year, so there is no lift and New Year is slightly worse. Black Friday week was 16% worse and is 11%. Brazil and Sweden were offered as the highest-converting countries with no mention that Brazil's rate comes from single-day automated repeats, and the UK was 32% where it is 30.5%. The campaigns that beat their Prize money were said to have done it with a Prize under 250 USD on 135 of them, where that trait is the one they have least often, 33% against 49% for everyone else, and the count is 2,222. The section also pointed readers at analysis scripts in `analysis/`, which holds only the aggregate outputs.
+
+**Also.** Four stale tables corrected: the store Prize figures in `decision-criteria.md`, the employee-band table, the referrals-per-click by industry rows, and the value-adjusted base count. The Prize-units table had a fourth copy in `drawing-and-fulfillment.md` still reading 1.07 and 0.84.
+
+## 1.6.0 (2026-09-11)
+
+Forty real prompts were run through the ten skills, the answers scored by independent graders, and the skills fixed where the answers were weak. Scored again afterwards, the mean went from 68.1 to 82.7 out of 100 across three scored rounds.
+
+**What was measured.** Four prompts per skill: one straightforward, one underspecified, one hard with constraints pulling against each other, and one trap where a plausible reading of an average gives bad advice. Every figure in every answer was checked against the reference file it came from.
+
+**The largest single fault was answering with questions.** Every skill said to ask what was missing and to proceed when the user wanted the work now, with nothing to tell the two apart. Seven of the ten skills scored their worst on the underspecified prompt. "Walk me through setting up a 14-day giveaway" returned three questions and no checklist. The shared `asking` block now says to answer first, to let a missing fact narrow the answer without cancelling it, and to leave the reader holding the yardstick even when the full answer has to wait. Underspecified prompts went from 56.7 to 80.9.
+
+**Benchmarks were being read against the wrong group.** `review.py` took a campaign's percentile against all 117,348 campaigns and then printed the size band's name beside the answer, and the column headed "Typical for campaigns your size" held all-campaign medians throughout. A 480-Entrant campaign read as below typical where its own band of 250 to 500 puts it better than 90% of 25,834 campaigns. Stated Prize value per Entrant for the largest campaigns read 42 cents where that band is 14. The script now ranks inside the band it names, and its self-test fails if a band figure stops moving with the band.
+
+**Prose that contradicted its own table.** When the floor moved from 1,000 Entrants to 100 the tables were rebuilt and the sentences reading them were not. 83 claims across 14 reference files disagreed with the table directly above or below them. The holiday page told readers that nine of eleven themes draw fewer Entrants than typical when only Halloween does. Campaigns carrying 11 or more Entry Methods were described as drawing a quarter fewer Entrants when they drew 17% more. Store campaigns were described as running below typical on size when they run 47% above. Three hand-written baseline blocks still carried 1,000-floor figures, and every comparison on those pages was measured against them. `scripts/check_claims.py` now checks a sentence against the table it reads and fails the build on a contradiction.
+
+**Figures that reversed advice.** Music and media was named the best value for Prize money and is fifth, behind home at 1.46. Own product was described as weaker on every measure when it draws 50% more Entrants and only converts lower. The budget table quoted a typical Prize value about 2.4 times too high, which is the table a first campaign is priced against. One Prize against six to twenty is 1.15 against 0.64, where four files carried 1.07 against 0.84.
+
+**What the data cannot carry.** 55% of the campaigns come from the 1,984 businesses on their eleventh campaign or later, 11% of the 17,777, while the median business ran one or two. Every figure counts campaigns, so a median describes the businesses that run giveaways constantly. Brazil's one-day typical run is 90% repeat campaigns, three quarters starting between midnight and 6am and 94% on the hour, which is automation and was being read as national character. The shared evidence block now carries both, along with the rule that no reader is told their campaign is too small to compare.
+
+**Shared rules have one copy each.** `scripts/answer-style.md`, `scripts/asking.md` and `scripts/evidence-scope.md` are written into every skill by `scripts/render_shared.py`, and CI fails on a drifted copy. The style checker ships into every skill too, because forty style rules read by eye still left about ten faults for every thousand words.
+
+**Also.** `terms.py` names the countries it has no note for and no longer writes "There are 1 winner". `draw.py commit --flagged-out` writes the flagged ids to a file for review on a list too long to read in a terminal. The entry-method planner has a B2B objective. The results review ranks on the size band alone where no vertical fits. The README's evidence section carried six stale figures and now matches the data.
+
+## 1.5.2 (2026-09-11)
+
+The answer style has one copy, and CI fails when a skill drifts from it.
+
+**What changed.** All ten skills carried their own copy of the forty-odd rules under `## How to write the answer`, about 8.9 KB each and 52% of everything in the ten `SKILL.md` bodies. The one copy now lives in `scripts/answer-style.md`, and `scripts/render_answer_style.py` writes it into every skill between `<!-- generated:answer_style -->` markers. CI runs `--check` and fails on a drifted copy.
+
+**What the copies had done.** Ten files, ten checksums, 8,569 to 9,414 bytes. All ten had been edited the same day and still disagreed. Four said "organizer" after the rename to "business". The rule for closing an answer existed in four generations and each skill sat at a different one: one had the bare rule, one added that nothing should follow the close, one added that a closing question must carry "you", and one added the decision verbs and the worked example. Every skill now has the last of those.
+
+**What each skill gained.** The best wording of every shared rule, which for most skills means the eight-word sentence rule, the decision-verb close, the "not X but" search in the contrast pass, and the worked example under specifics over adjectives.
+
+**Skill-specific rules survive.** Anything one skill needs alone goes after the closing marker, under the same heading, where a re-render leaves it alone. `gleam-campaign-setup` keeps its two: links in parentheses inside checklist lines, and how to describe a setting the user's plan does not call for.
 
 ## 1.5.1 (2026-09-11)
 

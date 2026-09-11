@@ -1,6 +1,6 @@
 # Timing findings
 
-Built from the campaigns behind these numbers: crypto, ambiguous and purchase-only campaigns removed, and every one reached at least 1,000 Entrants. Duration is the end date minus the start date in days as recorded, so a campaign extended after launch shows its final length. The typical range given below covers the middle half of campaigns, from the lower quarter to the upper quarter. Where a figure says nine campaigns in ten sit below it, that's the top-tenth mark.
+Built from the campaigns behind these numbers: crypto, ambiguous and purchase-only campaigns removed, and every one reached at least 100 Entrants. Duration is the end date minus the start date in days as recorded, so a campaign extended after launch shows its final length. The typical range given below covers the middle half of campaigns, from the lower quarter to the upper quarter. Where a figure says nine campaigns in ten sit below it, that's the top-tenth mark.
 
 <!-- generated:timing -->
 Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=116,491). By campaign size: 100-250 12 days, 250-500 14 days, 500-1k 14 days, 1k-2.5k 15 days, 2.5k-10k 18 days, 10k+ 18 days.
@@ -26,14 +26,14 @@ Duration: median 14 days, IQR 7 to 29, 90th percentile 35 (n=116,491). By campai
 
 ## Reading the tables
 
-- Two to four weeks is the most common choice at every size, and bigger campaigns run a little longer. [Half of all campaigns run 8 to 31 days, 20 days typical above 10,000 Entrants against 15 under 2,500.]
+- Two to four weeks is the most common choice at every size, and bigger campaigns run a little longer. [Half of all campaigns run 7 to 29 days, 18 days typical above 10,000 Entrants against 12 in the 100 to 250 band.]
 - Actions per Entrant rise with duration up to about two months, then fall. Repeatable daily actions accumulate over time, and campaigns past two months are mostly evergreen or recurring formats with different mechanics. This describes the campaigns businesses ran at each length. It cannot say that shortening or lengthening a campaign would change how many actions Entrants do, and it says nothing about reach or results.
-- December holds about 12% of starts, half again the share of a typical month. March, May, June and November are the next busiest. January is the quietest.
+- December holds about 10% of starts, a quarter again the share of a typical month. March, May, June and November are the next busiest. January is the quietest.
 - Five in six campaigns start on a weekday. Monday is the most common start day and Saturday the rarest.
 
 ## Experience (extracted)
 
-Experience tracks a better Conversion Rate: businesses on their eleventh campaign or later get 41% of viewers to enter, against 32% on a first campaign, looking only at the campaigns we can compare fairly (no repeatable action, a run of 14 days or less).
+Experience tracks a slightly better Conversion Rate: businesses on their eleventh campaign or later get 27% of viewers to enter, against 26% on a first campaign, and they draw 514 Entrants against 382. These are all runs at their actual length, so a repeatable action or a long run pulls a row's Conversion Rate down the same way it does anywhere else on this page.
 
 <!-- generated:tm_experience -->
 | Campaign number | Entrants | Conversion Rate |
@@ -74,7 +74,7 @@ One campaign's size and the next one's size move together closely, a correlation
 
 ## Overlapping campaigns and close day (extracted)
 
-Running two campaigns at once did not hurt the typical case, and the momentum finding still holds. Among the campaigns we can compare fairly, a campaign that started before the business's previous one closed got 42% of viewers to enter against 36% without overlap [2,117 Entrants against 2,113.5, 3,421 campaigns against 7,298]. Overlapping campaigns are more often December starts, the advent-calendar pattern, which carries much of that gap [25% against 15%]. Across all the campaigns behind these numbers the two groups sit within 5% of each other.
+Running two campaigns at once did not hurt the typical case, and the momentum finding still holds. Among the campaigns we can compare fairly, a campaign that started before the business's previous one closed got 36% of viewers to enter against 34% without overlap [454 Entrants against 450, 13,837 campaigns against 25,973]. Overlapping campaigns are more often December starts, the advent-calendar pattern, which accounts for part of a gap that is under two points to begin with [15% of starts against 12%]. Across all the campaigns behind these numbers the two groups sit within 5% of each other.
 
 Close day of the week, all the campaigns behind these numbers:
 
@@ -107,6 +107,8 @@ Holding run length fixed, close-day type makes no real difference: every gap sit
 
 One secondary pattern does not repeat across sizes: a weekend close brings about 10% more Actions per Entrant than a weekday close in 1-7 day campaigns, a gap not present at 8-14 days.
 
+Source: `analysis/output/text_and_context.json` (`overlap_clean`, `overlap_all`) for the overlap figures, `analysis/output/calendar.json` (`by_close_day_type`) for the close day.
+
 ## Limits
 
 - Duration and start date move together with the type of business running it, the budget and the season. The data cannot pull apart a pure duration effect from those.
@@ -134,7 +136,7 @@ Impressions in the data are counted once per day, so a visitor who returns count
 | 61 or more | 2,941 | 733 (+67%) | 3.22 (-9%) | 22% (-48%) | 4.6 | 5 |
 <!-- /generated -->
 
-Longer runs collect about a tenth more Entrants and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
+Longer runs collect two thirds more Entrants by 61 days and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
 
 The day-to-day view sharpens this. The typical Conversion Rate bends sharply between day 6 and day 7 of a campaign, the point that best explains the shape of the curve (accounting for 81% of it), stronger than any other day tested, in the same fairly-compared set (no repeatable action, durations 1 to 35 days).
 
@@ -165,12 +167,14 @@ For campaigns of 10,000 or more Entrants the bend moves later and gets weaker, a
 
 Entrants per day of the run, not just per campaign, fall well past the launch window as duration increases, in every industry checked. This cannot separate a business choosing a longer run from also choosing a smaller Prize or a slower-moving category, since industry is the only thing held constant here.
 
-| Industry | 1-3 days | 8-14 days |
-|---|---|---|
-| Gaming and esports | 1,426 Entrants/day | 234 Entrants/day |
-| Electronics and tech | 1,540 Entrants/day | 201 Entrants/day |
+| Industry | 1-3 days | 4-7 days | 8-14 days | 15-30 days | 31 days or more |
+|---|---|---|---|---|---|
+| Gaming and esports | 229 | 62.5 | 38.0 | 20.1 | 11.9 |
+| Electronics and tech | 586.5 | 124.1 | 83.8 | 49.9 | 27.3 |
 
-[Gaming and esports: 858 campaigns/213 businesses at 1-3 days, 1,986/788 at 8-14 days. Electronics and tech: 1,098/87 at 1-3 days, 1,488/419 at 8-14 days.]
+Entrants per day, typical. A gaming campaign of one to three days drew about six times the daily pace of one running eight to fourteen, and electronics about seven times. The fall continues past two weeks in both.
+
+[Gaming and esports: 2,973 campaigns from 733 businesses at 1-3 days, 5,105/1,476 at 4-7, 6,074/1,930 at 8-14, 6,317/2,079 at 15-30, 4,080/1,414 at 31 or more. Electronics and tech: 2,710/248, 2,155/548, 3,270/834, 4,600/1,080, 2,805/744. Extracted from `analysis/output/calendar.json`, `per_day_by_length_industry`.]
 
 ## Duration by what the campaign is optimizing for (extracted)
 
@@ -184,7 +188,7 @@ Pick the run length by what the campaign needs to produce, not by a single "long
 | Telegram join | 1,000-2,500 | 89 per 100 (560 campaigns, 58 businesses) | 49 per 100 (335 campaigns, 107 businesses) |
 | Telegram join | 2,500-10,000 | 83 per 100 (201 campaigns, 23 businesses) | 77 per 100 (264 campaigns, 60 businesses) |
 
-A community you want people to join before they leave the page favours a short run: Discord and Telegram joins land noticeably higher in shorter campaigns at every size above, roughly a quarter to double the rate. A campaign chasing reach, engagement, referrals or traffic favours a long one instead. Both directions hold across all three campaign sizes with enough data, so this is a genuine split by objective, not a slope in one direction. A campaign that wants both, a community built fast and the widest reach, has to pick which one the run length serves, since a shorter run and a longer one cannot both be the answer on the same clock.
+A community you want people to join before they leave the page favours a short run: Discord and Telegram joins land higher in shorter campaigns at every size above, from a few points to double the rate. A campaign chasing reach, engagement, referrals or traffic favours a long one instead. Both directions hold across all three campaign sizes with enough data, so this is a genuine split by objective, not a slope in one direction. A campaign that wants both, a community built fast and the widest reach, has to pick which one the run length serves, since a shorter run and a longer one cannot both be the answer on the same clock.
 
 ## No late rush, only a launch spike (extracted)
 
@@ -218,7 +222,7 @@ This is a finding about where volume sits, not a reason to close early. The peop
 | Sunday | 11,374 | 449 (-6%) | 4.52 (+3%) | 27% (+4%) | 3.7 | 7 |
 <!-- /generated -->
 
-Start weekday shows no difference on any measure. Businesses favour weekdays, and the data gives no reason to prefer one day over another.
+Start weekday shows no difference on Conversion Rate or Entries per Entrant, and weekend starts draw about a tenth fewer Entrants. Businesses favour weekdays, and the data gives little reason to prefer one day over another.
 
 <!-- generated:cmp_recency -->
 | Gap since previous campaign, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
@@ -246,7 +250,7 @@ Start weekday shows no difference on any measure. Businesses favour weekdays, an
 | software | 141 | 318 | +69% | +42% |
 <!-- /generated -->
 
-A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a third more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in every industry with enough campaigns. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
+A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a fifth more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in nine of the eleven verticals, with fitness and outdoor and kids, family and pets the exceptions. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
 
 ## Build lead time (extracted)
 
@@ -301,7 +305,7 @@ Source: analysis/output/field_cuts.json (by_tier, by_hosted_share), analysis/out
 
 ## Region (extracted)
 
-A short, high-entry-rate format shows up strongly in South America and, more specifically, in Portuguese-language and Brazilian YouTube-hosted campaigns, running well below the typical 16-day campaign length at close to double the typical Conversion Rate.
+A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at close to double the typical Conversion Rate. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them. The Brazilian YouTube cut is 2,543 campaigns from 88 sites, so it describes those accounts and not a market.
 
 | Group | Campaigns | Businesses | Typical duration | Conversion Rate |
 |---|---|---|---|---|
@@ -344,7 +348,7 @@ A separate check, using all runs at their actual length, for a second read on th
 | Sunday | 11,411 | 4,226 | 449 | 27% |
 <!-- /generated -->
 
-Entrants run from 2,116 to 2,287 and the Conversion Rate from 27.0% to 29.1% across the week, the same flat read as the duration-matched weekday table above. Weekday still shows no usable difference.
+Entrants run from 438 on Saturday to 521 on Friday and the Conversion Rate from 26% to 28% across the week, the same read as the duration-matched weekday table above: flat on Conversion Rate, with about a tenth fewer Entrants on a weekend start. Weekday still shows no usable difference on Conversion Rate.
 
 Month moves once, in December, and nowhere else:
 
@@ -365,7 +369,7 @@ Month moves once, in December, and nowhere else:
 | September (8,737 campaigns, 3,662 businesses) | 25.6% | 494 | 15 |
 <!-- /generated -->
 
-Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 5.2 points and the furthest by 6.7, on a run half to two-thirds the length of the rest of the year.
+Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 3.9 points and the furthest by 5.2, on a run about two thirds the length of the rest of the year.
 
 The December lift holds inside most industries too, not just because certain industries happen to start more campaigns in December:
 
@@ -437,7 +441,7 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_launch_wording`, `launch_w
 
 ## Run length by country (extracted)
 
-Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK.
+Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose 25th percentile and median are the same value, both 1 day, which marks a spike of automated repeat draws and not a choice spread across its 563 businesses. Every other country in the table starts at 3 days or more.
 
 | Country | Typical duration | Campaigns | Businesses |
 |---|---|---|---|

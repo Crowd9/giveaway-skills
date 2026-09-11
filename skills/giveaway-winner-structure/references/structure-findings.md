@@ -43,7 +43,7 @@ This compares campaigns with one Prize record against campaigns with several, sh
 | 4-9 | 5,246 | 2,162 | 675 | 23% | 5.1 | 14 | 9 |
 <!-- /generated -->
 
-Conversion Rate falls steadily from 29% at one Prize record to 18% at ten or more. Entrants dip slightly at two to three Prize records, then climb to 3,504 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
+Conversion Rate falls steadily from 28% at one Prize record to 19% at ten or more. Entrants rise at every step, from 471 at one record to 1,157 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
 
 In plain terms, splitting a Prize into several draws a smaller crowd for the same money, even once you allow for campaign size and industry. What you get instead is more reach and more referrals, so the trade only pays off when reach is what you need.
 
@@ -99,7 +99,7 @@ The same campaigns cut by stated Prize pool, not by Prize count:
 | 5k and up | 2,034 | 1,069 | 1,802 | 20% | 4.31 | 22 | 7 |
 <!-- /generated -->
 
-Bigger pools bring more Entrants and a longer run. Conversion Rate stays flat at 24% through the first three pool sizes and drops only at 5k and up (21%). A bigger pool and more Prize records tend to travel together with a bigger business and a longer campaign, so read both tables as who ran what, not as what a structure change would do to a given campaign.
+Bigger pools bring more Entrants and a longer run. Conversion Rate holds near 24% through the first three pool sizes and drops to 20% at 5k and up. A bigger pool and more Prize records tend to travel together with a bigger business and a longer campaign, so read both tables as who ran what, not as what a structure change would do to a given campaign.
 
 Source: `analysis/output/prize_timing_cuts.json` (by_prize_count, by_pool_band).
 
@@ -133,9 +133,9 @@ This looks at each Prize row: the typical number of Winners on a category's rows
 | Art and custom | 185 | 112 | 1 | 22% | 73 | 27% |
 <!-- /generated -->
 
-One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest pays the least on the highest. That highest-value category, firearms, also carries the lowest Conversion Rate and the most Actions per Entrant of the six, in line with the extra eligibility steps it carries elsewhere in this repository.
+One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest categories sit in the middle of the multi-Winner range. That highest-value category, firearms, also carries the lowest Conversion Rate at 20%, in line with the extra eligibility steps it carries elsewhere in this repository.
 
-Within experience, travel, tickets, flights or hotel packages alone return 1,810 USD per Winner, well above the category's 599 USD typical figure, because the category mixes cheap tickets with priced-out travel.
+Within experience, travel, tickets, flights or hotel packages alone return 1,810 USD per Winner, well above the category's 400 USD typical figure, because the category mixes cheap tickets with priced-out travel.
 
 Source: `analysis/output/prize_timing_cuts.json` (winners_by_prize_category, winners_by_ticket_kind).
 
@@ -171,7 +171,7 @@ A record-level look at position within a campaign's Prize list: first Prize, sec
 | Fourth plus | 4,932 | 1,841 | 33% | 69 | 20% |
 <!-- /generated -->
 
-First and fourth-plus Prizes go multi-Winner more often than second or third place (table above). USD per Winner runs highest at second or third, above first Prize, which reads as product tiers: a second or third Prize often repeats the same product line at a smaller size, lifting its per-Winner value above the headline Prize. Fourth-plus Prizes settle at the lowest per-Winner value, in line with a consolation tier, on the lowest Conversion Rate and highest Actions per Entrant of the three.
+First and fourth-plus Prizes go multi-Winner more often than second or third place (table above). USD per Winner runs highest at second or third, above first Prize, which reads as product tiers: a second or third Prize often repeats the same product line at a smaller size, lifting its per-Winner value above the headline Prize. Fourth-plus Prizes settle at the lowest per-Winner value at 69 USD, in line with a consolation tier, on the lowest Conversion Rate of the three at 20%.
 
 Source: `analysis/output/prize_timing_cuts.json` (winners_by_position).
 

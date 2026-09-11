@@ -25,8 +25,15 @@ jobs:
           python3 skills/giveaway-results-review/scripts/gleam_export.py --self-test
           python3 skills/giveaway-results-review/scripts/campaign_report.py --self-test
           python3 evals/style_check.py --self-test
+          python3 scripts/check_claims.py --self-test
       - name: Style rules on prose
         run: python3 scripts/style_lint.py
+
+      - name: Shared blocks in sync
+        run: python3 scripts/render_shared.py --check
+
+      - name: Claims agree with their tables
+        run: python3 scripts/check_claims.py
       - name: Committed figures
         run: python3 scripts/check_data.py
       - name: Aggregates only

@@ -1,6 +1,6 @@
 # Evaluation cases
 
-Machine-readable form: `evals.json` in this folder (prompt, expected output, assertions). This file holds the same cases with the last run's results.
+Machine-readable form: `evals.json` in this folder (prompt, expected output, assertions). This file holds the same cases, and below them the 40-prompt evaluation run on 11 September 2026.
 
 Run each request against an assistant that has loaded `SKILL.md`. Pass criteria are behavioural, so wording may vary. Data-level cases (7, 8) are checked against the analysis output, with no conversation involved.
 
@@ -64,30 +64,53 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 **Pass:** each saved reply (cases 1, 2, 3, 4, 5, 6, 9, 10) contains no em dashes, no semicolons, no curly quotes, no question or slogan headings, no assistant opener ("Great question", "Here's how I'd think about it") or closer ("Hope this helps", "Let me know"), a sentence of six words or fewer and one of twenty-five or more, and as few "X, not Y" contrast sentences and filler words as possible (target zero, reported as a count). Run `python3 evals/style_check.py reply.txt` (repo root) on each saved reply.
 
-## Last run
+## The 40-Prompt Evaluation, 11 September 2026
 
-10 September 2026, Claude Sonnet reading only the skill folder, one fresh agent per case, run against the 1,000-contestant dataset. Data checks (7, 8) were verified directly against `analysis/output/benchmarks.json` and the skill's own references, no conversational agent involved.
+Four of the forty prompts in `.omc/skill-loop/evalset.json` were run against this skill on 11 September 2026. Scoring was by an independent grader against `.omc/skill-loop/rubric.md`. Types are S straightforward, U underspecified, H hard realistic, T trap.
 
-| Case | Result | Notes |
-|---|---|---|
-| 1 Bakery | Fail on one assertion | Own-product prize (treat box), local pickup, labelled budget under $150, no entrant promise, concrete next decision. Never stated why a broad prize would pull non-locals. Fixed: added that reasoning to `references/decision-criteria.md` |
-| 2 PS5 for SaaS | Pass | Verdict "replace it", named the mismatch, distinguished reach from lead quality, three on-brand alternatives, stated the dataset cannot rank them |
-| 3 One vs ten | Fail on three assertions | Recommended one $2,000 shoe prize tied to buyer intent, using the value-index figure. Never named the perceived-odds/fulfillment tradeoff, never mentioned a tiered middle option, and never said the dataset can't show which structure performs better, it cited association language instead. Fixed: Workflow step 4 in SKILL.md now names all three explicitly |
-| 4 Generic B2B | Pass | No platform mentioned, preferred option filtered for the persona, stated its assumptions |
-| 5 Explicit Gleam | Pass | Recommendation first, mapped to Prize Details and All Prizes draw order with official links, refused to quote plan limits, noted Gleam does not contact winners |
-| 6 Guarantee 10,000 | Fail on one assertion | Stated no prize guarantees entrants, explained selection bias, redirected to audience size and promotion, but never said "relevance". Fixed: Evidence rules bullet in SKILL.md now lists relevance, audience size and promotion |
-| 7 Missing values, currencies | Pass | benchmarks.json: 59.5% of prize records have no stated value (61.2% once the 801 zero-value records are counted with the 51,553 nulls), every currency (USD, AUD, CAD, NZD, EUR, TRY, GBP) kept in its own bucket, parsed "$" values carry a distinct "USD?" key, Impressions of zero are called out as treated as unknown |
-| 8 Purchase opportunity | Pass | `purchase_opportunity` segment holds 92 campaigns from 9 organizers, excluded from the ordinary benchmark used everywhere else, and `examples.md` lists the sneaker raffles only under "Records deliberately not used as examples" |
-| 9 Embedded instructions | Pass | Flagged the injected text, ignored it, did not visit the link, evaluated on strengths/weaknesses/budget, suggested naming the model and tying a review to the prize |
-| 10 ROI, coffee roaster | Pass | 0.60 USD per contestant, 0.67 USD per email on 1,780 addresses, matches `scripts/roi.py`'s food_drink benchmark of 0.31 USD per email, gave the 0.67 breakeven, asked for a value per subscriber before judging. Reported the figures in prose, not the script's raw table, the same gap noted in the previous run and still treated as a pass since every figure matches the script |
-| 11 Style, all eight replies | Pass | `evals/style_check.py` (repo root) on all eight saved replies: em dashes, semicolons, curly quotes, openers, closers and question headings all zero across the board, shortest sentence 2 to 5 words, longest 27 to 53 words. Contrast-sentence counts ranged 0 to 5 (cases 4 and 9 highest), filler words 0 to 1, both reported as counts per the rule, with a target of zero |
+These forty prompts are additional to the cases in `evals.json`, which are a different set and were not re-scored in this round. The last recorded run of those cases was 10 September 2026, before this round of corrections landed, so their results are no longer reported here.
 
-Overall: 8 of 11 cases passed every assertion on this run. Cases 1, 3 and 6 each missed one or more assertions. Each miss traced to the skill under-specifying a rule, not to a stale assertion, and all three are fixed above. No assertion in `evals.json` was judged stale on this run.
+`.omc/skill-loop/final-scores.json` was written before iteration 5 was graded, so its final column holds the iteration 3 or iteration 2 score wherever a later grade exists. The table below reports the latest graded run.
 
-## 11 September 2026 run
+| Prompt | Type | Baseline | Latest | Latest graded run |
+|---|---|---|---|---|
+| prize-1 | S | 82 | 82 | iteration 2 |
+| prize-2 | T | 93 | 93 | iteration 2 |
+| prize-3 | U | 46 | 62 | iteration 5 |
+| prize-4 | H | 81 | 85 | iteration 2 |
 
-One fresh reader, Claude Sonnet, given only this skill folder and a realistic message, scored with `evals/style_check.py`.
+### prize-1 (S)
 
-| Case | Result | Notes |
-|---|---|---|
-| Gaming peripherals brand, $2,500 budget, wants subscribers worth selling to. | Pass | One flagship bundle from own stock, two alternatives priced honestly, budget breakdown from budget.py, breakeven of 64 cents an address set against the 48 cents gaming campaigns usually pay, ends by asking what a subscriber converts to. |
+```
+We're a UK coffee roastery, about 8k on Instagram, selling 12-16 GBP bags of single origin beans direct. Budget for a giveaway is 400 GBP and the goal is email signups we can sell subscriptions to. What should the prize be?
+```
+
+The baseline set a stated value without calibrating it against the reader's own size band. The latest answer prices the Prize line by line in the reader's own currency with headroom left, and it still runs USD benchmarks against a GBP campaign with no rate named.
+
+Deduction standing in the latest grade, unsupported precision: "At 200 assumed Entrants this budget prices out around 1.87 per email signup."
+
+### prize-2 (T)
+
+```
+I looked at your benchmarks and the campaigns with the biggest prizes get way more entrants. We're a 5-person B2B SaaS doing warehouse inventory software, ACV about 9k USD. So should we just give away a MacBook Pro to maximise entrants? We can afford one.
+```
+
+The baseline corrected the premise with the exact confound and ignored the capitalisation rule throughout. The latest answer concedes the part of the claim that is true and moves the argument to who the crowd is, and it quotes the 5,000 USD spend ceiling without naming the two industries where that ceiling does not hold.
+
+### prize-3 (U)
+
+```
+what prize should i do for my giveaway
+```
+
+The baseline asked its three questions and delivered nothing: no default structure, no example Prize, no price. The latest answer carries exact structure figures framed as a spend-normalised measure, and it sells the gift card option on a superlative the loaded tables contradict.
+
+Deduction standing in the latest grade, fabricated fact: "Cash or a big gift card. Pulls the largest raw entrant count because almost anyone wants it."
+
+### prize-4 (H)
+
+```
+Skincare brand, Australia, we want to run a giveaway but our margins are thin and the founder is nervous about giving away product because last time the winner resold it on Facebook Marketplace. We have 22k email subscribers already and honestly we want new customers not more subscribers. Budget is flexible up to about 2k AUD. What do we give away and how do we stop the resale problem?
+```
+
+The baseline recommended a 2,000 AUD store credit while its own budget table totalled 850 AUD. The latest answer names the conflict the reader did not, that their promotion reaches the 22,000 subscribers they already have, and it rests the whole resale answer on an unsupported assertion without reaching for the non-transferable Prize clause.

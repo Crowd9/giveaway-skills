@@ -11,10 +11,14 @@ Sentence variety is the soft gate: something short, something long, so the answe
 """
 import re, sys
 
+# Two words came off this list because the product uses them literally. A randomness beacon is the
+# published public value a provable draw rests on, from drand or NIST. Mandatory actions unlock the
+# rest, which is what campaign-setup.md calls it, so a skill explaining that setting has to say it.
+# A checker that bans the product's own vocabulary teaches the skill to be vague about its subject.
 FILLER = (r"\b(actually|leverage|robust|comprehensive|streamline|delve|foster|pivotal|landscape|testament|showcase|furthermore"
           r"|moreover|additionally|it is worth noting|generally speaking|in many cases|synergy|holistic|seamless|world-class"
           r"|utilise|utilize|facilitate|empower|cutting-edge|paradigm shift|game changer|transformative|elevate|embark"
-          r"|supercharge|harness|unlock|ever-evolving|realm|tapestry|beacon|multifaceted|meticulous|intricate|paramount"
+          r"|supercharge|harness|ever-evolving|realm|tapestry|multifaceted|meticulous|intricate|paramount"
           r"|crucial|vital|at the end of the day|when it comes to|at its core|in today's world|the reality is|the truth is"
           r"|in terms of|with regard to|going forward|let's dive in|let's take a look)\b")
 OPENERS = r"^(great question|here's how i'd think|here is how|let me walk you|certainly|of course|sure[,!])"
@@ -130,6 +134,12 @@ def self_test():
     """The two fixtures in evals/fixtures are the contract: one answer that must fail, one that must pass."""
     import os
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
+    if not os.path.isdir(d):
+        # A copy of this file ships inside each skill so a folder installed on its own can still lint a
+        # draft. The fixtures stay at the repo root, where CI runs the real self-test against them.
+        print("no fixtures here, so nothing to self-test. This copy lints a draft: "
+              "python3 scripts/style_check.py draft.txt")
+        return
     bad, good = check(open(os.path.join(d, "fails.txt")).read()), check(open(os.path.join(d, "passes.txt")).read())
     raw = check(open(os.path.join(d, "fails_raw.txt")).read())
     stiff = check(open(os.path.join(d, "fails_stiff.txt")).read())
@@ -150,6 +160,19 @@ def self_test():
                                       "question_headings", "label_openers", "bold_lead_ins", "meta_commentary",
                                       "bans_without_a_reason", "empty_ending")), good
     assert good["shortest_sentence"] <= 8 and good["longest_sentence"] >= 18, good
+    # the verdict must block on the two commonest faults, which it silently did not for a long time
+    import subprocess as _sp, tempfile as _tf, os as _os
+    with _tf.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
+        fh.write("Pick the coffee subscription, not the laptop. It pulls buyers.\n"
+                 "You get a tighter list. Ask them which matters more to you this quarter.\n")
+    out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
+    assert "FAIL" in out, f"a contrast sentence must block the verdict, got: {out}"
+    with open(fh.name, "w") as f2:
+        f2.write("This actually leverages a robust approach. You should pick one.\n"
+                 "Ask them which matters more to you this quarter.\n")
+    out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
+    assert "FAIL" in out, f"filler words must block the verdict, got: {out}"
+    _os.unlink(fh.name)
     print("self-test passed")
 
 if __name__ == "__main__":
@@ -159,7 +182,11 @@ if __name__ == "__main__":
     for path in [a for a in sys.argv[1:] if not a.startswith("--")]:
         text = open(path).read()
         r = check(text)
-        hard = (r["em_dashes"] + r["semicolons"] + r["curly_quotes"] + r["assistant_opener"] + r["assistant_closer"]
+        # contrast_sentences and filler_words were left out of this sum, so the two commonest faults in
+        # every measured run were the two the checker never failed on. 94 contrast sentences and 38 filler
+        # words across forty answers, every one of them reported and none of them blocking.
+        hard = (r["contrast_sentences"] + r["filler_words"]
+                + r["em_dashes"] + r["semicolons"] + r["curly_quotes"] + r["assistant_opener"] + r["assistant_closer"]
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"])

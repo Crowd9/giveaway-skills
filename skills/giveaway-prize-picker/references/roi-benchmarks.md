@@ -24,7 +24,7 @@ Music and media buys addresses and follows cheapest, typically 0.09 USD per emai
 
 Crowd per Prize dollar is Entrants against the typical for the stated Prize cost, 1.00 being typical for the money. Email uptake is email signups recorded divided by the campaign's Entrants, so 100% means very nearly everyone who entered signed up, and a figure over 100% means some Entrants signed up more than once. Conversion Rate here is the typical figure among the campaigns we can compare fairly (no repeatable action, run of 14 days or less), a narrower and higher-converting scope than the industry table's full-population Conversion Rate above, so the two are separate figures under similar names. Repeat business means five or more campaigns in the dataset.
 
-[All the campaigns behind these numbers: crowd per Prize dollar 1.00 (typical for the money), Conversion Rate 38%, email uptake 98%, referrals 12% of Entrants, repeat businesses 78%.]
+[All the campaigns behind these numbers: crowd per Prize dollar 1.00 (typical for the money), Conversion Rate 35%, email uptake 99%, referrals 12% of Entrants, repeat businesses 81%.]
 
 <!-- generated:roi_verticals -->
 | Industry | Campaigns | Entrants | Conversion Rate | Email uptake | Referrals % of Entrants | Crowd per Prize dollar |
@@ -42,7 +42,7 @@ Crowd per Prize dollar is Entrants against the typical for the stated Prize cost
 | Software | 1,752 | 565 | 31% | 1.01 | 22 | 0.75 |
 <!-- /generated -->
 
-Music and media gets the most for its money (23% above typical on crowd per Prize dollar), buys the cheapest Entrants and addresses, and has the most repeat businesses. Gaming holds the second-highest figure, with the most Actions per campaign, Twitch and Discord audiences, and the lowest email uptake of the ten. Software has the highest referral rate and sits lowest on crowd per Prize dollar. Every row is a proxy industry from a homepage label, and none of it says an industry causes a result.
+Home gets the most for its money at 46% above typical on crowd per Prize dollar, and technology comes next at 20% above. Music and media sits at 15% above while buying the cheapest Entrants and addresses, and it has the most repeat businesses. Gaming sits below typical for the money at 0.81, with Twitch and Discord audiences and the lowest email uptake of the ten. Software has the highest referral rate and sits lowest on crowd per Prize dollar. Every row is a proxy industry from a homepage label, and none of it says an industry causes a result.
 
 ## By industry
 
@@ -96,7 +96,7 @@ Homepage labels read from each business's own site, across the campaigns behind 
 | Jewelry watches | 420 | 163 | 492 | 21% | 7 | 20 | 701 |
 <!-- /generated -->
 
-Home and garden and apparel and fashion have the highest Conversion Rate among the largest industries (both 31%), apparel and fashion also offers email most often (74%), and automotive asks for the most Entry Methods (10).
+Apparel and fashion has the highest Conversion Rate among the ten largest industries at 31%, with electronics and tech next at 30%, and education asks for the most Actions at 9.
 
 By business type, on the same scope:
 
@@ -115,7 +115,7 @@ By business type, on the same scope:
 | Nonprofit | 951 | 270 | 393 | 27% | 3.3 | 16 | 7 | 33% |
 <!-- /generated -->
 
-Creators have the highest Conversion Rate (38%), rarely offer email (8%), and run the shortest campaigns (14 days, tied with community). Nonprofits run the longest (28 days).
+Creators have the highest Conversion Rate at 34%, rarely offer email at 5%, and run the shortest campaigns at 12 days, level with agencies, service businesses and the other group. Media and publishers run the longest at 18 days.
 
 Source: `analysis/output/prize_timing_cuts.json` (by_industry_ordinary, by_business_type_ordinary), `analysis/output/industries.json` (vertical_mapping).
 

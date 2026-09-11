@@ -46,7 +46,7 @@ Expect a broad Prize to bring Entrants who never buy. That is acceptable when th
 
 For a foot-traffic or local objective, name the reason directly: cash, electronics or a gift card to somewhere else can be won and used without the Winner ever visiting, so a broad Prize buys reach, not the visit the objective needs. Own product or in-store credit fixes this because redemption in person is the filter.
 
-Before allowing for size, own product shows up in about a fifth of Prize names, and those campaigns look weaker on every raw measure than bought-in ones. That comparison does not hold campaign size or industry constant, and it describes what businesses saw with no comparison group of failed campaigns. The taxonomy reference reports the same flag on a different base (Prize listings across all the campaigns behind these numbers, not the campaigns we can compare fairly), so the two figures measure the same weak signal on different bases and neither supersedes the other [22% here, 18.5% there].
+Before allowing for size, own product shows up in 17% of campaigns, and those campaigns drew more Entrants and more Actions per Entrant on a lower Conversion Rate than bought-in ones. That comparison does not hold campaign size or industry constant, and it describes what businesses saw with no comparison group of failed campaigns.
 
 | | Own product | Bought-in |
 |---|---|---|
@@ -122,7 +122,7 @@ A wider definition of collaboration, matching the campaign or Prize name and not
 
 ## Structure tradeoffs
 
-Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns draw about 7% more crowd for the money than typical (1.07 on crowd per Prize dollar) against 16% less for six to twenty units (0.84), in the crowd-per-Prize-dollar-by-number-of-Prize-units table in `references/evidence-and-limitations.md`. Split the budget only when the units are the point: sampling, digital Prizes, community rewards, or tiers that make the campaign read better. Before finalizing Prize count against a fixed budget, check `giveaway-winner-structure`'s structure findings: splitting that budget across several Prizes costs turnout against one Prize of the same value, with the full breakdown by Prize value there.
+Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns drew about 15% more crowd for the money than typical (1.15 on crowd per Prize dollar) against 36% less for six to twenty units (0.64), in the crowd-per-Prize-dollar-by-number-of-Prize-units table in `references/evidence-and-limitations.md`. Split the budget only when the units are the point: sampling, digital Prizes, community rewards, or tiers that make the campaign read better. Before finalizing Prize count against a fixed budget, check `giveaway-winner-structure`'s structure findings: splitting that budget across several Prizes costs turnout against one Prize of the same value, with the full breakdown by Prize value there.
 
 | Structure | Strengths | Costs and risks |
 |---|---|---|
@@ -173,22 +173,22 @@ Typical Prize values across the campaigns behind these numbers, and by campaign 
 
 | Measure | Typical | Middle half | Note |
 |---|---|---|---|
-| Per-listing stated value | 299 | 100 to 899 | nine in ten declared less than 2,070 |
-| Fully valued campaign total | 900 | 328 to 2,000 | - |
-| Campaign total, 1,000-2,500 Entrants | 511 | - | - |
-| Campaign total, 2,500-10,000 Entrants | 1,298 | - | - |
+| Per-listing stated value | 125 | 50 to 424 | nine in ten declared less than 1,199 |
+| Fully valued campaign total | 299 | 90 to 1,000 | - |
+| Campaign total, 1,000-2,500 Entrants | 530 | - | - |
+| Campaign total, 2,500-10,000 Entrants | 1,299 | - | - |
 | Campaign total, 10,000+ Entrants | 3,000 | - | - |
 
-Entrants rise with the stated pool at every spend level [43,173 campaigns with a full value stated, from 9,180 businesses].
+Entrants rise with the stated pool up to about 5,000 USD and fall back above it [43,173 campaigns with a full value stated, from 9,180 businesses].
 
 | Stated Prize pool | Typical Entrants |
 |---|---|
 | Under 50 USD | 266 |
 | 50,000 USD and up | 1,095 |
 
-Prize value and Entrant count move together only loosely: ten times the stated pool comes with about 1.74 times the Entrants, and value accounts for about 16% of the spread in Entrant counts, so most of what separates a big campaign from a small one is something other than the money. All of it describes what businesses chose and who they were. A bigger Prize comes with a bigger business, so none of it says a bigger Prize would lift a given campaign.
+Prize value and Entrant count move together only loosely: ten times the stated pool comes with about 2.2 times the Entrants, and value accounts for about 23% of the spread in Entrant counts, so most of what separates a big campaign from a small one is something other than the money. All of it describes what businesses chose and who they were. A bigger Prize comes with a bigger business, so none of it says a bigger Prize would lift a given campaign.
 
-Below 5,000 USD, extra spend buys Entrants roughly in proportion to the money. Past that point, extra Prize spend still buys more Entrants in most industries, just far less per dollar. Name both exception industries whenever this ceiling is cited, and do not treat it as a rule for every industry.
+Below 5,000 USD, a 1% bigger Prize buys a quarter to a half of a percent more Entrants. Past that point, extra Prize spend still buys more Entrants in most industries, just far less per dollar. Name both exception industries whenever this ceiling is cited, and do not treat it as a rule for every industry.
 
 | Spend level (USD) | Extra Entrants per 1% bigger Prize | Campaigns | Businesses |
 |---|---|---|---|
@@ -217,9 +217,9 @@ A cheap Prize is not a mark against a campaign on this measure: at the cheaper s
 ## Prizes for a store
 
 - **Own product at cost.** The stated value is retail, your cost is wholesale, and the Entrant who wanted it is already a customer. That is the trade: margin spent, not list price, for a Winner who fits your audience by definition. Once campaign size and industry are held constant, the mechanic costs quality: it stands lower than a bought-in Prize on Conversion Rate, on crowd per Prize dollar and on cost % of Entrants (see the own-product finding above), though raw Entrant count and email signups hold up. That cost reverses in electronics and tech, is flat in sports and outdoors, and on Conversion Rate alone it turns in own product's favor above 2,500 Entrants. It fits best when the objective is a buyer, not the largest crowd at any cost, and least when the objective is pure reach and margin can't absorb a discount.
-- **Win your cart up to a cap.** The Prize is whatever the Winner put in the cart, capped at a stated number. The cap is the budget, and the title carries it. Cart and wishlist campaigns sit at 0.94 on crowd per Prize dollar, about 6% below typical for the money, on 208 valued campaigns, so price them as a wishlist and browsing play, not a reach play.
-- **Gift card to your own store.** Costs the margin on what the Winner spends, and the Winner comes back to spend it. Gift card campaigns post 0.98 on crowd per Prize dollar, about 2% below typical for the money, on 1,504 valued campaigns. A gift card to someone else's store buys reach and sends the Winner elsewhere.
-- **Discount codes as the headline Prize.** 438 campaigns, 0.71 on crowd per Prize dollar (about 29% below typical for the money), and a purchase condition dressed as a Prize. Use codes for everyone who did not win, under a real Prize, and read giveaway-winner-communications for the mechanics.
+- **Win your cart up to a cap.** The Prize is whatever the Winner put in the cart, capped at a stated number. The cap is the budget, and the title carries it. Cart and wishlist campaigns sit at 1.43 on crowd per Prize dollar, about 43% above typical for the money and the second highest figure of any campaign type, on 451 valued campaigns of 903. They also draw 725 Entrants against a typical 492. Price them as a wishlist and browsing play that also reaches. [`analysis/output/campaign_types.json`, `types`.]
+- **Gift card to your own store.** Costs the margin on what the Winner spends, and the Winner comes back to spend it. Gift card campaigns post 1.17 on crowd per Prize dollar, about 17% above typical for the money, on 6,791 valued campaigns of 11,100, while drawing fewer Entrants than typical at 432. A gift card to someone else's store buys reach and sends the Winner elsewhere. [`analysis/output/campaign_types.json`, `types`.]
+- **Discount codes as the headline Prize.** 1,054 campaigns, 0.73 on crowd per Prize dollar (about 27% below typical for the money), and a purchase condition dressed as a Prize. Use codes for everyone who did not win, under a real Prize, and read giveaway-winner-communications for the mechanics. [`analysis/output/prize_economics.json`, `by_prize_category`.]
 - **Ship the Prize as an order.** Create the Winner's Prize as a zero-value order in the store so it goes out through the normal pick, pack and tracking flow, and the Winner sees it in their account.
 - **Fourth quarter.** Reserve the Prize stock before the sale sells it out. Close a December draw at least a week before the carrier's cutoff, and where that is not possible make the Prize a gift card so the Winner still has it by the day.
 - **Budget line for the codes.** A store campaign has two costs: the Prize, and the discount taken up by non-Winners. Put the second in the budget as redemptions expected times average discount, and read the redemption count as the campaign's revenue line afterwards.

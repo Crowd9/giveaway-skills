@@ -63,5 +63,5 @@ The platform's own entry confirmation covers the entry itself. The welcome email
 
 - The giveaway segment is new and unproven, and Black Friday is the largest send of the year. Send the launch, mid and Winners emails to the giveaway segment before the sale, so the addresses that will never open are known before they can hurt the sale send.
 - Close the pre-sale giveaway the day before the sale. The Winners email carries early access to the sale as the non-Winner offer, and the sale email follows the next day to the same segment.
-- No giveaway email on the sale days. The timing skill's holiday table shows campaigns live over Black Friday converting 12% to 15% below matched campaigns.
+- No giveaway email on the sale days. The timing skill's holiday table shows campaigns live over Black Friday converting about 11% below matched campaigns.
 - The December giveaway's last call goes out before the shipping cutoff email, so both promises can be kept.

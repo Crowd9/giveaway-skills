@@ -75,7 +75,9 @@ def _subtree_values(fn, keys):
     return vals
 
 def _matches(num, vals, pct):
-    for c in ([num, num / 100] if pct else [num, num * 100]):
+    # "45 per 100 Entrants" is the ratio 0.45 in the output, and DENOM strips the "per 100" before the
+    # numbers are read, so a bare 45 could never reach its own key. Try the division either way round.
+    for c in ([num, num / 100, num * 100] if pct else [num, num * 100, num / 100]):
         for v in vals:
             if v and abs(c - v) <= max(abs(v) * 0.01, 0.5 if abs(v) > 10 else 0.005): return True
         if any(round(v, 2) == round(c, 2) for v in vals): return True
@@ -86,6 +88,10 @@ SRC = re.compile(r"analysis/output/([a-z_]+\.json)`?([^.\n]{0,120})")
 KEY = re.compile(r"[`(]\s*([a-z][a-z0-9_]{3,})")
 SKIP_KEY = {"analysis", "output", "json"}
 DENOM = re.compile(r"per 100|out of 100|/100|100 Entrants|100 contestants", re.I)
+# the six size-band edges are structure, not findings, and a sentence naming one was being counted as
+# an uncited figure. Same noise the skill-body check had to drop before its notes were readable.
+BANDS = {"100", "250", "500", "1000", "2500", "10000", "1,000", "2,500", "10,000",
+         "9", "10", "49", "50", "199", "200", "999"}  # the employee-band edges are structure too
 checked = 0
 for base, _, files in os.walk(os.path.join(ROOT, "skills")):
     for fn in files:
@@ -109,7 +115,7 @@ for base, _, files in os.walk(os.path.join(ROOT, "skills")):
             for num_s, pct in NUM.findall(DENOM.sub(" ", line)):
                 try: num = float(num_s.replace(",", ""))
                 except ValueError: continue
-                if num < 2: continue
+                if num < 2 or num_s in BANDS: continue
                 checked += 1
                 if _matches(num, vals, pct == "%"): continue
                 where = "elsewhere in" if whole and _matches(num, whole, pct == "%") else "nowhere in"

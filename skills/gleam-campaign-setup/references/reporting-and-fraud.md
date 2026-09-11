@@ -27,6 +27,8 @@ Real-time list of every action with Who, Action, Details (form answers, tweet UR
 
 The filter analyses 20 or more attributes and marks suspicious entries Invalid for review before the draw. Invalid entries are hidden from reporting and Entrants are not told. Levels: Off, Low, Medium, High (default), Very High. CAPTCHA: Automatic, Always, Never. Gleam monitors campaigns and may adjust the level. Extra controls on other pages: Require login before actions and email or phone verification live on the User Details tab, Allowed Locations on the Setup tab.
 
+The documentation describes what the filter does to entries as they arrive. It does not say what happens to entries already collected when the level is changed part way through a campaign, so do not tell a user that raising the level will or will not re-screen what is already in. Say the docs do not cover it, and that the Actions tab is where the entries already collected get reviewed before the draw.
+
 ## Admin and test entries
 
 [Admin / Test Entries](https://gleam.io/docs/competitions/post-campaign/test-entries)

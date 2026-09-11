@@ -15,11 +15,11 @@ def draft(a):
          f"Entry period. Entries open at {a.open} and close at {a.close}. Entries received outside this period are invalid.",
          f"Eligibility. Entry is open to {a.eligible}. The following are not eligible: {a.exclude}.",
          "How to enter. Entrants complete the entry steps shown on the entry page. No purchase is necessary to enter. Where an optional step involves a purchase, a free entry route of equal weight is available. Entries that are incomplete, duplicated, automated, or made through multiple accounts are void.",
-         f"Prize. {a.prize}. There are {a.winners} winner{'s' if a.winners != 1 else ''}. The prize is " + ("not transferable and no cash alternative is offered" if a.cash_alternative == "no" else "transferable and a cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
+         f"Prize. {a.prize}. There " + ("is 1 winner" if a.winners == 1 else f"are {a.winners} winners") + ". The prize is " + ("not transferable and no cash alternative is offered" if a.cash_alternative == "no" else "transferable and a cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
          "Winner selection. Winners are selected " + ("at random from all valid Entries" if a.method == "random" else "by the Promoter's judges on the published criteria, and the judges' decision is final") + f" on {a.draw}." + (" The draw method is published in advance and the result can be verified from the published record." if a.method == "random" else ""),
          f"Notification. Winners are notified by {a.notify} within 3 days of selection and must respond within {a.reply_days} day{'s' if a.reply_days != 1 else ''} of notification. If a winner does not respond, cannot be verified as eligible, or declines the prize, the prize is forfeited and a replacement winner is selected the same way.",
          "Verification. Winners may be asked to provide proof of identity, age and residence before the Prize is released.",
-         f"Delivery. Prizes are {a.delivery}. The Promoter is not responsible for prizes lost or damaged in transit once dispatched to the address the winner supplied." + (" Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise." if a.region != "none" else ""),
+         f"Delivery. Prizes are {a.delivery}. The Promoter is not responsible for prizes lost or damaged in transit once dispatched to the address the winner supplied." + (" Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise." if a.region.lower() != "none" else ""),
          f"Publicity. Winners consent to the Promoter publishing their {a.publish} for the purpose of announcing the result, and may withdraw that consent by contacting the Promoter.",
          "Personal information. Personal information collected is used to run the promotion, contact Winners and deliver Prizes, and is handled in accordance with the Promoter's privacy policy. Entrants may request access to or correction of their information by contacting the Promoter."]
     if a.marketing_consent:
@@ -32,15 +32,29 @@ def draft(a):
            "US": "Note for the US: sweepstakes must be free to enter (no purchase necessary with an alternate method of entry), official rules and odds statements are expected, and some states require registration and bonding above value thresholds (for example New York and Florida). Prizes may be taxable income to Winners.",
            "EU": "Note for the EU: consumer protection and GDPR apply. Some member states regulate promotional games (for example Italy and Portugal require notification). Check the country of every eligible Entrant.",
            "CA": "Note for Canada: a skill-testing question is common practice to avoid the lottery provisions of the Criminal Code, and Quebec has its own regime. Confirm before including Quebec residents."}
-    L += ["", reg.get(a.region.upper(), "Check the rules of every jurisdiction where Entrants live."), "",
+    asked = [r.strip().upper() for r in a.region.split(",") if r.strip() and r.strip().lower() != "none"]
+    notes = [reg[r] for r in asked if r in reg]
+    uncovered = [r for r in asked if r not in reg]
+    if uncovered:
+        notes.append("No note here covers " + ", ".join(uncovered) + ". This script carries notes for "
+                     + ", ".join(sorted(reg)) + " only, so treat every other country as unchecked and take advice on it "
+                     + "before opening entry there.")
+    if not notes:
+        notes = ["Check the rules of every jurisdiction where Entrants live."]
+    L += [""] + notes + ["",
           "This draft is generated from the answers supplied and is a starting point for legal review. It is not legal advice."]
     return "\n".join(L)
+
+class _Copy:
+    """A shallow copy of the parsed args, so a self-test can vary one field."""
+    def __init__(self, src):
+        self.__dict__.update(src.__dict__ if hasattr(src, "__dict__") else {k: getattr(src, k) for k in dir(src) if not k.startswith("_")})
 
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     for k in ("promoter", "name", "open", "close", "draw", "eligible", "exclude", "prize", "notify", "publish", "delivery"): ap.add_argument("--" + k, required="--self-test" not in argv)
     ap.add_argument("--address", default=""); ap.add_argument("--winners", type=int, default=1); ap.add_argument("--method", choices=["random", "judged"], default="random")
-    ap.add_argument("--reply-days", type=int, default=3); ap.add_argument("--cash-alternative", choices=["yes", "no"], default="no"); ap.add_argument("--region", default="none")
+    ap.add_argument("--reply-days", type=int, default=3); ap.add_argument("--cash-alternative", choices=["yes", "no"], default="no"); ap.add_argument("--region", default="none", help="one or more of AU, UK, US, EU, CA, comma separated. Any other country is named in the output as uncovered")
     ap.add_argument("--marketing-consent", action="store_true", help="add a marketing-consent clause separate from the personal-information clause: entry alone does not subscribe anyone, and how to unsubscribe")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args(argv)
@@ -48,7 +62,16 @@ def main(argv):
         a.promoter = "Test Co"; a.name = "Test Draw"; a.open = "1 Jan"; a.close = "2 Jan"; a.draw = "3 Jan"; a.eligible = "adults"; a.exclude = "staff"
         a.prize = "One hat, value 10"; a.notify = "email"; a.publish = "first name"; a.delivery = "posted"; a.region = "AU"
         t = draft(a); assert "1. Promoter. The promotion is run by Test Co" in t and "13. General." in t and "permit" in t and "not legal advice" in t
-        assert ";" not in t and "—" not in t; print("self-test passed"); return 0
+        assert ";" not in t and "\u2014" not in t
+        a.region = "UK,DE,JP"
+        m = draft(a)
+        assert "There is 1 winner" in t, "one Winner must not read as \"There are 1 winner\""
+        a2 = _Copy(a); a2.winners = 3
+        assert "There are 3 winners" in draft(a2)
+        assert "Gambling Act 2005" in m, "a known region in a list must still get its note"
+        assert "No note here covers DE, JP" in m, "an uncovered country must be named, never passed over in silence"
+        assert "permit" not in m, "only the regions asked for get a note"
+        print("self-test passed"); return 0
     print(draft(a)); return 0
 
 if __name__ == "__main__": sys.exit(main(sys.argv[1:]))

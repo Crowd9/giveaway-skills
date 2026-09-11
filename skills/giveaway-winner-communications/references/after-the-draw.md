@@ -51,7 +51,7 @@ A complaint rate that jumps on the Winners email usually means the entry form di
 
 Addresses that never open in their first weeks are the ones that cost sender reputation later.
 
-- Sunset rule (external practice, no dataset support here): after the first 30 to 60 days, stop mailing an address that has never opened. Suppress it, or run one plain re-permission email and suppress everyone who ignores it.
+- Sunset rule (external practice, no dataset support here): an address that has opened nothing in its first 30 to 60 days gets suppressed. Suppress it outright, or send one plain re-permission email and suppress everyone who ignores that. It never joins the core list.
 - Re-permission copy, plain text, one link: "You entered the [campaign name] giveaway and have not opened anything since. Tap here if you want to keep hearing from [Brand]. If not, this is the last one." Subject: "Should we stop emailing you?"
 - Hard bounces come off immediately.
 - Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag the same addresses at draw time.

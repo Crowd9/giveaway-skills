@@ -61,7 +61,7 @@ A campaign-level cut on the same campaigns behind these numbers, one row per cam
 | Art and custom | 141 | 80 | 355 | 32% | 3.1 | 5 | 42% |
 <!-- /generated -->
 
-Home, garden, appliance and food, drink, consumables lead the categories with real size on Conversion Rate. Music gear and food, drink, consumables offer email most often. Regulated goods ties for the most Entry Methods but has the lowest Conversion Rate (17%), consistent with the eligibility friction that category carries. Discount or coupon has the highest Conversion Rate of all (50%), on a typical two-day run that fits a promotion with a form more than a Prize people wait for.
+Among the categories with real size, home, garden, appliance and food, drink, consumables convert at 31% and 30%, behind placeholder Prize names at 34%. Music gear and regulated goods offer email most often, at 61% and 60%. Regulated goods runs the most Entry Methods at 11, three clear of the next highest, and has the lowest Conversion Rate at 19%, consistent with the eligibility friction that category carries. Discount or coupon has the highest Conversion Rate of all at 40%, on a typical seven-day run that fits a promotion with a form more than a Prize people wait for.
 
 The two or three Prize categories businesses reach for most, by industry:
 
@@ -119,7 +119,7 @@ Any claim that crypto campaigns inflate a benchmark remains a hypothesis.
 Pick the category that matches the objective first, then choose the item:
 
 - Leads or sales in a niche: own product, store credit, category bundle, membership.
-- Discount codes and coupons appear as Prizes in 438 campaigns. They require a purchase, so treat them as a promotion with an entry form, and use them as a consolation tier under a real Prize if at all.
+- Discount codes and coupons appear as Prizes in 1,054 campaigns. They require a purchase, so treat them as a promotion with an entry form, and use them as a consolation tier under a real Prize if at all.
 - Hobby and home audiences: category gear (sports, music, tools, home) selects for the audience in a way generic electronics cannot.
 - Reach or launch awareness: hardware or gift card tied to the brand, or the launched product itself.
 - Community and UGC: merch, signed items, exclusive access, experiences with the team.

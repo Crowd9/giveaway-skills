@@ -189,7 +189,18 @@ def cmd_commit(a):
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
     ents, *_ = prepare(rows, id_column, a.weight_column, set(l.strip().lower() for l in open(a.exclude) if l.strip()) if a.exclude else set())
-    for note in scan(ents): print(f"review: {note}")
+    notes = scan(ents)
+    shown = notes if not getattr(a, "flagged_out", None) else notes[:20]
+    for note in shown: print(f"review: {note}")
+    if getattr(a, "flagged_out", None):
+        # 20,000 review lines in a terminal is not a review. Write the ids out, let a person read them, feed the
+        # kept ones back through --exclude. Nothing is dropped here: excluding a real Entrant costs them the Prize.
+        ids = [n.split(": ", 1)[1] for n in notes if ": " in n and not n.startswith("one domain")]
+        with open(a.flagged_out, "w") as fh:
+            fh.write("\n".join(dict.fromkeys(ids)) + ("\n" if ids else ""))
+        more = f" ({len(notes) - len(shown)} more not printed)" if len(notes) > len(shown) else ""
+        print(f"\n{len(set(ids))} flagged ids written to {a.flagged_out}{more}. Read that file, delete anyone who "
+              f"should stay in, then pass it to the draw as --exclude {a.flagged_out}. Flagging is a prompt to look, never a verdict.")
     print("\nPublish the commitment now, before the seed exists. Keep the input file unchanged.")
     if a.draw_at:
         ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at(ts)
@@ -283,6 +294,20 @@ def self_test():
     apply_rules(O); assert O.tiers == "Only:1" and O.backups == 0 and O.id_column == "email", vars(O)
     class N: rules = None; tiers = None; backups = None; winners = None
     apply_rules(N); assert (N.backups, N.winners) == (0, 1), vars(N)
+    # a flagged list must be writable and must feed --exclude, which is the only route at export scale
+    import tempfile as _tf, csv as _csv, os as _os
+    with _tf.NamedTemporaryFile("w", suffix=".csv", delete=False, newline="") as fh:
+        w = _csv.writer(fh); w.writerow(["email"])
+        for i in range(50): w.writerow([f"p{i}@" + ("mailinator.com" if i % 5 == 0 else "example.com")])
+    out = fh.name + ".flagged"
+    class _A: pass
+    _a = _A(); _a.input = fh.name; _a.id_column = "email"; _a.weight_column = None; _a.exclude = None
+    _a.tiers = "Grand:1"; _a.winners = None; _a.backups = None; _a.rules = None; _a.draw_at = None; _a.flagged_out = out
+    cmd_commit(_a)
+    flagged = [l.strip() for l in open(out) if l.strip()]
+    assert len(flagged) == 10, f"every disposable id must be written out, got {len(flagged)}"
+    assert all(f.endswith("@mailinator.com") for f in flagged), flagged
+    _os.unlink(fh.name); _os.unlink(out)
     print("self-test passed"); return 0
 
 def main(argv):
@@ -294,6 +319,7 @@ def main(argv):
         p.add_argument("--id-column"); p.add_argument("--weight-column"); p.add_argument("--exclude")
         p.add_argument("--rules", help="JSON file holding tiers, backups, winners, id-column, weight-column and exclude, so commit and draw read the same rules")
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
+    c.add_argument("--flagged-out", help="write the flagged ids to this file for review, then pass it to draw as --exclude. Use it on a list too long to read in a terminal")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
     d.add_argument("--seed"); d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
     d.add_argument("--audit"); d.add_argument("--winners-csv"); d.add_argument("--mask", action="store_true", help="print masked ids for announcements")
