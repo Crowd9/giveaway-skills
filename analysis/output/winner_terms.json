@@ -1,0 +1,128 @@
+{
+ "definitions": {
+  "scope": "campaigns with 100 or more Entrants, ordinary population, Gleam's own demonstration accounts excluded",
+  "terms_settings": "the values written into the campaign's terms; 7 days is the platform default for both timings"
+ },
+ "terms_timetable": {
+  "draw_days": {
+   "total": 122595,
+   "values": {
+    "7": {
+     "campaigns": 115799,
+     "businesses": 17623,
+     "share": 0.9446
+    },
+    "1": {
+     "campaigns": 1737,
+     "businesses": 510,
+     "share": 0.0142
+    },
+    "3": {
+     "campaigns": 1350,
+     "businesses": 353,
+     "share": 0.011
+    },
+    "2": {
+     "campaigns": 1243,
+     "businesses": 355,
+     "share": 0.0101
+    },
+    "14": {
+     "campaigns": 832,
+     "businesses": 185,
+     "share": 0.0068
+    },
+    "5": {
+     "campaigns": 400,
+     "businesses": 142,
+     "share": 0.0033
+    },
+    "21": {
+     "campaigns": 304,
+     "businesses": 13,
+     "share": 0.0025
+    },
+    "30": {
+     "campaigns": 267,
+     "businesses": 72,
+     "share": 0.0022
+    }
+   }
+  },
+  "reply_days": {
+   "total": 122595,
+   "values": {
+    "7": {
+     "campaigns": 114647,
+     "businesses": 17618,
+     "share": 0.9352
+    },
+    "2": {
+     "campaigns": 2414,
+     "businesses": 395,
+     "share": 0.0197
+    },
+    "1": {
+     "campaigns": 1452,
+     "businesses": 348,
+     "share": 0.0118
+    },
+    "3": {
+     "campaigns": 1412,
+     "businesses": 413,
+     "share": 0.0115
+    },
+    "14": {
+     "campaigns": 833,
+     "businesses": 202,
+     "share": 0.0068
+    },
+    "28": {
+     "campaigns": 482,
+     "businesses": 27,
+     "share": 0.0039
+    },
+    "5": {
+     "campaigns": 375,
+     "businesses": 176,
+     "share": 0.0031
+    },
+    "30": {
+     "campaigns": 308,
+     "businesses": 125,
+     "share": 0.0025
+    }
+   }
+  }
+ },
+ "selection_method": {
+  "total": 122595,
+  "values": {
+   "Random Draw": {
+    "campaigns": 121501,
+    "businesses": 18317,
+    "share": 0.9911
+   },
+   "Bốc thăm ngẫu nhiên": {
+    "campaigns": 85,
+    "businesses": 1,
+    "share": 0.0007
+   },
+   "Tirage au sort": {
+    "campaigns": 47,
+    "businesses": 9,
+    "share": 0.0004
+   },
+   "Ganhador aleatório": {
+    "campaigns": 35,
+    "businesses": 1,
+    "share": 0.0003
+   },
+   "Jurering": {
+    "campaigns": 32,
+    "businesses": 1,
+    "share": 0.0003
+   }
+  }
+ }
+}

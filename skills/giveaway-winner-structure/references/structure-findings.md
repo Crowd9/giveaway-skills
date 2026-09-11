@@ -195,6 +195,29 @@ Japan and Singapore list the most Prize units, the US, UK, Brazil and Australia 
 
 Source: `analysis/output/indicators.json` (prize_structure_by_country), `analysis/output/country_cuts.json` (by_country).
 
+## What the terms actually say (extracted)
+
+Two settings decide the Winner timetable, and almost nobody changes either.
+
+| Setting | Value | Campaigns | Share |
+|---|---|---|---|
+| Days after close before the draw | 7 | 115,799 | 94.5% |
+| Days a Winner has to reply | 7 | 114,647 | 93.5% |
+| Selection method | Random Draw | 121,501 | 98.2% |
+
+Seven days is Gleam's default for both, so this describes what campaigns end up with and never what businesses
+weighed up. The next most common reply window is two days on 2,153 campaigns, then one day on 1,254. A 72-hour
+deadline, which trade advice often recommends, is written into fewer than one campaign in a hundred here.
+
+Judging is close to non-existent. 98.2% name a random draw, and every other method together covers about 300
+campaigns, most of them one business running the same wording repeatedly.
+
+The practical reading: 7 days is what a reader's Entrants will expect because it is what almost every Gleam
+campaign says, and a shorter deadline is a deliberate choice to defend in the terms. Pick a shorter one when the
+Prize expires (an event ticket, a seasonal item), and leave the default otherwise.
+
+Source: `analysis/output/winner_terms.json`.
+
 ## Limits
 
 - Quantity is what the business typed. A record with quantity 100 may be 100 Winners, or 100 codes for one Winner. That applies to the country group's typical Prize-unit figures too.
