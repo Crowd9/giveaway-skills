@@ -59,6 +59,22 @@ Every option still works as a flag, and a flag on the command line overrides the
 
 One draw. If the tool errors (too few eligible Entrants, wrong column), fix the input, commit again, and keep only the final run.
 
+**Read the counts back before you call it done.** Both commands print, and the audit records, `rows_read`,
+`unique_eligible`, `duplicates_merged`, `excluded` and `rows_with_invalid_weight`. The last one is the quiet
+failure: an Entrant whose weight is blank, zero or negative is dropped from the draw, so a misnamed weight column
+or a sparse entries field can take most of the list out while the draw still succeeds and prints Winners. A file
+of five rows where three have no weight draws from two people and says so in one line that is easy to skip.
+
+Check `unique_eligible` against what the business expects before announcing anything. When the gap is more than a
+rounding difference, say the number out loud to the user and name the cause. Where the weight column is the
+problem, the fix is usually to drop `--weight-column` and run an unweighted draw, which keeps everyone in.
+
+**Weighting concentrates the odds, so decide it before the draw and say which you did.** The key is
+`u ^ (1 / weight)`, so an Entrant holding twenty entries is twenty times more likely to take any given place than
+one holding a single entry. That is the point of bonus entries, and it is also what a losing Entrant will ask
+about. Weight when the campaign rewarded effort and the terms said so. Draw unweighted when the Prize is large
+enough that the optics matter more than the reward, and put the choice in the audit note either way.
+
 ## Checking it without the script
 
 Each Entrant gets a sortable key from a hash of the seed and their id. Sort by key, highest first, ties broken by id, and the first Entrants fill the tiers in order, then the backups. Ten lines in Python, JavaScript or Go reproduce it, and the audit record lists every Winner's key for comparison.
