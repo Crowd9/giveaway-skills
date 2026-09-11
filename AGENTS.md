@@ -22,7 +22,6 @@ A library of Agent Skills for running giveaways, following the [Agent Skills spe
 ```bash
 python3 scripts/validate.py                                  # frontmatter, size, links, style, evals
 python3 evals/style_check.py reply.txt   # score a saved reply
-python3 analysis/analyze.py <export> --private-dir <dir>       # regenerate aggregates (private input)
 ```
 
 ## Only Aggregates Are Committed

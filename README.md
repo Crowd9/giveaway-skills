@@ -246,10 +246,6 @@ That data is what lets the skills say things like:
 
 Every figure carries its sample size, and every finding describes what organizers chose, never what caused participation, because the dataset holds no failed campaigns to compare against. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md), and the analysis scripts that produced them are in `analysis/`.
 
-## Defaults for the Gleam Editor
-
-The same analysis writes `defaults/`, machine-readable defaults for the Gleam AI campaign editor, with sample sizes on every value. See [defaults/README.md](defaults/README.md).
-
 ## What These Skills Will Not Do
 
 - Give legal advice. The winner-structure skill drafts terms from your answers, and a lawyer in your jurisdiction has to review that draft before you publish it.

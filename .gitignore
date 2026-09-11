@@ -1,8 +1,8 @@
-# Private build inputs: never commit source campaign data or record-level analysis
+# Build inputs and local tooling are not part of this repository
 analysis/*.py
-the analysis notes
-analysis/private/
-build-inputs/
+analysis/*.md
+!analysis/README.md
+defaults/
 .remember/
 .claude/settings.local.json
 .DS_Store
