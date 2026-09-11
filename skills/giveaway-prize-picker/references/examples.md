@@ -1,10 +1,10 @@
 # Example library
 
-Paraphrased and anonymized from the campaigns behind these numbers. Business identities, campaign names, links and exact wording are removed. Values are as stated in the listing unless marked "parsed" (taken from the Prize text) or "not stated". Every example is a real campaign that reached at least 1,000 Entrants, which says nothing about whether the Prize worked. Examples marked (small) come from campaigns of 1,000 to 2,500 Entrants, where half of all campaigns sit. Listing-level provenance lives in a private analysis file outside this repository.
+Paraphrased and anonymized from the campaigns behind these numbers. Business identities, campaign names, links and exact wording are removed. Values are as stated in the listing unless marked "parsed" (taken from the Prize text) or "not stated". Every example is a real campaign that reached at least 1,000 Entrants, which says nothing about whether the Prize worked. These were picked before the benchmarks widened to 100 Entrants, so they all sit in the upper half of the size bands. Examples marked (small) come from campaigns of 1,000 to 2,500 Entrants, which is the fourth of six bands and not the small end any more. Listing-level provenance lives in a private analysis file outside this repository.
 
 Labels: **extracted** means fields from the record, **inferred** means our classification or reading, **advice** means how to use it.
 
-## Small campaigns (1,000 to 2,500 Entrants)
+## Campaigns of 1,000 to 2,500 Entrants
 
 - **Independent coffee roaster, a year of coffee, stated 480 USD, 1 Winner (2022, small).** Advice: the "year of" framing from a consumable brand at ingredient cost.
 - **Specialty coffee retailer, a 299 USD grinder, 1 Winner, open to two countries (2024, small).** Advice: one category item at retail, with eligibility stated up front.
