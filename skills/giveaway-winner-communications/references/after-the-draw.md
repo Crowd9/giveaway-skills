@@ -2,6 +2,35 @@
 
 Advice from practice. Nothing here carries a dataset figure. The campaign emails that run while entries are open belong to giveaway-promotion-plan, and the opt-in wording on the entry form belongs to giveaway-entry-method-planner. This page picks up at the moment the Winner is announced and the rest of the list is still sitting there.
 
+## Most campaigns have no address to write to (extracted)
+
+Everything on this page runs on email, and the majority of campaigns never collected one. The share of campaigns
+offering an email or newsletter Action rises with size and stays a minority at every size:
+
+| Campaign size | Offered an email Action |
+|---|---|
+| 100 to 250 Entrants | 25% |
+| 250 to 500 | 31% |
+| 500 to 1,000 | 38% |
+| 1,000 to 2,500 | 43% |
+| 2,500 to 10,000 | 46% |
+| 10,000 or more | 40% |
+
+So in three campaigns out of four at the small end, and in more than half at every size, the business holds no
+address for the Winner or for anyone else who entered. Check which Actions the campaign ran before planning any
+of this. Where there is no email Action:
+
+- The Winner notification goes on the channel they entered with, and the deadline in the terms starts from a
+  message the Winner may not see for days. Allow for that when the Prize is time-bound.
+- There is no welcome series, no sunset rule and no second consent to collect. The list the campaign built is a
+  follower count on someone else's platform.
+- The public announcement carries more weight, because it is the only message that reaches the people who did not
+  win.
+- Say plainly that the campaign captured reach and not a list, and that an email Action is the change that would
+  alter it next time.
+
+Source: `analysis/output/benchmarks.json` (`ordinary_benchmark.entry_methods.by_band.share_with_family`).
+
 ## The welcome series that starts with the non-Winner message
 
 The series starts at entry. Message one is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them from the giveaway stream, on a fixed schedule, and stop.
