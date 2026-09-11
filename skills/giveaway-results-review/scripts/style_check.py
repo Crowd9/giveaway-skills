@@ -27,7 +27,10 @@ FILLER = (r"\b(actually|leverage|robust|comprehensive|streamline|delve|foster|pi
           r"|in terms of|with regard to|going forward|let's dive in|let's take a look)\b")
 OPENERS = r"^(great question|here's how i'd think|here is how|let me walk you|certainly|of course|sure[,!])"
 CLOSERS = r"(hope this helps|let me know if|feel free to|happy to elaborate)"
-CONTRAST = r"(, not \w|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\brather than\b|\binstead of\b|, don't \w)"
+# A closing question that offers to do more work. Distinct from a question that asks for a missing fact.
+OFFER = (r"\b(want (me|the|a|an|that|one)|shall i|should i|would you like|do you want|can i (draft|write|put|run|send|do)"
+         r"|happy to|i can (also )?(draft|write|put together|run|send)|(need|like) (me|anything else))\b")
+CONTRAST = r"(, not \w|\bnot \w+(?: \w+){0,4}, (?:but|it's|it is)\b|\brather than\b|\binstead of\b|\binstead\b\s*[.,]|, don't \w)"
 # A sentence that announces the next block rather than saying the thing. The commonest slop tell after punctuation.
 LABEL_OPENER = ("^(the (reasoning|caveat|point|upshot|short version|catch|tradeoff|takeaway|rule|logic|thinking|context"
                 r"|detail|numbers?|figures?|evidence)\b[^.!?]{0,60}[.:]"
@@ -79,8 +82,17 @@ def prose_only(text):
     return CODEISH.sub(" ", text)
 
 
+# A fenced block, a markdown table row and a pasted dict are not sentences. Counting them put a "longest
+# sentence" of 234 words into a report that then stamped itself PASS, so the variety gate was reading a
+# code block as prose and waving through answers that had no long sentence at all.
+def sentences(text):
+    body = re.sub(r"```.*?```", " ", text, flags=re.S)
+    body = "\n".join(l for l in body.split("\n") if not l.lstrip().startswith("|"))
+    return [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", body)) if s.strip()]
+
+
 def check(text):
-    sents = [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", text)) if s.strip()]
+    sents = sentences(text)
     lens = [len(s.split()) for s in sents]
     paras = [p.strip() for p in text.split("\n\n") if p.strip()]
     label = sum(1 for p in paras for first in [re.split(r"(?<=[.!?])\s", p, 1)[0]] if re.match(LABEL_OPENER, first.strip().lstrip("*- "), re.I))
@@ -89,6 +101,10 @@ def check(text):
     last = sents[-1] if sents else ""
     ACTION = r"\b(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm|next decision|next step)\b"
     asks = last.strip().endswith("?") and re.search(r"\byou(r|'ll|'re|'ve)?\b", last, re.I)
+    # An offer is not a next step. "Want the DM template?" hands the work back and reads as an assistant
+    # touting for more turns, where the reader wanted to be told what to do on Monday. A closing question
+    # still earns its place when it asks for the one fact that would change the recommendation.
+    offer = int(bool(last.strip().endswith("?") and re.search(OFFER, last, re.I)))
     empty_end = int(bool(last) and not asks and not re.search(r"\d", last) and len(last.split()) < 22 and not re.search(ACTION, last.lower()))
     return {
         "em_dashes": text.count("—"),
@@ -117,8 +133,12 @@ def check(text):
         "reader_facing_jargon": len(re.findall(JARGON, text, re.I)),
         "bans_without_a_reason": len([m for m in re.finditer(BAN, text, re.I) if not re.search(r"(rule|law|legal|jurisdiction|terms of service|platform|prohibit|forbid|fraud|risk|purchase to enter|lottery)", text[max(0,m.start()-260):m.end()+260], re.I)]),
         "empty_ending": empty_end,
+        "offer_endings": offer,
         "shortest_sentence": min(lens) if lens else 0,
         "longest_sentence": max(lens) if lens else 0,
+        # Past about forty-five words the reader has lost the subject. The variety gate only asks for one
+        # long sentence, so with no ceiling it rewarded the runaway it should have caught.
+        "runaway_sentences": sum(1 for n in lens if n > 45),
     }
 
 # Same patterns, keyed by the counter they feed, so --show can quote what tripped each one.
@@ -187,6 +207,16 @@ def self_test():
                  "Ask them which matters more to you this quarter.\n")
     out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
     assert "FAIL" in out, f"filler words must block the verdict, got: {out}"
+    with open(fh.name, "w") as f2:
+        f2.write("Run it on 19 November and close on 26 November.\n"
+                 "That lands the draw before the shipping cut-off and leaves you nine clear days to promote it.\n"
+                 "Want the DM template?\n")
+    out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
+    assert "FAIL" in out, f"an offer ending must block the verdict, got: {out}"
+    # a pasted code block must not be read as a long sentence, and a real runaway must fail
+    fenced = "Pick it. " + "```\n" + " ".join(["word"] * 80) + "\n```\n"
+    assert check(fenced)["longest_sentence"] < 45, check(fenced)
+    assert check("You " + " ".join(["run"] * 60) + " today.")["runaway_sentences"] == 1
     _os.unlink(fh.name)
     print("self-test passed")
 
@@ -204,7 +234,8 @@ if __name__ == "__main__":
                 + r["em_dashes"] + r["semicolons"] + r["curly_quotes"] + r["assistant_opener"] + r["assistant_closer"]
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
-                + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"])
+                + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
+                + r["runaway_sentences"] + r["offer_endings"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         if verbose:

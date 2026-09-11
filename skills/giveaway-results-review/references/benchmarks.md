@@ -6,16 +6,18 @@ Every figure is drawn from the campaigns behind these numbers (116,499 campaigns
 
 ## Campaign size
 
+<!-- generated:bm_size -->
 | Metric | Lower quarter | Typical | Upper quarter | Top tenth | Campaigns |
 |---|---|---|---|---|---|
-| Entrants | 225 | 492 | 1,293 | 3,349 | 117,130 |
-| Entries | 883 | 2,320 | 6,719 | 17,968 | 117,130 |
-| Entries per Entrant | 2.74 | 4.39 | 7.05 | 11.84 | 117,130 |
-| Entries per 100 Entrants | 274 | 439 | 705 | 1,184 | 117,130 |
-| Impressions | 862 | 2,033 | 5,608 | 16,452 | 117,041 |
-| Duration in days | 7 | 14 | 29 | 36 | 117,130 |
+| Entrants | 225 | 492 | 1,290 | 3,334 | 116,499 |
+| Entries | 882 | 2,322 | 6,715 | 17,903 | 116,283 |
+| Entries per Entrant | 2.74 | 4.38 | 7.06 | 11.87 | 116,283 |
+| Entries per 100 Entrants | 274 | 438 | 706 | 1,187 | 116,283 |
+| Impressions | 865 | 2,033 | 5,590 | 16,363 | 116,119 |
+| Duration in days | 7 | 14 | 29 | 35 | 115,754 |
+<!-- /generated -->
 
-Half of all campaigns sat between 225 and 1,293 Entrants, and the script compares a campaign against others in its own band.
+Half of all campaigns sat between 225 and 1,290 Entrants, and the script compares a campaign against others in its own band.
 
 | Comparison band | Campaigns | Businesses |
 |---|---|---|
@@ -505,16 +507,18 @@ Every benchmark on this page counts campaigns, and campaigns are not spread even
 
 The first row below is one campaign per business, which is the business-weighted view of the same data.
 
+<!-- generated:bm_seqcurve -->
 | The campaign is the business's | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant |
 |---|---|---|---|---|---|
-| 1st | 17,383 | 17,383 | 382 | 25.6% | 3.68 |
-| 2nd | 8,509 | 8,509 | 438 | 26.4% | 3.85 |
-| 3rd to 5th | 14,332 | 6,028 | 498 | 26.8% | 4.05 |
-| 6th to 10th | 12,888 | 3,326 | 547 | 27.0% | 4.18 |
-| 11th or later | 64,236 | 1,984 | 514 | 27.5% | 4.91 |
-| All campaigns | 116,499 | 17,633 | 492 | 26.9% | 4.39 |
+| 1st | 17,245 | 17,245 | 381 | 25.6% | 3.67 |
+| 2nd | 8,448 | 8,448 | 437 | 26.4% | 3.85 |
+| 3rd to 5th | 14,225 | 5,978 | 500 | 26.8% | 4.04 |
+| 6th to 10th | 12,804 | 3,299 | 548 | 27.0% | 4.18 |
+| 11th or later | 63,777 | 1,966 | 515 | 27.5% | 4.91 |
+| All campaigns | 116,499 | 17,633 | 492 | 26.9% | 4.38 |
+<!-- /generated -->
 
-A first campaign drew 382 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 382 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.68 against 4.39, because a business on its eleventh campaign runs more actions.
+A first campaign drew 381 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 381 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.67 against 4.38, because a business on its eleventh campaign runs more actions.
 
 None of this says that running more campaigns produces bigger ones. The businesses still running an eleventh campaign are the ones whose earlier campaigns went well enough to justify another, which is survivorship and not a result.
 

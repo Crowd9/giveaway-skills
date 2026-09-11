@@ -14,7 +14,7 @@ with the person named by a field such as username, author, handle, email or owne
 --rules rules.json keeps the flags in one file so commit and draw cannot drift apart. Keys, all optional:
 tiers, backups, winners, id-column, weight-column, exclude. A flag given on the command line wins over the file.
 
-  {"tiers": "Grand prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}
+  {"tiers": "Grand Prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}
 
 How the draw works (documented so anyone can recheck it in any language):
   1. Entrants are read, ids trimmed and lower-cased, duplicates merged (weights add up when a weight column is given),

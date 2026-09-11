@@ -235,12 +235,12 @@ Most giveaway advice is somebody's opinion. These skills are built on 116,499 re
 
 Some of what that shows:
 
-- **A first campaign drew 382 Entrants, and 25.6% of the people who saw it entered.** That is 17,383 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 382.
+- **A first campaign drew 381 Entrants, and 25.6% of the people who saw it entered.** That is 17,245 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 381.
 - **Most campaigns are small and cheap.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Your industry sets that price.** Music and media captured an address for 0.09 USD of stated Prize value. Software paid 1.19.
 - **Spending more on the Prize buys less than you would think.** Ten times the Prize value came with about 2.2 times the Entrants, and Prize value explains about 23% of the difference in Entrant counts.
-- **What you give away matters more than what you spend on it.** For the same money, tech hardware drew 43% more crowd than typical and a subscription drew 48% less.
+- **What you give away matters more than what you spend on it.** For the same money, tech hardware drew 42% more crowd than typical and a subscription drew 47% less.
 - **A small campaign works its audience as hard as a big one.** Entries per Entrant runs 4.46 in the smallest size band and 5.28 in the largest, so a low Entrant count is a reach problem.
 - **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.
 - **A long Action list costs you Conversion Rate.** Campaigns carrying 11 or more entry Actions converted 31% of viewers against 44% for a short list. They drew 17% more Entrants anyway.

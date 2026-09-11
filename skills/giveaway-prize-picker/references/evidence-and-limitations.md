@@ -38,6 +38,8 @@ That sums to 966,269, rounded to 966,000.
 
 The dataset's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
 
+The table below counts the whole dataset before any filter, so its 167,068 campaigns and 243,835 Prize records are larger than the 116,499 campaigns and 170,599 Prize records every benchmark on this page describes. Quote a row here only to say what the raw data holds. Within the benchmark population the share of Prize records carrying a stated value is 37.9%.
+
 | Field | Value |
 |---|---|
 | Campaigns | 167,068 |

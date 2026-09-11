@@ -35,7 +35,7 @@ Write the rules once into a small JSON file so the commit and the draw cannot di
 
 ```json
 {
-  "tiers": "Grand prize:1,Runner-up:5",
+  "tiers": "Grand Prize:1,Runner-up:5",
   "backups": 2,
   "id-column": "email",
   "weight-column": "entries",

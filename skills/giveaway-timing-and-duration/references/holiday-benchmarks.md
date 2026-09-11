@@ -2,7 +2,7 @@
 
 Built from the campaigns behind these numbers (116,499 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
-Baseline for comparison across this page. The typical campaign draws 492 Entrants (117,130 campaigns) over 14 days (116,276). Read every Conversion Rate column on this page against 34.5%, the typical figure among the campaigns we can compare fairly (40,352), because those columns are counted on that group and carry its campaign count in brackets. The all-campaign Conversion Rate is 26.9% (117,041), lower because Impressions count once per visitor per day and a long run collects more of them for the same crowd. The public-holiday table below reads 492 Entrants for every other start across 91,439 campaigns, which is the same baseline arrived at on this page's own data.
+Baseline for comparison across this page. The typical campaign draws 492 Entrants over 14 days, across 116,283 campaigns from 17,603 businesses. Read every Conversion Rate column on this page against 34.5%, the typical figure among the campaigns we can compare fairly, because those columns are counted on that group and carry its campaign count in brackets. The all-campaign Conversion Rate is 26.9%, lower because Impressions count once per visitor per day and a long run collects more of them for the same crowd. The public-holiday table below reads 492 Entrants for every other start across 90,764 campaigns, which is the same baseline arrived at on this page's own data.
 
 These figures were wrong on this page until the benchmark floor moved from 1,000 Entrants to 100. Anything comparing a theme with the typical figure is measured against the numbers above, so check them against the generated tables before trusting a sentence that says above or below.
 
@@ -122,6 +122,8 @@ Ramadan and Eid, Prime Day, Singles' Day, anniversaries and milestones have no f
 ## The season plan for a store
 
 Four dates decide a store's fourth quarter, and the data gives each a shape. Dates below are 2026, the 2027 rows in the calendar move them a day.
+
+One rule off this table gets missed most often, so it is stated here in plain sight: a Black Friday campaign closes **before** the sale, and no giveaway stays live from 27 to 30 November. Campaigns live over that weekend got 11% fewer people to enter than matched campaigns. An answer that quotes the 11% and then closes on Black Friday itself has argued against its own figure, which happened in measured answers twice.
 
 | Slot | Window (2026) | What the data says | What the giveaway does for the store |
 |---|---|---|---|

@@ -24,6 +24,8 @@ Start: [Competitions overview](https://gleam.io/docs/competitions/setup/overview
 | Very High | Adds more aggressive Cloudflare challenges |
 
 Gleam may adjust a campaign's level if it blocks legitimate Entrants or lets too many suspicious ones through.
+
+Answer a question about the levels with this table, one row at a time, so the reader can judge whether to move off the default. Naming the five levels without saying what each adds leaves them exactly where they started, which is how a measured answer scored worst in this skill. The docs do not record what High adds over Medium, so say that and leave the gap open. Say nothing at all about what a flagged Entrant sees on screen or whether the form still lets them finish. That is not documented anywhere, and inventing a reassurance about it was the other measured failure here.
 - **Terms and Conditions** are generated automatically from the campaign setup with editable fields: sponsor name and address, governing law country, privacy policy link, selection method (Random Draw by default, or Judges Panel, Popular Vote, Most Entries, other), contact window (7 days by default), claim window (7 days by default), additional terms. **Custom terms** written from scratch are available on Hobby and above. A "read the terms" checkbox can be added to the User Details form.
 - **Allowed Locations** restricts by country (not city) using MaxMind. Restricted visitors see a message.
 - **Age Restriction** works through the Minimum Age field in User Details, set required, with a DD/MM/YYYY format.
@@ -61,7 +63,7 @@ Gleam may adjust a campaign's level if it blocks legitimate Entrants or lets too
 
 [Post Entry Tab](https://gleam.io/docs/competitions/setup/post-entry)
 
-- **Post entry email** goes to every Entrant by default, in the campaign language, and can be disabled. **Custom post-entry emails** with tokens (campaign name, landing page URL, Contestant first and full name, current and prospective entries, viral share URL, unsubscribe) are on Business.
+- **Post entry email** goes to every Entrant by default, in the campaign language, and can be disabled. It does not wait for anyone to finish the Action list, and the setting that fires on completing every Action is the Post Entry Redirect below. A measured answer merged the two and told a business its email would go out once someone finished every Action. **Custom post-entry emails** with tokens (campaign name, landing page URL, Contestant first and full name, current and prospective entries, viral share URL, unsubscribe) are on Business.
 - **Post Entry Redirect** sends the user to a URL once all actions are complete. It ignores Viral Share, so do not make Viral Share the last action when using it.
 - **Pixel Tracking**: Adroll, Facebook Pixel and Conversions API (on load, conversion, or both, deduplicated by event id), Google Ads, Tune, Twitter.
 - **Post-Entry Webhook** sends entry data to your endpoint, Premium plans only.

@@ -1,7 +1,7 @@
 {
   "name": "giveaway-skills",
   "description": "Skills for running better giveaways from idea to results: ideas, prize choice, entry methods, timing, winner structure, promotion plan, provably fair random draw, winner communications, a results review against 117,348 campaigns, and Gleam setup, platform-neutral, supported by Gleam",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "keywords": ["giveaway", "contest", "sweepstakes", "competition", "raffle", "marketing", "gleam", "random-draw", "winner"],
   "author": {
     "name": "Gleam"

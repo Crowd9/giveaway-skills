@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.19 |
-| giveaway-entry-method-planner | 1.2.18 |
-| giveaway-timing-and-duration | 1.4.16 |
-| giveaway-winner-structure | 1.3.15 |
-| giveaway-promotion-plan | 1.3.19 |
-| giveaway-random-draw | 1.3.12 |
-| giveaway-winner-communications | 1.2.12 |
-| giveaway-idea-generator | 1.3.16 |
-| giveaway-results-review | 1.5.20 |
-| gleam-campaign-setup | 1.2.17 |
+| giveaway-prize-picker | 1.3.20 |
+| giveaway-entry-method-planner | 1.2.19 |
+| giveaway-timing-and-duration | 1.4.17 |
+| giveaway-winner-structure | 1.3.16 |
+| giveaway-promotion-plan | 1.3.20 |
+| giveaway-random-draw | 1.3.13 |
+| giveaway-winner-communications | 1.2.13 |
+| giveaway-idea-generator | 1.3.17 |
+| giveaway-results-review | 1.5.21 |
+| gleam-campaign-setup | 1.2.18 |
 
 ## Skills
 
@@ -42,6 +42,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.12 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.3.13 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.3.14 (2026-09-11): density pass on evidence, criteria and taxonomy, readable industry labels in tables, no "extracted" in the answer.
+- 1.3.20 (2026-09-12): The raw-dataset table names its own scope, so its 167,068 campaigns can no longer be read as the benchmark population.
 
 ### giveaway-entry-method-planner
 
@@ -66,6 +67,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.11 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.2.12 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.2.13 (2026-09-11): density pass on the mix and action families, Viral Share section rewritten, "16 to52%" repaired.
+- 1.2.19 (2026-09-12): The steps-inside-one-Action cut is relabelled and says what it does not measure, after answers read it as a count of Entry Methods.
 
 ### giveaway-timing-and-duration
 
@@ -91,6 +93,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.9 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.4.10 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.4.11 (2026-09-11): density pass on timing and holiday findings, readable industry labels, sample sizes out of the sentence.
+- 1.4.17 (2026-09-12): The Black Friday rule (close before the sale, nothing live 27 to 30 November) is stated in plain sight above the season table.
 
 ### giveaway-winner-structure
 
@@ -110,6 +113,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.8 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.3.9 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.3.10 (2026-09-11): density pass on structure findings and fulfillment, Winner-count ratios moved into tables.
+- 1.3.16 (2026-09-12): The seven-day windows carry "Gleam's default" in the table row, and the count-is-the-share trap is named.
 
 ### giveaway-promotion-plan
 
@@ -132,6 +136,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.12 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.3.13 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.3.14 (2026-09-11): density pass on the channel playbook, the "(below)" tic dropped.
+- 1.3.20 (2026-09-12): Directory rows carry the price and turnaround limits, the traffic curve says traffic and never Entries, and the quiet-middle row is read as days since launch.
 
 ### giveaway-random-draw
 
@@ -147,6 +152,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.5 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.3.6 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.3.7 (2026-09-11): density pass on the draw procedure, doc links repaired.
+- 1.3.13 (2026-09-12): A missing rule no longer holds the draw up, the rules applied are stated above the Winner list, and the tier example capitalises Prize.
 
 ### giveaway-winner-communications
 
@@ -163,6 +169,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.5 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.2.6 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.2.7 (2026-09-11): says what to do when no reserve Winner was drawn.
+- 1.2.13 (2026-09-12): Shared answer-style rules: copy every figure out of the table, and close on a next step in place of an offer.
 
 ### giveaway-idea-generator
 
@@ -187,6 +194,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.9 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.3.10 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.3.11 (2026-09-11): density pass on hooks and themes, stops labelling figures "extracted".
+- 1.3.17 (2026-09-12): Hook counts are generated from the source, the standouts and launch-subtype figures are refreshed, and the hand-off is a required part of the output.
 
 ### giveaway-results-review
 
@@ -218,6 +226,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.13 (2026-09-10): plain marketer language across every table and sentence, rates given per 100 entrants, written the way you would say it out loud, and twenty slop patterns from the no-ai-slop skill now caught by style_check.
 - 1.5.14 (2026-09-10): Gleam's own words with the app's capitals: Impressions, Actions, Entries, Users, Conversion Rate, Entry Method and every Action name, so the answer matches the dashboard the reader has open.
 - 1.5.15 (2026-09-11): density pass on benchmarks and reading results, so a row that matches the reader's campaign is findable.
+- 1.5.21 (2026-09-12): Campaign size and campaign sequence are generated tables, so the stale 117,130 population is gone from both.
 
 ### gleam-campaign-setup
 
@@ -229,6 +238,35 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.0 (2026-09-09): Shopify reference from the official install and integration pages (app, page creation, Open Graph tags, customer list sync and tags, the test).
 - 1.2.1 (2026-09-09): Viral Share cap noted (unlimited by default, when to cap).
 - 1.2.2 (2026-09-10):  section in settings-evidence.md: worth-normalised completions, the mandatory flag, email providers, country rules, language, terms settings, share clicks, landing and referrer mix.
+- 1.2.18 (2026-09-12): The post entry email and the Post Entry Redirect are separated, and the Fraud Level table says what to do with the gap in the docs.
+
+## 2.1.1 (2026-09-12)
+
+The forty-eight eval cases were run a second time and graded again, this time with both rounds held to the same
+standard: every figure in every answer was checked against the reference file it came from. On that measure the
+second round scores 71.1 against 66.1, and the axis that was costing the most, whether a figure is right, moved
+from 12.2 to 16.6 out of 25. The earlier published figure of 82.6 was graded to a softer standard and is
+withdrawn, because it cannot be compared with either of these.
+
+**Five stale tables were still being read as current.** The campaign-size and campaign-sequence tables in the
+results-review benchmarks, the hook table in the idea generator, and the holiday baseline all carried counts from
+the population before its last correction, so a file said 116,499 in its opening line and 117,130 two lines below.
+Each is now generated from the output it cites, which is the only thing that has ever kept a table honest here.
+Sixty-six tables are generated now.
+
+**A figure a few percent off, in the right direction.** The commonest correctness fault across both rounds was a
+number that had been remembered, never copied: 3,737 for 3,700, 730 for 726, 93.5% for 93.3%. The shared
+answer style now says to copy the digits out of the row and to grep the reference for each figure before sending.
+
+**A number attached to the wrong thing.** The second commonest fault was a real figure quoted about something it
+does not measure: a cut counting the steps inside one Action read as the number of Entry Methods on a campaign, a
+stated Prize value per email read as what a business paid, a whole-dataset table read as the benchmark population.
+Those three cuts now say in place what they are and what they are not.
+
+**An answer that ends on an offer.** "Want the DM template?" hands the work back. Every answer for one skill ended
+that way, and the style checker now fails it, along with a runaway sentence and a bare trailing "instead". The
+checker also stopped counting pasted code blocks and table rows as sentences, which had been letting a report with
+no prose at all pass its own variety gate.
 
 ## 2.1.0 (2026-09-12)
 

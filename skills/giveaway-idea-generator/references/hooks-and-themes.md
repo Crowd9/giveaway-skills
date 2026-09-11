@@ -72,22 +72,24 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`, `template
 
 Matches are on words in the campaign name and headline Prize name, and one title can match several hooks. Peak month is the month where the hook's share of that month's starts is highest. Conversion Rate is the typical share of viewers who entered for campaigns carrying the hook, against 27% for titles with no hook.
 
-(116,499 campaigns, 100 or more Entrants, 17,633 businesses, campaign analysis, 81,213 titles carry no hook.)
+(116,499 campaigns, 100 or more Entrants, 17,633 businesses, campaign analysis, 80,611 titles carry no hook.)
 
+<!-- generated:ig_hooks -->
 | Hook | Campaigns | Share of titles | Peak month | Share of that month's starts | Conversion Rate |
 |---|---|---|---|---|---|
-| Collaboration or partner ("X x Y", "with", "ft.") | 12,426 | 10.6% | March | 11.0% | 26% |
-| Gaming release tie-in | 5,823 | 5.0% | October | 6.0% | 28% |
-| Daily or weekly series (day 3, week 2, advent calendar) | 5,430 | 4.6% | December | 16.4% | 34% |
-| Seasonal (summer, spring, back to school) | 4,469 | 3.8% | June | 6.8% | 24% |
-| Milestone or anniversary (birthday, 100k, celebration) | 3,737 | 3.2% | May | 3.8% | 26% |
-| Holiday season (Christmas, advent, New Year) | 3,037 | 2.6% | December | 14.9% | 27% |
-| Event or livestream tie-in | 1,879 | 1.6% | July | 2.2% | 31% |
-| Launch or new product | 1,687 | 1.4% | August | 1.7% | 24% |
-| Valentine's, Mother's and Father's Day | 1,118 | 1.0% | February | 2.9% | 27% |
-| Black Friday or sales event | 1,072 | 0.9% | November | 5.6% | 25% |
-| Halloween | 635 | 0.5% | October | 5.1% | 24% |
-| Charity or cause | 140 | 0.1% | February | 0.2% | 23% |
+| Collaboration or partner ("X x Y", "with", "ft.") | 12,305 | 10.6% | March | 11.0% | 26% |
+| Gaming release tie-in | 5,807 | 5.0% | October | 6.0% | 28% |
+| Daily or weekly series (day 3, week 2, advent calendar) | 5,402 | 4.6% | December | 16.4% | 34% |
+| Seasonal (summer, spring, back to school) | 4,459 | 3.8% | June | 6.8% | 24% |
+| Milestone or anniversary (birthday, 100k, celebration) | 3,700 | 3.2% | May | 3.8% | 26% |
+| Holiday season (Christmas, advent, New Year) | 3,023 | 2.6% | December | 15.0% | 27% |
+| Event or livestream tie-in | 1,872 | 1.6% | July | 2.2% | 31% |
+| Launch or new product | 1,667 | 1.4% | August | 1.7% | 24% |
+| Valentine's, Mother's and Father's Day | 1,111 | 1.0% | February | 2.9% | 27% |
+| Black Friday or sales event | 1,065 | 0.9% | November | 5.7% | 25% |
+| Halloween | 634 | 0.5% | October | 5.2% | 24% |
+| Charity or cause | 139 | 0.1% | February | 0.2% | 23% |
+<!-- /generated -->
 
 Most titles carry no hook at all, which is the plainest finding: "[Brand] giveaway" with a Prize name is the default, and a hook is what separates a campaign from the default. Daily or weekly series titles get the most to enter (34%), charity or cause titles the fewest (23%).
 
@@ -157,7 +159,7 @@ Reading it:
 - **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. An existing audience does that.
 - **Cash** gets the highest share to enter of any type at 61%, on 570 Entrants, with the most actions of any type and long runs. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.17, so they draw a fair crowd for what a business spends.
 - **Community and Discord** campaigns record 20 referrals per 100 Entrants, well above the typical 12, behind scavenger hunt, flash and quiz campaigns. **Quiz and trivia** campaigns run a quarter below the typical figure on Entrants and a third below on value index. They carry 21 referrals per 100 Entrants against the typical 12.
-- **Product launches** draw a little more crowd than typical at 547 Entrants against 492, on the lowest share to enter of any type at 29% and a value index just under typical at 0.97. A launch has no audience yet, which is the point of running one, so plan the promotion first.
+- **Product launches** draw a little more crowd than typical at 546 Entrants against 492, on the lowest share to enter of any type at 29% and a value index just under typical at 0.98. A launch has no audience yet, which is the point of running one, so plan the promotion first.
 - **Photo or video contests** are the smallest type in the table at 252 Entrants, on the lowest share to enter at 21% and the lowest value index at 0.27, which is what asking for a made thing costs. **Creator or streamer** campaigns are next at 317. A **weekly or monthly series** sits a little under typical at 457, spreading one audience across many draws. **Flash** campaigns of 24 to 72 hours sit above typical on both Entrants and share to enter, 598 and 39%, so a short window is not by itself a small campaign. **UK competition wording** lands near typical on size at 508.
 
 Nothing here says the type caused the number. Businesses who run advent calendars have December audiences, and businesses who write "no purchase necessary" have run many campaigns before.
@@ -215,7 +217,7 @@ Source: `analysis/output/shape_capture.json`.
 | Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
 <!-- /generated -->
 
-Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 547 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 16 referrals per 100 Entrants, above the all-campaign typical figure of 12: a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 401 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
+Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 546 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 15 referrals per 100 Entrants, above the all-campaign typical figure of 12: a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 395 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
 
 By industry, a separate check of launch wording in campaign names and descriptions (wider scope than the subtypes above, keeps crypto businesses) shows where each wording concentrates. Match the wording to the industries that already use it.
 
@@ -233,7 +235,7 @@ Source: `analysis/output/standouts.json` (`launch_subtypes`), `analysis/output/p
 
 Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.13 USD per Entrant, from `analysis/output/standouts.json` (`standouts`):
 
-(6,683 valued campaigns, 15% of the set, 1,688 businesses. Typical 3,976 Entrants on a 500 USD pool.)
+(6,617 valued campaigns, 15% of the set, 1,668 businesses. Typical 3,962 Entrants on a 500 USD pool.)
 
 | Feature | Standouts | The rest |
 |---|---|---|

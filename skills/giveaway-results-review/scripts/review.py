@@ -4,7 +4,7 @@
   python3 review.py --contestants 1800 --impressions 6000 --entries 9000 --invalid 400 --days 14 --methods 6 [--actions actions.csv]
   python3 review.py --self-test
 
-Benchmarks are typical figures from the campaigns behind these numbers (117,348 campaigns that reached 100 unique
+Benchmarks are typical figures from the campaigns behind these numbers (116,499 campaigns that reached 100 unique
 Entrants), as published in references/benchmarks.md. Update both together. Impressions count one look per person per day,
 so long runs and daily actions pull down the Conversion Rate without anything being wrong. The script says so when it applies.
 

@@ -32,7 +32,7 @@ Source: analysis/output/field_cuts.json (referrer_channel_share, landing_kind_sh
 
 Extracted: the giveaway directories, deals forums and gaming communities that reached the most organizers. These are public third-party sites, so the host names are published.
 
-What this table is, and what it is not. It counts the traffic these sites sent, which says they are worth submitting to and nothing more. How a site takes a submission, what it charges, how long it sits in a queue and whether it accepts a campaign at all are not in this data and not on any page read here. Tell the reader to check the site's own submission page, and never put a turnaround time in an answer.
+What this table is, and what it is not. It counts the traffic these sites sent, which says they are worth submitting to and nothing more. How a site takes a submission, what it charges, how long it sits in a queue and whether it accepts a campaign at all are not in this data and not on any page read here. Tell the reader to check the site's own submission page, and never put a turnaround time in an answer. Price is the same: "free" is a claim about the site, and this data holds none. Both rounds of measured answers broke this rule the same way, one writing "free, and it's live within a day" and the other "submit free", so the sentence naming a directory carries "check the submission page for what they need" in the same breath. Directories are also a small share of Impressions in the traffic mix on this page, so never call them the biggest source of anything.
 
 | Giveaway directories | Businesses reached | Impressions |
 |---|---|---|
@@ -381,7 +381,7 @@ Source: `analysis/output/reach_returns.json`.
 
 ## Where the traffic lands across the run
 
-Extracted: typical share of a campaign's Impressions landing on each day since start, for campaigns run about 7, 14 and 30 days. Entries are not in this cut, so it tracks visits per day, not who entered that day.
+Extracted: typical share of a campaign's Impressions landing on each day since start, for campaigns run about 7, 14 and 30 days. Entries are not in this cut, so it tracks visits per day and never who entered that day. Write "traffic" or "visits" in the answer. A measured answer wrote "Entries flatten from day 10 to day 13" off this table, which promises the reader something the cut cannot see.
 
 | Duration | Day one | Peak day | Trough | Close |
 |---|---|---|---|---|
@@ -414,6 +414,10 @@ Source: analysis/output/field_cuts.json (share_click_curve_by_duration).
 - **Second push, while traffic is still falling.** A week-long run never settles into a flat stretch, so the second push slows a decline that is already underway.
 - **The quiet middle.** Traffic sits at a quarter to a third of the launch share and barely moves day to day. A partner or creator post belongs here, to give the flat stretch something to move on.
 - **The last days.** On a two-week or month-long run, traffic on the close reads a little above the quiet middle by itself. On a week-long run it does not, the decline runs straight to the end. In every case the close stays a fraction of the launch share, so the last-call post, email and countdown sticker go out on schedule regardless. The close is not going to fill itself in.
+
+Read the row for the run length the reader actually has, and quote its days as days since launch before converting
+them to dates. A measured answer turned days 10 to 13 of a fourteen-day run into 6 to 12 October on a run that
+started on 1 October, which is the four days on either side of the right answer.
 
 | Duration | Second push | Quiet middle |
 |---|---|---|
