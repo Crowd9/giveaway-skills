@@ -358,6 +358,25 @@ Answer in the first hour where you can, and pin one comment with the three quest
 
 Entrants who comment before they enter are the ones to answer first. A reply that lands while they are still on the post converts. Keep the thread going: a question answered publicly saves ten DMs.
 
+## What the next channel is worth (extracted)
+
+Reach pays, and it pays less each time. Splitting one size band into five equal groups by Impressions, the
+campaigns with nearly six times the traffic drew about 45% more Entrants, and the pattern holds in every band
+(5.4 to 10.2 times the Impressions for 1.23 to 3.15 times the Entrants). In the 10,000-plus band, the one with no
+ceiling on Entrant counts, 10.2 times the reach goes with 3.15 times the crowd, close to the square root of the
+reach multiple.
+
+Plan against that curve. Doubling the traffic in front of the page goes with roughly 40% more Entrants, so the
+second channel is worth less than the first and the fifth is worth less again. Where two pushes cost the same
+effort, the one reaching a warmer audience wins on Conversion Rate, and the one reaching a bigger cold audience
+wins on raw Entrants by less than its size suggests.
+
+The number of traffic sources a campaign records rises with the Impressions it records, from a typical 8 sources
+in the lowest fifth to 25 in the highest, so a wide channel mix in this data is a consequence of reach rather
+than a plan that produced it. Nothing here can price a channel a business has not tried.
+
+Source: `analysis/output/reach_returns.json`.
+
 ## Where the traffic lands across the run
 
 Extracted: typical share of a campaign's Impressions landing on each day since start, for campaigns run about 7, 14 and 30 days. Entries are not in this cut, so it tracks visits per day, not who entered that day.

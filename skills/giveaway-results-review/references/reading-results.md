@@ -44,6 +44,33 @@ A visitor who returns every day for a daily bonus counts as a new Impression eac
 | 31 to 60 days | 24% |
 | 61 days or more | 23% |
 
+## What extra reach is worth (extracted)
+
+Split the campaigns in one size band into five equal groups by Impressions and both the reach and the Conversion
+Rate move a long way, while the Entrant count barely does. In the 1,000 to 2,500 band:
+
+| Impressions group | Campaigns | Impressions | Entrants | Conversion Rate |
+|---|---|---|---|---|
+| lowest fifth | 4,234 | 2,505 | 1,236 | 54% |
+| second | 4,233 | 3,869 | 1,380 | 36% |
+| middle | 4,233 | 5,391 | 1,525 | 28% |
+| fourth | 4,233 | 7,797 | 1,670 | 21% |
+| highest fifth | 4,233 | 14,648 | 1,790 | 11% |
+
+Nearly six times the Impressions goes with about 45% more Entrants. The same shape holds in every band, from 5.4
+to 10.2 times the reach for 1.23 to 3.15 times the crowd, and the Conversion Rate falls from about 55% to about
+11% in all six. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.2 times the
+Impressions goes with 3.15 times the Entrants, which is close to the square root of the reach multiple.
+
+The working rule that falls out: doubling the traffic you put in front of a page goes with roughly 40% more
+Entrants, not twice as many. Read it as a description of campaigns at each reach level and never as what adding a
+channel would do for this campaign, because nothing here holds the audience or the Prize constant.
+
+A band bounds how far its Entrant counts can spread, so the middle bands understate the relationship. The
+direction and the steepness of the Conversion Rate fall are what carry.
+
+Source: `analysis/output/reach_returns.json`.
+
 ## Why this skill compares campaigns by size, not a size trend
 
 Splitting the campaigns behind these numbers into ten equal-count tenths by Entrant count, from `thresholds.json`'s `size_deciles`, shows no tenth where action count, entries per Entrant or Conversion Rate meaningfully bends: all three stay in a narrow band across every tenth tested (table below) [11,734 to 11,735 campaigns per tenth, 2,539 to 5,022 organizers]. Campaign size on its own carries no independent trend. The size splits used throughout this skill's benchmarks exist because where a threshold sits moves by size, not because a bigger campaign performs better on its own. Read a size-specific benchmark as the figure for campaigns of that size, not as a rung on a ladder where bigger always wins.
@@ -70,6 +97,7 @@ Entries and completions are the same count, worth only changes the credit.
 ## Common misreads
 
 - **A low Conversion Rate with a long run or daily action.** Usually the caveat above. Compare against the duration row, not the overall typical figure.
+- **A low Conversion Rate at a normal run length.** Usually reach. Campaigns in the top fifth of their size band by Impressions convert at about 11% where the bottom fifth convert at about 55%, and they drew more Entrants doing it. Check the Impression count before calling the page or the Prize weak.
 - **High entries, ordinary Entrant count.** Entry worth on share or bonus actions. Look at Entrants and actions instead.
 - **One action at 90%, the rest under 20%.** Normal: each action family completes at a different typical rate (table below), so a high top action and much lower others do not mean the others are broken. Rank against the typical figure for that family, not against the top action.
 - **A fifth or more of entries invalid.** Check for a validated-answer question first (wrong answers count as invalid), then referral and Discord actions. Invalid entries are otherwise left out of the benchmarks.
