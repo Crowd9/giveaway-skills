@@ -13,6 +13,7 @@ Baseline for comparison across this page, all the campaigns behind these numbers
 
 ## By holiday
 
+<!-- generated:hol_by_holiday -->
 | Theme | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Duration days | Lead days, typical (range) | Closed on or before the day | Start months |
 |---|---|---|---|---|---|---|---|---|
 | Christmas and advent | 4,911 | 586 | 39% (2,172) | 4.1 | 10 | 17 (9 to 26) | 75% | Dec, Nov |
@@ -27,6 +28,7 @@ Baseline for comparison across this page, all the campaigns behind these numbers
 | Father's Day | 331 | 823 | 35% (131) | 3.9 | 12 | 12 (7 to 18) | 43% | Jun, May |
 | Thanksgiving | 264 | 718 | 27% (87) | 4.6 | 12 | 14 (7 to 24) | 47% | Nov, Oct |
 | Lunar New Year | 111 | 614 | 34% (49) | 5.2 | 12 | 5 (1 to 10) | 20% | Feb, Jan |
+<!-- /generated -->
 
 Reading it:
 
@@ -41,6 +43,7 @@ Reading it:
 
 A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. Campaigns naming no holiday get 34.8% to enter (101,318 campaigns, 16,101 businesses). Against that baseline:
 
+<!-- generated:hol_theme -->
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |
 |---|---|---|---|---|
 | Christmas and advent | 4,911 | 1,563 | 586 | 39.0% |
@@ -58,11 +61,13 @@ A separate check, using all runs at their actual length, not the fair-comparison
 | Halloween | 838 | 509 | 482 | 28.8% |
 | Thanksgiving | 264 | 182 | 718 | 27.4% |
 | Prime Day and Singles Day | 99 | 60 | 794 | 27.1% |
+<!-- /generated -->
 
 Christmas clears the no-theme baseline by four points and is the only theme to do so by more than one. Father's Day and Lunar New Year sit level with it. Everything from Milestone down runs behind the baseline, and Thanksgiving and Prime Day trail it by seven points. This reads differently from the fair-comparison table above, because this check counts every run at its actual length, long or short, repeatable actions included.
 
 Lead time, days before the holiday date businesses started, for campaigns matched to a specific date:
 
+<!-- generated:hol_lead -->
 | Theme | Campaigns with a lead figure | Lower quarter | Typical | Upper quarter |
 |---|---|---|---|---|
 | Summer | 1,628 | 10 days | 27 days | 43 days |
@@ -77,15 +82,18 @@ Lead time, days before the holiday date businesses started, for campaigns matche
 | Easter | 433 | 4 days | 10 days | 21 days |
 | Black Friday and Cyber Monday | 650 | 3 days | 7 days | 14 days |
 | Lunar New Year | 79 | 1 day | 5 days | 10 days |
+<!-- /generated -->
 
 Black Friday launches closest to its date, a typical 6 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
 
 Starting near a public holiday, on its own, does not move the numbers (table below). Both gaps sit under a point.
 
-| Group | Entrants | Conversion Rate | Campaigns | Businesses |
+<!-- generated:hol_public -->
+| Start | Entrants | Conversion Rate | Campaigns | Businesses |
 |---|---|---|---|---|
-| Started within 3 days of a public holiday (business's own country) | 2,202 | 27.7% | 7,927 | 2,691 |
-| Every other start | 2,211 | 27.9% | 27,725 | 5,589 |
+| Every other start | 492 | 27.0% | 91,439 | 15,585 |
+| Started within 3 days of a public holiday (the organizer's own country) | 492 | 26.5% | 25,866 | 7,168 |
+<!-- /generated -->
 
 Source: `analysis/output/prize_timing_cuts.json` (`by_named_holiday`, `holiday_lead_days`, `by_public_holiday_start`).
 
@@ -155,6 +163,7 @@ Other store dates in the data sit below the typical figures: Singles Day (table 
 
 All the campaigns behind these numbers, by the calendar week of their start date, whatever their theme. Share of starts is that week's share of all 117,090 campaigns (an even spread would be 1.9%). Conversion Rate is from the campaigns we can compare fairly. The holiday-named column is the share of that week's starts whose title or description names a holiday, which is how the dates and the names were checked against each other. Monday dates are 2026.
 
+<!-- generated:hol_weeks -->
 | Week | Monday | Share of starts | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Holiday-named | Holidays in the week |
 |---|---|---|---|---|---|---|---|
 | 1 | 29 Dec | 1% | 512 | 38% (443) | 4.3 | 17% |  |
@@ -209,6 +218,7 @@ All the campaigns behind these numbers, by the calendar week of their start date
 | 50 | 07 Dec | 3% | 571 | 41% (1,388) | 4.2 | 34% |  |
 | 51 | 14 Dec | 2% | 567 | 41% (1,200) | 4.2 | 36% |  |
 | 52 | 21 Dec | 1% | 558 | 37% (601) | 4.3 | 26% | Christmas and advent |
+<!-- /generated -->
 
 Reading it:
 
@@ -235,8 +245,9 @@ Reading it:
 
 Campaigns whose run included the holiday date, against campaigns that did not, drawn with the same duration mix so a 45-day campaign is compared with 45-day campaigns. Closed on the day is the count that ended exactly on the holiday.
 
+<!-- generated:hol_liveover -->
 | Holiday | Live over it, campaigns | Entrants | Conversion Rate | Not over it, Entrants | Conversion Rate | Entrant ratio | Conversion Rate ratio |
-|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | Black Friday and Cyber Monday | 8,572 | 529 | 29% | 553 | 33% | 0.96 | 0.89 |
 | Thanksgiving | 8,547 | 534 | 30% | 552 | 33% | 0.97 | 0.92 |
 | Cyber Monday | 8,505 | 528 | 29% | 553 | 32% | 0.95 | 0.90 |
@@ -254,6 +265,7 @@ Campaigns whose run included the holiday date, against campaigns that did not, d
 | Lunar New Year | 7,227 | 548 | 31% | 544 | 32% | 1.01 | 0.96 |
 | Super Bowl (US) | 7,163 | 535 | 30% | 541 | 32% | 0.99 | 0.94 |
 | New Year | 6,597 | 575 | 30% | 558 | 31% | 1.03 | 0.98 |
+<!-- /generated -->
 
 Reading it:
 
@@ -283,27 +295,30 @@ For most holidays, most campaigns naming it start within 60 days before the date
 
 Themes that fewer than 100 campaigns named, so the shape only: campaigns, typical Entrants and the months they started. Under 50 campaigns the typical figure is a rough read.
 
+<!-- generated:hol_smaller -->
 | Theme | Campaigns | Entrants | Start months |
 |---|---|---|---|
-| Halloween (narrow match, also in the main table) | 222 | 1,969.5 | October and September |
-| New Year's resolutions | 95 | 2,423 | January and December |
-| National days (National Coffee Day, National Sticker Day, National Dog Day and so on) | 73 | 2,040 | September and January |
-| Wedding season | 61 | 2,370 | January and July |
-| Independence Day (US) | 58 | 3,158.5 | June and July |
-| St Patrick's Day | 42 | 2,449.5 | March and February |
-| Earth Day | 38 | 1,915 | April and March |
-| Pride | 35 | 1,789 | March and June |
-| Gamescom, E3, Summer Game Fest, The Game Awards | 34 | 2,801.5 | August and December |
-| Amazon Prime Day | 33 | 1,686 | July and June |
-| Labor Day (US) | 32 | 1,767 | August and September |
-| World days (World Photography Day, World Book Day, World Sleep Day) | 29 | 2,406 | August and March |
-| World Cup | 26 | 1,676.5 | June and May |
-| March Madness | 19 | 2,582 | March and February |
-| April Fools | 18 | 1,788 | April and March |
-| Canada Day | 16 | 4,774.5 | June and July |
-| Super Bowl | 14 | 3,463 | February and January |
-| Chinese or Lunar New Year | 11 | 1,747 | February and January |
-| International Women's Day | 9 | 1,448 | March and April |
+| Halloween (narrow match) | 770 | 486 | Oct and Sep |
+| Wedding season | 249 | 408 | Jan and Mar |
+| Pride | 190 | 378 | Jun and May |
+| New Year's resolutions | 173 | 1,168 | Jan and Dec |
+| National days | 158 | 918 | Aug and Jan |
+| Independence Day (US) | 139 | 681 | Jun and Jul |
+| World days | 115 | 442 | Mar and Dec |
+| St Patrick's Day | 109 | 591 | Mar and Feb |
+| World Cup | 88 | 457 | Jun and Nov |
+| Gamescom, E3, Summer Game Fest, The Game Awards | 87 | 742 | Aug and Dec |
+| Earth Day | 72 | 1,102 | Apr and Mar |
+| Amazon Prime Day | 70 | 946 | Jul and Jun |
+| Labor Day (US) | 69 | 925 | Aug and Sep |
+| International Women's Day | 46 | 308 | Mar and Feb |
+| March Madness | 46 | 474 | Mar and Feb |
+| Chinese or Lunar New Year | 35 | 538 | Feb and Jan |
+| Super Bowl | 32 | 821 | Feb and Jan |
+| April Fools | 29 | 1,296 | Apr and Mar |
+| Canada Day | 28 | 1,916 | Jun and Jul |
+| Stocking stuffers | 20 | 296 | Nov and Dec |
+<!-- /generated -->
 
 Named days that businesses used (National Coffee Day, National Sticker Day and similar) no longer clear five distinct businesses in the campaign analysis, each down to one to four businesses, mostly one, so none of them publish as a standalone figure any more. The pattern still holds in the National days and World days rows above: a named day nobody else in your category uses is a hook with no competition. Canada Day and the Super Bowl carry the largest campaigns in this group on small counts, both tied to national audiences with a single day of attention.
 

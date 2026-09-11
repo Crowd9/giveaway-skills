@@ -85,10 +85,9 @@ Two shorthands run through the tables below. The middle half is the middle half 
 | Stated GBP values | median 62, IQR 25 to 400, 90th pct 450 | 34 records. Max 1,200 |
 | Stated CAD values | median 545, IQR 200 to 2,180, 90th pct 4,500 | 21 records. Too few to use. Max 35,000 |
 | Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use. Max 60,000 |
-| Other currency codes | not reported | 8 records across codes with fewer than 10 each, including typed-in codes that are not currencies |
 | Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 43,109 campaigns. Max 10,000,000 |
 | Repeat organizers | 3,818 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
-| Plan tier | Business 29,966, Hobby 10,838, Free 12,039, Pro 62,493, Premium 2,007, Not Available 5 | tier at export time |
+| Plan tier | Business 29,966, Pro 62,493, Hobby 10,838, Free 12,039, Premium 2,007, Not Available 5 | tier at export time |
 <!-- /generated -->
 
 ## By campaign size
