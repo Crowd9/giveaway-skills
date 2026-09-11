@@ -1,0 +1,136 @@
+{
+ "definitions": {
+  "scope": "campaigns with 100 or more Entrants, ordinary population; a campaign counts under every shape its title and Prize name match, so shares do not sum to 100",
+  "email_offered": "share of campaigns in the shape that offered an email action at all",
+  "share_offered": "share that offered a Viral Share action",
+  "referral_entries": "median referral entries per 100 Entrants among campaigns offering a share action; an entry is a referred person multiplied by the entry worth the business set, never a count of people"
+ },
+ "by_shape": {
+  "Collaboration or partner": {
+   "campaigns": 10985,
+   "businesses": 2736,
+   "email_offered": 0.2645,
+   "share_offered": 0.3842,
+   "referral_entries_per_100_entrants_where_offered": 27
+  },
+  "Holiday themed": {
+   "campaigns": 7651,
+   "businesses": 2652,
+   "email_offered": 0.4744,
+   "share_offered": 0.5261,
+   "referral_entries_per_100_entrants_where_offered": 11
+  },
+  "Bundle, mega or ultimate": {
+   "campaigns": 6048,
+   "businesses": 2327,
+   "email_offered": 0.4084,
+   "share_offered": 0.4024,
+   "referral_entries_per_100_entrants_where_offered": 13
+  },
+  "Gift card or voucher": {
+   "campaigns": 5582,
+   "businesses": 1475,
+   "email_offered": 0.3782,
+   "share_offered": 0.426,
+   "referral_entries_per_100_entrants_where_offered": 11
+  },
+  "Sweepstakes wording (US)": {
+   "campaigns": 3137,
+   "businesses": 879,
+   "email_offered": 0.5222,
+   "share_offered": 0.4651,
+   "referral_entries_per_100_entrants_where_offered": 10
+  },
+  "Weekly or monthly series": {
+   "campaigns": 2843,
+   "businesses": 474,
+   "email_offered": 0.4316,
+   "share_offered": 0.4179,
+   "referral_entries_per_100_entrants_where_offered": 19
+  },
+  "Milestone": {
+   "campaigns": 2534,
+   "businesses": 1342,
+   "email_offered": 0.2032,
+   "share_offered": 0.3623,
+   "referral_entries_per_100_entrants_where_offered": 28
+  },
+  "Cash prize": {
+   "campaigns": 2029,
+   "businesses": 350,
+   "email_offered": 0.1424,
+   "share_offered": 0.6856,
+   "referral_entries_per_100_entrants_where_offered": 4
+  },
+  "Advent or daily calendar": {
+   "campaigns": 1878,
+   "businesses": 340,
+   "email_offered": 0.3456,
+   "share_offered": 0.3786,
+   "referral_entries_per_100_entrants_where_offered": 9
+  },
+  "Competition wording (UK)": {
+   "campaigns": 1738,
+   "businesses": 591,
+   "email_offered": 0.4597,
+   "share_offered": 0.3878,
+   "referral_entries_per_100_entrants_where_offered": 15
+  },
+  "Sorteo (Spanish)": {
+   "campaigns": 1539,
+   "businesses": 489,
+   "email_offered": 0.0728,
+   "share_offered": 0.1391,
+   "referral_entries_per_100_entrants_where_offered": 11
+  },
+  "Anniversary or birthday": {
+   "campaigns": 1413,
+   "businesses": 818,
+   "email_offered": 0.3715,
+   "share_offered": 0.3815,
+   "referral_entries_per_100_entrants_where_offered": 13
+  },
+  "Product launch": {
+   "campaigns": 1410,
+   "businesses": 756,
+   "email_offered": 0.3532,
+   "share_offered": 0.4872,
+   "referral_entries_per_100_entrants_where_offered": 20
+  },
+  "Creator or streamer": {
+   "campaigns": 1270,
+   "businesses": 614,
+   "email_offered": 0.126,
+   "share_offered": 0.1843,
+   "referral_entries_per_100_entrants_where_offered": 20
+  },
+  "Community or Discord": {
+   "campaigns": 999,
+   "businesses": 423,
+   "email_offered": 0.1241,
+   "share_offered": 0.3463,
+   "referral_entries_per_100_entrants_where_offered": 35
+  },
+  "Concours (French)": {
+   "campaigns": 659,
+   "businesses": 152,
+   "email_offered": 0.305,
+   "share_offered": 0.2519,
+   "referral_entries_per_100_entrants_where_offered": 7
+  },
+  "Gewinnspiel (German)": {
+   "campaigns": 620,
+   "businesses": 114,
+   "email_offered": 0.1177,
+   "share_offered": 0.3371,
+   "referral_entries_per_100_entrants_where_offered": 6
+  },
+  "Cart, wishlist or spree": {
+   "campaigns": 417,
+   "businesses": 143,
+   "email_offered": 0.7122,
+   "share_offered": 0.5084,
+   "referral_entries_per_100_entrants_where_offered": 9
+  }
+ }
+}

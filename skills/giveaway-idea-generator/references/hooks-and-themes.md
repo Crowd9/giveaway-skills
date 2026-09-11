@@ -162,6 +162,47 @@ Reading it:
 
 Nothing here says the type caused the number. Businesses who run advent calendars have December audiences, and businesses who write "no purchase necessary" have run many campaigns before.
 
+## What each shape is built to capture (extracted)
+
+A concept is a promise about what the business walks away with, and the shape a business picks goes with what it
+wires the campaign to collect. This is what businesses chose, so read it as the habit attached to each shape and
+never as what the shape would yield for this reader.
+
+| Concept shape | Campaigns | Businesses | Offered an email Action | Offered a Viral Share | Referral entries per 100 Entrants |
+|---|---|---|---|---|---|
+| Cart, wishlist or spree | 417 | 143 | 71% | 51% | 9 |
+| Sweepstakes wording (US) | 3,137 | 879 | 52% | 47% | 10 |
+| Holiday themed | 7,651 | 2,652 | 47% | 53% | 11 |
+| Competition wording (UK) | 1,738 | 591 | 46% | 39% | 15 |
+| Weekly or monthly series | 2,843 | 474 | 43% | 42% | 19 |
+| Bundle, mega or ultimate | 6,048 | 2,327 | 41% | 40% | 13 |
+| Gift card or voucher | 5,582 | 1,475 | 38% | 43% | 11 |
+| Anniversary or birthday | 1,413 | 818 | 37% | 38% | 13 |
+| Advent or daily calendar | 1,878 | 340 | 35% | 38% | 9 |
+| Product launch | 1,410 | 756 | 35% | 49% | 20 |
+| Collaboration or partner | 10,985 | 2,736 | 26% | 38% | 27 |
+| Milestone | 2,534 | 1,342 | 20% | 36% | 28 |
+| Cash prize | 2,029 | 350 | 14% | 69% | 4 |
+| Creator or streamer | 1,270 | 614 | 13% | 18% | 20 |
+| Community or Discord | 999 | 423 | 12% | 35% | 35 |
+
+The spread on the email column is the useful part, running from 71% down to 12%. A cart or wishlist concept is
+built to collect addresses almost every time. A cash concept is the shape least often wired for it at 14%, while
+69% of cash campaigns offered a Viral Share, the highest reach setup in the table. So a reader who wants a list
+and likes the cash idea is picking the one shape businesses habitually run without the Action that would build
+one. Keep the concept and add the email Action to the plan.
+
+The referral column runs the other way. Community and Discord concepts record 35 referral entries per 100
+Entrants and milestones 28, against 4 for cash. A referral entry is a referred person multiplied by the entry
+worth the business set, so these compare shapes against each other and never count people.
+
+Two limits. A campaign counts under every shape its title and Prize name match, so a holiday collaboration sits
+in both rows and the columns do not sum. And the businesses behind each shape differ: the series row rests on 474
+businesses running 2,843 campaigns, so it describes a habit of repeat runners more than a shape anyone can pick
+up.
+
+Source: `analysis/output/shape_capture.json`.
+
 ### Launches, pre-orders and drops (extracted)
 
 <!-- generated:ig_launch -->
