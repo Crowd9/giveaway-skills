@@ -4,7 +4,7 @@ Advice from practice plus the reporting definitions Gleam publishes. Other platf
 
 ## Reading an export from another platform
 
-Most contest platforms export one row per entry or per action with an email, an action name, a date and often a status and points. The report script matches those columns by name (Email Address, Entry Type, Points, Date, Verified and so on) and says on its first line which column it used for each role and which roles it could not find. When a role is wrong, pass `--map role=Column`. Exports with one row per person and one column per entry method are read as wide exports, with a non-empty cell counting as a completion. Sections whose columns are missing (referrers, cities, connected accounts) are omitted, never estimated. Benchmarks still apply: they describe campaigns of 1,000 or more Entrants whatever the platform, and the vertical rank is a name guess.
+Most contest platforms export one row per entry or per action with an email, an action name, a date and often a status and points. The report script matches those columns by name (Email Address, Entry Type, Points, Date, Verified and so on) and says on its first line which column it used for each role and which roles it could not find. When a role is wrong, pass `--map role=Column`. Exports with one row per person and one column per entry method are read as wide exports, with a non-empty cell counting as a completion. Sections whose columns are missing (referrers, cities, connected accounts) are omitted, never estimated. Benchmarks still apply: they describe campaigns of 100 or more Entrants whatever the platform, and the vertical rank is a name guess.
 
 ## Reading a Gleam Actions export
 
@@ -32,7 +32,7 @@ Source: analysis/output/field_cuts.json (email_traffic_by_provider, outcomes_whe
 | Users, Entrants | Unique people who entered | The real audience size |
 | Actions | Entry methods completed | Engagement depth |
 | Entries | Actions completed multiplied by entry worth | A weighting artefact. Never compare entries between campaigns with different worths |
-| Conversion Rate | Users divided by Impressions | Landing page fit, with the Impressions caveat below. Platform average about 28% |
+| Conversion Rate | Users divided by Impressions | Landing page fit, with the Impressions caveat below. The platform quotes an average of about 34% |
 
 ## The Impressions caveat
 
@@ -46,18 +46,18 @@ A visitor who returns every day for a daily bonus counts as a new Impression eac
 
 ## Why this skill compares campaigns by size, not a size trend
 
-Splitting the campaigns behind these numbers into ten equal-count tenths by Entrant count, from `thresholds.json`'s `size_deciles`, shows no tenth where action count, entries per Entrant or Conversion Rate meaningfully bends: all three stay in a narrow band across every tenth tested (table below) [3,565 to 3,566 campaigns per tenth, 838 to 1,730 organizers]. Campaign size on its own carries no independent trend. The size splits used throughout this skill's benchmarks exist because where a threshold sits moves by size, not because a bigger campaign performs better on its own. Read a size-specific benchmark as the figure for campaigns of that size, not as a rung on a ladder where bigger always wins.
+Splitting the campaigns behind these numbers into ten equal-count tenths by Entrant count, from `thresholds.json`'s `size_deciles`, shows no tenth where action count, entries per Entrant or Conversion Rate meaningfully bends: all three stay in a narrow band across every tenth tested (table below) [11,734 to 11,735 campaigns per tenth, 2,539 to 5,022 organizers]. Campaign size on its own carries no independent trend. The size splits used throughout this skill's benchmarks exist because where a threshold sits moves by size, not because a bigger campaign performs better on its own. Read a size-specific benchmark as the figure for campaigns of that size, not as a rung on a ladder where bigger always wins.
 
 | Metric | Range across the ten tenths |
 |---|---|
-| Action count | 7 (constant) |
-| Entries per Entrant | 4.19 to 4.44 |
-| Conversion Rate | 26.6% to 28.6% |
-| Entrants (decile boundary) | 1,064 to 14,715 |
+| Action count | 6 to 7 |
+| Entries per Entrant | 4.00 to 4.74 |
+| Conversion Rate | 25.3% to 28.3% |
+| Entrants (typical in the tenth) | 119 to 6,149 |
 
 ## Tone
 
-The reader ran the campaign and is deciding whether to run another. Lead with what worked and its rank. Every gap becomes a target with a route: the benchmark it can reach, the previous campaign that reached it, and the single change that closes it. The percentile file holds the top quarter for every metric, so "the top quarter of campaigns this size reach X" is always available as the target. A campaign in the dataset already beat the 1,000-Entrant floor, which most giveaways never reach, and the review can say so.
+The reader ran the campaign and is deciding whether to run another. Lead with what worked and its rank. Every gap becomes a target with a route: the benchmark it can reach, the previous campaign that reached it, and the single change that closes it. The percentile file holds the top quarter for every metric, so "the top quarter of campaigns this size reach X" is always available as the target. A campaign in the dataset already beat the 100-Entrant floor, which most giveaways never reach, and the review can say so.
 
 ## Judgement words
 
@@ -159,7 +159,7 @@ Source: `analysis/output/indicators.json` (`invalid_entry_share_by_industry`, `i
 
 | Figure that is off | Likely change | Skill |
 |---|---|---|
-| Entrants low for campaigns your size, Conversion Rate fine | Reach. The top fifth of campaigns had nine times the Impressions of the bottom fifth at the same Conversion Rate. Promotion channels, partners, timing | giveaway-promotion-plan, giveaway-timing-and-duration |
+| Entrants low for campaigns your size, Conversion Rate fine | Reach. The top fifth of campaigns had 25 times the Impressions of the bottom fifth at the same Conversion Rate. Promotion channels, partners, timing | giveaway-promotion-plan, giveaway-timing-and-duration |
 | Conversion Rate low on a campaign we can compare fairly | Landing fit: Prize appeal, too many actions, a mandatory action on the wrong network | giveaway-prize-picker, giveaway-entry-method-planner |
 | Actions per Entrant low | Entry mix and ordering, entry worth | giveaway-entry-method-planner |
 | The asset action (email, follow) underperformed | Make it the single mandatory action, cut the rest | giveaway-entry-method-planner |
@@ -183,10 +183,10 @@ Both joins run on the organizer's own machine, in a spreadsheet or the store's a
 
 For a store that sent a non-Winner code, the redemption count and revenue on that code in the store's discount report is the attribution figure, with no join needed. Read it at 14 days (the usual expiry) and again at 90.
 
-A campaign that ran in November or December compares against its week as well as the year. The timing skill's every-week table gives Entrants and Conversion Rate for weeks 46 to 52, and Conversion Rate swings well above and below the year typical depending on the week (table below), so a December result that matches the typical figure across the year sits below its week, and a week 47 result that matches that typical figure sits above it.
+A campaign that ran in November or December compares against its week as well as the year. The timing skill's every-week table gives Entrants and Conversion Rate for weeks 46 to 52, and Conversion Rate runs above the year typical in the December weeks and below it in week 47 (table below), so a December result that matches the typical figure across the year sits below its week, and a week 47 result that matches that typical figure sits above it.
 
 | Week | Conversion Rate |
 |---|---|
-| 48 to 51 | 40% to 54% |
+| 48 to 51 | 35% to 41% |
 | 47 | 32% |
-| Year typical | 38% |
+| Year typical | 35% |

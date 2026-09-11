@@ -8,7 +8,7 @@ Subject: You won the [Prize] from [Brand]
 
 "Hi [first name], you were drawn as the Winner of [Prize] in the [campaign name] giveaway on [date]. To claim it, reply to this message by [deadline with time zone] and confirm [what verification is needed, for example that you are over 18 and live in [region]]. We will never ask for payment, card details or a password. If we do not hear back by the deadline the Prize goes to a reserve Winner under the terms. [Name], [Brand]"
 
-Send from an address or account the Winner has seen before. Two attempts, the second sent halfway to the reply deadline. On a seven-day deadline that puts the attempts about 72 hours apart, which matches the contact rule in giveaway-winner-structure.
+Send from an address or account the Winner has seen before. Two attempts. The second goes halfway to the deadline, so day 3 or 4 on a seven-day window, which matches the contact rule in giveaway-winner-structure.
 
 ## 2. Verification and address request (after the Winner replies)
 
@@ -47,6 +47,16 @@ For a store, the offer is a code. Subject "You did not win, but here is [X]% off
 ## 6. Photo or review request (a week after delivery, optional)
 
 "Hope the [Prize] is treating you well. If you are happy to, a photo or a line about it would mean a lot, and we would only share it with your say-so. No pressure either way."
+
+## When several of these land at once
+
+Post-draw problems arrive together. Work them in this order, whichever ones apply.
+
+1. Draw the reserve first. Nothing goes out naming a reserve Winner before one exists.
+2. Close out the lapsed Winner, and log the attempts and the deadline that passed.
+3. Notify the reserve.
+4. Answer anyone disputing the result once, from the draw record, at whatever point they turn up. A dispute never changes the draw.
+5. Announce only after the reserve has verified and agreed to be named.
 
 ## Edge cases
 

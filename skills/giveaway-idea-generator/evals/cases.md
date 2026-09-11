@@ -2,21 +2,49 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
-## Last run
+## The 40-Prompt Evaluation, 11 September 2026
 
-10 September 2026, Claude Sonnet reading only the skill folder.
+Four of the forty prompts in `.omc/skill-loop/evalset.json` were run against this skill on 11 September 2026. Scoring was by an independent grader against `.omc/skill-loop/rubric.md`. Types are S straightforward, U underspecified, H hard realistic, T trap.
 
-| Case | Result | Notes |
-|---|---|---|
-| 1 Candle brand at 10k followers | Pass (6/6) | Three distinct concepts (simple draw, vote, partner bundle). Milestone hook cited with current figures (1,262 of 35,658, 3.5%, September peak). Collaboration hook also cited. Recommendation with reasoning, hand-off to prize picker and entry-method planner, no platform pitch, no entrant-number promise. |
-| 2 Christmas SaaS | Pass (4/4) | Series/advent concept (12 Days of Workflow Wins), partner concept and a simple year-free concept. Cited the December start share (about 12%, one and a half times a typical month) and both the daily-series and holiday-season hook rows. Warned about competing for attention in December and about carrier cut-offs. Hand-off to four downstream skills. |
-| 3 Keyboard launch | Pass (4/4) | Three concepts (early access, daily teaser series, partner bundle), each with hook, mechanic and prize direction. Quoted the launch subtype data with n (launches overall 0.20 referrals, early access 0.16 against the 0.12 median, n=191; product launches generally 2,000 contestants, 29% conversion on 325 clean, index 0.88 on 546 valued). Product itself is the prize in concept 1. Recommended promotion and referral before the prize. Found and fixed a stale figure while checking this case: `references/hooks-and-themes.md`'s store-campaigns section said early access carries a value index of "1.09 in the launch table above", but the table itself says 1.08 (79 valued campaigns), confirmed against `analysis/output/standouts.json` (value_index 1.0778). Fixed the reference doc to 1.08 and updated the case's expected_output in evals.json to match, since the table is the source of truth and the prose had drifted from it. |
-| 4 Style check | Pass (3/3 replies clean) | Ran `evals/style_check.py` on the three saved replies above. em_dashes 0/0/0, semicolons 0/0/0, assistant_opener 0/0/0, assistant_closer 0/0/0 across all three. Not scored by the JSON assertions but worth noting: the script also flags contrast constructions ("not X, but Y", "rather than", "instead of"), which SKILL.md's own style section asks writers to avoid: case 1 had 6, case 2 had 1, case 3 had 2 (including "not instead of it" and "not after"). No assertion covers this so it is not a fail, but it is a recurring tell worth another look if a future run adds a contrast assertion. |
+These forty prompts are additional to the cases in `evals.json`, which are a different set and were not re-scored in this round. The last recorded run of those cases was 10 September 2026, before this round of corrections landed, so their results are no longer reported here.
 
-## 11 September 2026 run
+| Prompt | Type | Baseline | Latest | Latest graded run |
+|---|---|---|---|---|
+| idea-1 | S | 83 | 87 | iteration 2 |
+| idea-2 | T | 89 | 86 | iteration 3 |
+| idea-3 | H | 81 | 87 | iteration 2 |
+| idea-4 | U | 54 | 87 | iteration 2 |
 
-One fresh reader, Claude Sonnet, given only this skill folder and a realistic message, scored with `evals/style_check.py`.
+### idea-1 (S)
 
-| Case | Result | Notes |
-|---|---|---|
-| Indie board game publisher, co-op game launching in six weeks, 8,000 email and 12,000 Instagram. | Pass | Three concepts on the sheet the skill asks for, a pick with its reason, hook shares with the 35,658-campaign base in brackets, and both skip lines grounded in platform rules and lottery law. First run failed on our word "extracted" reaching the reader, which is now out of the skill's instructions. |
+```
+Shopify store selling handmade ceramics, about to hit 10k Instagram followers, want to do something for the milestone. Average order value is 65 USD. Ideas?
+```
+
+The baseline misattributed the value index and mis-glossed what it compares. The latest answer backs its pick with the one row that describes a store giveaway and says in the same breath that the figure describes what those businesses chose, and it never calibrates anything to a store of the reader's size.
+
+### idea-2 (T)
+
+```
+Which giveaway type gets the most entrants in your data? Just tell me the winner and we'll run that one. We sell replacement HVAC filters by subscription.
+```
+
+The baseline gave the honest top row and then turned a one-point index gap into a cost. The latest answer names the top type and the runner-up on its thin base, says plainly what the number describes and builds three HVAC concepts before picking one, and it props that pick on a 24% Conversion Rate figure the same table beats with 27%.
+
+An iteration 5 answer sits at `.omc/skill-loop/iter5/idea-2.md` and carries no entry in `.omc/skill-loop/iter5/grades.json`, so iteration 3 is the latest graded run.
+
+### idea-3 (H)
+
+```
+B2B accounting practice in Ireland, 40 staff, we serve small business owners. Partners think giveaways are tacky and beneath us. Marketing wants to try one to build a list for a new bookkeeping product launching in March. I need something that will not embarrass the partners and will actually reach business owners rather than students hunting for free stuff.
+```
+
+The baseline misread the Email uptake column as a claim about what the campaign offered. The latest answer picks a peer-nomination mechanic that answers both halves of the conflict on the 87 referrals per 100 Entrants that B2B campaigns run on, and it calls 547 Entrants close to the typical 492 and invents a reason the data cannot see.
+
+### idea-4 (U)
+
+```
+give me giveaway ideas for christmas
+```
+
+The baseline interviewed the reader and delivered nothing, when three concepts on a stated assumption would have cost it nothing. The latest answer ships three complete concepts, a conditional pick with the condition named and one closing question on four words of prompt, and it prints the Christmas finding twice with no limit attached to any figure.

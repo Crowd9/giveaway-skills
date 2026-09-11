@@ -25,6 +25,10 @@ BENCH = {
     "conv_by_methods": [(3, 0.44), (6, 0.35), (10, 0.29), (10 ** 9, 0.31)],       # the campaigns we can compare fairly
     "conv_by_duration": [(7, 0.40), (14, 0.29), (30, 0.26), (60, 0.23), (10 ** 9, 0.22)],  # no repeatable actions
     "platform_average_conversion": 0.27,
+    # one campaign per business, 17,383 businesses, from organizer_history.json sequence_curve_all.
+    # The all-campaign figures are campaign weighted, and 55% of campaigns come from 11% of businesses,
+    # so a first campaign held against 492 is held against people who have run dozens.
+    "first_campaign": {"contestants": 382, "conversion": 0.256, "entries_per_contestant": 3.68, "n": 17383},
     "family_uptake": {"visit": 0.78, "follow": 0.53, "share": 0.11, "email": 0.85, "content": 0.13},
     "yield_median": {"email": {"100-250": 157, "250-500": 353, "500-1k": 645, "1k-2.5k": 1346, "2.5k-10k": 3713, "10k+": 16566},
                      "share": {"100-250": 17, "250-500": 35, "500-1k": 84, "1k-2.5k": 218, "2.5k-10k": 515, "10k+": 1698}},
@@ -73,9 +77,26 @@ def median_of(metric, key="all"):
     t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
     return t["p"][9] if t else None
 
+def typical(metric, contestants):
+    """The column is headed 'Typical for campaigns your size', so it takes the size band's own median.
+    It used to take the all-campaign median, which called a 3,400-Entrant campaign a top-tenth result
+    against every campaign in the data and then printed its band's name beside the claim."""
+    return median_of(metric, "band:" + band(contestants)) or median_of(metric)
+
+def band_rank(metric, value, contestants, lower_is_better=False):
+    """Where this sits inside its own band, in words, with the band's campaign count."""
+    t = (PCT or {}).get("groups", {}).get("band:" + band(contestants), {}).get(metric)
+    r = rank(value, t, lower_is_better)
+    if not r:
+        return None
+    word = "lower" if lower_is_better else "better"
+    return (f"in the bottom 5% of campaigns of {band_label(contestants)}" if r[0] == 0
+            else f"{word} than {r[0]}% of campaigns of {band_label(contestants)}") + f" (across {r[1]:,} campaigns)"
+
 def position(value, dist):
     if value < dist["p25"]: return "bottom quarter"
     if value < dist["median"]: return "below typical"
+    if value == dist["median"]: return "typical"
     if value < dist["p75"]: return "above typical"
     if value < dist["p90"]: return "top quarter"
     return "top tenth"
@@ -104,14 +125,22 @@ def review(a):
     if getattr(a, "vertical", None): groups.append((a.vertical.replace("_", " ") + " campaigns", "vertical:" + a.vertical))
     conv_groups = [("all campaigns", "all"), ("the campaigns we can compare fairly", "clean")] + groups[2:]
     rows = []
-    rows.append(("Users", f"{a.contestants:,}", f"{BENCH['contestants']['median']:,}", f"{position(a.contestants, BENCH['contestants'])}, campaigns of {band_label(a.contestants)}. " + rank_line("contestants", a.contestants, [g for g in groups if not g[1].startswith("band")])))
+    if getattr(a, "first_campaign", False):
+        fc = BENCH["first_campaign"]
+        rows.append(("Users", f"{a.contestants:,}", f"{fc['contestants']:,}",
+                     f"against first campaigns, where the typical one drew {fc['contestants']:,} "
+                     f"(one campaign each from {fc['n']:,} businesses). The all-campaign figure of "
+                     f"{BENCH['contestants']['median']:,} counts every campaign, and most of those come from "
+                     f"businesses on their eleventh or later. " + rank_line("contestants", a.contestants, groups)))
+    else:
+        rows.append(("Users", f"{a.contestants:,}", f"{typical('contestants', a.contestants):,.0f}", (band_rank("contestants", a.contestants, a.contestants) or position(a.contestants, BENCH["contestants"])) + ". " + rank_line("contestants", a.contestants, [g for g in groups if not g[1].startswith("band")])))
     if a.entries:
-        rows.append(("Entries", f"{a.entries:,}", f"{median_of('entries') or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups)))
+        rows.append(("Entries", f"{a.entries:,}", f"{typical('entries', a.contestants) or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups)))
         epc = a.entries / a.contestants
-        rows.append(("Entries per Entrant", f"{epc:.2f}", f"{BENCH['entries_per_contestant']['median']}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
+        rows.append(("Entries per Entrant", f"{epc:.2f}", f"{typical('entries_per_entrant', a.contestants) or 0:,.2f}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
     if a.impressions:
         conv = a.contestants / a.impressions
-        rows.append(("Impressions", f"{a.impressions:,}", f"{BENCH['impressions']['median']:,}", position(a.impressions, BENCH["impressions"]) + ". " + rank_line("impressions", a.impressions, groups)))
+        rows.append(("Impressions", f"{a.impressions:,}", f"{typical('impressions', a.contestants) or 0:,.0f}", position(a.impressions, BENCH["impressions"]) + ". " + rank_line("impressions", a.impressions, groups)))
         peer_m = lookup(BENCH["conv_by_methods"], a.methods) if a.methods else None
         peer_d = lookup(BENCH["conv_by_duration"], a.days) if a.days else None
         note = f"platform average {BENCH['platform_average_conversion']:.0%}"
@@ -125,16 +154,16 @@ def review(a):
         if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification. Check for a validated-answer question first, then referral and Discord actions"))
     if getattr(a, "actions_completed", None):
         apc = a.actions_completed / a.contestants
-        rows.append(("Actions completed per Entrant", f"{apc:.2f}", f"{median_of('actions_per_contestant') or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))
+        rows.append(("Actions completed per Entrant", f"{apc:.2f}", f"{typical('actions_per_contestant', a.contestants) or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))
     if a.days:
         pace = a.contestants / a.days
-        rows.append(("Entrants per day", f"{pace:,.0f}", f"{median_of('contestants_per_day') or 0:,.0f}", rank_line("contestants_per_day", pace, groups)))
+        rows.append(("Entrants per day", f"{pace:,.0f}", f"{typical('contestants_per_day', a.contestants) or 0:,.0f}", rank_line("contestants_per_day", pace, groups)))
     if getattr(a, "prize_value", None):
         pv = a.prize_value / a.contestants
-        rows.append(("Stated Prize value per Entrant", f"{pv:.2f}", f"{median_of('stated_usd_per_contestant') or 0:.2f}", "USD, stated value. " + rank_line("stated_usd_per_contestant", pv, groups).replace("better than", "higher than")))
+        rows.append(("Stated Prize value per Entrant", f"{pv:.2f}", f"{typical('stated_usd_per_contestant', a.contestants) or 0:.2f}", "USD, stated value. " + rank_line("stated_usd_per_contestant", pv, groups).replace("better than", "higher than")))
     for flag, key, label in [("x_follows", "x_follows", "X follows"), ("instagram_follows", "instagram_follows", "Instagram follows"), ("tiktok_follows", "tiktok_follows", "TikTok follows"), ("twitch_follows", "twitch_follows", "Twitch follows"), ("youtube_subscribes", "youtube_subscribes", "YouTube subscribes"), ("discord_joins", "discord_joins", "Discord joins")]:
         val = getattr(a, flag, None)
-        if val: rows.append((label, f"{val:,}", f"{median_of(key) or 0:,.0f}", rank_line(key, val, groups)))
+        if val: rows.append((label, f"{val:,}", f"{typical(key, a.contestants) or 0:,.0f}", rank_line(key, val, groups)))
     if getattr(a, "emails", None):
         up = a.emails / a.contestants
         rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
@@ -143,9 +172,9 @@ def review(a):
         rp = a.referrals / a.contestants
         rows.append(("Referral Entries per Entrant", f"{rp:.2f}", "0.13", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
-        rows.append(("Duration in days", f"{a.days}", f"{BENCH['duration_days']['median']}", position(a.days, BENCH["duration_days"]) + ". " + rank_line("duration_days", a.days, groups).replace("better than", "longer than")))
+        rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", position(a.days, BENCH["duration_days"]) + ". " + rank_line("duration_days", a.days, groups).replace("better than", "longer than")))
     if a.methods:
-        rows.append(("Entry actions", f"{a.methods}", "5", ("11 or more lost a fifth of Entrants in the campaigns we can compare fairly" if a.methods >= 11 else "within the usual range") + ". " + rank_line("methods", a.methods, groups).replace("better than", "more than")))
+        rows.append(("Entry actions", f"{a.methods}", "5", ("11 or more is more than most campaigns carry, and the campaigns that did drew a lower share of viewers through. Read the entry-method planner's friction section before adding another" if a.methods >= 11 else "within the usual range") + ". " + rank_line("methods", a.methods, groups).replace("better than", "more than")))
     return rows
 
 def read_actions(path, contestants):
@@ -245,8 +274,20 @@ def self_test():
     srows = review(Small); sd = {r[0]: r for r in srows}
     assert sd["Users"][1] == "300" and "250 to 500 Entrants" in sd["Users"][3], srows
     assert "Conversion Rate" in sd and "better than" in sd["Conversion Rate"][3], srows
-    assert plain_reading(rows) == "\nIn plain terms: each person took about 5.0 Entries, against about 4.4 for campaigns this size, about 14% above typical.", plain_reading(rows)
-    assert plain_reading(srows) == "\nIn plain terms: each person took about 4.0 Entries, against about 4.4 for campaigns this size, about 9% below typical.", plain_reading(srows)
+    assert plain_reading(rows) == "\nIn plain terms: each person took about 5.0 Entries, against about 4.3 for campaigns this size, about 16% above typical.", plain_reading(rows)
+    assert plain_reading(srows) == "\nIn plain terms: each person took about 4.0 Entries, against about 4.6 for campaigns this size, about 13% below typical.", plain_reading(srows)
+    # the column says "for campaigns your size", so the two sizes must not be handed the same figure
+    assert d["Entries per Entrant"][2] != sd["Entries per Entrant"][2], "a band typical that does not move with the band is the all-campaign median wearing the band's name"
+    assert d["Users"][2] == "1,484" and sd["Users"][2] == "352", (d["Users"][2], sd["Users"][2])
+    assert "campaigns of 1,000 to 2,500 Entrants" in d["Users"][3] and "campaigns of 250 to 500 Entrants" in sd["Users"][3], "the rank must be taken inside the band it names"
+    # a first campaign must be held against first campaigns, never against the campaign-weighted figure
+    class First: contestants = 400; impressions = 1400; entries = 1500; invalid = None; days = 12
+    First.methods = 5; First.repeatable = False; First.vertical = None; First.first_campaign = True
+    fd = {r[0]: r for r in review(First)}
+    assert fd["Users"][2] == "382", fd["Users"]
+    assert "first campaigns" in fd["Users"][3], fd["Users"]
+    First.first_campaign = False
+    assert {r[0]: r for r in review(First)}["Users"][2] != "382", "the flag must change the comparison"
     print("self-test passed"); return 0
 
 def main(argv):
@@ -261,6 +302,9 @@ def main(argv):
     ap.add_argument("--prize-value", type=float, help="stated Prize pool in USD, to rank value per Entrant")
     for flag, help_ in [("x-follows", "X follows gained"), ("instagram-follows", "Instagram follows gained"), ("tiktok-follows", "TikTok follows gained"), ("twitch-follows", "Twitch follows gained"), ("youtube-subscribes", "YouTube subscribes gained"), ("discord-joins", "Discord joins gained")]:
         ap.add_argument("--" + flag, type=int, help=help_)
+    ap.add_argument("--first-campaign", action="store_true",
+                    help="this is the business's first campaign, so compare it with first campaigns (382 Entrants) "
+                         "and not the campaign-weighted 492, which is mostly businesses on their eleventh or later")
     ap.add_argument("--history", help="CSV of the organizer's previous campaigns, oldest first: campaign,Contestants,Impressions,Entries,invalid,days,methods,emails (missing cells allowed)")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()

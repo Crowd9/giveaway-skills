@@ -61,7 +61,7 @@ The dataset's core counts are verified directly. Only USD has enough stated valu
 Excluded campaigns are similar in size to ordinary ones (crypto median 732 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
 <!-- /generated -->
 
-The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 17,305 Entrants versus 16,175 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
+The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 732 Entrants versus 492 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
 
 A homepage-label industry cut on the campaign analysis confirms the exclusion is not a small correction: finance and crypto is the largest single industry by campaign count, ahead of gaming and esports. See `references/roi-benchmarks.md` for the table this cut produced.
 
@@ -173,7 +173,7 @@ Category typical figures for stated values are given in the taxonomy as referenc
 
 A  field cut confirms the coverage gap holds at scale: 38.8% of Prize listings carry a stated value, and 99.9% of those are USD. Every typical figure below rests on that self-selected minority.
 
-Campaigns whose every Prize carried a stated USD value: 13,977. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
+Campaigns whose every Prize carried a stated USD value: 43,173, from 9,180 businesses. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
 
 <!-- generated:ev_value_bands -->
 | Stated pool, USD | Campaigns | Entrants | Actions per Entrant | Stated USD per Entrant |
@@ -191,9 +191,9 @@ Campaigns whose every Prize carried a stated USD value: 13,977. Prize cost per E
 | 50000+ | 157 | 1,095 | 4.25 | 108.93 |
 <!-- /generated -->
 
-Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 1.74 times the Entrants, and value accounts for about 16% of the variation in Entrant counts.
+Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 2.2 times the Entrants, and value accounts for about 23% of the variation in Entrant counts [the `value_regression` cut in `context_checks.json`, 43,173 campaigns from 9,180 businesses]. The table above rises through the middle bands and falls back at the largest pools.
 
-Most campaigns spend little: 56% of these campaigns used a pool of 1,000 USD or less, and 18% under 250 USD.
+Most campaigns spend little: 74% of these campaigns used a pool of 1,000 USD or less, and 46% under 250 USD.
 
 ### Prize pool by industry, business type, tier and category
 
@@ -300,20 +300,20 @@ Each campaign's Entrants divided by the typical Entrants for other campaigns at 
 | Subscription or membership | 1,636 | 426 | 0.52 | 48% below typical |
 <!-- /generated -->
 
-Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little less than their price tag suggests: broadly wanted, and no better than the money suggests. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
+Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little more than their price tag suggests at 1.10, broadly wanted and close to what the money buys. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
 
 ### Crowd per Prize dollar, by number of Prize units
 
-| Prize units | Campaigns | Crowd per Prize dollar | For the money | Entrants |
-|---|---|---|---|---|
-| 1 | 8,640 | 1.07 | 7% above typical | 2,240 |
-| 2-5 | 3,015 | 0.93 | 7% below typical | 2,091 |
-| 6-20 | 1,553 | 0.84 | 16% below typical | 2,219 |
-| 21+ | 769 | 0.84 | 16% below typical | 2,847 |
+| Prize units | Campaigns | Businesses | Crowd per Prize dollar | For the money | Entrants |
+|---|---|---|---|---|---|
+| 1 | 26,976 | 5,681 | 1.15 | 15% above typical | 509 |
+| 2-5 | 10,243 | 3,601 | 0.82 | 18% below typical | 463 |
+| 6-20 | 4,349 | 1,908 | 0.64 | 36% below typical | 562 |
+| 21+ | 1,605 | 695 | 0.78 | 22% below typical | 1,065 |
 
 One unit draws more crowd than its price tag suggests, and six or more draw less. For a fixed budget, one Prize worth wanting came with more Entrants than the same money split across several. Many units still fit sampling, digital Prizes and community goals, where the unit count is the point.
 
-The raw Entrants column tells the flatter story that `references/decision-criteria.md` reports under structure tradeoffs: single-Winner and multi-unit campaigns sat at 2,228 and 2,270 Entrants, which is the same crowd. The crowd-per-Prize-dollar column is those same campaigns with the money held constant. Quote the raw Entrant counts when the question is what campaigns looked like, and crowd per Prize dollar when the question is where to put a fixed budget.
+The raw Entrants column runs the other way, and the difference matters. Raw crowd rises with unit count, from 509 at one unit to 1,065 at twenty one or more, so campaigns giving away many things drew more people. Hold the money constant and the order reverses, because those campaigns also spent more. Quote the raw Entrant counts when the question is what campaigns looked like, and crowd per Prize dollar when the question is what a fixed budget bought. [Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The crowd-per-Prize-dollar column is those same campaigns with the money held constant. Quote the raw Entrant counts when the question is what campaigns looked like, and crowd per Prize dollar when the question is where to put a fixed budget.
 
 ### Top fifth against bottom fifth
 
@@ -321,15 +321,17 @@ Campaigns behind these numbers split into fifths by Entrant count. Typical figur
 
 | | Top fifth | Bottom fifth |
 |---|---|---|
-| Entrants | 9,098 | 1,138 |
-| Impressions | 35,505 | 4,047 |
-| Conversion Rate | 28% | 28% |
-| Stated Prize pool, USD | 2,016 | 400 |
-| Prize units | 1 | 1 |
-| Entry actions | 7 | 7 |
-| Business's previous campaigns | 13 | 13 |
+| Entrants | 3,349 | 140 |
+| Impressions | 14,063 | 550 |
+| Conversion Rate | 27.7% | 25.5% |
+| Stated Prize pool, USD | 1,200 | 120 |
+| Winners | 1 | 1 |
+| Entry Methods | 7 | 6 |
+| Business's previous campaigns | 12 | 7 |
+| Campaigns | 23,425 | 23,425 |
+| Businesses | 4,602 | 7,829 |
 
-Nearly nine times the Impressions at the same Conversion Rate. Reach separates the top from the bottom far more than the Prize does. Business history does not: both groups show a typical of 13 previous campaigns. The top fifth still spent about five times more on the Prize.
+Twenty five times the Impressions at a Conversion Rate two points apart. Reach separates the top from the bottom far more than anything else in the table. Two things that used to read as level no longer do: the top fifth's businesses have run 12 previous campaigns against 7, and its stated Prize pool is ten times the bottom's at 1,200 USD against 120. The bottom fifth is also spread across more businesses, 7,829 against 4,602, which is the concentration effect showing up again: the top is fewer accounts running more campaigns. None of this says a bigger Prize or more experience produced the Entrants. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,425 campaigns each side.]
 
 ## Region and language
 
@@ -355,7 +357,7 @@ Region is the top-level domain of the business's site, so a .com business in Man
 | Japan | 143 | 280 | 29% | 3.73 |
 <!-- /generated -->
 
-Australian businesses spend the most % of Entrants on the stated figure. Brazil has twice the Conversion Rate of the global rate.
+Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
 
 <!-- generated:ev_language -->
 | Language guess | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
@@ -392,7 +394,7 @@ Source: `analysis/output/indicators.json` (prize_currency_localisation_by_countr
 
 ### Description wording
 
-Flags found by text pattern in the Prize description, in the campaigns we can compare fairly, tell one story: careful businesses write more and run smaller campaigns. Descriptions that state the value, the Winner count or a no-purchase line all go with a lower Conversion Rate and fewer Entrants than descriptions that leave it out. Nothing here says the wording moved a number.
+Flags found by text pattern in the Prize description, in the campaigns we can compare fairly. Descriptions that state the value go with a lower Conversion Rate, and descriptions that state the Winner count go with fewer Entrants. A no-purchase line goes with more Entrants, and the table carries no Conversion Rate for either of those two flags. Nothing here says the wording moved a number.
 
 | Flag | Share of descriptions | Present (Conversion Rate / Entrants / campaigns) | Absent (Conversion Rate / Entrants / campaigns) |
 |---|---|---|---|
@@ -460,4 +462,4 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 | software | 578 | 424 (+16%) | 4.30 (+7%) | 31% (-15%) | 3.3 | 6 |
 <!-- /generated -->
 
-Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut, technology has the highest Conversion Rate, and travel and events has the lowest Actions per Entrant. Use them as context for a customer's expectations, never as targets.
+Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut and run the lowest Actions per Entrant at 2.44, and technology has the highest Conversion Rate. Use them as context for a customer's expectations, never as targets.

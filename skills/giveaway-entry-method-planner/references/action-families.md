@@ -1,6 +1,6 @@
 # Action families
 
-Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. Entries are actions completed times the entry worth the business set, and entry worth is unknown in the dataset, so a figure near 100 per 100 means most Entrants did it only where the worth was 1, repeatable actions and referrals can pass 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, and its top marks the level nine campaigns in ten sit below.]
+Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. Entries are actions completed times the entry worth the business set, and entry worth is unknown in the dataset, so a figure near 100 per 100 means most Entrants did it only where the worth was 1, repeatable actions and referrals can pass 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, so its top marks the level three campaigns in four sit below.]
 
 <!-- generated:entry_families -->
 | Action family | Campaigns using it | Share of campaigns | Uptake median (IQR) | n with uptake |
@@ -28,7 +28,7 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=117,348). upt
 - Visiting a page or profile is in four out of five campaigns and most Entrants do it. It is cheap for the Entrant and teaches little about them.
 - Email signup, when offered, is completed by almost everyone who enters. It is the highest-completing asset-producing action in the data.
 - Free follows are the most common social action and are completed by about half of Entrants. Community joins and content posting see lower completion.
-- Sharing and referring is offered in more than half of campaigns and records about 20 entries for every 100 Entrants, where each entry is a referred person times the entry worth. In the top tenth of campaigns the figure reaches 65 per 100. That is the only action whose entries are new people, so weight it and name the reward.
+- Sharing and referring is offered in more than half of campaigns and records about 26 entries for every 100 Entrants, where each entry is a referred person times the entry worth. In the top tenth of campaigns the figure reaches 66 per 100. [`analysis/output/benchmarks.json`, `ordinary_benchmark` entry_methods families.] That is the only action whose entries are new people, so weight it and name the reward.
 - Paid subscriptions and imported entries have very low completion. Paid actions only work when the audience already intended to pay.
 
 ## Completions by action, required versus optional
@@ -177,7 +177,7 @@ Share of campaigns of each size that offered at least one action from the family
 | Methods per campaign (median) | 6 | 7 | 7 | 7 | 7 | 7 |
 <!-- /generated -->
 
-The mix barely changes with size. Seven methods is typical at every size. Bigger campaigns are slightly less likely to ask for shares and slightly more likely to ask for follows and page visits.
+Most families barely change with size. Seven methods is typical everywhere except the 100 to 250 band, which runs six. Email is the exception, offered in a quarter of the smallest campaigns and in around four in ten from 1,000 Entrants up. Bigger campaigns are also a little more likely to ask for shares and page visits, and a little less likely to ask for a follow or an account connection.
 
 ## How much the business's own community or channel size mattered
 
@@ -250,7 +250,7 @@ App downloads by genre (by_app_genre):
 
 News and magazines runs 7 businesses and Action runs 5. Both advice only.
 
-Apps under 10m installs offer email in half or more of campaigns. Above 10m installs, offered email drops to 1% and completion on the download action itself is highest, about 77 of every 100, likely large apps that no longer need the asset a smaller app would chase.
+Apps under 1m installs offer email in half or more of campaigns, and the 1m to 10m band drops to a fifth. Above 10m installs, offered email drops to 1% and completion on the download action itself is highest, about 77 of every 100, likely large apps that no longer need the asset a smaller app would chase.
 
 YouTube channel size (by_youtube_subscribers), methods and referrals:
 
@@ -262,7 +262,7 @@ YouTube channel size (by_youtube_subscribers), methods and referrals:
 | 100k to 1m | 1,173 | 187 | 4 | 7 | 87 |
 | 1m+ | 643 | 80 | 4 | 8 | 51 |
 
-Small channels lean on referrals: channels with 1,000 to 10,000 subscribers record the most referral entries of any group and run the fewest methods, per the table above. YouTube gaming channels (by_youtube_gaming) show the same shape against other YouTube channels:
+Small channels lean on referrals: channels with 1,000 to 10,000 subscribers record the most referral entries of any group and run the fewest methods, per the table above. YouTube gaming channels (by_youtube_gaming) run the opposite shape against other YouTube channels, more methods and far fewer referral entries:
 
 | Channel type | Methods | Referral entries per 100 Entrants |
 |---|---|---|
@@ -317,7 +317,7 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 | 11 or more | 6,795 | 519 (+17%) | 9.26 (+617%) | 31% (-29%) | 3.2 | 14 |
 <!-- /generated -->
 
-Entrants per 100 Impressions falls with every extra group of methods and Entrants fall about a quarter at 11 or more, in the campaigns we can compare fairly and in every vertical with enough campaigns. Actions per Entrant rise because there are more things to do. More methods means more Actions per Entrant and fewer people.
+Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seven to ten, then holds at 31 for the longest lists. Entrant counts do not follow it down: campaigns of 11 or more methods drew 519 Entrants against 443 for campaigns of one to three, 17% more. Actions per Entrant rise with the list, because there are more things to do. So the longest lists in this data converted a smaller share of the Impressions they drew, and still recorded more Entrants and far more Actions. That describes the campaigns businesses chose to run, and says nothing about what adding a method to this campaign would do.
 
 <!-- generated:cmp_share -->
 | Share action, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
@@ -333,7 +333,7 @@ Entrants per 100 Impressions falls with every extra group of methods and Entrant
 | offers email signup | 10,849 | 546 (+29%) | 3.65 (-2%) | 30% (-17%) | 3.3 | 6 |
 <!-- /generated -->
 
-Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had fewer Entrants and lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup cost about a fifth of conversion for a small gain in Entrants. Both are prices worth paying only when the asset is the objective.
+Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had 34% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
 
 A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit, excluding crypto businesses [14.9% against 22.5%].
 

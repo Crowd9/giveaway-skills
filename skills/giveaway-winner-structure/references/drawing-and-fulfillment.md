@@ -6,14 +6,14 @@ Advice unless marked as extracted.
 
 One Prize for the money draws a bigger crowd than splitting it into several, and the gap grows with more units. For a fixed budget, one Prize worth wanting is the default. Several Winners earn their place when the units are the point: product sampling, digital Prizes, community rewards, daily draws.
 
-| Units | Crowd per Prize dollar |
-|---|---|
-| One | 1.07 |
-| Two to five | 0.93 |
-| Six to twenty | 0.84 |
-| Twenty-one or more | 0.84 |
+| Units | Campaigns | Crowd per Prize dollar | Entrants |
+|---|---|---|---|
+| One | 26,976 | 1.15 | 509 |
+| Two to five | 10,243 | 0.82 | 463 |
+| Six to twenty | 4,349 | 0.64 | 562 |
+| Twenty-one or more | 1,605 | 0.78 | 1,065 |
 
-[Extracted from 13,977 campaigns with a stated USD pool. The raw typical figures are close because larger pools carry more units.]
+[Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The raw Entrants column runs the other way, rising with unit count, because campaigns listing many things also spent more. Quote crowd per Prize dollar when the question is what a fixed budget bought, and the raw count when the question is what campaigns looked like.
 
 | Shape | Choose it when | Cost |
 |---|---|---|
@@ -67,11 +67,12 @@ Half of ordinary campaigns write their own terms in place of the platform defaul
 
 | | Custom terms | Platform default |
 |---|---|---|
-| Typical Entrants | 2,268 | 2,010 |
-| Campaigns | 4,713 | 6,010 |
-| Conversion Rate | 34% | 41% |
+| Typical Entrants | 591 | 401 |
+| Campaigns | 13,591 | 26,259 |
+| Businesses | 2,107 | 5,862 |
+| Conversion Rate | 30.9% | 37.0% |
 
-[39% of the 117,348 ordinary campaigns carried custom terms.]
+Campaigns with custom terms drew about 47% more Entrants and got a smaller share of their viewers through. Both figures describe the businesses that wrote their own terms, which are the larger and more practised ones, so neither says that writing terms changes a result. [Extracted from `analysis/output/extra_cuts.json`, `custom_terms_clean`, among the campaigns we can compare fairly.]
 
 Custom terms run long, and the generated draft below is far shorter, which is the point.
 

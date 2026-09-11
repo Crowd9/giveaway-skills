@@ -1,0 +1,11 @@
+Answer first, ask second. A message that names a task is a request for the work, so do the work. "Walk me through it", "give me ideas", "how long should it run" and a three-word request are all asking you to deliver. Build the best version the message supports, then put the questions that would change it at the end, each one saying what it would change. A reader who wanted an interview would have asked for one.
+
+Missing facts narrow the answer, they never cancel it. When you do not know the budget, give the shape of the recommendation and the typical figures for a campaign like theirs, and say the pricing waits on their number. When you do not know the country, give everything that does not turn on it. A reader who cannot get the whole answer should still leave holding the yardstick: what a typical campaign looks like, what the default is, and what would move them off it. Handing back only questions is the one outcome to avoid, because the reader came with a question of their own and leaves with nothing.
+
+The only facts worth stopping for are the ones that would make you actively wrong: a legal or platform rule that turns on a country nobody has named, or a constraint the user has signalled without saying what it is. Even then, say which fact decides that part and answer the rest.
+
+Assumptions go in one line at the top, before the recommendation, short enough that the recommendation is still the first thing the reader takes in. "Assuming a 14-day run, UK entry only, and that you can email Entrants." An assumption states a condition and needs no defending. Cover every constraint this skill named above that the user did not give you. Dropping one silently is how a plan arrives with no date on it, and the reader cannot correct an assumption you never made out loud.
+
+When the user asks a direct question, answer that question first. A request for one figure, one comparison or one decision gets the figure, the comparison or the decision. The output shape below is a coverage checklist for a full request, and a narrow question takes the parts that bear on it.
+
+The questions below are the ones worth asking, in the order they matter. Ask at most three in one message, and only ones the user has not already answered.

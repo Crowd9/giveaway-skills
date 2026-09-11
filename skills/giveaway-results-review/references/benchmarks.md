@@ -63,7 +63,7 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 Completions of the acquire and amplify actions, summed per campaign, across the 117,348 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
-Reading it: cost per completion varies widely by asset, from under $0.50 for an email signup to about $17 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.4 to $0.9 depending on the network.
+Reading it: cost per completion varies widely by asset, from under $0.50 for an email signup to about $17 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.4 to $0.9 on most networks, with Snapchat at $1.56 and LinkedIn at $2.07 above that.
 
 A subscribe asset's Share of Entrants column can read over 100: a campaign can offer more than one subscribe action, such as a newsletter and an SMS list, and every completion counts.
 
@@ -130,7 +130,7 @@ Stated USD per email signup by Prize category, campaigns with an email action:
 | 2020 | 1,185 | 598 | 26% |
 <!-- /generated -->
 
-The typical campaign has drifted smaller since 2021 while the Conversion Rate held steady. A campaign run this year sits a little under the typical figures across the whole export, at the same quality. The 2020 row rests on 454 campaigns against several thousand in every later year, so treat it as a rough marker.
+The typical campaign has held between 473 and 528 Entrants since 2021 while the Conversion Rate held steady. A campaign run this year sits a little above the typical figures across the whole export, at the same quality. The 2020 row rests on 1,185 campaigns against several thousand in every later year, so treat it as a rough marker.
 
 ## By template
 
@@ -138,10 +138,10 @@ Where a campaign was copied from, scoped to 100 or more Entrants, finance_crypto
 
 | Source | Share | Campaigns | Businesses | Conversion Rate |
 |---|---|---|---|---|
-| Own earlier campaign, copied | 62% | 21,973 | 2,710 | 0.270 |
-| Blank, no copying | 23% | 8,167 | 3,432 | 0.307 |
-| Gleam library template | 9% | 3,059 | 2,219 | 0.264 |
-| A campaign outside the dataset | 7% | 2,458 | 1,268 | 0.273 |
+| Own earlier campaign, copied | 58% | 68,068 | 5,673 | 0.265 |
+| Blank, no copying | 23% | 27,188 | 10,864 | 0.285 |
+| A campaign outside the dataset | 10% | 12,019 | 4,238 | 0.254 |
+| Gleam library template | 9% | 10,071 | 6,523 | 0.263 |
 
 Typical figures for the library templates with the most campaigns at this size:
 
@@ -162,7 +162,7 @@ Typical figures for the library templates with the most campaigns at this size:
 | Email Signup Referrals | 149 | 113 | 666 | 27% | 1.91 | 16 | 3 | 97% | 94% |
 <!-- /generated -->
 
-Source: `analysis/output/templates.json` (`source_mix_1k`, `by_template_1k`).
+Source: `analysis/output/templates.json` (`source_mix`, `by_template`).
 
 ## Benchmarks by plan tier
 
@@ -178,7 +178,7 @@ A Free or Hobby organizer runs on a plan with no email or share action, so ranki
 | Premium | 3,068 | 550 | 1,381 | 24% | 5.81 | 18 | 9 | 42% | 49% |
 <!-- /generated -->
 
-Free and Hobby campaigns carry no email or share action at all, so their Conversion Rate sits above Pro and Business on a smaller ask, not a stronger landing page. Premium campaigns run the most methods over the longest window and the lowest Conversion Rate follows from the duration and repeatable-action caveat, not from a weaker campaign.
+Free campaigns carry no email or share action at all and Hobby campaigns carry almost none, so their Conversion Rate sits above Pro and Business on a smaller ask, not a stronger landing page. Premium campaigns run the most methods over the longest window and the lowest Conversion Rate follows from the duration and repeatable-action caveat, not from a weaker campaign.
 
 ## Benchmarks by organizer stage, scale and business type
 
@@ -273,28 +273,32 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_industry_ordinary`), `anal
 
 ### Comparing against a similar-sized company
 
-`industries.json`'s `by_employee_band` and `by_founded_band` add a company headcount and company age cut, matched against Apollo's own organization data, not read from the homepage. Same 1,000-or-more scope as the tables above. Apollo matched 3,609 of the organizers here, about a third of the 11,225 organizers with an industry label, and the match skews toward companies with a public web presence, so read this as a lean on the larger and more established end, not a full comparison across every business.
+Source: `analysis/output/industries.json` (`by_employee_band`, `by_founded_band`, `enrichment_coverage`).
+
+`industries.json`'s `by_employee_band` and `by_founded_band` add a company headcount and company age cut, matched against Apollo's own organization data, not read from the homepage. Apollo matched 3,609 businesses [`analysis/output/industries.json`, `enrichment_coverage`, `by_employee_band`, `by_founded_band`]. How many carry an industry label is not a figure the outputs hold, so read both cuts for direction and never as coverage of the whole set. The match skews toward companies with a public web presence, and the match skews toward companies with a public web presence, so read this as a lean on the larger and more established end, not a full comparison across every business.
 
 | Employee count | Campaigns | Businesses | Conversion Rate | Email offered |
 |---|---|---|---|---|
-| 1 to 9 | 9,894 | 1,260 | 27.3% | 38% |
-| 10 to 49 | 9,336 | 916 | 26.5% | 50% |
-| 50 to 199 | 4,859 | 430 | 30.7% | 40% |
-| 200 to 999 | 4,325 | 218 | 33.7% | 24% |
-| 1,000 or more | 4,412 | 295 | 33.8% | 25% |
+| 1 to 9 | 28,827 | 1,798 | 25.5% | 30% |
+| 10 to 49 | 27,400 | 1,215 | 25.2% | 44% |
+| 50 to 199 | 12,043 | 552 | 29.2% | 32% |
+| 200 to 999 | 9,352 | 285 | 29.8% | 25% |
+| 1,000 or more | 12,262 | 524 | 34.2% | 17% |
 
-Organizers with 200 or more staff see a higher Conversion Rate than organizers under 50 staff, while running an email action about half as often (table above). The smaller organizer gets the useful half of that trade: a lower Conversion Rate on this one run, but an email list built on close to twice the share of campaigns, the asset that keeps paying out after the giveaway itself has closed.
+Businesses with 200 or more staff see a higher Conversion Rate than businesses under 50 staff, 29.8% and 34.2% against 25.5% and 25.2%, while offering an email action about half as often, 25% and 17% against 30% and 44% (table above).
 
-`by_founded_band` shows a related split by company age: the newest companies offer email far less often than older ones, while running the highest entries per Entrant and referral rate of the five groups (table below, 3,936 campaigns, 513 organizers).
+`by_founded_band` shows a related split by company age: the newest companies offer email far less often than older ones, while running the highest entries per Entrant and the highest referral rate of the five groups (table below, 11,919 to 18,308 campaigns and 660 to 947 organizers per band).
 
-| Founded | Email offered | Entries per Entrant | Referral rate |
-|---|---|---|---|
-| 2020 or later | 21.5% | 5.76 | 84% of Entrants |
-| Before 2015 (four earlier bands) | 35% to 46% | — | — |
+| Founded | Campaigns | Businesses | Email offered | Entries per Entrant | Referrals per 100 Entrants |
+|---|---|---|---|---|---|
+| 2020 or later | 11,919 | 824 | 14.9% | 5.56 | 60 |
+| 2015 to 2019 | 17,931 | 947 | 24.2% | 4.80 | 30 |
+| 2010 to 2014 | 12,553 | 660 | 41.5% | 4.83 | 14 |
+| 2000 to 2009 | 18,308 | 688 | 44.8% | 4.99 | 9 |
+| Before 2000 | 14,533 | 862 | 38.5% | 3.57 | 12 |
 
 Company size, company age, plan tier and organizer scale move together, so read this as another angle on the pattern in the tables above, not a separate driver.
 
-Source: `analysis/output/industries.json` (`by_employee_band`, `by_founded_band`, `enrichment_coverage`).
 
 ## Campaign sequence and organizer activity
 
@@ -412,7 +416,7 @@ Source: `analysis/output/field_cuts.json` (`by_organizer_tenure`).
 | Germany | 3,530 | 472 | 658 | 28% | 4.84 | 11 | 7.5 | 3.64 | 25% |
 | Hong Kong | 3,113 | 573 | 718 | 30% | 4.84 | 7 | 7 | 3.37 | 24% |
 
-Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration lines up with its 59% Conversion Rate, both marks of a short flash-style campaign.
+Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration and its 59% Conversion Rate are two readings of the same thing. Impressions count once per visitor per day, so a one-day campaign has one day of Impressions to divide into and converts higher by construction. Both figures rest on campaigns that are 90% repeats from a small set of accounts, so treat the row as a description of automated draws.
 
 ### City benchmarks
 
@@ -448,7 +452,7 @@ Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/ind
 
 Entries per Entrant barely moves across the whole range, from 4.46 in the smallest band to 5.28 in the largest. The Entrants a small campaign does reach are working about as hard as the ones in a campaign a hundred times the size, so a low Entrant count is a reach problem and not an engagement problem.
 
-Conversion Rate climbs gently with size, from 27% to 34%. Email and a share action are both offered far less often in small campaigns, 17% against 23% for email and 30% against 61% for sharing. Those are the two gaps a small campaign can close on its own, and the target is the next band's own figure.
+Conversion Rate climbs gently with size, from 27% to 34%. A share action is offered far less often in small campaigns, 30% against 61% in the largest band, and email peaks in the middle bands at 32% against 17% in the smallest. Those are the two gaps a small campaign can close on its own, and the target is the next band's own figure.
 
 State entries the same way here: entries per 100 Entrants, not the raw decimal (table below). Read a campaign's own figure against the matching row and state the gap as a percentage or a plain multiple ("about half", "roughly double"), never as two decimals set side by side.
 
@@ -469,14 +473,17 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 
 - After a campaign of 5,000 or more Entrants, the next one reached 5,000 again 61% of the time, against 12% after a smaller one.
 
-- Two more comparisons among the campaigns we can compare fairly: a campaign launched within 30 days of the organizer's previous one converts noticeably better than a first campaign despite drawing about the same number of Entrants, and a campaign without a share action converts better than one with, while also drawing more Entrants (table below).
+- Two more comparisons among the campaigns we can compare fairly: a campaign launched within 30 days of the organizer's previous one converts noticeably better than a first campaign and draws 41% more Entrants, and a campaign without a share action converts better than one with while drawing about a quarter fewer Entrants (table below).
 
 | Top fifth vs bottom fifth (by Entrants) | Top fifth | Bottom fifth |
 |---|---|---|
-| Impressions | 35,505 | 4,047 |
-| Conversion Rate | 28% | 28% |
-| Stated Prize pool (USD) | 2,016 | 400 |
-| Previous campaigns from organizer | 13 | 13 |
+| Entrants | 3,349 | 140 |
+| Impressions | 14,063 | 550 |
+| Conversion Rate | 27.7% | 25.5% |
+| Stated Prize pool (USD) | 1,200 | 120 |
+| Previous campaigns from the business | 12 | 7 |
+
+Reach is what separates the two, 25 times the Impressions for a Conversion Rate two points apart. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,425 campaigns each side.]
 
 <!-- generated:bm_splits -->
 | Split (campaigns we can compare fairly) | Entrants | Conversion Rate |
@@ -489,4 +496,39 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 
 The share-action line and the top-fifth line answer different questions and cannot be read as one finding. The share-action line splits campaigns by a setting the organizer chose before launch. The top-fifth line splits the same campaigns by the result they got afterwards. Neither says that adding or removing a share action moves a campaign between the fifths.
 
-- December: about 12% of starts, and December campaigns drew more Entrants and had a higher Conversion Rate.
+- December: 10.4% of starts, a quarter again an even month, and December campaigns drew more Entrants at a higher Conversion Rate, 560 at 30.8% against 471 to 508 at 25.6% to 26.9% across the other eleven months. [Extracted from `analysis/output/prize_timing_cuts.json`, `by_start_month`.]
+
+## Campaign weighted against business weighted
+
+[Extracted from `analysis/output/organizer_history.json`, `sequence_curve_all`, `reach_rate_by_first_band`, `ordinary_n` and `ordinary_organizers`. The shares below are worked from those counts and are not stored figures.]
+
+Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 64,236 of the 117,348, which is 55%, come from the 1,984 businesses on their eleventh campaign or later, 11% of the 17,777. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
+
+The first row below is one campaign per business, which is the business-weighted view of the same data.
+
+| The campaign is the business's | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant |
+|---|---|---|---|---|---|
+| 1st | 17,383 | 17,383 | 382 | 25.6% | 3.68 |
+| 2nd | 8,509 | 8,509 | 438 | 26.4% | 3.85 |
+| 3rd to 5th | 14,332 | 6,028 | 498 | 26.8% | 4.05 |
+| 6th to 10th | 12,888 | 3,326 | 547 | 27.0% | 4.18 |
+| 11th or later | 64,236 | 1,984 | 514 | 27.5% | 4.91 |
+| All campaigns | 117,348 | 17,777 | 492 | 26.9% | 4.39 |
+
+A first campaign drew 382 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 382 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.68 against 4.39, because a business on its eleventh campaign runs more actions.
+
+None of this says that running more campaigns produces bigger ones. The businesses still running an eleventh campaign are the ones whose earlier campaigns went well enough to justify another, which is survivorship and not a result.
+
+How far businesses get, one row per business, by the size of their first campaign:
+
+| First campaign | Businesses | Median campaigns run | Ran a 2nd | Reached a 5th | Reached an 11th |
+|---|---|---|---|---|---|
+| Under 250 Entrants | 8,957 | 1 | 39% | 15% | 6% |
+| 250 to 499 | 4,659 | 1 | 48% | 19% | 9% |
+| 500 to 999 | 3,717 | 2 | 53% | 24% | 12% |
+| 1,000 to 2,499 | 3,885 | 2 | 54% | 25% | 12% |
+| 2,500 to 4,999 | 1,943 | 2 | 58% | 27% | 14% |
+| 5,000 to 9,999 | 1,178 | 2 | 58% | 28% | 14% |
+| 10,000 or more | 1,143 | 2 | 62% | 31% | 16% |
+
+Most businesses run one campaign. A bigger first campaign goes with a better chance of a second, and even at 10,000 or more Entrants fewer than two in three came back. Read that as a reason to treat the first campaign as the start of a list the business keeps, since the second one is not guaranteed.

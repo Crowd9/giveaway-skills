@@ -2,11 +2,11 @@
 
 Advice. Formats change, so treat lengths and features as current practice, and check any platform rule in the entry-method planner's compliance notes before using tag-to-enter or share-to-enter.
 
-Extracted: the top fifth of campaigns by Entrants saw a typical 35,505 Impressions against 4,047 for the bottom fifth, with the same Conversion Rate (28% against 28%). Reach is what separates them. A campaign that is not being seen is a promotion problem before it is a Prize problem.
+Extracted: the top fifth of campaigns by Entrants saw a typical 14,063 Impressions against 550 for the bottom fifth, at Conversion Rates two points apart (27.7% against 25.5%). Reach is what separates them, so promotion is the lever this playbook is for. [`analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,425 campaigns each side.]
 
 ## Measured traffic mix
 
-Direct traffic supplies over half of all Impressions, well ahead of any single channel [across 54,660 campaigns from 10,692 businesses]. The rest splits across smaller traffic sources, none above 1.4%.
+Direct traffic supplies over half of all Impressions, well ahead of any single channel [across 54,660 campaigns from 10,692 businesses]. The rest splits across smaller traffic sources, none above 8%.
 
 | Traffic source | Share of Impressions |
 |---|---|
@@ -58,30 +58,37 @@ Extracted: the giveaway directories, deals forums and gaming communities that re
 
 Extracted: outcomes for campaigns where one traffic source supplies over 10% of a campaign's Impressions.
 
-| Traffic source over 10% of Impressions | Conversion Rate | Other figure | Campaigns | Businesses |
-|---|---|---|---|---|
-| Giveaway directories | 31.7% | 1,827 Entrants at the typical campaign | 6,768 | 2,254 |
-| Deals forums | 47% | 1.9 Actions each, 7 referrals per 100 Entrants | 1,383 | 173 |
-| YouTube | 41% | - | 5,131 | 1,217 |
-| X | 34% | 5.23 actions per Entrant | 10,195 | 2,941 |
-| Meta | 27% | 3.58 actions per Entrant | 8,391 | 3,139 |
-| Search | 18.5% | - | 1,019 | 407 |
-| TikTok | 15% | - | 178 | 102 |
+| Traffic source over 10% of Impressions | Conversion Rate | Entrants | Entries each | Campaigns | Businesses |
+|---|---|---|---|---|---|
+| YouTube | 40.3% | 514 | 3.61 | 15,164 | 3,453 |
+| Deals forums | 35.4% | 492 | 4.75 | 7,104 | 526 |
+| Giveaway directories | 31.4% | 683 | 4.80 | 18,486 | 4,619 |
+| X | 31.3% | 395 | 5.21 | 42,690 | 8,461 |
+| The Gleam directory | 28.1% | 1,018 | 5.52 | 21,390 | 5,775 |
+| The business's own site | 27.8% | 755 | 4.34 | 11,355 | 2,004 |
+| Direct | 27.5% | 505 | 4.92 | 155,265 | 24,629 |
+| Meta | 25.5% | 499 | 3.53 | 24,711 | 7,374 |
+| Search | 17.4% | 356 | 4.38 | 4,493 | 1,649 |
 
-Deals-forum traffic sees the highest Conversion Rate of any well-populated traffic source above, worth the spot on the promotion list for that alone. The audience does the minimum once it lands and rarely refers a friend, well below every other channel on both measures. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
+YouTube and deals forums convert best of the channels with real volume, and search worst. Every row here is campaigns where that source already supplied a tenth of the Impressions, so the table describes campaigns that were already reaching people through it. It says nothing about what adding a channel would do. [Extracted from `analysis/output/field_cuts.json`, `outcomes_when_channel_over_10pct`.]
+Deals-forum traffic converts at 35.4%, second of the well-populated sources above and behind YouTube at 40.3%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
 
-| Measure | Deals forums | Other traffic sources |
+| Measure | Deals forums | For comparison |
 |---|---|---|
-| Actions per Entrant | 1.9 | 3.6 to 5.9 |
-| Referrals per 100 Entrants | 7 (lowest of any source measured) | direct: 32 |
-| Actions per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.8 [1,084 campaigns, 145 businesses] | - |
-| Actions per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.2 [241 campaigns, 60 businesses] | - |
+| Conversion Rate | 35.4% | direct 27.5%, Meta 25.5% |
+| Entries per Entrant | 4.75 | direct 4.92, Meta 3.53 |
+| Referrals per 100 Entrants | 5.3, the lowest of any source measured | direct 23.4, X 52.8 |
+| Entries per Entrant, campaigns of 100 to 250 Entrants | 7.11 [1,324 campaigns, 203 businesses] | - |
+| Entries per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.83 [1,084 campaigns, 145 businesses] | - |
+| Entries per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.16 [241 campaigns, 60 businesses] | - |
 
-Meta sees a Conversion Rate close to X's and carries the bigger traffic share of the two. Where it lags is follow-through: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
+Referrals are where deals-forum traffic really is last, at 5.3 per 100 Entrants against 23.4 for direct. On Entries per Entrant it sits mid-table at 4.75, close to direct and above Meta, so the old reading that it trails every channel on both counts was wrong on the second. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
+
+Meta sees a Conversion Rate nearly six points under X's, 25.5% against 31.3%, and carries the bigger traffic share of the two. It lags on follow-through as well: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
 
 | Measure | Meta | X |
 |---|---|---|
-| Conversion Rate | 27% | 34% |
+| Conversion Rate | 25.5% | 31.3% |
 | Share of all Impressions | 7.6% | 4.7% |
 | Actions per Entrant, overall | 3.58 | 5.23 |
 | Actions per Entrant, 1,000-2,500 Entrants | 3.35 [4,347 campaigns, 1,970 businesses] | 5.11 [6,160 campaigns, 2,093 businesses] |
@@ -230,20 +237,21 @@ Source: analysis/output/success_profiles.json (interactions.referral_action_by_c
 
 ## What a shared link is worth
 
-Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, 15.8% of Viral Share clicks end in a referred entry, on 18,461 campaigns from 4,011 businesses. The same campaigns turn 24.3% of ordinary Impressions into Entrants, so a shared link converts a visitor at about two thirds the rate of any other visit to the page.
+Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, 14.9% of Viral Share clicks end in a referred entry, on 47,097 campaigns from 7,603 businesses. The same campaigns turn 22.5% of ordinary Impressions into Entrants, so a shared link converts a visitor at about two thirds the rate of any other visit to the page.
 
 Pooled with crypto organizers back in, the referral rate rises well above the crypto-excluded figure, because crypto campaigns run referral farms (below, `viral_click_conversion`). Use the crypto-excluded figure for an ordinary business's plan, and expect the higher pooled figure if pulling the number straight from the JSON.
 
 | Referral-rate figure | Value | Campaigns | Businesses |
 |---|---|---|---|
-| Pooled (crypto included) | 22.1% | 29,151 | 6,536 |
-| Spread on the pooled figure | lower quarter 11.6%, upper quarter 43.5% | - | - |
+| Pooled (crypto included) | 20% | 71,191 | 11,563 |
+| Spread on the pooled figure | lower quarter 10.2%, upper quarter 38.1% | - | - |
 
 | By industry | Referrals per click | Campaigns | Businesses |
 |---|---|---|---|
-| Software and SaaS | 58% | 918 | 181 |
-| Finance and crypto | 44.4% | 10,690 | 2,590 |
-| Marketing agency | 23.2% | 235 | 37 |
+| Software and SaaS | 46.1% | 1,859 | 362 |
+| Finance and crypto | 38.7% | 24,094 | 4,114 |
+| Creator or influencer | 29.4% | 1,044 | 140 |
+| Marketing agency | 17.9% | 471 | 75 |
 | Gaming | 18.6% | 2,992 | 808 |
 | Baby and kids | 18.3% | 219 | 44 |
 | Travel and events | 18.0% | 901 | 178 |
@@ -360,7 +368,7 @@ Extracted: typical share of a campaign's Impressions landing on each day since s
 | 14 days | 10% (4,851 campaigns, 1,828 businesses) | Day 1 | Day 10, 4.4% (5,173 campaigns, 1,919 businesses) | Day 13, 4.5% (4,663 campaigns, 1,770 businesses) |
 | 30 days | 4.1% (7,176 campaigns, 1,988 businesses) | Day 2, 4.7% (7,558 campaigns, 2,049 businesses) | Days 17 to 21, about 2.3% (day 20: 8,094 campaigns, 2,167 businesses) | Day 29, 2.8% (6,672 campaigns, 1,860 businesses) |
 
-Day one carries close to a quarter of a week-long campaign's total traffic and a tenth of a month-long one's. A week-long run falls every day straight through to the close, with no recovery. A two-week or month-long run falls hard through the first week or two, flattens into a long stretch at a quarter to a third of the launch share, and picks up a little in the final days. Both closes stay well under half the launch share.
+Day one carries 22% of a week-long campaign's total traffic, 10% of a two-week one's and 4.1% of a month-long one's. Quote the row for the run the reader is actually planning. A week-long run falls every day straight through to the close, with no recovery. A two-week or month-long run falls hard through the first week or two, flattens into a long stretch at a quarter to a third of the launch share, and picks up a little in the final days. Both closes stay well under half the launch share.
 
 | Duration | Launch peak | Quiet-stretch share of launch | Late-run uptick |
 |---|---|---|---|

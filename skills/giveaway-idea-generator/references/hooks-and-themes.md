@@ -141,10 +141,10 @@ A type is declared by words in the title, incentive name or the start of the des
 
 Reading it:
 
-- **Advent or daily calendars** lead on Entrants and Conversion Rate: five days, five actions, and a reason to come back (figures in the table above). The shape wins, and it is a December shape.
-- **Campaigns that say free entry or no purchase** run long, with the most actions of any type and repeatable bonuses, and post the highest value index. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
-- **Sweepstakes wording** carries the largest US campaigns at a value index above the typical figure, which is the long-run, daily-entry pattern.
-- **Collaborations** are 17% of campaigns and sit a little above the typical figure on Entrants. The title proxy for a partner does not by itself mark a strong campaign: the Prize-picker reference shows the value index rises further when the collaboration is signalled in the title alone (see table below). A collab title trades Conversion Rate for reach: on the 100-plus-Entrant frame, and after matching on size and industry, it still lands more often in the top fifth by raw audience and by value-index performance, but less often in the top fifth by Conversion Rate among the campaigns we can compare fairly, or by low cost per Entrant (see table below). That reach is the point for a business without a partner's audience of their own: borrowing attention costs Conversion Rate and cost per Entrant, and earns it back in who shows up.
+- **Advent or daily calendars** get the second highest share to enter of any type at 44%, on 600 Entrants, which is 22% above the typical figure: five days, five actions, and a reason to come back (figures in the table above). The shape wins, and it is a December shape.
+- **Campaigns that say free entry or no purchase** run long, carry 5.6 Actions per Entrant and repeatable bonuses, and post the highest value index at 2.17. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
+- **Sweepstakes wording** carries the largest US campaigns at 804 Entrants, on a value index level with typical at 1.01 and a low share to enter at 22%, which is the long-run, daily-entry pattern.
+- **Collaborations** are 14% of campaigns and draw 604 Entrants, 23% above the typical figure. The title proxy for a partner does not by itself mark a strong campaign: the Prize-picker reference shows the value index rises further when the collaboration is signalled in the title alone (see table below). A collab title trades Conversion Rate for reach: on the 100-plus-Entrant frame, and after matching on size and industry, it still lands more often in the top fifth by raw audience and by value-index performance, but less often in the top fifth by Conversion Rate among the campaigns we can compare fairly, or by low cost per Entrant (see table below). That reach is the point for a business without a partner's audience of their own: borrowing attention costs Conversion Rate and cost per Entrant, and earns it back in who shows up.
 
   | Collaboration title signal, matched comparison | Ratio vs. matched non-collab | Campaigns | Businesses |
   |---|---|---|---|
@@ -154,18 +154,18 @@ Reading it:
   | Top fifth by Conversion Rate (fair-comparison count) | 0.39 | 2,113 | 326 |
   | Top fifth by low cost per Entrant | 0.57 | 2,781 | 831 |
 
-- **Creator and streamer** campaigns get the most to enter of any type, with the most Actions per Entrant. An existing audience does that.
-- **Cash** gets a high share to enter at a small size, with the most actions of any type and long runs. **Gift cards** sit below the typical figure on everything except email uptake.
-- **Community and Discord** campaigns record the most referrals per 100 Entrants of any type in this table. **Quiz and trivia** campaigns now sit near the typical figure.
-- **Product launches** sit below the typical figure on Entrants, Conversion Rate and value index. A launch has no audience yet, which is the point of running one, so plan the promotion first.
-- **Weekly or monthly series**, **flash** campaigns and **UK competition wording** are the smallest. A series spreads one audience across many draws. A flash campaign has no time to be found. UK competition wording gets close to the all-campaign typical figure to enter.
+- **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. An existing audience does that.
+- **Cash** gets the highest share to enter of any type at 61%, on 570 Entrants, with the most actions of any type and long runs. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.17, so they draw a fair crowd for what a business spends.
+- **Community and Discord** campaigns record 20 referrals per 100 Entrants, well above the typical 12, behind scavenger hunt, flash and quiz campaigns. **Quiz and trivia** campaigns run a quarter below the typical figure on Entrants and a third below on value index. They carry 21 referrals per 100 Entrants against the typical 12.
+- **Product launches** draw a little more crowd than typical at 547 Entrants against 492, on the lowest share to enter of any type at 29% and a value index just under typical at 0.97. A launch has no audience yet, which is the point of running one, so plan the promotion first.
+- **Photo or video contests** are the smallest type in the table at 252 Entrants, on the lowest share to enter at 21% and the lowest value index at 0.27, which is what asking for a made thing costs. **Creator or streamer** campaigns are next at 317. A **weekly or monthly series** sits a little under typical at 457, spreading one audience across many draws. **Flash** campaigns of 24 to 72 hours sit above typical on both Entrants and share to enter, 598 and 39%, so a short window is not by itself a small campaign. **UK competition wording** lands near typical on size at 508.
 
 Nothing here says the type caused the number. Businesses who run advent calendars have December audiences, and businesses who write "no purchase necessary" have run many campaigns before.
 
 ### Launches, pre-orders and drops (extracted)
 
 <!-- generated:ig_launch -->
-| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email uptake | Referrals % of Entrants |
+| Subtype | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Email signups per Entrant, where offered | Referrals % of Entrants |
 |---|---|---|---|---|---|
 | Launch or new release | 3,349 | 588 | 30% (1,235) | 0.96 | 17 |
 | Limited edition or drop | 1,808 | 532 | 31% (659) | 1.00 | 14 |
@@ -174,7 +174,7 @@ Nothing here says the type caused the number. Businesses who run advent calendar
 | Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
 <!-- /generated -->
 
-Launch campaigns run below the all-campaign typical figures on Entrants and Conversion Rate, and above them on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception, with a value index above the rest and a referral rate above the all-campaign typical figure: a promise of first access is a reason to bring a friend. Pre-order and crowdfunding campaigns are the smallest, and around half come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
+Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 547 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 16 referrals per 100 Entrants, above the all-campaign typical figure of 12: a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 401 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
 
 By industry, a separate check of launch wording in campaign names and descriptions (wider scope than the subtypes above, keeps crypto businesses) shows where each wording concentrates. Match the wording to the industries that already use it.
 
@@ -190,7 +190,7 @@ Source: `analysis/output/standouts.json` (`launch_subtypes`), `analysis/output/p
 
 ### Campaigns that beat their Prize money (extracted)
 
-Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.13 USD per Entrant:
+Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.13 USD per Entrant, from `analysis/output/standouts.json` (`standouts`):
 
 (6,683 valued campaigns, 15% of the set, 1,688 businesses. Typical 3,976 Entrants on a 500 USD pool.)
 
@@ -231,11 +231,11 @@ Prize categories over-represented among them:
 | Music gear | 1% | 3% | 0.49 |
 | Gaming (folds gaming and esports) | 20% | 14% | 1.43 |
 
-The pattern is a business that has run many campaigns, more often with a secret code from a stream or video (see feature table above). Add Twitch and Discord actions, a single hero Prize, and a long list of actions with a daily bonus. Gaming is over-represented among standouts too (gaming here folds the gaming and esports label, and the other nine industry names above fold similar labels the same way, apparel, beauty and jewellery under fashion and beauty and so on). Firearms retailers with specialist audiences are the extreme case, over three times their share. Cash, gift cards and bundles are under-represented. Standouts got 32% to enter, under the typical figure, because their reach came from audiences, streams and directories, and the landing page had less to do with it.
+The pattern is a business that has run many campaigns, more often with a secret code from a stream or video (see feature table above). Add Twitch and Discord actions, a single hero Prize, and a long list of actions with a daily bonus. Gaming is over-represented among standouts too (gaming here folds the gaming and esports label, and the other nine industry names above fold similar labels the same way, apparel, beauty and jewellery under fashion and beauty and so on). Firearms retailers with specialist audiences are the extreme case, over three times their share. Cash, gift cards and bundles are under-represented. Standouts got 33% to enter, under the typical figure, because their reach came from audiences, streams and directories, and the landing page had less to do with it.
 
 ## Store campaigns
 
-For a store, the giveaway is a shopping session with a Prize at the end. The data has one line on the shape: cart, wishlist and spree campaigns (matched on words like "win your cart" and "wishlist") run below the all-campaign typical figures on size, long by design (see the campaign-types table above). The data cannot see what they were for: every Entrant browsed the catalogue and told the store what they wanted. Gift card and voucher campaigns run larger and shorter, closer to the all-campaign typical figure.
+For a store, the giveaway is a shopping session with a Prize at the end. The data has one line on the shape: cart, wishlist and spree campaigns (matched on words like "win your cart" and "wishlist") draw about half again the Entrants of the typical campaign, 725 against 492, at a level share to enter and the second highest value index in the table at 1.43 (see the campaign-types table above). The data cannot see what they were for: every Entrant browsed the catalogue and told the store what they wanted. Gift card and voucher campaigns run smaller at 432 Entrants, on a value index of 1.17.
 
 Formats to pick from, each with the store job it does:
 
@@ -243,7 +243,7 @@ Formats to pick from, each with the store job it does:
 - **Win your wishlist.** Same shape on the wishlist app, lighter on the Entrant. Job: a wishlist per Entrant the store can email against when items restock or drop in price.
 - **Pick your Prize.** Three products from the range as the Prize options, Entrant chooses one on the form. Job: a preference vote across the range, and the Entrant reads three product pages to choose.
 - **Bundle builder.** The Prize is the bundle the Entrant designs from a set of options. Job: tells the store which combinations sell, and the bundle becomes the post-campaign offer.
-- **Restock or drop.** A giveaway of the item that sells out, drawn on restock day. Job: the waitlist. Launch and early-access campaigns sit at a value index of 1.08 in the launch table above.
+- **Restock or drop.** A giveaway of the item that sells out, drawn on restock day. Job: the waitlist. Early access, beta and waitlist campaigns get 34% to enter, the highest of the launch subtypes with a usable count.
 - **Own product plus the next thing.** The Prize hierarchy in giveaway-prize-picker: the store's product with the aspirational adjacent item.
 - **Shopping spree with a partner.** Two stores, one cart across both, one entry page. Job: audience swap with a product that fits.
 - **Gift card tiers.** One large gift card and several small ones, so the store has many Winners who all come back to spend. Job: Winners who become customers, and codes with expiry dates that pull a visit.
@@ -253,9 +253,9 @@ Season formats for a store, with the timing skill's holiday table behind them:
 
 - **Pre-sale early access.** A giveaway in the two weeks before Black Friday, closing the day before the sale, with early access to the sale as the offer to everyone who did not win. Black Friday campaigns in the data run 8 days.
 - **Gift guide giveaway.** The hero item from the gift guide as the Prize, entry by picking the gift for someone on the Entrant's list. The December shape, launched around 6 December.
-- **Advent or 12 days.** A product a day, one draw a day, a reason to return. Advent calendars lead every type on Entrants and Conversion Rate.
+- **Advent or 12 days.** A product a day, one draw a day, a reason to return. Advent calendars get 44% to enter, second only to cash, on 600 Entrants.
 - **Win your order back.** Everyone who buys in the sale window can also enter free, and one order is refunded. Keep the free entry route equal, and have the terms read by a lawyer, since it sits close to a purchase condition.
-- **January restart.** The product that pairs with December's purchases, launched in the last ten days of December. Campaigns live over New Year converted 7% to 8% above matched campaigns.
+- **January restart.** The product that pairs with December's purchases, launched in the last ten days of December. Campaigns live over New Year converted about the same as matched campaigns, at a ratio of 0.98, the best of any holiday in that table after Christmas.
 
 Every Entrant who did not win is a shopper who just browsed the store, so the non-Winner code in giveaway-winner-communications is the second half of a store campaign. Keep purchase out of the entry conditions: a purchase-to-enter reads as a lottery in most places, and the free entry route has to stay open.
 
@@ -309,7 +309,7 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 | Finance | 554 | 79 | 79% | 15.0 |
 | Shopping | 542 | 69 | 36% | 5.0 |
 
-**Australian publishers lean on games-of-skill entries.** Campaigns with a judged or skill signal in Australia run fewer methods and fewer actions, get less to enter, and carry a larger typical Prize pool than Australia's other campaigns. A skill or judged entry is often the legal route for a promotion run without a permit in Australia, and the smaller method count and larger pool follow from that route.
+**Australian publishers lean on games-of-skill entries.** Campaigns with a judged or skill signal in Australia run 2 methods against 6, get 18% to enter against 30%, and carry a typical Prize pool of $2,135 against $699. A skill or judged entry is often the legal route for a promotion run without a permit in Australia, and the smaller method count and larger pool follow from that route.
 
 | Australia | Campaigns | Businesses | Methods | Actions per Entrant | Entry rate | Prize pool (typical) |
 |---|---|---|---|---|---|---|
@@ -376,9 +376,9 @@ What belongs to the concept is the collaboration test: same customer, different 
 | gewinnspiel | 286 | 44 | 1,332 | 36% | 4.3 | 34% |
 <!-- /generated -->
 
-"Raffle" is a UK word and still carries the UK pattern: small, one action, a high share entering (see table above). "Competition" carried the same pattern in the first data pull and has since fallen to a smaller base with a lower Conversion Rate, so it no longer stands out the same way. "Sweepstakes" is the US word and carries the largest campaigns. Titles with none of the usual words are about a quarter December starts, which is the advent calendar pattern.
+"Raffle" is a UK word and still carries one action and the highest share entering in the table at 46%, on 718 Entrants (see table above). "Competition" carried the same pattern in the first data pull and has since fallen to a smaller base with a lower Conversion Rate, so it no longer stands out the same way. "Sweepstakes" is the US word and carries 742 Entrants, the largest of the English titles here. Titles with none of the usual words are 17% December starts, the highest share of any English title word here, which is the advent calendar pattern.
 
-Titles that add a specific feature draw fewer Entrants than titles without it:
+Titles that start with "Win" or state a value draw fewer Entrants than titles without those features, and an emoji makes almost no difference:
 
 <!-- generated:ig_title_traits -->
 | Title feature | Campaigns (with) | Entrants (with) | Entrants (without) |

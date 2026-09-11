@@ -76,7 +76,7 @@ Source: https://discord.com/guidelines
 - Prohibited Gambling Content: no links or affiliate codes to sites with slots, roulette or dice games, and named sites (stake.com among them) cannot be streamed or linked. Skins gambling promotion is prohibited. Fantasy sports, sports betting and poker broadcasts are permitted.
 - Breaking the Law: content that solicits illegal activity is prohibited.
 
-What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. It had the lowest completion of any action family in the data, at a typical 5 entries recorded % of Entrants, so it costs Entrants and gains little. Keep gambling sites and skins sites out of the Prize and the chat.
+What it means: follow-to-enter is common on Twitch (16% of campaigns in the data) and the guidelines target bots and fake follows, and asking viewers to follow is untouched. Paid "sub to enter" is not addressed by name. Twitch Subscribers had the lowest completion of any single action in the data, at a typical 5 entries recorded % of Entrants, and its Paid subscription family sits second lowest of the fourteen families at 11 per 100, so it gains little. Keep gambling sites and skins sites out of the Prize and the chat.
 
 Source: https://safety.twitch.tv/s/article/Community-Guidelines
 
