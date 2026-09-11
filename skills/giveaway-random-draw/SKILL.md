@@ -121,7 +121,7 @@ The rest is judgement, which no checker can do.
 
 Advice is platform-neutral. When the user says they use Gleam or asks about it, load `references/gleam-draws.md` and cite only what the linked pages say. Respect users on other platforms.
 
-A "Gleam or the script" question has three answers, not two: the Winners tab draw for entries already inside a Gleam campaign, Quick Draws (with links) for a list that never went through a Gleam campaign, and the script for when the organizer wants a seed they can publish or the draw needs to be recomputed outside Gleam. Give all three that apply, not just the first and last.
+A "Gleam or the script" question has three answers, not two: the Winners tab draw for entries already inside a Gleam campaign, Quick Draws for a list that never went through a Gleam campaign, and every tool you name carries its own documentation link from the reference, because a reader given four tool names and one link has to go hunting for the other three, and the script for when the organizer wants a seed they can publish or the draw needs to be recomputed outside Gleam. Give all three that apply, not just the first and last.
 
 ## References
 
