@@ -529,6 +529,26 @@ The actions a store wants send the Entrant into the catalogue and bring somethin
 - **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the dataset.
 - **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
 
+## Keeping a follow after the campaign (advice)
+
+Common practice, nothing in the data covers it. This is about every Entrant who followed to enter, and almost
+all of them lose. A Winner is one person among hundreds and their follow is a rounding error either way. What
+the campaign data cannot see is whether the other several hundred are still following a month later, because it
+records the Action completed at the moment of entry and never looks again. Say that plainly when a reader asks,
+then give them this.
+
+- Measure it yourself, because it is the only way anyone finds out. Write down the follower count on the day the
+  campaign opens, the day it closes and 30 days after, on each network you asked people to follow. Two campaigns
+  in and the reader has a number for their own audience, which beats any benchmark.
+- Ask for the follow on the network where the business actually posts. A follow on an account that goes quiet
+  for six weeks is the one that lapses.
+- Give the new follower something within the first week. The welcome series, the Winner announcement and the
+  non-Winner offer are all reasons to appear in a feed while the campaign is still why they are there.
+- Where the objective is a list, weight the email Action above the follow. An address is
+  yours and a follow sits on somebody else's platform.
+- Treat the follower count on the close day as the top of the range. The business keeps some share of those
+  Entrants and nothing here says what share.
+
 ## Using what you built (advice)
 
 The list is the point of the campaign, and it decays from the day the Winner is announced. The first 30 days decide whether it becomes an audience. All of this is practice, with nothing in the dataset to support it.

@@ -343,6 +343,27 @@ Prize first, then the ask, then the deadline, then eligibility.
 
 Swap the first line at each push: mid run leads with a detail ("The [Prize] arrives in [feature]"), last call leads with the time ("Closes in 24 hours").
 
+## When almost nobody has entered (advice)
+
+Common practice, nothing in the data covers it. Every campaign behind the figures on this page reached at least
+100 Entrants, so the ones that never got going were filtered out before any of this was measured. There is no
+base rate here for how often a quiet campaign is broken and how often it is simply unseen, and an answer that
+offers one has made it up. Work through it in this order, because the cheap checks come first.
+
+- Open the entry link yourself, signed out, on a phone. A campaign that will not load, or that asks for a login
+  nobody has, records no Entrants and looks identical to one nobody wanted.
+- Check the link in every place it was posted. A bio link pointing at last month's campaign is the commonest
+  version of this.
+- Complete one entry end to end and watch it appear in the report. That tells you the page, the Actions and the
+  recording all work.
+- Ask what audience the campaign has actually reached: followers, list size, the traffic the posts got. A
+  campaign in front of 400 people is not underperforming at 40 Entrants, and no amount of promotion advice
+  substitutes for reach that was never there.
+- Then treat it as reach. The schedule above still applies over whatever days are left, with the last call
+  brought forward so it lands before the close.
+- Say which of these you checked and what it showed. A reader who is told to "promote harder" without a link
+  test is being asked to spend money on a page that may be broken.
+
 ## Comments and DMs during the run
 
 Answer in the first hour where you can, and pin one comment with the three questions everyone asks.

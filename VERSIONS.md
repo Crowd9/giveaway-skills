@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.27 |
-| giveaway-entry-method-planner | 1.2.26 |
-| giveaway-timing-and-duration | 1.4.25 |
-| giveaway-winner-structure | 1.3.23 |
-| giveaway-promotion-plan | 1.3.27 |
-| giveaway-random-draw | 1.3.21 |
-| giveaway-winner-communications | 1.2.21 |
-| giveaway-idea-generator | 1.3.24 |
-| giveaway-results-review | 1.5.28 |
-| gleam-campaign-setup | 1.2.25 |
+| giveaway-prize-picker | 1.3.28 |
+| giveaway-entry-method-planner | 1.2.27 |
+| giveaway-timing-and-duration | 1.4.26 |
+| giveaway-winner-structure | 1.3.24 |
+| giveaway-promotion-plan | 1.3.28 |
+| giveaway-random-draw | 1.3.22 |
+| giveaway-winner-communications | 1.2.22 |
+| giveaway-idea-generator | 1.3.25 |
+| giveaway-results-review | 1.5.29 |
+| gleam-campaign-setup | 1.2.26 |
 
 ## Skills
 
@@ -50,6 +50,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.3.28 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-entry-method-planner
 
@@ -82,6 +83,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.24 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.25 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.26 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.2.27 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do about follows that lapse after a campaign.
 
 ### giveaway-timing-and-duration
 
@@ -116,6 +118,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.4.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.4.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.4.25 (2026-09-12): The Black Friday close date names the Wednesday, since closing on Thanksgiving puts the draw on Black Friday morning.
+- 1.4.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-winner-structure
 
@@ -143,6 +146,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.21 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.22 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.23 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.3.24 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-promotion-plan
 
@@ -173,6 +177,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.25 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.26 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.27 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.3.28 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do when almost nobody has entered.
 
 ### giveaway-random-draw
 
@@ -197,6 +202,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.3.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-winner-communications
 
@@ -222,6 +228,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.19 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.20 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.2.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-idea-generator
 
@@ -254,6 +261,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.22 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.3.23 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.3.24 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.3.25 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### giveaway-results-review
 
@@ -293,6 +301,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.26 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.5.27 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.5.29 (2026-09-12): A question the data cannot answer gets labelled best practice.
 
 ### gleam-campaign-setup
 
@@ -312,6 +321,26 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.23 (2026-09-12): The checker reads a fenced block as output and never as the answer's prose, so a script's own draft can be pasted.
 - 1.2.24 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
+- 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
+
+## 2.2.0 (2026-09-12)
+
+When the campaign data cannot answer what the reader asked, the skills now answer it with practice and say so,
+in place of naming the gap and stopping.
+
+Five rounds of measured answers kept inventing behaviour to fill these holes: how an impersonator acts once
+reported, where a brand's message lands, what a platform does with a reshare. The first fix told the skills to
+cut such sentences, which was worse. The reader still has the problem, and a skill that goes quiet exactly where
+it is needed is no use. So the sentence gets converted, and never deleted. "Impersonators delete themselves
+once reported" becomes "screenshot the account before you report it, and post your official handle so Entrants
+can tell the difference": the same paragraph doing its job, claiming nothing about the world, labelled as
+practice with no data behind it. A figure is never attached to practice, because that makes it read as a finding.
+
+Two topics had no practice to convert into, and now do. What to do about follows that lapse after a campaign,
+which is about the Entrants who did not win and is invisible to data recorded at the moment of entry. And what
+to do when almost nobody has entered, which starts with opening the entry link signed out on a phone, because
+every campaign behind these benchmarks cleared 100 Entrants and the ones that never got going were filtered out
+before anything was measured.
 
 ## 2.1.8 (2026-09-12)
 
