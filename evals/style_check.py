@@ -73,6 +73,8 @@ META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(
 # Gleam's product nouns are checked on prose only. A file name, a flag or a URL carries the word in lower case by
 # necessity (`references/prize-taxonomy.md`, `--winners-csv`, /setup/prizes), and flagging those would teach an
 # answer to stop citing its sources.
+# A fenced block is what a script printed, never the answer's own prose. scripts/terms.py prints a line the
+# colon-reveal pattern matches, so an answer told to paste that draft failed a rule about its own writing.
 CODEISH = re.compile(r"```.*?```|`[^`]*`|https?://\S+|\B--[a-z][\w-]*|\b[\w./-]+\.(?:md|json|csv|py|txt)\b", re.S)
 
 
@@ -141,7 +143,7 @@ def check(text):
         "meta_commentary": len(re.findall(META, text, re.I)),
         "raw_metric_pairs": len(re.findall(RAW_PAIR, text, re.I)),
         "faux_insight": len(re.findall(FAUX_INSIGHT, text, re.I)),
-        "colon_reveals": len(re.findall(COLON_REVEAL, text)),
+        "colon_reveals": len(re.findall(COLON_REVEAL, prose_only(text))),
         "puffery": len(re.findall(PUFFERY, text, re.I)),
         "weasel_attribution": len(re.findall(WEASEL, text, re.I)),
         "superficial_analysis": len(re.findall(SUPERFICIAL, text, re.I)),
