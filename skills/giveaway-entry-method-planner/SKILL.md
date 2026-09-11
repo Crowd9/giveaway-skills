@@ -2,7 +2,7 @@
 name: giveaway-entry-method-planner
 description: "Choose which actions a giveaway should ask Entrants to take (follow, share, email signup, SMS or messaging opt-in, join a community, answer a question, visit a page), how many, and how to weight them, matched to the objective. Use when the user asks 'what entry methods should I use', 'how should people enter', 'how many actions', 'TikTok giveaway entry methods', 'should I require an email', 'how do I get shares', 'entry mechanics', 'bonus entries', or wants a giveaway to produce followers, subscribers, community members or UGC, with entry volume second. Platform-neutral. For choosing the Prize see giveaway-prize-picker. For run length and start date see giveaway-timing-and-duration."
 metadata:
-  version: 1.2.27
+  version: 1.2.28
 ---
 
 # Giveaway Entry Method Planner

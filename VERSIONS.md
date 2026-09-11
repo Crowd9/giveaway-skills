@@ -5,7 +5,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.28 |
-| giveaway-entry-method-planner | 1.2.27 |
+| giveaway-entry-method-planner | 1.2.28 |
 | giveaway-timing-and-duration | 1.4.26 |
 | giveaway-winner-structure | 1.3.24 |
 | giveaway-promotion-plan | 1.3.28 |
@@ -84,6 +84,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A phrase in backticks counts as a citation, so a style report can name the fault it removed.
 - 1.2.26 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.27 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do about follows that lapse after a campaign.
+- 1.2.28 (2026-09-12): Some Entrants leaving after a campaign is normal, and the two things that decide how many are the reason to stay and whether the Prize had anything to do with the business.
 
 ### giveaway-timing-and-duration
 

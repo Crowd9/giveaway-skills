@@ -529,25 +529,43 @@ The actions a store wants send the Entrant into the catalogue and bring somethin
 - **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the dataset.
 - **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
 
-## Keeping a follow after the campaign (advice)
+## Follows that lapse after the campaign (advice)
 
 Common practice, nothing in the data covers it. This is about every Entrant who followed to enter, and almost
 all of them lose. A Winner is one person among hundreds and their follow is a rounding error either way. What
 the campaign data cannot see is whether the other several hundred are still following a month later, because it
-records the Action completed at the moment of entry and never looks again. Say that plainly when a reader asks,
-then give them this.
+records the Action completed at the moment of entry and never looks again.
+
+Start by telling the reader that some of them leaving is normal. A follow given to enter a draw is a low price
+someone paid for a ticket, and a share of those people were always going to go. A drop after the campaign is not
+by itself a sign anything went wrong, and a reader bracing for zero churn is measuring against a number nobody
+hits. What decides how big the drop is comes down to two things, and both are chosen before the campaign opens.
+
+**Was there a reason to stay.** The feed goes quiet after the Winner is announced and the account stops being
+why they are there. The welcome series, the Winner announcement and the non-Winner offer are the three reasons
+to appear while the campaign still explains your presence, so plan them as part of the campaign.
+
+**Was the Prize anything to do with you.** A Prize that only connects to the business through its price tag
+pulls people who wanted the price tag. Nothing in this data measures who stays, and it does say what the wider
+crowd costs: a Prize matching the business's own category drew 1.08 Entrants per Prize dollar and one that
+plainly does not drew 1.10, so the two are a wash on reach, while a generic Prize like cash or a gift card sat
+lowest at 1.01 [`audience_fit` in the Prize picker's `decision-criteria.md`, 21,389 and 29,138 and 32,776
+campaigns]. Fitting the Prize to the audience costs nothing in crowd for the money. What it buys afterwards is
+not in the data, and it is the reason to do it.
+
+Then give them this.
 
 - Measure it yourself, because it is the only way anyone finds out. Write down the follower count on the day the
   campaign opens, the day it closes and 30 days after, on each network you asked people to follow. Two campaigns
   in and the reader has a number for their own audience, which beats any benchmark.
 - Ask for the follow on the network where the business actually posts. A follow on an account that goes quiet
   for six weeks is the one that lapses.
-- Give the new follower something within the first week. The welcome series, the Winner announcement and the
-  non-Winner offer are all reasons to appear in a feed while the campaign is still why they are there.
-- Where the objective is a list, weight the email Action above the follow. An address is
-  yours and a follow sits on somebody else's platform.
+- Where the objective is a list, weight the email Action above the follow. An address is yours and a follow sits
+  on somebody else's platform, which is worth saying to a reader whose whole plan rests on a follower count.
 - Treat the follower count on the close day as the top of the range. The business keeps some share of those
   Entrants and nothing here says what share.
+- Judge the campaign on the Entrants it drew and the addresses it captured, both of which are countable. A
+  follower number read a month later mixes the campaign with everything else the account did since.
 
 ## Using what you built (advice)
 
