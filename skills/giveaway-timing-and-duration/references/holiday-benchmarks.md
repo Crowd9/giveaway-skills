@@ -131,9 +131,13 @@ One rule off this table gets missed most often, so it is stated here in plain si
 |---|---|---|---|
 | Pre-sale list build | Launch 13 to 24 Nov, close by 25 Nov for a US audience (the day before Thanksgiving) | Black Friday campaigns run 8 days and launch 7 days out (648 campaigns with a lead figure). Campaigns live over Black Friday get 11% fewer to enter than matched campaigns (Cyber Monday alone 10% fewer), and week 47, the week before Thanksgiving, sits level with the year's quietest weeks at 32% entered | Build the list that receives the sale. Close the giveaway the day before the sale, send the Winners email with early access as the non-Winner offer, then the sale email to the same segment |
 | The sale itself | 27 to 30 Nov | Week 48, Thanksgiving and Black Friday week, holds 3% of starts at 35% entered and week 49, the first week of December, 40% | No giveaway live. The store is selling, the audience is being sold to from every direction, and a Prize on the same page splits the click |
-| December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent sits above the typical figures on both Entrants (586) and Conversion Rate (39%) on 4,911 campaigns, and weeks 50 and 51, the two weeks before Christmas, get the most to enter of any week in the data at 41% each (1,388 and 1,200 fair-comparison campaigns), with week 49, the first week of December, just behind at 40% on the largest count (1,573). Advent calendars: 600 Entrants, 44% entered, six days, six actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero Prize from the gift guide, closing before the shipping cutoff so the Winner has it by the day |
+| December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent sits above the typical figures on both Entrants and Conversion Rate, and the two weeks before Christmas get the most to enter of any week in the data (figures just below this table). Advent calendars: 600 Entrants, 44% entered, six days, six actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero Prize from the gift guide, closing before the shipping cutoff so the Winner has it by the day |
 | Shipping cutoff | Set by the carrier, usually mid December for domestic | 75% of Christmas campaigns close on or before the day | The Prize ships as an order through the store with tracking. Close the draw a week before the cutoff, or make the Prize a gift card |
 | New Year | Launch 9 to 27 Dec, 20 Dec typical | New Year campaigns run 16 days at 31% entered (934 campaigns), and being live over Christmas or New Year came with about the same share entering as matched campaigns, at ratios of 1.00 and 0.98, the two best of any holiday in the table | The restart campaign for the January customer: resolutions, restock, the product that pairs with what they bought in December |
+
+<!-- generated:hol_december -->
+Christmas and advent sits above the typical figures on both Entrants (587) and Conversion Rate (39%) on 4,895 campaigns, and weeks 50 and 51, the two weeks before Christmas, get the most to enter of any week in the data at 41% each (1,381 and 1,193 fair-comparison campaigns), with week 49, the first week of December, just behind at 40% on the largest count (1,562).
+<!-- /generated -->
 
 Two rules fall out of the table. A store builds the list before the sale and sells to it during the sale, so the giveaway and the discount never share a week. And December is crowded (about a quarter again a typical month on starts) and still gets the most people to enter, so a store that skips December because of the noise is skipping the best week of the year.
 
@@ -234,14 +238,16 @@ Reading it:
 
 - Week 49, the first week of December, has the largest fair-comparison count in the peak stretch. Week 51, the week before Christmas, converts higher still on a smaller count (table above). The advent shape runs through both, and so do plain December campaigns.
 
-- Two clusters stand out from the year's weekly pattern, one high and one low, neither with a holiday attached (table below). Week 47 is the quiet before the peak.
+- Two clusters stand out from the year's weekly pattern, one high and one low, neither with a holiday attached (table below).
 
+<!-- generated:hol_week_extremes -->
 | Weeks | Roughly when | Conversion Rate |
 |---|---|---|
-| 50, 51 | The two weeks before Christmas | 41% each |
-| 36, 37, 42, 47 | Early September, mid-October, the week before Thanksgiving | 32% each |
+| 50, 51 | weeks beginning 07 Dec, 14 Dec | 41% each |
+| 37, 42 | weeks beginning 07 Sep, 12 Oct | 32% each |
 
-- Entrants vary little by week. Week 50, the second week of December, is the highest at 571, and weeks 15 (early April) and 46 (mid-November) are the low at 437, about a quarter below it.
+- Entrants vary little by week. Week 50 is the highest at 572 and week 15 the lowest at 438, a spread narrow enough that no week is worth choosing for it alone.
+<!-- /generated -->
 - Start day of the month makes no difference: the first week of the month and the last get within a point of each other on Conversion Rate.
 
 ## Live over a holiday (extracted)

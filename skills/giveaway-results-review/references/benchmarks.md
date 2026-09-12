@@ -488,6 +488,15 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 Reach is what separates the two, 25 times the Impressions for a Conversion Rate two points apart. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,256 campaigns each side.]
 <!-- /generated -->
 
+<!-- generated:bm_splits -->
+| Split (campaigns we can compare fairly) | Entrants | Conversion Rate |
+|---|---|---|
+| Within 30 days of previous campaign | 470 | 38% |
+| First campaign | 332 | 31% |
+| Share action offered | 543 | 29% |
+| No share action | 408 | 37% |
+<!-- /generated -->
+
 The share-action line and the top-fifth line answer different questions and cannot be read as one finding. The share-action line splits campaigns by a setting the organizer chose before launch. The top-fifth line splits the same campaigns by the result they got afterwards. Neither says that adding or removing a share action moves a campaign between the fifths.
 
 - December: 10.4% of starts, a quarter again an even month, and December campaigns drew more Entrants at a higher Conversion Rate, 560 at 30.8% against 471 to 508 at 25.6% to 26.9% across the other eleven months. [Extracted from `analysis/output/prize_timing_cuts.json`, `by_start_month`.]

@@ -343,6 +343,30 @@ Campaigns behind these numbers split into fifths by Entrant count. Typical figur
 Twenty five times the Impressions at a Conversion Rate two points apart. Reach separates the top from the bottom far more than anything else in the table. Two things that used to read as level no longer do: the top fifth's businesses have run 12 previous campaigns against 7, and its stated Prize pool is ten times the bottom's at 1,200 USD against 120. The bottom fifth is also spread across more businesses, 7,763 against 4,543, which is the concentration effect showing up again: the top is fewer accounts running more campaigns. None of this says a bigger Prize or more experience produced the Entrants. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,256 campaigns each side.]
 <!-- /generated -->
 
+## Region and language
+
+Region is the top-level domain of the business's site, so a .com business in Manchester reads as global. Language is a word-pattern count on the description and title. Figures are typical values on the campaigns we can compare fairly, the 10,719 campaigns with no repeatable action and a run of 14 days or less, which is the cut that makes Impressions comparable between campaigns. A row below the five-business floor goes unpublished, which is why the Nordic advent-calendar rows seen in earlier cuts of this export no longer appear here.
+
+<!-- generated:ev_region -->
+| Business domain | Campaigns | Entrants | Conversion Rate | Entries per Entrant |
+|---|---|---|---|---|
+| global domain (.com, .io, .net and so on) | 99,225 | 488 | 26% | 4.44 |
+| United Kingdom | 4,570 | 469 | 36% | 3.82 |
+| other or none | 4,099 | 411 | 26% | 4.70 |
+| Australia | 3,028 | 566 | 32% | 3.24 |
+| Brazil | 1,227 | 1,077 | 54% | 4.69 |
+| Germany | 789 | 773 | 31% | 4.86 |
+| Sweden | 677 | 663 | 75% | 3.87 |
+| Canada | 612 | 612 | 23% | 3.26 |
+| South Africa | 301 | 432 | 22% | 4.47 |
+| Finland | 232 | 9,018 | 77% | 1.00 |
+| Belgium | 222 | 296 | 35% | 5.65 |
+| France | 207 | 224 | 20% | 3.98 |
+| Netherlands | 195 | 372 | 31% | 4.05 |
+| Spain | 165 | 381 | 24% | 5.02 |
+| Japan | 140 | 273 | 29% | 3.77 |
+<!-- /generated -->
+
 Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
 
 <!-- generated:ev_language -->
