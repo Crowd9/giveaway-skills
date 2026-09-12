@@ -6,6 +6,7 @@ A private dataset of 144,878 campaigns from one giveaway platform, each with at 
 
 The benchmarks below describe the 116,499 of those campaigns left after removing crypto, purchase-only and finance_crypto organizers.
 
+<!-- generated:ev2_size_share -->
 | Entrant count | Share of the 116,499 campaigns |
 |---|---|
 | 100 to 250 | 28% |
@@ -14,27 +15,30 @@ The benchmarks below describe the 116,499 of those campaigns left after removing
 | 1,000 to 2,500 | 17% |
 | 2,500 to 10,000 | 11% |
 | Above 10,000 | 3% |
+<!-- /generated -->
 
-Where the repository summary says the skills rest on about 966,000 entry actions, that total is not a field in the dataset and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed with how many Entrants took the action. Each one is an entry action offered in one of the campaigns behind these numbers, for which the dataset recorded how many Entrants took it.
+The repository summary quotes a count of entry actions. That total is not a field in the dataset and no analysis file carries it. It is the sum of the per-family action counts in the action families table in giveaway-entry-method-planner, the column headed n with uptake. Each one is an entry action offered in one of the campaigns behind these numbers, for which the dataset recorded how many Entrants took it.
 
-| Action family | Entrants who took it |
+<!-- generated:ev2_action_families -->
+| Action family | Actions with an uptake figure |
 |---|---|
-| Visits | 376,120 |
-| Follows | 173,303 |
-| Shares | 81,916 |
-| Bonus or code | 64,921 |
-| Custom actions | 52,841 |
-| Email signups | 49,688 |
-| Post engagements | 36,525 |
-| Community joins | 32,383 |
-| Questions | 31,477 |
-| Content posts | 26,338 |
-| Account connections | 24,194 |
-| Paid subscriptions | 8,413 |
-| Downloads | 4,392 |
-| Imported entries | 1,390 |
+| Visit a page or profile | 374,795 |
+| Follow or subscribe (free) | 172,265 |
+| Share, repost or refer | 80,835 |
+| Bonus, loyalty or code | 64,343 |
+| Custom action (other) | 52,187 |
+| Email or newsletter signup | 49,466 |
+| Engage with a post | 36,381 |
+| Join a community | 31,662 |
+| Answer a question or poll | 31,180 |
+| Post or create content | 26,035 |
+| Connect an account to enter | 24,076 |
+| Paid subscription | 8,404 |
+| Download or play | 4,347 |
+| Imported or offline entries | 1,387 |
 
-That sums to 966,269, rounded to 966,000.
+That sums to 957,363, rounded to 957,000.
+<!-- /generated -->
 
 The dataset's core counts are verified directly. Only USD has enough stated values to support any distribution, the rest are too thin to use. A few stated values are data-entry errors and are treated as such, never corrected.
 
@@ -128,24 +132,28 @@ Primary prize category (first prize record) by band, share of campaigns:
 
 ## Plan tier, extended
 
-The plan tier row above comes from the campaigns at large. A cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. Free and Hobby convert best and neither offers an email action. Premium runs longest and offers the most Entry Methods, and converts worst. Business and Pro sit in the middle on every measure.
+The plan tier row above comes from the campaigns at large. A cut on the same field, restricted to campaigns with a labelled site, breaks format and Conversion Rate out by tier. It counts more campaigns than the 116,499 the benchmarks describe, because it runs before the segment exclusions. Free and Hobby convert best and neither offers an email action. Premium runs longest and offers the most Entry Methods, and converts worst. Business and Pro sit in the middle on every measure.
 
+<!-- generated:ev2_tier_extended -->
 | Tier | Conversion Rate | Campaigns | Businesses | Days | Entry Methods | Email offered |
 |---|---|---|---|---|---|---|
-| Free | 34% | 14,233 | 5,360 | 11 | 4 | 0% |
-| Hobby | 32% | 12,725 | 3,133 | 10 | 6 | 0% |
-| Pro | 28% | 88,816 | 14,971 | 11 | 8 | 28% |
-| Business | 26% | 46,822 | 5,852 | 11 | 7 | 31% |
-| Premium | 24% | 3,076 | 547 | 18 | 9 | 42% |
+| Free | 34% | 13,210 | 4,829 | 12 | 4 | 0% |
+| Hobby | 32% | 11,949 | 2,909 | 11 | 6 | 0% |
+| Pro | 27% | 76,448 | 12,916 | 13 | 8 | 32% |
+| Business | 26% | 39,724 | 4,878 | 12 | 7 | 35% |
+| Premium | 24% | 2,521 | 393 | 20 | 9 | 50% |
+<!-- /generated -->
 
 ## Business scale
 
-Homepage labels also split businesses into listed and private companies. Private businesses run shorter campaigns with a higher referral rate, listed businesses run longer campaigns with a lower one. Revenue cuts inside this data, matched against Fortune-500-like companies, sit below the ten-business floor for anything but advice [7 to 20 businesses per group].
+Homepage labels also split businesses into listed and private companies. Private businesses run shorter campaigns with a higher referral rate, listed businesses run longer campaigns with a lower one. Revenue cuts inside this data, matched against Fortune-500-like companies, are too thin for anything but advice [6 to 48 businesses per group, two of the four groups at ten or fewer].
 
+<!-- generated:ev2_public_company -->
 | Business type | Duration | Referrals % of Entrants | Campaigns | Businesses |
 |---|---|---|---|---|
-| Private | 14 days | 20.3 | 30,975 | 2,975 |
-| Listed | 20 days | 12.3 | 1,831 | 128 |
+| Private | 12 days | 15.6 | 76,732 | 3,963 |
+| Listed | 14 days | 14.0 | 4,191 | 160 |
+<!-- /generated -->
 
 ## Repeat businesses
 
@@ -201,80 +209,90 @@ Campaigns whose every Prize carried a stated USD value: 42,953, from 9,089 busin
 
 Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 2.2 times the Entrants, and value accounts for about 23% of the variation in Entrant counts [the `value_regression` cut in `context_checks.json`, 42,953 campaigns from 9,089 businesses]. The table above rises through the middle bands and falls back at the largest pools.
 
-Most campaigns spend little: 74% of these campaigns used a pool of 1,000 USD or less, and 46% under 250 USD.
+Most campaigns spend little: 77% of these campaigns used a pool of 1,000 USD or less, and 46% under 250 USD.
 
 ### Prize pool by industry, business type, tier and category
 
-Stated USD Prize pool for campaigns with a full value, cut four ways across the campaigns behind these numbers. Share is that cut's campaign count against the same group's total campaign count, so it is the share of campaigns in the group that stated a value, not a share of Prize listings. State it beside every typical figure here, coverage runs from 9% to 69% and a thin-coverage figure describes a self-selected subset.
+Stated USD Prize pool for campaigns with a full value, cut four ways across the campaigns behind these numbers. Share is that cut's campaign count against the same group's total campaign count, so it is the share of campaigns in the group that stated a value, not a share of Prize listings. State it beside every typical figure here, coverage runs from 14% to 64% and a thin-coverage figure describes a self-selected subset. Stated USD per Entrant is the stated pool divided by Entrants, as in the table above.
 
 By industry:
 
-| Industry | Campaigns | Share with value | Typical pool USD | Middle half | USD % of Entrants |
+<!-- generated:ev2_pool_industry -->
+| Industry | Campaigns with a value | Share with value | Typical pool USD | Middle half | Stated USD per Entrant |
 |---|---|---|---|---|---|
-| Electronics and tech | 2,422 | 33% | 1,000 | 440 to 2,400 | 40 |
-| Gaming and esports | 2,082 | 33% | 800 | 300 to 2,000 | 26 |
-| Media and entertainment | 2,114 | 42% | 500 | 200 to 1,500 | 17 |
-| Sports and outdoors | 1,210 | 53% | 1,000 | 491 to 2,250 | 38 |
-| Food and drink | 888 | 50% | 750 | 318 to 2,000 | 27 |
-| Home and garden | 1,043 | 59% | 829 | 345 to 1,992 | 33 |
-| Apparel and fashion | 675 | 39% | 1,000 | 499 to 1,980 | 31 |
-| Travel and events | 462 | 34% | 1,199 | 519 to 2,682 | 47 |
-| Automotive | 724 | 64% | 1,725 | 754 to 3,892 | 32 |
-| Toys, hobbies and collectibles | 245 | 25% | 500 | 250 to 1,620 | 24 |
+| Media and entertainment | 9,030 | 42% | 70 | 25 to 300 | 0.16 |
+| Gaming and esports | 7,732 | 32% | 200 | 70 to 740 | 0.42 |
+| Electronics and tech | 5,167 | 33% | 549 | 199 to 1,599 | 0.61 |
+| Sports and outdoors | 2,366 | 51% | 641 | 300 to 1,798 | 0.66 |
+| Food and drink | 2,042 | 44% | 438 | 175 to 1,222 | 0.50 |
+| Home and garden | 1,989 | 54% | 500 | 200 to 1,450 | 0.48 |
+| Apparel and fashion | 1,556 | 34% | 531 | 200 to 1,531 | 0.54 |
+| Toys, hobbies, collectibles | 1,441 | 31% | 200 | 99 to 500 | 0.49 |
+| Travel and events | 1,282 | 32% | 600 | 254 to 1,500 | 0.87 |
+| Automotive | 1,276 | 55% | 999 | 361 to 2,500 | 0.51 |
+<!-- /generated -->
 
 By business type:
 
-| Business type | Campaigns | Share with value | Typical pool USD | Middle half | USD % of Entrants |
+<!-- generated:ev2_pool_btype -->
+| Business type | Campaigns with a value | Share with value | Typical pool USD | Middle half | Stated USD per Entrant |
 |---|---|---|---|---|---|
-| Brand | 5,282 | 49% | 1,000 | 400 to 2,244 | 38 |
-| Retailer | 2,802 | 36% | 822 | 300 to 2,400 | 25 |
-| Media publisher | 1,845 | 37% | 553 | 229 to 1,499 | 23 |
-| Software | 1,769 | 46% | 1,000 | 400 to 2,490 | 25 |
-| Creator | 1,100 | 28% | 698 | 300 to 1,500 | 25 |
-| Other | 571 | 37% | 600 | 200 to 1,798 | 25 |
-| Service business | 344 | 33% | 1,000 | 470 to 2,500 | 47 |
-| Agency | 307 | 36% | 1,250 | 650 to 2,875 | 39 |
-| Community | 176 | 38% | 490 | 300 to 1,000 | 27 |
-| Nonprofit | 114 | 44% | 1,000 | 508 to 2,498 | 47 |
+| Brand | 12,407 | 41% | 500 | 200 to 1,487 | 0.63 |
+| Media or publisher | 8,517 | 43% | 70 | 25 to 320 | 0.18 |
+| Retailer | 8,050 | 37% | 300 | 120 to 1,000 | 0.42 |
+| Creator | 5,359 | 30% | 120 | 50 to 499 | 0.33 |
+| Software | 3,896 | 40% | 500 | 200 to 1,700 | 0.50 |
+| Other | 2,286 | 37% | 250 | 100 to 800 | 0.56 |
+| Service business | 1,205 | 32% | 500 | 200 to 1,396 | 1.06 |
+| Agency | 868 | 30% | 568 | 180 to 1,688 | 0.73 |
+| Community | 753 | 28% | 300 | 100 to 627 | 0.54 |
+| Nonprofit | 382 | 40% | 600 | 309 to 1,944 | 1.14 |
+<!-- /generated -->
 
 By plan tier:
 
-| Tier | Campaigns | Share with value | Typical pool USD | Middle half | USD % of Entrants |
+<!-- generated:ev2_pool_tier -->
+| Tier | Campaigns with a value | Share with value | Typical pool USD | Middle half | Stated USD per Entrant |
 |---|---|---|---|---|---|
-| Pro | 8,010 | 43% | 699 | 300 to 1,646 | 29 |
-| Business | 4,959 | 41% | 1,495 | 500 to 2,848 | 36 |
-| Hobby | 574 | 27% | 400 | 148 to 988 | 21 |
-| Premium | 548 | 50% | 1,825 | 456 to 4,544 | 16 |
-| Free | 246 | 16% | 219 | 100 to 800 | 13 |
+| Pro | 24,491 | 40% | 299 | 100 to 819 | 0.42 |
+| Business | 11,227 | 38% | 700 | 175 to 2,000 | 0.56 |
+| Free | 3,936 | 33% | 60 | 25 to 168 | 0.25 |
+| Hobby | 3,527 | 33% | 149 | 70 to 399 | 0.41 |
+| Premium | 771 | 39% | 1,499 | 244 to 4,000 | 0.21 |
+<!-- /generated -->
 
 By Prize category:
 
-| Category | Campaigns | Share with value | Typical pool USD | Middle half | USD % of Entrants |
+<!-- generated:ev2_pool_category -->
+| Category | Campaigns with a value | Share with value | Typical pool USD | Middle half | Stated USD per Entrant |
 |---|---|---|---|---|---|
-| Tech hardware | 3,811 | 39% | 900 | 380 to 2,099 | 27 |
-| Other or unclassified | 2,923 | 38% | 799 | 316 to 1,999 | 33 |
-| Gift card or cash | 1,975 | 53% | 500 | 200 to 1,400 | 20 |
-| Bundle or box | 1,456 | 45% | 781 | 300 to 1,856 | 30 |
-| Game items or skins | 705 | 33% | 1,125 | 300 to 2,035 | 30 |
-| Regulated goods (firearms) | 694 | 66% | 1,836 | 876 to 3,870 | 32 |
-| Experience, travel, tickets | 577 | 33% | 1,600 | 575 to 4,000 | 57 |
-| Placeholder name | 439 | 30% | 1,200 | 330 to 3,344 | 33 |
-| Home, garden, appliance | 387 | 40% | 600 | 350 to 1,449 | 26 |
-| Merch, apparel, collectibles | 271 | 23% | 800 | 314 to 1,980 | 30 |
-| Sports and outdoor gear | 255 | 58% | 1,050 | 470 to 2,000 | 42 |
-| Vehicle | 194 | 69% | 1,999 | 999 to 3,988 | 89 |
-| Food, drink, consumables | 176 | 38% | 540 | 200 to 1,189 | 22 |
-| Subscription or membership | 127 | 48% | 906 | 458 to 1,980 | 40 |
-| Music gear | 113 | 49% | 1,100 | 500 to 1,999 | 33 |
-| Tools, craft, DIY | 79 | 40% | 879 | 300 to 2,358 | 24 |
-| Beauty and wellness | 73 | 51% | 365 | 250 to 992 | 26 |
-| Toys and collectibles | 44 | 9% | 232 | 109 to 1,000 | 14 |
+| Gift card or cash | 10,573 | 52% | 100 | 45 to 500 | 0.25 |
+| Unclassified | 9,563 | 34% | 299 | 99 to 916 | 0.47 |
+| Tech hardware | 7,294 | 36% | 500 | 200 to 1,500 | 0.43 |
+| Bundle or box | 4,459 | 40% | 300 | 100 to 869 | 0.50 |
+| Game items or skins | 3,486 | 34% | 150 | 60 to 500 | 0.38 |
+| Experience, travel, tickets | 1,578 | 28% | 800 | 300 to 2,400 | 1.24 |
+| Merch, apparel, collectibles | 1,198 | 30% | 150 | 50 to 571 | 0.36 |
+| Placeholder name | 1,010 | 21% | 570 | 170 to 2,100 | 0.58 |
+| Regulated goods (firearms) | 891 | 64% | 1,460 | 649 to 3,200 | 0.45 |
+| Home, garden, appliance | 861 | 41% | 365 | 143 to 873 | 0.36 |
+| Sports and outdoor gear | 554 | 54% | 552 | 230 to 1,599 | 0.65 |
+| Subscription or membership | 509 | 45% | 575 | 160 to 1,500 | 1.09 |
+| Food, drink, consumables | 431 | 37% | 300 | 100 to 800 | 0.42 |
+| Vehicle | 350 | 60% | 1,141 | 479 to 2,596 | 1.11 |
+| Beauty and wellness | 312 | 48% | 200 | 70 to 500 | 0.34 |
+| Toys and collectibles | 298 | 14% | 100 | 41 to 200 | 0.26 |
+| Tools, craft, DIY | 204 | 44% | 350 | 150 to 1,199 | 0.43 |
+| Music gear | 168 | 42% | 808 | 341 to 1,624 | 0.47 |
+| Exclusive access | 93 | 21% | 377 | 150 to 1,750 | 0.91 |
+| Discount or coupon | 85 | 16% | 300 | 50 to 750 | 0.84 |
+<!-- /generated -->
 
-Regulated goods and vehicle Prizes state a value most often (66% and 69%), consistent with retailers who already price these items for sale, and vehicle carries the highest USD % of Entrants of any cut here.
+Regulated goods and vehicle Prizes state a value most often (64% and 60%), consistent with retailers who already price these items for sale. Experience, travel and tickets carries the highest stated USD per Entrant of any cut here, 1.24 USD.
 
-Toys and collectibles states a value least often, so its typical pool describes a small, self-selected group [9% of 493 campaigns, 44 listings].
+Toys and collectibles states a value least often, so its typical pool describes a small, self-selected group [14% of the category, 298 valued campaigns from 159 businesses].
 
-Premium-tier campaigns post the highest typical pool on a below-typical USD % of Entrants. Free campaigns post the lowest of both together, a floor at both ends.
+Premium-tier campaigns post the highest typical pool and the lowest stated USD per Entrant of any tier, because their crowds are the largest. Free campaigns post the lowest typical pool.
 
 Source: `analysis/output/prize_timing_cuts.json` (prize_pool_by_industry, prize_pool_by_business_type, prize_pool_by_tier, prize_pool_by_category).
 
@@ -308,16 +326,18 @@ Each campaign's Entrants divided by the typical Entrants for other campaigns at 
 | Subscription or membership | 1,559 | 423 | 0.51 | 49% below typical |
 <!-- /generated -->
 
-Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little more than their price tag suggests at 1.10, broadly wanted and close to what the money buys. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
+Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little more than their price tag suggests at 1.07, broadly wanted and close to what the money buys. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
 
 ### Crowd per Prize dollar, by number of Prize units
 
+<!-- generated:ev2_units -->
 | Prize units | Campaigns | Businesses | Crowd per Prize dollar | For the money | Entrants |
 |---|---|---|---|---|---|
-| 1 | 26,976 | 5,681 | 1.15 | 15% above typical | 509 |
-| 2-5 | 10,243 | 3,601 | 0.82 | 18% below typical | 463 |
-| 6-20 | 4,349 | 1,908 | 0.64 | 36% below typical | 562 |
-| 21+ | 1,605 | 695 | 0.78 | 22% below typical | 1,065 |
+| 1 | 26,919 | 5,664 | 1.15 | 15% above typical | 509 |
+| 2-5 | 10,192 | 3,568 | 0.82 | 18% below typical | 463 |
+| 6-20 | 4,276 | 1,866 | 0.64 | 36% below typical | 565 |
+| 21+ | 1,566 | 670 | 0.77 | 23% below typical | 1,065 |
+<!-- /generated -->
 
 One unit draws more crowd than its price tag suggests, and six or more draw less. For a fixed budget, one Prize worth wanting came with more Entrants than the same money split across several. Many units still fit sampling, digital Prizes and community goals, where the unit count is the point.
 
@@ -350,21 +370,19 @@ Region is the top-level domain of the business's site, so a .com business in Man
 <!-- generated:ev_region -->
 | Business domain | Campaigns | Entrants | Conversion Rate | Entries per Entrant |
 |---|---|---|---|---|
-| global domain (.com, .io, .net and so on) | 99,225 | 488 | 26% | 4.44 |
-| United Kingdom | 4,570 | 469 | 36% | 3.82 |
-| other or none | 4,099 | 411 | 26% | 4.70 |
-| Australia | 3,028 | 566 | 32% | 3.24 |
-| Brazil | 1,227 | 1,077 | 54% | 4.69 |
-| Germany | 789 | 773 | 31% | 4.86 |
-| Sweden | 677 | 663 | 75% | 3.87 |
-| Canada | 612 | 612 | 23% | 3.26 |
-| South Africa | 301 | 432 | 22% | 4.47 |
-| Finland | 232 | 9,018 | 77% | 1.00 |
-| Belgium | 222 | 296 | 35% | 5.65 |
-| France | 207 | 224 | 20% | 3.98 |
-| Netherlands | 195 | 372 | 31% | 4.05 |
-| Spain | 165 | 381 | 24% | 5.02 |
-| Japan | 140 | 273 | 29% | 3.77 |
+| global domain (.com, .io, .net and so on) | 33,656 | 441 | 34% | 3.71 |
+| other or none | 1,593 | 438 | 32% | 3.89 |
+| United Kingdom | 991 | 397 | 39% | 2.66 |
+| Australia | 908 | 550 | 33% | 2.77 |
+| Brazil | 680 | 1,289 | 57% | 4.58 |
+| Germany | 385 | 803 | 37% | 4.33 |
+| Sweden | 345 | 836 | 75% | 3.54 |
+| Finland | 184 | 9,799 | 82% | 1.00 |
+| Belgium | 173 | 292 | 38% | 6.23 |
+| Canada | 117 | 326 | 32% | 1.87 |
+| South Africa | 66 | 240 | 35% | 4.59 |
+| France | 65 | 162 | 30% | 3.92 |
+| Poland | 50 | 462 | 44% | 5.52 |
 <!-- /generated -->
 
 Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
@@ -387,33 +405,37 @@ Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
 
 Among Prize listings that state a currency, how often that currency is the business's own against USD. This cut uses the same 100-Entrant floor as the benchmarks above.
 
+<!-- generated:ev2_currency_country -->
 | Country | Campaigns | Businesses | Home-currency share | USD share |
 |---|---|---|---|---|
-| United States | 29,990 | 5,917 | 100% | 100% |
-| United Kingdom | 4,458 | 792 | 1% | 99% |
-| Japan | 3,169 | 152 | 0% | 100% |
-| India | 1,640 | 402 | 0% | 100% |
-| Australia | 2,095 | 684 | 1% | 99% |
-| Brazil | 839 | 128 | 0% | 100% |
-| South Korea | 799 | 208 | 0% | 100% |
-| Germany | 797 | 231 | 0% | 100% |
+| United States | 29,461 | 5,705 | 100% | 100% |
+| United Kingdom | 4,285 | 708 | 1% | 99% |
+| Japan | 2,652 | 110 | 0% | 100% |
+| Australia | 1,965 | 641 | 1% | 99% |
+| India | 1,256 | 291 | 0% | 100% |
+| Brazil | 772 | 100 | 0% | 100% |
+| Germany | 718 | 205 | 0% | 100% |
+| South Korea | 480 | 150 | 0% | 100% |
+<!-- /generated -->
 
-Outside the United States, the business's own currency appears on under 1% of stated Prize values in every country in this cut, and USD covers over 99% of stated values everywhere outside the US. A stated value from a Japanese or Brazilian business is a USD figure the business typed, not a local price converted to dollars. Price a Prize in the business's own currency when quoting it to Entrants, and treat every stated USD value in this dataset as USD-shaped regardless of where the campaign ran.
+Outside the United States, the business's own currency appears on under 1% of stated Prize values in every country in this cut, and USD covers at least 99% of stated values, to the nearest point, in every one of them. A stated value from a Japanese or Brazilian business is a USD figure the business typed, not a local price converted to dollars. Price a Prize in the business's own currency when quoting it to Entrants, and treat every stated USD value in this dataset as USD-shaped regardless of where the campaign ran.
 
 Source: `analysis/output/indicators.json` (prize_currency_localisation_by_country).
 
 ### Description wording
 
-Flags found by text pattern in the Prize description, in the campaigns we can compare fairly. Descriptions that state the value go with a lower Conversion Rate, and descriptions that state the Winner count go with fewer Entrants. A no-purchase line goes with more Entrants, and the table carries no Conversion Rate for either of those two flags. Nothing here says the wording moved a number.
+Flags found by text pattern in the Prize description, in the campaigns we can compare fairly. Share of descriptions counts every campaign, the other columns count the campaigns we can compare fairly. Descriptions that state the value go with a lower Conversion Rate, and descriptions that state the Winner count go with fewer Entrants. A no-purchase line goes with more Entrants. Every flag goes with a lower Conversion Rate than its absence. Nothing here says the wording moved a number.
 
+<!-- generated:ev2_wording -->
 | Flag | Share of descriptions | Present (Conversion Rate / Entrants / campaigns) | Absent (Conversion Rate / Entrants / campaigns) |
 |---|---|---|---|
-| States the value | 26% | 33% / 2,101 / 2,130 | 39% / 2,121 / 8,589 |
-| States the Winner count | 5% | — / 1,864 / 429 | — / 2,127 / 10,290 |
-| No-purchase line | 6% | — / 2,405 / 287 | — / 2,109 / 10,432 |
-| Worldwide mentioned | 4% | - | - |
-| US only mentioned | 2% | - | - |
-| Age line included | 2% | - | - |
+| States the value | 23% | 32% / 522 / 6,913 | 35% / 438 / 32,549 |
+| States the Winner count | 5% | 27% / 437 / 2,076 | 35% / 453 / 37,386 |
+| No-purchase line | 3% | 31% / 547 / 964 | 35% / 450 / 38,498 |
+| Worldwide mentioned | 4% | 29% / 462 / 1,044 | 35% / 452 / 38,418 |
+| US only mentioned | 1% | 32% / 439 / 562 | 35% / 453 / 38,900 |
+| Age line included | 1% | 25% / 583 / 555 | 35% / 450 / 38,907 |
+<!-- /generated -->
 
 ## What the data cannot support
 
@@ -439,10 +461,12 @@ A company-records match covers about a sixth of the businesses in the source cou
 
 The industry and country cuts on this match carry many thin cells. Quote nothing from either cut without its campaign count and business count next to it.
 
+<!-- generated:ev2_thin_cells -->
 | Cut | Cells under 10 businesses |
 |---|---|
-| Industry (company records) | 13 of 51 |
-| Country (company records) | 2 of 31 |
+| Industry (company records) | 15 of 60 |
+| Country (company records) | 7 of 42 |
+<!-- /generated -->
 
 ## Text safety
 

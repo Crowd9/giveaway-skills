@@ -82,7 +82,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Completion rates by action family from 966,269 real entry actions, and the friction finding that every extra action costs Entrants
+- Completion rates by action family from 957,363 real entry actions, and the friction finding that every extra action costs Entrants
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 
@@ -231,7 +231,7 @@ Ask for a plan or ask it to check yours. Every answer states its assumptions, la
 
 ## Evidence Behind the Advice
 
-Most giveaway advice is somebody's opinion. These skills are built on 116,499 real giveaways from 17,633 businesses, every one of which reached at least 100 Entrants, with 170,599 Prize records and 966,269 entry actions. Token airdrops and buy-to-enter raffles were set aside, so the benchmarks describe ordinary businesses giving away ordinary things.
+Most giveaway advice is somebody's opinion. These skills are built on 116,499 real giveaways from 17,633 businesses, every one of which reached at least 100 Entrants, with 170,599 Prize records and 957,363 entry actions. Token airdrops and buy-to-enter raffles were set aside, so the benchmarks describe ordinary businesses giving away ordinary things.
 
 Some of what that shows:
 
