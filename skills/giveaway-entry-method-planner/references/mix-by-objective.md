@@ -71,24 +71,32 @@ Five jobs, and every action in a recommended list carries exactly one of these l
 
 ## Actions that came with more people (extracted)
 
-Among the campaigns we can compare fairly (no repeatable action, a run of 14 days or less, which is what makes Impressions comparable), Secret Code (a code shown on a stream, in a newsletter or in store) is the standout: it comes with more Entrants at no conversion cost, the only action with that shape. Actions that pull a single-channel audience convert far better on arrival, with fewer Entrants overall. These describe businesses' choices and audiences, never an action's effect.
+Among the campaigns we can compare fairly (no repeatable action, a run of 14 days or less, which is what makes Impressions comparable), Secret Code (a code shown on a stream, in a newsletter or in store) is the standout: it comes with a bigger crowd at no cost to Conversion Rate, the only Action in the table with that shape. Everything else trades one against the other. An app download and a Telegram join both come with a bigger crowd and give up Conversion Rate to get it, and the follow actions come with a smaller crowd that converts better on arrival. All of it describes what businesses chose, and a business that reaches a big crowd is also the sort to offer more Actions, so read a row as company an Action keeps.
 
-| Action | Entrants vs baseline | Conversion vs baseline |
-|---|---|---|
-| Secret Code | +16% | no cost |
-| App Downloads | +21% (likely large, established apps) | - |
-| Telegram Channel Members | fewer | +46% |
-| YouTube Entries | fewer | +76% |
-| Twitch Follows | fewer | +13% |
-| Other social follows, X Reposts, Chat Members, Facebook Likes | fewer | lower |
+<!-- generated:em_actions_baseline -->
+| Action | Entrants vs the campaigns without it | Conversion Rate vs the same | Campaigns | Businesses |
+|---|---|---|---|---|
+| Telegram Channel Members | +47% | +38% | 1,789 | 370 |
+| App Downloads | +45% | -28% | 1,184 | 257 |
+| Secret Code | +28% | about level | 1,594 | 563 |
+| Discord Members | +6% | about level | 7,176 | 1,443 |
+| Instagram Follows | +3% | -7% | 2,238 | 876 |
+| Facebook Likes | about level | -18% | 771 | 366 |
+| YouTube Entries | about level | about level | 14,242 | 3,287 |
+| X Follows | -9% | -6% | 21,879 | 4,119 |
+| X Reposts | -14% | -4% | 8,938 | 2,294 |
+| Twitch Follows | -17% | +24% | 8,981 | 1,873 |
+<!-- /generated -->
 
-An app-download action's payoff depends heavily on the Prize. Match the action to a Prize the Entrant already wants the app for, and expect it to cost you against a cash or gift-card Prize or in gaming and esports specifically. These counts are small, down to 33 businesses, near this skill's floor for a cut this fine, so state the count every time and don't extend the pattern beyond these three cells.
+An app-download action's payoff depends heavily on the Prize. Match the action to a Prize the Entrant already wants the app for, and expect it to cost you against a cash or gift-card Prize or in gaming and esports specifically. These counts are small, the smallest cell resting on 56 businesses, so state the count every time and don't extend the pattern beyond these three cells.
 
+<!-- generated:em_app_download -->
 | Context | Effect on conversion (against what the action and Prize predict separately) |
 |---|---|
-| Prize is tech hardware | 1.54x, earns its place (203 campaigns, 33 businesses) |
-| Prize is a gift card or cash | 0.585x, costs conversion (64 campaigns, 36 businesses) |
-| Gaming and esports vertical | 0.588x, costs conversion (89 campaigns, 27 businesses) |
+| Prize is tech hardware | 1.9x, earns its place (294 campaigns, 61 businesses) |
+| Prize is a gift card or cash | 0.751x, costs conversion (219 campaigns, 83 businesses) |
+| Gaming and esports vertical | 0.735x, costs conversion (265 campaigns, 56 businesses) |
+<!-- /generated -->
 
 [Extracted from `analysis/output/success_profiles.json`, `interactions.entry_method_by_prize_type` and `.entry_method_by_industry`.]
 

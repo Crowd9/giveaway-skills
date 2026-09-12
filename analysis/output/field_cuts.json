@@ -17,7 +17,8 @@
   "viral_click_conversion": "a viral share click is a click on one entrant's own share link. Referrals are completions of the share action, which Gleam credits when a referred person enters. referrals_per_click is the median across campaigns of referrals over clicks, so it reads as the share of clicks on a shared link that ended in an entry. campaign_conversion_same_campaigns is contestants per impression on the same campaigns, for comparison",
   "uptake_by_family_and_position": "completions per contestant by action family and list position (position is zero-indexed in the dataset, 1st is position 0). n counts Actions, one row per Action offered, so it runs above the campaign population and must never be printed under a Campaigns heading; sites counts the businesses behind them",
   "by_method_count_clean": "clean campaigns (no repeatable action, 14 days or less) by action count",
-  "by_description_length": "clean campaigns by word count of the campaign description"
+  "by_description_length": "clean campaigns by word count of the campaign description",
+  "actions_vs_baseline": "each Action against the campaigns in the same subset that did not offer it, on the fair-comparison subset (no repeatable Action, a run of 14 days or less). Medians across campaigns. It describes what businesses chose, never what an Action caused, and a business that reaches a big crowd is also the sort to offer more Actions"
  },
  "by_tier": {
   "Pro": {
@@ -1397,16 +1398,6 @@
    "completions_when_mandatory": 0.993,
    "completions_when_optional": 0.626
   },
-  "discord_role": {
-   "n": 566,
-   "sites": 71,
-   "mandatory_share": 0.041,
-   "worth": 30.0,
-   "completions_per_contestant": 0.025,
-   "worth_weighted_entries_per_contestant": 1.046,
-   "completions_when_mandatory": 0.967,
-   "completions_when_optional": 0.024
-  },
   "facebook_media": {
    "n": 566,
    "sites": 166,
@@ -1416,6 +1407,16 @@
    "worth_weighted_entries_per_contestant": 0.105,
    "completions_when_mandatory": 0.095,
    "completions_when_optional": 0.033
+  },
+  "discord_role": {
+   "n": 566,
+   "sites": 71,
+   "mandatory_share": 0.041,
+   "worth": 30.0,
+   "completions_per_contestant": 0.025,
+   "worth_weighted_entries_per_contestant": 1.046,
+   "completions_when_mandatory": 0.967,
+   "completions_when_optional": 0.024
   },
   "wallet_address": {
    "n": 537,
@@ -4089,14 +4090,6 @@
    "p90": 15.0,
    "share_worth_1": 0.35
   },
-  "instagram_choose": {
-   "n": 696,
-   "p25": 2.0,
-   "p50": 5.0,
-   "p75": 10.0,
-   "p90": 20.0,
-   "share_worth_1": 0.239
-  },
   "soundcloud_follow": {
    "n": 696,
    "p25": 1.0,
@@ -4104,6 +4097,14 @@
    "p75": 9.0,
    "p90": 10.0,
    "share_worth_1": 0.589
+  },
+  "instagram_choose": {
+   "n": 696,
+   "p25": 2.0,
+   "p50": 5.0,
+   "p75": 10.0,
+   "p90": 20.0,
+   "share_worth_1": 0.239
   },
   "discord_enter": {
    "n": 672,
@@ -5540,9 +5541,9 @@
   }
  },
  "landing_kind_share": {
+  "hosted": 0.487,
   "directory": 0.004,
-  "embed": 0.509,
-  "hosted": 0.487
+  "embed": 0.509
  },
  "by_hosted_share": {
   "hosted_90_plus": {
@@ -8237,6 +8238,108 @@
    "methods": 6.0,
    "email_offered": 0.484,
    "share_offered": 0.42
+  }
+ },
+ "actions_vs_baseline": {
+  "secret_code": {
+   "n": 1594,
+   "sites": 563,
+   "contestants_with": 577.0,
+   "contestants_without": 449.0,
+   "contestants_ratio": 1.285,
+   "conversion_with": 0.3419,
+   "conversion_without": 0.3467,
+   "conversion_ratio": 0.986
+  },
+  "download_app": {
+   "n": 1184,
+   "sites": 257,
+   "contestants_with": 648.0,
+   "contestants_without": 448.0,
+   "contestants_ratio": 1.446,
+   "conversion_with": 0.2502,
+   "conversion_without": 0.3488,
+   "conversion_ratio": 0.717
+  },
+  "telegram_join": {
+   "n": 1789,
+   "sites": 370,
+   "contestants_with": 657.0,
+   "contestants_without": 446.0,
+   "contestants_ratio": 1.473,
+   "conversion_with": 0.4709,
+   "conversion_without": 0.3424,
+   "conversion_ratio": 1.375
+  },
+  "youtube_visit_channel": {
+   "n": 14242,
+   "sites": 3287,
+   "contestants_with": 445.0,
+   "contestants_without": 456.0,
+   "contestants_ratio": 0.976,
+   "conversion_with": 0.3503,
+   "conversion_without": 0.3444,
+   "conversion_ratio": 1.017
+  },
+  "twitchtv_follow": {
+   "n": 8981,
+   "sites": 1873,
+   "contestants_with": 391.0,
+   "contestants_without": 473.0,
+   "contestants_ratio": 0.827,
+   "conversion_with": 0.4072,
+   "conversion_without": 0.3292,
+   "conversion_ratio": 1.237
+  },
+  "twitter_retweet": {
+   "n": 8938,
+   "sites": 2294,
+   "contestants_with": 405.0,
+   "contestants_without": 470.0,
+   "contestants_ratio": 0.862,
+   "conversion_with": 0.3372,
+   "conversion_without": 0.3501,
+   "conversion_ratio": 0.963
+  },
+  "facebook_like": {
+   "n": 771,
+   "sites": 366,
+   "contestants_with": 445.0,
+   "contestants_without": 452.0,
+   "contestants_ratio": 0.985,
+   "conversion_with": 0.2856,
+   "conversion_without": 0.3481,
+   "conversion_ratio": 0.82
+  },
+  "discord_join_server": {
+   "n": 7176,
+   "sites": 1443,
+   "contestants_with": 474.0,
+   "contestants_without": 446.0,
+   "contestants_ratio": 1.063,
+   "conversion_with": 0.351,
+   "conversion_without": 0.3453,
+   "conversion_ratio": 1.016
+  },
+  "instagram_follow": {
+   "n": 2238,
+   "sites": 876,
+   "contestants_with": 465.5,
+   "contestants_without": 451.0,
+   "contestants_ratio": 1.032,
+   "conversion_with": 0.322,
+   "conversion_without": 0.3482,
+   "conversion_ratio": 0.925
+  },
+  "twitter_follow": {
+   "n": 21879,
+   "sites": 4119,
+   "contestants_with": 435.0,
+   "contestants_without": 477.0,
+   "contestants_ratio": 0.912,
+   "conversion_with": 0.3377,
+   "conversion_without": 0.3599,
+   "conversion_ratio": 0.938
   }
  }
 }
