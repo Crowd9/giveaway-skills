@@ -378,7 +378,7 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 | Duration (typical) | 11 days |
 | Email offered | 5.5% |
 
-**Startups and B2B sellers run referral-heavy campaigns.** Both run far more referrals per 100 Entrants than the all-campaign typical figure of 12, and neither has an existing list to email, so the concept has to be the kind a person forwards: early access, a nomination, a peer invite.
+**Startups and B2B sellers run referral-heavy campaigns.** Both run far more referrals per 100 Entrants than the all-campaign typical figure of 11, and neither has an existing list to email, so the concept has to be the kind a person forwards: early access, a nomination, a peer invite.
 
 | Business type | Campaigns | Businesses | Referrals per 100 Entrants | Email offered |
 |---|---|---|---|---|

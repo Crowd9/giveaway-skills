@@ -52,7 +52,7 @@ A drawn name has a real chance of failing verification. The typical campaign has
 | 48 hours | hour 0 | hour 24 | hour 48 |
 
   Halfway means halfway. On a seven-day deadline the second message goes on day 3 or 4, never on day 5.
-- Reply deadline in the terms. When it passes, the Prize is forfeited and redrawn.
+- Reply deadline in the terms. When it passes, the Prize is forfeited and passes to the first backup drawn under the same audit record, as `winner-verification.md` sets out. A fresh draw after the fact breaks the commitment made before the first one, so it is the last resort, for when no backups were drawn.
 - Keep a written log of draws, contacts and responses. Disputes are settled by the log.
 - Never publish a Winner's full details without consent. First name and city, or a handle, with permission.
 
