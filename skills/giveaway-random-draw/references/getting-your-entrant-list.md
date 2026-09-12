@@ -66,7 +66,7 @@ Eleven handles from a comment thread, one of them the organizer's own account, d
 ```
 $ python3 draw.py commit handles.txt --exclude organizer.txt --winners 1 --backups 2
 input sha256   c8bacebf4c4bd5df5d49c5b7acd558182fe5bdbfe295925e4f7ee3a491f37721
-rules          {"backups": 2, "exclude_file_sha256": "40f1c59455ac72c02922e18b088214802877d75a88d1d2667b111788f40a50d0", "id_column": "entrant", "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id", "tiers": [["Winner", 1]], "tool_version": "2.4.2", "weight_column": null}
+rules          {...}   (the full rules line, with the method string and the exclusion file hash, is in the audit file)
 commitment     a8adf63be0a5872e2d03c57f35910be387629330b0dd66d258f170f8589d4471
 rows_read 11, unique_eligible 10, duplicates_merged 0, excluded 1, rows_with_invalid_weight 0
 
