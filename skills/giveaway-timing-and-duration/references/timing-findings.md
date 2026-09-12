@@ -65,14 +65,20 @@ Gap since the business's previous campaign, all the campaigns behind these numbe
 | 11th+ | 63,775 | 515 | 4.90 | 27% |
 <!-- /generated -->
 
-Campaign size repeats: after a big campaign, the next one tends to be big too, across 21,284 consecutive pairs from the same business.
+<!-- generated:tm3_persistence -->
+Campaign size repeats: after a campaign of 5,000 or more Entrants, about 51 in 100 of the next ones reach 5,000 too, against 3 in 100 when the previous one was smaller, across 97,370 consecutive pairs from 8,455 businesses.
 
 | Prior campaign size | Next reaches same size | Otherwise |
 |---|---|---|
-| 5,000+ Entrants | 61% | 12% |
-| 10,000+ Entrants | 57% | 5% |
+| 5,000+ Entrants | 51% | 3% |
+| 10,000+ Entrants | 50% | 1% |
 
-One campaign's size and the next one's size move together closely, a correlation of 0.63 out of 1. Results repeat because audiences, lists and promotion habits repeat. Gleam's own check of the same data found the same figures within a point.
+One campaign's size and the next one's size move together closely, a correlation of 0.66 out of 1 on a log scale.
+<!-- /generated -->
+
+Results repeat because audiences, lists and promotion habits repeat.
+
+Source: `analysis/output/context_checks.json` (`persistence`).
 
 ## Overlapping campaigns and close day (extracted)
 
@@ -140,30 +146,50 @@ Impressions in the data are counted once per day, so a visitor who returns count
 
 Longer runs collect two thirds more Entrants by 61 days and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
 
-The day-to-day view sharpens this. Each row is a different campaign's whole run, grouped by how long that run was, so the curve compares a 1-day campaign with a 14-day one and never tracks a single campaign day by day. The typical Conversion Rate bends sharply between a 6-day and a 7-day run, the point that best explains the shape of the curve (accounting for 81% of it), stronger than any other length tested, in the same fairly-compared set (no repeatable action, durations 1 to 35 days). Measured answers read it as a within-run drop and scheduled pushes against it, which this cut cannot support.
+The day-to-day view sharpens this. Each row is a different campaign's whole run, grouped by how long that run was, so the curve compares a 1-day campaign with a 14-day one and never tracks a single campaign day by day. The bend below is a two-segment straight-line fit tried at every possible split of the curve, and the split reported is the one that beats a single straight line by the most. Measured answers read it as a within-run drop and scheduled pushes against it, which this cut cannot support.
 
+<!-- generated:tm3_bend -->
 | Day | Conversion Rate |
 |---|---|
-| 1 | 56% |
-| 6 | 38% |
-| 7 | 34% |
-| 14 | 28% |
-| 30 | 29% |
+| 1 | 58% |
+| 4 | 38% |
+| 5 | 35% |
+| 7 | 32% |
+| 14 | 26% |
+| 30 | 26% |
 
-The same bend lands within a day or two across campaign sizes and account tiers:
+The typical Conversion Rate bends between a 4-day and a 5-day run, the split that best explains the shape of the curve (83% of it), across 65,576 campaigns with no repeatable action that ran 1 to 35 days.
 
-| Segment | Bend point |
-|---|---|
-| 1,000-2,500 Entrants | day 6-7 |
-| 2,500-10,000 Entrants | day 7-8 |
-| Pro accounts | day 5-6 |
-| Business accounts | day 4-5 |
-| Free accounts | day 6-7 |
-| Electronics and tech | day 8-9 |
+The same search repeated inside each campaign size, plan tier and industry:
 
-[Campaigns/businesses: 19,146/3,866 overall, 11,026/402 (1,000-2,500 Entrants), 6,549/275 (2,500-10,000 Entrants), 10,459/376 (Pro), 6,068/165 (Business), 620/47 (Free), 4,362/115 (electronics and tech).]
+| Segment | Bend point | Share of curve explained | Campaigns | Businesses |
+|---|---|---|---|---|
+| 100-250 Entrants | day 5-6 | 78% | 18,510 | 853 |
+| 250-500 Entrants | day 3-4 | 79% | 15,057 | 598 |
+| 500-1,000 Entrants | day 5-6 | 78% | 12,592 | 495 |
+| 1,000-2,500 Entrants | day 6-7 | 73% | 11,102 | 405 |
+| 2,500-10,000 Entrants | day 7-8 | 80% | 6,686 | 286 |
+| 10,000+ Entrants | day 14-15 | 31% | 1,392 | 64 |
+| Pro accounts | day 3-4 | 87% | 35,630 | 1,113 |
+| Business accounts | day 5-6 | 81% | 16,482 | 365 |
+| Free accounts | day 3-4 | 60% | 6,632 | 370 |
+| Hobby accounts | day 3-4 | 32% | 5,826 | 277 |
+| Premium accounts | day 15-29 | 74% | 390 | 17 |
+| Gaming and esports | day 3-4 | 75% | 14,651 | 618 |
+| Media and entertainment | day 7-8 | 33% | 12,188 | 224 |
+| Electronics and tech | day 6-7 | 68% | 9,135 | 253 |
+| Other industries | day 17-28 | 65% | 2,446 | 120 |
+| Toys, hobbies, collectibles | day 3-4 | 29% | 2,348 | 76 |
+| Food and drink | day 4-5 | 55% | 2,325 | 93 |
+| Apparel and fashion | day 12-13 | 64% | 2,219 | 83 |
+| Sports and outdoors | day 5-6 | 83% | 2,092 | 98 |
 
-For campaigns of 10,000 or more Entrants the bend moves later and gets weaker, and the day 6-7 drop-off established above doesn't hold at this size. [Moves to day 11-12, explaining 44% of the curve shape against 72-77% in the two smaller sizes above, 1,319 campaigns, 63 businesses.] Read that later bend as suggestive, not a rule for large campaigns, since it rests on a thinner slice of data. Two smaller categories move later still [home and garden to day 14-15, sports and outdoors to day 16-28], but both sit under 40 businesses and read as noise, not a pattern to plan around.
+For campaigns of 10,000 or more Entrants the bend moves to day 14-15 and gets weaker, explaining 31% of the curve shape against 73% to 80% in the two sizes below (1,392 campaigns, 64 businesses). Industries spread from day 3-4 in gaming and esports to day 12-13 in apparel and fashion.
+<!-- /generated -->
+
+Across every size band under 10,000 Entrants and the two largest plan tiers the bend lands within the first week or so, so the steep part of the curve is over early in a run. Read the 10,000-plus bend as suggestive only, since it rests on a thinner slice of data, and treat any row that explains under half of its own curve the same way: a bend that lands somewhere different in every segment is stratification noise, and none of these rows is a rule to plan a run length around.
+
+Source: `analysis/output/thresholds.json` (`duration_days`).
 
 ## Daily pace falls as a campaign runs longer (extracted)
 
@@ -183,20 +209,6 @@ Entrants per day, typical. A gaming campaign of one to three days drew about six
 The fall continues past two weeks in both.
 
 Source: `analysis/output/calendar.json` (`per_day_by_length_industry`).
-
-## Duration by what the campaign is optimizing for (extracted)
-
-Pick the run length by what the campaign needs to produce, not by a single "longer is better" rule. Reach, engagement, referrals and traffic per Entrant are all higher in 15-plus day campaigns than in campaigns of 7 days or fewer, at every campaign size checked, for example reach for campaigns of 2,500 to 10,000 Entrants: 4.43 Actions per Entrant against 2.40 [7,432 campaigns/2,144 businesses at 15+ days against 2,745/637 at 7 days or fewer]. Discord and Telegram joins go the other way, and bring in more per Entrant in the shorter campaigns:
-
-| Method | Campaign size | 7 days or fewer | 15+ days |
-|---|---|---|---|
-| Discord join | 1,000-2,500 | 52 per 100 (941 campaigns, 244 businesses) | 38 per 100 (1,641 campaigns, 575 businesses) |
-| Discord join | 2,500-10,000 | 46 per 100 (285 campaigns, 125 businesses) | 36 per 100 (1,265 campaigns, 370 businesses) |
-| Discord join | 10,000+ | 67 per 100 (55 campaigns, 23 businesses) | 33 per 100 (312 campaigns, 97 businesses) |
-| Telegram join | 1,000-2,500 | 89 per 100 (560 campaigns, 58 businesses) | 49 per 100 (335 campaigns, 107 businesses) |
-| Telegram join | 2,500-10,000 | 83 per 100 (201 campaigns, 23 businesses) | 77 per 100 (264 campaigns, 60 businesses) |
-
-A community you want people to join before they leave the page favours a short run: Discord and Telegram joins land higher in shorter campaigns at every size above, from a few points to double the rate. A campaign chasing reach, engagement, referrals or traffic favours a long one. Both directions hold across all three campaign sizes with enough data, so this is a genuine split by objective, not a slope in one direction. A campaign that wants both, a community built fast and the widest reach, has to pick which one the run length serves, since a shorter run and a longer one cannot both be the answer on the same clock.
 
 ## No late rush, only a launch spike (extracted)
 

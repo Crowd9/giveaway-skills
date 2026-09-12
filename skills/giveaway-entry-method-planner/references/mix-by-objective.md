@@ -440,15 +440,19 @@ A question or an account connection at the head of the list sits about four poin
 
 Question actions by what they ask (regex on the question text):
 
+<!-- generated:em2_question_types -->
 | Question type | Actions | Businesses | Completed it, per 100 Entrants (typical) |
 |---|---|---|---|
-| feedback or open | 844 | 375 | 85 |
-| detail capture | 5,224 | 708 | 77 |
-| other | 8,685 | 1,666 | 71 |
-| preference | 3,485 | 901 | 70 |
-| trivia | 1,647 | 330 | 62 |
+| feedback or open | 839 | 374 | 86 |
+| other | 6,937 | 1,509 | 75 |
+| preference | 3,475 | 898 | 70 |
+| detail capture | 6,755 | 851 | 68 |
+| trivia | 1,640 | 325 | 62 |
 
-An open or feedback question is completed most, by about 85 of every 100 Entrants, and trivia least at 62. Trivia is the only type with a right answer, which is the plain reading of why it sits last. Detail capture, the type that asks for a name, an order id or an account, sits second at 77. [Source: `analysis/output/text_and_context.json`, `question_types`.]
+A feedback or open question is completed most, by about 86 of every 100 Entrants, and trivia least at 62. Detail capture, the type that asks for a name, an order id or an account, sits fourth at 68.
+<!-- /generated -->
+
+Trivia is the only type with a right answer, which is the plain reading of why it sits last. [Source: `analysis/output/text_and_context.json`, `question_types`.]
 
 Share copy on Viral Share and X Posts actions (59,548 actions with custom text, from `analysis/output/text_and_context.json` `share_copy`): a hashtag, first person and an emoji all complete higher. Length does not run one way, with short copy highest and the 60 to 140 character band lowest. Most of the hashtag gap is the action type, since X Posts actions carry hashtags and record more completions than Viral Share (about 34 against 11 per 100 Entrants), first person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
 
