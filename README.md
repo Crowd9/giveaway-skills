@@ -3,7 +3,7 @@
 [![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,072 real campaigns. Ten skills cover the whole job, from the idea to the draw to the review afterwards. No code to write. Install once, then ask in plain English.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,068 real campaigns. Ten skills cover the whole job, from the idea to the draw to the review afterwards. No code to write. Install once, then ask in plain English.
 
 Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by [Gleam](https://gleam.io), and the advice fits any giveaway platform.
 
