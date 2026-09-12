@@ -177,34 +177,40 @@ Mail arrives later than everything else. On the start day and the six days after
 
 Read that as who mails, never as what mailing does. Campaigns collecting mail clicks on eight days or more are four times the size of one-day campaigns and see a lower Conversion Rate, which is what size does to it everywhere in this data.
 
+<!-- generated:pp2_mail_industry -->
 | Industry | Campaigns | Businesses | Share of campaigns where mail is a tenth of traffic |
 |---|---|---|---|
-| Health, wellness and fitness | 3,192 | 509 | 11.5% |
-| Jewellery and watches | 467 | 173 | 9.6% |
-| Local services | 927 | 182 | 3.3% |
-| Media and entertainment | 21,848 | 2,115 | 2.2% |
-| Education | 1,901 | 370 | 1.7% |
-| Marketing agency | 1,243 | 165 | 0.4% |
-| Travel and events | 4,028 | 669 | 0.4% |
-| Pets | 971 | 211 | 0.3% |
-| Apparel and fashion | 4,594 | 834 | 0.2% |
+| Health, wellness and fitness | 3,148 | 495 | 11.6% |
+| Jewelry and watches | 453 | 163 | 9.9% |
+| Local services | 910 | 181 | 3.4% |
+| Media and entertainment | 21,533 | 2,077 | 2.2% |
+| Education | 1,862 | 356 | 1.7% |
+| Travel and events | 3,909 | 636 | 0.4% |
+| Marketing agency | 1,149 | 156 | 0.3% |
+| Apparel and fashion | 4,615 | 808 | 0.2% |
+| Pets | 937 | 204 | 0.1% |
+<!-- /generated -->
 
-Plan tier tracks the same way, with Premium businesses drawing the most from mail clients and Hobby and Free the least. By organizer country, Argentina leads the share of campaigns drawing a tenth of traffic from mail, well ahead of Italy, Germany and the United States.
+Plan tier tracks the same way, with Premium businesses drawing the most from mail clients and Hobby and Free the least. By organizer country, Italy leads the share of campaigns drawing a tenth of traffic from mail, ahead of Romania, Germany and the United States.
 
+<!-- generated:pp2_mail_tier -->
 | Tier | Typical % of Impressions from mail clients |
 |---|---|
-| Premium | 0.7% |
-| Business | 0.35% |
-| Pro | 0.29% |
+| Premium | 0.74% |
+| Business | 0.37% |
+| Pro | 0.31% |
 | Hobby | 0% |
 | Free | 0% |
+<!-- /generated -->
 
+<!-- generated:pp2_mail_country -->
 | Country | Share of campaigns drawing a tenth of traffic from mail | Campaigns |
 |---|---|---|
-| Argentina | 9.7% | 318 |
-| Italy | 3.1% | - |
-| Germany | 2.3% | - |
-| United States | 1.7% | 55,074 |
+| Italy | 3.1% | 414 |
+| Romania | 2.8% | 316 |
+| Germany | 2.3% | 3,007 |
+| United States | 1.7% | 54,517 |
+<!-- /generated -->
 
 Source: `analysis/output/email_traffic.json`, keys `totals`, `by_client`, `day_curve`, `days_mail_landed`, `email_share_by_industry`, `email_share_by_plan_tier`, `email_share_by_country`, built by the analysis behind it.
 
@@ -231,11 +237,18 @@ Among campaigns that offer it, the entries attached to a share move the figures 
 
 Source: analysis/output/field_cuts.json (share_clicks).
 
-Offering a referral action raises Actions per Entrant at every campaign size, but the size of that lift does not grow as the campaign gets bigger. Comparing what campaigns with and without a referral action actually produce against what size and referral status predict on their own, the result lands close to that prediction at every campaign size tested. A referral action is worth building into the mix, but do not plan on the payoff scaling up just because the base to refer from is bigger.
+Offering a referral action raises Actions per Entrant at every campaign size, but the size of that lift does not grow as the campaign gets bigger. Comparing what campaigns with and without a referral action actually produce against what size and referral status predict on their own, the result lands close to that prediction at every campaign size tested, and the table carries how close. A referral action is worth building into the mix, but do not plan on the payoff scaling up just because the base to refer from is bigger.
 
-| Campaign size (Entrants) | Predicted-actual ratio | Campaigns | Businesses |
-|---|---|---|---|
-| 1,000 to 10,000 or more (six bands) | 0.99 to 1.07 | 1,202 to 10,793 per band | 376 to 2,846 per band |
+<!-- generated:pp2_referral_size -->
+| Campaign size (Entrants) | Predicted-actual ratio, referral action offered | Predicted-actual ratio, none offered |
+|---|---|---|
+| 100 to 250 Entrants | 1.07 [8,198 campaigns, 2,446 businesses] | 1.04 [24,823 campaigns, 7,629 businesses] |
+| 250 to 500 | 1.14 [9,654 campaigns, 2,340 businesses] | 0.95 [15,971 campaigns, 4,602 businesses] |
+| 500 to 1,000 | 0.98 [9,194 campaigns, 2,494 businesses] | 0.98 [12,595 campaigns, 3,457 businesses] |
+| 1,000 to 2,500 | 0.89 [9,110 campaigns, 2,664 businesses] | 1.01 [10,864 campaigns, 2,858 businesses] |
+| 2,500 to 10,000 | 0.88 [5,774 campaigns, 1,649 businesses] | 1.03 [6,929 campaigns, 1,657 businesses] |
+| 10,000 or more | 0.92 [1,229 campaigns, 395 businesses] | 1.08 [1,942 campaigns, 436 businesses] |
+<!-- /generated -->
 
 Source: analysis/output/success_profiles.json (interactions.referral_action_by_campaign_size).
 
@@ -279,17 +292,23 @@ Source: analysis/output/field_cuts.json (viral_click_conversion, viral_click_con
 
 Referrals % of Entrants fall as a YouTube host channel grows. A smaller channel's audience sits closer to the creator and shares more per person, a large channel's audience treats one giveaway post as one post among many.
 
+<!-- generated:pp2_youtube_referrals -->
 | YouTube subscribers | Referrals % of Entrants | Campaigns | Businesses |
 |---|---|---|---|
-| Under 1,000 | 38 (0.38 per Entrant) | 180 | 23 |
-| 1 million or more | 8 (0.08 per Entrant) | 643 | 80 |
+| Under 1,000 | 24 (0.24 per Entrant) | 709 | 203 |
+| 1 million or more | 8 (0.08 per Entrant) | 817 | 96 |
+<!-- /generated -->
 
-Software and b2b businesses sit well above the consumer brand and retailer averages on referrals % of Entrants, near 90 per 100 (0.9 per Entrant). That fits an audience used to forwarding a link at work.
+Software businesses and B2B audiences sit well above consumer brands and retailers on referrals % of Entrants. That fits an audience used to forwarding a link at work.
 
-| Business type | Campaigns | Businesses |
-|---|---|---|
-| Software | 18,311 | 4,205 |
-| B2B | 6,138 | 1,023 |
+<!-- generated:pp2_btype_referrals -->
+| Business type | Referrals % of Entrants | Campaigns | Businesses |
+|---|---|---|---|
+| Software | 62 (0.62 per Entrant) | 30,426 | 5,133 |
+| B2B | 44 (0.44 per Entrant) | 12,728 | 1,779 |
+| Brand | 14 (0.14 per Entrant) | 31,193 | 5,708 |
+| Retailer | 11 (0.11 per Entrant) | 21,733 | 2,266 |
+<!-- /generated -->
 
 Source: analysis/output/industries.json (by_youtube_subscribers, by_business_type, by_audience).
 
@@ -297,11 +316,13 @@ Source: analysis/output/industries.json (by_youtube_subscribers, by_business_typ
 
 YouTube supplies far more of India's and Brazil's Impressions than the United States', and Brazil's campaigns land almost entirely on the Gleam-hosted page, not an embed. A campaign built for a Brazilian or Indian audience can lean on a YouTube push harder than the US-only playbook above assumes.
 
+<!-- generated:pp2_country_traffic -->
 | Country | YouTube share of Impressions | Gleam-hosted landing share | Campaigns | Businesses |
 |---|---|---|---|---|
-| India | 16% | - | 6,007 | 872 |
-| Brazil | 19% | 97% | 5,857 | 562 |
-| United States | 2.5% | 44% | 58,742 | 9,091 |
+| India | 23% | 72% | 4,059 | 690 |
+| Brazil | 20% | 97% | 5,297 | 496 |
+| United States | 2.5% | 43% | 57,193 | 8,708 |
+<!-- /generated -->
 
 Source: analysis/output/indicators.json (referrer_mix_by_country, landing_kind_by_country).
 
@@ -405,19 +426,23 @@ Source: `analysis/output/reach_returns.json`.
 
 Extracted: typical share of a campaign's Impressions landing on each day since start, for campaigns run about 7, 14 and 30 days. Entries are not in this cut, so it tracks visits per day and never who entered that day. Write "traffic" or "visits" in the answer. A measured answer wrote "Entries flatten from day 10 to day 13" off this table, which promises the reader something the cut cannot see.
 
+<!-- generated:pp2_curve -->
 | Duration | Day one | Peak day | Trough | Close |
 |---|---|---|---|---|
-| 7 days | 22% (6,148 campaigns, 1,795 businesses) | Day 1 | none, declines straight through | Day 6, 7% (6,002 campaigns, 1,778 businesses) |
-| 14 days | 10% (4,851 campaigns, 1,828 businesses) | Day 1 | Day 10, 4.4% (5,173 campaigns, 1,919 businesses) | Day 13, 4.5% (4,663 campaigns, 1,770 businesses) |
-| 30 days | 4.1% (7,176 campaigns, 1,988 businesses) | Day 2, 4.7% (7,558 campaigns, 2,049 businesses) | Days 17 to 21, about 2.3% (day 20: 8,094 campaigns, 2,167 businesses) | Day 29, 2.8% (6,672 campaigns, 1,860 businesses) |
+| 7 days | 20.6% (23,879 campaigns, 5,739 businesses) | Day 1 | none, declines straight through | Day 6, 7.8% (23,755 campaigns, 5,724 businesses) |
+| 14 days | 10.7% (15,997 campaigns, 4,817 businesses) | Day 1 | Day 10, 4.4% (17,443 campaigns, 5,176 businesses) | Day 13, 5.1% (15,919 campaigns, 4,785 businesses) |
+| 30 days | 4.0% (20,348 campaigns, 5,030 businesses) | Day 2, 4.9% (21,783 campaigns, 5,270 businesses) | Day 18, 2.2% (23,255 campaigns, 5,458 businesses) | Day 29, 3.0% (19,596 campaigns, 4,704 businesses) |
+<!-- /generated -->
 
-Day one carries 22% of a week-long campaign's total traffic, 10% of a two-week one's and 4.1% of a month-long one's. Quote the row for the run the reader is actually planning. A week-long run falls every day straight through to the close, with no recovery. A two-week or month-long run falls hard through the first week or two, flattens into a long stretch at a quarter to a third of the launch share, and picks up a little in the final days. Both closes stay well under half the launch share.
+Day one carries a fifth of a week-long campaign's total traffic, a tenth of a two-week one's and a twenty-fifth of a month-long one's. Quote the row for the run the reader is actually planning. A week-long run falls every day straight through to the close, with no recovery. A two-week or month-long run falls hard through the first week or two, flattens into a long stretch at under half the peak day's share, and picks up a little in the final days. Neither close gets back to the launch share.
 
+<!-- generated:pp2_curve_read -->
 | Duration | Launch peak | Quiet-stretch share of launch | Late-run uptick |
 |---|---|---|---|
 | 7 days | Day 1 | none, declines straight through | none |
-| 14 days | Day 1 | a quarter to a third | day 13 a couple of points above day 10 |
-| 30 days | Days 1-2 (a two-day peak) | a quarter to a third | day 29 about a fifth higher than its trough |
+| 14 days | Day 1 | 41% of the peak day | day 13 0.8 points above day 10 |
+| 30 days | Days 1 to 2 (peak on day 2) | 45% of the peak day | day 29 0.8 points above day 18 |
+<!-- /generated -->
 
 Source: `analysis/output/prize_timing_cuts.json` (`impression_curve_by_duration`).
 
@@ -432,9 +457,9 @@ Source: analysis/output/field_cuts.json (share_click_curve_by_duration).
 
 ## Turning the curve into pushes
 
-- **Launch, day one.** The biggest traffic day at every length tested. Land the launch post and email inside the same two hours the campaign goes live.
+- **Launch, day one.** The biggest traffic day on a week-long or two-week run, and within a point of the peak on a month-long one. Land the launch post and email inside the same two hours the campaign goes live.
 - **Second push, while traffic is still falling.** A week-long run never settles into a flat stretch, so the second push slows a decline that is already underway.
-- **The quiet middle.** Traffic sits at a quarter to a third of the launch share and barely moves day to day. A partner or creator post belongs here, to give the flat stretch something to move on.
+- **The quiet middle.** Traffic sits at under half the peak day's share and barely moves day to day. A partner or creator post belongs here, to give the flat stretch something to move on.
 - **The last days.** On a two-week or month-long run, traffic on the close reads a little above the quiet middle by itself. On a week-long run it does not, the decline runs straight to the end. In every case the close stays a fraction of the launch share, so the last-call post, email and countdown sticker go out on schedule regardless. The close is not going to fill itself in.
 
 Read the row for the run length the reader actually has, and quote its days as days since launch before converting
