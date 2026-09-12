@@ -2,9 +2,9 @@
 
 Advice from practice, except the subscription-Action usage table below. The campaign emails that run while entries are open belong to giveaway-promotion-plan, and the opt-in wording on the entry form belongs to giveaway-entry-method-planner. This page picks up at the moment the Winner is announced and the rest of the list is still sitting there.
 
-## Most campaigns collected no marketing permission (extracted)
+## Most campaigns ran no email Action (extracted)
 
-Everything on this page runs on email, and the majority of campaigns never ran an email Action, which is where marketing permission is collected. The share of campaigns
+Everything on this page runs on email, and the majority of campaigns never ran an email Action, so they collected no address through the campaign. Marketing permission is a separate switch, the subscriber checkbox the setup skill describes, and this cut does not measure it. The share of campaigns
 offering an email or newsletter Action rises with size and stays a minority at every size:
 
 <!-- generated:wc_email_band -->
@@ -18,9 +18,9 @@ offering an email or newsletter Action rises with size and stays a minority at e
 | 10,000 or more | 41% | 3,171 | 748 |
 <!-- /generated -->
 
-So in three campaigns out of four at the small end, and in more than half at every size, the campaign holds no
-marketing permission for the Winner or for anyone else who entered, whatever addresses the User Details form
-captured. The table measures which Actions campaigns offered, never how many addresses exist or who ticked a box.
+So in three campaigns out of four at the small end, and in more than half at every size, the campaign ran no
+email Action, so it collected no address through one and has no list for the series on this page to go to.
+The table measures which Actions campaigns offered, never how many addresses exist or who ticked a box.
 Where there is no email Action there is no welcome series and no sunset rule to run, and the public announcement
 is the only message that reaches the people who did not win. Check three things before choosing the message channel:
 
