@@ -35,8 +35,8 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=116,499). upt
 
 A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: the ordinary population, the same 116,499 campaigns as every other cut in this file, which is campaigns of 100 or more Entrants once crypto, ambiguous and purchase-only campaigns are removed, every group at least five businesses. This is the same cut as the family table above, so the two tables can be read together. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
 
-<!-- table -->
-| Action | Campaigns | Businesses | Share who completed it | When required | When optional | How often required |
+<!-- generated:af_actions -->
+| Action | Actions | Businesses | Share who completed it | When required | When optional | How often required |
 |---|---|---|---|---|---|---|
 | Custom Actions | 285,843 | 13,428 | 77 | 99 | 73 | 13% |
 | X Follows | 92,096 | 10,037 | 54 | 79 | 51 | 12% |
@@ -70,48 +70,56 @@ A completions cut of the dataset: `entry_count` is the number of Entrants who co
 | Submit URL | 2,017 | 605 | 19 | 66 | 17 | 14% |
 | LinkedIn Follow | 1,782 | 382 | 28 | 51 | 28 | 4% |
 | X Hashtag Posts | 1,518 | 535 | 36 | 77 | 34 | 9% |
-<!-- /table -->
+<!-- /generated -->
 
 Email Subscriptions is completed by almost everyone who enters, more so when required.
 
+<!-- generated:af_email_context -->
 | Context | Completion |
 |---|---|
 | Overall | 85 per 100 Entrants |
 | Required | 102 per 100 |
 | Optional | 78 per 100 |
+<!-- /generated -->
 
 Businesses make it required about 33 times in 100 that they offer it.
 
-Visiting a profile still beats following it on the same network: Instagram Profile Visits completes at about 82 per 100 Entrants against about 52 for Instagram Follows, roughly 60% higher, the same gap the family table above shows between visiting and following in general. [Each figure rests on well over 1,000 campaigns and 1,000 businesses.]
+Visiting a profile still beats following it on the same network: Instagram Profile Visits completes at about 82 per 100 Entrants against about 52 for Instagram Follows, roughly 60% higher, the same gap the family table above shows between visiting and following in general. [Each figure rests on well over 1,000 Actions and 1,000 businesses.]
 
 A follow required completes far more often than the same follow left optional, across every network tested.
 
+<!-- generated:af_follow_required -->
 | Action | Required | Optional |
 |---|---|---|
 | TikTok Follows | 56 per 100 | 34 per 100 |
 | X Follows | 79 per 100 | 51 per 100 |
 | Instagram Follows | 80 per 100 | 50 per 100 |
+<!-- /generated -->
 
-TikTok Follows is made required for about 7 of every 100 campaigns that offer it.
+TikTok Follows is made required about 7 times in every 100 that it is offered.
 
 ## Entry worth
 
 Worth changes what an Entrant is credited, not whether they complete the action, and its effect differs by action. Worth is a lever for sharing, not for the other families: Viral Share completion climbs with worth and then flattens above 5, the campaign's entries per Entrant rise with it, while Email Subscriptions, follows and Custom Actions are flat or fall as worth rises. Worth stays advice, never a mandated value.
 
+<!-- generated:af_worth_share -->
 | Worth | Viral Share completion |
 |---|---|
 | 1 | 9 per 100 Entrants |
 | 2 | 11 per 100 |
 | 3-4 | 12 per 100 |
 | 5-9 | 13 per 100 |
-| 10+ | 13 per 100 |
+| 10+ | 12 per 100 |
+<!-- /generated -->
 
+<!-- generated:af_worth_flat -->
 | Action | Worth 1 | Worth 10+ |
 |---|---|---|
-| Email Subscriptions | 78 per 100 | 79 per 100, flat |
-| Custom Actions | 82 per 100 | 63 per 100 |
+| Email Subscriptions | 78 per 100 | 79 per 100 |
+| Custom Actions | 82 per 100 | 62 per 100 |
+<!-- /generated -->
 
-Typical settings: share worth typically sits at 4, with the top quarter of campaigns setting it at 10 or higher, email typically at 1, follows typically at 1. [Viral Share bands: 3,607 to 12,774 campaigns depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
+Typical settings: share worth typically sits at 4, with the top quarter of campaigns setting it at 10 or higher, email typically at 1, follows typically at 1. [Viral Share bands: 3,607 to 12,774 Actions depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
 
 ## Action settings from the config
 
@@ -119,32 +127,45 @@ Share who completed it by settings read from the action config, the ordinary pop
 
 **Share text.** Medium-length copy completes about a third more often than long copy.
 
+<!-- generated:af_share_text -->
 | Share text trait | Completion |
 |---|---|
-| 60-140 characters | 12 per 100 (30,789 campaigns, 5,447 businesses) |
-| Over 140 characters | 9 per 100 (10,075 campaigns, 1,867 businesses) |
-| Plain, no link or hashtag | 11 per 100 (40,545 campaigns, 6,729 businesses) |
-| With hashtag | 10 per 100 (385 campaigns, 81 businesses) |
-| With link | 11 per 100 (1,877 campaigns, 336 businesses) |
+| 60-140 characters | 12 per 100 (30,789 Actions, 5,447 businesses) |
+| Over 140 characters | 9 per 100 (10,075 Actions, 1,867 businesses) |
+| Plain, no link or hashtag | 11 per 100 (40,545 Actions, 6,729 businesses) |
+| With hashtag | 10 per 100 (385 Actions, 81 businesses) |
+| With link | 11 per 100 (1,877 Actions, 336 businesses) |
+<!-- /generated -->
 
 Neither a link nor a hashtag in the share text changes completion on this population. The link row runs at 11 per 100 against 11 for plain text, and 9% of link actions were mandatory against 6% of plain ones, too close together to read anything into.
 
-**Steps inside one Action.** Completion holds through the first few steps, slips through five to seven, then falls hard from eight steps on. This cut counts the steps configured inside a single Entry Method, and its denominator is Actions, not campaigns. It says nothing about how many Entry Methods a campaign should carry, which is the `cmp_methods` table further up this file. A measured answer quoted this row to judge a ten-method entry list and built its whole recommendation on a figure about something else.
+**Steps inside one Action.** Completion holds through the first four steps, slips through five to seven, and sits below half at every count from eight on. This cut counts the steps configured inside a single Entry Method, and its denominator is Actions, not campaigns. It says nothing about how many Entry Methods a campaign should carry, which is the `cmp_methods` table further up this file. A measured answer quoted this row to judge a ten-method entry list and built its whole recommendation on a figure about something else.
 
+<!-- generated:af_steps -->
 | Steps required | Completion |
 |---|---|
-| 1 | 77 per 100 (277,080 actions, 12,860 businesses) |
-| 2-4 | 67-102 per 100 (1,377 to 2,020 actions, 501 to 817 businesses each) |
-| 5-7 | 44-63 per 100 (1,900 to 3,278 actions, 709 to 1,170 businesses each) |
-| 8 | 27 per 100 (1,691 actions, 440 businesses) |
-| 11 | 17 per 100 (485 actions, 182 businesses) |
+| 1 | 77 per 100 (277,080 Actions, 12,860 businesses) |
+| 2 | 91 per 100 (1,377 Actions, 501 businesses) |
+| 3 | 102 per 100 (1,942 Actions, 737 businesses) |
+| 4 | 67 per 100 (2,020 Actions, 817 businesses) |
+| 5 | 63 per 100 (3,278 Actions, 1,170 businesses) |
+| 6 | 44 per 100 (1,900 Actions, 709 businesses) |
+| 7 | 49 per 100 (2,356 Actions, 912 businesses) |
+| 8 | 27 per 100 (1,691 Actions, 440 businesses) |
+| 9 | 28 per 100 (1,035 Actions, 334 businesses) |
+| 10 | 48 per 100 (1,619 Actions, 416 businesses) |
+| 11 | 17 per 100 (485 Actions, 182 businesses) |
+| 14 | 38 per 100 (529 Actions, 79 businesses) |
+<!-- /generated -->
 
 **Paid actions.** A paid step costs a Custom Action most of its completion and leaves a Twitch subscription where it was.
 
+<!-- generated:af_paid -->
 | Action | Free | Paid |
 |---|---|---|
-| Twitch Subscribers | 11 per 100 (6,700 campaigns, 847 businesses) | 11 per 100 (1,704 campaigns, 487 businesses) |
-| Custom Actions | 77 per 100 (283,662 campaigns, 13,368 businesses) | 19 per 100 (2,181 campaigns, 633 businesses) |
+| Twitch Subscribers | 11 per 100 (6,700 Actions, 847 businesses) | 11 per 100 (1,704 Actions, 487 businesses) |
+| Custom Actions | 77 per 100 (283,662 Actions, 13,368 businesses) | 19 per 100 (2,181 Actions, 633 businesses) |
+<!-- /generated -->
 
 ## SMS and messaging opt-in (advice, no dataset support)
 
@@ -186,89 +207,126 @@ The business's own server, channel, page or app against how much its join, follo
 
 Discord, the business's own server (by_discord_server_size, action is a Discord server join):
 
+<!-- generated:af_discord -->
 | Server size | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| 1k to 10k members | 105 | 52 | 67 | 11% |
-| 10k to 100k members | 145 | 38 | 64 | 9% |
+| Under 1k | 771 | 72 | 42 | 17% |
+| 1k to 10k | 3,159 | 243 | 47 | 18% |
+| 10k to 100k | 4,912 | 280 | 51 | 20% |
+| 100k+ | 2,072 | 67 | 84 | 6% |
+<!-- /generated -->
 
 Telegram, the business's own channel (by_telegram_size, action is a channel join plus a channel post view):
 
+<!-- generated:af_telegram -->
 | Channel size | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| Under 1k | 4,206 | 1,198 | 129 | 4% |
-| 1k to 10k | 5,788 | 1,041 | 119 | 6% |
-| 10k to 100k | 6,626 | 470 | 119 | 1% |
-| 100k+ | 2,006 | 95 | 103 | 0% |
+| Under 1k | 6,349 | 1,437 | 119 | 3% |
+| 1k to 10k | 8,033 | 1,158 | 114 | 8% |
+| 10k to 100k | 8,379 | 544 | 117 | 1% |
+| 100k+ | 2,505 | 106 | 105 | 0% |
+<!-- /generated -->
 
-Steam groups (by_steam_group_size): no group size cleared the five-business floor for reporting. No figure to report.
+Steam, the business's own group (by_steam_group_size, action is a Steam group join):
+
+<!-- generated:af_steam -->
+| Group size | Campaigns | Businesses | Share who completed it | Email offered |
+|---|---|---|---|---|
+| Under 1k | 64 | 26 | 30 | 9% |
+| 1k to 10k | 117 | 16 | 47 | 55% |
+| 10k to 100k | 53 | 11 | 55 | 2% |
+<!-- /generated -->
 
 Patreon, the business's own page (by_patreon_size, action is a Patreon page visit):
 
+<!-- generated:af_patreon -->
 | Patron count | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| 100 to 999 | 43 | 21 | 65 | 14% |
-| 1k+ | 37 | 21 | 63 | 32% |
+| Under 100 | 134 | 60 | 64 | 6% |
+| 100 to 999 | 167 | 58 | 66 | 8% |
+| 1k+ | 74 | 31 | 62 | 26% |
+<!-- /generated -->
 
 Bluesky, the business's own account (by_bluesky_followers, action is a Bluesky follow):
 
+<!-- generated:af_bluesky -->
 | Follower count | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| Under 1k | 93 | 58 | 18 | 29% |
-| 1k to 10k | 206 | 71 | 25 | 34% |
-| 10k to 100k | 50 | 15 | 30 | 24% |
+| Under 1k | 1,017 | 296 | 25 | 11% |
+| 1k to 10k | 844 | 140 | 35 | 25% |
+| 10k to 100k | 86 | 26 | 30 | 34% |
+<!-- /generated -->
 
 Kick, the business's own channel (by_kick_followers, action is a Kick follow):
 
+<!-- generated:af_kick -->
 | Follower count | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| 1k to 10k | 123 | 20 | 38 | 15% |
-| 10k to 100k | 101 | 13 | 51 | 20% |
+| Under 1k | 258 | 76 | 36 | 15% |
+| 1k to 10k | 280 | 43 | 49 | 12% |
+| 10k to 100k | 116 | 18 | 54 | 17% |
+<!-- /generated -->
 
 App downloads by install count (by_app_installs, action is an app download):
 
+<!-- generated:af_app_installs -->
 | Installs | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| Under 100k | 468 | 179 | 41 | 61% |
-| 100k to 1m | 411 | 110 | 42 | 50% |
-| 1m to 10m | 440 | 69 | 40 | 21% |
-| 10m+ | 499 | 32 | 77 | 1% |
+| Under 100k | 1,107 | 297 | 40 | 52% |
+| 100k to 1m | 917 | 160 | 51 | 45% |
+| 1m to 10m | 591 | 105 | 41 | 24% |
+| 10m+ | 1,114 | 47 | 69 | 1% |
+<!-- /generated -->
 
 App downloads by genre (by_app_genre):
 
+<!-- generated:af_app_genre -->
 | Genre | Campaigns | Businesses | Share who completed it | Email offered |
 |---|---|---|---|---|
-| Finance | 554 | 79 | 79 | 3% |
-| Shopping | 542 | 69 | 36 | 48% |
-| Entertainment | 129 | 31 | 47 | 65% |
-| Sports | 75 | 27 | 39 | 56% |
-| Tools | 73 | 17 | 103 | 10% |
-| Health and fitness | 49 | 17 | 66 | 16% |
-| Travel and local | 50 | 16 | 24 | 58% |
-| Role playing | 33 | 15 | 73 | 3% |
-| Social | 30 | 17 | 79 | 27% |
-| News and magazines | 38 | 7 | 53 | 92% |
-| Action | 36 | 5 | 77 | 14% |
+| Finance | 1,132 | 90 | 70 | 3% |
+| Shopping | 878 | 98 | 37 | 50% |
+| Entertainment | 243 | 50 | 51 | 61% |
+| Travel and local | 166 | 31 | 25 | 60% |
+| Sports | 144 | 38 | 45 | 56% |
+| Tools | 132 | 27 | 64 | 8% |
+| Health and fitness | 103 | 27 | 66 | 21% |
+| Social | 103 | 23 | 81 | 25% |
+| Card | 80 | 5 | 42 | 79% |
+| Lifestyle | 79 | 37 | 50 | 47% |
+| News and magazines | 74 | 11 | 44 | 92% |
+| Action | 70 | 12 | 82 | 11% |
+| Productivity | 65 | 8 | 40 | 2% |
+| Medical | 61 | 5 | 21 | 7% |
+| Food and drink | 57 | 27 | 30 | 40% |
+| Music and audio | 51 | 12 | 50 | 29% |
+| Role playing | 46 | 21 | 73 | 17% |
+| Education | 42 | 19 | 34 | 36% |
 
-News and magazines runs 7 businesses and Action runs 5. Both advice only.
+Under this skill's floor, advice only: Card 5 businesses, Productivity 8 businesses, Medical 5 businesses.
+<!-- /generated -->
 
-Apps under 1m installs offer email in half or more of campaigns, and the 1m to 10m band drops to a fifth. Above 10m installs, offered email drops to 1% and completion on the download action itself is highest, about 77 of every 100, likely large apps that no longer need the asset a smaller app would chase.
+Apps under 1m installs offer email in around half of campaigns, and the 1m to 10m band drops to a quarter. Above 10m installs, offered email drops to 1% and completion on the download action itself is highest, about 69 of every 100, likely large apps that no longer need the asset a smaller app would chase.
 
 YouTube channel size (by_youtube_subscribers), methods and referrals:
 
+<!-- generated:af_youtube_size -->
 | Subscribers | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email completed % of Entrants |
 |---|---|---|---|---|---|
-| Under 1k | 180 | 23 | 6 | 38 | no email offered |
-| 1k to 10k | 90 | 36 | 3 | 85 | 60 |
-| 10k to 100k | 247 | 91 | 6 | 17 | 77 |
-| 100k to 1m | 1,173 | 187 | 4 | 7 | 87 |
-| 1m+ | 643 | 80 | 4 | 8 | 51 |
+| Under 1k | 709 | 203 | 5 | 24 | 80 |
+| 1k to 10k | 884 | 321 | 5 | 23 | 67 |
+| 10k to 100k | 2,079 | 490 | 4 | 18 | 76 |
+| 100k to 1m | 4,340 | 396 | 6 | 3 | 87 |
+| 1m+ | 817 | 96 | 4 | 8 | 71 |
+<!-- /generated -->
 
-Small channels lean on referrals: channels with 1,000 to 10,000 subscribers record the most referral entries of any group and run the fewest methods, per the table above. YouTube gaming channels (by_youtube_gaming) run the opposite shape against other YouTube channels, more methods and far fewer referral entries:
+Small channels lean on referrals: channels under 10,000 subscribers record 23 or 24 referral entries per 100 Entrants, against 3 at 100,000 to 1m subscribers, per the table above. YouTube gaming channels (by_youtube_gaming) run the opposite shape against other YouTube channels, more methods and far fewer referral entries:
 
+<!-- generated:af_youtube_gaming -->
 | Channel type | Methods | Referral entries per 100 Entrants |
 |---|---|---|
-| Gaming | 5 (964 campaigns, 220 businesses) | 6 |
-| Other | 4 (1,307 campaigns, 184 businesses) | 20 |
+| Gaming | 6 (5,826 campaigns, 864 businesses) | 3 |
+| Other | 4 (2,797 campaigns, 599 businesses) | 19 |
+<!-- /generated -->
 
 ### Does a bigger channel mean a bigger campaign? (extracted)
 
@@ -276,26 +334,30 @@ Every figure in this subsection comes from businesses whose action config named 
 
 Channel size barely predicts campaign size, in either direction. A big channel does not guarantee a big campaign, and on this same evidence a small channel does not cap one either. If the business's channel is small, that is not the constraint to plan around.
 
-| Channel type | Correlation with campaign Entrants |
+<!-- generated:af_channel_predicts -->
+| Channel type | Spread in Entrants explained by channel size (r squared) |
 |---|---|
 | YouTube subscribers | 15.6% (9,267 campaigns, 1,518 businesses) |
+| Discord server size | 8.6% (10,172 campaigns, 698 businesses) |
 | Telegram channel size | 1.9% (24,612 campaigns, 4,249 businesses) |
-| Discord server size | 0.1% (728 campaigns, 196 businesses) |
+<!-- /generated -->
 
 [Extracted from `analysis/output/industries.json`, `channel_size_predicts_campaign_size`.]
 
-The raw YouTube conversion gap by subscriber count disappears once you compare like-for-like within an industry, and it reverses inside gaming and esports specifically: campaigns there convert at 40.9% with a 100,000-to-1m subscriber channel against 33.6% with a 1m+ channel. [376 and 122 campaigns.] Don't cite the version of this gap that doesn't compare like with like. [Extracted from `analysis/output/industries.json`, `channel_size_within_industry`.]
+The raw YouTube conversion gap by subscriber count keeps its shape once you compare like-for-like inside gaming and esports specifically: campaigns there convert at 44.7% with a 100,000-to-1m subscriber channel against 34.3% with a 1m+ channel, and 32.8% under 1,000 subscribers. [1,077, 168 and 278 campaigns.] Cite the like-for-like figure, never the raw one. [Extracted from `analysis/output/industries.json`, `channel_size_within_industry`.]
 
-Telegram's size gap holds up better. It survives a like-for-like check inside finance and crypto specifically, one of the few industries with enough channel-size volume to test. [Conversion runs 32.3% under 1,000 channel members up to 39.1% at 100,000+, 2,008 campaigns/967 businesses under 1,000, 797/64 at 100,000+.] This is the finance_crypto industry label, an exception to this skill's usual crypto exclusion made here only because the question is channel size, not entry mechanics. It also holds within two of the three Entrant-size groups tested: campaigns of 1,000-2,500 and 2,500-10,000 Entrants rise with channel size at every step, campaigns of 10,000 or more do not. [Extracted from `analysis/output/industries.json`, `channel_size_within_industry` and `channel_size_within_contestant_band`.]
+Telegram's size gap holds up better. It survives a like-for-like check inside finance and crypto specifically, one of the few industries with enough channel-size volume to test. [Conversion runs 31.3% under 1,000 channel members up to 35.8% at 100,000+, 3,294 campaigns/991 businesses under 1,000, 1,043/67 at 100,000+.] This is the finance_crypto industry label, an exception to this skill's usual crypto exclusion made here only because the question is channel size, not entry mechanics. It also holds within three of the six Entrant-size groups tested: campaigns of 500-1,000, 1,000-2,500 and 2,500-10,000 Entrants rise with channel size at every step, the smaller two groups and campaigns of 10,000 or more do not. [Extracted from `analysis/output/industries.json`, `channel_size_within_industry` and `channel_size_within_contestant_band`.]
 
-Channel age separates channels of the same size. Among YouTube channels with 100,000 to 1m subscribers, ones created before 2017 convert notably higher than ones created 2017 or later. [48.8% against 34.6%, 980 campaigns/124 businesses pre-2017, 167/56 later.] The pattern reverses for the smallest channels, where the newer ones convert higher. [Extracted from `analysis/output/industries.json`, `youtube_subscribers_vs_channel_age`.]
+Channel age separates channels of the same size. Among YouTube channels with 100,000 to 1m subscribers, ones created before 2017 convert notably higher than ones created 2017 or later. [62.8% against 33.5%, 3,709 campaigns/253 businesses pre-2017, 579/131 later.] The pattern reverses for the smallest channels, where the newer ones convert higher. [Extracted from `analysis/output/industries.json`, `youtube_subscribers_vs_channel_age`.]
 
 Bigger channels pull less direct traffic to the campaign. A bigger audience relies more on the platform surfacing the campaign and less on people going straight to it.
 
+<!-- generated:af_direct_traffic -->
 | Channel | Smaller size | Larger size |
 |---|---|---|
-| YouTube (10k-100k vs 1m+ subscribers) | 26.7% direct (247 campaigns) | 13.4% direct (643 campaigns) |
-| Telegram (1k-10k vs 100k+ members) | 69.2% direct (3,229 campaigns) | 52.0% direct (1,221 campaigns) |
+| YouTube (10k-100k vs 1m+ subscribers) | 30.5% direct (2,079 campaigns) | 14.0% direct (816 campaigns) |
+| Telegram (1k-10k vs 100k+ members) | 62.8% direct (4,897 campaigns) | 46.2% direct (1,603 campaigns) |
+<!-- /generated -->
 
 [Extracted from `analysis/output/industries.json`, `channel_size_vs_direct_traffic`.]
 
