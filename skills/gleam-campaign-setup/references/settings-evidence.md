@@ -126,13 +126,15 @@ Reading it: visits and email signups are completed by most Entrants, and follows
 
 Typical share of Entrants who completed an action, by the action's list position, split by family. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice. Carry that into the sentence that uses the table. "Position does most of the work here" is the claim this cut cannot make, because the action a business put first is the one it cared about most, and a caveat added at the end of the answer does not undo a causal sentence in the body. Measured answers made this exact claim twice.
 
+<!-- generated:se_position -->
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
 |---|---|---|---|
-| Email signup | 101 (1.01, 9,521 Actions) | 78 (0.78, 4,595 Actions) | 73 (0.73, 4,470 Actions) |
-| Visit or view | 98 (0.98, 4,447 Actions) | 87 (0.87, 27,832 Actions) | 75 (0.75, 53,229 Actions) |
-| Follow, subscribe, join | 82 (0.82, 15,548 Actions) | 56 (0.56, 49,352 Actions) | 43 (0.43, 66,981 Actions) |
-| Viral Share, refer | 16 (0.16, 492 Actions) | 12 (0.12, 6,050 Actions) | 11 (0.11, 22,774 Actions) |
-| Content upload | 81 (0.81, 378 Actions) | 27 (0.27, 1,050 Actions) | 13 (0.13, 2,897 Actions) |
+| Email signup | 101 (1.01, 20,986 Actions) | 78 (0.78, 10,182 Actions) | 73 (0.73, 16,859 Actions) |
+| Visit or view | 98 (0.98, 14,449 Actions) | 86 (0.86, 84,512 Actions) | 75 (0.75, 132,797 Actions) |
+| Follow, subscribe, join | 82 (0.82, 20,468 Actions) | 56 (0.56, 75,063 Actions) | 42 (0.42, 116,619 Actions) |
+| Viral Share, refer | 16 (0.16, 993 Actions) | 12 (0.12, 11,344 Actions) | 11 (0.11, 30,470 Actions) |
+| Content upload | 81 (0.81, 2,573 Actions) | 27 (0.27, 4,657 Actions) | 13 (0.13, 6,599 Actions) |
+<!-- /generated -->
 
 Every family sees fewer Entrants complete it the further down the list it sits, Viral Share included. An email signup in first position was completed by about every Entrant and a follow by about four in five, an email fifth or later by about three quarters of Entrants and a follow by about two fifths. Source: `analysis/output/field_cuts.json` `uptake_by_family_and_position`.
 
@@ -202,28 +204,29 @@ Nearly every Viral Share action carried custom share text, not the default, so t
 
 Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Each setting shows the same pattern: fewer choices or shorter waits keep completion higher, and X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above.
 
+<!-- generated:se_config -->
 | Setting | Option | Completion, % of Entrants (decimal) | Actions | Businesses |
 |---|---|---|---|---|
-| Email opt-in checkbox | Off | 92% (0.92) | 13,076 | 4,506 |
-| Email opt-in checkbox | On | 85% (0.85) | 3,872 | 1,618 |
-| Email opt-in checkbox | Auto | 78% (0.78) | 1,165 | 326 |
-| Newsletter description | None | 95% (0.95) | 10,092 | 3,554 |
-| Newsletter description | Long | 81% (0.81) | 6,881 | 2,744 |
-| Newsletter description | Short | 81% (0.81) | 1,140 | 539 |
-| Instagram visit delay | 5 seconds or less | 83% (0.83) | 72,067 | 12,912 |
-| Instagram visit delay | 6 to 15 seconds | 77% (0.77) | 849 | 299 |
-| Instagram visit delay | 16 seconds or more | 61% (0.61) | 417 | 87 |
-| X throwaway account restriction (per campaign) | Open | 49% (0.49) | 87,436 | 10,202 |
-| X throwaway account restriction (per campaign) | Restricted | 38% (0.38) | 8,619 | 839 |
-| Share text length | 60 to 140 characters | 12% (0.12) | 23,207 | 5,447 |
-| Share text length | Over 140 characters | 9% (0.09) | 4,934 | 1,867 |
-| Share text length | Default text | 11% (0.11) | 1,006 | 451 |
-| Secret Code length | 3 characters | 68% (0.68) | 176 | 72 |
-| Secret Code length | 4 to 13 characters (open-ended) | 19–34% | – | – |
-| Secret Code length | 8 characters, fixed-length pattern | 9% (0.09) | 209 | 92 |
-| Actions required | 1 to 7 (range) | 44–102% | – | – |
-| Actions required | 7 (exact) | 49% (0.49) | 1,464 | 912 |
-| Actions required | 8 | 27% (0.27) | 857 | 440 |
+| Email opt-in checkbox | Off | 92% (0.92) | 29,510 | 4,506 |
+| Email opt-in checkbox | On | 85% (0.85) | 9,764 | 1,618 |
+| Email opt-in checkbox | Auto | 78% (0.78) | 7,584 | 326 |
+| Newsletter description | None | 95% (0.95) | 20,856 | 3,554 |
+| Newsletter description | Long | 81% (0.81) | 23,680 | 2,744 |
+| Newsletter description | Short | 81% (0.81) | 2,322 | 539 |
+| Instagram visit delay | 5 seconds or less | 83% (0.83) | 192,023 | 12,912 |
+| Instagram visit delay | 6 to 15 seconds | 76% (0.77) | 1,672 | 299 |
+| Instagram visit delay | 16 seconds or more | 60% (0.60) | 612 | 87 |
+| X throwaway account restriction (per campaign) | Open | 49% (0.49) | 134,484 | 10,202 |
+| X throwaway account restriction (per campaign) | Restricted | 38% (0.38) | 7,355 | 839 |
+| Share text length | 60 to 140 characters | 12% (0.12) | 30,789 | 5,447 |
+| Share text length | Over 140 characters | 9% (0.09) | 10,075 | 1,867 |
+| Share text length | Default text | 11% (0.11) | 1,667 | 451 |
+| Secret Code length | 4 to 13 characters (open-ended) | 19 to 34% | - | - |
+| Secret Code length | 8 characters, fixed-length pattern | 9% (0.09) | 449 | 92 |
+| Actions required | 1 to 7 (range) | 44 to 102% | - | - |
+| Actions required | 7 (exact) | 49% (0.49) | 2,356 | 912 |
+| Actions required | 8 | 27% (0.27) | 1,691 | 440 |
+<!-- /generated -->
 
 Actions required is the exception worth flagging on its own: completion falls away as the number required climbs, and drops by roughly half again between 7 and 8.
 
@@ -328,13 +331,15 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   Follow_x follows the email pattern from 2,500 Entrants up, not below it. Discord_join is not a rule either way, its mandatory cost is cheaper at one size and pricier at the other. (Figures from `asset_yield.json`'s `yield_by_asset_and_mandatory` cut.)
 - Email provider: every provider completes email about as often as no integration or a little more, and the providers that lead also make the action mandatory most often, so read the gap as the setup around it.
 
-  | Email provider | Completion, % of Entrants (decimal) | Actions |
-  |---|---|---|
-  | No integration | 83% (0.832) | 11,039 |
-  | MailChimp | 85% (0.852) | 2,545 |
-  | Klaviyo | 96% (0.956) | 1,917 |
-  | MailerLite | 100% (1.004) | 243 |
-  | ConstantContact | 86% (0.863) | 186 |
+<!-- generated:se_providers -->
+  | Email provider | Completion, % of Entrants (decimal) | Actions | Businesses |
+  |---|---|---|---|
+  | No integration | 83% (0.832) | 30,857 | 3,274 |
+  | MailChimp | 85% (0.852) | 5,890 | 1,141 |
+  | Klaviyo | 96% (0.956) | 3,995 | 1,114 |
+  | MailerLite | 100% (1.004) | 822 | 112 |
+  | ConstantContact | 86% (0.863) | 461 | 73 |
+<!-- /generated -->
 - Marketing stack: businesses running Klaviyo offer email far more often, and are far more often on Shopify too.
 
   | | Runs Klaviyo | Doesn't run Klaviyo |

@@ -309,16 +309,16 @@ And by the business's vertical:
 
 | Vertical | Standouts | The rest | Ratio |
 |---|---|---|---|
-| Music media | 21% | 23% | 0.92 |
+| Music and media | 21% | 23% | 0.92 |
 | Gaming | 16% | 18% | 0.89 |
 | Technology | 14% | 11% | 1.22 |
 | Unclassified | 14% | 14% | 0.97 |
-| Fitness outdoor | 9% | 9% | 0.99 |
+| Fitness and outdoor | 9% | 9% | 0.99 |
 | Home | 7% | 4% | 1.63 |
-| Fashion beauty | 6% | 6% | 1.09 |
-| Food drink | 6% | 4% | 1.44 |
-| Kids family pets | 3% | 6% | 0.61 |
-| Travel events | 3% | 3% | 0.87 |
+| Fashion and beauty | 6% | 6% | 1.09 |
+| Food and drink | 6% | 4% | 1.44 |
+| Kids, family and pets | 3% | 6% | 0.61 |
+| Travel and events | 3% | 3% | 0.87 |
 <!-- /generated -->
 
 The pattern is a business that has run many campaigns, more often with a secret code from a stream or video (see feature table above). Add Twitch and Discord actions, a single hero Prize, and a long list of actions with a daily bonus. On the vertical table, home and food and drink are the ones over-represented, and gaming sits slightly under its share (vertical names fold similar industry labels, apparel, beauty and jewellery under fashion and beauty and so on). Firearms retailers with specialist audiences are the extreme case on Prize category, over three times their share. Cash, gift cards and bundles are under-represented. Standouts got 33% to enter, under the typical figure, so whatever reach they found, a higher share of viewers entering is not what marked them out.

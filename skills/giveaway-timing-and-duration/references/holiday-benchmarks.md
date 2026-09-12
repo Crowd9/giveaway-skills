@@ -246,7 +246,7 @@ Reading it:
 | 50, 51 | weeks beginning 07 Dec, 14 Dec | 41% each |
 | 37, 42 | weeks beginning 07 Sep, 12 Oct | 32% each |
 
-- Entrants vary little by week. Week 50 is the highest at 572 and week 15 the lowest at 438, a spread narrow enough that no week is worth choosing for it alone.
+- Entrants vary little by week. Week 50 is the highest at 572 and weeks 15 and 46 the lowest at 438, a spread narrow enough that no week is worth choosing for it alone.
 <!-- /generated -->
 - Start day of the month makes no difference: the first week of the month and the last get within a point of each other on Conversion Rate.
 
