@@ -68,6 +68,37 @@ JARGON = r"\b(contestant band|size band|per contestant|n\s*=\s*\d|stratified|coh
 BAN = r"\b(so (skip|avoid|drop|do not add|don't add|do not use|don't use)|(skip|avoid) (the|a|an|any) \w+ action|not worth (adding|offering|running|using)|(do not|don't) (bother|add|offer) [a-z]|leave (it|that|the \w+) out)\b"
 META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(i|we) (sent|gave|listed|showed) (you|above)|as (i|we) (said|noted) above|the (list|table|numbers) above (is|are|shows)|to summari[sz]e|in short,|in summary)\b"
 
+# A sentence asserting how an outside party behaves, or how often something happens, with no figure in it and no
+# word saying where it came from. Across six measured rounds the figures all traced to a reference and the prose
+# beside them did not: "that email send is the fastest reach you have", "a bio link pointing at last month's
+# campaign is the commonest version of this", "role addresses rarely become customers". Every one read like a
+# finding and none had a line behind it. The gate is loose on purpose. An instruction (a sentence opening on a
+# verb) is exempt because it claims nothing about the world, and a sentence naming a rule, a policy, the docs, the
+# data or a practice is exempt because it names its source. What is left is the sentence the writer has to either
+# source, turn into the thing to do, or cut.
+PARTY = (r"\b(instagram|facebook|tiktok|twitter|youtube|discord|telegram|reddit|twitch|pinterest|linkedin|snapchat|whatsapp"
+         r"|gmail|outlook|apple|google|klaviyo|mailchimp|shopify|paypal|stripe|random\.org|the platform|platforms|networks?"
+         r"|the algorithm|regulators?|carriers?|payment providers?|inbox(es)?|spam folder|promotions tab|app stores?|courier|customs)\b")
+GENERAL = (r"\b(plenty of|usually|typically|often|rarely|mostly|tends? to|commonest|the most \w+"
+           r"|the (biggest|largest|fastest|slowest|cheapest|best|worst|strongest|weakest|second biggest)"
+           r"|(more|less|fewer|better|worse|higher|lower|faster|slower|cheaper) \w*\s?than)\b")
+SOURCED = r"\b(rules?|policy|policies|terms|guidelines|law|laws|legal|practice|data|campaigns|reference|measured|according to|docs|documentation)\b"
+INSTRUCTION = (r"^(\*\*)?(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm"
+               r"|post|put|place|screenshot|report|reply|email|dm|message|name|state|link|open|paste|copy|export|download|upload|sort|read"
+               r"|treat|plan|budget|expect|hold|leave|make|take|let|do|don't|do not|never|always|announce|tag|thank|quote|cap|freeze"
+               r"|record|suppress|fix|publish|pin|schedule|delete|for|to|so|then|next|and|but|or|on|in|at|by)\b")
+
+
+def unsourced_claims(text):
+    out = []
+    for s in sentences(prose_only(text)):
+        t = s.strip().lstrip("*-# ")
+        if re.search(r"\d", t) or t.endswith("?") or re.search(SOURCED, t, re.I) or re.match(INSTRUCTION, t, re.I):
+            continue
+        if re.search(PARTY, t, re.I) or re.search(GENERAL, t, re.I):
+            out.append(t)
+    return out
+
 
 
 # Gleam's product nouns are checked on prose only. A file name, a flag or a URL carries the word in lower case by
@@ -166,6 +197,7 @@ def check(text):
         # long sentence, so with no ceiling it rewarded the runaway it should have caught.
         "runaway_sentences": sum(1 for n in lens if n > 45),
         "figure_blizzards": blizzards(text),
+        "unsourced_claims": len(unsourced_claims(text)),
     }
 
 # Same patterns, keyed by the counter they feed, so --show can quote what tripped each one.
@@ -257,6 +289,19 @@ def self_test():
     fenced = "Pick it. " + "```\n" + " ".join(["word"] * 80) + "\n```\n"
     assert check(fenced)["longest_sentence"] < 45, check(fenced)
     assert check("You " + " ".join(["run"] * 60) + " today.")["runaway_sentences"] == 1
+    # a claim about an outside party or a rate with nothing behind it blocks; the same thought as an
+    # instruction, with a figure, or naming its source does not
+    claims = check("That email send is the fastest reach you have. A brand account lands in a folder plenty of people never open.\n"
+                   "Facebook prohibits share-to-enter.\n")
+    assert claims["unsourced_claims"] == 3, claims
+    clean = check("Send the email first, since it lands the same hour. Facebook's promotion rules prohibit share-to-enter.\n"
+                  "Mail arrived 3 days after the other channels across 1,904 campaigns.\n")
+    assert clean["unsourced_claims"] == 0, clean
+    with open(fh.name, "w") as f2:
+        f2.write("Pick the coffee subscription. That email send is the fastest reach you have.\n"
+                 "Ask them which matters more to you this quarter.\n")
+    out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
+    assert "FAIL" in out and "unsourced claim: That email send" in out, f"an unsourced claim must block and be quoted, got: {out}"
     _os.unlink(fh.name)
     print("self-test passed")
 
@@ -275,9 +320,13 @@ if __name__ == "__main__":
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
-                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"])
+                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
+        # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an
+        # instruction, or cut it. A count alone sends the writer hunting.
+        for s in unsourced_claims(text):
+            print(f"  unsourced claim: {s}")
         if verbose:
             for name, line, quote in show(text):
                 print(f"  {name} line {line}: {quote}")
