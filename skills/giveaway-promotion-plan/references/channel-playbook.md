@@ -416,9 +416,8 @@ second channel is worth less than the first and the fifth is worth less again. W
 effort, the one reaching a warmer audience wins on Conversion Rate, and the one reaching a bigger cold audience
 wins on raw Entrants by less than its size suggests.
 
-The number of traffic sources a campaign records rises with the Impressions it records, from a typical 8 sources
-in the lowest fifth to 25 in the highest, so a wide channel mix in this data is a consequence of reach rather
-than a plan that produced it. Nothing here can price a channel a business has not tried.
+How many traffic sources a campaign records is not in this cut, so nothing here can say whether a wide channel
+mix produced the reach or followed from it. Nothing here can price a channel a business has not tried.
 
 Source: `analysis/output/reach_returns.json`.
 

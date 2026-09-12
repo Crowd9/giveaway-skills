@@ -470,16 +470,28 @@ The entry-method-planner skill holds the table of actions over-represented in th
 
 The entry-method-planner skill holds the share of Entrants who completed it by question type, by share copy traits, by visit destination and by the newsletter description under the email action (see table). The idea generator holds title wording. Load them when the user is writing the action titles and the description.
 
-| Measure | Category | Completion, % of Entrants |
-|---|---|---|
-| Question type | Detail capture | 97 |
-| Question type | Trivia | 84 |
-| Question type | Preference | 75 |
-| Visit destination | Own site | 96 |
-| Visit destination | YouTube | 81 |
-| Visit destination | Other sites | 70 |
-| Newsletter description (email action) | None | 95 |
-| Newsletter description (email action) | Any description | 84 |
+<!-- generated:se3_wording -->
+| Measure | Category | Actions | Businesses | Completed it, per 100 Entrants (typical) |
+|---|---|---|---|---|
+| Question type | other | 6,937 | 1,509 | 75 |
+| Question type | detail capture | 6,755 | 851 | 68 |
+| Question type | preference | 3,475 | 898 | 70 |
+| Question type | trivia | 1,640 | 325 | 62 |
+| Question type | feedback or open | 839 | 374 | 86 |
+| Visit destination | another site | 121,345 | 6,668 | 77 |
+| Visit destination | YouTube | 49,326 | 7,552 | 85 |
+| Visit destination | the business's own site | 10,195 | 2,564 | 97 |
+| Visit destination | another Gleam campaign | 583 | 271 | 85 |
+| Visit destination | Steam | 303 | 30 | 79 |
+| Visit destination | Instagram | 194 | 39 | 95 |
+| Visit destination | Facebook | 109 | 33 | 57 |
+| Visit destination | Amazon | 100 | 29 | 69 |
+| Newsletter description (email action) | no description | 20,856 | 3,554 | 95 |
+| Newsletter description (email action) | description without those | 18,701 | 2,478 | 81 |
+| Newsletter description (email action) | mentions frequency or unsubscribe | 7,301 | 863 | 81 |
+<!-- /generated -->
+
+Source: `analysis/output/text_and_context.json` keys `question_types`, `visit_destinations` and `newsletter_wording`, the same keys the planner's tables read.
 
 ## Settings the other skills already measured
 

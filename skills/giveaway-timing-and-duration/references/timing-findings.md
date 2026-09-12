@@ -94,20 +94,20 @@ Close day of the week, all the campaigns behind these numbers:
 
 Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the dataset, so pick the close time for your audience and your own working hours.
 
-Holding run length fixed, close-day type makes no real difference: every gap sits under two points with no consistent direction. Without holding the run length fixed, a raw comparison would mix short flash campaigns that close mid-week against long advent-style runs that close disproportionately in the holiday period, and holding it fixed removes that mix-up.
+Holding run length fixed, close-day type makes little difference: a weekend and a weekday close sit within about a point of each other at both lengths, and a public-holiday close sits under three points below them in 1-7 day runs and within a point at 8-14. Without holding the run length fixed, a raw comparison would mix short flash campaigns that close mid-week against long advent-style runs that close disproportionately in the holiday period, and holding it fixed removes that mix-up. A public holiday is read from the business's own country against the Nager.Date calendar.
 
-| Duration | Close type | Conversion Rate | Actions per Entrant |
-|---|---|---|---|
-| 1-7 days | Weekend | 43.8% | 4.30 |
-| 1-7 days | Weekday | 43.6% | 3.90 |
-| 1-7 days | Public holiday | 42.0% | n/a |
-| 8-14 days | Weekend | 32.3% | 4.51 |
-| 8-14 days | Weekday | 32.1% | 4.63 |
-| 8-14 days | Public holiday | 31.8% | n/a |
+<!-- generated:tm2_close_type -->
+| Duration | Close type | Campaigns | Businesses | Conversion Rate (campaigns with no repeatable action) | Actions per Entrant |
+|---|---|---|---|---|---|
+| 1-7 days | Weekday | 23,821 | 4,450 | 41.3% (16,519) | 3.76 |
+| 1-7 days | Weekend | 8,295 | 2,484 | 41.4% (5,483) | 3.87 |
+| 1-7 days | Public holiday | 1,392 | 730 | 38.6% (976) | 3.83 |
+| 8-14 days | Weekday | 18,248 | 5,247 | 28.2% (11,629) | 4.41 |
+| 8-14 days | Weekend | 6,103 | 2,734 | 29.3% (4,097) | 4.42 |
+| 8-14 days | Public holiday | 1,218 | 737 | 28.7% (758) | 4.39 |
+<!-- /generated -->
 
-[Campaigns/businesses: 2,406/712 (weekend, 1-7d), 6,936/1,477 (weekday, 1-7d), 433/239 (holiday, 1-7d, checked against the Nager.Date calendar), 1,796/972 (weekend, 8-14d), 5,977/2,117 (weekday, 8-14d), 387/287 (holiday, 8-14d).]
-
-One secondary pattern does not repeat across sizes: a weekend close brings about 10% more Actions per Entrant than a weekday close in 1-7 day campaigns, a gap not present at 8-14 days.
+Actions per Entrant sit within a tenth of an action across the three close types at both lengths, so no secondary pattern survives either.
 
 Source: `analysis/output/text_and_context.json` (`overlap_clean`, `overlap_all`) for the overlap figures, `analysis/output/calendar.json` (`by_close_day_type`) for the close day.
 
@@ -169,14 +169,20 @@ For campaigns of 10,000 or more Entrants the bend moves later and gets weaker, a
 
 Entrants per day of the run, not just per campaign, fall well past the launch window as duration increases, in every industry checked. This cannot separate a business choosing a longer run from also choosing a smaller Prize or a slower-moving category, since industry is the only thing held constant here.
 
+<!-- generated:tm2_daily_pace -->
 | Industry | 1-3 days | 4-7 days | 8-14 days | 15-30 days | 31 days or more |
 |---|---|---|---|---|---|
-| Gaming and esports | 229 | 62.5 | 38.0 | 20.1 | 11.9 |
-| Electronics and tech | 586.5 | 124.1 | 83.8 | 49.9 | 27.3 |
+| Gaming and esports | 233.4 | 63.3 | 37.9 | 20.1 | 11.9 |
+| Electronics and tech | 586.5 | 124.1 | 83.8 | 49.8 | 26.9 |
 
-Entrants per day, typical. A gaming campaign of one to three days drew about six times the daily pace of one running eight to fourteen, and electronics about seven times. The fall continues past two weeks in both.
+Entrants per day, typical. A gaming campaign of one to three days drew about six times the daily pace of one running eight to fourteen, and electronics about seven times.
 
-[Gaming and esports: 2,973 campaigns from 733 businesses at 1-3 days, 5,105/1,476 at 4-7, 6,074/1,930 at 8-14, 6,317/2,079 at 15-30, 4,080/1,414 at 31 or more. Electronics and tech: 2,710/248, 2,155/548, 3,270/834, 4,600/1,080, 2,805/744. Extracted from `analysis/output/calendar.json`, `per_day_by_length_industry`.]
+[Gaming and esports: 2,926 campaigns from 724 businesses at 1-3 days, 4,904/1,445 at 4-7, 6,002/1,899 at 8-14, 6,269/2,058 at 15-30, 4,031/1,393 at 31 or more. Electronics and tech: 2,710 campaigns from 248 businesses at 1-3 days, 2,152/548 at 4-7, 3,263/833 at 8-14, 4,595/1,078 at 15-30, 2,775/741 at 31 or more.]
+<!-- /generated -->
+
+The fall continues past two weeks in both.
+
+Source: `analysis/output/calendar.json` (`per_day_by_length_industry`).
 
 ## Duration by what the campaign is optimizing for (extracted)
 
@@ -194,21 +200,23 @@ A community you want people to join before they leave the page favours a short r
 
 ## No late rush, only a launch spike (extracted)
 
-The closing day of a run carries no more traffic than the data's quietest days, and often less. Entrants who have not acted by the final day mostly do not arrive late, the volume advantage sits with the launch and the day or two after it, not the close.
+The closing day of a run carries a fraction of the launch day's traffic and sits close to the quietest days of the run. Entrants who have not acted by the final day mostly do not arrive late, the volume advantage sits with the launch and the day or two after it, not the close.
 
-In a 7-day campaign, Impressions run highest on the launch day and lowest on the close:
+In a 7-day campaign, Impressions run highest on the launch day and the close sits among the quietest days:
 
-| Day | Share of Impressions |
-|---|---|
-| Launch (day 1) | 15.8% |
-| Day 2 | 12.5% |
-| Day 3 | 10.8% |
-| Day 4 | 9.1% |
-| Day 5 | 8.2% |
-| Day 6 | 8.5% |
-| Close (day 7) | 7.7% |
+<!-- generated:tm2_launch_curve -->
+| Day of a 7-day run | Share of Impressions | Campaigns | Businesses |
+|---|---|---|---|
+| Launch (day 1) | 15.9% | 19,677 | 5,052 |
+| Day 2 | 12.6% | 23,098 | 5,598 |
+| Day 3 | 10.8% | 25,385 | 5,959 |
+| Day 4 | 9.3% | 25,794 | 6,046 |
+| Day 5 | 8.3% | 25,838 | 6,052 |
+| Day 6 | 8.8% | 25,894 | 6,064 |
+| Close (day 7) | 8.6% | 25,892 | 6,066 |
 
-A 14-day campaign shows the same shape: close 4.9% against 9.0% on the launch day. [Days between running 4.4% to 7.4%. 7-day campaign: 7,735 campaigns/2,156 businesses on close-day share, 6,036/1,837 on launch-day share. 14-day campaign: 5,657/2,143 on close, 4,270/1,721 on launch.]
+A 14-day campaign shows the same shape: close 5.8% (17,492 campaigns, 5,195 businesses) against 9.1% on the launch day (13,160 campaigns, 4,090 businesses), with the days between running 4.4% to 7.3%. Both curves are anchored to the close date, so a run a day longer or shorter than the label shifts every row by a day.
+<!-- /generated -->
 
 This is a finding about where volume sits, not a reason to close early. The people who were going to show up mostly showed up by the launch window, but the closing days still carry their own work: the deadline reminder, the last-call push and the draw itself shape whether the Entrants already signed up finish, respond to the Winner email and stay on the list afterward, the Entrant relationship `giveaway-winner-communications` covers. Cutting a run short trades that closing work away for a volume gain this data does not show happening.
 
@@ -254,6 +262,8 @@ Start weekday shows no difference on Conversion Rate or Entries per Entrant, and
 
 A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a fifth more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in nine of the eleven verticals, with fitness and outdoor and kids, family and pets the exceptions. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
 
+Source: `analysis/output/calendar.json` (`last_days_impression_curve_by_duration`) for the launch curve.
+
 ## Build lead time (extracted)
 
 All the campaigns behind these numbers (116,499 campaigns, 17,633 businesses): the recorded create date sits after the campaign's start date in 22% of them. That is not a business building after launch. The field also updates on a later edit, so for about a fifth of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
@@ -283,12 +293,20 @@ Premium accounts run the longest campaigns with the most methods, Hobby accounts
 | Free | 11,993 | 4,183 | 12 days | 4 |
 | Hobby | 10,802 | 2,555 | 11 days | 6 |
 
-By growth stage, startups run short and enterprises run long:
+By growth stage, mid-market businesses and startups run the shortest campaigns and individuals the longest, with enterprises at the same typical length as small businesses:
 
+<!-- generated:tm2_stage -->
 | Growth stage | Campaigns | Businesses | Typical duration | Methods |
 |---|---|---|---|---|
-| Startups | 14,661 | 4,088 | 11 days | 9 |
-| Enterprises | 2,902 | 280 | 17 days | 7 |
+| Mid market | 17,126 | 1,384 | 8 days | 6 |
+| Startup | 23,190 | 5,227 | 10 days | 8 |
+| Small business | 60,935 | 7,897 | 14 days | 7 |
+| Enterprise | 6,675 | 507 | 14 days | 6 |
+| Public body | 1,109 | 294 | 14 days | 7 |
+| Individual | 10,371 | 1,808 | 16 days | 9 |
+
+The growth-stage cut is 121,842 campaigns, 2,436 of them with no stage read, wider than the campaigns behind the rest of this page, so its counts do not add to the plan-tier table above.
+<!-- /generated -->
 
 Hosting mix tracks the same pattern. Campaigns that keep most of their Impressions on the Gleam-hosted page run a shorter typical length than campaigns that lean on the embed.
 
@@ -307,13 +325,17 @@ Source: analysis/output/field_cuts.json (by_tier, by_hosted_share), analysis/out
 
 ## Region (extracted)
 
-A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at close to double the typical Conversion Rate. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them. The Brazilian YouTube cut is 2,543 campaigns from 88 sites, so it describes those accounts, never a market.
+A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at double the typical Conversion Rate or more. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them.
 
-| Group | Campaigns | Businesses | Typical duration | Conversion Rate |
-|---|---|---|---|---|
-| South America | 5,333 | 588 | 1 day | 57% |
-| Portuguese-language | 2,331 | 116 | 1 day | 65% |
-| Brazilian YouTube-hosted | 225 | 28 | 2 days (8 methods) | 56% |
+<!-- generated:tm2_region -->
+| Group | Campaigns | Businesses | Typical duration | Methods | Conversion Rate |
+|---|---|---|---|---|---|
+| South America | 5,333 | 588 | 1 day | 8 | 57% |
+| Portuguese-language | 2,331 | 116 | 1 day | 19 | 65% |
+| Brazilian YouTube-hosted | 2,199 | 86 | 1 day | 19 | 67% |
+
+The Brazilian YouTube-hosted row is read from the industries cut, which runs wider than the campaigns behind the rest of this page. It is 2,199 campaigns from 86 businesses, so it describes those accounts, never a market.
+<!-- /generated -->
 
 This is a short, high-entry-rate format run by a specific, well-established group of businesses, not a timing technique that travels. A short run works well here because the businesses running it already have an audience primed for a fast giveaway, not because cutting a run to a few days raises the Conversion Rate by itself.
 
