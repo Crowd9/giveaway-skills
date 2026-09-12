@@ -39,7 +39,7 @@ Prefer a unique id over a display name where both exist. Display names repeat an
 
 ## A worked example on plain handles
 
-Eleven handles from a comment thread, one of them the organizer's own account, drawn for one Winner with two backups. Two files, three commands, and the output as the script printed it. The drand round here is a past one chosen so the example reproduces; a real draw commits to a round in the future, as `draw-procedure.md` sets out.
+Eleven handles from a comment thread, one of them the organizer's own account, drawn for one Winner with two backups. Two files, three commands, and the output as the script printed it. The drand round here is a past one chosen so the example reproduces. A real draw commits to a round in the future, as `draw-procedure.md` sets out.
 
 `handles.txt`:
 
