@@ -325,12 +325,14 @@ Almost every campaign keeps the platform's 7-day default for both the draw windo
 
 Response window length tracks a few points of Conversion Rate up to 14 days, and the 15-plus row sits lowest because those campaigns run about twice as long, not because their Entrants respond slower.
 
-| Response window | Campaigns | Businesses | Conversion Rate |
-|---|---|---|---|
-| 1-3 days | 5,109 | 1,047 | 25% |
-| 4-7 days (default) | 108,256 | 16,671 | 27% |
-| 8-14 days | 990 | 273 | 30% |
-| 15+ days | 935 | 229 | 19% (29-day campaign typical) |
+<!-- generated:tm_response_days -->
+| Response window | Campaigns | Businesses | Conversion Rate | Days |
+|---|---|---|---|---|
+| 1-3 days | 5,109 | 1,047 | 25% | 12 |
+| 4-7 days (default) | 108,256 | 16,671 | 27% | 14 |
+| 8-14 days | 990 | 273 | 30% | 13 |
+| 15+ days | 935 | 229 | 19% | 29 |
+<!-- /generated -->
 
 Source: analysis/output/field_cuts.json (terms, by_response_days).
 
@@ -375,27 +377,29 @@ Every month outside December sits inside a 1.5-point range on Conversion Rate. D
 
 The December lift holds inside most industries too, not just because certain industries happen to start more campaigns in December:
 
+<!-- generated:tm_december_best -->
 | Industry | December | Next-best month | Gap |
 |---|---|---|---|
-| Electronics and tech | 44.3% (1,065 campaigns, 289 businesses) | January, 30.5% | 13.8 pts |
-| Home and garden | 41.7% (229 campaigns, 73 businesses) | August, 36.4% | 5.3 pts |
-| Media and entertainment | 34.0% (709 campaigns, 136 businesses) | March, 27.0% | 7.0 pts |
-| Toys, hobbies and collectibles | 33.1% (73 campaigns, 42 businesses) | July, 29.9% | 3.2 pts |
-| Travel and events | 32.7% (130 campaigns, 51 businesses) | August, 31.2% | 1.5 pts |
-| Health, wellness and fitness | 31.9% (76 campaigns, 41 businesses) | March, 30.9% | 1.0 pts |
-| Gaming and esports | 29.7% (801 campaigns, 361 businesses) | July, 29.1% | 0.6 pts |
+| Electronics and tech | 38.5% (2,114 campaigns, 557 businesses) | June, 30.3% | 8.2 pts |
+| Home and garden | 35.2% (420 campaigns, 135 businesses) | February, 31.0% | 4.2 pts |
+| Toys, hobbies, collectibles | 33.0% (418 campaigns, 126 businesses) | November, 29.3% | 3.7 pts |
+| Travel and events | 32.2% (337 campaigns, 119 businesses) | January, 29.8% | 2.4 pts |
+| Sports and outdoors | 31.5% (462 campaigns, 209 businesses) | November, 25.2% | 6.3 pts |
+| Other | 31.5% (385 campaigns, 242 businesses) | April, 29.8% | 1.7 pts |
+| Food and drink | 30.6% (408 campaigns, 163 businesses) | January, 28.6% | 2.0 pts |
+| Gaming and esports | 28.8% (2,591 campaigns, 1,109 businesses) | July, 27.8% | 1.0 pts |
+| Health, wellness and fitness | 26.9% (305 campaigns, 110 businesses) | November, 24.1% | 2.8 pts |
+| Media and entertainment | 25.9% (2,149 campaigns, 451 businesses) | March, 24.5% | 1.4 pts |
+<!-- /generated -->
 
-December is not the best month in five industries, though four of them sit within a point and a half of December's rate. Apparel and fashion is the clear exception, peaking 9.1 points above its December rate.
+December is not the best month in two of the twelve industries measured. Apparel and fashion peaks in May, a few points above its December rate, and creator or influencer campaigns peak in March, well above it.
 
+<!-- generated:tm_december_not_best -->
 | Industry | Peak month | Peak Conversion Rate | December Conversion Rate |
 |---|---|---|---|
-| Retail and marketplace | May | 35.1% | 34.4% |
-| Food and drink | January | 34.1% | 33.1% |
-| Automotive | July | 27.6% | 27.0% |
-| Sports and outdoors | November | 26.6% | 25.8% |
-| Apparel and fashion | May | 35.5% | 26.4% |
-
-[Campaigns/businesses: 86/29 (retail and marketplace), 159/73 (food and drink), 133/35 (automotive), 182/111 (sports and outdoors), 149/67 (apparel and fashion).]
+| Creator or influencer | March | 46.3% | 37.3% (329 campaigns, 179 businesses) |
+| Apparel and fashion | May | 34.2% | 31.7% (386 campaigns, 147 businesses) |
+<!-- /generated -->
 
 Source: `analysis/output/prize_timing_cuts.json` (`by_start_weekday`, `by_start_month`, `by_start_month_and_industry`).
 
@@ -403,58 +407,117 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_start_weekday`, `by_start_
 
 Campaigns whose name, incentive name or description carries launch or pre-release wording, against campaigns with none:
 
+<!-- generated:tm_launch_wording -->
 | Wording | Campaigns | Businesses | Conversion Rate | Referrals % of Entrants | Share offered | Email offered | Days |
 |---|---|---|---|---|---|---|---|
-| No launch wording | 33,788 | 6,070 | 28% | 12 | 45% | 43% | 16 |
-| Launch or release | 1,281 | 599 | 26.7% | 17 | 45% | 47% | 15 |
-| Coming soon or waitlist | 256 | 186 | 24% | 22 | 55% | 37% | 16 |
-| Crowdfunding | 117 | 77 | 22.8% | 18 | 77% | 60% | 18 |
-| Wishlist or pre-save | 115 | 53 | 17.9% | 14 | 53% | 24% | 14 |
-| Pre-order | 101 | 62 | 27.1% | 18 | 49% | 39% | 25 |
+| No launch wording | 110,374 | 16,703 | 27.0% | 11 | 37% | 32% | 14 |
+| Launch or release | 3,604 | 1,600 | 25.7% | 15 | 39% | 41% | 13 |
+| Coming soon or waitlist | 1,014 | 588 | 25.5% | 16 | 40% | 31% | 11 |
+| Crowdfunding | 699 | 203 | 23.0% | 10 | 84% | 64% | 15 |
+| Pre-order | 444 | 188 | 24.0% | 14 | 42% | 41% | 18 |
+| Wishlist or pre-save | 364 | 148 | 27.3% | 15 | 28% | 16% | 8 |
+<!-- /generated -->
 
-Launch wording gets a little fewer viewers to enter than the no-wording baseline and brings in more referrals. Crowdfunding wording leans hardest on sharing and email (the table above), wishlist or pre-save wording converts worst, and pre-order campaigns run the longest.
+Launch wording gets a little fewer viewers to enter than the no-wording baseline and brings in more referrals. Crowdfunding wording leans hardest on sharing and email and converts worst, wishlist or pre-save wording converts best on the shortest run, and pre-order campaigns run the longest.
 
-By industry, electronics and tech leads on launch/release and crowdfunding wording, while media and entertainment leads on pre-order wording. Every count below 30 campaigns is advice only.
+By industry, gaming and esports leads on most launch wording, with media and entertainment ahead on pre-order wording.
 
+<!-- generated:tm_launch_industry -->
 | Wording | Leading industry (campaigns) | Next industry (campaigns) |
 |---|---|---|
-| Launch or release | Electronics and tech (320) | Gaming and esports (269) |
-| Crowdfunding | Electronics and tech (31) | Toys, hobbies and collectibles (29), gaming and esports (23) |
-| Pre-order | Media and entertainment (36) | Gaming and esports (27) |
+| Launch or release | Gaming and esports (994) | Electronics and tech (563) |
+| Coming soon or waitlist | Gaming and esports (366) | Electronics and tech (137) |
+| Crowdfunding | Gaming and esports (308) | Toys, hobbies, collectibles (224) |
+| Pre-order | Media and entertainment (189) | Gaming and esports (110) |
+| Wishlist or pre-save | Gaming and esports (222) | Media and entertainment (30) |
+<!-- /generated -->
 
 Two Prize types carry a release date, and both are advice only given the small counts. Spotify pre-saves lead further out the earlier the campaign starts:
 
-| Start timing | Typical lead |
-|---|---|
-| 30+ days before release | 66 days |
-| Under 30 days before release | 10 days |
+<!-- generated:tm_release_spotify -->
+| Start timing | Campaigns | Businesses | Typical lead | Conversion Rate |
+|---|---|---|---|---|
+| 30+ days before release | 34 | 8 | 56 days before | 17% |
+| Under 30 days before release | 50 | 24 | 10 days before | 20% |
+<!-- /generated -->
 
 Steam game campaigns convert best starting just before release, and worst starting well ahead of it:
 
-| Start timing | Conversion Rate |
-|---|---|
-| 30+ days before release | 18% |
-| Under 30 days before release | 26% |
-| Within 30 days after release | 25% |
+<!-- generated:tm_release_steam -->
+| Start timing | Campaigns | Businesses | Typical lead | Conversion Rate |
+|---|---|---|---|---|
+| 30+ days before release | 111 | 52 | 164 days before | 18% |
+| Under 30 days before release | 67 | 35 | 10 days before | 25% |
+| Within 30 days after release | 107 | 64 | 4 days after | 24% |
+| Over 30 days after release | 460 | 135 | 561 days after | 22% |
+<!-- /generated -->
 
-Most Steam campaigns in this group start long after their release date, a typical 646 days after. [Spotify: 30/5 campaigns/businesses 30+ days before, 26/14 under 30 days before. Steam: 24/18 (30+ days before), 25/18 (under 30 days before), 36/29 (within 30 days after), 148/54 (typical-lag group).]
+Most Steam campaigns in this group start long after their release date, as the last row shows.
 
 Source: `analysis/output/prize_timing_cuts.json` (`by_launch_wording`, `launch_wording_by_industry`, `campaign_start_against_release_date`).
 
 ## Run length by country (extracted)
 
-Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose 25th percentile and median are the same value, both 1 day, which marks a spike of automated repeat draws, never a choice spread across its 563 businesses. Every other country in the table starts at 3 days or more.
+Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose lower quarter and median are the same value, both 1 day, which marks a spike of automated repeat draws, never a choice spread across its businesses. Every other country in the table starts at 3 days or more.
 
-| Country | Typical duration | Campaigns | Businesses |
+<!-- generated:tm_country_duration -->
+| Country | Typical days | Lower quarter | Typical days, crypto and SaaS removed | Campaigns | Businesses |
+|---|---|---|---|---|---|
+| United States | 14 | 7 | 14 | 57,061 | 8,646 |
+| United Kingdom | 21 | 10 | 22 | 15,125 | 1,688 |
+| Canada | 12 | 7 | 12 | 6,940 | 1,056 |
+| Australia | 15 | 8 | 15 | 6,045 | 1,328 |
+| Brazil | 1 | 1 | 1 | 5,149 | 493 |
+| Japan | 6 | 3 | 14 | 4,781 | 233 |
+| India | 9 | 6 | 16 | 4,024 | 678 |
+| Singapore | 7 | 4 | 14 | 3,487 | 269 |
+| Germany | 11 | 6 | 12 | 3,301 | 416 |
+| South Korea | 8 | 5 | 10 | 2,671 | 392 |
+| Vietnam | 9 | 5 | 20 | 2,450 | 519 |
+| France | 14 | 7 | 14 | 2,159 | 353 |
+| Poland | 13 | 8 | 13 | 2,143 | 187 |
+| Philippines | 17 | 7 | 22 | 2,048 | 286 |
+| Hong Kong | 8 | 5 | 10 | 1,973 | 428 |
+| Taiwan | 8 | 3 | 13 | 1,919 | 157 |
+| Spain | 13 | 7 | 14 | 1,865 | 491 |
+| China | 8 | 6 | 12 | 1,537 | 136 |
+| Malaysia | 6 | 4 | 15 | 1,466 | 102 |
+| Türkiye | 8 | 5 | 8 | 1,393 | 360 |
+<!-- /generated -->
+
+Japan's raw figure carries a large share of crypto and SaaS businesses. The third column removes them, which lifts Japan's typical run well above its raw figure while Brazil, the UK and the US barely move.
+
+By industry across all countries, finance and crypto businesses run the shortest typical length, with food and drink and beauty and personal care the longest. A country with a large crypto share reads shorter in the raw figure until that share is set aside, which is what the Japan figures above show directly.
+
+<!-- generated:tm_industry_duration -->
+| Industry | Typical days | Campaigns | Businesses |
 |---|---|---|---|
-| Brazil | 1 day | 5,860 | 563 |
-| Japan | 6 days | 6,505 | 291 |
-| United States | 14 days | 58,843 | 9,105 |
-| United Kingdom | 21 days | 15,716 | 1,847 |
-
-Japan's raw figure carries a large share of crypto and SaaS businesses, with those removed, Japan's typical run rises to 12 days [1,144 campaigns, 138 businesses]. Doing the same for Brazil, the UK and the US leaves them close to their raw figures, at 1, 22 and 14 days.
-
-By industry across all countries, finance and crypto businesses run the shortest typical length and food and drink the longest. [Finance and crypto: 7 days, 43,170 campaigns, 7,138 businesses. Food and drink: 19 days, 4,774 campaigns, 914 businesses.] A country with a large crypto share reads shorter in the raw figure until that share is set aside, which is what the Japan figures above show directly.
+| Finance and crypto | 7 | 24,555 | 4,297 |
+| Apparel and fashion | 8 | 4,660 | 824 |
+| Creator or influencer | 8 | 3,408 | 1,053 |
+| Retail marketplace | 8 | 2,870 | 388 |
+| Education | 8 | 1,894 | 369 |
+| Other | 10 | 4,625 | 1,558 |
+| Local services | 11 | 921 | 177 |
+| Gaming and esports | 12 | 25,595 | 4,903 |
+| Software and SaaS | 12 | 2,490 | 612 |
+| Nonprofit and community | 13 | 546 | 203 |
+| Electronics and tech | 14 | 15,634 | 2,072 |
+| Automotive | 14 | 2,288 | 382 |
+| Toys, hobbies, collectibles | 15 | 4,641 | 759 |
+| Travel and events | 15 | 4,032 | 654 |
+| Home and garden | 15 | 3,726 | 596 |
+| Art and crafts | 15 | 1,646 | 418 |
+| Marketing agency | 15 | 1,264 | 165 |
+| Pets | 15 | 980 | 214 |
+| Sports and outdoors | 16 | 4,640 | 1,016 |
+| Health, wellness and fitness | 16 | 3,064 | 503 |
+| Jewelry and watches | 17 | 459 | 166 |
+| Media and entertainment | 18 | 21,675 | 2,082 |
+| Baby and kids | 18 | 1,187 | 137 |
+| Food and drink | 19 | 4,734 | 900 |
+| Beauty and personal care | 19 | 1,416 | 352 |
+<!-- /generated -->
 
 Source: `analysis/output/indicators.json` (`duration_by_country`, `duration_by_industry`, `mechanics_by_country_excluding_crypto`).
 
@@ -462,34 +525,89 @@ Source: `analysis/output/indicators.json` (`duration_by_country`, `duration_by_i
 
 Local start hour is estimated with one UTC offset per country and no daylight saving, so read it as a rough window, not a precise hour. Countries spanning several time zones (the US, Canada, Brazil, Australia) carry up to three hours of error on top of that.
 
-| Country | Typical local start hour | Campaigns | Businesses |
-|---|---|---|---|
-| India | Midnight | 6,010 | 873 |
-| Brazil | Midnight | 5,860 | 563 |
-| South Korea | Midnight | 4,521 | 537 |
-| Japan | 11:00 | 6,505 | 291 |
-| Germany | 13:00 | 3,530 | 472 |
+<!-- generated:tm_start_hour -->
+| Country | Typical local start hour | Weekend starts | Campaigns | Businesses |
+|---|---|---|---|---|
+| United States | 08:00 | 19% | 57,289 | 8,720 |
+| United Kingdom | 12:00 | 16% | 15,188 | 1,710 |
+| Canada | 03:00 | 19% | 7,004 | 1,066 |
+| Australia | 10:00 | 20% | 6,066 | 1,334 |
+| Brazil | Midnight | 19% | 5,299 | 497 |
+| Japan | 12:00 | 11% | 4,797 | 235 |
+| India | Midnight | 22% | 4,062 | 691 |
+| Singapore | 12:00 | 11% | 3,491 | 271 |
+| Germany | 13:00 | 22% | 3,322 | 419 |
+| South Korea | Midnight | 14% | 2,675 | 392 |
+| Vietnam | 12:00 | 21% | 2,501 | 547 |
+| France | 13:00 | 22% | 2,174 | 356 |
+| Poland | 13:00 | 16% | 2,157 | 188 |
+| Philippines | 15:00 | 18% | 2,053 | 289 |
+| Hong Kong | 11:00 | 15% | 1,973 | 428 |
+| Taiwan | 15:00 | 11% | 1,920 | 157 |
+| Spain | 13:00 | 20% | 1,884 | 496 |
+| China | 15:00 | 13% | 1,541 | 136 |
+| Malaysia | 08:00 | 10% | 1,501 | 103 |
+| Türkiye | 03:00 | 21% | 1,406 | 367 |
+<!-- /generated -->
 
-The share of campaigns starting on a local Saturday or Sunday varies less by country, from about 10% (Japan, Singapore) up to about 22% (India, Germany), with most other countries measured between 15% and 20%. The same single-offset caveat applies. [Japan 10.5%, Singapore 10.9%, India 22.2%, Germany 21.5%.]
+The share of campaigns starting on a local Saturday or Sunday varies less by country, from about 10% to about 22%, as the weekend column shows. The same single-offset caveat applies.
 
 Source: `analysis/output/indicators.json` (`start_hour_local_by_country`, `weekend_start_by_country`).
 
 ## Run length by starting point (extracted)
 
-Duration barely varies by where the build started from, except for two specific templates that run notably longer.
+Duration barely varies by where the build started from.
 
+<!-- generated:tm_template_source -->
 | Build source | Typical duration | Campaigns | Businesses |
 |---|---|---|---|
-| Library template | 15 days | 10,477 | 6,709 |
-| Own earlier campaign copied | 14 days | 69,476 | 5,830 |
-| Blank build | 15 days | 28,223 | 11,226 |
-| Purchase Product template | 29 days | 31 | 30 |
-| Every Entry Type template | 26.5 days | 50 | 48 |
+| Own earlier campaign copied | 14 days | 67,690 | 5,640 |
+| Blank build | 15 days | 26,892 | 10,759 |
+| Copied from a campaign outside this dataset | 14 days | 11,961 | 4,211 |
+| Library template | 15 days | 9,955 | 6,467 |
+<!-- /generated -->
+
+A few library templates run notably longer than the rest:
+
+<!-- generated:tm_template_longest -->
+| Library template | Typical duration | Campaigns | Businesses |
+|---|---|---|---|
+| Every Entry Type | 26 days | 49 | 47 |
+| Build Pre-Launch Awareness | 23 days | 76 | 75 |
+| Grow Twitch Stream | 22.5 days | 127 | 112 |
+| Mr Beast's Giveaway | 22 days | 77 | 74 |
+| Photo Contest | 21 days | 157 | 138 |
+<!-- /generated -->
 
 Source: `analysis/output/templates.json` (`source_mix`, `by_template`).
 
 ## Repeat business concentration by country (extracted)
 
-Average campaigns per business varies sharply by country: Japan runs highest, Spain lowest among countries with at least ten businesses in this group. [Japan 22 campaigns/business, 6,505 campaigns, 291 businesses. Spain 4 campaigns/business, 2,142 campaigns, 562 businesses.] In Japan, 83% of campaigns come from a business on its eleventh campaign or later, against 29% in Spain, the same gap in a second measure. A country's campaign count partly reflects a small number of businesses who run often, more so in Japan than in most other countries measured here.
+Average campaigns per business varies sharply by country, Japan highest and Spain lowest among the countries measured here. In Japan four campaigns in five come from a business on its eleventh campaign or later, against fewer than one in three in Spain, the same gap in a second measure. A country's campaign count partly reflects a small number of businesses who run often, more so in Japan than in most other countries measured here.
+
+<!-- generated:tm_repeat_country -->
+| Country | Campaigns per business | Eleventh campaign or later | Campaigns | Businesses |
+|---|---|---|---|---|
+| Japan | 20 | 81% | 4,797 | 235 |
+| Malaysia | 15 | 77% | 1,501 | 103 |
+| Singapore | 13 | 73% | 3,491 | 271 |
+| Taiwan | 12 | 70% | 1,920 | 157 |
+| Poland | 11 | 70% | 2,157 | 188 |
+| China | 11 | 67% | 1,541 | 136 |
+| Brazil | 11 | 73% | 5,299 | 497 |
+| United Kingdom | 9 | 65% | 15,188 | 1,710 |
+| Germany | 8 | 59% | 3,322 | 419 |
+| Philippines | 7 | 56% | 2,053 | 289 |
+| South Korea | 7 | 52% | 2,675 | 392 |
+| Canada | 7 | 53% | 7,004 | 1,066 |
+| United States | 7 | 53% | 57,289 | 8,720 |
+| France | 6 | 51% | 2,174 | 356 |
+| India | 6 | 57% | 4,062 | 691 |
+| Hong Kong | 5 | 35% | 1,973 | 428 |
+| Vietnam | 5 | 41% | 2,501 | 547 |
+| Australia | 5 | 37% | 6,066 | 1,334 |
+| Türkiye | 4 | 35% | 1,406 | 367 |
+| Spain | 4 | 29% | 1,884 | 496 |
+<!-- /generated -->
 
 Source: `analysis/output/indicators.json` (`repeat_organizer_by_country`).
