@@ -334,6 +334,29 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 2.2.3 (2026-09-12)
+
+Every figure in a reference table now comes from the data it cites. Twenty five hand-typed tables, 357 cells
+between them, had drifted from their sources, some by a factor of three, and one hundred and thirty seven of
+them are generated now, 210 in all against 73 at the start of the day. A reader gets the number the cut
+holds, and the two skills that used to quote each other read the same key.
+
+Some of the drift had turned advice on its head. A Telegram join was said to draw fewer Entrants where it
+draws 47% more. Wishlist wording was said to convert worst of the launch wordings where it converts best.
+Community businesses were said to offer email least where creators do. A mandatory Discord join was labelled
+cheaper than an optional one with the two costs reversed. The Conversion Rate bend was placed at days six to
+seven where the data puts it at four to five. The Secret Code finding, the one Action that comes with a
+bigger crowd at no cost to Conversion Rate, survives, and now carries its real size, 28% on 1,594 campaigns.
+
+The clean subset every Conversion Rate comparison rests on was defined as 10,719 campaigns. It holds 39,462.
+Four sections that matched no cut in any output are gone, along with a Klaviyo table and a tenth-level check
+that had nothing left to stand on.
+
+Round seven of the benchmark, on the frozen rubric, scores 84.7 against round six's 85.8. Correctness rose
+from 18.2 to 19.4 of 25 and the number of answers capped for an invented claim fell from eleven to nine. The
+loss is in the writing score, where a new gate that blocks unsourced claims about how a platform or a
+person behaves has answers reaching for workarounds it now catches too.
+
 ## 2.2.2 (2026-09-12)
 
 Every figure in these skills is supposed to describe the same 116,499 campaigns, the ones left after crypto,

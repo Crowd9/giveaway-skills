@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Decide how many Winners a giveaway has, whether Prizes are tiered, how and when Winners are drawn, verified, contacted and announced, and what the redraw and fulfillment rules are. Use when the user asks 'how many Winners', 'should I have runner-up Prizes', 'one Winner or several', 'how do I pick the Winner', 'how to announce Winners', 'what if the Winner doesn't reply' (answered here as the deadline and redraw rule, with the message itself in giveaway-winner-communications), 'daily Winners', 'tiered Prizes', or 'Winner terms'. Platform-neutral. For what the Prize is see giveaway-prize-picker. For the run length see giveaway-timing-and-duration."
 metadata:
-  version: 1.3.26
+  version: 1.3.27
 ---
 
 # Giveaway Winner Structure
