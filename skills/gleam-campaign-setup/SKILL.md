@@ -41,7 +41,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 3. **Answer drawing questions** from `references/drawing-winners.md`: the Winners tab, All Prizes order, date-range draws, repeat Winners, manual Winners, Quick Draws.
 4. **Bring the evidence.** Load `references/settings-evidence.md` for what Entrants did with each Gleam action, the position effect, description length and the config switches, and quote it with the campaign count in brackets.
 5. **Add Gleam's own tips** from `references/tips-from-gleam.md` where they fit, attributed to the tips library.
-6. **Deliver** as a checklist in tab order, with the page link once per tab, on the heading or the first setting that comes from it.
+6. **Deliver** as a checklist in tab order, with the page link once per tab, on the heading or the first setting that comes from it. End it with one launch test in preview: an eligible and an ineligible age or location, the consent box ticked and unticked against the Mandatory gate, a test entry reaching the integration, and the confirmation the Entrant sees.
 7. **Point at the close.** Say in one line at the end of the checklist that the Actions tab export is what the post-campaign numbers get read from.
 
 ## Output

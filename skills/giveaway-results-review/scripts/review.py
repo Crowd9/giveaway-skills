@@ -151,7 +151,7 @@ def review(a):
         if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
         if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day, so a long run or a daily action lowers this without anything being wrong"
         note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
-        rows.append(("Conversion Rate", f"{conv:.1%}", f"{BENCH['platform_average_conversion']:.0%}", note))
+        rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)
         if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification. Check for a validated-answer question first, then referral and Discord actions"))
@@ -267,7 +267,8 @@ def self_test():
     assert "Email signups" in d and "better than" in d["Email signups"][3], rows
     assert d["Actions completed per Entrant"][1] == "3.00" and "Entrants per day" in d and "Impressions" in d and "better than" in d["Impressions"][3], rows
     assert "X follows" in d and "better than" in d["X follows"][3] and "higher than" in d["Stated Prize value per Entrant"][3], rows
-    assert d["Conversion Rate"][2] == "27%", rows
+    # the column is the band's own median, never the platform average the note carries
+    assert d["Conversion Rate"][2] == f"{median_of('conversion', 'band:' + band(1800)):.0%}" != f"{BENCH['platform_average_conversion']:.0%}", rows
     hist = [{"campaign": "spring", "contestants": 1200, "impressions": 5000, "entries": 5000, "invalid": 100, "days": 10, "methods": 5, "emails": 900},
             {"campaign": "summer", "contestants": 1500, "impressions": 5500, "entries": 7000, "invalid": 200, "days": 14, "methods": 6, "emails": 1200}]
     ht, notes = history_table(A, hist); hd = {r[0]: r for r in ht}

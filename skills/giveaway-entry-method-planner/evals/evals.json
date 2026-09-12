@@ -10,7 +10,7 @@
     "Mentions opt-in consent wording",
     "Includes one sharing or referral action",
     "Excludes app installs and account connections",
-    "Cites uptake figure with sample size and extracted label",
+    "Cites uptake figure with sample size and a source label in the reader's words (from Gleam campaign data, or the campaign count in brackets)",
     "No platform pitch"
    ],
    "files": []
