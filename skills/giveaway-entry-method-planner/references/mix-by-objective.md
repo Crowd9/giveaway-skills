@@ -578,14 +578,6 @@ Two examples:
 | Apparel and fashion | 499 campaigns, 48 businesses | 1,494 campaigns, 333 businesses | 1 | 4 | 3.6% | 25.4% |
 <!-- /generated -->
 
-A tenth-level check strengthens toward the extremes, it does not flatten out, consistent with a real relationship, not an artifact of one cutoff:
-
-| Metric | Top tenth vs bottom tenth | Ratio | Quarter-level ratio (above) |
-|---|---|---|---|
-| Referral offered | 11.9% against 39.2% | 0.30 | 0.45 |
-| Secret code offered | - | 0.27 | 0.44 |
-| Platform follow offered | - | 0.50 | 0.61 |
-
 This prices the fourth and fifth action, it is not an instruction to cut down to one. A campaign that needs three assets cannot run a one-action campaign, and nothing here says it should. What each added action, especially a referral or a secret code, costs on this specific completion measure is the number to weigh against what that action collects, so add it when the campaign needs that asset and budget for this rate to move. Conversion here is Entrants over Impressions, and a lean single-action entry form structurally has less friction between an Impression and a completed entry, so part of the pattern may describe how the metric is built as much as business choice. It does not mean a heavier campaign performs worse on total entries or reach, only on this completion rate. The top quarter itself is defined by conversion, one objective among several (an email list, followers, UGC and reach are the others), so an industry's top quarter by conversion is not automatically the shape to copy when the campaign's objective is one of those. Cite this finding with both caveats every time. Email offered and completion did not survive this same check (offered lower in 11 of the 21 industries and higher in 3, completion flat at a typical ratio of 1.00 across industries) and neither did community-join actions or question actions, so none of those are a vertical-strength signal here. [Extracted from `analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry` and `threshold_check_top_vs_bottom_decile_pooled`.]
 
 ## Invalid entries (extracted)
