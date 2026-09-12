@@ -27,7 +27,7 @@ Extracted: three in five campaigns give away one unit, one in five use tiers, on
 
 ## Sizing the count
 
-Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the Prize pool. Divide until each Prize is still something the audience would enter for. Three Prizes worth 100 each beat ten worth 30 when the audience shops at 100. Digital Prizes and own product at cost let the count rise without the budget rising.
+Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the Prize pool. For a cash budget and one Prize type, the count is the whole number below (budget minus contingency) divided by (unit cost plus per-recipient fulfillment), and the contingency covers one replacement and one redraw's postage. Work it before the terms name a number of Winners, since the terms fix it. Divide until each Prize is still something the audience would enter for. Three Prizes worth 100 each beat ten worth 30 when the audience shops at 100. Digital Prizes and own product at cost let the count rise without the budget rising.
 
 ## Draw rules
 
@@ -52,6 +52,7 @@ A drawn name has a real chance of failing verification. The typical campaign has
 | 48 hours | hour 0 | hour 24 | hour 48 |
 
   Halfway means halfway. On a seven-day deadline the second message goes on day 3 or 4, never on day 5.
+- Terms that name no reply deadline. Propose one to the reader before the first message goes out, and propose seven days: it is the platform default, and 93.4% of the 115,361 campaigns whose terms record the setting kept it (`analysis/output/winner_terms.json`, `terms_timetable`). State it in the first message with a date and time zone, since a deadline the Winner never saw is not one you can hold them to.
 - Reply deadline in the terms. When it passes, the Prize is forfeited and passes to the first backup drawn under the same audit record, as `winner-verification.md` sets out. A fresh draw after the fact breaks the commitment made before the first one, so it is the last resort, for when no backups were drawn.
 - Keep a written log of draws, contacts and responses. Disputes are settled by the log.
 - Never publish a Winner's full details without consent. First name and city, or a handle, with permission.

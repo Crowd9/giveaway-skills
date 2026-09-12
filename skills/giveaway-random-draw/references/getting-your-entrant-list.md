@@ -37,6 +37,57 @@ Comment exports are the messy case. There is no built-in "download comments" but
 
 Prefer a unique id over a display name where both exist. Display names repeat and change, ids do not.
 
+## A worked example on plain handles
+
+Eleven handles from a comment thread, one of them the organizer's own account, drawn for one Winner with two backups. Two files, three commands, and the output as the script printed it. The drand round here is a past one chosen so the example reproduces; a real draw commits to a round in the future, as `draw-procedure.md` sets out.
+
+`handles.txt`:
+
+```
+@maya_reads
+@tomcooks
+@lena.k
+@dev_arjun
+@sunny_side_up
+@kofi_b
+@the_real_priya
+@marcus.v
+@jo_runs
+@ella_makes
+@brand_official
+```
+
+`organizer.txt`:
+
+```
+@brand_official
+```
+
+```
+$ python3 draw.py commit handles.txt --exclude organizer.txt --winners 1 --backups 2
+input sha256   c8bacebf4c4bd5df5d49c5b7acd558182fe5bdbfe295925e4f7ee3a491f37721
+rules          {"backups": 2, "exclude_file_sha256": "40f1c59455ac72c02922e18b088214802877d75a88d1d2667b111788f40a50d0", "id_column": "entrant", "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id", "tiers": [["Winner", 1]], "tool_version": "2.4.2", "weight_column": null}
+commitment     a8adf63be0a5872e2d03c57f35910be387629330b0dd66d258f170f8589d4471
+rows_read 11, unique_eligible 10, duplicates_merged 0, excluded 1, rows_with_invalid_weight 0
+
+Reconcile eligibility and earned weights with the published rules before publishing this commitment. Publish before the seed exists, then keep the input file unchanged.
+
+$ python3 draw.py draw handles.txt --exclude organizer.txt --winners 1 --backups 2 --seed-drand 6458188 --audit audit.json
+Winner: @ella_makes
+Backup 1: @lena.k
+Backup 2: @tomcooks
+
+rows_read 11, unique_eligible 10, duplicates_merged 0, excluded 1, rows_with_invalid_weight 0, seed source drand, commitment a8adf63be0a5872e...
+audit written to audit.json
+
+$ python3 draw.py verify audit.json --exclude organizer.txt
+ok   drand round 6458188 randomness matches the public beacon
+ok   recomputed all 3 committed places, including order and tier assignments
+PASS
+```
+
+Read the counts back: 11 rows read, 1 excluded (the organizer), 10 unique eligible, 3 committed places, and verify recomputes all three from the committed rules and the public beacon. The commitment printed by `commit` is what you publish before the round exists, and the same value appears in the draw output, which is how a reader ties the two together.
+
 ## Checks before committing
 
 - Open the file and read ten rows. Confirm the person column, the count, and that the last comments before close are present.

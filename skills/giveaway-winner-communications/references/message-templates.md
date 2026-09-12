@@ -55,7 +55,7 @@ Post-draw problems arrive together. Work them in this order, whichever ones appl
 1. Draw the reserve first. Nothing goes out naming a reserve Winner before one exists.
 2. Close out the lapsed Winner, and log the attempts and the deadline that passed.
 3. Notify the reserve.
-4. Answer anyone disputing the result once, from the draw record, at whatever point they turn up. A dispute never changes the draw.
+4. Send anyone disputing the result a holding line first, then answer once from the draw record, at whatever point they turn up. The holding line buys the time to open the record, and it is the same for everyone: "Thanks, we are checking the draw record and will reply by [day, time zone]." Give a time inside one working day and keep it. A dispute never changes the draw.
 5. Announce only after the reserve has verified and agreed to be named.
 
 ## Edge cases

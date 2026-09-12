@@ -43,7 +43,7 @@ noisiest tenth. Use it to answer "is my invalid rate bad" and to decide whether 
 default is worth the risk of catching real Entrants. A share action makes almost no difference to it, 4.6%
 typical against 3.9% without one, so a campaign that offers sharing is not thereby inviting fraud.
 
-Source: `analysis/output/invalid_share.json`.
+Scope: campaigns of 100 or more Entrants that recorded at least one entry, on the ordinary population, so crypto, ambiguous and purchase-only campaigns are out. The filter level a campaign ran on is not in the data, so this is what the Invalid share looked like, never what any level produced. Source: `analysis/output/invalid_share.json`.
 
 The documentation describes what the filter does to entries as they arrive. It does not say what happens to entries already collected when the level is changed part way through a campaign, so do not tell a user that raising the level will or will not re-screen what is already in. Say the docs do not cover it, and that the Actions tab is where the entries already collected get reviewed before the draw.
 

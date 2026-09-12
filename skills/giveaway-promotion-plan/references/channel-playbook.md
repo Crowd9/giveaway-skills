@@ -473,7 +473,7 @@ started on 1 October, which is the four days on either side of the right answer.
 
 ## Fourteen-day calendar
 
-A worked example for a two-week run on Instagram plus email, with a partner on day 8. Shift the dates to the timing plan.
+A worked example for a two-week run on Instagram plus email, with a partner on day 8. Shift the dates to the timing plan. The partner's own day wins: day 8 is where a partner post does the most good on the curve above, and the quiet-middle table puts that window at days 10 to 13, but a partner who can only post on day 6 posts on day 6.
 
 | Day | Push | Feed | Story | Email | Other |
 |---|---|---|---|---|---|
