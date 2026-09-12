@@ -4,7 +4,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 
 ## Before the draw
 
-- Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it).
+- Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets the audit record and the published commitment, and checks those.
 - Decide the deduplication rule before looking at names. Common choices: one chance per email, or entries add up when the terms promised bonus entries.
 - List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries flagged as automated.
 - Decide tiers and backups. Two backups per tier covers most no-reply cases without a second draw.

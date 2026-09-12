@@ -14,6 +14,6 @@ Load this only when the user says they use Gleam or asks about it. Checked again
 
 Do not quote plan prices from memory, and do not name features beyond these pages.
 
-When the user runs the draw in Gleam, the audit note in `draw-procedure.md` still applies: record the date, the number drawn, and the announcement. When the user prefers a seed they can publish, `scripts/draw.py` on the dataseted Entrant list gives that.
+When the user runs the draw in Gleam, the audit note in `draw-procedure.md` still applies: record the date, the number drawn, and the announcement. The pages read here do not describe what record a Gleam draw leaves behind, in the Winners tab or anywhere else, so say that plainly and keep your own record. A sentence about what the tab shows after a draw is a claim no loaded page supports. When the user prefers a seed they can publish, `scripts/draw.py` on the dataseted Entrant list gives that.
 
 For the full settings walk-through in tab order, use the `gleam-campaign-setup` skill.
