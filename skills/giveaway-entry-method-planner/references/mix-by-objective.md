@@ -176,92 +176,179 @@ On action count: the top fifth and bottom fifth both ran a typical 7 actions, so
 
 ## Mix by the kind of business running it (extracted)
 
-From `analysis/output/industries.json`. Every group listed clears 30 campaigns and 10 businesses.
+From `analysis/output/industries.json`. Every group listed clears 30 campaigns and 10 businesses. This cut runs wider than the 116,499 campaigns behind the rest of this file, so read its campaign counts as that wider set.
 
 By audience (by_audience), typical values:
 
+<!-- generated:em_audience -->
 | Audience | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email offered |
 |---|---|---|---|---|---|
-| B2C | 39,320 | 8,130 | 7 | 21 | 37% |
-| B2B | 6,138 | 1,023 | 9 | 87 | 17% |
-| Both | 2,170 | 330 | 8 | 89 | 20% |
+| B2C | 105,282 | 15,582 | 7 | 16 | 34% |
+| B2B | 12,728 | 1,779 | 7 | 44 | 19% |
+| Both | 3,832 | 511 | 7 | 46 | 19% |
+<!-- /generated -->
 
-B2B and mixed-audience businesses run more methods than B2C and lean far more on referrals, with email offered less often.
+B2B and mixed-audience businesses lean far more on referrals than B2C, close to three times as many referral entries per 100 Entrants, and offer email about half as often. All three run the same typical 7 methods.
 
 By stage (by_org_stage), typical values:
 
+<!-- generated:em_stage -->
 | Stage | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email offered |
 |---|---|---|---|---|---|
-| Startup | 14,661 | 4,088 | 9 | 91 | 14% |
-| Small business | 20,470 | 3,580 | 7 | 14 | 51% |
-| Mid market | 6,813 | 815 | 6 | 20 | 30% |
-| Enterprise | 2,902 | 280 | 7 | 24 | 31% |
-| Individual | 1,792 | 426 | 8 | 17 | 16% |
+| Small business | 60,935 | 7,897 | 7 | 12 | 45% |
+| Startup | 23,190 | 5,227 | 8 | 58 | 15% |
+| Mid market | 17,126 | 1,384 | 6 | 36 | 22% |
+| Individual | 10,371 | 1,808 | 9 | 12 | 10% |
+| Enterprise | 6,675 | 507 | 6 | 24 | 25% |
+| Public body | 1,109 | 294 | 7 | 8 | 44% |
+<!-- /generated -->
 
-Startups run the most referral-heavy mix of any stage and offer email least often next to individuals. Small businesses sit at the other end, email offered in half of campaigns and referrals a small fraction of a startup's.
+Startups run the most referral-heavy mix of any stage and offer email least often next to individuals. Small businesses sit at the other end, email offered in 45% of campaigns and referrals a fifth of a startup's.
 
 By business type (by_business_type), email offered, lowest to highest:
 
+<!-- generated:em_btype -->
 | Business type | Campaigns | Businesses | Email offered | Referral entries % of Entrants |
 |---|---|---|---|---|
-| Community | 1,923 | 490 | 5% | 103 |
-| Creator | 4,175 | 1,026 | 8% | 16 |
-| Software | 18,311 | 4,205 | 12% | 95 |
-| Agency | 1,374 | 171 | 23% | 63 |
-| Other | 2,236 | 551 | 24% | 25 |
-| Service business | 1,157 | 255 | 39% | 10 |
-| Nonprofit | 265 | 94 | 40% | 11 |
-| Media or publisher | 5,556 | 703 | 49% | 14 |
-| Retailer | 7,952 | 996 | 50% | 11 |
-| Brand | 11,380 | 2,578 | 50% | 15 |
+| Creator | 18,168 | 4,187 | 5% | 7 |
+| Community | 4,999 | 1,128 | 8% | 44 |
+| Software | 30,426 | 5,133 | 12% | 62 |
+| Other | 7,846 | 2,149 | 18% | 20 |
+| Agency | 3,324 | 368 | 22% | 22 |
+| Service business | 4,092 | 803 | 32% | 9 |
+| Nonprofit | 968 | 280 | 33% | 9 |
+| Brand | 31,193 | 5,708 | 41% | 14 |
+| Media or publisher | 21,108 | 1,645 | 42% | 10 |
+| Retailer | 21,733 | 2,266 | 44% | 11 |
+<!-- /generated -->
 
-Community businesses offer email least, creators next. Community and software are the two most referral-heavy business types in the data, both above 90 referral entries % of Entrants, well ahead of agency in third place at 63.
+Creator businesses offer email least, community next. Software and community are the two most referral-heavy business types in the data, at 62 and 44 referral entries per 100 Entrants, ahead of agency in third place at 22.
 
 ## Mix by country (extracted)
 
 Action shares among campaigns with 100 or more Entrants, by the business's country. Source: `analysis/output/country_cuts.json`, by_country.
 
-| Country | Campaigns | Businesses | Notable action shares |
-|---|---|---|---|
-| Japan | 6,505 | 291 | Telegram Channel Members 51%, Email Subscriptions 5% |
-| India | 6,010 | 873 | Wallet address 48%, Telegram Channel Members 61% |
-| Brazil | 5,860 | 563 | Instagram Profile Visits 70%, typical run 1 day, typically 10 methods |
-| Australia | 6,433 | 1,406 | Email Subscriptions 47%, Facebook 54% |
-| United Kingdom | 15,716 | 1,847 | Share or refer 24% |
-| United States | 58,843 | 9,105 | Instagram Profile Visits 50%, Facebook 49% |
+<!-- generated:em_country -->
+| Country | Campaigns | Businesses | Days | Methods | Email | Share or refer | X Follows | Instagram visits | Facebook | Telegram | Wallet address |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| United States | 57,289 | 8,720 | 14 | 7 | 39% | 44% | 54% | 51% | 50% | 2% | 1% |
+| United Kingdom | 15,188 | 1,710 | 21 | 7 | 30% | 23% | 66% | 43% | 48% | 4% | 1% |
+| Canada | 7,004 | 1,066 | 12 | 6 | 40% | 38% | 59% | 52% | 47% | 2% | 1% |
+| Australia | 6,066 | 1,334 | 15 | 6 | 48% | 43% | 39% | 56% | 55% | 1% | 0% |
+| Brazil | 5,299 | 497 | 1 | 9 | 1% | 35% | 75% | 69% | 25% | 27% | 1% |
+| Japan | 4,797 | 235 | 6 | 7 | 6% | 60% | 88% | 11% | 21% | 48% | 5% |
+| India | 4,062 | 691 | 9 | 7 | 6% | 57% | 81% | 29% | 19% | 54% | 41% |
+| Singapore | 3,491 | 271 | 7 | 6 | 5% | 45% | 81% | 16% | 16% | 35% | 11% |
+| Germany | 3,322 | 419 | 11 | 7 | 18% | 32% | 65% | 50% | 45% | 8% | 2% |
+| South Korea | 2,675 | 392 | 8 | 7 | 2% | 60% | 88% | 10% | 5% | 56% | 21% |
+| Vietnam | 2,501 | 547 | 9 | 7 | 2% | 62% | 80% | 4% | 19% | 43% | 18% |
+| France | 2,174 | 356 | 14 | 7 | 12% | 22% | 80% | 54% | 32% | 6% | 4% |
+| Poland | 2,157 | 188 | 13 | 8 | 38% | 43% | 72% | 49% | 50% | 10% | 2% |
+| Philippines | 2,053 | 289 | 17 | 7 | 44% | 57% | 50% | 25% | 39% | 12% | 4% |
+| Hong Kong | 1,973 | 428 | 8 | 7 | 12% | 49% | 75% | 18% | 26% | 28% | 17% |
+| Taiwan | 1,920 | 157 | 8 | 7 | 5% | 45% | 71% | 35% | 35% | 33% | 6% |
+| Spain | 1,884 | 496 | 13 | 7 | 9% | 22% | 79% | 49% | 23% | 12% | 2% |
+| China | 1,541 | 136 | 8 | 7 | 14% | 56% | 75% | 18% | 44% | 27% | 3% |
+| Malaysia | 1,501 | 103 | 6 | 7 | 11% | 55% | 72% | 16% | 21% | 49% | 8% |
+| Türkiye | 1,406 | 367 | 8 | 5 | 2% | 26% | 55% | 35% | 10% | 29% | 21% |
+| Sweden | 1,311 | 137 | 9 | 5 | 7% | 11% | 32% | 50% | 33% | 1% | 2% |
+| The Netherlands | 1,232 | 253 | 14 | 7 | 28% | 35% | 71% | 53% | 40% | 18% | 3% |
+| United Arab Emirates | 742 | 153 | 8 | 7 | 5% | 41% | 87% | 24% | 19% | 30% | 14% |
+| Egypt | 716 | 37 | 8 | 13 | 0% | 4% | 6% | 4% | 4% | 1% | 0% |
+| Thailand | 652 | 170 | 8 | 8 | 12% | 47% | 74% | 8% | 47% | 18% | 6% |
+| Mexico | 652 | 183 | 8 | 5 | 10% | 16% | 44% | 51% | 57% | 7% | 1% |
+| South Africa | 633 | 155 | 15 | 6 | 22% | 21% | 61% | 50% | 44% | 6% | 1% |
+| Portugal | 521 | 146 | 9 | 6 | 8% | 37% | 53% | 46% | 31% | 20% | 5% |
+| Indonesia | 517 | 138 | 7 | 9 | 3% | 53% | 90% | 10% | 14% | 65% | 50% |
+| Italy | 512 | 105 | 22 | 7 | 50% | 30% | 81% | 50% | 50% | 12% | 4% |
+<!-- /generated -->
 
-Japan and India both lean on Telegram. India adds a wallet-address action, the crypto marker this skill's default figures exclude elsewhere, in close to half its campaigns. Brazil's campaigns run a typical one day and carry 10 Entry Methods, the most of any country in this table and second across the whole cut to Egypt's 13 on 736 campaigns. Both figures come from automated recurring draws: its 25th percentile duration is also 1 day, 90% of its campaigns are repeats and 94% start on the hour. Read the row as what those accounts do. Australia and the US split their most common single action between email or Instagram and Facebook. The UK's most common reach action is sharing or referring.
+Japan and India both lean on Telegram, offered in about half their campaigns. India adds a wallet-address action, the crypto marker this skill's default figures exclude elsewhere, in two fifths of its campaigns, and Indonesia in half. Brazil's campaigns run a typical one day and carry 9 Entry Methods, behind only Egypt's 13 on 716 campaigns. Both figures come from automated recurring draws: its 25th percentile duration is also 1 day, 91% of its campaigns are repeats and 93% start on the hour. Read the row as what those accounts do. An X Follow is the most common action in most of the table, the United States included at 54%. Email is offered most often in Italy, Australia and the Philippines, all above two fifths of their campaigns.
 
-**How often actions are required.** Malaysia requires at least one action in the large majority of its campaigns, India follows, and also asks for the most required actions once it asks for any. Germany and the US sit at the other end.
+**How often actions are required.** Malaysia requires at least one action in 91% of its campaigns and India follows at 79%. China, South Korea and Vietnam ask for the most once they ask for any, a typical 6. Germany requires an action least often at 29%.
 
-| Country | Campaigns with 1+ required action | Typical required actions (where 1+) |
-|---|---|---|
-| Malaysia | 90% (2,345 campaigns, 160 businesses) | - |
-| India | 79% (6,010 campaigns, 873 businesses) | 6 |
-| Germany | 31% (3,530 campaigns, 472 businesses) | - |
-| United States | - | 1 (58,839 campaigns, 9,104 businesses) |
+<!-- generated:em_mandatory_country -->
+| Country | Campaigns | Businesses | Campaigns with 1+ required action | Typical required actions (where 1+) |
+|---|---|---|---|---|
+| Malaysia | 1,501 | 103 | 91% | 5 |
+| India | 4,062 | 691 | 79% | 5 |
+| Japan | 4,797 | 235 | 76% | 5 |
+| Philippines | 2,053 | 289 | 73% | 1 |
+| China | 1,541 | 136 | 73% | 6 |
+| Singapore | 3,491 | 271 | 71% | 5 |
+| South Korea | 2,675 | 392 | 66% | 6 |
+| Taiwan | 1,917 | 157 | 63% | 5 |
+| Vietnam | 2,501 | 547 | 62% | 6 |
+| Türkiye | 1,406 | 367 | 59% | 3 |
+| Hong Kong | 1,973 | 428 | 59% | 4 |
+| Australia | 6,066 | 1,334 | 57% | 1 |
+| Spain | 1,884 | 496 | 56% | 2 |
+| France | 2,174 | 356 | 47% | 2 |
+| United States | 57,286 | 8,719 | 41% | 1 |
+| Poland | 2,157 | 188 | 38% | 3 |
+| United Kingdom | 15,188 | 1,710 | 36% | 1 |
+| Brazil | 5,299 | 497 | 36% | 3 |
+| Canada | 7,004 | 1,066 | 35% | 1 |
+| Germany | 3,322 | 419 | 29% | 2 |
+<!-- /generated -->
 
 [Source: `analysis/output/indicators.json`, mandatory_actions_by_country.]
 
-**Question actions.** A question action is closer to routine in East and Southeast Asia than elsewhere. Answer validation stays rarely on wherever the question action runs, under a tenth of question actions in every country in this table.
+**Question actions.** A question action is closer to routine in East and Southeast Asia than elsewhere, with Vietnam, Singapore, Malaysia and South Korea all near or above half their campaigns. Answer validation stays rarely on wherever the question action runs, at or under a tenth of question actions in 19 of the 20 countries, and Taiwan is the exception at 16%.
 
-| Country | Share of campaigns with a question action |
-|---|---|
-| China | 61% (2,613 campaigns, 166 businesses) |
-| Vietnam | 56% (3,762 campaigns, 773 businesses) |
-| United States | 13% (58,843 campaigns, 9,105 businesses) |
-| Canada | 8% (7,276 campaigns, 1,156 businesses) |
+<!-- generated:em_question_country -->
+| Country | Campaigns | Businesses | Campaigns with a question action | Validation on, of those |
+|---|---|---|---|---|
+| Vietnam | 2,501 | 547 | 59% | 9% |
+| Singapore | 3,491 | 271 | 53% | 6% |
+| Malaysia | 1,501 | 103 | 49% | 1% |
+| South Korea | 2,675 | 392 | 49% | 3% |
+| China | 1,541 | 136 | 46% | 1% |
+| Taiwan | 1,920 | 157 | 38% | 16% |
+| Poland | 2,157 | 188 | 36% | 1% |
+| Hong Kong | 1,973 | 428 | 32% | 6% |
+| Japan | 4,797 | 235 | 29% | 1% |
+| India | 4,062 | 691 | 20% | 2% |
+| Australia | 6,066 | 1,334 | 18% | 8% |
+| Türkiye | 1,406 | 367 | 16% | 3% |
+| United Kingdom | 15,188 | 1,710 | 13% | 4% |
+| United States | 57,289 | 8,720 | 12% | 10% |
+| Philippines | 2,053 | 289 | 11% | 4% |
+| Germany | 3,322 | 419 | 11% | 9% |
+| Brazil | 5,299 | 497 | 9% | 0% |
+| Spain | 1,884 | 496 | 8% | 1% |
+| France | 2,174 | 356 | 8% | 3% |
+| Canada | 7,004 | 1,066 | 7% | 7% |
+<!-- /generated -->
 
 [Source: `analysis/output/indicators.json`, question_action_by_country.]
 
 **Worth settings, crypto and SaaS businesses removed.** Poland's typical top worth on a campaign runs well above the other countries measured here.
 
-| Country | Typical top worth |
-|---|---|
-| Poland | 25 (1,956 campaigns, 145 businesses) |
-| United States | 5 (54,208 campaigns, 7,941 businesses) |
-| United Kingdom | 3 (13,988 campaigns, 1,481 businesses) |
-| Australia | 3 (5,943 campaigns, 1,247 businesses) |
+<!-- generated:em_worth_country -->
+| Country | Campaigns | Businesses | Typical top worth |
+|---|---|---|---|
+| Poland | 1,911 | 140 | 25 |
+| Türkiye | 957 | 206 | 10 |
+| China | 814 | 79 | 7 |
+| Malaysia | 466 | 60 | 7 |
+| United States | 53,955 | 7,886 | 5 |
+| Germany | 2,945 | 325 | 5 |
+| France | 1,920 | 264 | 5 |
+| Spain | 1,612 | 403 | 5 |
+| Taiwan | 1,162 | 89 | 5 |
+| South Korea | 776 | 132 | 5 |
+| Singapore | 1,148 | 139 | 4 |
+| United Kingdom | 13,899 | 1,470 | 3 |
+| Canada | 6,445 | 932 | 3 |
+| Australia | 5,765 | 1,231 | 3 |
+| Brazil | 4,790 | 392 | 3 |
+| Japan | 1,019 | 125 | 3 |
+| Philippines | 1,632 | 215 | 2 |
+| India | 1,558 | 441 | 2 |
+| Hong Kong | 891 | 205 | 2 |
+| Vietnam | 676 | 191 | 1 |
+<!-- /generated -->
 
 [Source: `analysis/output/indicators.json`, mechanics_by_country_excluding_crypto.]
 
@@ -331,21 +418,23 @@ A cross-check on exact combinations shows the same direction on share: follow, v
 
 **What leads the list and overall conversion.** Campaigns led by different action families show different conversion, pooled across every method count, not split by list length. This is an association across the whole dataset, not a comparison within a fixed list length, and businesses who lead with a quick connect-account step or a single question may already be running a leaner campaign in every other respect. Treat it as a pattern to weigh, not a rule to follow.
 
+<!-- generated:em_lead_family -->
 | Lead action family | Conversion Rate | Campaigns | Businesses |
 |---|---|---|---|
-| Question | 30.9% | 7,338 | 1,257 |
-| Account connection | 30.5% | 4,816 | 1,343 |
-| Follow | 28.2% | 16,473 | 4,565 |
-| Join | 27.1% | 2,638 | 858 |
-| Visit | 26.7% | 31,153 | 6,209 |
-| Email | 26.7% | 21,169 | 3,832 |
-| Bonus | 26.2% | 19,139 | 3,807 |
-| Share | 23.9% | 2,753 | 927 |
-| Engage | 22.3% | 2,869 | 445 |
-| Download | 20.9% | 656 | 259 |
-| Content | 14.7% | 1,765 | 654 |
+| Question | 30.9% | 7,315 | 1,244 |
+| Account connection | 30.6% | 4,780 | 1,326 |
+| Follow | 28.2% | 16,266 | 4,493 |
+| Join | 27.1% | 2,576 | 826 |
+| Visit | 26.7% | 31,064 | 6,181 |
+| Email | 26.7% | 21,047 | 3,825 |
+| Bonus | 26.1% | 19,036 | 3,776 |
+| Share | 23.7% | 2,692 | 916 |
+| Engage | 22.3% | 2,866 | 444 |
+| Download | 20.9% | 649 | 255 |
+| Content | 14.3% | 1,756 | 649 |
+<!-- /generated -->
 
-A question or an account connection at the head of the list sits about four points above a visit, an email or a bonus, and content sits twelve points below them. The spread across the seven middle families is under two points, so what leads matters far less than whether the first thing asked is a piece of work. These are campaigns grouped by what they happened to lead with, never a test of moving an action to the front.
+A question or an account connection at the head of the list sits about four points above a visit, an email or a bonus, and content sits twelve points below them. The five families from follow down to bonus sit within about two points of each other, so what leads matters far less than whether the first thing asked is a piece of work. These are campaigns grouped by what they happened to lead with, never a test of moving an action to the front.
 
 [Source: `analysis/output/method_mix.json`, `lead_action_family`.]
 
@@ -377,28 +466,32 @@ Share copy on Viral Share and X Posts actions (59,548 actions with custom text, 
 
 Visit actions by where they send people:
 
-| Destination | Actions | Share who completed it (typical) |
-|---|---|---|
-| another site | 121,815 | 77 |
-| YouTube | 49,522 | 85 |
-| the business's own site | 10,333 | 97 |
-| another Gleam campaign | 583 | 85 |
-| Steam | 303 | 79 |
-| Instagram | 194 | 95 |
-| Facebook | 117 | 58 |
-| Amazon | 101 | 69 |
+<!-- generated:em_visit_destinations -->
+| Destination | Actions | Businesses | Share who completed it (typical) |
+|---|---|---|---|
+| another site | 121,345 | 6,668 | 77 |
+| YouTube | 49,326 | 7,552 | 85 |
+| the business's own site | 10,195 | 2,564 | 97 |
+| another Gleam campaign | 583 | 271 | 85 |
+| Steam | 303 | 30 | 79 |
+| Instagram | 194 | 39 | 95 |
+| Facebook | 109 | 33 | 57 |
+| Amazon | 100 | 29 | 69 |
+<!-- /generated -->
 
 A visit to the business's own site is completed by almost everyone at 97 per 100 Entrants, a YouTube channel by 85 and any other site by 77. Two thirds of visit actions land in that last row, which is every destination the rules do not name, so it carries no one kind of page. [Source: `analysis/output/text_and_context.json`, `visit_destinations`.]
 
-Email Subscriptions by the description under the action:
+Email Subscriptions by the description under the action, from `analysis/output/text_and_context.json` `newsletter_wording`:
 
-| Newsletter description | Actions | Share who completed it (typical) |
-|---|---|---|
-| no description | 9,429 | 95 |
-| description without those | 5,476 | 84 |
-| mentions frequency or unsubscribe | 2,169 | 85 |
+<!-- generated:em_newsletter_wording -->
+| Newsletter description | Actions | Businesses | Share who completed it (typical) |
+|---|---|---|---|
+| no description | 20,856 | 3,554 | 95 |
+| description without those | 18,701 | 2,478 | 81 |
+| mentions frequency or unsubscribe | 7,301 | 863 | 81 |
+<!-- /generated -->
 
-No description at all ran highest. A description, with or without frequency and unsubscribe wording, went with about a tenth fewer completions. More words under the checkbox give people more to think about. Write the frequency line anyway where the law asks for it, and keep it to one line.
+No description at all ran highest, at 95 per 100 Entrants. A description completed at 81 whether or not it mentioned frequency and unsubscribe wording. More words under the checkbox give people more to think about. Write the frequency line anyway where the law asks for it, and keep it to one line.
 
 ## Friction
 
@@ -465,23 +558,25 @@ A two-segment fit over the pooled 38,810 campaigns [`analysis/output/thresholds.
 
 What the curve does support is the shape. Each action from the first to about the thirteenth costs Conversion Rate, steeply at first and more slowly later. Past sixteen it climbs back up on a few hundred campaigns per point, likely a handful of unusually well-optimized businesses still clearing 100 Entrants at that length, and that climb is no evidence that more actions help. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
 
-**Campaigns running more actions convert lower, and that holds inside most industries and not only pooled across all of them.** [`analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry`.] In at least 15 of the 21 industries tested, the top quarter by conversion runs fewer actions and far less social or referral friction than the rest of that same industry, a like-for-like version of the pattern above.
+**Campaigns running more actions convert lower, and that holds inside most industries and not only pooled across all of them.** [`analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry`.] In at least 13 of the 21 industries tested, the top quarter by conversion runs fewer actions and far less social or referral friction than the rest of that same industry, a like-for-like version of the pattern above.
 
+<!-- generated:em_quartile_features -->
 | Metric | Top quarter vs rest of industry | Industries showing this direction |
 |---|---|---|
-| Actions run | 0.67x | 18 of 21 |
-| Referral share offered | 0.50x | 18 of 21 |
-| Secret code offered | 0.57x | 15 of 21 |
-| Platform follow offered | 0.71x | 16 of 21 |
+| Actions run | 0.67x | 17 of 21 |
+| Referral share offered | 0.47x | 14 of 21 |
+| Secret code offered | 0.46x | 14 of 21 |
+| Platform follow offered | 0.71x | 13 of 21 |
+<!-- /generated -->
 
 Two examples:
 
-| Industry | Top quarter actions | Rest actions | Top quarter referral offered | Rest referral offered |
-|---|---|---|---|---|
-| Electronics and tech | 4 | 6 | 0.3% | 26% |
-| Apparel and fashion | 1 | 4 | 3.6% | 25% |
-
-[Electronics and tech: 1,434 campaigns/119 businesses top quarter, 4,299/852 rest. Apparel and fashion: 503/50 top quarter, 1,500/335 rest.]
+<!-- generated:em_quartile_examples -->
+| Industry | Top quarter | Rest of industry | Top quarter actions | Rest actions | Top quarter referral offered | Rest referral offered |
+|---|---|---|---|---|---|---|
+| Electronics and tech | 1,428 campaigns, 115 businesses | 4,281 campaigns, 851 businesses | 4 | 6 | 0.3% | 26.1% |
+| Apparel and fashion | 499 campaigns, 48 businesses | 1,494 campaigns, 333 businesses | 1 | 4 | 3.6% | 25.4% |
+<!-- /generated -->
 
 A tenth-level check strengthens toward the extremes, it does not flatten out, consistent with a real relationship, not an artifact of one cutoff:
 
@@ -491,7 +586,7 @@ A tenth-level check strengthens toward the extremes, it does not flatten out, co
 | Secret code offered | - | 0.27 | 0.44 |
 | Platform follow offered | - | 0.50 | 0.61 |
 
-This prices the fourth and fifth action, it is not an instruction to cut down to one. A campaign that needs three assets cannot run a one-action campaign, and nothing here says it should. What each added action, especially a referral or a secret code, costs on this specific completion measure is the number to weigh against what that action collects, so add it when the campaign needs that asset and budget for this rate to move. Conversion here is Entrants over Impressions, and a lean single-action entry form structurally has less friction between an Impression and a completed entry, so part of the pattern may describe how the metric is built as much as business choice. It does not mean a heavier campaign performs worse on total entries or reach, only on this completion rate. The top quarter itself is defined by conversion, one objective among several (an email list, followers, UGC and reach are the others), so an industry's top quarter by conversion is not automatically the shape to copy when the campaign's objective is one of those. Cite this finding with both caveats every time. Email offered and completion did not survive this same check (mixed direction, completion flat at a typical ratio of 0.995 across industries) and neither did community-join actions or question actions, so none of those are a vertical-strength signal here. [Extracted from `analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry` and `threshold_check_top_vs_bottom_decile_pooled`.]
+This prices the fourth and fifth action, it is not an instruction to cut down to one. A campaign that needs three assets cannot run a one-action campaign, and nothing here says it should. What each added action, especially a referral or a secret code, costs on this specific completion measure is the number to weigh against what that action collects, so add it when the campaign needs that asset and budget for this rate to move. Conversion here is Entrants over Impressions, and a lean single-action entry form structurally has less friction between an Impression and a completed entry, so part of the pattern may describe how the metric is built as much as business choice. It does not mean a heavier campaign performs worse on total entries or reach, only on this completion rate. The top quarter itself is defined by conversion, one objective among several (an email list, followers, UGC and reach are the others), so an industry's top quarter by conversion is not automatically the shape to copy when the campaign's objective is one of those. Cite this finding with both caveats every time. Email offered and completion did not survive this same check (offered lower in 11 of the 21 industries and higher in 3, completion flat at a typical ratio of 1.00 across industries) and neither did community-join actions or question actions, so none of those are a vertical-strength signal here. [Extracted from `analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry` and `threshold_check_top_vs_bottom_decile_pooled`.]
 
 ## Invalid entries (extracted)
 
