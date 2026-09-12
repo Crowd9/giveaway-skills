@@ -372,14 +372,6 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | MailerLite | 100% (1.004) | 822 | 112 |
   | ConstantContact | 86% (0.863) | 461 | 73 |
 <!-- /generated -->
-- Marketing stack: businesses running Klaviyo offer email far more often, and are far more often on Shopify too.
-
-  | | Runs Klaviyo | Doesn't run Klaviyo |
-  |---|---|---|
-  | Campaigns | 1,659 | 30,397 |
-  | Businesses | 444 | 5,054 |
-  | Offers email | 63% | 46% |
-  | On Shopify | 29% | 4% |
 - Country rules: 25% of campaigns restrict entry by country. Restricted campaigns offer email far more often, and restricting costs little on the share who enter.
 
 <!-- generated:se2_country_rule -->
