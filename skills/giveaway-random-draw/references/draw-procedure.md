@@ -5,10 +5,10 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 ## Before the draw
 
 - Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets the audit record and the published commitment, and checks those.
-- Decide the deduplication rule before looking at names. Common choices: one chance per email, or entries add up when the terms promised bonus entries.
+- Apply the duplicate and weighting rules in the published terms. Before launching a new campaign, decide whether each person gets one chance or bonus entries add up.
 - List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries flagged as automated.
-- Decide tiers and backups. Two backups per tier covers most no-reply cases without a second draw.
-- Pick the seed and, if the terms or a partner require it, publish it before drawing.
+- Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
+- Choose and publish the future seed source before its value exists, alongside the commitment. Use the announced value only after it becomes available.
 
 - Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,886 campaigns and 16,633 businesses, and referral-heavy mixes ran higher. Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
 
@@ -55,25 +55,28 @@ python3 scripts/draw.py draw entries.csv --rules rules.json \
 python3 scripts/draw.py verify draw-2026-09-12.json --exclude staff.txt
 ```
 
+Verification reconstructs every Winner and backup place from the committed tiers and backup count. The audit must contain that exact number of results in the recomputed order, with matching identifiers and Prize assignments. Missing Winners, omitted backups and reassigned tiers fail verification.
+
 Every option still works as a flag, and a flag on the command line overrides the file. Publish `rules.json` beside the commitment so anyone checking the draw can see what was fixed in advance.
 
-One draw. If the tool errors (too few eligible Entrants, wrong column), fix the input, commit again, and keep only the final run.
+One valid draw. If the tool errors or the inputs are wrong, stop and correct the inputs under the published rules. Keep the original commitment and any invalidated draw record with the reason for the correction. After a published commitment, any change to the input or exclusions requires a replacement commitment tied to a future seed, published before that seed exists. Mark which record was superseded and never reuse a known seed for corrected inputs.
 
-**Read the counts back before you call it done.** Both commands print, and the audit records, `rows_read`,
+**Read the counts before publishing the commitment and again before announcing Winners.** Both commands print, and the audit records, `rows_read`,
 `unique_eligible`, `duplicates_merged`, `excluded` and `rows_with_invalid_weight`. The last one is the quiet
 failure: an Entrant whose weight is blank, zero or negative is dropped from the draw, so a misnamed weight column
 or a sparse entries field can take most of the list out while the draw still succeeds and prints Winners. A file
 of five rows where three have no weight draws from two people and says so in one line that is easy to skip.
 
-Check `unique_eligible` against what the business expects before announcing anything. When the gap is more than a
-rounding difference, say the number out loud to the user and name the cause. Where the weight column is the
-problem, the fix is usually to drop `--weight-column` and run an unweighted draw, which keeps everyone in.
+Reconcile `unique_eligible`, exclusions and earned weights with the campaign records before drawing. Explain
+any gap to the organizer. Correct a missing or misnamed weight column from the source export, and resolve blank,
+zero, negative or otherwise invalid weights according to the published rules. Confirm that every eligible
+Entrant retains their earned chances. Keep `--weight-column` when the campaign promised weighted entries.
+A successful command does not establish that the inputs were correct.
 
-**Weighting concentrates the odds, so decide it before the draw and say which you did.** The key is
-`u ^ (1 / weight)`, so an Entrant holding twenty entries is twenty times more likely to take any given place than
-one holding a single entry. That is the point of bonus entries, and it is also what a losing Entrant will ask
-about. Weight when the campaign rewarded effort and the terms said so. Draw unweighted when the Prize is large
-enough that the optics matter more than the reward, and put the choice in the audit note either way.
+**The published terms decide weighting.** The key is `u ^ (1 / weight)`. Weights determine the chances at each
+selection among the Entrants still eligible, with Winners removed from later selections. Preserve bonus entries
+when the campaign promised them. Prize value or concerns about appearances do not justify changing those
+chances. Record the weighting and any input correction in the audit note.
 
 ## Checking it without the script
 
@@ -102,7 +105,7 @@ Deduplication is per identifier column. The script merges rows that match on the
 
 - Verify each drawn Entrant against the terms before calling them a Winner: required action completed, eligible region, age, one account.
 - Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline from the terms, then forfeiture and the next backup. On a seven-day deadline that puts the attempts about 72 hours apart.
-- If backups run out, hold a second draw with a new seed, recorded as draw 2, from the same frozen list minus everyone already drawn.
+- If the terms allow another draw after backups run out, use the same frozen list with everyone already drawn added to exclusions. Publish a new commitment and a future seed source before the seed exists, and record it as draw 2.
 - Announce first names and city, or handles, with consent. Never publish the Entrant list.
 - Keep the input file, the exclusions file, the audit JSON and the announcement together for as long as the terms or local law require.
 

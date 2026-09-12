@@ -1,7 +1,8 @@
 {
  "definitions": {
   "scope": "campaigns with 100 or more Entrants, ordinary population",
-  "terms_settings": "the values written into the campaign's terms; 7 days is the platform default for both timings"
+  "terms_settings": "the values written into the campaign's terms; 7 days is the platform default for both timings",
+  "privacy": "published groups hold at least five distinct businesses; smaller groups are omitted and shares keep the full population denominator, so published values need not sum to the total"
  },
  "terms_timetable": {
   "draw_days": {
@@ -108,20 +109,15 @@
     "businesses": 9,
     "share": 0.0004
    },
-   "Ganhador aleatório": {
-    "campaigns": 35,
-    "businesses": 1,
-    "share": 0.0003
+   "Sorteio Aleatório": {
+    "campaigns": 21,
+    "businesses": 11,
+    "share": 0.0002
    },
-   "Jurering": {
-    "campaigns": 32,
-    "businesses": 1,
-    "share": 0.0003
-   },
-   "Random draw to select finalists & then finalists judged": {
-    "campaigns": 31,
-    "businesses": 1,
-    "share": 0.0003
+   "Sorteo aleatorio": {
+    "campaigns": 6,
+    "businesses": 5,
+    "share": 0.0001
    }
   }
  }

@@ -51,6 +51,19 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "id": 5,
+   "prompt": "We did not offer an Email Subscription Action, but have email addresses from User Details. Can we contact the Winner and add everyone to the newsletter? Does the subscription-Action benchmark show that most campaigns cannot contact anyone?",
+   "expected_output": "Checks available contact records for Winner administration and individual recorded marketing consent for the newsletter. Separates addresses, consent and subscription-Action usage. Explains consent via the User Details checkbox and explicit Newsletter signup without inferring permission from Action presence or absence.",
+   "assertions": [
+    "Does not infer missing addresses from absence of a subscription Action",
+    "Uses available contact details for permitted Winner administration",
+    "Gates promotional messages on recorded marketing consent",
+    "Identifies both the User Details consent checkbox and explicit Newsletter signup",
+    "Does not turn Action usage or configuration rates into a consent or refusal rate"
+   ],
+   "files": []
   }
  ]
 }

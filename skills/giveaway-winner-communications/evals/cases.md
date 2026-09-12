@@ -48,3 +48,7 @@ winner email template
 ```
 
 The baseline closed on an offer to send more, which the skill's own style rules ban as a closer. The latest answer quotes the reminder timing from `references/message-templates.md` line 11 word for word, and it writes one message out of six and describes the other four without delivering them.
+
+## Contact and consent regression, 12 September 2026
+
+Added the no-subscription-Action prompt in `evals.json`. The documentation review checked the workflow and reference for separate address, consent and Action-usage decisions. No model response was generated or scored for this new case.

@@ -1,10 +1,10 @@
 # After the draw
 
-Advice from practice. Nothing here carries a dataset figure. The campaign emails that run while entries are open belong to giveaway-promotion-plan, and the opt-in wording on the entry form belongs to giveaway-entry-method-planner. This page picks up at the moment the Winner is announced and the rest of the list is still sitting there.
+Advice from practice, except the subscription-Action usage table below. The campaign emails that run while entries are open belong to giveaway-promotion-plan, and the opt-in wording on the entry form belongs to giveaway-entry-method-planner. This page picks up at the moment the Winner is announced and the rest of the list is still sitting there.
 
-## Most campaigns have no address to write to (extracted)
+## Most campaigns collected no marketing permission (extracted)
 
-Everything on this page runs on email, and the majority of campaigns never collected one. The share of campaigns
+Everything on this page runs on email, and the majority of campaigns never ran an email Action, which is where marketing permission is collected. The share of campaigns
 offering an email or newsletter Action rises with size and stays a minority at every size:
 
 <!-- generated:wc_email_band -->
@@ -18,24 +18,23 @@ offering an email or newsletter Action rises with size and stays a minority at e
 | 10,000 or more | 41% | 3,171 | 748 |
 <!-- /generated -->
 
-So in three campaigns out of four at the small end, and in more than half at every size, the business holds no
-address for the Winner or for anyone else who entered. Check which Actions the campaign ran before planning any
-of this. Where there is no email Action:
+So in three campaigns out of four at the small end, and in more than half at every size, the campaign holds no
+marketing permission for the Winner or for anyone else who entered, whatever addresses the User Details form
+captured. The table measures which Actions campaigns offered, never how many addresses exist or who ticked a box.
+Where there is no email Action there is no welcome series and no sunset rule to run, and the public announcement
+is the only message that reaches the people who did not win. Check three things before choosing the message channel:
 
-- The Winner notification goes on the channel they entered with, and the deadline in the terms starts from a
-  message the Winner may not see for days. Allow for that when the Prize is time-bound.
-- There is no welcome series, no sunset rule and no second consent to collect. The list the campaign built is a
-  follower count on someone else's platform.
-- The public announcement carries more weight, because it is the only message that reaches the people who did not
-  win.
-- Say plainly that the campaign captured reach, with no list to show for it, and that an email Action is the change that would
-  alter it next time.
+- **Address availability.** Inspect the campaign's contact records. An address can be collected through the User Details form even when no subscription Action is offered. If there is no usable email address, use the available contact channel for the Winner and the public announcement for the audience.
+- **Marketing consent.** Check each person's recorded opt-in and its scope. An Email Subscription Action gets consent through a checkbox on the User Details form. Newsletter signup also collects explicit consent. Having an address alone grants no marketing permission. Keep Winner administration separate from promotional messages.
+- **Subscription-Action usage.** The table describes which Actions campaigns offered. Offering an Action establishes neither a particular person's consent nor the absence of addresses in campaigns without that Action.
+
+Plan the promotional welcome series only for people with recorded marketing consent. When addresses exist without that consent, keep them out of the promotional series and core marketing list. When no contact address exists, use another available channel for permitted campaign administration.
 
 Source: `analysis/output/benchmarks.json` (`ordinary_benchmark.entry_methods.by_band.share_with_family`).
 
 ## The welcome series that starts with the non-Winner message
 
-The series starts at entry. Message one is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them from the giveaway stream, on a fixed schedule, and stop.
+The series starts at entry. Message one is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them only to people whose recorded marketing consent covers the series, from the giveaway stream, on a fixed schedule, and stop.
 
 | Message | When | What it does |
 |---|---|---|
@@ -88,16 +87,16 @@ Addresses that never open in their first weeks are the ones that cost sender rep
 - Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag the same addresses at draw time.
 - Only what survives this joins the core list.
 
-## Two consents, collected in different places
+## Record entry consent and marketing consent separately
 
-Entry consent and marketing consent are separate permissions and they are collected in separate places.
+Entry consent and marketing consent are separate permissions. Record each separately, even when both appear on the same form.
 
 | Consent | Where it is given | What it allows |
 |---|---|---|
 | Entry consent | The entry form, by entering | Running the promotion: contacting a Winner, verifying eligibility, delivering the Prize, publishing the result as the terms describe |
-| Marketing consent | A ticked opt-in box on the entry form, or an opt-in on the thank-you page | Sending the welcome series and everything after it |
+| Marketing consent | A ticked opt-in box on the entry form, or an opt-in on the thank-you page | Sending the promotional messages covered by the recorded opt-in |
 
-Entering does not subscribe anyone. Anyone who skipped the marketing box gets the Winner notification and nothing else. The terms script in giveaway-winner-structure writes this as a marketing-consent clause under its --marketing-consent flag.
+Entering does not subscribe anyone. Anyone without recorded marketing consent stays out of promotional messages. Winner notification, verification and delivery messages follow the campaign terms and use the contact details available. The terms script in giveaway-winner-structure writes this as a marketing-consent clause under its --marketing-consent flag.
 
 Where the region requires confirmed opt-in, send the confirmation email before message one, and hold the address out of the series until it is confirmed. Germany and Austria are the usual examples. Confirm the requirement for every country the Entrants live in before launch, since this is not legal advice.
 

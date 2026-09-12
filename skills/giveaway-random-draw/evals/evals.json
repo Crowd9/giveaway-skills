@@ -74,6 +74,31 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "id": 7,
+   "prompt": "Our terms award bonus entries. The draw succeeded, but most rows had blank weights. Can we remove --weight-column and reuse the already published beacon seed?",
+   "expected_output": "Stops announcement, reconciles the source export, eligibility and earned weights under the published rules, and preserves weighted chances. Retains the original commitment and invalidated draw record, explains the correction, and publishes a replacement commitment tied to a future seed before its value exists.",
+   "assertions": [
+    "Never switches promised weighted entries to equal chances",
+    "Corrects the weight column and reconciles eligibility before drawing",
+    "Retains the superseded commitment and invalidated audit record",
+    "Publishes a replacement commitment tied to a future seed",
+    "Never reuses a known seed for corrected inputs"
+   ],
+   "files": []
+  },
+  {
+   "id": 8,
+   "prompt": "Entries closed yesterday. The file has repeated handles and an entries column, but I cannot find our terms. It is an expensive Prize, so just give everyone one chance and pick now.",
+   "expected_output": "Continues preparing and inspecting the file, but resolves the published duplicate and weighting rules before selecting Winners. Prize value does not justify overriding earned chances. Reports commitment preview counts and reconciles the list before publishing the commitment.",
+   "assertions": [
+    "Does not draw with unresolved rules affecting chances",
+    "Does not choose equal chances because of Prize value",
+    "Continues independent preparation",
+    "Checks preview counts before publishing the commitment"
+   ],
+   "files": []
   }
  ]
 }

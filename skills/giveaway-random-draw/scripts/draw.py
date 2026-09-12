@@ -32,7 +32,7 @@ also prints the drand round that will be produced at that time, so the seed sour
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.4.0"
+VERSION = "2.4.2"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
@@ -73,7 +73,9 @@ def pick_id_column(rows, id_column):
     return keys[0]
 
 def load_entries(path, id_column):
-    raw = open(path, "rb").read(); text = raw.decode("utf-8-sig")
+    with open(path, "rb") as source:
+        raw = source.read()
+    text = raw.decode("utf-8-sig")
     stripped = text.lstrip()
     if stripped.startswith("[") or stripped.startswith("{"):
         rows = _flatten_json(json.loads(text))
@@ -81,9 +83,20 @@ def load_entries(path, id_column):
         return rows, pick_id_column(rows, id_column), sha(raw)
     lines = [l for l in text.splitlines() if l.strip()]
     if not lines: sys.exit("no Entries in input")
-    if "," in lines[0] or "\t" in lines[0]:
-        dialect = csv.excel_tab if "\t" in lines[0] and "," not in lines[0] else csv.excel
-        rows = list(csv.DictReader(io.StringIO(text), dialect=dialect))
+    # A one-column CSV has no delimiter. Its extension, header, or requested
+    # column still identifies it as a table, so the header cannot become an entrant.
+    suffix = str(path).lower().rsplit(".", 1)[-1]
+    first_field = next(csv.reader([lines[0]]))[0]
+    headered = (suffix in ("csv", "tsv") or "," in lines[0] or "\t" in lines[0]
+                or (suffix != "txt" and first_field in ID_KEYS)
+                or (id_column is not None and id_column != "entrant"))
+    if headered and "," not in lines[0] and "\t" not in lines[0] and id_column is None and first_field not in ID_KEYS:
+        sys.exit(f"one-column {suffix} file whose first line '{first_field}' is not a recognised header: "
+                 f"pass --id-column '{first_field}' if it is a header, or save a plain list as .txt")
+    if headered:
+        dialect = csv.excel_tab if suffix == "tsv" or ("\t" in lines[0] and "," not in lines[0]) else csv.excel
+        rows = list(csv.DictReader(io.StringIO(text.lstrip()), dialect=dialect))
+        if not rows: sys.exit("no Entries below the input header")
         return rows, pick_id_column(rows, id_column), sha(raw)
     return [{"entrant": l.strip()} for l in lines], "entrant", sha(raw)
 
@@ -97,10 +110,14 @@ def prepare(rows, id_column, weight_column, exclude):
         if weight_column:
             try: w = float(r.get(weight_column) or 0)
             except ValueError: w = 0.0
-            if w <= 0: bad += 1; continue
+            if not math.isfinite(w) or w <= 0: bad += 1; continue
         if key in seen:
             dupes += 1
-            if weight_column: seen[key]["weight"] += w
+            if weight_column:
+                total_weight = seen[key]["weight"] + w
+                if not math.isfinite(total_weight):
+                    raise ValueError("combined entry weights exceed the finite range; reconcile weights before drawing")
+                seen[key]["weight"] = total_weight
             continue
         seen[key] = {"id": key, "shown": r.get(id_column).strip(), "weight": w}; entrants.append(seen[key])
     plus = {}
@@ -188,7 +205,9 @@ def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
-    ents, *_ = prepare(rows, id_column, a.weight_column, set(l.strip().lower() for l in open(a.exclude) if l.strip()) if a.exclude else set())
+    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, {norm(l) for l in open(a.exclude, encoding="utf-8-sig") if l.strip()} if a.exclude else set())
+    print(f"rows_read {len(rows)}, unique_eligible {len(ents)}, duplicates_merged {dupes}, "
+          f"excluded {excluded}, rows_with_invalid_weight {bad}")
     notes = scan(ents)
     shown = notes if not getattr(a, "flagged_out", None) else notes[:20]
     for note in shown: print(f"review: {note}")
@@ -201,7 +220,8 @@ def cmd_commit(a):
         more = f" ({len(notes) - len(shown)} more not printed)" if len(notes) > len(shown) else ""
         print(f"\n{len(set(ids))} flagged ids written to {a.flagged_out}{more}. Read that file, delete anyone who "
               f"should stay in, then pass it to the draw as --exclude {a.flagged_out}. Flagging is a prompt to look, never a verdict.")
-    print("\nPublish the commitment now, before the seed exists. Keep the input file unchanged.")
+    print("\nReconcile eligibility and earned weights with the published rules before publishing this commitment. "
+          "Publish before the seed exists, then keep the input file unchanged.")
     if a.draw_at:
         ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at(ts)
         print(f"drand round at {a.draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
@@ -224,7 +244,7 @@ def cmd_draw(a):
              "plus_address_clusters": len(clusters), "seed": seed, "seed_source": source, "results": result}
     def show(x): return mask(x) if a.mask else x
     for r in result: print(f"{r['tier']}: {show(r['id'])}" + (f" (weight {r['weight']:g})" if a.weight_column else ""))
-    print(f"\nunique eligible {len(entrants)}, duplicates merged {dupes}, excluded {excluded}, invalid weights {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
+    print(f"\nrows_read {len(rows)}, unique_eligible {len(entrants)}, duplicates_merged {dupes}, excluded {excluded}, rows_with_invalid_weight {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
     if clusters: print(f"warning: {len(clusters)} groups of addresses share a local part with plus-tags (possible duplicate people). Review before announcing.")
     for note in scan(entrants): print(f"review: {note}")
     if a.audit: json.dump(audit, open(a.audit, "w"), indent=2); print(f"audit written to {a.audit}")
@@ -257,12 +277,94 @@ def cmd_verify(a):
         except Exception as ex: print(f"warn could not refetch drand round ({ex}); checked the recorded value only")
     entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude)
     if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL Entrant counts differ from the audit record"); ok = False
-    got = [e["id"] for e in rank(entrants, audit["seed"])[:len(audit["results"])]]
-    if got == [norm(r["id"]) for r in audit["results"]]: print(f"ok   recomputed the top {len(got)} entrants and they match the audit record")
-    else: print("FAIL recomputed ranking differs from the audit record"); ok = False
+    tiers = audit["rules"].get("tiers"); backups = audit["rules"].get("backups")
+    if (not isinstance(tiers, list) or not tiers or
+            any(not isinstance(t, list) or len(t) != 2 or not isinstance(t[0], str) or
+                type(t[1]) is not int or t[1] < 0 for t in tiers) or
+            type(backups) is not int or backups < 0):
+        print("FAIL committed tiers or backup count are invalid"); return 1
+    need = sum(count for _, count in tiers) + backups
+    results = audit.get("results")
+    if not isinstance(results, list) or len(results) != need:
+        print(f"FAIL result count differs from the {need} committed places"); ok = False
+    if len(entrants) < need:
+        print(f"FAIL only {len(entrants)} eligible entrants for {need} committed places"); ok = False
+    elif isinstance(results, list) and len(results) == need:
+        labels = [name for name, count in tiers for _ in range(count)]
+        labels.extend(f"Backup {k + 1}" for k in range(backups))
+        expected = [(e["shown"], label) for e, label in zip(rank(entrants, audit["seed"]), labels)]
+        recorded = [(r.get("id"), r.get("tier")) if isinstance(r, dict) else None for r in results]
+        if expected == recorded:
+            print(f"ok   recomputed all {need} committed places, including order and tier assignments")
+        else:
+            print("FAIL recomputed result order, IDs or tier assignments differ from the audit record"); ok = False
     print("PASS" if ok else "FAIL"); return 0 if ok else 1
 
+def verifier_self_test():
+    import contextlib, copy, os, tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        entries = os.path.join(directory, "entries.csv")
+        audit_path = os.path.join(directory, "audit.json")
+        with open(entries, "w") as handle:
+            handle.write("id,entries\nalpha,1\nbeta,2\ngamma,3\ndelta,4\nepsilon,5\nzeta,6\n")
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["draw", entries, "--id-column", "id", "--weight-column", "entries",
+                         "--tiers", "Grand:1,Runner-up:2", "--backups", "2", "--seed", "regression-seed",
+                         "--audit", audit_path]) == 0
+        with open(audit_path) as handle: original = json.load(handle)
+        def check(audit, expected_code):
+            with open(audit_path, "w") as handle: json.dump(audit, handle)
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                code = main(["verify", audit_path, "--input", entries])
+            assert code == expected_code, output.getvalue()
+            assert output.getvalue().splitlines()[-1] == ("PASS" if expected_code == 0 else "FAIL"), output.getvalue()
+        check(original, 0)
+        for length in (0, 1, 3, 4):
+            changed = copy.deepcopy(original); changed["results"] = changed["results"][:length]
+            check(changed, 1)
+        changed = copy.deepcopy(original); changed["results"].append(changed["results"][-1].copy())
+        check(changed, 1)
+        for index, tier in ((0, "Runner-up"), (1, "Grand"), (3, "Backup 2")):
+            changed = copy.deepcopy(original); changed["results"][index]["tier"] = tier
+            check(changed, 1)
+        changed = copy.deepcopy(original)
+        changed["results"][1], changed["results"][2] = changed["results"][2], changed["results"][1]
+        check(changed, 1)
+        changed = copy.deepcopy(original); changed["results"][0]["id"] = "absent-entrant"
+        check(changed, 1)
+        changed = copy.deepcopy(original); del changed["results"][0]["tier"]
+        check(changed, 1)
+
+def self_test_input_formats():
+    import os, tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        def read_file(name, content, column=None):
+            path = os.path.join(directory, name)
+            with open(path, "w") as output: output.write(content)
+            return load_entries(path, column)
+        for name in ("entrants.csv", "entrants.tsv", "entrants"):
+            for column in (None, "email"):
+                rows, chosen, _ = read_file(name, "email\nalpha\nbeta\n", column)
+                pool, _, _, _, _ = prepare(rows, chosen, None, set())
+                assert [entrant["id"] for entrant in pool] == ["alpha", "beta"], (name, column, pool)
+        rows, chosen, _ = read_file("custom.csv", '"account"\n"alpha"\n"beta"\n', "account")
+        assert chosen == "account" and len(rows) == 2, rows
+        rows, chosen, _ = read_file("custom.txt", "account\nalpha\nbeta\n", "account")
+        assert chosen == "account" and len(rows) == 2, rows
+        for column in (None, "entrant"):
+            rows, chosen, _ = read_file("plain.txt", "email\nalpha\nbeta\n", column)
+            assert chosen == "entrant" and len(rows) == 3, rows
+        for name, content, column in (("wrong.csv", "email\nalpha\nbeta\n", "account"),
+                                      ("bare.csv", "alpha@example.com\nbeta@example.com\n", None),
+                                      ("wrong.txt", "alpha\nbeta\n", "email"),
+                                      ("empty.csv", "email\n", None)):
+            try: read_file(name, content, column)
+            except SystemExit: pass
+            else: raise AssertionError("missing header or data must fail, never eat the first entrant: " + name)
+
 def self_test():
+    self_test_input_formats()
     import tempfile, os
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     open(p, "w").write("email,entries\nA@x.com,1\nb@x.com,3\na@x.com,2\nc@x.com,0\nd@x.com,1\nb+promo@x.com,1\n")
@@ -270,6 +372,15 @@ def self_test():
     ents, dupes, exc, bad, clusters = prepare(rows, col, "entries", {"d@x.com"})
     assert [e["id"] for e in ents] == ["a@x.com", "b@x.com", "b+promo@x.com"] and dupes == 1 and exc == 1 and bad == 1 and len(clusters) == 1, (ents, dupes, exc, bad, clusters)
     assert ents[0]["weight"] == 3.0
+    finite_rows = [{"id": key, "entries": weight} for key, weight in [("alpha", "NaN"), ("beta", "Infinity"), ("gamma", "-Infinity"), ("delta", "2")]]
+    finite_ents, _, _, invalid, _ = prepare(finite_rows, "id", "entries", set())
+    assert [e["id"] for e in finite_ents] == ["delta"] and invalid == 3
+    try:
+        prepare([{"id": "alpha", "entries": "1e308"}] * 2, "id", "entries", set())
+    except ValueError as error:
+        assert "combined entry weights" in str(error)
+    else:
+        raise AssertionError("overflowing combined weights must stop the draw")
     r1 = [e["id"] for e in rank(list(ents), "seed-1")]; r2 = [e["id"] for e in rank(list(ents), "seed-1")]; assert r1 == r2
     heavy = [{"id": "h", "weight": 3.0}, {"id": "l", "weight": 1.0}]; wins = sum(1 for i in range(4000) if rank(list(heavy), str(i))[0]["id"] == "h")
     assert 0.70 < wins / 4000 < 0.80, wins       # weight 3 vs 1 should win about 75%
@@ -308,6 +419,18 @@ def self_test():
     assert len(flagged) == 10, f"every disposable id must be written out, got {len(flagged)}"
     assert all(f.endswith("@mailinator.com") for f in flagged), flagged
     _os.unlink(fh.name); _os.unlink(out)
+    # The commitment preview must expose missing weights before a seed is fetched or a draw is run.
+    import contextlib, io
+    preview_file = os.path.join(d, "preview.csv")
+    open(preview_file, "w").write("id,entries\nalpha,2\nalpha,3\nbeta,1\ngamma,\ndelta,0\nepsilon,4\n")
+    exclusion_file = os.path.join(d, "exclude.txt")
+    open(exclusion_file, "w", encoding="utf-8-sig").write("epsilon\n")
+    _a.input = preview_file; _a.id_column = "id"; _a.weight_column = "entries"
+    _a.exclude = exclusion_file; _a.flagged_out = None
+    output = io.StringIO()
+    with contextlib.redirect_stdout(output): cmd_commit(_a)
+    assert "rows_read 6, unique_eligible 2, duplicates_merged 1, excluded 1, rows_with_invalid_weight 2" in output.getvalue(), output.getvalue()
+    verifier_self_test()
     print("self-test passed"); return 0
 
 def main(argv):

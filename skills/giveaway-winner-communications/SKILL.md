@@ -2,7 +2,7 @@
 name: giveaway-winner-communications
 description: "Write every message after the draw: Winner notification, verification request, address collection with a privacy note, shipping and delivery updates, the reply to a Winner who disputes or stalls, the public announcement, and the message to everyone who did not win. Use when the user asks 'how do I tell the Winner', 'Winner email', 'announce the Winner', 'what do I send non-Winners', 'Winner won't reply' (answered here as the message to send, with the redraw rule in giveaway-winner-structure), 'someone says they should have won', 'ask the Winner for a photo', or 'what do I email Entrants after the giveaway'. Platform-neutral. For the draw itself see giveaway-random-draw. For deadlines and the redraw rule see giveaway-winner-structure."
 metadata:
-  version: 1.2.25
+  version: 1.2.26
 ---
 
 # Giveaway Winner Communications
@@ -40,7 +40,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 1. **Get the facts.** Prize, Winner identifier and channel they entered with, reply deadline from the terms, what verification is needed (age, region, one account), delivery method and window, what the terms allow to be published, and whether non-Winners get anything.
 2. **Write the set.** Load `references/message-templates.md`. Notification (short, specific, a deadline, no attachments or links that look like phishing), verification ask, address form request with a one-line privacy note, delivery update, announcement, non-Winner message with any offer.
 3. **Handle the edge cases** the user names: no reply, a dispute, a Winner outside eligibility, a Prize that is out of stock, a Winner who wants cash. Each has a template and a rule in the reference.
-4. **Plan what happens to the list.** Load `references/after-the-draw.md`. Check first whether the campaign ran an email Action at all, because most did not, and the reference opens with what to do when there is no address to write to. When it did collect addresses: The non-Winner message is email one of a three-message welcome series, the giveaway sends go out on their own stream, the unsubscribe and complaint rates get read after the Winners email, and the addresses that never open are sunset before they reach the core list. Say where entry consent was collected and where marketing consent was collected, and add the one feedback question to the result email.
+4. **Plan what happens to the list.** Load `references/after-the-draw.md`. Check available contact addresses, each person's recorded marketing consent, and subscription-Action usage separately. Addresses can exist without a subscription Action, and Action usage never measures permission to mail a particular person. The Email Subscription Action collects consent through a User Details checkbox, and Newsletter signup also collects explicit consent. For people whose consent covers marketing, write the non-Winner message and following welcome series, separate the giveaway sending stream, read unsubscribe and complaint rates, and apply the sunset rule before moving subscribers to the core list. Keep Winner administration separate and add the feedback question only on an appropriate channel.
 5. **Deliver** the messages ready to send, each labelled with when it goes and by which channel.
 
 ## Output
@@ -49,7 +49,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 - The messages in send order, each with channel, timing and the fields to fill. Label each one the way `references/message-templates.md` does, name and timing in parentheses, never a dash.
 - Consent and privacy lines called out so they are not deleted.
 - A short contact log format (date, channel, message, response).
-- The welcome series after the non-Winner message, with what each email does and when it sends, the stream the giveaway sends run on, the unsubscribe, complaint and bounce figures to read afterwards, the sunset rule before addresses join the core list, and the one feedback question. Only when the campaign collected addresses.
+- The welcome series after the non-Winner message, with what each email does and when it sends, the stream the giveaway sends run on, the unsubscribe, complaint and bounce figures to read afterwards, the sunset rule before addresses join the core list, and the one feedback question. Only for addresses with recorded consent covering those marketing messages.
 - Next decision needed.
 
 ## Rules

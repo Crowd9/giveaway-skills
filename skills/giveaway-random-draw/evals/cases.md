@@ -2,6 +2,12 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root. The script's own check is `python3 scripts/draw.py --self-test`.
 
+## Draw integrity regression, 12 September 2026
+
+`python3 skills/giveaway-random-draw/scripts/draw.py --self-test` passed after the correction. The new regression checks that the commitment preview reports rows read, eligible people, merged duplicates, exclusions and invalid weights from a weighted synthetic input, including a byte-order-mark exclusion file. Further regressions reject nonfinite weights into the invalid-weight count and stop on overflow when combining duplicate weights. Existing ranking and weight tests also passed.
+
+Cases 7 and 8 in `evals.json` cover broken weights after a known seed and unresolved published rules. They have been added as evaluation specifications and have not been run through a model grader. The historical scores below predate this correction.
+
 ## The 40-Prompt Evaluation, 11 September 2026
 
 Four of the forty prompts in `.omc/skill-loop/evalset.json` were run against this skill on 11 September 2026. Scoring was by an independent grader against `.omc/skill-loop/rubric.md`. Types are S straightforward, U underspecified, H hard realistic, T trap.
@@ -48,3 +54,7 @@ pick a winner for me
 ```
 
 The baseline stated its four defaults and left the reader no route they could take on their own. The latest answer refuses the impossible ask and names the export route for each network, every one of them checkable in `references/getting-your-entrant-list.md`, and it still leaves nothing the reader can run today.
+
+## Draw data integrity regression, 12 September 2026
+
+Executable self-tests now cover empty, truncated, reordered and reassigned audit results, plus single-column CSV headers and explicit identifier columns. The export integration also performs a weighted draw and verifies its audit. These are executable regression checks. No new model response was generated or graded.

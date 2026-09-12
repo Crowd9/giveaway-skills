@@ -15,7 +15,7 @@ Every campaign is ranked inside its own size band. The six bands run 100 to 250,
 1,000 to 2,500, 2,500 to 10,000 and 10,000 or more Entrants, so a campaign is only ever compared with a group
 it belongs to.
 """
-import argparse, csv, json, os, sys
+import argparse, csv, json, math, os, sys
 
 BENCH = {
     "contestants": {"p25": 225, "median": 492, "p75": 1293, "p90": 3349},
@@ -300,10 +300,17 @@ def self_test():
     assert {r[0]: r for r in review(First)}["Users"][2] != "382", "the flag must change the comparison"
     print("self-test passed"); return 0
 
+def entry_total(value):
+    total = float(value)
+    if not math.isfinite(total) or total < 0:
+        raise argparse.ArgumentTypeError("Entries totals must be finite and nonnegative")
+    return total
+
+
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true"); ap.add_argument("--contestants", type=int); ap.add_argument("--impressions", type=int)
-    ap.add_argument("--entries", type=int); ap.add_argument("--invalid", type=int, help="invalid Entries worth (the Entries column summed over invalid rows), never a count of rows"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
+    ap.add_argument("--entries", type=entry_total); ap.add_argument("--invalid", type=entry_total, help="invalid Entries worth (the Entries column summed over invalid rows), never a count of rows"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
     ap.add_argument("--actions", help="CSV with action name and completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")

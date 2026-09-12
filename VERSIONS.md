@@ -5,14 +5,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.29 |
-| giveaway-entry-method-planner | 1.2.29 |
+| giveaway-entry-method-planner | 1.2.32 |
 | giveaway-timing-and-duration | 1.4.27 |
 | giveaway-winner-structure | 1.3.25 |
 | giveaway-promotion-plan | 1.3.29 |
-| giveaway-random-draw | 1.3.23 |
-| giveaway-winner-communications | 1.2.23 |
+| giveaway-random-draw | 1.3.27 |
+| giveaway-winner-communications | 1.2.26 |
 | giveaway-idea-generator | 1.3.26 |
-| giveaway-results-review | 1.5.30 |
+| giveaway-results-review | 1.5.33 |
 | gleam-campaign-setup | 1.2.27 |
 
 ## Skills
@@ -87,6 +87,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.27 (2026-09-12): A question the data cannot answer gets labelled best practice. Plus what to do about follows that lapse after a campaign.
 - 1.2.28 (2026-09-12): Some Entrants leaving after a campaign is normal, and the two things that decide how many are the reason to stay and whether the Prize had anything to do with the business.
 - 1.2.29 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.2.32 (2026-09-12): Remove address counts and consent-refusal inferences from subscription-Action activity and configuration figures.
 
 ### giveaway-timing-and-duration
 
@@ -210,6 +211,8 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.3.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.3.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.3.23 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.3.26 (2026-09-12): Preserve published weighting and eligibility, reconcile weights before commitment, and retain superseded records with a replacement commitment tied to a future seed. Draw script 2.4.1 prints preview counts and rejects non-finite weights and combined-weight overflow.
+- 1.3.27 (2026-09-12): Draw script 2.4.2 verifies every committed Winner and backup assignment and recognizes single-column CSV headers.
 
 ### giveaway-winner-communications
 
@@ -237,6 +240,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.21 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.22 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.23 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.2.26 (2026-09-12): Separate contact-address availability, recorded marketing consent and subscription-Action usage in the workflow and follow-up guidance.
 
 ### giveaway-idea-generator
 
@@ -312,6 +316,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.5.29 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.5.30 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.5.33 (2026-09-12): Summary and draw conversion share weight validation, reject missing earned weights, and preserve fractional totals. The export-to-draw regression checks the complete conversion path.
 
 ### gleam-campaign-setup
 

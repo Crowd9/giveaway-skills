@@ -372,7 +372,7 @@ Typical completions per campaign among campaigns that offered the action, comple
 | Referral entries (Viral Shares) | 42,900 | 88 | 12 | 2.89 |
 | Content submissions | 3,308 | 112 | 18 | 15.89 |
 
-Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 addresses. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions.
+Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 email signups. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions. Those are recorded completions among campaigns offering the action, never a count of available contact addresses or of individual marketing consent, and each row covers its own campaigns, so the medians do not describe one campaign's combined results.
 
 ## Wording and destinations (extracted)
 
@@ -604,7 +604,7 @@ Gleam marks an entry invalid when its check fails: a follow that was undone, a d
 
 ## Consent and rules
 
-Entry consent and marketing consent are two separate things, and a campaign needs both collected in the right place. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the Entrant accepts. Marketing consent is agreement to be contacted afterwards, and it is collected at the email or messaging action itself, in its own wording, with its own checkbox. One does not imply the other, and an Entrant who declines the second is still a valid Entrant.
+Keep entry consent and marketing consent separate, and collect the permission needed for each use. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the Entrant accepts. Marketing consent is agreement to receive specified promotional messages. An Email Subscription Action collects it through a checkbox on the User Details form, and Newsletter signup also collects explicit consent. Check the recorded choice and wording for each person. Contact details can exist without either subscription Action. One does not imply the other, and an Entrant who declines the second is still a valid Entrant.
 
 - Email entries need opt-in wording that says what the Entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
 - Where the region requires double opt-in (Germany and much of the EU for email, and most regimes for SMS), the confirmation goes out at the moment of capture and only confirmed contacts join the list. Plan for a share of Entrants never confirming.
@@ -615,7 +615,7 @@ Entry consent and marketing consent are two separate things, and a campaign need
 
 This skill does not give legal advice.
 
-Extracted: 28% of Email Subscriptions actions in the ordinary campaigns showed an explicit opt-in checkbox. Expect roughly one in ten Entrants to skip a visible checkbox, those who tick it are the list you can mail. [Where the checkbox was on, the typical Email Subscriptions action recorded 89 entries per 100 Entrants against 101 where it was off, the campaigns we can compare fairly, 812 campaigns/227 businesses with the checkbox on, 2,612/758 without.]
+Extracted: of the Email Subscriptions actions in the ordinary campaigns with the opt-in checkbox set on or off, 24.9% had it on (9,764 actions against 29,510 off, with a further 7,584 set to automatic), a setting the campaign recorded and never a count of who ticked it or who declined. With the checkbox on, the typical action recorded 85 entries per 100 Entrants against 92 with it off [1,618 and 4,506 businesses, `analysis/output/field_cuts.json`, `config_cuts.email_opt_in_checkbox`]. The setting says nothing about whether an address was collected elsewhere, so check the live consent records before adding anyone to a mailing list.
 
 ## Store campaigns
 

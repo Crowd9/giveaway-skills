@@ -4,8 +4,8 @@ The draw needs one file that names every eligible person once per entry. This pa
 
 ## What the script accepts
 
-- CSV or TSV with a header row. Say which column names the person with `--id-column` if it is not obvious.
-- One name, handle or email per line, no header.
+- CSV or TSV with a header row, including files with just one column. Keep the `.csv` or `.tsv` extension so the script treats the first row as a header. Say which column names the person with `--id-column` if it is not obvious. A requested column missing from the header stops the script.
+- One name, handle or email per line, no header. Save this as `.txt` and omit `--id-column`. The internal column for a plain list is `entrant`. For files without a `.txt` extension, a recognized field name such as `email` on the first line is treated as a header. Use `.csv` or `.tsv` for headered files to avoid ambiguity.
 - JSON from a comment or Entrant export. The script finds the list inside the file and picks the person field by looking for, in order: `email`, `username`, `user_name`, `handle`, `authorChannelId.value`, `authorDisplayName`, `author_name`, `author`, `commenter`, `owner`, `user`, `entrant`, `name`, then `id`. Nested objects are flattened with dots, so `from.username` and `snippet.topLevelComment.snippet.authorChannelId.value` both resolve. If the guess is wrong, pass `--id-column` with the dotted path.
 
 Run `commit` first. It prints the column it chose, so a wrong guess shows up before the seed exists.
@@ -18,7 +18,7 @@ If bonus entries live in a column, name it with `--weight-column`. If the sheet 
 
 ## Your giveaway platform
 
-A Gleam Actions export has one row per completed action with an Entries column for its worth and a Status column. The results-review skill's `gleam_export.py --entrants-csv entrants.csv` writes the valid rows as email and entries, and the draw script adds the entries up per person with `--weight-column entries`, so bonus entries carry their weight and invalid rows never enter the draw.
+A Gleam Actions export has one row per completed action with an Entries column for its worth and a Status column. The results-review skill's `gleam_export.py --entrants-csv entrants.csv` writes the valid rows as email and entries, and the draw script adds the entries up per person with `--weight-column entries`, so bonus entries carry their weight and invalid rows never enter the draw. Its summary counts a row whose Entries is missing, blank, nonnumeric, nonpositive or non-finite at zero and reports how many there were. Its draw export refuses the file until those rows are corrected from the campaign records. Valid fractional weights are preserved in both.
 
 Every hosted giveaway tool has an Entrant or users export, usually CSV, with an email column and an entries column. Export once after close, name the email column with `--id-column` if the header is unusual, and use the entries column as the weight. Platform-specific notes belong in your platform's own help pages.
 

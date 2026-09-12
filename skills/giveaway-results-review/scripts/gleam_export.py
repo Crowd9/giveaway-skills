@@ -9,11 +9,14 @@ Columns read: Email (the person), Status (Valid, Invalid, Winner), Action, Entri
 Entrants are unique emails with at least one valid row. Actions completed are valid rows. Entries are the sum of the
 Entries column on valid rows. Impressions are not in this export: pass them from the Reporting tab. Nothing leaves the
 machine and no row is printed: the summary is aggregates only.
+A row whose Entries is missing, nonnumeric, nonpositive or non-finite counts at zero in the summary and is
+reported; the draw export refuses the file until those rows are reconciled against the campaign records, since a
+chance the export invented is worse than a review one row short. Valid fractional weights are preserved in both.
 
 The review.py command printed at the end passes --invalid as invalid Entries worth, the Entries column summed over rows
 whose Status is Invalid. The row count is printed separately as "invalid rows".
 """
-import argparse, collections, csv, datetime as dt, sys
+import argparse, collections, csv, datetime as dt, math, sys
 
 FOLLOW_KEYS = [("x_follows", ("follow", ("x", "twitter", "@"))), ("instagram_follows", ("follow", ("instagram",))), ("tiktok_follows", ("follow", ("tiktok",))),
                ("twitch_follows", ("follow", ("twitch",))), ("youtube_subscribes", ("subscribe", ("youtube",))), ("discord_joins", ("join", ("discord",)))]
@@ -47,15 +50,53 @@ def parse_when(s):
         except ValueError: continue
     return None
 
+def read_rows(path, strict=False):
+    """Rows with their Entries parsed. A row whose Entries is blank, zero, negative or not a number counts as
+    unweighted: the summary keeps it at zero and reports it, the draw export refuses it, because a chance the
+    export invented is worse than a review that is one row short."""
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        rows = list(csv.DictReader(f))
+    for number, row in enumerate(rows, 2):
+        try:
+            weight = float(row.get("Entries") or "")
+        except (TypeError, ValueError):
+            weight = float("nan")
+        if not math.isfinite(weight) or weight <= 0:
+            if strict:
+                raise ValueError(f"row {number}: Entries must be a positive finite number; reconcile earned weights before export")
+            weight = 0.0; row["_unweighted"] = True
+        row["Entries"] = weight
+    return rows
+
+
+def weight_total(rows):
+    try:
+        total = math.fsum(r["Entries"] for r in rows)
+    except OverflowError:
+        raise ValueError("Entries total exceeds the finite range; reconcile earned weights before export") from None
+    return total
+
+
+def write_entrants(path, destination, who):
+    rows = read_rows(path, strict=True)
+    weight_total(rows)
+    with open(destination, "w", newline="", encoding="utf-8") as g:
+        writer = csv.writer(g)
+        writer.writerow(["email", "entries"])
+        for row in rows:
+            if (row.get("Status") or "Valid").strip().lower() in ("valid", "winner") and row.get(who):
+                writer.writerow([row[who].strip().lower(), row["Entries"]])
+
+
 def load(path):
-    with open(path, newline="", encoding="utf-8-sig") as f: rows = list(csv.DictReader(f))
+    rows = read_rows(path)
     if not rows or "Action" not in rows[0]: sys.exit("not a Gleam Actions export: no Action column")
     who = "Email" if "Email" in rows[0] else "Name"
     valid = [r for r in rows if (r.get("Status") or "Valid").strip().lower() in ("valid", "winner")]
     bad = [r for r in rows if (r.get("Status") or "Valid").strip().lower() not in ("valid", "winner")]
     people = {r[who].strip().lower() for r in valid if r.get(who)}
     per_action = collections.Counter(r["Action"].strip() for r in valid)
-    entries = sum(float(r.get("Entries") or 0) for r in valid)
+    entries = weight_total(valid)
     assets = collections.Counter()
     for r in valid:
         k = kind(r["Action"])
@@ -68,8 +109,9 @@ def load(path):
         u = (r.get("Referring URL") or "").strip()
         refs[u.split("/")[2] if u.startswith("http") and u.count("/") >= 2 else (u or "direct or unknown")] += 1
     span = (max(whens).date() - min(whens).date()).days + 1 if whens else None
-    return {"rows": len(rows), "valid_rows": len(valid), "invalid_rows": len(bad), "invalid_entries": int(sum(float(r.get("Entries") or 0) for r in bad)),
-            "contestants": len(people), "entries": int(entries),
+    return {"rows": len(rows), "valid_rows": len(valid), "invalid_rows": len(bad), "invalid_entries": weight_total(bad),
+            "unweighted_rows": sum(1 for r in rows if r.get("_unweighted")),
+            "contestants": len(people), "entries": entries,
             "actions_completed": len(valid), "per_action": dict(per_action.most_common()), "assets": dict(assets), "days_covered": span,
             "by_day": dict(sorted(days.items())), "by_hour_local": dict(sorted(hours.items())), "countries": dict(countries.most_common(10)),
             "country_share_top": countries.most_common(1)[0][1] / len(valid) if countries and valid else None, "referrers": dict(refs.most_common(8)), "person_column": who}
@@ -99,6 +141,44 @@ def self_test():
     assert "# Impressions from the Reporting tab" in review_command(s, A) and "views" not in review_command(s, A).lower(), review_command(s, A)
     assert generic_name("Follow @Gleamapp on Instagram:") == "Instagram Follows" and generic_name("Read Our Ideas:") == "Visit a Page" and generic_name("Subscribe to Our Giveaway List") == "Email Subscriptions", "generic"
     assert kind("Follow @Gleamapp on Instagram:") == "instagram_follows" and kind("Follow Gleamapp on X") == "x_follows" and kind("Subscribe to Our Giveaway List") == "emails"
+    import contextlib, io
+    output = os.path.join(d, "entrants.csv")
+    with contextlib.redirect_stdout(io.StringIO()):
+        assert main([p, "--entrants-csv", output]) == 0
+    with open(output, newline="") as exported:
+        exported_rows = list(csv.DictReader(exported))
+    assert [float(r["entries"]) for r in exported_rows] == [1, 2, 5]
+    # Both public paths reject unreconciled weights before creating or replacing an export.
+    for invalid in ("", "unknown", "0", "-1", "NaN", "Infinity", "-Infinity"):
+        with open(p, "w", newline="") as source:
+            writer = csv.writer(source)
+            writer.writerow(["Email", "Action", "Entries"])
+            writer.writerow(["a@example.com", "Subscribe", invalid])
+        assert load(p)["unweighted_rows"] == 1 and load(p)["entries"] == 0, load(p)
+        try:
+            write_entrants(p, output, "Email")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid weight accepted by the draw export")
+        with open(output, newline="") as exported:
+            assert list(csv.DictReader(exported)) == exported_rows
+    for columns, values in ((["Email", "Action"], ["a@example.com", "Subscribe"]),
+                            (["Email", "Action", "Entries"], ["a@example.com", "Subscribe"])):
+        with open(p, "w", newline="") as source:
+            writer = csv.writer(source); writer.writerow(columns); writer.writerow(values)
+        assert load(p)["unweighted_rows"] == 1, load(p)
+        try:
+            write_entrants(p, output, "Email")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("missing weight accepted by the draw export")
+    with open(p, "w", newline="") as source:
+        writer = csv.writer(source); writer.writerow(["Email", "Action", "Entries"])
+        writer.writerows([["a@example.com", "Subscribe", "1.25"], ["a@example.com", "Visit", "2.5"]])
+    assert load(p)["entries"] == 3.75
+    write_entrants(p, output, "Email")
     print("self-test passed"); return 0
 
 def main(argv):
@@ -109,8 +189,12 @@ def main(argv):
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")
-    s = load(a.export)
+    try:
+        s = load(a.export)
+    except ValueError as exc:
+        ap.error(str(exc))
     print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid rows {s['invalid_rows']:,}  invalid entries {s['invalid_entries']:,}  entrants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  days {s['days_covered']}")
+    if s["unweighted_rows"]: print(f"rows without a valid Entries value {s['unweighted_rows']:,} (counted at zero here; the draw export refuses them until reconciled)")
     print("assets", {k: f"{v:,}" for k, v in s["assets"].items()})
     print("per action"); [print(f"  {n:>7,}  {name}") for name, n in s["per_action"].items()]
     print("top countries", {k: f"{v / s['valid_rows']:.0%}" for k, v in list(s["countries"].items())[:6]})
@@ -121,10 +205,10 @@ def main(argv):
         with open(a.actions_csv, "w", newline="") as f:
             w = csv.writer(f); w.writerow(["action", "completions", "generic"]); [w.writerow([k, v, generic_name(k)]) for k, v in s["per_action"].items()]
     if a.entrants_csv:
-        with open(a.export, newline="", encoding="utf-8-sig") as f, open(a.entrants_csv, "w", newline="") as g:
-            w = csv.writer(g); w.writerow(["email", "entries"]); who = s["person_column"]
-            for r in csv.DictReader(f):
-                if (r.get("Status") or "Valid").strip().lower() in ("valid", "winner") and r.get(who): w.writerow([r[who].strip().lower(), r.get("Entries") or 1])
+        try:
+            write_entrants(a.export, a.entrants_csv, s["person_column"])
+        except ValueError as exc:
+            ap.error(str(exc))
         print("entrants written for the draw script, one row per valid action, weights add up per person")
     print("\nrun:", review_command(s, a)); return 0
 

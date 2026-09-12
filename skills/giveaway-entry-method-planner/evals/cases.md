@@ -50,3 +50,7 @@ how many entry methods is too many
 ```
 
 The baseline said larger campaigns hold on longer, which the reference's own elbow table contradicts. The latest answer opens with the number, gives the elbow by group and gets the corrected friction figures right, and it ends flat with no question about the objective and no assumption stated.
+
+## Contact and consent regression, 12 September 2026
+
+Added the no-subscription-Action prompt in `evals.json`. The documentation review checked the workflow and reference for separate address, consent and Action-usage decisions. No model response was generated or scored for this new case.

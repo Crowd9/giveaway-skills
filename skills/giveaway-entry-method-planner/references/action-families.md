@@ -72,7 +72,7 @@ A completions cut of the dataset: `entry_count` is the number of Entrants who co
 | X Hashtag Posts | 1,518 | 535 | 36 | 77 | 34 | 9% |
 <!-- /generated -->
 
-Email Subscriptions is completed by almost everyone who enters, more so when required.
+Email Subscriptions is completed by almost everyone who enters, more so when required. These Action figures do not measure available contact addresses or individual marketing consent. Check the campaign contact and consent records separately.
 
 <!-- generated:af_email_context -->
 | Context | Completion |

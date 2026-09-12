@@ -25,6 +25,8 @@ jobs:
           python3 skills/giveaway-results-review/scripts/gleam_export.py --self-test
           python3 skills/giveaway-results-review/scripts/campaign_report.py --self-test
           python3 evals/style_check.py --self-test
+          python3 evals/test_privacy_floor.py
+          python3 evals/test_export_to_draw.py
           python3 scripts/check_claims.py --self-test
       - name: Style rules on prose
         run: python3 scripts/style_lint.py

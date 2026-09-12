@@ -6,8 +6,12 @@ Catches the three ways bad figures have reached the skills before:
   2. a table cell left blank, which reads as a missing figure
   3. a table that drifted from the file it cites, because it was kept by hand
 
+Also checks explicit distinct-business counts recursively. Missing counts cannot
+be certified here and require the private analysis pipeline.
+
 Run in CI and after any regeneration."""
 import json, os, re, sys
+from privacy_floor import privacy_problems
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "analysis", "output")
@@ -17,6 +21,7 @@ fails, warns = [], []
 for f in sorted(os.listdir(OUT)):
     if not f.endswith(".json"): continue
     d = json.load(open(os.path.join(OUT, f)))
+    fails.extend(f"analysis/output/{f}: {problem}" for problem in privacy_problems(d))
     for k, v in (d.items() if isinstance(d, dict) else []):
         if k in ("definitions", "source"): continue
         if v in ({}, [], None):
@@ -146,4 +151,5 @@ for w in warns:
 for f in fails:
     print("  " + f)
 print(f"\n{len(fails)} problems and {len(warns)} citation gaps, across {len(names)} generated tables and {checked} prose figures")
+print("Privacy floor: explicit distinct-business counts checked recursively. Groups without such counts remain unverified and require the private analysis pipeline.")
 sys.exit(1 if fails else 0)

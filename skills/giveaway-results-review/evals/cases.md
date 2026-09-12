@@ -52,3 +52,7 @@ how did our giveaway do
 The baseline was a pure interview, with no benchmark and nothing the reader could hold their own figures against. The latest answer hands over a yardstick, 382 Entrants at 26% for a first campaign with six size bands to rank inside, and it explains the repeat-campaign climb in the one way `references/benchmarks.md` forbids two lines under its own table.
 
 Deduction standing in the latest grade, causal claim: "Once a business has run several campaigns those figures climb toward 492 Entrants, 27%, and closer to 4 and a half Entries each, mostly because they already have a list to push the next one to."
+
+## Draw data integrity regression, 12 September 2026
+
+The converter self-test rejects missing and invalid Entries consistently in summary and export. The integration test preserves fractional earned weights, runs the generated review command, draws Winners and verifies the audit. Missing weights stop conversion before an output file is created. These are executable regression checks. No new model response was generated or graded.
