@@ -8,25 +8,25 @@ Extracted: the top fifth of campaigns by Entrants saw a typical 14,070 Impressio
 
 ## Measured traffic mix
 
-Direct traffic supplies over half of all Impressions, well ahead of any single channel [across 54,660 campaigns from 10,692 businesses]. The rest splits across smaller traffic sources, none above 8%.
+Direct traffic supplies nearly half of all Impressions, well ahead of any single channel. The rest splits across smaller traffic sources, none above 10%. This cut is a share of Impressions and carries no campaign count of its own, so never borrow one from another table on this page: the pair that used to sit here matched no run of the source.
 
 | Traffic source | Share of Impressions |
 |---|---|
-| Direct | 51.7% |
-| Meta | 7.8% |
-| The business's own site | 7.2% |
-| Gleam's own pages | 6.9% |
-| X | 5.0% |
-| YouTube | 4.4% |
-| Giveaway directories | 3.3% |
-| Search | 3.0% |
-| Gaming communities | 2.2% |
-| Deals forums | 1.3% |
-| TikTok | 0.6% |
+| Direct | 47.9% |
+| The business's own site | 9.6% |
+| Meta | 9.0% |
+| YouTube | 6.1% |
+| Giveaway directories | 4.8% |
+| Search | 3.9% |
+| X | 3.7% |
+| Gaming communities | 3.1% |
+| Gleam's own pages | 3.1% |
+| Deals forums | 1.2% |
+| TikTok | 0.9% |
 
 Direct is the largest single line by far. A giveaway link travels through DMs, texts and QR codes that do not show where the click came from, so a large direct share is what real word-of-mouth reach looks like in the data, not a gap in the channel plan.
 
-Hosted pages carried 62% of Impressions and embeds 37%. Even inside a campaign built to sit on the organizer's own site, most of the traffic still lands on the Gleam-hosted page, so the profile-prep and per-channel steps below apply whichever way the campaign is set up.
+Embeds carried 51% of Impressions and hosted pages 49%. Traffic splits almost evenly between the Gleam-hosted page and an embed on the organizer's own site, so the profile-prep and per-channel steps below apply whichever way the campaign is set up.
 
 Source: analysis/output/field_cuts.json (referrer_channel_share, landing_kind_share).
 
@@ -34,107 +34,107 @@ Source: analysis/output/field_cuts.json (referrer_channel_share, landing_kind_sh
 
 Extracted: the giveaway directories, deals forums and gaming communities that reached the most organizers. These are public third-party sites, so the host names are published.
 
-What this table is, and what it is not. It counts the traffic these sites sent, which says they are worth submitting to and nothing more. How a site takes a submission, what it charges, how long it sits in a queue and whether it accepts a campaign at all are not in this data and not on any page read here. Tell the reader to check the site's own submission page, and never put a turnaround time in an answer. Price is the same: "free" is a claim about the site, and this data holds none. Both rounds of measured answers broke this rule the same way, one writing "free, and it's live within a day" and the other "submit free", so the sentence naming a directory carries "check the submission page for what they need" in the same breath. Directories carry 3.3% of Impressions in the traffic mix on this page, behind the business's own site at 7.2%, so never call them the biggest source of anything. A measured answer called them "the largest free reach on the table" in one round and "the largest free reach you have not already counted" in the next.
+What this table is, and what it is not. It counts the traffic these sites sent, which says they are worth submitting to and nothing more. How a site takes a submission, what it charges, how long it sits in a queue and whether it accepts a campaign at all are not in this data and not on any page read here. Tell the reader to check the site's own submission page, and never put a turnaround time in an answer. Price is the same: "free" is a claim about the site, and this data holds none. Both rounds of measured answers broke this rule the same way, one writing "free, and it's live within a day" and the other "submit free", so the sentence naming a directory carries "check the submission page for what they need" in the same breath. Directories carry 4.8% of Impressions in the traffic mix on this page, behind the business's own site at 9.6%, so never call them the biggest source of anything. A measured answer called them "the largest free reach on the table" in one round and "the largest free reach you have not already counted" in the next.
 
 | Giveaway directories | Businesses reached | Impressions |
 |---|---|---|
-| freestufftimes.com | 3,403 | 952,981 |
-| contestgirl.com | 3,253 | 16,721,404 |
-| sweepsadvantage.com | 3,080 | 3,409,200 |
-| giveawaybase.com | 2,245 | 3,615,998 |
-| ozbargain.com.au | 1,661 | 2,441,424 |
+| sweepsadvantage.com | 4,808 | 4,364,572 |
+| freestufftimes.com | 4,784 | 1,242,211 |
+| contestgirl.com | 4,314 | 18,415,684 |
+| giveawaybase.com | 3,111 | 4,450,711 |
+| ozbargain.com.au | 2,314 | 2,973,405 |
 
 | Deals forums | Businesses reached | Impressions |
 |---|---|---|
-| hardprize.ru | 713 | 21,008 |
-| slickdeals.net | 633 | 80,102 |
-| lottos.com.au | 501 | 243,549 |
-| ofertar.pt | 440 | 21,626 |
-| loquax.co.uk | 396 | 1,089,609 |
+| hardprize.ru | 994 | 26,430 |
+| slickdeals.net | 671 | 80,294 |
+| lottos.com.au | 653 | 324,699 |
+| loquax.co.uk | 640 | 2,273,354 |
+| ofertar.pt | 590 | 26,290 |
 
 | Gaming communities | Businesses reached | Impressions |
 |---|---|---|
-| steamcommunity.com | 692 | 1,403,251 |
-| gamingtribe.com | 597 | 31,002 |
-| store.steampowered.com | 106 | 43,408 |
-| gaming.lenovo.com | 83 | 191,283 |
-| gununiversity.com | 81 | 212,522 |
+| steamcommunity.com | 1,000 | 1,589,880 |
+| store.steampowered.com | 202 | 47,759 |
+| gaming.lenovo.com | 96 | 235,967 |
+| ledemondujeu.com | 88 | 78,631 |
+| gununiversity.com | 82 | 213,774 |
 
 Extracted: outcomes for campaigns where one traffic source supplies over 10% of a campaign's Impressions.
 
 | Traffic source over 10% of Impressions | Conversion Rate | Entrants | Entries each | Campaigns | Businesses |
 |---|---|---|---|---|---|
-| YouTube | 40.3% | 514 | 3.61 | 15,164 | 3,453 |
-| Deals forums | 35.4% | 492 | 4.75 | 7,104 | 526 |
-| Giveaway directories | 31.4% | 683 | 4.80 | 18,486 | 4,619 |
-| X | 31.3% | 395 | 5.21 | 42,690 | 8,461 |
-| The Gleam directory | 28.1% | 1,018 | 5.52 | 21,390 | 5,775 |
-| The business's own site | 27.8% | 755 | 4.34 | 11,355 | 2,004 |
-| Direct | 27.5% | 505 | 4.92 | 155,265 | 24,629 |
-| Meta | 25.5% | 499 | 3.53 | 24,711 | 7,374 |
-| Search | 17.4% | 356 | 4.38 | 4,493 | 1,649 |
+| YouTube | 41.4% | 548 | 3.50 | 13,447 | 2,890 |
+| Deals forums | 34.7% | 479 | 4.91 | 6,767 | 514 |
+| Giveaway directories | 31.4% | 682 | 4.81 | 17,968 | 4,388 |
+| X | 30.3% | 393 | 4.89 | 18,917 | 4,349 |
+| The business's own site | 27.9% | 771 | 4.31 | 10,914 | 1,832 |
+| Direct | 26.0% | 490 | 4.56 | 106,096 | 16,876 |
+| Meta | 24.8% | 465 | 3.40 | 21,251 | 6,030 |
+| The Gleam directory | 23.9% | 622 | 4.78 | 7,443 | 2,436 |
+| Search | 16.9% | 354 | 4.44 | 3,769 | 1,315 |
 
 YouTube and deals forums convert best of the channels with real volume, and search worst. Every row here is campaigns where that source already supplied a tenth of the Impressions, so the table describes campaigns that were already reaching people through it. It says nothing about what adding a channel would do. [Extracted from `analysis/output/field_cuts.json`, `outcomes_when_channel_over_10pct`.]
-Deals-forum traffic converts at 35.4%, second of the well-populated sources above and behind YouTube at 40.3%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
+Deals-forum traffic converts at 34.7%, second of the well-populated sources above and behind YouTube at 41.4%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
 
 | Measure | Deals forums | For comparison |
 |---|---|---|
-| Conversion Rate | 35.4% | direct 27.5%, Meta 25.5% |
-| Entries per Entrant | 4.75 | direct 4.92, Meta 3.53 |
-| Referrals per 100 Entrants | 5.3, the lowest of any source measured | direct 23.4, X 52.8 |
-| Entries per Entrant, campaigns of 100 to 250 Entrants | 7.11 [1,324 campaigns, 203 businesses] | - |
-| Entries per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.83 [1,084 campaigns, 145 businesses] | - |
-| Entries per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.16 [241 campaigns, 60 businesses] | - |
+| Conversion Rate | 34.7% | direct 26.0%, Meta 24.8% |
+| Entries per Entrant | 4.91 | direct 4.56, Meta 3.40 |
+| Referrals per 100 Entrants | 5.3, the lowest of the well-populated sources | direct 11.6, X 13.7 |
+| Entries per Entrant, campaigns of 100 to 250 Entrants | 7.13 [1,312 campaigns, 200 businesses] | - |
+| Entries per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.76 [933 campaigns, 142 businesses] | - |
+| Entries per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.31 [230 campaigns, 59 businesses] | - |
 
-Referrals are where deals-forum traffic really is last, at 5.3 per 100 Entrants against 23.4 for direct. On Entries per Entrant it sits mid-table at 4.75, close to direct and above Meta, so the old reading that it trails every channel on both counts was wrong on the second. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
+Referrals are where deals-forum traffic really trails, at 5.3 per 100 Entrants against 11.6 for direct. On Entries per Entrant it sits at the top of the table at 4.91, just above direct and well above Meta, so the old reading that it trails every channel on both counts was wrong on the second. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
 
-Meta sees a Conversion Rate nearly six points under X's, 25.5% against 31.3%, and carries the bigger traffic share of the two. It lags on follow-through as well: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
+Meta sees a Conversion Rate five and a half points under X's, 24.8% against 30.3%, and carries the bigger traffic share of the two. It lags on follow-through as well: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
 
 | Measure | Meta | X |
 |---|---|---|
-| Conversion Rate | 25.5% | 31.3% |
-| Share of all Impressions | 7.8% | 5.0% |
-| Actions per Entrant, overall | 3.58 | 5.23 |
-| Actions per Entrant, 1,000-2,500 Entrants | 3.35 [4,347 campaigns, 1,970 businesses] | 5.11 [6,160 campaigns, 2,093 businesses] |
-| Actions per Entrant, 2,500-10,000 Entrants | 3.75 [3,146 campaigns, 1,482 businesses] | 5.27 [3,422 campaigns, 1,328 businesses] |
-| Actions per Entrant, 10,000+ Entrants | 4.65 [898 campaigns, 503 businesses] | 5.93 [613 campaigns, 324 businesses] |
+| Conversion Rate | 24.8% | 30.3% |
+| Share of all Impressions | 9.0% | 3.7% |
+| Actions per Entrant, overall | 3.40 | 4.89 |
+| Actions per Entrant, 1,000-2,500 Entrants | 3.39 [3,707 campaigns, 1,683 businesses] | 4.69 [2,699 campaigns, 979 businesses] |
+| Actions per Entrant, 2,500-10,000 Entrants | 3.34 [2,432 campaigns, 1,070 businesses] | 5.79 [1,430 campaigns, 498 businesses] |
+| Actions per Entrant, 10,000+ Entrants | 2.84 [472 campaigns, 238 businesses] | 6.43 [325 campaigns, 115 businesses] |
 
 Source: analysis/output/field_cuts.json (promotion_sites, outcomes_when_channel_over_10pct, channel_quantity_vs_quality, channel_quality_by_size_band).
 
 ## Tagging with UTM
 
-Extracted, same campaign set: only 11% of Impressions carry a utm_source tag. Most traffic arrives untagged, which is exactly why the UTM line under Paid below matters on organic posts too. Tag every link you post, or the results review is left reading the traffic source and nothing about which post, story or email sent the visit.
+Extracted, same campaign set: only 15% of Impressions carry a utm_source tag. Most traffic arrives untagged, which is exactly why the UTM line under Paid below matters on organic posts too. Tag every link you post, or the results review is left reading the traffic source and nothing about which post, story or email sent the visit.
 
 | Of the tagged slice | Share |
 |---|---|
-| Email newsletters | 35% |
-| Meta | 20% |
-| Ad networks | 4.5% |
-| TikTok | 3.5% |
+| Email newsletters | 32% |
+| Meta | 23% |
+| Ad networks | 4.4% |
+| TikTok | 3.4% |
 
 Source: analysis/output/field_cuts.json (utm_source_share).
 
 ## Mass mail into the campaign
 
-Extracted: among Impressions that carry an email UTM tag, share by provider named in utm_source. This is the organizer's own mass mail arriving at the campaign page, none of it sent by Gleam, and it is a share of the 11% of Impressions that carry any UTM tag at all, not a share of all traffic.
+Extracted: among Impressions that carry an email UTM tag, share by provider named in utm_source. This is the organizer's own mass mail arriving at the campaign page, none of it sent by Gleam, and it is a share of the 15% of Impressions that carry any UTM tag at all, not a share of all traffic.
 
 | Provider | Share of tagged email Impressions | Campaigns | Businesses |
 |---|---|---|---|
-| Unnamed or untagged | 44% | 6,965 | 1,910 |
-| Listrak | 18% | 551 | 74 |
-| Named newsletter source | 12% | 2,783 | 748 |
-| Klaviyo | 11% | 2,215 | 804 |
-| HubSpot | 3.5% | 734 | 217 |
-| Attentive or SMS | 2.4% | 510 | 170 |
-| ActiveCampaign | 1.7% | 318 | 71 |
-| Salesforce or ExactTarget | 1.3% | 204 | 51 |
-| ConvertKit | 1.4% | 93 | 30 |
-| Sailthru | 1.0% | 293 | 23 |
-| Omnisend | 0.8% | 277 | 119 |
-| Iterable | 0.7% | 146 | 36 |
-| MailChimp | 0.7% | 116 | 44 |
-| Brevo or Sendinblue | 0.5% | 250 | 103 |
-| Braze | 0.3% | 42 | 19 |
+| Unnamed or untagged | 35% | 14,110 | 2,818 |
+| Listrak | 18% | 596 | 78 |
+| Named newsletter source | 16% | 6,096 | 1,037 |
+| Klaviyo | 14% | 3,818 | 1,185 |
+| HubSpot | 3.9% | 1,172 | 313 |
+| Attentive or SMS | 2.6% | 694 | 232 |
+| Salesforce or ExactTarget | 1.9% | 331 | 74 |
+| ActiveCampaign | 1.9% | 575 | 114 |
+| ConvertKit | 1.8% | 236 | 57 |
+| Sailthru | 1.4% | 728 | 36 |
+| Omnisend | 1.1% | 654 | 212 |
+| Iterable | 0.8% | 183 | 43 |
+| MailChimp | 0.7% | 176 | 67 |
+| Brevo or Sendinblue | 0.7% | 479 | 129 |
+| Braze | 0.4% | 58 | 22 |
 
 Campaigns that draw a tenth or more of their Impressions from their own tagged mass mail behave differently from campaigns with no tagged email traffic at all, though the two groups are not alike: the businesses that tag their email traffic are larger and run longer campaigns, so the gap describes who mails, not what mailing does.
 
@@ -217,17 +217,17 @@ Offering a Viral Share action is most of the gap in share clicks, before the rew
 
 | Group | Share clicks / Impressions | Share clicks per Entrant | Campaigns | Businesses |
 |---|---|---|---|---|
-| Offers Viral Share | 47% | 1.74 | 29,207 | 6,547 |
-| No share action | 1.4% | 0.06 | 25,453 | 5,441 |
+| Offers Viral Share | 20% | 0.93 | 43,131 | 6,948 |
+| No share action | 1.0% | 0.07 | 73,052 | 12,616 |
 
-Among campaigns that offer it, the entries attached to a share widen the gap further:
+Among campaigns that offer it, the entries attached to a share move the figures much less, and the climb stops short of the top band:
 
 | Share worth | Campaigns | Businesses | Share clicks / Impressions | Share clicks % of Entrants |
 |---|---|---|---|---|
-| 1 entry | 7,655 | 2,274 | 38% | 146 (1.46) |
-| 2 to 4 entries | 4,933 | 1,566 | 39% | 163 (1.63) |
-| 5 to 9 entries | 4,715 | 1,655 | 48% | 183 (1.83) |
-| 10 or more entries | 11,904 | 2,553 | 60% | 190 (1.90) |
+| 1 entry | 13,579 | 2,729 | 19% | 84 (0.84) |
+| 2 to 4 entries | 8,616 | 1,866 | 21% | 89 (0.89) |
+| 5 to 9 entries | 7,181 | 1,895 | 23% | 106 (1.06) |
+| 10 or more entries | 13,755 | 2,184 | 19% | 97 (0.97) |
 
 Source: analysis/output/field_cuts.json (share_clicks).
 
@@ -241,38 +241,37 @@ Source: analysis/output/success_profiles.json (interactions.referral_action_by_c
 
 ## What a shared link is worth
 
-Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, 14.9% of Viral Share clicks end in a referred entry, on 47,097 campaigns from 7,603 businesses. The same campaigns turn 22.5% of ordinary Impressions into Entrants, so a shared link converts a visitor at about two thirds the rate of any other visit to the page.
+Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, 13.9% of Viral Share clicks end in a referred entry, on 42,512 campaigns from 6,919 businesses. The same campaigns turn 21.8% of ordinary Impressions into Entrants, so a shared link converts a visitor at about two thirds the rate of any other visit to the page.
 
-Pooled with crypto organizers back in, the referral rate rises well above the crypto-excluded figure, because crypto campaigns run referral farms (below, `viral_click_conversion`). Use the crypto-excluded figure for an ordinary business's plan, and expect the higher pooled figure if pulling the number straight from the JSON.
+Crypto organizers are now out of the population before any cut runs, so `viral_click_conversion` and `viral_click_conversion_excluding_crypto` hold the same campaigns and report the same 13.9%. The gap those two keys used to describe has gone, and either one gives the figure to plan an ordinary business against.
 
 | Referral-rate figure | Value | Campaigns | Businesses |
 |---|---|---|---|
-| Pooled (crypto included) | 20% | 71,191 | 11,563 |
-| Spread on the pooled figure | lower quarter 10.2%, upper quarter 38.1% | - | - |
+| Whole population | 13.9% | 42,512 | 6,919 |
+| Spread on that figure | lower quarter 7.5%, upper quarter 22.9% | - | - |
 
 | By industry | Referrals per click | Campaigns | Businesses |
 |---|---|---|---|
-| Software and SaaS | 46.1% | 1,859 | 362 |
-| Finance and crypto | 38.7% | 24,094 | 4,114 |
-| Creator or influencer | 29.4% | 1,044 | 140 |
-| Marketing agency | 17.9% | 471 | 75 |
-| Gaming | 18.6% | 2,992 | 808 |
-| Baby and kids | 18.3% | 219 | 44 |
-| Travel and events | 18.0% | 901 | 178 |
-| Pets | 11.9% | 287 | 63 |
-| Automotive | 10.6% | 808 | 91 |
-| Toys and collectibles | 10.4% | 431 | 108 |
+| Creator or influencer | 28.9% | 1,008 | 133 |
+| Travel and events | 16.4% | 1,755 | 326 |
+| Gaming | 14.4% | 6,419 | 1,040 |
+| Baby and kids | 14.4% | 642 | 78 |
+| Software and SaaS | 14.0% | 682 | 262 |
+| Marketing agency | 13.6% | 344 | 65 |
+| Toys and collectibles | 13.2% | 1,936 | 283 |
+| Automotive | 13.0% | 1,289 | 174 |
+| Pets | 11.3% | 648 | 106 |
 
-Software, SaaS, finance and crypto sit well above every other industry, crypto because of referral farms and software because sharing fits how that audience already works. Toys and collectibles, automotive and pets sit at the bottom.
+Creator and influencer campaigns sit well clear of every other industry on this table, because sharing a link is already what that audience does. Finance and crypto has dropped out of the cut altogether, since those organizers are excluded from the population. Pets, automotive and toys and collectibles sit at the bottom.
 
-By share worth, still on the pooled figures, higher worth goes with a higher referral rate and more clicks per Entrant. Read that as a worth that draws more sharing, not as proof that raising worth causes it, since the businesses that set a high worth differ from the ones that do not.
+By share worth, the referral rate steps up off the worth-1 band and then flattens, and clicks per Entrant barely move across the rest. Read a higher worth as a small lift at best, and remember the businesses that set a high worth differ from the ones that do not.
 
 | Share worth | Referrals per click | Clicks per Entrant |
 |---|---|---|
-| 1 to 9 | 18.7% to 19.6% | 1.47 at worth 1 |
-| 10 or more | 28.1% [11,903 campaigns, 2,555 businesses] | 1.90 |
+| 1 to 9 | 11.9% to 15.1% | 0.86 at worth 1 |
+| 10 or more | 15.1% [13,665 campaigns, 2,183 businesses] | 0.98 |
 
-Clicks are a subset of Impressions on 94% of campaigns. Where clicks exceed the campaign's own Impression count, the campaign is almost always a crypto campaign, a fraud tell worth watching for before crediting a shared link's reach.
+Clicks are a subset of Impressions on 99% of campaigns. Where clicks exceed the campaign's own Impression count, on 288 of the 42,512 campaigns measured, treat it as a fraud tell worth checking before crediting a shared link's reach.
 
 Source: analysis/output/field_cuts.json (viral_click_conversion, viral_click_conversion_excluding_crypto, viral_click_conversion_by_worth, viral_click_conversion_by_industry).
 
@@ -426,8 +425,8 @@ Share clicks follow a tighter curve than Impressions: on a week-long run they pe
 
 | Day | Share of total share clicks | Campaigns | Businesses |
 |---|---|---|---|
-| Day 1 | 18% | 6,380 | 1,727 |
-| Day 2 | 17% | 7,666 | 1,923 |
+| Day 1 | 22% | 6,807 | 1,774 |
+| Day 2 | 17% | 7,739 | 1,967 |
 
 Source: analysis/output/field_cuts.json (share_click_curve_by_duration).
 

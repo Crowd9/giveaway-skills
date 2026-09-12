@@ -43,16 +43,16 @@ Five jobs, and every action in a recommended list carries exactly one of these l
 
 ## Weighting
 
-- Give the asset-producing action 3 to 5 entries. For sharing, weight it at the high end of what the platform allows unless the Prize is small enough that a high weight invites abuse: the share click rate (viral share clicks over Impressions) rises with the entries offered per referral.
+- Give the asset-producing action 3 to 5 entries. For sharing, weight it at 5 to 9 entries per referral unless the Prize is small enough that a high weight invites abuse: the share click rate (viral share clicks over Impressions) peaks in that band and falls back to the weight-1 rate at 10 or more.
 
 | Weight offered | Share click rate |
 |---|---|
-| 1 | 38 per 100 Impressions |
-| 2 to 4 | 39 per 100 |
-| 5 to 9 | 48 per 100 |
-| 10 or more | 60 per 100 |
+| 1 | 19 per 100 Impressions |
+| 2 to 4 | 21 per 100 |
+| 5 to 9 | 23 per 100 |
+| 10 or more | 19 per 100 |
 
-[Campaigns/businesses: 7,655/2,274 (weight 1), 4,933/1,566 (2-4), 4,715/1,655 (5-9), 11,904/2,553 (10+). Extracted from `analysis/output/field_cuts.json`, share_clicks.by_share_worth.] This shows businesses who weight sharing higher see a higher click rate, not that raising the weight on one campaign would raise its clicks, since the businesses who choose a high weight may also run a more shareable campaign.
+[Campaigns/businesses: 13,579/2,729 (weight 1), 8,616/1,866 (2-4), 7,181/1,895 (5-9), 13,755/2,184 (10+). Extracted from `analysis/output/field_cuts.json`, share_clicks.by_share_worth.] This shows businesses who weight sharing in the middle bands see a higher click rate, not that raising the weight on one campaign would raise its clicks, since the businesses who choose a high weight may also run a more shareable campaign.
 - One entry for visits and views. Two for follows and joins.
 - Daily repeatable actions keep a long campaign alive and inflate the entries recorded per Entrant. Extracted: a typical campaign records 430 entries for every 100 Entrants, and campaigns with more repeatable bonus actions sit well above that.
 - If the platform allows, make the asset action required before other actions unlock.
@@ -287,13 +287,13 @@ Completions % of Entrants by position in the action list, from `analysis/output/
 
 | Family | 1st | 2nd to 4th | 5th or later |
 |---|---|---|---|
-| Email signup | 101 (21,831 campaigns) | 78 (10,654 campaigns) | 74 (17,983 campaigns) |
-| Visit a page | 98 (15,926 campaigns) | 87 (90,592 campaigns) | 76 (150,937 campaigns) |
-| Follow or subscribe | 100 (48,793 campaigns) | 79 (144,024 campaigns) | 52 (171,892 campaigns) |
-| Content upload | 86 (2,858 campaigns) | 33 (5,917 campaigns) | 17 (9,707 campaigns) |
-| Share or refer | 21 (1,351 campaigns) | 16 (14,581 campaigns) | 27 (55,641 campaigns) |
+| Email signup | 101 (20,986 campaigns) | 78 (10,182 campaigns) | 73 (16,859 campaigns) |
+| Visit a page | 98 (14,449 campaigns) | 87 (84,512 campaigns) | 75 (132,797 campaigns) |
+| Follow or subscribe | 82 (20,468 campaigns) | 56 (75,063 campaigns) | 43 (116,619 campaigns) |
+| Content upload | 81 (2,573 campaigns) | 27 (4,657 campaigns) | 13 (6,599 campaigns) |
+| Share or refer | 16 (993 campaigns) | 12 (11,344 campaigns) | 11 (30,470 campaigns) |
 
-Everything except sharing falls down the list, and a follow loses half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 21% of Entrants in first and 16% in the next three, then 27% fifth or later, where long action lists with a required share sit, so its position is free and it can take the bottom slot.
+Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it.
 
 The position advantage extends past email and follow, and holds by campaign size. The ratio below is the asset's completions per Entrant in the first list position over the same asset later in the list, split into three groups by campaign size. [Scope: 1,000+ Entrant campaigns. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_position`.]
 

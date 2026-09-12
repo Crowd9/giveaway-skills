@@ -12,13 +12,15 @@ One row per completed action. The person is the Email column, Status is Valid, I
 
 A wider read comes from the referring host. A click out of a mail client or a webmail page is countable whether or not the link was tagged, and most campaigns show at least one [114,965 campaigns, 18,733 organizers]. Conversion Rate holds fairly steady regardless of how much of a campaign's Impressions came from mail clients (table below). Campaigns with no mail-client click at all read differently, but that's because they are the smallest campaigns in the data, not because of mailing.
 
+<!-- generated:rr_mail_share -->
 | Mail-client share of Impressions | Campaigns | Conversion Rate | Entrants |
 |---|---|---|---|
-| None | — | 35% | 238 |
-| Under 2% | 98,447 | 26% | 766 |
-| 2 to 10% | 14,632 | 25% | — |
-| 10 to 25% | 1,570 | 25% | — |
-| 25% or more | 316 | 28% | — |
+| None | 31,679 | 35% | 240 |
+| Under 2% | 98,367 | 26% | 765 |
+| 2 to 10% | 14,594 | 25% | 744 |
+| 10 to 25% | 1,565 | 25% | 516 |
+| 25% or more | 313 | 27% | 438 |
+<!-- /generated -->
 
 Source: `analysis/output/email_traffic.json` `outcomes_by_email_share`.
 

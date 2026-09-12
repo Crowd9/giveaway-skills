@@ -33,117 +33,118 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=116,499). upt
 
 ## Completions by action, required versus optional
 
-A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: campaigns with 100 or more Entrants, every group at least five businesses. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
+A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: the ordinary population, the same 116,499 campaigns as every other cut in this file, which is campaigns of 100 or more Entrants once crypto, ambiguous and purchase-only campaigns are removed, every group at least five businesses. This is the same cut as the family table above, so the two tables can be read together. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
 
 <!-- table -->
 | Action | Campaigns | Businesses | Share who completed it | When required | When optional | How often required |
 |---|---|---|---|---|---|---|
-| Custom Actions | 138,883 | 8,753 | 82 | 101 | 72 | 23% |
-| X Follows | 61,231 | 7,475 | 69 | 103 | 56 | 36% |
-| Instagram Profile Visits | 30,371 | 4,785 | 79 | 94 | 77 | 11% |
-| Viral Shares | 29,316 | 6,538 | 31 | 100 | 22 | 17% |
-| X Reposts | 27,707 | 5,276 | 69 | 100 | 49 | 40% |
-| YouTube Channel Visits | 21,661 | 4,205 | 83 | 98 | 81 | 14% |
-| Facebook visits | 21,503 | 3,793 | 77 | 92 | 75 | 8% |
-| Telegram Channel Members | 20,971 | 2,843 | 118 | 124 | 113 | 55% |
-| Email Subscriptions | 18,113 | 3,430 | 90 | 102 | 76 | 41% |
-| Chat Members | 17,658 | 3,670 | 53 | 89 | 43 | 36% |
-| Twitch Follows | 9,172 | 1,237 | 55 | 75 | 52 | 12% |
-| X Posts | 7,117 | 1,820 | 42 | 100 | 35 | 23% |
-| TikTok Follows | 7,059 | 1,503 | 34 | 58 | 33 | 8% |
-| Secret Code | 6,647 | 1,246 | 26 | 94 | 25 | 4% |
-| Instagram Follows | 4,747 | 1,077 | 49 | 77 | 47 | 11% |
-| TikTok Video Views | 3,233 | 1,039 | 48 | 67 | 47 | 6% |
-| App Downloads | 3,023 | 724 | 55 | 115 | 43 | 24% |
-| Twitch Subscribers | 2,604 | 342 | 5 | 99 | 5 | 1% |
-| Facebook Entries | 2,349 | 680 | 49 | 72 | 47 | 12% |
-| Instagram Post Views | 2,308 | 753 | 63 | 87 | 60 | 8% |
-| Pinterest Visits | 2,148 | 467 | 63 | 68 | 62 | 2% |
-| X Hashtag Posts | 1,880 | 920 | 71 | 95 | 56 | 34% |
-| Reddit Visits | 1,702 | 467 | 74 | 95 | 72 | 10% |
-| Facebook Likes | 1,597 | 546 | 37 | 55 | 36 | 6% |
-| Media Submits | 1,359 | 531 | 7 | 51 | 5 | 16% |
-| Podcast Subscriptions | 1,297 | 229 | 29 | 94 | 29 | 3% |
-| LinkedIn Follow | 1,275 | 380 | 30 | 51 | 29 | 6% |
-| YouTube Entries | 1,265 | 276 | 73 | 100 | 62 | 11% |
-| Facebook Post Views | 1,244 | 480 | 63 | 82 | 60 | 10% |
-| Submit URL | 1,253 | 463 | 32 | 78 | 23 | 30% |
-| Spotify follows | 1,183 | 271 | 28 | 90 | 27 | 6% |
-| Instagram Entries | 1,065 | 414 | 47 | 61 | 45 | 10% |
+| Custom Actions | 285,843 | 13,428 | 77 | 99 | 73 | 13% |
+| X Follows | 92,096 | 10,037 | 54 | 79 | 51 | 12% |
+| Instagram Profile Visits | 81,803 | 9,807 | 82 | 95 | 80 | 9% |
+| Facebook visits | 59,301 | 7,415 | 82 | 93 | 81 | 7% |
+| YouTube Channel Visits | 53,783 | 8,874 | 86 | 99 | 84 | 13% |
+| Email Subscriptions | 46,858 | 5,708 | 85 | 102 | 78 | 33% |
+| Viral Shares | 42,807 | 6,922 | 11 | 20 | 11 | 6% |
+| X Reposts | 33,715 | 5,647 | 44 | 71 | 41 | 13% |
+| Twitch Follows | 29,618 | 4,323 | 68 | 92 | 62 | 20% |
+| Chat Members | 22,329 | 3,249 | 44 | 80 | 42 | 11% |
+| TikTok Follows | 17,149 | 2,991 | 35 | 56 | 34 | 7% |
+| X Posts | 16,028 | 2,089 | 34 | 43 | 33 | 9% |
+| Secret Code | 13,648 | 2,351 | 27 | 84 | 27 | 4% |
+| Instagram Follows | 11,970 | 2,596 | 52 | 80 | 50 | 11% |
+| Instagram Post Views | 9,092 | 1,870 | 74 | 89 | 73 | 8% |
+| Twitch Subscribers | 8,404 | 1,175 | 11 | 22 | 11 | 2% |
+| Pinterest Visits | 8,365 | 929 | 66 | 71 | 66 | 4% |
+| Facebook Entries | 8,186 | 1,629 | 54 | 77 | 51 | 14% |
+| TikTok Visits | 8,112 | 1,846 | 53 | 64 | 52 | 7% |
+| Telegram Channel Members | 4,874 | 835 | 85 | 93 | 77 | 35% |
+| Facebook Post Views | 4,687 | 1,117 | 71 | 89 | 70 | 7% |
+| Facebook Likes | 4,631 | 1,253 | 39 | 54 | 38 | 6% |
+| Podcast Subscriptions | 4,234 | 479 | 34 | 59 | 34 | 1% |
+| Instagram Entries | 3,928 | 1,198 | 53 | 72 | 51 | 10% |
+| App Downloads | 3,607 | 764 | 41 | 81 | 38 | 10% |
+| YouTube Entries | 3,584 | 944 | 81 | 99 | 74 | 17% |
+| Spotify follows | 2,949 | 554 | 32 | 99 | 31 | 7% |
+| Reddit Visits | 2,884 | 461 | 77 | 94 | 76 | 5% |
+| Media Submits | 2,758 | 901 | 10 | 100 | 7 | 17% |
+| Submit URL | 2,017 | 605 | 19 | 66 | 17 | 14% |
+| LinkedIn Follow | 1,782 | 382 | 28 | 51 | 28 | 4% |
+| X Hashtag Posts | 1,518 | 535 | 36 | 77 | 34 | 9% |
 <!-- /table -->
 
 Email Subscriptions is completed by almost everyone who enters, more so when required.
 
 | Context | Completion |
 |---|---|
-| Overall | 90 per 100 Entrants |
+| Overall | 85 per 100 Entrants |
 | Required | 102 per 100 |
-| Optional | 76 per 100 |
+| Optional | 78 per 100 |
 
-Businesses make it required about 41 times in 100 that they offer it.
+Businesses make it required about 33 times in 100 that they offer it.
 
-Visiting a profile still beats following it on the same network: Instagram Profile Visits completes at about 79 per 100 Entrants against about 49 for Instagram Follows, roughly 60% higher, the same gap the family table above shows between visiting and following in general. [Each figure rests on well over 1,000 campaigns and 1,000 businesses.]
+Visiting a profile still beats following it on the same network: Instagram Profile Visits completes at about 82 per 100 Entrants against about 52 for Instagram Follows, roughly 60% higher, the same gap the family table above shows between visiting and following in general. [Each figure rests on well over 1,000 campaigns and 1,000 businesses.]
 
 A follow required completes far more often than the same follow left optional, across every network tested.
 
 | Action | Required | Optional |
 |---|---|---|
-| TikTok Follows | 58 per 100 | 33 per 100 |
-| X Follows | 103 per 100 | 56 per 100 |
-| Instagram Follows | 77 per 100 | 47 per 100 |
+| TikTok Follows | 56 per 100 | 34 per 100 |
+| X Follows | 79 per 100 | 51 per 100 |
+| Instagram Follows | 80 per 100 | 50 per 100 |
 
-TikTok Follows is made required for about 8 of every 100 campaigns that offer it.
+TikTok Follows is made required for about 7 of every 100 campaigns that offer it.
 
 ## Entry worth
 
-Worth changes what an Entrant is credited, not whether they complete the action, and its effect differs by action. Worth is a lever for sharing, not for the other families: the campaign's entries per Entrant rise with it, while Email Subscriptions, follows and Custom Actions are flat or fall as worth rises. Worth stays advice, never a mandated value.
+Worth changes what an Entrant is credited, not whether they complete the action, and its effect differs by action. Worth is a lever for sharing, not for the other families: Viral Share completion climbs with worth and then flattens above 5, the campaign's entries per Entrant rise with it, while Email Subscriptions, follows and Custom Actions are flat or fall as worth rises. Worth stays advice, never a mandated value.
 
 | Worth | Viral Share completion |
 |---|---|
-| 1 | 16 per 100 Entrants |
-| 2-4 | 18 per 100 |
-| 5-9 | 21 per 100 |
-| 10+ | 34 per 100 |
+| 1 | 9 per 100 Entrants |
+| 2 | 11 per 100 |
+| 3-4 | 12 per 100 |
+| 5-9 | 13 per 100 |
+| 10+ | 13 per 100 |
 
 | Action | Worth 1 | Worth 10+ |
 |---|---|---|
-| Email Subscriptions | 77 per 100 | 77 per 100, flat |
-| Custom Actions | 82 per 100 | 62 per 100 |
+| Email Subscriptions | 78 per 100 | 79 per 100, flat |
+| Custom Actions | 82 per 100 | 63 per 100 |
 
-Typical settings: share worth typically sits at 5, with the top quarter of campaigns setting it at 10 or higher, email typically at 1, follows typically at 2. [Viral Share bands: 6,901 to 9,184 campaigns depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
+Typical settings: share worth typically sits at 4, with the top quarter of campaigns setting it at 10 or higher, email typically at 1, follows typically at 1. [Viral Share bands: 3,607 to 12,774 campaigns depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
 
 ## Action settings from the config
 
-Share who completed it by settings read from the action config, campaigns with 100 or more Entrants, every group covers at least 30 campaigns and 10 businesses. Source: `analysis/output/field_cuts.json`, config_cuts.
+Share who completed it by settings read from the action config, the ordinary population, the same 116,499 campaigns as the tables above, every group covering at least 30 campaigns and 10 businesses. Source: `analysis/output/field_cuts.json`, config_cuts.
 
-**Share text.** Medium-length copy completes about twice as often as long copy.
+**Share text.** Medium-length copy completes about a third more often than long copy.
 
 | Share text trait | Completion |
 |---|---|
-| 60-140 characters | 26 per 100 (53,617 campaigns, 9,335 businesses) |
-| Over 140 characters | 14 per 100 (14,664 campaigns, 2,731 businesses) |
-| Plain, no link or hashtag | 22 per 100 (66,155 campaigns, 11,243 businesses) |
-| With hashtag | 22 per 100 (665 campaigns, 175 businesses) |
-| With link | 44 per 100 (4,753 campaigns, 552 businesses) |
+| 60-140 characters | 12 per 100 (30,789 campaigns, 5,447 businesses) |
+| Over 140 characters | 9 per 100 (10,075 campaigns, 1,867 businesses) |
+| Plain, no link or hashtag | 11 per 100 (40,545 campaigns, 6,729 businesses) |
+| With hashtag | 10 per 100 (385 campaigns, 81 businesses) |
+| With link | 11 per 100 (1,877 campaigns, 336 businesses) |
 
-Share text carrying a link completes twice as often as plain text, and a hashtag makes no difference either way. Read the link row with care: 40% of those actions were mandatory against 15% of the plain ones, so the gap is partly who was made to complete them, with the link's own effect unknown.
+Neither a link nor a hashtag in the share text changes completion on this population. The link row runs at 11 per 100 against 11 for plain text, and 9% of link actions were mandatory against 6% of plain ones, too close together to read anything into.
 
-**Steps inside one Action.** Completion holds steady through a few steps, then falls hard from eight steps on. This cut counts the steps configured inside a single Entry Method, and its denominator is Actions, not campaigns. It says nothing about how many Entry Methods a campaign should carry, which is the `cmp_methods` table further up this file. A measured answer quoted this row to judge a ten-method entry list and built its whole recommendation on a figure about something else.
+**Steps inside one Action.** Completion holds through the first few steps, slips through five to seven, then falls hard from eight steps on. This cut counts the steps configured inside a single Entry Method, and its denominator is Actions, not campaigns. It says nothing about how many Entry Methods a campaign should carry, which is the `cmp_methods` table further up this file. A measured answer quoted this row to judge a ten-method entry list and built its whole recommendation on a figure about something else.
 
 | Steps required | Completion |
 |---|---|
-| 1 | 84 per 100 (372,987 actions, 19,088 businesses) |
-| 2-4 | 99-109 per 100 (2,709 to 4,517 actions, 871 to 1,391 businesses each) |
-| 5-7 | 66-81 per 100 (3,726 to 5,900 actions, 1,398 to 1,938 businesses each) |
-| 8 | 31 per 100 (2,429 actions, 738 businesses) |
-| 11 | 23 per 100 (682 actions, 270 businesses) |
+| 1 | 77 per 100 (277,080 actions, 12,860 businesses) |
+| 2-4 | 67-102 per 100 (1,377 to 2,020 actions, 501 to 817 businesses each) |
+| 5-7 | 44-63 per 100 (1,900 to 3,278 actions, 709 to 1,170 businesses each) |
+| 8 | 27 per 100 (1,691 actions, 440 businesses) |
+| 11 | 17 per 100 (485 actions, 182 businesses) |
 
-**Paid actions.** A paid step moves completion in different directions depending on the action.
+**Paid actions.** A paid step costs a Custom Action most of its completion and leaves a Twitch subscription where it was.
 
 | Action | Free | Paid |
 |---|---|---|
-| Twitch Subscribers | 4 per 100 (2,226 campaigns, 250 businesses) | 11 per 100 (378 campaigns, 118 businesses) |
-| Custom Actions | 82 per 100 (137,494 campaigns, 8,713 businesses) | 44 per 100 (1,389 campaigns, 541 businesses) |
+| Twitch Subscribers | 11 per 100 (6,700 campaigns, 847 businesses) | 11 per 100 (1,704 campaigns, 487 businesses) |
+| Custom Actions | 77 per 100 (283,662 campaigns, 13,368 businesses) | 19 per 100 (2,181 campaigns, 633 businesses) |
 
 ## SMS and messaging opt-in (advice, no dataset support)
 
@@ -317,7 +318,7 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 | 11 or more | 6,762 | 518 (+17%) | 9.27 (+628%) | 31% (-29%) | 3.2 | 14 |
 <!-- /generated -->
 
-Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seven to ten, then holds at 31 for the longest lists. Entrant counts do not follow it down, and they do not rise in a line either. The count dips before it climbs: 443 at one to three methods, 401 at four to six, 463 at seven to ten, 519 at eleven or more. Only the longest lists beat the shortest, by 17%, and a campaign moving from three methods to five sat 9% below where it started. Quote the row the reader is actually in. Actions per Entrant rise with the list, because there are more things to do. So the longest lists in this data converted a smaller share of the Impressions they drew, and still recorded more Entrants and far more Actions. That describes the campaigns businesses chose to run, and says nothing about what adding a method to this campaign would do.
+Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seven to ten, then holds at 31 for the longest lists. Entrant counts do not follow it down, and they do not rise in a line either. The count dips before it climbs: 443 at one to three methods, 403 at four to six, 460 at seven to ten, 518 at eleven or more. Only the longest lists beat the shortest, by 17%, and a campaign moving from three methods to five sat 9% below where it started. Quote the row the reader is actually in. Actions per Entrant rise with the list, because there are more things to do. So the longest lists in this data converted a smaller share of the Impressions they drew, and still recorded more Entrants and far more Actions. That describes the campaigns businesses chose to run, and says nothing about what adding a method to this campaign would do.
 
 <!-- generated:cmp_share -->
 | Share action, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
@@ -333,16 +334,17 @@ Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seve
 | offers email signup | 10,841 | 546 (+29%) | 3.65 (-1%) | 30% (-17%) | 3.3 | 6 |
 <!-- /generated -->
 
-Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had 34% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
+Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had 33% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
 
-A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit, excluding crypto businesses [14.9% against 22.5%].
+A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit [13.9% against 21.8%].
 
 | Cut | Share-click conversion |
 |---|---|
-| Excluding finance and crypto | 14.9% (against 22.5% for ordinary Impressions on the same campaigns, 47,097 campaigns, 7,603 businesses) |
-| Pooled with crypto (referral farms included) | 20.0% (71,191 campaigns, 11,563 businesses) |
-| Worth 1-9, pooled | 16.7%-18.1% |
-| Worth 10+, pooled | 26.2% (27,991 campaigns, 4,196 businesses), with more clicks per Entrant too (1.61 against 1.27 at worth 1) |
+| The ordinary population | 13.9% (against 21.8% for ordinary Impressions on the same campaigns, 42,512 campaigns, 6,919 businesses) |
+| Worth 1 to 9 | 11.9%-15.1% |
+| Worth 10 or more | 15.1% (13,665 campaigns, 2,183 businesses), with more clicks per Entrant too (0.98 against 0.86 at worth 1) |
+
+There is no longer a crypto-pooled figure to set against the excluded one. `viral_click_conversion` and `viral_click_conversion_excluding_crypto` now report the same campaigns, because the ordinary population already drops crypto. Worth 10 or more sits at the top of the worth 1 to 9 range, so worth no longer separates share-click conversion the way it did on the wider population.
 
 [Source: analysis/output/field_cuts.json (viral_click_conversion, viral_click_conversion_excluding_crypto, viral_click_conversion_by_worth).]
 </content>

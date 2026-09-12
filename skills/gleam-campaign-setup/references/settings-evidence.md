@@ -128,13 +128,13 @@ Typical share of Entrants who completed an action, by the action's list position
 
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
 |---|---|---|---|
-| Email signup | 101 (1.01, 9,521 campaigns) | 75 (0.75, 4,595 campaigns) | 67 (0.67, 4,470 campaigns) |
-| Visit or view | 98 (0.98, 4,447 campaigns) | 84 (0.84, 27,832 campaigns) | 71 (0.71, 53,229 campaigns) |
-| Follow, subscribe, join | 100 (1.00, 15,548 campaigns) | 78 (0.78, 49,352 campaigns) | 48 (0.48, 66,981 campaigns) |
-| Viral Share, refer | 19 (0.19, 492 campaigns) | 14 (0.14, 6,050 campaigns) | 47 (0.47, 22,774 campaigns) |
-| Content upload | 82 (0.82, 378 campaigns) | 29 (0.29, 1,050 campaigns) | 16 (0.16, 2,897 campaigns) |
+| Email signup | 101 (1.01, 9,521 Actions) | 78 (0.78, 4,595 Actions) | 73 (0.73, 4,470 Actions) |
+| Visit or view | 98 (0.98, 4,447 Actions) | 87 (0.87, 27,832 Actions) | 75 (0.75, 53,229 Actions) |
+| Follow, subscribe, join | 82 (0.82, 15,548 Actions) | 56 (0.56, 49,352 Actions) | 43 (0.43, 66,981 Actions) |
+| Viral Share, refer | 16 (0.16, 492 Actions) | 12 (0.12, 6,050 Actions) | 11 (0.11, 22,774 Actions) |
+| Content upload | 81 (0.81, 378 Actions) | 27 (0.27, 1,050 Actions) | 13 (0.13, 2,897 Actions) |
 
-Every family sees fewer Entrants complete it the further down the list it sits, except Viral Share, which is low in the top four and higher fifth or later, where long action lists with a mandatory share sit. An email signup or a follow in first position was completed by close to every Entrant, an email fifth or later by about two thirds of Entrants and a follow by about half. Source: `analysis/output/field_cuts.json` `uptake_by_family_and_position`.
+Every family sees fewer Entrants complete it the further down the list it sits, Viral Share included. An email signup in first position was completed by about every Entrant and a follow by about four in five, an email fifth or later by about three quarters of Entrants and a follow by about two fifths. Source: `analysis/output/field_cuts.json` `uptake_by_family_and_position`.
 
 ## Description length
 
@@ -200,32 +200,32 @@ Nearly every Viral Share action carried custom share text, not the default, so t
 
 ## More settings that move how many Entrants complete an action
 
-Read from the action's own configuration, counted per campaign. Each setting shows the same pattern: fewer choices or shorter waits keep completion higher, and X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above.
+Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Each setting shows the same pattern: fewer choices or shorter waits keep completion higher, and X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above.
 
-| Setting | Option | Completion, % of Entrants (decimal) | Campaigns | Businesses |
+| Setting | Option | Completion, % of Entrants (decimal) | Actions | Businesses |
 |---|---|---|---|---|
-| Email opt-in checkbox | Off | 93% (0.93) | 13,076 | 2,710 |
-| Email opt-in checkbox | On | 86% (0.86) | 3,872 | 922 |
-| Email opt-in checkbox | Auto | 72% (0.72) | 1,165 | 198 |
-| Newsletter description | None | 95% (0.95) | 10,092 | 2,191 |
-| Newsletter description | Long | 86% (0.86) | 6,881 | 1,514 |
-| Newsletter description | Short | 76% (0.76) | 1,140 | 313 |
-| Instagram visit delay | 5 seconds or less | 80% (0.80) | 72,067 | 6,355 |
-| Instagram visit delay | 6 to 15 seconds | 71% (0.71) | 849 | 221 |
-| Instagram visit delay | 16 seconds or more | 58% (0.58) | 417 | 74 |
-| X throwaway account restriction (per campaign) | Open | 68% (0.68) | 87,436 | 7,382 |
-| X throwaway account restriction (per campaign) | Restricted | 64% (0.64) | 8,619 | 1,246 |
-| Share text length | 60 to 140 characters | 41% (0.41) | 23,207 | 5,345 |
-| Share text length | Over 140 characters | 13% (0.13) | 4,934 | 1,401 |
-| Share text length | Default text | 28% (0.28) | 1,006 | 464 |
+| Email opt-in checkbox | Off | 92% (0.92) | 13,076 | 4,506 |
+| Email opt-in checkbox | On | 85% (0.85) | 3,872 | 1,618 |
+| Email opt-in checkbox | Auto | 78% (0.78) | 1,165 | 326 |
+| Newsletter description | None | 95% (0.95) | 10,092 | 3,554 |
+| Newsletter description | Long | 81% (0.81) | 6,881 | 2,744 |
+| Newsletter description | Short | 81% (0.81) | 1,140 | 539 |
+| Instagram visit delay | 5 seconds or less | 83% (0.83) | 72,067 | 12,912 |
+| Instagram visit delay | 6 to 15 seconds | 77% (0.77) | 849 | 299 |
+| Instagram visit delay | 16 seconds or more | 61% (0.61) | 417 | 87 |
+| X throwaway account restriction (per campaign) | Open | 49% (0.49) | 87,436 | 10,202 |
+| X throwaway account restriction (per campaign) | Restricted | 38% (0.38) | 8,619 | 839 |
+| Share text length | 60 to 140 characters | 12% (0.12) | 23,207 | 5,447 |
+| Share text length | Over 140 characters | 9% (0.09) | 4,934 | 1,867 |
+| Share text length | Default text | 11% (0.11) | 1,006 | 451 |
 | Secret Code length | 3 characters | 68% (0.68) | 176 | 72 |
-| Secret Code length | 4 to 13 characters (open-ended) | 19–35% | – | – |
-| Secret Code length | 8 characters, fixed-length pattern | 8% (0.08) | 209 | 51 |
-| Actions required | 1 to 7 (range) | 73–102% | – | – |
-| Actions required | 7 (exact) | 73% (0.73) | 1,464 | 637 |
-| Actions required | 8 | 42% (0.42) | 857 | 344 |
+| Secret Code length | 4 to 13 characters (open-ended) | 19–34% | – | – |
+| Secret Code length | 8 characters, fixed-length pattern | 9% (0.09) | 209 | 92 |
+| Actions required | 1 to 7 (range) | 44–102% | – | – |
+| Actions required | 7 (exact) | 49% (0.49) | 1,464 | 912 |
+| Actions required | 8 | 27% (0.27) | 857 | 440 |
 
-Actions required is the exception worth flagging on its own: completion holds fairly steady through 7 required actions, then drops by roughly half at 8.
+Actions required is the exception worth flagging on its own: completion falls away as the number required climbs, and drops by roughly half again between 7 and 8.
 
 Email opt-in checkbox on or set to auto, by organizer country. Poland leads by a wide margin. Malaysia barely uses it.
 
@@ -305,15 +305,15 @@ Source: `analysis/output/country_cuts.json` keys `skill_against_other` and `aust
 
 ## Settings the campaign analysis added
 
-The September 2026 export carries entry worth, the mandatory flag, actions required, the paid flag, loyalty tiers, integrations, language, allowed and excluded countries, the generated terms settings and the organizer's country. Aggregates live in `analysis/output/field_cuts.json`. Headlines on campaigns with 1,000 or more Entrants:
+The September 2026 export carries entry worth, the mandatory flag, actions required, the paid flag, loyalty tiers, integrations, language, allowed and excluded countries, the generated terms settings and the organizer's country. Aggregates live in `analysis/output/field_cuts.json`. Headlines across the ordinary population:
 
-- Entry worth: `entry_count` is the number of completions of the action, not a worth-weighted total, so no division by worth is needed. Making an action mandatory raises how many Entrants complete it, and typically lowers the cost per completion too, scoped to campaigns with every Prize valued (about a third of the dataset). Email was mandatory on 41% of the campaigns offering it.
+- Entry worth: `entry_count` is the number of completions of the action, not a worth-weighted total, so no division by worth is needed. Making an action mandatory raises how many Entrants complete it, and typically lowers the cost per completion too, scoped to campaigns with every Prize valued (about a third of the dataset). Email was mandatory on 33% of the campaigns offering it.
 
   | Email action | Completion, % of Entrants (decimal) | Actions |
   |---|---|---|
-  | Typical campaign (any) | 90% (0.901) | 18,113 |
-  | Mandatory | 102% (1.023) | – |
-  | Optional | 76% (0.759) | – |
+  | Typical campaign (any) | 85% (0.851) | 46,858 |
+  | Mandatory | 102% (1.024) | – |
+  | Optional | 78% (0.777) | – |
 
   | Action | Campaign size (Entrants) | Cost optional | Cost mandatory | Save | Campaigns (optional / mandatory) | Businesses (optional / mandatory) |
   |---|---|---|---|---|---|---|
@@ -326,15 +326,15 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Discord_join | 2,500–10,000 | $0.61 | $0.77 | mandatory cheaper | – | – |
 
   Follow_x follows the email pattern from 2,500 Entrants up, not below it. Discord_join is not a rule either way, its mandatory cost is cheaper at one size and pricier at the other. (Figures from `asset_yield.json`'s `yield_by_asset_and_mandatory` cut.)
-- Email provider: connecting a provider does not raise completions, so connect for the workflow, not the number.
+- Email provider: every provider completes email about as often as no integration or a little more, and the providers that lead also make the action mandatory most often, so read the gap as the setup around it.
 
-  | Email provider | Completion, % of Entrants (decimal) | Campaigns |
+  | Email provider | Completion, % of Entrants (decimal) | Actions |
   |---|---|---|
-  | No integration | 92% (0.915) | 11,039 |
-  | MailChimp | 86% (0.858) | 2,545 |
-  | Klaviyo | 96% (0.96) | 1,917 |
-  | MailerLite | 100% (0.998) | 243 |
-  | ConstantContact | 86% (0.858) | 186 |
+  | No integration | 83% (0.832) | 11,039 |
+  | MailChimp | 85% (0.852) | 2,545 |
+  | Klaviyo | 96% (0.956) | 1,917 |
+  | MailerLite | 100% (1.004) | 243 |
+  | ConstantContact | 86% (0.863) | 186 |
 - Marketing stack: businesses running Klaviyo offer email far more often, and are far more often on Shopify too.
 
   | | Runs Klaviyo | Doesn't run Klaviyo |
@@ -343,74 +343,74 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Businesses | 444 | 5,054 |
   | Offers email | 63% | 46% |
   | On Shopify | 29% | 4% |
-- Country rules: 19% of campaigns restrict entry by country. Restricted campaigns offer email far more often, and restricting costs little on the share who enter.
+- Country rules: 25% of campaigns restrict entry by country. Restricted campaigns offer email far more often, and restricting costs little on the share who enter.
 
   | | Restricted by country | Open |
   |---|---|---|
-  | Campaigns | 32,289 | 134,779 |
-  | Businesses | 5,524 | 22,028 |
-  | Offers email | 52% | 23% |
-  | Entry rate | 29% | 30% |
+  | Campaigns | 29,521 | 86,978 |
+  | Businesses | 4,919 | 14,473 |
+  | Offers email | 54% | 26% |
+  | Entry rate | 27% | 27% |
 - Paid actions: campaigns that carry a paid action run more methods and more actions per Entrant than campaigns without one, with a lower share of viewers entering.
 
   | | Has a paid action | No paid action |
   |---|---|---|
-  | Campaigns | 1,637 | 53,149 |
-  | Businesses | 664 | – |
-  | Methods (typical) | 10 | 8 |
-  | Actions per Entrant | 5.31 | 4.86 |
-  | Entry rate | 26% | 30% |
-- Language: English dominates the dataset and runs the longest campaigns with the most email asks. Portuguese and German campaigns are both one-day runs, but German offers email far more often. Spanish and French sit in between on both duration and email.
+  | Campaigns | 3,694 | 112,805 |
+  | Businesses | 1,157 | 17,116 |
+  | Methods (typical) | 10 | 7 |
+  | Actions per Entrant | 5.35 | 4.36 |
+  | Entry rate | 23% | 27% |
+- Language: English dominates the dataset and runs the longest campaigns. Portuguese campaigns are one-day runs that almost never ask for email. German, Spanish and French sit between the two on duration, and French asks for email about as often as English does.
 
   | Language | Share of campaigns | Campaigns | Businesses | Duration (typical) | Email offered |
   |---|---|---|---|---|---|
-  | English | 96% | 52,259 | – | 14 days | 31% |
-  | Portuguese | – | 563 | 68 | 1 day | under 1% |
-  | German | – | 390 | 55 | 1 day | 19% |
-  | Spanish | – | 457 | 119 | 10 days | 16% |
-  | French | – | 425 | 100 | 11 days | 27% |
-- Terms: the generated terms set the draw and the Winner response window at 7 days on most campaigns. 37% of organizers wrote fully custom terms. Governing law runs US, GB and IN as the top three, then AU and CA.
+  | English | 93% | 108,473 | – | 15 days | 34% |
+  | Portuguese | – | 2,331 | 116 | 1 day | 2% |
+  | German | – | 889 | 154 | 9 days | 20% |
+  | Spanish | – | 924 | 252 | 13 days | 25% |
+  | French | – | 951 | 216 | 10 days | 35% |
+- Terms: the generated terms set the draw and the Winner response window at 7 days on most campaigns. 39% of organizers wrote fully custom terms. Governing law runs US, GB and CA as the top three, then AU and BR.
 
   | Governing law | Campaigns |
   |---|---|
-  | US | 19,658 |
-  | GB | 4,240 |
-  | IN | 3,163 |
-- Build lead: 24% of campaigns show a creation time after the start date, so the field reads as a modified-at time on those rows, not a true build lead. (12,927 campaigns, 3,776 businesses.) Among the rest, lead time barely moves the share who enter.
+  | US | 55,088 |
+  | GB | 14,002 |
+  | CA | 6,979 |
+- Build lead: 22% of campaigns show a creation time after the start date, so the field reads as a modified-at time on those rows, not a true build lead. (25,338 campaigns, 6,644 businesses.) Among the rest, lead time barely moves the share who enter.
 
   | Build lead | Entry rate |
   |---|---|
-  | Same day | 30% |
-  | 1 to 2 days | 29% |
-  | 3 to 7 days | 28% |
-  | 8 days or more | 28% |
-- Viral Share clicks: campaigns with a Viral Share action see share clicks equal to 47% of Impressions, and the typical campaign sees about 174 share clicks per 100 Entrants (1.743 per Entrant).
-- Landing: most Impressions land on the hosted gleam.io page, not on an embed or the directory listing. Traffic source is dominated by direct, ahead of organizer sites, Meta, and Gleam's own pages. Of the Impressions carrying a UTM tag, about a third trace to email newsletters and a fifth to Meta.
+  | Same day | 27% |
+  | 1 to 2 days | 26% |
+  | 3 to 7 days | 27% |
+  | 8 days or more | 26% |
+- Viral Share clicks: campaigns with a Viral Share action see share clicks equal to 20% of Impressions, and the typical campaign sees about 93 share clicks per 100 Entrants (0.927 per Entrant).
+- Landing: Impressions split about evenly between the hosted gleam.io page and an embed, with the directory listing a rounding error. Traffic source is dominated by direct, ahead of organizer sites, Meta and YouTube. Of the Impressions carrying a UTM tag, about a third trace to email newsletters and a fifth to Meta.
 
   | Landing page type | Share of Impressions |
   |---|---|
-  | Hosted gleam.io page | 63% |
-  | Embed | 36% |
+  | Hosted gleam.io page | 49% |
+  | Embed | 51% |
   | Directory listing | 0.4% |
 
   | Traffic source | Share of Impressions |
   |---|---|
-  | Direct | 52% |
-  | Organizer sites | 7.8% |
-  | Meta | 7.6% |
-  | Gleam pages | 7.5% |
-  | YouTube | 4.7% |
-  | X | 4.7% |
-  | Giveaway directories | 3.3% |
-  | Search | 2.6% |
+  | Direct | 48% |
+  | Organizer sites | 9.6% |
+  | Meta | 9.0% |
+  | YouTube | 6.1% |
+  | Giveaway directories | 4.8% |
+  | Search | 3.9% |
+  | X | 3.7% |
+  | Gleam pages | 3.1% |
 
-  (11% of Impressions carry a UTM tag. Of those, 35% trace to email newsletters and 20% to Meta.)
+  (15% of Impressions carry a UTM tag. Of those, 32% trace to email newsletters and 23% to Meta.)
 - Hosted share: campaigns landing almost entirely on the hosted page get the most to enter, over the shortest run, with the least email offered. Campaigns that lean on an embed run longer, offer email far more, and get less to enter. This is the largest split in the dataset, with no comparison group to show what caused it.
 
   | Landing mix | Campaigns | Businesses | Entry rate | Duration | Email offered |
   |---|---|---|---|---|---|
-  | 90% or more hosted | 36,817 | 8,400 | 34% | 10 days | 16% |
-  | Embed-mostly / 10–50% hosted | 7,444 + 7,125 | 1,568 + 1,660 | 21–24% | 18–27 days | 57–67% |
+  | 90% or more hosted | 70,080 | 13,712 | 31% | 12 days | 24% |
+  | Embed-mostly / 10–50% hosted | 20,872 + 17,319 | 3,212 + 2,923 | 20–23% | 16–21 days | 44–52% |
 
 Still not in the dataset: fraud level and CAPTCHA mode, require login and the login types, email and phone verification, age restriction, daily and interval settings, feature images and video, post-entry emails, redirects, pixels and webhooks. The docs describe what they do.
 
@@ -435,7 +435,7 @@ The entry-method-planner skill holds the share of Entrants who completed it by q
 
 ## Settings the other skills already measured
 
-- Email opt-in checkbox on: 89% of Entrants complete the email action against 101 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 93% against 86% in the table above because it compares like with like on campaign size and industry, where the table above pools every campaign. Quote whichever base the answer is about and say which one it is.
+- Email opt-in checkbox on: 89% of Entrants complete the email action against 101 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 92% against 85% in the table above because it compares like with like on campaign size and industry, where the table above pools every campaign. Quote whichever base the answer is about and say which one it is.
 - Validated-answer question: a typical 17% of entries come back invalid, because wrong answers count as invalid (giveaway-entry-method-planner).
 - Custom terms: written by 49% of campaigns (giveaway-winner-structure).
 - Eleven or more actions: a quarter fewer Entrants, 32% of viewers enter against 48% for one to three (giveaway-entry-method-planner).
@@ -443,10 +443,10 @@ The entry-method-planner skill holds the share of Entrants who completed it by q
 
 ## What this suggests for the setup, as advice
 
-- Put the action that produces the asset first and make it the single mandatory action. Position matters a lot: an email action or a follow completed by nearly every Entrant in first position drops off sharply by fifth position or later (see the position table above). See giveaway-entry-method-planner's `references/mix-by-objective.md` for the fuller asset list and the ratios by campaign size.
+- Put the action that produces the asset first and make it the single mandatory action. Position matters a lot: an email action completed by about every Entrant in first position, and a follow by about four in five, both fall away by fifth position or later (see the position table above). See giveaway-entry-method-planner's `references/mix-by-objective.md` for the fuller asset list and the ratios by campaign size.
 - Making that action mandatory is worth it beyond the completion count: it also tends to lower the cost per completion (see the entry-worth table above). Email saves the most as campaign size grows. Follow_x follows the same pattern from 2,500 Entrants up. Discord_join's mandatory cost is not a rule, it moves in opposite directions across the two sizes tested.
 - Keep the list short. Everything after the fourth action is completed by a minority, and eleven or more actions came with fewer Entrants.
-- Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It is the one family that does not fall away down the list: 19 completions per 100 Entrants in first position, 14 in the middle, 47 fifth or later, which is where long Action lists with a mandatory share sit, so read that last figure as the company it keeps. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
+- Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It falls away down the list like every other family: 16 completions per 100 Entrants in first position, 12 in the middle, 11 fifth or later. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
 - Use a question or choice template when you want an answer. Free-form custom actions lose half the Entrants.
 - Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a fifth of completions, and showing the page as HTML inside the widget costs a third against a plain link.
 - Keep the description under 150 words and lead with eligibility and Winner count, which the Gleam tips library also recommends.

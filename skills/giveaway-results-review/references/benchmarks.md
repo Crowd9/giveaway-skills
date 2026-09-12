@@ -21,12 +21,12 @@ Half of all campaigns sat between 225 and 1,290 Entrants, and the script compare
 
 | Comparison band | Campaigns | Businesses |
 |---|---|---|
-| 100 to 250 Entrants | 33,338 | 9,607 |
-| 250 to 500 | 25,892 | 6,554 |
-| 500 to 1,000 | 21,935 | 5,550 |
-| 1,000 to 2,500 | 20,137 | 5,123 |
-| 2,500 to 10,000 | 12,828 | 3,035 |
-| 10,000 or more | 3,218 | 762 |
+| 100 to 250 Entrants | 33,074 | 9,533 |
+| 250 to 500 | 25,681 | 6,496 |
+| 500 to 1,000 | 21,838 | 5,509 |
+| 1,000 to 2,500 | 20,021 | 5,077 |
+| 2,500 to 10,000 | 12,714 | 2,991 |
+| 10,000 or more | 3,171 | 748 |
 
 State entries as entries per 100 Entrants, not the raw decimal, using the row above. Give the reader's own figure the same way (entries divided by Entrants, times 100), and state the gap against the typical figure as a percentage or a plain multiple ("about half the typical rate"), never as two decimals side by side.
 
@@ -129,7 +129,7 @@ Stated USD per email signup by Prize category, campaigns with an email action:
 | 2020 | 1,156 | 611 | 26% |
 <!-- /generated -->
 
-The typical campaign has held between 473 and 528 Entrants since 2021 while the Conversion Rate held steady. A campaign run this year sits a little above the typical figures across the whole export, at the same quality. The 2020 row rests on 1,185 campaigns against several thousand in every later year, so treat it as a rough marker.
+The typical campaign has held between 472 and 528 Entrants since 2021 while the Conversion Rate held steady. A campaign run this year sits a little above the typical figures across the whole export, at the same quality. The 2020 row rests on 1,156 campaigns against several thousand in every later year, so treat it as a rough marker.
 
 ## By template
 
@@ -165,23 +165,23 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`).
 
 ## Benchmarks by plan tier
 
-A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`'s own scope (100 or more Entrants, plausible start dates, no crypto or purchase-only exclusion), which is wider than the 116,499 campaigns behind the numbers above, so treat these as tier comparisons, not a restatement of the campaign-size table. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
+A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`, which runs on the same 116,499 campaigns as the numbers above, so a tier row and the campaign-size table split one population two ways. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
 
 <!-- generated:bm_tier -->
 | Tier | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
-| Pro | 77,145 | 13,057 | 530 | 27% | 4.99 | 13 | 8 | 32% | 50% |
-| Business | 39,766 | 4,902 | 696 | 26% | 4.77 | 12 | 7 | 35% | 48% |
-| Free | 13,337 | 4,888 | 238 | 34% | 3.31 | 12 | 4 | 0% | 0% |
-| Hobby | 12,115 | 2,940 | 303 | 32% | 3.83 | 10 | 6 | 0% | 1% |
-| Premium | 2,510 | 395 | 1,283 | 24% | 5.67 | 20 | 9 | 50% | 44% |
+| Pro | 62,061 | 10,160 | 526 | 26% | 4.83 | 14 | 8 | 38% | 48% |
+| Business | 29,645 | 3,553 | 709 | 24% | 4.34 | 15 | 8 | 45% | 43% |
+| Free | 11,993 | 4,183 | 238 | 34% | 3.29 | 12 | 4 | 0% | 0% |
+| Hobby | 10,802 | 2,555 | 307 | 31% | 3.77 | 11 | 6 | 0% | 2% |
+| Premium | 1,993 | 202 | 1,221 | 23% | 5.34 | 22 | 10 | 61% | 39% |
 <!-- /generated -->
 
 Free campaigns carry no email or share action at all and Hobby campaigns carry almost none, so their Conversion Rate sits above Pro and Business on a smaller ask, not a stronger landing page. Premium campaigns run the most methods over the longest window and the lowest Conversion Rate follows from the duration and repeatable-action caveat, not from a weaker campaign.
 
 ## Benchmarks by organizer stage, scale and business type
 
-For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, also wider than the 116,499 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
+For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, wider than the 116,499 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
 
 By organizer stage (`by_org_stage`), read from the homepage:
 
@@ -306,17 +306,17 @@ Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s
 <!-- generated:bm_sequence -->
 | Sequence | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| 11th plus | 78,922 | 2,239 | 521 | 29% | 10 |
-| 4th to 10th | 25,742 | 5,647 | 542 | 28% | 13 |
-| 1st campaign | 22,273 | 22,273 | 412 | 26% | 15 |
-| 2nd to 3rd | 17,941 | 10,667 | 470 | 27% | 14 |
+| 11th plus | 63,192 | 1,877 | 516 | 27% | 14 |
+| 4th to 10th | 21,244 | 4,622 | 535 | 27% | 14 |
+| 1st campaign | 17,633 | 17,633 | 382 | 26% | 16 |
+| 2nd to 3rd | 14,430 | 8,546 | 453 | 27% | 15 |
 <!-- /generated -->
 
 <!-- generated:bm_activity -->
 | Activity | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| Has not | 75,921 | 18,404 | 474 | 28% | 11 |
-| Ran another campaign in the last 12 months | 68,957 | 3,869 | 537 | 28% | 14 |
+| Ran another campaign in the last 12 months | 61,616 | 3,563 | 538 | 27% | 14 |
+| Has not | 54,883 | 14,070 | 441 | 27% | 14 |
 <!-- /generated -->
 
 Later campaigns see a higher Conversion Rate over a shorter run than a 1st campaign. Read this as which organizers kept going before reading it as improvement: an organizer whose first campaign did poorly is less likely to be in the file with a 2nd, so the 11th-plus row describes organizers who kept going, not the same organizer's own campaign 1 through campaign 11.
@@ -385,14 +385,14 @@ Source: `analysis/output/organizer_history.json` (`reach_rate_by_first_band`, `s
 
 | Site age | Campaigns | Businesses | Conversion Rate | Email offered |
 |---|---|---|---|---|
-| 3 years or more | 19,034 | 2,013 | 28% | 41% |
-| 1 to 3 years | 12,992 | 2,499 | 32% | 29% |
-| 6 to 12 months | 6,437 | 1,939 | 31% | 21% |
-| 1 to 6 months | 9,011 | 3,475 | 31% | 20% |
-| 1 to 4 weeks | 3,287 | 2,487 | 30% | 24% |
-| Under 1 week | 3,273 | 3,032 | 29% | 21% |
+| 3 years or more | 56,242 | 4,077 | 26% | 35% |
+| 1 to 3 years | 26,629 | 4,594 | 28% | 31% |
+| 6 to 12 months | 9,286 | 3,217 | 28% | 31% |
+| 1 to 6 months | 12,430 | 4,951 | 27% | 32% |
+| 1 to 4 weeks | 4,959 | 3,704 | 27% | 35% |
+| Under 1 week | 5,483 | 5,102 | 26% | 28% |
 
-Conversion Rate barely moves across site age (table above). Email offered moves the most: an established site (three years or more) carries an email action about twice as often as a site under a year old.
+Conversion Rate barely moves across site age, and neither does how often an email action is offered (table above). Both hold inside a few points across every group, so site age is a weak comparison to lean on.
 
 Source: `analysis/output/field_cuts.json` (`by_organizer_tenure`).
 
@@ -424,14 +424,14 @@ Japan runs the highest plan-tier mix of the twelve, 61% of campaigns on Business
 <!-- generated:bm_city -->
 | City | Campaigns | Businesses | Entrants | Conversion Rate | Entries/Entrant | Days | Methods |
 |---|---|---|---|---|---|---|---|
-| Tokyo, Japan | 3,624 | 103 | 424 | 32% | 5.45 | 5 | 7 |
-| Los Angeles, United States | 3,200 | 423 | 635 | 24% | 4.75 | 12 | 7 |
-| Singapore | 2,942 | 231 | 719 | 31% | 4.87 | 6 | 6 |
+| Los Angeles, United States | 3,020 | 370 | 636 | 24% | 4.80 | 12 | 7 |
 | Plano, United States | 2,440 | 11 | 336 | 15% | 12.36 | 31 | 11 |
-| Sydney, Australia | 1,966 | 406 | 574 | 28% | 3.08 | 18 | 5 |
-| Melbourne, Australia | 1,597 | 360 | 666 | 29% | 3.24 | 15 | 6 |
-| London, United Kingdom | 1,506 | 59 | 587 | 43% | 1.72 | 19 | 2 |
-| Chicago, United States | 1,402 | 156 | 569 | 26% | 7.01 | 15 | 11 |
+| Sydney, Australia | 1,863 | 375 | 573 | 28% | 3.05 | 18 | 5 |
+| Melbourne, Australia | 1,515 | 333 | 671 | 29% | 3.19 | 15 | 6 |
+| London, United Kingdom | 1,465 | 44 | 589 | 43% | 1.68 | 19 | 2 |
+| Chicago, United States | 1,306 | 143 | 570 | 26% | 7.68 | 15 | 12 |
+| Seattle, United States | 918 | 106 | 1,642 | 35% | 3.14 | 10 | 5 |
+| Singapore | 915 | 115 | 487 | 22% | 4.65 | 14 | 7 |
 <!-- /generated -->
 
 Source: `analysis/output/country_cuts.json` (`by_country`), `analysis/output/indicators.json` (`impressions_per_contestant_by_country`, `plan_tier_by_country`), `analysis/output/field_cuts.json` (`by_organizer_city`).
@@ -505,7 +505,7 @@ The share-action line and the top-fifth line answer different questions and cann
 
 [Extracted from `analysis/output/organizer_history.json`, `sequence_curve_all`, `reach_rate_by_first_band`, `ordinary_n` and `ordinary_organizers`. The shares below are worked from those counts and are not stored figures.]
 
-Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 64,236 of the 116,499, which is 55%, come from the 1,984 businesses on their eleventh campaign or later, 11% of the 17,633. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
+Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 63,775 of the 116,499, which is 55%, come from the 1,965 businesses on their eleventh campaign or later, 11% of the 17,633. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
 
 The first row below is one campaign per business, which is the business-weighted view of the same data.
 

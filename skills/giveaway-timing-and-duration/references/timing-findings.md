@@ -256,16 +256,16 @@ A campaign that starts within 30 days of the business's previous one draws more 
 
 ## Build lead time (extracted)
 
-A wider set than the campaigns behind the numbers above (144,878 campaigns, 22,273 businesses, crypto and token formats included): the recorded create date sits after the campaign's start date in 27% of them. That is not a business building after launch. The field also updates on a later edit, so for about a quarter of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
+All the campaigns behind these numbers (116,499 campaigns, 17,633 businesses): the recorded create date sits after the campaign's start date in 22% of them. That is not a business building after launch. The field also updates on a later edit, so for about a fifth of these campaigns it reads as last-modified, not build lead time. Treat every number below with that in mind.
 
-Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 4 days, the top tenth 12 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
+Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 5 days, the top tenth 14 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
 
 | Build lead | Campaigns | Businesses | Conversion Rate | Actions per Entrant | Methods |
 |---|---|---|---|---|---|
-| Same day | 17,907 | 5,031 | 30% | 5.08 | 8 |
-| 1 to 2 days | 8,762 | 3,280 | 29% | 4.97 | 8 |
-| 3 to 7 days | 7,437 | 2,892 | 28% | 4.67 | 7 |
-| 8 or more days | 7,753 | 2,704 | 28% | 4.21 | 7 |
+| Same day | 42,030 | 9,219 | 27% | 4.65 | 7 |
+| 1 to 2 days | 17,018 | 5,010 | 26% | 4.36 | 7 |
+| 3 to 7 days | 15,604 | 4,572 | 27% | 4.11 | 7 |
+| 8 or more days | 16,509 | 4,173 | 26% | 3.90 | 7 |
 
 Same-day builds get as many Entrants to enter as campaigns built a week or more ahead. A longer lead buys time for assets and partner briefs, not a better Conversion Rate on its own.
 
@@ -273,15 +273,15 @@ Source: analysis/output/field_cuts.json (build_lead_days, by_build_lead).
 
 ## Duration by plan tier and hosting mix (extracted)
 
-Premium accounts run the longest campaigns with the most methods, Hobby accounts run the shortest and Free accounts use the fewest. [144,878 campaigns, 22,273 businesses total.]
+Premium accounts run the longest campaigns with the most methods, Hobby accounts run the shortest and Free accounts use the fewest. [116,499 campaigns, 17,633 businesses total.]
 
 | Plan tier | Campaigns | Businesses | Typical duration | Methods |
 |---|---|---|---|---|
-| Premium | 3,068 | 550 | 19 days | 9 |
-| Free | 14,364 | 5,423 | 12 days | 4 |
-| Pro | 89,858 | 15,115 | 11 days | 8 |
-| Business | 46,880 | 5,877 | 11 days | 7 |
-| Hobby | 12,892 | 3,164 | 10 days | 6 |
+| Premium | 1,993 | 202 | 22 days | 10 |
+| Business | 29,645 | 3,553 | 15 days | 8 |
+| Pro | 62,061 | 10,160 | 14 days | 8 |
+| Free | 11,993 | 4,183 | 12 days | 4 |
+| Hobby | 10,802 | 2,555 | 11 days | 6 |
 
 By growth stage, startups run short and enterprises run long:
 
@@ -290,14 +290,14 @@ By growth stage, startups run short and enterprises run long:
 | Startups | 14,661 | 4,088 | 11 days | 9 |
 | Enterprises | 2,902 | 280 | 17 days | 7 |
 
-Hosting mix tracks the same pattern. Campaigns that keep most of their Impressions on the Gleam-hosted page run a much shorter typical length than campaigns that lean on the embed.
+Hosting mix tracks the same pattern. Campaigns that keep most of their Impressions on the Gleam-hosted page run a shorter typical length than campaigns that lean on the embed.
 
 | Share of Impressions on the hosted page | Campaigns | Businesses | Typical days |
 |---|---|---|---|
-| 90% or more hosted | 36,817 | 8,400 | 10 |
-| 50 to 90% hosted | 3,274 | 1,271 | 25 |
-| 10 to 50% hosted | 7,125 | 1,660 | 27 |
-| Mostly embedded | 7,444 | 1,568 | 18 |
+| 90% or more hosted | 70,080 | 13,712 | 12 |
+| 50 to 90% hosted | 7,912 | 2,161 | 16 |
+| 10 to 50% hosted | 17,319 | 2,923 | 21 |
+| Mostly embedded | 20,872 | 3,212 | 16 |
 
 An embed sits inside a page the business already controls, so there is less pressure to close it down on a fixed date.
 
@@ -311,8 +311,8 @@ A short, high-entry-rate format fills the South American rows, and more specific
 
 | Group | Campaigns | Businesses | Typical duration | Conversion Rate |
 |---|---|---|---|---|
-| South America | 1,885 | 269 | 4 days | 53% |
-| Portuguese-language | 563 | 68 | 1 day | 60% |
+| South America | 5,333 | 588 | 1 day | 57% |
+| Portuguese-language | 2,331 | 116 | 1 day | 65% |
 | Brazilian YouTube-hosted | 225 | 28 | 2 days (8 methods) | 56% |
 
 This is a short, high-entry-rate format run by a specific, well-established group of businesses, not a timing technique that travels. A short run works well here because the businesses running it already have an audience primed for a fast giveaway, not because cutting a run to a few days raises the Conversion Rate by itself.
@@ -321,16 +321,16 @@ Source: analysis/output/field_cuts.json (by_continent, by_language), analysis/ou
 
 ## Response and draw windows (extracted)
 
-Almost every campaign keeps the platform's 7-day default for both the draw window and the response window, so this mostly shows businesses keeping the default, not choosing seven days on purpose. [96% of campaigns use the 7-day draw window, 96% the 7-day response window, 54,298 campaigns, 10,602 businesses.]
+Almost every campaign keeps the platform's 7-day default for both the draw window and the response window, so this mostly shows businesses keeping the default, not choosing seven days on purpose. [94.3% of campaigns use the 7-day draw window and 93.4% the 7-day response window, out of the 115,361 campaigns whose terms record these settings, from `analysis/output/winner_terms.json` (`terms_timetable`). The earlier pair of 96% figures carried a campaign count that traces to no run of the source, so both are read off the recorded denominator now.]
 
-Response window length tracks only a small difference in Conversion Rate, and a longer window pairs with a longer campaign, not a slower-responding Entrant.
+Response window length tracks a few points of Conversion Rate up to 14 days, and the 15-plus row sits lowest because those campaigns run about twice as long, not because their Entrants respond slower.
 
 | Response window | Campaigns | Businesses | Conversion Rate |
 |---|---|---|---|
-| 1-3 days | 1,353 | 389 | 31% |
-| 4-7 days (default) | 51,881 | 10,205 | 30% |
-| 8-14 days | 622 | 190 | 30% |
-| 15+ days | 404 | 190 | 26% (20-day campaign typical) |
+| 1-3 days | 5,109 | 1,047 | 25% |
+| 4-7 days (default) | 108,256 | 16,671 | 27% |
+| 8-14 days | 990 | 273 | 30% |
+| 15+ days | 935 | 229 | 19% (29-day campaign typical) |
 
 Source: analysis/output/field_cuts.json (terms, by_response_days).
 

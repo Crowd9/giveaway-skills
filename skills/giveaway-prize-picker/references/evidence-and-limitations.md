@@ -154,8 +154,8 @@ Campaign sequence tracks how many campaigns a business had already run. Conversi
 <!-- generated:ev_sequence -->
 | Campaign sequence | Conversion Rate | Duration | Campaigns | Businesses |
 |---|---|---|---|---|
-| First campaign | 26% | 15 days | 22,273 | 22,273 |
-| Eleventh or later | 29% | 10 days | 78,922 | 2,239 |
+| First campaign | 26% | 16 days | 17,633 | 17,633 |
+| Eleventh or later | 27% | 14 days | 63,192 | 1,877 |
 <!-- /generated -->
 
 ## Inferred Prize values from text
