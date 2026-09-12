@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a provably fair random draw for a giveaway: commit to the Entrant list and rules before the seed exists, take the seed from a public randomness beacon (drand or NIST) or a published value, pick Winners from a list, CSV, spreadsheet or comment export with deduplication, exclusions, entry weights, tiers and backups, and produce an audit record anyone can verify. Use when the user asks 'pick a Winner', 'draw the Winner', 'random Winner from this list', 'choose 3 Winners from these comments', 'how do I prove the draw was fair', 'redraw', 'backup Winners', 'weighted draw', or pastes a list of Entrants. Platform-neutral. For deciding how many Winners and the terms see giveaway-winner-structure."
 metadata:
-  version: 1.3.23
+  version: 1.3.24
 ---
 
 # Giveaway Random Draw

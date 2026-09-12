@@ -334,6 +334,32 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 2.2.2 (2026-09-12)
+
+Every figure in these skills is supposed to describe the same 116,499 campaigns, the ones left after crypto,
+token and buy-to-enter campaigns are set aside. One of the files behind them never applied those screens. It
+ran on every campaign that reached 100 Entrants, 144,878 of them, while its own note claimed the narrower
+population. The campaigns wrongly carried along are the ones that run referral farms, and the figures drawn
+from that file are the channel, action and setting cuts, which is exactly what a referral farm distorts.
+
+Those cuts are now on the population the skills promise. Around 780 figures across seven reference files
+moved with it, and eleven claims stopped being true and were rewritten: embeds carry more of the traffic than
+hosted pages, the share-click rate peaks at a middle reward and falls back above it, and a Viral Share loses
+completions down the Action list like every other family.
+
+Two counts were sitting under a heading that misnamed them. The per-Action cuts count one row per Action
+offered, which runs above the number of campaigns, and seventeen places called them campaigns. A row headed
+TikTok Video Views held profile visits. Both now say what they hold.
+
+Three figures about draw and response windows traced to no run of any source. They are read off the recorded
+denominator now, 94.3% and 93.4% of the 115,361 campaigns whose terms carry the setting.
+
+Alongside that, four places where two files disagreed with each other are settled. A Winner who does not reply
+by the deadline passes the Prize to the first backup drawn under the same audit record, which keeps the result
+checkable against the commitment made before the draw. Nothing claims a directory listing is free, because
+what a site charges is not something this data knows. Six tables that had drifted from their sources, one of
+them wrong in every row, are now generated from those sources.
+
 ## 2.2.1 (2026-09-12)
 
 A number that belongs to somebody else no longer gets stored here. Permit thresholds, plan limits, platform

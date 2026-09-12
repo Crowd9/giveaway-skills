@@ -2,7 +2,7 @@
 name: giveaway-winner-communications
 description: "Write every message after the draw: Winner notification, verification request, address collection with a privacy note, shipping and delivery updates, the reply to a Winner who disputes or stalls, the public announcement, and the message to everyone who did not win. Use when the user asks 'how do I tell the Winner', 'Winner email', 'announce the Winner', 'what do I send non-Winners', 'Winner won't reply' (answered here as the message to send, with the redraw rule in giveaway-winner-structure), 'someone says they should have won', 'ask the Winner for a photo', or 'what do I email Entrants after the giveaway'. Platform-neutral. For the draw itself see giveaway-random-draw. For deadlines and the redraw rule see giveaway-winner-structure."
 metadata:
-  version: 1.2.23
+  version: 1.2.24
 ---
 
 # Giveaway Winner Communications
