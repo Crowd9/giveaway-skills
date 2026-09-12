@@ -4709,15 +4709,15 @@
   }
  },
  "usd_per_email_by_prize_category": {
-  "other_unclassified": {
-   "campaigns": 5130,
-   "organizers": 1562,
-   "median": 0.5948661239471084
-  },
   "gift_card_or_cash": {
-   "campaigns": 4390,
-   "organizers": 1068,
-   "median": 0.15822784810126583
+   "campaigns": 5103,
+   "organizers": 1252,
+   "median": 0.20491803278688525
+  },
+  "other_unclassified": {
+   "campaigns": 4747,
+   "organizers": 1475,
+   "median": 0.5922580645161291
   },
   "tech_hardware": {
    "campaigns": 2987,
@@ -4725,64 +4725,64 @@
    "median": 0.4222972972972973
   },
   "bundle_or_box": {
-   "campaigns": 2664,
-   "organizers": 1019,
-   "median": 0.5951542588866532
+   "campaigns": 2541,
+   "organizers": 975,
+   "median": 0.5822416302765647
   },
   "game_item_or_skin": {
-   "campaigns": 1462,
-   "organizers": 228,
-   "median": 0.42417863183273957
+   "campaigns": 1437,
+   "organizers": 229,
+   "median": 0.4487917146144994
   },
   "experience_travel_tickets": {
-   "campaigns": 928,
-   "organizers": 407,
-   "median": 1.1485449699841173
+   "campaigns": 861,
+   "organizers": 385,
+   "median": 1.2
   },
   "merch_apparel_collectible": {
-   "campaigns": 828,
-   "organizers": 328,
-   "median": 0.4884855825871819
+   "campaigns": 795,
+   "organizers": 321,
+   "median": 0.49880287310454907
   },
   "regulated_goods_firearm": {
-   "campaigns": 606,
+   "campaigns": 603,
    "organizers": 121,
-   "median": 0.39128114501679734
+   "median": 0.3901677721420211
   },
   "home_garden_appliance": {
-   "campaigns": 604,
-   "organizers": 287,
-   "median": 0.4923824515294829
+   "campaigns": 601,
+   "organizers": 280,
+   "median": 0.4871259568545581
   },
   "placeholder_name": {
-   "campaigns": 496,
-   "organizers": 177,
-   "median": 0.5642403657927275
+   "campaigns": 478,
+   "organizers": 174,
+   "median": 0.5377934159733377
   },
   "sports_outdoor_gear": {
-   "campaigns": 396,
-   "organizers": 200,
-   "median": 0.5729320113314447
-  },
-  "food_drink_consumables": {
-   "campaigns": 331,
-   "organizers": 190,
-   "median": 0.527027027027027
+   "campaigns": 364,
+   "organizers": 186,
+   "median": 0.5405849606371314
   },
   "subscription_membership": {
-   "campaigns": 319,
-   "organizers": 199,
+   "campaigns": 311,
+   "organizers": 195,
    "median": 1.1904761904761905
+  },
+  "food_drink_consumables": {
+   "campaigns": 308,
+   "organizers": 181,
+   "median": 0.5250088062466889
   },
   "beauty_wellness": {
    "campaigns": 208,
-   "organizers": 84,
-   "median": 0.381941964817063
+   "organizers": 82,
+   "median": 0.2845923407011578
   },
   "vehicle": {
-   "campaigns": 202,
-   "organizers": 90,
-   "median": 0.9006112699182006
+   "campaigns": 180,
+   "organizers": 86,
+   "median": 0.883358623115917
   },
   "discount_or_coupon": {
    "campaigns": 158,
@@ -4790,19 +4790,19 @@
    "median": 2.057017543859649
   },
   "music_gear": {
-   "campaigns": 147,
-   "organizers": 47,
-   "median": 0.3155274978754401
-  },
-  "toys_collectibles": {
-   "campaigns": 118,
-   "organizers": 68,
-   "median": 0.396857707259627
+   "campaigns": 146,
+   "organizers": 46,
+   "median": 0.31108012952682795
   },
   "tools_craft_diy": {
-   "campaigns": 113,
-   "organizers": 55,
-   "median": 0.3682266009852217
+   "campaigns": 121,
+   "organizers": 60,
+   "median": 0.4090909090909091
+  },
+  "toys_collectibles": {
+   "campaigns": 108,
+   "organizers": 64,
+   "median": 0.4147553516819572
   }
  },
  "yield_by_asset_and_mandatory": {

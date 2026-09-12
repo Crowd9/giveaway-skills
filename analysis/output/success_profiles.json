@@ -19,10 +19,10 @@
   "entrants": {
    "definition": "top 20% of valid_contestants, stratified by vertical only since size band would make this circular",
    "n_top_stratified": 23256,
-   "organizers_top_stratified": 4468,
+   "organizers_top_stratified": 4467,
    "strata_used": 11,
    "n_top_raw": 23257,
-   "organizers_top_raw": 4542,
+   "organizers_top_raw": 4543,
    "stratified": {
     "own_product_prize": {
      "top": 0.1981,
@@ -35,7 +35,7 @@
      "ratio": 1.347
     },
     "repeat_organizer_5plus": {
-     "top": 0.864,
+     "top": 0.8641,
      "rest": 0.8032,
      "ratio": 1.076
     },
@@ -45,9 +45,9 @@
      "ratio": 1.553
     },
     "email_action": {
-     "top": 0.4532,
-     "rest": 0.3098,
-     "ratio": 1.463
+     "top": 0.4531,
+     "rest": 0.3099,
+     "ratio": 1.462
     },
     "referral_action": {
      "top": 0.4393,
@@ -57,12 +57,12 @@
     "social_action": {
      "top": 0.6824,
      "rest": 0.7318,
-     "ratio": 0.932
+     "ratio": 0.933
     },
     "question_action": {
-     "top": 0.1051,
+     "top": 0.1052,
      "rest": 0.1228,
-     "ratio": 0.856
+     "ratio": 0.857
     },
     "mandatory_action": {
      "top": 0.4582,
@@ -70,8 +70,8 @@
      "ratio": 1.122
     },
     "single_prize_unit": {
-     "top": 0.6031,
-     "rest": 0.603,
+     "top": 0.6032,
+     "rest": 0.6029,
      "ratio": 1.0
     },
     "stated_pool_under_250usd": {
@@ -80,9 +80,9 @@
      "ratio": 0.259
     },
     "11_plus_actions": {
-     "top": 0.297,
+     "top": 0.2971,
      "rest": 0.2565,
-     "ratio": 1.158
+     "ratio": 1.159
     },
     "repeatable_action": {
      "top": 0.3654,
@@ -92,10 +92,10 @@
     "december_start": {
      "top": 0.1233,
      "rest": 0.0988,
-     "ratio": 1.248
+     "ratio": 1.247
     },
     "worth_5_plus_on_an_action": {
-     "top": 0.5056,
+     "top": 0.5058,
      "rest": 0.4864,
      "ratio": 1.04
     }
@@ -112,8 +112,8 @@
      "ratio": 1.374
     },
     "repeat_organizer_5plus": {
-     "top": 0.8607,
-     "rest": 0.804,
+     "top": 0.8606,
+     "rest": 0.8041,
      "ratio": 1.07
     },
     "secret_code_action": {
@@ -139,10 +139,10 @@
     "question_action": {
      "top": 0.1022,
      "rest": 0.1235,
-     "ratio": 0.827
+     "ratio": 0.828
     },
     "mandatory_action": {
-     "top": 0.4555,
+     "top": 0.4556,
      "rest": 0.409,
      "ratio": 1.114
     },
@@ -158,7 +158,7 @@
     },
     "11_plus_actions": {
      "top": 0.2908,
-     "rest": 0.2581,
+     "rest": 0.258,
      "ratio": 1.127
     },
     "repeatable_action": {
@@ -172,7 +172,7 @@
      "ratio": 1.31
     },
     "worth_5_plus_on_an_action": {
-     "top": 0.5141,
+     "top": 0.5142,
      "rest": 0.4843,
      "ratio": 1.062
     }
@@ -505,7 +505,7 @@
   "email_yield_per_contestant": {
    "definition": "campaigns running an email action only, stratified by band and vertical",
    "n_top_stratified": 7863,
-   "organizers_top_stratified": 1647,
+   "organizers_top_stratified": 1648,
    "strata_used": 65,
    "n_top_raw": 7868,
    "organizers_top_raw": 1239,
@@ -516,13 +516,13 @@
      "ratio": 1.047
     },
     "collaboration_in_title": {
-     "top": 0.1758,
+     "top": 0.1756,
      "rest": 0.1554,
-     "ratio": 1.131
+     "ratio": 1.13
     },
     "repeat_organizer_5plus": {
-     "top": 0.8696,
-     "rest": 0.8347,
+     "top": 0.8695,
+     "rest": 0.8348,
      "ratio": 1.042
     },
     "secret_code_action": {
@@ -551,9 +551,9 @@
      "ratio": 0.445
     },
     "mandatory_action": {
-     "top": 0.6047,
+     "top": 0.6046,
      "rest": 0.433,
-     "ratio": 1.397
+     "ratio": 1.396
     },
     "single_prize_unit": {
      "top": 0.6672,
@@ -566,8 +566,8 @@
      "ratio": 1.316
     },
     "11_plus_actions": {
-     "top": 0.3037,
-     "rest": 0.3375,
+     "top": 0.3038,
+     "rest": 0.3374,
      "ratio": 0.9
     },
     "repeatable_action": {
@@ -581,9 +581,9 @@
      "ratio": 1.254
     },
     "worth_5_plus_on_an_action": {
-     "top": 0.4831,
+     "top": 0.4833,
      "rest": 0.5853,
-     "ratio": 0.825
+     "ratio": 0.826
     }
    },
    "raw_unmatched": {
@@ -1032,9 +1032,9 @@
      "ratio": 1.007
     },
     "question_action": {
-     "top": 0.0832,
+     "top": 0.0834,
      "rest": 0.0985,
-     "ratio": 0.845
+     "ratio": 0.846
     },
     "mandatory_action": {
      "top": 0.4534,
@@ -1052,19 +1052,19 @@
      "ratio": 0.753
     },
     "11_plus_actions": {
-     "top": 0.3949,
-     "rest": 0.2703,
-     "ratio": 1.461
+     "top": 0.3948,
+     "rest": 0.2704,
+     "ratio": 1.46
     },
     "repeatable_action": {
-     "top": 0.4974,
-     "rest": 0.3939,
+     "top": 0.4976,
+     "rest": 0.3938,
      "ratio": 1.263
     },
     "december_start": {
-     "top": 0.0907,
-     "rest": 0.1013,
-     "ratio": 0.895
+     "top": 0.0908,
+     "rest": 0.1012,
+     "ratio": 0.897
     },
     "worth_5_plus_on_an_action": {
      "top": 0.6137,
@@ -1153,7 +1153,7 @@
   "cost_per_contestant": {
    "definition": "valued campaigns only, lower cost is the top of this cohort, stratified by band and vertical",
    "n_top_stratified": 8580,
-   "organizers_top_stratified": 2072,
+   "organizers_top_stratified": 2071,
    "strata_used": 63,
    "n_top_raw": 8591,
    "organizers_top_raw": 1540,
@@ -1164,12 +1164,12 @@
      "ratio": 0.54
     },
     "collaboration_in_title": {
-     "top": 0.0814,
-     "rest": 0.1483,
-     "ratio": 0.549
+     "top": 0.0815,
+     "rest": 0.1482,
+     "ratio": 0.55
     },
     "repeat_organizer_5plus": {
-     "top": 0.8498,
+     "top": 0.8499,
      "rest": 0.7679,
      "ratio": 1.107
     },
@@ -1179,13 +1179,13 @@
      "ratio": 0.855
     },
     "email_action": {
-     "top": 0.4318,
+     "top": 0.4319,
      "rest": 0.4587,
-     "ratio": 0.941
+     "ratio": 0.942
     },
     "referral_action": {
-     "top": 0.4903,
-     "rest": 0.4731,
+     "top": 0.4904,
+     "rest": 0.473,
      "ratio": 1.037
     },
     "social_action": {
@@ -1194,18 +1194,18 @@
      "ratio": 1.075
     },
     "question_action": {
-     "top": 0.089,
-     "rest": 0.0972,
-     "ratio": 0.916
+     "top": 0.0892,
+     "rest": 0.0971,
+     "ratio": 0.918
     },
     "mandatory_action": {
-     "top": 0.3917,
+     "top": 0.3916,
      "rest": 0.4564,
      "ratio": 0.858
     },
     "single_prize_unit": {
-     "top": 0.827,
-     "rest": 0.5766,
+     "top": 0.8269,
+     "rest": 0.5767,
      "ratio": 1.434
     },
     "stated_pool_under_250usd": {
@@ -1219,8 +1219,8 @@
      "ratio": 1.076
     },
     "repeatable_action": {
-     "top": 0.4051,
-     "rest": 0.4172,
+     "top": 0.405,
+     "rest": 0.4173,
      "ratio": 0.971
     },
     "december_start": {
@@ -1229,8 +1229,8 @@
      "ratio": 0.956
     },
     "worth_5_plus_on_an_action": {
-     "top": 0.5534,
-     "rest": 0.5688,
+     "top": 0.5535,
+     "rest": 0.5687,
      "ratio": 0.973
     }
    },
@@ -1318,84 +1318,84 @@
    "definition": "value index by prize category crossed with organizer industry, valued campaigns",
    "cells": {
     "gift_card_or_cash | media_entertainment": {
-     "n": 3043,
-     "sites": 304,
-     "cell_median": 1.3496,
-     "row_median": 1.1128,
+     "n": 3331,
+     "sites": 334,
+     "cell_median": 1.3346,
+     "row_median": 1.0777,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3377,
-     "interaction_ratio": 1.009
+     "expected_from_main_effects": 1.2955,
+     "interaction_ratio": 1.03
     },
     "tech_hardware | electronics_tech": {
      "n": 2610,
      "sites": 631,
      "cell_median": 1.5106,
      "row_median": 1.4268,
-     "col_median": 1.1354,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.6574,
-     "interaction_ratio": 0.911
+     "expected_from_main_effects": 1.6551,
+     "interaction_ratio": 0.913
     },
-    "other_unclassified | media_entertainment": {
-     "n": 1940,
-     "sites": 371,
-     "cell_median": 0.8461,
-     "row_median": 0.8172,
-     "col_median": 1.175,
+    "gift_card_or_cash | gaming_esports": {
+     "n": 1970,
+     "sites": 659,
+     "cell_median": 0.8418,
+     "row_median": 1.0777,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9823,
-     "interaction_ratio": 0.861
+     "expected_from_main_effects": 0.8921,
+     "interaction_ratio": 0.944
     },
     "tech_hardware | gaming_esports": {
      "n": 1933,
      "sites": 676,
      "cell_median": 1.1787,
      "row_median": 1.4268,
-     "col_median": 0.8089,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1808,
+     "expected_from_main_effects": 1.1811,
      "interaction_ratio": 0.998
     },
     "game_item_or_skin | gaming_esports": {
-     "n": 1829,
-     "sites": 639,
-     "cell_median": 0.7406,
-     "row_median": 0.7562,
-     "col_median": 0.8089,
+     "n": 1825,
+     "sites": 631,
+     "cell_median": 0.7438,
+     "row_median": 0.7502,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6258,
-     "interaction_ratio": 1.183
+     "expected_from_main_effects": 0.621,
+     "interaction_ratio": 1.198
+    },
+    "other_unclassified | media_entertainment": {
+     "n": 1771,
+     "sites": 348,
+     "cell_median": 0.8387,
+     "row_median": 0.8317,
+     "col_median": 1.175,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.9998,
+     "interaction_ratio": 0.839
     },
     "other_unclassified | gaming_esports": {
-     "n": 1752,
-     "sites": 716,
-     "cell_median": 0.6316,
-     "row_median": 0.8172,
-     "col_median": 0.8089,
+     "n": 1534,
+     "sites": 664,
+     "cell_median": 0.6379,
+     "row_median": 0.8317,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6763,
-     "interaction_ratio": 0.934
-    },
-    "gift_card_or_cash | gaming_esports": {
-     "n": 1691,
-     "sites": 578,
-     "cell_median": 0.8781,
-     "row_median": 1.1128,
-     "col_median": 0.8089,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9209,
-     "interaction_ratio": 0.954
+     "expected_from_main_effects": 0.6885,
+     "interaction_ratio": 0.927
     },
     "other_unclassified | electronics_tech": {
-     "n": 1529,
-     "sites": 494,
-     "cell_median": 0.9709,
-     "row_median": 0.8172,
-     "col_median": 1.1354,
+     "n": 1469,
+     "sites": 486,
+     "cell_median": 0.9401,
+     "row_median": 0.8317,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9492,
-     "interaction_ratio": 1.023
+     "expected_from_main_effects": 0.9647,
+     "interaction_ratio": 0.974
     },
     "tech_hardware | media_entertainment": {
      "n": 1244,
@@ -1408,484 +1408,484 @@
      "interaction_ratio": 1.704
     },
     "bundle_or_box | media_entertainment": {
-     "n": 937,
-     "sites": 216,
-     "cell_median": 1.0451,
-     "row_median": 0.8938,
+     "n": 900,
+     "sites": 209,
+     "cell_median": 1.0421,
+     "row_median": 0.8936,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0744,
-     "interaction_ratio": 0.973
-    },
-    "other_unclassified | sports_outdoors": {
-     "n": 776,
-     "sites": 323,
-     "cell_median": 1.1,
-     "row_median": 0.8172,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9977,
-     "interaction_ratio": 1.103
-    },
-    "other_unclassified | home_garden": {
-     "n": 714,
-     "sites": 190,
-     "cell_median": 1.4159,
-     "row_median": 0.8172,
-     "col_median": 1.4153,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1832,
-     "interaction_ratio": 1.197
-    },
-    "game_item_or_skin | media_entertainment": {
-     "n": 707,
-     "sites": 127,
-     "cell_median": 0.6917,
-     "row_median": 0.7562,
-     "col_median": 1.175,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9091,
-     "interaction_ratio": 0.761
-    },
-    "experience_travel_tickets | travel_events": {
-     "n": 582,
-     "sites": 172,
-     "cell_median": 0.5571,
-     "row_median": 0.6037,
-     "col_median": 0.7669,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4737,
-     "interaction_ratio": 1.176
-    },
-    "gift_card_or_cash | apparel_fashion": {
-     "n": 554,
-     "sites": 153,
-     "cell_median": 1.173,
-     "row_median": 1.1128,
-     "col_median": 1.0677,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2155,
-     "interaction_ratio": 0.965
-    },
-    "gift_card_or_cash | food_drink": {
-     "n": 526,
-     "sites": 167,
-     "cell_median": 1.0596,
-     "row_median": 1.1128,
-     "col_median": 1.1324,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2892,
-     "interaction_ratio": 0.822
-    },
-    "other_unclassified | toys_hobbies_collectibles": {
-     "n": 510,
-     "sites": 157,
-     "cell_median": 0.6884,
-     "row_median": 0.8172,
-     "col_median": 0.7156,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5983,
-     "interaction_ratio": 1.151
-    },
-    "gift_card_or_cash | electronics_tech": {
-     "n": 505,
-     "sites": 174,
-     "cell_median": 1.0502,
-     "row_median": 1.1128,
-     "col_median": 1.1354,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2926,
-     "interaction_ratio": 0.812
-    },
-    "merch_apparel_collectible | media_entertainment": {
-     "n": 494,
-     "sites": 131,
-     "cell_median": 0.8583,
-     "row_median": 0.7932,
-     "col_median": 1.175,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9536,
-     "interaction_ratio": 0.9
-    },
-    "other_unclassified | other": {
-     "n": 465,
-     "sites": 244,
-     "cell_median": 0.5161,
-     "row_median": 0.8172,
-     "col_median": 0.515,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4305,
-     "interaction_ratio": 1.199
-    },
-    "bundle_or_box | gaming_esports": {
-     "n": 460,
-     "sites": 246,
-     "cell_median": 0.6508,
-     "row_median": 0.8938,
-     "col_median": 0.8089,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7397,
-     "interaction_ratio": 0.88
-    },
-    "other_unclassified | food_drink": {
-     "n": 450,
-     "sites": 182,
-     "cell_median": 1.1093,
-     "row_median": 0.8172,
-     "col_median": 1.1324,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9467,
-     "interaction_ratio": 1.172
-    },
-    "other_unclassified | health_wellness_fitness": {
-     "n": 401,
-     "sites": 157,
-     "cell_median": 0.7618,
-     "row_median": 0.8172,
-     "col_median": 0.7221,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6037,
-     "interaction_ratio": 1.262
-    },
-    "regulated_goods_firearm | automotive": {
-     "n": 398,
-     "sites": 15,
-     "cell_median": 3.1863,
-     "row_median": 2.0489,
-     "col_median": 1.4032,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 2.9413,
-     "interaction_ratio": 1.083
-    },
-    "bundle_or_box | sports_outdoors": {
-     "n": 386,
-     "sites": 180,
-     "cell_median": 1.1512,
-     "row_median": 0.8938,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0912,
-     "interaction_ratio": 1.055
-    },
-    "bundle_or_box | health_wellness_fitness": {
-     "n": 382,
-     "sites": 100,
-     "cell_median": 0.536,
-     "row_median": 0.8938,
-     "col_median": 0.7221,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6603,
-     "interaction_ratio": 0.812
-    },
-    "regulated_goods_firearm | sports_outdoors": {
-     "n": 369,
-     "sites": 108,
-     "cell_median": 1.7114,
-     "row_median": 2.0489,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 2.5015,
-     "interaction_ratio": 0.684
-    },
-    "bundle_or_box | electronics_tech": {
-     "n": 356,
-     "sites": 172,
-     "cell_median": 0.9629,
-     "row_median": 0.8938,
-     "col_median": 1.1354,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0382,
-     "interaction_ratio": 0.927
-    },
-    "other_unclassified | apparel_fashion": {
-     "n": 350,
-     "sites": 183,
-     "cell_median": 0.8592,
-     "row_median": 0.8172,
-     "col_median": 1.0677,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8926,
-     "interaction_ratio": 0.963
-    },
-    "bundle_or_box | food_drink": {
-     "n": 348,
-     "sites": 165,
-     "cell_median": 1.3003,
-     "row_median": 0.8938,
-     "col_median": 1.1324,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0354,
-     "interaction_ratio": 1.256
-    },
-    "gift_card_or_cash | other": {
-     "n": 346,
-     "sites": 180,
-     "cell_median": 0.5116,
-     "row_median": 1.1128,
-     "col_median": 0.515,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5863,
-     "interaction_ratio": 0.873
-    },
-    "other_unclassified | creator_influencer": {
-     "n": 319,
-     "sites": 161,
-     "cell_median": 0.6128,
-     "row_median": 0.8172,
-     "col_median": 0.7556,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6317,
+     "expected_from_main_effects": 1.0742,
      "interaction_ratio": 0.97
     },
-    "bundle_or_box | home_garden": {
-     "n": 310,
-     "sites": 105,
-     "cell_median": 1.3187,
-     "row_median": 0.8938,
-     "col_median": 1.4153,
+    "other_unclassified | sports_outdoors": {
+     "n": 739,
+     "sites": 315,
+     "cell_median": 1.0918,
+     "row_median": 0.8317,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2941,
-     "interaction_ratio": 1.019
+     "expected_from_main_effects": 1.012,
+     "interaction_ratio": 1.079
     },
-    "gift_card_or_cash | retail_marketplace": {
-     "n": 309,
-     "sites": 124,
-     "cell_median": 1.0107,
-     "row_median": 1.1128,
-     "col_median": 1.0071,
+    "other_unclassified | home_garden": {
+     "n": 683,
+     "sites": 176,
+     "cell_median": 1.466,
+     "row_median": 0.8317,
+     "col_median": 1.4243,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1465,
-     "interaction_ratio": 0.882
+     "expected_from_main_effects": 1.2119,
+     "interaction_ratio": 1.21
     },
-    "experience_travel_tickets | media_entertainment": {
-     "n": 305,
-     "sites": 120,
-     "cell_median": 0.6003,
-     "row_median": 0.6037,
+    "game_item_or_skin | media_entertainment": {
+     "n": 667,
+     "sites": 129,
+     "cell_median": 0.6625,
+     "row_median": 0.7502,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7257,
-     "interaction_ratio": 0.827
+     "expected_from_main_effects": 0.9018,
+     "interaction_ratio": 0.735
     },
-    "bundle_or_box | toys_hobbies_collectibles": {
-     "n": 295,
-     "sites": 107,
-     "cell_median": 0.6594,
-     "row_median": 0.8938,
-     "col_median": 0.7156,
+    "gift_card_or_cash | apparel_fashion": {
+     "n": 664,
+     "sites": 189,
+     "cell_median": 1.1512,
+     "row_median": 1.0777,
+     "col_median": 1.065,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6543,
-     "interaction_ratio": 1.008
+     "expected_from_main_effects": 1.1742,
+     "interaction_ratio": 0.98
     },
-    "gift_card_or_cash | home_garden": {
-     "n": 292,
-     "sites": 122,
-     "cell_median": 1.0752,
-     "row_median": 1.1128,
-     "col_median": 1.4153,
+    "gift_card_or_cash | food_drink": {
+     "n": 614,
+     "sites": 188,
+     "cell_median": 1.0643,
+     "row_median": 1.0777,
+     "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.6113,
-     "interaction_ratio": 0.667
+     "expected_from_main_effects": 1.2485,
+     "interaction_ratio": 0.852
     },
-    "other_unclassified | automotive": {
-     "n": 289,
-     "sites": 88,
-     "cell_median": 1.3176,
-     "row_median": 0.8172,
+    "gift_card_or_cash | electronics_tech": {
+     "n": 561,
+     "sites": 199,
+     "cell_median": 1.0979,
+     "row_median": 1.0777,
+     "col_median": 1.1338,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.2501,
+     "interaction_ratio": 0.878
+    },
+    "experience_travel_tickets | travel_events": {
+     "n": 549,
+     "sites": 165,
+     "cell_median": 0.5608,
+     "row_median": 0.596,
+     "col_median": 0.7705,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.4698,
+     "interaction_ratio": 1.194
+    },
+    "merch_apparel_collectible | media_entertainment": {
+     "n": 481,
+     "sites": 128,
+     "cell_median": 0.8562,
+     "row_median": 0.7796,
+     "col_median": 1.175,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.9372,
+     "interaction_ratio": 0.914
+    },
+    "other_unclassified | toys_hobbies_collectibles": {
+     "n": 458,
+     "sites": 148,
+     "cell_median": 0.7118,
+     "row_median": 0.8317,
+     "col_median": 0.7146,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6081,
+     "interaction_ratio": 1.171
+    },
+    "bundle_or_box | gaming_esports": {
+     "n": 453,
+     "sites": 242,
+     "cell_median": 0.6525,
+     "row_median": 0.8936,
+     "col_median": 0.8092,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.7397,
+     "interaction_ratio": 0.882
+    },
+    "other_unclassified | food_drink": {
+     "n": 424,
+     "sites": 172,
+     "cell_median": 1.1093,
+     "row_median": 0.8317,
+     "col_median": 1.1324,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.9635,
+     "interaction_ratio": 1.151
+    },
+    "gift_card_or_cash | other": {
+     "n": 423,
+     "sites": 212,
+     "cell_median": 0.5261,
+     "row_median": 1.0777,
+     "col_median": 0.5211,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5745,
+     "interaction_ratio": 0.916
+    },
+    "other_unclassified | other": {
+     "n": 383,
+     "sites": 221,
+     "cell_median": 0.5307,
+     "row_median": 0.8317,
+     "col_median": 0.5211,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.4434,
+     "interaction_ratio": 1.197
+    },
+    "other_unclassified | health_wellness_fitness": {
+     "n": 382,
+     "sites": 147,
+     "cell_median": 0.7608,
+     "row_median": 0.8317,
+     "col_median": 0.7214,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6138,
+     "interaction_ratio": 1.239
+    },
+    "bundle_or_box | sports_outdoors": {
+     "n": 381,
+     "sites": 176,
+     "cell_median": 1.1217,
+     "row_median": 0.8936,
+     "col_median": 1.1893,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.0873,
+     "interaction_ratio": 1.032
+    },
+    "bundle_or_box | health_wellness_fitness": {
+     "n": 367,
+     "sites": 95,
+     "cell_median": 0.536,
+     "row_median": 0.8936,
+     "col_median": 0.7214,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6595,
+     "interaction_ratio": 0.813
+    },
+    "regulated_goods_firearm | sports_outdoors": {
+     "n": 365,
+     "sites": 108,
+     "cell_median": 1.7116,
+     "row_median": 2.0836,
+     "col_median": 1.1893,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 2.5353,
+     "interaction_ratio": 0.675
+    },
+    "gift_card_or_cash | automotive": {
+     "n": 355,
+     "sites": 118,
+     "cell_median": 1.0781,
+     "row_median": 1.0777,
      "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1731,
-     "interaction_ratio": 1.123
+     "expected_from_main_effects": 1.5471,
+     "interaction_ratio": 0.697
     },
-    "merch_apparel_collectible | apparel_fashion": {
-     "n": 287,
-     "sites": 104,
-     "cell_median": 0.9393,
-     "row_median": 0.7932,
-     "col_median": 1.0677,
+    "gift_card_or_cash | home_garden": {
+     "n": 349,
+     "sites": 143,
+     "cell_median": 0.9757,
+     "row_median": 1.0777,
+     "col_median": 1.4243,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8665,
-     "interaction_ratio": 1.084
+     "expected_from_main_effects": 1.5704,
+     "interaction_ratio": 0.621
+    },
+    "regulated_goods_firearm | automotive": {
+     "n": 346,
+     "sites": 15,
+     "cell_median": 6.3376,
+     "row_median": 2.0836,
+     "col_median": 1.4032,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 2.9912,
+     "interaction_ratio": 2.119
+    },
+    "bundle_or_box | electronics_tech": {
+     "n": 343,
+     "sites": 167,
+     "cell_median": 0.9526,
+     "row_median": 0.8936,
+     "col_median": 1.1338,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.0366,
+     "interaction_ratio": 0.919
+    },
+    "bundle_or_box | food_drink": {
+     "n": 336,
+     "sites": 161,
+     "cell_median": 1.3227,
+     "row_median": 0.8936,
+     "col_median": 1.1324,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.0352,
+     "interaction_ratio": 1.278
+    },
+    "gift_card_or_cash | retail_marketplace": {
+     "n": 318,
+     "sites": 129,
+     "cell_median": 1.0053,
+     "row_median": 1.0777,
+     "col_median": 1.0035,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.1064,
+     "interaction_ratio": 0.909
+    },
+    "gift_card_or_cash | sports_outdoors": {
+     "n": 308,
+     "sites": 154,
+     "cell_median": 1.1435,
+     "row_median": 1.0777,
+     "col_median": 1.1893,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.3113,
+     "interaction_ratio": 0.872
+    },
+    "gift_card_or_cash | toys_hobbies_collectibles": {
+     "n": 301,
+     "sites": 140,
+     "cell_median": 0.6549,
+     "row_median": 1.0777,
+     "col_median": 0.7146,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.7879,
+     "interaction_ratio": 0.831
+    },
+    "experience_travel_tickets | media_entertainment": {
+     "n": 298,
+     "sites": 118,
+     "cell_median": 0.6015,
+     "row_median": 0.596,
+     "col_median": 1.175,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.7165,
+     "interaction_ratio": 0.84
+    },
+    "other_unclassified | creator_influencer": {
+     "n": 291,
+     "sites": 146,
+     "cell_median": 0.6128,
+     "row_median": 0.8317,
+     "col_median": 0.7556,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6429,
+     "interaction_ratio": 0.953
+    },
+    "gift_card_or_cash | health_wellness_fitness": {
+     "n": 287,
+     "sites": 116,
+     "cell_median": 0.906,
+     "row_median": 1.0777,
+     "col_median": 0.7214,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.7953,
+     "interaction_ratio": 1.139
+    },
+    "other_unclassified | apparel_fashion": {
+     "n": 285,
+     "sites": 155,
+     "cell_median": 0.8893,
+     "row_median": 0.8317,
+     "col_median": 1.065,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.9062,
+     "interaction_ratio": 0.981
+    },
+    "bundle_or_box | home_garden": {
+     "n": 284,
+     "sites": 100,
+     "cell_median": 1.3533,
+     "row_median": 0.8936,
+     "col_median": 1.4243,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.3021,
+     "interaction_ratio": 1.039
+    },
+    "bundle_or_box | toys_hobbies_collectibles": {
+     "n": 281,
+     "sites": 103,
+     "cell_median": 0.6729,
+     "row_median": 0.8936,
+     "col_median": 0.7146,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6533,
+     "interaction_ratio": 1.03
+    },
+    "home_garden_appliance | home_garden": {
+     "n": 281,
+     "sites": 89,
+     "cell_median": 1.7751,
+     "row_median": 1.351,
+     "col_median": 1.4243,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.9687,
+     "interaction_ratio": 0.902
+    },
+    "gift_card_or_cash | creator_influencer": {
+     "n": 279,
+     "sites": 103,
+     "cell_median": 0.9355,
+     "row_median": 1.0777,
+     "col_median": 0.7556,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.8331,
+     "interaction_ratio": 1.123
     },
     "tech_hardware | home_garden": {
      "n": 278,
      "sites": 76,
      "cell_median": 1.6926,
      "row_median": 1.4268,
-     "col_median": 1.4153,
+     "col_median": 1.4243,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 2.066,
-     "interaction_ratio": 0.819
+     "expected_from_main_effects": 2.0791,
+     "interaction_ratio": 0.814
     },
-    "gift_card_or_cash | automotive": {
-     "n": 277,
-     "sites": 112,
-     "cell_median": 0.799,
-     "row_median": 1.1128,
+    "other_unclassified | automotive": {
+     "n": 274,
+     "sites": 85,
+     "cell_median": 1.3158,
+     "row_median": 0.8317,
      "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5975,
-     "interaction_ratio": 0.5
-    },
-    "home_garden_appliance | home_garden": {
-     "n": 273,
-     "sites": 89,
-     "cell_median": 1.7751,
-     "row_median": 1.3524,
-     "col_median": 1.4153,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.9582,
-     "interaction_ratio": 0.906
+     "expected_from_main_effects": 1.1939,
+     "interaction_ratio": 1.102
     },
     "other_unclassified | art_crafts": {
-     "n": 270,
-     "sites": 101,
-     "cell_median": 1.0323,
-     "row_median": 0.8172,
-     "col_median": 0.9741,
+     "n": 266,
+     "sites": 100,
+     "cell_median": 1.0449,
+     "row_median": 0.8317,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8143,
-     "interaction_ratio": 1.268
+     "expected_from_main_effects": 0.8325,
+     "interaction_ratio": 1.255
+    },
+    "merch_apparel_collectible | apparel_fashion": {
+     "n": 265,
+     "sites": 99,
+     "cell_median": 0.8577,
+     "row_median": 0.7796,
+     "col_median": 1.065,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.8495,
+     "interaction_ratio": 1.01
     },
     "other_unclassified | travel_events": {
-     "n": 264,
-     "sites": 98,
-     "cell_median": 0.9323,
-     "row_median": 0.8172,
-     "col_median": 0.7669,
+     "n": 254,
+     "sites": 90,
+     "cell_median": 0.938,
+     "row_median": 0.8317,
+     "col_median": 0.7705,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6412,
-     "interaction_ratio": 1.454
+     "expected_from_main_effects": 0.6556,
+     "interaction_ratio": 1.431
     },
-    "gift_card_or_cash | health_wellness_fitness": {
-     "n": 250,
-     "sites": 96,
-     "cell_median": 0.9287,
-     "row_median": 1.1128,
-     "col_median": 0.7221,
+    "gift_card_or_cash | travel_events": {
+     "n": 249,
+     "sites": 117,
+     "cell_median": 0.6371,
+     "row_median": 1.0777,
+     "col_median": 0.7705,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8221,
-     "interaction_ratio": 1.13
+     "expected_from_main_effects": 0.8495,
+     "interaction_ratio": 0.75
     },
     "other_unclassified | beauty_personal_care": {
-     "n": 248,
-     "sites": 75,
+     "n": 234,
+     "sites": 69,
      "cell_median": 1.4901,
-     "row_median": 0.8172,
-     "col_median": 1.3676,
+     "row_median": 0.8317,
+     "col_median": 1.3647,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1433,
-     "interaction_ratio": 1.303
-    },
-    "gift_card_or_cash | creator_influencer": {
-     "n": 246,
-     "sites": 92,
-     "cell_median": 0.9401,
-     "row_median": 1.1128,
-     "col_median": 0.7556,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8603,
-     "interaction_ratio": 1.093
+     "expected_from_main_effects": 1.1611,
+     "interaction_ratio": 1.283
     },
     "other_unclassified | education": {
-     "n": 244,
-     "sites": 110,
-     "cell_median": 0.6944,
-     "row_median": 0.8172,
-     "col_median": 0.559,
+     "n": 230,
+     "sites": 108,
+     "cell_median": 0.6534,
+     "row_median": 0.8317,
+     "col_median": 0.5558,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4674,
-     "interaction_ratio": 1.486
-    },
-    "gift_card_or_cash | toys_hobbies_collectibles": {
-     "n": 231,
-     "sites": 123,
-     "cell_median": 0.7044,
-     "row_median": 1.1128,
-     "col_median": 0.7156,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8147,
-     "interaction_ratio": 0.865
-    },
-    "gift_card_or_cash | sports_outdoors": {
-     "n": 224,
-     "sites": 126,
-     "cell_median": 1.1129,
-     "row_median": 1.1128,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3586,
-     "interaction_ratio": 0.819
-    },
-    "sports_outdoor_gear | sports_outdoors": {
-     "n": 223,
-     "sites": 102,
-     "cell_median": 1.1319,
-     "row_median": 1.0444,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2751,
-     "interaction_ratio": 0.888
+     "expected_from_main_effects": 0.4729,
+     "interaction_ratio": 1.382
     },
     "tech_hardware | software_saas": {
      "n": 222,
      "sites": 73,
      "cell_median": 0.8784,
      "row_median": 1.4268,
-     "col_median": 0.6947,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0141,
-     "interaction_ratio": 0.866
+     "expected_from_main_effects": 1.0122,
+     "interaction_ratio": 0.868
     },
-    "gift_card_or_cash | travel_events": {
-     "n": 215,
+    "sports_outdoor_gear | sports_outdoors": {
+     "n": 203,
      "sites": 99,
-     "cell_median": 0.5955,
-     "row_median": 1.1128,
-     "col_median": 0.7669,
+     "cell_median": 1.1893,
+     "row_median": 1.0459,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8731,
-     "interaction_ratio": 0.682
+     "expected_from_main_effects": 1.2727,
+     "interaction_ratio": 0.935
     },
-    "other_unclassified | software_saas": {
-     "n": 209,
-     "sites": 101,
-     "cell_median": 0.6302,
-     "row_median": 0.8172,
-     "col_median": 0.6947,
+    "gift_card_or_cash | art_crafts": {
+     "n": 203,
+     "sites": 63,
+     "cell_median": 0.9365,
+     "row_median": 1.0777,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5808,
-     "interaction_ratio": 1.085
+     "expected_from_main_effects": 1.0787,
+     "interaction_ratio": 0.868
     },
     "bundle_or_box | other": {
-     "n": 207,
-     "sites": 91,
-     "cell_median": 0.6343,
-     "row_median": 0.8938,
-     "col_median": 0.515,
+     "n": 202,
+     "sites": 86,
+     "cell_median": 0.636,
+     "row_median": 0.8936,
+     "col_median": 0.5211,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4709,
-     "interaction_ratio": 1.347
+     "expected_from_main_effects": 0.4764,
+     "interaction_ratio": 1.335
     },
-    "bundle_or_box | apparel_fashion": {
-     "n": 196,
-     "sites": 98,
-     "cell_median": 1.1889,
-     "row_median": 0.8938,
-     "col_median": 1.0677,
+    "other_unclassified | software_saas": {
+     "n": 193,
+     "sites": 91,
+     "cell_median": 0.6352,
+     "row_median": 0.8317,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9763,
-     "interaction_ratio": 1.218
+     "expected_from_main_effects": 0.59,
+     "interaction_ratio": 1.077
     },
     "bundle_or_box | beauty_personal_care": {
-     "n": 195,
-     "sites": 66,
-     "cell_median": 1.4318,
-     "row_median": 0.8938,
-     "col_median": 1.3676,
+     "n": 191,
+     "sites": 64,
+     "cell_median": 1.4342,
+     "row_median": 0.8936,
+     "col_median": 1.3647,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2505,
-     "interaction_ratio": 1.145
+     "expected_from_main_effects": 1.2476,
+     "interaction_ratio": 1.15
     },
     "tech_hardware | food_drink": {
      "n": 187,
@@ -1897,495 +1897,495 @@
      "expected_from_main_effects": 1.6529,
      "interaction_ratio": 0.833
     },
-    "gift_card_or_cash | art_crafts": {
+    "gift_card_or_cash | software_saas": {
      "n": 183,
-     "sites": 60,
-     "cell_median": 0.9579,
-     "row_median": 1.1128,
-     "col_median": 0.9741,
+     "sites": 113,
+     "cell_median": 0.6501,
+     "row_median": 1.0777,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.109,
-     "interaction_ratio": 0.864
+     "expected_from_main_effects": 0.7645,
+     "interaction_ratio": 0.85
     },
-    "food_drink_consumables | food_drink": {
-     "n": 182,
-     "sites": 101,
-     "cell_median": 1.3634,
-     "row_median": 1.1402,
-     "col_median": 1.1324,
+    "bundle_or_box | apparel_fashion": {
+     "n": 177,
+     "sites": 90,
+     "cell_median": 1.1897,
+     "row_median": 0.8936,
+     "col_median": 1.065,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3209,
-     "interaction_ratio": 1.032
+     "expected_from_main_effects": 0.9737,
+     "interaction_ratio": 1.222
     },
     "bundle_or_box | art_crafts": {
-     "n": 181,
-     "sites": 56,
-     "cell_median": 1.7068,
-     "row_median": 0.8938,
-     "col_median": 0.9741,
+     "n": 177,
+     "sites": 54,
+     "cell_median": 1.7656,
+     "row_median": 0.8936,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8907,
-     "interaction_ratio": 1.916
+     "expected_from_main_effects": 0.8944,
+     "interaction_ratio": 1.974
     },
     "merch_apparel_collectible | sports_outdoors": {
      "n": 177,
-     "sites": 81,
+     "sites": 82,
      "cell_median": 0.9635,
-     "row_median": 0.7932,
-     "col_median": 1.1934,
+     "row_median": 0.7796,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9685,
-     "interaction_ratio": 0.995
+     "expected_from_main_effects": 0.9487,
+     "interaction_ratio": 1.016
     },
-    "experience_travel_tickets | gaming_esports": {
+    "food_drink_consumables | food_drink": {
      "n": 166,
-     "sites": 92,
-     "cell_median": 0.6128,
-     "row_median": 0.6037,
-     "col_median": 0.8089,
+     "sites": 98,
+     "cell_median": 1.297,
+     "row_median": 1.0964,
+     "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4996,
-     "interaction_ratio": 1.227
+     "expected_from_main_effects": 1.2702,
+     "interaction_ratio": 1.021
+    },
+    "gift_card_or_cash | education": {
+     "n": 162,
+     "sites": 76,
+     "cell_median": 0.5547,
+     "row_median": 1.0777,
+     "col_median": 0.5558,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6128,
+     "interaction_ratio": 0.905
     },
     "other_unclassified | pets": {
-     "n": 164,
-     "sites": 57,
-     "cell_median": 1.3449,
-     "row_median": 0.8172,
-     "col_median": 1.2594,
+     "n": 161,
+     "sites": 54,
+     "cell_median": 1.3493,
+     "row_median": 0.8317,
+     "col_median": 1.2603,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0528,
-     "interaction_ratio": 1.277
-    },
-    "experience_travel_tickets | food_drink": {
-     "n": 163,
-     "sites": 79,
-     "cell_median": 0.6007,
-     "row_median": 0.6037,
-     "col_median": 1.1324,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6994,
-     "interaction_ratio": 0.859
+     "expected_from_main_effects": 1.0724,
+     "interaction_ratio": 1.258
     },
     "other_unclassified | marketing_agency": {
-     "n": 162,
-     "sites": 43,
-     "cell_median": 0.9581,
-     "row_median": 0.8172,
-     "col_median": 1.1184,
+     "n": 159,
+     "sites": 41,
+     "cell_median": 0.9633,
+     "row_median": 0.8317,
+     "col_median": 1.1166,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.935,
-     "interaction_ratio": 1.025
-    },
-    "bundle_or_box | education": {
-     "n": 161,
-     "sites": 58,
-     "cell_median": 0.583,
-     "row_median": 0.8938,
-     "col_median": 0.559,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5112,
-     "interaction_ratio": 1.141
-    },
-    "gift_card_or_cash | software_saas": {
-     "n": 161,
-     "sites": 98,
-     "cell_median": 0.6602,
-     "row_median": 1.1128,
-     "col_median": 0.6947,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7909,
-     "interaction_ratio": 0.835
+     "expected_from_main_effects": 0.9501,
+     "interaction_ratio": 1.014
     },
     "game_item_or_skin | software_saas": {
-     "n": 161,
-     "sites": 23,
-     "cell_median": 0.9526,
-     "row_median": 0.7562,
-     "col_median": 0.6947,
+     "n": 158,
+     "sites": 20,
+     "cell_median": 0.9564,
+     "row_median": 0.7502,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5375,
-     "interaction_ratio": 1.772
+     "expected_from_main_effects": 0.5322,
+     "interaction_ratio": 1.797
     },
     "game_item_or_skin | toys_hobbies_collectibles": {
-     "n": 158,
-     "sites": 48,
+     "n": 156,
+     "sites": 46,
      "cell_median": 0.7812,
-     "row_median": 0.7562,
-     "col_median": 0.7156,
+     "row_median": 0.7502,
+     "col_median": 0.7146,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5537,
-     "interaction_ratio": 1.411
+     "expected_from_main_effects": 0.5485,
+     "interaction_ratio": 1.424
+    },
+    "bundle_or_box | education": {
+     "n": 156,
+     "sites": 58,
+     "cell_median": 0.574,
+     "row_median": 0.8936,
+     "col_median": 0.5558,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5081,
+     "interaction_ratio": 1.13
     },
     "merch_apparel_collectible | gaming_esports": {
-     "n": 157,
+     "n": 155,
      "sites": 98,
-     "cell_median": 0.6531,
-     "row_median": 0.7932,
-     "col_median": 0.8089,
+     "cell_median": 0.6526,
+     "row_median": 0.7796,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6565,
-     "interaction_ratio": 0.995
+     "expected_from_main_effects": 0.6454,
+     "interaction_ratio": 1.011
     },
-    "home_garden_appliance | food_drink": {
-     "n": 151,
-     "sites": 66,
-     "cell_median": 1.8927,
-     "row_median": 1.3524,
+    "experience_travel_tickets | food_drink": {
+     "n": 153,
+     "sites": 75,
+     "cell_median": 0.5509,
+     "row_median": 0.596,
      "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5667,
-     "interaction_ratio": 1.208
+     "expected_from_main_effects": 0.6905,
+     "interaction_ratio": 0.798
     },
     "discount_or_coupon | electronics_tech": {
      "n": 149,
      "sites": 52,
      "cell_median": 0.6764,
      "row_median": 0.7316,
-     "col_median": 1.1354,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8498,
-     "interaction_ratio": 0.796
+     "expected_from_main_effects": 0.8486,
+     "interaction_ratio": 0.797
     },
-    "bundle_or_box | automotive": {
+    "home_garden_appliance | food_drink": {
      "n": 146,
-     "sites": 47,
-     "cell_median": 0.9878,
-     "row_median": 0.8938,
-     "col_median": 1.4032,
+     "sites": 64,
+     "cell_median": 1.8712,
+     "row_median": 1.351,
+     "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.283,
-     "interaction_ratio": 0.77
+     "expected_from_main_effects": 1.5651,
+     "interaction_ratio": 1.196
     },
     "tech_hardware | sports_outdoors": {
      "n": 142,
      "sites": 88,
      "cell_median": 1.2535,
      "row_median": 1.4268,
-     "col_median": 1.1934,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.742,
-     "interaction_ratio": 0.72
+     "expected_from_main_effects": 1.7361,
+     "interaction_ratio": 0.722
     },
-    "gift_card_or_cash | education": {
-     "n": 139,
-     "sites": 69,
-     "cell_median": 0.5469,
-     "row_median": 1.1128,
-     "col_median": 0.559,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6365,
-     "interaction_ratio": 0.859
-    },
-    "beauty_wellness | beauty_personal_care": {
-     "n": 131,
+    "bundle_or_box | automotive": {
+     "n": 142,
      "sites": 45,
-     "cell_median": 1.3706,
-     "row_median": 1.109,
-     "col_median": 1.3676,
+     "cell_median": 0.9773,
+     "row_median": 0.8936,
+     "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5517,
-     "interaction_ratio": 0.883
+     "expected_from_main_effects": 1.2828,
+     "interaction_ratio": 0.762
+    },
+    "gift_card_or_cash | baby_kids": {
+     "n": 139,
+     "sites": 41,
+     "cell_median": 0.8835,
+     "row_median": 1.0777,
+     "col_median": 0.7453,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.8217,
+     "interaction_ratio": 1.075
+    },
+    "experience_travel_tickets | gaming_esports": {
+     "n": 135,
+     "sites": 90,
+     "cell_median": 0.4814,
+     "row_median": 0.596,
+     "col_median": 0.8092,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.4934,
+     "interaction_ratio": 0.976
     },
     "game_item_or_skin | electronics_tech": {
-     "n": 131,
-     "sites": 73,
-     "cell_median": 0.8137,
-     "row_median": 0.7562,
-     "col_median": 1.1354,
+     "n": 134,
+     "sites": 76,
+     "cell_median": 0.7579,
+     "row_median": 0.7502,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8784,
-     "interaction_ratio": 0.926
+     "expected_from_main_effects": 0.8702,
+     "interaction_ratio": 0.871
+    },
+    "beauty_wellness | beauty_personal_care": {
+     "n": 133,
+     "sites": 42,
+     "cell_median": 1.4052,
+     "row_median": 1.1375,
+     "col_median": 1.3647,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.5882,
+     "interaction_ratio": 0.885
     },
     "home_garden_appliance | media_entertainment": {
-     "n": 130,
+     "n": 129,
      "sites": 54,
-     "cell_median": 1.0865,
-     "row_median": 1.3524,
+     "cell_median": 1.0827,
+     "row_median": 1.351,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.6257,
-     "interaction_ratio": 0.668
+     "expected_from_main_effects": 1.6241,
+     "interaction_ratio": 0.667
     },
     "tech_hardware | marketing_agency": {
      "n": 128,
      "sites": 20,
      "cell_median": 1.7531,
      "row_median": 1.4268,
-     "col_median": 1.1184,
+     "col_median": 1.1166,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.6325,
-     "interaction_ratio": 1.074
+     "expected_from_main_effects": 1.63,
+     "interaction_ratio": 1.076
     },
     "tech_hardware | health_wellness_fitness": {
      "n": 121,
      "sites": 51,
      "cell_median": 1.4959,
      "row_median": 1.4268,
-     "col_median": 0.7221,
+     "col_median": 0.7214,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.054,
-     "interaction_ratio": 1.419
+     "expected_from_main_effects": 1.053,
+     "interaction_ratio": 1.421
     },
     "game_item_or_skin | other": {
      "n": 119,
      "sites": 44,
      "cell_median": 0.411,
-     "row_median": 0.7562,
-     "col_median": 0.515,
+     "row_median": 0.7502,
+     "col_median": 0.5211,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.3984,
-     "interaction_ratio": 1.032
-    },
-    "other_unclassified | baby_kids": {
-     "n": 115,
-     "sites": 30,
-     "cell_median": 0.5425,
-     "row_median": 0.8172,
-     "col_median": 0.7406,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6191,
-     "interaction_ratio": 0.876
+     "expected_from_main_effects": 0.3999,
+     "interaction_ratio": 1.028
     },
     "tech_hardware | other": {
      "n": 114,
      "sites": 78,
      "cell_median": 0.5622,
      "row_median": 1.4268,
-     "col_median": 0.515,
+     "col_median": 0.5211,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7517,
-     "interaction_ratio": 0.748
-    },
-    "bundle_or_box | baby_kids": {
-     "n": 113,
-     "sites": 30,
-     "cell_median": 0.8115,
-     "row_median": 0.8938,
-     "col_median": 0.7406,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6772,
-     "interaction_ratio": 1.198
-    },
-    "subscription_membership | gaming_esports": {
-     "n": 112,
-     "sites": 55,
-     "cell_median": 0.6818,
-     "row_median": 0.5242,
-     "col_median": 0.8089,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4338,
-     "interaction_ratio": 1.572
-    },
-    "other_unclassified | jewelry_watches": {
-     "n": 111,
-     "sites": 41,
-     "cell_median": 0.4541,
-     "row_median": 0.8172,
-     "col_median": 0.5874,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4911,
-     "interaction_ratio": 0.925
+     "expected_from_main_effects": 0.7607,
+     "interaction_ratio": 0.739
     },
     "music_gear | media_entertainment": {
      "n": 108,
      "sites": 27,
      "cell_median": 2.7651,
-     "row_median": 1.9141,
+     "row_median": 1.9337,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 2.301,
-     "interaction_ratio": 1.202
+     "expected_from_main_effects": 2.3245,
+     "interaction_ratio": 1.19
+    },
+    "gift_card_or_cash | marketing_agency": {
+     "n": 107,
+     "sites": 39,
+     "cell_median": 0.7873,
+     "row_median": 1.0777,
+     "col_median": 1.1166,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.2311,
+     "interaction_ratio": 0.639
+    },
+    "gift_card_or_cash | pets": {
+     "n": 106,
+     "sites": 47,
+     "cell_median": 0.9455,
+     "row_median": 1.0777,
+     "col_median": 1.2603,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.3895,
+     "interaction_ratio": 0.68
+    },
+    "other_unclassified | jewelry_watches": {
+     "n": 106,
+     "sites": 37,
+     "cell_median": 0.4991,
+     "row_median": 0.8317,
+     "col_median": 0.5877,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5001,
+     "interaction_ratio": 0.998
     },
     "bundle_or_box | travel_events": {
-     "n": 107,
-     "sites": 51,
-     "cell_median": 0.8125,
-     "row_median": 0.8938,
-     "col_median": 0.7669,
+     "n": 102,
+     "sites": 48,
+     "cell_median": 0.8392,
+     "row_median": 0.8936,
+     "col_median": 0.7705,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7013,
-     "interaction_ratio": 1.159
+     "expected_from_main_effects": 0.7044,
+     "interaction_ratio": 1.191
+    },
+    "other_unclassified | baby_kids": {
+     "n": 101,
+     "sites": 26,
+     "cell_median": 0.5088,
+     "row_median": 0.8317,
+     "col_median": 0.7453,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6342,
+     "interaction_ratio": 0.802
     },
     "home_garden_appliance | health_wellness_fitness": {
-     "n": 101,
-     "sites": 36,
-     "cell_median": 0.6761,
-     "row_median": 1.3524,
-     "col_median": 0.7221,
+     "n": 100,
+     "sites": 35,
+     "cell_median": 0.6712,
+     "row_median": 1.351,
+     "col_median": 0.7214,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9991,
-     "interaction_ratio": 0.677
+     "expected_from_main_effects": 0.9971,
+     "interaction_ratio": 0.673
+    },
+    "subscription_membership | gaming_esports": {
+     "n": 100,
+     "sites": 55,
+     "cell_median": 0.7134,
+     "row_median": 0.5113,
+     "col_median": 0.8092,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.4232,
+     "interaction_ratio": 1.685
+    },
+    "gift_card_or_cash | beauty_personal_care": {
+     "n": 98,
+     "sites": 60,
+     "cell_median": 0.8719,
+     "row_median": 1.0777,
+     "col_median": 1.3647,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.5046,
+     "interaction_ratio": 0.579
     },
     "sports_outdoor_gear | electronics_tech": {
      "n": 97,
      "sites": 28,
      "cell_median": 0.7643,
-     "row_median": 1.0444,
-     "col_median": 1.1354,
+     "row_median": 1.0459,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2132,
+     "expected_from_main_effects": 1.2133,
      "interaction_ratio": 0.63
     },
-    "gift_card_or_cash | pets": {
-     "n": 95,
-     "sites": 40,
-     "cell_median": 0.8983,
-     "row_median": 1.1128,
-     "col_median": 1.2594,
+    "bundle_or_box | baby_kids": {
+     "n": 94,
+     "sites": 27,
+     "cell_median": 0.796,
+     "row_median": 0.8936,
+     "col_median": 0.7453,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.4337,
-     "interaction_ratio": 0.627
+     "expected_from_main_effects": 0.6814,
+     "interaction_ratio": 1.168
     },
     "toys_collectibles | media_entertainment": {
-     "n": 95,
+     "n": 92,
      "sites": 37,
-     "cell_median": 0.7438,
-     "row_median": 0.8628,
+     "cell_median": 0.7745,
+     "row_median": 0.8567,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0372,
-     "interaction_ratio": 0.717
+     "expected_from_main_effects": 1.0298,
+     "interaction_ratio": 0.752
     },
-    "gift_card_or_cash | marketing_agency": {
-     "n": 93,
-     "sites": 30,
-     "cell_median": 0.7927,
-     "row_median": 1.1128,
-     "col_median": 1.1184,
+    "gift_card_or_cash | local_services": {
+     "n": 89,
+     "sites": 47,
+     "cell_median": 0.8492,
+     "row_median": 1.0777,
+     "col_median": 0.578,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2732,
-     "interaction_ratio": 0.623
+     "expected_from_main_effects": 0.6372,
+     "interaction_ratio": 1.333
     },
     "food_drink_consumables | media_entertainment": {
-     "n": 90,
-     "sites": 30,
+     "n": 88,
+     "sites": 29,
      "cell_median": 1.4005,
-     "row_median": 1.1402,
+     "row_median": 1.0964,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3707,
-     "interaction_ratio": 1.022
+     "expected_from_main_effects": 1.318,
+     "interaction_ratio": 1.063
     },
-    "bundle_or_box | creator_influencer": {
-     "n": 89,
-     "sites": 40,
-     "cell_median": 0.9529,
-     "row_median": 0.8938,
+    "game_item_or_skin | creator_influencer": {
+     "n": 87,
+     "sites": 60,
+     "cell_median": 0.7632,
+     "row_median": 0.7502,
      "col_median": 0.7556,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6909,
-     "interaction_ratio": 1.379
-    },
-    "other_unclassified | retail_marketplace": {
-     "n": 87,
-     "sites": 44,
-     "cell_median": 0.5902,
-     "row_median": 0.8172,
-     "col_median": 1.0071,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8419,
-     "interaction_ratio": 0.701
-    },
-    "experience_travel_tickets | sports_outdoors": {
-     "n": 87,
-     "sites": 52,
-     "cell_median": 0.7904,
-     "row_median": 0.6037,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.737,
-     "interaction_ratio": 1.072
+     "expected_from_main_effects": 0.5799,
+     "interaction_ratio": 1.316
     },
     "subscription_membership | software_saas": {
      "n": 85,
      "sites": 40,
      "cell_median": 0.3156,
-     "row_median": 0.5242,
-     "col_median": 0.6947,
+     "row_median": 0.5113,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.3726,
-     "interaction_ratio": 0.847
+     "expected_from_main_effects": 0.3627,
+     "interaction_ratio": 0.87
     },
-    "subscription_membership | media_entertainment": {
+    "bundle_or_box | creator_influencer": {
      "n": 84,
-     "sites": 50,
-     "cell_median": 0.5844,
-     "row_median": 0.5242,
-     "col_median": 1.175,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6302,
-     "interaction_ratio": 0.927
-    },
-    "gift_card_or_cash | baby_kids": {
-     "n": 83,
-     "sites": 33,
-     "cell_median": 0.881,
-     "row_median": 1.1128,
-     "col_median": 0.7406,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8431,
-     "interaction_ratio": 1.045
-    },
-    "toys_collectibles | toys_hobbies_collectibles": {
-     "n": 83,
-     "sites": 48,
-     "cell_median": 0.6781,
-     "row_median": 0.8628,
-     "col_median": 0.7156,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6317,
-     "interaction_ratio": 1.074
-    },
-    "gift_card_or_cash | local_services": {
-     "n": 83,
-     "sites": 42,
-     "cell_median": 0.9823,
-     "row_median": 1.1128,
-     "col_median": 0.578,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.658,
-     "interaction_ratio": 1.493
-    },
-    "game_item_or_skin | creator_influencer": {
-     "n": 82,
-     "sites": 54,
-     "cell_median": 0.7674,
-     "row_median": 0.7562,
+     "sites": 40,
+     "cell_median": 0.9057,
+     "row_median": 0.8936,
      "col_median": 0.7556,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5846,
-     "interaction_ratio": 1.313
+     "expected_from_main_effects": 0.6908,
+     "interaction_ratio": 1.311
     },
-    "vehicle | automotive": {
-     "n": 81,
-     "sites": 34,
-     "cell_median": 0.7621,
-     "row_median": 1.0848,
-     "col_median": 1.4032,
+    "experience_travel_tickets | sports_outdoors": {
+     "n": 83,
+     "sites": 51,
+     "cell_median": 0.7742,
+     "row_median": 0.596,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5573,
-     "interaction_ratio": 0.489
+     "expected_from_main_effects": 0.7252,
+     "interaction_ratio": 1.068
+    },
+    "other_unclassified | retail_marketplace": {
+     "n": 82,
+     "sites": 42,
+     "cell_median": 0.5996,
+     "row_median": 0.8317,
+     "col_median": 1.0035,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.8539,
+     "interaction_ratio": 0.702
+    },
+    "subscription_membership | media_entertainment": {
+     "n": 82,
+     "sites": 48,
+     "cell_median": 0.5697,
+     "row_median": 0.5113,
+     "col_median": 1.175,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6146,
+     "interaction_ratio": 0.927
+    },
+    "toys_collectibles | toys_hobbies_collectibles": {
+     "n": 79,
+     "sites": 44,
+     "cell_median": 0.6781,
+     "row_median": 0.8567,
+     "col_median": 0.7146,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6264,
+     "interaction_ratio": 1.083
     },
     "bundle_or_box | marketing_agency": {
-     "n": 79,
-     "sites": 20,
-     "cell_median": 0.9774,
-     "row_median": 0.8938,
-     "col_median": 1.1184,
+     "n": 78,
+     "sites": 19,
+     "cell_median": 0.983,
+     "row_median": 0.8936,
+     "col_median": 1.1166,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0226,
-     "interaction_ratio": 0.956
+     "expected_from_main_effects": 1.0208,
+     "interaction_ratio": 0.963
     },
     "vehicle | electronics_tech": {
-     "n": 78,
-     "sites": 25,
-     "cell_median": 1.4434,
-     "row_median": 1.0848,
-     "col_median": 1.1354,
+     "n": 77,
+     "sites": 24,
+     "cell_median": 1.4629,
+     "row_median": 0.9969,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2601,
-     "interaction_ratio": 1.145
+     "expected_from_main_effects": 1.1564,
+     "interaction_ratio": 1.265
     },
     "tech_hardware | creator_influencer": {
      "n": 76,
@@ -2397,195 +2397,175 @@
      "expected_from_main_effects": 1.103,
      "interaction_ratio": 0.836
     },
-    "merch_apparel_collectible | health_wellness_fitness": {
-     "n": 74,
-     "sites": 30,
-     "cell_median": 0.5273,
-     "row_median": 0.7932,
-     "col_median": 0.7221,
+    "vehicle | automotive": {
+     "n": 75,
+     "sites": 31,
+     "cell_median": 0.7621,
+     "row_median": 0.9969,
+     "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.586,
-     "interaction_ratio": 0.9
-    },
-    "subscription_membership | education": {
-     "n": 74,
-     "sites": 50,
-     "cell_median": 0.4947,
-     "row_median": 0.5242,
-     "col_median": 0.559,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.2998,
-     "interaction_ratio": 1.65
+     "expected_from_main_effects": 1.4311,
+     "interaction_ratio": 0.533
     },
     "tech_hardware | education": {
      "n": 74,
      "sites": 40,
      "cell_median": 0.5808,
      "row_median": 1.4268,
-     "col_median": 0.559,
+     "col_median": 0.5558,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8161,
-     "interaction_ratio": 0.712
+     "expected_from_main_effects": 0.8114,
+     "interaction_ratio": 0.716
     },
-    "bundle_or_box | pets": {
-     "n": 72,
-     "sites": 34,
-     "cell_median": 1.2027,
-     "row_median": 0.8938,
-     "col_median": 1.2594,
+    "subscription_membership | education": {
+     "n": 73,
+     "sites": 49,
+     "cell_median": 0.4866,
+     "row_median": 0.5113,
+     "col_median": 0.5558,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1515,
-     "interaction_ratio": 1.044
-    },
-    "home_garden_appliance | sports_outdoors": {
-     "n": 72,
-     "sites": 35,
-     "cell_median": 2.2277,
-     "row_median": 1.3524,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.6511,
-     "interaction_ratio": 1.349
+     "expected_from_main_effects": 0.2907,
+     "interaction_ratio": 1.674
     },
     "merch_apparel_collectible | electronics_tech": {
-     "n": 72,
-     "sites": 43,
-     "cell_median": 0.6187,
-     "row_median": 0.7932,
-     "col_median": 1.1354,
+     "n": 73,
+     "sites": 44,
+     "cell_median": 0.6289,
+     "row_median": 0.7796,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9214,
-     "interaction_ratio": 0.671
+     "expected_from_main_effects": 0.9044,
+     "interaction_ratio": 0.695
+    },
+    "merch_apparel_collectible | health_wellness_fitness": {
+     "n": 73,
+     "sites": 29,
+     "cell_median": 0.5211,
+     "row_median": 0.7796,
+     "col_median": 0.7214,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5754,
+     "interaction_ratio": 0.906
+    },
+    "home_garden_appliance | sports_outdoors": {
+     "n": 71,
+     "sites": 34,
+     "cell_median": 2.2469,
+     "row_median": 1.351,
+     "col_median": 1.1893,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.6439,
+     "interaction_ratio": 1.367
+    },
+    "bundle_or_box | pets": {
+     "n": 69,
+     "sites": 32,
+     "cell_median": 1.3405,
+     "row_median": 0.8936,
+     "col_median": 1.2603,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.1522,
+     "interaction_ratio": 1.163
     },
     "bundle_or_box | software_saas": {
      "n": 69,
      "sites": 38,
      "cell_median": 0.4747,
-     "row_median": 0.8938,
-     "col_median": 0.6947,
+     "row_median": 0.8936,
+     "col_median": 0.6934,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6352,
-     "interaction_ratio": 0.747
-    },
-    "bundle_or_box | retail_marketplace": {
-     "n": 69,
-     "sites": 35,
-     "cell_median": 0.5682,
-     "row_median": 0.8938,
-     "col_median": 1.0071,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9208,
-     "interaction_ratio": 0.617
-    },
-    "gift_card_or_cash | beauty_personal_care": {
-     "n": 68,
-     "sites": 42,
-     "cell_median": 0.9554,
-     "row_median": 1.1128,
-     "col_median": 1.3676,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.557,
-     "interaction_ratio": 0.614
-    },
-    "beauty_wellness | health_wellness_fitness": {
-     "n": 68,
-     "sites": 29,
-     "cell_median": 0.8106,
-     "row_median": 1.109,
-     "col_median": 0.7221,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8193,
-     "interaction_ratio": 0.989
+     "expected_from_main_effects": 0.6339,
+     "interaction_ratio": 0.749
     },
     "toys_collectibles | gaming_esports": {
      "n": 67,
      "sites": 37,
      "cell_median": 1.1969,
-     "row_median": 0.8628,
-     "col_median": 0.8089,
+     "row_median": 0.8567,
+     "col_median": 0.8092,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.714,
-     "interaction_ratio": 1.676
+     "expected_from_main_effects": 0.7092,
+     "interaction_ratio": 1.688
     },
     "subscription_membership | electronics_tech": {
-     "n": 67,
+     "n": 66,
      "sites": 22,
-     "cell_median": 0.417,
-     "row_median": 0.5242,
-     "col_median": 1.1354,
+     "cell_median": 0.4219,
+     "row_median": 0.5113,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6089,
-     "interaction_ratio": 0.685
+     "expected_from_main_effects": 0.5931,
+     "interaction_ratio": 0.711
     },
-    "vehicle | sports_outdoors": {
-     "n": 67,
-     "sites": 26,
-     "cell_median": 1.5828,
-     "row_median": 1.0848,
-     "col_median": 1.1934,
+    "bundle_or_box | retail_marketplace": {
+     "n": 66,
+     "sites": 32,
+     "cell_median": 0.5594,
+     "row_median": 0.8936,
+     "col_median": 1.0035,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3244,
-     "interaction_ratio": 1.195
+     "expected_from_main_effects": 0.9174,
+     "interaction_ratio": 0.61
     },
     "tech_hardware | apparel_fashion": {
      "n": 65,
      "sites": 46,
      "cell_median": 0.9107,
      "row_median": 1.4268,
-     "col_median": 1.0677,
+     "col_median": 1.065,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5585,
-     "interaction_ratio": 0.584
+     "expected_from_main_effects": 1.5547,
+     "interaction_ratio": 0.586
     },
-    "tools_craft_diy | art_crafts": {
-     "n": 60,
-     "sites": 14,
-     "cell_median": 0.969,
-     "row_median": 1.1618,
-     "col_median": 0.9741,
+    "beauty_wellness | health_wellness_fitness": {
+     "n": 65,
+     "sites": 26,
+     "cell_median": 0.8263,
+     "row_median": 1.1375,
+     "col_median": 0.7214,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1579,
-     "interaction_ratio": 0.837
+     "expected_from_main_effects": 0.8395,
+     "interaction_ratio": 0.984
+    },
+    "gift_card_or_cash | nonprofit_community": {
+     "n": 60,
+     "sites": 38,
+     "cell_median": 0.4869,
+     "row_median": 1.0777,
+     "col_median": 0.4828,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5323,
+     "interaction_ratio": 0.915
     },
     "tech_hardware | retail_marketplace": {
      "n": 57,
      "sites": 31,
      "cell_median": 0.9517,
      "row_median": 1.4268,
-     "col_median": 1.0071,
+     "col_median": 1.0035,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.47,
-     "interaction_ratio": 0.647
+     "expected_from_main_effects": 1.4649,
+     "interaction_ratio": 0.65
     },
     "sports_outdoor_gear | home_garden": {
-     "n": 56,
-     "sites": 24,
-     "cell_median": 1.3496,
-     "row_median": 1.0444,
-     "col_median": 1.4153,
+     "n": 55,
+     "sites": 23,
+     "cell_median": 1.3495,
+     "row_median": 1.0459,
+     "col_median": 1.4243,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5122,
-     "interaction_ratio": 0.892
+     "expected_from_main_effects": 1.5241,
+     "interaction_ratio": 0.885
     },
     "beauty_wellness | media_entertainment": {
-     "n": 54,
-     "sites": 21,
-     "cell_median": 1.7201,
-     "row_median": 1.109,
+     "n": 55,
+     "sites": 20,
+     "cell_median": 1.7891,
+     "row_median": 1.1375,
      "col_median": 1.175,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3332,
-     "interaction_ratio": 1.29
-    },
-    "food_drink_consumables | health_wellness_fitness": {
-     "n": 53,
-     "sites": 27,
-     "cell_median": 0.8015,
-     "row_median": 1.1402,
-     "col_median": 0.7221,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8423,
-     "interaction_ratio": 0.952
+     "expected_from_main_effects": 1.3675,
+     "interaction_ratio": 1.308
     },
     "tech_hardware | automotive": {
      "n": 52,
@@ -2594,367 +2574,347 @@
      "row_median": 1.4268,
      "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 2.0482,
+     "expected_from_main_effects": 2.0483,
      "interaction_ratio": 0.82
     },
-    "game_item_or_skin | beauty_personal_care": {
+    "food_drink_consumables | health_wellness_fitness": {
      "n": 52,
-     "sites": 18,
-     "cell_median": 1.4454,
-     "row_median": 0.7562,
-     "col_median": 1.3676,
+     "sites": 26,
+     "cell_median": 0.8162,
+     "row_median": 1.0964,
+     "col_median": 0.7214,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0581,
-     "interaction_ratio": 1.366
+     "expected_from_main_effects": 0.8091,
+     "interaction_ratio": 1.009
     },
-    "experience_travel_tickets | health_wellness_fitness": {
+    "vehicle | sports_outdoors": {
      "n": 51,
-     "sites": 31,
-     "cell_median": 0.7443,
-     "row_median": 0.6037,
-     "col_median": 0.7221,
+     "sites": 26,
+     "cell_median": 1.4324,
+     "row_median": 0.9969,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.446,
-     "interaction_ratio": 1.669
+     "expected_from_main_effects": 1.213,
+     "interaction_ratio": 1.181
     },
-    "experience_travel_tickets | electronics_tech": {
-     "n": 50,
-     "sites": 38,
-     "cell_median": 0.6565,
-     "row_median": 0.6037,
-     "col_median": 1.1354,
+    "game_item_or_skin | beauty_personal_care": {
+     "n": 51,
+     "sites": 17,
+     "cell_median": 1.479,
+     "row_median": 0.7502,
+     "col_median": 1.3647,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7012,
-     "interaction_ratio": 0.936
+     "expected_from_main_effects": 1.0474,
+     "interaction_ratio": 1.412
     },
     "tech_hardware | art_crafts": {
      "n": 50,
      "sites": 27,
      "cell_median": 0.7848,
      "row_median": 1.4268,
-     "col_median": 0.9741,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.4219,
-     "interaction_ratio": 0.552
+     "expected_from_main_effects": 1.4281,
+     "interaction_ratio": 0.55
     },
-    "gift_card_or_cash | nonprofit_community": {
+    "tools_craft_diy | art_crafts": {
+     "n": 50,
+     "sites": 14,
+     "cell_median": 1.3572,
+     "row_median": 1.1511,
+     "col_median": 0.9784,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.1522,
+     "interaction_ratio": 1.178
+    },
+    "experience_travel_tickets | electronics_tech": {
      "n": 49,
-     "sites": 31,
-     "cell_median": 0.4989,
-     "row_median": 1.1128,
-     "col_median": 0.4889,
+     "sites": 37,
+     "cell_median": 0.665,
+     "row_median": 0.596,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5566,
-     "interaction_ratio": 0.896
+     "expected_from_main_effects": 0.6914,
+     "interaction_ratio": 0.962
     },
-    "other_unclassified | local_services": {
-     "n": 46,
-     "sites": 24,
-     "cell_median": 0.4316,
-     "row_median": 0.8172,
-     "col_median": 0.578,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4832,
-     "interaction_ratio": 0.893
-    },
-    "experience_travel_tickets | apparel_fashion": {
-     "n": 46,
+    "experience_travel_tickets | health_wellness_fitness": {
+     "n": 49,
      "sites": 29,
-     "cell_median": 0.7783,
-     "row_median": 0.6037,
-     "col_median": 1.0677,
+     "cell_median": 0.7168,
+     "row_median": 0.596,
+     "col_median": 0.7214,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6594,
-     "interaction_ratio": 1.18
+     "expected_from_main_effects": 0.4398,
+     "interaction_ratio": 1.63
     },
     "tech_hardware | toys_hobbies_collectibles": {
      "n": 46,
      "sites": 29,
      "cell_median": 1.0459,
      "row_median": 1.4268,
-     "col_median": 0.7156,
+     "col_median": 0.7146,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.0446,
-     "interaction_ratio": 1.001
+     "expected_from_main_effects": 1.0432,
+     "interaction_ratio": 1.003
     },
-    "experience_travel_tickets | home_garden": {
+    "tools_craft_diy | electronics_tech": {
      "n": 45,
-     "sites": 25,
-     "cell_median": 1.2049,
-     "row_median": 0.6037,
-     "col_median": 1.4153,
+     "sites": 24,
+     "cell_median": 0.6667,
+     "row_median": 1.1511,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8741,
-     "interaction_ratio": 1.378
+     "expected_from_main_effects": 1.3353,
+     "interaction_ratio": 0.499
+    },
+    "experience_travel_tickets | apparel_fashion": {
+     "n": 44,
+     "sites": 28,
+     "cell_median": 0.7302,
+     "row_median": 0.596,
+     "col_median": 1.065,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.6494,
+     "interaction_ratio": 1.124
     },
     "merch_apparel_collectible | food_drink": {
-     "n": 45,
-     "sites": 31,
-     "cell_median": 0.7717,
-     "row_median": 0.7932,
+     "n": 44,
+     "sites": 30,
+     "cell_median": 0.7499,
+     "row_median": 0.7796,
      "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.919,
-     "interaction_ratio": 0.84
+     "expected_from_main_effects": 0.9032,
+     "interaction_ratio": 0.83
+    },
+    "experience_travel_tickets | home_garden": {
+     "n": 43,
+     "sites": 24,
+     "cell_median": 1.2049,
+     "row_median": 0.596,
+     "col_median": 1.4243,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.8685,
+     "interaction_ratio": 1.387
     },
     "discount_or_coupon | sports_outdoors": {
      "n": 43,
      "sites": 13,
      "cell_median": 1.494,
      "row_median": 0.7316,
-     "col_median": 1.1934,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8932,
-     "interaction_ratio": 1.673
+     "expected_from_main_effects": 0.8902,
+     "interaction_ratio": 1.678
     },
-    "home_garden_appliance | apparel_fashion": {
+    "home_garden_appliance | electronics_tech": {
      "n": 42,
-     "sites": 25,
-     "cell_median": 1.6367,
-     "row_median": 1.3524,
-     "col_median": 1.0677,
+     "sites": 30,
+     "cell_median": 1.1225,
+     "row_median": 1.351,
+     "col_median": 1.1338,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.4772,
-     "interaction_ratio": 1.108
-    },
-    "merch_apparel_collectible | other": {
-     "n": 42,
-     "sites": 21,
-     "cell_median": 0.5458,
-     "row_median": 0.7932,
-     "col_median": 0.515,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4179,
-     "interaction_ratio": 1.306
+     "expected_from_main_effects": 1.5672,
+     "interaction_ratio": 0.716
     },
     "subscription_membership | other": {
      "n": 42,
      "sites": 16,
      "cell_median": 0.2552,
-     "row_median": 0.5242,
-     "col_median": 0.515,
+     "row_median": 0.5113,
+     "col_median": 0.5211,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.2762,
-     "interaction_ratio": 0.924
+     "expected_from_main_effects": 0.2726,
+     "interaction_ratio": 0.936
+    },
+    "other_unclassified | local_services": {
+     "n": 42,
+     "sites": 22,
+     "cell_median": 0.5296,
+     "row_median": 0.8317,
+     "col_median": 0.578,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.4918,
+     "interaction_ratio": 1.077
     },
     "tech_hardware | jewelry_watches": {
      "n": 41,
      "sites": 27,
      "cell_median": 1.2203,
      "row_median": 1.4268,
-     "col_median": 0.5874,
+     "col_median": 0.5877,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8574,
-     "interaction_ratio": 1.423
+     "expected_from_main_effects": 0.8579,
+     "interaction_ratio": 1.422
     },
     "tech_hardware | travel_events": {
      "n": 40,
      "sites": 23,
      "cell_median": 1.0042,
      "row_median": 1.4268,
-     "col_median": 0.7669,
+     "col_median": 0.7705,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1195,
-     "interaction_ratio": 0.897
+     "expected_from_main_effects": 1.1246,
+     "interaction_ratio": 0.893
     },
-    "subscription_membership | food_drink": {
+    "merch_apparel_collectible | other": {
      "n": 40,
-     "sites": 31,
-     "cell_median": 0.8104,
-     "row_median": 0.5242,
-     "col_median": 1.1324,
+     "sites": 20,
+     "cell_median": 0.5374,
+     "row_median": 0.7796,
+     "col_median": 0.5211,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6073,
-     "interaction_ratio": 1.334
+     "expected_from_main_effects": 0.4156,
+     "interaction_ratio": 1.293
     },
-    "tools_craft_diy | electronics_tech": {
-     "n": 39,
-     "sites": 23,
-     "cell_median": 0.711,
-     "row_median": 1.1618,
-     "col_median": 1.1354,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3496,
-     "interaction_ratio": 0.527
-    },
-    "home_garden_appliance | electronics_tech": {
-     "n": 37,
+    "gift_card_or_cash | jewelry_watches": {
+     "n": 40,
      "sites": 30,
-     "cell_median": 0.9403,
-     "row_median": 1.3524,
-     "col_median": 1.1354,
+     "cell_median": 0.6933,
+     "row_median": 1.0777,
+     "col_median": 0.5877,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.5709,
-     "interaction_ratio": 0.599
+     "expected_from_main_effects": 0.648,
+     "interaction_ratio": 1.07
     },
-    "vehicle | media_entertainment": {
-     "n": 37,
-     "sites": 16,
-     "cell_median": 0.881,
-     "row_median": 1.0848,
-     "col_median": 1.175,
+    "home_garden_appliance | apparel_fashion": {
+     "n": 39,
+     "sites": 25,
+     "cell_median": 1.4315,
+     "row_median": 1.351,
+     "col_median": 1.065,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3041,
-     "interaction_ratio": 0.676
-    },
-    "sports_outdoor_gear | food_drink": {
-     "n": 36,
-     "sites": 28,
-     "cell_median": 0.9877,
-     "row_median": 1.0444,
-     "col_median": 1.1324,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2099,
-     "interaction_ratio": 0.816
+     "expected_from_main_effects": 1.4721,
+     "interaction_ratio": 0.972
     },
     "subscription_membership | sports_outdoors": {
-     "n": 36,
-     "sites": 22,
-     "cell_median": 0.6862,
-     "row_median": 0.5242,
-     "col_median": 1.1934,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.64,
-     "interaction_ratio": 1.072
-    },
-    "food_drink_consumables | apparel_fashion": {
      "n": 35,
-     "sites": 19,
-     "cell_median": 1.5825,
-     "row_median": 1.1402,
-     "col_median": 1.0677,
+     "sites": 21,
+     "cell_median": 0.7656,
+     "row_median": 0.5113,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.2454,
-     "interaction_ratio": 1.271
+     "expected_from_main_effects": 0.6221,
+     "interaction_ratio": 1.231
+    },
+    "sports_outdoor_gear | food_drink": {
+     "n": 35,
+     "sites": 27,
+     "cell_median": 1.0307,
+     "row_median": 1.0459,
+     "col_median": 1.1324,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.2117,
+     "interaction_ratio": 0.851
+    },
+    "vehicle | media_entertainment": {
+     "n": 34,
+     "sites": 15,
+     "cell_median": 0.939,
+     "row_median": 0.9969,
+     "col_median": 1.175,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 1.1984,
+     "interaction_ratio": 0.784
     },
     "merch_apparel_collectible | toys_hobbies_collectibles": {
      "n": 34,
      "sites": 23,
      "cell_median": 0.6316,
-     "row_median": 0.7932,
-     "col_median": 0.7156,
+     "row_median": 0.7796,
+     "col_median": 0.7146,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5808,
-     "interaction_ratio": 1.088
+     "expected_from_main_effects": 0.57,
+     "interaction_ratio": 1.108
     },
     "sports_outdoor_gear | automotive": {
      "n": 34,
      "sites": 17,
      "cell_median": 0.7771,
-     "row_median": 1.0444,
+     "row_median": 1.0459,
      "col_median": 1.4032,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.4993,
+     "expected_from_main_effects": 1.5015,
      "interaction_ratio": 0.518
     },
-    "merch_apparel_collectible | software_saas": {
-     "n": 34,
-     "sites": 14,
-     "cell_median": 0.2377,
-     "row_median": 0.7932,
-     "col_median": 0.6947,
+    "subscription_membership | food_drink": {
+     "n": 33,
+     "sites": 30,
+     "cell_median": 0.7305,
+     "row_median": 0.5113,
+     "col_median": 1.1324,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.5638,
-     "interaction_ratio": 0.422
+     "expected_from_main_effects": 0.5923,
+     "interaction_ratio": 1.233
+    },
+    "merch_apparel_collectible | software_saas": {
+     "n": 33,
+     "sites": 13,
+     "cell_median": 0.2421,
+     "row_median": 0.7796,
+     "col_median": 0.6934,
+     "grand_median": 0.9774,
+     "expected_from_main_effects": 0.5531,
+     "interaction_ratio": 0.438
     },
     "merch_apparel_collectible | education": {
-     "n": 34,
-     "sites": 24,
-     "cell_median": 0.5017,
-     "row_median": 0.7932,
-     "col_median": 0.559,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4537,
-     "interaction_ratio": 1.106
-    },
-    "game_item_or_skin | sports_outdoors": {
      "n": 33,
-     "sites": 16,
-     "cell_median": 1.1845,
-     "row_median": 0.7562,
-     "col_median": 1.1934,
+     "sites": 23,
+     "cell_median": 0.4699,
+     "row_median": 0.7796,
+     "col_median": 0.5558,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.9233,
-     "interaction_ratio": 1.283
-    },
-    "gift_card_or_cash | jewelry_watches": {
-     "n": 33,
-     "sites": 25,
-     "cell_median": 0.8786,
-     "row_median": 1.1128,
-     "col_median": 0.5874,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.6687,
-     "interaction_ratio": 1.314
+     "expected_from_main_effects": 0.4434,
+     "interaction_ratio": 1.06
     },
     "tech_hardware | nonprofit_community": {
      "n": 33,
      "sites": 21,
      "cell_median": 0.5654,
      "row_median": 1.4268,
-     "col_median": 0.4889,
+     "col_median": 0.4828,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7137,
-     "interaction_ratio": 0.792
+     "expected_from_main_effects": 0.7047,
+     "interaction_ratio": 0.802
     },
-    "vehicle | travel_events": {
+    "game_item_or_skin | sports_outdoors": {
      "n": 32,
-     "sites": 14,
-     "cell_median": 1.605,
-     "row_median": 1.0848,
-     "col_median": 0.7669,
+     "sites": 15,
+     "cell_median": 1.3336,
+     "row_median": 0.7502,
+     "col_median": 1.1893,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.8512,
-     "interaction_ratio": 1.886
-    },
-    "game_item_or_skin | art_crafts": {
-     "n": 31,
-     "sites": 16,
-     "cell_median": 0.8759,
-     "row_median": 0.7562,
-     "col_median": 0.9741,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.7536,
-     "interaction_ratio": 1.162
+     "expected_from_main_effects": 0.9128,
+     "interaction_ratio": 1.461
     },
     "experience_travel_tickets | toys_hobbies_collectibles": {
      "n": 31,
      "sites": 10,
      "cell_median": 0.4608,
-     "row_median": 0.6037,
-     "col_median": 0.7156,
+     "row_median": 0.596,
+     "col_median": 0.7146,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 0.442,
-     "interaction_ratio": 1.043
-    },
-    "other_unclassified | nonprofit_community": {
-     "n": 30,
-     "sites": 25,
-     "cell_median": 0.4616,
-     "row_median": 0.8172,
-     "col_median": 0.4889,
-     "grand_median": 0.9774,
-     "expected_from_main_effects": 0.4087,
-     "interaction_ratio": 1.129
+     "expected_from_main_effects": 0.4358,
+     "interaction_ratio": 1.058
     },
     "home_garden_appliance | art_crafts": {
      "n": 30,
      "sites": 15,
      "cell_median": 0.8819,
-     "row_median": 1.3524,
-     "col_median": 0.9741,
+     "row_median": 1.351,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.3477,
-     "interaction_ratio": 0.654
+     "expected_from_main_effects": 1.3523,
+     "interaction_ratio": 0.652
     },
-    "sports_outdoor_gear | apparel_fashion": {
+    "game_item_or_skin | art_crafts": {
      "n": 30,
-     "sites": 18,
-     "cell_median": 1.3705,
-     "row_median": 1.0444,
-     "col_median": 1.0677,
+     "sites": 16,
+     "cell_median": 0.9016,
+     "row_median": 0.7502,
+     "col_median": 0.9784,
      "grand_median": 0.9774,
-     "expected_from_main_effects": 1.1408,
+     "expected_from_main_effects": 0.7509,
      "interaction_ratio": 1.201
     }
    }
@@ -3702,16 +3662,6 @@
      "expected_from_main_effects": 993.6216,
      "interaction_ratio": 0.666
     },
-    "500-999 | software_saas": {
-     "n": 130,
-     "sites": 59,
-     "cell_median": 673.5,
-     "row_median": 853.5,
-     "col_median": 667,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 1099.0048,
-     "interaction_ratio": 0.613
-    },
     "250-499 | beauty_personal_care": {
      "n": 130,
      "sites": 56,
@@ -3722,16 +3672,6 @@
      "expected_from_main_effects": 727.1458,
      "interaction_ratio": 0.868
     },
-    "1000-2499 | marketing_agency": {
-     "n": 130,
-     "sites": 29,
-     "cell_median": 2697.0,
-     "row_median": 1315.5,
-     "col_median": 834.5,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 2119.2756,
-     "interaction_ratio": 1.273
-    },
     "1000-2499 | toys_hobbies_collectibles": {
      "n": 130,
      "sites": 67,
@@ -3741,6 +3681,26 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 864.7254,
      "interaction_ratio": 1.04
+    },
+    "500-999 | software_saas": {
+     "n": 130,
+     "sites": 59,
+     "cell_median": 673.5,
+     "row_median": 853.5,
+     "col_median": 667,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 1099.0048,
+     "interaction_ratio": 0.613
+    },
+    "1000-2499 | marketing_agency": {
+     "n": 130,
+     "sites": 29,
+     "cell_median": 2697.0,
+     "row_median": 1315.5,
+     "col_median": 834.5,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 2119.2756,
+     "interaction_ratio": 1.273
     },
     "250-499 | education": {
      "n": 127,
@@ -3762,16 +3722,6 @@
      "expected_from_main_effects": 479.3311,
      "interaction_ratio": 0.809
     },
-    "under 50 | food_drink": {
-     "n": 124,
-     "sites": 35,
-     "cell_median": 206.0,
-     "row_median": 272,
-     "col_median": 773.5,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 406.1622,
-     "interaction_ratio": 0.507
-    },
     "50-99 | apparel_fashion": {
      "n": 124,
      "sites": 52,
@@ -3782,15 +3732,15 @@
      "expected_from_main_effects": 485.2181,
      "interaction_ratio": 0.739
     },
-    "100-249 | baby_kids": {
-     "n": 123,
-     "sites": 12,
-     "cell_median": 416,
-     "row_median": 404.0,
-     "col_median": 469,
+    "under 50 | food_drink": {
+     "n": 124,
+     "sites": 35,
+     "cell_median": 206.0,
+     "row_median": 272,
+     "col_median": 773.5,
      "grand_median": 518.0,
-     "expected_from_main_effects": 365.7838,
-     "interaction_ratio": 1.137
+     "expected_from_main_effects": 406.1622,
+     "interaction_ratio": 0.507
     },
     "50-99 | beauty_personal_care": {
      "n": 123,
@@ -3801,6 +3751,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 377.082,
      "interaction_ratio": 1.554
+    },
+    "100-249 | baby_kids": {
+     "n": 123,
+     "sites": 12,
+     "cell_median": 416,
+     "row_median": 404.0,
+     "col_median": 469,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 365.7838,
+     "interaction_ratio": 1.137
     },
     "50-99 | retail_marketplace": {
      "n": 122,
@@ -3872,16 +3832,6 @@
      "expected_from_main_effects": 345.5058,
      "interaction_ratio": 0.728
     },
-    "5000-9999 | automotive": {
-     "n": 108,
-     "sites": 29,
-     "cell_median": 25316.0,
-     "row_median": 2152,
-     "col_median": 1274.0,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 5292.7568,
-     "interaction_ratio": 4.783
-    },
     "100-249 | pets": {
      "n": 108,
      "sites": 38,
@@ -3891,6 +3841,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 597.0309,
      "interaction_ratio": 0.938
+    },
+    "5000-9999 | automotive": {
+     "n": 108,
+     "sites": 29,
+     "cell_median": 25316.0,
+     "row_median": 2152,
+     "col_median": 1274.0,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 5292.7568,
+     "interaction_ratio": 4.783
     },
     "50-99 | art_crafts": {
      "n": 106,
@@ -3962,16 +3922,6 @@
      "expected_from_main_effects": 3200.0212,
      "interaction_ratio": 0.882
     },
-    "under 50 | health_wellness_fitness": {
-     "n": 92,
-     "sites": 18,
-     "cell_median": 233.5,
-     "row_median": 272,
-     "col_median": 409,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 214.7645,
-     "interaction_ratio": 1.087
-    },
     "5000-9999 | food_drink": {
      "n": 92,
      "sites": 40,
@@ -3981,6 +3931,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 3213.4595,
      "interaction_ratio": 1.038
+    },
+    "under 50 | health_wellness_fitness": {
+     "n": 92,
+     "sites": 18,
+     "cell_median": 233.5,
+     "row_median": 272,
+     "col_median": 409,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 214.7645,
+     "interaction_ratio": 1.087
     },
     "500-999 | education": {
      "n": 90,
@@ -4022,16 +3982,6 @@
      "expected_from_main_effects": 293.0039,
      "interaction_ratio": 1.268
     },
-    "250-499 | retail_marketplace": {
-     "n": 85,
-     "sites": 38,
-     "cell_median": 725,
-     "row_median": 619.0,
-     "col_median": 520.5,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 621.9875,
-     "interaction_ratio": 1.166
-    },
     "250-499 | creator_influencer": {
      "n": 85,
      "sites": 59,
@@ -4041,6 +3991,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 334.5946,
      "interaction_ratio": 1.1
+    },
+    "250-499 | retail_marketplace": {
+     "n": 85,
+     "sites": 38,
+     "cell_median": 725,
+     "row_median": 619.0,
+     "col_median": 520.5,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 621.9875,
+     "interaction_ratio": 1.166
     },
     "50-99 | sports_outdoors": {
      "n": 82,
@@ -4112,16 +4072,6 @@
      "expected_from_main_effects": 650.8456,
      "interaction_ratio": 0.582
     },
-    "250-499 | software_saas": {
-     "n": 73,
-     "sites": 51,
-     "cell_median": 400,
-     "row_median": 619.0,
-     "col_median": 667,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 797.0521,
-     "interaction_ratio": 0.502
-    },
     "10000-24999 | electronics_tech": {
      "n": 73,
      "sites": 52,
@@ -4131,6 +4081,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 2538.7297,
      "interaction_ratio": 0.609
+    },
+    "250-499 | software_saas": {
+     "n": 73,
+     "sites": 51,
+     "cell_median": 400,
+     "row_median": 619.0,
+     "col_median": 667,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 797.0521,
+     "interaction_ratio": 0.502
     },
     "500-999 | beauty_personal_care": {
      "n": 72,
@@ -4232,16 +4192,6 @@
      "expected_from_main_effects": 4426.556,
      "interaction_ratio": 0.442
     },
-    "under 50 | retail_marketplace": {
-     "n": 59,
-     "sites": 28,
-     "cell_median": 208,
-     "row_median": 272,
-     "col_median": 520.5,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 273.3127,
-     "interaction_ratio": 0.761
-    },
     "2500-4999 | toys_hobbies_collectibles": {
      "n": 59,
      "sites": 21,
@@ -4251,6 +4201,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 1391.5801,
      "interaction_ratio": 0.259
+    },
+    "under 50 | retail_marketplace": {
+     "n": 59,
+     "sites": 28,
+     "cell_median": 208,
+     "row_median": 272,
+     "col_median": 520.5,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 273.3127,
+     "interaction_ratio": 0.761
     },
     "2500-4999 | marketing_agency": {
      "n": 58,
@@ -4332,16 +4292,6 @@
      "expected_from_main_effects": 711.0811,
      "interaction_ratio": 0.705
     },
-    "10000-24999 | media_entertainment": {
-     "n": 46,
-     "sites": 33,
-     "cell_median": 1024.0,
-     "row_median": 1491,
-     "col_median": 407.5,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 1172.9392,
-     "interaction_ratio": 0.873
-    },
     "5000-9999 | software_saas": {
      "n": 46,
      "sites": 25,
@@ -4351,6 +4301,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 2771.0116,
      "interaction_ratio": 0.484
+    },
+    "10000-24999 | media_entertainment": {
+     "n": 46,
+     "sites": 33,
+     "cell_median": 1024.0,
+     "row_median": 1491,
+     "col_median": 407.5,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 1172.9392,
+     "interaction_ratio": 0.873
     },
     "500-999 | local_services": {
      "n": 45,
@@ -4362,6 +4322,16 @@
      "expected_from_main_effects": 738.1622,
      "interaction_ratio": 0.513
     },
+    "under 50 | software_saas": {
+     "n": 44,
+     "sites": 29,
+     "cell_median": 182.5,
+     "row_median": 272,
+     "col_median": 667,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 350.2394,
+     "interaction_ratio": 0.521
+    },
     "100-249 | local_services": {
      "n": 44,
      "sites": 15,
@@ -4371,16 +4341,6 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 349.4054,
      "interaction_ratio": 1.825
-    },
-    "100-249 | jewelry_watches": {
-     "n": 44,
-     "sites": 18,
-     "cell_median": 251.0,
-     "row_median": 404.0,
-     "col_median": 389,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 303.39,
-     "interaction_ratio": 0.827
     },
     "50-99 | pets": {
      "n": 44,
@@ -4392,25 +4352,15 @@
      "expected_from_main_effects": 474.3736,
      "interaction_ratio": 1.332
     },
-    "under 50 | software_saas": {
+    "100-249 | jewelry_watches": {
      "n": 44,
-     "sites": 29,
-     "cell_median": 182.5,
-     "row_median": 272,
-     "col_median": 667,
+     "sites": 18,
+     "cell_median": 251.0,
+     "row_median": 404.0,
+     "col_median": 389,
      "grand_median": 518.0,
-     "expected_from_main_effects": 350.2394,
-     "interaction_ratio": 0.521
-    },
-    "250-499 | local_services": {
-     "n": 42,
-     "sites": 25,
-     "cell_median": 477.5,
-     "row_median": 619.0,
-     "col_median": 448,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 535.3514,
-     "interaction_ratio": 0.892
+     "expected_from_main_effects": 303.39,
+     "interaction_ratio": 0.827
     },
     "2500-4999 | other": {
      "n": 42,
@@ -4421,6 +4371,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 1103.4556,
      "interaction_ratio": 0.334
+    },
+    "250-499 | local_services": {
+     "n": 42,
+     "sites": 25,
+     "cell_median": 477.5,
+     "row_median": 619.0,
+     "col_median": 448,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 535.3514,
+     "interaction_ratio": 0.892
     },
     "50-99 | education": {
      "n": 41,
@@ -4452,16 +4412,6 @@
      "expected_from_main_effects": 2305.7143,
      "interaction_ratio": 1.325
     },
-    "5000-9999 | health_wellness_fitness": {
-     "n": 38,
-     "sites": 30,
-     "cell_median": 546.5,
-     "row_median": 2152,
-     "col_median": 409,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 1699.166,
-     "interaction_ratio": 0.322
-    },
     "50-99 | software_saas": {
      "n": 38,
      "sites": 22,
@@ -4471,6 +4421,16 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 413.334,
      "interaction_ratio": 0.64
+    },
+    "1000-2499 | nonprofit_community": {
+     "n": 38,
+     "sites": 27,
+     "cell_median": 996.5,
+     "row_median": 1315.5,
+     "col_median": 382,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 970.1178,
+     "interaction_ratio": 1.027
     },
     "2500-4999 | art_crafts": {
      "n": 38,
@@ -4482,15 +4442,15 @@
      "expected_from_main_effects": 2280.4749,
      "interaction_ratio": 1.883
     },
-    "1000-2499 | nonprofit_community": {
+    "5000-9999 | health_wellness_fitness": {
      "n": 38,
-     "sites": 27,
-     "cell_median": 996.5,
-     "row_median": 1315.5,
-     "col_median": 382,
+     "sites": 30,
+     "cell_median": 546.5,
+     "row_median": 2152,
+     "col_median": 409,
      "grand_median": 518.0,
-     "expected_from_main_effects": 970.1178,
-     "interaction_ratio": 1.027
+     "expected_from_main_effects": 1699.166,
+     "interaction_ratio": 0.322
     },
     "50-99 | marketing_agency": {
      "n": 36,
@@ -4552,6 +4512,16 @@
      "expected_from_main_effects": 1597.5,
      "interaction_ratio": 0.694
     },
+    "1000-2499 | jewelry_watches": {
+     "n": 31,
+     "sites": 22,
+     "cell_median": 676,
+     "row_median": 1315.5,
+     "col_median": 389,
+     "grand_median": 518.0,
+     "expected_from_main_effects": 987.8948,
+     "interaction_ratio": 0.684
+    },
     "under 50 | automotive": {
      "n": 31,
      "sites": 24,
@@ -4571,16 +4541,6 @@
      "grand_median": 518.0,
      "expected_from_main_effects": 343.9286,
      "interaction_ratio": 0.727
-    },
-    "1000-2499 | jewelry_watches": {
-     "n": 31,
-     "sites": 22,
-     "cell_median": 676,
-     "row_median": 1315.5,
-     "col_median": 389,
-     "grand_median": 518.0,
-     "expected_from_main_effects": 987.8948,
-     "interaction_ratio": 0.684
     },
     "250-499 | jewelry_watches": {
      "n": 30,
@@ -5797,16 +5757,6 @@
      "expected_from_main_effects": 0.5264,
      "interaction_ratio": 0.556
     },
-    "8-14 | Concours (French)": {
-     "n": 282,
-     "sites": 72,
-     "cell_median": 0.2943,
-     "row_median": 0.2797,
-     "col_median": 0.351,
-     "grand_median": 0.3258,
-     "expected_from_main_effects": 0.3013,
-     "interaction_ratio": 0.977
-    },
     "7 or fewer | Charity or fundraiser": {
      "n": 282,
      "sites": 35,
@@ -5816,6 +5766,16 @@
      "grand_median": 0.3258,
      "expected_from_main_effects": 0.3915,
      "interaction_ratio": 0.842
+    },
+    "8-14 | Concours (French)": {
+     "n": 282,
+     "sites": 72,
+     "cell_median": 0.2943,
+     "row_median": 0.2797,
+     "col_median": 0.351,
+     "grand_median": 0.3258,
+     "expected_from_main_effects": 0.3013,
+     "interaction_ratio": 0.977
     },
     "7 or fewer | Gewinnspiel (German)": {
      "n": 217,
@@ -6422,16 +6382,6 @@
      "expected_from_main_effects": 0.2639,
      "interaction_ratio": 1.091
     },
-    "social_follow_or_join | marketing_agency": {
-     "n": 265,
-     "sites": 50,
-     "cell_median": 0.3313,
-     "row_median": 0.3396,
-     "col_median": 0.3333,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.3569,
-     "interaction_ratio": 0.928
-    },
     "app_download | gaming_esports": {
      "n": 265,
      "sites": 56,
@@ -6441,6 +6391,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.2432,
      "interaction_ratio": 0.735
+    },
+    "social_follow_or_join | marketing_agency": {
+     "n": 265,
+     "sites": 50,
+     "cell_median": 0.3313,
+     "row_median": 0.3396,
+     "col_median": 0.3333,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.3569,
+     "interaction_ratio": 0.928
     },
     "social_follow_or_join | art_crafts": {
      "n": 237,
@@ -6562,16 +6522,6 @@
      "expected_from_main_effects": 0.3566,
      "interaction_ratio": 0.956
     },
-    "email | beauty_personal_care": {
-     "n": 160,
-     "sites": 64,
-     "cell_median": 0.3534,
-     "row_median": 0.3042,
-     "col_median": 0.333,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.3194,
-     "interaction_ratio": 1.107
-    },
     "email | education": {
      "n": 160,
      "sites": 41,
@@ -6581,6 +6531,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.2715,
      "interaction_ratio": 1.085
+    },
+    "email | beauty_personal_care": {
+     "n": 160,
+     "sites": 64,
+     "cell_median": 0.3534,
+     "row_median": 0.3042,
+     "col_median": 0.333,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.3194,
+     "interaction_ratio": 1.107
     },
     "question_or_skill | travel_events": {
      "n": 148,
@@ -6662,16 +6622,6 @@
      "expected_from_main_effects": 0.5838,
      "interaction_ratio": 0.952
     },
-    "app_download | apparel_fashion": {
-     "n": 106,
-     "sites": 27,
-     "cell_median": 0.2331,
-     "row_median": 0.2502,
-     "col_median": 0.3177,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.2507,
-     "interaction_ratio": 0.93
-    },
     "secret_code | media_entertainment": {
      "n": 106,
      "sites": 55,
@@ -6681,6 +6631,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.2971,
      "interaction_ratio": 0.968
+    },
+    "app_download | apparel_fashion": {
+     "n": 106,
+     "sites": 27,
+     "cell_median": 0.2331,
+     "row_median": 0.2502,
+     "col_median": 0.3177,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.2507,
+     "interaction_ratio": 0.93
     },
     "referral_share | art_crafts": {
      "n": 103,
@@ -6902,16 +6862,6 @@
      "expected_from_main_effects": 0.3135,
      "interaction_ratio": 1.235
     },
-    "secret_code | home_garden": {
-     "n": 47,
-     "sites": 16,
-     "cell_median": 0.3137,
-     "row_median": 0.3389,
-     "col_median": 0.3279,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.3504,
-     "interaction_ratio": 0.895
-    },
     "referral_share | local_services": {
      "n": 47,
      "sites": 11,
@@ -6921,6 +6871,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.235,
      "interaction_ratio": 1.099
+    },
+    "secret_code | home_garden": {
+     "n": 47,
+     "sites": 16,
+     "cell_median": 0.3137,
+     "row_median": 0.3389,
+     "col_median": 0.3279,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.3504,
+     "interaction_ratio": 0.895
     },
     "question_or_skill | art_crafts": {
      "n": 46,
@@ -6932,16 +6892,6 @@
      "expected_from_main_effects": 0.2665,
      "interaction_ratio": 1.502
     },
-    "social_follow_or_join | local_services": {
-     "n": 46,
-     "sites": 20,
-     "cell_median": 0.23,
-     "row_median": 0.3396,
-     "col_median": 0.2582,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.2765,
-     "interaction_ratio": 0.832
-    },
     "secret_code | other": {
      "n": 46,
      "sites": 30,
@@ -6951,6 +6901,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.3093,
      "interaction_ratio": 1.103
+    },
+    "social_follow_or_join | local_services": {
+     "n": 46,
+     "sites": 20,
+     "cell_median": 0.23,
+     "row_median": 0.3396,
+     "col_median": 0.2582,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.2765,
+     "interaction_ratio": 0.832
     },
     "app_download | other": {
      "n": 45,
@@ -6992,16 +6952,6 @@
      "expected_from_main_effects": 0.6694,
      "interaction_ratio": 0.432
     },
-    "secret_code | sports_outdoors": {
-     "n": 40,
-     "sites": 22,
-     "cell_median": 0.2886,
-     "row_median": 0.3389,
-     "col_median": 0.3342,
-     "grand_median": 0.3172,
-     "expected_from_main_effects": 0.3572,
-     "interaction_ratio": 0.808
-    },
     "app_download | food_drink": {
      "n": 40,
      "sites": 16,
@@ -7011,6 +6961,16 @@
      "grand_median": 0.3172,
      "expected_from_main_effects": 0.2623,
      "interaction_ratio": 1.008
+    },
+    "secret_code | sports_outdoors": {
+     "n": 40,
+     "sites": 22,
+     "cell_median": 0.2886,
+     "row_median": 0.3389,
+     "col_median": 0.3342,
+     "grand_median": 0.3172,
+     "expected_from_main_effects": 0.3572,
+     "interaction_ratio": 0.808
     },
     "question_or_skill | education": {
      "n": 36,
@@ -7068,844 +7028,844 @@
    "definition": "clean conversion by entry-method family crossed with prize category",
    "cells": {
     "social_follow_or_join | other_unclassified": {
-     "n": 8477,
-     "sites": 2554,
-     "cell_median": 0.3484,
-     "row_median": 0.3315,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3437,
-     "interaction_ratio": 1.014
+     "n": 7853,
+     "sites": 2440,
+     "cell_median": 0.3502,
+     "row_median": 0.3328,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3467,
+     "interaction_ratio": 1.01
     },
     "social_follow_or_join | tech_hardware": {
      "n": 5765,
      "sites": 1530,
      "cell_median": 0.3429,
-     "row_median": 0.3315,
+     "row_median": 0.3328,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3488,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3486,
      "interaction_ratio": 0.983
     },
     "social_follow_or_join | gift_card_or_cash": {
-     "n": 3883,
-     "sites": 1015,
-     "cell_median": 0.389,
-     "row_median": 0.3315,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3583,
-     "interaction_ratio": 1.086
+     "n": 4984,
+     "sites": 1191,
+     "cell_median": 0.3795,
+     "row_median": 0.3328,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3493,
+     "interaction_ratio": 1.087
     },
-    "email | other_unclassified": {
-     "n": 3328,
-     "sites": 960,
-     "cell_median": 0.3061,
-     "row_median": 0.3048,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3161,
-     "interaction_ratio": 0.968
+    "referral_share | gift_card_or_cash": {
+     "n": 3306,
+     "sites": 617,
+     "cell_median": 0.343,
+     "row_median": 0.2804,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2942,
+     "interaction_ratio": 1.166
     },
     "social_follow_or_join | game_item_or_skin": {
-     "n": 3197,
-     "sites": 1035,
-     "cell_median": 0.2995,
-     "row_median": 0.3315,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2835,
-     "interaction_ratio": 1.056
+     "n": 3165,
+     "sites": 1051,
+     "cell_median": 0.3052,
+     "row_median": 0.3328,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2918,
+     "interaction_ratio": 1.046
+    },
+    "email | other_unclassified": {
+     "n": 2956,
+     "sites": 890,
+     "cell_median": 0.3093,
+     "row_median": 0.3049,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3176,
+     "interaction_ratio": 0.974
     },
     "referral_share | other_unclassified": {
-     "n": 3160,
-     "sites": 1001,
-     "cell_median": 0.2782,
-     "row_median": 0.2778,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.288,
+     "n": 2827,
+     "sites": 935,
+     "cell_median": 0.2823,
+     "row_median": 0.2804,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2921,
      "interaction_ratio": 0.966
     },
     "social_follow_or_join | bundle_or_box": {
-     "n": 2750,
-     "sites": 992,
-     "cell_median": 0.31,
-     "row_median": 0.3315,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3094,
-     "interaction_ratio": 1.002
-    },
-    "referral_share | gift_card_or_cash": {
-     "n": 2427,
-     "sites": 502,
-     "cell_median": 0.3651,
-     "row_median": 0.2778,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3002,
-     "interaction_ratio": 1.216
-    },
-    "question_or_skill | other_unclassified": {
-     "n": 1784,
-     "sites": 470,
-     "cell_median": 0.3453,
-     "row_median": 0.2932,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.304,
-     "interaction_ratio": 1.136
+     "n": 2676,
+     "sites": 968,
+     "cell_median": 0.3108,
+     "row_median": 0.3328,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3087,
+     "interaction_ratio": 1.007
     },
     "email | gift_card_or_cash": {
-     "n": 1621,
-     "sites": 535,
-     "cell_median": 0.2878,
-     "row_median": 0.3048,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3295,
-     "interaction_ratio": 0.874
+     "n": 2308,
+     "sites": 656,
+     "cell_median": 0.2778,
+     "row_median": 0.3049,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3199,
+     "interaction_ratio": 0.868
+    },
+    "question_or_skill | other_unclassified": {
+     "n": 1492,
+     "sites": 446,
+     "cell_median": 0.3465,
+     "row_median": 0.2941,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3064,
+     "interaction_ratio": 1.131
     },
     "email | bundle_or_box": {
-     "n": 1545,
-     "sites": 636,
-     "cell_median": 0.3123,
-     "row_median": 0.3048,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2846,
-     "interaction_ratio": 1.097
-    },
-    "referral_share | bundle_or_box": {
-     "n": 1455,
-     "sites": 530,
-     "cell_median": 0.2383,
-     "row_median": 0.2778,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2593,
-     "interaction_ratio": 0.919
+     "n": 1432,
+     "sites": 595,
+     "cell_median": 0.3128,
+     "row_median": 0.3049,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2828,
+     "interaction_ratio": 1.106
     },
     "referral_share | tech_hardware": {
      "n": 1421,
      "sites": 467,
      "cell_median": 0.2755,
-     "row_median": 0.2778,
+     "row_median": 0.2804,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2922,
-     "interaction_ratio": 0.943
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2937,
+     "interaction_ratio": 0.938
     },
     "email | tech_hardware": {
      "n": 1411,
      "sites": 423,
      "cell_median": 0.3125,
-     "row_median": 0.3048,
+     "row_median": 0.3049,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3207,
-     "interaction_ratio": 0.974
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3194,
+     "interaction_ratio": 0.979
+    },
+    "referral_share | bundle_or_box": {
+     "n": 1371,
+     "sites": 501,
+     "cell_median": 0.235,
+     "row_median": 0.2804,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2601,
+     "interaction_ratio": 0.904
     },
     "social_follow_or_join | merch_apparel_collectible": {
-     "n": 1371,
-     "sites": 492,
-     "cell_median": 0.2993,
-     "row_median": 0.3315,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3046,
-     "interaction_ratio": 0.982
+     "n": 1300,
+     "sites": 486,
+     "cell_median": 0.2995,
+     "row_median": 0.3328,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3165,
+     "interaction_ratio": 0.946
     },
     "email | merch_apparel_collectible": {
-     "n": 1213,
-     "sites": 235,
-     "cell_median": 0.3328,
-     "row_median": 0.3048,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2801,
-     "interaction_ratio": 1.188
+     "n": 1070,
+     "sites": 233,
+     "cell_median": 0.3648,
+     "row_median": 0.3049,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2899,
+     "interaction_ratio": 1.258
     },
     "social_follow_or_join | experience_travel_tickets": {
-     "n": 988,
-     "sites": 400,
-     "cell_median": 0.2354,
-     "row_median": 0.3315,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2723,
-     "interaction_ratio": 0.865
+     "n": 979,
+     "sites": 394,
+     "cell_median": 0.2355,
+     "row_median": 0.3328,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2684,
+     "interaction_ratio": 0.878
+    },
+    "question_or_skill | gift_card_or_cash": {
+     "n": 862,
+     "sites": 232,
+     "cell_median": 0.2876,
+     "row_median": 0.2941,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3087,
+     "interaction_ratio": 0.932
     },
     "referral_share | game_item_or_skin": {
-     "n": 870,
-     "sites": 198,
-     "cell_median": 0.2051,
-     "row_median": 0.2778,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2376,
-     "interaction_ratio": 0.863
+     "n": 835,
+     "sites": 203,
+     "cell_median": 0.2071,
+     "row_median": 0.2804,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2459,
+     "interaction_ratio": 0.842
     },
     "email | experience_travel_tickets": {
-     "n": 854,
-     "sites": 262,
-     "cell_median": 0.2623,
-     "row_median": 0.3048,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2503,
-     "interaction_ratio": 1.048
-    },
-    "email | game_item_or_skin": {
-     "n": 633,
-     "sites": 170,
-     "cell_median": 0.2758,
-     "row_median": 0.3048,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2607,
-     "interaction_ratio": 1.058
+     "n": 833,
+     "sites": 251,
+     "cell_median": 0.2622,
+     "row_median": 0.3049,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2459,
+     "interaction_ratio": 1.066
     },
     "social_follow_or_join | toys_collectibles": {
-     "n": 621,
-     "sites": 142,
-     "cell_median": 0.2572,
-     "row_median": 0.3315,
+     "n": 619,
+     "sites": 141,
+     "cell_median": 0.2586,
+     "row_median": 0.3328,
      "col_median": 0.2861,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.305,
-     "interaction_ratio": 0.843
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3049,
+     "interaction_ratio": 0.848
     },
     "question_or_skill | tech_hardware": {
      "n": 605,
      "sites": 232,
      "cell_median": 0.3289,
-     "row_median": 0.2932,
+     "row_median": 0.2941,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3084,
-     "interaction_ratio": 1.066
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3081,
+     "interaction_ratio": 1.068
     },
-    "secret_code | other_unclassified": {
-     "n": 561,
-     "sites": 239,
-     "cell_median": 0.3541,
-     "row_median": 0.3332,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3454,
-     "interaction_ratio": 1.025
+    "email | game_item_or_skin": {
+     "n": 599,
+     "sites": 176,
+     "cell_median": 0.286,
+     "row_median": 0.3049,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2673,
+     "interaction_ratio": 1.07
     },
     "secret_code | tech_hardware": {
      "n": 554,
      "sites": 189,
      "cell_median": 0.3513,
-     "row_median": 0.3332,
+     "row_median": 0.3323,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3505,
-     "interaction_ratio": 1.002
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3481,
+     "interaction_ratio": 1.009
     },
-    "referral_share | merch_apparel_collectible": {
-     "n": 524,
-     "sites": 192,
-     "cell_median": 0.2188,
-     "row_median": 0.2778,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2553,
-     "interaction_ratio": 0.857
-    },
-    "question_or_skill | gift_card_or_cash": {
-     "n": 505,
-     "sites": 187,
-     "cell_median": 0.2466,
-     "row_median": 0.2932,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3169,
-     "interaction_ratio": 0.778
+    "secret_code | other_unclassified": {
+     "n": 527,
+     "sites": 223,
+     "cell_median": 0.3553,
+     "row_median": 0.3323,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3462,
+     "interaction_ratio": 1.026
     },
     "question_or_skill | game_item_or_skin": {
-     "n": 503,
-     "sites": 118,
-     "cell_median": 0.2097,
-     "row_median": 0.2932,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2507,
-     "interaction_ratio": 0.836
+     "n": 488,
+     "sites": 119,
+     "cell_median": 0.2112,
+     "row_median": 0.2941,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2579,
+     "interaction_ratio": 0.819
     },
     "referral_share | experience_travel_tickets": {
-     "n": 494,
-     "sites": 197,
-     "cell_median": 0.2796,
-     "row_median": 0.2778,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2281,
-     "interaction_ratio": 1.226
+     "n": 475,
+     "sites": 191,
+     "cell_median": 0.2802,
+     "row_median": 0.2804,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2261,
+     "interaction_ratio": 1.239
     },
     "question_or_skill | bundle_or_box": {
-     "n": 477,
-     "sites": 178,
-     "cell_median": 0.2699,
-     "row_median": 0.2932,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2737,
-     "interaction_ratio": 0.986
+     "n": 459,
+     "sites": 172,
+     "cell_median": 0.2685,
+     "row_median": 0.2941,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2729,
+     "interaction_ratio": 0.984
     },
     "social_follow_or_join | home_garden_appliance": {
-     "n": 434,
-     "sites": 172,
-     "cell_median": 0.3409,
-     "row_median": 0.3315,
-     "col_median": 0.3328,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3547,
-     "interaction_ratio": 0.961
+     "n": 430,
+     "sites": 165,
+     "cell_median": 0.3438,
+     "row_median": 0.3328,
+     "col_median": 0.3365,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3585,
+     "interaction_ratio": 0.959
     },
-    "social_follow_or_join | subscription_membership": {
-     "n": 352,
-     "sites": 209,
-     "cell_median": 0.2773,
-     "row_median": 0.3315,
-     "col_median": 0.2916,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3108,
-     "interaction_ratio": 0.892
+    "referral_share | merch_apparel_collectible": {
+     "n": 381,
+     "sites": 190,
+     "cell_median": 0.2389,
+     "row_median": 0.2804,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2666,
+     "interaction_ratio": 0.896
     },
     "email | home_garden_appliance": {
-     "n": 345,
-     "sites": 165,
-     "cell_median": 0.3545,
-     "row_median": 0.3048,
-     "col_median": 0.3328,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3262,
-     "interaction_ratio": 1.087
+     "n": 365,
+     "sites": 154,
+     "cell_median": 0.3658,
+     "row_median": 0.3049,
+     "col_median": 0.3365,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3284,
+     "interaction_ratio": 1.114
+    },
+    "social_follow_or_join | subscription_membership": {
+     "n": 326,
+     "sites": 201,
+     "cell_median": 0.2716,
+     "row_median": 0.3328,
+     "col_median": 0.2837,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3023,
+     "interaction_ratio": 0.899
     },
     "referral_share | home_garden_appliance": {
-     "n": 321,
-     "sites": 118,
-     "cell_median": 0.3205,
-     "row_median": 0.2778,
-     "col_median": 0.3328,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2972,
-     "interaction_ratio": 1.078
+     "n": 313,
+     "sites": 114,
+     "cell_median": 0.3143,
+     "row_median": 0.2804,
+     "col_median": 0.3365,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3021,
+     "interaction_ratio": 1.041
     },
     "app_download | tech_hardware": {
      "n": 294,
      "sites": 61,
      "cell_median": 0.5324,
-     "row_median": 0.2673,
+     "row_median": 0.2675,
      "col_median": 0.3272,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2813,
-     "interaction_ratio": 1.893
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2802,
+     "interaction_ratio": 1.9
     },
     "question_or_skill | merch_apparel_collectible": {
-     "n": 263,
-     "sites": 81,
-     "cell_median": 0.2347,
-     "row_median": 0.2932,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2694,
-     "interaction_ratio": 0.871
+     "n": 262,
+     "sites": 80,
+     "cell_median": 0.2354,
+     "row_median": 0.2941,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2797,
+     "interaction_ratio": 0.842
     },
-    "app_download | other_unclassified": {
-     "n": 235,
-     "sites": 106,
-     "cell_median": 0.2676,
-     "row_median": 0.2673,
-     "col_median": 0.3225,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2772,
-     "interaction_ratio": 0.965
+    "secret_code | gift_card_or_cash": {
+     "n": 236,
+     "sites": 117,
+     "cell_median": 0.3127,
+     "row_median": 0.3323,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3487,
+     "interaction_ratio": 0.897
     },
     "social_follow_or_join | discount_or_coupon": {
      "n": 232,
      "sites": 89,
      "cell_median": 0.3803,
-     "row_median": 0.3315,
+     "row_median": 0.3328,
      "col_median": 0.336,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3581,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.358,
      "interaction_ratio": 1.062
     },
-    "question_or_skill | experience_travel_tickets": {
-     "n": 223,
-     "sites": 105,
-     "cell_median": 0.2591,
-     "row_median": 0.2932,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2408,
-     "interaction_ratio": 1.076
+    "app_download | gift_card_or_cash": {
+     "n": 219,
+     "sites": 83,
+     "cell_median": 0.2108,
+     "row_median": 0.2675,
+     "col_median": 0.3278,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2807,
+     "interaction_ratio": 0.751
     },
-    "social_follow_or_join | regulated_goods_firearm": {
+    "app_download | other_unclassified": {
      "n": 216,
-     "sites": 62,
-     "cell_median": 0.3378,
-     "row_median": 0.3315,
-     "col_median": 0.3173,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3382,
-     "interaction_ratio": 0.999
+     "sites": 98,
+     "cell_median": 0.2747,
+     "row_median": 0.2675,
+     "col_median": 0.3254,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2787,
+     "interaction_ratio": 0.986
+    },
+    "question_or_skill | experience_travel_tickets": {
+     "n": 210,
+     "sites": 104,
+     "cell_median": 0.2544,
+     "row_median": 0.2941,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2372,
+     "interaction_ratio": 1.072
     },
     "social_follow_or_join | exclusive_access": {
-     "n": 197,
-     "sites": 133,
-     "cell_median": 0.3267,
-     "row_median": 0.3315,
-     "col_median": 0.2985,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3181,
-     "interaction_ratio": 1.027
-    },
-    "secret_code | gift_card_or_cash": {
-     "n": 194,
-     "sites": 96,
-     "cell_median": 0.3119,
-     "row_median": 0.3332,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3601,
-     "interaction_ratio": 0.866
-    },
-    "email | food_drink_consumables": {
-     "n": 192,
-     "sites": 115,
-     "cell_median": 0.3513,
-     "row_median": 0.3048,
-     "col_median": 0.3388,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.332,
-     "interaction_ratio": 1.058
+     "n": 196,
+     "sites": 132,
+     "cell_median": 0.326,
+     "row_median": 0.3328,
+     "col_median": 0.2975,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3169,
+     "interaction_ratio": 1.029
     },
     "social_follow_or_join | sports_outdoor_gear": {
-     "n": 191,
-     "sites": 107,
-     "cell_median": 0.3061,
-     "row_median": 0.3315,
-     "col_median": 0.3084,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3287,
-     "interaction_ratio": 0.931
-    },
-    "referral_share | regulated_goods_firearm": {
-     "n": 186,
-     "sites": 43,
-     "cell_median": 0.3251,
-     "row_median": 0.2778,
-     "col_median": 0.3173,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2834,
-     "interaction_ratio": 1.147
-    },
-    "app_download | gift_card_or_cash": {
-     "n": 181,
-     "sites": 71,
-     "cell_median": 0.2136,
-     "row_median": 0.2673,
-     "col_median": 0.3362,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2889,
-     "interaction_ratio": 0.739
+     "n": 185,
+     "sites": 102,
+     "cell_median": 0.3083,
+     "row_median": 0.3328,
+     "col_median": 0.3117,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3321,
+     "interaction_ratio": 0.928
     },
     "social_follow_or_join | food_drink_consumables": {
-     "n": 180,
-     "sites": 94,
+     "n": 174,
+     "sites": 92,
      "cell_median": 0.3597,
-     "row_median": 0.3315,
-     "col_median": 0.3388,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3611,
-     "interaction_ratio": 0.996
+     "row_median": 0.3328,
+     "col_median": 0.3421,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3645,
+     "interaction_ratio": 0.987
+    },
+    "email | food_drink_consumables": {
+     "n": 169,
+     "sites": 103,
+     "cell_median": 0.3611,
+     "row_median": 0.3049,
+     "col_median": 0.3421,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3339,
+     "interaction_ratio": 1.081
+    },
+    "social_follow_or_join | regulated_goods_firearm": {
+     "n": 166,
+     "sites": 62,
+     "cell_median": 0.3021,
+     "row_median": 0.3328,
+     "col_median": 0.2879,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3067,
+     "interaction_ratio": 0.985
     },
     "email | sports_outdoor_gear": {
-     "n": 170,
-     "sites": 97,
+     "n": 164,
+     "sites": 91,
      "cell_median": 0.3451,
-     "row_median": 0.3048,
-     "col_median": 0.3084,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3023,
-     "interaction_ratio": 1.142
-    },
-    "email | subscription_membership": {
-     "n": 163,
-     "sites": 108,
-     "cell_median": 0.3323,
-     "row_median": 0.3048,
-     "col_median": 0.2916,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2858,
-     "interaction_ratio": 1.163
-    },
-    "app_download | game_item_or_skin": {
-     "n": 155,
-     "sites": 23,
-     "cell_median": 0.1633,
-     "row_median": 0.2673,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2286,
-     "interaction_ratio": 0.714
-    },
-    "referral_share | subscription_membership": {
-     "n": 155,
-     "sites": 104,
-     "cell_median": 0.26,
-     "row_median": 0.2778,
-     "col_median": 0.2916,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2605,
-     "interaction_ratio": 0.998
-    },
-    "secret_code | bundle_or_box": {
-     "n": 151,
-     "sites": 111,
-     "cell_median": 0.2939,
-     "row_median": 0.3332,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.311,
-     "interaction_ratio": 0.945
+     "row_median": 0.3049,
+     "col_median": 0.3117,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3042,
+     "interaction_ratio": 1.134
     },
     "secret_code | game_item_or_skin": {
-     "n": 149,
-     "sites": 84,
-     "cell_median": 0.2837,
-     "row_median": 0.3332,
-     "col_median": 0.266,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2849,
-     "interaction_ratio": 0.996
+     "n": 153,
+     "sites": 86,
+     "cell_median": 0.2863,
+     "row_median": 0.3323,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2914,
+     "interaction_ratio": 0.983
     },
-    "referral_share | sports_outdoor_gear": {
-     "n": 140,
-     "sites": 87,
-     "cell_median": 0.2815,
-     "row_median": 0.2778,
-     "col_median": 0.3084,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2754,
-     "interaction_ratio": 1.022
+    "email | subscription_membership": {
+     "n": 151,
+     "sites": 102,
+     "cell_median": 0.3292,
+     "row_median": 0.3049,
+     "col_median": 0.2837,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2769,
+     "interaction_ratio": 1.189
+    },
+    "secret_code | bundle_or_box": {
+     "n": 149,
+     "sites": 109,
+     "cell_median": 0.2939,
+     "row_median": 0.3323,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3082,
+     "interaction_ratio": 0.954
+    },
+    "app_download | game_item_or_skin": {
+     "n": 143,
+     "sites": 23,
+     "cell_median": 0.1586,
+     "row_median": 0.2675,
+     "col_median": 0.2739,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2345,
+     "interaction_ratio": 0.676
+    },
+    "referral_share | regulated_goods_firearm": {
+     "n": 136,
+     "sites": 43,
+     "cell_median": 0.2763,
+     "row_median": 0.2804,
+     "col_median": 0.2879,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2584,
+     "interaction_ratio": 1.069
     },
     "email | toys_collectibles": {
-     "n": 137,
-     "sites": 51,
-     "cell_median": 0.3427,
-     "row_median": 0.3048,
+     "n": 134,
+     "sites": 49,
+     "cell_median": 0.3433,
+     "row_median": 0.3049,
      "col_median": 0.2861,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2804,
-     "interaction_ratio": 1.222
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2793,
+     "interaction_ratio": 1.229
     },
-    "referral_share | food_drink_consumables": {
-     "n": 129,
-     "sites": 83,
-     "cell_median": 0.3122,
-     "row_median": 0.2778,
-     "col_median": 0.3388,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3025,
-     "interaction_ratio": 1.032
+    "referral_share | sports_outdoor_gear": {
+     "n": 133,
+     "sites": 80,
+     "cell_median": 0.2836,
+     "row_median": 0.2804,
+     "col_median": 0.3117,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2798,
+     "interaction_ratio": 1.013
+    },
+    "referral_share | subscription_membership": {
+     "n": 128,
+     "sites": 96,
+     "cell_median": 0.2457,
+     "row_median": 0.2804,
+     "col_median": 0.2837,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2546,
+     "interaction_ratio": 0.965
     },
     "app_download | merch_apparel_collectible": {
-     "n": 127,
-     "sites": 42,
-     "cell_median": 0.2062,
-     "row_median": 0.2673,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2457,
-     "interaction_ratio": 0.839
+     "n": 126,
+     "sites": 41,
+     "cell_median": 0.208,
+     "row_median": 0.2675,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2544,
+     "interaction_ratio": 0.818
     },
     "app_download | experience_travel_tickets": {
-     "n": 124,
+     "n": 123,
      "sites": 36,
-     "cell_median": 0.1768,
-     "row_median": 0.2673,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2196,
-     "interaction_ratio": 0.805
+     "cell_median": 0.1755,
+     "row_median": 0.2675,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2157,
+     "interaction_ratio": 0.814
     },
     "question_or_skill | home_garden_appliance": {
-     "n": 122,
+     "n": 121,
+     "sites": 42,
+     "cell_median": 0.2361,
+     "row_median": 0.2941,
+     "col_median": 0.3365,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3169,
+     "interaction_ratio": 0.745
+    },
+    "social_follow_or_join | tools_craft_diy": {
+     "n": 115,
      "sites": 43,
-     "cell_median": 0.2437,
-     "row_median": 0.2932,
-     "col_median": 0.3328,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3137,
-     "interaction_ratio": 0.777
+     "cell_median": 0.5045,
+     "row_median": 0.3328,
+     "col_median": 0.3613,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.385,
+     "interaction_ratio": 1.31
     },
     "app_download | bundle_or_box": {
-     "n": 117,
+     "n": 115,
      "sites": 51,
-     "cell_median": 0.3236,
-     "row_median": 0.2673,
-     "col_median": 0.2903,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2496,
-     "interaction_ratio": 1.297
+     "cell_median": 0.3256,
+     "row_median": 0.2675,
+     "col_median": 0.2898,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2481,
+     "interaction_ratio": 1.312
     },
     "email | regulated_goods_firearm": {
      "n": 113,
      "sites": 50,
      "cell_median": 0.2849,
-     "row_median": 0.3048,
-     "col_median": 0.3173,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.311,
-     "interaction_ratio": 0.916
+     "row_median": 0.3049,
+     "col_median": 0.2879,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.281,
+     "interaction_ratio": 1.014
     },
-    "social_follow_or_join | tools_craft_diy": {
-     "n": 110,
-     "sites": 40,
-     "cell_median": 0.5246,
-     "row_median": 0.3315,
-     "col_median": 0.3648,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3888,
-     "interaction_ratio": 1.349
+    "referral_share | food_drink_consumables": {
+     "n": 108,
+     "sites": 70,
+     "cell_median": 0.3137,
+     "row_median": 0.2804,
+     "col_median": 0.3421,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3071,
+     "interaction_ratio": 1.021
     },
     "referral_share | toys_collectibles": {
-     "n": 107,
-     "sites": 48,
-     "cell_median": 0.3315,
-     "row_median": 0.2778,
+     "n": 106,
+     "sites": 47,
+     "cell_median": 0.3318,
+     "row_median": 0.2804,
      "col_median": 0.2861,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2555,
-     "interaction_ratio": 1.297
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2568,
+     "interaction_ratio": 1.292
     },
     "referral_share | discount_or_coupon": {
      "n": 103,
      "sites": 58,
      "cell_median": 0.2706,
-     "row_median": 0.2778,
+     "row_median": 0.2804,
      "col_median": 0.336,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3001,
-     "interaction_ratio": 0.902
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3016,
+     "interaction_ratio": 0.897
     },
     "secret_code | merch_apparel_collectible": {
      "n": 82,
      "sites": 50,
      "cell_median": 0.2986,
-     "row_median": 0.3332,
-     "col_median": 0.2858,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3061,
-     "interaction_ratio": 0.975
-    },
-    "social_follow_or_join | beauty_wellness": {
-     "n": 77,
-     "sites": 51,
-     "cell_median": 0.3652,
-     "row_median": 0.3315,
-     "col_median": 0.3553,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3787,
-     "interaction_ratio": 0.964
-    },
-    "email | beauty_wellness": {
-     "n": 73,
-     "sites": 45,
-     "cell_median": 0.3619,
-     "row_median": 0.3048,
-     "col_median": 0.3553,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3482,
-     "interaction_ratio": 1.039
-    },
-    "email | discount_or_coupon": {
-     "n": 72,
-     "sites": 43,
-     "cell_median": 0.2888,
-     "row_median": 0.3048,
-     "col_median": 0.336,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3293,
-     "interaction_ratio": 0.877
+     "row_median": 0.3323,
+     "col_median": 0.2971,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.316,
+     "interaction_ratio": 0.945
     },
     "question_or_skill | discount_or_coupon": {
      "n": 72,
      "sites": 15,
      "cell_median": 0.342,
-     "row_median": 0.2932,
+     "row_median": 0.2941,
      "col_median": 0.336,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3167,
-     "interaction_ratio": 1.08
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3164,
+     "interaction_ratio": 1.081
+    },
+    "email | discount_or_coupon": {
+     "n": 72,
+     "sites": 43,
+     "cell_median": 0.2888,
+     "row_median": 0.3049,
+     "col_median": 0.336,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3279,
+     "interaction_ratio": 0.881
+    },
+    "social_follow_or_join | beauty_wellness": {
+     "n": 70,
+     "sites": 46,
+     "cell_median": 0.3635,
+     "row_median": 0.3328,
+     "col_median": 0.373,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3974,
+     "interaction_ratio": 0.915
     },
     "secret_code | experience_travel_tickets": {
-     "n": 71,
-     "sites": 41,
-     "cell_median": 0.3035,
-     "row_median": 0.3332,
-     "col_median": 0.2554,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2736,
-     "interaction_ratio": 1.109
+     "n": 70,
+     "sites": 40,
+     "cell_median": 0.3102,
+     "row_median": 0.3323,
+     "col_median": 0.2519,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.268,
+     "interaction_ratio": 1.158
     },
     "social_follow_or_join | vehicle": {
-     "n": 68,
-     "sites": 56,
-     "cell_median": 0.324,
-     "row_median": 0.3315,
-     "col_median": 0.2983,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.318,
-     "interaction_ratio": 1.019
+     "n": 65,
+     "sites": 53,
+     "cell_median": 0.3188,
+     "row_median": 0.3328,
+     "col_median": 0.2934,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3126,
+     "interaction_ratio": 1.02
+    },
+    "email | beauty_wellness": {
+     "n": 64,
+     "sites": 37,
+     "cell_median": 0.387,
+     "row_median": 0.3049,
+     "col_median": 0.373,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.364,
+     "interaction_ratio": 1.063
     },
     "referral_share | beauty_wellness": {
-     "n": 65,
-     "sites": 41,
-     "cell_median": 0.3254,
-     "row_median": 0.2778,
-     "col_median": 0.3553,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3173,
-     "interaction_ratio": 1.026
+     "n": 55,
+     "sites": 32,
+     "cell_median": 0.357,
+     "row_median": 0.2804,
+     "col_median": 0.373,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3348,
+     "interaction_ratio": 1.066
     },
     "question_or_skill | subscription_membership": {
-     "n": 57,
-     "sites": 37,
-     "cell_median": 0.3777,
-     "row_median": 0.2932,
-     "col_median": 0.2916,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2749,
-     "interaction_ratio": 1.374
-    },
-    "question_or_skill | toys_collectibles": {
-     "n": 53,
-     "sites": 28,
-     "cell_median": 0.3333,
-     "row_median": 0.2932,
-     "col_median": 0.2861,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2697,
-     "interaction_ratio": 1.236
-    },
-    "email | vehicle": {
-     "n": 52,
+     "n": 55,
      "sites": 35,
-     "cell_median": 0.3205,
-     "row_median": 0.3048,
-     "col_median": 0.2983,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2924,
-     "interaction_ratio": 1.096
+     "cell_median": 0.4051,
+     "row_median": 0.2941,
+     "col_median": 0.2837,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2671,
+     "interaction_ratio": 1.516
     },
     "email | music_gear": {
      "n": 52,
      "sites": 30,
      "cell_median": 0.2792,
-     "row_median": 0.3048,
+     "row_median": 0.3049,
      "col_median": 0.2904,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2846,
-     "interaction_ratio": 0.981
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2834,
+     "interaction_ratio": 0.985
     },
     "email | tools_craft_diy": {
-     "n": 48,
-     "sites": 23,
-     "cell_median": 0.2985,
-     "row_median": 0.3048,
-     "col_median": 0.3648,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3575,
-     "interaction_ratio": 0.835
+     "n": 52,
+     "sites": 25,
+     "cell_median": 0.3291,
+     "row_median": 0.3049,
+     "col_median": 0.3613,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3526,
+     "interaction_ratio": 0.933
+    },
+    "question_or_skill | toys_collectibles": {
+     "n": 51,
+     "sites": 27,
+     "cell_median": 0.3618,
+     "row_median": 0.2941,
+     "col_median": 0.2861,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2694,
+     "interaction_ratio": 1.343
+    },
+    "email | vehicle": {
+     "n": 50,
+     "sites": 34,
+     "cell_median": 0.2945,
+     "row_median": 0.3049,
+     "col_median": 0.2934,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2863,
+     "interaction_ratio": 1.029
     },
     "referral_share | vehicle": {
-     "n": 46,
-     "sites": 34,
-     "cell_median": 0.2675,
-     "row_median": 0.2778,
-     "col_median": 0.2983,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2664,
-     "interaction_ratio": 1.004
-    },
-    "referral_share | exclusive_access": {
      "n": 43,
-     "sites": 33,
-     "cell_median": 0.2447,
-     "row_median": 0.2778,
-     "col_median": 0.2985,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2666,
-     "interaction_ratio": 0.918
-    },
-    "social_follow_or_join | music_gear": {
-     "n": 42,
-     "sites": 27,
-     "cell_median": 0.2886,
-     "row_median": 0.3315,
-     "col_median": 0.2904,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3095,
-     "interaction_ratio": 0.932
+     "sites": 31,
+     "cell_median": 0.2624,
+     "row_median": 0.2804,
+     "col_median": 0.2934,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2633,
+     "interaction_ratio": 0.997
     },
     "email | exclusive_access": {
      "n": 42,
      "sites": 35,
      "cell_median": 0.2555,
-     "row_median": 0.3048,
-     "col_median": 0.2985,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.2926,
-     "interaction_ratio": 0.874
+     "row_median": 0.3049,
+     "col_median": 0.2975,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.2903,
+     "interaction_ratio": 0.88
+    },
+    "referral_share | exclusive_access": {
+     "n": 42,
+     "sites": 32,
+     "cell_median": 0.2401,
+     "row_median": 0.2804,
+     "col_median": 0.2975,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.267,
+     "interaction_ratio": 0.899
+    },
+    "social_follow_or_join | music_gear": {
+     "n": 42,
+     "sites": 27,
+     "cell_median": 0.2886,
+     "row_median": 0.3328,
+     "col_median": 0.2904,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3094,
+     "interaction_ratio": 0.933
     },
     "social_follow_or_join | art_custom": {
      "n": 40,
      "sites": 31,
      "cell_median": 0.3131,
-     "row_median": 0.3315,
-     "col_median": 0.3158,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3366,
-     "interaction_ratio": 0.93
+     "row_median": 0.3328,
+     "col_median": 0.3288,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3503,
+     "interaction_ratio": 0.894
+    },
+    "referral_share | tools_craft_diy": {
+     "n": 39,
+     "sites": 24,
+     "cell_median": 0.23,
+     "row_median": 0.2804,
+     "col_median": 0.3613,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3243,
+     "interaction_ratio": 0.709
     },
     "secret_code | subscription_membership": {
-     "n": 39,
+     "n": 38,
      "sites": 29,
-     "cell_median": 0.2636,
-     "row_median": 0.3332,
-     "col_median": 0.2916,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3124,
-     "interaction_ratio": 0.844
+     "cell_median": 0.2617,
+     "row_median": 0.3323,
+     "col_median": 0.2837,
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3018,
+     "interaction_ratio": 0.867
     },
     "secret_code | toys_collectibles": {
      "n": 35,
      "sites": 16,
      "cell_median": 0.4621,
-     "row_median": 0.3332,
+     "row_median": 0.3323,
      "col_median": 0.2861,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3065,
-     "interaction_ratio": 1.508
-    },
-    "referral_share | tools_craft_diy": {
-     "n": 31,
-     "sites": 19,
-     "cell_median": 0.2223,
-     "row_median": 0.2778,
-     "col_median": 0.3648,
-     "grand_median": 0.311,
-     "expected_from_main_effects": 0.3258,
-     "interaction_ratio": 0.682
+     "grand_median": 0.3124,
+     "expected_from_main_effects": 0.3044,
+     "interaction_ratio": 1.518
     }
    }
   },
@@ -8528,244 +8488,244 @@
    "definition": "clean conversion by organizer sequence band (1st, 2nd-5th, 6th-20th, 21st+ campaign on the dataset by that site, all campaigns not just ordinary) crossed with contestant band",
    "cells": {
     "21st+ | 250-500": {
-     "n": 4473,
-     "sites": 385,
-     "cell_median": 0.3666,
+     "n": 4472,
+     "sites": 386,
+     "cell_median": 0.3665,
      "row_median": 0.3877,
      "col_median": 0.3407,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3812,
+     "expected_from_main_effects": 0.3811,
      "interaction_ratio": 0.962
     },
     "21st+ | 100-250": {
      "n": 4470,
-     "sites": 431,
+     "sites": 429,
      "cell_median": 0.3427,
      "row_median": 0.3877,
      "col_median": 0.3204,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3585,
+     "expected_from_main_effects": 0.3584,
      "interaction_ratio": 0.956
     },
     "21st+ | 500-1k": {
-     "n": 3779,
-     "sites": 363,
-     "cell_median": 0.3878,
+     "n": 3777,
+     "sites": 364,
+     "cell_median": 0.3873,
      "row_median": 0.3877,
      "col_median": 0.3542,
      "grand_median": 0.3465,
      "expected_from_main_effects": 0.3963,
-     "interaction_ratio": 0.979
+     "interaction_ratio": 0.977
     },
     "21st+ | 1k-2.5k": {
-     "n": 3037,
+     "n": 3040,
      "sites": 294,
-     "cell_median": 0.4339,
+     "cell_median": 0.4341,
      "row_median": 0.3877,
      "col_median": 0.3721,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.4163,
-     "interaction_ratio": 1.042
+     "expected_from_main_effects": 0.4162,
+     "interaction_ratio": 1.043
     },
     "6th-20th | 100-250": {
-     "n": 2850,
-     "sites": 952,
+     "n": 2851,
+     "sites": 955,
      "cell_median": 0.3333,
-     "row_median": 0.3448,
+     "row_median": 0.3449,
      "col_median": 0.3204,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3188,
-     "interaction_ratio": 1.046
+     "expected_from_main_effects": 0.3189,
+     "interaction_ratio": 1.045
     },
     "2nd-5th | 100-250": {
-     "n": 2631,
-     "sites": 1742,
+     "n": 2635,
+     "sites": 1745,
      "cell_median": 0.3118,
      "row_median": 0.3257,
      "col_median": 0.3204,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3012,
+     "expected_from_main_effects": 0.3011,
      "interaction_ratio": 1.035
     },
     "1st | 100-250": {
-     "n": 2047,
-     "sites": 2047,
-     "cell_median": 0.2952,
-     "row_median": 0.3076,
+     "n": 2042,
+     "sites": 2042,
+     "cell_median": 0.2954,
+     "row_median": 0.3078,
      "col_median": 0.3204,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.2844,
+     "expected_from_main_effects": 0.2846,
      "interaction_ratio": 1.038
     },
     "6th-20th | 250-500": {
-     "n": 1881,
-     "sites": 831,
-     "cell_median": 0.3386,
-     "row_median": 0.3448,
+     "n": 1882,
+     "sites": 832,
+     "cell_median": 0.3401,
+     "row_median": 0.3449,
      "col_median": 0.3407,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3389,
-     "interaction_ratio": 0.999
+     "expected_from_main_effects": 0.339,
+     "interaction_ratio": 1.003
     },
     "21st+ | 2.5k-10k": {
-     "n": 1750,
-     "sites": 208,
-     "cell_median": 0.4231,
+     "n": 1746,
+     "sites": 207,
+     "cell_median": 0.4235,
      "row_median": 0.3877,
      "col_median": 0.375,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.4196,
-     "interaction_ratio": 1.008
+     "expected_from_main_effects": 0.4195,
+     "interaction_ratio": 1.01
     },
     "6th-20th | 500-1k": {
-     "n": 1647,
-     "sites": 758,
+     "n": 1650,
+     "sites": 755,
      "cell_median": 0.3529,
-     "row_median": 0.3448,
+     "row_median": 0.3449,
      "col_median": 0.3542,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3524,
+     "expected_from_main_effects": 0.3525,
      "interaction_ratio": 1.001
     },
     "2nd-5th | 250-500": {
-     "n": 1594,
-     "sites": 1211,
-     "cell_median": 0.3258,
+     "n": 1589,
+     "sites": 1210,
+     "cell_median": 0.3253,
      "row_median": 0.3257,
      "col_median": 0.3407,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3202,
-     "interaction_ratio": 1.017
+     "expected_from_main_effects": 0.3201,
+     "interaction_ratio": 1.016
     },
     "6th-20th | 1k-2.5k": {
-     "n": 1500,
-     "sites": 640,
+     "n": 1491,
+     "sites": 636,
      "cell_median": 0.3511,
-     "row_median": 0.3448,
+     "row_median": 0.3449,
      "col_median": 0.3721,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3702,
-     "interaction_ratio": 0.949
+     "expected_from_main_effects": 0.3703,
+     "interaction_ratio": 0.948
     },
     "2nd-5th | 500-1k": {
-     "n": 1272,
-     "sites": 976,
-     "cell_median": 0.3305,
+     "n": 1274,
+     "sites": 975,
+     "cell_median": 0.3311,
      "row_median": 0.3257,
      "col_median": 0.3542,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.333,
-     "interaction_ratio": 0.992
+     "expected_from_main_effects": 0.3329,
+     "interaction_ratio": 0.995
     },
     "2nd-5th | 1k-2.5k": {
-     "n": 1128,
+     "n": 1133,
      "sites": 857,
-     "cell_median": 0.343,
+     "cell_median": 0.3428,
      "row_median": 0.3257,
      "col_median": 0.3721,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3497,
-     "interaction_ratio": 0.981
+     "expected_from_main_effects": 0.3496,
+     "interaction_ratio": 0.98
     },
     "1st | 250-500": {
-     "n": 1017,
-     "sites": 1017,
-     "cell_median": 0.3117,
-     "row_median": 0.3076,
+     "n": 1022,
+     "sites": 1022,
+     "cell_median": 0.3114,
+     "row_median": 0.3078,
      "col_median": 0.3407,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3024,
-     "interaction_ratio": 1.031
+     "expected_from_main_effects": 0.3026,
+     "interaction_ratio": 1.029
     },
     "6th-20th | 2.5k-10k": {
-     "n": 933,
-     "sites": 366,
-     "cell_median": 0.3572,
-     "row_median": 0.3448,
+     "n": 939,
+     "sites": 368,
+     "cell_median": 0.3573,
+     "row_median": 0.3449,
      "col_median": 0.375,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3731,
+     "expected_from_main_effects": 0.3732,
      "interaction_ratio": 0.957
     },
     "1st | 500-1k": {
-     "n": 759,
-     "sites": 759,
-     "cell_median": 0.3131,
-     "row_median": 0.3076,
+     "n": 756,
+     "sites": 756,
+     "cell_median": 0.313,
+     "row_median": 0.3078,
      "col_median": 0.3542,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3144,
-     "interaction_ratio": 0.996
+     "expected_from_main_effects": 0.3146,
+     "interaction_ratio": 0.995
+    },
+    "1st | 1k-2.5k": {
+     "n": 652,
+     "sites": 652,
+     "cell_median": 0.3152,
+     "row_median": 0.3078,
+     "col_median": 0.3721,
+     "grand_median": 0.3465,
+     "expected_from_main_effects": 0.3305,
+     "interaction_ratio": 0.954
     },
     "2nd-5th | 2.5k-10k": {
-     "n": 653,
-     "sites": 475,
-     "cell_median": 0.3456,
+     "n": 650,
+     "sites": 474,
+     "cell_median": 0.3454,
      "row_median": 0.3257,
      "col_median": 0.375,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3525,
-     "interaction_ratio": 0.981
-    },
-    "1st | 1k-2.5k": {
-     "n": 651,
-     "sites": 651,
-     "cell_median": 0.3147,
-     "row_median": 0.3076,
-     "col_median": 0.3721,
-     "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3303,
-     "interaction_ratio": 0.953
+     "expected_from_main_effects": 0.3524,
+     "interaction_ratio": 0.98
     },
     "21st+ | 10k+": {
-     "n": 442,
+     "n": 441,
      "sites": 56,
-     "cell_median": 0.4932,
+     "cell_median": 0.4937,
      "row_median": 0.3877,
      "col_median": 0.4101,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.4589,
-     "interaction_ratio": 1.075
+     "expected_from_main_effects": 0.4588,
+     "interaction_ratio": 1.076
     },
     "1st | 2.5k-10k": {
-     "n": 399,
-     "sites": 399,
-     "cell_median": 0.3344,
-     "row_median": 0.3076,
+     "n": 400,
+     "sites": 400,
+     "cell_median": 0.3334,
+     "row_median": 0.3078,
      "col_median": 0.375,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3329,
-     "interaction_ratio": 1.005
+     "expected_from_main_effects": 0.3331,
+     "interaction_ratio": 1.001
     },
     "6th-20th | 10k+": {
-     "n": 195,
+     "n": 194,
      "sites": 86,
-     "cell_median": 0.3597,
-     "row_median": 0.3448,
+     "cell_median": 0.3656,
+     "row_median": 0.3449,
      "col_median": 0.4101,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.408,
-     "interaction_ratio": 0.882
+     "expected_from_main_effects": 0.4081,
+     "interaction_ratio": 0.896
     },
     "2nd-5th | 10k+": {
-     "n": 141,
+     "n": 142,
      "sites": 107,
-     "cell_median": 0.3227,
+     "cell_median": 0.323,
      "row_median": 0.3257,
      "col_median": 0.4101,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.3855,
-     "interaction_ratio": 0.837
+     "expected_from_main_effects": 0.3854,
+     "interaction_ratio": 0.838
     },
     "1st | 10k+": {
-     "n": 80,
-     "sites": 80,
-     "cell_median": 0.3074,
-     "row_median": 0.3076,
+     "n": 81,
+     "sites": 81,
+     "cell_median": 0.3031,
+     "row_median": 0.3078,
      "col_median": 0.4101,
      "grand_median": 0.3465,
-     "expected_from_main_effects": 0.364,
-     "interaction_ratio": 0.844
+     "expected_from_main_effects": 0.3643,
+     "interaction_ratio": 0.832
     }
    }
   },
@@ -9247,16 +9207,6 @@
   "holiday_by_campaign_type": {
    "definition": "contestants by named holiday theme crossed with campaign type",
    "cells": {
-    "Christmas and advent | Holiday themed": {
-     "n": 2894,
-     "sites": 1130,
-     "cell_median": 523.0,
-     "row_median": 600.5,
-     "col_median": 608,
-     "grand_median": 646,
-     "expected_from_main_effects": 565.1765,
-     "interaction_ratio": 0.925
-    },
     "Summer | Holiday themed": {
      "n": 2894,
      "sites": 1295,
@@ -9266,6 +9216,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 652.2353,
      "interaction_ratio": 0.973
+    },
+    "Christmas and advent | Holiday themed": {
+     "n": 2894,
+     "sites": 1130,
+     "cell_median": 523.0,
+     "row_median": 600.5,
+     "col_median": 608,
+     "grand_median": 646,
+     "expected_from_main_effects": 565.1765,
+     "interaction_ratio": 0.925
     },
     "Anniversary or birthday | Anniversary or birthday": {
      "n": 2166,
@@ -9477,16 +9437,6 @@
      "expected_from_main_effects": 718.1176,
      "interaction_ratio": 0.943
     },
-    "Anniversary or birthday | Gift card or voucher": {
-     "n": 180,
-     "sites": 131,
-     "cell_median": 513.5,
-     "row_median": 599,
-     "col_median": 538.0,
-     "grand_median": 646,
-     "expected_from_main_effects": 498.8576,
-     "interaction_ratio": 1.029
-    },
     "Christmas and advent | Milestone": {
      "n": 180,
      "sites": 89,
@@ -9496,6 +9446,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 682.3019,
      "interaction_ratio": 1.318
+    },
+    "Anniversary or birthday | Gift card or voucher": {
+     "n": 180,
+     "sites": 131,
+     "cell_median": 513.5,
+     "row_median": 599,
+     "col_median": 538.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 498.8576,
+     "interaction_ratio": 1.029
     },
     "Summer | Sweepstakes wording (US)": {
      "n": 179,
@@ -9527,16 +9487,6 @@
      "expected_from_main_effects": 410.8684,
      "interaction_ratio": 1.711
     },
-    "New Year | Collaboration or partner": {
-     "n": 158,
-     "sites": 121,
-     "cell_median": 1085.5,
-     "row_median": 885.0,
-     "col_median": 748.0,
-     "grand_median": 646,
-     "expected_from_main_effects": 1024.7368,
-     "interaction_ratio": 1.059
-    },
     "New Year | Bundle, mega or ultimate": {
      "n": 158,
      "sites": 135,
@@ -9556,6 +9506,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 751.2074,
      "interaction_ratio": 1.08
+    },
+    "New Year | Collaboration or partner": {
+     "n": 158,
+     "sites": 121,
+     "cell_median": 1085.5,
+     "row_median": 885.0,
+     "col_median": 748.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 1024.7368,
+     "interaction_ratio": 1.059
     },
     "Anniversary or birthday | Sweepstakes wording (US)": {
      "n": 139,
@@ -9577,16 +9537,6 @@
      "expected_from_main_effects": 378.3158,
      "interaction_ratio": 0.991
     },
-    "Halloween | Bundle, mega or ultimate": {
-     "n": 133,
-     "sites": 93,
-     "cell_median": 626,
-     "row_median": 510,
-     "col_median": 842.5,
-     "grand_median": 646,
-     "expected_from_main_effects": 665.1316,
-     "interaction_ratio": 0.941
-    },
     "Summer | Creator or streamer": {
      "n": 133,
      "sites": 52,
@@ -9596,6 +9546,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 437.6842,
      "interaction_ratio": 0.955
+    },
+    "Halloween | Bundle, mega or ultimate": {
+     "n": 133,
+     "sites": 93,
+     "cell_median": 626,
+     "row_median": 510,
+     "col_median": 842.5,
+     "grand_median": 646,
+     "expected_from_main_effects": 665.1316,
+     "interaction_ratio": 0.941
     },
     "Anniversary or birthday | Community or Discord": {
      "n": 131,
@@ -9697,26 +9657,6 @@
      "expected_from_main_effects": 816.1594,
      "interaction_ratio": 0.814
     },
-    "Black Friday and Cyber Monday | Bundle, mega or ultimate": {
-     "n": 105,
-     "sites": 81,
-     "cell_median": 946,
-     "row_median": 921,
-     "col_median": 842.5,
-     "grand_median": 646,
-     "expected_from_main_effects": 1201.1494,
-     "interaction_ratio": 0.788
-    },
-    "Milestone | Gift card or voucher": {
-     "n": 105,
-     "sites": 69,
-     "cell_median": 238,
-     "row_median": 576,
-     "col_median": 538.0,
-     "grand_median": 646,
-     "expected_from_main_effects": 479.7028,
-     "interaction_ratio": 0.496
-    },
     "Summer | Community or Discord": {
      "n": 105,
      "sites": 59,
@@ -9737,6 +9677,26 @@
      "expected_from_main_effects": 849.4737,
      "interaction_ratio": 1.369
     },
+    "Milestone | Gift card or voucher": {
+     "n": 105,
+     "sites": 69,
+     "cell_median": 238,
+     "row_median": 576,
+     "col_median": 538.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 479.7028,
+     "interaction_ratio": 0.496
+    },
+    "Black Friday and Cyber Monday | Bundle, mega or ultimate": {
+     "n": 105,
+     "sites": 81,
+     "cell_median": 946,
+     "row_median": 921,
+     "col_median": 842.5,
+     "grand_median": 646,
+     "expected_from_main_effects": 1201.1494,
+     "interaction_ratio": 0.788
+    },
     "Christmas and advent | Creator or streamer": {
      "n": 103,
      "sites": 79,
@@ -9746,6 +9706,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 379.2632,
      "interaction_ratio": 1.136
+    },
+    "Halloween | Collaboration or partner": {
+     "n": 100,
+     "sites": 84,
+     "cell_median": 569.0,
+     "row_median": 510,
+     "col_median": 748.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 590.5263,
+     "interaction_ratio": 0.964
     },
     "New Year | Gift card or voucher": {
      "n": 100,
@@ -9757,14 +9727,14 @@
      "expected_from_main_effects": 737.0433,
      "interaction_ratio": 1.101
     },
-    "Halloween | Collaboration or partner": {
-     "n": 100,
-     "sites": 84,
-     "cell_median": 569.0,
-     "row_median": 510,
-     "col_median": 748.0,
+    "Summer | Free or no purchase": {
+     "n": 99,
+     "sites": 54,
+     "cell_median": 835,
+     "row_median": 693,
+     "col_median": 807.5,
      "grand_median": 646,
-     "expected_from_main_effects": 590.5263,
+     "expected_from_main_effects": 866.25,
      "interaction_ratio": 0.964
     },
     "Valentine's Day | Gift card or voucher": {
@@ -9777,16 +9747,6 @@
      "expected_from_main_effects": 468.8762,
      "interaction_ratio": 1.248
     },
-    "Summer | Free or no purchase": {
-     "n": 99,
-     "sites": 54,
-     "cell_median": 835,
-     "row_median": 693,
-     "col_median": 807.5,
-     "grand_median": 646,
-     "expected_from_main_effects": 866.25,
-     "interaction_ratio": 0.964
-    },
     "Milestone | Collaboration or partner": {
      "n": 98,
      "sites": 82,
@@ -9797,16 +9757,6 @@
      "expected_from_main_effects": 666.9474,
      "interaction_ratio": 0.984
     },
-    "Black Friday and Cyber Monday | Gift card or voucher": {
-     "n": 97,
-     "sites": 66,
-     "cell_median": 739,
-     "row_median": 921,
-     "col_median": 538.0,
-     "grand_median": 646,
-     "expected_from_main_effects": 767.0248,
-     "interaction_ratio": 0.963
-    },
     "Valentine's Day | Bundle, mega or ultimate": {
      "n": 97,
      "sites": 75,
@@ -9816,6 +9766,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 734.2531,
      "interaction_ratio": 0.865
+    },
+    "Black Friday and Cyber Monday | Gift card or voucher": {
+     "n": 97,
+     "sites": 66,
+     "cell_median": 739,
+     "row_median": 921,
+     "col_median": 538.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 767.0248,
+     "interaction_ratio": 0.963
     },
     "Anniversary or birthday | Free or no purchase": {
      "n": 93,
@@ -9937,16 +9897,6 @@
      "expected_from_main_effects": 579.2879,
      "interaction_ratio": 0.773
     },
-    "Christmas and advent | Free or no purchase": {
-     "n": 73,
-     "sites": 38,
-     "cell_median": 702,
-     "row_median": 600.5,
-     "col_median": 807.5,
-     "grand_median": 646,
-     "expected_from_main_effects": 750.625,
-     "interaction_ratio": 0.935
-    },
     "Summer | Milestone": {
      "n": 73,
      "sites": 54,
@@ -9956,6 +9906,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 787.4025,
      "interaction_ratio": 1.981
+    },
+    "Christmas and advent | Free or no purchase": {
+     "n": 73,
+     "sites": 38,
+     "cell_median": 702,
+     "row_median": 600.5,
+     "col_median": 807.5,
+     "grand_median": 646,
+     "expected_from_main_effects": 750.625,
+     "interaction_ratio": 0.935
     },
     "Christmas and advent | Cart, wishlist or spree": {
      "n": 67,
@@ -10037,16 +9997,6 @@
      "expected_from_main_effects": 639.3622,
      "interaction_ratio": 1.509
     },
-    "Milestone | Cash prize": {
-     "n": 48,
-     "sites": 34,
-     "cell_median": 730.5,
-     "row_median": 576,
-     "col_median": 878,
-     "grand_median": 646,
-     "expected_from_main_effects": 782.8607,
-     "interaction_ratio": 0.933
-    },
     "Back to school | Collaboration or partner": {
      "n": 48,
      "sites": 39,
@@ -10056,6 +10006,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 1181.0526,
      "interaction_ratio": 0.669
+    },
+    "Milestone | Cash prize": {
+     "n": 48,
+     "sites": 34,
+     "cell_median": 730.5,
+     "row_median": 576,
+     "col_median": 878,
+     "grand_median": 646,
+     "expected_from_main_effects": 782.8607,
+     "interaction_ratio": 0.933
     },
     "Father's Day | Gift card or voucher": {
      "n": 47,
@@ -10137,16 +10097,6 @@
      "expected_from_main_effects": 587.8731,
      "interaction_ratio": 0.771
     },
-    "Easter | Gift card or voucher": {
-     "n": 39,
-     "sites": 30,
-     "cell_median": 499,
-     "row_median": 634,
-     "col_median": 538.0,
-     "grand_median": 646,
-     "expected_from_main_effects": 528.0062,
-     "interaction_ratio": 0.945
-    },
     "Halloween | Competition wording (UK)": {
      "n": 39,
      "sites": 23,
@@ -10156,6 +10106,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 579.8684,
      "interaction_ratio": 0.886
+    },
+    "Easter | Gift card or voucher": {
+     "n": 39,
+     "sites": 30,
+     "cell_median": 499,
+     "row_median": 634,
+     "col_median": 538.0,
+     "grand_median": 646,
+     "expected_from_main_effects": 528.0062,
+     "interaction_ratio": 0.945
     },
     "Easter | Competition wording (UK)": {
      "n": 37,
@@ -10167,16 +10127,6 @@
      "expected_from_main_effects": 720.856,
      "interaction_ratio": 1.046
     },
-    "Halloween | Community or Discord": {
-     "n": 36,
-     "sites": 30,
-     "cell_median": 270.5,
-     "row_median": 510,
-     "col_median": 442,
-     "grand_median": 646,
-     "expected_from_main_effects": 348.9474,
-     "interaction_ratio": 0.775
-    },
     "New Year | Weekly or monthly series": {
      "n": 36,
      "sites": 26,
@@ -10186,6 +10136,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 821.9814,
      "interaction_ratio": 1.16
+    },
+    "Halloween | Community or Discord": {
+     "n": 36,
+     "sites": 30,
+     "cell_median": 270.5,
+     "row_median": 510,
+     "col_median": 442,
+     "grand_median": 646,
+     "expected_from_main_effects": 348.9474,
+     "interaction_ratio": 0.775
     },
     "New Year | Competition wording (UK)": {
      "n": 36,
@@ -10197,16 +10157,6 @@
      "expected_from_main_effects": 1006.2423,
      "interaction_ratio": 0.623
     },
-    "Milestone | Competition wording (UK)": {
-     "n": 35,
-     "sites": 29,
-     "cell_median": 798,
-     "row_median": 576,
-     "col_median": 734.5,
-     "grand_median": 646,
-     "expected_from_main_effects": 654.9102,
-     "interaction_ratio": 1.218
-    },
     "Back to school | Sweepstakes wording (US)": {
      "n": 35,
      "sites": 20,
@@ -10216,6 +10166,16 @@
      "grand_median": 646,
      "expected_from_main_effects": 2042.3684,
      "interaction_ratio": 0.437
+    },
+    "Milestone | Competition wording (UK)": {
+     "n": 35,
+     "sites": 29,
+     "cell_median": 798,
+     "row_median": 576,
+     "col_median": 734.5,
+     "grand_median": 646,
+     "expected_from_main_effects": 654.9102,
+     "interaction_ratio": 1.218
     },
     "Valentine's Day | Community or Discord": {
      "n": 32,

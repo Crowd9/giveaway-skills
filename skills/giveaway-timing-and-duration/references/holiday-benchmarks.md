@@ -9,7 +9,7 @@ These figures were wrong on this page until the benchmark floor moved from 1,000
 ## By holiday
 
 <!-- generated:hol_by_holiday -->
-| Theme | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Duration days | Lead days, typical (range) | Closed on or before the day | Start months |
+| Theme | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Entries per Entrant | Duration days | Lead days, typical (range) | Closed on or before the day | Start months |
 |---|---|---|---|---|---|---|---|---|
 | Christmas and advent | 4,895 | 587 | 39% (2,165) | 4.1 | 10 | 17 (9 to 26) | 75% | Dec, Nov |
 | Summer | 3,085 | 623 | 32% (869) | 4.3 | 16 | 27 (10 to 43) | 61% | Jun, Jul |
@@ -167,7 +167,7 @@ Source for the advent-calendar row above: `analysis/output/campaign_types.json` 
 All the campaigns behind these numbers, by the calendar week of their start date, whatever their theme. Share of starts is that week's share of all 117,090 campaigns (an even spread would be 1.9%). Conversion Rate is from the campaigns we can compare fairly. The holiday-named column is the share of that week's starts whose title or description names a holiday, which is how the dates and the names were checked against each other. Monday dates are 2026.
 
 <!-- generated:hol_weeks -->
-| Week | Monday | Share of starts | Entrants | Conversion Rate (fair-comparison count) | Actions per Entrant | Holiday-named | Holidays in the week |
+| Week | Monday | Share of starts | Entrants | Conversion Rate (fair-comparison count) | Entries per Entrant | Holiday-named | Holidays in the week |
 |---|---|---|---|---|---|---|---|
 | 1 | 29 Dec | 1% | 512 | 38% (438) | 4.3 | 17% | - |
 | 2 | 05 Jan | 1% | 537 | 33% (441) | 4.4 | 11% | - |

@@ -1044,19 +1044,19 @@
     "fully_custom_terms_share": 0.0621,
     "custom_tos_text_share": 0.0597
    },
-   "poland": {
-    "n": 2146,
-    "sites": 187,
-    "law_differs_share": 0.5494,
-    "fully_custom_terms_share": 0.5331,
-    "custom_tos_text_share": 0.5326
-   },
    "france": {
     "n": 2146,
     "sites": 355,
     "law_differs_share": 0.1934,
     "fully_custom_terms_share": 0.2875,
     "custom_tos_text_share": 0.2875
+   },
+   "poland": {
+    "n": 2146,
+    "sites": 187,
+    "law_differs_share": 0.5494,
+    "fully_custom_terms_share": 0.5331,
+    "custom_tos_text_share": 0.5326
    },
    "philippines": {
     "n": 2036,
@@ -4749,8 +4749,8 @@
     "eleventh_plus_share": 0.5331,
     "campaign_sequence_p50": 13.0,
     "campaigns_per_organizer_mean": 6.5704,
-    "contestants_first_p50": 359.0,
-    "contestants_repeat_p50": 595.0
+    "contestants_first_p50": 365.0,
+    "contestants_repeat_p50": 594.0
    },
    "australia": {
     "n": 6066,
@@ -4769,8 +4769,8 @@
     "eleventh_plus_share": 0.7267,
     "campaign_sequence_p50": 84.0,
     "campaigns_per_organizer_mean": 10.662,
-    "contestants_first_p50": 307.0,
-    "contestants_repeat_p50": 543.5
+    "contestants_first_p50": 308.0,
+    "contestants_repeat_p50": 543.0
    },
    "japan": {
     "n": 4797,
@@ -4789,7 +4789,7 @@
     "eleventh_plus_share": 0.5662,
     "campaign_sequence_p50": 16.0,
     "campaigns_per_organizer_mean": 5.8784,
-    "contestants_first_p50": 368.0,
+    "contestants_first_p50": 369.0,
     "contestants_repeat_p50": 965.0
    },
    "singapore": {
@@ -4799,7 +4799,7 @@
     "eleventh_plus_share": 0.7339,
     "campaign_sequence_p50": 54.0,
     "campaigns_per_organizer_mean": 12.8819,
-    "contestants_first_p50": 480.5,
+    "contestants_first_p50": 482.5,
     "contestants_repeat_p50": 736.0
    },
    "germany": {
@@ -4810,7 +4810,7 @@
     "campaign_sequence_p50": 16.0,
     "campaigns_per_organizer_mean": 7.9284,
     "contestants_first_p50": 370.0,
-    "contestants_repeat_p50": 748.0
+    "contestants_repeat_p50": 746.0
    },
    "south korea": {
     "n": 2675,
@@ -4819,7 +4819,7 @@
     "eleventh_plus_share": 0.5234,
     "campaign_sequence_p50": 12.0,
     "campaigns_per_organizer_mean": 6.824,
-    "contestants_first_p50": 786.0,
+    "contestants_first_p50": 799.5,
     "contestants_repeat_p50": 472.0
    },
    "vietnam": {
@@ -4829,8 +4829,8 @@
     "eleventh_plus_share": 0.4134,
     "campaign_sequence_p50": 6.0,
     "campaigns_per_organizer_mean": 4.5722,
-    "contestants_first_p50": 995.0,
-    "contestants_repeat_p50": 763.5
+    "contestants_first_p50": 986.0,
+    "contestants_repeat_p50": 768.5
    },
    "france": {
     "n": 2174,
@@ -4839,8 +4839,8 @@
     "eleventh_plus_share": 0.5106,
     "campaign_sequence_p50": 11.0,
     "campaigns_per_organizer_mean": 6.1067,
-    "contestants_first_p50": 359.5,
-    "contestants_repeat_p50": 343.0
+    "contestants_first_p50": 367.0,
+    "contestants_repeat_p50": 341.0
    },
    "poland": {
     "n": 2157,
@@ -4849,8 +4849,8 @@
     "eleventh_plus_share": 0.7047,
     "campaign_sequence_p50": 39.0,
     "campaigns_per_organizer_mean": 11.4734,
-    "contestants_first_p50": 376.0,
-    "contestants_repeat_p50": 383.0
+    "contestants_first_p50": 393.0,
+    "contestants_repeat_p50": 381.0
    },
    "philippines": {
     "n": 2053,
@@ -4859,8 +4859,8 @@
     "eleventh_plus_share": 0.5592,
     "campaign_sequence_p50": 14.0,
     "campaigns_per_organizer_mean": 7.1038,
-    "contestants_first_p50": 440.0,
-    "contestants_repeat_p50": 379.0
+    "contestants_first_p50": 431.5,
+    "contestants_repeat_p50": 381.0
    },
    "hong kong": {
     "n": 1973,
@@ -4879,8 +4879,8 @@
     "eleventh_plus_share": 0.6953,
     "campaign_sequence_p50": 44.0,
     "campaigns_per_organizer_mean": 12.2293,
-    "contestants_first_p50": 456.0,
-    "contestants_repeat_p50": 474.0
+    "contestants_first_p50": 471.0,
+    "contestants_repeat_p50": 472.0
    },
    "spain": {
     "n": 1884,
@@ -4889,8 +4889,8 @@
     "eleventh_plus_share": 0.2898,
     "campaign_sequence_p50": 4.0,
     "campaigns_per_organizer_mean": 3.7984,
-    "contestants_first_p50": 325.5,
-    "contestants_repeat_p50": 387.0
+    "contestants_first_p50": 316.5,
+    "contestants_repeat_p50": 388.0
    },
    "china": {
     "n": 1541,
@@ -4909,7 +4909,7 @@
     "eleventh_plus_share": 0.7702,
     "campaign_sequence_p50": 60.0,
     "campaigns_per_organizer_mean": 14.5728,
-    "contestants_first_p50": 331.0,
+    "contestants_first_p50": 344.0,
     "contestants_repeat_p50": 586.0
    },
    "t\u00fcrkiye": {
@@ -4919,7 +4919,7 @@
     "eleventh_plus_share": 0.3457,
     "campaign_sequence_p50": 5.0,
     "campaigns_per_organizer_mean": 3.8311,
-    "contestants_first_p50": 393.0,
+    "contestants_first_p50": 410.0,
     "contestants_repeat_p50": 419.0
    }
   }
@@ -6602,118 +6602,6 @@
  "industry_mix_by_country": {
   "definition": "Share of a country's labelled campaigns falling in each industry, groups of at least 30 campaigns and 5 organizers only, so the shares within a country do not sum to one.",
   "rows": {
-   "canada": {
-    "media_entertainment": {
-     "n": 1260,
-     "sites": 137,
-     "share_of_country": 0.1817
-    },
-    "gaming_esports": {
-     "n": 1174,
-     "sites": 228,
-     "share_of_country": 0.1693
-    },
-    "toys_hobbies_collectibles": {
-     "n": 658,
-     "sites": 46,
-     "share_of_country": 0.0949
-    },
-    "home_garden": {
-     "n": 502,
-     "sites": 47,
-     "share_of_country": 0.0724
-    },
-    "electronics_tech": {
-     "n": 474,
-     "sites": 102,
-     "share_of_country": 0.0683
-    },
-    "retail_marketplace": {
-     "n": 422,
-     "sites": 17,
-     "share_of_country": 0.0609
-    },
-    "finance_crypto": {
-     "n": 412,
-     "sites": 90,
-     "share_of_country": 0.0594
-    },
-    "food_drink": {
-     "n": 368,
-     "sites": 69,
-     "share_of_country": 0.0531
-    },
-    "sports_outdoors": {
-     "n": 248,
-     "sites": 47,
-     "share_of_country": 0.0358
-    },
-    "health_wellness_fitness": {
-     "n": 196,
-     "sites": 29,
-     "share_of_country": 0.0283
-    },
-    "travel_events": {
-     "n": 194,
-     "sites": 49,
-     "share_of_country": 0.028
-    },
-    "pets": {
-     "n": 148,
-     "sites": 9,
-     "share_of_country": 0.0213
-    },
-    "creator_influencer": {
-     "n": 128,
-     "sites": 40,
-     "share_of_country": 0.0185
-    },
-    "automotive": {
-     "n": 102,
-     "sites": 25,
-     "share_of_country": 0.0147
-    },
-    "art_crafts": {
-     "n": 102,
-     "sites": 20,
-     "share_of_country": 0.0147
-    },
-    "other": {
-     "n": 95,
-     "sites": 60,
-     "share_of_country": 0.0137
-    },
-    "beauty_personal_care": {
-     "n": 89,
-     "sites": 15,
-     "share_of_country": 0.0128
-    },
-    "apparel_fashion": {
-     "n": 81,
-     "sites": 35,
-     "share_of_country": 0.0117
-    },
-    "software_saas": {
-     "n": 78,
-     "sites": 38,
-     "share_of_country": 0.0112
-    },
-    "baby_kids": {
-     "n": 56,
-     "sites": 9,
-     "share_of_country": 0.0081
-    },
-    "education": {
-     "n": 46,
-     "sites": 25,
-     "share_of_country": 0.0066
-    },
-    "nonprofit_community": {
-     "n": 32,
-     "sites": 12,
-     "share_of_country": 0.0046
-    }
-   },
    "united states": {
     "media_entertainment": {
      "n": 9684,
@@ -6841,217 +6729,6 @@
      "share_of_country": 0.0028
     }
    },
-   "united kingdom": {
-    "media_entertainment": {
-     "n": 6066,
-     "sites": 206,
-     "share_of_country": 0.4026
-    },
-    "gaming_esports": {
-     "n": 2395,
-     "sites": 478,
-     "share_of_country": 0.159
-    },
-    "finance_crypto": {
-     "n": 1090,
-     "sites": 193,
-     "share_of_country": 0.0723
-    },
-    "electronics_tech": {
-     "n": 747,
-     "sites": 149,
-     "share_of_country": 0.0496
-    },
-    "travel_events": {
-     "n": 665,
-     "sites": 54,
-     "share_of_country": 0.0441
-    },
-    "creator_influencer": {
-     "n": 513,
-     "sites": 106,
-     "share_of_country": 0.034
-    },
-    "toys_hobbies_collectibles": {
-     "n": 469,
-     "sites": 73,
-     "share_of_country": 0.0311
-    },
-    "food_drink": {
-     "n": 447,
-     "sites": 71,
-     "share_of_country": 0.0297
-    },
-    "baby_kids": {
-     "n": 436,
-     "sites": 12,
-     "share_of_country": 0.0289
-    },
-    "health_wellness_fitness": {
-     "n": 346,
-     "sites": 45,
-     "share_of_country": 0.023
-    },
-    "apparel_fashion": {
-     "n": 292,
-     "sites": 68,
-     "share_of_country": 0.0194
-    },
-    "sports_outdoors": {
-     "n": 263,
-     "sites": 56,
-     "share_of_country": 0.0175
-    },
-    "other": {
-     "n": 262,
-     "sites": 101,
-     "share_of_country": 0.0174
-    },
-    "home_garden": {
-     "n": 228,
-     "sites": 38,
-     "share_of_country": 0.0151
-    },
-    "retail_marketplace": {
-     "n": 221,
-     "sites": 34,
-     "share_of_country": 0.0147
-    },
-    "beauty_personal_care": {
-     "n": 97,
-     "sites": 37,
-     "share_of_country": 0.0064
-    },
-    "marketing_agency": {
-     "n": 97,
-     "sites": 14,
-     "share_of_country": 0.0064
-    },
-    "art_crafts": {
-     "n": 91,
-     "sites": 27,
-     "share_of_country": 0.006
-    },
-    "software_saas": {
-     "n": 78,
-     "sites": 45,
-     "share_of_country": 0.0052
-    },
-    "education": {
-     "n": 72,
-     "sites": 22,
-     "share_of_country": 0.0048
-    },
-    "pets": {
-     "n": 67,
-     "sites": 20,
-     "share_of_country": 0.0044
-    },
-    "jewelry_watches": {
-     "n": 62,
-     "sites": 12,
-     "share_of_country": 0.0041
-    },
-    "automotive": {
-     "n": 46,
-     "sites": 18,
-     "share_of_country": 0.0031
-    }
-   },
-   "south korea": {
-    "finance_crypto": {
-     "n": 1855,
-     "sites": 263,
-     "share_of_country": 0.6982
-    },
-    "gaming_esports": {
-     "n": 278,
-     "sites": 68,
-     "share_of_country": 0.1046
-    },
-    "media_entertainment": {
-     "n": 195,
-     "sites": 14,
-     "share_of_country": 0.0734
-    },
-    "other": {
-     "n": 113,
-     "sites": 24,
-     "share_of_country": 0.0425
-    },
-    "nonprofit_community": {
-     "n": 42,
-     "sites": 6,
-     "share_of_country": 0.0158
-    },
-    "travel_events": {
-     "n": 35,
-     "sites": 14,
-     "share_of_country": 0.0132
-    }
-   },
-   "germany": {
-    "gaming_esports": {
-     "n": 1529,
-     "sites": 140,
-     "share_of_country": 0.4652
-    },
-    "media_entertainment": {
-     "n": 464,
-     "sites": 39,
-     "share_of_country": 0.1412
-    },
-    "electronics_tech": {
-     "n": 405,
-     "sites": 45,
-     "share_of_country": 0.1232
-    },
-    "finance_crypto": {
-     "n": 269,
-     "sites": 79,
-     "share_of_country": 0.0818
-    },
-    "toys_hobbies_collectibles": {
-     "n": 122,
-     "sites": 17,
-     "share_of_country": 0.0371
-    },
-    "home_garden": {
-     "n": 101,
-     "sites": 8,
-     "share_of_country": 0.0307
-    },
-    "software_saas": {
-     "n": 73,
-     "sites": 13,
-     "share_of_country": 0.0222
-    },
-    "retail_marketplace": {
-     "n": 63,
-     "sites": 8,
-     "share_of_country": 0.0192
-    },
-    "other": {
-     "n": 56,
-     "sites": 24,
-     "share_of_country": 0.017
-    },
-    "marketing_agency": {
-     "n": 43,
-     "sites": 7,
-     "share_of_country": 0.0131
-    },
-    "education": {
-     "n": 39,
-     "sites": 5,
-     "share_of_country": 0.0119
-    },
-    "creator_influencer": {
-     "n": 37,
-     "sites": 27,
-     "share_of_country": 0.0113
-    }
-   },
    "australia": {
     "gaming_esports": {
      "n": 1035,
@@ -7164,6 +6841,123 @@
      "share_of_country": 0.0057
     }
    },
+   "united kingdom": {
+    "media_entertainment": {
+     "n": 6066,
+     "sites": 206,
+     "share_of_country": 0.4026
+    },
+    "gaming_esports": {
+     "n": 2395,
+     "sites": 478,
+     "share_of_country": 0.159
+    },
+    "finance_crypto": {
+     "n": 1090,
+     "sites": 193,
+     "share_of_country": 0.0723
+    },
+    "electronics_tech": {
+     "n": 747,
+     "sites": 149,
+     "share_of_country": 0.0496
+    },
+    "travel_events": {
+     "n": 665,
+     "sites": 54,
+     "share_of_country": 0.0441
+    },
+    "creator_influencer": {
+     "n": 513,
+     "sites": 106,
+     "share_of_country": 0.034
+    },
+    "toys_hobbies_collectibles": {
+     "n": 469,
+     "sites": 73,
+     "share_of_country": 0.0311
+    },
+    "food_drink": {
+     "n": 447,
+     "sites": 71,
+     "share_of_country": 0.0297
+    },
+    "baby_kids": {
+     "n": 436,
+     "sites": 12,
+     "share_of_country": 0.0289
+    },
+    "health_wellness_fitness": {
+     "n": 346,
+     "sites": 45,
+     "share_of_country": 0.023
+    },
+    "apparel_fashion": {
+     "n": 292,
+     "sites": 68,
+     "share_of_country": 0.0194
+    },
+    "sports_outdoors": {
+     "n": 263,
+     "sites": 56,
+     "share_of_country": 0.0175
+    },
+    "other": {
+     "n": 262,
+     "sites": 101,
+     "share_of_country": 0.0174
+    },
+    "home_garden": {
+     "n": 228,
+     "sites": 38,
+     "share_of_country": 0.0151
+    },
+    "retail_marketplace": {
+     "n": 221,
+     "sites": 34,
+     "share_of_country": 0.0147
+    },
+    "marketing_agency": {
+     "n": 97,
+     "sites": 14,
+     "share_of_country": 0.0064
+    },
+    "beauty_personal_care": {
+     "n": 97,
+     "sites": 37,
+     "share_of_country": 0.0064
+    },
+    "art_crafts": {
+     "n": 91,
+     "sites": 27,
+     "share_of_country": 0.006
+    },
+    "software_saas": {
+     "n": 78,
+     "sites": 45,
+     "share_of_country": 0.0052
+    },
+    "education": {
+     "n": 72,
+     "sites": 22,
+     "share_of_country": 0.0048
+    },
+    "pets": {
+     "n": 67,
+     "sites": 20,
+     "share_of_country": 0.0044
+    },
+    "jewelry_watches": {
+     "n": 62,
+     "sites": 12,
+     "share_of_country": 0.0041
+    },
+    "automotive": {
+     "n": 46,
+     "sites": 18,
+     "share_of_country": 0.0031
+    }
+   },
    "malaysia": {
     "finance_crypto": {
      "n": 1026,
@@ -7191,41 +6985,205 @@
      "share_of_country": 0.0346
     }
    },
-   "t\u00fcrkiye": {
+   "canada": {
+    "media_entertainment": {
+     "n": 1260,
+     "sites": 137,
+     "share_of_country": 0.1817
+    },
     "gaming_esports": {
-     "n": 584,
-     "sites": 111,
-     "share_of_country": 0.4168
+     "n": 1174,
+     "sites": 228,
+     "share_of_country": 0.1693
     },
-    "finance_crypto": {
-     "n": 430,
-     "sites": 157,
-     "share_of_country": 0.3069
+    "toys_hobbies_collectibles": {
+     "n": 658,
+     "sites": 46,
+     "share_of_country": 0.0949
     },
-    "creator_influencer": {
-     "n": 71,
-     "sites": 35,
-     "share_of_country": 0.0507
-    },
-    "other": {
-     "n": 69,
-     "sites": 32,
-     "share_of_country": 0.0493
+    "home_garden": {
+     "n": 502,
+     "sites": 47,
+     "share_of_country": 0.0724
     },
     "electronics_tech": {
-     "n": 54,
+     "n": 474,
+     "sites": 102,
+     "share_of_country": 0.0683
+    },
+    "retail_marketplace": {
+     "n": 422,
+     "sites": 17,
+     "share_of_country": 0.0609
+    },
+    "finance_crypto": {
+     "n": 412,
+     "sites": 90,
+     "share_of_country": 0.0594
+    },
+    "food_drink": {
+     "n": 368,
+     "sites": 69,
+     "share_of_country": 0.0531
+    },
+    "sports_outdoors": {
+     "n": 248,
+     "sites": 47,
+     "share_of_country": 0.0358
+    },
+    "health_wellness_fitness": {
+     "n": 196,
+     "sites": 29,
+     "share_of_country": 0.0283
+    },
+    "travel_events": {
+     "n": 194,
+     "sites": 49,
+     "share_of_country": 0.028
+    },
+    "pets": {
+     "n": 148,
+     "sites": 9,
+     "share_of_country": 0.0213
+    },
+    "creator_influencer": {
+     "n": 128,
+     "sites": 40,
+     "share_of_country": 0.0185
+    },
+    "art_crafts": {
+     "n": 102,
+     "sites": 20,
+     "share_of_country": 0.0147
+    },
+    "automotive": {
+     "n": 102,
      "sites": 25,
-     "share_of_country": 0.0385
+     "share_of_country": 0.0147
+    },
+    "other": {
+     "n": 95,
+     "sites": 60,
+     "share_of_country": 0.0137
+    },
+    "beauty_personal_care": {
+     "n": 89,
+     "sites": 15,
+     "share_of_country": 0.0128
+    },
+    "apparel_fashion": {
+     "n": 81,
+     "sites": 35,
+     "share_of_country": 0.0117
+    },
+    "software_saas": {
+     "n": 78,
+     "sites": 38,
+     "share_of_country": 0.0112
+    },
+    "baby_kids": {
+     "n": 56,
+     "sites": 9,
+     "share_of_country": 0.0081
+    },
+    "education": {
+     "n": 46,
+     "sites": 25,
+     "share_of_country": 0.0066
+    },
+    "nonprofit_community": {
+     "n": 32,
+     "sites": 12,
+     "share_of_country": 0.0046
+    }
+   },
+   "china": {
+    "finance_crypto": {
+     "n": 673,
+     "sites": 55,
+     "share_of_country": 0.4382
+    },
+    "electronics_tech": {
+     "n": 375,
+     "sites": 40,
+     "share_of_country": 0.2441
+    },
+    "home_garden": {
+     "n": 151,
+     "sites": 8,
+     "share_of_country": 0.0983
+    },
+    "other": {
+     "n": 96,
+     "sites": 8,
+     "share_of_country": 0.0625
+    },
+    "software_saas": {
+     "n": 49,
+     "sites": 6,
+     "share_of_country": 0.0319
+    },
+    "gaming_esports": {
+     "n": 36,
+     "sites": 8,
+     "share_of_country": 0.0234
+    }
+   },
+   "spain": {
+    "gaming_esports": {
+     "n": 698,
+     "sites": 175,
+     "share_of_country": 0.3729
+    },
+    "finance_crypto": {
+     "n": 231,
+     "sites": 88,
+     "share_of_country": 0.1234
     },
     "media_entertainment": {
-     "n": 49,
-     "sites": 30,
-     "share_of_country": 0.035
+     "n": 177,
+     "sites": 52,
+     "share_of_country": 0.0946
     },
-    "marketing_agency": {
-     "n": 38,
-     "sites": 5,
-     "share_of_country": 0.0271
+    "electronics_tech": {
+     "n": 152,
+     "sites": 45,
+     "share_of_country": 0.0812
+    },
+    "creator_influencer": {
+     "n": 103,
+     "sites": 60,
+     "share_of_country": 0.055
+    },
+    "toys_hobbies_collectibles": {
+     "n": 103,
+     "sites": 20,
+     "share_of_country": 0.055
+    },
+    "other": {
+     "n": 89,
+     "sites": 47,
+     "share_of_country": 0.0475
+    },
+    "education": {
+     "n": 68,
+     "sites": 14,
+     "share_of_country": 0.0363
+    },
+    "sports_outdoors": {
+     "n": 45,
+     "sites": 22,
+     "share_of_country": 0.024
+    },
+    "food_drink": {
+     "n": 34,
+     "sites": 13,
+     "share_of_country": 0.0182
+    },
+    "retail_marketplace": {
+     "n": 33,
+     "sites": 12,
+     "share_of_country": 0.0176
     }
    },
    "philippines": {
@@ -7274,126 +7232,138 @@
      "sites": 5,
      "share_of_country": 0.0244
     },
-    "health_wellness_fitness": {
-     "n": 36,
-     "sites": 13,
-     "share_of_country": 0.0176
-    },
     "local_services": {
      "n": 36,
      "sites": 5,
      "share_of_country": 0.0176
+    },
+    "health_wellness_fitness": {
+     "n": 36,
+     "sites": 13,
+     "share_of_country": 0.0176
     }
    },
-   "china": {
+   "poland": {
+    "gaming_esports": {
+     "n": 1292,
+     "sites": 74,
+     "share_of_country": 0.6023
+    },
     "finance_crypto": {
-     "n": 673,
-     "sites": 55,
-     "share_of_country": 0.4382
+     "n": 222,
+     "sites": 43,
+     "share_of_country": 0.1035
     },
     "electronics_tech": {
-     "n": 375,
-     "sites": 40,
-     "share_of_country": 0.2441
-    },
-    "home_garden": {
-     "n": 151,
-     "sites": 8,
-     "share_of_country": 0.0983
-    },
-    "other": {
-     "n": 96,
-     "sites": 8,
-     "share_of_country": 0.0625
-    },
-    "software_saas": {
-     "n": 49,
-     "sites": 6,
-     "share_of_country": 0.0319
-    },
-    "gaming_esports": {
-     "n": 36,
-     "sites": 8,
-     "share_of_country": 0.0234
+     "n": 197,
+     "sites": 15,
+     "share_of_country": 0.0918
     }
    },
-   "japan": {
-    "finance_crypto": {
-     "n": 3763,
-     "sites": 116,
-     "share_of_country": 0.7851
-    },
+   "brazil": {
     "gaming_esports": {
-     "n": 337,
-     "sites": 50,
-     "share_of_country": 0.0703
+     "n": 1611,
+     "sites": 217,
+     "share_of_country": 0.3067
+    },
+    "electronics_tech": {
+     "n": 1048,
+     "sites": 56,
+     "share_of_country": 0.1995
+    },
+    "creator_influencer": {
+     "n": 896,
+     "sites": 72,
+     "share_of_country": 0.1706
+    },
+    "finance_crypto": {
+     "n": 411,
+     "sites": 104,
+     "share_of_country": 0.0783
+    },
+    "other": {
+     "n": 392,
+     "sites": 63,
+     "share_of_country": 0.0746
     },
     "media_entertainment": {
-     "n": 305,
-     "sites": 16,
-     "share_of_country": 0.0636
+     "n": 325,
+     "sites": 47,
+     "share_of_country": 0.0619
     },
     "retail_marketplace": {
-     "n": 70,
-     "sites": 8,
-     "share_of_country": 0.0146
-    },
-    "electronics_tech": {
-     "n": 65,
+     "n": 188,
      "sites": 13,
-     "share_of_country": 0.0136
+     "share_of_country": 0.0358
     },
-    "other": {
-     "n": 61,
-     "sites": 17,
-     "share_of_country": 0.0127
-    },
-    "jewelry_watches": {
-     "n": 44,
-     "sites": 5,
-     "share_of_country": 0.0092
-    },
-    "toys_hobbies_collectibles": {
-     "n": 42,
-     "sites": 11,
-     "share_of_country": 0.0088
-    }
-   },
-   "hong kong": {
-    "finance_crypto": {
-     "n": 1032,
-     "sites": 217,
-     "share_of_country": 0.5271
-    },
-    "electronics_tech": {
-     "n": 384,
-     "sites": 78,
-     "share_of_country": 0.1961
-    },
-    "gaming_esports": {
-     "n": 168,
-     "sites": 37,
-     "share_of_country": 0.0858
-    },
-    "other": {
-     "n": 129,
-     "sites": 36,
-     "share_of_country": 0.0659
-    },
-    "home_garden": {
-     "n": 55,
-     "sites": 12,
-     "share_of_country": 0.0281
-    },
-    "media_entertainment": {
-     "n": 43,
-     "sites": 6,
-     "share_of_country": 0.022
+    "food_drink": {
+     "n": 60,
+     "sites": 18,
+     "share_of_country": 0.0114
     },
     "software_saas": {
+     "n": 51,
+     "sites": 12,
+     "share_of_country": 0.0097
+    }
+   },
+   "t\u00fcrkiye": {
+    "gaming_esports": {
+     "n": 584,
+     "sites": 111,
+     "share_of_country": 0.4168
+    },
+    "finance_crypto": {
+     "n": 430,
+     "sites": 157,
+     "share_of_country": 0.3069
+    },
+    "creator_influencer": {
+     "n": 71,
+     "sites": 35,
+     "share_of_country": 0.0507
+    },
+    "other": {
+     "n": 69,
+     "sites": 32,
+     "share_of_country": 0.0493
+    },
+    "electronics_tech": {
+     "n": 54,
+     "sites": 25,
+     "share_of_country": 0.0385
+    },
+    "media_entertainment": {
+     "n": 49,
+     "sites": 30,
+     "share_of_country": 0.035
+    },
+    "marketing_agency": {
+     "n": 38,
+     "sites": 5,
+     "share_of_country": 0.0271
+    }
+   },
+   "vietnam": {
+    "finance_crypto": {
+     "n": 1791,
+     "sites": 350,
+     "share_of_country": 0.7178
+    },
+    "gaming_esports": {
+     "n": 260,
+     "sites": 53,
+     "share_of_country": 0.1042
+    },
+    "other": {
+     "n": 248,
+     "sites": 79,
+     "share_of_country": 0.0994
+    },
+    "media_entertainment": {
      "n": 35,
-     "sites": 15,
-     "share_of_country": 0.0179
+     "sites": 22,
+     "share_of_country": 0.014
     }
    },
    "india": {
@@ -7448,98 +7418,177 @@
      "share_of_country": 0.0087
     }
    },
-   "spain": {
-    "gaming_esports": {
-     "n": 698,
-     "sites": 175,
-     "share_of_country": 0.3729
-    },
+   "hong kong": {
     "finance_crypto": {
-     "n": 231,
-     "sites": 88,
-     "share_of_country": 0.1234
-    },
-    "media_entertainment": {
-     "n": 177,
-     "sites": 52,
-     "share_of_country": 0.0946
+     "n": 1032,
+     "sites": 217,
+     "share_of_country": 0.5271
     },
     "electronics_tech": {
-     "n": 152,
-     "sites": 45,
-     "share_of_country": 0.0812
+     "n": 384,
+     "sites": 78,
+     "share_of_country": 0.1961
     },
-    "toys_hobbies_collectibles": {
-     "n": 103,
-     "sites": 20,
-     "share_of_country": 0.055
-    },
-    "creator_influencer": {
-     "n": 103,
-     "sites": 60,
-     "share_of_country": 0.055
+    "gaming_esports": {
+     "n": 168,
+     "sites": 37,
+     "share_of_country": 0.0858
     },
     "other": {
-     "n": 89,
-     "sites": 47,
-     "share_of_country": 0.0475
+     "n": 129,
+     "sites": 36,
+     "share_of_country": 0.0659
     },
-    "education": {
-     "n": 68,
-     "sites": 14,
-     "share_of_country": 0.0363
-    },
-    "sports_outdoors": {
-     "n": 45,
-     "sites": 22,
-     "share_of_country": 0.024
-    },
-    "food_drink": {
-     "n": 34,
-     "sites": 13,
-     "share_of_country": 0.0182
-    },
-    "retail_marketplace": {
-     "n": 33,
+    "home_garden": {
+     "n": 55,
      "sites": 12,
-     "share_of_country": 0.0176
+     "share_of_country": 0.0281
+    },
+    "media_entertainment": {
+     "n": 43,
+     "sites": 6,
+     "share_of_country": 0.022
+    },
+    "software_saas": {
+     "n": 35,
+     "sites": 15,
+     "share_of_country": 0.0179
     }
    },
-   "france": {
+   "japan": {
+    "finance_crypto": {
+     "n": 3763,
+     "sites": 116,
+     "share_of_country": 0.7851
+    },
     "gaming_esports": {
-     "n": 770,
-     "sites": 123,
-     "share_of_country": 0.3558
+     "n": 337,
+     "sites": 50,
+     "share_of_country": 0.0703
     },
     "media_entertainment": {
-     "n": 315,
-     "sites": 43,
-     "share_of_country": 0.1456
+     "n": 305,
+     "sites": 16,
+     "share_of_country": 0.0636
+    },
+    "retail_marketplace": {
+     "n": 70,
+     "sites": 8,
+     "share_of_country": 0.0146
     },
     "electronics_tech": {
-     "n": 222,
-     "sites": 52,
-     "share_of_country": 0.1026
-    },
-    "finance_crypto": {
-     "n": 217,
-     "sites": 82,
-     "share_of_country": 0.1003
-    },
-    "toys_hobbies_collectibles": {
-     "n": 162,
-     "sites": 8,
-     "share_of_country": 0.0749
-    },
-    "creator_influencer": {
-     "n": 115,
-     "sites": 32,
-     "share_of_country": 0.0531
+     "n": 65,
+     "sites": 13,
+     "share_of_country": 0.0136
     },
     "other": {
-     "n": 68,
-     "sites": 22,
-     "share_of_country": 0.0314
+     "n": 61,
+     "sites": 17,
+     "share_of_country": 0.0127
+    },
+    "jewelry_watches": {
+     "n": 44,
+     "sites": 5,
+     "share_of_country": 0.0092
+    },
+    "toys_hobbies_collectibles": {
+     "n": 42,
+     "sites": 11,
+     "share_of_country": 0.0088
+    }
+   },
+   "germany": {
+    "gaming_esports": {
+     "n": 1529,
+     "sites": 140,
+     "share_of_country": 0.4652
+    },
+    "media_entertainment": {
+     "n": 464,
+     "sites": 39,
+     "share_of_country": 0.1412
+    },
+    "electronics_tech": {
+     "n": 405,
+     "sites": 45,
+     "share_of_country": 0.1232
+    },
+    "finance_crypto": {
+     "n": 269,
+     "sites": 79,
+     "share_of_country": 0.0818
+    },
+    "toys_hobbies_collectibles": {
+     "n": 122,
+     "sites": 17,
+     "share_of_country": 0.0371
+    },
+    "home_garden": {
+     "n": 101,
+     "sites": 8,
+     "share_of_country": 0.0307
+    },
+    "software_saas": {
+     "n": 73,
+     "sites": 13,
+     "share_of_country": 0.0222
+    },
+    "retail_marketplace": {
+     "n": 63,
+     "sites": 8,
+     "share_of_country": 0.0192
+    },
+    "other": {
+     "n": 56,
+     "sites": 24,
+     "share_of_country": 0.017
+    },
+    "marketing_agency": {
+     "n": 43,
+     "sites": 7,
+     "share_of_country": 0.0131
+    },
+    "education": {
+     "n": 39,
+     "sites": 5,
+     "share_of_country": 0.0119
+    },
+    "creator_influencer": {
+     "n": 37,
+     "sites": 27,
+     "share_of_country": 0.0113
+    }
+   },
+   "south korea": {
+    "finance_crypto": {
+     "n": 1855,
+     "sites": 263,
+     "share_of_country": 0.6982
+    },
+    "gaming_esports": {
+     "n": 278,
+     "sites": 68,
+     "share_of_country": 0.1046
+    },
+    "media_entertainment": {
+     "n": 195,
+     "sites": 14,
+     "share_of_country": 0.0734
+    },
+    "other": {
+     "n": 113,
+     "sites": 24,
+     "share_of_country": 0.0425
+    },
+    "nonprofit_community": {
+     "n": 42,
+     "sites": 6,
+     "share_of_country": 0.0158
+    },
+    "travel_events": {
+     "n": 35,
+     "sites": 14,
+     "share_of_country": 0.0132
     }
    },
    "singapore": {
@@ -7584,68 +7633,41 @@
      "share_of_country": 0.0089
     }
    },
-   "brazil": {
+   "france": {
     "gaming_esports": {
-     "n": 1611,
-     "sites": 217,
-     "share_of_country": 0.3067
-    },
-    "electronics_tech": {
-     "n": 1048,
-     "sites": 56,
-     "share_of_country": 0.1995
-    },
-    "creator_influencer": {
-     "n": 896,
-     "sites": 72,
-     "share_of_country": 0.1706
-    },
-    "finance_crypto": {
-     "n": 411,
-     "sites": 104,
-     "share_of_country": 0.0783
-    },
-    "other": {
-     "n": 392,
-     "sites": 63,
-     "share_of_country": 0.0746
+     "n": 770,
+     "sites": 123,
+     "share_of_country": 0.3558
     },
     "media_entertainment": {
-     "n": 325,
-     "sites": 47,
-     "share_of_country": 0.0619
-    },
-    "retail_marketplace": {
-     "n": 188,
-     "sites": 13,
-     "share_of_country": 0.0358
-    },
-    "food_drink": {
-     "n": 60,
-     "sites": 18,
-     "share_of_country": 0.0114
-    },
-    "software_saas": {
-     "n": 51,
-     "sites": 12,
-     "share_of_country": 0.0097
-    }
-   },
-   "poland": {
-    "gaming_esports": {
-     "n": 1292,
-     "sites": 74,
-     "share_of_country": 0.6023
-    },
-    "finance_crypto": {
-     "n": 222,
+     "n": 315,
      "sites": 43,
-     "share_of_country": 0.1035
+     "share_of_country": 0.1456
     },
     "electronics_tech": {
-     "n": 197,
-     "sites": 15,
-     "share_of_country": 0.0918
+     "n": 222,
+     "sites": 52,
+     "share_of_country": 0.1026
+    },
+    "finance_crypto": {
+     "n": 217,
+     "sites": 82,
+     "share_of_country": 0.1003
+    },
+    "toys_hobbies_collectibles": {
+     "n": 162,
+     "sites": 8,
+     "share_of_country": 0.0749
+    },
+    "creator_influencer": {
+     "n": 115,
+     "sites": 32,
+     "share_of_country": 0.0531
+    },
+    "other": {
+     "n": 68,
+     "sites": 22,
+     "share_of_country": 0.0314
     }
    },
    "taiwan": {
@@ -7663,28 +7685,6 @@
      "n": 181,
      "sites": 29,
      "share_of_country": 0.0946
-    }
-   },
-   "vietnam": {
-    "finance_crypto": {
-     "n": 1791,
-     "sites": 350,
-     "share_of_country": 0.7178
-    },
-    "gaming_esports": {
-     "n": 260,
-     "sites": 53,
-     "share_of_country": 0.1042
-    },
-    "other": {
-     "n": 248,
-     "sites": 79,
-     "share_of_country": 0.0994
-    },
-    "media_entertainment": {
-     "n": 35,
-     "sites": 22,
-     "share_of_country": 0.014
     }
    }
   }

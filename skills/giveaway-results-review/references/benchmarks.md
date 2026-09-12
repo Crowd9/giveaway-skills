@@ -307,16 +307,16 @@ Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s
 | Sequence | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
 | 11th plus | 78,922 | 2,239 | 521 | 29% | 10 |
-| 4th to 10th | 25,742 | 5,647 | 541 | 28% | 13 |
-| 1st campaign | 22,273 | 22,273 | 411 | 26% | 15 |
+| 4th to 10th | 25,742 | 5,647 | 542 | 28% | 13 |
+| 1st campaign | 22,273 | 22,273 | 412 | 26% | 15 |
 | 2nd to 3rd | 17,941 | 10,667 | 470 | 27% | 14 |
 <!-- /generated -->
 
 <!-- generated:bm_activity -->
 | Activity | Campaigns | Businesses | Entrants | Conversion Rate | Days |
 |---|---|---|---|---|---|
-| Has not | 75,913 | 18,401 | 474 | 28% | 11 |
-| Ran another campaign in the last 12 months | 68,965 | 3,872 | 537 | 28% | 14 |
+| Has not | 75,921 | 18,404 | 474 | 28% | 11 |
+| Ran another campaign in the last 12 months | 68,957 | 3,869 | 537 | 28% | 14 |
 <!-- /generated -->
 
 Later campaigns see a higher Conversion Rate over a shorter run than a 1st campaign. Read this as which organizers kept going before reading it as improvement: an organizer whose first campaign did poorly is less likely to be in the file with a 2nd, so the 11th-plus row describes organizers who kept going, not the same organizer's own campaign 1 through campaign 11.
@@ -339,11 +339,11 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 <!-- generated:bm_seq_band -->
 | Position in sequence (1,000 to 2,499 Entrants) | Entrants | Entries per Entrant | Organizers |
 |---|---|---|---|
-| 1st | 1,480 | 3.94 | 2,683 |
-| 2nd | 1,008 | 3.92 | 1,530 |
-| 3rd-5th | 930 | 4.10 | 1,111 |
-| 6th-10th | 896 | 4.28 | 647 |
-| 11th+ | 695 | 5.94 | 374 |
+| 1st | 1,483 | 3.94 | 2,689 |
+| 2nd | 986 | 3.90 | 1,535 |
+| 3rd-5th | 923 | 4.10 | 1,117 |
+| 6th-10th | 896 | 4.29 | 652 |
+| 11th+ | 678 | 6.18 | 373 |
 <!-- /generated -->
 
 | Transition | Typical change in Entrants |
@@ -474,25 +474,18 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 
 - After a campaign of 5,000 or more Entrants, the next one reached 5,000 again 61% of the time, against 12% after a smaller one.
 
-- Two more comparisons among the campaigns we can compare fairly: a campaign launched within 30 days of the organizer's previous one converts noticeably better than a first campaign and draws 41% more Entrants, and a campaign without a share action converts better than one with while drawing about a quarter fewer Entrants (table below).
+- Two more comparisons among the campaigns we can compare fairly: a campaign launched within 30 days of the organizer's previous one converts noticeably better than a first campaign and draws 42% more Entrants, and a campaign without a share action converts better than one with while drawing about a quarter fewer Entrants (table below).
 
+<!-- generated:bm_quintile -->
 | Top fifth vs bottom fifth (by Entrants) | Top fifth | Bottom fifth |
 |---|---|---|
-| Entrants | 3,349 | 140 |
-| Impressions | 14,063 | 550 |
-| Conversion Rate | 27.7% | 25.5% |
+| Entrants | 3,338 | 140 |
+| Impressions | 14,070 | 552 |
+| Conversion Rate | 27.6% | 25.4% |
 | Stated Prize pool (USD) | 1,200 | 120 |
 | Previous campaigns from the business | 12 | 7 |
 
-Reach is what separates the two, 25 times the Impressions for a Conversion Rate two points apart. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,425 campaigns each side.]
-
-<!-- generated:bm_splits -->
-| Split (campaigns we can compare fairly) | Entrants | Conversion Rate |
-|---|---|---|
-| Within 30 days of previous campaign | 470 | 38% |
-| First campaign | 333 | 31% |
-| Share action offered | 544 | 29% |
-| No share action | 406 | 37% |
+Reach is what separates the two, 25 times the Impressions for a Conversion Rate two points apart. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,256 campaigns each side.]
 <!-- /generated -->
 
 The share-action line and the top-fifth line answer different questions and cannot be read as one finding. The share-action line splits campaigns by a setting the organizer chose before launch. The top-fifth line splits the same campaigns by the result they got afterwards. Neither says that adding or removing a share action moves a campaign between the fifths.
@@ -510,15 +503,15 @@ The first row below is one campaign per business, which is the business-weighted
 <!-- generated:bm_seqcurve -->
 | The campaign is the business's | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant |
 |---|---|---|---|---|---|
-| 1st | 17,245 | 17,245 | 381 | 25.6% | 3.67 |
-| 2nd | 8,448 | 8,448 | 437 | 26.4% | 3.85 |
-| 3rd to 5th | 14,225 | 5,978 | 500 | 26.8% | 4.04 |
-| 6th to 10th | 12,804 | 3,299 | 548 | 27.0% | 4.18 |
-| 11th or later | 63,777 | 1,966 | 515 | 27.5% | 4.91 |
+| 1st | 17,247 | 17,247 | 382 | 25.5% | 3.67 |
+| 2nd | 8,445 | 8,445 | 434 | 26.4% | 3.85 |
+| 3rd to 5th | 14,228 | 5,979 | 504 | 26.8% | 4.04 |
+| 6th to 10th | 12,804 | 3,300 | 545 | 26.9% | 4.18 |
+| 11th or later | 63,775 | 1,965 | 515 | 27.5% | 4.90 |
 | All campaigns | 116,499 | 17,633 | 492 | 26.9% | 4.38 |
 <!-- /generated -->
 
-A first campaign drew 381 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 381 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.67 against 4.38, because a business on its eleventh campaign runs more actions.
+A first campaign drew 382 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 382 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.67 against 4.38, because a business on its eleventh campaign runs more actions.
 
 None of this says that running more campaigns produces bigger ones. The businesses still running an eleventh campaign are the ones whose earlier campaigns went well enough to justify another, which is survivorship, never a result.
 

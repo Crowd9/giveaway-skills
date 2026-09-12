@@ -311,10 +311,10 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 <!-- generated:cmp_methods -->
 | Entry methods, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| 1 to 3 | 10,841 | 443 | 1.29 | 44% | 2.3 | 2 |
-| 4 to 6 | 12,430 | 401 (-9%) | 3.43 (+166%) | 35% (-21%) | 2.9 | 5 |
-| 7 to 10 | 9,744 | 463 (+5%) | 5.26 (+307%) | 29% (-35%) | 3.5 | 8 |
-| 11 or more | 6,795 | 519 (+17%) | 9.26 (+617%) | 31% (-29%) | 3.2 | 14 |
+| 1 to 3 | 10,802 | 443 | 1.27 | 44% | 2.3 | 2 |
+| 4 to 6 | 12,295 | 403 (-9%) | 3.42 (+169%) | 35% (-21%) | 2.9 | 5 |
+| 7 to 10 | 9,603 | 460 (+4%) | 5.25 (+312%) | 29% (-35%) | 3.5 | 8 |
+| 11 or more | 6,762 | 518 (+17%) | 9.27 (+628%) | 31% (-29%) | 3.2 | 14 |
 <!-- /generated -->
 
 Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seven to ten, then holds at 31 for the longest lists. Entrant counts do not follow it down, and they do not rise in a line either. The count dips before it climbs: 443 at one to three methods, 401 at four to six, 463 at seven to ten, 519 at eleven or more. Only the longest lists beat the shortest, by 17%, and a campaign moving from three methods to five sat 9% below where it started. Quote the row the reader is actually in. Actions per Entrant rise with the list, because there are more things to do. So the longest lists in this data converted a smaller share of the Impressions they drew, and still recorded more Entrants and far more Actions. That describes the campaigns businesses chose to run, and says nothing about what adding a method to this campaign would do.
@@ -322,15 +322,15 @@ Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seve
 <!-- generated:cmp_share -->
 | Share action, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no share action | 28,415 | 406 | 3.36 | 37% | 2.7 | 5 |
-| offers a share action | 11,395 | 544 (+34%) | 4.90 (+46%) | 29% (-23%) | 3.5 | 8 |
+| no share action | 28,200 | 408 | 3.35 | 37% | 2.7 | 5 |
+| offers a share action | 11,262 | 543 (+33%) | 4.89 (+46%) | 29% (-23%) | 3.5 | 8 |
 <!-- /generated -->
 
 <!-- generated:cmp_email -->
 | Email signup, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no email signup | 28,961 | 423 | 3.71 | 37% | 2.7 | 5 |
-| offers email signup | 10,849 | 546 (+29%) | 3.65 (-2%) | 30% (-17%) | 3.3 | 6 |
+| no email signup | 28,621 | 423 | 3.68 | 37% | 2.7 | 5 |
+| offers email signup | 10,841 | 546 (+29%) | 3.65 (-1%) | 30% (-17%) | 3.3 | 6 |
 <!-- /generated -->
 
 Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion therefore measures referred Entrants times the entry worth the business set, and the entry worth is unknown in the dataset. Campaigns offering a share action had 34% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.

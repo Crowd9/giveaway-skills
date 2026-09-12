@@ -91,7 +91,7 @@ Two shorthands run through the tables below. The middle half is the middle half 
 | Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use. Max 60,000 |
 | Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 42,892 campaigns. Max 10,000,000 |
 | Repeat organizers | 3,795 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
-| Plan tier | Business 29,645, Hobby 10,802, Free 11,993, Pro 62,061, Premium 1,993, Not Available 5 | tier at export time |
+| Plan tier | Business 29,645, Pro 62,061, Not Available 5, Premium 1,993, Hobby 10,802, Free 11,993 | tier at export time |
 <!-- /generated -->
 
 ## By campaign size
@@ -112,17 +112,17 @@ Primary prize category (first prize record) by band, share of campaigns:
 
 | Category | 100-250 | 250-500 | 500-1k | 1k-2.5k | 2.5k-10k | 10k+ |
 |---|---|---|---|---|---|---|
-| Tech hardware | 10.9% | 12.6% | 16.9% | 23.6% | 29.9% | 36.9% |
-| Gift card or cash | 13.0% | 18.5% | 13.7% | 11.0% | 9.8% | 8.2% |
-| Bundle or box | 9.8% | 11.0% | 11.1% | 9.9% | 8.7% | 5.0% |
-| Experience, travel, tickets | 6.4% | 4.6% | 4.0% | 4.4% | 5.5% | 5.4% |
-| Game items or skins | 12.0% | 9.0% | 8.0% | 6.5% | 5.4% | 5.0% |
-| Merch, apparel, collectibles | 3.9% | 3.6% | 3.8% | 3.1% | 3.8% | 4.7% |
-| Home, garden, appliance | 1.1% | 1.3% | 1.7% | 2.7% | 3.0% | 1.4% |
-| Regulated goods (firearms) | 0.3% | 0.5% | 0.8% | 2.0% | 2.9% | 9.2% |
-| Sports and outdoor gear | 0.6% | 0.8% | 1.0% | 1.3% | 1.3% | 0.6% |
-| Food, drink, consumables | 0.8% | 1.0% | 1.2% | 1.5% | 1.1% | 0.4% |
-| Subscription or membership | 1.3% | 1.0% | 1.0% | 0.9% | 0.6% | 0.3% |
+| Tech hardware | 10.9% | 12.6% | 16.9% | 23.6% | 29.9% | 36.8% |
+| Gift card or cash | 16.5% | 22.4% | 18.1% | 14.6% | 13.1% | 11.3% |
+| Bundle or box | 9.4% | 10.5% | 10.7% | 9.4% | 8.1% | 4.6% |
+| Experience, travel, tickets | 6.3% | 4.5% | 3.8% | 4.1% | 5.1% | 5.0% |
+| Game items or skins | 12.1% | 8.8% | 8.2% | 6.5% | 5.3% | 5.0% |
+| Merch, apparel, collectibles | 3.7% | 3.5% | 3.3% | 2.8% | 3.6% | 4.4% |
+| Home, garden, appliance | 1.1% | 1.4% | 2.0% | 2.6% | 2.9% | 1.3% |
+| Regulated goods (firearms) | 0.3% | 0.5% | 0.8% | 1.7% | 2.8% | 9.1% |
+| Sports and outdoor gear | 0.6% | 0.7% | 0.9% | 1.3% | 1.3% | 0.6% |
+| Food, drink, consumables | 0.8% | 1.0% | 1.1% | 1.4% | 1.0% | 0.3% |
+| Subscription or membership | 1.2% | 1.0% | 1.0% | 0.9% | 0.6% | 0.3% |
 | Discount or coupon | 0.6% | 0.3% | 0.4% | 0.6% | 0.3% | 0.1% |
 <!-- /generated -->
 
@@ -181,10 +181,10 @@ Category typical figures for stated values are given in the taxonomy as referenc
 
 A  field cut confirms the coverage gap holds at scale: 38.8% of Prize listings carry a stated value, and 99.9% of those are USD. Every typical figure below rests on that self-selected minority.
 
-Campaigns whose every Prize carried a stated USD value: 43,173, from 9,180 businesses. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
+Campaigns whose every Prize carried a stated USD value: 42,953, from 9,089 businesses. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
 
 <!-- generated:ev_value_bands -->
-| Stated pool, USD | Campaigns | Entrants | Actions per Entrant | Stated USD per Entrant |
+| Stated pool, USD | Campaigns | Entrants | Entries per Entrant | Stated USD per Entrant |
 |---|---|---|---|---|
 | under 50 | 6,063 | 266 | 6.05 | 0.07 |
 | 50-99 | 5,213 | 320 | 5.89 | 0.19 |
@@ -199,7 +199,7 @@ Campaigns whose every Prize carried a stated USD value: 43,173, from 9,180 busin
 | 50000+ | 146 | 1,128 | 4.27 | 114.55 |
 <!-- /generated -->
 
-Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 2.2 times the Entrants, and value accounts for about 23% of the variation in Entrant counts [the `value_regression` cut in `context_checks.json`, 43,173 campaigns from 9,180 businesses]. The table above rises through the middle bands and falls back at the largest pools.
+Prize value and Entrant count move together only loosely: ten times the Prize value comes with about 2.2 times the Entrants, and value accounts for about 23% of the variation in Entrant counts [the `value_regression` cut in `context_checks.json`, 42,953 campaigns from 9,089 businesses]. The table above rises through the middle bands and falls back at the largest pools.
 
 Most campaigns spend little: 74% of these campaigns used a pool of 1,000 USD or less, and 46% under 250 USD.
 
@@ -285,27 +285,27 @@ Each campaign's Entrants divided by the typical Entrants for other campaigns at 
 <!-- generated:ev_crowd_category -->
 | Category | Campaigns | Entrants | Crowd per Prize dollar | For the money |
 |---|---|---|---|---|
-| Regulated goods (firearms) | 1,577 | 2,107 | 2.04 | 104% above typical |
-| Music gear | 452 | 1,306 | 1.91 | 91% above typical |
+| Regulated goods (firearms) | 1,510 | 2,133 | 2.07 | 107% above typical |
+| Music gear | 447 | 1,290 | 1.93 | 93% above typical |
 | Tech hardware | 22,019 | 898 | 1.42 | 42% above typical |
-| Home, garden, appliance | 2,452 | 913 | 1.35 | 35% above typical |
-| Tools, craft, DIY | 581 | 941 | 1.16 | 16% above typical |
-| Food, drink, consumables | 1,467 | 694 | 1.14 | 14% above typical |
-| Beauty and wellness | 815 | 472 | 1.11 | 11% above typical |
-| Gift card or cash | 17,799 | 436 | 1.10 | 10% above typical |
-| Sports and outdoor gear | 1,363 | 777 | 1.04 | 4% above typical |
-| Vehicle | 728 | 802 | 1.04 | 4% above typical |
-| Art and custom | 184 | 399 | 1.02 | typical |
-| Placeholder name | 5,557 | 548 | 0.95 | 5% below typical |
-| Bundle or box | 13,369 | 499 | 0.89 | 11% below typical |
-| Toys and collectibles | 2,296 | 420 | 0.86 | 14% below typical |
-| Unclassified | 34,246 | 424 | 0.82 | 18% below typical |
-| Merch, apparel, collectibles | 5,538 | 497 | 0.79 | 21% below typical |
-| Game items or skins | 11,195 | 362 | 0.75 | 25% below typical |
+| Home, garden, appliance | 2,534 | 828 | 1.34 | 34% above typical |
+| Tools, craft, DIY | 613 | 910 | 1.15 | 15% above typical |
+| Beauty and wellness | 727 | 483 | 1.14 | 14% above typical |
+| Food, drink, consumables | 1,358 | 657 | 1.10 | 10% above typical |
+| Gift card or cash | 22,598 | 450 | 1.07 | 7% above typical |
+| Sports and outdoor gear | 1,303 | 784 | 1.05 | 5% above typical |
+| Placeholder name | 5,021 | 484 | 0.98 | typical |
+| Vehicle | 662 | 798 | 0.98 | typical |
+| Art and custom | 178 | 404 | 0.95 | 5% below typical |
+| Bundle or box | 12,782 | 496 | 0.89 | 11% below typical |
+| Toys and collectibles | 2,267 | 420 | 0.86 | 14% below typical |
+| Unclassified | 31,353 | 434 | 0.83 | 17% below typical |
+| Merch, apparel, collectibles | 5,257 | 479 | 0.78 | 22% below typical |
+| Game items or skins | 11,218 | 365 | 0.73 | 27% below typical |
 | Discount or coupon | 1,046 | 732 | 0.73 | 27% below typical |
-| Exclusive access | 524 | 378 | 0.61 | 39% below typical |
-| Experience, travel, tickets | 6,308 | 404 | 0.60 | 40% below typical |
-| Subscription or membership | 1,630 | 422 | 0.53 | 47% below typical |
+| Exclusive access | 520 | 376 | 0.61 | 39% below typical |
+| Experience, travel, tickets | 6,049 | 390 | 0.60 | 40% below typical |
+| Subscription or membership | 1,559 | 423 | 0.51 | 49% below typical |
 <!-- /generated -->
 
 Gaming PCs and GPUs draw far more crowd than their price tag suggests, consoles draw more too, phones and peripherals draw about what their price tag suggests. Cash and gift cards draw a little more than their price tag suggests at 1.10, broadly wanted and close to what the money buys. This agrees with Gleam's internal analysis of the same export, which found the same ordering with a wider spread.
@@ -327,48 +327,26 @@ The raw Entrants column runs the other way, and the difference matters. Raw crow
 
 Campaigns behind these numbers split into fifths by Entrant count. Typical figures for the top and bottom fifth:
 
-| | Top fifth | Bottom fifth |
+<!-- generated:ev_quintile -->
+|  | Top fifth | Bottom fifth |
 |---|---|---|
-| Entrants | 3,349 | 140 |
-| Impressions | 14,063 | 550 |
-| Conversion Rate | 27.7% | 25.5% |
+| Entrants | 3,338 | 140 |
+| Impressions | 14,070 | 552 |
+| Conversion Rate | 27.6% | 25.4% |
 | Stated Prize pool, USD | 1,200 | 120 |
 | Winners | 1 | 1 |
 | Entry Methods | 7 | 6 |
 | Business's previous campaigns | 12 | 7 |
-| Campaigns | 23,425 | 23,425 |
-| Businesses | 4,602 | 7,829 |
+| Campaigns | 23,256 | 23,256 |
+| Businesses | 4,543 | 7,763 |
 
-Twenty five times the Impressions at a Conversion Rate two points apart. Reach separates the top from the bottom far more than anything else in the table. Two things that used to read as level no longer do: the top fifth's businesses have run 12 previous campaigns against 7, and its stated Prize pool is ten times the bottom's at 1,200 USD against 120. The bottom fifth is also spread across more businesses, 7,829 against 4,602, which is the concentration effect showing up again: the top is fewer accounts running more campaigns. None of this says a bigger Prize or more experience produced the Entrants. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,425 campaigns each side.]
-
-## Region and language
-
-Region is the top-level domain of the business's site, so a .com business in Manchester reads as global. Language is a word-pattern count on the description and title. Figures are typical values on the campaigns we can compare fairly, the 10,719 campaigns with no repeatable action and a run of 14 days or less, which is the cut that makes Impressions comparable between campaigns. A row below the five-business floor goes unpublished, which is why the Nordic advent-calendar rows seen in earlier cuts of this export no longer appear here.
-
-<!-- generated:ev_region -->
-| Business domain | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
-|---|---|---|---|---|
-| global domain (.com, .io, .net and so on) | 99,225 | 488 | 26% | 4.44 |
-| United Kingdom | 4,570 | 469 | 36% | 3.82 |
-| other or none | 4,099 | 411 | 26% | 4.70 |
-| Australia | 3,028 | 566 | 32% | 3.24 |
-| Brazil | 1,227 | 1,077 | 54% | 4.69 |
-| Germany | 789 | 773 | 31% | 4.86 |
-| Sweden | 677 | 663 | 75% | 3.87 |
-| Canada | 612 | 612 | 23% | 3.26 |
-| South Africa | 301 | 432 | 22% | 4.47 |
-| Finland | 232 | 9,018 | 77% | 1.00 |
-| Belgium | 222 | 296 | 35% | 5.65 |
-| France | 207 | 224 | 20% | 3.98 |
-| Netherlands | 195 | 372 | 31% | 4.05 |
-| Spain | 165 | 381 | 24% | 5.02 |
-| Japan | 140 | 273 | 29% | 3.77 |
+Twenty five times the Impressions at a Conversion Rate two points apart. Reach separates the top from the bottom far more than anything else in the table. Two things that used to read as level no longer do: the top fifth's businesses have run 12 previous campaigns against 7, and its stated Prize pool is ten times the bottom's at 1,200 USD against 120. The bottom fifth is also spread across more businesses, 7,763 against 4,543, which is the concentration effect showing up again: the top is fewer accounts running more campaigns. None of this says a bigger Prize or more experience produced the Entrants. [Extracted from `analysis/output/context_checks.json`, `top_vs_bottom_quintile`, 23,256 campaigns each side.]
 <!-- /generated -->
 
 Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
 
 <!-- generated:ev_language -->
-| Language guess | Campaigns | Entrants | Conversion Rate | Actions per Entrant |
+| Language guess | Campaigns | Entrants | Conversion Rate | Entries per Entrant |
 |---|---|---|---|---|
 | English or unknown | 108,016 | 491 | 27% | 4.4 |
 | Indonesian | 2,455 | 555 | 23% | 4.9 |
@@ -457,17 +435,17 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 <!-- generated:cmp_vertical -->
 | Vertical, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| music_media | 7,047 | 365 | 4.01 | 36% | 2.8 | 6 |
-| gaming | 10,161 | 383 (+5%) | 4.17 (+4%) | 35% (-4%) | 2.9 | 6 |
-| unclassified | 6,861 | 406 (+11%) | 3.88 (-3%) | 33% (-8%) | 3.0 | 6 |
-| technology | 5,742 | 816 (+124%) | 4.16 (+4%) | 40% (+11%) | 2.5 | 6 |
-| fitness_outdoor | 2,010 | 429 (+18%) | 3.05 (-24%) | 31% (-15%) | 3.3 | 5 |
-| kids_family_pets | 1,909 | 366 (+0%) | 3.15 (-21%) | 29% (-19%) | 3.4 | 4 |
-| fashion_beauty | 2,443 | 832 (+128%) | 2.44 (-39%) | 34% (-6%) | 2.9 | 4 |
+| music_media | 7,037 | 365 | 4.01 | 36% | 2.8 | 6 |
+| gaming | 9,952 | 383 (+5%) | 4.14 (+3%) | 34% (-4%) | 2.9 | 6 |
+| unclassified | 6,794 | 406 (+11%) | 3.86 (-4%) | 33% (-8%) | 3.0 | 6 |
+| technology | 5,735 | 815 (+123%) | 4.16 (+4%) | 40% (+11%) | 2.5 | 6 |
+| fitness_outdoor | 2,007 | 429 (+18%) | 3.04 (-24%) | 31% (-15%) | 3.3 | 5 |
+| kids_family_pets | 1,908 | 366 (+0%) | 3.15 (-21%) | 29% (-19%) | 3.4 | 4 |
+| fashion_beauty | 2,440 | 834 (+128%) | 2.44 (-39%) | 34% (-6%) | 2.9 | 4 |
 | food_drink | 1,178 | 686 (+88%) | 2.95 (-27%) | 35% (-4%) | 2.9 | 5 |
-| travel_events | 803 | 452 (+24%) | 3.00 (-25%) | 34% (-6%) | 2.9 | 6 |
+| travel_events | 800 | 452 (+24%) | 3.00 (-25%) | 34% (-6%) | 3.0 | 6 |
 | home | 1,078 | 744 (+104%) | 3.22 (-20%) | 35% (-4%) | 2.9 | 5 |
-| software | 578 | 424 (+16%) | 4.30 (+7%) | 31% (-15%) | 3.3 | 6 |
+| software | 533 | 399 (+9%) | 4.10 (+2%) | 31% (-15%) | 3.3 | 6 |
 <!-- /generated -->
 
 Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut and run the lowest Actions per Entrant at 2.44, and technology has the highest Conversion Rate. Use them as context for a customer's expectations, never as targets.

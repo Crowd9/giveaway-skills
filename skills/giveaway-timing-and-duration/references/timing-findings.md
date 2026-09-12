@@ -41,10 +41,10 @@ Experience tracks a slightly better Conversion Rate: businesses on their elevent
 | Campaign number | Entrants | Conversion Rate |
 |---|---|---|
 | 11th+ | 515 | 27% |
-| 1st | 381 | 26% |
-| 2nd | 437 | 26% |
-| 3rd-5th | 500 | 27% |
-| 6th-10th | 548 | 27% |
+| 1st | 382 | 26% |
+| 2nd | 434 | 26% |
+| 3rd-5th | 504 | 27% |
+| 6th-10th | 545 | 27% |
 <!-- /generated -->
 
 These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
@@ -56,13 +56,13 @@ A shorter first campaign is part of that pattern too: businesses that went on to
 Gap since the business's previous campaign, all the campaigns behind these numbers:
 
 <!-- generated:tm_cadence -->
-| Campaign number | Campaigns | Entrants | Actions per Entrant | Conversion Rate |
+| Campaign number | Campaigns | Entrants | Entries per Entrant | Conversion Rate |
 |---|---|---|---|---|
-| 1st | 17,245 | 381 | 3.67 | 26% |
-| 2nd | 8,448 | 437 | 3.85 | 26% |
-| 3rd-5th | 14,225 | 500 | 4.04 | 27% |
-| 6th-10th | 12,804 | 548 | 4.18 | 27% |
-| 11th+ | 63,777 | 515 | 4.91 | 27% |
+| 1st | 17,247 | 382 | 3.67 | 26% |
+| 2nd | 8,445 | 434 | 3.85 | 26% |
+| 3rd-5th | 14,228 | 504 | 4.04 | 27% |
+| 6th-10th | 12,804 | 545 | 4.18 | 27% |
+| 11th+ | 63,775 | 515 | 4.90 | 27% |
 <!-- /generated -->
 
 Campaign size repeats: after a big campaign, the next one tends to be big too, across 21,284 consecutive pairs from the same business.
@@ -124,18 +124,18 @@ Impressions in the data are counted once per day, so a visitor who returns count
 <!-- generated:cmp_repeatable -->
 | Repeatable actions | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| no repeatable actions | 75,386 | 493 | 3.83 | 29% | 3.4 | 6 |
-| has repeatable actions | 41,742 | 490 (-1%) | 5.66 (+48%) | 23% (-23%) | 4.4 | 9 |
+| no repeatable actions | 74,826 | 494 | 3.82 | 29% | 3.4 | 6 |
+| has repeatable actions | 41,457 | 490 (-1%) | 5.66 (+48%) | 23% (-22%) | 4.4 | 9 |
 <!-- /generated -->
 
 <!-- generated:cmp_duration -->
 | Duration, no repeatable actions | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| 1 to 7 days | 23,197 | 439 | 3.54 | 41% | 2.4 | 5 |
-| 8 to 14 | 16,613 | 468 (+7%) | 3.92 (+11%) | 29% (-31%) | 3.5 | 6 |
-| 15 to 30 | 20,578 | 538 (+23%) | 4.07 (+15%) | 26% (-37%) | 3.9 | 6 |
-| 31 to 60 | 11,468 | 544 (+24%) | 4.19 (+18%) | 23% (-45%) | 4.4 | 7 |
-| 61 or more | 2,941 | 733 (+67%) | 3.22 (-9%) | 22% (-48%) | 4.6 | 5 |
+| 1 to 7 days | 22,978 | 440 | 3.53 | 41% | 2.4 | 5 |
+| 8 to 14 | 16,484 | 468 (+6%) | 3.92 (+11%) | 28% (-31%) | 3.5 | 6 |
+| 15 to 30 | 20,497 | 538 (+22%) | 4.07 (+15%) | 26% (-37%) | 3.9 | 6 |
+| 31 to 60 | 11,419 | 545 (+24%) | 4.19 (+19%) | 23% (-45%) | 4.4 | 7 |
+| 61 or more | 2,929 | 733 (+67%) | 3.21 (-9%) | 21% (-48%) | 4.7 | 5 |
 <!-- /generated -->
 
 Longer runs collect two thirds more Entrants by 61 days and roughly double the Impressions per Entrant, so the Conversion Rate halves with no change in who actually entered. Compare the Conversion Rate only across campaigns of similar length.
@@ -215,13 +215,13 @@ This is a finding about where volume sits, not a reason to close early. The peop
 <!-- generated:cmp_weekday -->
 | Start weekday | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| Monday | 22,450 | 480 | 4.40 | 26% | 3.8 | 7 |
-| Tuesday | 18,732 | 499 (+4%) | 4.26 (-3%) | 26% (+2%) | 3.8 | 7 |
-| Wednesday | 19,315 | 504 (+5%) | 4.23 (-4%) | 28% (+6%) | 3.6 | 7 |
-| Thursday | 18,614 | 513 (+7%) | 4.43 (+1%) | 27% (+3%) | 3.7 | 7 |
-| Friday | 18,244 | 521 (+9%) | 4.53 (+3%) | 27% (+3%) | 3.7 | 7 |
-| Saturday | 8,399 | 438 (-9%) | 4.44 (+1%) | 28% (+9%) | 3.5 | 7 |
-| Sunday | 11,374 | 449 (-6%) | 4.52 (+3%) | 27% (+4%) | 3.7 | 7 |
+| Monday | 22,313 | 479 | 4.39 | 26% | 3.8 | 7 |
+| Tuesday | 18,584 | 500 (+4%) | 4.26 (-3%) | 26% (+2%) | 3.8 | 7 |
+| Wednesday | 19,181 | 504 (+5%) | 4.23 (-4%) | 28% (+6%) | 3.6 | 7 |
+| Thursday | 18,502 | 513 (+7%) | 4.43 (+1%) | 27% (+3%) | 3.7 | 7 |
+| Friday | 18,162 | 521 (+9%) | 4.52 (+3%) | 27% (+3%) | 3.7 | 7 |
+| Saturday | 8,346 | 438 (-9%) | 4.44 (+1%) | 28% (+9%) | 3.5 | 7 |
+| Sunday | 11,195 | 454 (-5%) | 4.50 (+3%) | 27% (+4%) | 3.7 | 7 |
 <!-- /generated -->
 
 Start weekday shows no difference on Conversion Rate or Entries per Entrant, and weekend starts draw about a tenth fewer Entrants. Businesses favour weekdays, and the data gives little reason to prefer one day over another.
@@ -229,27 +229,27 @@ Start weekday shows no difference on Conversion Rate or Entries per Entrant, and
 <!-- generated:cmp_recency -->
 | Gap since previous campaign, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
 |---|---|---|---|---|---|---|
-| first campaign | 5,017 | 333 | 3.19 | 31% | 3.2 | 5 |
-| previous within 30 days | 25,947 | 470 (+41%) | 3.96 (+24%) | 38% (+22%) | 2.7 | 6 |
-| previous 31 to 90 days | 4,855 | 496 (+49%) | 3.51 (+10%) | 33% (+6%) | 3.1 | 5 |
-| previous 91 to 365 days | 3,307 | 434 (+30%) | 3.36 (+5%) | 31% (+0%) | 3.2 | 5 |
+| first campaign | 4,967 | 332 | 3.18 | 31% | 3.2 | 5 |
+| previous within 30 days | 25,695 | 470 (+42%) | 3.94 (+24%) | 38% (+22%) | 2.7 | 6 |
+| previous 31 to 90 days | 4,820 | 499 (+50%) | 3.51 (+10%) | 33% (+6%) | 3.1 | 5 |
+| previous 91 to 365 days | 3,296 | 439 (+32%) | 3.35 (+5%) | 31% (+1%) | 3.2 | 5 |
 | previous over a year | 684 | 382 (+15%) | 3.12 (-2%) | 32% (+3%) | 3.2 | 5 |
 <!-- /generated -->
 
 <!-- generated:cmp_recency_vertical -->
 | Vertical (regex proxy) | First campaigns | Within 30 days | Contestants | Contestants per impression |
 |---|---|---|---|---|
-| music_media | 700 | 5,157 | +46% | +19% |
-| gaming | 1,481 | 6,084 | +35% | +15% |
-| unclassified | 809 | 4,865 | +68% | +17% |
-| technology | 515 | 4,008 | +72% | +47% |
-| fitness_outdoor | 346 | 1,047 | -32% | +6% |
-| kids_family_pets | 235 | 1,191 | +1% | -9% |
-| fashion_beauty | 327 | 1,561 | +105% | +35% |
-| food_drink | 190 | 585 | +66% | +22% |
-| travel_events | 139 | 484 | +37% | +37% |
-| home | 134 | 647 | +26% | +25% |
-| software | 141 | 318 | +69% | +42% |
+| music_media | 696 | 5,148 | +49% | +19% |
+| gaming | 1,461 | 5,928 | +41% | +15% |
+| unclassified | 793 | 4,825 | +68% | +16% |
+| technology | 512 | 4,001 | +71% | +48% |
+| fitness_outdoor | 344 | 1,048 | -32% | +6% |
+| kids_family_pets | 235 | 1,191 | -2% | -9% |
+| fashion_beauty | 326 | 1,559 | +106% | +35% |
+| food_drink | 191 | 582 | +63% | +21% |
+| travel_events | 138 | 484 | +40% | +36% |
+| home | 135 | 646 | +23% | +24% |
+| software | 136 | 283 | +69% | +44% |
 <!-- /generated -->
 
 A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a fifth more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in nine of the eleven verticals, with fitness and outdoor and kids, family and pets the exceptions. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.

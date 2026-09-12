@@ -141,7 +141,7 @@ Every family sees fewer Entrants complete it the further down the list it sits, 
 Words in the campaign description, among the campaigns we can compare fairly: no repeatable action, 14 days or less.
 
 <!-- generated:gs_desc_length -->
-| Words | Campaigns | Businesses | Entrants | Conversion Rate | Actions per Entrant |
+| Words | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant |
 |---|---|---|---|---|---|
 | 0-25 | 14,787 | 2,954 | 420 | 39% | 3.46 |
 | 26-75 | 14,941 | 3,882 | 421 | 32% | 3.81 |

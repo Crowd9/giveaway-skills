@@ -386,14 +386,14 @@
  },
  "question_types": {
   "other": {
-   "n": 8569,
-   "sites": 1641,
-   "median_uptake": 0.7099476439790576
+   "n": 6937,
+   "sites": 1509,
+   "median_uptake": 0.7472035794183445
   },
   "detail capture": {
-   "n": 5123,
-   "sites": 681,
-   "median_uptake": 0.7610294117647058
+   "n": 6755,
+   "sites": 851,
+   "median_uptake": 0.6837606837606838
   },
   "preference": {
    "n": 3475,
@@ -986,46 +986,46 @@
  },
  "overlap_all": {
   "no overlap": {
-   "n": 72480,
+   "n": 72372,
    "sites": 17538,
-   "contestants": 509.0,
-   "contestants_per_impression": 0.2702960840496657,
-   "entries_per_entrant": 4.076422540575999,
-   "stated_usd_per_contestant": 0.5409617651453522,
-   "usd_per_email": 0.6055050734514614,
-   "december_share": 0.09980684326710816
+   "contestants": 511.0,
+   "contestants_per_impression": 0.2702008199869417,
+   "entries_per_entrant": 4.074824234551442,
+   "stated_usd_per_contestant": 0.5406578733173462,
+   "usd_per_email": 0.6043922787829178,
+   "december_share": 0.09972088653070248
   },
   "overlaps the previous campaign": {
-   "n": 43803,
+   "n": 43911,
    "sites": 3312,
-   "contestants": 473,
-   "contestants_per_impression": 0.264771997430957,
-   "entries_per_entrant": 5.046511627906977,
-   "stated_usd_per_contestant": 0.23812358951677837,
+   "contestants": 471,
+   "contestants_per_impression": 0.2650541493567408,
+   "entries_per_entrant": 5.050561797752809,
+   "stated_usd_per_contestant": 0.2394051107540095,
    "usd_per_email": 0.17182313958051396,
-   "december_share": 0.11022076113508207
+   "december_share": 0.11033681765389082
   }
  },
  "overlap_clean": {
   "no overlap": {
-   "n": 25784,
-   "sites": 6893,
-   "contestants": 450.0,
-   "contestants_per_impression": 0.3424323389111301,
-   "entries_per_entrant": 3.5120870344397694,
-   "stated_usd_per_contestant": 0.5681818181818182,
-   "usd_per_email": 0.6790649470290189,
-   "december_share": 0.1211991932981694
+   "n": 25721,
+   "sites": 6890,
+   "contestants": 451,
+   "contestants_per_impression": 0.34170522141440846,
+   "entries_per_entrant": 3.5061417322834645,
+   "stated_usd_per_contestant": 0.5695301376364499,
+   "usd_per_email": 0.676954732510288,
+   "december_share": 0.12141829633373508
   },
   "overlaps the previous campaign": {
-   "n": 13678,
-   "sites": 1511,
-   "contestants": 455.0,
-   "contestants_per_impression": 0.3571194225721785,
-   "entries_per_entrant": 4.144429923970208,
-   "stated_usd_per_contestant": 0.45558086560364464,
-   "usd_per_email": 0.36995515695067266,
-   "december_share": 0.15513964029828922
+   "n": 13741,
+   "sites": 1507,
+   "contestants": 453,
+   "contestants_per_impression": 0.3596989306771638,
+   "entries_per_entrant": 4.153846153846154,
+   "stated_usd_per_contestant": 0.45454545454545453,
+   "usd_per_email": 0.3639705882352941,
+   "december_share": 0.15457390291827378
   }
  },
  "close_weekday_all": {

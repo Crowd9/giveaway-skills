@@ -32,14 +32,6 @@
    "contestants_per_impression": 0.2809,
    "invalid_share": 0.0043
   },
-  "5-20%": {
-   "n": 40516,
-   "organizers": 9345,
-   "contestants": 520.0,
-   "entries_per_entrant": 4.3908,
-   "contestants_per_impression": 0.2609,
-   "invalid_share": 0.099
-  },
   "1-5%": {
    "n": 33978,
    "organizers": 7972,
@@ -47,6 +39,14 @@
    "entries_per_entrant": 4.1524,
    "contestants_per_impression": 0.2754,
    "invalid_share": 0.0255
+  },
+  "5-20%": {
+   "n": 40516,
+   "organizers": 9345,
+   "contestants": 520.0,
+   "entries_per_entrant": 4.3908,
+   "contestants_per_impression": 0.2609,
+   "invalid_share": 0.099
   }
  },
  "invalid_share_campaigns_5pct_plus": 0.417,
@@ -144,85 +144,85 @@
   }
  },
  "nth_campaign_clean": {
-  "2nd": {
-   "n": 2721,
-   "organizers": 2721,
-   "contestants": 371.0,
-   "entries_per_entrant": 3.3441,
-   "contestants_per_impression": 0.32,
-   "invalid_share": 0.0257
-  },
   "3rd-5th": {
-   "n": 4739,
-   "organizers": 2585,
-   "contestants": 400.0,
-   "entries_per_entrant": 3.4354,
-   "contestants_per_impression": 0.3299,
-   "invalid_share": 0.0317
+   "n": 4738,
+   "organizers": 2583,
+   "contestants": 401.0,
+   "entries_per_entrant": 3.4345,
+   "contestants_per_impression": 0.3307,
+   "invalid_share": 0.0316
   },
-  "6th-10th": {
-   "n": 4356,
-   "organizers": 1615,
-   "contestants": 446.0,
-   "entries_per_entrant": 3.5369,
-   "contestants_per_impression": 0.3404,
-   "invalid_share": 0.0321
+  "2nd": {
+   "n": 2720,
+   "organizers": 2720,
+   "contestants": 371.0,
+   "entries_per_entrant": 3.3331,
+   "contestants_per_impression": 0.32,
+   "invalid_share": 0.0259
   },
   "1st": {
-   "n": 4966,
-   "organizers": 4966,
+   "n": 4970,
+   "organizers": 4970,
    "contestants": 332.0,
-   "entries_per_entrant": 3.1756,
-   "contestants_per_impression": 0.3077,
-   "invalid_share": 0.0255
+   "entries_per_entrant": 3.1805,
+   "contestants_per_impression": 0.3078,
+   "invalid_share": 0.0254
+  },
+  "6th-10th": {
+   "n": 4358,
+   "organizers": 1617,
+   "contestants": 446.0,
+   "entries_per_entrant": 3.5346,
+   "contestants_per_impression": 0.3397,
+   "invalid_share": 0.0321
   },
   "11th+": {
-   "n": 22720,
-   "organizers": 1146,
+   "n": 22716,
+   "organizers": 1144,
    "contestants": 497.0,
-   "entries_per_entrant": 4.0076,
-   "contestants_per_impression": 0.3773,
+   "entries_per_entrant": 4.0092,
+   "contestants_per_impression": 0.3774,
    "invalid_share": 0.0395
   }
  },
  "nth_campaign_all": {
   "2nd": {
-   "n": 8446,
-   "organizers": 8446,
-   "contestants": 436.0,
-   "entries_per_entrant": 3.8546,
-   "contestants_per_impression": 0.2638,
-   "invalid_share": 0.0289
+   "n": 8444,
+   "organizers": 8444,
+   "contestants": 434.5,
+   "entries_per_entrant": 3.8519,
+   "contestants_per_impression": 0.2637,
+   "invalid_share": 0.0288
   },
   "3rd-5th": {
-   "n": 14227,
-   "organizers": 5980,
-   "contestants": 500.0,
-   "entries_per_entrant": 4.0386,
+   "n": 14228,
+   "organizers": 5979,
+   "contestants": 504.0,
+   "entries_per_entrant": 4.0417,
    "contestants_per_impression": 0.2681,
-   "invalid_share": 0.0332
+   "invalid_share": 0.0333
   },
   "1st": {
-   "n": 17244,
-   "organizers": 17244,
-   "contestants": 381.0,
-   "entries_per_entrant": 3.6701,
+   "n": 17246,
+   "organizers": 17246,
+   "contestants": 382.0,
+   "entries_per_entrant": 3.6693,
    "contestants_per_impression": 0.2553,
    "invalid_share": 0.0302
   },
   "6th-10th": {
-   "n": 12807,
+   "n": 12804,
    "organizers": 3300,
-   "contestants": 548.0,
-   "entries_per_entrant": 4.182,
-   "contestants_per_impression": 0.2695,
-   "invalid_share": 0.0353
+   "contestants": 545.0,
+   "entries_per_entrant": 4.1831,
+   "contestants_per_impression": 0.2693,
+   "invalid_share": 0.0354
   },
   "11th+": {
-   "n": 63775,
+   "n": 63777,
    "organizers": 1965,
-   "contestants": 514.0,
-   "entries_per_entrant": 4.9061,
+   "contestants": 515.0,
+   "entries_per_entrant": 4.9048,
    "contestants_per_impression": 0.2745,
    "invalid_share": 0.0376
   }
@@ -265,14 +265,6 @@
   }
  },
  "optin_checkbox_clean_email_campaigns": {
-  "Auto": {
-   "n": 377,
-   "organizers": 85,
-   "contestants": 379.0,
-   "entries_per_entrant": 5.3942,
-   "contestants_per_impression": 0.2501,
-   "invalid_share": 0.012
-  },
   "On": {
    "n": 2726,
    "organizers": 529,
@@ -280,6 +272,14 @@
    "entries_per_entrant": 4.3746,
    "contestants_per_impression": 0.2811,
    "invalid_share": 0.0282
+  },
+  "Auto": {
+   "n": 377,
+   "organizers": 85,
+   "contestants": 379.0,
+   "entries_per_entrant": 5.3942,
+   "contestants_per_impression": 0.2501,
+   "invalid_share": 0.012
   },
   "Off": {
    "n": 7734,

@@ -101,7 +101,7 @@ Apparel and fashion has the highest Conversion Rate among the ten largest indust
 By business type, on the same scope:
 
 <!-- generated:roi_btype -->
-| Business type | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions per Entrant | Days | Methods | Email offered |
+| Business type | Campaigns | Businesses | Typical Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered |
 |---|---|---|---|---|---|---|---|---|
 | Brand | 30,187 | 5,482 | 594 | 26% | 4.3 | 14 | 7 | 42% |
 | Retailer | 21,569 | 2,245 | 650 | 28% | 4.4 | 14 | 7 | 44% |

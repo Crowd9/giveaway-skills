@@ -35,9 +35,9 @@ A Prize that matches the business's own category draws no more crowd for the mon
 <!-- generated:ev_audience_fit -->
 | Prize fit | Campaigns | Businesses | Entrants | Crowd per Prize dollar |
 |---|---|---|---|---|
-| A definite category that does not match | 29,138 | 6,563 | 553 | 1.10 |
-| Matches the business's own category | 21,389 | 4,374 | 681 | 1.08 |
-| Generic (cash, gift card, bundle, subscription, discount) | 32,776 | 7,726 | 458 | 1.01 |
+| A definite category that does not match | 27,625 | 6,464 | 547 | 1.09 |
+| Matches the business's own category | 21,264 | 4,305 | 673 | 1.08 |
+| Generic (cash, gift card, bundle, subscription, discount) | 36,845 | 8,215 | 463 | 1.00 |
 <!-- /generated -->
 
 Splitting the same budget across records buys about a fifth less crowd per Prize dollar. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
@@ -206,7 +206,7 @@ Typical Prize values across the campaigns behind these numbers, and by campaign 
 | Campaign total, 2,500-10,000 Entrants | 1,299 | - | - |
 | Campaign total, 10,000+ Entrants | 3,000 | - | - |
 
-Entrants rise with the stated pool up to about 5,000 USD and fall back above it [43,173 campaigns with a full value stated, from 9,180 businesses].
+Entrants rise with the stated pool up to about 5,000 USD and fall back above it [42,953 campaigns with a full value stated, from 9,089 businesses].
 
 | Stated Prize pool | Typical Entrants |
 |---|---|

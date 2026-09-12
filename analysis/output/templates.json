@@ -110,11 +110,11 @@
  },
  "source_mix_first_campaign": {
   "own_campaign|repeat": {
-   "n": 67351,
-   "organizers": 5518,
-   "contestants": 555.0,
+   "n": 67461,
+   "organizers": 5548,
+   "contestants": 554.0,
    "conversion": 0.264,
-   "entries_per_entrant": 4.961,
+   "entries_per_entrant": 4.959,
    "days": 14.0,
    "methods": 8.0,
    "email_offered": 0.368,
@@ -122,87 +122,87 @@
    "prizes": 1.0
   },
   "blank|repeat": {
-   "n": 17765,
-   "organizers": 4252,
+   "n": 17701,
+   "organizers": 4212,
    "contestants": 528.0,
    "conversion": 0.3,
-   "entries_per_entrant": 3.823,
+   "entries_per_entrant": 3.828,
    "days": 14.0,
    "methods": 6.0,
    "email_offered": 0.223,
    "share_offered": 0.209,
    "prizes": 1.0
   },
+  "blank|first": {
+   "n": 9191,
+   "organizers": 9191,
+   "contestants": 349.0,
+   "conversion": 0.263,
+   "entries_per_entrant": 3.662,
+   "days": 15.0,
+   "methods": 6.0,
+   "email_offered": 0.215,
+   "share_offered": 0.255,
+   "prizes": 1.0
+  },
   "campaign_outside_data|repeat": {
-   "n": 9173,
-   "organizers": 2477,
+   "n": 9151,
+   "organizers": 2471,
    "contestants": 254.0,
    "conversion": 0.254,
-   "entries_per_entrant": 4.148,
+   "entries_per_entrant": 4.15,
    "days": 13.0,
    "methods": 7.0,
    "email_offered": 0.326,
    "share_offered": 0.29,
    "prizes": 1.0
   },
-  "blank|first": {
-   "n": 9127,
-   "organizers": 9127,
-   "contestants": 348.0,
-   "conversion": 0.263,
-   "entries_per_entrant": 3.665,
-   "days": 15.0,
-   "methods": 6.0,
-   "email_offered": 0.214,
-   "share_offered": 0.255,
-   "prizes": 1.0
-  },
   "template|first": {
-   "n": 5379,
-   "organizers": 5379,
-   "contestants": 465.0,
+   "n": 5403,
+   "organizers": 5403,
+   "contestants": 466.0,
    "conversion": 0.246,
-   "entries_per_entrant": 3.55,
+   "entries_per_entrant": 3.551,
    "days": 16.0,
    "methods": 6.0,
-   "email_offered": 0.409,
+   "email_offered": 0.41,
    "share_offered": 0.484,
    "prizes": 1.0
   },
   "template|repeat": {
-   "n": 4576,
-   "organizers": 2038,
-   "contestants": 475.5,
+   "n": 4552,
+   "organizers": 2021,
+   "contestants": 472.0,
    "conversion": 0.289,
-   "entries_per_entrant": 3.093,
+   "entries_per_entrant": 3.084,
    "days": 13.0,
    "methods": 5.0,
-   "email_offered": 0.349,
+   "email_offered": 0.348,
    "share_offered": 0.411,
    "prizes": 1.0
   },
   "campaign_outside_data|first": {
-   "n": 2788,
-   "organizers": 2788,
-   "contestants": 368.5,
+   "n": 2810,
+   "organizers": 2810,
+   "contestants": 367.0,
    "conversion": 0.252,
-   "entries_per_entrant": 4.047,
+   "entries_per_entrant": 4.046,
    "days": 16.0,
    "methods": 7.0,
    "email_offered": 0.295,
-   "share_offered": 0.38,
+   "share_offered": 0.379,
    "prizes": 1.0
   },
   "own_campaign|first": {
-   "n": 339,
-   "organizers": 339,
-   "contestants": 360.0,
+   "n": 229,
+   "organizers": 229,
+   "contestants": 397.0,
    "conversion": 0.279,
-   "entries_per_entrant": 4.182,
-   "days": 13.0,
-   "methods": 6.0,
-   "email_offered": 0.251,
-   "share_offered": 0.395,
+   "entries_per_entrant": 4.602,
+   "days": 12.0,
+   "methods": 7.0,
+   "email_offered": 0.218,
+   "share_offered": 0.441,
    "prizes": 1.0
   }
  },
@@ -922,16 +922,16 @@
    "share_offered": 0.114,
    "prizes": 1.0
   },
-  "Easter Egg Hunt": {
+  "Build Online Presence": {
    "n": 31,
-   "organizers": 20,
-   "contestants": 167.0,
-   "conversion": 0.118,
-   "entries_per_entrant": 4.538,
-   "days": 6.0,
-   "methods": 4.0,
-   "email_offered": 0.161,
-   "share_offered": 0.032,
+   "organizers": 31,
+   "contestants": 619.0,
+   "conversion": 0.346,
+   "entries_per_entrant": 3.111,
+   "days": 12.0,
+   "methods": 7.0,
+   "email_offered": 0.871,
+   "share_offered": 0.839,
    "prizes": 1.0
   },
   "Instagram Bio Contest": {
@@ -946,28 +946,16 @@
    "share_offered": 0.742,
    "prizes": 1.0
   },
-  "Build Online Presence": {
+  "Easter Egg Hunt": {
    "n": 31,
-   "organizers": 31,
-   "contestants": 619.0,
-   "conversion": 0.346,
-   "entries_per_entrant": 3.111,
-   "days": 12.0,
-   "methods": 7.0,
-   "email_offered": 0.871,
-   "share_offered": 0.839,
-   "prizes": 1.0
-  },
-  "YouTube Example Competition": {
-   "n": 30,
-   "organizers": 28,
-   "contestants": 308.5,
-   "conversion": 0.217,
-   "entries_per_entrant": 5.645,
-   "days": 20.0,
-   "methods": 7.0,
-   "email_offered": 0.133,
-   "share_offered": 0.333,
+   "organizers": 20,
+   "contestants": 167.0,
+   "conversion": 0.118,
+   "entries_per_entrant": 4.538,
+   "days": 6.0,
+   "methods": 4.0,
+   "email_offered": 0.161,
+   "share_offered": 0.032,
    "prizes": 1.0
   },
   "Brand Partnership Giveaway": {
@@ -980,6 +968,18 @@
    "methods": 9.0,
    "email_offered": 0.833,
    "share_offered": 0.767,
+   "prizes": 1.0
+  },
+  "YouTube Example Competition": {
+   "n": 30,
+   "organizers": 28,
+   "contestants": 308.5,
+   "conversion": 0.217,
+   "entries_per_entrant": 5.645,
+   "days": 20.0,
+   "methods": 7.0,
+   "email_offered": 0.133,
+   "share_offered": 0.333,
    "prizes": 1.0
   }
  },
@@ -1116,18 +1116,6 @@
    "share_offered": 0.848,
    "prizes": 2.0
   },
-  "Photo Contest": {
-   "n": 31,
-   "organizers": 27,
-   "contestants": 2412.0,
-   "conversion": 0.185,
-   "entries_per_entrant": 2.658,
-   "days": 15.0,
-   "methods": 5.0,
-   "email_offered": 0.355,
-   "share_offered": 0.29,
-   "prizes": 1.0
-  },
   "Twitter / X Contest": {
    "n": 31,
    "organizers": 31,
@@ -1138,6 +1126,18 @@
    "methods": 8.0,
    "email_offered": 0.194,
    "share_offered": 0.355,
+   "prizes": 1.0
+  },
+  "Photo Contest": {
+   "n": 31,
+   "organizers": 27,
+   "contestants": 2412.0,
+   "conversion": 0.185,
+   "entries_per_entrant": 2.658,
+   "days": 15.0,
+   "methods": 5.0,
+   "email_offered": 0.355,
+   "share_offered": 0.29,
    "prizes": 1.0
   }
  },
@@ -1259,14 +1259,14 @@
    "organizers": 71,
    "share": 0.009
   },
-  "Mr Beast's Giveaway": {
-   "n": 77,
-   "organizers": 74,
-   "share": 0.008
-  },
   "Survey Form": {
    "n": 77,
    "organizers": 33,
+   "share": 0.008
+  },
+  "Mr Beast's Giveaway": {
+   "n": 77,
+   "organizers": 74,
    "share": 0.008
   },
   "Build Pre-Launch Awareness": {
@@ -1294,14 +1294,14 @@
    "organizers": 42,
    "share": 0.005
   },
-  "Grow Twitch Following": {
-   "n": 46,
-   "organizers": 43,
-   "share": 0.005
-  },
   "Promote Crowdfunding Campaign": {
    "n": 46,
    "organizers": 44,
+   "share": 0.005
+  },
+  "Grow Twitch Following": {
+   "n": 46,
+   "organizers": 43,
    "share": 0.005
   },
   "Secret Code": {
@@ -1319,14 +1319,14 @@
    "organizers": 34,
    "share": 0.004
   },
-  "Build Online Presence": {
-   "n": 31,
-   "organizers": 31,
-   "share": 0.003
-  },
   "Easter Egg Hunt": {
    "n": 31,
    "organizers": 20,
+   "share": 0.003
+  },
+  "Build Online Presence": {
+   "n": 31,
+   "organizers": 31,
    "share": 0.003
   },
   "Instagram Bio Contest": {
@@ -2642,14 +2642,14 @@
     "organizers": 23,
     "share": 0.113
    },
-   "sports_outdoors": {
-    "n": 30,
-    "organizers": 21,
-    "share": 0.106
-   },
    "gaming_esports": {
     "n": 30,
     "organizers": 27,
+    "share": 0.106
+   },
+   "sports_outdoors": {
+    "n": 30,
+    "organizers": 21,
     "share": 0.106
    },
    "home_garden": {
@@ -2831,14 +2831,14 @@
     "organizers": 13,
     "share": 0.103
    },
-   "media_entertainment": {
-    "n": 14,
-    "organizers": 11,
-    "share": 0.096
-   },
    "food_drink": {
     "n": 14,
     "organizers": 13,
+    "share": 0.096
+   },
+   "media_entertainment": {
+    "n": 14,
+    "organizers": 11,
     "share": 0.096
    },
    "electronics_tech": {
@@ -2994,11 +2994,11 @@
  },
  "template_by_organizer_tenure": {
   "6th or later|own_campaign": {
-   "n": 56141,
-   "organizers": 2698,
+   "n": 56179,
+   "organizers": 2701,
    "contestants": 555.0,
    "conversion": 0.266,
-   "entries_per_entrant": 5.16,
+   "entries_per_entrant": 5.159,
    "days": 14.0,
    "methods": 8.0,
    "email_offered": 0.368,
@@ -3006,83 +3006,83 @@
    "prizes": 1.0
   },
   "2nd to 5th|own_campaign": {
-   "n": 11207,
-   "organizers": 5142,
-   "contestants": 552.0,
+   "n": 11282,
+   "organizers": 5164,
+   "contestants": 549.0,
    "conversion": 0.258,
    "entries_per_entrant": 4.265,
    "days": 15.0,
    "methods": 7.0,
    "email_offered": 0.37,
-   "share_offered": 0.44,
+   "share_offered": 0.439,
    "prizes": 1.0
   },
   "6th or later|blank": {
-   "n": 11147,
-   "organizers": 1480,
+   "n": 11128,
+   "organizers": 1469,
    "contestants": 578.0,
    "conversion": 0.314,
-   "entries_per_entrant": 3.865,
+   "entries_per_entrant": 3.866,
    "days": 14.0,
    "methods": 6.0,
    "email_offered": 0.244,
-   "share_offered": 0.207,
+   "share_offered": 0.206,
    "prizes": 1.0
   },
   "first campaign|blank": {
-   "n": 9134,
-   "organizers": 9134,
-   "contestants": 348.0,
+   "n": 9191,
+   "organizers": 9191,
+   "contestants": 349.0,
    "conversion": 0.263,
-   "entries_per_entrant": 3.663,
+   "entries_per_entrant": 3.662,
    "days": 15.0,
    "methods": 6.0,
-   "email_offered": 0.214,
+   "email_offered": 0.215,
    "share_offered": 0.255,
    "prizes": 1.0
   },
   "6th or later|campaign_outside_data": {
-   "n": 6663,
-   "organizers": 1248,
-   "contestants": 246.0,
-   "conversion": 0.25,
-   "entries_per_entrant": 4.19,
+   "n": 6651,
+   "organizers": 1245,
+   "contestants": 245.0,
+   "conversion": 0.249,
+   "entries_per_entrant": 4.187,
    "days": 12.0,
    "methods": 7.0,
-   "email_offered": 0.337,
-   "share_offered": 0.27,
+   "email_offered": 0.338,
+   "share_offered": 0.269,
    "prizes": 1.0
   },
   "2nd to 5th|blank": {
-   "n": 6611,
-   "organizers": 3736,
-   "contestants": 435.0,
+   "n": 6573,
+   "organizers": 3701,
+   "contestants": 436.0,
    "conversion": 0.282,
-   "entries_per_entrant": 3.765,
+   "entries_per_entrant": 3.767,
    "days": 14.0,
    "methods": 6.0,
-   "email_offered": 0.188,
+   "email_offered": 0.187,
    "share_offered": 0.213,
    "prizes": 1.0
   },
   "first campaign|template": {
-   "n": 5376,
-   "organizers": 5376,
-   "contestants": 464.5,
+   "n": 5403,
+   "organizers": 5403,
+   "contestants": 466.0,
    "conversion": 0.246,
-   "entries_per_entrant": 3.546,
+   "entries_per_entrant": 3.551,
    "days": 16.0,
    "methods": 6.0,
-   "email_offered": 0.409,
+   "email_offered": 0.41,
    "share_offered": 0.484,
    "prizes": 1.0
   },
   "first campaign|campaign_outside_data": {
-   "n": 2781,
-   "organizers": 2781,
-   "contestants": 363.0,
+   "n": 2810,
+   "organizers": 2810,
+   "contestants": 367.0,
    "conversion": 0.252,
-   "entries_per_entrant": 4.047,
+   "entries_per_entrant": 4.046,
    "days": 16.0,
    "methods": 7.0,
    "email_offered": 0.295,
@@ -3090,51 +3090,51 @@
    "prizes": 1.0
   },
   "2nd to 5th|campaign_outside_data": {
-   "n": 2517,
-   "organizers": 1807,
-   "contestants": 288.0,
-   "conversion": 0.266,
-   "entries_per_entrant": 4.028,
+   "n": 2500,
+   "organizers": 1794,
+   "contestants": 284.0,
+   "conversion": 0.267,
+   "entries_per_entrant": 4.038,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.295,
-   "share_offered": 0.345,
+   "email_offered": 0.294,
+   "share_offered": 0.346,
    "prizes": 1.0
   },
   "2nd to 5th|template": {
-   "n": 2512,
-   "organizers": 1701,
-   "contestants": 512.0,
-   "conversion": 0.263,
-   "entries_per_entrant": 3.371,
+   "n": 2492,
+   "organizers": 1684,
+   "contestants": 510.0,
+   "conversion": 0.264,
+   "entries_per_entrant": 3.357,
    "days": 14.0,
    "methods": 6.0,
    "email_offered": 0.407,
-   "share_offered": 0.473,
+   "share_offered": 0.471,
    "prizes": 1.0
   },
   "6th or later|template": {
-   "n": 2067,
-   "organizers": 628,
-   "contestants": 441.0,
-   "conversion": 0.335,
+   "n": 2060,
+   "organizers": 625,
+   "contestants": 440.0,
+   "conversion": 0.333,
    "entries_per_entrant": 2.632,
    "days": 11.0,
    "methods": 4.0,
    "email_offered": 0.277,
-   "share_offered": 0.337,
+   "share_offered": 0.338,
    "prizes": 1.0
   },
   "first campaign|own_campaign": {
-   "n": 342,
-   "organizers": 342,
-   "contestants": 364.5,
-   "conversion": 0.27,
-   "entries_per_entrant": 4.341,
-   "days": 13.5,
+   "n": 229,
+   "organizers": 229,
+   "contestants": 397.0,
+   "conversion": 0.279,
+   "entries_per_entrant": 4.602,
+   "days": 12.0,
    "methods": 7.0,
-   "email_offered": 0.254,
-   "share_offered": 0.398,
+   "email_offered": 0.218,
+   "share_offered": 0.441,
    "prizes": 1.0
   }
  }

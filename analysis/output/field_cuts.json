@@ -563,7 +563,7 @@
    "sites": 2239,
    "contestants": 521.0,
    "conversion": 0.291,
-   "entries_per_entrant": 5.049,
+   "entries_per_entrant": 5.05,
    "days": 10.0,
    "methods": 8.0,
    "email_offered": 0.283,
@@ -572,9 +572,9 @@
   "4th to 10th": {
    "n": 25742,
    "sites": 5647,
-   "contestants": 541.0,
+   "contestants": 542.0,
    "conversion": 0.275,
-   "entries_per_entrant": 4.382,
+   "entries_per_entrant": 4.383,
    "days": 13.0,
    "methods": 7.0,
    "email_offered": 0.285,
@@ -583,9 +583,9 @@
   "1st campaign": {
    "n": 22273,
    "sites": 22273,
-   "contestants": 411.0,
+   "contestants": 412.0,
    "conversion": 0.256,
-   "entries_per_entrant": 3.961,
+   "entries_per_entrant": 3.96,
    "days": 15.0,
    "methods": 6.0,
    "email_offered": 0.243,
@@ -596,7 +596,7 @@
    "sites": 10667,
    "contestants": 470.0,
    "conversion": 0.268,
-   "entries_per_entrant": 4.167,
+   "entries_per_entrant": 4.169,
    "days": 14.0,
    "methods": 6.0,
    "email_offered": 0.261,
@@ -777,8 +777,8 @@
  },
  "by_organizer_active": {
   "organizer_inactive": {
-   "n": 75913,
-   "sites": 18401,
+   "n": 75921,
+   "sites": 18404,
    "contestants": 474.0,
    "conversion": 0.279,
    "entries_per_entrant": 4.553,
@@ -788,8 +788,8 @@
    "share_offered": 0.429
   },
   "organizer_active_last_12m": {
-   "n": 68965,
-   "sites": 3872,
+   "n": 68957,
+   "sites": 3869,
    "contestants": 537.0,
    "conversion": 0.277,
    "entries_per_entrant": 4.698,
@@ -4306,14 +4306,6 @@
    "p90": 10.0,
    "share_worth_1": 0.355
   },
-  "youtube_video": {
-   "n": 399,
-   "p25": 4.5,
-   "p50": 10.0,
-   "p75": 25.0,
-   "p90": 100.0,
-   "share_worth_1": 0.173
-  },
   "telegram_enter": {
    "n": 399,
    "p25": 1.0,
@@ -4321,6 +4313,14 @@
    "p75": 10.0,
    "p90": 10.0,
    "share_worth_1": 0.509
+  },
+  "youtube_video": {
+   "n": 399,
+   "p25": 4.5,
+   "p50": 10.0,
+   "p75": 25.0,
+   "p90": 100.0,
+   "share_worth_1": 0.173
   },
   "facebook_check_in": {
    "n": 388,
@@ -5731,9 +5731,9 @@
   }
  },
  "landing_kind_share": {
+  "embed": 0.428,
   "directory": 0.003,
-  "hosted": 0.568,
-  "embed": 0.428
+  "hosted": 0.568
  },
  "by_hosted_share": {
   "hosted_90_plus": {

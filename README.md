@@ -235,17 +235,17 @@ Most giveaway advice is somebody's opinion. These skills are built on 116,499 re
 
 Some of what that shows:
 
-- **A first campaign drew 381 Entrants, and 25.6% of the people who saw it entered.** That is 17,245 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 381.
+- **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 381.
 - **Most campaigns are small and cheap.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Your industry sets that price.** Music and media captured an address for 0.09 USD of stated Prize value. Software paid 1.19.
 - **Spending more on the Prize buys less than you would think.** Ten times the Prize value came with about 2.2 times the Entrants, and Prize value explains about 23% of the difference in Entrant counts.
-- **What you give away matters more than what you spend on it.** For the same money, tech hardware drew 42% more crowd than typical and a subscription drew 47% less.
+- **What you give away matters more than what you spend on it.** For the same money, tech hardware drew 42% more crowd than typical and a subscription drew 49% less.
 - **A small campaign works its audience as hard as a big one.** Entries per Entrant runs 4.46 in the smallest size band and 5.28 in the largest, so a low Entrant count is a reach problem.
 - **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.
 - **A long Action list costs you Conversion Rate.** Campaigns carrying 11 or more entry Actions converted 31% of viewers against 44% for a short list. They drew 17% more Entrants anyway.
-- **Run the next one within 30 days.** Businesses that did drew 41% more Entrants than a first campaign, and converted better with it, 38% of viewers against 31%.
-- **December is the busiest month, and it converts best.** Its campaigns converted 30.8% of viewers against 26.9% across the year. The two weeks before Christmas convert best of any week at 41%, and Black Friday week is 11% worse than comparable campaigns outside it.
+- **Run the next one within 30 days.** Businesses that did drew 42% more Entrants than a first campaign, and converted better with it, 38% of viewers against 31%.
+- **December is the busiest month, and it converts best.** Its campaigns converted 30.8% of viewers against 26.9% across the year, and the two weeks before Christmas get more people entering than any other week at 41%.
 - **A Secret Code is the one Action that costs nothing.** Shown on a stream, in a newsletter or in store, it drew about 16% more Entrants at no cost to Conversion Rate.
 
 Every finding describes what businesses chose, never what caused participation, because the dataset holds no failed campaigns to compare against. Cost figures use the stated Prize pool, which is what a business wrote down and the only cost the data holds, so real cost is often lower and promotion spend is invisible. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count in the references. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md). `analysis/output/` holds the aggregate files every figure is drawn from, and the scripts that produced them are not published.

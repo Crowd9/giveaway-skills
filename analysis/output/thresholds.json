@@ -3381,43 +3381,43 @@
   {
    "decile": 1,
    "n": 11650,
-   "sites": 4981,
+   "sites": 4977,
    "contestants": 119.0,
    "methods": 6.0,
-   "epe": 3.984,
-   "conversion": 0.2528
+   "epe": 3.99,
+   "conversion": 0.2529
   },
   {
    "decile": 2,
    "n": 11650,
-   "sites": 4680,
+   "sites": 4674,
    "contestants": 165.0,
    "methods": 6.0,
-   "epe": 4.073,
+   "epe": 4.07,
    "conversion": 0.2562
   },
   {
    "decile": 3,
    "n": 11650,
-   "sites": 4329,
+   "sites": 4330,
    "contestants": 225.0,
    "methods": 7.0,
-   "epe": 4.285,
-   "conversion": 0.2558
+   "epe": 4.284,
+   "conversion": 0.256
   },
   {
    "decile": 4,
    "n": 11650,
-   "sites": 4016,
+   "sites": 4015,
    "contestants": 306.0,
    "methods": 7.0,
-   "epe": 4.507,
-   "conversion": 0.2598
+   "epe": 4.51,
+   "conversion": 0.2597
   },
   {
    "decile": 5,
    "n": 11650,
-   "sites": 3732,
+   "sites": 3734,
    "contestants": 418.0,
    "methods": 7.0,
    "epe": 4.736,
@@ -3426,7 +3426,7 @@
   {
    "decile": 6,
    "n": 11650,
-   "sites": 3715,
+   "sites": 3714,
    "contestants": 583.0,
    "methods": 7.0,
    "epe": 4.675,
@@ -3435,25 +3435,25 @@
   {
    "decile": 7,
    "n": 11650,
-   "sites": 3752,
+   "sites": 3755,
    "contestants": 839.0,
    "methods": 7.0,
-   "epe": 4.67,
-   "conversion": 0.2818
+   "epe": 4.665,
+   "conversion": 0.2819
   },
   {
    "decile": 8,
    "n": 11650,
-   "sites": 3734,
+   "sites": 3733,
    "contestants": 1290.0,
    "methods": 7.0,
-   "epe": 4.357,
-   "conversion": 0.2829
+   "epe": 4.36,
+   "conversion": 0.2828
   },
   {
    "decile": 9,
    "n": 11650,
-   "sites": 3364,
+   "sites": 3363,
    "contestants": 2273.0,
    "methods": 7.0,
    "epe": 4.321,

@@ -1048,11 +1048,11 @@
      "n": 246,
      "share_of_band": 0.053
     },
-    "email+visit": {
+    "email": {
      "n": 200,
      "share_of_band": 0.043
     },
-    "email": {
+    "email+visit": {
      "n": 200,
      "share_of_band": 0.043
     },
@@ -1240,36 +1240,6 @@
   }
  },
  "mandatory_count_vs_optional_completion": {
-  "1-6": {
-   "2": {
-    "n": 4497,
-    "sites": 1635,
-    "contestants": 412.0,
-    "conversion": 0.335,
-    "optional_completions_per_contestant": 0.664
-   },
-   "3+": {
-    "n": 6095,
-    "sites": 2169,
-    "contestants": 390.0,
-    "conversion": 0.321,
-    "optional_completions_per_contestant": 0.511
-   },
-   "1": {
-    "n": 13690,
-    "sites": 3690,
-    "contestants": 543.5,
-    "conversion": 0.322,
-    "optional_completions_per_contestant": 0.591
-   },
-   "0": {
-    "n": 29309,
-    "sites": 6664,
-    "contestants": 436.0,
-    "conversion": 0.332,
-    "optional_completions_per_contestant": 0.827
-   }
-  },
   "7-10": {
    "1": {
     "n": 6188,
@@ -1277,13 +1247,6 @@
     "contestants": 644.0,
     "conversion": 0.24,
     "optional_completions_per_contestant": 0.543
-   },
-   "3+": {
-    "n": 4848,
-    "sites": 1491,
-    "contestants": 408.5,
-    "conversion": 0.26,
-    "optional_completions_per_contestant": 0.384
    },
    "0": {
     "n": 18990,
@@ -1298,15 +1261,52 @@
     "contestants": 386.0,
     "conversion": 0.237,
     "optional_completions_per_contestant": 0.524
+   },
+   "3+": {
+    "n": 4848,
+    "sites": 1491,
+    "contestants": 408.5,
+    "conversion": 0.26,
+    "optional_completions_per_contestant": 0.384
+   }
+  },
+  "1-6": {
+   "2": {
+    "n": 4497,
+    "sites": 1635,
+    "contestants": 412.0,
+    "conversion": 0.335,
+    "optional_completions_per_contestant": 0.664
+   },
+   "1": {
+    "n": 13690,
+    "sites": 3690,
+    "contestants": 543.5,
+    "conversion": 0.322,
+    "optional_completions_per_contestant": 0.591
+   },
+   "3+": {
+    "n": 6095,
+    "sites": 2169,
+    "contestants": 390.0,
+    "conversion": 0.321,
+    "optional_completions_per_contestant": 0.511
+   },
+   "0": {
+    "n": 29309,
+    "sites": 6664,
+    "contestants": 436.0,
+    "conversion": 0.332,
+    "optional_completions_per_contestant": 0.827
    }
   },
   "11+": {
-   "2": {
-    "n": 1908,
-    "sites": 436,
-    "contestants": 407.5,
-    "conversion": 0.194,
-    "optional_completions_per_contestant": 0.458
+   "3+": {
+    "n": 3449,
+    "sites": 933,
+    "contestants": 546.0,
+    "conversion": 0.205,
+    "optional_completions_per_contestant": 0.394
    },
    "1": {
     "n": 5890,
@@ -1315,12 +1315,12 @@
     "conversion": 0.207,
     "optional_completions_per_contestant": 0.479
    },
-   "3+": {
-    "n": 3449,
-    "sites": 933,
-    "contestants": 546.0,
-    "conversion": 0.205,
-    "optional_completions_per_contestant": 0.394
+   "2": {
+    "n": 1908,
+    "sites": 436,
+    "contestants": 407.5,
+    "conversion": 0.194,
+    "optional_completions_per_contestant": 0.458
    },
    "0": {
     "n": 19534,

@@ -196,60 +196,60 @@
     "rest": 0.1553512948234582,
     "ratio": 1.9436563068018828
    },
-   "other_unclassified": {
-    "standouts": 0.20296206740214598,
-    "rest": 0.2799625725844181,
-    "ratio": 0.7249614315533056
-   },
    "gift_card_or_cash": {
-    "standouts": 0.16895874263261296,
-    "rest": 0.23837961306657127,
-    "ratio": 0.7087801698269749
+    "standouts": 0.19147649992443705,
+    "rest": 0.2756969480144206,
+    "ratio": 0.6945180253298332
+   },
+   "other_unclassified": {
+    "standouts": 0.1908719963729787,
+    "rest": 0.257313482125657,
+    "ratio": 0.7417877788454468
    },
    "bundle_or_box": {
-    "standouts": 0.10941514281396403,
-    "rest": 0.12419847538321821,
-    "ratio": 0.880970096262134
+    "standouts": 0.10548586972948466,
+    "rest": 0.11918980653328563,
+    "ratio": 0.8850242549896754
    },
    "game_item_or_skin": {
-    "standouts": 0.055463200846304975,
-    "rest": 0.09475190577097724,
-    "ratio": 0.5853518237444624
+    "standouts": 0.05485869729484661,
+    "rest": 0.09348597847923604,
+    "ratio": 0.5868120352083724
    },
    "regulated_goods_firearm": {
-    "standouts": 0.0550098231827112,
-    "rest": 0.017337699865151223,
-    "ratio": 3.172844357127265
+    "standouts": 0.054707571406982014,
+    "rest": 0.015851611305281118,
+    "ratio": 3.4512309413463638
    },
    "placeholder_name": {
-    "standouts": 0.03853710140547076,
-    "rest": 0.023832457274953905,
-    "ratio": 1.6170007549313983
+    "standouts": 0.03747922019041862,
+    "rest": 0.0223463687150838,
+    "ratio": 1.6771951035212331
    },
    "home_garden_appliance": {
-    "standouts": 0.0344567024331268,
-    "rest": 0.023006852519470513,
-    "ratio": 1.4976712874551774
+    "standouts": 0.03415445065739761,
+    "rest": 0.022924292043922174,
+    "ratio": 1.4898802803575715
    },
    "experience_travel_tickets": {
-    "standouts": 0.0343055765452622,
-    "rest": 0.042931447285136363,
-    "ratio": 0.7990780352084568
+    "standouts": 0.03279431766661629,
+    "rest": 0.040234471750557284,
+    "ratio": 0.8150801101585747
    },
    "merch_apparel_collectible": {
-    "standouts": 0.02795828925494937,
-    "rest": 0.04092247571346011,
-    "ratio": 0.6832013158420278
+    "standouts": 0.02644703037630346,
+    "rest": 0.03993175000688004,
+    "ratio": 0.6623058185966498
    },
    "sports_outdoor_gear": {
-    "standouts": 0.014659211122865346,
-    "rest": 0.016374494317087266,
-    "ratio": 0.8952466463387532
+    "standouts": 0.013903581683542391,
+    "rest": 0.015466329086055535,
+    "ratio": 0.8989580918770105
    },
    "food_drink_consumables": {
-    "standouts": 0.014508085235000755,
-    "rest": 0.011833668161928613,
-    "ratio": 1.2260006818237732
+    "standouts": 0.0137524557956778,
+    "rest": 0.01109062388199356,
+    "ratio": 1.240007410043534
    }
   },
   "verticals": {
@@ -312,12 +312,12 @@
   "n": 109,
   "sites": 62,
   "prize_categories": {
-   "other_unclassified": 23,
    "tech_hardware": 23,
+   "other_unclassified": 23,
+   "gift_card_or_cash": 18,
    "game_item_or_skin": 14,
-   "gift_card_or_cash": 14,
-   "bundle_or_box": 13,
-   "placeholder_name": 11
+   "bundle_or_box": 12,
+   "placeholder_name": 8
   },
   "verticals": {
    "gaming": 35,

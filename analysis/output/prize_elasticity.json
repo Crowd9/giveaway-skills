@@ -13,62 +13,62 @@
   },
   "2": {
    "campaigns": 4301,
-   "businesses": 1060,
+   "businesses": 1055,
    "pool_usd": 50,
-   "contestants": 300
+   "contestants": 302
   },
   "3": {
    "campaigns": 4301,
-   "businesses": 1483,
+   "businesses": 1461,
    "pool_usd": 90,
-   "contestants": 311
+   "contestants": 306
   },
   "4": {
    "campaigns": 4301,
-   "businesses": 1560,
+   "businesses": 1533,
    "pool_usd": 150,
-   "contestants": 372
+   "contestants": 376
   },
   "5": {
    "campaigns": 4300,
-   "businesses": 1618,
+   "businesses": 1612,
    "pool_usd": 227,
-   "contestants": 523
+   "contestants": 520
   },
   "6": {
    "campaigns": 4300,
-   "businesses": 1834,
+   "businesses": 1832,
    "pool_usd": 360,
-   "contestants": 644
+   "contestants": 649
   },
   "7": {
    "campaigns": 4300,
    "businesses": 1959,
    "pool_usd": 550,
-   "contestants": 810
+   "contestants": 816
   },
   "8": {
    "campaigns": 4300,
-   "businesses": 2008,
+   "businesses": 2010,
    "pool_usd": 1000,
-   "contestants": 1047
+   "contestants": 1044
   },
   "9": {
    "campaigns": 4300,
-   "businesses": 1680,
+   "businesses": 1681,
    "pool_usd": 1850,
-   "contestants": 1518
+   "contestants": 1516
   },
   "10": {
    "campaigns": 4300,
-   "businesses": 1775,
+   "businesses": 1774,
    "pool_usd": 4600,
-   "contestants": 2020
+   "contestants": 2022
   }
  },
  "elasticity": {
   "prize_money_multiple": 230.0,
-  "contestant_multiple": 7.42,
+  "contestant_multiple": 7.43,
   "log_elasticity": 0.369,
   "entrants_from_doubling_the_prize": 1.291
  }
