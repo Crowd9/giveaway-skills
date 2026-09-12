@@ -80,13 +80,13 @@ PARTY = (r"\b(instagram|facebook|tiktok|twitter|youtube|discord|telegram|reddit|
          r"|gmail|outlook|apple|google|klaviyo|mailchimp|shopify|paypal|stripe|random\.org|the platform|platforms|networks?"
          r"|the algorithm|regulators?|carriers?|payment providers?|inbox(es)?|spam folder|promotions tab|app stores?|courier|customs)\b")
 GENERAL = (r"\b(plenty of|usually|typically|often|rarely|mostly|tends? to|commonest|the most \w+"
-           r"|the (biggest|largest|fastest|slowest|cheapest|best|worst|strongest|weakest|second biggest)"
-           r"|(more|less|fewer|better|worse|higher|lower|faster|slower|cheaper) \w*\s?than)\b")
-SOURCED = r"\b(rules?|policy|policies|terms|guidelines|law|laws|legal|practice|data|campaigns|reference|measured|according to|docs|documentation)\b"
+           r"|the (biggest|largest|fastest|slowest|cheapest|best|worst|strongest|weakest|second biggest|busiest|quietest|highest|lowest|earliest|hardest|easiest|safest|riskiest)"
+           r"|(more|less|fewer|better|worse|higher|lower|faster|slower|cheaper) \w*\s?than|\w+est of (any|all|every))\b")
+SOURCED = r"\b(rules?|policy|policies|guidelines|law|laws|legal|practice|data|campaigns|reference|measured|according to|docs|documentation)\b"
 INSTRUCTION = (r"^(\*\*)?(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm"
                r"|post|put|place|screenshot|report|reply|email|dm|message|name|state|link|open|paste|copy|export|download|upload|sort|read"
                r"|treat|plan|budget|expect|hold|leave|make|take|let|do|don't|do not|never|always|announce|tag|thank|quote|cap|freeze"
-               r"|record|suppress|fix|publish|pin|schedule|delete|for|to|so|then|next|and|but|or|on|in|at|by)\b")
+               r"|record|suppress|fix|publish|pin|schedule|delete)\b")
 
 
 def unsourced_claims(text):
