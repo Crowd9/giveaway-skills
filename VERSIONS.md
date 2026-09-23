@@ -348,13 +348,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 The results review now answers the prompt Gleam's Reporting tab sends. It reads the tab's summary field by
 field, ranks a campaign that is still running as a floor on the days it has run, keeps test campaigns out of
-the organizer's history, treats a field marked not provided as unknown rather than a number read out of the
+the organizer's history, treats a field marked not provided as unknown, with no number read out of the
 Prize description, and ranks from the reference tables where a browser cannot run the scripts.
 
 The same review can be handed over as a dashboard, built by the skill from the export and the reviewer's own
 words: the verdict, the numbers against campaigns the same size, the three changes, one tab per Reporting
-tab, and a Levers tab whose sliders show what campaigns at a chosen level drew, as a comparison and never a
-forecast. The site's own logo and colours theme it.
+tab, and a Levers tab whose sliders show what campaigns at a chosen level drew, which is a comparison, with
+no forecast in it. The site's own logo and colours theme it.
 
 Numbers reach the reader in the reader's units. A share is a percentage, a count above one per person is
 "each", a comparison is 1.5x, and the checker fails an answer on "per 100" or "1.5 times". The report script
