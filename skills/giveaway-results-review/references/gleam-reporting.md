@@ -64,7 +64,7 @@ The report script puts a typical figure and a rank beside Entrants, Entries, act
 
 The prompt can ask for the review as an interactive dashboard. Where the chat can build one, its first screen carries the written verdict, the numbers table and the three changes, so a reader who never clicks still has the review, and the report script's sections sit behind one tab per Reporting tab (Overview, Traffic, Entry Methods, Viral, Audience, Outcomes) with every figure as the script printed it. Where it cannot, the written review is the answer, with the report's sections after it in the same order, and saying so is enough.
 
-The `site` block is the dashboard's theme. Where the site has a header colour, an elements colour, a logo or an icon set, the dashboard wears them: the header colour on its top band, the elements colour as its accent, the logo beside the campaign name, so the business sees its own campaign rather than a generic page. Where they read `(none)` or `(not set)`, the dashboard uses its default look and the written review says in one line that the campaign page carried no brand, since that is a finding about the campaign and not only about the report.
+The `site` block is the dashboard's theme. Where the site has a header colour, an elements colour, a logo or an icon set, the dashboard wears them: the header colour on its top band, the elements colour as its accent, the logo beside the campaign name, so the business sees its own campaign on the page. Where they read `(none)` or `(not set)`, the dashboard uses its default look and the written review says in one line that the campaign page carried no brand, which is a finding about the campaign itself.
 
 ## Reading the description
 
