@@ -344,6 +344,33 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 2.3.0 (2026-09-23)
+
+The results review now answers the prompt Gleam's Reporting tab sends. It reads the tab's summary field by
+field, ranks a campaign that is still running as a floor on the days it has run, keeps test campaigns out of
+the organizer's history, treats a field marked not provided as unknown rather than a number read out of the
+Prize description, and ranks from the reference tables where a browser cannot run the scripts.
+
+The same review can be handed over as a dashboard, built by the skill from the export and the reviewer's own
+words: the verdict, the numbers against campaigns the same size, the three changes, one tab per Reporting
+tab, and a Levers tab whose sliders show what campaigns at a chosen level drew, as a comparison and never a
+forecast. The site's own logo and colours theme it.
+
+Numbers reach the reader in the reader's units. A share is a percentage, a count above one per person is
+"each", a comparison is 1.5x, and the checker fails an answer on "per 100" or "1.5 times". The report script
+puts a typical figure and a rank beside its topline, every Entry Method and the referred share, and says in
+words where the data holds no benchmark.
+
+The draw is verifiable end to end. The verifier rebuilds every place from the committed tiers and backup
+count, the export refuses missing weights instead of inventing them, a one-column CSV keeps its header out of
+the pool, and a page visit about referrals no longer counts as a referral. Three published groups that
+described a single business are gone, the generator applies the five-business floor before writing, and a
+recursive privacy check runs in CI. The email Action is described as what it measures, marketing permission,
+with an address able to exist without it.
+
+Round eight, answered and graded by a second model on the frozen rubric, scored 90.4 and is not a point on
+the round six to seven line. Its six correctness caps were all repository faults and are fixed.
+
 ## 2.2.3 (2026-09-12)
 
 Every figure in a reference table now comes from the data it cites. Twenty five hand-typed tables, 357 cells
