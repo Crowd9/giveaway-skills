@@ -18,7 +18,7 @@ Gleam's Reporting tab builds a review prompt for the business and opens it in Cl
 | `prizeValue` | The Prize value recorded on the campaign, often `not recorded` | Use the business's stated Prize cost from the context instead |
 | `planName`, `planCost` | The Gleam plan and its monthly price | The cost side of the return figure, with the Prize and promotion costs. The ROI script has no plan flag, so months run times the monthly price goes in as `--admin`, and with `prizeValue` not recorded leave `--stated-value` out and say the cost per result sits beside a stated-value benchmark |
 
-Two things the JSON does not say. The `days` figure is the planned length, so on a live campaign it overstates the run and understates Entrants per day. And the Reporting tab's counts and the export's counts come from different moments, so unique emails in the export can sit a few above or below `contestants`. Take Impressions and `methods` from the JSON, take per-action counts, referrers, countries and timing from the export, and where the two disagree on Entrants by under one percent say which you used and move on. The export's last dated row is the last time anyone acted, which on a live campaign is the figure that says whether it is still moving.
+Two things the JSON does not say. The `days` figure is the planned length, so on a live campaign it overstates the run and understates Entrants per day. And the Reporting tab's counts and the export's counts come from different moments, so unique emails in the export can sit a few above or below `contestants`. Take Impressions, `methods` and the run length from the JSON (`gleam_export.py` counts dated rows inclusively and can print a day more), take per-action counts, referrers, countries and timing from the export, and where the two disagree on Entrants by under one percent say which you used and move on. The export's last dated row is the last time anyone acted, which on a live campaign is the figure that says whether it is still moving.
 
 ## What the export holds
 
@@ -50,7 +50,7 @@ A field that reads `(not provided)` or `not recorded` is unknown. It never becom
 
 ## Without a shell
 
-Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where they cannot, rank from the tables in `references/benchmarks.md` by hand: name the size band, quote the band's typical figure beside the campaign's, and give the comparison as a direction with the count behind it, since the percentile needs the script. Say that the ranks were read from the tables. Skip the pasted checker output, since there is no run to paste. Where Python is available, fetch the two scripts from the repository and run them as the workflow says.
+Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where they cannot, rank from the tables in `references/benchmarks.md` by hand: name the size band, quote the band's typical figure beside the campaign's, and give the comparison as a direction with the count behind it, since the percentile needs the script. Say that the ranks were read from the tables. Skip the pasted checker output, since there is no run to paste. Where Python is available, fetch the two scripts from the repository and run them as the workflow says, and still keep the checker's output out of the reply: the business owner reading it wants the review, and the dict means nothing to them. The report script prints sharers and top Entrants by first name and initial for the owner's own eyes, and none of those names go in the reply.
 
 ## Reading the description
 

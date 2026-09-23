@@ -12,7 +12,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-random-draw | 1.3.27 |
 | giveaway-winner-communications | 1.2.26 |
 | giveaway-idea-generator | 1.3.26 |
-| giveaway-results-review | 1.5.34 |
+| giveaway-results-review | 1.5.35 |
 | gleam-campaign-setup | 1.2.27 |
 
 ## Skills
@@ -316,6 +316,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.5.29 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.5.30 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.5.35 (2026-09-23): Read a page about referrals as a visit, give each action's typical figure from the same group its rank uses, and say when the Conversion Rate row is skipped for want of Impressions.
 - 1.5.34 (2026-09-23): Read the review prompt Gleam's Reporting tab sends, with a live campaign ranked as a floor, test campaigns kept out of the organizer's history, and the tables used when the scripts cannot run.
 - 1.5.33 (2026-09-12): Summary and draw conversion share weight validation, reject missing earned weights, and preserve fractional totals. The export-to-draw regression checks the complete conversion path.
 

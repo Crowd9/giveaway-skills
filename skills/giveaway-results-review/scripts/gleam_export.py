@@ -23,7 +23,8 @@ FOLLOW_KEYS = [("x_follows", ("follow", ("x", "twitter", "@"))), ("instagram_fol
 
 def kind(action):
     a = action.lower()
-    if "refer" in a: return "referrals"
+    # "Join the Referral Program:" is a page visit about referrals, and it counted as 1,826 referrals on one export
+    if "refer" in a and not any(w in a for w in ("program", "join", "visit", "learn", "read", "check", "see ")): return "referrals"
     if ("subscribe" in a or "sign up" in a or "signup" in a or "newsletter" in a or "email" in a) and "youtube" not in a: return "emails"
     for key, (verb, nets) in FOLLOW_KEYS:
         if verb in a and any(n in a for n in nets):
@@ -40,6 +41,7 @@ GENERIC = [("Viral Shares", ("refer",)), ("Secret Code", ("secret code",)), ("Lo
 def generic_name(action):
     """Best guess at the Gleam action type behind an organizer's custom title, for the per-action benchmark."""
     a = action.lower()
+    if any(w in a for w in ("check ", "read ", "learn", "see how", "program", "watch", "view ")): return "Visit a Page"
     for name, words in GENERIC:
         if all(w in a for w in words) if len(words) == 2 and name.endswith(("Follows", "Comments")) else any(w in a for w in words): return name
     return ""
@@ -179,6 +181,8 @@ def self_test():
         writer.writerows([["a@example.com", "Subscribe", "1.25"], ["a@example.com", "Visit", "2.5"]])
     assert load(p)["entries"] == 3.75
     write_entrants(p, output, "Email")
+    assert kind("Refer Friends For Extra Entries") == "referrals" and kind("Join the Referral Program:") is None
+    assert generic_name("Join the Referral Program:") == "Visit a Page" and generic_name("Refer Friends For Extra Entries") == "Viral Shares"
     print("self-test passed"); return 0
 
 def main(argv):

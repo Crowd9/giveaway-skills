@@ -115,8 +115,13 @@ def lookup(table, x):
         if x <= limit: return v
     return table[-1][1]
 
+# A page visit about sharing reads as a share by keyword: "Join the Referral Program:" and "Check how to make a
+# giveaway Go Viral:" both sat in the share family on one export. A visit verb wins.
+VISIT_FIRST = ("check ", "read ", "learn", "see how", "program", "watch", "view ")
+
 def family(name):
     n = name.lower()
+    if any(w in n for w in VISIT_FIRST): return "visit"
     for fam, words in FAMILY_WORDS.items():
         if any(w in n for w in words): return fam
     return None
@@ -152,6 +157,8 @@ def review(a):
         if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day, so a long run or a daily action lowers this without anything being wrong"
         note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
         rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
+    else:
+        rows.append(("Conversion Rate", "-", "-", "skipped: no Impressions given, and the export never holds them, so take the figure from the Reporting tab"))
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)
         if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification. Check for a validated-answer question first, then referral and Discord actions"))
@@ -194,6 +201,8 @@ def read_actions(path, contestants):
             gname = r[2].strip() if len(r) > 2 and r[2].strip() else r[0]
             t = (PCT or {}).get("per_action_uptake", {}).get(gname)
             rr = rank(up, t)
+            # the typical column and the rank read the same group, or a repost at triple the family figure lands in the bottom fifth
+            if t: bench = t["p"][9]
             if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
             ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
             if ym: read += f", a typical campaign of {band_label(contestants)} collected {ym:,}"
@@ -281,6 +290,7 @@ def self_test():
     assert read_history(fh.name)[0]["contestants"] == 1200, "the help text's capitalised headers must parse"
     os.unlink(fh.name)
     assert family("Subscribe to our newsletter") == "email" and family("Share on Facebook") == "share" and family("Visit our store") == "visit"
+    assert family("Join the Referral Program:") == "visit" and family("Check how to make a giveaway Go Viral:") == "visit" and family("Refer Friends For Extra Entries") == "share"
     class Small: contestants = 300; impressions = 1000; entries = 1200; invalid = None; days = 9; methods = 6; repeatable = False; vertical = None
     srows = review(Small); sd = {r[0]: r for r in srows}
     assert sd["Users"][1] == "300" and "250 to 500 Entrants" in sd["Users"][3], srows
