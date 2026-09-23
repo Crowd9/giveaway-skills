@@ -16,6 +16,9 @@ Gleam's Reporting tab builds a review prompt for the business and opens it in Cl
 | `hasRepeatableAction` | A daily, loyalty or timed bonus action is on | The Impressions caveat applies |
 | `referrals` | Completions of the referral action, each one a referred Entrant credited to a sharer | Referral Entries per Entrant |
 | `prizeValue` | The Prize value recorded on the campaign, often `not recorded` | Use the business's stated Prize cost from the context instead |
+| `site` | The site the campaign sits on: name, URL, and whether a logo, icon and colours are set | Who the business is. Unset branding on a site with real traffic is worth one line, since the widget then carries no brand |
+| `socialChannels` | The accounts the follow actions point at, one per platform | Whether the follows built this business's audience or a partner's: a follow on an account that is not the site's own is reach for that account, and the review says so |
+| `context.objective`, `context.vertical`, `context.prizeCost`, `context.promotionSpend` | What the business typed beside the report | The facts the review is built on. Newer prompts add `benchmarkVertical`, the nearest of this skill's verticals chosen by Gleam, and `currency` |
 | `planName`, `planCost` | The Gleam plan and its monthly price | The cost side of the return figure, with the Prize and promotion costs. The ROI script has no plan flag, so months run times the monthly price goes in as `--admin`, and with `prizeValue` not recorded leave `--stated-value` out and say the cost per result sits beside a stated-value benchmark |
 
 Two things the JSON does not say. The `days` figure is the planned length, so on a live campaign it overstates the run and understates Entrants per day. And the Reporting tab's counts and the export's counts come from different moments, so unique emails in the export can sit a few above or below `contestants`. Take Impressions, `methods` and the run length from the JSON (`gleam_export.py` counts dated rows inclusively and can print a day more), take per-action counts, referrers, countries and timing from the export, and where the two disagree on Entrants by under one percent say which you used and move on. The export's last dated row is the last time anyone acted, which on a live campaign is the figure that says whether it is still moving.
@@ -24,7 +27,7 @@ Two things the JSON does not say. The `days` figure is the planned length, so on
 
 The export is the campaign's Actions export, one row per completed action, described in `reading-results.md` under "Reading a Gleam Actions export". In a chat with no shell, read it as a table: count rows per Action for completions, rows per Email for actions per Entrant, the Entries column summed for total Entries, the Referring URL host for where visits came from, Country for the audience, and When for the busiest days. Count over the whole file where the chat lets you. Where it only lets you sample, say the split is sampled and build no change on it: a sample of a file this size read every visit as coming from the giveaway directory when the full count had a third arriving direct. Say that these were read from the export by hand, and skip the heatmap and journey, which need the script.
 
-The export merges actions that share a name. A campaign with three actions called "Click For a Bonus Entry" shows one row in the export's action count with all three summed, while the prompt's actions table lists them apart. Rank each action from the prompt's table, and use the export for the per-Entrant view.
+A row in the actions table with no name and no type is an Entry Method that was deleted from the campaign after people completed it. Count its completions in the totals and say that the method no longer exists, so it cannot be ranked. The export merges actions that share a name. A campaign with three actions called "Click For a Bonus Entry" shows one row in the export's action count with all three summed, while the prompt's actions table lists them apart. Rank each action from the prompt's table, and use the export for the per-Entrant view.
 
 ## A live campaign
 
@@ -38,7 +41,7 @@ The prompt can arrive while the campaign is still running. Read `status`, or com
 
 ## Previous campaigns
 
-The prompt lists every campaign on the account, oldest first, including tests with a handful of Entrants. The benchmarks describe campaigns from 100 Entrants up, so count the previous campaigns at 100 Entrants or more. None means this is the business's first real campaign, and it is compared with first campaigns. One or more means the organizer's own history is in play, and the comparison is against those campaigns only, never against a row with three Entrants and four Impressions.
+The prompt lists previous campaigns on the account, in one table oldest first or in three short tables (latest, oldest, highest by Entrants), including tests with a handful of Entrants. The highest-by-Entrants table is the one that says whether the account has run a real campaign before. The benchmarks describe campaigns from 100 Entrants up, so count the previous campaigns at 100 Entrants or more. None means this is the business's first real campaign, and it is compared with first campaigns. One or more means the organizer's own history is in play, and the comparison is against those campaigns only, never against a row with three Entrants and four Impressions.
 
 ## Context the business typed
 
@@ -51,6 +54,10 @@ A field that reads `(not provided)` or `not recorded` is unknown. It never becom
 ## Without a shell
 
 Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where they cannot, rank from the tables in `references/benchmarks.md` by hand: name the size band, quote the band's typical figure beside the campaign's, and give the comparison as a direction with the count behind it, since the percentile needs the script. Say that the ranks were read from the tables. Skip the pasted checker output, since there is no run to paste. Where Python is available, fetch the two scripts from the repository and run them as the workflow says, and still keep the checker's output out of the reply: the business owner reading it wants the review, and the dict means nothing to them. The report script prints sharers and top Entrants by first name and initial for the owner's own eyes, and none of those names go in the reply.
+
+## A dashboard
+
+The prompt can ask for the review as an interactive dashboard. Where the chat can build one, its first screen carries the written verdict, the numbers table and the three changes, so a reader who never clicks still has the review, and every figure on it is one the written review would carry with the same count behind it. Where it cannot, the written review is the answer, and saying so is enough.
 
 ## Reading the description
 
