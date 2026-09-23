@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 116,499 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: Entrants for campaigns your size, how many entered, actions per Entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.5.33
+  version: 1.5.34
 ---
 
 # Giveaway Results Review
@@ -12,6 +12,8 @@ Read a finished campaign's numbers against what 116,499 campaigns of the same si
 ## Before starting
 
 If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first for the business and its objective. Ask only for what it lacks.
+
+When the message carries a JSON summary from Gleam's Reporting tab (fields such as `contestants`, `impressions`, `hasRepeatableAction`, an actions table and a previous-campaigns table), load `references/gleam-reporting.md` before anything else. It says what each field means, that `days` is the planned run and the campaign may still be live, that previous campaigns under 100 Entrants do not count, and how to rank from the tables when the scripts cannot run.
 
 ## What to ask first
 
@@ -159,6 +161,7 @@ Advice is platform-neutral. Reporting definitions come from the campaign's own p
 A sample in Gleam Actions export shape, 118 rows from 30 Entrants over five days, sits at `examples/sample-actions-export.csv`, which is the file to count if either figure is ever in doubt, and both scripts run on it as is.
 
 - `references/benchmarks.md`: distributions for Entrants, entries, Impressions, duration, Conversion Rate by method count and duration, invalid share, how many did each kind of action, and what campaigns produced (email signups, follows, joins, referrals per campaign and stated USD per completion). Written from the analysis output.
+- `references/gleam-reporting.md`: the review prompt Gleam's Reporting tab sends, field by field, with the live-campaign, previous-campaign and no-shell rules. Load when the message carries that JSON summary.
 - `references/reading-results.md`: how to read each metric, the Impressions caveat, common misreads, the recommendation map.
 - `scripts/campaign_report.py`: the full report from any export, Gleam as is and other platforms through `--map` or synonyms, with `--impressions`, `--prize-value`, `--plan-cost`, `--benchmark-cpl`, `--sends`, `--partners`. `--self-test` checks it.
 - `scripts/gleam_export.py`: reads an export into the review numbers, the per-action CSV and an Entrants CSV for the draw script. `--self-test` checks it.
