@@ -362,7 +362,7 @@ puts a typical figure and a rank beside its topline, every Entry Method and the 
 words where the data holds no benchmark.
 
 The draw is verifiable end to end. The verifier rebuilds every place from the committed tiers and backup
-count, the export refuses missing weights instead of inventing them, a one-column CSV keeps its header out of
+count, the export refuses a file with missing weights, a one-column CSV keeps its header out of
 the pool, and a page visit about referrals no longer counts as a referral. Three published groups that
 described a single business are gone, the generator applies the five-business floor before writing, and a
 recursive privacy check runs in CI. The email Action is described as what it measures, marketing permission,
