@@ -58,7 +58,7 @@ Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where
 
 ## Sliders and what-ifs
 
-A dashboard may carry sliders, and only two kinds. Arithmetic on this campaign's own counts (a target share of Entrants times its Entrants is a number of addresses) and a lookup in the benchmark (where that share, or that Entrant count, sits among campaigns the same size). Both are labelled as such beside the control, with the sentence that the data shows what campaigns chose and never what a change causes. A slider that moves one figure and claims another moves with it is a forecast, and nothing in the data supports one.
+A dashboard may carry sliders, and only three kinds. Arithmetic on this campaign's own counts (a target share of Entrants times its Entrants is a number of addresses). A lookup in the benchmark (where that share, or that Entrant count, sits among campaigns the same size). And a lookup along a cut the references already describe, such as Entrants by Impressions fifth within the band in `reading-results.md`, the Prize pool tenths in the Prize picker's evidence, or the sequence curve in `benchmarks.md`, worded as what campaigns at that level drew and carrying the source's own limit beside it: a bigger Prize goes with a bigger business, more reach goes with a different campaign, and the businesses that ran again are the ones whose last run went well. All three are labelled beside the control, with the sentence that the data shows what campaigns chose and never what a change causes. A slider that moves one figure and claims another moves with it for this reader is a forecast, and nothing in the data supports one.
 
 ## What is benchmarked and what is not
 
