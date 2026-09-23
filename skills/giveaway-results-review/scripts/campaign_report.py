@@ -14,7 +14,31 @@ timezone, so every time figure is account time. Status Invalid rows are counted 
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
 never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
 """
-import argparse, collections, csv, datetime as dt, statistics as st, sys, urllib.parse
+import argparse, collections, csv, datetime as dt, os, statistics as st, sys, urllib.parse
+
+# The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
+# A copy of this script on its own still runs; the columns then say no benchmark was loaded.
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import review as _bench; from gleam_export import generic_name as _gname
+except Exception:
+    _bench = None; _gname = None
+
+
+def reader_unit(v):
+    return f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
+
+
+def bench(metric, value, n, fmt=lambda v: f"{v:,.2f}", key=None, group=None):
+    """Two cells: the typical figure for campaigns this size (or the named group) and where this one sits."""
+    if not _bench or value is None: return "-", "no benchmark loaded"
+    _bench.PCT = _bench.PCT or _bench.load_pct()
+    if group is None:
+        key = key or "band:" + _bench.band(n); t = _bench.PCT.get("groups", {}).get(key, {}).get(metric); label = f"campaigns of {_bench.band_label(n)}"
+    else:
+        t = _bench.PCT.get("per_action_uptake", {}).get(group); label = f"campaigns offering {group}"
+    if not t: return "-", "no benchmark for this"
+    rr = _bench.rank(value, t)
+    return fmt(t["p"][9]), f"better than {rr[0]}% of {rr[1]:,} {label}"
 
 # Maintenance: DIRECTORIES, SOCIAL, WEBMAIL and SEARCH are hand-kept host lists used only to label a referrer.
 # Add a host when a report shows it under "Other referrers" with a meaningful entrant count. An unknown host is labelled, never dropped.
@@ -187,6 +211,10 @@ def analyze(rows, a):
     whens = [r["_when"] for r in valid if r["_when"]]
     if whens:
         start = min(whens); R["first48"] = sum(1 for w in whens if (w - start).total_seconds() <= 172800) / len(whens); R["start"] = start; R["end"] = max(whens)
+    # by day: the day each Entrant first acted, and actions that day. The curve the Reporting tab draws, here as a table.
+    new_by_day = collections.Counter(rs[0]["_when"].date() for rs in people.values() if rs and rs[0]["_when"])
+    act_by_day = collections.Counter(r["_when"].date() for r in valid if r["_when"])
+    R["by_day"] = [(d, new_by_day[d], act_by_day[d]) for d in sorted(act_by_day)]
     # traffic: first touch channels, hosts, hosted vs embedded, utm
     ft = collections.Counter(first[w]["_channel"] for w in first); fh = collections.Counter(first[w]["_host"] or "direct or unknown" for w in first)
     ch_actions = collections.Counter(r["_channel"] for r in valid); ch_invalid = collections.Counter(r["_channel"] for r in invalid); ch_all = collections.Counter(r["_channel"] for r in rows)
@@ -237,8 +265,16 @@ def render(R, a):
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
     w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
-    w(f"| Metric | Value |\n|---|---|\n| Users | {n:,} |\n| Actions completed | {T['actions']:,} |\n| Entries | {T['entries']:,} |\n| Actions per entrant | {T['actions_per_entrant']:.2f} |\n| Entries per entrant | {T['entries_per_entrant']:.2f} |\n| Invalid actions | {T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows) |"
-      + (f"\n| Conversion Rate | {n / a.impressions:.1%} |" if a.impressions else ""))
+    def row(label, shown, metric=None, value=None, fmt=lambda v: f"{v:,.2f}"):
+        typ, where = bench(metric, value, n, fmt) if metric else ("-", "no benchmark for this")
+        return f"| {label} | {shown} | {typ} | {where} |"
+    w("| Metric | Value | Typical, campaigns your size | Where this campaign sits |\n|---|---|---|---|\n"
+      + "\n".join([row("Users", f"{n:,}", "contestants", n, lambda v: f"{v:,.0f}"), row("Actions completed", f"{T['actions']:,}"), row("Entries", f"{T['entries']:,}", "entries", T["entries"], lambda v: f"{v:,.0f}"),
+                   row("Actions each", f"{T['actions_per_entrant']:.1f}", "actions_per_contestant", T["actions_per_entrant"], lambda v: f"{v:.1f}"),
+                   row("Entries each", f"{T['entries_per_entrant']:.1f}", "entries_per_entrant", T["entries_per_entrant"], lambda v: f"{v:.1f}"),
+                   row("Invalid actions", f"{T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows)")]
+                  + ([row("Conversion Rate", f"{n / a.impressions:.1%}", "conversion", n / a.impressions, lambda v: f"{v:.0%}")] if a.impressions else [])))
+    w("\nTypical is the median of campaigns in the same size band in Gleam campaign data, and the rank is the share of that band this campaign beats. Engagement depth, speed, timing, traffic mix, audience and retention have no benchmark in the data, so those sections describe this campaign alone.")
     E = R["engagement"]; w("\nEngagement by actions per Entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
     S = R["speed"]
     if S["multi"]:
@@ -258,6 +294,11 @@ def render(R, a):
     if R["engagement"]["1"][1] > 0.1: ins.append(f"{R['engagement']['1'][0]:,} entrants ({R['engagement']['1'][1]:.0%}) completed one action only.")
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {V['referred_entrants']:,} referred entrants.")
+    if R.get("by_day"):
+        peak = max(R["by_day"], key=lambda t: t[1])
+        w(f"\nBy day (account time), new Entrants and actions. Peak day for new Entrants {peak[0].isoformat()} with {peak[1]:,}.")
+        w("\nDay | New Entrants | Actions\n---|---|---")
+        for d, ne, ac in R["by_day"]: w(f"{d.isoformat()} | {ne:,} | {ac:,}")
     if R["heat_peak"]:
         (dw, hr), cnt = R["heat_peak"]; w(f"\nActivity peak: {DAYS[dw]} {hr:02d}:00 account time with {cnt:,} actions. A single campaign's heatmap follows its launch timing.")
         w("\nHour | " + " | ".join(DAYS) + "\n---|" + "---|" * 7)
@@ -278,12 +319,16 @@ def render(R, a):
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
     if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ".")
     else: w("\nPartner contribution needs --partners with the hosts or UTM values that identify them. Without tagging it is not attributable.")
-    w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|")
+    w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Typical, campaigns offering it | Where it sits | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         flag = " (slow)" if sec and sec > 120 else ""
-        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
+        g = _gname(act) if _gname else None
+        typ, where = bench(None, comp / n, n, reader_unit, group=g) if g else ("-", "no matching group")
+        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
     w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
     w(f"\n## Viral\n\nReferral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants), referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)" + (f", referrals per sharer {V['referrals_per_sharer']:.1f}" if V["referrals_per_sharer"] else "") + (f", share of referrals who joined {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)" if V["referral_conversion"] is not None else "") + (f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)." if V["lift"] is not None else "."))
+    rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.0%}")
+    w(f"\nReferred Entrants as a share of all Entrants: {V['refer_rows'] / n:.0%} here, {rtyp} typical for campaigns your size, {rwhere}.")
     if V["top"]:
         w("\n| Sharer | Referral completions | Referred who entered | Entries brought | Connected accounts | Referred doing one action |\n|---|---|---|---|---|---|")
         for s in V["top"]:
@@ -327,7 +372,8 @@ def self_test():
     assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
     assert R["channels"][0][0] in ("Email (webmail)", "Competition directories") and R["utm"][0][1] == 1 and R["roi"]["emails"] == 1 and R["partners"][0][1] == 1, (R["channels"], R["utm"], R["roi"])
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
-    assert "| Users | 2 |" in out and "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
+    assert "| Users | 2 |" in out and "Typical, campaigns your size" in out and "better than" in out and "campaigns offering" in out, out[:900]
+    assert "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     out2 = render(analyze(load(p), C), C)
     assert "| Conversion Rate | 20.0% |" in out2 and "supplied from the Reporting tab" in out2 and "Views" not in out2 and "share who entered" not in out2.lower(), out2[:400]
