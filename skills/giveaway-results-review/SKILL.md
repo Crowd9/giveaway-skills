@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 116,499 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: Entrants for campaigns your size, how many entered, actions per Entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.5.37
+  version: 1.6.0
 ---
 
 # Giveaway Results Review
@@ -49,7 +49,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 7. **Price it.** The ROI script lives in the giveaway-prize-picker skill. From that skill's folder run `python3 scripts/roi.py --prize-cost N --stated-value N --promotion N --contestants N --emails N --follows N --referrals N --vertical NAME` with the actual counts, and show cost per result beside the vertical benchmark. Ask for a value per email only if the user wants a return figure.
 8. **Measure what the list did next** (advice: the 30, 60 and 90 day windows below are common practice and no cut in this data sets them). Ask for the four outcome figures, or read them if the user already has them: unsubscribes and spam complaints on the giveaway segment in the week after the Winners email, addresses synced to the email provider against addresses collected, customers and revenue from a join of Entrant email against order data at 30, 60 and 90 days after close, and the open share of the new subscribers in their first 30 days. `campaign_report.py` prints the same four as a checklist under Outcomes. None of them is in the dataset, so never estimate one. When the user has none of them yet, say which system holds each and leave the section as the next thing to collect. Where the giveaway ran on social, also take follower counts at launch, close and 30 days after on each promoted channel, and reach, saves and link clicks on the launch post against the channel's usual post. When the session has a social or analytics connector, read the follower count and last month's post reach from it and say where the figure came from. Otherwise ask for the numbers or a screenshot of the channel's insights. Never scrape a profile. The dataset has none of these, so compare against the user's own previous posts and campaigns.
 9. **Recommend changes.** Three at most, each tied to a figure, each pointing at the skill that plans it: Prize, entry mix, timing, structure, promotion.
-10. **Deliver.**
+10. **Deliver.** When the reader asked for a dashboard, or the request came from Gleam's Reporting tab, write the verdict, assumptions, pills, three changes, caveats and closing question to `words.json` (the shape is in the script's docstring) and run `python3 scripts/dashboard.py export.csv --words words.json --out dashboard.html` with the same flags you gave `review.py`, plus `--site site.json` when the prompt carried a site block. The page carries every figure from the two scripts, the report by Reporting tab and a Levers tab, so hand over the file and keep the written review as the reply.
 
 ## Output
 
@@ -162,6 +162,7 @@ A sample in Gleam Actions export shape, 118 rows from 30 Entrants over five days
 
 - `references/benchmarks.md`: distributions for Entrants, entries, Impressions, duration, Conversion Rate by method count and duration, invalid share, how many did each kind of action, and what campaigns produced (email signups, follows, joins, referrals per campaign and stated USD per completion). Written from the analysis output.
 - `references/gleam-reporting.md`: the review prompt Gleam's Reporting tab sends, field by field, with the live-campaign, previous-campaign and no-shell rules. Load when the message carries that JSON summary.
+- `scripts/dashboard.py`: the results dashboard as one HTML file, from the export and `words.json`, themed by the site block. Run it only when a dashboard was asked for.
 - `references/reading-results.md`: how to read each metric, the Impressions caveat, common misreads, the recommendation map.
 - `scripts/campaign_report.py`: the full report from any export, Gleam as is and other platforms through `--map` or synonyms, with `--impressions`, `--prize-value`, `--plan-cost`, `--benchmark-cpl`, `--sends`, `--partners`. `--self-test` checks it.
 - `scripts/gleam_export.py`: reads an export into the review numbers, the per-action CSV and an Entrants CSV for the draw script. `--self-test` checks it.

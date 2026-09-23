@@ -73,6 +73,43 @@ The working rule that falls out: doubling the traffic you put in front of a page
 Entrants, not twice as many. Read it as a description of campaigns at each reach level and never as what adding a
 channel would do for this campaign, because nothing here holds the audience or the Prize constant.
 
+Every band, so a reader's own row is here:
+
+<!-- generated:rr_reach_bands -->
+| Size band | Impressions group | Campaigns | Impressions | Entrants | Conversion Rate |
+|---|---|---|---|---|---|
+| 100 to 250 Entrants | lowest fifth | 6,601 | 274 | 132 | 53% |
+| 100 to 250 Entrants | second | 6,601 | 441 | 148 | 34% |
+| 100 to 250 Entrants | middle | 6,601 | 632 | 164 | 26% |
+| 100 to 250 Entrants | fourth | 6,601 | 928 | 176 | 19% |
+| 100 to 250 Entrants | highest fifth | 6,601 | 1,764 | 187 | 10% |
+| 250 to 500 | lowest fifth | 5,122 | 593 | 315 | 58% |
+| 250 to 500 | second | 5,122 | 949 | 340 | 36% |
+| 250 to 500 | middle | 5,122 | 1,341 | 354 | 26% |
+| 250 to 500 | fourth | 5,122 | 1,922 | 370 | 19% |
+| 250 to 500 | highest fifth | 5,121 | 3,322 | 385 | 11% |
+| 500 to 1,000 | lowest fifth | 4,358 | 1,153 | 611 | 57% |
+| 500 to 1,000 | second | 4,358 | 1,820 | 662 | 37% |
+| 500 to 1,000 | middle | 4,358 | 2,509 | 698 | 28% |
+| 500 to 1,000 | fourth | 4,358 | 3,529 | 738 | 21% |
+| 500 to 1,000 | highest fifth | 4,357 | 6,292 | 765 | 12% |
+| 1,000 to 2,500 | lowest fifth | 3,988 | 2,504 | 1,232 | 54% |
+| 1,000 to 2,500 | second | 3,988 | 3,875 | 1,377 | 36% |
+| 1,000 to 2,500 | middle | 3,988 | 5,416 | 1,516 | 28% |
+| 1,000 to 2,500 | fourth | 3,988 | 7,874 | 1,669 | 21% |
+| 1,000 to 2,500 | highest fifth | 3,988 | 14,836 | 1,788 | 11% |
+| 2,500 to 10,000 | lowest fifth | 2,533 | 6,905 | 3,030 | 48% |
+| 2,500 to 10,000 | second | 2,533 | 11,147 | 3,611 | 33% |
+| 2,500 to 10,000 | middle | 2,533 | 15,922 | 4,201 | 27% |
+| 2,500 to 10,000 | fourth | 2,532 | 24,126 | 4,931 | 20% |
+| 2,500 to 10,000 | highest fifth | 2,532 | 46,236 | 5,560 | 11% |
+| 10,000 or more | lowest fifth | 623 | 23,160 | 12,158 | 58% |
+| 10,000 or more | second | 623 | 41,399 | 13,834 | 34% |
+| 10,000 or more | middle | 623 | 62,315 | 15,778 | 25% |
+| 10,000 or more | fourth | 622 | 109,844 | 21,530 | 20% |
+| 10,000 or more | highest fifth | 622 | 246,976 | 38,600 | 15% |
+<!-- /generated -->
+
 A band bounds how far its Entrant counts can spread, so the middle bands understate the relationship. The
 direction and the steepness of the Conversion Rate fall are what carry.
 

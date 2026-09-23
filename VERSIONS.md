@@ -12,7 +12,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-random-draw | 1.3.27 |
 | giveaway-winner-communications | 1.2.26 |
 | giveaway-idea-generator | 1.3.26 |
-| giveaway-results-review | 1.5.37 |
+| giveaway-results-review | 1.6.0 |
 | gleam-campaign-setup | 1.2.27 |
 
 ## Skills
@@ -316,6 +316,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.5.28 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.5.29 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.5.30 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+- 1.6.0 (2026-09-23): A dashboard script builds the review as one HTML page from the export and the reviewer's words: verdict, the numbers against campaigns the same size, the changes, the report by Reporting tab, and a Levers tab whose sliders do arithmetic on the campaign's counts and lookups in the references, never a forecast. The reach table now covers every size band.
 - 1.5.37 (2026-09-23): The report script benchmarks its topline, every Entry Method and the referred share against campaigns the same size, adds a by-day table, and says which sections have no benchmark.
 - 1.5.36 (2026-09-23): The review script prints shares as percentages and counts above one as "each", so the answer carries the reader's units.
 - 1.5.35 (2026-09-23): Read a page about referrals as a visit, give each action's typical figure from the same group its rank uses, and say when the Conversion Rate row is skipped for want of Impressions.

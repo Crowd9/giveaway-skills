@@ -258,6 +258,24 @@ def analyze(rows, a):
     R["ten_plus"] = ten_plus
     return R
 
+def insights(R):
+    """The deterministic findings, each checkable against a table in the report."""
+    T = R["topline"]; n = R["base"]
+    ins = []
+    ch = [c for c in R["channels"] if c[1] >= 30 and c[4]]
+    if ch:
+        best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
+        ins.append(f"Source whose entrants went deepest: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
+    if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of all actions happened in the first 48 hours.")
+    V = R["viral"]
+    if V["top_share"] is not None: ins.append(f"Top sharer accounts for {V['top_share']:.0%} of referral completions" + (" (over 40%, review before crediting)." if V["top_share"] > 0.4 else "."))
+    ins.append(f"Average depth {T['actions_per_entrant']:.1f} actions, {R['ten_plus'] / n:.0%} of entrants completed 10 or more.")
+    if R["cities"]: c0 = R["cities"][0]; ins.append(f"Biggest city concentration: {c0[0][0]}, {c0[0][1]} with {c0[1]:,} entrants ({c0[1] / n:.0%}).")
+    if R["countries"] and R["cities"] and R["countries"][0][0] != R["cities"][0][0][1]: ins.append(f"City and country leaders diverge: {R['countries'][0][0]} leads by country, {R['cities'][0][0][0]} leads by city.")
+    if R["engagement"]["1"][1] > 0.1: ins.append(f"{R['engagement']['1'][0]:,} entrants ({R['engagement']['1'][1]:.0%}) completed one action only.")
+    return ins
+
+
 def render(R, a):
     L = []; w = L.append; T = R["topline"]; n = R["base"]
     info = getattr(load, "last", None)
@@ -279,19 +297,7 @@ def render(R, a):
     S = R["speed"]
     if S["multi"]:
         w(f"Speed: of {S['multi']:,} multi-action entrants, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
-    # insights
-    ins = []
-    ch = [c for c in R["channels"] if c[1] >= 30 and c[4]]
-    if ch:
-        best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
-        ins.append(f"Source whose entrants went deepest: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
-    if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of all actions happened in the first 48 hours.")
-    V = R["viral"]
-    if V["top_share"] is not None: ins.append(f"Top sharer accounts for {V['top_share']:.0%} of referral completions" + (" (over 40%, review before crediting)." if V["top_share"] > 0.4 else "."))
-    ins.append(f"Average depth {T['actions_per_entrant']:.1f} actions, {R['ten_plus'] / n:.0%} of entrants completed 10 or more.")
-    if R["cities"]: c0 = R["cities"][0]; ins.append(f"Biggest city concentration: {c0[0][0]}, {c0[0][1]} with {c0[1]:,} entrants ({c0[1] / n:.0%}).")
-    if R["countries"] and R["cities"] and R["countries"][0][0] != R["cities"][0][0][1]: ins.append(f"City and country leaders diverge: {R['countries'][0][0]} leads by country, {R['cities'][0][0][0]} leads by city.")
-    if R["engagement"]["1"][1] > 0.1: ins.append(f"{R['engagement']['1'][0]:,} entrants ({R['engagement']['1'][1]:.0%}) completed one action only.")
+    ins = insights(R); V = R["viral"]
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {V['referred_entrants']:,} referred entrants.")
     if R.get("by_day"):
