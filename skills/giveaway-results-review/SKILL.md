@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review a finished giveaway from its export or its numbers against benchmarks from 116,499 real campaigns, with a full report in the order of the reporting tabs (overview, traffic, entry methods, viral, audience, outcomes) from a Gleam Actions export or another platform's export: Entrants for campaigns your size, how many entered, actions per Entrant, invalid entries, which entry actions pulled their weight, and what to change next time. Use when the user asks 'how did my giveaway do', 'was this a good result', 'review my campaign results', 'why was conversion low', 'which actions worked', 'giveaway post-mortem', 'debrief', or pastes campaign stats, a reporting screenshot or an actions export. Platform-neutral. For planning the next one see giveaway-timing-and-duration and giveaway-entry-method-planner."
 metadata:
-  version: 1.5.35
+  version: 1.5.36
 ---
 
 # Giveaway Results Review
@@ -126,7 +126,7 @@ The rest is judgement, which no checker can do.
 ## Numbers
 
 - Translate every rate before it reaches the reader. "0.52 joins per Entrant" means nothing to a person. "About 52% of Entrants joined" does.
-- Pick the shape that fits the number. Something each person either did or did not do is a percentage: 48% of Entrants followed on Instagram. A count that usually runs above one per person is written as a count: 2.5 Entries each. A count that usually runs below one per person reads better per hundred: 7 referrals per 100 Entrants. "250 Entries per 100 Entrants" is nonsense where "2.5 Entries each" is the plain fact.
+- Pick the shape that fits the number, and there are only three. A share of people or of campaigns is a percentage: "48% of Entrants followed on Instagram", "referred Entrants were 19% of the total". A count that runs above one per person is "each": "2.5 Entries each", "1.5 visits each". A comparison between two figures is a multiple written with the letter x and no space: "1.5x the typical campaign", never "1.5 times" and never "150%". Nothing else reaches the reader. "19 per 100 Entrants", "per hundred", "33 times in 100" and a bare decimal like 0.19 are all the same number wearing the analyst's unit, and the checker fails on them. The reference tables keep their per-100 columns because a rate there can pass 100, so the translation happens in the sentence you write, and where a rate does pass 100 it becomes "each".
 - Two figures a paragraph, three at the outside, and one denominator. The checker fails a paragraph carrying more than six, so it catches the blizzard and leaves the rule to you: one measured paragraph held sixteen across six denominators and buried the number that decided the call. A paragraph carrying six numbers with four different denominators cannot be held in the head, however true each one is. Pick the figure that decides the call, put a second beside it if it earns its place, and let the table carry the rest.
 - One comparison, not three. Pick the figure for the reader's own size. If their size is unknown, ask, or give the middle case and say which one it is. Never print the same finding once for every size.
 - Sample sizes never sit in the sentence. Put counts in the table, in brackets at the end of a section, or in the Source line.

@@ -68,6 +68,9 @@ APP_LOWER = r"(?<![A-Za-z`\-])(impressions|conversion rate|entry methods?|viral 
 STIFF = r"\b(works the other way|pulls? in the opposite direction|the picture reverses|comes at a cost|on the other hand|that said|conversely|by contrast|it is worth (noting|remembering)|bear in mind|one thing to note)\b"
 JARGON = r"\b(contestant band|size band|per contestant|n\s*=\s*\d|stratified|cohort|controlled for|unstratified|clean subset|ordinary segment|uptake|extracted)\b"
 BAN = r"\b(so (skip|avoid|drop|do not add|don't add|do not use|don't use)|(skip|avoid) (the|a|an|any) \w+ action|not worth (adding|offering|running|using)|(do not|don't) (bother|add|offer) [a-z]|leave (it|that|the \w+) out)\b"
+# The analyst's units for a rate. A reader knows 53% and 1.5x; "53 per 100 Entrants" and "1.5 times" make them
+# stop and convert, and Stuart asked for the conversion to happen before the sentence reaches them.
+ANALYST_UNITS = r"\b(per (100|hundred)\b|\d+(?:\.\d+)? times (?:the|as|more|fewer|higher|lower|in (?:every )?100|what)\b|in every 100\b)"
 META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(i|we) (sent|gave|listed|showed) (you|above)|as (i|we) (said|noted) above|the (list|table|numbers) above (is|are|shows)|to summari[sz]e|in short,|in summary)\b"
 
 # A sentence asserting how an outside party behaves, or how often something happens, with no figure in it and no
@@ -200,6 +203,7 @@ def check(text):
         "runaway_sentences": sum(1 for n in lens if n > 45),
         "figure_blizzards": blizzards(text),
         "unsourced_claims": len(unsourced_claims(text)),
+        "analyst_units": len(re.findall(ANALYST_UNITS, prose_only(text), re.I)),
     }
 
 # Same patterns, keyed by the counter they feed, so --show can quote what tripped each one.
@@ -208,7 +212,8 @@ SHOW = {"filler_words": (FILLER, re.I), "assistant_closer": (CLOSERS, re.I), "co
         "colon_reveals": (COLON_REVEAL, 0), "puffery": (PUFFERY, re.I), "weasel_attribution": (WEASEL, re.I),
         "superficial_analysis": (SUPERFICIAL, re.I), "metadiscourse": (METADISCOURSE, re.I),
         "rhetorical_setups": (RHETORICAL, re.I), "recap_endings": (RECAP, 0), "lowercase_app_terms": (APP_LOWER, 0),
-        "stiff_phrases": (STIFF, re.I), "reader_facing_jargon": (JARGON, re.I), "bans_without_a_reason": (BAN, re.I)}
+        "stiff_phrases": (STIFF, re.I), "reader_facing_jargon": (JARGON, re.I), "bans_without_a_reason": (BAN, re.I),
+        "analyst_units": (ANALYST_UNITS, re.I)}
 
 
 def show(text):
@@ -304,6 +309,8 @@ def self_test():
                  "Ask them which matters more to you this quarter.\n")
     out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
     assert "FAIL" in out and "unsourced claim: That email send" in out, f"an unsourced claim must block and be quoted, got: {out}"
+    units = check("Referrals ran at 19 per 100 Entrants, about 1.5 times the typical campaign. You drew 2.2x the crowd, and 53% subscribed.")
+    assert units["analyst_units"] == 2, units
     _os.unlink(fh.name)
     print("self-test passed")
 
@@ -322,7 +329,7 @@ if __name__ == "__main__":
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
-                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"])
+                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["analyst_units"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an

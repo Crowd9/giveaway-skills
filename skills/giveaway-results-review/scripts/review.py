@@ -177,10 +177,10 @@ def review(a):
     if getattr(a, "emails", None):
         up = a.emails / a.contestants
         rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
-        rows.append(("Email signups per Entrant", f"{up:.2f}", f"{BENCH['family_uptake']['email']:.2f}", rank_line("email_uptake", up, groups)))
+        rows.append(("Share of Entrants who signed up", f"{up:.0%}", f"{BENCH['family_uptake']['email']:.0%}", rank_line("email_uptake", up, groups)))
     if getattr(a, "referrals", None):
         rp = a.referrals / a.contestants
-        rows.append(("Referral Entries per Entrant", f"{rp:.2f}", "0.13", rank_line("referrals_per_contestant", rp, groups)))
+        rows.append(("Referred Entrants as a share of all Entrants", f"{rp:.0%}", "13%", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
         rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", position(a.days, BENCH["duration_days"]) + ". " + rank_line("duration_days", a.days, groups).replace("better than", "longer than")))
     if a.methods:
@@ -206,7 +206,9 @@ def read_actions(path, contestants):
             if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
             ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
             if ym: read += f", a typical campaign of {band_label(contestants)} collected {ym:,}"
-            out.append((r[0], f"{up:.2f}", f"{bench:.2f}" if bench else "n/a", fam or "unclassified", read))
+            # a share under one per Entrant reads as a percentage, above one as "each", so the writer copies reader units
+            reader = lambda v: f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
+            out.append((r[0], reader(up), reader(bench) if bench else "n/a", fam or "unclassified", read))
     return sorted(out, key=lambda x: -float(x[1]))
 
 HIST_COLS = ("campaign", "contestants", "impressions", "entries", "invalid", "days", "methods", "emails")
@@ -341,7 +343,7 @@ def main(argv):
     print_table(rows, ("Metric", "This campaign", "Typical for campaigns your size", "Read"))
     print(plain_reading(rows))
     if a.actions:
-        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Per Entrant", "Typical for that action", "Family", "Read"))
+        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Completed by", "Typical for that action", "Family", "Read"))
     if a.history:
         rows, notes = history_table(a, read_history(a.history)); print()
         print_table(rows, ("Metric", "This campaign", "Previous", "Your typical", "Change", "Record")); [print(n) for n in notes]
