@@ -177,7 +177,9 @@ def review(a):
     if getattr(a, "emails", None):
         up = a.emails / a.contestants
         rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
-        rows.append(("Share of Entrants who signed up", f"{up:.0%}", f"{BENCH['family_uptake']['email']:.0%}", rank_line("email_uptake", up, groups)))
+        # the typical figure comes from the same band table the rank reads, never the all-campaign family constant
+        t_up = typical("email_uptake", a.contestants) or BENCH["family_uptake"]["email"]
+        rows.append(("Email signups per Entrant", f"{up:.0%}" if up <= 1 else f"{up:.2f} each", f"{t_up:.0%}" if t_up <= 1 else f"{t_up:.2f} each", rank_line("email_uptake", up, groups)))
     if getattr(a, "referrals", None):
         rp = a.referrals / a.contestants
         rows.append(("Referred Entrants as a share of all Entrants", f"{rp:.0%}", "13%", rank_line("referrals_per_contestant", rp, groups)))
