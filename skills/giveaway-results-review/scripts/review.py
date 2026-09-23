@@ -208,8 +208,9 @@ def read_actions(path, contestants):
             if ym: read += f", a typical campaign of {band_label(contestants)} collected {ym:,}"
             # a share under one per Entrant reads as a percentage, above one as "each", so the writer copies reader units
             reader = lambda v: f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
-            out.append((r[0], reader(up), reader(bench) if bench else "n/a", fam or "unclassified", read))
-    return sorted(out, key=lambda x: -float(x[1]))
+            out.append((r[0], reader(up), reader(bench) if bench else "n/a", fam or "unclassified", read, up))
+    # the sort key rides along as a sixth field and is dropped before printing
+    return [row[:5] for row in sorted(out, key=lambda x: -x[5])]
 
 HIST_COLS = ("campaign", "contestants", "impressions", "entries", "invalid", "days", "methods", "emails")
 
@@ -311,6 +312,12 @@ def self_test():
     assert "first campaigns" in fd["Users"][3], fd["Users"]
     First.first_campaign = False
     assert {r[0]: r for r in review(First)}["Users"][2] != "382", "the flag must change the comparison"
+    import tempfile as _tf2, os as _os2
+    with _tf2.NamedTemporaryFile("w", suffix=".csv", delete=False) as fa:
+        fa.write("action,completions,type\nVisit our store,1800,Visit a Page\nSubscribe to our newsletter,900,Email Subscriptions\nShare on Facebook,200,Viral Shares\n")
+    acts = read_actions(fa.name, 1200)
+    assert [r[0] for r in acts] == ["Visit our store", "Subscribe to our newsletter", "Share on Facebook"] and acts[0][1] == "1.5 each" and acts[1][1] == "75%", acts
+    _os2.unlink(fa.name)
     print("self-test passed"); return 0
 
 def entry_total(value):
