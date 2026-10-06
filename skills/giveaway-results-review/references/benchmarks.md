@@ -345,7 +345,7 @@ Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s
 
 Later campaigns see a higher Conversion Rate over a shorter run than a 1st campaign. Read this as which organizers kept going before reading it as improvement: an organizer whose first campaign did poorly is less likely to be in the file with a 2nd, so the 11th-plus row describes organizers who kept going, not the same organizer's own campaign 1 through campaign 11.
 
-Figures that compare like with like sit behind that caveat, from `organizer_history.json`. This source uses a wider 100+ Entrant scope (120,561 campaigns, 18,324 organizers), a broader size range than the 1,000+ scope the rest of this page uses, so the counts below cover smaller campaigns too.
+Figures that compare like with like sit behind that caveat, from `organizer_history.json`. This source uses the same 100+ Entrant scope as the rest of this page (116,499 campaigns, 17,633 businesses), and pairs each business's consecutive campaigns, so a row describes a business against itself.
 
 - Organizers who start bigger are much more likely to keep going: about 2.5x the reach rate to an 11th campaign (table below). This is why every cut below matches organizers on their first-campaign size before comparing them.
 
@@ -353,7 +353,7 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 
 - That rise in entries per Entrant is survivorship, not improvement. Paired within-organizer transitions, each organizer against its own immediate next campaign with no gap, show close to zero typical change in entries per Entrant at every step. Organizers who started higher are the ones who keep going to later positions, not individual campaigns improving.
 
-- Entrants typically decline from one campaign to the next too, though the decline narrows the further into the sequence you go. Well under half of "next" campaigns actually outdraw the one before (44% to 49%) [5,731 to 60,918 paired transitions].
+- Entrants typically decline from one campaign to the next too, though the decline narrows the further into the sequence you go. Under half of "next" campaigns outdraw the one before as the sequence runs on, 44% to 49% [5,731 to 60,918 paired transitions]. The exception is the smallest campaigns: after one under 250 Entrants, 50.9% of next campaigns draw more.
 
 <!-- generated:bm2_reach -->
 | First campaign size | Reach an 11th campaign | Organizers |
@@ -375,8 +375,8 @@ Figures that compare like with like sit behind that caveat, from `organizer_hist
 <!-- generated:bm2_transition -->
 | Transition | Typical change in Entrants |
 |---|---|
-| 1st to 2nd | -4.4% |
-| 11th-plus | -0.4% |
+| 1st to 2nd | -9.8% |
+| 11th-plus | -0.9% |
 <!-- /generated -->
 
 None of this says a second or third campaign will not grow, so it gives no reason to stop after one. What it rules out is treating the campaign count itself as the lever: running more of them, on its own, carries no guaranteed lift. The line below on continuers shows where the real lever sits, in what the organizer sets up before the next campaign even launches, Prize, entry mix, timing and promotion, the design choices this skill and `giveaway-entry-method-planner`, `giveaway-timing-and-duration` and `giveaway-promotion-plan` cover.
@@ -386,8 +386,8 @@ Neither a steady schedule nor a fast one shows a performance edge once organizer
 <!-- generated:bm2_spacing -->
 | Spacing (organizers with 21+ campaigns) | Typical Entrants change |
 |---|---|
-| Sporadic | -0.5% |
-| Regular | -0.4% |
+| Sporadic | -1.1% |
+| Regular | -0.8% |
 
 Sample: 50,543 sporadic against 16,821 regular paired transitions.
 <!-- /generated -->
@@ -395,7 +395,7 @@ Sample: 50,543 sporadic against 16,821 regular paired transitions.
 <!-- generated:bm2_cadence -->
 | Cadence | Change at 1st transition |
 |---|---|
-| Monthly or faster | -3.1% |
+| Monthly or faster | -7.0% |
 | Over a month between campaigns | -5.1% to -5.3% |
 <!-- /generated -->
 
@@ -412,6 +412,50 @@ Organizers who go on to run a second campaign already look different on their fi
 <!-- /generated -->
 
 See `giveaway-timing-and-duration` for the duration angle.
+
+### Repeating or changing the mix between campaigns (extracted)
+
+This is a within-business comparison, the strongest evidence shape in these references: each business's next campaign set against its own last one, with no other campaign of any kind between them, so every business is its own control. The pairs come from campaigns of 100 or more Entrants with crypto and ambiguous campaigns removed. Overlap is the share of Entry Method types (or Prize categories) the two campaigns have in common out of all the types either used: 80% or more is the same, 20% to under 80% is partly the same, under 20% is different. "Next one drew more Entrants" is the share of pairs where the next campaign drew more Entrants than the last.
+
+Entry Method mix:
+
+<!-- generated:bm3_action_repeat -->
+| Overlap with the last campaign | Pairs | Businesses | Next one drew more Entrants | Change in Conversion Rate | Change in Entries per Entrant |
+|---|---|---|---|---|---|
+| Same (80% or more in common) | 61,338 | 5,928 | 47.4% | +0.06 points | no change |
+| Partly the same (20% to under 80%) | 30,344 | 5,905 | 49.5% | -0.07 points | no change |
+| Different (under 20% in common) | 5,870 | 1,567 | 49.7% | +0.23 points | no change |
+<!-- /generated -->
+
+Prize category:
+
+<!-- generated:bm3_prize_repeat -->
+| Overlap with the last campaign | Pairs | Businesses | Next one drew more Entrants | Change in Conversion Rate | Change in Entries per Entrant |
+|---|---|---|---|---|---|
+| Same (80% or more in common) | 53,425 | 6,224 | 47.5% | +0.03 points | no change |
+| Partly the same (20% to under 80%) | 6,436 | 2,054 | 48.2% | -0.01 points | no change |
+| Different (under 20% in common) | 37,692 | 5,323 | 49.1% | +0.05 points | no change |
+<!-- /generated -->
+
+Businesses that kept the same Entry Method mix drew more Entrants the next time in 47.4% of pairs, against 49.5% for businesses that changed part of it and 49.7% for those that changed most of it. The Prize category pairs show the same direction at a smaller gap, 47.5% when it stayed the same against 49.1% when it changed. Conversion Rate moved by under a quarter of a point in every group, and Entries per Entrant moved by less than 0.01. A gap of 1.6 to 2.3 points on pairs that sit inside 1,567 to 6,224 businesses is a lean at most, and the source carries no interval. Businesses that repeat a mix may also be the ones on a settled formula and a settled audience, so nothing here says the mix itself moved the result. The practical reading is that neither repeating nor changing the mix came with a next campaign that drew more Entrants. In every group fewer than half of the next campaigns outdrew the last.
+
+The chance that the next campaign draws more depends a little on how big the last one was:
+
+<!-- generated:bm3_band_next -->
+| Size of the campaign before | Pairs | Businesses | Next one drew more Entrants | Change in Conversion Rate |
+|---|---|---|---|---|
+| Under 250 Entrants | 22,465 | 2,493 | 50.9% | +0.09 points |
+| 250 to 499 | 18,461 | 1,625 | 48.6% | +0.10 points |
+| 500 to 999 | 18,924 | 1,460 | 47.8% | +0.02 points |
+| 1,000 to 2,499 | 17,230 | 1,537 | 46.6% | -0.04 points |
+| 2,500 to 4,999 | 9,518 | 718 | 46.9% | +0.04 points |
+| 5,000 to 9,999 | 5,229 | 367 | 45.8% | +0.00 points |
+| 10,000 or more | 5,726 | 272 | 46.7% | -0.01 points |
+<!-- /generated -->
+
+After a campaign under 250 Entrants the next one drew more in 50.9% of pairs, the only size band above half. From 1,000 Entrants up it sat at 45.8% to 46.9%. Within one business these pairs avoid the survivorship problem above, since a business appears in the pair only because it ran both, though a business that ran two campaigns in a row is still one that kept going.
+
+[Extracted from `analysis/output/organizer_history.json`, `action_mix_repeat`, `prize_category_repeat` and `within_organizer_transition_by_band`.]
 
 Source: `analysis/output/organizer_history.json` (`reach_rate_by_first_band`, `sequence_curve_by_first_band`, `within_organizer_transition_by_seq`, `cadence_regularity`, `transition_by_cadence_regularity_and_campaign_count`, `transition_by_gap_length_and_seq`, `first_campaign_by_survival_matched_on_band`).
 

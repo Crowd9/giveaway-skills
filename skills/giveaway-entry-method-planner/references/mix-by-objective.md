@@ -16,7 +16,7 @@ Advice unless marked as extracted. Completion throughout this file means entries
 | Local foot traffic | In-store code or visit | Follow, tag a local friend | Share to story | Email if the business cannot send to it |
 | Qualified leads or demo requests (B2B) | A short qualifying question only a real buyer can answer, paired with email signup (advice, no dataset support for the pairing) | Visit the pricing or product page, follow the company channel | Refer a colleague | Anything that reads as payment for a review or a referral, content tasks, community joins nobody can moderate |
 
-The B2B row is advice. What the data does hold is 6,138 B2B campaigns from 1,023 businesses, and what those businesses chose: 9 Entry Methods where B2C took 7, 87 referral entries per 100 Entrants where B2C saw 21, and email offered in 17% of campaigns where B2C offered it in 37% (extracted, the mix by the kind of business running it section below). None of that says whether a lead was qualified, because the dataset ends at the entry and carries no outcome after it. So treat a B2B giveaway as list building whose qualification happens in the question and in the follow-up, and tell the reader that is what they are buying.
+The B2B row is advice, and `qualified-entry.md` holds the full version: who to name as the buyer, gating, the qualifying question, what to require, the follow-up and the scorecard. What the data does hold is 12,728 B2B campaigns from 1,779 businesses, and what those businesses chose: the same typical 7 Entry Methods as B2C, 44 referral entries per 100 Entrants where B2C saw 16, and email offered in 19% of campaigns where B2C offered it in 34% (extracted, the mix by the kind of business running it section below). None of that says whether a lead was qualified, because the dataset ends at the entry and carries no outcome after it. So treat a B2B giveaway as list building whose qualification happens in the question and in the follow-up, and tell the reader that is what they are buying. The usual scorecard of Entrants and Conversion Rate rewards a big crowd, so a buyer campaign needs its own, and `qualified-entry.md` gives one.
 
 A buyer's employer may have rules about being paid for a review, a referral or a public endorsement, and a regulated buyer may have more. Where the user raises that, drop the referral and review actions and put the reach into the question and the page visit, and say why.
 
@@ -141,6 +141,54 @@ Sharing's effect on email specifically depends on campaign size and is unsettled
 
 [Extracted from `analysis/output/method_mix.json`, `family_pair_lift`.]
 
+## What separated the top fifth, by goal (extracted)
+
+Pick the goal and read down its column. Each column takes the campaigns that did best on that goal, the top fifth, and compares how often they made each choice with the other four fifths of campaigns of the same size and the same vertical. A cell shows how much more or less often the top fifth made the choice, then both shares. "About level" means the ratio sits between 0.85x and 1.15x. These are the choices businesses made, and nothing here says what any choice caused. Bigger and more experienced businesses choose differently, and matching on size and vertical removes some of that and never all of it.
+
+<!-- generated:em3_goal_cohorts -->
+| Goal | Campaigns the top fifth is drawn from | Campaigns in the top fifth | Businesses | Size and vertical groups |
+|---|---|---|---|---|
+| An email list | Email signups per Entrant, among campaigns running an email Action | 7,863 | 1,648 | 65 |
+| Referrals | Referral entries per Entrant, among campaigns running a Referral share | 8,490 | 2,685 | 63 |
+| Follows and joins | Follow, join or subscribe completions per Entrant, among campaigns running at least one | 16,769 | 3,547 | 64 |
+| A bigger crowd | Entrants, compared inside each vertical only | 23,256 | 4,467 | 11 |
+| More Entries per Entrant | Entries per Entrant, among all campaigns | 23,250 | 3,371 | 65 |
+<!-- /generated -->
+
+The population is campaigns of 100 or more Entrants with crypto and ambiguous campaigns removed (116,283 campaigns from 17,603 businesses). Each goal uses only the campaigns that can report it, so the email column covers campaigns that ran an email Action. The bigger-crowd column is matched on vertical alone, because matching on size would make it circular.
+
+<!-- generated:em3_goal_features -->
+| Choice | An email list (7,863 campaigns, 1,648 businesses) | Referrals (8,490 campaigns, 2,685 businesses) | Follows and joins (16,769 campaigns, 3,547 businesses) | A bigger crowd (23,256 campaigns, 4,467 businesses) | More Entries per Entrant (23,250 campaigns, 3,371 businesses) |
+|---|---|---|---|---|---|
+| Prize is the business's own product | about level (23% against 22%) | about level (19% against 19%) | about level (15% against 16%) | 1.2x (20% against 16%) | 0.8x (14% against 18%) |
+| Collaboration wording in the title | about level (18% against 16%) | 1.2x (16% against 13%) | 1.5x (20% against 14%) | 1.3x (18% against 13%) | about level (14% against 14%) |
+| Business has run 5 or more campaigns | about level (87% against 83%) | about level (76% against 85%) | about level (83% against 82%) | about level (86% against 80%) | about level (90% against 79%) |
+| Secret Code offered | 0.6x (6% against 11%) | about level (11% against 11%) | 1.7x (14% against 8%) | 1.6x (11% against 7%) | 2.2x (14% against 6%) |
+| Email signup offered | all, by construction | 0.8x (49% against 59%) | 0.6x (20% against 34%) | 1.5x (45% against 31%) | 1.3x (41% against 32%) |
+| Referral share offered | about level (66% against 62%) | all, by construction | 0.8x (33% against 40%) | 1.2x (44% against 35%) | 1.7x (55% against 33%) |
+| A follow, join or subscribe offered | about level (60% against 69%) | about level (76% against 74%) | all, by construction | about level (68% against 73%) | 1.3x (90% against 68%) |
+| A question offered | 0.4x (5% against 11%) | 0.8x (10% against 13%) | 0.7x (9% against 12%) | about level (11% against 12%) | 1.2x (13% against 12%) |
+| A required Action | 1.4x (60% against 43%) | about level (44% against 42%) | about level (41% against 39%) | about level (46% against 41%) | 0.8x (34% against 44%) |
+| One Prize unit in total | about level (67% against 62%) | about level (56% against 63%) | about level (62% against 59%) | about level (60% against 60%) | 1.2x (67% against 59%) |
+| Stated Prize pool under 250 USD | 1.3x (26% against 19%) | about level (20% against 21%) | 0.7x (14% against 19%) | 0.3x (5% against 20%) | 1.4x (22% against 16%) |
+| 11 or more Actions | about level (30% against 34%) | about level (38% against 44%) | 2.0x (56% against 29%) | 1.2x (30% against 26%) | 5.0x (73% against 15%) |
+| A repeatable Action | 0.7x (27% against 37%) | about level (41% against 44%) | about level (34% against 39%) | about level (37% against 35%) | 1.9x (56% against 30%) |
+| Started in December | 1.3x (11% against 9%) | about level (9% against 10%) | about level (10% against 11%) | 1.2x (12% against 10%) | about level (9% against 11%) |
+| An Action worth 5 or more Entries | 0.8x (48% against 59%) | about level (74% against 69%) | 1.2x (64% against 54%) | about level (51% against 49%) | 1.7x (72% against 43%) |
+<!-- /generated -->
+
+"All, by construction" marks the choice that defines the column. A stated Prize pool under 250 USD counts campaigns with a stated value only, so a campaign with no value stated counts as not under. A top fifth is a share of campaigns, and a business with many campaigns fills it many times, so read each ratio as describing campaigns.
+
+- **An email list.** The top fifth by email signups per Entrant ran a required Action more often (1.4x, 60% against 43%) and a stated pool under 250 USD more often (1.3x, 26% against 19%). They ran a question less often (0.4x, 5% against 11%) and Secret Code less often (0.6x, 6% against 11%). Referral share sat level (66% against 62%).
+- **Referrals.** Almost nothing in the table separated the top fifth by referral entries per Entrant. Collaboration wording was the one choice above level (1.2x, 16% against 13%), with email signup (0.8x) and a question (0.8x) below it. The 15 choices here do not explain referral yield.
+- **Follows and joins.** The top fifth carried long lists of 11 or more Actions (2.0x, 56% against 29%), Secret Code (1.7x, 14% against 8%) and collaboration wording (1.5x, 20% against 14%) more often. They offered email signup less often (0.6x, 20% against 34%).
+- **A bigger crowd.** The top fifth offered email signup (1.5x, 45% against 31%), Secret Code (1.6x, 11% against 7%) and collaboration wording (1.3x, 18% against 13%) more often. A stated pool under 250 USD marked 5% of the top fifth against 20% of the rest, the widest gap in the column.
+- **More Entries per Entrant.** This column partly describes how the measure is built, because Entries rise with every Action and with every extra Entry an Action is worth. The top fifth ran 11 or more Actions far more often (5.0x, 73% against 15%), and a repeatable Action (1.9x, 56% against 30%), Secret Code (2.2x, 14% against 6%) and a referral share (1.7x, 55% against 33%) more often too.
+
+To check a plan against this, take the goal's column and ask which of its choices the plan makes. If the goal is an email list and the plan has a question Action, the campaigns that did best on email signups per Entrant ran one less often than their peers.
+
+[Extracted from `analysis/output/success_profiles.json`, `success_cohorts.email_yield_per_contestant`, `.referral_yield_per_contestant`, `.social_yield_per_contestant`, `.entrants` and `.engagement`, the stratified comparison. The unmatched comparison sits beside it in the source, and a choice that is large unmatched and level matched is explained by size and vertical.]
+
 ## Actions more common in top campaigns, by vertical (extracted)
 
 Within each vertical (a regex on business, campaign and Prize names, so rough), campaigns split into fifths by Entrants. The ratio is how much more often an action appears in the top fifth than the bottom fifth. Association only: bigger businesses choose differently.
@@ -162,17 +210,59 @@ On action count: the top fifth and bottom fifth both ran a typical 7 actions, so
 
 **The exact combination businesses reach for differs by vertical, beyond what the per-family table above shows.** In electronics and tech and gaming and esports, the single most common exact action set skips email entirely and anchors on follow plus visit. In food and drink, sports and outdoors and media and entertainment, the most common sets are all built around email, visit and share together, with an extra action or two layered on. This is consistent with, not independent of, the per-family email-offered shares already in the sections above. [Campaigns, all clearing the size floor comfortably (334 to 1,840 businesses overall): electronics and tech 7,289, gaming and esports 6,328, food and drink 1,787, sports and outdoors 2,268, media and entertainment 5,019. Extracted from `analysis/output/method_mix.json`, `top_combinations_by_industry`.]
 
-**Gaming and esports campaigns lean on Discord, Twitch and Telegram over the baseline, and underuse email.** Email is the weak spot in this vertical: offered less often than the baseline, and where it is offered it completes at 0.77x the baseline, the worst of the three actions in the table below that carry a completion figure. Don't lean on email as the primary acquisition action for a gaming campaign.
+## Actions by industry, offered and completed (extracted)
 
-| Action | Gaming and esports | All-industry baseline | Ratio |
-|---|---|---|---|
-| Chat Members offered | 38.0% | 16.1% | 2.4x |
-| Twitch Follows offered | 38.6% | 16.8% | 2.3x |
-| Telegram Channel Members offered | 7.9% | 4.5% | 1.7x (completion 1.20x baseline) |
-| Referral share offered | 31.6% | 45.1% | completion 1.16x baseline |
-| Email offered | 20.8% | 43.5% | completion 0.77x baseline |
+Every industry with enough campaigns gets a row (23 industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses). The offered columns list the Actions an industry's businesses offered at least 1.5x as often as the all-industry rate, or at most 0.67x as often, strongest first and up to three each. The completed columns list Actions where the typical completion among campaigns offering them ran at least 1.25x or at most 0.75x of the all-industry completion, up to two each. A dash means no Action cleared the cut. Each figure carries the campaigns and businesses that offered the Action. Completion is the share of Entrants who completed the Action. A high ratio in an industry describes the Entrants that industry's businesses reached, and says nothing about what the Action would do for another business there.
 
-[6,327 gaming and esports campaigns, 1,413 businesses. Extracted from `analysis/output/vertical_profiles.json`, `action_index_by_industry`.]
+<!-- generated:em3_industry_actions -->
+| Industry | Campaigns | Businesses | Offered most often against all industries | Offered least often | Completed more often once offered | Completed less often once offered |
+|---|---|---|---|---|---|---|
+| Gaming and esports | 24,229 | 4,657 | Discord join 2.3x (9,008 campaigns, 1,802 businesses). Twitch follow 2.2x (10,358 campaigns, 2,536 businesses). X repost 1.7x (9,784 campaigns, 2,526 businesses) | Email signup 0.5x (3,935 campaigns, 493 businesses) | - | - |
+| Media and entertainment | 21,540 | 2,074 | - | Secret code 0.5x (835 campaigns, 228 businesses). Twitch follow 0.6x (2,593 campaigns, 477 businesses). TikTok follow 0.6x (1,679 campaigns, 325 businesses) | - | Telegram join 0.4x (464 campaigns, 73 businesses). Referral share 0.7x (8,102 campaigns, 672 businesses) |
+| Electronics and tech | 15,543 | 2,063 | Telegram join 1.8x (965 campaigns, 76 businesses). TikTok follow 1.6x (3,000 campaigns, 418 businesses) | - | Secret code 2.0x (1,616 campaigns, 290 businesses). Referral share 1.7x (4,564 campaigns, 756 businesses) | - |
+| Toys, hobbies, collectibles | 4,700 | 750 | Secret code 1.8x (636 campaigns, 108 businesses) | - | - | Twitch follow 0.4x (774 campaigns, 194 businesses). Discord join 0.7x (858 campaigns, 160 businesses) |
+| Food and drink | 4,681 | 890 | Email signup 1.6x (2,538 campaigns, 486 businesses) | Discord join 0.2x (179 campaigns, 46 businesses). Twitch follow 0.3x (260 campaigns, 69 businesses). Telegram join 0.3x (46 campaigns, 19 businesses) | - | Secret code 0.6x (234 campaigns, 109 businesses). X repost 0.7x (452 campaigns, 116 businesses) |
+| Sports and outdoors | 4,635 | 1,013 | Email signup 1.6x (2,426 campaigns, 547 businesses) | Twitch follow 0.1x (115 campaigns, 53 businesses). Discord join 0.1x (109 campaigns, 39 businesses). Telegram join 0.3x (44 campaigns, 19 businesses) | Referral share 1.3x (2,469 campaigns, 538 businesses) | Telegram join 0.5x (44 campaigns, 19 businesses). X follow 0.6x (1,733 campaigns, 404 businesses) |
+| Apparel and fashion | 4,628 | 812 | Email signup 1.6x (2,376 campaigns, 435 businesses) | Discord join 0.2x (128 campaigns, 53 businesses). Telegram join 0.2x (33 campaigns, 16 businesses). Twitch follow 0.3x (268 campaigns, 97 businesses) | - | Telegram join 0.3x (33 campaigns, 16 businesses). Secret code 0.5x (189 campaigns, 75 businesses) |
+| Travel and events | 3,969 | 638 | - | Twitch follow 0.1x (70 campaigns, 29 businesses). Discord join 0.1x (66 campaigns, 37 businesses). Telegram join 0.3x (37 campaigns, 20 businesses) | - | Twitch follow 0.2x (70 campaigns, 29 businesses). X follow 0.4x (1,419 campaigns, 220 businesses) |
+| Home and garden | 3,710 | 594 | Email signup 1.8x (2,148 campaigns, 341 businesses). Referral share 1.5x (2,099 campaigns, 338 businesses) | Discord join 0.1x (44 campaigns, 16 businesses). Twitch follow 0.1x (74 campaigns, 15 businesses). X repost 0.4x (359 campaigns, 77 businesses) | - | Secret code 0.6x (271 campaigns, 84 businesses). Discord join 0.6x (44 campaigns, 16 businesses) |
+| Creator or influencer | 3,389 | 1,045 | Twitch follow 2.7x (1,785 campaigns, 494 businesses). Discord join 1.8x (988 campaigns, 169 businesses). X repost 1.8x (1,408 campaigns, 387 businesses) | Email signup 0.1x (129 campaigns, 57 businesses). Instagram follow 0.5x (120 campaigns, 82 businesses). Facebook visit 0.6x (749 campaigns, 249 businesses) | Discord join 1.6x (988 campaigns, 169 businesses). TikTok follow 1.5x (403 campaigns, 91 businesses) | Referral share 0.4x (1,020 campaigns, 133 businesses) |
+| Health, wellness and fitness | 3,160 | 498 | - | Discord join 0.2x (94 campaigns, 21 businesses). Twitch follow 0.2x (139 campaigns, 10 businesses) | - | Secret code 0.5x (180 campaigns, 71 businesses). Discord join 0.6x (94 campaigns, 21 businesses) |
+| Retail marketplace | 2,860 | 382 | - | YouTube channel visit 0.5x (512 campaigns, 142 businesses). Telegram join 0.5x (51 campaigns, 29 businesses). Discord join 0.6x (272 campaigns, 40 businesses) | Discord join 2.4x (272 campaigns, 40 businesses). Secret code 1.9x (162 campaigns, 54 businesses) | Referral share 0.6x (1,306 campaigns, 162 businesses) |
+| Automotive | 2,310 | 379 | Email signup 1.7x (1,295 campaigns, 145 businesses). Referral share 1.5x (1,293 campaigns, 175 businesses) | Discord join 0.1x (41 campaigns, 30 businesses). X repost 0.3x (177 campaigns, 65 businesses). TikTok follow 0.4x (127 campaigns, 60 businesses) | Secret code 1.5x (242 campaigns, 50 businesses) | Twitch follow 0.2x (276 campaigns, 50 businesses). X follow 0.7x (1,179 campaigns, 155 businesses) |
+| Education | 1,868 | 357 | - | Twitch follow 0.3x (109 campaigns, 29 businesses). Discord join 0.3x (93 campaigns, 36 businesses). X repost 0.3x (138 campaigns, 67 businesses) | - | Discord join 0.6x (93 campaigns, 36 businesses). Referral share 0.7x (534 campaigns, 200 businesses) |
+| Software and SaaS | 1,662 | 545 | Telegram join 2.2x (125 campaigns, 71 businesses) | Facebook visit 0.7x (445 campaigns, 191 businesses) | Referral share 1.9x (702 campaigns, 264 businesses). Telegram join 1.6x (125 campaigns, 71 businesses) | Twitch follow 0.7x (218 campaigns, 64 businesses) |
+| Art and crafts | 1,590 | 401 | - | Twitch follow 0.4x (110 campaigns, 72 businesses). Discord join 0.4x (108 campaigns, 53 businesses). X follow 0.5x (485 campaigns, 177 businesses) | Telegram join 1.5x (41 campaigns, 24 businesses) | TikTok follow 0.7x (154 campaigns, 62 businesses) |
+| Beauty and personal care | 1,411 | 351 | Instagram follow 4.3x (429 campaigns, 47 businesses). Secret code 3.1x (337 campaigns, 43 businesses). TikTok follow 2.9x (495 campaigns, 64 businesses) | Discord join 0.1x (31 campaigns, 17 businesses). Twitch follow 0.2x (48 campaigns, 28 businesses). YouTube channel visit 0.6x (321 campaigns, 113 businesses) | Secret code 1.3x (337 campaigns, 43 businesses) | X repost 0.6x (419 campaigns, 42 businesses). X follow 0.6x (641 campaigns, 117 businesses) |
+| Marketing agency | 1,201 | 157 | TikTok follow 2.0x (297 campaigns, 33 businesses). Secret code 1.5x (139 campaigns, 27 businesses) | Twitch follow 0.6x (134 campaigns, 20 businesses) | Referral share 1.3x (366 campaigns, 65 businesses) | Secret code 0.7x (139 campaigns, 27 businesses). Instagram follow 0.7x (120 campaigns, 26 businesses) |
+| Baby and kids | 1,184 | 138 | Email signup 1.6x (626 campaigns, 91 businesses). Referral share 1.5x (661 campaigns, 78 businesses) | YouTube channel visit 0.3x (136 campaigns, 25 businesses). X repost 0.6x (170 campaigns, 10 businesses) | - | YouTube channel visit 0.6x (136 campaigns, 25 businesses). Referral share 0.7x (661 campaigns, 78 businesses) |
+| Pets | 947 | 206 | Email signup 2.3x (706 campaigns, 105 businesses). Referral share 1.9x (653 campaigns, 108 businesses) | Discord join 0.2x (30 campaigns, 17 businesses). Twitch follow 0.2x (42 campaigns, 17 businesses). X repost 0.4x (94 campaigns, 41 businesses) | Instagram follow 1.4x (48 campaigns, 28 businesses) | Secret code 0.3x (40 campaigns, 22 businesses). X follow 0.7x (355 campaigns, 81 businesses) |
+| Local services | 917 | 181 | Secret code 1.6x (114 campaigns, 34 businesses) | YouTube channel visit 0.3x (123 campaigns, 61 businesses). X repost 0.5x (102 campaigns, 19 businesses). Email signup 0.5x (144 campaigns, 49 businesses) | - | X repost 0.3x (102 campaigns, 19 businesses). Secret code 0.4x (114 campaigns, 34 businesses) |
+| Nonprofit and community | 516 | 197 | Secret code 2.1x (85 campaigns, 36 businesses) | YouTube channel visit 0.6x (119 campaigns, 69 businesses) | Discord join 1.5x (91 campaigns, 38 businesses) | TikTok follow 0.5x (60 campaigns, 24 businesses). Secret code 0.5x (85 campaigns, 36 businesses) |
+| Jewelry and watches | 418 | 162 | Secret code 2.8x (91 campaigns, 29 businesses). Email signup 1.6x (218 campaigns, 77 businesses) | Discord join 0.5x (36 campaigns, 16 businesses). X repost 0.6x (57 campaigns, 27 businesses). TikTok follow 0.7x (34 campaigns, 26 businesses) | Referral share 1.6x (162 campaigns, 87 businesses). Secret code 1.5x (91 campaigns, 29 businesses) | TikTok follow 0.7x (34 campaigns, 26 businesses) |
+<!-- /generated -->
+
+**Gaming and esports campaigns lean on Discord, Twitch and X reposts over the all-industry rate, and underuse email.** Email is the weak spot in this industry: offered in 16.2% of gaming campaigns against 33.0% across all industries, and where it is offered it completes at 0.83x the all-industry completion, the lowest of the 13 Actions in the table below. Don't lean on email as the primary acquisition action for a gaming campaign.
+
+<!-- generated:em3_gaming_actions -->
+| Action | Offered, gaming and esports | Offered, all industries | Ratio | Completion against all industries | Campaigns offering it | Businesses |
+|---|---|---|---|---|---|---|
+| Discord join | 37.2% | 16.2% | 2.3x | 1.01x | 9,008 | 1,802 |
+| Twitch follow | 42.8% | 19.3% | 2.2x | 1.00x | 10,358 | 2,536 |
+| X repost | 40.4% | 23.6% | 1.7x | 1.08x | 9,784 | 2,526 |
+| Telegram join | 5.6% | 3.4% | 1.7x | 1.06x | 1,367 | 276 |
+| X follow | 78.3% | 56.5% | 1.4x | 1.18x | 18,968 | 3,827 |
+| YouTube channel visit | 50.2% | 38.4% | 1.3x | 1.04x | 12,157 | 3,032 |
+| Secret code | 9.0% | 7.7% | 1.2x | 1.10x | 2,173 | 631 |
+| TikTok follow | 13.9% | 12.3% | 1.1x | 1.14x | 3,368 | 822 |
+| Instagram profile visit | 48.2% | 50.8% | 1.0x | 1.03x | 11,689 | 2,368 |
+| Instagram follow | 6.2% | 7.1% | 0.9x | 0.99x | 1,499 | 577 |
+| Facebook visit | 33.6% | 40.1% | 0.8x | 1.05x | 8,135 | 1,471 |
+| Referral share | 26.7% | 37.1% | 0.7x | 1.24x | 6,456 | 1,045 |
+| Email signup | 16.2% | 33.0% | 0.5x | 0.83x | 3,935 | 493 |
+<!-- /generated -->
+
+[24,229 gaming and esports campaigns, 4,657 businesses, with each Action's own counts in the table. Extracted from `analysis/output/vertical_profiles.json`, `by_industry` and `action_index_by_industry`.]
 
 ## Mix by the kind of business running it (extracted)
 
@@ -583,6 +673,25 @@ Two examples:
 <!-- /generated -->
 
 This prices the fourth and fifth action, it is not an instruction to cut down to one. A campaign that needs three assets cannot run a one-action campaign, and nothing here says it should. What each added action, especially a referral or a secret code, costs on this specific completion measure is the number to weigh against what that action collects, so add it when the campaign needs that asset and budget for this rate to move. Conversion here is Entrants over Impressions, and a lean single-action entry form structurally has less friction between an Impression and a completed entry, so part of the pattern may describe how the metric is built as much as business choice. It does not mean a heavier campaign performs worse on total entries or reach, only on this completion rate. The top quarter itself is defined by conversion, one objective among several (an email list, followers, UGC and reach are the others), so an industry's top quarter by conversion is not automatically the shape to copy when the campaign's objective is one of those. Cite this finding with both caveats every time. Email offered and completion did not survive this same check (offered lower in 11 of the 21 industries and higher in 3, completion flat at a typical ratio of 1.00 across industries) and neither did community-join actions or question actions, so none of those are a vertical-strength signal here. [Extracted from `analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry` and `threshold_check_top_vs_bottom_decile_pooled`.]
+
+### Cheap actions against costly ones (extracted)
+
+Two kinds of action sit on a list. The cheap kind is a visit, a follow or an engagement, quick to do and teaching the business little about the Entrant. The costly kind is a question, a content upload, an account connection, a download or a join, which asks more of the Entrant. Each campaign is placed by the share of its action types that are cheap. The count is of types, so a campaign with six follows and one question carries one cheap type and one costly type.
+
+<!-- generated:em3_reach_deep -->
+| Share of action types that are cheap | Campaigns | Businesses | Typical Entrants | Conversion Rate | Entries per Entrant | Typical Entry Methods | Email offered | Share offered |
+|---|---|---|---|---|---|---|---|---|
+| Under 25% cheap | 6,089 | 1,494 | 521 | 35% | 1.1 | 2 | 16% | 18% |
+| 25% to under 50% cheap | 5,060 | 1,398 | 407 | 22% | 5.1 | 9 | 30% | 60% |
+| 50% to under 75% cheap | 43,110 | 8,143 | 508 | 25% | 5.4 | 9 | 32% | 61% |
+| 75% to 100% cheap | 54,694 | 10,418 | 482 | 27% | 4.2 | 6 | 38% | 53% |
+<!-- /generated -->
+
+Read it with three limits. Conversion Rate here is the typical value across every campaign in the group, never the fair-comparison subset used elsewhere in this file, so run length and repeatable Actions are mixed in. The share of cheap types travels with the length of the list: the mostly costly group ran a typical 2 Entry Methods, the two mixed groups ran 9 and the all-cheap group ran 6, so the table cannot separate the mix from the count. The mostly costly group is a short list, which fits its highest Conversion Rate and its 1.1 Entries each.
+
+What it answers about piling on easy actions: the campaigns whose lists were 75% to 100% cheap types converted at 27% on a typical 6 Entry Methods, against 22% and 25% for the two mixed groups on 9. Mostly cheap lists did not convert lower than lists that mixed in costly types, and the data holds no separate limit for cheap Actions. The action-count curve above is the guide on length, since Conversion Rate fell with each Action added from the first to about the thirteenth. Entries per Entrant rises with every Action an Entrant completes, so read the 4.2 against 5.1 and 5.4 as partly the list length.
+
+[Population: campaigns of 100 or more Entrants carrying at least one cheap or costly action type, 1,398 to 10,418 businesses per group. Extracted from `analysis/output/method_mix.json`, `reach_vs_deep`.]
 
 ## Invalid entries (extracted)
 

@@ -210,8 +210,13 @@ def check_skill(path, root):
     text = open(path, encoding="utf-8").read()
     skill_dir = os.path.dirname(path)
     cache = {}
-    hard, notes, ingen = [], [], False
+    hard, notes, ingen, infront = [], [], False, False
     for n, line in enumerate(text.split("\n"), 1):
+        # the frontmatter carries the version, 1.6.0, which reads as the figure 1.6 and is not a claim
+        if n == 1 and line == "---":
+            infront = True; continue
+        if infront:
+            infront = line != "---"; continue
         if line.startswith("<!-- generated:"):
             ingen = True; continue
         if line.startswith("<!-- /generated"):

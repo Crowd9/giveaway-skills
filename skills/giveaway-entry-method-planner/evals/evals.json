@@ -13,7 +13,31 @@
     "Cites uptake figure with sample size and a source label in the reader's words (from Gleam campaign data, or the campaign count in brackets)",
     "No platform pitch"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?m)^\\|",
+     "min": 7
+    },
+    {
+     "count": "(?m)^\\|.*\\b(?:Required|Optional)\\b",
+     "min": 4
+    },
+    {
+     "contains": "Acquire"
+    },
+    {
+     "contains": "Amplify"
+    },
+    {
+     "count": "(?i)opt[- ]in",
+     "min": 1
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -26,7 +50,17 @@
     "Mentions network rules for tag-a-friend",
     "States the dataset cannot show the effect of method count"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\brequired\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\boptional\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -37,7 +71,17 @@
     "Cites the families with figures and sample sizes",
     "Redirects to objective"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "\\d+(?:\\.\\d+)?%",
+     "min": 2
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,
@@ -63,7 +107,68 @@
     "Identifies both the User Details consent checkbox and explicit Newsletter signup",
     "Does not turn Action usage or configuration rates into a consent or refusal rate"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "User Details"
+    },
+    {
+     "contains": "Newsletter"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "prompt": "We sell warehouse inventory software to operations managers. I would take 40 of the right people over 4,000 randoms from a giveaway. How do I set up entry so the wrong people stay out, and how will I know if it worked?",
+   "expected_output": "Names the buyer in one sentence and puts it in the title, first line and terms. Makes one qualifying question with answer choices the required action, takes the email from the entry form and leaves company, role and phone optional unless sales will use them. Sorts by answer and email domain after entry and treats a work-email requirement as a decision that turns away some real buyers, with no split of work against free mail quoted. Names who contacts each tier and how fast. Replaces Entrants and Conversion Rate with qualified Entrants, cost per qualified Entrant, replies, meetings and pipeline. Says the B2B figures show what businesses chose and end at the entry, that 40 Entrants is below the 100-Entrant floor of the data, and labels the gating, question and follow-up advice as practice.",
+   "assertions": [
+    "Gives a one-sentence buyer definition and says where to put it in the campaign",
+    "Makes one qualifying question the required action, with answer choices, and says nobody is rejected on the answer",
+    "Offers sorting by email domain after entry as the default and says a work-email requirement turns away some real buyers",
+    "States that no work-email against free-mail split exists in the data and quotes none",
+    "Names an owner and a response time for each tier and labels the time as judgement",
+    "Replaces crowd measures with qualified Entrants, cost per qualified Entrant and pipeline, and says the crowd benchmarks can be ignored",
+    "Says the B2B figures describe what businesses chose, end at the entry and cannot show lead quality",
+    "Labels gating, the qualifying question and follow-up as practice, with no causal claim"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)qualif",
+     "min": 4
+    },
+    {
+     "count": "(?i)cost per qualified",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:practice|advice|judgement|judgment)\\b",
+     "min": 1
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "prompt": "We're a healthcare SaaS in the US selling to clinic managers. Legal won't let us do anything that looks like we're paying for a review or a referral, and we can't collect anything that could be PHI. We want qualified demo requests out of this, not a list of randoms. Nobody on the team can moderate a Discord. What do people actually do to enter?",
+   "expected_output": "Drops referral, review and Discord actions and says what each drop costs. Makes the required action a qualifying question about the clinic's workflow with answer choices and no patient or personal health detail, plus a visit to the pricing or product page. Takes the email from the entry form with marketing permission as a separate tick. Says the pairing of question and email is the skill's own advice with no measured result, and that the B2B data holds what businesses chose and ends at the entry.",
+   "assertions": [
+    "Leaves out referral, review and Discord actions and says why",
+    "The qualifying question asks about the clinic and never asks for patient or health data",
+    "Keeps marketing permission separate from entry consent",
+    "Labels the question and follow-up as practice with no dataset support",
+    "States that the data cannot show lead quality"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\b(?:practice|advice)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)opt[- ]in|marketing permission|consent",
+     "min": 1
+    }
+   ]
   }
  ]
 }

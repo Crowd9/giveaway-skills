@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Decide how long a giveaway should run, when to start it, and how to plan the lead-up and wrap-up. Use when the user asks 'how long should my giveaway run', 'when should I launch it', 'best day to start', 'best time to launch an Instagram giveaway', 'should it run over Christmas', 'Black Friday giveaway timing', 'when should a store run a giveaway', 'giveaway timeline', 'giveaway calendar', 'evergreen giveaway', or wants a launch schedule for a contest or sweepstakes. Platform-neutral. For the Prize see giveaway-prize-picker. For entry actions see giveaway-entry-method-planner."
 metadata:
-  version: 1.4.29
+  version: 1.4.30
 ---
 
 # Giveaway Timing and Duration
@@ -38,7 +38,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Workflow
 
-1. **Ask only what changes the answer**, in one message: the objective, any fixed date (launch, event, season), the promotion channels and how often they can post, the shipping lead time, and the audience's time zone. If the user wants dates now, proceed with stated assumptions and skip the questions.
+1. **Ask only what changes the answer**, in one message: the objective, any fixed date (launch, event, season), the promotion channels and how often they can post, the shipping lead time, the audience's time zone, and whether anywhere entry is open needs a permit, registration or notification. That last one can move the start date by weeks and is settled by giveaway-winner-structure, which carries the questions to put to a lawyer, so ask whether it has been checked before planning backwards from a launch. If the user wants dates now, proceed with stated assumptions and skip the questions.
 2. **Anchor on a fixed date if one exists.** A launch, a holiday, an event. The giveaway ends a few days before the moment the business wants attention, or runs through it if the goal is to be present during it.
 3. **Set the run length from the promotion plan.** Load `references/timing-findings.md` for what businesses chose. Rule of thumb from practice: two to three promotional pushes per week, and a campaign that outlives the pushes goes quiet. One week for a focused list or launch push. Two to four weeks when there is a content series or partner posts to fill it. Longer only with repeatable daily actions and fresh content.
 4. **Pick the start day.** Extracted: start weekday shows no difference on Entrants, actions or Conversion Rate. Load `references/calendar-by-region.md` when the audience is outside the US or UK, since seasons and holidays flip. For any start date, load `references/holiday-benchmarks.md` and quote that week's share of starts and Conversion Rate, and whether being live over a nearby holiday came with more or fewer entering. The weekly Conversion Rate is from the campaigns compared fairly, no daily, loyalty or timed bonus action and a run of 14 days or fewer, so the sentence carrying it says that in those words, never "comparable campaigns". For a holiday hook, add the lead time businesses used and the launch window.

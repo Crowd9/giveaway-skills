@@ -13,7 +13,21 @@
     "Recommends at most three changes, each naming the next piece of work in the reader's own words",
     "No abstract good or bad verdict"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "review\\.py",
+     "min": 1
+    },
+    {
+     "count": "1,000\\s*(?:to|-|\u2013)\\s*2,500",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +39,21 @@
     "Does not call the result bad",
     "Names what to check next"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "31\\s*(?:to|-|\u2013)\\s*60",
+     "min": 1
+    },
+    {
+     "count": "(?i)once per \\w+",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -39,6 +67,60 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "prompt": "Day 4 of a 14 day giveaway. Impressions were 900 on day 1 and 610 yesterday. 130 Entrants so far, 3,100 Impressions in total. Is this pace normal and is anything wrong?",
+   "expected_output": "Says the campaign is live, day 4 of 14, and does not rank it. Reads yesterday against day one as a multiple (about two thirds) beside the 14 day row for day 4, names the row, and says a fall from day one is the typical shape. Says the table is Impressions only with no spread, so it cannot say how far under is unusual and gives no Entrant pace. Reads Conversion Rate so far (Entrants over Impressions) against the run length so far, labelled rough. Picks reach, conversion or broken with the figure that decides it.",
+   "assertions": [
+    "States it is live and does not call any figure a result",
+    "Compares yesterday over day one with the 14 day row for the day and names the row",
+    "Says the curve is Impressions and gives no Entrant pace",
+    "Says the table has no spread",
+    "Labels the conversion read as rough"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\blive\\b|still running",
+     "min": 1
+    },
+    {
+     "count": "14.day",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ],
+   "id": 4
+  },
+  {
+   "prompt": "Our giveaway is on day 9 of 21, Impressions are fine but Entrants have been flat since Tuesday at 2am and nobody has entered since. Is it broken, and should I extend?",
+   "expected_output": "Reads the shape as something broken rather than reach or conversion: Impressions arriving with Entrants stopped at one clock time. Gives the cheap checks (entry link in every place posted, the embed, verification step, email provider sync, any change made at that time, one test entry signed out on a phone) and takes the time of the last Entry from the export. Says extension goes through the terms check and gives no figure for what added days bring in. Never invents a base rate.",
+   "assertions": [
+    "Reads flat Entrants with live Impressions as broken",
+    "Lists the cheap checks and a signed-out test entry",
+    "Takes the last Entry time from the export",
+    "Says nothing in the data measures what added days bring in",
+    "Sends any change of date through the terms check"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bsigned.out\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)terms",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ],
+   "id": 5
   }
  ]
 }

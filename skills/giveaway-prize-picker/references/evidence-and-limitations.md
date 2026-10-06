@@ -444,7 +444,7 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 - **Business outcomes.** Sales, lead quality, retention and profitability are absent from the dataset.
 - **Cost.** Values are stated retail values entered by businesses, often rounded, sometimes totals, occasionally wrong by orders of magnitude. What the business actually paid is unknown.
 - **Winners.** Quantity is the number of units listed and may differ from the number of Winners actually awarded.
-- **Currency merging.** Values were never converted. USD and EUR are reported separately, and parsed "$" values are flagged as ambiguous.
+- **Currency conversion.** A stated Prize pool is in USD. A value stated in another currency is converted at one fixed set of exchange rates for every campaign, and a pool is totalled only when every Prize in it has a value and a known rate. Parsed "$" values are flagged as ambiguous.
 - **Current platform features.** Entry-method types in the dataset are history. Current capability lives in each platform's own documentation.
 
 ## Classification limits
@@ -476,7 +476,7 @@ Descriptions contained URLs in 5,069 campaigns, HTML in 17, and phrases addresse
 
 Conversion Rate means Entrants per Impression: the share of unique daily Impressions of the entry page that became a unique Entrant.
 
-Verified from the platform's reporting terms page on 9 September 2026: Impressions count one view per user per 24 hours, an Action is one Entry Method completed, Entries are Actions completed times Entry Worth, Users are unique Entrants, and the platform quotes an average Conversion Rate of about 34%. The dataset's valid Entrants are Users, valid entries are Entries, and Entry Worth is absent, so Actions per Entrant mixes how many Actions people did with how much each was worth.
+Verified from the platform's reporting terms page on 9 September 2026: Impressions count one view per user per 24 hours, an Action is one Entry Method completed, Entries are Actions completed times Entry Worth, Users are unique Entrants, and the platform quotes an average Conversion Rate of about 34%. The dataset's valid Entrants are Users, valid entries are Entries, and Entry Worth is carried on every action, so Actions per Entrant counts how many Actions people did and never how much each was worth. Half of all actions carry a worth above 1, so a campaign's Entries run above its Actions.
 
 Impressions in the dataset are unique per day, so a visitor who returns counts again each day. Repeatable actions (daily bonus, loyalty, timed bonus) and long runs raise Impressions per Entrant and lower Conversion Rate, without any change in who entered. The campaigns we can compare fairly excludes campaigns with a repeatable action and any run over 14 days. Typical figures, across the campaigns behind these numbers, descriptive only. The comparisons that depend on this rate live in the entry-method planner and timing references, all computed on the campaigns we can compare fairly by the analysis behind it.
 

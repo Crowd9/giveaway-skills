@@ -57,7 +57,8 @@ def stu_case_problem(heading):
 def main():
     bad = 0
     for root, _, files in os.walk("."):
-        if any(p in root for p in (".git", "node_modules", ".omc", ".private", ".remember", "analysis/output")): continue
+        # The ignored directories hold local working files, not published prose, and walking them buried the real hits.
+        if any(p in root for p in (".git", "node_modules", ".omc", ".private", ".remember", "analysis/output", "./docs", "./visuals")): continue
         for f in files:
             if not f.endswith(".md"): continue
             p = os.path.join(root, f)

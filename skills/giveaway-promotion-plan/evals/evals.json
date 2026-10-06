@@ -13,7 +13,25 @@
     "No entrant-number promise",
     "No platform pitch"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?m)^\\|",
+     "min": 6
+    },
+    {
+     "count": "(?im)^[\\s*>\\-|]*Subject\\b",
+     "min": 4
+    },
+    {
+     "count": "(?i)\\bbrief\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i:time ?zone)|\\b(?:UTC|GMT|BST|EST|EDT|PST|PDT|CET|AEST|AEDT|ET|PT)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +43,17 @@
     "Optional paid with a cap",
     "No promise of entrant numbers"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bcap(?:ped)?\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:mobile|phone)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -38,7 +66,25 @@
     "Eligibility never widened in a reply",
     "No promise of entrant numbers"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bpinned\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bscreenshot",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bpay(?:ment)?\\b",
+     "min": 1
+    },
+    {
+     "count": "@[\\w.]+|\\[(?:official )?(?:handle|account)[^\\]]*\\]",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,
@@ -52,6 +98,87 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "prompt": "Day 5 of our 14 day Instagram giveaway. 40 entries so far and it was meant to be hundreds. Should I just boost the post or is something wrong?",
+   "expected_output": "Diagnoses before spending: the cheap broken checks first (open the entry link signed out on a phone, check the bio link, one test entry), then reach against conversion using Impressions by day against the pace in the playbook, labelled as practice with no base rate for how often a stall is broken. Says the curve is Impressions and never an Entrant pace. Paid only after scheduled pushes, capped at what one extra Winner costs.",
+   "assertions": [
+    "Runs the link and test-entry checks before any promotion advice",
+    "Separates reach, conversion and broken",
+    "Labels the diagnosis as common practice with nothing in the data behind it",
+    "Does not call the Impression curve an Entrant pace",
+    "Offers no base rate for how often a quiet campaign is broken"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bsigned.out\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)common practice|nothing in the data",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ],
+   "id": 5
+  },
+  {
+   "prompt": "We are a week in and want to add a bonus entry for following TikTok, drop the Facebook like, push the end date out five days and swap the second Prize for a cheaper one. Can we, without breaking what people already agreed to? We run on Gleam.",
+   "expected_output": "Sorts each change by what it does to people already in (adds, takes away, touches nothing), says the terms Entrants accepted decide and gives the question for the lawyer in the country the terms name, never what a law requires. On Gleam, quotes only what the docs say: dates can be changed at any point during the contest, and says the docs do not cover what the other changes do to entries already taken, so check in the app. Announces the change everywhere the original was announced.",
+   "assertions": [
+    "Sorts each of the four changes into adds, takes away or neutral",
+    "Names the terms and the lawyer as the deciders and states no legal requirement",
+    "Says end dates can be changed during the contest, from the Gleam docs",
+    "Says the Gleam docs do not cover the effect of the other changes on entries already taken",
+    "Treats the cheaper Prize swap as the change most to put to the lawyer first"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\blawyer\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)docs? (?:do|does) not (?:say|cover)|not in the docs",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ],
+   "id": 6
+  },
+  {
+   "prompt": "Entries are pouring in from one country we do not sell to, a lot with similar looking emails, and someone in the comments says the giveaway is rigged and that share to enter breaks Instagram's rules. Our post just got restricted too. What do I do?",
+   "expected_output": "Export the Actions tab first, rule out harmless causes of the burst, find the source, and leave removal to the draw with a written rule. Answers the rigged claim once with the draw method and record. For the platform rule claim names the platform as the decider, gives the question to ask and a holding line, never stating what the policy says. For the restriction: read and screenshot the notice, appeal by its route, move to channels still available, no promise of a review time.",
+   "assertions": [
+    "Exports the Actions tab before any change",
+    "Does not state what Instagram's rules say",
+    "Gives the question to put to the platform and a holding reply",
+    "Does not remove entrants before the draw and writes the removal rule first",
+    "States no review time for an appeal"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bscreenshot",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bappeal",
+     "min": 1
+    },
+    {
+     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
+     "min": 1
+    }
+   ],
+   "id": 7
   }
  ]
 }

@@ -13,7 +13,23 @@
     "Two prize entries with winner counts",
     "No invented plan limits or prices"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?ms)^#+ .*Setup.*^#+ .*User Details.*^#+ .*How to Enter.*^#+ .*Prize.*^#+ .*Post Entry",
+     "min": 1
+    },
+    {
+     "count": "https://gleam\\.io/docs\\S*",
+     "min": 4
+    },
+    {
+     "contains": "Allowed Locations"
+    },
+    {
+     "contains": "Minimum Age"
+    }
+   ]
   },
   {
    "id": 2,
@@ -26,7 +42,23 @@
     "Links the Setup page",
     "Does not invent behaviour beyond the page"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "Very High"
+    },
+    {
+     "count": "(?m)^\\|\\s*(?:Off|Low|Medium|High|Very High)\\b",
+     "min": 5
+    },
+    {
+     "contains": "Actions tab"
+    },
+    {
+     "count": "https://gleam\\.io/docs\\S*",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,

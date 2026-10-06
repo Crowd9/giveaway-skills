@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Decide how many Winners a giveaway has, whether Prizes are tiered, how and when Winners are drawn, verified, contacted and announced, and what the redraw and fulfillment rules are. Use when the user asks 'how many Winners', 'should I have runner-up Prizes', 'one Winner or several', 'how do I pick the Winner', 'how to announce Winners', 'what if the Winner doesn't reply' (answered here as the deadline and redraw rule, with the message itself in giveaway-winner-communications), 'daily Winners', 'tiered Prizes', or 'Winner terms'. Platform-neutral. For what the Prize is see giveaway-prize-picker. For the run length see giveaway-timing-and-duration."
 metadata:
-  version: 1.3.27
+  version: 1.4.0
 ---
 
 # Giveaway Winner Structure
@@ -37,11 +37,12 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Workflow
 
+0. **Settle eligibility first.** Which countries entry is open in, the minimum age, who is excluded, and whether the free entry route holds everywhere on that list. Load `references/eligibility-and-compliance.md` for the decisions, what businesses chose, and the questions to put to a lawyer. A permit or registration can move the start date, so that one goes to them before the dates are set, and giveaway-timing-and-duration needs the answer before it plans backwards from a launch.
 1. **Choose the shape.** One Winner, several equal Winners, tiers, or recurring draws. Default to one Prize worth wanting for acquisition. Split when sampling, digital Prizes, community rewards or daily draws make the unit count the point. Load `references/structure-findings.md` for what businesses chose and `references/drawing-and-fulfillment.md` for the tradeoffs. Decide from the objective: headline value favours one Winner, social proof and product trial favour several, a long campaign favours recurring draws.
 2. **Set the count.** Units the budget covers after fulfillment cost, divided so each Prize is still worth wanting. A runner-up Prize nobody wants is admin without benefit. Splitting a fixed budget across more Winners has a measured effect on how many people enter and what it costs, see `references/structure-findings.md`.
 3. **Write the draw rules.** Random or judged, when, by whom, how ties and duplicate entries are handled, and how entries are verified before a Prize is released. Hand the running of a random draw to giveaway-random-draw once the rules are settled: it freezes the Entrant list, publishes a commitment before the seed exists, draws from a public beacon and writes the audit record these terms promise.
 4. **Write the verification rules.** Load `references/winner-verification.md`: entry checks, account signals, proof scaled to the Prize, and what to do when a drawn entry fails.
-5. **Write the contact and redraw rules.** Channel, reply deadline, number of attempts, and when the Prize passes to a redraw. 93.3% of campaigns give the Winner 7 days, because that is the platform default, and fewer than one in a hundred uses 72 hours (`references/structure-findings.md`). Leave it at 7 unless the Prize expires, and say in the terms why it is shorter when it is.
+5. **Write the contact and redraw rules.** Channel, reply deadline, number of attempts, and when the Prize passes to a redraw. 93.3% of campaigns give the Winner 7 days, which is the platform default, and fewer than one in a hundred uses 72 hours (`references/structure-findings.md`). Leave it at 7 unless the Prize expires, and say in the terms why it is shorter when it is.
 6. **Plan the announcement and fulfillment.** Public announcement with consent, delivery window, substitution rule, who pays duties and taxes.
 7. **Deliver.**
 
@@ -143,6 +144,7 @@ Advice is platform-neutral. When the user says they use Gleam or asks about it, 
 
 - `references/structure-findings.md`: how many Prizes and units businesses listed, tiers, by campaign size.
 - `references/drawing-and-fulfillment.md`: structure tradeoffs, draw and contact rules, terms snippet.
+- `references/eligibility-and-compliance.md`: what to settle before the dates, entry open against restricted by country, governing law and terms defaults, and the questions a lawyer answers.
 - `references/winner-verification.md`: entry checks, fraud signals on the account, proof scaled to Prize value, what to do when a drawn entry fails.
 - `references/gleam-drawing.md`: only for explicit Gleam requests.
 - `scripts/terms.py`: drafts full terms from a questionnaire, with a region note for AU, UK, US, EU and CA (pass several as `--region UK,DE,JP` and it names the ones it cannot cover), and `--marketing-consent` for a marketing clause separate from the personal-information clause. Draft only, for legal review.

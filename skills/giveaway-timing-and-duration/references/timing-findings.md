@@ -257,7 +257,7 @@ Start weekday shows no difference on Conversion Rate or Entries per Entrant, and
 <!-- /generated -->
 
 <!-- generated:cmp_recency_vertical -->
-| Vertical (regex proxy) | First campaigns | Within 30 days | Contestants | Contestants per impression |
+| Vertical | First campaigns | Within 30 days | Contestants | Contestants per impression |
 |---|---|---|---|---|
 | music_media | 696 | 5,148 | +49% | +19% |
 | gaming | 1,461 | 5,928 | +41% | +15% |

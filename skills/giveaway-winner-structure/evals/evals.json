@@ -13,7 +13,25 @@
     "Cites a dataset figure with sample size",
     "No platform pitch"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bredraw",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bdeadline\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)must (?:respond|reply)|\\bforfeit",
+     "min": 1
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +43,25 @@
     "Recommends keeping a written log",
     "Handles the case of terms with no deadline"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bforfeit",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bredraw",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\blog\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bdeadline\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -38,7 +74,24 @@
     "Links official docs",
     "No invented plan limits"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "https://gleam\\.io/docs\\S*",
+     "min": 2
+    },
+    {
+     "contains": "All Prizes"
+    },
+    {
+     "count": "(?i)\\b(?:does not|doesn't|do not|don't)\\s+(?:automatically\\s+)?(?:contact|notify|email|message)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)runner-?ups?",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,

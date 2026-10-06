@@ -13,7 +13,36 @@
     "Includes a non-winner message",
     "Contact log format present"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "72 hours"
+    },
+    {
+     "count": "(?im)^[\\s*>\\-|]*Subject\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i:time ?zone)|\\b(?:UTC|GMT|BST|EST|EDT|PST|PDT|CET|AEST|AEDT|ET|PT)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:payment|card details?)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bdelete[sd]?\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)contact log",
+     "min": 1
+    },
+    {
+     "count": "(?im)^[#*\\s\\d.\\-]*(?:Winner notification|Notification|Verification|Address request|Delivery update|Public announcement|Announcement|Message to everyone else|Non-winner message)\\b",
+     "min": 5
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +54,13 @@
     "One factual reply then stop",
     "Logs the exchange"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\blog(?:ged|ging)?\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -41,7 +76,29 @@
     "Includes one feedback question to entrants",
     "Invents no dataset numbers"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bsunset",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bcomplaints?\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bunsubscribe",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bsegment\\b|\\bstream\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bfeedback\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,
@@ -67,7 +124,15 @@
     "Identifies both the User Details consent checkbox and explicit Newsletter signup",
     "Does not turn Action usage or configuration rates into a consent or refusal rate"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "User Details"
+    },
+    {
+     "contains": "Newsletter"
+    }
+   ]
   }
  ]
 }

@@ -39,6 +39,7 @@ The prompt can arrive while the campaign is still running. Read `status`, or com
 - Use `daysElapsed`, or the days between `startsAt` and today, as the run length for Entrants per day and the duration caveat, never the planned `days`.
 - Read the daily pattern from the export's When column. A campaign that took most of its Entrants in its first week and has run for three months is a finished campaign wearing a live end date, and the change to make is to close it and draw.
 - Keep the changes for next time, and add the one change that still helps this run, usually a fresh push or an earlier close.
+- Load `references/live-campaign.md` for the diagnosis: the day's pace, reach against conversion against broken, and extend, push or accept.
 
 ## Previous campaigns
 

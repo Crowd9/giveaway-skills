@@ -13,7 +13,34 @@
     "Gives verification and contact steps",
     "Draws once"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "draw.py commit"
+    },
+    {
+     "contains": "draw.py draw"
+    },
+    {
+     "contains": "--tiers"
+    },
+    {
+     "contains": "--weight-column"
+    },
+    {
+     "contains": "--exclude"
+    },
+    {
+     "contains": "--audit"
+    },
+    {
+     "count": "(?i)unique[_ ]eligible",
+     "min": 1
+    },
+    {
+     "contains": "draw.py verify"
+    }
+   ]
   },
   {
    "id": 2,
@@ -24,7 +51,20 @@
     "Explains what evidence exists and what does not",
     "Recommends the frozen-list, seed and audit procedure for next time"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "draw.py commit"
+    },
+    {
+     "count": "(?i)\\bfroze|\\bfreez|\\bfrozen",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\baudit",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -36,7 +76,20 @@
     "Explains when the script adds value",
     "No invented plan limits"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "https://gleam\\.io/docs\\S*",
+     "min": 2
+    },
+    {
+     "count": "Quick Draws?",
+     "min": 1
+    },
+    {
+     "contains": "draw.py"
+    }
+   ]
   },
   {
    "id": 4,
@@ -47,7 +100,18 @@
     "Removes the organizer's account",
     "Draws once with a recorded seed"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "draw.py draw"
+    },
+    {
+     "contains": "--seed"
+    },
+    {
+     "contains": "@brand_official"
+    }
+   ]
   },
   {
    "id": 5,
@@ -60,7 +124,25 @@
     "Sponsor can verify with the script or a few lines of code",
     "Mentions a third-party service as an alternative"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "draw.py commit"
+    },
+    {
+     "contains": "--seed-drand"
+    },
+    {
+     "contains": "draw.py verify"
+    },
+    {
+     "contains": "Sydney"
+    },
+    {
+     "count": "(?i)random\\.org",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 6,
@@ -86,7 +168,19 @@
     "Publishes a replacement commitment tied to a future seed",
     "Never reuses a known seed for corrected inputs"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "--weight-column"
+    },
+    {
+     "contains": "draw.py commit"
+    },
+    {
+     "count": "(?i)supersede|invalidat",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 8,
@@ -98,7 +192,16 @@
     "Continues independent preparation",
     "Checks preview counts before publishing the commitment"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "draw.py commit"
+    },
+    {
+     "count": "rows_read|unique_eligible|duplicates_merged",
+     "min": 1
+    }
+   ]
   }
  ]
 }

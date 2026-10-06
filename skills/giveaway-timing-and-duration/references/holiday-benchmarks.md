@@ -119,7 +119,7 @@ Dates for the next sixteen months. The launch window is the holiday date minus t
 
 The last column names the holiday's own row in the weekly table, never a week number. Week numbers move between years, and this calendar carries both 2026 and 2027 dates, so citing one by number pointed three rows at the wrong week and quoted the wrong figures with them.
 
-Ramadan and Eid, Prime Day, Singles' Day, anniversaries and milestones have no fixed date here. Use the theme row above for their shape and the region calendar in `calendar-by-region.md` for the dates that stall a team or an audience.
+Prime Day, Singles' Day, anniversaries and milestones have no fixed date here, so use the theme row above for their shape. Ramadan and Eid have no theme row, only the counts under "Smaller and obscure dates" below. The region calendar in `calendar-by-region.md` gives the dates that stall a team or an audience.
 
 ## The season plan for a store
 
@@ -257,30 +257,30 @@ Campaigns whose run included the holiday date, against campaigns that did not, d
 <!-- generated:hol_liveover -->
 | Holiday | Live over it, campaigns | Entrants | Conversion Rate | Not over it, Entrants | Conversion Rate | Entrant ratio | Conversion Rate ratio |
 |---|---|---|---|---|---|---|---|
-| Black Friday and Cyber Monday | 8,419 | 531 | 29% | 547 | 33% | 0.97 | 0.90 |
-| Thanksgiving | 8,394 | 535 | 30% | 546 | 32% | 0.98 | 0.92 |
-| Cyber Monday | 8,360 | 529 | 29% | 547 | 32% | 0.97 | 0.90 |
-| Halloween | 7,937 | 545 | 30% | 549 | 32% | 0.99 | 0.95 |
-| Christmas and advent | 7,862 | 558 | 31% | 543 | 31% | 1.03 | 1.01 |
-| Singles Day | 7,814 | 544 | 30% | 545 | 32% | 1.00 | 0.94 |
-| Diwali | 7,676 | 546 | 30% | 545 | 32% | 1.00 | 0.94 |
-| Father's Day | 7,599 | 566 | 30% | 541 | 32% | 1.05 | 0.95 |
-| Back to school | 7,506 | 597 | 28% | 543 | 32% | 1.10 | 0.87 |
-| Prime Day (mid July, varies) | 7,400 | 561 | 30% | 547 | 32% | 1.03 | 0.93 |
-| Easter | 7,391 | 557 | 30% | 543 | 32% | 1.03 | 0.93 |
-| Independence Day (US) | 7,224 | 568 | 30% | 547 | 32% | 1.04 | 0.95 |
-| Valentine's Day | 7,194 | 543 | 31% | 535 | 32% | 1.01 | 0.96 |
-| Mother's Day | 7,181 | 549 | 30% | 545 | 32% | 1.01 | 0.92 |
-| Lunar New Year | 7,076 | 549 | 31% | 537 | 32% | 1.02 | 0.96 |
-| Super Bowl (US) | 7,014 | 536 | 30% | 535 | 32% | 1.00 | 0.94 |
-| New Year | 6,444 | 576 | 30% | 554 | 31% | 1.04 | 0.98 |
+| Black Friday and Cyber Monday | 8,419 | 531 | 29% | 552 | 33% | 0.96 | 0.89 |
+| Thanksgiving | 8,394 | 535 | 30% | 552 | 33% | 0.97 | 0.91 |
+| Cyber Monday | 8,360 | 529 | 29% | 554 | 32% | 0.95 | 0.90 |
+| Halloween | 7,937 | 545 | 30% | 559 | 32% | 0.97 | 0.94 |
+| Christmas and advent | 7,862 | 558 | 31% | 548 | 32% | 1.02 | 0.99 |
+| Singles Day | 7,814 | 544 | 30% | 550 | 32% | 0.99 | 0.94 |
+| Diwali | 7,676 | 546 | 30% | 553 | 32% | 0.99 | 0.93 |
+| Father's Day | 7,599 | 566 | 30% | 546 | 32% | 1.04 | 0.95 |
+| Back to school | 7,506 | 597 | 28% | 552 | 33% | 1.08 | 0.87 |
+| Prime Day (mid July, varies) | 7,400 | 561 | 30% | 553 | 32% | 1.01 | 0.93 |
+| Easter | 7,391 | 557 | 30% | 545 | 32% | 1.02 | 0.92 |
+| Independence Day (US) | 7,224 | 568 | 30% | 552 | 32% | 1.03 | 0.94 |
+| Valentine's Day | 7,194 | 543 | 31% | 538 | 32% | 1.01 | 0.95 |
+| Mother's Day | 7,181 | 549 | 30% | 552 | 32% | 0.99 | 0.91 |
+| Lunar New Year | 7,076 | 549 | 31% | 542 | 32% | 1.01 | 0.96 |
+| Super Bowl (US) | 7,014 | 536 | 30% | 539 | 32% | 0.99 | 0.93 |
+| New Year | 6,444 | 576 | 30% | 559 | 31% | 1.03 | 0.98 |
 <!-- /generated -->
 
 Reading it:
 
 <!-- generated:hol2_liveover_notes -->
-- Being live over Christmas or New Year came with about the same share entering as the same-length campaigns that were not, at ratios of 1.01 and 0.98. Every other holiday came with fewer entering, and the two furthest back were Back to school at 13% lower and Black Friday and Cyber Monday at 10% lower. Those are weeks when the audience is being sold to from every direction.
-- Entrant counts do not move much with any holiday: every ratio sits between 0.97 and 1.10. A holiday does not add Entrants. It changes how many of the people who arrive decide to enter.
+- Being live over Christmas or New Year came with about the same share entering as the same-length campaigns that were not, within 1% for Christmas and 2% for New Year. Every other holiday came with fewer entering, and the two furthest back were Back to school at 13% lower and Black Friday and Cyber Monday at 11% lower. Those are weeks when the audience is being sold to from every direction.
+- Entrant counts do not move much with any holiday: every ratio sits between 0.95 and 1.08. A holiday does not add Entrants. It changes how many of the people who arrive decide to enter.
 - Closing on the holiday itself is rare (247 to 703 campaigns per holiday that any campaign closed on) and those campaigns look like the rest.
 <!-- /generated -->
 
@@ -326,13 +326,25 @@ Themes that fewer than 100 campaigns named, so the shape only: campaigns, typica
 | Earth Day | 72 | 1,102 | Apr and Mar |
 | Amazon Prime Day | 70 | 946 | Jul and Jun |
 | Labor Day (US) | 69 | 925 | Aug and Sep |
-| International Women's Day | 46 | 308 | Mar and Apr |
-| March Madness | 46 | 474 | Mar and Feb |
+| Carnival | 50 | 468 | Feb and Mar |
+| International Women's Day | 46 | 308 | Mar and Feb |
+| March Madness | 46 | 474 | Mar and Apr |
 | Chinese or Lunar New Year | 35 | 538 | Feb and Jan |
 | Super Bowl | 32 | 821 | Feb and Jan |
 | April Fools | 29 | 1,296 | Apr and Mar |
 | Canada Day | 28 | 1,916 | Jun and Jul |
+| Diwali | 27 | 1,008 | Oct and Nov |
+| Galentine's Day | 25 | 990 | Feb and Jan |
 | Stocking stuffers | 20 | 296 | Nov and Dec |
+| Ramadan or Eid | 18 | 550 | Mar and Apr |
+| Cinco de Mayo | 15 | 437 | Apr and May |
+| Oktoberfest | 15 | 335 | Sep and Aug |
+| Midsummer | 13 | 726 | Jun and Jul |
+| Boxing Day | 10 | 980 | Dec and Nov |
+| Hanukkah | 9 | 468 | Dec and Nov |
+| Day of the Dead | 7 | 609 | Oct and May |
+| Pi Day | 6 | 894 | Mar |
+| Holi | 5 | 2,547 | Mar and Dec |
 <!-- /generated -->
 
 Named days that businesses used (National Coffee Day, National Sticker Day and similar) no longer clear five distinct businesses in the campaign analysis, each down to one to four businesses, mostly one, so none of them publish as a standalone figure any more. The pattern still holds in the National days and World days rows above: a named day nobody else in your category uses is a hook with no competition. Canada Day and April Fools carry the largest campaigns in this group on small counts, both tied to a single day of attention.
@@ -355,4 +367,25 @@ Dates for the ones with a fixed or predictable day:
 | National Coffee Day | Tue 29 Sep 2026 in the US, Thu 01 Oct 2026 internationally |
 | Super Bowl | Sun 14 Feb 2027, the same day as Valentine's |
 
-Missing from the data at any count worth reporting: Juneteenth, Cinco de Mayo, Pi Day, Bastille Day, Oktoberfest, Bonfire Night, Movember, Giving Tuesday, Small Business Saturday, Hanukkah, Boxing Day, Australia Day, Eurovision, Ramadan and Eid, Holi, Diwali beyond the main table, Day of the Dead, Carnival, Midsummer, Black History Month, Galentine's, Grandparents Day. Each appeared in under 15 campaigns on the campaign analysis. A business that owns one of those has it to themselves.
+
+A few more do appear and still fall short of the 30 campaigns a theme row here needs, so they get a count and no
+typical figure to plan against. Every count below comes from one definition, generated with the rest of this page.
+
+<!-- generated:smaller_named -->
+| Theme | Campaigns | Businesses | Typical Entrants | Busiest start months |
+|---|---|---|---|---|
+| Diwali | 27 | 11 | 1,008 | Oct (19), Nov (6) |
+| Carnival | 50 | 34 | 468 | Feb (18), Mar (6) |
+| Ramadan or Eid | 18 | 12 | 550 | Mar (8), Apr (6) |
+| Galentine's Day | 25 | 14 | 990 | Feb (17), Jan (6) |
+| Cinco de Mayo | 15 | 12 | 437 | Apr (9), May (6) |
+| Oktoberfest | 15 | 11 | 335 | Sep (9), Aug (2) |
+| Midsummer | 13 | 11 | 726 | Jun (6), Jul (3) |
+| Boxing Day | 10 | 8 | 980 | Dec (6), Nov (2) |
+| Hanukkah | 9 | 6 | 468 | Dec (6), Nov (3) |
+| Day of the Dead | 7 | 5 | 609 | Oct (5), May (1) |
+| Pi Day | 6 | 5 | 894 | Mar (6) |
+| Holi | 5 | 5 | 2,547 | Mar (4), Dec (1) |
+
+Matched on the campaign title, the Prize name and the description, across the campaigns these benchmarks describe. Below the five-business floor and so not published: Juneteenth, Giving Tuesday, Small Business Saturday, Australia Day, Eurovision, Black History Month, Bonfire Night, Movember, Bastille Day, Grandparents Day.
+<!-- /generated --> Diwali also appears in the week and live-over tables above, which place it by its date and not by its wording. A campaign that names the holiday only in its description is not counted, so each count is a floor. Few businesses name any of these, so a hook built on one has little company in the data.

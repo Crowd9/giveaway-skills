@@ -114,6 +114,44 @@ How much crowd a category draws for the money, against the typical campaign at t
 
 Any claim that crypto campaigns inflate a benchmark remains a hypothesis.
 
+## Crowd per Prize dollar, by industry
+
+The table above lists each industry's most common categories by share of campaigns. This one adds the value-adjusted view inside an industry. The index here is a campaign's Entrants against the typical Entrants for the same stated Prize pool band, 1.00 being typical for the money, taken across campaigns with a stated USD pool (42,953 campaigns). Each cell gives the category's index inside the industry, then the same category's index across all industries, with the campaigns and businesses behind it. The left column lists categories at 1.25 or above and the right column those at 0.80 or below, strongest first and up to three each, with unclassified and placeholder Prize names left out. A dash means nothing cleared the cut.
+
+The index compares against campaigns of every industry at the same pool, so an industry that draws big crowds in every category lifts all its rows, and the all-industry figure beside each cell is the fair comparison. Read each cell as what businesses in that industry ran and drew. It says nothing about what a Prize would do for another business.
+
+<!-- generated:pp3_industry_index -->
+| Industry | Crowd for the Prize money above 1.25 | Crowd for the Prize money below 0.80 |
+|---|---|---|
+| Gaming and esports | - | Experience, travel, tickets 0.48 (all industries 0.59, 100 campaigns, 73 businesses). Merch, apparel, collectibles 0.56 (all industries 0.80, 72 campaigns, 48 businesses). Bundle or box 0.66 (all industries 0.92, 392 campaigns, 205 businesses) |
+| Media and entertainment | Tech hardware 3.04 (all industries 1.48, 1,198 campaigns, 200 businesses). Music gear 2.81 (all industries 1.91, 93 campaigns, 26 businesses). Beauty and wellness 1.82 (all industries 1.18, 51 campaigns, 17 businesses) | Subscription or membership 0.57 (all industries 0.47, 53 campaigns, 33 businesses). Experience, travel, tickets 0.57 (all industries 0.59, 288 campaigns, 112 businesses). Game items or skins 0.65 (all industries 0.73, 624 campaigns, 113 businesses) |
+| Electronics and tech | Tech hardware 1.58 (all industries 1.48, 2,467 campaigns, 594 businesses). Vehicle 1.49 (all industries 1.02, 64 campaigns, 20 businesses) | Subscription or membership 0.41 (all industries 0.47, 53 campaigns, 16 businesses). Merch, apparel, collectibles 0.60 (all industries 0.80, 43 campaigns, 24 businesses). Experience, travel, tickets 0.65 (all industries 0.59, 45 campaigns, 33 businesses) |
+| Toys, hobbies, collectibles | - | Experience, travel, tickets 0.46 (all industries 0.59, 31 campaigns, 10 businesses). Gift card or cash 0.67 (all industries 1.10, 273 campaigns, 121 businesses). Toys and collectibles 0.68 (all industries 0.86, 76 campaigns, 44 businesses) |
+| Food and drink | Home, garden, appliance 1.98 (all industries 1.41, 126 campaigns, 55 businesses). Bundle or box 1.43 (all industries 0.92, 281 campaigns, 135 businesses). Tech hardware 1.42 (all industries 1.48, 165 campaigns, 74 businesses) | Experience, travel, tickets 0.52 (all industries 0.59, 145 campaigns, 68 businesses) |
+| Sports and outdoors | Home, garden, appliance 2.25 (all industries 1.41, 57 campaigns, 24 businesses). Regulated goods (firearms) 1.75 (all industries 2.15, 347 campaigns, 103 businesses). Vehicle 1.43 (all industries 1.02, 49 campaigns, 25 businesses) | Experience, travel, tickets 0.77 (all industries 0.59, 73 campaigns, 42 businesses) |
+| Apparel and fashion | Home, garden, appliance 1.86 (all industries 1.41, 32 campaigns, 19 businesses) | Experience, travel, tickets 0.78 (all industries 0.59, 40 campaigns, 25 businesses) |
+| Travel and events | - | Experience, travel, tickets 0.56 (all industries 0.59, 536 campaigns, 159 businesses). Gift card or cash 0.64 (all industries 1.10, 225 campaigns, 104 businesses) |
+| Home and garden | Home, garden, appliance 1.76 (all industries 1.41, 232 campaigns, 75 businesses). Tech hardware 1.76 (all industries 1.48, 232 campaigns, 67 businesses). Bundle or box 1.36 (all industries 0.92, 231 campaigns, 87 businesses) | - |
+| Creator or influencer | - | Game items or skins 0.76 (all industries 0.73, 84 campaigns, 57 businesses) |
+| Health, wellness and fitness | Tech hardware 1.65 (all industries 1.48, 110 campaigns, 46 businesses) | Merch, apparel, collectibles 0.51 (all industries 0.80, 52 campaigns, 19 businesses). Bundle or box 0.53 (all industries 0.92, 328 campaigns, 78 businesses). Home, garden, appliance 0.62 (all industries 1.41, 89 campaigns, 28 businesses) |
+| Retail marketplace | - | Bundle or box 0.57 (all industries 0.92, 63 campaigns, 30 businesses) |
+| Automotive | Regulated goods (firearms) 6.37 (all industries 2.15, 342 campaigns, 14 businesses). Tech hardware 1.75 (all industries 1.48, 39 campaigns, 25 businesses) | Vehicle 0.77 (all industries 1.02, 74 campaigns, 30 businesses) |
+| Education | - | Subscription or membership 0.45 (all industries 0.47, 41 campaigns, 27 businesses). Gift card or cash 0.57 (all industries 1.10, 130 campaigns, 61 businesses). Bundle or box 0.62 (all industries 0.92, 118 campaigns, 42 businesses) |
+| Software and SaaS | - | Subscription or membership 0.24 (all industries 0.47, 60 campaigns, 29 businesses). Bundle or box 0.63 (all industries 0.92, 40 campaigns, 26 businesses). Gift card or cash 0.65 (all industries 1.10, 146 campaigns, 91 businesses) |
+| Art and crafts | Bundle or box 2.26 (all industries 0.92, 149 campaigns, 43 businesses). Tools, craft, DIY 1.30 (all industries 1.16, 44 campaigns, 13 businesses) | - |
+| Beauty and personal care | Beauty and wellness 1.51 (all industries 1.18, 124 campaigns, 38 businesses). Bundle or box 1.49 (all industries 0.92, 178 campaigns, 53 businesses). Game items or skins 1.49 (all industries 0.73, 48 campaigns, 15 businesses) | - |
+| Marketing agency | Tech hardware 1.49 (all industries 1.48, 119 campaigns, 18 businesses) | Gift card or cash 0.65 (all industries 1.10, 93 campaigns, 33 businesses) |
+| Baby and kids | - | Bundle or box 0.74 (all industries 0.92, 88 campaigns, 25 businesses) |
+| Pets | Bundle or box 1.26 (all industries 0.92, 65 campaigns, 30 businesses) | - |
+| Local services | - | - |
+| Nonprofit and community | - | Gift card or cash 0.49 (all industries 1.10, 54 campaigns, 33 businesses) |
+| Jewelry and watches | Tech hardware 1.29 (all industries 1.48, 36 campaigns, 24 businesses) | Gift card or cash 0.59 (all industries 1.10, 35 campaigns, 26 businesses) |
+<!-- /generated -->
+
+Hold loosely any cell resting on fewer than 20 businesses, and quote its business count whenever you quote its index.
+
+Source: `analysis/output/vertical_profiles.json` (prize_category_index_by_industry).
+
 ## Using the taxonomy
 
 Pick the category that matches the objective first, then choose the item:

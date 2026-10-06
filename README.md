@@ -71,6 +71,7 @@ A prize that pulls the people you want, and the budget worked out before you com
 - Budget calculator with cost ratio, shipping, duties, tax, a substitute reserve and contingency
 - ROI script: cost per Entrant, per email signup and per follow beside the benchmark for your industry, and the breakeven value per address
 - Prize values by category and campaign size from 170,599 real Prize records, with sample sizes shown
+- A Prize a buyer wants that a freebie hunter does not, tested on whether someone with no use for the product would still enter
 
 > "Is a PS5 a good prize for our accounting software?"
 
@@ -85,6 +86,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 - Completion rates by action family from 957,363 real entry actions, and what a longer list costs in Conversion Rate
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
+- A buyer mode for when forty right Entrants beat four thousand: what to gate on, the qualifying question, and a scorecard that is not crowd size
 
 > "We want email subscribers, we have Instagram and Klaviyo."
 
@@ -112,6 +114,7 @@ How many winners, what tiers, and a process that holds up when a winner disappea
 - Draw, contact, redraw, announcement and delivery rules
 - Winner verification: the account signals that mark a fake, and what to do when a drawn entry fails
 - A terms draft from a short questionnaire, 13 clauses with notes for Australia, the UK, the US, the EU and Canada
+- Eligibility settled before the dates: which countries, minimum age, who is excluded, and the questions to put to a lawyer
 - Daily and series structures, skill-based judging, and what the data shows about how businesses split prizes
 
 > "Budget $1,500 of our own $60 meal-prep sets, we want reviews."
@@ -127,6 +130,7 @@ A schedule that fills the whole run, with the copy written.
 - Two email branches, list and entrants, each with subject, preview text and send time
 - Profile prep, a fourteen-day calendar, and the replies for comments and DMs including the impersonation warning
 - Partner and creator briefs, a paid recommendation with a cap, and what to reuse afterwards
+- A rescue for a campaign already live and going wrong: what to check first, what each change does to people already entered, and the reply when someone calls the draw rigged
 - Retargeting and lookalike audiences built from the entrant list once the campaign closes, with winners and existing customers excluded
 
 > "Runs 1 to 14 October, one partner post, no paid budget."
@@ -172,6 +176,7 @@ Your finished campaign read against 116,499 others in its own size band, from 10
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
 - Three changes at most, each tied to a figure and to the skill that plans it
+- A live mode for a campaign still running, reading pace against campaigns of the same run length
 - A full report from your export in reporting-tab order: overview, traffic by channel, entry methods, the referral graph, audience, retention and ROI
 - Reads a Gleam Actions export as is, and other platforms' exports through column matching or a mapping, including one-column-per-method exports
 
@@ -213,7 +218,7 @@ An abbreviated version of what comes back:
 >
 > Entries per Entrant sit at 3.92 for an 8 to 14 day run and 4.07 for 15 to 30, so the second week buys repeat entries and little after that. Past two months the figure falls.
 >
-> Start day makes no measurable difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only because your own week is easier that way.
+> Start day makes no measurable difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only for the sake of your own working week.
 >
 > One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 42% more Entrants than a first campaign, and 38% of viewers entered against 31%. Book the second before you launch this one.
 >
@@ -239,7 +244,7 @@ Some of what that shows:
 - **Most campaigns are small and cheap.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Your industry sets that price.** Music and media captured an address for 0.09 USD of stated Prize value. Software paid 1.19.
-- **Spending more on the Prize buys less than you would think.** Ten times the Prize value came with about 2.2 times the Entrants, and Prize value explains about 23% of the difference in Entrant counts.
+- **Spending more on the Prize buys less than you would think.** Ten times the Prize value came with about 2.2 times the Entrants, and Prize value accounts for about 23% of the spread in Entrant counts, which leaves most of it to everything else.
 - **What you give away matters more than what you spend on it.** For the same money, tech hardware drew 42% more crowd than typical and a subscription drew 49% less.
 - **A small campaign works its audience as hard as a big one.** Entries per Entrant runs 4.46 in the smallest size band and 5.28 in the largest, so a low Entrant count is a reach problem.
 - **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.

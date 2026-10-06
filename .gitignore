@@ -9,3 +9,7 @@ defaults/
 __pycache__/
 .omc/
 .private/
+
+# Local working files, not part of the published library
+docs/
+visuals/

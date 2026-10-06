@@ -59,7 +59,7 @@ Rate move a long way, while the Entrant count barely does. In the 1,000 to 2,500
 | Impressions group | Campaigns | Impressions | Entrants | Conversion Rate |
 |---|---|---|---|---|
 | lowest fifth | 3,988 | 2,504 | 1,232 | 54% |
-| second | 3,988 | 3,875 | 1,376 | 36% |
+| second | 3,988 | 3,875 | 1,377 | 36% |
 | middle | 3,988 | 5,416 | 1,516 | 28% |
 | fourth | 3,988 | 7,874 | 1,669 | 21% |
 | highest fifth | 3,988 | 14,836 | 1,788 | 11% |

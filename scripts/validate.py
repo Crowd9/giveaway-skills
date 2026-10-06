@@ -40,7 +40,10 @@ for d in sorted(glob.glob("skills/*/")):
     else:
         try:
             j = json.load(open(ev)); assert j["skill_name"] == name and j["evals"]
-            for e in j["evals"]: assert {"id", "prompt", "expected_output", "assertions"} <= set(e)
+            for e in j["evals"]:
+                assert {"id", "prompt", "expected_output", "assertions"} <= set(e)
+                for c in e.get("checks", []):
+                    assert (set(c) == {"contains"} and c["contains"]) or (set(c) <= {"count", "min"} and "count" in c and re.compile(c["count"]) and c.get("min", 1) >= 1), c
         except Exception as ex: errors.append(f"{name}: evals.json invalid ({ex})")
 
 for w in warnings: print("warn ", w)

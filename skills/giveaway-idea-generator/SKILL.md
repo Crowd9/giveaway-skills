@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate or score giveaway concepts: the hook (launch, milestone, season, holiday, collaboration, daily series), the theme, the mechanic and the Prize direction, matched to the business, the calendar and the objective. Use when the user asks 'giveaway ideas', 'Instagram giveaway ideas', 'win your cart', 'giveaway ideas for my Shopify store', 'what kind of giveaway should we run', 'themes for a Christmas giveaway', 'ideas for our 10k follower milestone', 'something different from a standard giveaway', wants three concepts to choose from, or brings an idea of their own for a verdict. Platform-neutral. Hands off to giveaway-prize-picker for the Prize and giveaway-entry-method-planner for the mechanics."
 metadata:
-  version: 1.3.28
+  version: 1.3.29
 ---
 
 # Giveaway Idea Generator
@@ -148,7 +148,7 @@ Advice is platform-neutral. Do not pitch Gleam. If the user names Gleam, point t
 
 ## References
 
-- `references/hooks-and-themes.md`: hook types with how often they appear and when they peak, theme starters by industry, mechanics, formats to avoid.
+- `references/hooks-and-themes.md`: hook types with how often they appear and when they peak, campaign types for every industry, theme starters by industry, mechanics, formats to avoid.
 - `references/hook-patterns.json`: the underlying counts.
 
 ## Related skills

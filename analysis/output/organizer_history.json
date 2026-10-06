@@ -859,21 +859,24 @@
    "organizers": 1567,
    "log_ratio_contestants": -0.0033,
    "d_conversion": 0.0023,
-   "d_entries_per_entrant": -0.0001
+   "d_entries_per_entrant": -0.0001,
+   "share_next_bigger": 0.497
   },
   "same_mix": {
    "n": 61338,
    "organizers": 5928,
    "log_ratio_contestants": -0.0101,
    "d_conversion": 0.0006,
-   "d_entries_per_entrant": 0.0
+   "d_entries_per_entrant": 0.0,
+   "share_next_bigger": 0.474
   },
   "partial_overlap": {
    "n": 30344,
    "organizers": 5905,
    "log_ratio_contestants": -0.0031,
    "d_conversion": -0.0007,
-   "d_entries_per_entrant": -0.002
+   "d_entries_per_entrant": -0.002,
+   "share_next_bigger": 0.495
   }
  },
  "prize_category_repeat": {
@@ -882,21 +885,24 @@
    "organizers": 5323,
    "log_ratio_contestants": -0.0055,
    "d_conversion": 0.0005,
-   "d_entries_per_entrant": 0.0
+   "d_entries_per_entrant": 0.0,
+   "share_next_bigger": 0.491
   },
   "same_mix": {
    "n": 53425,
    "organizers": 6224,
    "log_ratio_contestants": -0.0096,
    "d_conversion": 0.0003,
-   "d_entries_per_entrant": 0.0
+   "d_entries_per_entrant": 0.0,
+   "share_next_bigger": 0.475
   },
   "partial_overlap": {
    "n": 6436,
    "organizers": 2054,
    "log_ratio_contestants": -0.0136,
    "d_conversion": -0.0001,
-   "d_entries_per_entrant": 0.0009
+   "d_entries_per_entrant": 0.0009,
+   "share_next_bigger": 0.482
   }
  },
  "first_campaign_by_survival_matched_on_band": {

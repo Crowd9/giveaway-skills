@@ -6,7 +6,7 @@ Hard fails: em dashes, semicolons, curly quotes, an assistant opener or closer, 
 the answer commenting on itself, a closing sentence that carries no number and asks for nothing, a mechanic banned
 on the strength of an average when no platform rule, law or money risk is named nearby, a raw pair of decimals the reader
 has to divide themselves, analysis jargon that belongs in the reference files, a literary join nobody says out loud,
-an answer over sixty words that never once says "you", and any of Gleam's own words written without its capital,
+a figure explained by a causal verb the table cannot back, an answer over sixty words that never once says "you", and any of Gleam's own words written without its capital,
 which covers the dashboard names and the product nouns Entrant, Contestant, Prize and Winner. "entries" stays out:
 the repo's own prose uses it as a common noun 194 times, so flagging it would fail the references it is drawn from.
 Sentence variety is the soft gate: something short, something long, so the answer does not read as one template rhythm.
@@ -85,7 +85,11 @@ PARTY = (r"\b(instagram|facebook|tiktok|twitter|youtube|discord|telegram|reddit|
 GENERAL = (r"\b(plenty of|usually|typically|often|rarely|mostly|tends? to|commonest|the most \w+"
            r"|the (biggest|largest|fastest|slowest|cheapest|best|worst|strongest|weakest|second biggest|busiest|quietest|highest|lowest|earliest|hardest|easiest|safest|riskiest)"
            r"|(more|less|fewer|better|worse|higher|lower|faster|slower|cheaper) \w*\s?than|\w+est of (any|all|every))\b")
-SOURCED = r"\b(rules?|policy|policies|guidelines|law|laws|legal|practice|data|campaigns|reference|measured|according to|docs|documentation)\b"
+# Naming who decides a point is allowed, so a rule, a policy or a law still exempts a sentence. The words "data",
+# "campaigns" and "practice" used to exempt one too, which let the overreaching claims through: 13 of 22 sentences
+# a grader flagged carried one of them. They now exempt only when the sentence shows its working, by citing a
+# reference, quoting a source or carrying a figure.
+SOURCED = r"\b(rules?|policy|policies|guidelines|law|laws|legal|reference|measured|according to|docs|documentation)\b"
 INSTRUCTION = (r"^(\*\*)?(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm"
                r"|post|put|place|screenshot|report|reply|email|dm|message|name|state|link|open|paste|copy|export|download|upload|sort|read"
                r"|treat|plan|budget|expect|hold|leave|make|take|let|do|don't|do not|never|always|announce|tag|thank|quote|cap|freeze"
@@ -96,9 +100,45 @@ def unsourced_claims(text):
     out = []
     for s in sentences(prose_only(text)):
         t = s.strip().lstrip("*-# ")
-        if re.search(r"\d", t) or t.endswith("?") or re.search(SOURCED, t, re.I) or re.match(INSTRUCTION, t, re.I):
+        if re.search(r"\d", t) or t.endswith("?") or re.search(SOURCED, t, re.I):
             continue
+        # An instruction exempts only the instruction. "Send it Tuesday because Gmail buries promotions" is an
+        # instruction with a claim riding on its back, so the reason clause is tested on its own.
+        if re.match(INSTRUCTION, t, re.I):
+            t = re.sub(r"(?i)^.*?\b(because|since|as)\b", "", t, count=1) if re.search(r"(?i)\b(because|since|as)\b", t) else ""
+            if not t.strip():
+                continue
         if re.search(PARTY, t, re.I) or re.search(GENERAL, t, re.I):
+            out.append(t.strip())
+    return out
+
+
+# A real figure read further than its row allows. The dataset has no comparison group, so a sentence that carries
+# a figure and also says why it is so ("42% more Entrants because they already had a list", "which explains the
+# 19%", "email drives the lift") is a causal claim the table cannot back. Across the benchmark all 75 automatic
+# deduction points were this fault. A figure here is a percentage, a decimal, a thousands-separated count or an
+# Nx multiple. Bare integers and dollar amounts are plan inputs (a date, a budget), so a reason that quotes them
+# is arithmetic and stays out. "since" is causal only when it is not a start date. A negation or a "whether" in
+# the forty characters before the connective is the answer correctly refusing the claim, and a sentence naming a
+# rule, a law or the terms gives its source. Unlike unsourced_claims an instruction earns no exemption, because
+# "Expect 42% more Entrants because they have a list" is an instruction carrying the claim on its back.
+# ponytail: a negation near the connective exempts the sentence, so "did not rise because" slips through.
+FIGURE = re.compile(r"\d+(?:\.\d+)?%|\b\d{1,3}(?:,\d{3})+\b|\b\d+\.\d+\b|\b\d+(?:\.\d+)?x\b")
+CAUSAL = (r"\b(because|since(?!\s+(?:\d|then\b|last\b|early\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*\b))"
+          r"|explains?|explained by|explaining|(?:can|could|may|might|would|will) explain|drives|driven by|driving"
+          r"|causes|caused|causing|(?:can|could|may|might|will|would|to) cause|due to(?!\s+(?:be|end|close|start|launch|ship))|owing to|thanks to|(?:leads|led) to"
+          r"|is why|the reason (?:is|for|why)|as a result)\b")
+CAUSAL_OK = re.compile(r"\b(?:not|cannot|never|nothing|whether|without)\b|n't", re.I)
+CAUSAL_SOURCE = r"\b(rules?|policy|policies|guidelines|law|laws|legal|terms|docs|documentation|according to)\b"
+
+
+def causal_claims(text):
+    out = []
+    for s in sentences(prose_only(text)):
+        t = s.strip().lstrip("*-# ")
+        if t.endswith("?") or not FIGURE.search(t) or re.search(CAUSAL_SOURCE, t, re.I):
+            continue
+        if any(not CAUSAL_OK.search(t[max(0, m.start() - 40):m.start()]) for m in re.finditer(CAUSAL, t, re.I)):
             out.append(t)
     return out
 
@@ -201,6 +241,7 @@ def check(text):
         "runaway_sentences": sum(1 for n in lens if n > 45),
         "figure_blizzards": blizzards(text),
         "unsourced_claims": len(unsourced_claims(text)),
+        "causal_claims": len(causal_claims(text)),
         "analyst_units": len(re.findall(ANALYST_UNITS, prose_only(text), re.I)),
     }
 
@@ -302,11 +343,25 @@ def self_test():
     clean = check("Send the email first, since it lands the same hour. Facebook's promotion rules prohibit share-to-enter.\n"
                   "Mail arrived 3 days after the other channels across 1,904 campaigns.\n")
     assert clean["unsourced_claims"] == 0, clean
+    # The four ways a claim used to slip past: a reason clause riding on an instruction, and the words
+    # "data", "campaigns" and "practice" standing in for a source.
+    hatches = check(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "fails_claims.txt")).read())
+    assert hatches["unsourced_claims"] == 4, hatches
     with open(fh.name, "w") as f2:
         f2.write("Pick the coffee subscription. That email send is the fastest reach you have.\n"
                  "Ask them which matters more to you this quarter.\n")
     out = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True).stdout
     assert "FAIL" in out and "unsourced claim: That email send" in out, f"an unsourced claim must block and be quoted, got: {out}"
+    # A figure plus a causal connective blocks. The same figure stated plainly, a refusal of the cause, a start
+    # date, a rule as the source and a bare plan number do not.
+    cz = check(open(os.path.join(d, "fails_causal.txt")).read())
+    assert cz["causal_claims"] == 6, cz
+    ok = check("About 42% more Entrants joined the referral campaigns, across 1,904 of them.\n"
+               "The table cannot say whether the 19.2% is because of the list.\n"
+               "Email did not explain the 31% gap, and nothing here shows what drives it.\n"
+               "Campaigns since 2024 ran 1.5x longer. Close on 26 November because the courier cuts off on 3 December.\n"
+               "Facebook limits it to 5 days because its promotion rules say so, and 12.5% broke them.\n")
+    assert ok["causal_claims"] == 0, ok
     units = check("Referrals ran at 19 per 100 Entrants, about 1.5 times the typical campaign. You drew 2.2x the crowd, and 53% subscribed.")
     assert units["analyst_units"] == 2, units
     _os.unlink(fh.name)
@@ -327,13 +382,15 @@ if __name__ == "__main__":
                 + r["question_headings"] + r["label_openers"] + r["bold_lead_ins"] + r["meta_commentary"] + r["empty_ending"]
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
-                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["analyst_units"])
+                + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["causal_claims"] + r["analyst_units"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an
         # instruction, or cut it. A count alone sends the writer hunting.
         for s in unsourced_claims(text):
             print(f"  unsourced claim: {s}")
+        for s in causal_claims(text):
+            print(f"  causal claim on a figure: {s}")
         if verbose:
             for name, line, quote in show(text):
                 print(f"  {name} line {line}: {quote}")

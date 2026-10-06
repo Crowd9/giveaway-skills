@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.29 |
-| giveaway-entry-method-planner | 1.2.32 |
-| giveaway-timing-and-duration | 1.4.27 |
-| giveaway-winner-structure | 1.3.25 |
-| giveaway-promotion-plan | 1.3.29 |
-| giveaway-random-draw | 1.3.27 |
-| giveaway-winner-communications | 1.2.26 |
-| giveaway-idea-generator | 1.3.26 |
-| giveaway-results-review | 1.6.0 |
-| gleam-campaign-setup | 1.2.27 |
+| giveaway-prize-picker | 1.3.32 |
+| giveaway-entry-method-planner | 1.2.33 |
+| giveaway-timing-and-duration | 1.4.30 |
+| giveaway-winner-structure | 1.4.0 |
+| giveaway-promotion-plan | 1.3.32 |
+| giveaway-random-draw | 1.3.28 |
+| giveaway-winner-communications | 1.2.27 |
+| giveaway-idea-generator | 1.3.29 |
+| giveaway-results-review | 1.6.1 |
+| gleam-campaign-setup | 1.2.30 |
 
 ## Skills
 
@@ -343,6 +343,44 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 2.4.0 (2026-10-06)
+
+Several published figures were wrong and are now right. A campaign's second outing draws 9.8% fewer Entrants than
+its first, not the 4.4% these tables carried, because the fall was being read in the wrong unit. The page
+describing campaign sequence also misdescribed its own base, and claimed well under half of next campaigns
+outdraw the one before, which holds until you reach the smallest campaigns, where 50.9% of them do. The B2B row
+quoted a count that matches nothing in the data at all. The gaming profile was stale on every figure it carried.
+A reader was told the data holds no entry worth, when it holds one for every Action, and that wrong note was also
+the stated reason a completion figure can pass 100%.
+
+Eligibility has somewhere to live. Which countries entry is open in, the minimum age, who is excluded, whether the
+free route holds everywhere, and what happens to the data afterwards, all settled before the dates are locked. It
+carries the questions to put to a lawyer and states no threshold and no statute of its own, because those change
+without telling anyone. Timing now asks whether a permit has been checked before it plans backwards from a launch.
+Restricting entry by country costs nothing in turnout: those campaigns drew 702 Entrants against 439 at the same
+Conversion Rate.
+
+A campaign that is already live and going wrong has an answer. What to check first, what each possible change does
+to the people already entered, what to do about entries that look fake or a public accusation that the draw is
+rigged, and whether to extend, push or accept. The results review reads a running campaign against others of the
+same run length.
+
+The giveaway where forty right Entrants beat four thousand has one too. What to gate on and what to only sort by,
+the qualifying question, the Prize a buyer wants that a freebie hunter does not, and a scorecard that is not crowd
+size. Those campaigns run 44 referral entries per 100 Entrants against 16, and offer email half as often.
+
+Four findings that were measured and never shown now reach the reader who needs them: what separated the top fifth
+of campaigns that built an email list, earned referrals or grew a following from peers their own size, an Action
+index for every industry where only gaming had one, how many easy Actions a list can carry, and whether repeating
+your last campaign's mix beats changing it.
+
+The smaller holiday themes have counts again, generated under one definition so they cannot drift apart. Carnival
+is the largest at 50 campaigns from 34 businesses, and Diwali draws the biggest crowd.
+
+Answers are checked for two more faults: a figure carrying a cause it cannot support, and a deliverable that stops
+short of what was asked for, with the commands, subject lines and headings an answer has to contain now checked by
+machine on 42 cases. The check that catches an unsourced claim had four ways through it and now has none.
 
 ## 2.3.0 (2026-09-23)
 

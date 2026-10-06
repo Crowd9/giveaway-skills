@@ -13,7 +13,28 @@
     "Cites a dataset figure with sample size",
     "No platform pitch"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "14 October"
+    },
+    {
+     "count": "\\b\\d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December)\\b|\\b(?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}\\b",
+     "min": 4
+    },
+    {
+     "count": "\\b(?:Mon|Tues|Wednes|Thurs|Fri)day\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:reply|respond|response)\\b",
+     "min": 1
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +46,21 @@
     "Cites the duration distribution",
     "States the data cannot show which length performs better"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)quiet[- ]middle",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\brecurring\\b|\\bmonthly\\b|\\bshorter\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:cannot|can't|can not|does not|doesn't|do not|don't)\\s+(?:show|rank|say|tell|prove)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -36,7 +71,12 @@
     "Says it shows organizer choice and nothing about outcomes",
     "Ties the choice to the audience and team availability"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "Monday"
+    }
+   ]
   },
   {
    "prompt": "We want to run a Black Friday giveaway this year. When should we launch and how long should it run?",
@@ -48,7 +88,24 @@
     "Dated timeline"
    ],
    "files": [],
-   "id": 4
+   "id": 4,
+   "checks": [
+    {
+     "contains": "Black Friday"
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    },
+    {
+     "count": "\\b\\d{1,2} (?:January|February|March|April|May|June|July|August|September|October|November|December)\\b|\\b(?:January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}\\b",
+     "min": 4
+    },
+    {
+     "count": "\\b8 days\\b|\\b8-day\\b|\\beight days\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 5,

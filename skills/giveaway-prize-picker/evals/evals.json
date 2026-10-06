@@ -13,7 +13,17 @@
     "Ends on a concrete next decision",
     "Does not promise entrant numbers"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bestimate",
+     "min": 1
+    },
+    {
+     "count": "\\$\\d+",
+     "min": 3
+    }
+   ]
   },
   {
    "id": 2,
@@ -24,9 +34,20 @@
     "Distinguishes the reach objective from the lead-quality objective",
     "Offers at least two on-brand alternatives",
     "States that the dataset cannot rank the options",
-    "Gives a keep, adjust or replace verdict"
+    "Gives a keep, adjust or replace verdict",
+    "Where the aim is leads, prefers a Prize that only a buyer values and says the dataset holds no outcome after the entry"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\b(?:keep|adjust|replace)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:cannot|can't|can not|does not|doesn't|do not|don't)\\s+(?:show|rank|say|tell|prove)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -38,18 +59,39 @@
     "Mentions a tiered or mixed option",
     "Notes the dataset cannot show which structure performs better"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\btier|\\bmixed\\b|\\bmiddle\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\b(?:cannot|can't|can not|does not|doesn't|do not|don't)\\s+(?:show|rank|say|tell|prove)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,
    "prompt": "What's a good prize for a B2B SaaS webinar giveaway?",
-   "expected_output": "Gives a preferred option, two alternatives, structure, estimate-labelled budget and next decision. Mentions no giveaway platform by name.",
+   "expected_output": "Gives a preferred option, two alternatives, structure, estimate-labelled budget and next decision. Mentions no giveaway platform by name. The preferred option passes the buyer test: a person with no use for the product would not want it. Names a consolation for qualified non-Winners and labels the buyer-Prize advice as practice.",
    "assertions": [
     "No mention of Gleam or any platform pitch",
     "Preferred option filters for the webinar's buyer persona",
-    "States assumptions since budget and audience were not given"
+    "States assumptions since budget and audience were not given",
+    "Preferred Prize is one that only the webinar's buyer values, with a consolation for qualified Entrants who do not win, and says that is practice"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\bestimate",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\bassum",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 5,
@@ -61,7 +103,17 @@
     "Does not state plan prices, prize-count limits or winner limits from memory",
     "Notes that Gleam does not contact winners automatically"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "https://gleam\\.io/docs\\S*",
+     "min": 2
+    },
+    {
+     "count": "(?i)\\b(?:does not|doesn't|do not|don't)\\s+(?:automatically\\s+)?(?:contact|notify|email|message)\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 6,
@@ -73,7 +125,13 @@
     "Redirects to promotion, audience and relevance",
     "Does not rank prize types by contestant counts as evidence"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)guarantee",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 7,
@@ -85,7 +143,12 @@
     "Parsed dollar amounts carry the USD? flag",
     "Zeros are counted as missing"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "USD?"
+    }
+   ]
   },
   {
    "id": 8,
@@ -96,7 +159,15 @@
     "No ordinary benchmark includes them",
     "examples.md lists them only as excluded"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "purchase_opportunity"
+    },
+    {
+     "contains": "examples.md"
+    }
+   ]
   },
   {
    "id": 9,
@@ -108,7 +179,13 @@
     "Does not visit or recommend the link",
     "Suggests naming the exact model and tying a review to the prize"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?im)^[#*\\s\\-]*Budget\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "prompt": "We're a coffee roaster. If we spend $900 on prizes and $300 on promotion and expect 2,000 entrants with an email action, what does that cost us per subscriber and is it good value?",
@@ -120,7 +197,17 @@
     "Asks for a value per subscriber before judging"
    ],
    "files": [],
-   "id": 10
+   "id": 10,
+   "checks": [
+    {
+     "count": "roi\\.py\\s+--",
+     "min": 1
+    },
+    {
+     "count": "(?i)break-?even",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 11,
@@ -138,6 +225,34 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "id": 12,
+   "prompt": "We're a 5-person B2B SaaS doing warehouse inventory software. Marketing wants to give away a MacBook Pro to maximise entrants, but honestly we would rather have 40 good leads than 4,000 randoms. What should the Prize be, and how do we judge it afterwards?",
+   "expected_output": "Gives a verdict of replace on the MacBook, since nearly anyone wants it. Recommends a Prize only a buyer values, such as a year of the product with an onboarding session or a stock audit, with a consolation such as a report for qualified Entrants who do not win. Judges the campaign by cost per qualified Entrant against the business's own cost per lead and asks for that figure, with no invented value. Sets crowd per Prize dollar aside and says the data holds the crowd each Prize category drew and nothing on whether Entrants were buyers. Labels the buyer-Prize advice as practice and quotes no causal claim.",
+   "assertions": [
+    "Gives a keep, adjust or replace verdict and applies the test that a person with no use for the product would still want the Prize",
+    "Offers at least two Prizes a buyer values and a consolation for qualified non-Winners",
+    "Judges by cost per qualified Entrant and asks the reader for their own cost per lead",
+    "Tells the reader to set crowd per Prize dollar and Entrant counts aside",
+    "States that the data holds no outcome after the entry and labels the advice as practice",
+    "No mention of a giveaway platform"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "(?i)\\b(?:keep|adjust|replace)\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)qualified",
+     "min": 2
+    },
+    {
+     "count": "(?i)\\b(?:practice|advice|judgement|judgment)\\b",
+     "min": 1
+    }
+   ]
   }
  ]
 }

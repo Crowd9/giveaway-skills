@@ -734,16 +734,16 @@
    },
    "same_length_not_over": {
     "n": 35705,
-    "organizers": 9344,
-    "contestants": 543,
-    "conv_clean": 0.31155778894472363,
-    "clean_n": 5019,
-    "entries_per_entrant": 4.703665462054723,
+    "organizers": 9315,
+    "contestants": 548,
+    "conv_clean": 0.3160919540229885,
+    "clean_n": 5047,
+    "entries_per_entrant": 4.724494382022472,
     "duration": 30,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0276243093922652,
-   "conv_ratio": 1.00626325512641,
+   "contestants_ratio": 1.0182481751824817,
+   "conv_ratio": 0.9918289626590873,
    "closed_on_holiday_n": 448,
    "closed_on_holiday_contestants": 445.5
   },
@@ -760,16 +760,16 @@
    },
    "same_length_not_over": {
     "n": 28520,
-    "organizers": 8094,
-    "contestants": 554.0,
-    "conv_clean": 0.3101521441279319,
-    "clean_n": 3084,
-    "entries_per_entrant": 4.7338781907747425,
+    "organizers": 8111,
+    "contestants": 559.0,
+    "conv_clean": 0.3073394495412844,
+    "clean_n": 3099,
+    "entries_per_entrant": 4.751892182794591,
     "duration": 31.0,
-    "email_uptake": 1.0007084086781632
+    "email_uptake": 1.000457134580789
    },
-   "contestants_ratio": 1.0406137184115523,
-   "conv_ratio": 0.9759647664939709,
+   "contestants_ratio": 1.0313059033989267,
+   "conv_ratio": 0.984896554520446,
    "closed_on_holiday_n": 0,
    "closed_on_holiday_contestants": null
   },
@@ -786,16 +786,16 @@
    },
    "same_length_not_over": {
     "n": 38630,
-    "organizers": 9770,
-    "contestants": 547.0,
-    "conv_clean": 0.32673651532790066,
-    "clean_n": 4956,
-    "entries_per_entrant": 4.6974884183463095,
+    "organizers": 9802,
+    "contestants": 552.0,
+    "conv_clean": 0.3283077000782888,
+    "clean_n": 5018,
+    "entries_per_entrant": 4.721657147280745,
     "duration": 30.0,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 0.9707495429616088,
-   "conv_ratio": 0.8977176369403405,
+   "contestants_ratio": 0.9619565217391305,
+   "conv_ratio": 0.8934214225628562,
    "closed_on_holiday_n": 342,
    "closed_on_holiday_contestants": 621.5
   },
@@ -812,16 +812,16 @@
    },
    "same_length_not_over": {
     "n": 38505,
-    "organizers": 9758,
-    "contestants": 546,
-    "conv_clean": 0.3220687153785281,
-    "clean_n": 4973,
-    "entries_per_entrant": 4.7073170731707314,
+    "organizers": 9777,
+    "contestants": 552,
+    "conv_clean": 0.32514499312749334,
+    "clean_n": 5038,
+    "entries_per_entrant": 4.72972972972973,
     "duration": 30,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 0.9798534798534798,
-   "conv_ratio": 0.9231218325330739,
+   "contestants_ratio": 0.9692028985507246,
+   "conv_ratio": 0.9143879469957622,
    "closed_on_holiday_n": 341,
    "closed_on_holiday_contestants": 662
   },
@@ -838,16 +838,16 @@
    },
    "same_length_not_over": {
     "n": 35253,
-    "organizers": 9192,
-    "contestants": 549,
-    "conv_clean": 0.31771740935972004,
-    "clean_n": 4499,
-    "entries_per_entrant": 4.738544474393531,
+    "organizers": 9201,
+    "contestants": 559,
+    "conv_clean": 0.3211834498607314,
+    "clean_n": 4549,
+    "entries_per_entrant": 4.753968253968254,
     "duration": 31,
-    "email_uptake": 1.0005931131599142
+    "email_uptake": 1.0001759983571836
    },
-   "contestants_ratio": 0.9927140255009107,
-   "conv_ratio": 0.946067897997862,
+   "contestants_ratio": 0.9749552772808586,
+   "conv_ratio": 0.9358584377887849,
    "closed_on_holiday_n": 703,
    "closed_on_holiday_contestants": 515
   },
@@ -864,16 +864,16 @@
    },
    "same_length_not_over": {
     "n": 32775,
-    "organizers": 8915,
-    "contestants": 535,
-    "conv_clean": 0.31845238095238093,
-    "clean_n": 4671,
-    "entries_per_entrant": 4.704781704781705,
+    "organizers": 8948,
+    "contestants": 538,
+    "conv_clean": 0.3214845464234217,
+    "clean_n": 4713,
+    "entries_per_entrant": 4.716156562683932,
     "duration": 27,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0149532710280373,
-   "conv_ratio": 0.9581592434339012,
+   "contestants_ratio": 1.0092936802973977,
+   "conv_ratio": 0.9491221142591996,
    "closed_on_holiday_n": 338,
    "closed_on_holiday_contestants": 427.5
   },
@@ -890,16 +890,16 @@
    },
    "same_length_not_over": {
     "n": 32755,
-    "organizers": 8915,
-    "contestants": 545,
-    "conv_clean": 0.3214427015600415,
-    "clean_n": 4079,
-    "entries_per_entrant": 4.713220998055736,
+    "organizers": 8927,
+    "contestants": 552,
+    "conv_clean": 0.324120929266543,
+    "clean_n": 4121,
+    "entries_per_entrant": 4.733905579399142,
     "duration": 31,
-    "email_uptake": 1.001004016064257
+    "email_uptake": 1.0002595885521448
    },
-   "contestants_ratio": 1.0073394495412844,
-   "conv_ratio": 0.9187394939050737,
+   "contestants_ratio": 0.9945652173913043,
+   "conv_ratio": 0.9111479027875181,
    "closed_on_holiday_n": 303,
    "closed_on_holiday_contestants": 510
   },
@@ -916,16 +916,16 @@
    },
    "same_length_not_over": {
     "n": 34830,
-    "organizers": 9220,
-    "contestants": 541.0,
-    "conv_clean": 0.3188976377952756,
-    "clean_n": 4190,
-    "entries_per_entrant": 4.738960928892279,
+    "organizers": 9258,
+    "contestants": 546.0,
+    "conv_clean": 0.32136105860113423,
+    "clean_n": 4213,
+    "entries_per_entrant": 4.761610817166373,
     "duration": 30.0,
-    "email_uptake": 1.0005005066439878
+    "email_uptake": 1.0004202014425063
    },
-   "contestants_ratio": 1.0462107208872458,
-   "conv_ratio": 0.9538947376045254,
+   "contestants_ratio": 1.0366300366300367,
+   "conv_ratio": 0.9465825755353475,
    "closed_on_holiday_n": 283,
    "closed_on_holiday_contestants": 498
   },
@@ -942,16 +942,16 @@
    },
    "same_length_not_over": {
     "n": 33780,
-    "organizers": 9097,
-    "contestants": 543.0,
-    "conv_clean": 0.3192438781197041,
-    "clean_n": 4221,
-    "entries_per_entrant": 4.719943977591036,
+    "organizers": 9149,
+    "contestants": 545.0,
+    "conv_clean": 0.3231430015159171,
+    "clean_n": 4251,
+    "entries_per_entrant": 4.736897927449004,
     "duration": 30.0,
-    "email_uptake": 1.0001904709257614
+    "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0257826887661141,
-   "conv_ratio": 0.9262612048016576,
+   "contestants_ratio": 1.0220183486238532,
+   "conv_ratio": 0.915084707963713,
    "closed_on_holiday_n": 350,
    "closed_on_holiday_contestants": 452.0
   },
@@ -968,16 +968,16 @@
    },
    "same_length_not_over": {
     "n": 34305,
-    "organizers": 9059,
-    "contestants": 543,
-    "conv_clean": 0.3238358494577929,
-    "clean_n": 4136,
-    "entries_per_entrant": 4.762402088772846,
+    "organizers": 9062,
+    "contestants": 552,
+    "conv_clean": 0.32545931758530183,
+    "clean_n": 4178,
+    "entries_per_entrant": 4.782877316857899,
     "duration": 31,
-    "email_uptake": 1.0010378827192528
+    "email_uptake": 1.0004722550177096
    },
-   "contestants_ratio": 1.0994475138121547,
-   "conv_ratio": 0.8705174624019009,
+   "contestants_ratio": 1.0815217391304348,
+   "conv_ratio": 0.8661751152073732,
    "closed_on_holiday_n": 289,
    "closed_on_holiday_contestants": 509
   },
@@ -994,16 +994,16 @@
    },
    "same_length_not_over": {
     "n": 34945,
-    "organizers": 9190,
-    "contestants": 545,
-    "conv_clean": 0.3175287356321839,
-    "clean_n": 4512,
-    "entries_per_entrant": 4.734210526315789,
+    "organizers": 9166,
+    "contestants": 553,
+    "conv_clean": 0.32054616384915474,
+    "clean_n": 4543,
+    "entries_per_entrant": 4.743816254416961,
     "duration": 31,
-    "email_uptake": 1.0002929544455836
+    "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0009174311926605,
-   "conv_ratio": 0.9415862876070488,
+   "contestants_ratio": 0.9864376130198915,
+   "conv_ratio": 0.9327227623075374,
    "closed_on_holiday_n": 434,
    "closed_on_holiday_contestants": 518.5
   },
@@ -1020,16 +1020,16 @@
    },
    "same_length_not_over": {
     "n": 32195,
-    "organizers": 8812,
-    "contestants": 537,
-    "conv_clean": 0.31691965938541283,
-    "clean_n": 4366,
-    "entries_per_entrant": 4.728577342348558,
+    "organizers": 8836,
+    "contestants": 542,
+    "conv_clean": 0.31923170686790503,
+    "clean_n": 4400,
+    "entries_per_entrant": 4.736849390919159,
     "duration": 29,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0223463687150838,
-   "conv_ratio": 0.9638710721520145,
+   "contestants_ratio": 1.0129151291512914,
+   "conv_ratio": 0.9568902001462827,
    "closed_on_holiday_n": 367,
    "closed_on_holiday_contestants": 571
   },
@@ -1046,16 +1046,16 @@
    },
    "same_length_not_over": {
     "n": 33820,
-    "organizers": 9005,
-    "contestants": 547.0,
-    "conv_clean": 0.32216592675721617,
-    "clean_n": 3842,
-    "entries_per_entrant": 4.748112965705822,
+    "organizers": 9039,
+    "contestants": 553.0,
+    "conv_clean": 0.32440944881889766,
+    "clean_n": 3899,
+    "entries_per_entrant": 4.775888351555929,
     "duration": 31.0,
-    "email_uptake": 1.0010571445351502
+    "email_uptake": 1.0005422573398404
    },
-   "contestants_ratio": 1.0255941499085923,
-   "conv_ratio": 0.9325149409414288,
+   "contestants_ratio": 1.0144665461121158,
+   "conv_ratio": 0.9260659369112854,
    "closed_on_holiday_n": 267,
    "closed_on_holiday_contestants": 421
   },
@@ -1072,16 +1072,16 @@
    },
    "same_length_not_over": {
     "n": 38340,
-    "organizers": 9739,
-    "contestants": 547.0,
-    "conv_clean": 0.32269760696156635,
-    "clean_n": 4872,
-    "entries_per_entrant": 4.703152606007067,
+    "organizers": 9759,
+    "contestants": 554.0,
+    "conv_clean": 0.3247549019607843,
+    "clean_n": 4931,
+    "entries_per_entrant": 4.724168609645355,
     "duration": 30.0,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 0.9670932358318098,
-   "conv_ratio": 0.9017894298793174,
+   "contestants_ratio": 0.9548736462093863,
+   "conv_ratio": 0.8960766696615753,
    "closed_on_holiday_n": 521,
    "closed_on_holiday_contestants": 536
   },
@@ -1098,16 +1098,16 @@
    },
    "same_length_not_over": {
     "n": 35625,
-    "organizers": 9304,
-    "contestants": 545,
-    "conv_clean": 0.31943720991438274,
-    "clean_n": 4574,
-    "entries_per_entrant": 4.729508196721311,
+    "organizers": 9300,
+    "contestants": 550,
+    "conv_clean": 0.3214845464234217,
+    "clean_n": 4608,
+    "entries_per_entrant": 4.753112033195021,
     "duration": 31,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 0.998165137614679,
-   "conv_ratio": 0.9441707278605268,
+   "contestants_ratio": 0.9890909090909091,
+   "conv_ratio": 0.9381578876682993,
    "closed_on_holiday_n": 293,
    "closed_on_holiday_contestants": 535
   },
@@ -1124,16 +1124,16 @@
    },
    "same_length_not_over": {
     "n": 32925,
-    "organizers": 8902,
-    "contestants": 547,
-    "conv_clean": 0.3193988144751466,
-    "clean_n": 3724,
-    "entries_per_entrant": 4.74190564292322,
+    "organizers": 8923,
+    "contestants": 552,
+    "conv_clean": 0.321735765165976,
+    "clean_n": 3771,
+    "entries_per_entrant": 4.77158774373259,
     "duration": 31,
-    "email_uptake": 1.0008695218260009
+    "email_uptake": 1.0003424004905535
    },
-   "contestants_ratio": 1.0393053016453382,
-   "conv_ratio": 0.9489703165650588,
+   "contestants_ratio": 1.0298913043478262,
+   "conv_ratio": 0.9420774029477952,
    "closed_on_holiday_n": 247,
    "closed_on_holiday_contestants": 503
   },
@@ -1150,16 +1150,16 @@
    },
    "same_length_not_over": {
     "n": 31865,
-    "organizers": 8774,
-    "contestants": 535,
-    "conv_clean": 0.3154302518859481,
-    "clean_n": 4598,
-    "entries_per_entrant": 4.703592814371257,
+    "organizers": 8794,
+    "contestants": 539,
+    "conv_clean": 0.3190368133735153,
+    "clean_n": 4632,
+    "entries_per_entrant": 4.7135483870967745,
     "duration": 28,
     "email_uptake": 1.0
    },
-   "contestants_ratio": 1.0018691588785047,
-   "conv_ratio": 0.9441738907986084,
+   "contestants_ratio": 0.9944341372912802,
+   "conv_ratio": 0.9335004479563428,
    "closed_on_holiday_n": 264,
    "closed_on_holiday_contestants": 383.0
   }
@@ -1197,38 +1197,6 @@
     "email_uptake": 0.9650145772594753
    }
   },
-  "8-14": {
-   "weekend": {
-    "n": 6103,
-    "organizers": 2734,
-    "contestants": 415,
-    "conv_clean": 0.29339875383321423,
-    "clean_n": 4097,
-    "entries_per_entrant": 4.420277296360485,
-    "duration": 11,
-    "email_uptake": 0.9447048014638326
-   },
-   "weekday": {
-    "n": 18248,
-    "organizers": 5247,
-    "contestants": 465.0,
-    "conv_clean": 0.28183361629881154,
-    "clean_n": 11629,
-    "entries_per_entrant": 4.414718239669396,
-    "duration": 10.0,
-    "email_uptake": 0.9272151898734177
-   },
-   "holiday": {
-    "n": 1218,
-    "organizers": 737,
-    "contestants": 474.5,
-    "conv_clean": 0.2870222018768597,
-    "clean_n": 758,
-    "entries_per_entrant": 4.391765595967913,
-    "duration": 11.0,
-    "email_uptake": 0.9456521739130435
-   }
-  },
   "15-30": {
    "weekday": {
     "n": 22315,
@@ -1240,16 +1208,6 @@
     "duration": 22,
     "email_uptake": 0.9927935907491541
    },
-   "holiday": {
-    "n": 1607,
-    "organizers": 950,
-    "contestants": 564,
-    "conv_clean": null,
-    "clean_n": 0,
-    "entries_per_entrant": 4.964343598055105,
-    "duration": 21,
-    "email_uptake": 0.9875846501128668
-   },
    "weekend": {
     "n": 8930,
     "organizers": 3618,
@@ -1259,19 +1217,19 @@
     "entries_per_entrant": 4.920904502847666,
     "duration": 22.0,
     "email_uptake": 0.9908675799086758
+   },
+   "holiday": {
+    "n": 1607,
+    "organizers": 950,
+    "contestants": 564,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.964343598055105,
+    "duration": 21,
+    "email_uptake": 0.9875846501128668
    }
   },
   "31+": {
-   "weekday": {
-    "n": 15457,
-    "organizers": 4622,
-    "contestants": 635,
-    "conv_clean": null,
-    "clean_n": 0,
-    "entries_per_entrant": 4.8667211774325425,
-    "duration": 35,
-    "email_uptake": 1.0061652281134401
-   },
    "holiday": {
     "n": 1355,
     "organizers": 745,
@@ -1291,6 +1249,48 @@
     "entries_per_entrant": 4.973418811681064,
     "duration": 34.0,
     "email_uptake": 1.006321837549224
+   },
+   "weekday": {
+    "n": 15457,
+    "organizers": 4622,
+    "contestants": 635,
+    "conv_clean": null,
+    "clean_n": 0,
+    "entries_per_entrant": 4.8667211774325425,
+    "duration": 35,
+    "email_uptake": 1.0061652281134401
+   }
+  },
+  "8-14": {
+   "holiday": {
+    "n": 1218,
+    "organizers": 737,
+    "contestants": 474.5,
+    "conv_clean": 0.2870222018768597,
+    "clean_n": 758,
+    "entries_per_entrant": 4.391765595967913,
+    "duration": 11.0,
+    "email_uptake": 0.9456521739130435
+   },
+   "weekday": {
+    "n": 18248,
+    "organizers": 5247,
+    "contestants": 465.0,
+    "conv_clean": 0.28183361629881154,
+    "clean_n": 11629,
+    "entries_per_entrant": 4.414718239669396,
+    "duration": 10.0,
+    "email_uptake": 0.9272151898734177
+   },
+   "weekend": {
+    "n": 6103,
+    "organizers": 2734,
+    "contestants": 415,
+    "conv_clean": 0.29339875383321423,
+    "clean_n": 4097,
+    "entries_per_entrant": 4.420277296360485,
+    "duration": 11,
+    "email_uptake": 0.9447048014638326
    }
   }
  },
@@ -1738,62 +1738,176 @@
   }
  },
  "per_day_by_length_industry": {
-  "4-7": {
-   "software_saas": {
-    "n": 214,
-    "sites": 114,
-    "contestants_per_day": 56.73,
-    "entries_per_entrant_per_day": 0.712,
-    "conv_clean": 0.29559095558312115
-   },
+  "1-3": {
    "gaming_esports": {
-    "n": 4904,
-    "sites": 1445,
-    "contestants_per_day": 63.27,
-    "entries_per_entrant_per_day": 0.755,
-    "conv_clean": 0.34973637961335674
-   },
-   "art_crafts": {
-    "n": 190,
-    "sites": 92,
-    "contestants_per_day": 48.12,
-    "entries_per_entrant_per_day": 0.529,
-    "conv_clean": 0.32469935245143383
-   },
-   "retail_marketplace": {
-    "n": 541,
-    "sites": 92,
-    "contestants_per_day": 84.0,
-    "entries_per_entrant_per_day": 0.835,
-    "conv_clean": 0.2854609929078014
-   },
-   "automotive": {
-    "n": 375,
-    "sites": 61,
-    "contestants_per_day": 128.86,
-    "entries_per_entrant_per_day": 0.332,
-    "conv_clean": 0.5372516853823438
-   },
-   "sports_outdoors": {
-    "n": 656,
-    "sites": 241,
-    "contestants_per_day": 125.1,
-    "entries_per_entrant_per_day": 0.54,
-    "conv_clean": 0.3312229256914362
+    "n": 2926,
+    "sites": 724,
+    "contestants_per_day": 233.42,
+    "entries_per_entrant_per_day": 2.4,
+    "conv_clean": 0.5025433297490409
    },
    "electronics_tech": {
-    "n": 2152,
-    "sites": 548,
-    "contestants_per_day": 124.07,
-    "entries_per_entrant_per_day": 0.737,
-    "conv_clean": 0.36493378160281
+    "n": 2710,
+    "sites": 248,
+    "contestants_per_day": 586.5,
+    "entries_per_entrant_per_day": 3.185,
+    "conv_clean": 0.6067682364304245
+   },
+   "toys_hobbies_collectibles": {
+    "n": 659,
+    "sites": 102,
+    "contestants_per_day": 188.25,
+    "entries_per_entrant_per_day": 1.184,
+    "conv_clean": 0.3676190476190476
+   },
+   "creator_influencer": {
+    "n": 1044,
+    "sites": 153,
+    "contestants_per_day": 374.0,
+    "entries_per_entrant_per_day": 11.547,
+    "conv_clean": 0.6614287673111203
+   },
+   "health_wellness_fitness": {
+    "n": 164,
+    "sites": 38,
+    "contestants_per_day": 279.0,
+    "entries_per_entrant_per_day": 3.446,
+    "conv_clean": 0.41051829268292683
    },
    "media_entertainment": {
-    "n": 2656,
-    "sites": 514,
-    "contestants_per_day": 56.5,
-    "entries_per_entrant_per_day": 0.7,
-    "conv_clean": 0.2810077519379845
+    "n": 1543,
+    "sites": 272,
+    "contestants_per_day": 431.67,
+    "entries_per_entrant_per_day": 3.143,
+    "conv_clean": 0.49590298262864635
+   },
+   "other": {
+    "n": 700,
+    "sites": 191,
+    "contestants_per_day": 270.67,
+    "entries_per_entrant_per_day": 3.724,
+    "conv_clean": 0.6068472465194055
+   },
+   "education": {
+    "n": 186,
+    "sites": 32,
+    "contestants_per_day": 284.0,
+    "entries_per_entrant_per_day": 1.34,
+    "conv_clean": 0.5009009009009009
+   },
+   "apparel_fashion": {
+    "n": 1565,
+    "sites": 91,
+    "contestants_per_day": 451.67,
+    "entries_per_entrant_per_day": 1.0,
+    "conv_clean": 0.3776223776223776
+   },
+   "local_services": {
+    "n": 70,
+    "sites": 15,
+    "contestants_per_day": 181.5,
+    "entries_per_entrant_per_day": 1.586,
+    "conv_clean": 0.327639751552795
+   },
+   "food_drink": {
+    "n": 365,
+    "sites": 81,
+    "contestants_per_day": 355.0,
+    "entries_per_entrant_per_day": 1.929,
+    "conv_clean": 0.4604323145682082
+   },
+   "retail_marketplace": {
+    "n": 741,
+    "sites": 47,
+    "contestants_per_day": 579.0,
+    "entries_per_entrant_per_day": 1.0,
+    "conv_clean": 0.5035714285714286
+   },
+   "software_saas": {
+    "n": 151,
+    "sites": 55,
+    "contestants_per_day": 247.5,
+    "entries_per_entrant_per_day": 2.558,
+    "conv_clean": 0.43327239488117003
+   },
+   "home_garden": {
+    "n": 287,
+    "sites": 52,
+    "contestants_per_day": 526.0,
+    "entries_per_entrant_per_day": 2.445,
+    "conv_clean": 0.5702127659574469
+   },
+   "nonprofit_community": {
+    "n": 81,
+    "sites": 32,
+    "contestants_per_day": 202.25,
+    "entries_per_entrant_per_day": 1.689,
+    "conv_clean": 0.37576452599388377
+   },
+   "automotive": {
+    "n": 379,
+    "sites": 39,
+    "contestants_per_day": 396.5,
+    "entries_per_entrant_per_day": 2.781,
+    "conv_clean": 0.5160748560460653
+   },
+   "beauty_personal_care": {
+    "n": 112,
+    "sites": 24,
+    "contestants_per_day": 364.0,
+    "entries_per_entrant_per_day": 2.209,
+    "conv_clean": 0.524904214559387
+   },
+   "marketing_agency": {
+    "n": 60,
+    "sites": 25,
+    "contestants_per_day": 161.0,
+    "entries_per_entrant_per_day": 1.03,
+    "conv_clean": 0.4530679191828823
+   },
+   "sports_outdoors": {
+    "n": 291,
+    "sites": 88,
+    "contestants_per_day": 183.33,
+    "entries_per_entrant_per_day": 1.18,
+    "conv_clean": 0.5510030658491069
+   },
+   "art_crafts": {
+    "n": 158,
+    "sites": 45,
+    "contestants_per_day": 128.0,
+    "entries_per_entrant_per_day": 1.0,
+    "conv_clean": 0.6734234234234234
+   },
+   "travel_events": {
+    "n": 240,
+    "sites": 70,
+    "contestants_per_day": 321.42,
+    "entries_per_entrant_per_day": 1.274,
+    "conv_clean": 0.36462093862815886
+   },
+   "baby_kids": {
+    "n": 50,
+    "sites": 14,
+    "contestants_per_day": 276.0,
+    "entries_per_entrant_per_day": 0.988,
+    "conv_clean": 0.37500090612146664
+   },
+   "pets": {
+    "n": 41,
+    "sites": 11,
+    "contestants_per_day": 167.5,
+    "entries_per_entrant_per_day": 2.225,
+    "conv_clean": 0.46246006389776356
+   }
+  },
+  "4-7": {
+   "home_garden": {
+    "n": 628,
+    "sites": 138,
+    "contestants_per_day": 105.79,
+    "entries_per_entrant_per_day": 0.635,
+    "conv_clean": 0.397027027027027
    },
    "toys_hobbies_collectibles": {
     "n": 880,
@@ -1802,40 +1916,33 @@
     "entries_per_entrant_per_day": 0.756,
     "conv_clean": 0.28590891397430906
    },
-   "travel_events": {
-    "n": 786,
-    "sites": 164,
-    "contestants_per_day": 48.25,
-    "entries_per_entrant_per_day": 0.595,
-    "conv_clean": 0.3218064093653102
+   "baby_kids": {
+    "n": 176,
+    "sites": 42,
+    "contestants_per_day": 157.24,
+    "entries_per_entrant_per_day": 0.384,
+    "conv_clean": 0.30919623461259954
    },
-   "home_garden": {
-    "n": 628,
-    "sites": 138,
-    "contestants_per_day": 105.79,
-    "entries_per_entrant_per_day": 0.635,
-    "conv_clean": 0.397027027027027
+   "media_entertainment": {
+    "n": 2656,
+    "sites": 514,
+    "contestants_per_day": 56.5,
+    "entries_per_entrant_per_day": 0.7,
+    "conv_clean": 0.2810077519379845
    },
-   "health_wellness_fitness": {
-    "n": 632,
-    "sites": 107,
-    "contestants_per_day": 69.55,
-    "entries_per_entrant_per_day": 0.606,
-    "conv_clean": 0.2403740374037404
+   "gaming_esports": {
+    "n": 4904,
+    "sites": 1445,
+    "contestants_per_day": 63.27,
+    "entries_per_entrant_per_day": 0.755,
+    "conv_clean": 0.34973637961335674
    },
-   "marketing_agency": {
-    "n": 201,
-    "sites": 41,
-    "contestants_per_day": 78.0,
-    "entries_per_entrant_per_day": 0.84,
-    "conv_clean": 0.333984375
-   },
-   "creator_influencer": {
-    "n": 522,
-    "sites": 224,
-    "contestants_per_day": 50.71,
-    "entries_per_entrant_per_day": 0.659,
-    "conv_clean": 0.4378698224852071
+   "retail_marketplace": {
+    "n": 541,
+    "sites": 92,
+    "contestants_per_day": 84.0,
+    "entries_per_entrant_per_day": 0.835,
+    "conv_clean": 0.2854609929078014
    },
    "apparel_fashion": {
     "n": 667,
@@ -1844,33 +1951,26 @@
     "entries_per_entrant_per_day": 0.444,
     "conv_clean": 0.3357991191550218
    },
-   "other": {
-    "n": 896,
-    "sites": 372,
-    "contestants_per_day": 49.0,
-    "entries_per_entrant_per_day": 0.682,
-    "conv_clean": 0.2897727272727273
+   "jewelry_watches": {
+    "n": 55,
+    "sites": 30,
+    "contestants_per_day": 52.0,
+    "entries_per_entrant_per_day": 0.527,
+    "conv_clean": 0.2916404776869893
    },
-   "food_drink": {
-    "n": 681,
-    "sites": 225,
-    "contestants_per_day": 105.25,
-    "entries_per_entrant_per_day": 0.64,
-    "conv_clean": 0.35553168635875404
+   "travel_events": {
+    "n": 786,
+    "sites": 164,
+    "contestants_per_day": 48.25,
+    "entries_per_entrant_per_day": 0.595,
+    "conv_clean": 0.3218064093653102
    },
-   "local_services": {
-    "n": 300,
-    "sites": 33,
-    "contestants_per_day": 79.81,
-    "entries_per_entrant_per_day": 0.812,
-    "conv_clean": 0.1907834153134335
-   },
-   "baby_kids": {
-    "n": 176,
-    "sites": 42,
-    "contestants_per_day": 157.24,
-    "entries_per_entrant_per_day": 0.384,
-    "conv_clean": 0.30919623461259954
+   "electronics_tech": {
+    "n": 2152,
+    "sites": 548,
+    "contestants_per_day": 124.07,
+    "entries_per_entrant_per_day": 0.737,
+    "conv_clean": 0.36493378160281
    },
    "education": {
     "n": 195,
@@ -1879,6 +1979,55 @@
     "entries_per_entrant_per_day": 0.592,
     "conv_clean": 0.3105175292153589
    },
+   "health_wellness_fitness": {
+    "n": 632,
+    "sites": 107,
+    "contestants_per_day": 69.55,
+    "entries_per_entrant_per_day": 0.606,
+    "conv_clean": 0.2403740374037404
+   },
+   "food_drink": {
+    "n": 681,
+    "sites": 225,
+    "contestants_per_day": 105.25,
+    "entries_per_entrant_per_day": 0.64,
+    "conv_clean": 0.35553168635875404
+   },
+   "sports_outdoors": {
+    "n": 656,
+    "sites": 241,
+    "contestants_per_day": 125.1,
+    "entries_per_entrant_per_day": 0.54,
+    "conv_clean": 0.3312229256914362
+   },
+   "software_saas": {
+    "n": 214,
+    "sites": 114,
+    "contestants_per_day": 56.73,
+    "entries_per_entrant_per_day": 0.712,
+    "conv_clean": 0.29559095558312115
+   },
+   "other": {
+    "n": 896,
+    "sites": 372,
+    "contestants_per_day": 49.0,
+    "entries_per_entrant_per_day": 0.682,
+    "conv_clean": 0.2897727272727273
+   },
+   "automotive": {
+    "n": 375,
+    "sites": 61,
+    "contestants_per_day": 128.86,
+    "entries_per_entrant_per_day": 0.332,
+    "conv_clean": 0.5372516853823438
+   },
+   "creator_influencer": {
+    "n": 522,
+    "sites": 224,
+    "contestants_per_day": 50.71,
+    "entries_per_entrant_per_day": 0.659,
+    "conv_clean": 0.4378698224852071
+   },
    "beauty_personal_care": {
     "n": 192,
     "sites": 80,
@@ -1886,12 +2035,19 @@
     "entries_per_entrant_per_day": 0.435,
     "conv_clean": 0.3857344844167465
    },
-   "nonprofit_community": {
-    "n": 72,
-    "sites": 37,
-    "contestants_per_day": 59.14,
-    "entries_per_entrant_per_day": 0.608,
-    "conv_clean": 0.32821075740944017
+   "marketing_agency": {
+    "n": 201,
+    "sites": 41,
+    "contestants_per_day": 78.0,
+    "entries_per_entrant_per_day": 0.84,
+    "conv_clean": 0.333984375
+   },
+   "local_services": {
+    "n": 300,
+    "sites": 33,
+    "contestants_per_day": 79.81,
+    "entries_per_entrant_per_day": 0.812,
+    "conv_clean": 0.1907834153134335
    },
    "pets": {
     "n": 135,
@@ -1900,374 +2056,41 @@
     "entries_per_entrant_per_day": 0.518,
     "conv_clean": 0.42843603710145445
    },
-   "jewelry_watches": {
-    "n": 55,
-    "sites": 30,
-    "contestants_per_day": 52.0,
-    "entries_per_entrant_per_day": 0.527,
-    "conv_clean": 0.2916404776869893
-   }
-  },
-  "8-14": {
-   "creator_influencer": {
-    "n": 589,
-    "sites": 338,
-    "contestants_per_day": 33.0,
-    "entries_per_entrant_per_day": 0.366,
-    "conv_clean": 0.3629482963062398
-   },
-   "gaming_esports": {
-    "n": 6002,
-    "sites": 1899,
-    "contestants_per_day": 37.9,
-    "entries_per_entrant_per_day": 0.475,
-    "conv_clean": 0.28831658291457285
-   },
-   "automotive": {
-    "n": 448,
-    "sites": 115,
-    "contestants_per_day": 118.18,
-    "entries_per_entrant_per_day": 0.416,
-    "conv_clean": 0.322321963955173
-   },
-   "marketing_agency": {
-    "n": 317,
-    "sites": 50,
-    "contestants_per_day": 57.38,
-    "entries_per_entrant_per_day": 0.427,
-    "conv_clean": 0.2946240052594161
-   },
-   "health_wellness_fitness": {
-    "n": 583,
-    "sites": 173,
-    "contestants_per_day": 36.38,
-    "entries_per_entrant_per_day": 0.406,
-    "conv_clean": 0.22094841063053675
-   },
-   "media_entertainment": {
-    "n": 4455,
-    "sites": 764,
-    "contestants_per_day": 30.29,
-    "entries_per_entrant_per_day": 0.432,
-    "conv_clean": 0.2834065659957403
+   "nonprofit_community": {
+    "n": 72,
+    "sites": 37,
+    "contestants_per_day": 59.14,
+    "entries_per_entrant_per_day": 0.608,
+    "conv_clean": 0.32821075740944017
    },
    "art_crafts": {
-    "n": 361,
-    "sites": 125,
-    "contestants_per_day": 36.5,
-    "entries_per_entrant_per_day": 0.438,
-    "conv_clean": 0.30177420285554124
-   },
-   "retail_marketplace": {
-    "n": 773,
-    "sites": 124,
-    "contestants_per_day": 26.12,
-    "entries_per_entrant_per_day": 0.51,
-    "conv_clean": 0.16529172847754614
-   },
-   "electronics_tech": {
-    "n": 3263,
-    "sites": 833,
-    "contestants_per_day": 83.79,
-    "entries_per_entrant_per_day": 0.456,
-    "conv_clean": 0.2972733711048159
-   },
-   "sports_outdoors": {
-    "n": 1054,
-    "sites": 388,
-    "contestants_per_day": 68.35,
-    "entries_per_entrant_per_day": 0.336,
-    "conv_clean": 0.3117679536059519
-   },
-   "toys_hobbies_collectibles": {
-    "n": 739,
-    "sites": 241,
-    "contestants_per_day": 41.44,
-    "entries_per_entrant_per_day": 0.403,
-    "conv_clean": 0.24381260537207194
-   },
-   "home_garden": {
-    "n": 931,
-    "sites": 222,
-    "contestants_per_day": 85.86,
-    "entries_per_entrant_per_day": 0.357,
-    "conv_clean": 0.3076923076923077
-   },
-   "baby_kids": {
-    "n": 295,
-    "sites": 73,
-    "contestants_per_day": 38.29,
-    "entries_per_entrant_per_day": 0.407,
-    "conv_clean": 0.2737911745667282
-   },
-   "other": {
-    "n": 1136,
-    "sites": 465,
-    "contestants_per_day": 29.79,
-    "entries_per_entrant_per_day": 0.477,
-    "conv_clean": 0.24327930827875252
-   },
-   "food_drink": {
-    "n": 844,
-    "sites": 317,
-    "contestants_per_day": 81.14,
-    "entries_per_entrant_per_day": 0.293,
-    "conv_clean": 0.32170542635658916
-   },
-   "software_saas": {
-    "n": 338,
-    "sites": 167,
-    "contestants_per_day": 34.95,
-    "entries_per_entrant_per_day": 0.421,
-    "conv_clean": 0.23623972922994046
-   },
-   "jewelry_watches": {
-    "n": 88,
-    "sites": 47,
-    "contestants_per_day": 39.06,
-    "entries_per_entrant_per_day": 0.344,
-    "conv_clean": 0.2953519407138192
-   },
-   "apparel_fashion": {
-    "n": 684,
-    "sites": 315,
-    "contestants_per_day": 55.34,
-    "entries_per_entrant_per_day": 0.327,
-    "conv_clean": 0.2849341417911111
-   },
-   "education": {
-    "n": 847,
-    "sites": 128,
-    "contestants_per_day": 58.5,
-    "entries_per_entrant_per_day": 0.582,
-    "conv_clean": 0.23986058301647656
-   },
-   "local_services": {
-    "n": 180,
-    "sites": 48,
-    "contestants_per_day": 50.67,
-    "entries_per_entrant_per_day": 0.412,
-    "conv_clean": 0.23788546255506607
-   },
-   "travel_events": {
-    "n": 804,
-    "sites": 223,
-    "contestants_per_day": 42.91,
-    "entries_per_entrant_per_day": 0.325,
-    "conv_clean": 0.3351749539594843
-   },
-   "beauty_personal_care": {
-    "n": 277,
-    "sites": 119,
-    "contestants_per_day": 35.54,
-    "entries_per_entrant_per_day": 0.296,
-    "conv_clean": 0.3538851087011
-   },
-   "pets": {
-    "n": 243,
-    "sites": 76,
-    "contestants_per_day": 75.25,
-    "entries_per_entrant_per_day": 0.516,
-    "conv_clean": 0.3260598503740648
-   },
-   "nonprofit_community": {
-    "n": 112,
-    "sites": 63,
-    "contestants_per_day": 31.78,
-    "entries_per_entrant_per_day": 0.39,
-    "conv_clean": 0.289002557544757
-   }
-  },
-  "15-30": {
-   "local_services": {
-    "n": 204,
-    "sites": 81,
-    "contestants_per_day": 28.62,
-    "entries_per_entrant_per_day": 0.149,
-    "conv_clean": null
-   },
-   "media_entertainment": {
-    "n": 6972,
-    "sites": 922,
-    "contestants_per_day": 19.67,
-    "entries_per_entrant_per_day": 0.281,
-    "conv_clean": null
-   },
-   "electronics_tech": {
-    "n": 4595,
-    "sites": 1078,
-    "contestants_per_day": 49.77,
-    "entries_per_entrant_per_day": 0.228,
-    "conv_clean": null
-   },
-   "gaming_esports": {
-    "n": 6269,
-    "sites": 2058,
-    "contestants_per_day": 20.13,
-    "entries_per_entrant_per_day": 0.264,
-    "conv_clean": null
-   },
-   "home_garden": {
-    "n": 1251,
-    "sites": 307,
-    "contestants_per_day": 43.21,
-    "entries_per_entrant_per_day": 0.155,
-    "conv_clean": null
-   },
-   "sports_outdoors": {
-    "n": 1534,
-    "sites": 494,
-    "contestants_per_day": 55.92,
-    "entries_per_entrant_per_day": 0.221,
-    "conv_clean": null
-   },
-   "beauty_personal_care": {
-    "n": 341,
-    "sites": 158,
-    "contestants_per_day": 21.07,
-    "entries_per_entrant_per_day": 0.178,
-    "conv_clean": null
-   },
-   "food_drink": {
-    "n": 1579,
-    "sites": 402,
-    "contestants_per_day": 26.11,
-    "entries_per_entrant_per_day": 0.205,
-    "conv_clean": null
-   },
-   "automotive": {
-    "n": 521,
-    "sites": 175,
-    "contestants_per_day": 61.07,
-    "entries_per_entrant_per_day": 0.23,
-    "conv_clean": null
-   },
-   "toys_hobbies_collectibles": {
-    "n": 1424,
-    "sites": 349,
-    "contestants_per_day": 21.41,
-    "entries_per_entrant_per_day": 0.223,
-    "conv_clean": null
-   },
-   "education": {
-    "n": 381,
-    "sites": 153,
-    "contestants_per_day": 22.5,
-    "entries_per_entrant_per_day": 0.171,
-    "conv_clean": null
-   },
-   "baby_kids": {
-    "n": 434,
-    "sites": 71,
-    "contestants_per_day": 20.5,
-    "entries_per_entrant_per_day": 0.155,
-    "conv_clean": null
-   },
-   "marketing_agency": {
-    "n": 347,
-    "sites": 76,
-    "contestants_per_day": 27.18,
-    "entries_per_entrant_per_day": 0.247,
-    "conv_clean": null
-   },
-   "travel_events": {
-    "n": 1127,
-    "sites": 294,
-    "contestants_per_day": 26.71,
-    "entries_per_entrant_per_day": 0.171,
-    "conv_clean": null
-   },
-   "health_wellness_fitness": {
-    "n": 788,
-    "sites": 254,
-    "contestants_per_day": 23.62,
-    "entries_per_entrant_per_day": 0.189,
-    "conv_clean": null
-   },
-   "pets": {
-    "n": 351,
-    "sites": 101,
-    "contestants_per_day": 38.59,
-    "entries_per_entrant_per_day": 0.193,
-    "conv_clean": null
-   },
-   "retail_marketplace": {
-    "n": 484,
-    "sites": 152,
-    "contestants_per_day": 25.73,
-    "entries_per_entrant_per_day": 0.27,
-    "conv_clean": null
-   },
-   "apparel_fashion": {
-    "n": 974,
-    "sites": 348,
-    "contestants_per_day": 30.05,
-    "entries_per_entrant_per_day": 0.15,
-    "conv_clean": null
-   },
-   "creator_influencer": {
-    "n": 773,
-    "sites": 380,
-    "contestants_per_day": 11.77,
-    "entries_per_entrant_per_day": 0.234,
-    "conv_clean": null
-   },
-   "other": {
-    "n": 909,
-    "sites": 507,
-    "contestants_per_day": 15.07,
-    "entries_per_entrant_per_day": 0.222,
-    "conv_clean": null
-   },
-   "nonprofit_community": {
-    "n": 132,
-    "sites": 76,
-    "contestants_per_day": 21.56,
-    "entries_per_entrant_per_day": 0.186,
-    "conv_clean": null
-   },
-   "jewelry_watches": {
-    "n": 107,
-    "sites": 60,
-    "contestants_per_day": 25.0,
-    "entries_per_entrant_per_day": 0.184,
-    "conv_clean": null
-   },
-   "software_saas": {
-    "n": 549,
-    "sites": 218,
-    "contestants_per_day": 30.05,
-    "entries_per_entrant_per_day": 0.193,
-    "conv_clean": null
-   },
-   "art_crafts": {
-    "n": 547,
-    "sites": 176,
-    "contestants_per_day": 31.59,
-    "entries_per_entrant_per_day": 0.206,
-    "conv_clean": null
+    "n": 190,
+    "sites": 92,
+    "contestants_per_day": 48.12,
+    "entries_per_entrant_per_day": 0.529,
+    "conv_clean": 0.32469935245143383
    }
   },
   "31+": {
-   "media_entertainment": {
-    "n": 5850,
-    "sites": 659,
-    "contestants_per_day": 13.28,
-    "entries_per_entrant_per_day": 0.184,
-    "conv_clean": null
-   },
-   "travel_events": {
-    "n": 998,
-    "sites": 239,
-    "contestants_per_day": 17.23,
-    "entries_per_entrant_per_day": 0.063,
-    "conv_clean": null
-   },
    "toys_hobbies_collectibles": {
     "n": 914,
     "sites": 260,
     "contestants_per_day": 12.14,
     "entries_per_entrant_per_day": 0.115,
+    "conv_clean": null
+   },
+   "sports_outdoors": {
+    "n": 1085,
+    "sites": 406,
+    "contestants_per_day": 32.98,
+    "entries_per_entrant_per_day": 0.11,
+    "conv_clean": null
+   },
+   "media_entertainment": {
+    "n": 5850,
+    "sites": 659,
+    "contestants_per_day": 13.28,
+    "entries_per_entrant_per_day": 0.184,
     "conv_clean": null
    },
    "health_wellness_fitness": {
@@ -2284,11 +2107,25 @@
     "entries_per_entrant_per_day": 0.083,
     "conv_clean": null
    },
-   "food_drink": {
-    "n": 1187,
-    "sites": 334,
-    "contestants_per_day": 12.65,
-    "entries_per_entrant_per_day": 0.082,
+   "automotive": {
+    "n": 545,
+    "sites": 176,
+    "contestants_per_day": 34.41,
+    "entries_per_entrant_per_day": 0.126,
+    "conv_clean": null
+   },
+   "other": {
+    "n": 608,
+    "sites": 418,
+    "contestants_per_day": 6.65,
+    "entries_per_entrant_per_day": 0.09,
+    "conv_clean": null
+   },
+   "electronics_tech": {
+    "n": 2775,
+    "sites": 741,
+    "contestants_per_day": 26.94,
+    "entries_per_entrant_per_day": 0.13,
     "conv_clean": null
    },
    "beauty_personal_care": {
@@ -2305,46 +2142,25 @@
     "entries_per_entrant_per_day": 0.142,
     "conv_clean": null
    },
-   "retail_marketplace": {
-    "n": 317,
-    "sites": 143,
-    "contestants_per_day": 18.19,
-    "entries_per_entrant_per_day": 0.097,
+   "jewelry_watches": {
+    "n": 136,
+    "sites": 51,
+    "contestants_per_day": 11.36,
+    "entries_per_entrant_per_day": 0.141,
     "conv_clean": null
    },
-   "electronics_tech": {
-    "n": 2775,
-    "sites": 741,
-    "contestants_per_day": 26.94,
-    "entries_per_entrant_per_day": 0.13,
+   "food_drink": {
+    "n": 1187,
+    "sites": 334,
+    "contestants_per_day": 12.65,
+    "entries_per_entrant_per_day": 0.082,
     "conv_clean": null
    },
-   "sports_outdoors": {
-    "n": 1085,
-    "sites": 406,
-    "contestants_per_day": 32.98,
-    "entries_per_entrant_per_day": 0.11,
-    "conv_clean": null
-   },
-   "pets": {
-    "n": 175,
-    "sites": 64,
-    "contestants_per_day": 23.19,
-    "entries_per_entrant_per_day": 0.086,
-    "conv_clean": null
-   },
-   "nonprofit_community": {
-    "n": 115,
-    "sites": 57,
-    "contestants_per_day": 8.38,
-    "entries_per_entrant_per_day": 0.042,
-    "conv_clean": null
-   },
-   "baby_kids": {
-    "n": 227,
-    "sites": 39,
-    "contestants_per_day": 16.84,
-    "entries_per_entrant_per_day": 0.117,
+   "travel_events": {
+    "n": 998,
+    "sites": 239,
+    "contestants_per_day": 17.23,
+    "entries_per_entrant_per_day": 0.063,
     "conv_clean": null
    },
    "home_garden": {
@@ -2354,18 +2170,18 @@
     "entries_per_entrant_per_day": 0.093,
     "conv_clean": null
    },
-   "other": {
-    "n": 608,
-    "sites": 418,
-    "contestants_per_day": 6.65,
-    "entries_per_entrant_per_day": 0.09,
+   "local_services": {
+    "n": 158,
+    "sites": 77,
+    "contestants_per_day": 16.45,
+    "entries_per_entrant_per_day": 0.062,
     "conv_clean": null
    },
-   "software_saas": {
-    "n": 387,
-    "sites": 168,
-    "contestants_per_day": 26.16,
-    "entries_per_entrant_per_day": 0.113,
+   "baby_kids": {
+    "n": 227,
+    "sites": 39,
+    "contestants_per_day": 16.84,
+    "entries_per_entrant_per_day": 0.117,
     "conv_clean": null
    },
    "creator_influencer": {
@@ -2375,18 +2191,11 @@
     "entries_per_entrant_per_day": 0.125,
     "conv_clean": null
    },
-   "local_services": {
-    "n": 158,
-    "sites": 77,
-    "contestants_per_day": 16.45,
-    "entries_per_entrant_per_day": 0.062,
-    "conv_clean": null
-   },
-   "jewelry_watches": {
-    "n": 136,
-    "sites": 51,
-    "contestants_per_day": 11.36,
-    "entries_per_entrant_per_day": 0.141,
+   "pets": {
+    "n": 175,
+    "sites": 64,
+    "contestants_per_day": 23.19,
+    "entries_per_entrant_per_day": 0.086,
     "conv_clean": null
    },
    "education": {
@@ -2396,11 +2205,25 @@
     "entries_per_entrant_per_day": 0.087,
     "conv_clean": null
    },
-   "automotive": {
-    "n": 545,
-    "sites": 176,
-    "contestants_per_day": 34.41,
-    "entries_per_entrant_per_day": 0.126,
+   "retail_marketplace": {
+    "n": 317,
+    "sites": 143,
+    "contestants_per_day": 18.19,
+    "entries_per_entrant_per_day": 0.097,
+    "conv_clean": null
+   },
+   "art_crafts": {
+    "n": 321,
+    "sites": 130,
+    "contestants_per_day": 11.45,
+    "entries_per_entrant_per_day": 0.11,
+    "conv_clean": null
+   },
+   "software_saas": {
+    "n": 387,
+    "sites": 168,
+    "contestants_per_day": 26.16,
+    "entries_per_entrant_per_day": 0.113,
     "conv_clean": null
    },
    "marketing_agency": {
@@ -2410,175 +2233,352 @@
     "entries_per_entrant_per_day": 0.061,
     "conv_clean": null
    },
-   "art_crafts": {
-    "n": 321,
-    "sites": 130,
-    "contestants_per_day": 11.45,
-    "entries_per_entrant_per_day": 0.11,
+   "nonprofit_community": {
+    "n": 115,
+    "sites": 57,
+    "contestants_per_day": 8.38,
+    "entries_per_entrant_per_day": 0.042,
     "conv_clean": null
    }
   },
-  "1-3": {
-   "apparel_fashion": {
-    "n": 1565,
-    "sites": 91,
-    "contestants_per_day": 451.67,
-    "entries_per_entrant_per_day": 1.0,
-    "conv_clean": 0.3776223776223776
+  "8-14": {
+   "electronics_tech": {
+    "n": 3263,
+    "sites": 833,
+    "contestants_per_day": 83.79,
+    "entries_per_entrant_per_day": 0.456,
+    "conv_clean": 0.2972733711048159
    },
    "gaming_esports": {
-    "n": 2926,
-    "sites": 724,
-    "contestants_per_day": 233.42,
-    "entries_per_entrant_per_day": 2.4,
-    "conv_clean": 0.5025433297490409
-   },
-   "other": {
-    "n": 700,
-    "sites": 191,
-    "contestants_per_day": 270.67,
-    "entries_per_entrant_per_day": 3.724,
-    "conv_clean": 0.6068472465194055
-   },
-   "electronics_tech": {
-    "n": 2710,
-    "sites": 248,
-    "contestants_per_day": 586.5,
-    "entries_per_entrant_per_day": 3.185,
-    "conv_clean": 0.6067682364304245
-   },
-   "media_entertainment": {
-    "n": 1543,
-    "sites": 272,
-    "contestants_per_day": 431.67,
-    "entries_per_entrant_per_day": 3.143,
-    "conv_clean": 0.49590298262864635
-   },
-   "beauty_personal_care": {
-    "n": 112,
-    "sites": 24,
-    "contestants_per_day": 364.0,
-    "entries_per_entrant_per_day": 2.209,
-    "conv_clean": 0.524904214559387
-   },
-   "food_drink": {
-    "n": 365,
-    "sites": 81,
-    "contestants_per_day": 355.0,
-    "entries_per_entrant_per_day": 1.929,
-    "conv_clean": 0.4604323145682082
-   },
-   "toys_hobbies_collectibles": {
-    "n": 659,
-    "sites": 102,
-    "contestants_per_day": 188.25,
-    "entries_per_entrant_per_day": 1.184,
-    "conv_clean": 0.3676190476190476
-   },
-   "creator_influencer": {
-    "n": 1044,
-    "sites": 153,
-    "contestants_per_day": 374.0,
-    "entries_per_entrant_per_day": 11.547,
-    "conv_clean": 0.6614287673111203
-   },
-   "retail_marketplace": {
-    "n": 741,
-    "sites": 47,
-    "contestants_per_day": 579.0,
-    "entries_per_entrant_per_day": 1.0,
-    "conv_clean": 0.5035714285714286
-   },
-   "travel_events": {
-    "n": 240,
-    "sites": 70,
-    "contestants_per_day": 321.42,
-    "entries_per_entrant_per_day": 1.274,
-    "conv_clean": 0.36462093862815886
-   },
-   "automotive": {
-    "n": 379,
-    "sites": 39,
-    "contestants_per_day": 396.5,
-    "entries_per_entrant_per_day": 2.781,
-    "conv_clean": 0.5160748560460653
-   },
-   "education": {
-    "n": 186,
-    "sites": 32,
-    "contestants_per_day": 284.0,
-    "entries_per_entrant_per_day": 1.34,
-    "conv_clean": 0.5009009009009009
-   },
-   "home_garden": {
-    "n": 287,
-    "sites": 52,
-    "contestants_per_day": 526.0,
-    "entries_per_entrant_per_day": 2.445,
-    "conv_clean": 0.5702127659574469
-   },
-   "health_wellness_fitness": {
-    "n": 164,
-    "sites": 38,
-    "contestants_per_day": 279.0,
-    "entries_per_entrant_per_day": 3.446,
-    "conv_clean": 0.41051829268292683
-   },
-   "software_saas": {
-    "n": 151,
-    "sites": 55,
-    "contestants_per_day": 247.5,
-    "entries_per_entrant_per_day": 2.558,
-    "conv_clean": 0.43327239488117003
-   },
-   "pets": {
-    "n": 41,
-    "sites": 11,
-    "contestants_per_day": 167.5,
-    "entries_per_entrant_per_day": 2.225,
-    "conv_clean": 0.46246006389776356
-   },
-   "sports_outdoors": {
-    "n": 291,
-    "sites": 88,
-    "contestants_per_day": 183.33,
-    "entries_per_entrant_per_day": 1.18,
-    "conv_clean": 0.5510030658491069
+    "n": 6002,
+    "sites": 1899,
+    "contestants_per_day": 37.9,
+    "entries_per_entrant_per_day": 0.475,
+    "conv_clean": 0.28831658291457285
    },
    "art_crafts": {
-    "n": 158,
-    "sites": 45,
-    "contestants_per_day": 128.0,
-    "entries_per_entrant_per_day": 1.0,
-    "conv_clean": 0.6734234234234234
+    "n": 361,
+    "sites": 125,
+    "contestants_per_day": 36.5,
+    "entries_per_entrant_per_day": 0.438,
+    "conv_clean": 0.30177420285554124
    },
-   "local_services": {
-    "n": 70,
-    "sites": 15,
-    "contestants_per_day": 181.5,
-    "entries_per_entrant_per_day": 1.586,
-    "conv_clean": 0.327639751552795
+   "other": {
+    "n": 1136,
+    "sites": 465,
+    "contestants_per_day": 29.79,
+    "entries_per_entrant_per_day": 0.477,
+    "conv_clean": 0.24327930827875252
    },
-   "nonprofit_community": {
-    "n": 81,
-    "sites": 32,
-    "contestants_per_day": 202.25,
-    "entries_per_entrant_per_day": 1.689,
-    "conv_clean": 0.37576452599388377
+   "health_wellness_fitness": {
+    "n": 583,
+    "sites": 173,
+    "contestants_per_day": 36.38,
+    "entries_per_entrant_per_day": 0.406,
+    "conv_clean": 0.22094841063053675
+   },
+   "media_entertainment": {
+    "n": 4455,
+    "sites": 764,
+    "contestants_per_day": 30.29,
+    "entries_per_entrant_per_day": 0.432,
+    "conv_clean": 0.2834065659957403
    },
    "baby_kids": {
-    "n": 50,
-    "sites": 14,
-    "contestants_per_day": 276.0,
-    "entries_per_entrant_per_day": 0.988,
-    "conv_clean": 0.37500090612146664
+    "n": 295,
+    "sites": 73,
+    "contestants_per_day": 38.29,
+    "entries_per_entrant_per_day": 0.407,
+    "conv_clean": 0.2737911745667282
+   },
+   "nonprofit_community": {
+    "n": 112,
+    "sites": 63,
+    "contestants_per_day": 31.78,
+    "entries_per_entrant_per_day": 0.39,
+    "conv_clean": 0.289002557544757
+   },
+   "travel_events": {
+    "n": 804,
+    "sites": 223,
+    "contestants_per_day": 42.91,
+    "entries_per_entrant_per_day": 0.325,
+    "conv_clean": 0.3351749539594843
+   },
+   "education": {
+    "n": 847,
+    "sites": 128,
+    "contestants_per_day": 58.5,
+    "entries_per_entrant_per_day": 0.582,
+    "conv_clean": 0.23986058301647656
    },
    "marketing_agency": {
-    "n": 60,
-    "sites": 25,
-    "contestants_per_day": 161.0,
-    "entries_per_entrant_per_day": 1.03,
-    "conv_clean": 0.4530679191828823
+    "n": 317,
+    "sites": 50,
+    "contestants_per_day": 57.38,
+    "entries_per_entrant_per_day": 0.427,
+    "conv_clean": 0.2946240052594161
+   },
+   "retail_marketplace": {
+    "n": 773,
+    "sites": 124,
+    "contestants_per_day": 26.12,
+    "entries_per_entrant_per_day": 0.51,
+    "conv_clean": 0.16529172847754614
+   },
+   "apparel_fashion": {
+    "n": 684,
+    "sites": 315,
+    "contestants_per_day": 55.34,
+    "entries_per_entrant_per_day": 0.327,
+    "conv_clean": 0.2849341417911111
+   },
+   "food_drink": {
+    "n": 844,
+    "sites": 317,
+    "contestants_per_day": 81.14,
+    "entries_per_entrant_per_day": 0.293,
+    "conv_clean": 0.32170542635658916
+   },
+   "creator_influencer": {
+    "n": 589,
+    "sites": 338,
+    "contestants_per_day": 33.0,
+    "entries_per_entrant_per_day": 0.366,
+    "conv_clean": 0.3629482963062398
+   },
+   "software_saas": {
+    "n": 338,
+    "sites": 167,
+    "contestants_per_day": 34.95,
+    "entries_per_entrant_per_day": 0.421,
+    "conv_clean": 0.23623972922994046
+   },
+   "home_garden": {
+    "n": 931,
+    "sites": 222,
+    "contestants_per_day": 85.86,
+    "entries_per_entrant_per_day": 0.357,
+    "conv_clean": 0.3076923076923077
+   },
+   "sports_outdoors": {
+    "n": 1054,
+    "sites": 388,
+    "contestants_per_day": 68.35,
+    "entries_per_entrant_per_day": 0.336,
+    "conv_clean": 0.3117679536059519
+   },
+   "toys_hobbies_collectibles": {
+    "n": 739,
+    "sites": 241,
+    "contestants_per_day": 41.44,
+    "entries_per_entrant_per_day": 0.403,
+    "conv_clean": 0.24381260537207194
+   },
+   "beauty_personal_care": {
+    "n": 277,
+    "sites": 119,
+    "contestants_per_day": 35.54,
+    "entries_per_entrant_per_day": 0.296,
+    "conv_clean": 0.3538851087011
+   },
+   "local_services": {
+    "n": 180,
+    "sites": 48,
+    "contestants_per_day": 50.67,
+    "entries_per_entrant_per_day": 0.412,
+    "conv_clean": 0.23788546255506607
+   },
+   "automotive": {
+    "n": 448,
+    "sites": 115,
+    "contestants_per_day": 118.18,
+    "entries_per_entrant_per_day": 0.416,
+    "conv_clean": 0.322321963955173
+   },
+   "jewelry_watches": {
+    "n": 88,
+    "sites": 47,
+    "contestants_per_day": 39.06,
+    "entries_per_entrant_per_day": 0.344,
+    "conv_clean": 0.2953519407138192
+   },
+   "pets": {
+    "n": 243,
+    "sites": 76,
+    "contestants_per_day": 75.25,
+    "entries_per_entrant_per_day": 0.516,
+    "conv_clean": 0.3260598503740648
+   }
+  },
+  "15-30": {
+   "gaming_esports": {
+    "n": 6269,
+    "sites": 2058,
+    "contestants_per_day": 20.13,
+    "entries_per_entrant_per_day": 0.264,
+    "conv_clean": null
+   },
+   "sports_outdoors": {
+    "n": 1534,
+    "sites": 494,
+    "contestants_per_day": 55.92,
+    "entries_per_entrant_per_day": 0.221,
+    "conv_clean": null
+   },
+   "electronics_tech": {
+    "n": 4595,
+    "sites": 1078,
+    "contestants_per_day": 49.77,
+    "entries_per_entrant_per_day": 0.228,
+    "conv_clean": null
+   },
+   "media_entertainment": {
+    "n": 6972,
+    "sites": 922,
+    "contestants_per_day": 19.67,
+    "entries_per_entrant_per_day": 0.281,
+    "conv_clean": null
+   },
+   "apparel_fashion": {
+    "n": 974,
+    "sites": 348,
+    "contestants_per_day": 30.05,
+    "entries_per_entrant_per_day": 0.15,
+    "conv_clean": null
+   },
+   "home_garden": {
+    "n": 1251,
+    "sites": 307,
+    "contestants_per_day": 43.21,
+    "entries_per_entrant_per_day": 0.155,
+    "conv_clean": null
+   },
+   "education": {
+    "n": 381,
+    "sites": 153,
+    "contestants_per_day": 22.5,
+    "entries_per_entrant_per_day": 0.171,
+    "conv_clean": null
+   },
+   "health_wellness_fitness": {
+    "n": 788,
+    "sites": 254,
+    "contestants_per_day": 23.62,
+    "entries_per_entrant_per_day": 0.189,
+    "conv_clean": null
+   },
+   "art_crafts": {
+    "n": 547,
+    "sites": 176,
+    "contestants_per_day": 31.59,
+    "entries_per_entrant_per_day": 0.206,
+    "conv_clean": null
+   },
+   "food_drink": {
+    "n": 1579,
+    "sites": 402,
+    "contestants_per_day": 26.11,
+    "entries_per_entrant_per_day": 0.205,
+    "conv_clean": null
+   },
+   "software_saas": {
+    "n": 549,
+    "sites": 218,
+    "contestants_per_day": 30.05,
+    "entries_per_entrant_per_day": 0.193,
+    "conv_clean": null
+   },
+   "travel_events": {
+    "n": 1127,
+    "sites": 294,
+    "contestants_per_day": 26.71,
+    "entries_per_entrant_per_day": 0.171,
+    "conv_clean": null
+   },
+   "pets": {
+    "n": 351,
+    "sites": 101,
+    "contestants_per_day": 38.59,
+    "entries_per_entrant_per_day": 0.193,
+    "conv_clean": null
+   },
+   "toys_hobbies_collectibles": {
+    "n": 1424,
+    "sites": 349,
+    "contestants_per_day": 21.41,
+    "entries_per_entrant_per_day": 0.223,
+    "conv_clean": null
+   },
+   "other": {
+    "n": 909,
+    "sites": 507,
+    "contestants_per_day": 15.07,
+    "entries_per_entrant_per_day": 0.222,
+    "conv_clean": null
+   },
+   "nonprofit_community": {
+    "n": 132,
+    "sites": 76,
+    "contestants_per_day": 21.56,
+    "entries_per_entrant_per_day": 0.186,
+    "conv_clean": null
+   },
+   "marketing_agency": {
+    "n": 347,
+    "sites": 76,
+    "contestants_per_day": 27.18,
+    "entries_per_entrant_per_day": 0.247,
+    "conv_clean": null
+   },
+   "creator_influencer": {
+    "n": 773,
+    "sites": 380,
+    "contestants_per_day": 11.77,
+    "entries_per_entrant_per_day": 0.234,
+    "conv_clean": null
+   },
+   "automotive": {
+    "n": 521,
+    "sites": 175,
+    "contestants_per_day": 61.07,
+    "entries_per_entrant_per_day": 0.23,
+    "conv_clean": null
+   },
+   "baby_kids": {
+    "n": 434,
+    "sites": 71,
+    "contestants_per_day": 20.5,
+    "entries_per_entrant_per_day": 0.155,
+    "conv_clean": null
+   },
+   "retail_marketplace": {
+    "n": 484,
+    "sites": 152,
+    "contestants_per_day": 25.73,
+    "entries_per_entrant_per_day": 0.27,
+    "conv_clean": null
+   },
+   "local_services": {
+    "n": 204,
+    "sites": 81,
+    "contestants_per_day": 28.62,
+    "entries_per_entrant_per_day": 0.149,
+    "conv_clean": null
+   },
+   "beauty_personal_care": {
+    "n": 341,
+    "sites": 158,
+    "contestants_per_day": 21.07,
+    "entries_per_entrant_per_day": 0.178,
+    "conv_clean": null
+   },
+   "jewelry_watches": {
+    "n": 107,
+    "sites": 60,
+    "contestants_per_day": 25.0,
+    "entries_per_entrant_per_day": 0.184,
+    "conv_clean": null
    }
   }
  },

@@ -13,7 +13,33 @@
     "No platform pitch",
     "No entrant-number promise"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "count": "(?m)^[\\s*>\\-]*Title[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Hook[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Mechanic[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Prize direction[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Asset produced[:*]",
+     "min": 3
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 2,
@@ -25,7 +51,20 @@
     "Warns about competition for attention in December",
     "Hands the reader on to the next piece of work, named in their own words"
    ],
-   "files": []
+   "files": [],
+   "checks": [
+    {
+     "contains": "December"
+    },
+    {
+     "count": "(?i)\\badvent\\b|\\bseries\\b",
+     "min": 1
+    },
+    {
+     "count": "\\d+(?:\\.\\d+)?%",
+     "min": 1
+    }
+   ]
   },
   {
    "prompt": "We're launching a new mechanical keyboard next month, pre-orders open the same day. Budget $600. Ideas?",
@@ -37,7 +76,37 @@
     "Three concepts with hook, mechanic and prize direction"
    ],
    "files": [],
-   "id": 3
+   "id": 3,
+   "checks": [
+    {
+     "count": "(?m)^[\\s*>\\-]*Title[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Hook[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Mechanic[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Prize direction[:*]",
+     "min": 3
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Asset produced[:*]",
+     "min": 3
+    },
+    {
+     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "min": 1
+    },
+    {
+     "count": "(?i)\\breferral",
+     "min": 1
+    }
+   ]
   },
   {
    "id": 4,

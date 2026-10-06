@@ -27,11 +27,13 @@ def draft(a):
     C += ["Platforms. The promotion is in no way sponsored, endorsed, administered by, or associated with Instagram, Facebook, TikTok, X, YouTube, or any other platform on which it is promoted. Entrants release those platforms from any liability connected with the promotion.",
           "General. The Promoter may cancel, suspend or amend the promotion where required by law or where it cannot proceed as planned. The Promoter's decisions are final on matters the terms do not cover. Entry constitutes acceptance of these terms."]
     L = [f"{a.name}: Terms and Conditions", ""] + [f"{i}. {c}" for i, c in enumerate(C, 1)]
-    reg = {"AU": "Note for Australia: trade promotion lotteries are regulated by state and territory. Some require a permit above a Prize-value threshold (NSW, ACT, SA, NT historically). Confirm permit needs before launch.",
-           "UK": "Note for the UK: a free Prize draw needs a genuinely free entry route to avoid being a lottery under the Gambling Act 2005, and the CAP Code sections on promotions apply.",
-           "US": "Note for the US: sweepstakes must be free to enter (no purchase necessary with an alternate method of entry), official rules and odds statements are expected, and some states require registration and bonding above value thresholds (for example New York and Florida). Prizes may be taxable income to Winners.",
-           "EU": "Note for the EU: consumer protection and GDPR apply. Some member states regulate promotional games (for example Italy and Portugal require notification). Check the country of every eligible Entrant.",
-           "CA": "Note for Canada: a skill-testing question is common practice to avoid the lottery provisions of the Criminal Code, and Quebec has its own regime. Confirm before including Quebec residents."}
+    # Each note names who decides and the question to put to a lawyer. None of them states what a law requires,
+    # which is the rule every skill in this repository carries and which this script used to break.
+    reg = {"AU": "Note for Australia: each state and territory decides how a trade promotion is regulated, and a permit can be required. Ask your lawyer which states your Entrants are in, whether a permit applies at your Prize value, and how long one takes to obtain.",
+           "UK": "Note for the UK: how a Prize draw must be structured, and how it must be advertised, are decided by the gambling regulator and the advertising codes. Ask your lawyer whether your entry route qualifies as free and what the advertising codes require of your wording.",
+           "US": "Note for the US: rules are set federally and state by state, and some states treat registration, bonding and Prize tax differently above certain values. Ask your lawyer which states your Entrants are in, what your Prize value triggers in each, and who reports the Prize as income.",
+           "EU": "Note for the EU: consumer protection and data protection are decided at both EU and member-state level, and some member states regulate promotional games separately. Ask your lawyer about the country of every eligible Entrant, and about your lawful basis for the data you collect.",
+           "CA": "Note for Canada: federal law and the provinces each have a say, and Quebec is commonly treated separately. Ask your lawyer whether a skill-testing question is needed for your promotion and what including Quebec residents would require of you."}
     asked = [r.strip().upper() for r in a.region.split(",") if r.strip() and r.strip().lower() != "none"]
     notes = [reg[r] for r in asked if r in reg]
     uncovered = [r for r in asked if r not in reg]
@@ -61,16 +63,16 @@ def main(argv):
     if a.self_test:
         a.promoter = "Test Co"; a.name = "Test Draw"; a.open = "1 Jan"; a.close = "2 Jan"; a.draw = "3 Jan"; a.eligible = "adults"; a.exclude = "staff"
         a.prize = "One hat, value 10"; a.notify = "email"; a.publish = "first name"; a.delivery = "posted"; a.region = "AU"
-        t = draft(a); assert "1. Promoter. The promotion is run by Test Co" in t and "13. General." in t and "permit" in t and "not legal advice" in t
+        t = draft(a); assert "1. Promoter. The promotion is run by Test Co" in t and "13. General." in t and "Ask your lawyer" in t and "not legal advice" in t
         assert ";" not in t and "\u2014" not in t
         a.region = "UK,DE,JP"
         m = draft(a)
         assert "There is 1 Winner" in t, "one Winner must not read as \"There are 1 Winner\""
         a2 = _Copy(a); a2.winners = 3
         assert "There are 3 Winners" in draft(a2)
-        assert "Gambling Act 2005" in m, "a known region in a list must still get its note"
+        assert "Note for the UK" in m, "a known region in a list must still get its note"
         assert "No note here covers DE, JP" in m, "an uncovered country must be named, never passed over in silence"
-        assert "permit" not in m, "only the regions asked for get a note"
+        assert "Note for Australia" not in m, "only the regions asked for get a note"
         print("self-test passed"); return 0
     print(draft(a)); return 0
 

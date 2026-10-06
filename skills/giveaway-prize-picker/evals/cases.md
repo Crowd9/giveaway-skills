@@ -62,7 +62,13 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 ## 11. Style check (applies to every conversational case above)
 
-**Pass:** each saved reply (cases 1, 2, 3, 4, 5, 6, 9, 10) contains no em dashes, no semicolons, no curly quotes, no question or slogan headings, no assistant opener ("Great question", "Here's how I'd think about it") or closer ("Hope this helps", "Let me know"), a sentence of six words or fewer and one of twenty-five or more, and as few "X, not Y" contrast sentences and filler words as possible (target zero, reported as a count). Run `python3 evals/style_check.py reply.txt` (repo root) on each saved reply.
+**Pass:** each saved reply (cases 1, 2, 3, 4, 5, 6, 9, 10, 12) contains no em dashes, no semicolons, no curly quotes, no question or slogan headings, no assistant opener ("Great question", "Here's how I'd think about it") or closer ("Hope this helps", "Let me know"), a sentence of six words or fewer and one of twenty-five or more, and as few "X, not Y" contrast sentences and filler words as possible (target zero, reported as a count). Run `python3 evals/style_check.py reply.txt` (repo root) on each saved reply.
+
+## 12. B2B buyer campaign, 40 good leads against 4,000
+
+**Request:** "We're a 5-person B2B SaaS doing warehouse inventory software. Marketing wants to give away a MacBook Pro to maximise entrants, but honestly we would rather have 40 good leads than 4,000 randoms. What should the Prize be, and how do we judge it afterwards?"
+
+**Pass:** verdict of replace on the MacBook with the reason that nearly anyone wants it, two Prizes only a buyer values (a year of the product with an onboarding session, a stock audit), a consolation for qualified Entrants who do not win, cost per qualified Entrant judged against the reader's own cost per lead (asked for, never invented), crowd per Prize dollar set aside, and the buyer-Prize advice labelled as practice with the data's limit stated: it ends at the entry. Cases 2 and 4 above now also assert the buyer test. Checked against `references/buyer-prizes.md`. No model response was generated or scored for this case.
 
 ## The 40-Prompt Evaluation, 11 September 2026
 
