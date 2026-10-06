@@ -82,7 +82,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Completion rates by action family from 957,363 real entry actions, and the friction finding that every extra action costs Entrants
+- Completion rates by action family from 957,363 real entry actions, and what a longer list costs in Conversion Rate
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 
@@ -98,7 +98,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 - A dated timeline: terms and assets, launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil
 - Holiday benchmarks with a dated calendar of launch windows: Christmas, Black Friday, Easter, Halloween, back to school and more
 - Every week of the year benchmarked, and whether being live over each holiday helped or hurt
-- The recency finding: a campaign within 30 days of your last one converted at 41% against 32% for a first campaign
+- The recency finding: a campaign within 30 days of your last one drew 42% more Entrants than a first campaign, and 38% of viewers entered against 31%
 
 > "Shoe launches 14 October, want hype and emails."
 
@@ -215,7 +215,7 @@ An abbreviated version of what comes back:
 >
 > Start day makes no measurable difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only because your own week is easier that way.
 >
-> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 41% more Entrants than a first campaign, and 38% of viewers entered against 31%. Book the second before you launch this one.
+> One timing decision does move the numbers, and it is the next one. A campaign that starts within 30 days of your previous one drew 42% more Entrants than a first campaign, and 38% of viewers entered against 31%. Book the second before you launch this one.
 >
 > Next decision: the exact close date and time zone, which the promotion pushes hang off.
 
@@ -235,7 +235,7 @@ Most giveaway advice is somebody's opinion. These skills are built on 116,499 re
 
 Some of what that shows:
 
-- **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 381.
+- **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 382.
 - **Most campaigns are small and cheap.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Your industry sets that price.** Music and media captured an address for 0.09 USD of stated Prize value. Software paid 1.19.
