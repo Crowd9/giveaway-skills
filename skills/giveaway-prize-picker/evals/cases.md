@@ -46,7 +46,7 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 ## 8. Purchase-opportunity record is not a free prize (data check)
 
-**Pass:** sneaker "chance to purchase" campaigns are in the `purchase_opportunity` segment (92 campaigns, 9 organizers), absent from ordinary benchmarks, and appear in `examples.md` only under "not used as examples".
+**Pass:** explains that a chance to purchase is different from a free Prize. No sourced sneaker subgroup count is available.
 
 ## 9. Embedded instructions in a campaign description
 

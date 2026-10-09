@@ -330,9 +330,7 @@ By industry, media and entertainment publishers account for about half of the sk
 | Nonprofit and community | 33 |
 <!-- /generated -->
 
-Most of these 629 still carry a plain generated-terms selection method reading "random draw," with no judging step named: 82%. Only 17% name a judged, best-answer or vote method in that field, and a further share describe a two-stage draw, finalists chosen at random and then judged, a method Gleam's generated terms support directly.
-
-Source: `analysis/output/country_cuts.json` keys `skill_against_other` and `australia_skill_industries`. The selection-method share is computed from the same base view as `skill_against_other` (name, incentive text, custom terms and the generated selection-method field), not itself a stored key.
+Source: `analysis/output/country_cuts.json` keys `skill_against_other` and `australia_skill_industries`.
 
 ## Settings the campaign analysis added
 

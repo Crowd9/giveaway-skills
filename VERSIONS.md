@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.39 |
-| giveaway-entry-method-planner | 1.2.36 |
+| giveaway-prize-picker | 1.3.40 |
+| giveaway-entry-method-planner | 1.2.37 |
 | giveaway-timing-and-duration | 1.4.35 |
 | giveaway-winner-structure | 1.4.7 |
-| giveaway-promotion-plan | 1.3.36 |
+| giveaway-promotion-plan | 1.3.37 |
 | giveaway-random-draw | 1.3.33 |
 | giveaway-winner-communications | 1.2.29 |
-| giveaway-idea-generator | 1.3.32 |
+| giveaway-idea-generator | 1.3.33 |
 | giveaway-results-review | 1.6.7 |
-| gleam-campaign-setup | 1.2.34 |
+| gleam-campaign-setup | 1.2.35 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.7 (2026-10-10)
+
+Every number you plan against now traces back to our data. We looked for the source of each figure no table could account for. Where we found it, the figure now names it. Where we couldn't, the number is gone, and any advice that still holds is labelled as practice.
+
+That removed a referral benchmark, a sneaker-raffle count, a selection-method share for Australian skill contests, an optional-sharing rate and a handful of figures about how Prize names were classified. Nothing you'd plan against depended on them alone.
+
+A few figures came back slightly different once traced. A validated question marks about 3.5% of entries invalid, and about a quarter of pre-order and crowdfunding campaigns come from businesses with fewer than five campaigns in our data, where the old text said about half.
 
 ## 3.0.6 (2026-10-10)
 

@@ -124,7 +124,7 @@ Two pairings draw more than the hook and the type would predict apart, on the 10
 | Anniversary or birthday + sweepstakes wording | 1.28 | 139 | 77 |
 | Summer + stated-milestone framing | 1.98 | 73 | 54 |
 
-These are small two-way cuts, so quote the campaign count with either (`analysis/output/success_profiles.json`, `interactions.holiday_by_campaign_type`). About one in eight of the anniversary-or-birthday-plus-sweepstakes rows trace to a single business's own numbered series, so read that pairing loosely.
+These are small two-way cuts, so quote the campaign count with either (`analysis/output/success_profiles.json`, `interactions.holiday_by_campaign_type`).
 
 The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent and Father's Day are above the all-campaign typical figures on both counts, and the smaller dates section lists the national and world days businesses used (National Coffee Day, World Photography Day, National Sticker Day) and the holidays nobody in the data has taken. Load it when the hook is a date.
 
@@ -185,15 +185,19 @@ Reading it:
 
   The first row uses `analysis/output/context_checks.json`, `collaboration_signal`, and counts valued campaigns with the title signal. The remaining rows use `analysis/output/success_profiles.json`, `success_cohorts.*.stratified.collaboration_in_title`, and count each top-fifth cohort. Their ratios compare the prevalence of collaboration titles in the top fifth with the rest. Audience and value-index cohorts match industry, while conversion and cost cohorts also match campaign size.
 
+The following campaign-type comparisons use `analysis/output/campaign_types.json` (`types`, `all`).
+
 - **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. An existing audience does that.
 - **Cash** gets the highest share to enter of any type at 61%, on 567 Entrants, with the most actions of any type and a typical ten-day run. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.18, so those campaigns drew more Entrants than typical among campaigns offering a Prize of similar stated value.
 - **Community and Discord** campaigns record 19 referrals per 100 Entrants, well above the typical 11, behind scavenger hunt, flash and quiz campaigns. **Quiz and trivia** campaigns run a quarter below the typical figure on Entrants and a third below on value index. They carry 20 referrals per 100 Entrants against the typical 11.
 - **Product launches** draw a little more crowd than typical at 546 Entrants against 492, on a low share to enter at 29% and a value index just under typical at 0.98. Photo or video contests at 21% and US sweepstakes wording at 22% sit lower, so sort the column before writing a superlative off this row. A launch has no audience yet, which is the point of running one, so plan the promotion first.
-- **Photo or video contests** are the smallest type in the table at 249 Entrants, on the lowest share to enter at 21% and the lowest value index at 0.27, which is what asking for a made thing costs. **Creator or streamer** campaigns are next at 317. A **weekly or monthly series** sits a little under typical at 459, spreading one audience across many draws. **Flash** campaigns of 24 to 72 hours sit above typical on both Entrants and share to enter, 602 and 39%, so a short window is not by itself a small campaign. **UK competition wording** lands near typical on size at 507.
+- **Photo or video contests** are the smallest type in the table at 249 Entrants, on the lowest share to enter at 21% and the lowest value index at 0.27, which is what asking for a made thing costs. **Creator or streamer** campaigns are next at 317. A **weekly or monthly series** sits a little under typical at 459, spreading one audience across many draws. **Flash** campaigns (the source labels this type "24 to 72 hours", `analysis/output/campaign_types.json`, `types`) sit above typical on both Entrants and share to enter, 602 and 39%, so a short window is not by itself a small campaign. **UK competition wording** lands near typical on size at 507.
 
 Nothing here says the type caused the number. Businesses who run advent calendars have December audiences, and businesses who write "no purchase necessary" have run many campaigns before.
 
 ### Campaign types by industry (extracted)
+
+Source for the total population: `analysis/output/campaign_types.json` (`all`). Industry comparisons use `analysis/output/vertical_profiles.json`, `campaign_types_by_industry`.
 
 Every industry with enough campaigns gets a row (23 industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses). Each type is a share of the industry's campaigns, set against the same type's share across all industries. The first column lists types at 1.25x the all-industry share or more, the second types at 0.75x or less, strongest first and up to three each. The source holds each industry's most common types, up to eight, so a type missing from a row sat near the all-industry share or was too thin to publish, and a dash means none of the listed types cleared the cut. Each figure carries the campaigns and businesses behind it. The rows describe what an industry's businesses chose to run and say nothing about what the type did for them.
 
@@ -282,7 +286,7 @@ Source: `analysis/output/shape_capture.json`.
 | Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
 <!-- /generated -->
 
-Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 546 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 15 referrals per 100 Entrants, above the all-campaign typical figure of 11 (the campaign-types baseline above): a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 395 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a quarter of launch-or-new-release campaigns already do, and treat the campaign as the start of the list.
+Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 546 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 15 referrals per 100 Entrants, above the all-campaign typical figure of 11 (the campaign-types baseline above): a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 395 Entrants. About a quarter of pre-order and crowdfunding campaigns came from businesses with fewer than five recorded ordinary campaigns in this sample (23.6% of 982 campaigns from 325 businesses, calculated as one minus `repeat_organizer_share` in `analysis/output/standouts.json`, `launch_subtypes`). This counts campaigns recorded in the sample, not the business's full campaign history. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a quarter of launch-or-new-release campaigns already do, and treat the campaign as the start of the list.
 
 By industry, a separate check of launch wording in campaign names and descriptions (wider scope than the subtypes above, keeps crypto businesses) shows where each wording concentrates. Match the wording to the industries that already use it.
 
@@ -417,8 +421,6 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 | Entry rate | 34% |
 | Duration (typical) | 9 days |
 | Email offered | 4.5% |
-
-**Startups and B2B sellers run referral-heavy campaigns.** Both run far more referrals per 100 Entrants than the all-campaign typical figure of 13, and neither has an existing list to email, so the concept has to be the kind a person forwards: early access, a nomination, a peer invite.
 
 | Business type | Campaigns | Businesses | Referrals per 100 Entrants | Email offered |
 |---|---|---|---|---|

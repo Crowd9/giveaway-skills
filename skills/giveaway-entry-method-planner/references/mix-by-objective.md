@@ -104,8 +104,6 @@ An app-download action's payoff depends heavily on the Prize. Match the action t
 
 A share action's value is the people it brings, which the dataset does not count. Campaigns offering one had more Entrants and lower conversion typically [`cmp_share` in action-families.md: 544 Entrants against 406, and conversion 23% lower], so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
 
-Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (these are recorded referral completions, without multiplying by Entry worth). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the dataset lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
-
 **A share action is a design tradeoff, not a free addition.** When reach or new people is the objective, its reach and referral gain is worth the completion it costs elsewhere, and it's the case where a share action clearly earns its place. When the objective is a tight, high-completion list, that same cost is the reason to leave sharing out or push it to the bottom of the list. Consistent at every campaign size tested. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
 
 What it buys:
@@ -115,7 +113,6 @@ What it buys:
 | Impressions per Entrant | +33-52% (1.33x-1.52x) |
 | Entries per Entrant | +20-24% |
 | Visits to the business's own site | +19-71% |
-| Referral entries from people the campaign didn't already reach | 13 per 100 Entrants typical, 65+ in the top tenth (see above) |
 
 Completion on other actions running beside it (lower at every size tested except Telegram, which varies by size):
 
@@ -191,22 +188,22 @@ To check a plan against this, take the goal's column and ask which of its choice
 
 ## Actions more common in top campaigns, by vertical (extracted)
 
-Within each vertical (a regex on business, campaign and Prize names, so rough), campaigns split into fifths by Entrants. The ratio is how much more often an action appears in the top fifth than the bottom fifth. Association only: bigger businesses choose differently.
+Within each vertical, defined by grouping the business's industry label, campaigns split into fifths by Entrants. The ratio is how much more often an Action appears in the top fifth than the bottom fifth. The frame includes 116,283 ordinary campaigns with positive valid Entries. Business counts below cover the whole vertical, and distinct-business counts for each fifth are not published, so their privacy floor remains unverified. These comparisons describe the groups and do not show that an Action produced a larger audience.
 
-| Vertical | Campaigns | Actions over-represented in the top fifth |
-|---|---|---|
-| Gaming | 6,503 | Twitch Subscribers 1.7x, Custom Actions 1.7x, Secret Code 1.5x, Twitch Follows 1.3x, Bonus 1.2x |
-| Technology | 1,717 | Single Choice List 7.2x, Facebook visits 1.4x, YouTube Channel Visits 1.3x, Instagram Profile Visits 1.3x |
-| Home | 883 | YouTube Channel Visits 2.3x, Custom Actions 1.7x, X Posts 1.6x, Pinterest Visits 1.4x, Viral Shares 1.3x |
-| Food and drink | 989 | YouTube Channel Visits 2.2x, Facebook visits 1.4x, Instagram Profile Visits 1.2x |
-| Fitness and outdoor | 878 | Answer a Question 1.6x, Bonus 1.2x |
-| Travel | 1,758 | Secret Code 1.5x, Answer a Question 1.4x, Instagram Profile Visits 1.2x |
-| Software | 363 | X Reposts 1.7x, Bonus 1.4x, YouTube Channel Visits 1.3x, Viral Shares 1.3x |
-| Fashion and beauty | 359 | YouTube Channel Visits 1.8x, Instagram Profile Visits 1.3x, Bonus 1.3x |
+Source: `analysis/output/context_checks.json` (`method_prevalence_top_vs_bottom_by_vertical`, `ordinary_n`).
 
-Gleam's internal analysis of the same export, with its own industry labels, found the same shape: questions and single-choice actions over-represented in technology and food, Twitch and custom actions in gaming, Pinterest and YouTube in home. Two readings of one dataset agreeing is still one dataset.
+| Vertical | Campaigns | Businesses | Campaigns per fifth | Actions over-represented in the top fifth |
+|---|---|---|---|---|
+| Gaming | 24,229 | 4,657 | 4,845 | Email Subscriptions 2.4x, Viral Shares 2.0x, TikTok Follows 1.6x, Chat Members 1.3x, Custom Actions 1.3x |
+| Technology | 15,543 | 2,063 | 3,108 | TikTok Follows 1.7x, Custom Actions 1.6x, Secret Code 1.6x, Viral Shares 1.5x, Instagram Follows 1.4x, Chat Members 1.3x |
+| Home | 3,710 | 594 | 742 | Pinterest Visits 2.5x, X Follows 2.2x, YouTube Channel Visits 2.0x, Viral Shares 1.7x, Instagram Profile Visits 1.6x, Facebook visits 1.4x, Bonus 1.4x, Email Subscriptions 1.3x |
+| Food and drink | 4,681 | 890 | 936 | Pinterest Visits 3.2x, TikTok Follows 1.9x, Facebook visits 1.7x, Viral Shares 1.6x, Instagram Profile Visits 1.5x, Email Subscriptions 1.5x, YouTube Channel Visits 1.3x |
+| Fitness and outdoor | 7,795 | 1,508 | 1,559 | Viral Shares 2.1x, Bonus 1.7x, Email Subscriptions 1.5x, X Follows 1.4x, Instagram Profile Visits 1.2x |
+| Travel | 3,969 | 638 | 793 | Viral Shares 1.9x, Email Subscriptions 1.6x, Custom Actions 1.6x, YouTube Channel Visits 1.5x |
+| Software | 1,662 | 545 | 332 | Email Subscriptions 2.8x, Viral Shares 1.4x, Custom Actions 1.4x, YouTube Channel Visits 1.2x |
+| Fashion and beauty | 6,457 | 1,305 | 1,291 | Custom Actions 3.7x, Email Subscriptions 2.9x, Facebook visits 1.9x, Viral Shares 1.8x, X Follows 1.3x |
 
-On action count: the top fifth and bottom fifth both ran a typical 7 actions, so count alone does not separate them. The finding from the campaigns we can compare fairly points the same way: eleven or more actions came with 17% more Entrants than one to three, alongside lower conversion and far more Entries per Entrant [`cmp_methods` in action-families.md]. Keep the list purposeful and tied to the assets you can use.
+The top fifth ran a typical 7 Actions against 6 in the bottom fifth, each covering 23,256 campaigns, from 4,543 and 7,763 businesses respectively (`analysis/output/context_checks.json`, `top_vs_bottom_quintile`). The comparison is within the same positive-valid-Entries frame. The finding from the campaigns we can compare fairly is that eleven or more actions came with 17% more Entrants than one to three, alongside lower conversion and far more Entries per Entrant [`cmp_methods` in action-families.md]. Keep the list purposeful and tied to the assets you can use.
 
 **The exact combination businesses reach for differs by vertical, beyond what the per-family table above shows.** In electronics and tech and gaming and esports, the single most common exact action set skips email entirely and anchors on follow plus visit. In food and drink, sports and outdoors and media and entertainment, the most common sets are all built around email, visit and share together, with an extra action or two layered on. This is consistent with, not independent of, the per-family email-offered shares already in the sections above. [Campaigns, all clearing the size floor comfortably (334 to 1,840 businesses overall): electronics and tech 7,289, gaming and esports 6,328, food and drink 1,787, sports and outdoors 2,268, media and entertainment 5,019. Extracted from `analysis/output/method_mix.json`, `top_combinations_by_industry`.]
 
@@ -462,7 +459,7 @@ Typical completions per campaign among campaigns that offered the action, comple
 | Referral entries (Viral Shares) | 42,536 | 88 | 11 | 2.90 |
 | Content submissions | 3,271 | 110 | 17 | 16.00 |
 
-Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 email signups. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions. Those are recorded completions among campaigns offering the action, never a count of available contact addresses or of individual marketing consent, and each row covers its own campaigns, so the medians do not describe one campaign's combined results.
+Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 email signups. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions. Those are recorded completions among campaigns offering the action, never a count of available contact addresses or of individual marketing consent, and each row covers its own campaigns, so the medians do not describe one campaign's combined results. Source: `analysis/output/asset_yield.json`, `yield_by_asset` (rounded completion medians).
 
 ## Wording and destinations (extracted)
 
@@ -478,7 +475,7 @@ Completions % of Entrants by position in the action list, from `analysis/output/
 | Content upload | 81 (2,573 Actions) | 27 (4,657 Actions) | 13 (6,599 Actions) |
 | Share or refer | 16 (993 Actions) | 12 (11,344 Actions) | 11 (30,470 Actions) |
 
-Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it. That drop is the difference between the cited completion ratios, multiplied by a hundred and rounded to whole percentage points.
+Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it. That drop is the difference between the cited completion ratios, multiplied by a hundred and rounded to whole percentage points (`analysis/output/field_cuts.json`, `uptake_by_family_and_position`).
 
 The position advantage extends past email and follow, and holds by campaign size. The ratio below is the asset's completions per Entrant in the first list position over the same asset later in the list, split into three groups by campaign size. [Scope: 1,000+ Entrant campaigns. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_position`.]
 
@@ -627,8 +624,7 @@ and drops on either side, and the shape repeats three times:
 | 7 to 10 | 484 | 644 | 386 | 408 |
 | 11 or more | 560 | 747 | 408 | 546 |
 
-One required action goes with 25% to 33% more Entrants than requiring none, and 32% to 83% more than requiring
-two. Three separate bands landing on the same shape is worth more than any one of them, and the groups are large:
+One required action goes with 25% to 33% more Entrants than requiring none, and 32% to 83% more than requiring two (ratios of the table's Entrant medians, `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`). Three separate bands landing on the same shape is worth more than any one of them, and the groups are large:
 the smallest cell holds 1,908 campaigns from 436 businesses.
 
 Read it as the signature of a campaign built around one asset. A business that requires exactly one action has
@@ -697,21 +693,23 @@ What it answers about piling on easy actions: the campaigns whose lists were 75%
 
 ## Invalid entries (extracted)
 
-Gleam marks an entry invalid when its check fails: a follow that was undone, a duplicate account, a rejected answer, a referral that did not verify. Plan for a few percent of entries to fall away at verification, more when the mix leans on referrals, and say so in the terms. These are typical values of what businesses saw, and invalid entries were already excluded from every other figure in these references.
+Invalid share is invalid Entries divided by all Entries, calculated per campaign. The overall typical share is 4.2%, from 107,109 campaigns and 16,490 businesses with recorded invalid-entry values (`analysis/output/invalid_share.json`, `distribution.typical`). Campaigns with missing invalid-entry values are excluded from that distribution.
 
-| Context | Invalid entry rate |
-|---|---|
-| Typical campaign | 4.2% |
-| With a share or referral action | 4.5% |
-| Without one | 3.2% |
-| Chat Members offered | 4.5% (3.7% without) |
-| X Reposts offered | 4.2% (3.7% without) |
-| Email Subscriptions offered | 4.3% (3.4% without) |
-| Twitch Follows offered | 2.6% (3.9% without) |
-| Question action validated the answer | 3.2% |
-| Question action did not validate | 3.2%, the same |
+The wider Action comparison counts missing invalid-entry values as zero. Its population is 116,499 ordinary campaigns (`analysis/output/extra_cuts.json`, `ordinary_n`). Each rate is the typical campaign's invalid share, not a prediction of what adding an Action would cause.
 
-[Across 116,499 ordinary campaigns: 42% had 5% or more invalid, 7% had 20% or more. Question-validation comparison: 516 campaigns validated, 39,334 did not.]
+Source: `analysis/output/extra_cuts.json` (`invalid_by_method_presence_all`, `ordinary_n`). Without-Action campaign counts are `ordinary_n` minus `n_with`. Distinct-business counts without each Action are not published and their privacy floor remains unverified.
+
+| Action offered | With Action | Without Action | Campaigns with | Businesses with | Campaigns without |
+|---|---|---|---|---|---|
+| Share or referral | 4.3% | 3.1% | 43,173 | 6,959 | 73,326 |
+| Chat Members | 4.5% | 3.4% | 18,909 | 3,254 | 97,590 |
+| X Reposts | 4.0% | 3.4% | 27,474 | 5,658 | 89,025 |
+| Email Subscriptions | 3.9% | 3.3% | 38,418 | 5,715 | 78,081 |
+| Twitch Follows | 2.5% | 3.7% | 22,515 | 4,326 | 93,984 |
+
+For campaigns without repeatable Actions and lasting at most 14 days, the typical invalid share was 3.5% both with and without a validated question. The groups contain 509 campaigns from 77 businesses and 38,993 campaigns from 7,104 businesses, respectively (`analysis/output/extra_cuts.json`, `invalid_validated_question_clean`). Missing invalid values are counted as zero in this comparison too.
+
+Across the wider 116,499-campaign population, 42% had at least 5% invalid Entries and 7% had at least 20% (`analysis/output/extra_cuts.json`, `invalid_share_campaigns_5pct_plus`, `invalid_share_campaigns_20pct_plus`, `ordinary_n`). The source does not publish distinct-business counts for these threshold groups.
 
 ## Consent and rules
 

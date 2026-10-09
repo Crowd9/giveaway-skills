@@ -2,7 +2,7 @@
 name: giveaway-entry-method-planner
 description: "Choose giveaway actions, required steps and entry weights. Use for 'how should people enter', 'how many actions', 'bonus entries', 'review my entry list', 'TikTok giveaway entry methods', 'should I require an email', 'how do I get shares', 'qualified leads', or 'keep freebie hunters out'. Match email, social, community and UGC actions to the objective."
 metadata:
-  version: 1.2.36
+  version: 1.2.37
 ---
 
 # Giveaway Entry Method Planner
