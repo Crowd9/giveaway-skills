@@ -524,16 +524,7 @@
    "methods": 5,
    "share_with_repeatable": 0.356
   },
-  "food_drink": {
-   "n": 4681,
-   "organizers": 890,
-   "contestants": 635,
-   "entries_per_entrant": 3.613368283093054,
-   "contestants_per_impression": 0.2669353291114949,
-   "impressions_per_contestant": 3.7462257368799423,
-   "methods": 6,
-   "share_with_repeatable": 0.383
-  },
+  "food_drink": null,
   "travel_events": {
    "n": 3969,
    "organizers": 638,
@@ -563,7 +554,10 @@
    "impressions_per_contestant": 4.308951965065503,
    "methods": 7.0,
    "share_with_repeatable": 0.321
-  }
+  },
+  "suppressed_below_floor": [
+   "food_drink"
+  ]
  },
  "industry_clean": {
   "gaming_esports": {
@@ -848,36 +842,9 @@
    "methods": 7,
    "share_with_repeatable": 0.319
   },
-  "toys_hobbies_collectibles": {
-   "n": 4700,
-   "organizers": 750,
-   "contestants": 417.0,
-   "entries_per_entrant": 4.228278411161435,
-   "contestants_per_impression": 0.25944218477629283,
-   "impressions_per_contestant": 3.8544232922732364,
-   "methods": 7.0,
-   "share_with_repeatable": 0.409
-  },
-  "food_drink": {
-   "n": 4681,
-   "organizers": 890,
-   "contestants": 635,
-   "entries_per_entrant": 3.613368283093054,
-   "contestants_per_impression": 0.2669353291114949,
-   "impressions_per_contestant": 3.7462257368799423,
-   "methods": 6,
-   "share_with_repeatable": 0.383
-  },
-  "sports_outdoors": {
-   "n": 4635,
-   "organizers": 1013,
-   "contestants": 968,
-   "entries_per_entrant": 3.783410138248848,
-   "contestants_per_impression": 0.24388881734773543,
-   "impressions_per_contestant": 4.100229377776487,
-   "methods": 6,
-   "share_with_repeatable": 0.449
-  },
+  "toys_hobbies_collectibles": null,
+  "food_drink": null,
+  "sports_outdoors": null,
   "apparel_fashion": {
    "n": 4628,
    "organizers": 812,
@@ -918,16 +885,7 @@
    "methods": 7.0,
    "share_with_repeatable": 0.403
   },
-  "creator_influencer": {
-   "n": 3389,
-   "organizers": 1045,
-   "contestants": 316,
-   "entries_per_entrant": 4.815668202764977,
-   "contestants_per_impression": 0.37163814180929094,
-   "impressions_per_contestant": 2.6907894736842106,
-   "methods": 7,
-   "share_with_repeatable": 0.296
-  },
+  "creator_influencer": null,
   "health_wellness_fitness": {
    "n": 3160,
    "organizers": 498,
@@ -1018,16 +976,7 @@
    "methods": 7.0,
    "share_with_repeatable": 0.308
   },
-  "pets": {
-   "n": 947,
-   "organizers": 206,
-   "contestants": 745,
-   "entries_per_entrant": 3.9297945205479454,
-   "contestants_per_impression": 0.24641984106620385,
-   "impressions_per_contestant": 4.058120755120594,
-   "methods": 6,
-   "share_with_repeatable": 0.517
-  },
+  "pets": null,
   "local_services": {
    "n": 917,
    "organizers": 181,
@@ -1048,26 +997,17 @@
    "methods": 5.0,
    "share_with_repeatable": 0.27
   },
-  "nonprofit_community": {
-   "n": 516,
-   "organizers": 197,
-   "contestants": 396.0,
-   "entries_per_entrant": 3.2777255408062933,
-   "contestants_per_impression": 0.2814569536423841,
-   "impressions_per_contestant": 3.552941176470588,
-   "methods": 7.0,
-   "share_with_repeatable": 0.395
-  },
-  "jewelry_watches": {
-   "n": 418,
-   "organizers": 162,
-   "contestants": 492.0,
-   "entries_per_entrant": 3.992007664243156,
-   "contestants_per_impression": 0.20878472556224115,
-   "impressions_per_contestant": 4.789783158422159,
-   "methods": 7.0,
-   "share_with_repeatable": 0.347
-  }
+  "nonprofit_community": null,
+  "jewelry_watches": null,
+  "suppressed_below_floor": [
+   "toys_hobbies_collectibles",
+   "pets",
+   "creator_influencer",
+   "jewelry_watches",
+   "food_drink",
+   "nonprofit_community",
+   "sports_outdoors"
+  ]
  },
  "recency_by_vertical_clean": {
   "music_media": {

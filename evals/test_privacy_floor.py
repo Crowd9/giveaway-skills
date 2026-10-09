@@ -113,7 +113,7 @@ class PrivacyFloorTests(unittest.TestCase):
         holi = {"smaller_themes": {"Holi": {"n": 5, "organizers": 5,
                 "start_months": {"Mar": 4, "Dec": 1}}}}
         problems = privacy_problems(holi)
-        self.assertEqual(len(problems), 2)
+        self.assertEqual(len(problems), 4)
         self.assertNotIn("Dec", " ".join(problems))
         self.assertNotIn("Holi", " ".join(problems))
 
@@ -154,6 +154,84 @@ class PrivacyFloorTests(unittest.TestCase):
         problems = privacy_problems({"sensitive label": {"businesses": 1}})
         self.assertEqual(len(problems), 1)
         self.assertNotIn("sensitive label", problems[0])
+
+
+class ResidualPrivacyTests(unittest.TestCase):
+    def test_launchpad_parent_and_industry_subset_regression(self):
+        data = {"by_niche": {"cryptocurrency launchpad": {"n": 244, "sites": 18}},
+                "niche_by_industry": {"finance_crypto": {
+                    "cryptocurrency launchpad": {"n": 243, "sites": 17, "email_offered": 0.041}}}}
+        self.assertTrue(privacy_problems(data))
+        subset = data["niche_by_industry"]["finance_crypto"]
+        subset["cryptocurrency launchpad"] = None
+        subset["suppressed_below_floor"] = ["cryptocurrency launchpad"]
+        self.assertEqual(privacy_problems(data), [])
+
+    def test_residual_sum_checks_even_when_no_single_child_is_close(self):
+        data = {"by_niche": {"a": {"n": 100, "sites": 20}},
+                "niche_by_industry": {"i": {"a": {"n": 51, "sites": 10}},
+                                      "j": {"a": {"n": 47, "sites": 10}}}}
+        self.assertTrue(MODULE.residual_suppressions(data))
+        data["niche_by_industry"]["j"]["a"] = None
+        self.assertEqual(MODULE.residual_suppressions(data), [])
+
+    def test_business_counts_are_not_added_across_campaign_bands(self):
+        data = {"yield_by_asset": {"email": {"campaigns": 100, "organizers": 20}},
+                "yield_by_asset_and_band": {
+                    "email|small": {"campaigns": 50, "organizers": 10},
+                    "email|large": {"campaigns": 50, "organizers": 9}}}
+        self.assertEqual(MODULE.residual_suppressions(data), [])
+
+    def test_action_support_is_not_subtracted_from_campaign_support(self):
+        data = {"yield_by_asset_and_band": {"email|small": {"campaigns": 100, "organizers": 20}},
+                "yield_by_asset_and_mandatory": {
+                    "email|optional|small": {"campaigns": 99, "organizers": 10}}}
+        self.assertEqual(MODULE.residual_suppressions(data), [])
+        data["yield_by_asset_and_mandatory"]["email|optional|small"]["organizers"] = 19
+        self.assertTrue(MODULE.residual_suppressions(data))
+
+    def test_zero_and_five_residuals_are_allowed(self):
+        for n, businesses in ((100, 20), (95, 15)):
+            data = {"by_country": {"a": {"n": 100, "sites": 20}},
+                    "by_country_1k_plus": {"a": {"n": n, "sites": businesses}}}
+            self.assertEqual(MODULE.residual_suppressions(data), [])
+
+    def test_small_missing_month_is_not_recoverable_from_total(self):
+        data = {"n": 20, "start_months": {"Jan": 19, "suppressed_below_floor": 1}}
+        self.assertTrue(privacy_problems(data))
+        data["start_months"]["Jan"] = None
+        self.assertEqual(privacy_problems(data), [])
+
+    def test_cross_file_country_indicator_and_duplicate_industry_totals(self):
+        corpus = {"country_cuts.json": {"by_country": {"a": {"n": 100, "sites": 20}}},
+                  "indicators.json": {"duration_by_country": {"rows": {"a": {"n": 99, "sites": 20}}}},
+                  "prize_timing_cuts.json": {"by_industry_ordinary": {"food_drink": {"n": 100, "sites": 20}}},
+                  "roi_benchmarks.json": {"by_vertical": {"food_drink": {"n": 99, "organizers": 19}}}}
+        self.assertEqual(len(MODULE.corpus_residual_suppressions(corpus)), 2)
+
+    def test_unrelated_equal_labels_do_not_imply_same_population(self):
+        data = {"unrelated": {"a": {"n": 100, "sites": 20}},
+                "another": {"a": {"n": 99, "sites": 19}}}
+        self.assertEqual(MODULE.residual_suppressions(data), [])
+
+    def test_percentile_metrics_and_installed_copy_keep_suppression(self):
+        data = {"contestants": {"n": 100, "p": [10]},
+                "duration_days": {"n": 98, "p": [5]}}
+        self.assertTrue(MODULE.residual_suppressions(data))
+        data["duration_days"] = None
+        self.assertEqual(MODULE.residual_suppressions(data), [])
+        root = Path(__file__).resolve().parents[1]
+        import json
+        source = json.loads((root / "analysis/output/percentiles.json").read_text())
+        bundled = json.loads((root / "skills/giveaway-results-review/references/percentiles.json").read_text())
+        self.assertEqual(source, bundled)
+        self.assertIsNone(bundled["groups"]["vertical:food_drink"]["contestants"])
+
+    def test_definitions_and_null_cells_do_not_crash_residual_registry(self):
+        self.assertEqual(privacy_problems({"definitions": {
+            "channel_size_within_industry": "Meaning of the metric"}}), [])
+        data = {"by_niche": {"a": None}, "niche_by_industry": {"i": {"a": None}}}
+        self.assertEqual(privacy_problems(data), [])
 
 
 class CommittedFilePrivacyTests(unittest.TestCase):

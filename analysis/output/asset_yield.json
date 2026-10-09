@@ -4846,14 +4846,7 @@
    "usd_per_completion": 3.10077519379845,
    "valued_campaigns": 231
   },
-  "app_download|optional|10k+": {
-   "campaigns": 149,
-   "organizers": 55,
-   "median": 4931,
-   "per_contestant": 0.29661167287564305,
-   "usd_per_completion": 0.745527011743875,
-   "valued_campaigns": 56
-  },
+  "app_download|optional|10k+": null,
   "app_download|optional|1k-2.5k": {
    "campaigns": 739,
    "organizers": 246,
@@ -5174,22 +5167,8 @@
    "usd_per_completion": 0.7361624157364943,
    "valued_campaigns": 54
   },
-  "follow_bluesky|optional|250-500": {
-   "campaigns": 459,
-   "organizers": 145,
-   "median": 98,
-   "per_contestant": 0.2883895131086142,
-   "usd_per_completion": 1.2989203778677463,
-   "valued_campaigns": 148
-  },
-  "follow_bluesky|optional|500-1k": {
-   "campaigns": 300,
-   "organizers": 111,
-   "median": 152.0,
-   "per_contestant": 0.2271154675648095,
-   "usd_per_completion": 1.4,
-   "valued_campaigns": 83
-  },
+  "follow_bluesky|optional|250-500": null,
+  "follow_bluesky|optional|500-1k": null,
   "follow_facebook|mandatory|100-250": {
    "campaigns": 67,
    "organizers": 40,
@@ -5230,14 +5209,7 @@
    "usd_per_completion": 3.6909704203425013,
    "valued_campaigns": 382
   },
-  "follow_facebook|optional|10k+": {
-   "campaigns": 67,
-   "organizers": 40,
-   "median": 2671,
-   "per_contestant": 0.1863902485843171,
-   "usd_per_completion": 1.5656996022261422,
-   "valued_campaigns": 20
-  },
+  "follow_facebook|optional|10k+": null,
   "follow_facebook|optional|1k-2.5k": {
    "campaigns": 939,
    "organizers": 345,
@@ -5270,22 +5242,8 @@
    "usd_per_completion": 0.446888288702448,
    "valued_campaigns": 544
   },
-  "follow_goodreads|optional|100-250": {
-   "campaigns": 773,
-   "organizers": 50,
-   "median": 82,
-   "per_contestant": 0.4797687861271676,
-   "usd_per_completion": 0.410958904109589,
-   "valued_campaigns": 563
-  },
-  "follow_goodreads|optional|250-500": {
-   "campaigns": 1126,
-   "organizers": 32,
-   "median": 171.0,
-   "per_contestant": 0.4834273800903848,
-   "usd_per_completion": 0.1201923076923077,
-   "valued_campaigns": 996
-  },
+  "follow_goodreads|optional|100-250": null,
+  "follow_goodreads|optional|250-500": null,
   "follow_goodreads|optional|500-1k": {
    "campaigns": 273,
    "organizers": 23,
@@ -5406,14 +5364,7 @@
    "usd_per_completion": 1.3685047769745329,
    "valued_campaigns": 72
   },
-  "follow_kick|optional|2.5k-10k": {
-   "campaigns": 52,
-   "organizers": 19,
-   "median": 1117.5,
-   "per_contestant": 0.2986687582289637,
-   "usd_per_completion": 1.3096351730589335,
-   "valued_campaigns": 17
-  },
+  "follow_kick|optional|2.5k-10k": null,
   "follow_kick|optional|250-500": {
    "campaigns": 120,
    "organizers": 46,
@@ -5438,14 +5389,7 @@
    "usd_per_completion": 19.27392156862745,
    "valued_campaigns": 136
   },
-  "follow_linkedin|optional|10k+": {
-   "campaigns": 71,
-   "organizers": 27,
-   "median": 2869,
-   "per_contestant": 0.22155388471177945,
-   "usd_per_completion": 0.945273631840796,
-   "valued_campaigns": 17
-  },
+  "follow_linkedin|optional|10k+": null,
   "follow_linkedin|optional|1k-2.5k": {
    "campaigns": 389,
    "organizers": 118,
@@ -5454,30 +5398,9 @@
    "usd_per_completion": 3.003480278422274,
    "valued_campaigns": 173
   },
-  "follow_linkedin|optional|2.5k-10k": {
-   "campaigns": 296,
-   "organizers": 102,
-   "median": 998.0,
-   "per_contestant": 0.24199711517067907,
-   "usd_per_completion": 1.9319938176197837,
-   "valued_campaigns": 129
-  },
-  "follow_linkedin|optional|250-500": {
-   "campaigns": 308,
-   "organizers": 106,
-   "median": 101.0,
-   "per_contestant": 0.3008052663175109,
-   "usd_per_completion": 11.386637458926614,
-   "valued_campaigns": 100
-  },
-  "follow_linkedin|optional|500-1k": {
-   "campaigns": 293,
-   "organizers": 102,
-   "median": 198,
-   "per_contestant": 0.2727272727272727,
-   "usd_per_completion": 3.4722222222222223,
-   "valued_campaigns": 95
-  },
+  "follow_linkedin|optional|2.5k-10k": null,
+  "follow_linkedin|optional|250-500": null,
+  "follow_linkedin|optional|500-1k": null,
   "follow_pinterest|optional|100-250": {
    "campaigns": 224,
    "organizers": 82,
@@ -5486,38 +5409,10 @@
    "usd_per_completion": 3.6363636363636362,
    "valued_campaigns": 106
   },
-  "follow_pinterest|optional|1k-2.5k": {
-   "campaigns": 338,
-   "organizers": 51,
-   "median": 508.5,
-   "per_contestant": 0.40212281187007626,
-   "usd_per_completion": 0.3375,
-   "valued_campaigns": 271
-  },
-  "follow_pinterest|optional|2.5k-10k": {
-   "campaigns": 119,
-   "organizers": 28,
-   "median": 903,
-   "per_contestant": 0.21342962507682853,
-   "usd_per_completion": 1.414654454621149,
-   "valued_campaigns": 81
-  },
-  "follow_pinterest|optional|250-500": {
-   "campaigns": 259,
-   "organizers": 69,
-   "median": 135,
-   "per_contestant": 0.3987730061349693,
-   "usd_per_completion": 0.8065040650406504,
-   "valued_campaigns": 124
-  },
-  "follow_pinterest|optional|500-1k": {
-   "campaigns": 448,
-   "organizers": 63,
-   "median": 260.5,
-   "per_contestant": 0.37623011756569846,
-   "usd_per_completion": 0.6410256410256411,
-   "valued_campaigns": 347
-  },
+  "follow_pinterest|optional|1k-2.5k": null,
+  "follow_pinterest|optional|2.5k-10k": null,
+  "follow_pinterest|optional|250-500": null,
+  "follow_pinterest|optional|500-1k": null,
   "follow_snapchat|optional|100-250": {
    "campaigns": 196,
    "organizers": 40,
@@ -5534,38 +5429,10 @@
    "usd_per_completion": 0.9526353276353277,
    "valued_campaigns": 41
   },
-  "follow_snapchat|optional|1k-2.5k": {
-   "campaigns": 185,
-   "organizers": 42,
-   "median": 408,
-   "per_contestant": 0.24330783938814532,
-   "usd_per_completion": 2.6611675126903553,
-   "valued_campaigns": 101
-  },
-  "follow_snapchat|optional|2.5k-10k": {
-   "campaigns": 205,
-   "organizers": 36,
-   "median": 1285,
-   "per_contestant": 0.29199660633484165,
-   "usd_per_completion": 1.3437364542696142,
-   "valued_campaigns": 133
-  },
-  "follow_snapchat|optional|250-500": {
-   "campaigns": 188,
-   "organizers": 30,
-   "median": 58.0,
-   "per_contestant": 0.1705894569243017,
-   "usd_per_completion": 1.98,
-   "valued_campaigns": 111
-  },
-  "follow_snapchat|optional|500-1k": {
-   "campaigns": 157,
-   "organizers": 37,
-   "median": 130,
-   "per_contestant": 0.18421052631578946,
-   "usd_per_completion": 3.7080745341614905,
-   "valued_campaigns": 89
-  },
+  "follow_snapchat|optional|1k-2.5k": null,
+  "follow_snapchat|optional|2.5k-10k": null,
+  "follow_snapchat|optional|250-500": null,
+  "follow_snapchat|optional|500-1k": null,
   "follow_soundcloud|optional|100-250": {
    "campaigns": 166,
    "organizers": 37,
@@ -5654,22 +5521,8 @@
    "usd_per_completion": 0.718333081880294,
    "valued_campaigns": 224
   },
-  "follow_spotify|optional|2.5k-10k": {
-   "campaigns": 483,
-   "organizers": 115,
-   "median": 1035,
-   "per_contestant": 0.2526388888888889,
-   "usd_per_completion": 0.9501326179998795,
-   "valued_campaigns": 168
-  },
-  "follow_spotify|optional|250-500": {
-   "campaigns": 542,
-   "organizers": 162,
-   "median": 108.0,
-   "per_contestant": 0.3113387249258188,
-   "usd_per_completion": 1.9021739130434783,
-   "valued_campaigns": 167
-  },
+  "follow_spotify|optional|2.5k-10k": null,
+  "follow_spotify|optional|250-500": null,
   "follow_spotify|optional|500-1k": {
    "campaigns": 513,
    "organizers": 181,
@@ -5694,30 +5547,9 @@
    "usd_per_completion": 0.4957035249378382,
    "valued_campaigns": 162
   },
-  "follow_threads|optional|2.5k-10k": {
-   "campaigns": 79,
-   "organizers": 40,
-   "median": 813,
-   "per_contestant": 0.22402159244264508,
-   "usd_per_completion": 1.971326164874552,
-   "valued_campaigns": 31
-  },
-  "follow_threads|optional|250-500": {
-   "campaigns": 234,
-   "organizers": 64,
-   "median": 90.0,
-   "per_contestant": 0.2471801069362045,
-   "usd_per_completion": 0.704,
-   "valued_campaigns": 127
-  },
-  "follow_threads|optional|500-1k": {
-   "campaigns": 381,
-   "organizers": 53,
-   "median": 180,
-   "per_contestant": 0.24358974358974358,
-   "usd_per_completion": 0.3561643835616438,
-   "valued_campaigns": 279
-  },
+  "follow_threads|optional|2.5k-10k": null,
+  "follow_threads|optional|250-500": null,
+  "follow_threads|optional|500-1k": null,
   "follow_tiktok|mandatory|100-250": {
    "campaigns": 283,
    "organizers": 127,
@@ -5766,14 +5598,7 @@
    "usd_per_completion": 4.083916083916083,
    "valued_campaigns": 1172
   },
-  "follow_tiktok|optional|10k+": {
-   "campaigns": 491,
-   "organizers": 133,
-   "median": 4517,
-   "per_contestant": 0.274173971679029,
-   "usd_per_completion": 0.6806788851226224,
-   "valued_campaigns": 264
-  },
+  "follow_tiktok|optional|10k+": null,
   "follow_tiktok|optional|1k-2.5k": {
    "campaigns": 3755,
    "organizers": 960,
@@ -6134,14 +5959,7 @@
    "usd_per_completion": 2.413793103448276,
    "valued_campaigns": 393
   },
-  "subscribe_podcast|optional|10k+": {
-   "campaigns": 73,
-   "organizers": 25,
-   "median": 4232,
-   "per_contestant": 0.23207657745653448,
-   "usd_per_completion": 0.652502157031924,
-   "valued_campaigns": 30
-  },
+  "subscribe_podcast|optional|10k+": null,
   "subscribe_podcast|optional|1k-2.5k": {
    "campaigns": 686,
    "organizers": 143,
@@ -6150,14 +5968,7 @@
    "usd_per_completion": 1.0914234663490172,
    "valued_campaigns": 192
   },
-  "subscribe_podcast|optional|2.5k-10k": {
-   "campaigns": 453,
-   "organizers": 82,
-   "median": 1254,
-   "per_contestant": 0.28892698668818073,
-   "usd_per_completion": 0.8934266822248152,
-   "valued_campaigns": 129
-  },
+  "subscribe_podcast|optional|2.5k-10k": null,
   "subscribe_podcast|optional|250-500": {
    "campaigns": 1060,
    "organizers": 156,
@@ -6166,14 +5977,7 @@
    "usd_per_completion": 0.49019607843137253,
    "valued_campaigns": 561
   },
-  "subscribe_podcast|optional|500-1k": {
-   "campaigns": 1081,
-   "organizers": 141,
-   "median": 234,
-   "per_contestant": 0.33655172413793105,
-   "usd_per_completion": 0.3961528114070487,
-   "valued_campaigns": 384
-  },
+  "subscribe_podcast|optional|500-1k": null,
   "subscribe_youtube|mandatory|100-250": {
    "campaigns": 216,
    "organizers": 117,
@@ -6214,14 +6018,7 @@
    "usd_per_completion": 1.096774193548387,
    "valued_campaigns": 297
   },
-  "subscribe_youtube|optional|10k+": {
-   "campaigns": 49,
-   "organizers": 17,
-   "median": 7865,
-   "per_contestant": 0.41033046749059643,
-   "usd_per_completion": 0.35576192171451193,
-   "valued_campaigns": 24
-  },
+  "subscribe_youtube|optional|10k+": null,
   "subscribe_youtube|optional|1k-2.5k": {
    "campaigns": 676,
    "organizers": 144,
@@ -6494,14 +6291,7 @@
    "usd_per_completion": 38.10570859608364,
    "valued_campaigns": 472
   },
-  "ugc|optional|10k+": {
-   "campaigns": 105,
-   "organizers": 40,
-   "median": 647,
-   "per_contestant": 0.03676711431378971,
-   "usd_per_completion": 5.794223826714801,
-   "valued_campaigns": 29
-  },
+  "ugc|optional|10k+": null,
   "ugc|optional|1k-2.5k": {
    "campaigns": 623,
    "organizers": 278,
@@ -6533,7 +6323,39 @@
    "per_contestant": 0.08538007241086713,
    "usd_per_completion": 30.183823529411764,
    "valued_campaigns": 240
-  }
+  },
+  "suppressed_below_floor": [
+   "app_download|optional|10k+",
+   "follow_bluesky|optional|250-500",
+   "follow_bluesky|optional|500-1k",
+   "follow_facebook|optional|10k+",
+   "follow_goodreads|optional|100-250",
+   "follow_goodreads|optional|250-500",
+   "follow_kick|optional|2.5k-10k",
+   "follow_linkedin|optional|10k+",
+   "follow_linkedin|optional|2.5k-10k",
+   "follow_linkedin|optional|250-500",
+   "follow_linkedin|optional|500-1k",
+   "follow_pinterest|optional|1k-2.5k",
+   "follow_pinterest|optional|2.5k-10k",
+   "follow_pinterest|optional|250-500",
+   "follow_pinterest|optional|500-1k",
+   "follow_snapchat|optional|1k-2.5k",
+   "follow_snapchat|optional|2.5k-10k",
+   "follow_snapchat|optional|250-500",
+   "follow_snapchat|optional|500-1k",
+   "follow_spotify|optional|2.5k-10k",
+   "follow_spotify|optional|250-500",
+   "follow_threads|optional|2.5k-10k",
+   "follow_threads|optional|250-500",
+   "follow_threads|optional|500-1k",
+   "follow_tiktok|optional|10k+",
+   "subscribe_podcast|optional|10k+",
+   "subscribe_podcast|optional|2.5k-10k",
+   "subscribe_podcast|optional|500-1k",
+   "subscribe_youtube|optional|10k+",
+   "ugc|optional|10k+"
+  ]
  },
  "yield_by_asset_and_position": {
   "app_download|first|100-250": {
@@ -6672,14 +6494,7 @@
    "usd_per_completion": 0.782312925170068,
    "valued_campaigns": 547
   },
-  "comments|later|2.5k-10k": {
-   "campaigns": 335,
-   "organizers": 115,
-   "median": 1037,
-   "per_contestant": 0.252212389380531,
-   "usd_per_completion": 0.9900990099009901,
-   "valued_campaigns": 153
-  },
+  "comments|later|2.5k-10k": null,
   "comments|later|250-500": {
    "campaigns": 1980,
    "organizers": 306,
@@ -6744,14 +6559,7 @@
    "usd_per_completion": 2.214403645489367,
    "valued_campaigns": 1500
   },
-  "discord_join|later|10k+": {
-   "campaigns": 606,
-   "organizers": 141,
-   "median": 5305.0,
-   "per_contestant": 0.3099614168227759,
-   "usd_per_completion": 0.6001825834521066,
-   "valued_campaigns": 358
-  },
+  "discord_join|later|10k+": null,
   "discord_join|later|1k-2.5k": {
    "campaigns": 3682,
    "organizers": 866,
@@ -6896,14 +6704,7 @@
    "usd_per_completion": 1.3321739130434782,
    "valued_campaigns": 260
   },
-  "follow_bluesky|later|1k-2.5k": {
-   "campaigns": 207,
-   "organizers": 104,
-   "median": 406,
-   "per_contestant": 0.2735562310030395,
-   "usd_per_completion": 0.9615384615384616,
-   "valued_campaigns": 81
-  },
+  "follow_bluesky|later|1k-2.5k": null,
   "follow_bluesky|later|2.5k-10k": {
    "campaigns": 121,
    "organizers": 56,
@@ -6968,14 +6769,7 @@
    "usd_per_completion": 4.2682926829268295,
    "valued_campaigns": 349
   },
-  "follow_facebook|later|10k+": {
-   "campaigns": 72,
-   "organizers": 42,
-   "median": 2837.5,
-   "per_contestant": 0.2198581378992936,
-   "usd_per_completion": 1.402554388863921,
-   "valued_campaigns": 20
-  },
+  "follow_facebook|later|10k+": null,
   "follow_facebook|later|1k-2.5k": {
    "campaigns": 947,
    "organizers": 350,
@@ -7008,14 +6802,7 @@
    "usd_per_completion": 0.45496360521141177,
    "valued_campaigns": 546
   },
-  "follow_goodreads|later|100-250": {
-   "campaigns": 762,
-   "organizers": 50,
-   "median": 82.0,
-   "per_contestant": 0.47961042046084407,
-   "usd_per_completion": 0.40733366517338643,
-   "valued_campaigns": 556
-  },
+  "follow_goodreads|later|100-250": null,
   "follow_goodreads|later|250-500": {
    "campaigns": 1121,
    "organizers": 33,
@@ -7080,14 +6867,7 @@
    "usd_per_completion": 4.132231404958677,
    "valued_campaigns": 939
   },
-  "follow_instagram|later|10k+": {
-   "campaigns": 306,
-   "organizers": 91,
-   "median": 5624.5,
-   "per_contestant": 0.4108418294988047,
-   "usd_per_completion": 0.579593430125436,
-   "valued_campaigns": 134
-  },
+  "follow_instagram|later|10k+": null,
   "follow_instagram|later|1k-2.5k": {
    "campaigns": 2555,
    "organizers": 648,
@@ -7128,22 +6908,8 @@
    "usd_per_completion": 1.3506541367237885,
    "valued_campaigns": 52
   },
-  "follow_kick|later|1k-2.5k": {
-   "campaigns": 218,
-   "organizers": 31,
-   "median": 571.5,
-   "per_contestant": 0.4239732054666595,
-   "usd_per_completion": 1.4125235361490427,
-   "valued_campaigns": 78
-  },
-  "follow_kick|later|2.5k-10k": {
-   "campaigns": 53,
-   "organizers": 20,
-   "median": 1109,
-   "per_contestant": 0.2956509005710939,
-   "usd_per_completion": 1.8399264029438822,
-   "valued_campaigns": 17
-  },
+  "follow_kick|later|1k-2.5k": null,
+  "follow_kick|later|2.5k-10k": null,
   "follow_kick|later|250-500": {
    "campaigns": 140,
    "organizers": 51,
@@ -7152,14 +6918,7 @@
    "usd_per_completion": 0.6015037593984962,
    "valued_campaigns": 45
   },
-  "follow_kick|later|500-1k": {
-   "campaigns": 142,
-   "organizers": 39,
-   "median": 382.0,
-   "per_contestant": 0.4981955245542967,
-   "usd_per_completion": 1.9586627589967285,
-   "valued_campaigns": 50
-  },
+  "follow_kick|later|500-1k": null,
   "follow_linkedin|later|100-250": {
    "campaigns": 361,
    "organizers": 111,
@@ -7176,38 +6935,10 @@
    "usd_per_completion": 1.046031311333242,
    "valued_campaigns": 18
   },
-  "follow_linkedin|later|1k-2.5k": {
-   "campaigns": 402,
-   "organizers": 121,
-   "median": 405.0,
-   "per_contestant": 0.26681749622926093,
-   "usd_per_completion": 2.9411764705882355,
-   "valued_campaigns": 177
-  },
-  "follow_linkedin|later|2.5k-10k": {
-   "campaigns": 299,
-   "organizers": 102,
-   "median": 1000,
-   "per_contestant": 0.24271070615034168,
-   "usd_per_completion": 1.9351403678606003,
-   "valued_campaigns": 127
-  },
-  "follow_linkedin|later|250-500": {
-   "campaigns": 310,
-   "organizers": 107,
-   "median": 102.0,
-   "per_contestant": 0.3018934155940857,
-   "usd_per_completion": 11.386637458926614,
-   "valued_campaigns": 100
-  },
-  "follow_linkedin|later|500-1k": {
-   "campaigns": 296,
-   "organizers": 102,
-   "median": 199.5,
-   "per_contestant": 0.27299307118584226,
-   "usd_per_completion": 3.4722222222222223,
-   "valued_campaigns": 95
-  },
+  "follow_linkedin|later|1k-2.5k": null,
+  "follow_linkedin|later|2.5k-10k": null,
+  "follow_linkedin|later|250-500": null,
+  "follow_linkedin|later|500-1k": null,
   "follow_pinterest|later|100-250": {
    "campaigns": 263,
    "organizers": 88,
@@ -7240,14 +6971,7 @@
    "usd_per_completion": 0.6120071684587813,
    "valued_campaigns": 134
   },
-  "follow_pinterest|later|500-1k": {
-   "campaigns": 521,
-   "organizers": 62,
-   "median": 277,
-   "per_contestant": 0.38863976083707025,
-   "usd_per_completion": 0.6116207951070336,
-   "valued_campaigns": 359
-  },
+  "follow_pinterest|later|500-1k": null,
   "follow_snapchat|later|100-250": {
    "campaigns": 196,
    "organizers": 40,
@@ -7264,22 +6988,8 @@
    "usd_per_completion": 0.9526353276353277,
    "valued_campaigns": 41
   },
-  "follow_snapchat|later|1k-2.5k": {
-   "campaigns": 187,
-   "organizers": 44,
-   "median": 415,
-   "per_contestant": 0.24558823529411763,
-   "usd_per_completion": 2.717391304347826,
-   "valued_campaigns": 103
-  },
-  "follow_snapchat|later|2.5k-10k": {
-   "campaigns": 204,
-   "organizers": 36,
-   "median": 1283.5,
-   "per_contestant": 0.28955552426860276,
-   "usd_per_completion": 1.3437364542696142,
-   "valued_campaigns": 133
-  },
+  "follow_snapchat|later|1k-2.5k": null,
+  "follow_snapchat|later|2.5k-10k": null,
   "follow_snapchat|later|250-500": {
    "campaigns": 189,
    "organizers": 31,
@@ -7376,14 +7086,7 @@
    "usd_per_completion": 4.861111111111111,
    "valued_campaigns": 179
   },
-  "follow_spotify|later|10k+": {
-   "campaigns": 87,
-   "organizers": 34,
-   "median": 1943,
-   "per_contestant": 0.14023218909212395,
-   "usd_per_completion": 0.9428032683846638,
-   "valued_campaigns": 21
-  },
+  "follow_spotify|later|10k+": null,
   "follow_spotify|later|1k-2.5k": {
    "campaigns": 493,
    "organizers": 160,
@@ -7392,14 +7095,7 @@
    "usd_per_completion": 0.7724886661894537,
    "valued_campaigns": 208
   },
-  "follow_spotify|later|2.5k-10k": {
-   "campaigns": 479,
-   "organizers": 113,
-   "median": 1033,
-   "per_contestant": 0.25136612021857924,
-   "usd_per_completion": 1.0136164209699732,
-   "valued_campaigns": 164
-  },
+  "follow_spotify|later|2.5k-10k": null,
   "follow_spotify|later|250-500": {
    "campaigns": 530,
    "organizers": 155,
@@ -7416,14 +7112,7 @@
    "usd_per_completion": 1.268258426966292,
    "valued_campaigns": 220
   },
-  "follow_threads|later|100-250": {
-   "campaigns": 285,
-   "organizers": 112,
-   "median": 34,
-   "per_contestant": 0.20670391061452514,
-   "usd_per_completion": 2.0595238095238093,
-   "valued_campaigns": 80
-  },
+  "follow_threads|later|100-250": null,
   "follow_threads|later|1k-2.5k": {
    "campaigns": 228,
    "organizers": 46,
@@ -7440,22 +7129,8 @@
    "usd_per_completion": 1.742871277459678,
    "valued_campaigns": 34
   },
-  "follow_threads|later|250-500": {
-   "campaigns": 233,
-   "organizers": 64,
-   "median": 91,
-   "per_contestant": 0.2478448275862069,
-   "usd_per_completion": 0.7056585365853658,
-   "valued_campaigns": 128
-  },
-  "follow_threads|later|500-1k": {
-   "campaigns": 384,
-   "organizers": 55,
-   "median": 181.0,
-   "per_contestant": 0.2447170808853653,
-   "usd_per_completion": 0.35782075387232515,
-   "valued_campaigns": 280
-  },
+  "follow_threads|later|250-500": null,
+  "follow_threads|later|500-1k": null,
   "follow_tiktok|first|100-250": {
    "campaigns": 144,
    "organizers": 73,
@@ -7504,14 +7179,7 @@
    "usd_per_completion": 3.9285714285714284,
    "valued_campaigns": 1237
   },
-  "follow_tiktok|later|10k+": {
-   "campaigns": 499,
-   "organizers": 136,
-   "median": 4530,
-   "per_contestant": 0.274173971679029,
-   "usd_per_completion": 0.6841700162490378,
-   "valued_campaigns": 257
-  },
+  "follow_tiktok|later|10k+": null,
   "follow_tiktok|later|1k-2.5k": {
    "campaigns": 3850,
    "organizers": 981,
@@ -7896,14 +7564,7 @@
    "usd_per_completion": 1.0768441297316198,
    "valued_campaigns": 182
   },
-  "subscribe_podcast|later|2.5k-10k": {
-   "campaigns": 446,
-   "organizers": 82,
-   "median": 1244.0,
-   "per_contestant": 0.2871560665691144,
-   "usd_per_completion": 0.8934266822248152,
-   "valued_campaigns": 129
-  },
+  "subscribe_podcast|later|2.5k-10k": null,
   "subscribe_podcast|later|250-500": {
    "campaigns": 1051,
    "organizers": 158,
@@ -8056,14 +7717,7 @@
    "usd_per_completion": 1.3793759512937593,
    "valued_campaigns": 272
   },
-  "telegram_join|later|10k+": {
-   "campaigns": 89,
-   "organizers": 29,
-   "median": 10867,
-   "per_contestant": 0.7635973339026068,
-   "usd_per_completion": 0.592059511846881,
-   "valued_campaigns": 40
-  },
+  "telegram_join|later|10k+": null,
   "telegram_join|later|1k-2.5k": {
    "campaigns": 1171,
    "organizers": 181,
@@ -8240,14 +7894,7 @@
    "usd_per_completion": 50.0,
    "valued_campaigns": 441
   },
-  "ugc|later|10k+": {
-   "campaigns": 103,
-   "organizers": 38,
-   "median": 647,
-   "per_contestant": 0.03676711431378971,
-   "usd_per_completion": 5.794223826714801,
-   "valued_campaigns": 29
-  },
+  "ugc|later|10k+": null,
   "ugc|later|1k-2.5k": {
    "campaigns": 596,
    "organizers": 260,
@@ -8279,7 +7926,34 @@
    "per_contestant": 0.09,
    "usd_per_completion": 30.259615384615387,
    "valued_campaigns": 226
-  }
+  },
+  "suppressed_below_floor": [
+   "comments|later|2.5k-10k",
+   "discord_join|later|10k+",
+   "follow_bluesky|later|1k-2.5k",
+   "follow_facebook|later|10k+",
+   "follow_goodreads|later|100-250",
+   "follow_instagram|later|10k+",
+   "follow_kick|later|1k-2.5k",
+   "follow_kick|later|2.5k-10k",
+   "follow_kick|later|500-1k",
+   "follow_linkedin|later|1k-2.5k",
+   "follow_linkedin|later|2.5k-10k",
+   "follow_linkedin|later|250-500",
+   "follow_linkedin|later|500-1k",
+   "follow_pinterest|later|500-1k",
+   "follow_snapchat|later|1k-2.5k",
+   "follow_snapchat|later|2.5k-10k",
+   "follow_spotify|later|10k+",
+   "follow_spotify|later|2.5k-10k",
+   "follow_threads|later|100-250",
+   "follow_threads|later|250-500",
+   "follow_threads|later|500-1k",
+   "follow_tiktok|later|10k+",
+   "subscribe_podcast|later|2.5k-10k",
+   "telegram_join|later|10k+",
+   "ugc|later|10k+"
+  ]
  },
  "yield_by_asset_and_worth_tier": {
   "app_download|boosted_worth|100-250": {
@@ -9322,14 +8996,7 @@
    "usd_per_completion": 0.8711425390529868,
    "valued_campaigns": 24
   },
-  "follow_soundcloud|default_worth|2.5k-10k": {
-   "campaigns": 63,
-   "organizers": 10,
-   "median": 837,
-   "per_contestant": 0.2268640350877193,
-   "usd_per_completion": 2.3699460916442048,
-   "valued_campaigns": 13
-  },
+  "follow_soundcloud|default_worth|2.5k-10k": null,
   "follow_soundcloud|default_worth|250-500": {
    "campaigns": 137,
    "organizers": 15,
@@ -10393,7 +10060,10 @@
    "per_contestant": 0.42395437262357416,
    "usd_per_completion": 8.72340425531915,
    "valued_campaigns": 70
-  }
+  },
+  "suppressed_below_floor": [
+   "follow_soundcloud|default_worth|2.5k-10k"
+  ]
  },
  "yield_by_asset_and_action_count": {
   "app_download|1-3|100-250": {
@@ -11308,14 +10978,7 @@
    "usd_per_completion": 0.125,
    "valued_campaigns": 116
   },
-  "follow_bluesky|4-6|250-500": {
-   "campaigns": 96,
-   "organizers": 27,
-   "median": 122.0,
-   "per_contestant": 0.41519622951661783,
-   "usd_per_completion": 1.2820512820512822,
-   "valued_campaigns": 11
-  },
+  "follow_bluesky|4-6|250-500": null,
   "follow_bluesky|7-10|100-250": {
    "campaigns": 240,
    "organizers": 118,
@@ -11524,14 +11187,7 @@
    "usd_per_completion": 0.09634508515760343,
    "valued_campaigns": 136
   },
-  "follow_goodreads|4-6|100-250": {
-   "campaigns": 56,
-   "organizers": 18,
-   "median": 81.0,
-   "per_contestant": 0.5945420851267336,
-   "usd_per_completion": 0.354676710608914,
-   "valued_campaigns": 42
-  },
+  "follow_goodreads|4-6|100-250": null,
   "follow_goodreads|7-10|100-250": {
    "campaigns": 185,
    "organizers": 24,
@@ -11852,14 +11508,7 @@
    "usd_per_completion": 15.792682926829269,
    "valued_campaigns": 47
   },
-  "follow_linkedin|4-6|250-500": {
-   "campaigns": 46,
-   "organizers": 28,
-   "median": 144.5,
-   "per_contestant": 0.47306257770410276,
-   "usd_per_completion": 10.791666666666666,
-   "valued_campaigns": 23
-  },
+  "follow_linkedin|4-6|250-500": null,
   "follow_linkedin|7-10|100-250": {
    "campaigns": 108,
    "organizers": 42,
@@ -11980,14 +11629,7 @@
    "usd_per_completion": 1.0552248677248677,
    "valued_campaigns": 40
   },
-  "follow_snapchat|11+|100-250": {
-   "campaigns": 80,
-   "organizers": 24,
-   "median": 34.5,
-   "per_contestant": 0.168373745819398,
-   "usd_per_completion": 3.8076923076923075,
-   "valued_campaigns": 57
-  },
+  "follow_snapchat|11+|100-250": null,
   "follow_snapchat|11+|1k-2.5k": {
    "campaigns": 160,
    "organizers": 31,
@@ -12036,14 +11678,7 @@
    "usd_per_completion": 2.475910693301998,
    "valued_campaigns": 36
   },
-  "follow_soundcloud|11+|1k-2.5k": {
-   "campaigns": 74,
-   "organizers": 28,
-   "median": 383.0,
-   "per_contestant": 0.23474757166289908,
-   "usd_per_completion": 1.2678288431061806,
-   "valued_campaigns": 27
-  },
+  "follow_soundcloud|11+|1k-2.5k": null,
   "follow_soundcloud|11+|250-500": {
    "campaigns": 145,
    "organizers": 23,
@@ -12124,14 +11759,7 @@
    "usd_per_completion": 0.5103312526599517,
    "valued_campaigns": 16
   },
-  "follow_spotify|4-6|2.5k-10k": {
-   "campaigns": 31,
-   "organizers": 14,
-   "median": 1810,
-   "per_contestant": 0.35376204862609695,
-   "usd_per_completion": 0.4287138584247258,
-   "valued_campaigns": 19
-  },
+  "follow_spotify|4-6|2.5k-10k": null,
   "follow_spotify|4-6|250-500": {
    "campaigns": 34,
    "organizers": 25,
@@ -12228,14 +11856,7 @@
    "usd_per_completion": 0.348653807514567,
    "valued_campaigns": 270
   },
-  "follow_threads|4-6|100-250": {
-   "campaigns": 51,
-   "organizers": 27,
-   "median": 45,
-   "per_contestant": 0.2621951219512195,
-   "usd_per_completion": 1.8518518518518519,
-   "valued_campaigns": 15
-  },
+  "follow_threads|4-6|100-250": null,
   "follow_threads|7-10|100-250": {
    "campaigns": 154,
    "organizers": 49,
@@ -12444,14 +12065,7 @@
    "usd_per_completion": 5.357142857142857,
    "valued_campaigns": 17
   },
-  "follow_tumblr|11+|1k-2.5k": {
-   "campaigns": 57,
-   "organizers": 14,
-   "median": 172,
-   "per_contestant": 0.11399787910922587,
-   "usd_per_completion": 2.049645390070922,
-   "valued_campaigns": 43
-  },
+  "follow_tumblr|11+|1k-2.5k": null,
   "follow_tumblr|11+|250-500": {
    "campaigns": 44,
    "organizers": 17,
@@ -13284,22 +12898,8 @@
    "usd_per_completion": 3.597122302158273,
    "valued_campaigns": 25
   },
-  "subscribe_podcast|4-6|1k-2.5k": {
-   "campaigns": 44,
-   "organizers": 27,
-   "median": 602.5,
-   "per_contestant": 0.4134622518167168,
-   "usd_per_completion": 1.417004048582996,
-   "valued_campaigns": 21
-  },
-  "subscribe_podcast|4-6|2.5k-10k": {
-   "campaigns": 41,
-   "organizers": 14,
-   "median": 1862,
-   "per_contestant": 0.48240791643760306,
-   "usd_per_completion": 1.347249854611123,
-   "valued_campaigns": 10
-  },
+  "subscribe_podcast|4-6|1k-2.5k": null,
+  "subscribe_podcast|4-6|2.5k-10k": null,
   "subscribe_podcast|4-6|250-500": {
    "campaigns": 56,
    "organizers": 29,
@@ -14027,7 +13627,19 @@
    "per_contestant": 0.13654618473895583,
    "usd_per_completion": 26.73157894736842,
    "valued_campaigns": 66
-  }
+  },
+  "suppressed_below_floor": [
+   "follow_bluesky|4-6|250-500",
+   "follow_goodreads|4-6|100-250",
+   "follow_linkedin|4-6|250-500",
+   "follow_snapchat|11+|100-250",
+   "follow_soundcloud|11+|1k-2.5k",
+   "follow_spotify|4-6|2.5k-10k",
+   "follow_threads|4-6|100-250",
+   "follow_tumblr|11+|1k-2.5k",
+   "subscribe_podcast|4-6|1k-2.5k",
+   "subscribe_podcast|4-6|2.5k-10k"
+  ]
  },
  "yield_by_asset_and_duration": {
   "app_download|15+|100-250": {
@@ -14126,38 +13738,10 @@
    "usd_per_completion": 4.746835443037975,
    "valued_campaigns": 53
   },
-  "app_download|8-14|1k-2.5k": {
-   "campaigns": 164,
-   "organizers": 79,
-   "median": 619.0,
-   "per_contestant": 0.39249758494500075,
-   "usd_per_completion": 1.1194029850746268,
-   "valued_campaigns": 101
-  },
-  "app_download|8-14|2.5k-10k": {
-   "campaigns": 107,
-   "organizers": 55,
-   "median": 1745,
-   "per_contestant": 0.3841266422571613,
-   "usd_per_completion": 0.7122507122507122,
-   "valued_campaigns": 51
-  },
-  "app_download|8-14|250-500": {
-   "campaigns": 145,
-   "organizers": 70,
-   "median": 166,
-   "per_contestant": 0.5,
-   "usd_per_completion": 0.47244094488188976,
-   "valued_campaigns": 71
-  },
-  "app_download|8-14|500-1k": {
-   "campaigns": 190,
-   "organizers": 82,
-   "median": 251.0,
-   "per_contestant": 0.37007837084161244,
-   "usd_per_completion": 0.3599587897647232,
-   "valued_campaigns": 124
-  },
+  "app_download|8-14|1k-2.5k": null,
+  "app_download|8-14|2.5k-10k": null,
+  "app_download|8-14|250-500": null,
+  "app_download|8-14|500-1k": null,
   "comments|15+|100-250": {
    "campaigns": 1408,
    "organizers": 306,
@@ -14246,22 +13830,8 @@
    "usd_per_completion": 1.125,
    "valued_campaigns": 511
   },
-  "comments|8-14|1k-2.5k": {
-   "campaigns": 99,
-   "organizers": 62,
-   "median": 426,
-   "per_contestant": 0.3276627218934911,
-   "usd_per_completion": 1.4227642276422765,
-   "valued_campaigns": 45
-  },
-  "comments|8-14|2.5k-10k": {
-   "campaigns": 50,
-   "organizers": 35,
-   "median": 1332.0,
-   "per_contestant": 0.3888407845352332,
-   "usd_per_completion": 0.7066302418724203,
-   "valued_campaigns": 22
-  },
+  "comments|8-14|1k-2.5k": null,
+  "comments|8-14|2.5k-10k": null,
   "comments|8-14|250-500": {
    "campaigns": 467,
    "organizers": 103,
@@ -14334,14 +13904,7 @@
    "usd_per_completion": 2.0722186076772937,
    "valued_campaigns": 448
   },
-  "discord_join|7 or fewer|10k+": {
-   "campaigns": 59,
-   "organizers": 27,
-   "median": 13675,
-   "per_contestant": 0.6122250121800398,
-   "usd_per_completion": 0.4810776138550353,
-   "valued_campaigns": 17
-  },
+  "discord_join|7 or fewer|10k+": null,
   "discord_join|7 or fewer|1k-2.5k": {
    "campaigns": 986,
    "organizers": 253,
@@ -14758,14 +14321,7 @@
    "usd_per_completion": 0.1266025641025641,
    "valued_campaigns": 52
   },
-  "follow_bluesky|7 or fewer|1k-2.5k": {
-   "campaigns": 38,
-   "organizers": 21,
-   "median": 473.5,
-   "per_contestant": 0.3336230723775757,
-   "usd_per_completion": 0.8678500986193294,
-   "valued_campaigns": 11
-  },
+  "follow_bluesky|7 or fewer|1k-2.5k": null,
   "follow_bluesky|7 or fewer|250-500": {
    "campaigns": 106,
    "organizers": 39,
@@ -14798,14 +14354,7 @@
    "usd_per_completion": 0.9115744698381965,
    "valued_campaigns": 14
   },
-  "follow_bluesky|8-14|250-500": {
-   "campaigns": 98,
-   "organizers": 49,
-   "median": 93.5,
-   "per_contestant": 0.25059187963270274,
-   "usd_per_completion": 1.0677966101694916,
-   "valued_campaigns": 21
-  },
+  "follow_bluesky|8-14|250-500": null,
   "follow_bluesky|8-14|500-1k": {
    "campaigns": 69,
    "organizers": 43,
@@ -14878,14 +14427,7 @@
    "usd_per_completion": 0.5889281507656066,
    "valued_campaigns": 55
   },
-  "follow_facebook|7 or fewer|2.5k-10k": {
-   "campaigns": 37,
-   "organizers": 23,
-   "median": 1484,
-   "per_contestant": 0.3824181236148732,
-   "usd_per_completion": 0.5920104921665407,
-   "valued_campaigns": 12
-  },
+  "follow_facebook|7 or fewer|2.5k-10k": null,
   "follow_facebook|7 or fewer|250-500": {
    "campaigns": 90,
    "organizers": 70,
@@ -15254,22 +14796,8 @@
    "usd_per_completion": 6.672934379768912,
    "valued_campaigns": 26
   },
-  "follow_linkedin|8-14|100-250": {
-   "campaigns": 57,
-   "organizers": 31,
-   "median": 80,
-   "per_contestant": 0.4731182795698925,
-   "usd_per_completion": 15.792682926829269,
-   "valued_campaigns": 35
-  },
-  "follow_linkedin|8-14|1k-2.5k": {
-   "campaigns": 69,
-   "organizers": 31,
-   "median": 415,
-   "per_contestant": 0.27580645161290324,
-   "usd_per_completion": 8.292214912280702,
-   "valued_campaigns": 22
-  },
+  "follow_linkedin|8-14|100-250": null,
+  "follow_linkedin|8-14|1k-2.5k": null,
   "follow_linkedin|8-14|2.5k-10k": {
    "campaigns": 33,
    "organizers": 20,
@@ -15302,14 +14830,7 @@
    "usd_per_completion": 1.4098972922502335,
    "valued_campaigns": 50
   },
-  "follow_pinterest|15+|1k-2.5k": {
-   "campaigns": 95,
-   "organizers": 34,
-   "median": 561,
-   "per_contestant": 0.3856893542757417,
-   "usd_per_completion": 0.6505576208178439,
-   "valued_campaigns": 73
-  },
+  "follow_pinterest|15+|1k-2.5k": null,
   "follow_pinterest|15+|2.5k-10k": {
    "campaigns": 72,
    "organizers": 22,
@@ -15606,46 +15127,11 @@
    "usd_per_completion": 0.7522522522522522,
    "valued_campaigns": 17
   },
-  "follow_spotify|8-14|100-250": {
-   "campaigns": 122,
-   "organizers": 61,
-   "median": 63.5,
-   "per_contestant": 0.39633805961817575,
-   "usd_per_completion": 2.8424908424908426,
-   "valued_campaigns": 29
-  },
-  "follow_spotify|8-14|1k-2.5k": {
-   "campaigns": 57,
-   "organizers": 46,
-   "median": 515,
-   "per_contestant": 0.3164451827242525,
-   "usd_per_completion": 1.0282911263493788,
-   "valued_campaigns": 24
-  },
-  "follow_spotify|8-14|2.5k-10k": {
-   "campaigns": 70,
-   "organizers": 32,
-   "median": 1073.0,
-   "per_contestant": 0.26597181336387593,
-   "usd_per_completion": 0.8212328767123288,
-   "valued_campaigns": 31
-  },
-  "follow_spotify|8-14|250-500": {
-   "campaigns": 99,
-   "organizers": 63,
-   "median": 127,
-   "per_contestant": 0.3938618925831202,
-   "usd_per_completion": 2.074468085106383,
-   "valued_campaigns": 27
-  },
-  "follow_spotify|8-14|500-1k": {
-   "campaigns": 77,
-   "organizers": 52,
-   "median": 248,
-   "per_contestant": 0.3515151515151515,
-   "usd_per_completion": 1.5452390536249383,
-   "valued_campaigns": 36
-  },
+  "follow_spotify|8-14|100-250": null,
+  "follow_spotify|8-14|1k-2.5k": null,
+  "follow_spotify|8-14|2.5k-10k": null,
+  "follow_spotify|8-14|250-500": null,
+  "follow_spotify|8-14|500-1k": null,
   "follow_threads|15+|100-250": {
    "campaigns": 144,
    "organizers": 62,
@@ -15998,14 +15484,7 @@
    "usd_per_completion": 0.7692307692307693,
    "valued_campaigns": 635
   },
-  "follow_twitch|8-14|10k+": {
-   "campaigns": 188,
-   "organizers": 52,
-   "median": 8838.0,
-   "per_contestant": 0.327876605804441,
-   "usd_per_completion": 0.6261180679785331,
-   "valued_campaigns": 139
-  },
+  "follow_twitch|8-14|10k+": null,
   "follow_twitch|8-14|1k-2.5k": {
    "campaigns": 650,
    "organizers": 318,
@@ -16478,14 +15957,7 @@
    "usd_per_completion": 3.077205882352941,
    "valued_campaigns": 124
   },
-  "subscribe_podcast|15+|10k+": {
-   "campaigns": 42,
-   "organizers": 23,
-   "median": 4227.0,
-   "per_contestant": 0.2706404047415348,
-   "usd_per_completion": 1.2181679059060544,
-   "valued_campaigns": 12
-  },
+  "subscribe_podcast|15+|10k+": null,
   "subscribe_podcast|15+|1k-2.5k": {
    "campaigns": 229,
    "organizers": 101,
@@ -16558,14 +16030,7 @@
    "usd_per_completion": 1.9118595947864239,
    "valued_campaigns": 26
   },
-  "subscribe_podcast|8-14|100-250": {
-   "campaigns": 119,
-   "organizers": 72,
-   "median": 75,
-   "per_contestant": 0.4326241134751773,
-   "usd_per_completion": 2.7777777777777777,
-   "valued_campaigns": 69
-  },
+  "subscribe_podcast|8-14|100-250": null,
   "subscribe_podcast|8-14|1k-2.5k": {
    "campaigns": 72,
    "organizers": 44,
@@ -16606,14 +16071,7 @@
    "usd_per_completion": 0.825,
    "valued_campaigns": 174
   },
-  "subscribe_youtube|15+|10k+": {
-   "campaigns": 45,
-   "organizers": 17,
-   "median": 7623,
-   "per_contestant": 0.3855816493719279,
-   "usd_per_completion": 0.35576192171451193,
-   "valued_campaigns": 24
-  },
+  "subscribe_youtube|15+|10k+": null,
   "subscribe_youtube|15+|1k-2.5k": {
    "campaigns": 247,
    "organizers": 115,
@@ -16702,14 +16160,7 @@
    "usd_per_completion": 0.21114864864864866,
    "valued_campaigns": 51
   },
-  "subscribe_youtube|8-14|2.5k-10k": {
-   "campaigns": 63,
-   "organizers": 30,
-   "median": 1539,
-   "per_contestant": 0.4466305951795376,
-   "usd_per_completion": 0.47233468286099867,
-   "valued_campaigns": 37
-  },
+  "subscribe_youtube|8-14|2.5k-10k": null,
   "subscribe_youtube|8-14|250-500": {
    "campaigns": 112,
    "organizers": 72,
@@ -16822,14 +16273,7 @@
    "usd_per_completion": 2.4594017094017095,
    "valued_campaigns": 60
   },
-  "telegram_join|8-14|1k-2.5k": {
-   "campaigns": 157,
-   "organizers": 58,
-   "median": 908,
-   "per_contestant": 0.6252059308072487,
-   "usd_per_completion": 0.7875386268921895,
-   "valued_campaigns": 118
-  },
+  "telegram_join|8-14|1k-2.5k": null,
   "telegram_join|8-14|2.5k-10k": {
    "campaigns": 69,
    "organizers": 39,
@@ -17062,14 +16506,7 @@
    "usd_per_completion": 23.31111111111111,
    "valued_campaigns": 25
   },
-  "ugc|7 or fewer|2.5k-10k": {
-   "campaigns": 30,
-   "organizers": 22,
-   "median": 754.5,
-   "per_contestant": 0.16388805367080572,
-   "usd_per_completion": 3.6748466257668713,
-   "valued_campaigns": 13
-  },
+  "ugc|7 or fewer|2.5k-10k": null,
   "ugc|7 or fewer|250-500": {
    "campaigns": 124,
    "organizers": 67,
@@ -17078,14 +16515,7 @@
    "usd_per_completion": 27.763636363636362,
    "valued_campaigns": 38
   },
-  "ugc|7 or fewer|500-1k": {
-   "campaigns": 72,
-   "organizers": 38,
-   "median": 166.0,
-   "per_contestant": 0.24356028466688048,
-   "usd_per_completion": 12.123877618889258,
-   "valued_campaigns": 22
-  },
+  "ugc|7 or fewer|500-1k": null,
   "ugc|8-14|100-250": {
    "campaigns": 133,
    "organizers": 97,
@@ -17125,7 +16555,35 @@
    "per_contestant": 0.1847672778561354,
    "usd_per_completion": 28.074074074074073,
    "valued_campaigns": 43
-  }
+  },
+  "suppressed_below_floor": [
+   "app_download|8-14|1k-2.5k",
+   "app_download|8-14|2.5k-10k",
+   "app_download|8-14|250-500",
+   "app_download|8-14|500-1k",
+   "comments|8-14|1k-2.5k",
+   "comments|8-14|2.5k-10k",
+   "discord_join|7 or fewer|10k+",
+   "follow_bluesky|7 or fewer|1k-2.5k",
+   "follow_bluesky|8-14|250-500",
+   "follow_facebook|7 or fewer|2.5k-10k",
+   "follow_linkedin|8-14|100-250",
+   "follow_linkedin|8-14|1k-2.5k",
+   "follow_pinterest|15+|1k-2.5k",
+   "follow_spotify|8-14|100-250",
+   "follow_spotify|8-14|1k-2.5k",
+   "follow_spotify|8-14|2.5k-10k",
+   "follow_spotify|8-14|250-500",
+   "follow_spotify|8-14|500-1k",
+   "follow_twitch|8-14|10k+",
+   "subscribe_podcast|8-14|100-250",
+   "subscribe_podcast|15+|10k+",
+   "subscribe_youtube|15+|10k+",
+   "subscribe_youtube|8-14|2.5k-10k",
+   "telegram_join|8-14|1k-2.5k",
+   "ugc|7 or fewer|2.5k-10k",
+   "ugc|7 or fewer|500-1k"
+  ]
  },
  "yield_by_asset_and_sharing": {
   "app_download|has_share_action|100-250": {
@@ -18520,14 +17978,7 @@
    "usd_per_completion": 4.3478260869565215,
    "valued_campaigns": 17
   },
-  "follow_tumblr|has_share_action|1k-2.5k": {
-   "campaigns": 52,
-   "organizers": 13,
-   "median": 145.5,
-   "per_contestant": 0.08929330291673457,
-   "usd_per_completion": 2.686980859516071,
-   "valued_campaigns": 30
-  },
+  "follow_tumblr|has_share_action|1k-2.5k": null,
   "follow_tumblr|has_share_action|250-500": {
    "campaigns": 47,
    "organizers": 15,
@@ -19024,14 +18475,7 @@
    "usd_per_completion": 0.8620689655172413,
    "valued_campaigns": 309
   },
-  "subscribe_youtube|no_share_action|10k+": {
-   "campaigns": 47,
-   "organizers": 18,
-   "median": 7865,
-   "per_contestant": 0.3855816493719279,
-   "usd_per_completion": 0.35410764872521244,
-   "valued_campaigns": 25
-  },
+  "subscribe_youtube|no_share_action|10k+": null,
   "subscribe_youtube|no_share_action|1k-2.5k": {
    "campaigns": 484,
    "organizers": 123,
@@ -19351,7 +18795,11 @@
    "per_contestant": 0.39813374805598756,
    "usd_per_completion": 5.013237148059952,
    "valued_campaigns": 96
-  }
+  },
+  "suppressed_below_floor": [
+   "follow_tumblr|has_share_action|1k-2.5k",
+   "subscribe_youtube|no_share_action|10k+"
+  ]
  },
  "yield_by_asset_and_prize_structure": {
   "app_download|1|100-250": {
@@ -20058,14 +19506,7 @@
    "usd_per_completion": 0.9126819126819127,
    "valued_campaigns": 23
   },
-  "follow_bluesky|2-4|2.5k-10k": {
-   "campaigns": 30,
-   "organizers": 19,
-   "median": 955.5,
-   "per_contestant": 0.25398904806249567,
-   "usd_per_completion": 0.8822162645218945,
-   "valued_campaigns": 18
-  },
+  "follow_bluesky|2-4|2.5k-10k": null,
   "follow_bluesky|2-4|250-500": {
    "campaigns": 56,
    "organizers": 37,
@@ -20074,14 +19515,7 @@
    "usd_per_completion": 1.3867791842475388,
    "valued_campaigns": 30
   },
-  "follow_bluesky|2-4|500-1k": {
-   "campaigns": 58,
-   "organizers": 41,
-   "median": 230.5,
-   "per_contestant": 0.3599674774789982,
-   "usd_per_completion": 1.2619808306709266,
-   "valued_campaigns": 27
-  },
+  "follow_bluesky|2-4|500-1k": null,
   "follow_facebook|1|100-250": {
    "campaigns": 828,
    "organizers": 369,
@@ -20226,14 +19660,7 @@
    "usd_per_completion": 3.1481481481481484,
    "valued_campaigns": 23
   },
-  "follow_goodreads|2-4|250-500": {
-   "campaigns": 30,
-   "organizers": 11,
-   "median": 154.5,
-   "per_contestant": 0.4255033361073395,
-   "usd_per_completion": 0.37494276556776557,
-   "valued_campaigns": 16
-  },
+  "follow_goodreads|2-4|250-500": null,
   "follow_instagram|1|100-250": {
    "campaigns": 1749,
    "organizers": 832,
@@ -20386,14 +19813,7 @@
    "usd_per_completion": 1.1927480916030535,
    "valued_campaigns": 55
   },
-  "follow_kick|1|2.5k-10k": {
-   "campaigns": 48,
-   "organizers": 19,
-   "median": 1106.0,
-   "per_contestant": 0.30190206129862107,
-   "usd_per_completion": 1.761147589089707,
-   "valued_campaigns": 20
-  },
+  "follow_kick|1|2.5k-10k": null,
   "follow_kick|1|250-500": {
    "campaigns": 128,
    "organizers": 50,
@@ -20410,14 +19830,7 @@
    "usd_per_completion": 1.3692946058091287,
    "valued_campaigns": 39
   },
-  "follow_kick|2-4|1k-2.5k": {
-   "campaigns": 40,
-   "organizers": 10,
-   "median": 559.5,
-   "per_contestant": 0.4221351050735772,
-   "usd_per_completion": 2.72972972972973,
-   "valued_campaigns": 3
-  },
+  "follow_kick|2-4|1k-2.5k": null,
   "follow_linkedin|1|100-250": {
    "campaigns": 273,
    "organizers": 83,
@@ -20562,38 +19975,10 @@
    "usd_per_completion": 0.5714285714285714,
    "valued_campaigns": 328
   },
-  "follow_pinterest|2-4|100-250": {
-   "campaigns": 32,
-   "organizers": 16,
-   "median": 70.0,
-   "per_contestant": 0.4762498614344308,
-   "usd_per_completion": 2.762724014336918,
-   "valued_campaigns": 22
-  },
-  "follow_pinterest|2-4|1k-2.5k": {
-   "campaigns": 55,
-   "organizers": 17,
-   "median": 634,
-   "per_contestant": 0.43722707423580787,
-   "usd_per_completion": 2.0326678765880217,
-   "valued_campaigns": 27
-  },
-  "follow_pinterest|2-4|250-500": {
-   "campaigns": 49,
-   "organizers": 20,
-   "median": 180,
-   "per_contestant": 0.48577680525164113,
-   "usd_per_completion": 2.74093567251462,
-   "valued_campaigns": 16
-  },
-  "follow_pinterest|2-4|500-1k": {
-   "campaigns": 58,
-   "organizers": 22,
-   "median": 357.5,
-   "per_contestant": 0.4716771212514305,
-   "usd_per_completion": 2.6876172607879925,
-   "valued_campaigns": 28
-  },
+  "follow_pinterest|2-4|100-250": null,
+  "follow_pinterest|2-4|1k-2.5k": null,
+  "follow_pinterest|2-4|250-500": null,
+  "follow_pinterest|2-4|500-1k": null,
   "follow_snapchat|1|100-250": {
    "campaigns": 168,
    "organizers": 24,
@@ -20658,14 +20043,7 @@
    "usd_per_completion": 0.8741258741258742,
    "valued_campaigns": 23
   },
-  "follow_soundcloud|1|2.5k-10k": {
-   "campaigns": 101,
-   "organizers": 12,
-   "median": 868,
-   "per_contestant": 0.20925606683463732,
-   "usd_per_completion": 2.3157115687761944,
-   "valued_campaigns": 26
-  },
+  "follow_soundcloud|1|2.5k-10k": null,
   "follow_soundcloud|1|250-500": {
    "campaigns": 160,
    "organizers": 26,
@@ -20970,22 +20348,8 @@
    "usd_per_completion": 1.9458753266144084,
    "valued_campaigns": 46
   },
-  "follow_tumblr|1|250-500": {
-   "campaigns": 67,
-   "organizers": 19,
-   "median": 60,
-   "per_contestant": 0.16566265060240964,
-   "usd_per_completion": 1.5909090909090908,
-   "valued_campaigns": 38
-  },
-  "follow_tumblr|1|500-1k": {
-   "campaigns": 77,
-   "organizers": 23,
-   "median": 114,
-   "per_contestant": 0.15674603174603174,
-   "usd_per_completion": 1.7879948914431671,
-   "valued_campaigns": 42
-  },
+  "follow_tumblr|1|250-500": null,
+  "follow_tumblr|1|500-1k": null,
   "follow_twitch|1|100-250": {
    "campaigns": 6420,
    "organizers": 2215,
@@ -22129,6 +21493,20 @@
    "per_contestant": 0.1174934725848564,
    "usd_per_completion": 33.5,
    "valued_campaigns": 25
-  }
+  },
+  "suppressed_below_floor": [
+   "follow_bluesky|2-4|2.5k-10k",
+   "follow_bluesky|2-4|500-1k",
+   "follow_goodreads|2-4|250-500",
+   "follow_kick|2-4|1k-2.5k",
+   "follow_kick|1|2.5k-10k",
+   "follow_pinterest|2-4|100-250",
+   "follow_pinterest|2-4|1k-2.5k",
+   "follow_pinterest|2-4|250-500",
+   "follow_pinterest|2-4|500-1k",
+   "follow_soundcloud|1|2.5k-10k",
+   "follow_tumblr|1|250-500",
+   "follow_tumblr|1|500-1k"
+  ]
  }
 }

@@ -58,7 +58,7 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 **Request:** "We're a coffee roaster. If we spend $900 on prizes and $300 on promotion and expect 2,000 entrants with an email action, what does that cost us per subscriber and is it good value?"
 
-**Pass:** runs `scripts/roi.py` with the numbers, reports cost per contestant and per email beside the food and drink benchmark (0.31 USD per email, `scripts/roi.py`'s own food_drink figure), gives the breakeven value per email, refuses to call it good or bad without a value per subscriber from the user, and asks for that value.
+**Pass:** runs `scripts/roi.py` with the numbers, reports $1,200 total spend and $0.60 per expected Entrant, and labels the subscriber estimate and cost denominator. With the 85% completion assumption, that is 1,700 estimated signups and about $0.71 per signup. Gives the breakeven value per signup and asks for the user's value per subscriber before judging value. Leaves the stated-value comparison unavailable because the user supplied actual spending only. The food and drink benchmark is withheld. If stated Prize value is later supplied, any comparison uses an available size-band population with its sample size and missing-data note, or remains unavailable.
 
 ## 11. Style check (applies to every conversational case above)
 

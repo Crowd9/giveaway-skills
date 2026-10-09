@@ -13,7 +13,6 @@ From the campaigns behind these numbers (116,283 campaigns, 17,603 businesses). 
 | Fitness and outdoor | 7,795 | 1,508 | 540 | 702 | 0.66 | 1.13 | 3.57 | 850 | 437 | 24% |
 | Kids, family, pets | 6,831 | 1,086 | 249 | 476 | 0.57 | 0.76 | 5.10 | 488 | 313 | 26% |
 | Fashion and beauty | 6,457 | 1,305 | 368 | 581 | 0.41 | 0.52 | 2.99 | 880 | 436 | 31% |
-| Food and drink | 4,681 | 890 | 428 | 635 | 0.52 | 0.87 | 2.78 | 712 | 331 | 27% |
 | Travel and events | 3,969 | 638 | 599 | 488 | 0.84 | 2.72 | 7.91 | 650 | 180 | 27% |
 | Home | 3,710 | 594 | 510 | 916 | 0.54 | 0.91 | 3.32 | 868 | 516 | 29% |
 | Software | 1,662 | 545 | 1,000 | 557 | 1.19 | 1.28 | 4.39 | 979 | 578 | 23% |
@@ -36,7 +35,6 @@ Crowd per Prize dollar is Entrants against the typical for the stated Prize cost
 | Fitness outdoor | 7,795 | 702 | 31% | 1.00 | 14 | 0.99 |
 | Kids family pets | 6,831 | 476 | 29% | 0.95 | 11 | 0.79 |
 | Fashion beauty | 6,457 | 581 | 34% | 1.01 | 11 | 1.18 |
-| Food and drink | 4,681 | 635 | 35% | 0.99 | 12 | 1.18 |
 | Travel and events | 3,969 | 488 | 34% | 1.00 | 8 | 0.79 |
 | Home | 3,710 | 916 | 35% | 0.97 | 11 | 1.45 |
 | Software | 1,662 | 557 | 31% | 1.01 | 21 | 0.74 |
@@ -46,26 +44,23 @@ Home gets the most for its money at 45% above typical on crowd per Prize dollar,
 
 ## By industry
 
-The ten industry names above fold several homepage labels each. The individual labels behind the largest ten, same scope and cost figures as the industry table above:
+The industry groups above fold homepage labels together. Available individual labels appear below, using the same scope and cost figures. Rows that could expose small residual groups are withheld.
 
 | Industry (raw label) | Campaigns | Businesses | Stated pool USD | Entrants | Per email signup | Per follow | Conversion Rate |
 |---|---|---|---|---|---|---|---|
 | Electronics and tech | 15,543 | 2,063 | 545 | 901 | 0.65 | 0.52 | 30% |
 | Gaming and esports | 24,229 | 4,657 | 200 | 398 | 0.59 | 0.37 | 27% |
 | Media and entertainment | 21,540 | 2,074 | 70 | 401 | 0.09 | 0.22 | 24% |
-| Sports and outdoors | 4,635 | 1,013 | 648 | 968 | 0.63 | 1.09 | 24% |
-| Food and drink | 4,681 | 890 | 428 | 635 | 0.52 | 0.87 | 27% |
 | Home and garden | 3,710 | 594 | 510 | 916 | 0.54 | 0.91 | 29% |
 | Apparel and fashion | 4,628 | 812 | 531 | 613 | 0.50 | 0.67 | 31% |
 | Travel and events | 3,969 | 638 | 599 | 488 | 0.84 | 2.72 | 27% |
 | Automotive | 2,310 | 379 | 999 | 950 | 0.37 | 0.64 | 26% |
-| Toys, hobbies, collectibles | 4,700 | 750 | 200 | 417 | 0.59 | 0.69 | 26% |
 
-Electronics and tech is the largest label behind the technology industry name, and gaming and esports behind gaming on its own with no other label folded in. Automotive has the largest typical pool among these labels (999 USD). Media and entertainment and sports and outdoors have the lowest Conversion Rate of the ten (24%).
+Electronics and tech is the largest label behind the technology industry name, and gaming and esports behind gaming on its own with no other label folded in. Automotive has the largest typical pool among these labels (999 USD). Media and entertainment has the lowest Conversion Rate among the available rows (24%).
 
 ## Industries
 
-Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. The ten largest industries by campaign count:
+Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. Available industries by campaign count:
 
 <!-- generated:roi_industries -->
 | Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions | Days | Emails per campaign |
@@ -73,14 +68,10 @@ Homepage labels read from each business's own site, across the campaigns behind 
 | Gaming and esports | 24,229 | 4,657 | 398 | 27% | 8 | 12 | 490 |
 | Media and entertainment | 21,540 | 2,074 | 401 | 24% | 8 | 18 | 831 |
 | Electronics and tech | 15,543 | 2,063 | 901 | 30% | 7 | 14 | 764 |
-| Toys, hobbies, collectibles | 4,700 | 750 | 417 | 26% | 7 | 15 | 367 |
-| Food and drink | 4,681 | 890 | 635 | 27% | 6 | 20 | 712 |
-| Sports and outdoors | 4,635 | 1,013 | 968 | 24% | 6 | 16 | 1,061 |
 | Apparel and fashion | 4,628 | 812 | 613 | 31% | 4 | 8 | 1,183 |
 | Other | 4,315 | 1,480 | 311 | 28% | 6 | 10 | 356 |
 | Travel and events | 3,969 | 638 | 488 | 27% | 6 | 15 | 650 |
 | Home and garden | 3,710 | 594 | 916 | 29% | 7 | 15 | 868 |
-| Creator influencer | 3,389 | 1,045 | 316 | 37% | 7 | 8 | 414 |
 | Health wellness fitness | 3,160 | 498 | 471 | 22% | 8 | 16 | 461 |
 | Retail marketplace | 2,860 | 382 | 488 | 29% | 8 | 8 | 530 |
 | Automotive | 2,310 | 379 | 950 | 26% | 7 | 14 | 1,521 |
@@ -90,13 +81,10 @@ Homepage labels read from each business's own site, across the campaigns behind 
 | Beauty personal care | 1,411 | 351 | 552 | 32% | 7 | 19 | 576 |
 | Marketing agency | 1,201 | 157 | 540 | 27% | 7 | 15 | 471 |
 | Baby kids | 1,184 | 138 | 548 | 29% | 7 | 18 | 640 |
-| Pets | 947 | 206 | 745 | 25% | 6 | 15 | 776 |
 | Local services | 917 | 181 | 532 | 25% | 7 | 11 | 342 |
-| Nonprofit community | 516 | 197 | 396 | 28% | 7 | 14 | 486 |
-| Jewelry watches | 418 | 162 | 492 | 21% | 7 | 20 | 701 |
 <!-- /generated -->
 
-Apparel and fashion has the highest Conversion Rate among the ten largest industries at 31%, with electronics and tech next at 30%, and education asks for the most Actions at 9.
+Apparel and fashion has the highest Conversion Rate among the available rows at 31%, with electronics and tech next at 30%, and education asks for the most Actions at 9.
 
 By business type, on the same scope:
 

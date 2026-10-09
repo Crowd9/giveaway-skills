@@ -1,6 +1,6 @@
 # Winner verification
 
-Advice from practice. A drawn entry is a Winner only after it passes these checks. Scale the checks to the Prize, ask for the least you need, and delete what you collected once the Prize is delivered. Sweepstakes and privacy law differ by jurisdiction. This is not legal advice.
+Advice from practice. A drawn entry is a Winner only after it passes these checks. Scale the checks to the Prize, ask for the least you need, and delete verification proof after the check. Keep delivery details only for fulfilment and delete them within the stated retention period. Sweepstakes and privacy law differ by jurisdiction. This is not legal advice.
 
 ## Why it matters
 

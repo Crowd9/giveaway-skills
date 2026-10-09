@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose and evaluate giveaway, contest, sweepstakes or raffle Prizes, budgets and fulfilment. Use for 'what should we give away', 'is this a good Prize', 'giveaway budget', 'Prize bundle', 'what Prize gets the most entries', 'B2B giveaway Prize', 'webinar giveaway', or 'attract buyers, not freebie hunters'."
 metadata:
-  version: 1.3.45
+  version: 1.3.46
 ---
 
 # Giveaway Prize Picker

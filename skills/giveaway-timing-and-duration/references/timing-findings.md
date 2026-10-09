@@ -494,7 +494,7 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_launch_wording`, `launch_w
 
 ## Run length by country (extracted)
 
-Typical run length varies widely by the business's country, from 1 day in Brazil to 21 in the UK. Brazil is the one country whose lower quarter and median are the same value, both 1 day, which marks a spike of automated repeat draws, never a choice spread across its businesses. Every other country in the table starts at 3 days or more.
+Run length varies by the business's country. Rows that would reveal small residual groups are withheld from this comparison.
 
 <!-- generated:tm_country_duration -->
 | Country | Typical days | Lower quarter | Typical days, crypto and SaaS removed | Campaigns | Businesses |
@@ -503,27 +503,16 @@ Typical run length varies widely by the business's country, from 1 day in Brazil
 | United Kingdom | 21 | 10 | 22 | 15,125 | 1,688 |
 | Canada | 12 | 7 | 12 | 6,940 | 1,056 |
 | Australia | 15 | 8 | 15 | 6,045 | 1,328 |
-| Brazil | 1 | 1 | 1 | 5,149 | 493 |
-| Japan | 6 | 3 | 14 | 4,781 | 233 |
 | India | 9 | 6 | 16 | 4,024 | 678 |
-| Singapore | 7 | 4 | 14 | 3,487 | 269 |
-| Germany | 11 | 6 | 12 | 3,301 | 416 |
-| South Korea | 8 | 5 | 10 | 2,671 | 392 |
 | Vietnam | 9 | 5 | 20 | 2,450 | 519 |
-| France | 14 | 7 | 14 | 2,159 | 353 |
-| Poland | 13 | 8 | 13 | 2,143 | 187 |
-| Philippines | 17 | 7 | 22 | 2,048 | 286 |
 | Hong Kong | 8 | 5 | 10 | 1,973 | 428 |
-| Taiwan | 8 | 3 | 13 | 1,919 | 157 |
 | Spain | 13 | 7 | 14 | 1,865 | 491 |
-| China | 8 | 6 | 12 | 1,537 | 136 |
-| Malaysia | 6 | 4 | 15 | 1,466 | 102 |
 | Türkiye | 8 | 5 | 8 | 1,393 | 360 |
 <!-- /generated -->
 
-Japan's raw figure carries a large share of crypto and SaaS businesses. The third column removes them, which lifts Japan's typical run well above its raw figure while Brazil, the UK and the US barely move.
+The third column removes crypto and SaaS businesses from each available country comparison.
 
-By industry across all countries, finance and crypto businesses run the shortest typical length, with food and drink and beauty and personal care the longest. A country with a large crypto share reads shorter in the raw figure until that share is set aside, which is what the Japan figures above show directly.
+By industry across all countries, finance and crypto businesses run the shortest typical length, with food and drink and beauty and personal care the longest. A country with a large crypto share reads shorter in the raw figure until that share is set aside.
 
 <!-- generated:tm_industry_duration -->
 | Industry | Typical days | Campaigns | Businesses |

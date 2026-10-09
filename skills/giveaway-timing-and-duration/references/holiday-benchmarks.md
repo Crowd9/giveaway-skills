@@ -308,7 +308,7 @@ Source: `analysis/output/calendar_names.json` (`name_date_agreement`).
 
 ## Smaller and obscure dates (extracted)
 
-Smaller themes and narrow matches, showing campaigns, typical Entrants and the months they started. Under 50 campaigns the typical figure is a rough read. Start-month buckets below the privacy floor are omitted, with a dash where none remain.
+Smaller themes and narrow matches, showing campaigns, typical Entrants and the months they started. Under 50 campaigns the typical figure is a rough read. Start-month buckets are omitted where needed to protect small groups, including cells that would reveal them by subtraction. A dash means no months remain available.
 
 <!-- generated:hol_smaller -->
 | Theme | Campaigns | Entrants | Start months |
@@ -320,29 +320,29 @@ Smaller themes and narrow matches, showing campaigns, typical Entrants and the m
 | National days | 158 | 918 | Aug and Jan |
 | Independence Day (US) | 138 | 708 | Jun and Jul |
 | World days | 113 | 456 | Mar and Dec |
-| St Patrick's Day | 109 | 591 | Mar and Feb |
+| St Patrick's Day | 109 | 591 | Mar |
 | World Cup | 88 | 457 | Jun and Nov |
 | Gamescom, E3, Summer Game Fest, The Game Awards | 87 | 742 | Aug and Dec |
-| Earth Day | 72 | 1,102 | Apr and Mar |
+| Earth Day | 72 | 1,102 | Apr |
 | Amazon Prime Day | 70 | 946 | Jul and Jun |
 | Labor Day (US) | 69 | 925 | Aug and Sep |
 | Carnival | 50 | 468 | Feb and Mar |
-| International Women's Day | 46 | 308 | Mar |
+| International Women's Day | 46 | 308 | - |
 | March Madness | 46 | 474 | Mar |
-| Chinese or Lunar New Year | 35 | 538 | Feb and Jan |
+| Chinese or Lunar New Year | 35 | 538 | Feb |
 | Super Bowl | 32 | 821 | Feb and Jan |
-| April Fools | 29 | 1,296 | Apr and Mar |
-| Canada Day | 28 | 1,916 | Jun |
-| Diwali | 27 | 1,008 | Oct and Nov |
-| Galentine's Day | 25 | 990 | Feb and Jan |
+| April Fools | 29 | 1,296 | Apr |
+| Canada Day | 28 | 1,916 | - |
+| Diwali | 27 | 1,008 | Oct |
+| Galentine's Day | 25 | 990 | Feb |
 | Stocking stuffers | 20 | 296 | Nov and Dec |
-| Ramadan or Eid | 18 | 550 | Mar and Apr |
+| Ramadan or Eid | 18 | 550 | Mar |
 | Cinco de Mayo | 15 | 437 | Apr and May |
 | Oktoberfest | 15 | 335 | Sep |
 | Midsummer | 13 | 726 | Jun |
-| Boxing Day | 10 | 980 | Dec |
-| Hanukkah | 9 | 468 | Dec |
-| Day of the Dead | 7 | 609 | Oct |
+| Boxing Day | 10 | 980 | - |
+| Hanukkah | 9 | 468 | - |
+| Day of the Dead | 7 | 609 | - |
 | Pi Day | 6 | 894 | Mar |
 | Holi | 5 | 2,547 | - |
 <!-- /generated -->
@@ -373,16 +373,16 @@ The smaller themes below meet the five-business privacy floor. Their typical Ent
 <!-- generated:smaller_named -->
 | Theme | Campaigns | Businesses | Typical Entrants | Busiest start months |
 |---|---|---|---|---|
-| Diwali | 27 | 11 | 1,008 | Oct (19), Nov (6) |
+| Diwali | 27 | 11 | 1,008 | Oct (19) |
 | Carnival | 50 | 34 | 468 | Feb (18), Mar (6) |
-| Ramadan or Eid | 18 | 12 | 550 | Mar (8), Apr (6) |
-| Galentine's Day | 25 | 14 | 990 | Feb (17), Jan (6) |
+| Ramadan or Eid | 18 | 12 | 550 | Mar (8) |
+| Galentine's Day | 25 | 14 | 990 | Feb (17) |
 | Cinco de Mayo | 15 | 12 | 437 | Apr (9), May (6) |
 | Oktoberfest | 15 | 11 | 335 | Sep (9) |
 | Midsummer | 13 | 11 | 726 | Jun (6) |
-| Boxing Day | 10 | 8 | 980 | Dec (6) |
-| Hanukkah | 9 | 6 | 468 | Dec (6) |
-| Day of the Dead | 7 | 5 | 609 | Oct (5) |
+| Boxing Day | 10 | 8 | 980 | - |
+| Hanukkah | 9 | 6 | 468 | - |
+| Day of the Dead | 7 | 5 | 609 | - |
 | Pi Day | 6 | 5 | 894 | Mar (6) |
 | Holi | 5 | 5 | 2,547 | - |
 

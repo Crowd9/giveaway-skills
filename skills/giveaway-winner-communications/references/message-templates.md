@@ -12,7 +12,7 @@ Send from an address or account the Winner has seen before. Two attempts. The se
 
 ## 2. Verification and address request (after the Winner replies)
 
-"Thanks [first name]. To send the [Prize] we need [delivery address, or the email for a digital Prize] and [any required proof, for example a photo of ID with the number covered, or your city]. Reply here or use this form: [link to the brand's own form]. We use these details only to deliver the Prize and delete them within [30] days of delivery. [Name]"
+"Thanks [first name]. To send the [Prize] we need [delivery address, or the email for a digital Prize] and [any required proof, for example a photo of ID with the number covered, or your city]. Reply here or use this form: [link to the brand's own form]. We use the proof to check your eligibility and delete it after the check, keeping only a record that the check passed. We use your delivery address or email to deliver the Prize and delete it within [30] days of delivery. [Name]"
 
 Never ask for the full document if a partial suffices. Never ask for financial details.
 

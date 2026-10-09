@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.45 |
-| giveaway-entry-method-planner | 1.2.43 |
-| giveaway-timing-and-duration | 1.4.42 |
-| giveaway-winner-structure | 1.4.14 |
-| giveaway-promotion-plan | 1.3.42 |
-| giveaway-random-draw | 1.3.36 |
-| giveaway-winner-communications | 1.2.33 |
-| giveaway-idea-generator | 1.3.37 |
-| giveaway-results-review | 1.6.14 |
-| gleam-campaign-setup | 1.2.40 |
+| giveaway-prize-picker | 1.3.46 |
+| giveaway-entry-method-planner | 1.2.44 |
+| giveaway-timing-and-duration | 1.4.43 |
+| giveaway-winner-structure | 1.4.15 |
+| giveaway-promotion-plan | 1.3.43 |
+| giveaway-random-draw | 1.3.37 |
+| giveaway-winner-communications | 1.2.34 |
+| giveaway-idea-generator | 1.3.38 |
+| giveaway-results-review | 1.6.15 |
+| gleam-campaign-setup | 1.2.41 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.16 (2026-10-10)
+
+Two published tables that overlapped could be subtracted to reveal a single campaign. We now withhold 311 cells so no such pair can be subtracted, and the build fails on a pair that can be subtracted down to a handful.
+
+Checking a draw seeded from the NIST beacon now confirms the number against the beacon itself. When it can't reach the beacon, it says the Winner ranking checks out and the random number is unconfirmed.
+
+Asking a Winner for ID now tells them you'll delete it once checked, and their address is kept only as long as delivery needs. The dashboard counts each email subscriber once, however many email actions they completed, and reports separate the Prize's real cost from its stated value. The draw script's help explains that a seed you write yourself can be reproduced but isn't proof of a fair draw.
 
 ## 3.0.15 (2026-10-10)
 

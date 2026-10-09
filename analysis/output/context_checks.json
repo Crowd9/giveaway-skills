@@ -543,53 +543,7 @@
     }
    }
   },
-  "food_drink": {
-   "n": 4681,
-   "organizers": 890,
-   "quintile": 936,
-   "methods": {
-    "Pinterest Visits": {
-     "top": 0.15705128205128205,
-     "bottom": 0.049145299145299144,
-     "ratio": 3.1956521739130435
-    },
-    "TikTok Follows": {
-     "top": 0.1527777777777778,
-     "bottom": 0.08226495726495726,
-     "ratio": 1.8571428571428572
-    },
-    "Facebook visits": {
-     "top": 0.48717948717948717,
-     "bottom": 0.28205128205128205,
-     "ratio": 1.7272727272727273
-    },
-    "Viral Shares": {
-     "top": 0.5523504273504274,
-     "bottom": 0.33760683760683763,
-     "ratio": 1.6360759493670887
-    },
-    "Instagram Profile Visits": {
-     "top": 0.5908119658119658,
-     "bottom": 0.38354700854700857,
-     "ratio": 1.5403899721448466
-    },
-    "Email Subscriptions": {
-     "top": 0.6143162393162394,
-     "bottom": 0.41239316239316237,
-     "ratio": 1.489637305699482
-    },
-    "YouTube Channel Visits": {
-     "top": 0.30982905982905984,
-     "bottom": 0.2297008547008547,
-     "ratio": 1.3488372093023258
-    },
-    "Visit a Page": {
-     "top": 0.5096153846153846,
-     "bottom": 0.4423076923076923,
-     "ratio": 1.1521739130434783
-    }
-   }
-  },
+  "food_drink": null,
   "travel_events": {
    "n": 3969,
    "organizers": 638,
@@ -871,6 +825,9 @@
      "ratio": 0.9870129870129869
     }
    }
-  }
+  },
+  "suppressed_below_floor": [
+   "food_drink"
+  ]
  }
 }

@@ -5680,25 +5680,7 @@
  },
  "niche_by_industry": {
   "travel_events": {
-   "travel and events": {
-    "n": 589,
-    "sites": 13,
-    "contestants": 555.0,
-    "conversion": 0.313,
-    "entries_per_entrant": 3.946,
-    "days": 20.5,
-    "methods": 7.0,
-    "email_offered": 0.385,
-    "email_uptake": 1.021,
-    "referrals_per_contestant": 0.099,
-    "shopify_share": 0.0,
-    "woocommerce_share": null,
-    "sells_online_share": 0.267,
-    "business_plus_share": 0.343,
-    "suppressed_below_floor": [
-     "woocommerce_share"
-    ]
-   },
+   "travel and events": null,
    "travel experiences": {
     "n": 92,
     "sites": 14,
@@ -5805,7 +5787,10 @@
      "business_plus_share",
      "sells_online_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "travel and events"
+   ]
   },
   "apparel_fashion": {
    "fashion and apparel": {
@@ -6001,26 +5986,7 @@
    }
   },
   "marketing_agency": {
-   "marketing agency": {
-    "n": 152,
-    "sites": 25,
-    "contestants": 355.5,
-    "conversion": 0.316,
-    "entries_per_entrant": 4.676,
-    "days": 8.5,
-    "methods": 8.0,
-    "email_offered": 0.559,
-    "email_uptake": 1.0,
-    "referrals_per_contestant": 0.347,
-    "shopify_share": null,
-    "woocommerce_share": 0.151,
-    "sells_online_share": null,
-    "business_plus_share": 0.145,
-    "suppressed_below_floor": [
-     "sells_online_share",
-     "shopify_share"
-    ]
-   },
+   "marketing agency": null,
    "digital marketing agency": {
     "n": 16,
     "sites": 12,
@@ -6059,7 +6025,10 @@
     "suppressed_below_floor": [
      "business_plus_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "marketing agency"
+   ]
   },
   "other": {
    "online community": {
@@ -6295,25 +6264,7 @@
    }
   },
   "home_garden": {
-   "home and garden": {
-    "n": 464,
-    "sites": 11,
-    "contestants": 1128.0,
-    "conversion": 0.348,
-    "entries_per_entrant": 3.682,
-    "days": 14.0,
-    "methods": 8.0,
-    "email_offered": 0.522,
-    "email_uptake": 0.902,
-    "referrals_per_contestant": 0.088,
-    "shopify_share": 0.0,
-    "woocommerce_share": null,
-    "sells_online_share": 0.644,
-    "business_plus_share": 0.545,
-    "suppressed_below_floor": [
-     "woocommerce_share"
-    ]
-   },
+   "home and garden": null,
    "home products": {
     "n": 71,
     "sites": 11,
@@ -6377,7 +6328,10 @@
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
     "business_plus_share": 0.163
-   }
+   },
+   "suppressed_below_floor": [
+    "home and garden"
+   ]
   },
   "beauty_personal_care": {
    "skincare beauty brand": {
@@ -6568,22 +6522,7 @@
    }
   },
   "retail_marketplace": {
-   "online retail": {
-    "n": 155,
-    "sites": 5,
-    "contestants": 226.0,
-    "conversion": 0.211,
-    "entries_per_entrant": 7.589,
-    "days": 7.0,
-    "methods": 10.0,
-    "email_offered": 0.671,
-    "email_uptake": 1.057,
-    "referrals_per_contestant": 0.047,
-    "shopify_share": 0.252,
-    "woocommerce_share": 0.0,
-    "sells_online_share": 0.503,
-    "business_plus_share": 0.097
-   },
+   "online retail": null,
    "online marketplace": {
     "n": 72,
     "sites": 6,
@@ -6646,7 +6585,10 @@
      "email_uptake",
      "woocommerce_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "online retail"
+   ]
   },
   "health_wellness_fitness": {
    "health wellness brand": {
@@ -6903,44 +6845,8 @@
   },
   "education": {},
   "finance_crypto": {
-   "cryptocurrency trading platform": {
-    "n": 4429,
-    "sites": 235,
-    "contestants": 449.0,
-    "conversion": 0.312,
-    "entries_per_entrant": 5.412,
-    "days": 5.0,
-    "methods": 7.0,
-    "email_offered": 0.005,
-    "email_uptake": 0.947,
-    "referrals_per_contestant": 0.58,
-    "shopify_share": 0.0,
-    "woocommerce_share": null,
-    "sells_online_share": 0.812,
-    "business_plus_share": 0.666,
-    "suppressed_below_floor": [
-     "woocommerce_share"
-    ]
-   },
-   "cryptocurrency platform": {
-    "n": 1437,
-    "sites": 398,
-    "contestants": 753.0,
-    "conversion": 0.304,
-    "entries_per_entrant": 5.143,
-    "days": 8.0,
-    "methods": 7.0,
-    "email_offered": 0.065,
-    "email_uptake": 1.002,
-    "referrals_per_contestant": 0.841,
-    "shopify_share": null,
-    "woocommerce_share": 0.033,
-    "sells_online_share": 0.232,
-    "business_plus_share": 0.331,
-    "suppressed_below_floor": [
-     "shopify_share"
-    ]
-   },
+   "cryptocurrency trading platform": null,
+   "cryptocurrency platform": null,
    "cryptocurrency trading exchange": {
     "n": 1342,
     "sites": 14,
@@ -7068,38 +6974,8 @@
     "sells_online_share": 0.449,
     "business_plus_share": 0.227
    },
-   "cryptocurrency token platform": {
-    "n": 251,
-    "sites": 115,
-    "contestants": 1067.0,
-    "conversion": 0.274,
-    "entries_per_entrant": 4.688,
-    "days": 14.0,
-    "methods": 7.0,
-    "email_offered": 0.179,
-    "email_uptake": 0.956,
-    "referrals_per_contestant": 0.793,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.02,
-    "sells_online_share": 0.195,
-    "business_plus_share": 0.255
-   },
-   "cryptocurrency launchpad": {
-    "n": 243,
-    "sites": 17,
-    "contestants": 651.0,
-    "conversion": 0.358,
-    "entries_per_entrant": 6.198,
-    "days": 5.0,
-    "methods": 8.0,
-    "email_offered": 0.041,
-    "email_uptake": 0.974,
-    "referrals_per_contestant": 0.807,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.0,
-    "sells_online_share": 0.037,
-    "business_plus_share": 0.683
-   },
+   "cryptocurrency token platform": null,
+   "cryptocurrency launchpad": null,
    "cryptocurrency blockchain platform": {
     "n": 230,
     "sites": 9,
@@ -7196,25 +7072,7 @@
     "sells_online_share": 0.031,
     "business_plus_share": 0.061
    },
-   "nft marketplace": {
-    "n": 152,
-    "sites": 37,
-    "contestants": 786.0,
-    "conversion": 0.274,
-    "entries_per_entrant": 5.629,
-    "days": 9.0,
-    "methods": 8.0,
-    "email_offered": 0.112,
-    "email_uptake": 0.993,
-    "referrals_per_contestant": 0.79,
-    "shopify_share": 0.0,
-    "woocommerce_share": null,
-    "sells_online_share": 0.211,
-    "business_plus_share": 0.474,
-    "suppressed_below_floor": [
-     "woocommerce_share"
-    ]
-   },
+   "nft marketplace": null,
    "cryptocurrency exchange platform": {
     "n": 133,
     "sites": 25,
@@ -8043,25 +7901,17 @@
      "email_uptake",
      "sells_online_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "cryptocurrency trading platform",
+    "cryptocurrency platform",
+    "cryptocurrency token platform",
+    "cryptocurrency launchpad",
+    "nft marketplace"
+   ]
   },
   "gaming_esports": {
-   "gaming and esports": {
-    "n": 2591,
-    "sites": 78,
-    "contestants": 635.0,
-    "conversion": 0.248,
-    "entries_per_entrant": 6.032,
-    "days": 11.0,
-    "methods": 9.0,
-    "email_offered": 0.143,
-    "email_uptake": 0.896,
-    "referrals_per_contestant": 0.193,
-    "shopify_share": 0.036,
-    "woocommerce_share": 0.049,
-    "sells_online_share": 0.316,
-    "business_plus_share": 0.348
-   },
+   "gaming and esports": null,
    "gaming platform": {
     "n": 757,
     "sites": 173,
@@ -8101,22 +7951,7 @@
      "woocommerce_share"
     ]
    },
-   "mobile game developer": {
-    "n": 359,
-    "sites": 9,
-    "contestants": 474.0,
-    "conversion": 0.042,
-    "entries_per_entrant": 3.105,
-    "days": 8.0,
-    "methods": 5.0,
-    "email_offered": 0.0,
-    "email_uptake": null,
-    "referrals_per_contestant": 0.021,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.354,
-    "sells_online_share": 0.064,
-    "business_plus_share": 0.373
-   },
+   "mobile game developer": null,
    "gaming community platform": {
     "n": 246,
     "sites": 26,
@@ -8156,42 +7991,8 @@
      "email_uptake"
     ]
    },
-   "esports team": {
-    "n": 232,
-    "sites": 39,
-    "contestants": 338.5,
-    "conversion": 0.301,
-    "entries_per_entrant": 5.359,
-    "days": 10.0,
-    "methods": 8.0,
-    "email_offered": 0.082,
-    "email_uptake": 0.568,
-    "referrals_per_contestant": 0.264,
-    "shopify_share": null,
-    "woocommerce_share": null,
-    "sells_online_share": 0.164,
-    "business_plus_share": 0.099,
-    "suppressed_below_floor": [
-     "shopify_share",
-     "woocommerce_share"
-    ]
-   },
-   "gaming esports": {
-    "n": 222,
-    "sites": 60,
-    "contestants": 535.0,
-    "conversion": 0.287,
-    "entries_per_entrant": 5.496,
-    "days": 13.0,
-    "methods": 7.0,
-    "email_offered": 0.32,
-    "email_uptake": 0.757,
-    "referrals_per_contestant": 0.137,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.113,
-    "sells_online_share": 0.374,
-    "business_plus_share": 0.203
-   },
+   "esports team": null,
+   "gaming esports": null,
    "video game publisher": {
     "n": 213,
     "sites": 32,
@@ -8568,22 +8369,7 @@
      "email_uptake"
     ]
    },
-   "blockchain gaming platform": {
-    "n": 61,
-    "sites": 28,
-    "contestants": 474.0,
-    "conversion": 0.253,
-    "entries_per_entrant": 5.094,
-    "days": 14.0,
-    "methods": 7.0,
-    "email_offered": 0.082,
-    "email_uptake": 0.835,
-    "referrals_per_contestant": 0.556,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.0,
-    "sells_online_share": 0.426,
-    "business_plus_share": 0.377
-   },
+   "blockchain gaming platform": null,
    "nft gaming": {
     "n": 59,
     "sites": 11,
@@ -9179,7 +8965,14 @@
      "sells_online_share",
      "woocommerce_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "blockchain gaming platform",
+    "gaming and esports",
+    "mobile game developer",
+    "esports team",
+    "gaming esports"
+   ]
   },
   "electronics_tech": {
    "gaming computer hardware retailer": {
@@ -9246,38 +9039,8 @@
     "sells_online_share": 0.316,
     "business_plus_share": 0.316
    },
-   "tech products": {
-    "n": 455,
-    "sites": 15,
-    "contestants": 789.0,
-    "conversion": 0.311,
-    "entries_per_entrant": 4.658,
-    "days": 9.0,
-    "methods": 6.0,
-    "email_offered": 0.352,
-    "email_uptake": 0.959,
-    "referrals_per_contestant": 0.163,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.092,
-    "sells_online_share": 0.567,
-    "business_plus_share": 0.268
-   },
-   "electronics retailer": {
-    "n": 417,
-    "sites": 88,
-    "contestants": 768.0,
-    "conversion": 0.259,
-    "entries_per_entrant": 3.968,
-    "days": 17.5,
-    "methods": 6.0,
-    "email_offered": 0.408,
-    "email_uptake": 0.913,
-    "referrals_per_contestant": 0.222,
-    "shopify_share": 0.012,
-    "woocommerce_share": 0.019,
-    "sells_online_share": 0.698,
-    "business_plus_share": 0.197
-   },
+   "tech products": null,
+   "electronics retailer": null,
    "computer hardware technology": {
     "n": 326,
     "sites": 7,
@@ -9294,25 +9057,7 @@
     "sells_online_share": 1.0,
     "business_plus_share": 0.709
    },
-   "computer hardware retailer": {
-    "n": 227,
-    "sites": 24,
-    "contestants": 512.0,
-    "conversion": 0.267,
-    "entries_per_entrant": 3.857,
-    "days": 21.0,
-    "methods": 7.0,
-    "email_offered": 0.335,
-    "email_uptake": 0.852,
-    "referrals_per_contestant": 0.461,
-    "shopify_share": 0.0,
-    "woocommerce_share": null,
-    "sells_online_share": 0.89,
-    "business_plus_share": 0.278,
-    "suppressed_below_floor": [
-     "woocommerce_share"
-    ]
-   },
+   "computer hardware retailer": null,
    "gaming headsets keyboards": {
     "n": 226,
     "sites": 6,
@@ -9639,25 +9384,7 @@
     "sells_online_share": 0.179,
     "business_plus_share": 0.429
    },
-   "audio equipment retailer": {
-    "n": 27,
-    "sites": 11,
-    "contestants": 1208.0,
-    "conversion": 0.263,
-    "entries_per_entrant": 3.173,
-    "days": 28.0,
-    "methods": 5.0,
-    "email_offered": 0.667,
-    "email_uptake": 1.003,
-    "referrals_per_contestant": 0.289,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.0,
-    "sells_online_share": null,
-    "business_plus_share": 0.222,
-    "suppressed_below_floor": [
-     "sells_online_share"
-    ]
-   },
+   "audio equipment retailer": null,
    "electronics": {
     "n": 23,
     "sites": 6,
@@ -9758,7 +9485,13 @@
      "sells_online_share",
      "shopify_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "tech products",
+    "electronics retailer",
+    "computer hardware retailer",
+    "audio equipment retailer"
+   ]
   },
   "toys_hobbies_collectibles": {
    "collectible items": {
@@ -10018,27 +9751,7 @@
     "sells_online_share": 0.262,
     "business_plus_share": 0.295
    },
-   "parenting lifestyle blog": {
-    "n": 867,
-    "sites": 10,
-    "contestants": 226.0,
-    "conversion": 0.27,
-    "entries_per_entrant": 5.5,
-    "days": 21.0,
-    "methods": 10.0,
-    "email_offered": null,
-    "email_uptake": null,
-    "referrals_per_contestant": 0.012,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.048,
-    "sells_online_share": 0.053,
-    "business_plus_share": null,
-    "suppressed_below_floor": [
-     "business_plus_share",
-     "email_offered",
-     "email_uptake"
-    ]
-   },
+   "parenting lifestyle blog": null,
    "entertainment and media": {
     "n": 384,
     "sites": 7,
@@ -10058,22 +9771,7 @@
      "business_plus_share"
     ]
    },
-   "family lifestyle blog": {
-    "n": 329,
-    "sites": 5,
-    "contestants": 332.0,
-    "conversion": 0.314,
-    "entries_per_entrant": 15.927,
-    "days": 21.0,
-    "methods": 14.0,
-    "email_offered": 0.0,
-    "email_uptake": null,
-    "referrals_per_contestant": 0.239,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.027,
-    "sells_online_share": 0.0,
-    "business_plus_share": 0.0
-   },
+   "family lifestyle blog": null,
    "media publisher": {
     "n": 159,
     "sites": 30,
@@ -10298,25 +9996,14 @@
      "business_plus_share",
      "shopify_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "parenting lifestyle blog",
+    "family lifestyle blog"
+   ]
   },
   "sports_outdoors": {
-   "sporting goods": {
-    "n": 460,
-    "sites": 14,
-    "contestants": 1599.5,
-    "conversion": 0.285,
-    "entries_per_entrant": 3.946,
-    "days": 8.0,
-    "methods": 5.0,
-    "email_offered": 0.396,
-    "email_uptake": 0.946,
-    "referrals_per_contestant": 0.141,
-    "shopify_share": 0.0,
-    "woocommerce_share": 0.0,
-    "sells_online_share": 0.661,
-    "business_plus_share": 0.746
-   },
+   "sporting goods": null,
    "sports and outdoors": {
     "n": 407,
     "sites": 10,
@@ -10543,7 +10230,10 @@
      "business_plus_share",
      "woocommerce_share"
     ]
-   }
+   },
+   "suppressed_below_floor": [
+    "sporting goods"
+   ]
   },
   "food_drink": {
    "food and beverages": {
@@ -14725,22 +14415,7 @@
     "email_uptake"
    ]
   },
-  "under_1k:channel_2017_plus": {
-   "n": 350,
-   "sites": 128,
-   "contestants": 223.0,
-   "conversion": 0.362,
-   "entries_per_entrant": 4.139,
-   "days": 10.5,
-   "methods": 6.0,
-   "email_offered": 0.0,
-   "email_uptake": null,
-   "referrals_per_contestant": 0.375,
-   "shopify_share": 0.0,
-   "woocommerce_share": 0.0,
-   "sells_online_share": 0.0,
-   "business_plus_share": 0.0
-  },
+  "under_1k:channel_2017_plus": null,
   "1k-10k:channel_before_2017": {
    "n": 312,
    "sites": 124,
@@ -14779,7 +14454,10 @@
    "suppressed_below_floor": [
     "business_plus_share"
    ]
-  }
+  },
+  "suppressed_below_floor": [
+   "under_1k:channel_2017_plus"
+  ]
  },
  "channel_size_vs_direct_traffic": {
   "youtube": {

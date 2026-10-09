@@ -163,7 +163,10 @@
    "contestants": 591,
    "start_months": {
     "Mar": 92,
-    "Feb": 14
+    "Feb": null,
+    "suppressed_below_floor": [
+     "Feb"
+    ]
    }
   },
   "Earth Day": {
@@ -172,7 +175,10 @@
    "contestants": 1101.5,
    "start_months": {
     "Apr": 63,
-    "Mar": 5
+    "Mar": null,
+    "suppressed_below_floor": [
+     "Mar"
+    ]
    }
   },
   "Labor Day (US)": {
@@ -217,7 +223,10 @@
    "contestants": 538,
    "start_months": {
     "Feb": 20,
-    "Jan": 14
+    "Jan": null,
+    "suppressed_below_floor": [
+     "Jan"
+    ]
    }
   },
   "World Cup": {
@@ -243,8 +252,8 @@
    "organizers": 28,
    "contestants": 308.0,
    "start_months": {
-    "Mar": 44,
-    "suppressed_below_floor": 1
+    "Mar": null,
+    "suppressed_below_floor": 2
    }
   },
   "March Madness": {
@@ -271,7 +280,10 @@
    "contestants": 1296,
    "start_months": {
     "Apr": 18,
-    "Mar": 9
+    "Mar": null,
+    "suppressed_below_floor": [
+     "Mar"
+    ]
    }
   },
   "Canada Day": {
@@ -279,8 +291,8 @@
    "organizers": 10,
    "contestants": 1916.5,
    "start_months": {
-    "Jun": 27,
-    "suppressed_below_floor": 1
+    "Jun": null,
+    "suppressed_below_floor": 2
    }
   },
   "Pride": {
@@ -298,7 +310,10 @@
    "contestants": 1008,
    "start_months": {
     "Oct": 19,
-    "Nov": 6
+    "Nov": null,
+    "suppressed_below_floor": [
+     "Nov"
+    ]
    }
   },
   "Carnival": {
@@ -316,7 +331,10 @@
    "contestants": 550.0,
    "start_months": {
     "Mar": 8,
-    "Apr": 6
+    "Apr": null,
+    "suppressed_below_floor": [
+     "Apr"
+    ]
    }
   },
   "Cinco de Mayo": {
@@ -334,7 +352,10 @@
    "contestants": 990,
    "start_months": {
     "Feb": 17,
-    "Jan": 6
+    "Jan": null,
+    "suppressed_below_floor": [
+     "Jan"
+    ]
    }
   },
   "Oktoberfest": {
@@ -368,8 +389,8 @@
    "organizers": 8,
    "contestants": 980.0,
    "start_months": {
-    "Dec": 6,
-    "suppressed_below_floor": 1
+    "Dec": null,
+    "suppressed_below_floor": 2
    }
   },
   "Pi Day": {
@@ -385,8 +406,8 @@
    "organizers": 6,
    "contestants": 468,
    "start_months": {
-    "Dec": 6,
-    "suppressed_below_floor": 1
+    "Dec": null,
+    "suppressed_below_floor": 2
    }
   },
   "Day of the Dead": {
@@ -394,8 +415,8 @@
    "organizers": 5,
    "contestants": 609,
    "start_months": {
-    "Oct": 5,
-    "suppressed_below_floor": 1
+    "Oct": null,
+    "suppressed_below_floor": 2
    }
   }
  },

@@ -32,7 +32,7 @@ def is_count_map(value):
     suppression marker records removed bucket totals and is never a cohort.
     """
     counts = {key: count for key, count in value.items() if key != SUPPRESSION_KEY}
-    return bool(counts) and all(type(count) is int for count in counts.values()) and not any(
+    return bool(counts) and all(type(count) is int or count is None for count in counts.values()) and not any(
         COUNT_KEY.fullmatch(key) or SAMPLE_KEY.fullmatch(key) or STATISTIC_KEY.fullmatch(key)
         for key in counts
     )
@@ -161,6 +161,280 @@ def conditional_suppressions(value):
     return fields
 
 
+# Parent/child conventions are explicit: naming similarity alone cannot establish
+# equal populations. Each tuple names a parent table, a crossed table, and the
+# component holding the parent label. Nested keys or |/: compound keys encode
+# the two dimensions. A final bool declares disjoint CAMPAIGN cells for sums.
+# Businesses can recur across campaign bands: their counts are NEVER summed.
+CROSSED_TABLES = (
+    ("by_niche", "niche_by_industry", 1, True),
+    ("by_industry", "niche_by_industry", 0, True),
+    ("by_industry", "by_industry_and_scale", 0, True),
+    ("by_org_scale", "by_industry_and_scale", 1, True),
+    ("by_industry", "employee_band_by_industry", 0, True),
+    ("by_employee_band", "employee_band_by_industry", 1, True),
+    ("by_youtube_subscribers", "youtube_subscribers_vs_views_per_video", 0, True),
+    ("by_youtube_subscribers", "youtube_subscribers_vs_channel_age", 0, True),
+    ("by_country", "industry_mix_by_country", 0, True),
+    ("by_country", "selection_method_by_country", 0, True),
+    ("by_country", "language_by_country", 0, True),
+    ("by_country", "governing_law_by_country", 0, True),
+    ("by_country", "skill_against_other", 0, True),
+    ("by_template", "template_by_industry", 1, True),
+    ("by_template", "template_by_country", 1, True),
+    ("by_template", "industry_mix_by_template", 0, True),
+    ("source_mix", "source_mix_by_band", 0, True),
+    ("source_mix", "source_mix_first_campaign", 0, True),
+    ("source_mix", "source_kind_by_industry", 1, True),
+    ("source_mix", "template_by_organizer_tenure", 1, True),
+    ("by_prize_category", "prize_category_by_industry", 1, True),
+    ("by_industry_ordinary", "prize_category_by_industry", 0, True),
+    ("by_launch_wording", "launch_wording_by_industry", 0, True),
+    ("by_industry_ordinary", "launch_wording_by_industry", 1, True),
+    ("by_start_month", "by_start_month_and_industry", 1, True),
+    ("by_industry_ordinary", "by_start_month_and_industry", 0, True),
+    ("value_curve", "value_curve_by_industry", 1, True),
+    ("value_curve", "value_curve_by_tier", 1, True),
+    ("value_curve", "bundles_by_value_band", 0, True),
+    ("bundles", "bundles_by_value_band", 1, True),
+    ("own_product", "own_product_by_industry", 1, True),
+    ("own_product", "own_product_by_size_band", 1, True),
+    ("audience_fit", "audience_fit_by_industry", 1, True),
+    ("collaboration", "collaboration_by_industry", 1, True),
+    ("outcomes_when_channel_over_10pct", "channel_quality_by_size_band", 0, True),
+    ("channel_quantity_vs_quality", "channel_quality_by_size_band", 0, True),
+    ("sequence_curve_all", "sequence_curve_by_first_band", 1, True),
+    ("within_organizer_transition_by_seq", "within_organizer_transition_by_band_and_seq", 1, True),
+    ("within_organizer_transition_by_band", "within_organizer_transition_by_band_and_seq", 0, True),
+    ("within_organizer_transition_by_seq", "transition_by_gap_length_and_seq", 1, True),
+)
+FILTERED_TABLES = (
+    ("by_industry", "by_industry_excluding_crypto"),
+    ("by_industry", "stores_by_industry"),
+    ("by_country", "by_country_1k_plus"),
+    ("by_country", "terms_by_country"),
+    ("by_band_all", "by_band"),
+    ("by_template", "by_template_1k"),
+    ("source_mix", "source_mix_1k"),
+    ("region_all", "region_clean"),
+    ("title_term_all", "title_term_clean"),
+    ("overlap_all", "overlap_clean"),
+    ("nth_campaign_all", "nth_campaign_clean"),
+    ("industry_all", "industry_clean"),
+    ("vertical_all", "vertical_clean"),
+    ("recency_all", "recency_clean"),
+)
+
+
+def cohort_counts(row):
+    """Canonical row support, excluding conditional counts and action counts."""
+    if type(row) is int:
+        return {"campaigns": row}
+    if not isinstance(row, dict):
+        return {}
+    result = {}
+    for kind, keys in (("campaigns", ("n", "campaigns")),
+                       ("businesses", ("sites", "organizers", "businesses", "unique_organizers"))):
+        for key in keys:
+            if type(row.get(key)) is int:
+                result[kind] = row[key]
+                break
+    return result
+
+
+def crossed_rows(table):
+    """Yield dimensions, mutable container and key for a two-axis table."""
+    if not isinstance(table, dict):
+        return
+    for key, row in table.items():
+        if key == SUPPRESSION_KEY:
+            continue
+        if "|" in key or ":" in key:
+            yield re.split(r"[|:]", key), table, key
+        elif isinstance(row, dict):
+            for inner in row:
+                if inner != SUPPRESSION_KEY:
+                    yield [key, inner], row, inner
+
+
+def residual_groups(value):
+    """Known same-population relationships; yield parent and child locations.
+
+    Sums use only declared disjoint campaign partitions, even when the published
+    list omits cells. Positive residuals 1..4 are unsafe. A zero difference is an
+    identical cohort, not a hidden person. Business differences are a conservative
+    disclosure warning, NOT the distinct-business count of residual campaigns.
+    General intersections, suppressed counts, rounded-share linear systems and
+    cross-file populations without a documented common cohort need private
+    membership-aware disclosure review. Passing this check is not that review.
+    """
+    rules = list(CROSSED_TABLES)
+    for name in value:
+        if name.startswith("yield_by_asset_and_"):
+            rules.append(("yield_by_asset", name, 0,
+                          name in {"yield_by_asset_and_band", "yield_by_asset_and_vertical", "yield_by_asset_and_industry"}))
+    for parent_name, child_name, axis, partition in rules:
+        parents = value.get(parent_name, {})
+        if not isinstance(parents, dict):
+            continue
+        grouped = {}
+        for dimensions, container, key in crossed_rows(value.get(child_name)):
+            if len(dimensions) > axis:
+                grouped.setdefault(dimensions[axis].strip(), []).append((container, key))
+        for label, children in grouped.items():
+            if label in parents:
+                parent = parents[label]
+                if child_name in {"yield_by_asset_and_mandatory", "yield_by_asset_and_position", "yield_by_asset_and_worth_tier"}:
+                    parent = {key: val for key, val in parent.items() if key not in {"n", "campaigns"}} if isinstance(parent, dict) else parent
+                yield parent, children, partition
+    # Asset refinements hold asset|setting|band, whose parent is asset|band.
+    parents = value.get("yield_by_asset_and_band", {})
+    for name, table in value.items():
+        if not name.startswith("yield_by_asset_and_") or not isinstance(table, dict):
+            continue
+        grouped = {}
+        for key in table:
+            dimensions = key.split("|")
+            if len(dimensions) == 3:
+                grouped.setdefault(dimensions[0] + "|" + dimensions[2], []).append((table, key))
+        for label, children in grouped.items():
+            if label in parents:
+                # Mandatory/position refer to Actions: campaigns can recur.
+                partition = name.rsplit("_", 1)[-1] in {"duration", "sharing", "structure", "count"}
+                parent = parents[label]
+                if name in {"yield_by_asset_and_mandatory", "yield_by_asset_and_position", "yield_by_asset_and_worth_tier"}:
+                    parent = {key: val for key, val in parent.items() if key not in {"n", "campaigns"}} if isinstance(parent, dict) else parent
+                yield parent, children, partition
+    for parent_name, child_name in FILTERED_TABLES:
+        parents, children = value.get(parent_name, {}), value.get(child_name, {})
+        if isinstance(parents, dict) and isinstance(children, dict):
+            for label in parents.keys() & children.keys() - {SUPPRESSION_KEY}:
+                yield parents[label], [(children, label)], False
+    # Channel-size crossings add industry or contestant-band to the channel band.
+    for channel, parent_name in (("youtube", "by_youtube_subscribers"),
+                                 ("discord", "by_discord_server_size"),
+                                 ("telegram", "by_telegram_size")):
+        parents = value.get(parent_name, {})
+        for name in ("channel_size_within_industry", "channel_size_within_contestant_band"):
+            grouped = {}
+            channels = value.get(name, {})
+            if not isinstance(channels, dict):
+                continue
+            for dims, container, key in crossed_rows(channels.get(channel)):
+                grouped.setdefault(dims[-1], []).append((container, key))
+            for label, children in grouped.items():
+                if label in parents:
+                    yield parents[label], children, True
+
+
+    # The top-combinations wrapper carries a band/industry total of its own.
+    for name in ("top_combinations_by_size_band", "top_combinations_by_industry"):
+        grouped = {}
+        for group in value.get(name, {}).values():
+            if not isinstance(group, dict):
+                continue
+            cells = group.get("top_combinations", {})
+            children = [(cells, key) for key in cells if key != SUPPRESSION_KEY]
+            yield group, children, True
+            for container, key in children:
+                grouped.setdefault(key, []).append((container, key))
+        for label, children in grouped.items():
+            if label in value.get("top_combinations", {}):
+                yield value["top_combinations"][label], children, True
+    # Per-metric percentile support is a subset of that group's Entrant support.
+    if isinstance(value.get("contestants"), dict) and "p" in value["contestants"]:
+        for metric, row in value.items():
+            if metric != "contestants" and isinstance(row, dict) and "p" in row:
+                yield value["contestants"], [(value, metric)], False
+    # Count maps embedded in a cohort are disjoint time/tier categories.
+    for key in ("start_months", "start_years", "tier", "prize_count_distribution"):
+        table = value.get(key)
+        if isinstance(table, dict) and is_count_map(table):
+            yield value, [(table, label) for label in table if label != SUPPRESSION_KEY], True
+
+
+def corpus_residual_groups(corpus):
+    """Cross-file cohorts verified against the generators, not fuzzy labels.
+
+    country_cuts and indicators share the 100+ plausible-date base. Indicator
+    filters only narrow it. Ordinary industry cuts share frame.py's exclusions;
+    positive-entry and positive-impression filters narrow prize_timing totals.
+    Industry enrichment tables are NOT interchangeable with these: they exclude
+    aggregate hosts and use different dates/labels. Matching counts prove nothing.
+    """
+    country = corpus.get("country_cuts.json", {}).get("by_country", {})
+    indicators = corpus.get("indicators.json", {})
+    for name, indicator in indicators.items():
+        if "by_country" not in name or name == "industry_mix_by_country":
+            continue
+        rows = indicator.get("rows", {})
+        for label in country.keys() & rows.keys() - {SUPPRESSION_KEY}:
+            yield country[label], [(rows, label)], False
+    # Indicator industry cells partition the same country base.
+    for label, rows in indicators.get("industry_mix_by_country", {}).get("rows", {}).items():
+        if label in country and isinstance(rows, dict):
+            yield country[label], [(rows, key) for key in rows if key != SUPPRESSION_KEY], True
+    ordinary = corpus.get("prize_timing_cuts.json", {}).get("by_industry_ordinary", {})
+    for filename, table_name in (
+        ("roi_benchmarks.json", "by_industry"),
+        ("roi_benchmarks.json", "by_vertical"),
+        ("standouts.json", "industries"),
+        ("comparisons.json", "vertical_all"),
+        ("comparisons.json", "vertical_clean"),
+        ("context_checks.json", "method_prevalence_top_vs_bottom_by_vertical"),
+        ("standouts.json", "industries_by_label"),
+        ("comparisons.json", "industry_all"),
+        ("comparisons.json", "industry_clean"),
+        ("vertical_profiles.json", "by_industry"),
+        ("email_traffic.json", "email_share_by_industry"),
+    ):
+        rows = corpus.get(filename, {}).get(table_name, {})
+        for label in ordinary.keys() & rows.keys() - {SUPPRESSION_KEY}:
+            yield ordinary[label], [(rows, label)], False
+    for name, metrics in corpus.get("percentiles.json", {}).get("groups", {}).items():
+        kind, _, label = name.partition(":")
+        if kind in {"industry", "vertical"} and label in ordinary and isinstance(metrics, dict):
+            for metric in metrics:
+                if metric != SUPPRESSION_KEY:
+                    yield ordinary[label], [(metrics, metric)], False
+    tiers = corpus.get("field_cuts.json", {}).get("by_tier", {})
+    rows = corpus.get("email_traffic.json", {}).get("email_share_by_plan_tier", {})
+    for label in tiers.keys() & rows.keys() - {SUPPRESSION_KEY}:
+        yield tiers[label], [(rows, label)], False
+    # Templates includes all ordinary starts; ROI additionally needs entries > 0.
+    years = corpus.get("templates.json", {}).get("template_share_by_year", {})
+    rows = corpus.get("roi_benchmarks.json", {}).get("by_start_year", {})
+    for label in years.keys() & rows.keys() - {SUPPRESSION_KEY}:
+        yield years[label], [(rows, label)], False
+
+
+def corpus_residual_suppressions(corpus):
+    return _residual_suppressions(corpus_residual_groups(corpus))
+
+
+def residual_suppressions(value):
+    """Return child locations to withhold in documented parent/subset tables."""
+    return _residual_suppressions(residual_groups(value))
+
+
+def _residual_suppressions(groups):
+    result = []
+    for parent, children, partition in groups:
+        total = cohort_counts(parent)
+        visible = [(container, key, cohort_counts(container[key])) for container, key in children
+                   if cohort_counts(container[key])]
+        for container, key, counts in visible:
+            if any(0 < total[kind] - counts[kind] < FLOOR for kind in total.keys() & counts.keys()):
+                result.append((container, key))
+        if partition and "campaigns" in total and visible:
+            remainder = total["campaigns"] - sum(counts.get("campaigns", 0) for _, _, counts in visible)
+            if 0 < remainder < FLOOR:
+                # Withhold another whole cell, including all its derived metrics.
+                container, key, _ = min(visible, key=lambda item: item[2].get("campaigns", float("inf")))
+                result.append((container, key))
+    return result
+
+
 def privacy_problems(value, path="$"):
     """Return failures without printing group labels, which may be private.
 
@@ -170,11 +444,13 @@ is explicitly zero. A parent count never excuses a smaller nested subgroup.
 """
     problems = []
     if isinstance(value, dict):
+        for index, _ in enumerate(residual_suppressions(value)):
+            problems.append(f"{path}.residual[{index}]: parent minus published subset is below the privacy floor")
         for key in sorted(conditional_suppressions(value)):
             problems.append(f"{path}: {key} has conditional support below the privacy floor or withheld support")
         if is_count_map(value):
             for index, (key, count) in enumerate(value.items()):
-                if key != SUPPRESSION_KEY and 0 < count < FLOOR:
+                if key != SUPPRESSION_KEY and type(count) is int and 0 < count < FLOOR:
                     problems.append(f"{path}.bucket[{index}]: campaign count is below the five-campaign privacy floor")
         for key, count in value.items():
             if SAMPLE_KEY.fullmatch(key) and type(count) is int and 0 < count < FLOOR:
@@ -270,6 +546,7 @@ def check_committed_files():
         ["git", "ls-files", "--stage", "-z"], cwd=root
     ).decode().split("\0")
     failures = 0
+    corpus = {}
     for record in filter(None, records):
         metadata, path = record.split("\t", 1)
         mode = metadata.split()[0]
@@ -281,12 +558,17 @@ def check_committed_files():
         problems = committed_file_problems(path, content, mode)
         if mode != "120000" and path.startswith("analysis/output/") and path.endswith(".json"):
             try:
-                problems.extend(privacy_problems(json.loads(content)))
+                aggregate = json.loads(content)
+                corpus[Path(path).name] = aggregate
+                problems.extend(privacy_problems(aggregate))
             except json.JSONDecodeError:
                 problems.append("invalid aggregate JSON")
         for problem in problems:
             print(f"{path}: {problem}")
             failures += 1
+    for index, _ in enumerate(corpus_residual_suppressions(corpus)):
+        print(f"Cross-file residual[{index}]: parent minus published subset is below the privacy floor")
+        failures += 1
     if not failures:
         print("Tracked-file privacy gate passed")
     return bool(failures)

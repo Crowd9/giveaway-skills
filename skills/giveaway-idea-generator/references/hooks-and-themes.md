@@ -52,7 +52,7 @@ Which templates each industry reaches for, up to three by share of that industry
 | Food and drink | Gleam Sweepstakes 42%, Instant Entry 16%, Email Signup 5% |
 | Other | Instant Entry 23%, Gleam Sweepstakes 23%, YouTube Contest 6% |
 | Home and garden | Gleam Sweepstakes 35%, Instant Entry 8%, Email Signup 8% |
-| Travel and events | Gleam Sweepstakes 36%, Instant Entry 14%, Easter Egg Hunt 6%* |
+| Travel and events | Gleam Sweepstakes 36%, Instant Entry 14% |
 | Toys, hobbies and collectibles | Gleam Sweepstakes 32%, Instant Entry 15%, YouTube Contest 8%* |
 | Software and SaaS | Gleam Sweepstakes 30%, Instant Entry 11%*, YouTube Contest 9%* |
 | Health, wellness and fitness | Gleam Sweepstakes 40%, Instant Entry 10%, Email Signup 6%* |
@@ -199,7 +199,7 @@ These comparisons do not establish what choosing a campaign type would change. E
 
 Source for the total population: `analysis/output/campaign_types.json` (`all`). Industry comparisons use `analysis/output/vertical_profiles.json`, `campaign_types_by_industry`.
 
-Every industry with enough campaigns gets a row (23 industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses). Each type is a share of the industry's campaigns, set against the same type's share across all industries. The first column lists types at 1.25x the all-industry share or more, the second types at 0.75x or less, strongest first and up to three each. The source holds each industry's most common types, up to eight, so a type missing from a row sat near the all-industry share or was too thin to publish, and a dash means none of the listed types cleared the cut. Each figure carries the campaigns and businesses behind it. The rows describe what an industry's businesses chose to run and say nothing about what the type did for them.
+The source covers 23 qualifying industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses. Rows that could expose small groups by subtraction are withheld here. Each type is a share of the industry's campaigns, set against the same type's share across all industries. The first column lists types at 1.25x the all-industry share or more, the second types at 0.75x or less, strongest first and up to three each. The source holds each industry's most common types, up to eight, so a type missing from a row sat near the all-industry share or was too thin to publish, and a dash means none of the listed types cleared the cut. Each figure carries the campaigns and businesses behind it. The rows describe what an industry's businesses chose to run and say nothing about what the type did for them.
 
 <!-- generated:ig2_industry_types -->
 | Industry | Campaigns | Businesses | Types used more often than across all industries | Types used less often |
@@ -207,13 +207,9 @@ Every industry with enough campaigns gets a row (23 industries, from 116,283 cam
 | Gaming and esports | 24,229 | 4,657 | Creator or streamer 2.3x (2,967 campaigns, 1,026 businesses). Community or Discord 1.8x (1,957 campaigns, 782 businesses). Product launch 1.6x (1,303 campaigns, 537 businesses) | Holiday themed 0.6x (1,265 campaigns, 543 businesses). Gift card or voucher 0.7x (1,624 campaigns, 569 businesses) |
 | Media and entertainment | 21,540 | 2,074 | Free or no purchase 2.0x (1,361 campaigns, 67 businesses). Gift card or voucher 1.7x (3,477 campaigns, 333 businesses). Competition wording (UK) 1.4x (1,274 campaigns, 124 businesses) | Collaboration or partner 0.7x (2,192 campaigns, 438 businesses) |
 | Electronics and tech | 15,543 | 2,063 | Collaboration or partner 1.4x (3,143 campaigns, 630 businesses). Milestone 1.4x (831 campaigns, 335 businesses) | - |
-| Toys, hobbies, collectibles | 4,700 | 750 | Product launch 2.0x (322 campaigns, 107 businesses) | Collaboration or partner 0.6x (433 campaigns, 142 businesses). Creator or streamer 0.7x (181 campaigns, 102 businesses). Holiday themed 0.7x (302 campaigns, 108 businesses) |
-| Food and drink | 4,681 | 890 | Weekly or monthly series 1.9x (323 campaigns, 59 businesses). Sweepstakes wording (US) 1.8x (283 campaigns, 111 businesses). Holiday themed 1.5x (618 campaigns, 237 businesses) | - |
-| Sports and outdoors | 4,635 | 1,013 | - | Gift card or voucher 0.7x (326 campaigns, 143 businesses) |
 | Apparel and fashion | 4,628 | 812 | Cart, wishlist or spree 4.7x (169 campaigns, 32 businesses). Gift card or voucher 1.5x (650 campaigns, 202 businesses) | - |
 | Travel and events | 3,969 | 638 | Sweepstakes wording (US) 1.7x (222 campaigns, 63 businesses). Competition wording (UK) 1.4x (239 campaigns, 54 businesses). Holiday themed 1.3x (428 campaigns, 146 businesses) | Community or Discord 0.7x (129 campaigns, 40 businesses) |
 | Home and garden | 3,710 | 594 | Holiday themed 2.2x (715 campaigns, 201 businesses). Weekly or monthly series 2.0x (277 campaigns, 31 businesses). Advent or daily calendar 1.6x (140 campaigns, 32 businesses) | - |
-| Creator or influencer | 3,389 | 1,045 | Cash prize 4.9x (571 campaigns, 48 businesses). Creator or streamer 1.9x (343 campaigns, 218 businesses). Weekly or monthly series 1.3x (166 campaigns, 30 businesses) | Collaboration or partner 0.4x (216 campaigns, 135 businesses). Bundle, mega or ultimate 0.6x (240 campaigns, 118 businesses) |
 | Health, wellness and fitness | 3,160 | 498 | Sweepstakes wording (US) 2.8x (298 campaigns, 39 businesses). Product launch 1.6x (169 campaigns, 52 businesses). Advent or daily calendar 1.4x (104 campaigns, 27 businesses) | Cash prize 0.7x (71 campaigns, 34 businesses) |
 | Retail marketplace | 2,860 | 382 | Sweepstakes wording (US) 3.7x (351 campaigns, 17 businesses). Free or no purchase 3.5x (314 campaigns, 17 businesses). Cash prize 3.1x (302 campaigns, 41 businesses) | Bundle, mega or ultimate 0.6x (203 campaigns, 72 businesses). Collaboration or partner 0.7x (281 campaigns, 65 businesses) |
 | Automotive | 2,310 | 379 | Advent or daily calendar 1.5x (84 campaigns, 15 businesses). Gift card or voucher 1.3x (278 campaigns, 110 businesses) | Collaboration or partner 0.6x (210 campaigns, 82 businesses) |
@@ -223,10 +219,7 @@ Every industry with enough campaigns gets a row (23 industries, from 116,283 cam
 | Beauty and personal care | 1,411 | 351 | Advent or daily calendar 2.3x (77 campaigns, 20 businesses). Holiday themed 2.1x (251 campaigns, 93 businesses). Bundle, mega or ultimate 1.5x (268 campaigns, 119 businesses) | - |
 | Marketing agency | 1,201 | 157 | Community or Discord 2.1x (113 campaigns, 29 businesses). Weekly or monthly series 1.6x (73 campaigns, 16 businesses). Collaboration or partner 1.4x (245 campaigns, 50 businesses) | - |
 | Baby and kids | 1,184 | 138 | Bundle, mega or ultimate 2.2x (330 campaigns, 66 businesses). Holiday themed 1.5x (151 campaigns, 40 businesses). Competition wording (UK) 1.4x (71 campaigns, 15 businesses) | - |
-| Pets | 947 | 206 | Anniversary or birthday 1.8x (34 campaigns, 11 businesses). Advent or daily calendar 1.7x (40 campaigns, 11 businesses). Holiday themed 1.5x (124 campaigns, 48 businesses) | - |
 | Local services | 917 | 181 | Gift card or voucher 2.3x (199 campaigns, 47 businesses). Holiday themed 1.4x (111 campaigns, 46 businesses). Weekly or monthly series 1.3x (45 campaigns, 15 businesses) | Collaboration or partner 0.3x (44 campaigns, 20 businesses) |
-| Nonprofit and community | 516 | 197 | Community or Discord 3.0x (68 campaigns, 46 businesses). Gift card or voucher 1.3x (66 campaigns, 32 businesses) | Holiday themed 0.7x (33 campaigns, 16 businesses) |
-| Jewelry and watches | 418 | 162 | - | - |
 <!-- /generated -->
 
 Use a row to find the angle your industry already leans on, and to see where an angle would stand out. A type that appears in a row because a handful of businesses ran it many times shows in the business count, so check that count before building a concept on a multiple.

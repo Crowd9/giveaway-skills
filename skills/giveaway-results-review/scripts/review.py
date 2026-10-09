@@ -281,7 +281,8 @@ def plain_reading(rows):
 def self_test():
     class A: contestants = 1800; impressions = 6000; entries = 9000; invalid = 400; days = 14; methods = 6; repeatable = False; vertical = "food_drink"; emails = 1500; referrals = 200; actions_completed = 5400; prize_value = 1500; x_follows = 900
     rows = review(A); d = {r[0]: r for r in rows}
-    assert "better than" in d["Users"][3] and "food drink campaigns" in d["Users"][3], rows
+    assert "better than" in d["Users"][3] and "food drink campaigns" not in d["Users"][3], rows
+    assert "food drink campaigns" in d["Impressions"][3], rows  # Available metric still ranks.
     assert "Email signups" in d and "better than" in d["Email signups"][3], rows
     assert d["Actions completed per Entrant"][1] == "3.00" and "Entrants per day" in d and "Impressions" in d and "better than" in d["Impressions"][3], rows
     assert "X follows" in d and "better than" in d["X follows"][3] and "higher than" in d["Stated Prize value per Entrant"][3], rows

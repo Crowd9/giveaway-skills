@@ -180,27 +180,17 @@ Read that as who mails, never as what mailing does. Campaigns collecting mail cl
 <!-- generated:pp2_mail_industry -->
 | Industry | Campaigns | Businesses | Share of campaigns where mail is a tenth of traffic |
 |---|---|---|---|
-| Health, wellness and fitness | 3,148 | 495 | 11.6% |
-| Jewelry and watches | 453 | 163 | 9.9% |
 | Local services | 910 | 181 | 3.4% |
-| Media and entertainment | 21,533 | 2,077 | 2.2% |
-| Education | 1,862 | 356 | 1.7% |
-| Travel and events | 3,909 | 636 | 0.4% |
-| Marketing agency | 1,149 | 156 | - |
-| Apparel and fashion | 4,615 | 808 | 0.2% |
-| Pets | 937 | 204 | - |
 <!-- /generated -->
 
-Plan tier tracks the same way, with Premium businesses drawing the most from mail clients and Hobby and Free the least. By organizer country, Italy leads the share of campaigns drawing a tenth of traffic from mail, ahead of Romania, Germany and the United States.
+The published tier comparison is limited to Business, Pro and Hobby. Other tiers are withheld to protect small residual groups. By organizer country, Italy leads the share of campaigns drawing a tenth of traffic from mail, ahead of Romania, Germany and the United States.
 
 <!-- generated:pp2_mail_tier -->
 | Tier | Typical % of Impressions from mail clients |
 |---|---|
-| Premium | 0.74% |
 | Business | 0.37% |
 | Pro | 0.31% |
 | Hobby | 0% |
-| Free | 0% |
 <!-- /generated -->
 
 <!-- generated:pp2_mail_country -->
@@ -314,13 +304,11 @@ Source: analysis/output/industries.json (by_youtube_subscribers, by_business_typ
 
 ## Traffic mix by country
 
-YouTube supplies far more of India's and Brazil's Impressions than the United States', and Brazil's campaigns land almost entirely on the Gleam-hosted page, not an embed. A campaign built for a Brazilian or Indian audience can lean on a YouTube push harder than the US-only playbook above assumes.
+The available country row describes the United States. Other country comparisons are withheld to protect small residual groups. Choose promotion channels from your own audience evidence.
 
 <!-- generated:pp2_country_traffic -->
 | Country | YouTube share of Impressions | Gleam-hosted landing share | Campaigns | Businesses |
 |---|---|---|---|---|
-| India | 23% | 72% | 4,059 | 690 |
-| Brazil | 20% | 97% | 5,297 | 496 |
 | United States | 2.5% | 43% | 57,193 | 8,708 |
 <!-- /generated -->
 

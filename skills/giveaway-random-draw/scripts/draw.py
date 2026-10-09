@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Provably fair random draw with an audit record. Python 3.8+, no dependencies.
+"""Reproducible random draw with an audit record. Python 3.8+, no dependencies.
 
 Input: CSV or TSV with a header, one id per line, or a JSON export of comments or Entrants (a list, or an object holding one,
 with the person named by a field such as username, author, handle, email or owner.username). Pass --id-column to override.
@@ -19,8 +19,8 @@ tiers, backups, winners, id-column, weight-column, exclude. A flag given on the 
 How the draw works (documented so anyone can recheck it in any language):
   1. Entrants are read, ids trimmed and lower-cased, duplicates merged (weights add up when a weight column is given),
      exclusions removed, invalid or zero weights dropped.
-  2. The seed is a public string: text you published in advance, or the randomness of a drand round or NIST beacon
-     pulse chosen in advance and fetched after it existed.
+  2. Supplied seed text permits reproduction. Fairness requires a preannounced future source beyond the
+     organizer's control, such as a drand round or NIST beacon pulse fetched after it exists.
   3. Each Entrant gets key = u ** (1 / weight), where u = SHA-256(seed + "|" + id) read as a number in (0, 1).
      This is Efraimidis-Spirakis weighted sampling without replacement. With no weights it is a uniform draw.
   4. Entrants are sorted by key, highest first. Tiers and backups are filled in that order.
@@ -29,6 +29,7 @@ How the draw works (documented so anyone can recheck it in any language):
 
 commit prints a commitment (hash of the input plus the rules) to publish before the seed exists. With --draw-at it
 also prints the drand round that will be produced at that time, so the seed source can be announced in advance.
+verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but the beacon source is unverified.
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
@@ -280,7 +281,7 @@ def mask(x):
 def cmd_verify(a):
     with open(a.audit_file) as resource:
         audit = json.load(resource)
-    path = a.input or audit["input_file"]; ok = True
+    path = a.input or audit["input_file"]; ok = True; source_unverified = False
     rows, id_column, digest = load_entries(path, audit["rules"]["id_column"])
     if digest != audit["input_sha256"]: print("FAIL input file hash differs from the audit record"); ok = False
     if commitment(digest, audit["rules"]) != audit["commitment"]: print("FAIL commitment does not match input and rules"); ok = False
@@ -297,7 +298,34 @@ def cmd_verify(a):
             j = fetch_json(f"{DRAND['url']}/public/{src['round']}")
             if j["randomness"] != audit["seed"]: print("FAIL drand randomness for that round differs"); ok = False
             else: print(f"ok   drand round {src['round']} randomness matches the public beacon")
-        except Exception as ex: print(f"warn could not refetch drand round ({ex}); checked the recorded value only")
+        except Exception as ex:
+            print(f"warn could not refetch drand round ({ex}); seed source unverified")
+            source_unverified = True
+    elif src["type"] == "nist-beacon":
+        # Fetch only the fixed NIST endpoint, never an arbitrary URL supplied in an audit.
+        url = src.get("fetched_from", "")
+        prefix = NIST + "/time/"
+        valid_url = (isinstance(url, str) and url.startswith(prefix)
+                     and url[len(prefix):].isascii() and url[len(prefix):].isdigit())
+        stamp = src.get("timeStamp")
+        try:
+            timestamp = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+            valid_stamp = timestamp.utcoffset() is not None
+        except (AttributeError, TypeError, ValueError):
+            valid_stamp = False
+        if (not valid_url or not valid_stamp or not isinstance(src.get("outputValue"), str)
+                or not src["outputValue"] or src["outputValue"] != audit["seed"]):
+            print("FAIL NIST pulse metadata or recorded output does not match the seed"); ok = False
+        else:
+            try:
+                pulse = fetch_json(url)["pulse"]
+                if pulse["timeStamp"] != stamp or pulse["outputValue"] != audit["seed"]:
+                    print("FAIL NIST pulse timestamp or randomness differs"); ok = False
+                else:
+                    print("ok   NIST pulse timestamp and randomness match the public beacon")
+            except Exception as ex:
+                print(f"warn could not refetch NIST pulse ({ex}); seed source unverified")
+                source_unverified = True
     entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude)
     if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL Entrant counts differ from the audit record"); ok = False
     tiers = audit["rules"].get("tiers"); backups = audit["rules"].get("backups")
@@ -321,7 +349,10 @@ def cmd_verify(a):
             print(f"ok   recomputed all {need} committed places, including order and tier assignments")
         else:
             print("FAIL recomputed result order, IDs or tier assignments differ from the audit record"); ok = False
-    print("PASS" if ok else "FAIL"); return 0 if ok else 1
+    if not ok: print("FAIL"); return 1
+    if source_unverified:
+        print("PARTIAL: ranking recomputation verified; seed source unverified"); return 2
+    print("PASS"); return 0
 
 def verifier_self_test():
     import contextlib, copy, os, tempfile
@@ -341,7 +372,8 @@ def verifier_self_test():
             with contextlib.redirect_stdout(output):
                 code = main(["verify", audit_path, "--input", entries])
             assert code == expected_code, output.getvalue()
-            assert output.getvalue().splitlines()[-1] == ("PASS" if expected_code == 0 else "FAIL"), output.getvalue()
+            ending = {0: "PASS", 1: "FAIL", 2: "PARTIAL: ranking recomputation verified; seed source unverified"}
+            assert output.getvalue().splitlines()[-1] == ending[expected_code], output.getvalue()
         assert [(r["tier"], r["id"], r["key"]) for r in original["results"]] == [
             ("Grand", "delta", 0.974794625452104),
             ("Runner-up", "zeta", 0.9522387005466458),
@@ -349,6 +381,32 @@ def verifier_self_test():
             ("Backup 1", "gamma", 0.7696785881239763),
             ("Backup 2", "beta", 0.4605470121165112)], original["results"]
         check(original, 0)
+        # Fabricated metadata must never gain PASS merely by recomputing matching Winners.
+        from unittest.mock import patch
+        nist = copy.deepcopy(original)
+        nist["seed_source"] = {"type": "nist-beacon", "timeStamp": "2026-09-12T00:00:00.000Z",
+                               "outputValue": nist["seed"], "fetched_from": NIST + "/time/1789171200000"}
+        pulse = {"pulse": {"timeStamp": nist["seed_source"]["timeStamp"], "outputValue": nist["seed"]}}
+        fetched = []
+        def fetch_pulse(url):
+            fetched.append(url)
+            return copy.deepcopy(pulse)
+        with patch.dict(globals(), fetch_json=fetch_pulse):
+            check(nist, 0)
+            assert fetched == [nist["seed_source"]["fetched_from"]], fetched
+            for field, value in (("outputValue", "fabricated"), ("timeStamp", "2026-09-12T00:01:00.000Z"),
+                                 ("timeStamp", "invalid"), ("fetched_from", "https://example.com/pulse")):
+                changed = copy.deepcopy(nist); changed["seed_source"][field] = value
+                check(changed, 1)
+            mismatch = copy.deepcopy(pulse); mismatch["pulse"]["outputValue"] = "actual-beacon-value"
+            with patch.dict(globals(), fetch_json=lambda url: mismatch): check(nist, 1)
+        def unavailable(url): raise OSError("offline test")
+        with patch.dict(globals(), fetch_json=unavailable):
+            check(nist, 2)
+            drand = copy.deepcopy(original); drand["seed_source"] = {"type": "drand", "round": 1000}
+            check(drand, 2)
+            changed = copy.deepcopy(nist); changed["results"][0]["id"] = "absent-entrant"
+            check(changed, 1)
         for length in (0, 1, 3, 4):
             changed = copy.deepcopy(original); changed["results"] = changed["results"][:length]
             check(changed, 1)
@@ -422,6 +480,15 @@ def self_test():
     self_test_numeric_ids()
     self_test_invalid_counts()
     self_test_input_formats()
+    import contextlib, io
+    for args in (["--help"], ["draw", "--help"]):
+        help_output = io.StringIO()
+        with contextlib.redirect_stdout(help_output):
+            try: main(args)
+            except SystemExit as error: assert error.code == 0
+        help_text = " ".join(help_output.getvalue().split())
+        assert "reproduction" in help_text and "preannounced future source beyond" in help_text, help_text
+        assert "text you published in advance" not in help_text, help_text
     import tempfile, os
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     with open(p, "w") as resource:
@@ -525,7 +592,8 @@ def main(argv):
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     c.add_argument("--flagged-out", help="write the flagged ids to this file for review, then pass it to draw as --exclude. Use it on a list too long to read in a terminal")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
-    d.add_argument("--seed"); d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
+    d.add_argument("--seed", help="text for reproduction; fairness requires a preannounced future source beyond organizer control")
+    d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
     d.add_argument("--audit"); d.add_argument("--winners-csv"); d.add_argument("--mask", action="store_true", help="print masked ids for announcements")
     v = sub.add_parser("verify", help="recompute a draw from its audit record"); v.add_argument("audit_file"); v.add_argument("--input"); v.add_argument("--exclude")
     a = ap.parse_args(argv)

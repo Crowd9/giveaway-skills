@@ -277,25 +277,7 @@
    "contestants_per_impression": 0.3053834712137824,
    "share_with_email_action": 0.5205203654948118
   },
-  "food_drink": {
-   "n": 4681,
-   "organizers": 890,
-   "valued_n": 2002,
-   "contestants": 635,
-   "stated_pool_usd": 427.5,
-   "usd_per_contestant": 0.4993170489629295,
-   "usd_per_email": 0.5154639175257731,
-   "usd_per_follow": 0.8701657458563536,
-   "usd_per_join": 4.254810882548108,
-   "usd_per_referral_entry": 2.7777777777777777,
-   "emails_per_campaign": 712,
-   "follows_per_campaign": 331,
-   "referral_entries_per_campaign": 118.0,
-   "actions": 6,
-   "duration_days": 20.0,
-   "contestants_per_impression": 0.2669353291114949,
-   "share_with_email_action": 0.543259987182226
-  },
+  "food_drink": null,
   "travel_events": {
    "n": 3969,
    "organizers": 638,
@@ -352,7 +334,10 @@
    "duration_days": 17,
    "contestants_per_impression": 0.2320749936660755,
    "share_with_email_action": 0.3862815884476534
-  }
+  },
+  "suppressed_below_floor": [
+   "food_drink"
+  ]
  },
  "by_industry": {
   "gaming_esports": {
@@ -412,63 +397,9 @@
    "contestants_per_impression": 0.2987012987012987,
    "share_with_email_action": 0.2564498488065367
   },
-  "toys_hobbies_collectibles": {
-   "n": 4700,
-   "organizers": 750,
-   "valued_n": 1414,
-   "contestants": 417.0,
-   "stated_pool_usd": 200.0,
-   "usd_per_contestant": 0.49953789279112754,
-   "usd_per_email": 0.594741582374948,
-   "usd_per_follow": 0.6906077348066298,
-   "usd_per_join": 2.0454545454545454,
-   "usd_per_referral_entry": 3.8283108643933383,
-   "emails_per_campaign": 367,
-   "follows_per_campaign": 306,
-   "referral_entries_per_campaign": 63.0,
-   "actions": 7.0,
-   "duration_days": 15.0,
-   "contestants_per_impression": 0.25944218477629283,
-   "share_with_email_action": 0.40191489361702126
-  },
-  "food_drink": {
-   "n": 4681,
-   "organizers": 890,
-   "valued_n": 2002,
-   "contestants": 635,
-   "stated_pool_usd": 427.5,
-   "usd_per_contestant": 0.4993170489629295,
-   "usd_per_email": 0.5154639175257731,
-   "usd_per_follow": 0.8701657458563536,
-   "usd_per_join": 4.254810882548108,
-   "usd_per_referral_entry": 2.7777777777777777,
-   "emails_per_campaign": 712,
-   "follows_per_campaign": 331,
-   "referral_entries_per_campaign": 118.0,
-   "actions": 6,
-   "duration_days": 20.0,
-   "contestants_per_impression": 0.2669353291114949,
-   "share_with_email_action": 0.543259987182226
-  },
-  "sports_outdoors": {
-   "n": 4635,
-   "organizers": 1013,
-   "valued_n": 2317,
-   "contestants": 968,
-   "stated_pool_usd": 648.0,
-   "usd_per_contestant": 0.6637168141592921,
-   "usd_per_email": 0.6269571612620555,
-   "usd_per_follow": 1.0934065934065933,
-   "usd_per_join": 2.4285714285714284,
-   "usd_per_referral_entry": 2.8919572666801048,
-   "emails_per_campaign": 1061,
-   "follows_per_campaign": 509,
-   "referral_entries_per_campaign": 206,
-   "actions": 6,
-   "duration_days": 16.0,
-   "contestants_per_impression": 0.24388881734773543,
-   "share_with_email_action": 0.5275080906148867
-  },
+  "toys_hobbies_collectibles": null,
+  "food_drink": null,
+  "sports_outdoors": null,
   "apparel_fashion": {
    "n": 4628,
    "organizers": 812,
@@ -545,25 +476,7 @@
    "contestants_per_impression": 0.2927320570707693,
    "share_with_email_action": 0.5859838274932615
   },
-  "creator_influencer": {
-   "n": 3389,
-   "organizers": 1045,
-   "valued_n": 903,
-   "contestants": 316,
-   "stated_pool_usd": 75.0,
-   "usd_per_contestant": 0.275,
-   "usd_per_email": 0.898203374554323,
-   "usd_per_follow": 0.2898550724637681,
-   "usd_per_join": 0.95338570408362,
-   "usd_per_referral_entry": 2.359550561797753,
-   "emails_per_campaign": 413.5,
-   "follows_per_campaign": 492.5,
-   "referral_entries_per_campaign": 19.0,
-   "actions": 7,
-   "duration_days": 8.0,
-   "contestants_per_impression": 0.37163814180929094,
-   "share_with_email_action": 0.04190026556506344
-  },
+  "creator_influencer": null,
   "health_wellness_fitness": {
    "n": 3160,
    "organizers": 498,
@@ -735,25 +648,7 @@
    "contestants_per_impression": 0.28638581543801106,
    "share_with_email_action": 0.5320945945945946
   },
-  "pets": {
-   "n": 947,
-   "organizers": 206,
-   "valued_n": 458,
-   "contestants": 745,
-   "stated_pool_usd": 341.0,
-   "usd_per_contestant": 0.450020182216584,
-   "usd_per_email": 0.4588859416445623,
-   "usd_per_follow": 1.0900884303610905,
-   "usd_per_join": 1.6666666666666667,
-   "usd_per_referral_entry": 4.3345347515355535,
-   "emails_per_campaign": 775.5,
-   "follows_per_campaign": 431.0,
-   "referral_entries_per_campaign": 96.0,
-   "actions": 6,
-   "duration_days": 15,
-   "contestants_per_impression": 0.24641984106620385,
-   "share_with_email_action": 0.7455121436114044
-  },
+  "pets": null,
   "local_services": {
    "n": 917,
    "organizers": 181,
@@ -773,62 +668,21 @@
    "contestants_per_impression": 0.24739412700155483,
    "share_with_email_action": 0.15812431842966193
   },
-  "nonprofit_community": {
-   "n": 516,
-   "organizers": 197,
-   "valued_n": 165,
-   "contestants": 396.0,
-   "stated_pool_usd": 688.0,
-   "usd_per_contestant": 1.1583011583011582,
-   "usd_per_email": 1.0918727915194346,
-   "usd_per_follow": 1.2936610608020698,
-   "usd_per_join": 1.237684352242825,
-   "usd_per_referral_entry": 9.967948717948717,
-   "emails_per_campaign": 486.0,
-   "follows_per_campaign": 262,
-   "referral_entries_per_campaign": 56.5,
-   "actions": 7.0,
-   "duration_days": 14.0,
-   "contestants_per_impression": 0.2814569536423841,
-   "share_with_email_action": 0.32558139534883723
-  },
-  "jewelry_watches": {
-   "n": 418,
-   "organizers": 162,
-   "valued_n": 217,
-   "contestants": 492.0,
-   "stated_pool_usd": 500.0,
-   "usd_per_contestant": 0.802675585284281,
-   "usd_per_email": 0.873015873015873,
-   "usd_per_follow": 1.1009174311926606,
-   "usd_per_join": 1.0273972602739727,
-   "usd_per_referral_entry": 2.722772277227723,
-   "emails_per_campaign": 701,
-   "follows_per_campaign": 271.5,
-   "referral_entries_per_campaign": 201.0,
-   "actions": 7.0,
-   "duration_days": 20.0,
-   "contestants_per_impression": 0.20878472556224115,
-   "share_with_email_action": 0.5191387559808612
-  }
+  "nonprofit_community": null,
+  "jewelry_watches": null,
+  "suppressed_below_floor": [
+   "toys_hobbies_collectibles",
+   "pets",
+   "creator_influencer",
+   "jewelry_watches",
+   "food_drink",
+   "nonprofit_community",
+   "sports_outdoors"
+  ]
  },
  "by_start_year": {
-  "2020": {
-   "n": 1156,
-   "organizers": 717,
-   "contestants": 611.0,
-   "contestants_per_impression": 0.2640067911714771,
-   "actions": 7.0,
-   "stated_pool_usd": 550.0
-  },
-  "2021": {
-   "n": 27806,
-   "organizers": 5768,
-   "contestants": 501.0,
-   "contestants_per_impression": 0.28086997193638913,
-   "actions": 7.0,
-   "stated_pool_usd": 234.0
-  },
+  "2020": null,
+  "2021": null,
   "2022": {
    "n": 25956,
    "organizers": 6782,
@@ -845,14 +699,7 @@
    "actions": 7,
    "stated_pool_usd": 300.0
   },
-  "2024": {
-   "n": 16725,
-   "organizers": 4141,
-   "contestants": 472,
-   "contestants_per_impression": 0.23893360160965796,
-   "actions": 7,
-   "stated_pool_usd": 307.5
-  },
+  "2024": null,
   "2025": {
    "n": 16359,
    "organizers": 3811,
@@ -868,6 +715,11 @@
    "contestants_per_impression": 0.27136431784107945,
    "actions": 7.0,
    "stated_pool_usd": 300.0
-  }
+  },
+  "suppressed_below_floor": [
+   "2024",
+   "2020",
+   "2021"
+  ]
  }
 }

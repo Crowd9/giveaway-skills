@@ -2807,22 +2807,10 @@
    }
   },
   "india": {
-   "other": {
-    "n": 4056,
-    "sites": 690,
-    "contestants": 828.5,
-    "conversion": 0.336,
-    "entries_per_entrant": 5.03,
-    "days": 9.0,
-    "methods": 7.0,
-    "email_offered": 0.057,
-    "question_offered": 0.506,
-    "upload_offered": 0.01,
-    "share_offered": 0.571,
-    "instagram_offered": 0.292,
-    "facebook_offered": 0.187,
-    "pool_usd_p50": 200.0
-   }
+   "other": null,
+   "suppressed_below_floor": [
+    "other"
+   ]
   },
   "ireland": {
    "other": {
@@ -2864,22 +2852,7 @@
    }
   },
   "singapore": {
-   "other": {
-    "n": 3423,
-    "sites": 269,
-    "contestants": 718.0,
-    "conversion": 0.304,
-    "entries_per_entrant": 4.826,
-    "days": 7.0,
-    "methods": 6.0,
-    "email_offered": 0.048,
-    "question_offered": 0.857,
-    "upload_offered": 0.076,
-    "share_offered": 0.454,
-    "instagram_offered": 0.155,
-    "facebook_offered": 0.152,
-    "pool_usd_p50": 578.0
-   },
+   "other": null,
    "skill_or_judged": {
     "n": 68,
     "sites": 15,
@@ -2895,7 +2868,10 @@
     "instagram_offered": 0.324,
     "facebook_offered": 0.441,
     "pool_usd_p50": 836.0
-   }
+   },
+   "suppressed_below_floor": [
+    "other"
+   ]
   },
   "united kingdom": {
    "other": {

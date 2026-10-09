@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Map a giveaway plan to documented Gleam Competitions settings. Use for 'set this up in Gleam', 'fraud setting', 'Gleam draw', 'Gleam impressions', 'Gleam terms', 'mandatory action', 'daily entries', 'free entry alternative', 'export entries', 'Gleam on Shopify', 'Quick Draws', 'repeat Winners', or 'admin entries'. Cover setup, operation and reporting."
 metadata:
-  version: 1.2.40
+  version: 1.2.41
 ---
 
 # Gleam Campaign Setup

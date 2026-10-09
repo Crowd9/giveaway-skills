@@ -148,15 +148,6 @@ BENCH = {
    "stated_pool_usd": 368.0,
    "n": 6457
   },
-  "food_drink": {
-   "usd_per_contestant": 0.5,
-   "usd_per_email": 0.52,
-   "usd_per_follow": 0.87,
-   "usd_per_referral_entry": 2.78,
-   "emails_per_campaign": 712,
-   "stated_pool_usd": 427.5,
-   "n": 4681
-  },
   "travel_events": {
    "usd_per_contestant": 0.86,
    "usd_per_email": 0.84,
@@ -238,11 +229,14 @@ def print_table(rows, header):
 def benchmark_self_test():
     # Installed skills carry the reference, while the private aggregate source is optional.
     reference = Path(__file__).resolve().parents[1] / "references" / "roi-benchmarks.md"
-    vertical_names = ("Music and media", "Gaming", "Unclassified", "Technology",
-                      "Fitness and outdoor", "Kids, family, pets", "Fashion and beauty",
-                      "Food and drink", "Travel and events", "Home", "Software")
-    band_names = ("100 to 250", "250 to 500", "500 to 1,000", "1,000 to 2,500",
-                  "2,500 to 10,000", "10,000 or more")
+    vertical_names = {
+        "music_media": "Music and media", "gaming": "Gaming", "unclassified": "Unclassified",
+        "technology": "Technology", "fitness_outdoor": "Fitness and outdoor",
+        "kids_family_pets": "Kids, family, pets", "fashion_beauty": "Fashion and beauty",
+        "travel_events": "Travel and events", "home": "Home", "software": "Software",
+    }
+    band_names = {"100-250": "100 to 250", "250-500": "250 to 500", "500-1k": "500 to 1,000",
+                  "1k-2.5k": "1,000 to 2,500", "2.5k-10k": "2,500 to 10,000", "10k+": "10,000 or more"}
     lines = reference.read_text().splitlines()
     for section, names, columns in (
         ("by_vertical", vertical_names, {1: "n", 3: "stated_pool_usd", 5: "usd_per_email",
@@ -250,7 +244,8 @@ def benchmark_self_test():
         ("by_band", band_names, {1: "n", 2: "stated_pool_usd", 4: "usd_per_email",
                                 5: "usd_per_follow", 6: "emails_per_campaign"}),
     ):
-        for key, name in zip(BENCH[section], names):
+        for key in BENCH[section]:
+            name = names[key]
             cells = next(line for line in lines if line.startswith("| " + name + " |"))
             cells = [cell.strip() for cell in cells.strip("|").split("|")]
             for column, metric in columns.items():
@@ -273,6 +268,8 @@ def self_test():
     class A: prize_cost = 900; stated_value = 1500; promotion = 300; admin = 200; shipping = 0; contestants = 2000; vertical = "food_drink"
     class A(A): emails = None; follows = None; referrals = None; email_action = True; follow_action = True; share_action = True; value_per_email = 4; value_per_follow = 0; value_per_referral = 0
     rows, note = run(A); d = {r[0]: r for r in rows}
+    assert "food_drink" not in BENCH["by_vertical"]
+    assert d["Stated value per Entrant"][3] == "band 1k-2.5k", rows
     assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Return per dollar"][1] == "4.86", rows
     A.value_per_email = 0; rows, _ = run(A); assert any(r[0] == "Breakeven value per email" for r in rows)
     A.stated_value = None

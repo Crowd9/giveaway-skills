@@ -2,7 +2,7 @@
 """Build the results dashboard as one HTML file, from the export and the words the reviewer wrote.
 
   python3 dashboard.py export.csv --words words.json --out dashboard.html [--impressions N] [--plan-cost USD]
-                       [--prize-cost USD] [--vertical NAME] [--first-campaign] [--site site.json]
+                       [--prize-cost USD] [--prize-value USD] [--vertical NAME] [--first-campaign] [--site site.json]
   python3 dashboard.py --self-test
 
 Every figure on the page comes from campaign_report.py and review.py run on the export, so the page and the
@@ -510,10 +510,21 @@ const DATA={{DATA}};
   function beats(v,t){let k=0;for(const x of t.p){if(v>x)k++;}return k?PCTS[k-1]:0;}
   function bandOf(n){for(const k in SL){if(k!=="all"&&n>=SL[k].lo&&n<SL[k].hi)return k;}return "band:10k+";}
   const es=document.getElementById("emailShare"),ec=document.getElementById("emailCount"),er=document.getElementById("emailRank");
-  function upd1(){const sh=+es.value/100;ec.innerHTML=fmt(Math.round(sh*N))+' <small>addresses if <span>'+Math.round(sh*100)+'%</span> of your '+fmt(N)+' Entrants sign up</small>';const t=SL[DATA.band].email;if(!t){er.textContent="";return;}er.textContent="Campaigns your size that ran an email action typically got a signup from "+(t.p[9]>=0.95?"almost every Entrant":Math.round(t.p[9]*100)+"% of Entrants")+". At "+Math.round(sh*100)+"% you'd be ahead of "+beats(sh,t)+"% of them, across "+fmt(t.n)+" campaigns.";}
+  function upd1(){const sh=+es.value/100;ec.innerHTML=fmt(Math.round(sh*N))+' <small>addresses if <span>'+Math.round(sh*100)+'%</span> of your '+fmt(N)+' Entrants sign up</small>';er.textContent="This target counts unique subscribers. Email benchmarks count subscription completions per Entrant, so this target has no benchmark rank.";}
   es.addEventListener("input",upd1);upd1();
   const en=document.getElementById("ent"),enb=document.getElementById("entBand"),enr=document.getElementById("entRank");
-  function upd2(){const n=+en.value;if(N<100||n<100){enb.textContent=fmt(n)+" Entrants";enr.textContent="No matching peers: the dataset starts at 100 Entrants";return;}const k=bandOf(n),b=SL[k];enb.innerHTML='<span>'+fmt(n)+'</span> <small>Entrants puts you with campaigns of '+b.label+', where the typical one gets '+fmt(Math.round(b.contestants.p[9]))+', with '+b.entries_per_entrant.p[9].toFixed(1)+' Entries and '+b.actions_per_contestant.p[9].toFixed(1)+' actions each</small>';enr.textContent="That beats "+beats(n,SL.all.contestants)+"% of all "+fmt(SL.all.contestants.n)+" campaigns and "+beats(n,b.contestants)+"% of the "+fmt(b.contestants.n)+" your size. Getting there is what the promotion plan is for.";}
+  function upd2(){
+    const n=+en.value;if(N<100||n<100){enb.textContent=fmt(n)+" Entrants";enr.textContent="No matching peers: the dataset starts at 100 Entrants";return;}
+    const b=SL[bandOf(n)]||{},typ=[],ranks=[];
+    if(b.contestants)typ.push(fmt(Math.round(b.contestants.p[9]))+" Entrants");
+    if(b.entries_per_entrant)typ.push(b.entries_per_entrant.p[9].toFixed(1)+" Entries each");
+    if(b.actions_per_contestant)typ.push(b.actions_per_contestant.p[9].toFixed(1)+" actions each");
+    enb.textContent=fmt(n)+" Entrants"+(typ.length?". Available typical figures for this size: "+typ.join(", "):". Size benchmarks unavailable");
+    const all=SL.all||{};
+    if(all.contestants)ranks.push("ahead of "+beats(n,all.contestants)+"% of all "+fmt(all.contestants.n)+" campaigns");
+    if(b.contestants)ranks.push("ahead of "+beats(n,b.contestants)+"% of the "+fmt(b.contestants.n)+" your size");
+    enr.textContent=ranks.length?ranks.join("; "):"Entrant rank unavailable";
+  }
   en.addEventListener("input",upd2);upd2();
   const pr=document.getElementById("prize"),prp=document.getElementById("prizePer");
   function upd3(){const c=+pr.value;prp.innerHTML='<span>'+fmt(c)+'</span> <small>works out at '+(c?(c/N).toFixed(2):"-")+' an Entrant'+(DATA.emails?' and '+(c?(c/DATA.emails).toFixed(2):"-")+' an address':'')+'</small>';}
@@ -536,24 +547,35 @@ const DATA={{DATA}};
 
 def gather(a):
     """Everything the page needs, from the two scripts and the references."""
+    # Suppressed whole cohorts behave like unavailable groups throughout the review.
+    RV.PCT = RV.PCT or RV.load_pct()
+    if RV.PCT:
+        RV.PCT = dict(RV.PCT, groups={key: group for key, group in RV.PCT.get("groups", {}).items() if isinstance(group, dict)})
     rows = CR.load(a.export)
-    class A: impressions = a.impressions; prize_value = a.prize_cost; plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; partners = a.partners.split(",") if a.partners else None
+    class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; partners = a.partners.split(",") if a.partners else None
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
     b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
     b.days = a.days; b.methods = a.methods
-    emails = sum(comp for act, comp, *_ in R["actions"] if kind(act) == "emails")
-    b.emails = emails or None
+    email_completions = sum(comp for act, comp, *_ in R["actions"] if kind(act) == "emails")
+    emails = R["email_subscribers"]
+    b.emails = email_completions or None
     b.referrals = R["viral"]["refer_rows"]; b.actions_completed = T["actions"]; b.prize_value = None
     for k in ("x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"): setattr(b, k, None)
     b.vertical = a.vertical; b.repeatable = a.repeatable; b.first_campaign = a.first_campaign; b.actions = None; b.history = None
     metrics = RV.review(b)
+    labels = {"Email signups": "Email subscription completions", "Email signups per Entrant": "Email subscription completions per Entrant"}
+    metrics = [(labels.get(label, label), *values) for label, *values in metrics]
     span = (R["end"].date() - R["start"].date()).days + 1 if R.get("start") else None
     metrics.append(("Observed activity span in days", str(span) if span is not None else "unavailable", "-", "Completion timestamps only"))
     metrics.append(("Completed method titles", str(sum(comp > 0 for _, comp, *_ in R["actions"])), "-", "Methods with valid completions only"))
     RV.PCT = RV.PCT or RV.load_pct(); band = RV.band(N) if N >= 100 else "below-100"; band_label = RV.band_label(N) if N >= 100 else "Below 100 Entrants"
     groups = RV.PCT.get("groups", {})
-    def slice_of(key): return {m: {"n": groups[key][m]["n"], "p": groups[key][m]["p"]} for m in ("contestants", "email_uptake", "entries_per_entrant", "actions_per_contestant") if m in groups.get(key, {})}
+    def slice_of(key):
+        group = groups.get(key) or {}
+        return {m: {"n": group[m]["n"], "p": group[m]["p"]}
+                for m in ("contestants", "email_uptake", "entries_per_entrant", "actions_per_contestant")
+                if isinstance(group.get(m), dict)}
     bands = {"band:100-250": ("100 to 250", 100, 250), "band:250-500": ("250 to 500", 250, 500), "band:500-1k": ("500 to 1,000", 500, 1000),
              "band:1k-2.5k": ("1,000 to 2,500", 1000, 2500), "band:2.5k-10k": ("2,500 to 10,000", 2500, 10000), "band:10k+": ("10,000 or more", 10000, 10 ** 9)}
     slices = {k: dict(label=v[0], lo=v[1], hi=v[2], **slice_of(k)) for k, v in bands.items()}
@@ -566,7 +588,7 @@ def gather(a):
         typ = t["p"][9] if t else None; rr = RV.rank(comp / N, t) if t else None
         acts.append({"name": act, "completions": comp, "share": comp / N, "typical": typ, "family": fam if fam in FAMILY_COLOUR else "other",
                      "where": (f"better than {rr[0]}% of {n(rr[1])} offering {g}" if rr else "No matching peers: the dataset starts at 100 Entrants" if N < 100 else "no matching group"), "entrants": uniq, "share_actions": share, "rate": rate, "seconds": sec, "invalid": inv})
-    return {"R": R, "T": T, "N": N, "emails": emails, "metrics": metrics, "band": band, "band_label": band_label, "slices": slices, "acts": acts,
+    return {"R": R, "T": T, "N": N, "emails": emails, "email_completions": email_completions, "metrics": metrics, "band": band, "band_label": band_label, "slices": slices, "acts": acts,
             "reach": reach_rows(band_label) if N >= 100 else [], "pool": pool_rows() if N >= 100 else [], "seq": seq_rows() if N >= 100 else {"curve": [], "survival": [], "splits": []}, "insights": CR.insights(R)}
 
 
@@ -598,8 +620,11 @@ def metric_rows(D):
 def tiles(D):
     T, N, R = D["T"], D["N"], D["R"]; V = R["viral"]
     em = D["emails"]
-    t = [("Entrants", n(N), f"{D['band_label']} band"), ("Entries each", f"{T['entries_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['entries_per_entrant']['p'][9]:.1f} typical for your size" if N >= 100 else "No matching peers"),
-         ("Actions each", f"{T['actions_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['actions_per_contestant']['p'][9]:.1f} typical for your size" if N >= 100 else "No matching peers"),
+    def typical(metric):
+        value = (D["slices"].get("band:" + D["band"]) or {}).get(metric)
+        return f"{value['p'][9]:.1f} typical for your size" if value else "Benchmark unavailable"
+    t = [("Entrants", n(N), f"{D['band_label']} band"), ("Entries each", f"{T['entries_per_entrant']:.1f}", typical("entries_per_entrant") if N >= 100 else "No matching peers"),
+         ("Actions each", f"{T['actions_per_entrant']:.1f}", typical("actions_per_contestant") if N >= 100 else "No matching peers"),
          ("Referred Entrants", n(V["referred_entrants"]), f"{V['referred_share']:.0%} of Entrants")]
     if em: t[2] = ("Email signups", n(em), f"{em / N:.0%} of Entrants")
     return "\n".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v num">{esc(v)}</div><div class="c">{esc(c)}</div></div>' for l, v, c in t)
@@ -633,6 +658,15 @@ def render(D, W, S, a):
     ins = "".join(f"<li>{esc(i)}</li>" for i in D["insights"])
     topline = table(["Metric", "Value"], [("Entrants (unique valid emails)", n(N)), ("Actions completed", n(T["actions"])), ("Entries", f"{T['entries']:,}"), ("Actions each", f"{T['actions_per_entrant']:.1f}"), ("Entries each", f"{T['entries_per_entrant']:.1f}"),
                                           ("Invalid actions", f"{n(T['invalid_actions'])} ({T['invalid_rate']:.1%} of rows)")] + ([("Conversion Rate", f"{N / a.impressions:.1%}")] if a.impressions else []))
+    if R.get("prize_value") is not None:
+        topline += f'<p>Stated Prize value: {R["prize_value"]:,.2f}. Advertised value, excluded from spending.</p>'
+    if R.get("roi"):
+        roi = R["roi"]
+        topline += f'<p>Supplied actual Prize and plan costs: {roi["cost"]:,.2f}, or {roi["per_entrant"]:.2f} per Entrant'
+        if roi["per_email"] is not None: topline += f' and {roi["per_email"]:.2f} per unique email subscriber'
+        topline += '. Only supplied costs are included. Add missing costs before treating this as total campaign spending.</p>'
+    else:
+        topline += '<p>Actual costs unavailable. Stated Prize value alone does not establish spending.</p>'
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
     journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {n(V['referred_entrants'])}. Referrals are an output per sharer, never a stage, so this is not a funnel."
     channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x", f"{c[5]:.1%}") for c in R["channels"]])
@@ -679,7 +713,7 @@ def render(D, W, S, a):
     <div class="changes">
       <div class="change"><div class="eyebrow">Your List</div><h3>Get More Entrants Onto Your List</h3><input type="range" id="emailShare" min="0" max="100" value="{round(email_share * 100)}" step="1" aria-label="Target share of Entrants signing up"><div class="target num" id="emailCount"></div><p id="emailRank" class="note" style="margin:0"></p></div>
       <div class="change"><div class="eyebrow">Next Campaign</div><h3>Aim Bigger Next Time</h3><input type="range" id="ent" min="1" max="{max(20000, N * 2)}" value="{N}" step="1" aria-label="Entrants on the next run"><div class="target num" id="entBand"></div><p id="entRank" class="note" style="margin:0"></p></div>
-      <div class="change"><div class="eyebrow">Your Spend</div><h3>What Your Prize Bought You</h3><input type="range" id="prize" min="0" max="{max(5000, int(a.prize_cost or 0) * 2)}" value="{int(a.prize_cost or 0)}" step="10" aria-label="Prize cost"><div class="target num" id="prizePer"></div><p class="note" style="margin:0">Worked on your {n(N)} Entrants{(" and " + n(data["emails"]) + " addresses") if data["emails"] else ""}. Cost benchmarks by vertical live in the Prize picker.</p></div>
+      <div class="change"><div class="eyebrow">Your Spend</div><h3>What Your Prize Bought You</h3><input type="range" id="prize" min="0" max="{max(5000, int(a.prize_cost or 0) * 2)}" value="{int(a.prize_cost or 0)}" step="10" aria-label="Prize cost"><div class="target num" id="prizePer"></div><p class="note" style="margin:0">Worked on your {n(N)} Entrants{(" and " + n(data["emails"]) + " addresses") if data["emails"] else ""}. This scenario uses actual Prize cost only. Plan, promotion and other costs are excluded. Cost benchmarks by vertical live in the Prize picker.</p></div>
       {reach_card}
       {pool_card}
       <div class="change"><div class="eyebrow">Run It Again</div><h3>Your Next One</h3><div class="target num">{esc(surv.split(" of ")[0]) if surv else "-"} <small>{esc(surv.split(" ", 1)[1]) if surv else "No matching peers: the dataset starts at 100 Entrants" if N < 100 else "no sequence table found in the references"}</small></div><p class="note" style="margin:0">{esc(nextrun)}</p></div>
@@ -756,6 +790,22 @@ def self_test():
     floor = gather(A)
     assert floor["band"] == "100-250" and floor["slices"]["all"]
     assert any(x["typical"] is not None for x in floor["acts"])
+    # Withheld metrics and whole cohorts remain unavailable in tiles and levers.
+    import copy
+    saved_pct = RV.PCT
+    try:
+        RV.PCT = copy.deepcopy(saved_pct)
+        for metric in ("contestants", "entries_per_entrant", "actions_per_contestant"):
+            RV.PCT["groups"]["band:100-250"][metric] = None
+        hidden = gather(A)
+        assert all(metric not in hidden["slices"]["band:100-250"] for metric in ("contestants", "entries_per_entrant", "actions_per_contestant"))
+        assert "Benchmark unavailable" in render(hidden, words_of(words), site_of(None), A)
+        RV.PCT["groups"]["band:100-250"] = None
+        hidden_group = gather(A)
+        assert "contestants" not in hidden_group["slices"]["band:100-250"]
+        assert "Benchmark unavailable" in render(hidden_group, words_of(words), site_of(None), A)
+    finally:
+        RV.PCT = saved_pct
     # Only supplied settings select configured-duration/method comparisons.
     with open(p, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When"])
@@ -790,6 +840,23 @@ def self_test():
         for title in titles:
             if "YouTube" in title:
                 assert generic_name(title) != "Email Subscriptions" and RV.family(title) == "follow"
+    with open(p, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        wr.writerow(["one@example.com", "Subscribe to our newsletter", 1])
+        wr.writerow(["one@example.com", "Subscribe to partner newsletter", 1])
+        for i in range(9): wr.writerow([f"other{i}@example.com", "Entry Confirmed", 1])
+    A.prize_cost = 100; A.prize_value = 1000; A.plan_cost = None
+    data = gather(A); page = render(data, words_of(words), site_of(None), A)
+    assert data["emails"] == data["R"]["roi"]["emails"] == 1 and data["email_completions"] == 2
+    metrics = {r[0]: r[1] for r in data["metrics"]}
+    assert metrics["Email subscription completions"] == "2"
+    assert data["R"]["roi"]["per_entrant"] == 10 and data["R"]["roi"]["per_email"] == 100
+    assert "10.00 per Entrant" in page and "100.00 per unique email subscriber" in page
+    assert "Stated Prize value: 1,000.00" in page and '"emails": 1' in page
+    A.prize_cost = None
+    value_only = gather(A)
+    assert "roi" not in value_only["R"]
+    assert "Actual costs unavailable" in render(value_only, words_of(words), site_of(None), A)
     print("self-test passed"); return 0
 
 
@@ -797,7 +864,7 @@ def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--words", help="words.json written by the reviewer"); ap.add_argument("--site", help="site.json from the Reporting tab"); ap.add_argument("--out", default="dashboard.html")
-    ap.add_argument("--impressions", type=int); ap.add_argument("--plan-cost", type=float); ap.add_argument("--prize-cost", type=float); ap.add_argument("--vertical"); ap.add_argument("--first-campaign", action="store_true")
+    ap.add_argument("--impressions", type=int); ap.add_argument("--plan-cost", type=float); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--vertical"); ap.add_argument("--first-campaign", action="store_true")
     ap.add_argument("--repeatable", action="store_true"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int); ap.add_argument("--sends"); ap.add_argument("--partners")
     ap.add_argument("--title", help="campaign name for the page"); ap.add_argument("--dates", help="run dates as the reader would say them, e.g. 6 to 16 August 2026, 10 days, ended")
     a = ap.parse_args(argv)

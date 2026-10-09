@@ -293,9 +293,7 @@ Governing law named in the generated terms points to a country other than the or
 <!-- generated:se2_law_mismatch -->
 | Organizer country | Governing law names a different country | Campaigns | Businesses |
 |---|---|---|---|
-| China | 92% | 1,538 | 135 |
 | Japan | 76% | 4,784 | 235 |
-| Singapore | 75% | 3,470 | 270 |
 | United States | 8% | 56,583 | 8,613 |
 <!-- /generated -->
 

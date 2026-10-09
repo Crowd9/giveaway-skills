@@ -221,16 +221,7 @@
    "usd_per_email": 6.724697077690663,
    "december_share": 0.44935064935064933
   },
-  "Sweden": {
-   "n": 345,
-   "sites": 10,
-   "contestants": 836,
-   "contestants_per_impression": 0.7496774193548387,
-   "entries_per_entrant": 3.53781512605042,
-   "stated_usd_per_contestant": 0.932937181663837,
-   "usd_per_email": 3.78343949044586,
-   "december_share": 0.3333333333333333
-  },
+  "Sweden": null,
   "Finland": {
    "n": 184,
    "sites": 6,
@@ -296,7 +287,10 @@
    "stated_usd_per_contestant": 0.36764705882352944,
    "usd_per_email": null,
    "december_share": 0.58
-  }
+  },
+  "suppressed_below_floor": [
+   "Sweden"
+  ]
  },
  "language_guess_all": {
   "English or unknown": {

@@ -153,7 +153,10 @@
     "Apr": 161,
     "May": 161,
     "Mar": 37,
-    "Feb": 6
+    "Feb": null,
+    "suppressed_below_floor": [
+     "Feb"
+    ]
    },
    "lead_days_median": 12,
    "lead_days_p25": 6,
@@ -285,7 +288,10 @@
     "Jul": 39,
     "Jun": 23,
     "Nov": 20,
-    "Oct": 15
+    "Oct": null,
+    "suppressed_below_floor": [
+     "Oct"
+    ]
    }
   },
   "Anniversary or birthday": {

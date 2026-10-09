@@ -1219,8 +1219,8 @@
      "Business": 5912,
      "Free": 2849,
      "Hobby": 2519,
-     "Premium": 245,
-     "suppressed_below_floor": 1
+     "Premium": null,
+     "suppressed_below_floor": 2
     }
    },
    "500-1k": {
@@ -1421,8 +1421,8 @@
      "Business": 5138,
      "Hobby": 607,
      "Free": 448,
-     "Premium": 397,
-     "suppressed_below_floor": 1
+     "Premium": null,
+     "suppressed_below_floor": 2
     }
    },
    "10k+": {
@@ -1489,8 +1489,8 @@
      "Pro": 1080,
      "Premium": 273,
      "Free": 189,
-     "Hobby": 84,
-     "suppressed_below_floor": 1
+     "Hobby": null,
+     "suppressed_below_floor": 2
     }
    }
   },
@@ -2032,8 +2032,8 @@
    "2023": 23,
    "2024": 33,
    "2025": 63,
-   "2026": 17,
-   "suppressed_below_floor": 1
+   "2026": null,
+   "suppressed_below_floor": 2
   },
   "wallet_address_entry_method_share": null,
   "suppressed_below_floor": [

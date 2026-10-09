@@ -1663,11 +1663,7 @@
     "organizers": 44,
     "share": 0.138
    },
-   "Easter Egg Hunt": {
-    "n": 26,
-    "organizers": 16,
-    "share": 0.061
-   },
+   "Easter Egg Hunt": null,
    "Email Signup": {
     "n": 25,
     "organizers": 19,
@@ -1682,7 +1678,10 @@
     "n": 13,
     "organizers": 13,
     "share": 0.03
-   }
+   },
+   "suppressed_below_floor": [
+    "Easter Egg Hunt"
+   ]
   },
   "toys_hobbies_collectibles": {
    "Gleam Sweepstakes": {

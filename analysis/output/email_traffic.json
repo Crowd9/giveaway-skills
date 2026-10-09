@@ -227,36 +227,16 @@
   }
  },
  "email_share_by_industry": {
-  "health_wellness_fitness": {
-   "n": 3148,
-   "organizers": 495,
-   "median_email_share": 0.0047,
-   "share_of_campaigns_over_10pct": 0.116
-  },
-  "jewelry_watches": {
-   "n": 453,
-   "organizers": 163,
-   "median_email_share": 0.0026,
-   "share_of_campaigns_over_10pct": 0.099
-  },
+  "health_wellness_fitness": null,
+  "jewelry_watches": null,
   "local_services": {
    "n": 910,
    "organizers": 181,
    "median_email_share": 0.0021,
    "share_of_campaigns_over_10pct": 0.034
   },
-  "media_entertainment": {
-   "n": 21533,
-   "organizers": 2077,
-   "median_email_share": 0.004,
-   "share_of_campaigns_over_10pct": 0.022
-  },
-  "education": {
-   "n": 1862,
-   "organizers": 356,
-   "median_email_share": 0.001,
-   "share_of_campaigns_over_10pct": 0.017
-  },
+  "media_entertainment": null,
+  "education": null,
   "art_crafts": {
    "n": 1580,
    "organizers": 401,
@@ -269,54 +249,19 @@
    "median_email_share": 0.0018,
    "share_of_campaigns_over_10pct": 0.012
   },
-  "automotive": {
-   "n": 2288,
-   "organizers": 375,
-   "median_email_share": 0.005,
-   "share_of_campaigns_over_10pct": 0.011
-  },
-  "retail_marketplace": {
-   "n": 2853,
-   "organizers": 380,
-   "median_email_share": 0.0028,
-   "share_of_campaigns_over_10pct": 0.011
-  },
-  "sports_outdoors": {
-   "n": 4629,
-   "organizers": 1012,
-   "median_email_share": 0.006,
-   "share_of_campaigns_over_10pct": 0.01
-  },
-  "toys_hobbies_collectibles": {
-   "n": 4702,
-   "organizers": 750,
-   "median_email_share": 0.0027,
-   "share_of_campaigns_over_10pct": 0.01
-  },
-  "software_saas": {
-   "n": 1655,
-   "organizers": 544,
-   "median_email_share": 0.0029,
-   "share_of_campaigns_over_10pct": 0.009
-  },
-  "food_drink": {
-   "n": 4659,
-   "organizers": 889,
-   "median_email_share": 0.0038,
-   "share_of_campaigns_over_10pct": 0.008
-  },
+  "automotive": null,
+  "retail_marketplace": null,
+  "sports_outdoors": null,
+  "toys_hobbies_collectibles": null,
+  "software_saas": null,
+  "food_drink": null,
   "creator_influencer": {
    "n": 3395,
    "organizers": 1047,
    "median_email_share": 0.0,
    "share_of_campaigns_over_10pct": 0.007
   },
-  "other": {
-   "n": 4423,
-   "organizers": 1486,
-   "median_email_share": 0.0007,
-   "share_of_campaigns_over_10pct": 0.007
-  },
+  "other": null,
   "electronics_tech": {
    "n": 15504,
    "organizers": 2064,
@@ -329,12 +274,7 @@
    "median_email_share": 0.0087,
    "share_of_campaigns_over_10pct": 0.006
   },
-  "gaming_esports": {
-   "n": 24235,
-   "organizers": 4661,
-   "median_email_share": 0.0008,
-   "share_of_campaigns_over_10pct": 0.005
-  },
+  "gaming_esports": null,
   "baby_kids": {
    "n": 1184,
    "organizers": 138,
@@ -344,50 +284,33 @@
     "share_of_campaigns_over_10pct"
    ]
   },
-  "home_garden": {
-   "n": 3680,
-   "organizers": 592,
-   "median_email_share": 0.0042,
-   "share_of_campaigns_over_10pct": 0.004
-  },
-  "travel_events": {
-   "n": 3909,
-   "organizers": 636,
-   "median_email_share": 0.0035,
-   "share_of_campaigns_over_10pct": 0.004
-  },
-  "marketing_agency": {
-   "n": 1149,
-   "organizers": 156,
-   "median_email_share": 0.0011,
-   "share_of_campaigns_over_10pct": null,
-   "suppressed_below_floor": [
-    "share_of_campaigns_over_10pct"
-   ]
-  },
-  "apparel_fashion": {
-   "n": 4615,
-   "organizers": 808,
-   "median_email_share": 0.0014,
-   "share_of_campaigns_over_10pct": 0.002
-  },
-  "pets": {
-   "n": 937,
-   "organizers": 204,
-   "median_email_share": 0.0051,
-   "share_of_campaigns_over_10pct": null,
-   "suppressed_below_floor": [
-    "share_of_campaigns_over_10pct"
-   ]
-  }
+  "home_garden": null,
+  "travel_events": null,
+  "marketing_agency": null,
+  "apparel_fashion": null,
+  "pets": null,
+  "suppressed_below_floor": [
+   "marketing_agency",
+   "media_entertainment",
+   "toys_hobbies_collectibles",
+   "apparel_fashion",
+   "travel_events",
+   "retail_marketplace",
+   "gaming_esports",
+   "home_garden",
+   "pets",
+   "health_wellness_fitness",
+   "other",
+   "jewelry_watches",
+   "food_drink",
+   "software_saas",
+   "sports_outdoors",
+   "automotive",
+   "education"
+  ]
  },
  "email_share_by_plan_tier": {
-  "Premium": {
-   "n": 1989,
-   "organizers": 199,
-   "median_email_share": 0.0074,
-   "share_of_campaigns_over_10pct": 0.011
-  },
+  "Premium": null,
   "Business": {
    "n": 29444,
    "organizers": 3530,
@@ -406,12 +329,11 @@
    "median_email_share": 0.0,
    "share_of_campaigns_over_10pct": 0.014
   },
-  "Free": {
-   "n": 11990,
-   "organizers": 4181,
-   "median_email_share": 0.0,
-   "share_of_campaigns_over_10pct": 0.004
-  }
+  "Free": null,
+  "suppressed_below_floor": [
+   "Free",
+   "Premium"
+  ]
  },
  "email_share_by_email_action": {
   "offers an email action": {

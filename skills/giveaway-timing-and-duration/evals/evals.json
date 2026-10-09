@@ -39,11 +39,11 @@
   {
    "id": 2,
    "prompt": "Is a 3-month giveaway a good idea? We sell coffee subscriptions.",
-   "expected_output": "Explains the quiet-middle problem, says long runs need repeatable actions and fresh content, offers a shorter run or a monthly recurring draw as alternatives, notes the data shows most campaigns run 8 to 31 days and that entries per contestant fall past two months, and says the data cannot show which length performs better.",
+   "expected_output": "Explains the quiet-middle problem, says long runs need repeatable actions and fresh content, offers a shorter run or a monthly recurring draw as alternatives, notes the data shows the middle half of campaigns run 7 to 29 days and that entries per contestant fall past two months, and says the data cannot show which length performs better.",
    "assertions": [
     "Names the quiet-middle risk",
     "Offers a shorter or recurring alternative",
-    "Cites the duration distribution",
+    "Describes 7 to 29 days as the middle half of campaigns",
     "States the data cannot show which length performs better"
    ],
    "files": [],
@@ -60,8 +60,8 @@
    "review_checks": [
     {
      "id": "duration-evidence",
-     "criterion": "Explains that the observational duration distribution does not establish which duration produces better results. Reject a causal duration ranking anywhere in the answer.",
-     "pass_example": "These figures describe how long the observed campaigns ran, rather than the benefit of choosing that length.",
+     "criterion": "Describes 7 to 29 days as the middle half of campaigns. Explains that the observational duration distribution does not establish which duration produces better results. Reject a causal duration ranking anywhere in the answer.",
+     "pass_example": "The middle half ran 7 to 29 days. These figures describe how long the observed campaigns ran, rather than the benefit of choosing that length.",
      "fail_example": "The data cannot prove anything, but shortening the campaign will improve results."
     }
    ]

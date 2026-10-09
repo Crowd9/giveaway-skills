@@ -4,7 +4,7 @@ completed action) as is, and exports from other platforms through --map or the b
 exports with one column per entry method. No dependencies. Aggregates only: no email, name, IP or row ever prints. Top Entrants show a display name (first
 name and last initial) only.
 
-  python3 campaign_report.py export.csv [--impressions N] [--prize-value USD] [--plan-cost USD] [--benchmark-cpl USD]
+  python3 campaign_report.py export.csv [--impressions N] [--prize-cost USD] [--prize-value USD] [--plan-cost USD] [--benchmark-cpl USD]
                                         [--sends "2026-04-20=Launch email,2026-05-01=Last call"] [--partners host1,host2]
                                         [--markdown report.md]
   python3 campaign_report.py --self-test
@@ -271,9 +271,14 @@ def analyze(rows, a):
             after = sum(byday[day + dt.timedelta(days=i)] for i in range(2)); newa = sum(newby[day + dt.timedelta(days=i)] for i in range(2))
             base_days = [day - dt.timedelta(days=i) for i in range(1, 8)]; base = sum(byday[x] for x in base_days) / 7
             R["sends"].append((label.strip() or d, day.isoformat(), after, newa, (after / 2) / base if base else None))
-    # ROI
-    if a.prize_value is not None or a.plan_cost is not None:
-        cost = (a.prize_value or 0) + (a.plan_cost or 0); emails = sum(1 for rs in people.values() if any(_kind(r["Action"]) == "emails" for r in rs))
+    # People are deduplicated across subscription Actions. Benchmarks still use completions.
+    emails = sum(1 for rs in people.values() if any(_kind(r["Action"]) == "emails" for r in rs))
+    R["email_subscribers"] = emails
+    R["prize_value"] = getattr(a, "prize_value", None)
+    # Stated retail value is never substituted for the organizer's actual cost.
+    prize_cost = getattr(a, "prize_cost", None)
+    if prize_cost is not None or a.plan_cost is not None:
+        cost = (prize_cost or 0) + (a.plan_cost or 0)
         R["roi"] = {"cost": cost, "per_entrant": cost / n, "per_entry": cost / entries if entries else None, "per_email": cost / emails if emails else None, "emails": emails,
                     "lead_value": (a.benchmark_cpl * emails) if a.benchmark_cpl and emails else None}
     R["ten_plus"] = ten_plus
@@ -345,11 +350,15 @@ def render(R, a):
     if R["sends"]:
         w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New Entrants in 48h | Lift |\n|---|---|---|---|---|")
         for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
+    w(f"\nUnique email subscribers: {R['email_subscribers']:,} (people with a valid subscription Action).")
+    if R.get("prize_value") is not None:
+        w(f"\nStated Prize value: {R['prize_value']:,.2f}. This is the advertised value, not actual spending.")
     if R.get("roi"):
         r = R["roi"]; per_entry = format(r["per_entry"], ".4f") if r["per_entry"] is not None else "unavailable"
-        w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {per_entry} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
+        w(f"\nCost per result on the supplied actual costs (Prize and plan inputs total {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {per_entry} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
         w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The dataset carries no order data, so nothing here is revenue.")
-    else: w("\nROI needs Prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
+        w("Only supplied costs are included. Add any missing Prize, plan, promotion and other costs before treating this as total campaign spending.")
+    else: w("\nCost per result needs actual Prize cost or plan cost (--prize-cost, --plan-cost, optional --benchmark-cpl). Stated Prize value alone does not establish spending.")
     w("\n## Traffic\n\nFirst-touch channel per Entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
     w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {h} | {k:,} |" for h, k in R["hosts"]))
@@ -406,7 +415,7 @@ def self_test():
                 ("Cy Q", "c@example.com", "Invalid", "Subscribe to Our List", 5, "", "Leeds", "United Kingdom", 6000, "https://gleam.io/x", "https://www.contestgirl.com/", "", "")]
         for i, (nm, em, stt, act, en, det, city, co, off, lp, ref, fb, tw) in enumerate(rows):
             wr.writerow([i, nm, em, stt, act, en, det, city, co, (base + dt.timedelta(seconds=off)).strftime("%Y-%m-%d %H:%M:%S %z"), lp, ref, fb, tw])
-    class A: impressions = None; prize_value = 100.0; plan_cost = 50.0; benchmark_cpl = 2.0; sends = "2026-05-01=Launch"; partners = ["contestgirl"]
+    class A: impressions = None; prize_cost = 100.0; prize_value = 1000.0; plan_cost = 50.0; benchmark_cpl = 2.0; sends = "2026-05-01=Launch"; partners = ["contestgirl"]
     R = analyze(load(p), A)
     assert R["topline"]["entrants"] == 2 and R["topline"]["invalid_actions"] == 1 and R["viral"]["referred_entrants"] == 1 and R["viral"]["sharers"] == 1, R["topline"]
     assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
@@ -507,6 +516,23 @@ def self_test():
         report = analyze(load(q), A)
         assert report["roi"]["emails"] == expected
         assert report["roi"]["per_email"] == (150 / expected if expected else None)
+    # Multiple subscription Actions count one person for acquisition costs.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        wr.writerow(["one@example.com", "Subscribe to our newsletter", 1])
+        wr.writerow(["one@example.com", "Subscribe to partner newsletter", 1])
+        for i in range(9): wr.writerow([f"other{i}@example.com", "Entry Confirmed", 1])
+    class Costs(A): prize_cost = 100; prize_value = 1000; plan_cost = None
+    report = analyze(load(q), Costs)
+    assert report["email_subscribers"] == report["roi"]["emails"] == 1
+    assert sum(comp for act, comp, *_ in report["actions"] if _kind(act) == "emails") == 2
+    assert report["roi"]["per_entrant"] == 10 and report["roi"]["per_email"] == 100
+    rendered = render(report, Costs)
+    assert "Stated Prize value: 1,000.00" in rendered and "10.00 per entrant" in rendered
+    # Legacy --prize-value remains accepted but never becomes spending.
+    class ValueOnly(B): prize_value = 1000
+    legacy = analyze(load(q), ValueOnly)
+    assert "roi" not in legacy and "Stated Prize value alone does not establish spending" in render(legacy, ValueOnly)
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None
@@ -517,7 +543,7 @@ def self_test():
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
-    ap.add_argument("--impressions", type=int); ap.add_argument("--prize-value", type=float); ap.add_argument("--plan-cost", type=float); ap.add_argument("--benchmark-cpl", type=float)
+    ap.add_argument("--impressions", type=int); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--plan-cost", type=float); ap.add_argument("--benchmark-cpl", type=float)
     ap.add_argument("--sends", help='comma list of date=label, e.g. "2026-04-20=Launch email,2026-05-01=Last call"'); ap.add_argument("--partners", help="comma list of referrer hosts or UTM values that identify partners")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")

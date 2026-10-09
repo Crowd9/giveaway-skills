@@ -83,3 +83,7 @@ These added cases are **not yet run against a model**. Synthetic passing and fai
 | 13 | matched-population | not yet run against a model |
 
 Fixtures and replay manifest: `evals/fixtures/giveaway-timing-and-duration/` at the repository root. Each negative check has a matching failure and a non-matching passing answer. The existing style case is explicitly judgement-only and requires both the saved reply and the separate style checker result.
+
+## Targeted rerun, 10 October 2026
+
+Case 2 (three-month coffee subscription giveaway): PASS. A fresh answer described 7 to 29 days as the middle half across 115,754 campaigns, identified the quiet-middle risk, offered a shorter run or recurring monthly draw, and rejected a causal duration ranking. An independent reviewer passed `duration-evidence`, and `check_deliverable.py` passed both mechanical checks. Answer and review are saved in the implementation scratchpad as `3016-timing-case2.txt` and `3016-timing-case2-review.json`.

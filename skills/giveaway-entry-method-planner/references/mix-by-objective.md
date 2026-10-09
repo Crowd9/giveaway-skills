@@ -197,7 +197,6 @@ Source: `analysis/output/context_checks.json` (`method_prevalence_top_vs_bottom_
 | Gaming | 24,229 | 4,657 | 4,845 | Email Subscriptions 2.4x, Viral Shares 2.0x, TikTok Follows 1.6x, Chat Members 1.3x, Custom Actions 1.3x |
 | Technology | 15,543 | 2,063 | 3,108 | TikTok Follows 1.7x, Custom Actions 1.6x, Secret Code 1.6x, Viral Shares 1.5x, Instagram Follows 1.4x, Chat Members 1.3x |
 | Home | 3,710 | 594 | 742 | Pinterest Visits 2.5x, X Follows 2.2x, YouTube Channel Visits 2.0x, Viral Shares 1.7x, Instagram Profile Visits 1.6x, Facebook visits 1.4x, Bonus 1.4x, Email Subscriptions 1.3x |
-| Food and drink | 4,681 | 890 | 936 | Pinterest Visits 3.2x, TikTok Follows 1.9x, Facebook visits 1.7x, Viral Shares 1.6x, Instagram Profile Visits 1.5x, Email Subscriptions 1.5x, YouTube Channel Visits 1.3x |
 | Fitness and outdoor | 7,795 | 1,508 | 1,559 | Viral Shares 2.1x, Bonus 1.7x, Email Subscriptions 1.5x, X Follows 1.4x, Instagram Profile Visits 1.2x |
 | Travel | 3,969 | 638 | 793 | Viral Shares 1.9x, Email Subscriptions 1.6x, Custom Actions 1.6x, YouTube Channel Visits 1.5x |
 | Software | 1,662 | 545 | 332 | Email Subscriptions 2.8x, Viral Shares 1.4x, Custom Actions 1.4x, YouTube Channel Visits 1.2x |
@@ -209,7 +208,7 @@ The top fifth ran a typical 7 Actions against 6 in the bottom fifth, each coveri
 
 ## Actions by industry, offered and completed (extracted)
 
-Every industry with enough campaigns gets a row (23 industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses). The offered columns list the Actions an industry's businesses offered at least 1.5x as often as the all-industry rate, or at most 0.67x as often, strongest first and up to three each. The completed columns list Actions where the typical completion among campaigns offering them ran at least 1.25x or at most 0.75x of the all-industry completion, up to two each. A dash means no Action cleared the cut. Each figure carries the campaigns and businesses that offered the Action. Completion is the share of Entrants who completed the Action. A high ratio in an industry describes the Entrants that industry's businesses reached, and says nothing about what the Action would do for another business there.
+The source covers 23 qualifying industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses. Rows that could expose small groups by subtraction are withheld here. The offered columns list the Actions an industry's businesses offered at least 1.5x as often as the all-industry rate, or at most 0.67x as often, strongest first and up to three each. The completed columns list Actions where the typical completion among campaigns offering them ran at least 1.25x or at most 0.75x of the all-industry completion, up to two each. A dash means no Action cleared the cut. Each figure carries the campaigns and businesses that offered the Action. Completion is the share of Entrants who completed the Action. A high ratio in an industry describes the Entrants that industry's businesses reached, and says nothing about what the Action would do for another business there.
 
 <!-- generated:em3_industry_actions -->
 | Industry | Campaigns | Businesses | Offered most often against all industries | Offered least often | Completed more often once offered | Completed less often once offered |
@@ -217,13 +216,9 @@ Every industry with enough campaigns gets a row (23 industries, from 116,283 cam
 | Gaming and esports | 24,229 | 4,657 | Discord join 2.3x (9,008 campaigns, 1,802 businesses). Twitch follow 2.2x (10,358 campaigns, 2,536 businesses). X repost 1.7x (9,784 campaigns, 2,526 businesses) | Email signup 0.5x (3,935 campaigns, 493 businesses) | - | - |
 | Media and entertainment | 21,540 | 2,074 | - | Secret code 0.5x (835 campaigns, 228 businesses). Twitch follow 0.6x (2,593 campaigns, 477 businesses). TikTok follow 0.6x (1,679 campaigns, 325 businesses) | - | Telegram join 0.4x (464 campaigns, 73 businesses). Referral share 0.7x (8,102 campaigns, 672 businesses) |
 | Electronics and tech | 15,543 | 2,063 | Telegram join 1.8x (965 campaigns, 76 businesses). TikTok follow 1.6x (3,000 campaigns, 418 businesses) | - | Secret code 2.0x (1,616 campaigns, 290 businesses). Referral share 1.7x (4,564 campaigns, 756 businesses) | - |
-| Toys, hobbies, collectibles | 4,700 | 750 | Secret code 1.8x (636 campaigns, 108 businesses) | - | - | Twitch follow 0.4x (774 campaigns, 194 businesses). Discord join 0.7x (858 campaigns, 160 businesses) |
-| Food and drink | 4,681 | 890 | Email signup 1.6x (2,538 campaigns, 486 businesses) | Discord join 0.2x (179 campaigns, 46 businesses). Twitch follow 0.3x (260 campaigns, 69 businesses). Telegram join 0.3x (46 campaigns, 19 businesses) | - | Secret code 0.6x (234 campaigns, 109 businesses). X repost 0.7x (452 campaigns, 116 businesses) |
-| Sports and outdoors | 4,635 | 1,013 | Email signup 1.6x (2,426 campaigns, 547 businesses) | Twitch follow 0.1x (115 campaigns, 53 businesses). Discord join 0.1x (109 campaigns, 39 businesses). Telegram join 0.3x (44 campaigns, 19 businesses) | Referral share 1.3x (2,469 campaigns, 538 businesses) | Telegram join 0.5x (44 campaigns, 19 businesses). X follow 0.6x (1,733 campaigns, 404 businesses) |
 | Apparel and fashion | 4,628 | 812 | Email signup 1.6x (2,376 campaigns, 435 businesses) | Discord join 0.2x (128 campaigns, 53 businesses). Telegram join 0.2x (33 campaigns, 16 businesses). Twitch follow 0.3x (268 campaigns, 97 businesses) | - | Telegram join 0.3x (33 campaigns, 16 businesses). Secret code 0.5x (189 campaigns, 75 businesses) |
 | Travel and events | 3,969 | 638 | - | Twitch follow 0.1x (70 campaigns, 29 businesses). Discord join 0.1x (66 campaigns, 37 businesses). Telegram join 0.3x (37 campaigns, 20 businesses) | - | Twitch follow 0.2x (70 campaigns, 29 businesses). X follow 0.4x (1,419 campaigns, 220 businesses) |
 | Home and garden | 3,710 | 594 | Email signup 1.8x (2,148 campaigns, 341 businesses). Referral share 1.5x (2,099 campaigns, 338 businesses) | Discord join 0.1x (44 campaigns, 16 businesses). Twitch follow 0.1x (74 campaigns, 15 businesses). X repost 0.4x (359 campaigns, 77 businesses) | - | Secret code 0.6x (271 campaigns, 84 businesses). Discord join 0.6x (44 campaigns, 16 businesses) |
-| Creator or influencer | 3,389 | 1,045 | Twitch follow 2.7x (1,785 campaigns, 494 businesses). Discord join 1.8x (988 campaigns, 169 businesses). X repost 1.8x (1,408 campaigns, 387 businesses) | Email signup 0.1x (129 campaigns, 57 businesses). Instagram follow 0.5x (120 campaigns, 82 businesses). Facebook visit 0.6x (749 campaigns, 249 businesses) | Discord join 1.6x (988 campaigns, 169 businesses). TikTok follow 1.5x (403 campaigns, 91 businesses) | Referral share 0.4x (1,020 campaigns, 133 businesses) |
 | Health, wellness and fitness | 3,160 | 498 | - | Discord join 0.2x (94 campaigns, 21 businesses). Twitch follow 0.2x (139 campaigns, 10 businesses) | - | Secret code 0.5x (180 campaigns, 71 businesses). Discord join 0.6x (94 campaigns, 21 businesses) |
 | Retail marketplace | 2,860 | 382 | - | YouTube channel visit 0.5x (512 campaigns, 142 businesses). Telegram join 0.5x (51 campaigns, 29 businesses). Discord join 0.6x (272 campaigns, 40 businesses) | Discord join 2.4x (272 campaigns, 40 businesses). Secret code 1.9x (162 campaigns, 54 businesses) | Referral share 0.6x (1,306 campaigns, 162 businesses) |
 | Automotive | 2,310 | 379 | Email signup 1.7x (1,295 campaigns, 145 businesses). Referral share 1.5x (1,293 campaigns, 175 businesses) | Discord join 0.1x (41 campaigns, 30 businesses). X repost 0.3x (177 campaigns, 65 businesses). TikTok follow 0.4x (127 campaigns, 60 businesses) | Secret code 1.5x (242 campaigns, 50 businesses) | Twitch follow 0.2x (276 campaigns, 50 businesses). X follow 0.7x (1,179 campaigns, 155 businesses) |
@@ -233,10 +228,7 @@ Every industry with enough campaigns gets a row (23 industries, from 116,283 cam
 | Beauty and personal care | 1,411 | 351 | Instagram follow 4.3x (429 campaigns, 47 businesses). Secret code 3.1x (337 campaigns, 43 businesses). TikTok follow 2.9x (495 campaigns, 64 businesses) | Discord join 0.1x (31 campaigns, 17 businesses). Twitch follow 0.2x (48 campaigns, 28 businesses). YouTube channel visit 0.6x (321 campaigns, 113 businesses) | Secret code 1.3x (337 campaigns, 43 businesses) | X repost 0.6x (419 campaigns, 42 businesses). X follow 0.6x (641 campaigns, 117 businesses) |
 | Marketing agency | 1,201 | 157 | TikTok follow 2.0x (297 campaigns, 33 businesses). Secret code 1.5x (139 campaigns, 27 businesses) | Twitch follow 0.6x (134 campaigns, 20 businesses) | Referral share 1.3x (366 campaigns, 65 businesses) | Secret code 0.7x (139 campaigns, 27 businesses). Instagram follow 0.7x (120 campaigns, 26 businesses) |
 | Baby and kids | 1,184 | 138 | Email signup 1.6x (626 campaigns, 91 businesses). Referral share 1.5x (661 campaigns, 78 businesses) | YouTube channel visit 0.3x (136 campaigns, 25 businesses). X repost 0.6x (170 campaigns, 10 businesses) | - | YouTube channel visit 0.6x (136 campaigns, 25 businesses). Referral share 0.7x (661 campaigns, 78 businesses) |
-| Pets | 947 | 206 | Email signup 2.3x (706 campaigns, 105 businesses). Referral share 1.9x (653 campaigns, 108 businesses) | Discord join 0.2x (30 campaigns, 17 businesses). Twitch follow 0.2x (42 campaigns, 17 businesses). X repost 0.4x (94 campaigns, 41 businesses) | Instagram follow 1.4x (48 campaigns, 28 businesses) | Secret code 0.3x (40 campaigns, 22 businesses). X follow 0.7x (355 campaigns, 81 businesses) |
 | Local services | 917 | 181 | Secret code 1.6x (114 campaigns, 34 businesses) | YouTube channel visit 0.3x (123 campaigns, 61 businesses). X repost 0.5x (102 campaigns, 19 businesses). Email signup 0.5x (144 campaigns, 49 businesses) | - | X repost 0.3x (102 campaigns, 19 businesses). Secret code 0.4x (114 campaigns, 34 businesses) |
-| Nonprofit and community | 516 | 197 | Secret code 2.1x (85 campaigns, 36 businesses) | YouTube channel visit 0.6x (119 campaigns, 69 businesses) | Discord join 1.5x (91 campaigns, 38 businesses) | TikTok follow 0.5x (60 campaigns, 24 businesses). Secret code 0.5x (85 campaigns, 36 businesses) |
-| Jewelry and watches | 418 | 162 | Secret code 2.8x (91 campaigns, 29 businesses). Email signup 1.6x (218 campaigns, 77 businesses) | Discord join 0.5x (36 campaigns, 16 businesses). X repost 0.6x (57 campaigns, 27 businesses). TikTok follow 0.7x (34 campaigns, 26 businesses) | Referral share 1.6x (162 campaigns, 87 businesses). Secret code 1.5x (91 campaigns, 29 businesses) | TikTok follow 0.7x (34 campaigns, 26 businesses) |
 <!-- /generated -->
 
 **Gaming and esports campaigns offer Discord, Twitch and X reposts more often, and email less often, than the all-industry rate.** Email is offered in 16.2% of gaming campaigns against 33.0% across all industries, and where it is offered it completes at 0.83x its all-industry completion rate, the lowest relative index of the 13 Actions in the table below. Each index compares an Action with its own baseline, so it cannot rank different Actions by absolute completion or value to the requested asset. Keep email as the primary acquisition action when the objective is an email list. Consider Discord, Twitch or X only when the audience and objective support them.
@@ -364,14 +356,12 @@ Japan and India both lean on Telegram, offered in about half their campaigns. In
 | China | 1,541 | 136 | 73% | 6 |
 | Singapore | 3,491 | 271 | 71% | 5 |
 | South Korea | 2,675 | 392 | 66% | 6 |
-| Taiwan | 1,917 | 157 | 63% | 5 |
 | Vietnam | 2,501 | 547 | 62% | 6 |
 | Türkiye | 1,406 | 367 | 59% | 3 |
 | Hong Kong | 1,973 | 428 | 59% | 4 |
 | Australia | 6,066 | 1,334 | 57% | 1 |
 | Spain | 1,884 | 496 | 56% | 2 |
 | France | 2,174 | 356 | 47% | 2 |
-| United States | 57,286 | 8,719 | 41% | 1 |
 | Poland | 2,157 | 188 | 38% | 3 |
 | United Kingdom | 15,188 | 1,710 | 36% | 1 |
 | Brazil | 5,299 | 497 | 36% | 3 |
@@ -754,12 +744,8 @@ why they are there. The welcome series, the Winner announcement and the non-Winn
 to appear while the campaign still explains your presence, so plan them as part of the campaign.
 
 **Was the Prize anything to do with you.** A Prize that only connects to the business through its price tag
-pulls people who wanted the price tag. Nothing in this data measures who stays, and it does say what the wider
-crowd costs: a Prize matching the business's own category drew 1.08 Entrants per Prize dollar and one that
-plainly does not drew 1.10, so the two are a wash on reach, while a generic Prize like cash or a gift card sat
-lowest at 1.01 [`audience_fit` in the Prize picker's `decision-criteria.md`, 21,389 and 29,138 and 32,776
-campaigns]. Fitting the Prize to the audience costs nothing in crowd for the money. What it buys afterwards is
-not in the data, and it is the reason to do it.
+pulls people who wanted the price tag. Choose a Prize your intended audience has a reason to want.
+The data does not measure who stays after the campaign, so check follower retention with your own audience.
 
 Then give them this.
 
