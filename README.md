@@ -83,7 +83,7 @@ The actions entrants take, weighted so the giveaway builds the list, following o
 
 - One required action that captures the asset, supporting actions on channels you already run, and where to stop
 - Entry weights with a one-line reason for each, and what to leave out and why
-- Completion rates by action family from 957,363 real entry actions, and what a longer list costs in Conversion Rate
+- Completion rates by action family, and Conversion Rates observed at different list lengths
 - Promotion rules for 17 networks, read from the source pages, including which allow tag-a-friend and which ban giveaways
 - Email opt-in wording, age and region notes, and a review of an entry list you already have
 - A buyer mode for when forty right Entrants beat four thousand: what to gate on, the qualifying question, and a scorecard that is not crowd size
@@ -99,7 +99,7 @@ A run length and a start date that fit the launch, the promotion plan and the sh
 - Recommended duration and start date with the reason
 - A dated timeline: terms and assets, launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil
 - Holiday benchmarks with a dated calendar of launch windows: Christmas, Black Friday, Easter, Halloween, back to school and more
-- Every week of the year benchmarked, and whether being live over each holiday helped or hurt
+- Weekly benchmarks and comparisons of campaigns live over each holiday
 - The recency finding: a campaign within 30 days of your last one drew 42% more Entrants than a first campaign, and 38% of viewers entered against 31%
 
 > "Shoe launches 14 October, want hype and emails."
@@ -139,10 +139,10 @@ A schedule that fills the whole run, with the copy written.
 
 ### Random Draw
 
-Winners nobody can dispute, from a script that needs no account and no dependencies.
+A draw you can't steer, from a script that needs no account and no dependencies.
 
-- Commits to your entrant list and rules before the random seed exists, so the draw cannot be steered
-- Seed from a public randomness beacon (drand or NIST) or a value you publish, and a formula reproducible with the original private inputs
+- Publish the commitment to your Entrant list and rules, plus a specific future beacon round, before its seed exists
+- Draw from a public randomness beacon (drand or NIST), or an outside source you name in advance, and rerun it from the original inputs to show the same Winners
 - Reads CSV, spreadsheet exports, one-per-line lists and comment exports from Instagram, TikTok and YouTube
 - Deduplication, exclusions, entry weights, tiers, backups, and review lines for suspicious entry clusters
 - Audit record with the input hash, seed, round and timestamp, and a verify command that refetches the beacon
@@ -169,9 +169,9 @@ Every message after the draw, in send order, in your voice.
 
 ### Results Review
 
-Your finished campaign read against 116,499 others in its own size band, from 100 Entrants up, and what to change next time.
+Your finished campaign compared with campaigns in its own size band, from a dataset of 116,499 campaigns of 100 Entrants and up, and what to change next time.
 
-- A script that ranks 21 figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
+- A script that ranks up to 19 figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
@@ -216,7 +216,7 @@ An abbreviated version of what comes back:
 >
 > Half of all campaigns run between 7 and 29 days and the median is 14. Campaigns that finished under 250 Entrants ran 12 days, the ones over 10,000 ran 18. As a first campaign with no list to warm, plan for the shorter end.
 >
-> Entries per Entrant sit at 3.92 for an 8 to 14 day run and 4.07 for 15 to 30, among campaigns in those duration bands. Campaigns running past two months recorded fewer Entries per Entrant. These groups do not show what extending your campaign would change.
+> Among campaigns without repeatable Actions, Entries per Entrant were 3.92 for 8 to 14 days (16,484 campaigns) and 4.07 for 15 to 30 days (20,497). Campaigns running past two months recorded fewer Entries per Entrant. These groups do not show what extending your campaign would change.
 >
 > The observed start-day differences do not establish that choosing a different day changes results. Monday is the most common choice at 19% and Saturday the rarest at 7%. Choose a day when your audience is available and your team can staff the launch.
 >
@@ -242,20 +242,21 @@ Some of what that shows:
 
 - **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so use 382 for a first-campaign comparison, not as a forecast.
 - **The smallest audience band is the largest group in the data.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD. Choose the budget comparison from your expected audience size, including for a first campaign.
-- **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
-- **Stated Prize value per recorded email signup varied by industry.** Among campaigns offering email signup with every Prize valued in USD, music and media recorded 0.09 USD per signup and software 1.19.
-- **Larger stated Prize pools were associated with more Entrants.** Among campaigns with fully stated Prize values, ten times the Prize value came with about 2.2 times the Entrants. Stated value accounted for about 23% of the observed spread in Entrant counts, without establishing the effect of extra spending.
+- **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000. [Cost by campaign size](skills/giveaway-prize-picker/references/roi-benchmarks.md#by-campaign-size)
+- **Stated Prize value per recorded email signup varied by industry.** Among campaigns offering email signup with every Prize valued in USD, music and media recorded 0.09 USD per signup and software 1.19. [Industry comparison](skills/giveaway-prize-picker/references/roi-benchmarks.md#by-industry)
+- **Larger stated Prize pools were associated with more Entrants.** Among campaigns with fully stated Prize values, ten times the Prize value came with about 2.2 times the Entrants.
 - **Prize categories differed at similar stated values.** Among valued campaigns, tech hardware drew 42% more Entrants than typical for that stated value and a subscription drew 49% less.
 - **Entries per Entrant were similar across size bands.** The smallest band recorded 4.09 and the largest 4.37. Those medians alone cannot diagnose a small campaign's reach.
 - **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.
-- **Longer Action lists were associated with lower Conversion Rate.** Among the ordinary campaigns compared, those carrying 11 or more entry Actions converted 31% of viewers against 44% for a short list. They also drew 17% more Entrants.
-- **Frequent repeat campaigns differed from first campaigns.** Among campaigns compared for repeat timing, those starting within 30 days of the previous campaign drew 42% more Entrants than first campaigns and converted 38% of viewers against 31%.
-- **December had the most starts and the highest observed monthly Conversion Rate.** Its campaigns converted 30.9% of viewers against 26.9% across the year. In the holiday comparison of ordinary campaigns lasting at most two weeks without repeatable bonus Actions, the two weeks before Christmas recorded 41% Conversion Rate.
-- **Secret Code campaigns recorded more Entrants without lower Conversion Rate in this comparison.** Among 1,594 campaigns from 563 businesses offering the Action, Entrants were more than a quarter higher than in the comparison group. This is an observed association, and neither delivery effort nor promotion cost was measured.
+- **Longer Action lists were associated with lower Conversion Rate.** Among the ordinary campaigns compared, those carrying 11 or more entry Actions converted 31% of viewers against 44% for a short list. They also drew 17% more Entrants. [Action-list comparison](skills/giveaway-entry-method-planner/references/action-families.md#method-count-sharing-and-email-against-entrants-and-conversion)
+- **Frequent repeat campaigns differed from first campaigns.** Among campaigns compared for repeat timing, those starting within 30 days of the previous campaign drew 42% more Entrants than first campaigns and converted 38% of viewers against 31%. [Repeat-timing comparison](skills/giveaway-timing-and-duration/references/timing-findings.md)
+- **December had the most starts and the highest observed monthly Conversion Rate.** Its campaigns converted 30.9% of viewers against 26.9% across the year. [Monthly comparison](skills/giveaway-results-review/references/benchmarks.md)
+- **The two weeks before Christmas recorded 41% Conversion Rate** in the holiday comparison of ordinary campaigns lasting at most two weeks without repeatable bonus Actions. [Holiday comparison](skills/giveaway-timing-and-duration/references/holiday-benchmarks.md)
+- **Secret Code campaigns recorded more Entrants without lower Conversion Rate in this comparison.** Among 1,594 campaigns from 563 businesses offering the Action, Entrants were more than a quarter higher than in the comparison group. This is an observed association, and neither delivery effort nor promotion cost was measured. [Action comparison](skills/giveaway-entry-method-planner/references/mix-by-objective.md#actions-that-came-with-more-people-extracted)
 - **Music gear campaigns drew nearly three times the Entrants of gift card or cash campaigns.** In the Prize-category comparison, music gear campaigns drew a typical 1,290 Entrants against 450 for a gift card or cash, and 93% more crowd than their Prize price predicts. Regulated goods draw the most of all at 2,133.
 - **The Prizes that feel most generous sit at the bottom of the table.** A trip, a stay or a pair of tickets drew 40% less crowd than its price band predicts, and a subscription 49% less, the two lowest rows for crowd per Prize dollar.
-- **The campaigns that beat their Prize money got an Entrant for 0.13 USD** of stated Prize value, against 0.42 across the data. 6,617 campaigns from 1,668 businesses drew at least three times the typical crowd for what they spent.
-- **Four in five campaigns list a single Prize, and three in five give away exactly one unit of it.** Among campaigns that drew more Entrants than typical for their stated Prize value, single-unit Prizes were more common: 71% of them listed a single Prize unit against 61% of the rest.
+- **The campaigns that beat their Prize money got an Entrant for 0.13 USD** of stated Prize value, against 0.42 across the data. 6,617 campaigns from 1,668 businesses drew at least three times the typical crowd for what they spent. [Comparison and sample](skills/giveaway-idea-generator/references/hooks-and-themes.md#campaigns-above-typical-for-their-stated-prize-value-extracted)
+- **Four in five campaigns list a single Prize, and three in five give away exactly one unit of it.** Among campaigns drawing at least three times the typical Entrants for their stated Prize-value band, 71% listed one Prize unit, against 61% of the remaining valued campaigns. [Single-unit comparison](skills/giveaway-idea-generator/references/hooks-and-themes.md#campaigns-above-typical-for-their-stated-prize-value-extracted)
 
 Every finding describes what businesses chose, never what caused participation, because the dataset holds no failed campaigns to compare against. Cost figures use the stated Prize pool, which is what a business wrote down and the only cost the data holds, so real cost is often lower and promotion spend is invisible. Individual figures sit on slightly smaller bases where a campaign is missing the field being measured, and every one carries its own count in the references. The terms the figures use (contestant, entry, conversion, clean subset, value index, uptake) are defined in [GLOSSARY.md](GLOSSARY.md). The full findings, the exclusions and the limits are in [evidence-and-limitations.md](skills/giveaway-prize-picker/references/evidence-and-limitations.md). `analysis/output/` holds the aggregate files every figure is drawn from, and the scripts that produced them are not published.
 

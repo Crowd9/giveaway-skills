@@ -18,9 +18,9 @@ Everything the app does not name is written plainly: entrants, businesses, campa
 
 ## Campaign Counts
 
-- **The dataset.** Every figure in these skills is extracted from Gleam's own campaign records. The campaign analysis, pulled on 10 September 2026, covers 167,068 campaigns from 25,482 organizers with 100 or more entrants, and carries per action worth and mandatory flags, plan tier, language, country rules, terms settings, organizer location, daily impressions and referrers. It replaced a earlier dataset of campaigns with 1,000 or more entrants. Where a table still comes from the earlier dataset it says so.
-- **Ordinary segment.** The 116,499 campaigns the benchmarks describe: every campaign that reached 100 unique valid entrants, after removing organizers whose homepage label is finance_crypto, token airdrops, buy-to-enter raffles and campaigns whose purpose could not be classified. Tables show n between 117,041 and 116,499 depending on which fields a cut needs.
-- **Clean subset.** The 39,462 ordinary campaigns, from 7,115 businesses, with no repeatable action (daily bonus, loyalty, timed bonus) and a run of 14 days or less. Impressions count once per visitor per day, so long runs and daily actions inflate impressions and depress conversion. Every comparison that depends on conversion uses this subset.
+- **The dataset.** Every figure in these skills is extracted from Gleam's own campaign records. The campaign analysis, pulled on 10 September 2026, covers 144,878 campaigns from 22,273 businesses with 100 or more entrants, and carries per action worth and mandatory flags, plan tier, language, country rules, terms settings, organizer location, daily impressions and referrers. It replaced a earlier dataset of campaigns with 1,000 or more entrants. Where a table still comes from the earlier dataset it says so.
+- **Ordinary segment.** The 116,499 campaigns the benchmarks describe: every campaign that reached 100 unique valid entrants, after removing organizers whose homepage label is finance_crypto, token airdrops, buy-to-enter raffles and campaigns whose purpose could not be classified. Tables use different eligible populations. Read the sample size and exclusions beside each table.
+- **Clean subset.** Selected comparisons use campaigns with no repeatable Action and runs of 14 days or less. Other tables report all-run Conversion Rates and identify their scope.
 - **n.** The number of campaigns, prize records or actions behind a figure. A figure with a small n is reported as thin.
 
 ## Entrants and Entries
@@ -46,7 +46,7 @@ Everything the app does not name is written plainly: entrants, businesses, campa
 - **Stated value.** The USD value the organizer typed for the prize. About 60% of prize records have none, so value figures come from the ones that do.
 - **Value band.** Stated campaign prize totals grouped on a roughly doubling scale: under 50, 50 to 99, 100 to 249, 250 to 499, 500 to 999, 1,000 to 2,499, 2,500 to 4,999, 5,000 to 9,999, 10,000 to 24,999, 25,000 to 49,999 and 50,000 USD and over.
 - **Value index.** A campaign's contestants divided by the median contestants of its value band. 1.00 is typical for the money spent. 1.50 drew half again more than campaigns with the same budget.
-- **Cost per asset.** Stated prize value divided by completions of an asset action (emails, follows, referrals). The giveaway's acquisition cost for that asset.
+- **Cost per asset.** Stated USD Prize value divided by completed asset Actions. This is stated value per completion. Actual Prize and promotion costs are not measured.
 
 ## Statistics
 

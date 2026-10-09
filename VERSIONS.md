@@ -344,6 +344,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 3.0.45 (2026-10-10)
+
+The front page now promises only what the skills deliver. The draw is described the way the draw skill runs it: commit to your list and a future beacon round first, so nobody can steer the result. Each headline figure links to the table it came from, so you can check the sample yourself. Comparisons read as what campaigns did, without promising what a change would do for yours. The glossary carries the current dataset size of 144,878 campaigns from 22,273 businesses.
+
 ## 3.0.44 (2026-10-10)
 
 When you ask how often small campaigns offer tiered Prizes, the answer now carries its sample: 15% of 33,074 campaigns from 9,533 businesses in the 100 to 250 Entrant band. The skill tests reward an answer that quotes that count, where before they marked it down. Two notes on earlier test runs now flag the 2 figures corrected since, so nobody copies an outdated example.
