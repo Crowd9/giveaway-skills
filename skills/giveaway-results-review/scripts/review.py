@@ -125,8 +125,42 @@ def lookup(table, x):
 def family(name):
     return classify_action(name)[2]
 
+def invalid_rows(a):
+    if a.invalid is None: return []
+    if a.entries is None:
+        note = "Invalid share pending: supply valid Entries as well"
+    elif a.entries + a.invalid == 0:
+        note = "Invalid share unavailable: no valid or invalid Entries"
+    else:
+        share = a.invalid / (a.entries + a.invalid)
+        note = f"{share:.1%} of all Entries were invalid"
+        if share >= 0.2:
+            note += ". A fifth or more prompts a verification check here, a planning assumption rather than a measured health cutoff. Check validated-answer questions, then referral and Discord actions"
+    return [("Invalid Entries", f"{a.invalid:,}", "-", note)]
+
+
+def zero_review(a):
+    rows = [("Users", "0", "-", "No matching peers: the dataset starts at 100 Entrants")]
+    for flag, label in (("entries", "Entries"), ("impressions", "Impressions"), ("actions_completed", "Actions completed"),
+                        ("emails", "Email signups"), ("referrals", "Referral completions"), ("prize_value", "Stated Prize value"),
+                        ("x_follows", "X follows"), ("instagram_follows", "Instagram follows"), ("tiktok_follows", "TikTok follows"),
+                        ("twitch_follows", "Twitch follows"), ("youtube_subscribes", "YouTube subscribes"), ("discord_joins", "Discord joins"),
+                        ("days", "Duration in days"), ("methods", "Entry actions")):
+        value = getattr(a, flag, None)
+        if value is not None: rows.append((label, f"{value:,}", "-", ""))
+    rows.append(("Conversion Rate", "0.0%" if a.impressions and a.impressions > 0 else "-", "-",
+                 "" if a.impressions and a.impressions > 0 else "unavailable: positive Impressions required"))
+    rows += invalid_rows(a)
+    for label in ("Entries per Entrant", "Actions completed per Entrant", "Email signups per Entrant",
+                  "Referral completions per Entrant", "Stated Prize value per Entrant"):
+        rows.append((label, "-", "-", "unavailable: zero Entrants"))
+    if a.days: rows.append(("Entrants per day", "0", "-", ""))
+    return rows
+
+
 def review(a):
     global PCT
+    if a.contestants == 0: return zero_review(a)
     PCT = PCT or load_pct()
     groups = [("all campaigns", "all"), (f"campaigns of {band_label(a.contestants)}", "band:" + band(a.contestants))]
     if getattr(a, "vertical", None): groups.append((a.vertical.replace("_", " ") + " campaigns", "vertical:" + a.vertical))
@@ -153,7 +187,9 @@ def review(a):
             conv = a.contestants / a.impressions
             peer_m = lookup(BENCH["conv_by_methods"], a.methods) if a.methods else None
             peer_d = lookup(BENCH["conv_by_duration"], a.days) if a.days else None
-            note = f"platform average {BENCH['platform_average_conversion']:.0%}"
+            conversion = PCT["groups"]["all"]["conversion"]
+            note = (f"dataset median {conversion['p'][9]:.0%} across {conversion['n']:,} campaigns reaching at least 100 Entrants "
+                    "(percentiles.json; crypto, ambiguous and purchase-only campaigns excluded; missing or unusable conversion fields excluded)")
             if peer_m: note += f", the campaigns we can compare fairly with {a.methods} actions {peer_m:.0%}"
             if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
             if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day. Return visits during a long run or a daily action may explain part of this rate. The rate establishes neither a fault nor operational health. Check the entry flow, required actions and traffic sources before judging it"
@@ -161,9 +197,7 @@ def review(a):
             rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
     else:
         rows.append(("Conversion Rate", "-", "-", "skipped: no Impressions given, and the export never holds them, so take the figure from the Reporting tab"))
-    if a.invalid is not None and a.entries:
-        inv = a.invalid / (a.entries + a.invalid)
-        if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification, the planning assumption used here to prompt a check, not a measured health cutoff. Check for a validated-answer question first, then referral and Discord actions"))
+    rows += invalid_rows(a)
     if getattr(a, "actions_completed", None) is not None:
         apc = a.actions_completed / a.contestants
         rows.append(("Actions completed per Entrant", f"{apc:.2f}", f"{typical('actions_per_contestant', a.contestants) or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))
@@ -207,7 +241,11 @@ def read_actions(path, contestants):
             if len(r) < 2: continue
             try: n = float(r[1].replace(",", ""))
             except ValueError: continue
-            fam = family(r[0]); up = n / contestants
+            fam = family(r[0])
+            if contestants == 0:
+                out.append((r[0], "unavailable", "n/a", fam or "unclassified", "Per-Entrant rate unavailable: zero Entrants; no matching peers", n))
+                continue
+            up = n / contestants
             bench = BENCH["family_uptake"].get(fam)
             read = (("at or above" if bench and up >= bench else "below") + " what's typical for that kind of action") if bench else "no matching group to compare against"
             gname = r[2].strip() if len(r) > 2 and r[2].strip() else r[0]
@@ -444,6 +482,27 @@ def self_test():
             else: raise AssertionError("missing benchmark CLI must fail cleanly")
         assert "Restore references/percentiles.json" in errors.getvalue() and "Traceback" not in errors.getvalue()
     finally: PCT, PCT_FILE = saved_pct, saved_file
+    # Zero is observed data; missing totals and zero denominators stay unavailable.
+    class NoEntrants(A): contestants = 0; impressions = 200; entries = 0; invalid = 40
+    zero = {r[0]: r for r in review(NoEntrants)}
+    assert zero["Conversion Rate"][1] == "0.0%"
+    assert zero["Entries per Entrant"][1] == "-"
+    assert "100.0%" in zero["Invalid Entries"][3]
+    assert all(r[2] == "-" for r in zero.values())
+    class InvalidOnly(A): entries = 0; invalid = 40
+    assert "100.0%" in dict((r[0], r[3]) for r in review(InvalidOnly))["Invalid Entries"]
+    class NoEntries(InvalidOnly): invalid = 0
+    assert "unavailable" in invalid_rows(NoEntries)[0][3]
+    class UnknownEntries(InvalidOnly): entries = None
+    assert "pending" in invalid_rows(UnknownEntries)[0][3]
+    class NoImpressions(NoEntrants): impressions = 0
+    assert {r[0]: r[1] for r in review(NoImpressions)}["Conversion Rate"] == "-"
+    output = io.StringIO()
+    with contextlib.redirect_stdout(output):
+        assert main(["--contestants", "0", "--impressions", "200", "--entries", "0", "--invalid", "40"]) == 0
+    assert "100.0%" in output.getvalue() and "0.0%" in output.getvalue()
+    assert "dataset median 27% across 115,906 campaigns" in {r[0]: r[3] for r in review(A)}["Conversion Rate"]
+    assert "platform average" not in str(review(A))
     print("self-test passed"); return 0
 
 def entry_total(value):
@@ -471,7 +530,8 @@ def main(argv):
     ap.add_argument("--history", help="CSV of the organizer's previous campaigns, oldest first: campaign,Contestants,Impressions,Entries,invalid,days,methods,emails (missing cells allowed)")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
-    if not a.contestants: ap.error("--contestants is required")
+    if a.contestants is None: ap.error("--contestants is required")
+    if a.contestants < 0: ap.error("--contestants must be nonnegative")
     try:
         rows = review(a)
     except ValueError as exc:

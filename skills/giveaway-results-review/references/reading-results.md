@@ -34,7 +34,7 @@ Source: analysis/output/field_cuts.json (email_traffic_by_provider, outcomes_whe
 | Users, Entrants | Unique people who entered | The real audience size |
 | Actions | Entry methods completed | Engagement depth |
 | Entries | Actions completed multiplied by entry worth | A weighting artefact. Never compare entries between campaigns with different worths |
-| Conversion Rate | Users divided by Impressions | Landing page fit, with the Impressions caveat below. The platform quotes an average of about 34% |
+| Conversion Rate | Users divided by Impressions | Landing page fit, with the Impressions caveat below. The dataset median is 26.9% across 115,906 campaigns with Conversion Rate data in `percentiles.json` (`groups.all.conversion`), from the 116,285-campaign population that reached 100 Entrants, excluding crypto, ambiguous and purchase-only campaigns. Missing or unusable Conversion Rate fields are excluded |
 
 ## The Impressions caveat
 

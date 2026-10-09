@@ -20,7 +20,7 @@ This file never states what a law requires. It names who decides a point and the
 | Entry open to everyone | 86,978 | 14,473 | 439 | 27% |
 | Entry restricted by country | 29,521 | 4,919 | 702 | 27% |
 
-Restricting entry by country came with a bigger crowd and the same Conversion Rate, so narrowing the field is not a cost in turnout in this data. Those campaigns also asked for an email address far more often, 54% against 26%, which is the likelier reason they look different. A business that restricts is usually a business that wants a list it can legally mail.
+Campaigns restricted by country had more typical Entrants and the same rounded Conversion Rate as campaigns open to everyone. They also asked for an email address more often, 54% against 26%. These are associations between different groups, with no evidence here that country restrictions caused either result or that email collection explains the difference. Choose eligible countries around the published terms, delivery coverage and applicable requirements. The comparison cannot promise what narrowing or widening eligibility will do to turnout.
 
 Governing law named in the terms, top five: United States 55,088 campaigns, United Kingdom 14,002, Canada 6,979, Australia 6,580, Brazil 4,739.
 

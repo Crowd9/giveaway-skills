@@ -5,14 +5,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.50 |
-| giveaway-entry-method-planner | 1.2.45 |
+| giveaway-entry-method-planner | 1.2.46 |
 | giveaway-timing-and-duration | 1.4.46 |
-| giveaway-winner-structure | 1.4.17 |
+| giveaway-winner-structure | 1.4.18 |
 | giveaway-promotion-plan | 1.3.47 |
 | giveaway-random-draw | 1.3.44 |
-| giveaway-winner-communications | 1.2.38 |
+| giveaway-winner-communications | 1.2.39 |
 | giveaway-idea-generator | 1.3.39 |
-| giveaway-results-review | 1.6.24 |
+| giveaway-results-review | 1.6.25 |
 | gleam-campaign-setup | 1.2.42 |
 
 ## Skills
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.26 (2026-10-10)
+
+A giveaway nobody has entered can now be reviewed. Enter zero Entrants and you'll see a 0% Conversion Rate and your invalid share, with no comparison against campaigns of 100 or more. If every Entry you recorded was invalid, the review now shows the 100% invalid share.
+
+Referrals are matched to the right people when your report identifies Entrants by user ID. A complaint about your draw is answered with a holding reply until the records are checked. The referral figure counts shares and referrals completed, so read it as activity, since one person can complete several. Restricting entry by country is described as a difference between campaigns, with no promise about turnout. Use the one Conversion Rate benchmark the review quotes, from our data, when you compare your campaign.
 
 ## 3.0.25 (2026-10-10)
 

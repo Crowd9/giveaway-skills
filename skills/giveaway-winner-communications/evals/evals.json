@@ -47,12 +47,12 @@
   {
    "id": 2,
    "prompt": "A guy is furious in our DMs saying his cousin should have won and we cheated. What do I reply?",
-   "expected_output": "A short, calm reply that cites the draw method, date, entrant count and where the record is, offers to walk through it, and does not redraw or argue. Advises logging the exchange and not engaging further after one factual reply.",
+   "expected_output": "A short, calm holding reply because no draw or eligibility records were supplied. Says what will be checked and gives an update deadline within one working day, with a time zone. Makes no unsupported claim that the draw was valid or the Winner eligible. Advises logging the exchange, checking the records and considering new evidence before a factual follow-up. Does not promise an automatic redraw.",
    "assertions": [
-    "Reply cites the draw record",
-    "Does not offer a redraw",
-    "One factual reply then stop",
-    "Logs the exchange"
+    "Uses the missing-record branch with a holding reply and an update deadline within one working day, including a time zone",
+    "Does not invent verified draw facts or claim the Winner was eligible without checked records",
+    "Does not offer an automatic redraw",
+    "Logs the exchange and reviews new evidence instead of stopping automatically after one reply"
    ],
    "files": [],
    "checks": [

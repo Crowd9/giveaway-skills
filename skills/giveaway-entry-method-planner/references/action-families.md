@@ -28,7 +28,7 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=116,499). upt
 - Visiting a page or profile is in four out of five campaigns and most Entrants do it. It is cheap for the Entrant and teaches little about them.
 - Email signup, when offered, records nearly one completion per Entrant. It is the highest-completing asset-producing action in the data.
 - Free follows are the most common social action and record about one completion per two Entrants. Community joins and content posting see lower completion.
-- Sharing and referring is offered in more than half of campaigns and records about 26 entries for every 100 Entrants, where each entry is a referred person times the entry worth. In the top tenth of campaigns the figure reaches 66 per 100. [`analysis/output/benchmarks.json`, `ordinary_benchmark` entry_methods families.] That is the only action whose entries are new people, so weight it and name the reward.
+- Sharing, reposting and referring is offered in more than half of campaigns and records about 26 completed events for every 100 Entrants. In the top tenth of campaigns the figure reaches 66 per 100. [`analysis/output/benchmarks.json`, `ordinary_benchmark` entry_methods families.] These counts are unweighted completions across the family, which includes shares and reposts. They do not count distinct referred people. Setting five Entries per action does not turn 26 completions into 5.2 referrals: neither multiply nor divide this measure by Entry worth.
 - Paid subscriptions and imported entries have very low completion. Paid actions only work when the audience already intended to pay.
 
 ## Completions by action, required versus optional

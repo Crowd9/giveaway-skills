@@ -126,12 +126,13 @@ def entry_number(value): return int(value) if value == int(value) else value
 def pct(a, b): return f"{a / b:.0%}" if b else "-"
 
 def load(path, mapping=None, wide_unit=None, wide_worth=None):
-    with open(path, newline="", encoding="utf-8-sig") as f: raw = list(csv.DictReader(f))
-    if not raw: sys.exit("empty file")
-    cols = resolve_columns(list(raw[0].keys()), mapping or {})
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f); raw = list(reader); header = reader.fieldnames or []
+    if not header: sys.exit("empty file: export headers are required")
+    cols = resolve_columns(header, mapping or {})
     if "who" not in cols: sys.exit("no column names the Entrant. Pass --map who=<column>")
     rows = []
-    if "action" not in cols:
+    if "action" not in cols and raw:
         # Wide cells carry declared units; weights alone never imply one completion.
         if wide_unit not in ("boolean", "completions", "entries"):
             raise ValueError("wide export requires --wide-unit boolean, completions or entries")
@@ -170,6 +171,11 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
     for r in rows:
         r["Action"] = (r.get(cols["action"]) or "").strip() or "unnamed action"
         r["_who"] = (r.get(cols["who"]) or "").strip().lower()
+        r["_emails"] = {(r.get(h) or "").strip().lower() for h in header
+                        if h.casefold() in {"email", "email address", "e-mail", "entrant email", "user email"}
+                        and "@" in (r.get(h) or "")}
+        if cols["who"].casefold() in {"email", "email address", "e-mail", "entrant email", "user email"}:
+            r["_emails"].add(r["_who"])
         sv = str(r.get(cols["status"]) or "").strip().lower() if "status" in cols else ""
         r["_valid"] = sv in ("", "valid", "winner", "approved", "verified", "true", "yes", "1")
         r["_when"] = parse_when(r.get(cols["when"])) if "when" in cols and not wide else None
@@ -196,10 +202,10 @@ def analyze(rows, a):
     for r in valid: people[r["_who"]].append(r)
     for rs in people.values(): rs.sort(key=lambda r: r["_when"].timestamp() if r["_when"] else float("inf"))
     n = len(people); R = {"base": n, "notes": []}
-    if not n: sys.exit("no valid Entrants in export")
     entries = sum(r["_entries"] for r in valid)
-    R["topline"] = {"entrants": n, "actions": len(valid), "entries": entry_number(entries), "actions_per_entrant": len(valid) / n, "entries_per_entrant": entries / n,
-                    "unweighted_rows": sum(bool(r.get("_unweighted")) for r in rows), "invalid_actions": len(invalid), "invalid_entries": sum(r["_entries"] for r in invalid), "invalid_rate": len(invalid) / len(rows) if rows else 0}
+    R["topline"] = {"entrants": n, "actions": len(valid), "entries": entry_number(entries), "actions_per_entrant": len(valid) / n if n else None, "entries_per_entrant": entries / n if n else None,
+                    "unweighted_rows": sum(bool(r.get("_unweighted")) for r in rows), "invalid_actions": len(invalid), "invalid_entries": sum(r["_entries"] for r in invalid), "invalid_rate": len(invalid) / len(rows) if rows else None}
+    if not n: return R
     # engagement distribution
     b = collections.Counter()
     for rs in people.values():
@@ -232,9 +238,19 @@ def analyze(rows, a):
     referred_by = {}; sharer = collections.defaultdict(set)
     referral_actions = [r for r in valid if r["_refer"]]
     refer_rows = len(referral_actions); referral_people = {r["_who"] for r in referral_actions}; graph_rows = 0
-    for r in valid:
-        if r["_refer"] and "@" in (r.get("Details") or ""):
-            graph_rows += 1; ref = r["Details"].strip().lower(); sharer[r["_who"]].add(ref); referred_by.setdefault(ref, r["_who"])
+    email_people = collections.defaultdict(set)
+    for r in rows:
+        for email in r.get("_emails", ()):
+            email_people[email].add(r["_who"])
+    # An absent target can be called a non-Entrant only with complete identity coverage.
+    crosswalk_complete = all(any(r.get("_emails") for r in rs) for rs in people.values())
+    for r in referral_actions:
+        email = (r.get("Details") or "").strip().lower()
+        if "@" not in email: continue
+        candidates = email_people.get(email, set())
+        if len(candidates) > 1 or not candidates and not crosswalk_complete: continue
+        ref = next(iter(candidates)) if candidates else ("unmatched email", email)
+        graph_rows += 1; sharer[r["_who"]].add(ref); referred_by.setdefault(ref, r["_who"])
     referred_entrants = {e for e in referred_by if e in people}
     handles_of = lambda who: [c for c in HANDLE_COLS if any(r.get(c) for r in people.get(who, []))]
     top_sharers = []
@@ -394,6 +410,17 @@ def insights(R):
 
 def render(R, a):
     L = []; w = L.append; T = R["topline"]; n = R["base"]
+    if not n:
+        w("# Campaign report\n\n| Metric | Value |\n|---|---|")
+        for label, key in (("Users", "entrants"), ("Actions completed", "actions"), ("Entries", "entries"),
+                           ("Invalid Actions", "invalid_actions"), ("Invalid Entries", "invalid_entries")):
+            w(f"| {label} | {T[key]:,} |")
+        if a.impressions is not None: w(f"| Impressions | {a.impressions:,} |")
+        w("| Conversion Rate | " + ("0.0%" if a.impressions and a.impressions > 0 else "unavailable") + " |")
+        total = T["entries"] + T["invalid_entries"]
+        w("| Invalid Entries share | " + (f"{T['invalid_entries'] / total:.1%}" if total else "unavailable") + " |")
+        w("\nPer-Entrant ratios, engagement and referral outcomes are unavailable: zero valid Entrants. No matching peers: the dataset starts at 100 Entrants.")
+        return "\n".join(L)
     info = getattr(load, "last", None)
     if info:
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
@@ -606,9 +633,9 @@ def self_test():
     fractional[2]["Details"] = "absent@example.com"
     assert analyze(fractional, B)["viral"]["top"][0][3] == 0
     for empty in ([], [r for r in fractional if not r["_valid"]]):
-        try: analyze(empty, B)
-        except SystemExit as exc: assert str(exc) == "no valid Entrants in export", exc
-        else: raise AssertionError("empty campaign must explain why it cannot be reported")
+        empty_report = analyze(empty, B)
+        assert empty_report["base"] == 0
+        assert "zero valid Entrants" in render(empty_report, B)
     assert resolve_columns(["Email", "Action", "Custom Worth"], {"Entries": "Custom Worth"})["entries"] == "Custom Worth"
     for role in ("status", "who", "Entries"):
         try: load(p, {role: "Missing Column"})
@@ -815,6 +842,33 @@ def self_test():
         _bench.PCT = None; _bench.load_pct = lambda: None
         assert bench("contestants", 100, 100) == ("-", "no benchmark loaded")
     finally: _bench.PCT, _bench.load_pct = saved_pct, saved_load
+    # Referral emails resolve to stable person IDs, with ambiguity left unavailable.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["User ID", "Email", "Action", "Entries", "Details"])
+        wr.writerows([["person-a", "a@example.com", "Refer Friends", 1, "b@example.com"],
+                      ["person-b", "b@example.com", "Entry Confirmed", 1, ""]])
+    by_email = analyze(load(q), B)["viral"]
+    by_id = analyze(load(q, {"who": "User ID"}), B)["viral"]
+    assert by_email == by_id and by_id["referred_entrants"] == 1
+    for email_values in (("", ""), ("b@example.com", "b@example.com")):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["User ID", "Email", "Action", "Entries", "Details"])
+            wr.writerows([["person-a", email_values[0], "Refer Friends", 1, "b@example.com"],
+                          ["person-b", email_values[1], "Entry Confirmed", 1, ""]])
+        unresolved = analyze(load(q, {"who": "User ID"}), B)["viral"]
+        assert not unresolved["graph_complete"] and unresolved["referred_entrants"] is None
+    class ZeroArgs(B): impressions = 200
+    for invalid_count in (0, 1):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status"])
+            if invalid_count: wr.writerow(["a@example.com", "Entry Confirmed", 40, "Invalid"])
+        empty = analyze(load(q), ZeroArgs)
+        assert empty["base"] == 0 and empty["topline"]["entries_per_entrant"] is None
+        assert empty["topline"]["invalid_entries"] == invalid_count * 40
+        result = render(empty, ZeroArgs)
+        assert "| Conversion Rate | 0.0% |" in result and "zero valid Entrants" in result
+        assert "better than" not in result
+        assert ("| Invalid Entries share | 100.0% |" if invalid_count else "| Invalid Entries share | unavailable |") in result
     print("self-test passed"); return 0
 
 def main(argv):
