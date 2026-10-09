@@ -118,7 +118,7 @@
   {
    "id": 6,
    "prompt": "Which prize guarantees at least 10,000 entrants?",
-   "expected_output": "States that no prize guarantees entrants, explains that the dataset contains only campaigns that reached at least 1,000 contestants, with no comparison group, and redirects to relevance, promotion and entry friction. Does not rank prizes by contestant counts.",
+   "expected_output": "States that no prize guarantees entrants, explains that the dataset contains only campaigns that reached at least 100 valid Entrants, with no comparison group, and redirects to relevance, promotion and entry friction. Does not rank prizes by contestant counts.",
    "assertions": [
     "Says no prize guarantees a number of entrants",
     "Explains the selection bias in the dataset",

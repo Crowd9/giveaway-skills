@@ -19,7 +19,7 @@ that guesses is worse than no checker.
   python3 scripts/check_claims.py
   python3 scripts/check_claims.py --self-test
 """
-import glob, os, re, sys
+import glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -174,6 +174,35 @@ SKILL_NUM = re.compile(r"(?<![\w.])(\d[\d,]*(?:\.\d+)?)\s*(%?)")
 SKILL_REF = re.compile(r"`references/([a-z0-9-]+\.md)`")
 # the repo already cites aggregates this way in its reference files, so a skill body may too
 SKILL_OUT = re.compile(r"`analysis/output/([a-z_]+\.json)`")
+EXTRACTED_COUNTS = re.compile(r"\[Extracted from ([\d,]+) campaigns and ([\d,]+) businesses\b[^\]]*\]")
+
+
+def check_extracted(path, root):
+    """Check bracketed population counts only against one explicitly cited distribution."""
+    hits = []
+    with open(path, encoding="utf-8") as source:
+        for n, line in enumerate(source, 1):
+            counts = EXTRACTED_COUNTS.findall(line)
+            outs = set(SKILL_OUT.findall(line))
+            if len(counts) != 1 or len(outs) != 1:
+                continue
+            out = next(iter(outs))
+            fp = os.path.join(root, "analysis", "output", out)
+            if not os.path.exists(fp):
+                continue
+            with open(fp, encoding="utf-8") as aggregate:
+                data = json.load(aggregate)
+            distribution = data.get("distribution") if isinstance(data, dict) else None
+            if not isinstance(distribution, dict) or not all(
+                    type(distribution.get(key)) is int for key in ("campaigns", "businesses")):
+                continue
+            for key, stated in zip(("campaigns", "businesses"), counts[0]):
+                if int(stated.replace(",", "")) != distribution[key]:
+                    hits.append(f"{os.path.relpath(path, root)}:{n}: extracted {key} count {stated} "
+                                f"disagrees with {out} distribution.{key} ({distribution[key]:,})")
+    return hits
+
+
 # a figure describing a file that ships with the skill is checked by counting that file, which the
 # reader can do as easily as the checker, so naming it is enough
 SKILL_EX = re.compile(r"`examples/[a-z0-9-]+\.(?:csv|json)`")
@@ -295,6 +324,27 @@ def check_skill(path, root):
 
 def self_test():
     """A planted inversion must fail, and the file as it stands must pass."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as root:
+        os.makedirs(os.path.join(root, "analysis", "output"))
+        fp = os.path.join(root, "analysis", "output", "sample.json")
+        tmp = os.path.join(root, "reference.md")
+        with open(fp, "w", encoding="utf-8") as aggregate:
+            json.dump({"distribution": {"campaigns": 1234, "businesses": 56}}, aggregate)
+        def extracted(text):
+            with open(tmp, "w", encoding="utf-8") as reference:
+                reference.write(text)
+            return check_extracted(tmp, root)
+        valid = "[Extracted from 1,234 campaigns and 56 businesses, `analysis/output/sample.json`.]"
+        assert not extracted(valid), "matching extracted population should pass"
+        assert len(extracted(valid.replace("1,234", "1,235"))) == 1, "stale campaign count was missed"
+        assert len(extracted(valid.replace("56 businesses", "57 businesses"))) == 1, "stale business count was missed"
+        stale = valid.replace("1,234", "9,999")
+        assert not extracted(stale.replace("`analysis/output/sample.json`", "no citation")), "uncited counts must be skipped"
+        assert not extracted(stale + " `analysis/output/other.json`"), "multiple cited sources must be skipped"
+        with open(fp, "w", encoding="utf-8") as aggregate:
+            json.dump({"distribution": [{"campaigns": 1234, "businesses": 56}]}, aggregate)
+        assert not extracted(stale), "ambiguous distribution must be skipped"
     src = os.path.join(ROOT, "skills", "giveaway-idea-generator", "references", "hooks-and-themes.md")
     assert not check(src), f"the live file should be clean: {check(src)}"
     text = open(src, encoding="utf-8").read()
@@ -340,20 +390,22 @@ def self_test():
 def main():
     if "--self-test" in sys.argv:
         return self_test()
-    bad = []
+    bad, extracted_bad = [], []
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "references", "*.md"))):
         bad += check(f)
+        extracted_bad += check_extracted(f, ROOT)
     skill_bad, skill_notes = [], []
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "SKILL.md"))):
         h, n = check_skill(f, ROOT)
         skill_bad += h; skill_notes += n
     for n in skill_notes:
         print("  note: " + n)
-    for b in bad + skill_bad:
+    for b in bad + skill_bad + extracted_bad:
         print("  " + b)
     print(f"\n{len(bad)} sentences contradict the table they read, {len(skill_bad)} figures in a skill body "
-          f"disagree with the reference it cites, {len(skill_notes)} uncited figures in a skill body")
-    return 1 if (bad or skill_bad) else 0
+          f"disagree with the reference it cites, {len(skill_notes)} uncited figures in a skill body, "
+          f"{len(extracted_bad)} extracted population counts disagree with their cited distribution")
+    return 1 if (bad or skill_bad or extracted_bad) else 0
 
 
 if __name__ == "__main__":
