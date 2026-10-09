@@ -361,10 +361,10 @@ Swap the first line at each push: mid run leads with a detail ("The [Prize] arri
 
 ## When almost nobody has entered (advice)
 
-Common practice, nothing in the data covers it. Every campaign behind the figures on this page reached at least
-100 Entrants, so the ones that never got going were filtered out before any of this was measured. There is no
-base rate here for how often a quiet campaign is broken and how often it is simply unseen, and an answer that
-offers one has made it up. Work through it in this order, because the cheap checks come first.
+Common practice, nothing in the data covers it. Use each source's stated population. The email-traffic source
+specifies location-row coverage and reports no Entrant floor. There is no base rate here for how often a quiet
+campaign is broken and how often it is simply unseen. Work through it in this order, because the cheap checks
+come first.
 
 - Open the entry link yourself, signed out, on a phone. A campaign that will not load, or that asks for a login
   nobody has, records no Entrants and looks identical to one nobody wanted.

@@ -321,7 +321,7 @@ Reading it:
 For most holidays, most campaigns naming it start within 60 days before the date and end within 14 days after it (table below). New Year is the exception: about half of New Year-named campaigns start in January, after the date, which a before-the-date window does not count, so "new year" shows up in titles and descriptions about as often after 1 January as before it. Back to school and Lunar New Year also run under 70%, both tied to a picked date, not a single day everyone marks the same way.
 
 <!-- generated:hol2_name_date -->
-| Holiday | Share started 60 days before to 14 days after | Campaigns |
+| Holiday | Share starting within 60 days before and ending by 14 days after | Campaigns |
 |---|---|---|
 | Christmas and advent | 84% | 4,986 |
 | New Year | 39% | 955 |

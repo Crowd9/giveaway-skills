@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.56 |
-| giveaway-entry-method-planner | 1.2.56 |
-| giveaway-timing-and-duration | 1.4.56 |
-| giveaway-winner-structure | 1.4.26 |
-| giveaway-promotion-plan | 1.3.55 |
+| giveaway-prize-picker | 1.3.57 |
+| giveaway-entry-method-planner | 1.2.57 |
+| giveaway-timing-and-duration | 1.4.57 |
+| giveaway-winner-structure | 1.4.27 |
+| giveaway-promotion-plan | 1.3.56 |
 | giveaway-random-draw | 1.3.54 |
 | giveaway-winner-communications | 1.2.45 |
 | giveaway-idea-generator | 1.3.47 |
-| giveaway-results-review | 1.6.39 |
-| gleam-campaign-setup | 1.2.51 |
+| giveaway-results-review | 1.6.40 |
+| gleam-campaign-setup | 1.2.52 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.49 (2026-10-10)
+
+Every figure now describes what it counted, so you can repeat it without overclaiming. Action completions stay completions, never a count of people. Template mixes describe what campaigns copied from a Gleam template went on to use, so you won't read them as the template's defaults. Bundle comparisons name the campaigns they classed as bundles, and the duration curve reports how well a two-part line fits it. Where a source sets no Entrant floor, the page no longer says it does, so check each table's own population before you compare.
 
 ## 3.0.48 (2026-10-10)
 

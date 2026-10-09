@@ -193,7 +193,7 @@ Conversion Rate so far is Entrants so far divided by Impressions so far. Read it
 | 61 or more | 2,929 | 21% |
 <!-- /generated -->
 
-Source: `analysis/output/percentiles.json` (`bench`, `conv_by_duration`). Finished campaigns with no repeatable action.
+Source: `analysis/output/percentiles.json` (`bench`, `conv_by_duration`). Campaigns with no repeatable action. The source does not specify completion-status filtering.
 
 Read the Impressions count before calling a Conversion Rate low. Inside every size band the campaigns with the fewest Impressions converted highest and those with the most converted lowest, in the table under "What extra reach is worth" in `references/reading-results.md`. A high Conversion Rate beside low Impressions is therefore a reach problem that looks like a good rate.
 

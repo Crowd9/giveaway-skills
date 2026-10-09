@@ -40,7 +40,7 @@ A Prize that matches the business's own category draws no more crowd for the mon
 | Generic (cash, gift card, bundle, subscription, discount) | 36,845 | 8,215 | 463 | 1.00 |
 <!-- /generated -->
 
-Campaigns with several Prize records drew about a quarter less crowd per Prize dollar than single-record campaigns. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
+Campaigns classified as bundles, through multiple Prize records or a bundle/box category, drew about a quarter less crowd per Prize dollar than the remaining campaigns. That association does not establish what splitting a Prize would change.
 
 Expect a broad Prize to bring Entrants who never buy. That is acceptable when the objective needs reach and the follow-up handles the mismatch. It becomes a problem when the leads go straight to a sales team.
 

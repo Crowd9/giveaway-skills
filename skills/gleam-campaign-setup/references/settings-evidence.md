@@ -218,7 +218,7 @@ Nearly every Viral Share action carried custom share text, not the default, so t
 
 ## Completion-event ratios by setting
 
-Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Configurations with fewer choices or shorter waits generally recorded higher completion-event ratios. X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above. These comparisons describe different campaigns and do not predict the result of changing a setting.
+Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Configurations with fewer choices or shorter waits generally recorded higher completion-event ratios. X throwaway account restriction matches the direction of the per-action figure in Throwaway account restriction above. These comparisons describe different campaigns and do not predict the result of changing a setting.
 
 <!-- generated:se_config -->
 | Setting | Option | Completion, % of Entrants (decimal) | Actions | Businesses |
@@ -232,8 +232,8 @@ Read from the action's own configuration. The count is Actions, one row per Acti
 | Instagram visit delay | 5 seconds or less | 83% (0.83) | 192,023 | 12,912 |
 | Instagram visit delay | 6 to 15 seconds | 76% (0.77) | 1,672 | 299 |
 | Instagram visit delay | 16 seconds or more | 60% (0.60) | 612 | 87 |
-| X throwaway account restriction (per campaign) | Open | 49% (0.49) | 134,484 | 10,202 |
-| X throwaway account restriction (per campaign) | Restricted | 38% (0.38) | 7,355 | 839 |
+| X throwaway account restriction | Open | 49% (0.49) | 134,484 | 10,202 |
+| X throwaway account restriction | Restricted | 38% (0.38) | 7,355 | 839 |
 | Share text length | 60 to 140 characters | 12% (0.12) | 30,789 | 5,447 |
 | Share text length | Over 140 characters | 9% (0.09) | 10,075 | 1,867 |
 | Share text length | Default text | 11% (0.11) | 1,667 | 451 |
@@ -464,7 +464,7 @@ The entry-method-planner skill holds the table of actions over-represented in th
 
 ## Wording that showed up in the data
 
-The entry-method-planner skill holds the share of Entrants who completed it by question type, by share copy traits, by visit destination and by the newsletter description under the email action (see table). The idea generator holds title wording. Load them when the user is writing the action titles and the description.
+The entry-method-planner skill holds recorded completion events per Entrant by question type, by share copy traits, by visit destination and by the newsletter description under the email action (see table). The idea generator holds title wording. Load them when the user is writing the action titles and the description.
 
 <!-- generated:se3_wording -->
 | Measure | Category | Actions | Businesses | Completed it, per 100 Entrants (typical) |

@@ -100,7 +100,7 @@ Close day of the week, all the campaigns behind these numbers:
 
 Flat, like the start day. Close hour in UTC shows no usable pattern either, and the campaign timezone is not in the dataset, so pick the close time for your audience and your own working hours.
 
-Holding run length fixed, close-day type makes little difference: a weekend and a weekday close sit within about a point of each other at both lengths, and a public-holiday close sits under three points below them in 1-7 day runs and within a point at 8-14. Without holding the run length fixed, a raw comparison would mix short flash campaigns that close mid-week against long advent-style runs that close disproportionately in the holiday period, and holding it fixed removes that mix-up. A public holiday is read from the business's own country against the Nager.Date calendar.
+Comparing within the 1-7-day and 8-14-day run-length bands, close-day type makes little difference: a weekend and a weekday close sit within about a point of each other at both lengths, and a public-holiday close sits under three points below them in 1-7 day runs and within a point at 8-14. A raw comparison mixes short flash campaigns that close mid-week with long advent-style runs that close disproportionately in the holiday period. Comparing within run-length bands reduces that mix, though durations still vary inside each band. A public holiday is read from the business's own country against the Nager.Date calendar.
 
 <!-- generated:tm2_close_type -->
 | Duration | Close type | Campaigns | Businesses | Conversion Rate (campaigns with no repeatable action) | Entries per Entrant |
@@ -158,11 +158,11 @@ The day-to-day view sharpens this. Each row is a different campaign's whole run,
 | 14 | 26% |
 | 30 | 26% |
 
-The typical Conversion Rate bends between a 4-day and a 5-day run, the split that best explains the shape of the curve (83% of it), across 65,576 campaigns with no repeatable action that ran 1 to 35 days.
+The typical Conversion Rate bends between a 4-day and a 5-day run across 65,576 campaigns with no repeatable action that ran 1 to 35 days. The two-segment fit reduces squared fitting error by 83% compared with a single straight line.
 
 The same search repeated inside each campaign size, plan tier and industry:
 
-| Segment | Bend point | Share of curve explained | Campaigns | Businesses |
+| Segment | Bend point | Squared fitting error reduction versus one line | Campaigns | Businesses |
 |---|---|---|---|---|
 | 100-250 Entrants | day 5-6 | 78% | 18,510 | 853 |
 | 250-500 Entrants | day 3-4 | 79% | 15,057 | 598 |
@@ -184,10 +184,10 @@ The same search repeated inside each campaign size, plan tier and industry:
 | Apparel and fashion | day 12-13 | 64% | 2,219 | 83 |
 | Sports and outdoors | day 5-6 | 83% | 2,092 | 98 |
 
-For campaigns of 10,000 or more Entrants the bend moves to day 14-15 and gets weaker, explaining 31% of the curve shape against 73% to 80% in the two sizes below (1,392 campaigns, 64 businesses). Industries spread from day 3-4 in gaming and esports to day 12-13 in apparel and fashion.
+For campaigns of 10,000 or more Entrants the bend moves to day 14-15 and gets weaker: the two-segment fit reduces squared fitting error by 31% compared with a single straight line, against 73% to 80% in the two sizes below (1,392 campaigns, 64 businesses). Industries spread from day 3-4 in gaming and esports to day 12-13 in apparel and fashion.
 <!-- /generated -->
 
-Across every size band under 10,000 Entrants and the two largest plan tiers the bend lands within the first week or so, so the steep part of the curve is over early in a run. Read the 10,000-plus bend as suggestive only, since it rests on a thinner slice of data, and treat any row that explains under half of its own curve the same way: a bend that lands somewhere different in every segment is stratification noise, and none of these rows is a rule to plan a run length around.
+Across every size band under 10,000 Entrants and the two largest plan tiers the bend lands within the first week or so of campaign duration. This compares whole runs of different lengths. Read the 10,000-plus bend as suggestive only, since it rests on a thinner slice of data, and treat any row that reduces squared fitting error by under half compared with a single straight line the same way. Bend locations vary across segments, and none of these rows is a rule to plan a run length around.
 
 Source: `analysis/output/thresholds.json` (`duration_days`).
 

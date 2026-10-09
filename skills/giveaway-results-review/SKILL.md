@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review finished giveaways or diagnose live campaigns from numbers, reporting screenshots or Actions exports. Use for 'how did my giveaway do', 'giveaway post-mortem', 'why was conversion low', 'which actions worked', 'compare my campaigns', 'giveaway ROI', 'is this pace normal', 'nobody is entering', 'entries look fake', 'should I extend', or 'results dashboard'."
 metadata:
-  version: 1.6.39
+  version: 1.6.40
 ---
 
 # Giveaway Results Review
@@ -92,7 +92,7 @@ This folder works alone. `analysis/output/` paths name source data that is not i
 
 - `scripts/review.py --first-campaign` uses the first-campaign Entrant median in its Users row. Its percentile ranks and other rows remain campaign-weighted. Interpret those using the first-campaign comparison in `references/evidence-detail.md`.
 - Where the business fits none of the ten verticals, and a B2B or industrial supplier usually fits none, rank on the size band alone and say plainly that no vertical group in the data covers them. Use the band rank for a business outside those verticals.
-- A rank is a position among campaigns that reached 100 Entrants, in a vertical guessed from names. Say "better than 70% of the 15,543 technology campaigns in the dataset" for an Entrant rank (`references/percentiles.json`, `groups.vertical:technology.contestants.n`).
+- A rank is a position among campaigns that reached 100 Entrants, in a vertical derived from the organizer homepage's industry label. Say "better than 70% of the 15,543 technology campaigns in the dataset" for an Entrant rank (`references/percentiles.json`, `groups.vertical:technology.contestants.n`).
 - `scripts/review.py` reads `references/percentiles.json` and prints the peer-group count: a campaign of "300 Entrants" is compared with campaigns of 250 to 500 Entrants.
 - Actions and entries are outputs. The only funnel is Impressions to Entrants. Every number in the report is recomputable from the file. Label each report-specific assumption inline, and omit a section whose column is empty in the file.
 - Lead with performance against the objective. Reaching the dataset floor establishes eligibility for comparison and says nothing about success or rank. Mention strengths only when supported and relevant to the objective.

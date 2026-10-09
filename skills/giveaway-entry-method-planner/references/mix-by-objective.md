@@ -20,9 +20,9 @@ The B2B row is advice, and `qualified-entry.md` holds the full version: who to n
 
 A buyer's employer may have rules about being paid for a review, a referral or a public endorsement, and a regulated buyer may have more. Where the user raises that, drop the referral and review actions and put the reach into the question and the page visit, and say why.
 
-## What the Gleam library templates ship (extracted)
+## Mixes in campaigns copied from Gleam library templates (extracted)
 
-Each Gleam library template ships a different default mix of methods, email and sharing. Refer A Friend leans hardest into sharing, the platform's own referral shape. E-Commerce Giveaway carries the most methods. [Scope: 100 or more Entrants, finance and crypto businesses excluded.]
+Campaigns copied from each Gleam library template used different mixes of methods, email and sharing. These aggregates include businesses' subsequent configuration choices. Campaigns copied from Refer A Friend offered sharing most often. Campaigns copied from E-Commerce Giveaway carried the most methods. [Scope: 100 or more Entrants, finance and crypto businesses excluded.]
 
 | Template | Methods | Email offered | Share offered |
 |---|---|---|---|
@@ -33,7 +33,7 @@ Each Gleam library template ships a different default mix of methods, email and 
 | Instant Entry | 1 | 7% | 6% |
 | YouTube Contest | 6 | 9% | 38% |
 
-Each template's default mix is a starting point, not a fixed one, so weight and add actions against the objective table above.
+Use the observed mixes as context, and weight and add actions against the objective table above.
 
 Source: `analysis/output/templates.json` (`by_template`).
 
@@ -208,7 +208,7 @@ The top fifth ran a typical 7 Actions against 6 in the bottom fifth, each coveri
 
 ## Actions by industry, offered and completed (extracted)
 
-The source covers 23 qualifying industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses. Rows that could expose small groups by subtraction are withheld here. The offered columns list the Actions an industry's businesses offered at least 1.5x as often as the all-industry rate, or at most 0.67x as often, strongest first and up to three each. The completed columns list Actions where the typical completion among campaigns offering them ran at least 1.25x or at most 0.75x of the all-industry completion, up to two each. A dash means no Action cleared the cut. Each figure carries the campaigns and businesses that offered the Action. Completion is the share of Entrants who completed the Action. A high ratio in an industry describes the Entrants that industry's businesses reached, and says nothing about what the Action would do for another business there.
+The source covers 23 qualifying industries, from 116,283 campaigns of 100 or more Entrants and 17,603 businesses. Rows that could expose small groups by subtraction are withheld here. The offered columns list the Actions an industry's businesses offered at least 1.5x as often as the all-industry rate, or at most 0.67x as often, strongest first and up to three each. The completed columns list Actions where the typical completion among campaigns offering them ran at least 1.25x or at most 0.75x of the all-industry completion, up to two each. A dash means no Action cleared the cut. Each figure carries the campaigns and businesses that offered the Action. Completion is recorded completion events divided by Entrants, taking the median across campaigns offering the Action. A high ratio in an industry describes the Entrants that industry's businesses reached, and says nothing about what the Action would do for another business there.
 
 <!-- generated:em3_industry_actions -->
 | Industry | Campaigns | Businesses | Offered most often against all industries | Offered least often | Completed more often once offered | Completed less often once offered |
@@ -453,7 +453,7 @@ Stated Prize value per email signup and per follow by vertical sits in the Prize
 
 ## Wording and destinations (extracted)
 
-Completions % of Entrants for the action, typical value across campaigns offering it.
+Completion events per Entrant, summarized across offered Actions within each family and position.
 
 Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`. The sharing comparison uses `share|1st.completions_per_contestant` and `share|5th+.completions_per_contestant`. Sample counts are Actions offered, not campaigns:
 

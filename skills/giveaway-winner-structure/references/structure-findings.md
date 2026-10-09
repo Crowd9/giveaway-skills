@@ -47,17 +47,17 @@ This compares campaigns with one Prize record against campaigns with several, sh
 
 Conversion Rate falls steadily from 28% at one Prize record to 19% at ten or more. Entrants rise at every step, from 471 at one record to 1,340 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
 
-Among the campaigns compared here, several Prize records were associated with fewer Entrants for the same stated Prize value after adjusting for campaign size and industry. They were also associated with more reach and referrals. These comparisons do not establish what splitting one campaign's Prize would change.
+Campaigns classified as bundles had fewer Entrants relative to the median in their stated Prize value band than the remaining campaigns. The bundle group includes campaigns with multiple Prize records or a bundle/box category. This comparison accounts for stated Prize value band. It does not establish what splitting one campaign's Prize would change.
 
-Matching by stated Prize value leaves single-record campaigns ahead in six of the seven ranges shown. The reversal is at 25,000 to 49,999 USD, where split Prizes sit slightly ahead on a small sample. Combined counts below describe each full group. The index uses 35,165 valued single-record campaigns and 7,788 valued split-record campaigns.
+Comparing within stated Prize value bands leaves campaigns outside the bundle group ahead in six of the seven ranges shown. The reversal is at 25,000 to 49,999 USD, where bundles sit slightly ahead on a small sample. Combined counts below describe each full group. The index uses 35,165 valued campaigns outside the bundle group and 7,788 valued bundle campaigns.
 
 | Cut (matched to stated Prize value) | Crowd-per-dollar score | Campaigns | Businesses |
 |---|---|---|---|
-| Single Prize, by price range | 1.00 to 1.21 | - | - |
-| Split Prize (2+), by price range | 0.70 to 1.04 | - | - |
-| Single Prize, all price ranges combined | 1.04 | 96,008 | 14,156 |
-| Split Prize, all price ranges combined | 0.79 | 20,275 | 6,516 |
-| Split Prize at 25,000-49,999 USD, reverses | 1.04 | 50 | 46 |
+| Outside the bundle group, by price range | 1.00 to 1.21 | - | - |
+| Bundle group, by price range | 0.70 to 1.04 | - | - |
+| Outside the bundle group, all price ranges combined | 1.04 | 96,008 | 14,156 |
+| Bundle group, all price ranges combined | 0.79 | 20,275 | 6,516 |
+| Bundle group at 25,000-49,999 USD, reverses | 1.04 | 50 | 46 |
 | Ranges shown | 7, from 250-499 USD to 25,000-49,999 USD | - | - |
 
 Single-unit campaigns are more common in the top fifth on the three measures below. Conversion Rate and cost per Entrant compare within size and industry. Crowd per dollar compares within industry after accounting for value. The ratios compare the prevalence of single-unit campaigns in the top fifth against the rest. They measure feature prevalence. Counts are the matched top-fifth cohorts.
@@ -68,7 +68,7 @@ Single-unit campaigns are more common in the top fifth on the three measures bel
 | Crowd per dollar spent | 1.170x | 8,590 | 2,098 |
 | Cost per Entrant | 1.434x | 8,580 | 2,071 |
 
-The asset-yield comparison associates more Prize records with more reach actions and referrals per 100 Entrants, going from one Prize record to five or more, consistent across three campaign sizes, though not more follows or joins, which stay close to flat for the two smaller sizes and fall for the largest (table below).
+The asset-yield comparison associates more Prize records with more Impressions and referral completions per 100 Entrants, going from one Prize record to five or more, consistent across three campaign sizes, though not more follows or joins, which stay close to flat for the two smaller sizes and fall for the largest (table below).
 
 | Effect of 1 Prize record to 5+ | Lift per 100 Entrants |
 |---|---|
@@ -158,7 +158,7 @@ Single-Winner campaigns had a higher ratio of observed to predicted Entrants tha
 
 The single-Winner group had the higher score on this measure. That association does not establish a cost from splitting one campaign's budget. Apply the practical choice above: keep the Prize whole when its unit value matters, or divide it when rewarding more people serves the objective and each unit remains worth winning. Account for fulfillment before choosing the count.
 
-Do not use this below 500 USD or above 49,999 USD, where it was not tested.
+The displayed comparison covers 500 to 49,999 USD. The source also reports qualifying cells outside that range.
 
 Source: `analysis/output/success_profiles.json` (interactions.prize_value_by_winner_count), `analysis/output/context_checks.json` (winner_count_index_value_adjusted).
 
