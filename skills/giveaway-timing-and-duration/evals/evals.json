@@ -55,10 +55,14 @@
     {
      "count": "(?i)\\brecurring\\b|\\bmonthly\\b|\\bshorter\\b",
      "min": 1
-    },
+    }
+   ],
+   "review_checks": [
     {
-     "count": "(?i)\\b(?:cannot|can't|can not|does not|doesn't|do not|don't)\\s+(?:show|rank|say|tell|prove)\\b",
-     "min": 1
+     "id": "duration-evidence",
+     "criterion": "Explains that the observational duration distribution does not establish which duration produces better results. Reject a causal duration ranking anywhere in the answer.",
+     "pass_example": "These figures describe how long the observed campaigns ran, rather than the benefit of choosing that length.",
+     "fail_example": "The data cannot prove anything, but shortening the campaign will improve results."
     }
    ]
   },

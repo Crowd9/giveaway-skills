@@ -4,7 +4,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 
 ## Before the draw
 
-- Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets the audit record and the published commitment, and checks those.
+- Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets only the public summary described below. It cannot reproduce the ranking.
 - Apply the duplicate and weighting rules in the published terms. Before launching a new campaign, decide whether each person gets one chance or bonus entries add up.
 - List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries flagged as automated.
 - Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
@@ -16,7 +16,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 
 ## Why commit first
 
-A draw is provable when three things hold: the Entrant list and rules were fixed before the seed was known, the seed came from somewhere the organizer could not steer, and the selection from seed to Winners is a fixed calculation anyone can redo. The script does all three. `commit` hashes the frozen file and the rules into one value to publish. The seed comes from a public randomness beacon whose round was named in advance. The selection is a hash ranking, so the audit record plus the file reproduces the Winners in any language.
+A draw is provable when three things hold: the Entrant list and rules were fixed before the seed was known, the seed came from somewhere the organizer could not steer, and the selection from seed to Winners is a fixed calculation reproducible with the original inputs. The script supports all three when the organizer follows this procedure and the verifier has the original private inputs. `commit` hashes the frozen file and the rules into one value to publish. The seed comes from a public randomness beacon whose round was named in advance. The selection is a hash ranking, so the audit record plus the file reproduces the Winners in any language.
 
 ## Seed sources
 
@@ -57,7 +57,7 @@ python3 scripts/draw.py verify draw-2026-09-12.json --exclude staff.txt
 
 Verification reconstructs every Winner and backup place from the committed tiers and backup count. The audit must contain that exact number of results in the recomputed order, with matching identifiers and Prize assignments. Missing Winners, omitted backups and reassigned tiers fail verification.
 
-Every option still works as a flag, and a flag on the command line overrides the file. Publish `rules.json` beside the commitment so anyone checking the draw can see what was fixed in advance.
+Every option still works as a flag, and a flag on the command line overrides the file. Publish the rules beside the commitment so readers can see what was fixed in advance. Remove private paths and personal data from the public copy, while retaining the exact original rules privately for verification.
 
 One valid draw. If the tool errors or the inputs are wrong, stop and correct the inputs under the published rules. Keep the original commitment and any invalidated draw record with the reason for the correction. After a published commitment, any change to the input or exclusions requires a replacement commitment tied to a future seed, published before that seed exists. Mark which record was superseded and never reuse a known seed for corrected inputs.
 
@@ -88,7 +88,7 @@ u = (u + 0.5) / 2^64
 key = u ^ (1 / weight)   # weight = 1 when unweighted
 ```
 
-Anyone can run one line and check the audit record holds the same key for the same person. Worked example with seed `seed-2026` and Entrant id `ann`:
+A private verifier with the original identifier can check that the audit record holds the same key for that person. Worked example with seed `seed-2026` and Entrant id `ann`:
 
 ```
 printf '%s' 'seed-2026|ann' | shasum -a 256
@@ -106,7 +106,8 @@ Deduplication is per identifier column. The script merges rows that match on the
 - Verify each drawn Entrant against the terms before calling them a Winner: required action completed, eligible region, age, one account.
 - Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline from the terms, then forfeiture and the next backup. On a seven-day deadline that puts the attempts about 72 hours apart.
 - If the terms allow another draw after backups run out, use the same frozen list with everyone already drawn added to exclusions. Publish a new commitment and a future seed source before the seed exists, and record it as draw 2.
-- Announce first names and city, or handles, with consent. Never publish the Entrant list.
+- Publish only a separate summary: commitment hash, input file hash, rules, method, seed and its source, counts and masked Winners. Remove all personal data and private paths. The full audit contains original Winner identifiers, and `--mask` changes console Winner lines only. Keep the full audit, Winners CSV, input and exclusions private.
+- The public summary lets readers check the announced commitment and seed source. It cannot reproduce the ranking without the private inputs. Redacting or hashing identifiers changes the ranking.
 - Keep the input file, the exclusions file, the audit JSON and the announcement together for as long as the terms or local law require.
 
 ## Comment-based draws
@@ -115,8 +116,8 @@ Exports from social comments carry duplicates, replies and the organizer's own c
 
 ## Disputes
 
-Answer with the record: the input hash, the seed and where it came from, the method, and the audit file. A dispute about eligibility is settled by the terms and the verification step. A dispute about the draw itself is settled by rerunning the script with the same file and seed in front of the person asking.
+Answer publicly with the non-identifying summary. Resolve an eligibility dispute using the terms and private verification. Recompute a disputed draw privately using the original files and seed under the organizer's control, and share the result without exposing identifiers.
 
-## Audit note template
+## Private audit note template
 
 "Draw for [campaign] held on [date, time, time zone]. Entries closed at [time]. Input file [name], SHA-256 [hash], [N] rows, [M] unique eligible Entrants after merging [D] duplicates and excluding [E] entries under [rule]. Method: seeded random draw ([tool and version]), seed [value] taken from [source]. Winners: [tier, identifier]. Backups: [list]. Drawn by [name], witnessed by [name]."

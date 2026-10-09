@@ -1,6 +1,6 @@
 # Action families
 
-Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. The count is actions completed, never weighted by the entry worth the business set, so a figure near 100 per 100 means most Entrants did the action once. A repeatable action and a referral can each be completed more than once by the same person, which is how a figure passes 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, so its top marks the level three campaigns in four sit below.]
+Extracted from the campaigns we can compare fairly (crypto, ambiguous and purchase-only campaigns removed). Platform-specific action types were mapped by hand to generic families so the advice works on any platform. [Completion is entries recorded on a method divided by the campaign's valid Entrants, capped at 5, then the typical value across campaigns that offered the family, converted here to a count per 100 Entrants with the raw figure alongside for tracing. The count is actions completed, never weighted by the entry worth the business set, so the figure counts completed events per 100 Entrants, without identifying how many distinct people completed them. A repeatable action and a referral can each be completed more than once by the same person, which is how a figure passes 100. The bracketed range in the table below is the middle half of campaigns, between the lower and upper quarter, so its top marks the level three campaigns in four sit below.]
 
 <!-- generated:entry_families -->
 | Action family | Campaigns using it | Share of campaigns | Uptake median (IQR) | n with uptake |
@@ -26,14 +26,14 @@ Methods per campaign: median 7, IQR 4 to 11, 90th percentile 16 (n=116,499). upt
 ## Reading the table
 
 - Visiting a page or profile is in four out of five campaigns and most Entrants do it. It is cheap for the Entrant and teaches little about them.
-- Email signup, when offered, is completed by almost everyone who enters. It is the highest-completing asset-producing action in the data.
-- Free follows are the most common social action and are completed by about half of Entrants. Community joins and content posting see lower completion.
+- Email signup, when offered, records nearly one completion per Entrant. It is the highest-completing asset-producing action in the data.
+- Free follows are the most common social action and record about one completion per two Entrants. Community joins and content posting see lower completion.
 - Sharing and referring is offered in more than half of campaigns and records about 26 entries for every 100 Entrants, where each entry is a referred person times the entry worth. In the top tenth of campaigns the figure reaches 66 per 100. [`analysis/output/benchmarks.json`, `ordinary_benchmark` entry_methods families.] That is the only action whose entries are new people, so weight it and name the reward.
 - Paid subscriptions and imported entries have very low completion. Paid actions only work when the audience already intended to pay.
 
 ## Completions by action, required versus optional
 
-A completions cut of the dataset: `entry_count` is the number of Entrants who completed the action, not a worth-weighted total, so this needs no division by worth. Scope: the ordinary population, the same 116,499 campaigns as every other cut in this file, which is campaigns of 100 or more Entrants once crypto, ambiguous and purchase-only campaigns are removed, every group at least five businesses. This is the same cut as the family table above, so the two tables can be read together. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
+A completions cut of the dataset: `entry_count` counts completed events, not distinct Entrants or a worth-weighted total, so this needs no division by worth. Scope: the ordinary population, the same 116,499 campaigns as every other cut in this file, which is campaigns of 100 or more Entrants once crypto, ambiguous and purchase-only campaigns are removed, every group at least five businesses. This is the same cut as the family table above, so the two tables can be read together. Source: `analysis/output/field_cuts.json`, actions_completions. Wallet-address actions are excluded, they run mostly in crypto campaigns, which this skill's figures leave out.
 
 <!-- generated:af_actions -->
 | Action | Actions | Businesses | Share who completed it | When required | When optional | How often required |
@@ -72,7 +72,7 @@ A completions cut of the dataset: `entry_count` is the number of Entrants who co
 | X Hashtag Posts | 1,518 | 535 | 36 | 77 | 34 | 9% |
 <!-- /generated -->
 
-Email Subscriptions is completed by almost everyone who enters, more so when required. These Action figures do not measure available contact addresses or individual marketing consent. Check the campaign contact and consent records separately.
+Email Subscriptions records nearly one completion per Entrant, with higher completion when required. These Action figures do not measure available contact addresses or individual marketing consent. Check the campaign contact and consent records separately.
 
 <!-- generated:af_email_context -->
 | Context | Completion |

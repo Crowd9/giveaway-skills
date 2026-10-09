@@ -22,10 +22,14 @@
     {
      "count": "1,000\\s*(?:to|-|\u2013)\\s*2,500",
      "min": 1
-    },
+    }
+   ],
+   "review_checks": [
     {
-     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
-     "min": 1
+     "id": "actionable-next-step",
+     "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
+     "pass_example": "Obtain completed email subscriptions by Action before deciding whether the subscriber objective was met.",
+     "fail_example": "Your campaign did well."
     }
    ]
   },
@@ -48,10 +52,14 @@
     {
      "count": "(?i)once per \\w+",
      "min": 1
-    },
+    }
+   ],
+   "review_checks": [
     {
-     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
-     "min": 1
+     "id": "actionable-next-step",
+     "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
+     "pass_example": "Check uptake of the email Action and compare Entrants with the relevant size band before treating conversion as a fault.",
+     "fail_example": "You should do better next time."
     }
    ]
   },
@@ -87,13 +95,17 @@
     {
      "count": "14.day",
      "min": 1
-    },
-    {
-     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
-     "min": 1
     }
    ],
-   "id": 4
+   "id": 4,
+   "review_checks": [
+    {
+     "id": "actionable-next-step",
+     "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
+     "pass_example": "Check whether the entry page converts incoming visitors before choosing a reach or conversion fix.",
+     "fail_example": "That is your next decision."
+    }
+   ]
   },
   {
    "prompt": "Our giveaway is on day 9 of 21, Impressions are fine but Entrants have been flat since Tuesday at 2am and nobody has entered since. Is it broken, and should I extend?",
@@ -114,13 +126,17 @@
     {
      "count": "(?i)terms",
      "min": 1
-    },
-    {
-     "count": "(?s)\\b(?:you|your)\\b[^.?!]*[.?!]\\s*\\Z",
-     "min": 1
     }
    ],
-   "id": 5
+   "id": 5,
+   "review_checks": [
+    {
+     "id": "actionable-next-step",
+     "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
+     "pass_example": "Test an Entry while signed out on a phone and inspect changes at Tuesday 2am before extending.",
+     "fail_example": "The next step is yours."
+    }
+   ]
   }
  ]
 }

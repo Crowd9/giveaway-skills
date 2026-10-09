@@ -57,5 +57,61 @@ class PrivacyFloorTests(unittest.TestCase):
         self.assertNotIn("sensitive label", problems[0])
 
 
+class CommittedFilePrivacyTests(unittest.TestCase):
+    def check_file(self, path, content="", mode="100644"):
+        return MODULE.committed_file_problems(path, content, mode)
+
+    def test_csv_is_allowed_only_at_reviewed_example_paths(self):
+        for path in MODULE.CSV_PATHS:
+            self.assertEqual(self.check_file(path), [])
+        for path in ("analysis/export.csv", "examples/data.csv",
+                     "skills/giveaway-random-draw/examples/new.csv"):
+            self.assertTrue(self.check_file(path))
+
+    def test_reserved_email_domains_are_scoped_to_fixture_paths(self):
+        address = "synthetic" + "@" + "example.com"
+        for path in MODULE.EMAIL_FIXTURE_PATHS:
+            self.assertEqual(self.check_file(path, address), [])
+        for path in ("README.md", "analysis/output/aggregate.json",
+                     "skills/giveaway-random-draw/references/drawing.md"):
+            self.assertTrue(self.check_file(path, address))
+
+    def test_non_reserved_domains_require_existing_values_and_paths(self):
+        for path, addresses in MODULE.EXTRA_EMAILS.items():
+            for address in addresses:
+                self.assertEqual(self.check_file(path, address), [])
+                self.assertTrue(self.check_file("README.md", address))
+        for domain in ("x.com", "mailinator.com", "gleam.io", "anthropic.com"):
+            address = "unreviewed" + "@" + domain
+            for path in MODULE.EMAIL_FIXTURE_PATHS:
+                self.assertTrue(self.check_file(path, address))
+
+    def test_escaped_newline_does_not_change_fixture_email(self):
+        path = "skills/giveaway-random-draw/scripts/draw.py"
+        address = "a" + "@" + "x.com"
+        self.assertEqual(self.check_file(path, r"\n" + address), [])
+
+    def test_all_ipv4_addresses_fail_even_in_fixtures(self):
+        for octets in ((1, 2, 3, 4), (0, 0, 0, 0), (127, 0, 0, 1),
+                       (192, 0, 2, 1)):
+            address = ".".join(map(str, octets))
+            for path in ("README.md", *MODULE.EMAIL_FIXTURE_PATHS):
+                problems = self.check_file(path, address)
+                self.assertTrue(problems)
+                self.assertNotIn(address, " ".join(problems))
+
+    def test_symlinks_and_unexpected_types_fail(self):
+        self.assertTrue(self.check_file("README.md", mode="120000"))
+        self.assertTrue(self.check_file("data.parquet"))
+        self.assertEqual(self.check_file("LICENSE"), [])
+        self.assertEqual(self.check_file(".gitignore"), [])
+
+    def test_diagnostics_do_not_republish_email_values(self):
+        address = "unreviewed" + "@" + "example.org"
+        problems = self.check_file("README.md", address)
+        self.assertTrue(problems)
+        self.assertNotIn(address, " ".join(problems))
+
+
 if __name__ == "__main__":
     unittest.main()

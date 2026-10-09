@@ -117,13 +117,14 @@
   {
    "id": 5,
    "prompt": "We want the draw to be provably fair for a sponsor who is nervous about it. Walk us through it. The draw is next Friday at 9am Sydney time.",
-   "expected_output": "Explains commit first (freeze the list, run commit, publish the commitment and the drand round for 9am Sydney), seed from that round after the time, one draw with an audit record, verify by the sponsor with the same files, and what to send the sponsor (commitment, round, audit JSON, exclusion file). Mentions RANDOM.ORG as the paid third-party alternative. No claim of certified randomness.",
+   "expected_output": "Explains commit first (freeze the list, run commit, publish the commitment and the drand round for 9am Sydney), seed from that round after the time, one draw with a private audit record, and verification under the organizer's control with the same original private files. Sends the sponsor only a non-identifying summary: commitment hash, input hash, rules, seed and source, counts and masked Winners. Explains that this summary does not support recomputing the ranking. Mentions RANDOM.ORG as the paid third-party alternative. No claim of certified randomness.",
    "assertions": [
     "Commit before the seed exists",
     "Names the drand round for the stated time via the script",
     "One draw with an audit record",
-    "Sponsor can verify with the script or a few lines of code",
-    "Mentions a third-party service as an alternative"
+    "Verification uses the original files privately under the organizer's control, and the public summary is not claimed to reproduce the ranking",
+    "Mentions a third-party service as an alternative",
+    "Keeps audit JSON, original input and exclusions private and gives the sponsor only a non-identifying summary"
    ],
    "files": [],
    "checks": [
@@ -167,7 +168,9 @@
     "Corrects the weight column and reconciles eligibility before drawing",
     "Retains the superseded commitment and invalidated audit record",
     "Publishes a replacement commitment tied to a future seed",
-    "Never reuses a known seed for corrected inputs"
+    "Never reuses a known seed for corrected inputs",
+    "Fails if any recommendation removes earned weights, even if other sentences say to preserve them",
+    "Fails if any recommendation reuses the known seed with corrected inputs, even if other sentences mention a future seed"
    ],
    "files": [],
    "checks": [
@@ -180,6 +183,26 @@
     {
      "count": "(?i)supersede|invalidat",
      "min": 1
+    },
+    {
+     "not_count": "(?im)(?:^|[.!?]\\s+)(?:[-*]\\s*)?(?:remove|drop|omit)\\s+(?:the\\s+)?(?:`?--weight-column`?|(?:earned\\s+)?weights?)\\b"
+    },
+    {
+     "not_count": "(?im)(?:^|[.!?]\\s+|,\\s*)(?:[-*]\\s*)?(?:reuse|re-use)\\s+(?:the\\s+)?(?:already\\s+)?(?:known|published|old|same)\\s+(?:beacon\\s+)?seed\\b"
+    }
+   ],
+   "review_checks": [
+    {
+     "id": "preserve-earned-weights",
+     "criterion": "Reject any recommendation to remove earned weights or switch promised weighted chances to equal chances. Reject contradictions elsewhere in the answer.",
+     "pass_example": "Reconcile the blank weights with the source export and preserve earned chances.",
+     "fail_example": "Keep weighted chances. Remove --weight-column for the replacement draw."
+    },
+    {
+     "id": "fresh-future-seed",
+     "criterion": "Reject any recommendation to reuse a known seed with corrected inputs. Require a replacement commitment published before the replacement seed exists. Reject contradictions elsewhere in the answer.",
+     "pass_example": "Commit the corrected file before the next chosen public seed becomes available.",
+     "fail_example": "Publish a new commitment, then use the seed already published yesterday."
     }
    ]
   },

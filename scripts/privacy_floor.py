@@ -53,3 +53,83 @@ def _empty_cohort(value):
         return child is None
 
     return value.get("campaigns") == 0 and zero_stats(value)
+
+
+# Synthetic data is confined to these reviewed examples and self-test fixtures.
+CSV_PATHS = frozenset({
+    "skills/giveaway-random-draw/examples/sample-entrants.csv",
+    "skills/giveaway-results-review/examples/sample-actions-export.csv",
+})
+EMAIL_FIXTURE_PATHS = CSV_PATHS | frozenset({
+    "evals/test_export_to_draw.py",
+    "skills/giveaway-random-draw/scripts/draw.py",
+    "skills/giveaway-results-review/scripts/campaign_report.py",
+    "skills/giveaway-results-review/scripts/dashboard.py",
+    "skills/giveaway-results-review/scripts/gleam_export.py",
+})
+# Non-reserved domains are accepted only for the existing literal fixtures.
+EXTRA_EMAILS = {
+    "skills/giveaway-random-draw/examples/sample-entrants.csv": {
+        "freeprizes" + "@" + "mailinator.com",
+    },
+    "skills/giveaway-random-draw/scripts/draw.py": {
+        local + "@" + "x.com" for local in ("a", "A", "b", "b+promo", "c", "d")
+    } | {"x" + "@" + "mailinator.com"},
+}
+EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}")
+IPV4 = re.compile(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b")
+
+
+def committed_file_problems(path, content, mode="100644"):
+    """Check a tracked file without echoing potentially identifying values."""
+    from pathlib import PurePosixPath
+
+    problems = []
+    suffix = PurePosixPath(path).suffix
+    if not (path == "LICENSE" or path.endswith(".gitignore") or suffix in {
+            ".md", ".json", ".py", ".txt", ".yml"} or path in CSV_PATHS):
+        problems.append("unexpected file type or CSV outside reviewed examples")
+    if mode == "120000":
+        problems.append("committed symlink")
+    # Python self-tests embed CSV lines with escaped newlines.
+    for address in EMAIL.findall(content.replace("\\n", "\n")):
+        domain = address.rsplit("@", 1)[1]
+        if (path in EMAIL_FIXTURE_PATHS and domain in {"example.com", "example.org"}
+                or address in EXTRA_EMAILS.get(path, ())):
+            continue
+        problems.append("email address outside reviewed synthetic fixtures")
+        break
+    # No tracked fixture currently needs an IP address, including localhost.
+    if IPV4.search(content):
+        problems.append("IP address found")
+    return problems
+
+
+def check_committed_files():
+    """Inspect tracked working-tree contents so local and CI checks agree."""
+    from pathlib import Path
+    import subprocess
+
+    root = Path(__file__).resolve().parents[1]
+    records = subprocess.check_output(
+        ["git", "ls-files", "--stage", "-z"], cwd=root
+    ).decode().split("\0")
+    failures = 0
+    for record in filter(None, records):
+        metadata, path = record.split("\t", 1)
+        mode = metadata.split()[0]
+        file = root / path
+        if mode == "120000":
+            content = ""  # Never follow a symlink to read external content.
+        else:
+            content = file.read_bytes().decode("utf-8", errors="replace")
+        for problem in committed_file_problems(path, content, mode):
+            print(f"{path}: {problem}")
+            failures += 1
+    if not failures:
+        print("Tracked-file privacy gate passed")
+    return bool(failures)
+
+
+if __name__ == "__main__":
+    raise SystemExit(check_committed_files())

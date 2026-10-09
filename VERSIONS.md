@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.34 |
-| giveaway-entry-method-planner | 1.2.34 |
-| giveaway-timing-and-duration | 1.4.31 |
-| giveaway-winner-structure | 1.4.2 |
-| giveaway-promotion-plan | 1.3.33 |
-| giveaway-random-draw | 1.3.30 |
+| giveaway-prize-picker | 1.3.35 |
+| giveaway-entry-method-planner | 1.2.35 |
+| giveaway-timing-and-duration | 1.4.32 |
+| giveaway-winner-structure | 1.4.3 |
+| giveaway-promotion-plan | 1.3.34 |
+| giveaway-random-draw | 1.3.31 |
 | giveaway-winner-communications | 1.2.28 |
 | giveaway-idea-generator | 1.3.30 |
-| giveaway-results-review | 1.6.2 |
+| giveaway-results-review | 1.6.3 |
 | gleam-campaign-setup | 1.2.31 |
 
 ## Skills
@@ -343,6 +343,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.2 (2026-10-09)
+
+Proving a draw no longer risks publishing your Entrants. The full draw record names the Winners, so it stays private. You publish the part that proves the draw without naming anyone. That's the fingerprints, the rules, the random number and where it came from, the counts and masked Winners.
+
+Your own numbers are read in the right unit. A daily action or a weighted Entry can pass your Entrant count without anything being wrong, and the results review now carries on with it. A completion figure says whether it counts people or completed actions. A Prize figure says when it counts Prize records.
+
+The advice agrees with itself. Timing and promotion share one meaning of a push, so a two-week plan carries the same number of emails wherever you build it. The ten-plus Prize row now matches its own table at 1,340 Entrants. Splitting a Prize is described as what campaigns did.
+
+The checks behind the skills got stricter. An answer that drops earned entries or reuses a known random number now fails its test. A test with nothing to check is reported as not assessed, and versions that disagree stop a release.
 
 ## 3.0.1 (2026-10-09)
 

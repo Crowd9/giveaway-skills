@@ -1,6 +1,6 @@
 # Mix by objective
 
-Advice unless marked as extracted. Completion throughout this file means entries recorded on an action divided by the campaign's Entrants, shown here as a count % of Entrants: about 75 per 100 is three completions for every four Entrants.
+Advice unless marked as extracted. Completion throughout this file means recorded completed events (`entry_count`) divided by the campaign's Entrants, without multiplying by Entry worth: about 75 per 100 is three completions for every four Entrants, not three distinct people. Source definition: `analysis/output/field_cuts.json`, `definitions.completions_per_contestant`.
 
 ## Patterns
 
@@ -104,7 +104,7 @@ An app-download action's payoff depends heavily on the Prize. Match the action t
 
 A share action's value is the people it brings, which the dataset does not count. Campaigns offering one had more Entrants and lower conversion typically [`cmp_share` in action-families.md: 544 Entrants against 406, and conversion 23% lower], so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
 
-Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (each referral entry is a referred Entrant times an entry worth the dataset does not carry). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the dataset lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
+Among 16,745 campaigns offering a share action, the typical campaign records 13 referral entries for every 100 Entrants, and the top tenth 65 or more (these are recorded referral completions, without multiplying by Entry worth). The top tenth is a Twitter-centred gaming and hardware audience [tech hardware Prizes in a third, Twitter follow offered in three quarters, retweet in 40%, email signup in only a third], with a slightly cheaper first Prize, fewer Entrants than the typical campaign and lower conversion. A high share of referred Entrants in this data marks an audience that refers for entries. It does not show that referrals grew the audience, because the dataset lacks referral clicks, successful sharers and viral conversion rate, which the platform's own Viral Share report holds.
 
 **A share action is a design tradeoff, not a free addition.** When reach or new people is the objective, its reach and referral gain is worth the completion it costs elsewhere, and it's the case where a share action clearly earns its place. When the objective is a tight, high-completion list, that same cost is the reason to leave sharing out or push it to the bottom of the list. Consistent at every campaign size tested. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
 
@@ -468,15 +468,15 @@ Stated Prize value per email signup and per follow by vertical sits in the Prize
 
 Completions % of Entrants for the action, typical value across campaigns offering it.
 
-Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`:
+Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`. Sample counts are Actions offered, not campaigns:
 
 | Family | 1st | 2nd to 4th | 5th or later |
 |---|---|---|---|
-| Email signup | 101 (20,986 campaigns) | 78 (10,182 campaigns) | 73 (16,859 campaigns) |
-| Visit a page | 98 (14,449 campaigns) | 87 (84,512 campaigns) | 75 (132,797 campaigns) |
-| Follow or subscribe | 82 (20,468 campaigns) | 56 (75,063 campaigns) | 43 (116,619 campaigns) |
-| Content upload | 81 (2,573 campaigns) | 27 (4,657 campaigns) | 13 (6,599 campaigns) |
-| Share or refer | 16 (993 campaigns) | 12 (11,344 campaigns) | 11 (30,470 campaigns) |
+| Email signup | 101 (20,986 Actions) | 78 (10,182 Actions) | 73 (16,859 Actions) |
+| Visit a page | 98 (14,449 Actions) | 87 (84,512 Actions) | 75 (132,797 Actions) |
+| Follow or subscribe | 82 (20,468 Actions) | 56 (75,063 Actions) | 43 (116,619 Actions) |
+| Content upload | 81 (2,573 Actions) | 27 (4,657 Actions) | 13 (6,599 Actions) |
+| Share or refer | 16 (993 Actions) | 12 (11,344 Actions) | 11 (30,470 Actions) |
 
 Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it.
 
@@ -573,7 +573,7 @@ Visit actions by where they send people:
 | Amazon | 100 | 29 | 69 |
 <!-- /generated -->
 
-A visit to the business's own site is completed by almost everyone at 97 per 100 Entrants, a YouTube channel by 85 and any other site by 77. Two thirds of visit actions land in that last row, which is every destination the rules do not name, so it carries no one kind of page. [Source: `analysis/output/text_and_context.json`, `visit_destinations`.]
+A visit to the business's own site records 97 completions per 100 Entrants, a YouTube channel by 85 and any other site by 77. Two thirds of visit actions land in that last row, which is every destination the rules do not name, so it carries no one kind of page. [Source: `analysis/output/text_and_context.json`, `visit_destinations`.]
 
 Email Subscriptions by the description under the action, from `analysis/output/text_and_context.json` `newsletter_wording`:
 

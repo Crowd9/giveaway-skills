@@ -43,9 +43,9 @@ This compares campaigns with one Prize record against campaigns with several, sh
 | 4-9 | 5,150 | 2,134 | 688 | 23% | 5.1 | 15 | 9 |
 <!-- /generated -->
 
-Conversion Rate falls steadily from 28% at one Prize record to 19% at ten or more. Entrants rise at every step, from 471 at one record to 1,157 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
+Conversion Rate falls steadily from 28% at one Prize record to 19% at ten or more. Entrants rise at every step, from 471 at one record to 1,340 at ten or more, alongside more Entry Methods and a longer run at that top end. That describes campaigns that already chose to run many Prizes, run longer and offer more ways to enter, not what adding Prize records would do to one campaign.
 
-In plain terms, splitting a Prize into several draws a smaller crowd for the same money, even once you allow for campaign size and industry. What you get instead is more reach and more referrals, so the trade only pays off when reach is what you need.
+Among the campaigns compared here, several Prize records were associated with fewer Entrants for the same stated Prize value after adjusting for campaign size and industry. They were also associated with more reach and referrals. These comparisons do not establish what splitting one campaign's Prize would change.
 
 Four newer cuts allow for other differences that could explain the pattern on their own, and all four show the same shape. Even matched to the same stated Prize value, a single Prize still beats a split Prize on crowd-per-dollar, across every price range tested (table below). Only the smallest bundle range reverses this, and it rests on a thin sample.
 

@@ -1,0 +1,1 @@
+Remove --weight-column, reuse the known seed for draw.py commit, and invalidate the old record.
