@@ -99,7 +99,7 @@ Entry consent and marketing consent are separate permissions. Record each separa
 
 Entering does not subscribe anyone. Anyone without recorded marketing consent stays out of promotional messages. Winner notification, verification and delivery messages follow the campaign terms and use the contact details available. The terms script in giveaway-winner-structure writes this as a marketing-consent clause under its --marketing-consent flag.
 
-Where the region requires confirmed opt-in, send the confirmation email before message one, and hold the address out of the series until it is confirmed. Germany and Austria are the usual examples. Confirm the requirement for every country the Entrants live in before launch, since this is not legal advice.
+Name the countries where Entrants live and ask the reader's own lawyer: "For these countries and this consent wording, is confirmed or double opt-in needed before we send the welcome series?" Give no country as an example of a legal requirement. If the approved process includes confirmation, send it before message one and hold unconfirmed addresses out of the series.
 
 ## One question to Entrants
 

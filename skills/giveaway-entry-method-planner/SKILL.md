@@ -2,7 +2,7 @@
 name: giveaway-entry-method-planner
 description: "Choose giveaway actions, required steps and entry weights. Use for 'how should people enter', 'how many actions', 'bonus entries', 'review my entry list', 'TikTok giveaway entry methods', 'should I require an email', 'how do I get shares', 'qualified leads', or 'keep freebie hunters out'. Match email, social, community and UGC actions to the objective."
 metadata:
-  version: 1.2.47
+  version: 1.2.48
 ---
 
 # Giveaway Entry Method Planner
@@ -51,8 +51,8 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Output
 
-- Recommended entry list as a table: action, required or optional, entry weight, and one "Why keep it" column with a plain reason tied to the objective for every action. Translate the internal jobs Acquire, Grow social and Amplify into what the action does for this reader.
-- Explain completion patterns through the decision: required follows were completed more often, while optional follows leave a shorter route to entry. Quote a completion ratio only when its size decides the choice, explain that it counts actions completed and can include repeats, and never turn it into a share of distinct people.
+- Lead with the recommended entry list before any campaign figures, as a table: action, required or optional, entry weight, and one "Why keep it" column with a plain reason tied to the objective for every action. Translate the internal jobs Acquire, Grow social and Amplify into what the action does for this reader.
+- Use at most two campaign figures across the answer, with their sample sizes together in one short source line. Entry weights and other setup instructions are separate from this evidence limit. Explain completion patterns through the decision: required follows were completed more often, while optional follows leave a shorter route to entry. Quote a completion ratio only when its size decides the choice, explain that it counts actions completed and can include repeats, and never turn it into a share of distinct people. For a ratio above 100 completions per 100 Entrants, add one clause, "repeat completions can exceed one per person", or omit the ratio.
 - Separate Keep, Drop and Conditional choices. Keep is the recommended table, Drop names actions to remove, and Conditional names the condition that would earn each remaining action a place. Put Discord or installs here when they depend on a different objective.
 - Consent and rules notes: email opt-in wording, age or region limits, platform terms for follow-to-enter on the named channels. Entry consent and marketing consent are separate, so say where each is collected. Say plainly that the user should confirm local rules.
 - What happens to the asset in the first 30 days: the welcome series, the separate segment, the sunset rule for people who never open, and the consent noted at capture. The using what you built section of `references/mix-by-objective.md` holds it, and giveaway-winner-communications writes the messages.
@@ -70,7 +70,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

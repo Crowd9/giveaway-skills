@@ -333,7 +333,10 @@
    "expected_output": "Give the business-facing next step without internal filenames, skill names or method narration.",
    "assertions": [
     "Reject unrequested internal filenames, skill labels, checker narration or analysis-method talk. Translate handoffs into concrete work. Reader-relevant evidence limits and sample sizes are allowed.",
-    "Reject contradictory unsafe advice anywhere in the answer."
+    "Reject contradictory unsafe advice anywhere in the answer.",
+    "For a short-window rescue, provide only the immediate check, the remaining-day schedule and copy for those days unless the user requests more.",
+    "Do not assume a partner or invent a closing date. Use relative days and placeholders for unknown closing details.",
+    "Open the first practice section with the required practice label once in the whole answer."
    ],
    "files": [],
    "checks": [

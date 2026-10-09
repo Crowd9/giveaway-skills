@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.50 |
-| giveaway-entry-method-planner | 1.2.47 |
-| giveaway-timing-and-duration | 1.4.46 |
-| giveaway-winner-structure | 1.4.18 |
-| giveaway-promotion-plan | 1.3.47 |
-| giveaway-random-draw | 1.3.45 |
-| giveaway-winner-communications | 1.2.39 |
-| giveaway-idea-generator | 1.3.39 |
-| giveaway-results-review | 1.6.26 |
-| gleam-campaign-setup | 1.2.43 |
+| giveaway-prize-picker | 1.3.51 |
+| giveaway-entry-method-planner | 1.2.48 |
+| giveaway-timing-and-duration | 1.4.47 |
+| giveaway-winner-structure | 1.4.19 |
+| giveaway-promotion-plan | 1.3.48 |
+| giveaway-random-draw | 1.3.46 |
+| giveaway-winner-communications | 1.2.40 |
+| giveaway-idea-generator | 1.3.40 |
+| giveaway-results-review | 1.6.27 |
+| gleam-campaign-setup | 1.2.44 |
 
 ## Skills
 
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.28 (2026-10-10)
+
+Answers say what to do first and keep only the figures that decide it. An entry plan opens with the actions to keep and quotes two figures at most. With days left on a struggling campaign, the rescue plan gives the check to run, a schedule for the days remaining and the copy for those days, and saves the rest for when you ask.
+
+The recommended giveaway idea now matches the evidence quoted for it, or says why practice points another way. A Prize plan for a particular place keeps one line naming whose rules decide and the question for your lawyer. Consent questions about other countries go to that question too, never to a list of countries' rules. If fake entries get through, check the setup advice for the next steps to take before you draw.
 
 ## 3.0.27 (2026-10-10)
 

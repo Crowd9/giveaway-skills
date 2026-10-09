@@ -2,7 +2,7 @@
 name: giveaway-promotion-plan
 description: "Promote or rescue a giveaway. Use for 'how do I promote my giveaway', 'launch posts', 'giveaway email sequence', 'partner brief', 'should I boost the post', 'nobody is entering', 'entries look fake', 'it is rigged', 'someone is impersonating us', 'we got taken down', 'can I change the Prize or end date', or 'should I extend'. Write schedules, copy and next steps."
 metadata:
-  version: 1.3.47
+  version: 1.3.48
 ---
 
 # Giveaway Promotion Plan
@@ -37,7 +37,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 ## Workflow
 
-1. **Check whether the campaign is already running and going wrong.** If it is, load `references/live-campaign-rescue.md` first and work through it: diagnose reach, conversion or something broken before promoting anything, sort any change to the Entry Methods, Prize, end date or eligibility by what it does to Entrants who have already entered and hand the reader the question for their lawyer, then handle entries that look fake, a public accusation or a takedown, and finish with the call to extend, push or accept. Steps 2 to 8 then fill whatever days are left.
+1. **Check whether the campaign is already running and going wrong.** If it is, load `references/live-campaign-rescue.md` first and work through it: diagnose reach, conversion or something broken before promoting anything, sort any change to the Entry Methods, Prize, end date or eligibility by what it does to Entrants who have already entered and hand the reader the question for their lawyer, then handle entries that look fake, a public accusation or a takedown, and finish with the call to extend, push or accept. For a rescue with only days left, deliver only the check, the remaining-day schedule and copy for those days, then stop. Use steps 2 to 8 only where needed for that scope. Welcome emails, reply libraries, partner briefs, risks lists and after-close plans wait for an explicit request. Use only confirmed channels and partners. Keep the stated close, or use relative days and [closing date, time, time zone] placeholders until it is supplied.
 2. **Inventory the reach.** Channels the business posts on and their rough audience size (read them from a social or analytics connector when the session has one, and say so, otherwise ask), email list size and send cadence, partners or creators who owe a post, any paid budget, and the entry page link.
 3. **Set the pushes.** Three pushes for a two-week run, four for three to four weeks: launch, mid (Prize in use, social proof), last call, and on the longer run a second mid. A partner or creator moment is a post without an email. Put it in the quiet middle from the table (days 10 to 13 on a two-week run) unless the partner's posting day is fixed, in which case take their day, as the fourteen-day calendar does on day 8, and say which rule you used. Map each to dates from the timing plan. A push is one post per channel plus one email, inside the same two hours. Supporting social posts are separate posts between pushes, including partner or creator posts, without an extra email. Plan two to three social posting moments per week, counting the posts inside pushes toward that total. Take the second-push day and the quiet middle from the table in `references/channel-playbook.md` for the reader's own run length, and quote the row. A seven-day run has no quiet middle.
 4. **Write the copy.** Load `references/channel-playbook.md` for per-channel format, and read its where to list a giveaway section for the third-party sites that reached the most businesses. Name the specific sites that fit this campaign and pair them with "check their submission page for what they need". The playbook's own traffic mix says what share directories carry. Load `references/email-sequence.md` for the email branches: the list that has not entered, Entrants (welcome with referrals only when configured and confirmed, sent by the email provider when the sync lands), and the Winners email to everyone opted in. Lead every piece with the Prize and the deadline. One entry link. Say who is eligible in the caption so ineligible people do not enter. Include referral copy only when the campaign has a configured referral action and the organizer confirms the reward and qualifying event. Use those exact conditions. A purchase reward needs its own confirmed configuration. With no referral action or an unconfirmed reward, omit referral links, extra-entry promises and referral nudges, and use the welcome-only branch.
@@ -48,6 +48,8 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 9. **Deliver.**
 
 ## Output
+
+For a short-window rescue, the three-part output in step 1 overrides this full-plan checklist.
 
 - Schedule table: date, push, channel, format, owner, asset needed. Count today as the first day of any remaining run and end on the stated closing date. Keep pre-launch preparation outside the live-day count.
 - Copy for each push per channel, plus the emails for both branches with subject, preview text and send time, in the brand voice.
@@ -69,7 +71,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

@@ -4,7 +4,7 @@
   {
    "id": 1,
    "prompt": "We're a small candle brand hitting 10k Instagram followers next month. Give us giveaway ideas. Budget about $300.",
-   "expected_output": "Three concepts (a simple milestone draw, a participatory scent-vote or UGC concept, a partner bundle), each with title, hook, mechanic, prize direction and asset. Recommends one for the objective and budget, uses the milestone hook without unsolicited title-share statistics, names what to avoid, hands off to the prize picker or entry planner.",
+   "expected_output": "Three concepts (a simple milestone draw, a participatory scent-vote or UGC concept, a partner bundle), each with title, hook, mechanic, prize direction and asset. Recommends one for the objective and budget, uses the milestone hook without unsolicited title-share statistics, names what to avoid, hands off to the prize picker or entry planner. The recommendation agrees with the cited evidence on the objective-relevant measure, or names the concept those figures favour and clearly gives the practical reason for overriding them under the practice label.",
    "assertions": [
     "Three concepts of different shape",
     "Milestone hook fits the concept without unsolicited title shares or peak months",
@@ -12,7 +12,8 @@
     "Hands the reader on to the next piece of work, named in their own words",
     "No platform pitch",
     "No entrant-number promise",
-    "Any value comparison refers to a Prize of similar stated value, never actual spending"
+    "Any value comparison refers to a Prize of similar stated value, never actual spending",
+    "The recommendation agrees with the cited evidence on the objective-relevant measure, or names the concept those figures favour and clearly gives the practical reason for overriding them under the practice label."
    ],
    "files": [],
    "checks": [

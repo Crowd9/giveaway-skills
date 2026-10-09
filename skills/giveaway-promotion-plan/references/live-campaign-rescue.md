@@ -9,6 +9,10 @@ Two rules hold for the whole page:
 - Never say what a platform's rules or a law requires. Name who decides and give the reader the question to put to them.
 - Never say what a change does on Gleam unless the documentation says so. Where it is silent, say the docs do not cover it and the reader should check in the app.
 
+## With Only Days Left
+
+Give the immediate check, a schedule covering only the remaining days, and the copy needed on those days. Count today in the remaining days. Use relative day labels until the user gives the closing date, and keep the close time and time zone as placeholders if unknown. Include only confirmed channels and partners. Welcome emails, partner briefs, reply libraries and after-close work are available on request. Open the practice section with the required label once for the whole answer.
+
 ## The Order of Work (Advice)
 
 1. Write down the facts before touching anything. Impressions and Entrants for each day since the start, the time of the last Entry, every change made so far with its time, the pushes already sent, and what the campaign was for. Impressions by day come from the Reporting tab. Entrants by day come from the When column of the Actions export.
@@ -127,4 +131,4 @@ Ask what the campaign was for before calling a number short. Compare the target 
 
 An extension has costs the dataset cannot measure, such as the terms, a permit tied to dates, a partner who posted for the old close, and a Winner contact window that starts later. Put them to the lawyer in one message with the new date.
 
-When the call is accept, take the next steps from the afterwards section of the playbook and send the Entrants the post-close message from the Winner communications step.
+For a full plan or an explicit request for after-close work, when the call is accept, take the next steps from the afterwards section of the playbook and send the Entrants the post-close message from the Winner communications step.

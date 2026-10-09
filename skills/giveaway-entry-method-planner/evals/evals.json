@@ -4,7 +4,7 @@
   {
    "id": 1,
    "prompt": "We're a skincare brand with 12k Instagram followers and a Klaviyo list. Goal is email subscribers. What should the entry methods be?",
-   "expected_output": "Email signup as the required action with opt-in wording and a stated entry weight. Keeps supporting actions on existing channels only when each has a plain reason tied to email subscribers, with that reason in one Why keep it column. Includes a sharing or referral action with a reason tied to reaching prospective subscribers and a stated weight. Leaves out account connections and content tasks. Uses method counts as context rather than a list-length target. Uses an email completion figure only when it helps the choice. Any dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution. Ends with a next decision.",
+   "expected_output": "Email signup as the required action with opt-in wording and a stated entry weight. Keeps supporting actions on existing channels only when each has a plain reason tied to email subscribers, with that reason in one Why keep it column. Includes a sharing or referral action with a reason tied to reaching prospective subscribers and a stated weight. Leaves out account connections and content tasks. Uses method counts as context rather than a list-length target. Uses an email completion figure only when it helps the choice. Any dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution. Ends with a next decision. Leads with the recommended entry list before campaign figures, quotes at most two campaign figures with sample sizes on one short source line, and explains any ratio above 100 completions per 100 Entrants in one clause or omits it.",
    "assertions": [
     "Email signup is required and given a stated entry weight",
     "Mentions opt-in consent wording",
@@ -14,7 +14,8 @@
     "No platform pitch",
     "Every kept action has a plain reason tied to the email-subscriber objective in one Why keep it column",
     "Does not use action-job taxonomy labels in the owner-facing table",
-    "Uses method counts only as context and never fills the list to hit a target"
+    "Uses method counts only as context and never fills the list to hit a target",
+    "Leads with the recommended entry list before campaign figures, quotes at most two campaign figures with sample sizes on one short source line, and explains any ratio above 100 completions per 100 Entrants in one clause or omits it."
    ],
    "files": [],
    "checks": [

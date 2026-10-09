@@ -52,6 +52,17 @@ reporting, and that the Entrant is not told. It says nothing about whether the e
 they see on screen, or whether a CAPTCHA appears at that moment. An answer that describes the Entrant's
 experience is inventing it. Describe what the business sees on the Actions tab and stop there.
 
+## When suspicious Entries get through
+
+Give the reader these next steps even when the first recommendation is to keep High. These are review practices, with controls verified against the [Pre-Entry tab](https://gleam.io/docs/competitions/setup/user-details) and [Actions tab](https://gleam.io/docs/competitions/data/actions-tab) on 10 October 2026.
+
+- Review the Actions tab and save an export before changes. Compare suspicious Entries with the terms, the promotion schedule and legitimate Entrants reporting problems. A burst or shared location alone does not prove fraud. Record the reason for any exclusion before the draw.
+- Check Allowed Locations against the countries already eligible in the terms. Consider Pre-Entry Login or email verification. Phone verification needs the documented Twilio integration. Test that eligible Entrants can still enter.
+- If suspicious Entries continue, review the Fraud Level with support. Change one control at a time, note when, then compare subsequent suspicious Entries and reports of legitimate people blocked. A change in Invalid share alone cannot establish improvement.
+- Review Entries already collected before drawing and check a selected Winner against the terms before announcing. Turning on verification mid-run leaves earlier unverified Entries valid. Do not promise a Fraud Level change rechecks old Entries.
+
+Keep any benchmark sample sizes in one short source line, outside these steps. Include the missing filter-level note when using the Invalid-share comparison.
+
 ## Admin and test entries
 
 [Admin / Test Entries](https://gleam.io/docs/competitions/post-campaign/test-entries)

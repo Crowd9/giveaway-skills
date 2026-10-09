@@ -91,3 +91,7 @@ New cases are not yet run against a model. Synthetic fixtures exercise the check
 Existing cases 3, 4 now have explicit judgement-only reviews. Their new rubrics are not yet run against a model. Missing reviews remain UNASSESSED until evidence is supplied.
 
 Fixture pairs and supplied review records: `evals/fixtures/giveaway-entry-method-planner/manifest.json` from the repository root. Each fail answer isolates its one negative check. The fixture reviews classify synthetic examples only. Semantic paraphrases, implied guarantees, population selection and current-source validity still require independent meaning review.
+
+## Answer scope regression, 10 October 2026
+
+Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.

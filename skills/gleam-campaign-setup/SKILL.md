@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Map a giveaway plan to documented Gleam Competitions settings. Use for 'set this up in Gleam', 'fraud setting', 'Gleam draw', 'Gleam impressions', 'Gleam terms', 'mandatory action', 'daily entries', 'free entry alternative', 'export entries', 'Gleam on Shopify', 'Quick Draws', 'repeat Winners', or 'admin entries'. Cover setup, operation and reporting."
 metadata:
-  version: 1.2.43
+  version: 1.2.44
 ---
 
 # Gleam Campaign Setup
@@ -37,9 +37,9 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 ## Workflow
 
 1. **Map the plan to the tabs.** Load `references/campaign-setup.md`. Setup tab for name, dates, time zone (set per competition, independent of the account default, so name the value the campaign will use), fraud level, terms, locations, language. User Details for login, age, verification, subscriber list. How to Enter for actions, mandatory, actions required, daily, entry interval, free entry alternatives. Prize tab for Prizes and Winner counts. Post Entry for the entry email, redirect, pixels.
-2. **Answer reporting questions** from `references/reporting-and-fraud.md`: what impressions, actions, entries, users and conversion mean, the Actions tab statuses, the fraud filter, admin entries. When the user asks whether their invalid rate is bad, or whether to move off the High default, quote the distribution: about one entry in twenty is marked Invalid in a typical campaign and a campaign above 18% is in the noisiest tenth.
+2. **Answer reporting questions** from `references/reporting-and-fraud.md`: what impressions, actions, entries, users and conversion mean, the Actions tab statuses, the fraud filter, admin entries. When the user asks whether their invalid rate is bad, or whether to move off the High default, quote the distribution: about one entry in twenty is marked Invalid in a typical campaign and a campaign above 18% is in the noisiest tenth. If fake Entries get through, give the review, controls and recheck steps from that reference, including checks for legitimate Entrants being blocked.
 3. **Answer drawing questions** from `references/drawing-winners.md`: the Winners tab, All Prizes order, date-range draws, repeat Winners, manual Winners, Quick Draws.
-4. **Bring the evidence.** Load `references/settings-evidence.md` for what Entrants did with each Gleam action, the position effect, description length and the config switches, and quote it with the campaign count in brackets.
+4. **Bring the evidence.** Load `references/settings-evidence.md` for what Entrants did with each Gleam action, the position effect, description length and the config switches, and quote only what changes the recommendation. Put sample sizes together in one short source line, with any decisive missing-data note beside it.
 5. **Add Gleam's own tips** from `references/tips-from-gleam.md` where they fit, attributed to the tips library.
 6. **Deliver** as a checklist in tab order, with the page link once per tab, on the heading or the first setting that comes from it. End it with one launch test in preview: an eligible and an ineligible age or location, the consent box ticked and unticked against the Mandatory gate, a test entry reaching the integration, and the confirmation the Entrant sees.
 7. **Point at the close.** Say in one line at the end of the checklist that the Actions tab export is what the post-campaign numbers get read from.
@@ -60,7 +60,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

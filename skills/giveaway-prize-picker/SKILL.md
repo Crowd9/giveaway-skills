@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose and evaluate giveaway, contest, sweepstakes or raffle Prizes, budgets and fulfilment. Use for 'what should we give away', 'is this a good Prize', 'giveaway budget', 'Prize bundle', 'what Prize gets the most entries', 'B2B giveaway Prize', 'webinar giveaway', or 'attract buyers, not freebie hunters'."
 metadata:
-  version: 1.3.50
+  version: 1.3.51
 ---
 
 # Giveaway Prize Picker
@@ -65,7 +65,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 - For a buyer campaign: the test the Prize passes, who it filters out, the consolation for qualified Entrants and the cost per qualified Entrant to track.
 - Estimated budget breakdown, labelled as estimates, including shipping, taxes, duties, and fulfillment where relevant. Run `scripts/budget.py` for the breakdown when the user gives numbers, and show its lines that apply to this business, dropping any that are zero, such as shipping and duties for a local Prize collected in store. Verify current prices with tools when they are available and precision matters. Otherwise label the figures as indicative estimates.
 - When the user gives a value per subscriber or asks about return, run `scripts/roi.py` and show cost per result beside the industry benchmark from `references/roi-benchmarks.md`. Read `references/roi-benchmarks.md` and declare the supplied values as revenue, contribution or alternative acquisition price. Revenue needs an explicit margin after product and fulfilment costs for financial ROI. With no value given, report breakeven contribution per email only when the email count is known or explicitly assumed. Divide the displayed total budget by that count and label a forecast as an estimate. Otherwise leave it unpriced.
-- Main tradeoffs and assumptions.
+- Main tradeoffs and assumptions. For a Prize plan in a specific place, retain one local-rules line in either output mode: name the country whose rules decide and ask the reader's own lawyer, "What local prize-draw rules apply to this Prize, entry mechanic and eligible locations?" If only a town or region is given and its country is unclear, ask which country decides this check.
 - A short Prize description the user can adapt: "Win [contents and quantity], worth [stated value], for [eligible audience], with [delivery or collection terms]." Add any consolation separately: "The first [cap] eligible Entrants to [qualifying step] get [item], [limit per person], by [deadline]." Match its recipients, cap and qualifying step to the budget and recommendation.
 - The next decision needed to make it actionable.
 
@@ -82,7 +82,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

@@ -65,7 +65,7 @@
   {
    "id": 3,
    "prompt": "Our giveaway just closed with 3,200 email addresses collected. We have written the winner emails. What do we send everyone else, and what do we do with the list?",
-   "expected_output": "Treats the non-winner message as email one of a three-message welcome series, gives what each email does and when it sends, uses a giveaway segment for consent, measurement and suppression without promising reputation isolation, and describes infrastructure separation only if the provider documents it, names the unsubscribe, complaint and bounce figures to read after the winners email, gives the sunset rule before addresses join the core list, separates entry consent from marketing consent and says where each is collected with double opt-in where the region requires it, and adds one feedback question to the result email. No invented benchmark figures.",
+   "expected_output": "Treats the non-winner message as email one of a three-message welcome series, gives what each email does and when it sends, uses a giveaway segment for consent, measurement and suppression without promising reputation isolation, and describes infrastructure separation only if the provider documents it, names the unsubscribe, complaint and bounce figures to read after the winners email, gives the sunset rule before addresses join the core list, separates entry consent from marketing consent and says where each is collected with double opt-in where the region requires it, and adds one feedback question to the result email. No invented benchmark figures. Routes any confirmed or double opt-in requirement to a concrete question for the reader's own lawyer about the Entrants' countries, without claiming or giving country examples of legal requirements.",
    "assertions": [
     "Non-winner message framed as email one of a three-message series",
     "Each message has a job and a send time",
@@ -74,7 +74,8 @@
     "Gives the sunset or hygiene rule before the core list",
     "Distinguishes entry consent from marketing consent and names where each is collected",
     "Includes one feedback question to entrants",
-    "Invents no dataset numbers"
+    "Invents no dataset numbers",
+    "Routes any confirmed or double opt-in requirement to a concrete question for the reader's own lawyer about the Entrants' countries, without claiming or giving country examples of legal requirements."
    ],
    "files": [],
    "checks": [

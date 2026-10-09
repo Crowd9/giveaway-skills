@@ -78,3 +78,7 @@ Fixtures and replay manifest: `evals/fixtures/giveaway-promotion-plan/` at the r
 ## Configured referral copy, 10 October 2026
 
 Added judgement-only regression cases. Reviewed the source instructions and copyable templates for the stated branches. These cases have not been run against a model.
+
+## Answer scope regression, 10 October 2026
+
+Added assertions for the brief's answer corrections to the existing case. Not yet run against a model. Repository checks are recorded in the patch report.

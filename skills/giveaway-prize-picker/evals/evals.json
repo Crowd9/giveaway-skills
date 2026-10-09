@@ -3,15 +3,16 @@
  "evals": [
   {
    "id": 1,
-   "prompt": "I run a bakery in one town, about 300 Instagram followers. I have $150 total. What should I give away to get more local customers in the door?",
-   "expected_output": "Recommends the bakery's own product or in-store credit, redeemed in person, with several small winners or a repeat-visit structure. Explains why a broad prize would pull non-locals. Gives an estimate-labelled budget within $150 including any signage or promotion, two alternatives (one larger prize, a local partner bundle), a short adaptable description, and one next decision. Makes no entrant-count promise and does not cite the dataset as proof of results.",
+   "prompt": "I run a bakery in one town in England, about 300 Instagram followers. I have $150 total. What should I give away to get more local customers in the door?",
+   "expected_output": "Recommends the bakery's own product or in-store credit, redeemed in person, with several small winners or a repeat-visit structure. Explains why a broad prize would pull non-locals. Gives an estimate-labelled budget within $150 including any signage or promotion, two alternatives (one larger prize, a local partner bundle), a short adaptable description, and one next decision. Makes no entrant-count promise and does not cite the dataset as proof of results. For the stated location, keeps one local-rules line naming the country and a concrete question for the reader's own lawyer, without stating a legal requirement.",
    "assertions": [
     "Preferred prize is own product or store credit redeemed locally",
     "States why a broad-appeal prize suits this objective poorly",
     "Budget lines are labelled estimates and total at or under $150",
     "Offers two alternatives of different category or structure",
     "Ends on a concrete next decision",
-    "Does not promise entrant numbers"
+    "Does not promise entrant numbers",
+    "For the stated location, keeps one local-rules line naming the country and a concrete question for the reader's own lawyer, without stating a legal requirement."
    ],
    "files": [],
    "checks": [

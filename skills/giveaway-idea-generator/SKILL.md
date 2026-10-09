@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate or score giveaway concepts. Use for 'giveaway ideas', 'Instagram giveaway ideas', 'ideas for my Shopify store', 'win your cart', 'Christmas giveaway', 'ideas for our launch', '10k follower milestone', 'collaboration giveaway', or 'is my idea any good'. Recommend three concepts with hooks, mechanics and Prize directions, or evaluate the user's concept."
 metadata:
-  version: 1.3.39
+  version: 1.3.40
 ---
 
 # Giveaway Idea Generator
@@ -48,7 +48,7 @@ When the reader asks which type wins, give the figure and its limit, then build 
 2. **Pick hooks.** Load `references/hooks-and-themes.md`. Choose one hook that fits a moment the business has (a launch, a milestone, a season) and one that manufactures a moment (a series, a collaboration, a challenge). Match the evidence to the concept's hook. Where no row covers the hook, say so and quote the nearest shape by name. Read the campaign types table for where each shape sits on Entrants, Conversion Rate and the value index (a campaign's Entrants against the typical Entrants for its stated Prize level, 1.00 being typical among campaigns offering a Prize of similar stated value), the launch subtypes when the moment is a launch, drop or pre-order, and the standouts section for what campaigns that drew more Entrants than typical for their stated Prize value had in common. Inspect these rows when choosing the concepts. Quote the selected type's figures only when they change the choice, with the count for each metric. Quote title shares and peak months only when the user asks about prevalence or timing, with the 116,499-campaign base in brackets. Extracted: collaborations appear in about one campaign title in nine and holiday-season hooks in 15% of December starts.
 3. **If the user brought their own concept, score it.** Check it against three things: the hook (does the title name a moment the audience already cares about), the type (where the declared shape sits in the campaign types table on Entrants, Conversion Rate and the value index), and the standouts evidence (which features of campaigns that drew more Entrants than typical for their stated Prize value it has and which it lacks). Return keep, change or drop, with the reason in one sentence and the one change that would move it most.
 4. **Build three concepts** that differ in shape: one simple (single Prize, one push), one participatory (UGC, question, series), one partnered (bundle or co-promotion). Each with a working title, the hook, the mechanic in one sentence, the Prize direction, and what asset it produces. Where the user gave a total, calculate each concept's cost across all draws, including Prizes, packaging and postage, against that same ceiling. Sum known costs yourself. If unit costs are missing, name them and leave the total unconfirmed. Count a final larger Prize either as the last draw's replacement or as an extra Prize, and use that choice consistently in the description and total.
-5. **Say which one to run and why**, tied to the objective and the budget.
+5. **Say which one to run and why**, tied to the objective and the budget. Check that the recommendation agrees with the comparison you quote on the measure that matters for this objective. If those figures favour another concept, say which one they favour and give the practical reason for choosing differently, under the practice label. A stronger hook, audience fit or budget constraint can decide the choice. Describe that choice as judgement, with its expected results unproven.
 6. **Hand off.** Name the next piece of work: picking the Prize, choosing what Entrants do to enter, setting the dates. Add giveaway-winner-structure when the concept runs a series or several draws, and giveaway-promotion-plan when the concept is UGC or leans on reach the business does not yet have.
 
 ## Output
@@ -70,7 +70,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

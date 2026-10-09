@@ -87,3 +87,7 @@ Added judgement-only cases for permitted and prohibited third-party delivery. Th
 ## Prize substitution branches, 10 October 2026
 
 Added judgement-only regression cases. Reviewed the source instructions and copyable templates for the stated branches. These cases have not been run against a model.
+
+## Answer scope regression, 10 October 2026
+
+Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.

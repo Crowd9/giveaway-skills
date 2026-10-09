@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a verifiable random giveaway draw from a list, CSV, spreadsheet or comment export. Use for 'pick a Winner', 'draw the Winner', 'choose Winners from these comments', 'weighted draw', 'backup Winners', 'redraw', or 'prove the draw was fair'. Handle deduplication, exclusions and tiers, commit before a public seed exists, and assess records of past draws."
 metadata:
-  version: 1.3.45
+  version: 1.3.46
 ---
 
 # Giveaway Random Draw
@@ -67,7 +67,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

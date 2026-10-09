@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Set giveaway duration, launch date and wrap-up timeline. Use for 'how long should my giveaway run', 'when should I launch', 'best day to start', 'best time for an Instagram giveaway', 'Black Friday giveaway timing', 'should it run over Christmas', 'giveaway calendar', or 'evergreen giveaway'. Match dates to promotion, holidays, draw and fulfilment."
 metadata:
-  version: 1.4.46
+  version: 1.4.47
 ---
 
 # Giveaway Timing and Duration
@@ -63,7 +63,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 

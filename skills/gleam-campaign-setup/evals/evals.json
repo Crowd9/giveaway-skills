@@ -40,7 +40,9 @@
     "High is the default",
     "Invalid entries reviewable on Actions tab",
     "Links the Setup page",
-    "Does not invent behaviour beyond the page"
+    "Does not invent behaviour beyond the page",
+    "If fake Entries get through, give practical Actions review, eligible-Entrant checks, documented controls, a change log and a recheck before the draw.",
+    "Keep benchmark sample sizes together in one short source line, with the missing filter-level note when comparing Invalid share."
    ],
    "files": [],
    "checks": [

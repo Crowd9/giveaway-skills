@@ -2,7 +2,7 @@
 name: giveaway-winner-communications
 description: "Write messages after a giveaway draw. Use for 'Winner email', 'verify the Winner', 'collect the delivery address', 'shipping update', 'announce the Winner', 'what do I send non-Winners', 'Winner has not replied', 'someone says they should have won', 'ask the Winner for a photo', or 'what do I email Entrants after the giveaway'. Include timing and follow-up."
 metadata:
-  version: 1.2.39
+  version: 1.2.40
 ---
 
 # Giveaway Winner Communications
@@ -61,7 +61,7 @@ Say whose campaigns each figure describes. Use the reader's size band and indust
 
 **Before quoting campaign data, benchmarking a result or forecast, judging audience size, interpreting a country, language or industry cut, discussing crypto, or converting a unit, read `references/evidence-detail.md`.**
 
-Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open its first section once with "Common practice, our data doesn't cover this." Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
+Distinguish campaign findings, readings of text and general practice. When data cannot answer the task, give useful practice. Open the first practice section with "Common practice, our data doesn't cover this." Use that label once in the whole answer, with no repeated labels or separate explanation of the method. Identify suggested numbers as planning assumptions, and state any evidence gap that changes the decision.
 
 Verify current platform features in the platform's own documentation. Use loaded references for capability counts, comparisons and operational details about outside services. State what remains unknown. Never advise breaking a platform's rules. Give a compliant way to pursue the reader's objective.
 
@@ -81,6 +81,7 @@ This folder works alone. `analysis/output/` paths name source data that is not i
 - Verification asks only for what the terms allow: proof of age or residence, one account. Scale it to the Prize (use the Winner-verification reference in giveaway-winner-structure if installed, otherwise ask only for the minimum evidence needed to check the published eligibility rules) and delete it after the check.
 - Address collection goes through a form or a reply the Winner controls, with a line saying what the address is used for and when it is deleted.
 - Dates carry a time zone. Deadlines match the terms.
+- Route confirmed or double opt-in requirements to the reader's own lawyer using the country-specific question in `references/after-the-draw.md`. Give no country as an example of a legal requirement.
 
 ## How to write the answer
 
