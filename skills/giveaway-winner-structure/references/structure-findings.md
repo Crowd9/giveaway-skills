@@ -32,7 +32,7 @@ Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10 
 
 ## Entrants and Conversion Rate by Prize count (extracted)
 
-This compares campaigns with one Prize record against campaigns with several, showing the Entrants, the Conversion Rate (the share of people who saw it and entered) and the Actions per Entrant, for each count. Every group below is at least 30 campaigns from 10 businesses.
+This compares campaigns with one Prize record against campaigns with several, showing the Entrants, the Conversion Rate (the share of people who saw it and entered) and the Entries per Entrant, for each count. Every group below is at least 30 campaigns from 10 businesses.
 
 <!-- generated:st_prize_count -->
 | Prize records | Campaigns | Businesses | Typical Entrants | Conversion Rate | Entries per Entrant | Days | Methods |

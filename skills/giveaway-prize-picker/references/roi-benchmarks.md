@@ -60,7 +60,7 @@ Electronics and tech is the largest label behind the technology industry name, a
 
 ## Industries
 
-Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto remains the largest single industry outside this scope, matching `references/evidence-and-limitations.md`. Available industries by campaign count:
+Homepage labels read from each business's own site, across the campaigns behind these numbers: crypto businesses, and the earlier crypto, ambiguous and purchase-opportunity campaigns, are excluded, the same scope as the rest of this repository's default figures. Finance and crypto is included in the broader industry cut in `references/evidence-and-limitations.md`. Available industries by campaign count:
 
 <!-- generated:roi_industries -->
 | Industry | Campaigns | Businesses | Typical Entrants | Conversion Rate | Actions | Days | Emails per campaign |
@@ -126,15 +126,14 @@ The 100 to 250 row costs more per email signup (1.03) than any band above it, wh
 
 | Year | Campaigns | Entrants | Conversion Rate | Actions | Stated pool USD |
 |---|---|---|---|---|---|
-| 2020 | 1,156 | 611 | 26% | 7 | 550 |
-| 2021 | 27,806 | 501 | 28% | 7 | 234 |
 | 2022 | 25,956 | 475 | 29% | 7 | 300 |
 | 2023 | 20,237 | 489 | 26% | 7 | 300 |
-| 2024 | 16,725 | 472 | 24% | 7 | 308 |
 | 2025 | 16,359 | 512 | 25% | 7 | 299 |
 | 2026 | 7,992 | 528 | 27% | 7 | 300 |
 
-Typical Entrant counts have held near 470 to 600 since 2021 and Conversion Rate near 24% to 29%. Stated Prize pools were highest in 2020 (550 USD) and have sat near 300 USD every year since 2022.
+Across the published rows for 2022, 2023, 2025 and 2026, typical Entrant counts ranged from 475 to 528, Conversion Rate from 25% to 29%, and stated Prize pools from 299 to 300 USD. Figures for 2020, 2021 and 2024 are not published for this group.
+
+Source: `analysis/output/roi_benchmarks.json` (`by_start_year`). Sample sizes are shown per year in the table.
 
 ## Using the ROI script
 

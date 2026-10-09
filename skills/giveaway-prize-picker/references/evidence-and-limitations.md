@@ -71,7 +71,7 @@ Excluded campaigns are similar in size to ordinary ones (crypto median 580 conte
 
 The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 580 Entrants across 3,467 campaigns versus 492 across the 116,499 ordinary campaigns (`analysis/output/benchmarks.json`, `excluded_crypto.valid_contestants` and `ordinary_benchmark.valid_contestants`). Any claim that crypto inflated participation figures is a hypothesis.
 
-A homepage-label industry cut on the campaign analysis confirms the exclusion is not a small correction: finance and crypto is the largest single industry by campaign count, ahead of gaming and esports. See `references/roi-benchmarks.md` for the table this cut produced.
+The broader homepage-label industry cut includes 24,669 finance and crypto campaigns from 4,329 businesses, compared with 25,711 gaming and esports campaigns from 4,943 businesses (`analysis/output/industries.json`, `by_industry`). This cut requires a labelled organizer site. See `references/roi-benchmarks.md` for the industry table after finance and crypto are excluded.
 
 ## What the campaigns behind these numbers show
 
@@ -496,4 +496,4 @@ Impressions in the dataset are unique per day, so a visitor who returns counts a
 | software | 533 | 399 (+9%) | 4.10 (+2%) | 31% (-15%) | 3.3 | 6 |
 <!-- /generated -->
 
-Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut and run the lowest Actions per Entrant at 2.44, and technology has the highest Conversion Rate. Use them as context for a customer's expectations, never as targets.
+Industries here fold each business's homepage-label category into the ten names this skill uses throughout. Gaming is gaming_esports, technology is electronics_tech, and so on, see `references/roi-benchmarks.md` for the full mapping. Fashion and beauty campaigns draw the most Entrants in this cut and run the lowest Entries per Entrant at 2.44, and technology has the highest Conversion Rate. Use them as context for a customer's expectations, never as targets.

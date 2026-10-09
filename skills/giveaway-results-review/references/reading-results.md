@@ -223,7 +223,7 @@ Most of the country gap in invalid share is industry mix. The table reads each c
 | Vietnam | 24.1% (2,337 campaigns, 525 organizers) | 18.4% (541 campaigns, 178 organizers) |
 | Turkiye | 13.4% (1,313 campaigns, 352 organizers) | 10.3% (881 campaigns, 194 organizers) |
 
-Vietnam and Turkiye keep most of their gap once crypto and SaaS are excluded. India, Japan and Singapore do not. Six percent of campaigns carry no invalid count and are left out of every figure on this page.
+Vietnam and Turkiye keep most of their gap once crypto and SaaS are excluded. India and Singapore do not. Japan's all-industry baseline is not published for this group. Six percent of campaigns carry no invalid count and are left out of every figure on this page.
 
 Source: `analysis/output/indicators.json` (`invalid_entry_share_by_industry`, `invalid_entry_share_by_country`, `invalid_entry_share_by_country_excluding_crypto`).
 

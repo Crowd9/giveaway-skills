@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.53 |
-| giveaway-entry-method-planner | 1.2.51 |
-| giveaway-timing-and-duration | 1.4.52 |
-| giveaway-winner-structure | 1.4.22 |
-| giveaway-promotion-plan | 1.3.52 |
+| giveaway-prize-picker | 1.3.54 |
+| giveaway-entry-method-planner | 1.2.52 |
+| giveaway-timing-and-duration | 1.4.53 |
+| giveaway-winner-structure | 1.4.23 |
+| giveaway-promotion-plan | 1.3.53 |
 | giveaway-random-draw | 1.3.52 |
 | giveaway-winner-communications | 1.2.43 |
-| giveaway-idea-generator | 1.3.42 |
-| giveaway-results-review | 1.6.35 |
-| gleam-campaign-setup | 1.2.47 |
+| giveaway-idea-generator | 1.3.43 |
+| giveaway-results-review | 1.6.36 |
+| gleam-campaign-setup | 1.2.48 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.42 (2026-10-10)
+
+Ten references now say exactly what Gleam campaign data says. Year comparisons only show the years published for that group, and no comparison leans on a group too small to publish. Choosing an email provider, you'll see the honest picture from Gleam campaign data: HubSpot, AWeber and Zapier campaigns completed email less often than campaigns with no integration. In Gleam campaign data, Lunar New Year is the holiday launched closest to its date, and gaming and esports is the largest industry. Every table that counts Entries now calls them Entries, so a figure like 3.76 Entries per Entrant means the same thing in every skill.
 
 ## 3.0.41 (2026-10-10)
 

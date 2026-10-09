@@ -171,7 +171,7 @@ in the sentence that made the recommendation, three rounds running.
 Reading it:
 
 - **Advent or daily calendars** get the second highest share to enter of any type at 44%, on 602 Entrants, which is 22% above the typical figure: six days, six actions, and a reason to come back (figures in the table above). The shape wins, and it is a December shape.
-- **Campaigns that say free entry or no purchase** run long, carry 5.6 Actions per Entrant and repeatable bonuses, and post the highest value index at 2.18. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
+- **Campaigns that say free entry or no purchase** run long, carry 5.6 Entries per Entrant and repeatable bonuses, and post the highest value index at 2.18. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
 - **Sweepstakes wording** carries the largest US campaigns at 806 Entrants, on a value index level with typical at 1.01 and a low share to enter at 22%, which is the long-run, daily-entry pattern.
 - **Collaborations** are 14% of campaigns and draw 603 Entrants, 23% above the typical figure. The title proxy for a partner does not by itself mark a strong campaign: the title-only collaboration signal has a value index below typical (see table below). The matched cohorts show a mixed pattern: on the 100-plus-Entrant frame, collaboration titles are more common in the top fifth by audience and value-index performance after matching industry, but less common in the top fifth by Conversion Rate or low cost per Entrant after matching size and industry (see table below). For a business seeking a partner's audience, these associations make collaboration worth testing. They do not predict the reach, Conversion Rate or cost of adding that partner.
 
@@ -187,7 +187,7 @@ Reading it:
 
 The following campaign-type comparisons use `analysis/output/campaign_types.json` (`types`, `all`).
 
-- **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. The table does not measure how large their existing audiences were.
+- **Creator and streamer** campaigns get 39% to enter on 4.9 Entries per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. The table does not measure how large their existing audiences were.
 - **Cash** gets the highest share to enter of any type at 61%, on 567 Entrants, with the most actions of any type and a typical ten-day run. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.18, so those campaigns drew more Entrants than typical among campaigns offering a Prize of similar stated value.
 - **Community and Discord** campaigns record 19 referrals per 100 Entrants, well above the typical 11, behind scavenger hunt, flash and quiz campaigns. **Quiz and trivia** campaigns run a quarter below the typical figure on Entrants and a third below on value index. They carry 20 referrals per 100 Entrants against the typical 11.
 - **Product launches** draw a little more crowd than typical at 546 Entrants against 492, on a low share to enter at 29% and a value index just under typical at 0.98. Photo or video contests at 21% and US sweepstakes wording at 22% sit lower, so sort the column before writing a superlative off this row. A launch can come from an established brand or a new business. Plan promotion around the audience the business can actually reach.
@@ -436,7 +436,7 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 
 **Australian publishers lean on games-of-skill entries.** Campaigns with a judged or skill signal in Australia run 2 methods against 6, get 18% to enter against 30%, and carry a typical Prize pool of $2,135 against $699. A skill or judged entry is often the legal route for a promotion run without a permit in Australia, and the smaller method count and larger pool follow from that route.
 
-| Australia | Campaigns | Businesses | Methods | Actions per Entrant | Entry rate | Prize pool (typical) |
+| Australia | Campaigns | Businesses | Methods | Entries per Entrant | Entry rate | Prize pool (typical) |
 |---|---|---|---|---|---|---|
 | Judged or skill signal | 629 | 124 | 2 | 1.8 | 18% | $2,135 |
 | Other | 5,437 | 1,277 | 6 | – | 30% | $699 |

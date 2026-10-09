@@ -71,7 +71,7 @@ A share entry is a referred person multiplied by entry worth, so the share row i
 
 ## What campaigns produced (extracted)
 
-Completions of the acquire and amplify actions, summed per campaign, across the 116,499 campaigns behind these numbers that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
+Completions of the acquire and amplify actions, summed per campaign, across the 116,283 campaigns in `analysis/output/asset_yield.json`, counting only campaigns that offered each. This is the closest the dataset comes to an outcome: an email signup completed is an address on the list, a follow completed is a follower at that moment. Unsubscribes, unfollows and list quality are not visible. Stated USD per completion divides the stated Prize pool by completions, for campaigns with every Prize valued in USD, and the stated value is what the organizer wrote.
 
 Reading it: cost per completion varies widely by asset, from about $0.40 for an email signup to about $16 for a content submission (exact figures and sample sizes in the table below). Follows sit in between, roughly $0.6 to $1.2 on most networks, with Snapchat at $2.30 and LinkedIn at $4.78 above that.
 
@@ -134,16 +134,15 @@ Stated USD per email signup by Prize category, campaigns with an email action:
 <!-- generated:bm_year -->
 | Year | Campaigns | Entrants | Conversion Rate |
 |---|---|---|---|
-| 2021 | 27,806 | 501 | 28% |
 | 2022 | 25,956 | 475 | 29% |
 | 2023 | 20,237 | 489 | 26% |
-| 2024 | 16,725 | 472 | 24% |
 | 2025 | 16,359 | 512 | 25% |
 | 2026 | 7,992 | 528 | 27% |
-| 2020 | 1,156 | 611 | 26% |
 <!-- /generated -->
 
-The typical campaign has held between 472 and 528 Entrants since 2021 while the Conversion Rate held steady. A campaign run this year sits a little above the typical figures across the whole export, at the same quality. The 2020 row rests on 1,156 campaigns against several thousand in every later year, so treat it as a rough marker.
+Across the published rows for 2022, 2023, 2025 and 2026, typical Entrant counts ranged from 475 to 528 and Conversion Rate from 25% to 29%. Figures for 2020, 2021 and 2024 are not published for this group.
+
+Source: `analysis/output/roi_benchmarks.json` (`by_start_year`). Sample sizes are shown per year in the table.
 
 ## By template
 
@@ -197,7 +196,7 @@ Free campaigns carry no email or share action at all and Hobby campaigns carry a
 
 ## Benchmarks by organizer stage, scale and business type
 
-For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, wider than the 116,499 campaigns behind the numbers above (it keeps crypto, which is the largest single industry, and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
+For picking a comparison group closer than campaigns your size: how established the business is, how big the organization is, what kind of business it runs, and its industry. Figures come from `industries.json`, whose scope is campaigns with 100 or more Entrants and a labelled organizer site, wider than the 116,499 campaigns behind the numbers above (it keeps crypto and applies no purchase-only exclusion). Conversion Rate is Entrants over Impressions on every run, same caveat as the tier table above.
 
 By organizer stage (`by_org_stage`), read from the homepage:
 

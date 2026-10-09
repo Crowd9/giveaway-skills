@@ -88,16 +88,16 @@ Campaigns meeting the deals-forum threshold recorded a 34.7% whole-campaign Conv
 
 Campaigns meeting the deals-forum threshold recorded 5.3 referrals per 100 Entrants against 11.6 for campaigns meeting the direct-traffic threshold. Their Entries per Entrant median is 4.91, above the direct and Meta groups. These measures cover all Entrants in each campaign. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
 
-Campaigns meeting the Meta threshold recorded a whole-campaign Conversion Rate five and a half points under the X group, 24.8% against 30.3%. Meta supplies a larger share of all Impressions. Whole-campaign Actions per Entrant are lower in the Meta group, including within the size bands shown. These comparisons do not identify which visitors completed Actions or establish that adding a referral or bonus-entry push would close the gap.
+Campaigns meeting the Meta threshold recorded a whole-campaign Conversion Rate five and a half points under the X group, 24.8% against 30.3%. Meta supplies a larger share of all Impressions. Whole-campaign Entries per Entrant are lower in the Meta group, including within the size bands shown. These comparisons do not identify which visitors completed Actions or establish that adding a referral or bonus-entry push would close the gap.
 
 | Measure | Meta | X |
 |---|---|---|
 | Conversion Rate | 24.8% | 30.3% |
 | Share of all Impressions | 9.0% | 3.7% |
-| Actions per Entrant, overall | 3.40 | 4.89 |
-| Actions per Entrant, 1,000-2,500 Entrants | 3.39 [3,707 campaigns, 1,683 businesses] | 4.69 [2,699 campaigns, 979 businesses] |
-| Actions per Entrant, 2,500-10,000 Entrants | 3.34 [2,432 campaigns, 1,070 businesses] | 5.79 [1,430 campaigns, 498 businesses] |
-| Actions per Entrant, 10,000+ Entrants | 2.84 [472 campaigns, 238 businesses] | 6.43 [325 campaigns, 115 businesses] |
+| Entries per Entrant, overall | 3.40 | 4.89 |
+| Entries per Entrant, 1,000-2,500 Entrants | 3.39 [3,707 campaigns, 1,683 businesses] | 4.69 [2,699 campaigns, 979 businesses] |
+| Entries per Entrant, 2,500-10,000 Entrants | 3.34 [2,432 campaigns, 1,070 businesses] | 5.79 [1,430 campaigns, 498 businesses] |
+| Entries per Entrant, 10,000+ Entrants | 2.84 [472 campaigns, 238 businesses] | 6.43 [325 campaigns, 115 businesses] |
 
 Source: analysis/output/field_cuts.json (promotion_sites, outcomes_when_channel_over_10pct, channel_quantity_vs_quality, channel_quality_by_size_band).
 
@@ -227,7 +227,7 @@ Among campaigns that offer it, the entries attached to a share move the figures 
 
 Source: analysis/output/field_cuts.json (share_clicks).
 
-Offering a referral action raises Actions per Entrant at every campaign size, but the size of that lift does not grow as the campaign gets bigger. Comparing what campaigns with and without a referral action actually produce against what size and referral status predict on their own, the result lands close to that prediction at every campaign size tested, and the table carries how close. A referral action is worth building into the mix, but do not plan on the payoff scaling up just because the base to refer from is bigger.
+Campaigns offering a referral action recorded more Entries per Entrant at every campaign size, but that gap did not grow with campaign size. Comparing what campaigns with and without a referral action actually produce against what size and referral status predict on their own, the result lands close to that prediction at every campaign size tested, and the table carries how close. A referral action is worth building into the mix, but do not plan on the payoff scaling up just because the base to refer from is bigger.
 
 <!-- generated:pp2_referral_size -->
 | Campaign size (Entrants) | Predicted-actual ratio, referral action offered | Predicted-actual ratio, none offered |

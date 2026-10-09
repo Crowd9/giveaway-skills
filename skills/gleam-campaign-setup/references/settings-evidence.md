@@ -160,7 +160,7 @@ Words in the campaign description, among the campaigns we can compare fairly: no
 | 301+ | 268 | 78 | 330 | 29% | 4.15 |
 <!-- /generated -->
 
-No description and short descriptions sit with the simplest campaigns, which also see the highest share of viewers enter, so the 39% says as much about the campaign as the copy. Longer descriptions run with more actions and more actions per Entrant. Source: `analysis/output/gleam_settings.json` `description_length_clean`.
+No description and short descriptions sit with the simplest campaigns, which also see the highest share of viewers enter, so the 39% says as much about the campaign as the copy. Longer descriptions run with more actions and more Entries per Entrant. Source: `analysis/output/gleam_settings.json` `description_length_clean`.
 
 ## Custom Actions templates
 
@@ -311,7 +311,7 @@ Australian campaigns that carry a skill or judged signal in their name, Prize co
 | Campaigns | 629 | 5,437 |
 | Businesses | 124 | 1,277 |
 | Entry methods (typical) | 2 | 6 |
-| Actions per Entrant | 1.8 | 3.4 |
+| Entries per Entrant | 1.8 | 3.4 |
 | Entry rate | 18% | 30% |
 | Duration (typical) | 18 days | 14 days |
 | Prize pool (typical) | $2,135 | $699 |
@@ -357,7 +357,7 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
 <!-- /generated -->
 
   Follow_x follows the email pattern from 2,500 Entrants up, not below it. Discord_join is not a rule either way, its mandatory cost is cheaper at one size and pricier at the other. (Figures from `asset_yield.json`'s `yield_by_asset_and_mandatory` cut.)
-- Email provider: every provider completes email about as often as no integration or a little more, and the providers that lead also make the action mandatory most often, so read the gap as the setup around it.
+- Email provider: the selected providers in the table recorded email completion rates near or above the no-integration group. Other providers recorded lower rates, so this selection does not describe every provider. These comparisons describe campaign setups and do not establish an effect of choosing a provider.
 
 <!-- generated:se_providers -->
   | Email provider | Completion, % of Entrants (decimal) | Actions | Businesses |
@@ -378,7 +378,7 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Offers email | 54% | 26% |
   | Entry rate | 27% | 27% |
 <!-- /generated -->
-- Paid actions: campaigns that carry a paid action run more methods and more actions per Entrant than campaigns without one, with a lower share of viewers entering.
+- Paid actions: campaigns that carry a paid action run more methods and more Entries per Entrant than campaigns without one, with a lower share of viewers entering.
 
 <!-- generated:se2_paid -->
   |  | Has a paid action | No paid action |
@@ -386,7 +386,7 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Campaigns | 3,694 | 112,805 |
   | Businesses | 1,157 | 17,116 |
   | Methods (typical) | 10 | 7 |
-  | Actions per Entrant | 5.35 | 4.36 |
+  | Entries per Entrant | 5.35 | 4.36 |
   | Entry rate | 23% | 27% |
 <!-- /generated -->
 - Language: English dominates the dataset and runs the longest campaigns. Portuguese campaigns are one-day runs that almost never ask for email. German, Spanish and French sit between the two on duration, and French asks for email about as often as English does.
@@ -400,7 +400,7 @@ The September 2026 export carries entry worth, the mandatory flag, actions requi
   | Spanish | 0.8% | 924 | 252 | 13 days | 25% |
   | French | 0.8% | 951 | 216 | 10 days | 35% |
 <!-- /generated -->
-- Terms: the generated terms set the draw and the Winner response window at 7 days on most campaigns. 39% of organizers wrote fully custom terms. Governing law runs US, GB and CA as the top three, then AU and BR.
+- Terms: the generated terms set the draw and the Winner response window at 7 days on most campaigns. 39% of campaigns used fully custom terms. Governing law runs US, GB and CA as the top three, then AU and BR.
 
 <!-- generated:se2_law_top -->
   | Governing law | Campaigns |

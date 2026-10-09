@@ -20,7 +20,7 @@ Advice. Fill in the dates and delete what does not apply.
 
 ## Adjusting the length
 
-- One week: a single push, a small list, one channel. Fewer Actions per Entrant because repeatable actions have less time.
+- One week: a single push, a small list, one channel. Shorter campaigns recorded fewer Entries per Entrant in the duration comparison.
 - Three to four weeks: a content series, two or more partners, or a product launch with staged reveals.
 - Longer than six weeks: only with daily repeatable actions, fresh content each week, and a reason the audience keeps coming back. Otherwise the middle goes quiet.
 

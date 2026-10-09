@@ -29,7 +29,7 @@ The two tables below are shares of every campaign carrying a start date. They ho
 ## Reading the tables
 
 - Two to four weeks is the most common choice at every size, and bigger campaigns run a little longer. [Half of all campaigns run 7 to 29 days, 18 days typical above 10,000 Entrants against 12 in the 100 to 250 band.]
-- Actions per Entrant rise with duration up to about two months, then fall. Repeatable daily actions accumulate over time, and campaigns past two months are mostly evergreen or recurring formats with different mechanics. This describes the campaigns businesses ran at each length. It cannot say that shortening or lengthening a campaign would change how many actions Entrants do, and it says nothing about reach or results.
+- Entries per Entrant rise with duration up to about two months, then fall. Repeatable daily actions accumulate over time, and campaigns past two months are mostly evergreen or recurring formats with different mechanics. This describes the campaigns businesses ran at each length. It cannot say that shortening or lengthening a campaign would change Entries per Entrant, and it says nothing about reach or results.
 - December holds about 10% of starts, a quarter again the share of a typical month. March, May, June and November are the next busiest. January is the quietest.
 - Five in six campaigns start on a weekday. Monday is the most common start day and Saturday the rarest.
 
@@ -103,7 +103,7 @@ Flat, like the start day. Close hour in UTC shows no usable pattern either, and 
 Holding run length fixed, close-day type makes little difference: a weekend and a weekday close sit within about a point of each other at both lengths, and a public-holiday close sits under three points below them in 1-7 day runs and within a point at 8-14. Without holding the run length fixed, a raw comparison would mix short flash campaigns that close mid-week against long advent-style runs that close disproportionately in the holiday period, and holding it fixed removes that mix-up. A public holiday is read from the business's own country against the Nager.Date calendar.
 
 <!-- generated:tm2_close_type -->
-| Duration | Close type | Campaigns | Businesses | Conversion Rate (campaigns with no repeatable action) | Actions per Entrant |
+| Duration | Close type | Campaigns | Businesses | Conversion Rate (campaigns with no repeatable action) | Entries per Entrant |
 |---|---|---|---|---|---|
 | 1-7 days | Weekday | 23,821 | 4,450 | 41.3% (16,519) | 3.76 |
 | 1-7 days | Weekend | 8,295 | 2,484 | 41.4% (5,483) | 3.87 |
@@ -113,7 +113,7 @@ Holding run length fixed, close-day type makes little difference: a weekend and 
 | 8-14 days | Public holiday | 1,218 | 737 | 28.7% (758) | 4.39 |
 <!-- /generated -->
 
-Actions per Entrant sit within a tenth of an action across the three close types at both lengths, so no secondary pattern survives either.
+Entries per Entrant sit within about a tenth of an Entry across the three close types at both lengths, so no secondary pattern survives either.
 
 Source: `analysis/output/text_and_context.json` (`overlap_clean`, `overlap_all`) for the overlap figures, `analysis/output/calendar.json` (`by_close_day_type`) for the close day.
 
@@ -282,7 +282,7 @@ All the campaigns behind these numbers (116,499 campaigns, 17,633 businesses): t
 
 Among the campaigns where the create date sits before the start date, the typical lead time is 1 day, the upper quarter 5 days, the top tenth 14 days. Most businesses with a usable lead figure built the campaign the day before launch or closer.
 
-| Build lead | Campaigns | Businesses | Conversion Rate | Actions per Entrant | Methods |
+| Build lead | Campaigns | Businesses | Conversion Rate | Entries per Entrant | Methods |
 |---|---|---|---|---|---|
 | Same day | 42,030 | 9,219 | 27% | 4.65 | 7 |
 | 1 to 2 days | 17,018 | 5,010 | 26% | 4.36 | 7 |

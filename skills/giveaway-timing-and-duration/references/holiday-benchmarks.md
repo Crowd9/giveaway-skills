@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (116,499 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The first two tables use Conversion Rates from the campaigns we can compare fairly (no repeatable action, 14 days or less). The all-run comparisons below have their own baselines. The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
+Built from the campaigns behind these numbers (116,283 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The first two tables use Conversion Rates from the campaigns we can compare fairly (no repeatable action, 14 days or less). The all-run comparisons below have their own baselines. The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
 Baselines for the fair-comparison tables below, from `analysis/output/holidays.json` (`all_ordinary`). The typical campaign draws 492 Entrants over 14 days, across 116,283 campaigns from 17,603 businesses. Compare their Conversion Rates with 34.5%, the typical figure among the campaigns we can compare fairly. The JSON does not report that baseline's fair-comparison sample count separately. The first table gives each theme's fair-comparison count in brackets.
 
@@ -103,7 +103,7 @@ Lead time, days before the holiday date businesses started, for campaigns matche
 | Lunar New Year | 76 | 1 day | 5 days | 10 days |
 <!-- /generated -->
 
-Black Friday launches closest to its date, a typical 7 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. These lead figures use `analysis/output/holidays.json` (`holidays`), matching the table above. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
+Among the dated holidays in the table, Lunar New Year campaigns launched closest to the holiday, a typical 5 days out (76 campaigns with lead data), followed by Black Friday and Cyber Monday at 7 days (648). Halloween campaigns launched furthest ahead, a typical 18 days out (776), just ahead of Christmas and advent at 17 (4,593). These lead figures use `analysis/output/holidays.json` (`holidays`), matching the table above. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
 
 ## Starts near a public holiday, all runs
 
