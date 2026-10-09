@@ -5,14 +5,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.46 |
-| giveaway-entry-method-planner | 1.2.44 |
+| giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.43 |
 | giveaway-winner-structure | 1.4.15 |
 | giveaway-promotion-plan | 1.3.43 |
-| giveaway-random-draw | 1.3.37 |
-| giveaway-winner-communications | 1.2.34 |
+| giveaway-random-draw | 1.3.38 |
+| giveaway-winner-communications | 1.2.35 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.15 |
+| giveaway-results-review | 1.6.16 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.17 (2026-10-10)
+
+The results dashboard is safe to open whatever your export contains. Text from an action name is shown as text, so it can never run as code in your browser.
+
+A draw from a comment export counts people by their account, so two people who share a display name keep their own chances, and one person's repeat comments stay one person. When the only id could belong to a comment, you're asked which column identifies the person.
+
+Replacing a Winner keeps your rules. If one Prize per person is the rule, everyone already confirmed stays out of the redraw. Entry advice says plainly that an optional action earns extra chances, and its figures for a qualifying question match the current table.
+
+The numbers review labels referral completions as completions, compares your last campaign only with your last campaign, and keeps a long run's lower Conversion Rate as something to check. The review also shows traffic sources whose every entry was invalid, works from the folder layout the guide describes, and the README no longer says start day made no difference.
 
 ## 3.0.16 (2026-10-10)
 

@@ -218,7 +218,7 @@ An abbreviated version of what comes back:
 >
 > Entries per Entrant sit at 3.92 for an 8 to 14 day run and 4.07 for 15 to 30, among campaigns in those duration bands. Campaigns running past two months recorded fewer Entries per Entrant. These groups do not show what extending your campaign would change.
 >
-> The observed campaigns showed no measurable start-day difference. Monday is the most common choice at 19% and Saturday the rarest at 7%, worth copying only for the sake of your own working week.
+> The observed start-day differences do not establish that choosing a different day changes results. Monday is the most common choice at 19% and Saturday the rarest at 7%. Choose a day when your audience is available and your team can staff the launch.
 >
 > Among the campaigns compared for repeat timing, those starting within 30 days of the previous campaign drew 42% more Entrants than first campaigns, and 38% of viewers entered against 31%. Those repeat organizers may also have larger audiences and more experience, so this does not establish a benefit from booking your next campaign sooner.
 >

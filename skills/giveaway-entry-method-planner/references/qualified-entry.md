@@ -60,7 +60,7 @@ One question, about the business and never about the person. It should be easy f
 - **Leave out a right answer.** Nobody should lose on the answer. Use it to tier, and never to reject. Trivia, the one question type with a right answer, was completed by the fewest Entrants of any type, about 62% (1,640 actions from 325 businesses, `mix-by-objective.md`).
 - **Make it the one required action.** Take the email address from the entry form and keep marketing permission as a separate tick (see the consent section of `mix-by-objective.md`).
 
-For the cost to entries, `mix-by-objective.md` has the question-type figures. An open or feedback question was completed by a typical 86% of Entrants (839 actions, 374 businesses), a preference question by 70% (3,475 actions, 898 businesses) and a detail-capture question by 68% (6,755 actions, 851 businesses). Two more figures sit in that file. Campaigns whose only action was a question had the highest Conversion Rate of any single-family or multi-family combination tested, 54.9% (862 campaigns, 135 businesses). The top fifth by email signups per Entrant offered a question less often than the rest, 5% against 11%. All of it describes what businesses chose, and none of it says what your question would do.
+For the cost to entries, `mix-by-objective.md` has the question-type figures. An open or feedback question was completed by a typical 86% of Entrants (839 actions, 374 businesses), a preference question by 70% (3,475 actions, 898 businesses) and a detail-capture question by 68% (6,755 actions, 851 businesses). Two more figures sit in that file. Question-only campaigns recorded a typical Conversion Rate of 45.6% (2,464 campaigns, 403 businesses), below bonus-only campaigns at 52.2% (2,428 campaigns, 639 businesses). These are single-family campaigns in the source table, with no measurement of buyer quality. The top fifth by email signups per Entrant offered a question less often than the rest, 5% against 11%. All of it describes what businesses chose, and none of it says what your question would do.
 
 ## What to Require and What to Leave Optional (advice)
 
@@ -76,11 +76,11 @@ For the cost to entries, `mix-by-objective.md` has the question-type figures. An
 | Refer a colleague | Optional, low weight | The colleague enters through the same form and answers the same question |
 | Follows, reposts, tag a friend | Leave out | They add Entrants who followed to enter, and no list you will use |
 | Daily, repeatable or secret-code actions | Leave out | They reward effort, and effort does not show who needs the product |
-| Bonus entries for effort | Keep every action at the same weight | A draw should not tilt toward whoever did the most tasks |
+| Bonus entries for effort | Keep optional actions at low weight | Extra completions still add tickets and increase draw chances |
 
 Where the buyer's employer may have rules about gifts, reviews or referrals, drop the referral action and the review ask, and say why. That is the same advice as the B2B row in `mix-by-objective.md`, and a regulated buyer may have more rules again. If you sell to public bodies, ask them first. Nothing here says what any employer allows, so put the question to the buyer's employer or to counsel.
 
-Required fields follow the friction rule in `mix-by-objective.md`: conversion fell with every action added across 38,810 campaigns, and there was no point where it stopped falling. For a buyer campaign that cost is the point, since each extra field is one more filter. Pick the field that sorts best and stop there.
+The Action-count table in `mix-by-objective.md` covers 38,463 campaigns. Conversion generally fell as Action count rose, with increases between some adjacent counts and a rise at the upper end. It does not measure the effect of adding a required form field. As practical buyer-selection advice, ask only for fields that change qualification or follow-up. A qualifying question helps sort buyers, without a measured promise about conversion.
 
 ## What Happens to the Entrants Afterwards (advice)
 
@@ -129,5 +129,7 @@ Built by hand to show the shape, and not taken from any campaign in the data. Th
 | Entry form with company email and company name | Collect a contact | Collected on the entry form | none | A contact to tag by tier |
 | Visit the pricing page | Show the product and pricing | Optional | 1 | An intent signal |
 | Refer a colleague | Bring in referrals | Optional | 1 | A second Entrant who answers the same question |
+
+This example uses an entry-weighted draw. One completed action earns one ticket and three earn three tickets, so optional actions increase the chance of winning. If equal chances are the goal, state one ticket per distinct eligible person in the terms and do not award draw tickets for optional actions.
 
 The Prize that makes this list worth entering is the job of giveaway-prize-picker, and a Prize anyone would take undoes the sort.

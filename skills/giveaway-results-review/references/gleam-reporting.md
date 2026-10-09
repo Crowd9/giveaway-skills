@@ -14,7 +14,7 @@ Gleam's Reporting tab builds a review prompt for the business and opens it in Cl
 | `daysElapsed`, `status` | Days run so far, and `live` or `ended` | Present in newer prompts. Where absent, read `startsAt` and `endsAt` against today's date |
 | `methods` | Entry Methods on the campaign | The configured count for `--methods`. The actions table can omit unused methods and the export merges matching titles. Pass this field explicitly to `gleam_export.py` or `dashboard.py` |
 | `hasRepeatableAction` | A daily, loyalty or timed bonus action is on | The Impressions caveat applies |
-| `referrals` | Completions of the referral action, each one a referred Entrant credited to a sharer | Referral Entries per Entrant |
+| `referrals` | Completions of the referral action, each one a referred Entrant credited to a sharer | Referral completions per Entrant |
 | `prizeValue` | The Prize value recorded on the campaign, often `not recorded` | Use the business's stated Prize cost from the context instead |
 | `site` | The site the campaign sits on: name, URL, and whether a logo, icon and colours are set | Who the business is. Unset branding on a site with real traffic is worth one line, since the widget then carries no brand |
 | `socialChannels` | The accounts the follow actions point at, one per platform | Whether the follows built this business's audience or a partner's: a follow on an account that is not the site's own is reach for that account, and the review says so |
@@ -55,7 +55,7 @@ A field that reads `(not provided)` or `not recorded` is unknown. It never becom
 
 ## Without a shell
 
-Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where they cannot, rank from the tables in `references/benchmarks.md` by hand: name the size band, quote the band's typical figure beside the campaign's, and give the comparison as a direction with the count behind it, since the percentile needs the script. Say that the ranks were read from the tables. Skip the pasted checker output, since there is no run to paste. Where Python is available, fetch the scripts and `references/percentiles.json` from the repository into one folder (the prompt lists the raw URLs) and run them from there as the workflow says, since the report script reads the benchmark file and the other two scripts beside it, and still keep the checker's output out of the reply: the business owner reading it wants the review, and the dict means nothing to them. The report script prints sharers and top Entrants by first name and initial, which is the display name the owner needs to find the account in their own export, and that is as far as it goes: no email, IP or full name reaches the reply or the dashboard.
+Claude and ChatGPT in the browser usually cannot run this skill's scripts. Where they cannot, rank from the tables in `references/benchmarks.md` by hand: name the size band, quote the band's typical figure beside the campaign's, and give the comparison as a direction with the count behind it, since the percentile needs the script. Say that the ranks were read from the tables. Skip the pasted checker output, since there is no run to paste. Where Python is available, preserve the repository layout when downloading: put `review.py`, `gleam_export.py`, `campaign_report.py` and `dashboard.py` in a `scripts/` folder and `percentiles.json` in a sibling `references/` folder (the prompt lists the raw URLs). Run `python3 scripts/review.py` or `python3 scripts/dashboard.py` with the workflow's arguments from their parent folder, since the scripts load `../references/percentiles.json` relative to their own location, and still keep the checker's output out of the reply: the business owner reading it wants the review, and the dict means nothing to them. The report script prints sharers and top Entrants by first name and initial, which is the display name the owner needs to find the account in their own export, and that is as far as it goes: no email, IP or full name reaches the reply or the dashboard.
 
 ## Sliders and what-ifs
 
@@ -63,7 +63,7 @@ A dashboard may carry sliders, and only three kinds. Arithmetic on this campaign
 
 ## What is benchmarked and what is not
 
-The report script puts a typical figure and a rank beside Entrants, Entries, actions each, Entries each, the Conversion Rate when Impressions are given, every Entry Method's completion rate, and the referred share, all against campaigns in the same size band from `references/percentiles.json`. Engagement depth, speed, timing, traffic mix, audience geography, retention and the heatmap have no benchmark in the data, and the report says so on those sections. Never invent a comparison for them, and never call a figure high or low where no benchmark sits beside it.
+The report script puts a typical figure and a rank beside Entrants, Entries, actions each, Entries each, the Conversion Rate when Impressions are given, every Entry Method's completion rate, and referral completions per Entrant, all against campaigns in the same size band from `references/percentiles.json`. Engagement depth, speed, timing, traffic mix, audience geography, retention and the heatmap have no benchmark in the data, and the report says so on those sections. Never invent a comparison for them, and never call a figure high or low where no benchmark sits beside it.
 
 ## A dashboard
 

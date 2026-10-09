@@ -6,7 +6,8 @@
 
 Benchmarks are typical figures from the campaigns behind these numbers (116,499 campaigns that reached 100 unique
 Entrants), as published in references/benchmarks.md. Update both together. Impressions count one look per person per day,
-so long runs and daily actions pull down the Conversion Rate without anything being wrong. The script says so when it applies.
+so return visits during long runs or daily actions may explain part of the Conversion Rate.
+The rate alone establishes neither a fault nor operational health. Check the entry flow and traffic before judging it.
 
 --invalid takes invalid Entries worth, the Entries column summed over rows whose status is Invalid, which is the unit
 gleam_export.py writes into the command it prints. The invalid share is derived as invalid / (Entries + invalid).
@@ -44,7 +45,10 @@ def load_pct():
     try:
         with open(PCT_FILE) as resource:
             d = json.load(resource)
-    except (OSError, ValueError): return None
+    except (OSError, ValueError) as exc:
+        raise ValueError(f"Benchmark data unavailable at {PCT_FILE}. Restore references/percentiles.json beside the scripts folder, then retry.") from exc
+    if not isinstance(d, dict) or not d.get("groups", {}).get("band:100-250", {}).get("contestants"):
+        raise ValueError(f"Benchmark data incomplete at {PCT_FILE}. Restore references/percentiles.json beside the scripts folder, then retry.")
     if d.get("bench"):
         BENCH.update({k: v for k, v in d["bench"].items() if v is not None})
         for k in ("conv_by_methods", "conv_by_duration"): BENCH[k] = [(x[0], x[1]) for x in BENCH[k] if x[1] is not None]
@@ -149,7 +153,7 @@ def review(a):
         note = f"platform average {BENCH['platform_average_conversion']:.0%}"
         if peer_m: note += f", the campaigns we can compare fairly with {a.methods} actions {peer_m:.0%}"
         if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
-        if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day, so a long run or a daily action lowers this without anything being wrong"
+        if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day. Return visits during a long run or a daily action may explain part of this rate. The rate establishes neither a fault nor operational health. Check the entry flow, required actions and traffic sources before judging it"
         note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
         rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
     else:
@@ -177,7 +181,9 @@ def review(a):
         rows.append(("Email signups per Entrant", f"{up:.0%}" if up <= 1 else f"{up:.2f} each", f"{t_up:.0%}" if t_up <= 1 else f"{t_up:.2f} each", rank_line("email_uptake", up, groups)))
     if getattr(a, "referrals", None) is not None:
         rp = a.referrals / a.contestants
-        rows.append(("Referred Entrants as a share of all Entrants", f"{rp:.0%}", "13%", rank_line("referrals_per_contestant", rp, groups)))
+        typical_rp = median_of("referrals_per_contestant", "band:" + band(a.contestants))
+        reader = lambda value: f"{value:.0%}" if value <= 1 else f"{value:.2f} each"
+        rows.append(("Referral completions per Entrant", reader(rp), reader(typical_rp) if typical_rp is not None else "-", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
         rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", rank_line("duration_days", a.days, groups, configuration="longer")))
     if a.methods:
@@ -236,9 +242,9 @@ def read_history(path):
 def history_table(a, hist):
     """This campaign beside the organizer's previous ones and their own typical figure."""
     def metrics(c, i, e, inv, d):
-        return {"contestants": c, "conversion": c / i if i else None, "entries_per_entrant": e / c if e and c else None,
-                "invalid_share": inv / (e + inv) if e is not None and inv is not None and (e + inv) else None, "contestants_per_day": c / d if d else None}
-    prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in hist if h.get("contestants")]
+        return {"contestants": c, "conversion": c / i if c is not None and i else None, "entries_per_entrant": e / c if e is not None and c else None,
+                "invalid_share": inv / (e + inv) if e is not None and inv is not None and (e + inv) else None, "contestants_per_day": c / d if c is not None and d else None}
+    prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in hist]
     for h in prev: h["emails_val"] = h.get("emails")
     now = metrics(a.contestants, a.impressions, a.entries, a.invalid, a.days); now["emails"] = getattr(a, "emails", None)
     out = []
@@ -246,12 +252,12 @@ def history_table(a, hist):
                           ("contestants_per_day", "Entrants per day", "{:,.0f}"), ("emails", "Email signups", "{:,.0f}")]:
         vals = [p.get(m) for p in prev if p.get(m) is not None]
         if now.get(m) is None or not vals: continue
-        last = vals[-1]; med = statistics.median(vals)
+        last = prev[-1].get(m); med = statistics.median(vals)
         delta = (now[m] - last) / last if last else None
-        out.append((label, fmt.format(now[m]), fmt.format(last), fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if now[m] > v)} of {len(vals)} previous beaten"))
+        out.append((label, fmt.format(now[m]), fmt.format(last) if last is not None else "-", fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if now[m] > v)} of {len(vals)} previous beaten"))
     notes = []
-    if prev and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the dataset")
-    elif prev: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the dataset, so a jump past it is unusual")
+    if prev and prev[-1]["contestants"] is not None and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the dataset")
+    elif prev and prev[-1]["contestants"] is not None: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the dataset, so a jump past it is unusual")
     return out, notes
 
 def print_table(rows, header):
@@ -292,6 +298,23 @@ def self_test():
             {"campaign": "summer", "contestants": 1500, "impressions": 5500, "entries": 7000, "invalid": 200, "days": 14, "methods": 6, "emails": 1200}]
     ht, notes = history_table(A, hist); hd = {r[0]: r for r in ht}
     assert hd["Users"][4] == "+20% against the previous" and hd["Users"][5] == "2 of 2 previous beaten" and notes, ht
+    partial = [dict(h) for h in hist]
+    partial[-1].update(impressions=None, emails=None)
+    missing_previous = {r[0]: r for r in history_table(A, partial)[0]}
+    assert missing_previous["Users"][2] == "1,500"
+    for label in ("Conversion Rate", "Email signups"):
+        assert missing_previous[label][2] == "-" and missing_previous[label][4] == "", missing_previous
+    assert missing_previous["Conversion Rate"][3] == "24.0%" and missing_previous["Email signups"][3] == "900"
+    partial[-1]["contestants"] = None
+    assert {r[0]: r for r in history_table(A, partial)[0]}["Users"][2] == "-"
+    class Repeated(A): contestants = 100; referrals = 150; days = 20; impressions = 1000
+    repeated = {r[0]: r for r in review(Repeated)}
+    referral = repeated["Referral completions per Entrant"]
+    assert referral[1] == "1.50 each" and referral[2] == f"{median_of('referrals_per_contestant', 'band:100-250'):.0%}"
+    assert "Referred Entrants" not in str(repeated)
+    assert repeated["Conversion Rate"][1] == "10.0%"
+    assert "may explain part" in repeated["Conversion Rate"][3] and "neither a fault nor operational health" in repeated["Conversion Rate"][3]
+    assert "without anything being wrong" not in str(repeated)
     assert "1,000 to 2,500 Entrants" in d["Users"][3] and d["Entries per Entrant"][1] == "5.00" and d["Conversion Rate"][1] == "30.0%", rows
     assert "Invalid share of Entries" not in d and "Entries" in d and "better than" in d["Entries"][3]
     # A measured zero is an outcome, while an omitted count stays absent.
@@ -301,13 +324,13 @@ def self_test():
     zd = {r[0]: r for r in review(Zero)}
     for label in ("Entries", "Email signups", "X follows", "Instagram follows", "TikTok follows", "Twitch follows", "YouTube subscribes", "Discord joins"):
         assert zd[label][1] == "0", zd
-    assert zd["Email signups per Entrant"][1] == zd["Referred Entrants as a share of all Entrants"][1] == "0%", zd
+    assert zd["Email signups per Entrant"][1] == zd["Referral completions per Entrant"][1] == "0%", zd
     assert zd["Actions completed per Entrant"][1] == zd["Stated Prize value per Entrant"][1] == "0.00", zd
     class Missing(Zero):
         entries = emails = referrals = actions_completed = prize_value = None
         x_follows = instagram_follows = tiktok_follows = twitch_follows = youtube_subscribes = discord_joins = None
     md = {r[0]: r for r in review(Missing)}
-    assert set(zd) - set(md) == {"Entries", "Entries per Entrant", "Email signups", "Email signups per Entrant", "Referred Entrants as a share of all Entrants", "Actions completed per Entrant", "Stated Prize value per Entrant", "X follows", "Instagram follows", "TikTok follows", "Twitch follows", "YouTube subscribes", "Discord joins"}, md
+    assert set(zd) - set(md) == {"Entries", "Entries per Entrant", "Email signups", "Email signups per Entrant", "Referral completions per Entrant", "Actions completed per Entrant", "Stated Prize value per Entrant", "X follows", "Instagram follows", "TikTok follows", "Twitch follows", "YouTube subscribes", "Discord joins"}, md
     for count in (40, 99):
         class Below(A): contestants = count
         for first in (False, True):
@@ -362,6 +385,21 @@ def self_test():
     assert history_table(First, hist)[0][0][3] == "200", "even history must average the two central values"
     with _tf2.NamedTemporaryFile("w", suffix=".csv") as empty:
         assert read_actions(empty.name, 1200) == [], "empty action export has no rows"
+    global PCT, PCT_FILE
+    saved_pct, saved_file = PCT, PCT_FILE
+    try:
+        PCT = None; PCT_FILE = os.path.join(os.path.dirname(__file__), "missing-percentiles-test.json")
+        try: review(A)
+        except ValueError as exc: assert "Restore references/percentiles.json" in str(exc)
+        else: raise AssertionError("missing benchmarks must explain the required layout")
+        import contextlib, io
+        errors = io.StringIO()
+        with contextlib.redirect_stderr(errors):
+            try: main(["--contestants", "100"])
+            except SystemExit as exc: assert exc.code == 2
+            else: raise AssertionError("missing benchmark CLI must fail cleanly")
+        assert "Restore references/percentiles.json" in errors.getvalue() and "Traceback" not in errors.getvalue()
+    finally: PCT, PCT_FILE = saved_pct, saved_file
     print("self-test passed"); return 0
 
 def entry_total(value):
@@ -378,7 +416,7 @@ def main(argv):
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
     ap.add_argument("--actions", help="CSV with action name and completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")
-    ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral Entries recorded")
+    ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral action completions recorded, including repeated completions")
     ap.add_argument("--actions-completed", type=int, help="total actions completed across all entry methods (sum of the actions report)")
     ap.add_argument("--prize-value", type=float, help="stated Prize pool in USD, to rank value per Entrant")
     for flag, help_ in [("x-follows", "X follows gained"), ("instagram-follows", "Instagram follows gained"), ("tiktok-follows", "TikTok follows gained"), ("twitch-follows", "Twitch follows gained"), ("youtube-subscribes", "YouTube subscribes gained"), ("discord-joins", "Discord joins gained")]:
@@ -390,7 +428,10 @@ def main(argv):
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.contestants: ap.error("--contestants is required")
-    rows = review(a)
+    try:
+        rows = review(a)
+    except ValueError as exc:
+        ap.error(str(exc))
     print_table(rows, ("Metric", "This campaign", "Benchmark unavailable" if a.contestants < 100 else "Typical for campaigns your size", "Read"))
     print(plain_reading(rows))
     if a.actions:

@@ -32,6 +32,11 @@ FAMILY_COLOUR = {"visit": "visit", "email": "email", "follow": "follow", "share"
 
 
 def esc(x): return html.escape(str(x), quote=True)
+def script_json(value):
+    """Serialize data without introducing HTML script boundaries or JS line separators."""
+    return json.dumps(value).translate({ord(c): f"\\u{ord(c):04x}" for c in "<>&\u2028\u2029"})
+
+
 def n(x): return f"{x:,.0f}"
 def pct(x): return f"{x:.0%}"
 def reader_unit(v): return f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
@@ -318,12 +323,12 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
       <div class="card">
         <h3>Where Entrants Came From</h3>
         <div class="chart" id="sourceChart"></div>
-        <p class="note">Earliest row's referrer. Email clicks arrive as webmail or direct and are undercounted. No benchmark: the campaign data holds no comparison for traffic mix, so this tab describes this campaign alone.</p>
+        <p class="note">Earliest valid row's referrer. Email clicks arrive as webmail or direct and are undercounted. No benchmark: the campaign data holds no comparison for traffic mix, so this tab describes this campaign alone.</p>
       </div>
       <div class="card">
         <h3>Channels, With Depth and Invalid Rate</h3>
         {{CHANNELS}}
-        <p class="note">Signals, never verdicts.</p>
+        <p class="note">Entrants and depth use each person's first valid source. Actions and invalid rates use each row's source. Depth is unavailable for channels with no valid first-touch Entrants. Signals, never verdicts.</p>
       </div>
     </div>
     <div class="grid2" style="margin-top:16px">
@@ -427,7 +432,7 @@ const DATA={{DATA}};
   const svgNS="http://www.w3.org/2000/svg";
   function el(tag,attrs,parent){const e=document.createElementNS(svgNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
   function tipFor(host){const t=document.createElement("div");t.className="tip";host.appendChild(t);return t;}
-  function showTip(t,host,x,y,html){t.innerHTML=html;t.style.left=x+"px";t.style.top=y+"px";t.classList.add("on");}
+  function showTip(t,host,x,y,text){t.textContent=text;t.style.left=x+"px";t.style.top=y+"px";t.classList.add("on");}
   function hideTip(t){t.classList.remove("on");}
   function short(d){const m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];const p=d.split("-");return (+p[2])+" "+m[+p[1]-1];}
 
@@ -453,7 +458,7 @@ const DATA={{DATA}};
     const tip=tipFor(host);
     svg.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),x=(e.clientX-r.left)*W/r.width;let i=Math.round((x-pl)/((W-pl-pr)/(daily.length-1)));i=Math.max(0,Math.min(daily.length-1,i));
       cross.setAttribute("x1",xs(i));cross.setAttribute("x2",xs(i));cross.setAttribute("opacity",1);dot.setAttribute("cx",xs(i));dot.setAttribute("cy",ys(daily[i][1]));dot.setAttribute("opacity",1);
-      showTip(tip,host,xs(i)*r.width/W,ys(daily[i][1])*r.height/H,`<b>${short(daily[i][0])}</b> ${fmt(daily[i][1])} new Entrants, ${fmt(daily[i][2])} actions`);});
+      showTip(tip,host,xs(i)*r.width/W,ys(daily[i][1])*r.height/H,`${short(daily[i][0])} ${fmt(daily[i][1])} new Entrants, ${fmt(daily[i][2])} actions`);});
     svg.addEventListener("mouseleave",()=>{cross.setAttribute("opacity",0);dot.setAttribute("opacity",0);hideTip(tip);});
   })();
 
@@ -466,7 +471,7 @@ const DATA={{DATA}};
       el("rect",{x:pl,y:y+4,width:Math.max(2,xs(d[1])-pl),height:16,rx:4,fill:"var(--accent)"},svg);
       const v=el("text",{x:xs(d[1])+8,y:y+15},svg);v.textContent=pct(d[1]/total);v.setAttribute("class","num");
       const hit=el("rect",{x:0,y:y,width:W,height:rowH,fill:"transparent"},svg);
-      hit.addEventListener("mousemove",()=>{const r=svg.getBoundingClientRect();showTip(tip,host,(xs(d[1])/2+pl/2)*r.width/W,y*r.height/H,`<b>${d[0]}</b> ${fmt(d[1])} Entrants, ${pct(d[1]/total)}`);});
+      hit.addEventListener("mousemove",()=>{const r=svg.getBoundingClientRect();showTip(tip,host,(xs(d[1])/2+pl/2)*r.width/W,y*r.height/H,`${d[0]} ${fmt(d[1])} Entrants, ${pct(d[1]/total)}`);});
       hit.addEventListener("mouseleave",()=>hideTip(tip));});
   }
   const depthLabel={"1":"1 action","2-5":"2 to 5","6-10":"6 to 10","11+":"11 or more"};
@@ -490,7 +495,8 @@ const DATA={{DATA}};
     const scale=Math.max(1.5,...rows.map(a=>a[2]),...rows.map(a=>a[3]||0));
     rows.forEach(a=>{const r=document.createElement("div");r.className="act";
       const tick=a[3]==null?"":`<span class="tick" style="left:${Math.min(100,a[3]/scale*100)}%" title="typical ${a[3]<=1?Math.round(a[3]*100)+"%":a[3].toFixed(1)+" each"}"></span>`;
-      r.innerHTML=`<span class="n" title="${a[0]}">${a[0]}</span><span class="track" aria-hidden="true"><span class="fill" style="width:${a[2]/scale*100}%;background:${fam[a[4]]||fam.other}"></span>${tick}</span><span class="pct num">${pct(a[2])}</span><span class="typ num">${a[3]==null?"n/a":a[3]<=1?Math.round(a[3]*100)+"%":a[3].toFixed(1)+" each"}</span>`;
+      r.innerHTML=`<span class="n"></span><span class="track" aria-hidden="true"><span class="fill" style="width:${a[2]/scale*100}%;background:${fam[a[4]]||fam.other}"></span>${tick}</span><span class="pct num">${pct(a[2])}</span><span class="typ num">${a[3]==null?"n/a":a[3]<=1?Math.round(a[3]*100)+"%":a[3].toFixed(1)+" each"}</span>`;
+      const label=r.querySelector(".n");label.textContent=a[0];label.title=a[0];
       r.setAttribute("aria-label",`${a[0]}, ${famName[a[4]]||"other"}, completed by ${pct(a[2])} of Entrants, ${fmt(a[1])} completions`);
       list.appendChild(r);});
   }
@@ -669,7 +675,7 @@ def render(D, W, S, a):
         topline += '<p>Actual costs unavailable. Stated Prize value alone does not establish spending.</p>'
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
     journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {n(V['referred_entrants'])}. Referrals are an output per sharer, never a stage, so this is not a funnel."
-    channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x", f"{c[5]:.1%}") for c in R["channels"]])
+    channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x" if c[4] is not None else "unavailable", f"{c[5]:.1%}") for c in R["channels"]])
     hosts = table(["Host", "Entrants"], [(h, n(c)) for h, c in R["hosts"]])
     landing = ", ".join(f"{k} {n(v)} ({v / N:.0%})" for k, v in R["landing"])
     utm = table(["Source", "Medium", "Campaign", "Entrants"], [(u[0][0], u[0][1], u[0][2], n(u[1])) for u in R["utm"]], num_from=3) if R["utm"] else "<p class=\"note\">No UTM parameters on any landing page.</p>"
@@ -684,7 +690,7 @@ def render(D, W, S, a):
     caveats = "".join(f"<li>{esc(c)}</li>" for c in W["caveats"])
     bslice = D["slices"]["band:" + D["band"]]
     email_share = D["emails"] / N if D["emails"] else 0
-    data = {"N": N, "emails": D["emails"], "daily": daily, "depth": [(k, v[0]) for k, v in E.items()], "sources": [(c[0], c[1]) for c in R["channels"]],
+    data = {"N": N, "emails": D["emails"], "daily": daily, "depth": [(k, v[0]) for k, v in E.items()], "sources": [(c[0], c[1]) for c in R["channels"] if c[1]],
             "countries": countries, "acts": [(x["name"], x["completions"], x["share"], x["typical"], x["family"]) for x in D["acts"]], "heat": heat, "slices": D["slices"], "band": "band:" + D["band"],
             "band_label": D["band_label"], "reach": D["reach"], "pool": D["pool"], "email_share": email_share, "site": S}
     seq = D["seq"]; curve = {r[0]: r for r in seq["curve"]}; splits = {r[0]: r for r in seq["splits"]}
@@ -725,7 +731,7 @@ def render(D, W, S, a):
                  "HEATPEAK": esc(f"Peak {CR.DAYS[heat_peak[0][0]]} {heat_peak[0][1]:02d}:00, {n(heat_peak[1])} actions") if heat_peak else "", "CHANNELS": channels, "HOSTS": hosts, "LANDING": esc(landing), "UTM": utm, "FRICTION": friction,
                  "VIRALLINE": esc(f"Referral completions {n(V['refer_rows'])}, sharers {n(V['sharers'])} ({V['participation']:.0%} of Entrants), referred Entrants who entered {n(V['referred_entrants'])} ({V['referred_share']:.0%}), {V['referrals_per_sharer']:.1f} per sharer." if V["sharers"] else "No referral action ran."),
                  "SHARERS": sharers, "CITIES": cities, "HANDLES": esc(handles), "RETENTION": esc(retention), "ENGAGED": engaged, "CAVEATS": caveats, "QUESTION": esc(W["question"]), "LEVERS": levers,
-                 "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": json.dumps(data)}.items():
+                 "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": script_json(data)}.items():
         page = page.replace("{{" + k + "}}", v)
     assert "{{" not in page, re.findall(r"\{\{\w+\}\}", page)[:5]
     if N < 100:
@@ -761,6 +767,38 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    # Export labels must survive script embedding without adding executable markup.
+    from html.parser import HTMLParser
+    class ScriptParser(HTMLParser):
+        def __init__(self):
+            super().__init__(); self.scripts = []; self.in_script = False
+        def handle_starttag(self, tag, attrs):
+            if tag == "script": self.scripts.append(""); self.in_script = True
+        def handle_endtag(self, tag):
+            if tag == "script": self.in_script = False
+        def handle_data(self, data):
+            if self.in_script: self.scripts[-1] += data
+    def embedded_data(document):
+        parser = ScriptParser(); parser.feed(document); parser.close()
+        assert len(parser.scripts) == 1, "an export label created another script element"
+        return json.loads(parser.scripts[0].split("const DATA=", 1)[1].split(";\n", 1)[0])
+    ordinary = embedded_data(page)
+    assert ordinary["N"] == 2 and ordinary["acts"]
+    hostile = "</script><script>alert(1)</script>"
+    with open(p, encoding="utf-8") as source: original_export = source.read()
+    try:
+        with open(p, "w", encoding="utf-8") as source:
+            source.write(original_export.replace("Subscribe to Our List", hostile))
+        hostile_page = render(gather(A), words_of(words), site_of(None), A)
+        hostile_data = embedded_data(hostile_page)
+        assert hostile in [action[0] for action in hostile_data["acts"]]
+        assert hostile not in hostile_page
+        assert "label.textContent=a[0]" in hostile_page and "t.textContent=text" in hostile_page
+        special = "<>&\u2028\u2029"
+        assert json.loads(script_json(special)) == special
+        assert not any(c in script_json(special) for c in special)
+    finally:
+        with open(p, "w", encoding="utf-8") as source: source.write(original_export)
     with open(p, encoding="utf-8") as source: fractional_invalid = source.read().replace(",Invalid,Subscribe to Our List,5,", ",Invalid,Subscribe to Our List,5.5,")
     with open(p, "w", encoding="utf-8") as source: source.write(fractional_invalid)
     metrics = {row[0]: row for row in gather(A)["metrics"]}
@@ -790,6 +828,52 @@ def self_test():
     floor = gather(A)
     assert floor["band"] == "100-250" and floor["slices"]["all"]
     assert any(x["typical"] is not None for x in floor["acts"])
+    # Invalid-only traffic retains its invalid rate without an engagement depth.
+    with open(p, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status", "Referring URL"])
+        for i in range(100): wr.writerow([f"person{i}@example.com", "Subscribe to Our List", 1, "Valid", "https://mail.google.com/"])
+        wr.writerow(["invalid@example.com", "Subscribe to Our List", 1, "Invalid", "https://www.contestgirl.com/"])
+    invalid_channel = gather(A)
+    invalid_page = render(invalid_channel, words_of(words), site_of(None), A)
+    assert any(c[1] == 0 and c[4] is None and c[5] == 1 for c in invalid_channel["R"]["channels"])
+    assert '>unavailable</td><td class="num">100.0%</td>' in invalid_page
+    assert all(c[1] > 0 for c in embedded_data(invalid_page)["sources"])
+    assert "Earliest valid row's referrer" in invalid_page
+    assert "Entrants and depth use each person's first valid source" in invalid_page
+    assert "Actions and invalid rates use each row's source" in invalid_page
+    assert "Depth is unavailable for channels with no valid first-touch Entrants" in invalid_page
+    A.days, A.impressions = 20, 1000
+    cautious_page = render(gather(A), words_of(words), site_of(None), A)
+    assert "may explain part of this rate" in cautious_page and "operational health" in cautious_page
+    assert "entry flow, required actions and traffic sources" in cautious_page
+    assert "without anything being wrong" not in cautious_page
+    A.days, A.impressions = None, 10
+    # Missing benchmark files fail through the CLI with an actionable message.
+    import contextlib, io
+    saved_path, saved_data = RV.PCT_FILE, RV.PCT
+    try:
+        RV.PCT_FILE = os.path.join(d, "missing-percentiles.json"); RV.PCT = None
+        error = io.StringIO()
+        with contextlib.redirect_stderr(error):
+            try: main([p, "--out", os.path.join(d, "missing.html")])
+            except SystemExit as exc: assert exc.code == 2
+            else: raise AssertionError("missing benchmarks must stop dashboard generation")
+        assert "Benchmark data unavailable" in error.getvalue() and "Traceback" not in error.getvalue()
+        assert not os.path.exists(os.path.join(d, "missing.html"))
+    finally:
+        RV.PCT_FILE, RV.PCT = saved_path, saved_data
+    # The documented standalone scripts/ + references/ layout is sufficient.
+    import shutil, subprocess
+    standalone = os.path.join(d, "standalone")
+    os.makedirs(os.path.join(standalone, "scripts")); os.makedirs(os.path.join(standalone, "references"))
+    for name in ("dashboard.py", "campaign_report.py", "review.py", "gleam_export.py"):
+        shutil.copyfile(os.path.join(HERE, name), os.path.join(standalone, "scripts", name))
+    shutil.copyfile(RV.PCT_FILE, os.path.join(standalone, "references", "percentiles.json"))
+    output = os.path.join(standalone, "dashboard.html")
+    run = subprocess.run([sys.executable, "-W", "error::ResourceWarning", os.path.join(standalone, "scripts", "dashboard.py"),
+                          p, "--out", output], capture_output=True, text=True)
+    assert run.returncode == 0, run.stderr
+    with open(output, encoding="utf-8") as resource: assert embedded_data(resource.read())["N"] == 100
     # Withheld metrics and whole cohorts remain unavailable in tiles and levers.
     import copy
     saved_pct = RV.PCT
@@ -870,7 +954,10 @@ def main(argv):
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("an export is required")
-    page = render(gather(a), words_of(a.words), site_of(a.site), a)
+    try:
+        page = render(gather(a), words_of(a.words), site_of(a.site), a)
+    except ValueError as exc:
+        ap.error(str(exc))
     with open(a.out, "w", encoding="utf-8") as resource:
         resource.write(page)
     print(f"dashboard written to {a.out}"); return 0

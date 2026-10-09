@@ -241,9 +241,9 @@ def analyze(rows, a):
     ch_actions = collections.Counter(r["_channel"] for r in valid); ch_invalid = collections.Counter(r["_channel"] for r in invalid); ch_all = collections.Counter(r["_channel"] for r in rows)
     avg_apc = len(valid) / n
     ch_apc = {}
-    for c in ft:
+    for c in ch_all:
         ppl = [w for w in first if first[w]["_channel"] == c]; ch_apc[c] = (sum(len(people[w]) for w in ppl) / len(ppl)) / avg_apc if ppl else None
-    R["channels"] = [(c, ft[c], ft[c] / n, ch_actions[c], ch_apc[c], ch_invalid[c] / ch_all[c] if ch_all[c] else 0) for c, _ in ft.most_common()]
+    R["channels"] = [(c, ft[c], ft[c] / n, ch_actions[c], ch_apc[c], ch_invalid[c] / ch_all[c] if ch_all[c] else 0) for c in sorted(ch_all, key=lambda c: -ft[c])]
     R["hosts"] = fh.most_common(12); R["invalid_rate_all"] = R["topline"]["invalid_rate"]
     lp = collections.Counter(first[w]["_landing"] for w in first); R["landing"] = lp.most_common(6)
     feat = [w for w in first if first[w]["_channel"] == "Gleam giveaways directory (featured)"]
@@ -359,15 +359,17 @@ def render(R, a):
         w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The dataset carries no order data, so nothing here is revenue.")
         w("Only supplied costs are included. Add any missing Prize, plan, promotion and other costs before treating this as total campaign spending.")
     else: w("\nCost per result needs actual Prize cost or plan cost (--prize-cost, --plan-cost, optional --benchmark-cpl). Stated Prize value alone does not establish spending.")
-    w("\n## Traffic\n\nFirst-touch channel per Entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
-    for c in R["channels"]: w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {c[4]:.2f}x | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
+    w("\n## Traffic\n\nFirst-touch channel per valid Entrant (earliest valid row's referrer). Actions and invalid rates use each row's own source, including sources with no valid Entrants. Depth is unavailable without valid first-touch Entrants. Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
+    for c in R["channels"]:
+        depth = f"{c[4]:.2f}x" if c[4] is not None else "unavailable"
+        w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {depth} | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
     w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {h} | {k:,} |" for h, k in R["hosts"]))
     w("\nLanding page at first touch: " + ", ".join(f"{k} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
     if R.get("featured"):
         F = R["featured"]; w(f"\nFeatured on gleam.io/giveaways: {F['entrants']:,} entrants ({F['share']:.0%}) came from browsing the directory (landed on the listing with gleam.io as the referrer)" + (f", at {F['depth']:.2f}x the average actions per entrant" if F["depth"] else "") + f". {F['landed']:,} entrants ({F['landed_share']:.0%}) landed on the listing URL from any source, at {F['landed_depth']:.2f}x, since the listing link also gets shared by aggregators, email and social. Listing traffic is people browsing giveaways, so read its depth and email signups apart from your own channels.")
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
-    if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ".")
-    else: w("\nPartner contribution needs --partners with the hosts or UTM values that identify them. Without tagging it is not attributable.")
+    if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ". Host substring matches can overlap, so do not sum partner rows. Read tagged email traffic in the separate UTM rollup.")
+    else: w("\nPartner contribution needs --partners with referrer-host substrings. For tagged email traffic, read the separate UTM rollup. Overlapping host matches may count the same Entrant in multiple partner rows, so do not sum them.")
     w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Typical, campaigns offering it | Where it sits | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         flag = " (slow)" if sec and sec > 120 else ""
@@ -533,6 +535,29 @@ def self_test():
     class ValueOnly(B): prize_value = 1000
     legacy = analyze(load(q), ValueOnly)
     assert "roi" not in legacy and "Stated Prize value alone does not establish spending" in render(legacy, ValueOnly)
+    # Invalid-only sources stay visible without gaining valid people or depth.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status", "Referring URL", "Landing Page URL"])
+        wr.writerows([["valid@example.com", "Visit", 1, "Valid", "", "https://example.org/?utm_source=partnera"],
+                      ["invalid@example.com", "Visit", 1, "Invalid", "https://facebook.com/", ""],
+                      ["host@example.com", "Visit", 1, "Valid", "https://partner.example.org/", ""]])
+    class Partners(B): partners = ["partnera", "partner.example.org", "example.org"]
+    traffic = analyze(load(q), Partners)
+    social = next(c for c in traffic["channels"] if c[0] == "Social")
+    assert social[1:] == (0, 0, 0, None, 1.0), traffic["channels"]
+    assert traffic["base"] == 2 and sum(c[1] for c in traffic["channels"]) == 2
+    text = render(traffic, Partners)
+    assert "| Social | 0 | 0% | 0 | unavailable | 100.0%" in text
+    assert not any("Social" in line for line in insights(traffic))
+    assert traffic["partners"] == [("partnera", 0, 0), ("partner.example.org", 1, 0.5), ("example.org", 1, 0.5)]
+    assert traffic["utm"] == [(("partnera", "-", "-"), 1)]
+    assert "do not sum partner rows" in text and "separate UTM rollup" in text
+    import contextlib, io
+    help_output = io.StringIO()
+    with contextlib.redirect_stdout(help_output):
+        try: main(["--help"])
+        except SystemExit as exc: assert exc.code == 0
+    assert "referrer-host substrings" in help_output.getvalue() and "referrer hosts or UTM values" not in help_output.getvalue()
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None
@@ -544,7 +569,7 @@ def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--impressions", type=int); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--plan-cost", type=float); ap.add_argument("--benchmark-cpl", type=float)
-    ap.add_argument("--sends", help='comma list of date=label, e.g. "2026-04-20=Launch email,2026-05-01=Last call"'); ap.add_argument("--partners", help="comma list of referrer hosts or UTM values that identify partners")
+    ap.add_argument("--sends", help='comma list of date=label, e.g. "2026-04-20=Launch email,2026-05-01=Last call"'); ap.add_argument("--partners", help="comma list of referrer-host substrings identifying partners (matches may overlap). For tagged email traffic, read the separate UTM rollup")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
     a = ap.parse_args(argv)
@@ -552,7 +577,11 @@ def main(argv):
     if not a.export: ap.error("export path required")
     a.partners = [p.strip() for p in a.partners.split(",")] if a.partners else None
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if a.map else {}
-    out = render(analyze(load(a.export, mapping), a), a); print(out)
+    try:
+        out = render(analyze(load(a.export, mapping), a), a)
+    except ValueError as exc:
+        ap.error(str(exc))
+    print(out)
     if a.markdown:
         with open(a.markdown, "w") as resource:
             resource.write(out + "\n")

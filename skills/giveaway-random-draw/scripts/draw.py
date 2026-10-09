@@ -40,7 +40,14 @@ NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 def sha(b): return hashlib.sha256(b).hexdigest()
 def norm(s): return str(s or "").strip().lower()
 
-ID_KEYS = ("email", "Email", "username", "user_name", "handle", "authorChannelId.value", "authorDisplayName", "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name", "id", "ID")
+ACCOUNT_ID_KEYS = ("authorChannelId.value", "authorChannelId", "from.id", "from.id_str",
+                   "author_id", "author.id", "author.id_str", "user_id", "user.id", "user.id_str",
+                   "owner_id", "owner.id", "account_id", "account.id", "commenter_id", "commenter.id",
+                   "entrant_id", "entrant.id", "participant_id", "participant.id")
+PERSON_KEYS = ("email", "Email") + ACCOUNT_ID_KEYS + ("username", "user_name", "handle", "authorDisplayName",
+               "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name")
+# Generic object IDs remain recognized headers, but need an explicit person-ID choice.
+ID_KEYS = PERSON_KEYS + ("id", "ID", "comment_id", "post_id")
 
 def _flatten_json(obj):
     """Best-effort: find the list of comment or Entrant objects inside a JSON export and the field that names the person."""
@@ -68,10 +75,11 @@ def pick_id_column(rows, id_column):
         if id_column not in rows[0]: sys.exit(f"column '{id_column}' not found; columns are {list(rows[0].keys())}")
         return id_column
     keys = list(rows[0].keys())
-    for cand in ID_KEYS:
+    for cand in PERSON_KEYS:
         for k in keys:
             if k == cand or k.endswith("." + cand): return k
-    return keys[0]
+    sys.exit("cannot identify a person/account column safely; pass --id-column with the person identifier "
+             f"(comment/post IDs must not stand in for people); columns are {keys}")
 
 def load_entries(path, id_column):
     with open(path, "rb") as source:
@@ -450,6 +458,47 @@ def self_test_input_formats():
             except SystemExit: pass
             else: raise AssertionError("missing header or data must fail, never eat the first entrant: " + name)
 
+def self_test_account_ids():
+    import contextlib, os, tempfile
+    examples = [
+        ([{"id": "c1", "from": {"id": "person-a", "name": "Alex"}},
+          {"id": "c2", "from": {"id": "person-b", "name": "Alex"}},
+          {"id": "c3", "from": {"id": "person-a", "name": "Renamed"}}], "from.id"),
+        ([{"id": "post1", "author_id": "person-a"}, {"id": "post2", "author_id": "person-a"},
+          {"id": "post3", "author_id": "person-b"}], "author_id"),
+        ([{"id": "c1", "user": {"id": "person-a", "username": "same"}},
+          {"id": "c2", "user": {"id": "person-a", "username": "new"}},
+          {"id": "c3", "user": {"id": "person-b", "username": "same"}}], "user.id"),
+    ]
+    for objects, expected in examples:
+        rows = _flatten_json(objects)
+        column = pick_id_column(rows, None)
+        pool, duplicates, *_ = prepare(rows, column, None, set())
+        assert column == expected and {e["id"] for e in pool} == {"person-a", "person-b"}
+        assert duplicates == 1
+    for key in ACCOUNT_ID_KEYS:
+        assert pick_id_column([{"id": "comment", "name": "Display", "nested." + key: "person"}], None) == "nested." + key
+    with tempfile.TemporaryDirectory() as directory:
+        for filename, content in (("comments.json", json.dumps({"comments": [{"id": "c1", "text": "hello"}]})),
+                                  ("posts.csv", "id,text\npost1,hello\n"),
+                                  ("comments.csv", "comment_id,text\nc1,hello\n")):
+            path = os.path.join(directory, filename)
+            with open(path, "w") as output: output.write(content)
+            try: load_entries(path, None)
+            except SystemExit as error: assert "--id-column" in str(error), str(error)
+            else: raise AssertionError("ambiguous object IDs must require explicit selection")
+            chosen = "comment_id" if filename == "comments.csv" else "id"
+            assert load_entries(path, chosen)[1] == chosen
+        # Audits record the original column: verification must not auto-select the new default.
+        path = os.path.join(directory, "legacy.json")
+        audit = os.path.join(directory, "audit.json")
+        with open(path, "w") as output: json.dump(examples[0][0], output)
+        for old_column in ("from.name", "id"):
+            with contextlib.redirect_stdout(io.StringIO()):
+                assert main(["draw", path, "--id-column", old_column, "--seed", "legacy-seed", "--audit", audit]) == 0
+                assert main(["verify", audit, "--input", path]) == 0
+
+
 def self_test_invalid_counts():
     for options in ({"winners": -1}, {"backups": -1}, {"tiers": "Grand:2,Runner-up:-1"}):
         a = argparse.Namespace(rules=None, winners=1, backups=0, tiers=None)
@@ -468,7 +517,7 @@ def self_test_numeric_ids():
         path = os.path.join(directory, "numeric.json")
         with open(path, "w") as output:
             json.dump([{"id": 0}, {"id": 42}, {"id": "42"}], output)
-        rows, column, _ = load_entries(path, None)
+        rows, column, _ = load_entries(path, "id")
         pool, duplicates, _, _, _ = prepare(rows, column, None, set())
         assert [(e["id"], e["shown"]) for e in pool] == [("42", "42")]
         assert duplicates == 1
@@ -478,6 +527,7 @@ def self_test_numeric_ids():
 
 def self_test():
     self_test_numeric_ids()
+    self_test_account_ids()
     self_test_invalid_counts()
     self_test_input_formats()
     import contextlib, io
@@ -489,6 +539,7 @@ def self_test():
         help_text = " ".join(help_output.getvalue().split())
         assert "reproduction" in help_text and "preannounced future source beyond" in help_text, help_text
         assert "text you published in advance" not in help_text, help_text
+        if args[0] == "draw": assert "required for ambiguous id fields" in help_text, help_text
     import tempfile, os
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     with open(p, "w") as resource:
@@ -524,7 +575,7 @@ def self_test():
     gj = os.path.join(d, "g.json")
     with open(gj, "w") as resource:
         resource.write(json.dumps({"data": [{"id": "1", "text": "hi", "from": {"id": "9", "username": "ann"}}, {"id": "2", "text": "x", "from": {"id": "8", "username": "bob"}}]}))
-    rows, col, _ = load_entries(gj, None); assert col == "from.username", (col, rows)
+    rows, col, _ = load_entries(gj, None); assert col == "from.id", (col, rows)
     sc = scan([{"id": f"ava_k_{2290+i}@example.com"} for i in range(6)] + [{"id": "x@mailinator.com"}])
     assert any("trailing number" in n for n in sc) and any("disposable" in n for n in sc), sc
     rp = os.path.join(d, "rules.json")
@@ -587,7 +638,7 @@ def main(argv):
     sub = ap.add_subparsers(dest="cmd")
     def common(p):
         p.add_argument("input"); p.add_argument("--winners", type=int); p.add_argument("--tiers"); p.add_argument("--backups", type=int)
-        p.add_argument("--id-column"); p.add_argument("--weight-column"); p.add_argument("--exclude")
+        p.add_argument("--id-column", help="person/account column or dotted JSON path; required for ambiguous id fields or unrecognized headers"); p.add_argument("--weight-column"); p.add_argument("--exclude")
         p.add_argument("--rules", help="JSON file holding tiers, backups, winners, id-column, weight-column and exclude, so commit and draw read the same rules")
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     c.add_argument("--flagged-out", help="write the flagged ids to this file for review, then pass it to draw as --exclude. Use it on a list too long to read in a terminal")
