@@ -283,17 +283,17 @@ This industry cut reads the organizer's own homepage, and so do `percentiles.jso
 | Software | 23% |
 <!-- /generated -->
 
-Gaming reads differently across sources because each draws on a different scope, so use the cut that matches the comparison you're making. `prize_timing_cuts.json`'s `by_industry_ordinary` scopes the homepage labels to the campaigns behind these numbers, tighter than the `by_industry` table further up the page. The Prize picker's ROI benchmarks describe the earlier dataset's campaigns we can compare fairly, no repeatable action and a run of 14 days or less.
+Gaming reads differently across sources because each draws on a different scope, so use the cut that matches the comparison you're making. `prize_timing_cuts.json`'s `by_industry_ordinary` scopes the homepage labels to the campaigns behind these numbers, tighter than the `by_industry` table further up the page. The Prize picker's ROI benchmarks use campaigns with no repeatable action and a run of 14 days or less. The clean subset's business count and missing Conversion Rate coverage are not separately reported.
 
 <!-- generated:bm2_gaming_sources -->
 | Source | Conversion Rate | Campaigns | Organizers |
 |---|---|---|---|
 | `by_industry_ordinary` (tighter scope) | 27% | 24,250 | 4,663 |
 | `by_industry` (table above) | 27% | 25,711 | 4,943 |
-| Prize picker ROI benchmarks (earlier dataset) | 36% | - | - |
+| Prize picker ROI benchmarks (no repeatable action, at most 14 days) | 34% | 9,952 | Not reported |
 <!-- /generated -->
 
-Source: `analysis/output/prize_timing_cuts.json` (`by_industry_ordinary`), `analysis/output/industries.json` (`vertical_mapping`).
+Source: `analysis/output/prize_timing_cuts.json` (`by_industry_ordinary`), `analysis/output/industries.json` (`vertical_mapping`, `by_industry`), `analysis/output/standouts.json` (`industries.gaming.conv_clean`, `industries.gaming.clean_n`).
 
 ### Comparing against a similar-sized company
 

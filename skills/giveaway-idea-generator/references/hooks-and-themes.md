@@ -130,7 +130,9 @@ The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, dura
 
 ## Campaign types (extracted)
 
-A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical among campaigns offering a Prize of similar stated value. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
+The campaign-type matcher uses regex on the title, incentive name and first 600 characters of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical among campaigns offering a Prize of similar stated value. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
+
+The Milestone row uses the campaign-type matcher: 4,410 campaigns from 2,092 businesses, with a median of 726 Entrants. The holiday benchmarks in the timing skill use a holiday-theme matcher that reads the first 400 description characters and produces a different Milestone group. These benchmarks are not interchangeable. Missing classification coverage is not separately reported, and the contribution of the character limit versus other matching differences is unverified.
 
 <!-- generated:ig_types -->
 Three columns here carry three different counts. The campaign and business counts cover the whole type, the

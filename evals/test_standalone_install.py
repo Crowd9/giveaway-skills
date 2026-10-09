@@ -87,6 +87,19 @@ class StandaloneInstallTests(unittest.TestCase):
                         self.assertEqual(result.returncode, 0, output)
                         self.assertNotIn('ResourceWarning', result.stderr, output)
 
+    def test_no_link_leaves_the_skill(self):
+        # A skill installs alone, so a Markdown link into a sibling skill's folder is dead on install.
+        found = []
+        for doc in sorted((ROOT / 'skills').glob('*/**/*.md')):
+            skill = (ROOT / 'skills' / doc.relative_to(ROOT / 'skills').parts[0]).resolve()
+            for _, target, _ in validator.link_targets(doc.read_text()):
+                parsed = urlsplit(target)
+                if parsed.scheme or parsed.netloc or not parsed.path:
+                    continue
+                if not (doc.parent / unquote(parsed.path)).resolve().is_relative_to(skill):
+                    found.append(f'{doc.relative_to(ROOT)}: {target}')
+        self.assertEqual(found, [])
+
     def test_missing_read_is_rejected(self):
         with tempfile.TemporaryDirectory() as temp:
             skill = Path(temp)

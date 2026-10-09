@@ -1,6 +1,6 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (116,283 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The first two tables use Conversion Rates from the campaigns we can compare fairly (no repeatable action, 14 days or less). The all-run comparisons below have their own baselines. The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
+Built from the campaigns behind these numbers (116,283 campaigns). The holiday-theme matcher uses regex on the title, incentive name and first 400 characters of the description, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The first two tables use Conversion Rates from the campaigns we can compare fairly (no repeatable action, 14 days or less). The all-run comparisons below have their own baselines. The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
 Baselines for the fair-comparison tables below, from `analysis/output/holidays.json` (`all_ordinary`). The typical campaign draws 492 Entrants over 14 days, across 116,283 campaigns from 17,603 businesses. Compare their Conversion Rates with 34.5%, the typical figure among the campaigns we can compare fairly. The JSON does not report that baseline's fair-comparison sample count separately. The first table gives each theme's fair-comparison count in brackets.
 
@@ -37,6 +37,8 @@ Reading it:
 ## More themes, with fair-comparison Conversion Rates
 
 Compare this table's Conversion Rates with the 34.5% fair-comparison baseline above. Campaign and business counts cover each whole theme, while Conversion Rates cover only its fair-comparison subset. The source is `analysis/output/holidays.json` (`holidays`), with the subset counts for dated themes in the first table.
+
+The Milestone row uses the holiday-theme matcher: 1,159 campaigns from 765 businesses, with a median of 527 Entrants. The campaign types in the idea skill use a campaign-type matcher that reads the first 600 description characters and produces a different Milestone group. These benchmarks are not interchangeable. Missing classification coverage is not separately reported, and the contribution of the character limit versus other matching differences is unverified.
 
 <!-- generated:hol_theme -->
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |

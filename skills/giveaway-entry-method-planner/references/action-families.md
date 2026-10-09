@@ -119,7 +119,7 @@ Worth changes what an Entrant is credited, not whether they complete the action,
 | Custom Actions | 82 per 100 | 62 per 100 |
 <!-- /generated -->
 
-Typical settings: share worth typically sits at 4, with the top quarter of campaigns setting it at 10 or higher, email typically at 1, follows typically at 1. [Viral Share bands: 3,607 to 12,774 Actions depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
+Typical settings: share worth has a median of 4 across 43,570 Actions, with the top quarter of Actions set at 10 or higher, email typically at 1, follows typically at 1. Missing-worth coverage is not separately reported. [Viral Share bands: 3,607 to 12,774 Actions depending on the band. From `worth_bands_by_action` and `worth_distribution_by_action`.]
 
 ## Action settings from the config
 
@@ -398,7 +398,9 @@ Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seve
 | offers email signup | 10,841 | 546 (+29%) | 3.65 (-1%) | 30% (-17%) | 3.3 | 6 |
 <!-- /generated -->
 
-Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion here counts referred Entrants, not entries, so it is not weighted by the worth the business set. Worth is in the data, and a share action carries a median worth of 5, the highest of any family, so the entries a share generates run well above the count shown. Campaigns offering a share action had 33% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
+Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion here counts referred Entrants, not entries, so it is not weighted by the worth the business set. Worth is in the data, and share Actions carry a median worth of 4 across 43,570 Actions (`analysis/output/field_cuts.json`, `worth_distribution_by_action.share_action`, missing-worth coverage not separately reported), so the entries a share generates run well above the count shown. Campaigns offering a share action had 33% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
+
+Source: `analysis/output/field_cuts.json` (`viral_click_conversion_excluding_crypto`).
 
 Median share-click conversion is 13.9%, against a median overall campaign Conversion Rate of 21.8% on the same campaigns, including referral traffic. Non-referral conversion is not available in this cut, so these figures cannot establish whether referral visitors convert worse than other visitors.
 

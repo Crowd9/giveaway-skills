@@ -2,7 +2,7 @@
 
 Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 100 or more unique Entrants, crypto and purchase-only campaigns removed. (116,499 campaigns.)
 
-Action-completion figures below count completion events per 100 Entrants, calculated for each campaign offering the action and then summarized across those campaigns. A figure of 51 means 51 completion events per 100 Entrants, with the underlying ratio in brackets. Repeatable actions can exceed 100. Percentage labels in the tables also describe these event ratios. They do not identify distinct people, unique subscribers or mailing permission. Use individual consent records to determine which addresses may be mailed. Missing completion-record and consent-record coverage is not reported in these aggregates.
+Action-completion figures below count completion events per 100 Entrants for each offered Action, then take the median across those Actions. A campaign offering several matching Actions contributes several observations. The counts show offering campaigns, while the number of Action observations is not supplied. For comparisons after summing matching completions per campaign, use the asset and per-action percentile tables in the results-review skill. A figure of 51 means 51 completion events per 100 Entrants, with the underlying ratio in brackets. Repeatable actions can exceed 100. Percentage labels in the tables also describe these event ratios. They do not identify distinct people, unique subscribers or mailing permission. Use individual consent records to determine which addresses may be mailed. Missing completion-record and consent-record coverage is not reported in these aggregates.
 
 Action names are the dataset's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. ()
 
@@ -47,7 +47,7 @@ Source: `analysis/output/templates.json` (`source_mix_first_campaign`, `template
 Actions offered by at least 300 campaigns, in order of how many campaigns offered them.
 
 <!-- generated:se2_uptake_actions -->
-| Action | Campaigns | Typical completion events per 100 Entrants | Typical range, events per 100 Entrants |
+| Action | Offering campaigns | Median across offered Actions, completion events per 100 Entrants | Middle half of offered Actions, events per 100 Entrants |
 |---|---|---|---|
 | X Follows | 65,714 | 54 (0.54) | 39 to 70 (0.39 to 0.70) |
 | Visit a Page | 62,783 | 78 (0.78) | 56 to 100 (0.56 to 1.00) |

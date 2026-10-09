@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Map a giveaway plan to documented Gleam Competitions settings. Use for 'set this up in Gleam', 'fraud setting', 'Gleam draw', 'Gleam impressions', 'Gleam terms', 'mandatory action', 'daily entries', 'free entry alternative', 'export entries', 'Gleam on Shopify', 'Quick Draws', 'repeat Winners', or 'admin entries'. Cover setup, operation and reporting."
 metadata:
-  version: 1.2.50
+  version: 1.2.51
 ---
 
 # Gleam Campaign Setup
@@ -107,7 +107,7 @@ Use the dashboard's exact names and capitals: Impressions, Actions, Entries, Use
 - `references/campaign-setup.md`: the five setup tabs, checked 9 September 2026.
 - `references/reporting-and-fraud.md`: reporting definitions, Actions tab, fraud filter, admin entries.
 - `references/drawing-winners.md`: Winners tab, repeat and recurring Winners, manual Winners, Quick Draws.
-- `references/settings-evidence.md`: what share of Entrants completed each Gleam action, the position effect, description length, custom action templates, throwaway restriction, from the dataset.
+- `references/settings-evidence.md`: completion events per 100 Entrants, with medians across offered Actions, the position effect, description length, custom action templates, throwaway restriction, from the dataset.
 - `references/tips-from-gleam.md`: selected tips from Gleam's own library, attributed.
 - `references/shopify.md`: the Shopify app, page creation, Open Graph tags, customer list sync and tags, the test. Load when the user runs a Shopify store.
 

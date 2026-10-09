@@ -5,15 +5,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.56 |
-| giveaway-entry-method-planner | 1.2.55 |
-| giveaway-timing-and-duration | 1.4.55 |
+| giveaway-entry-method-planner | 1.2.56 |
+| giveaway-timing-and-duration | 1.4.56 |
 | giveaway-winner-structure | 1.4.26 |
 | giveaway-promotion-plan | 1.3.55 |
 | giveaway-random-draw | 1.3.54 |
 | giveaway-winner-communications | 1.2.45 |
-| giveaway-idea-generator | 1.3.46 |
-| giveaway-results-review | 1.6.38 |
-| gleam-campaign-setup | 1.2.50 |
+| giveaway-idea-generator | 1.3.47 |
+| giveaway-results-review | 1.6.39 |
+| gleam-campaign-setup | 1.2.51 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.48 (2026-10-10)
+
+Figures that measure different things now say so, so you won't compare two numbers that were never alike. X Follows reads 54% in setup and 61% in a results review, and the setup table now says it takes the median across offered Actions. Milestone campaigns show 527 typical Entrants in the timing skill and 726 in the idea skill, and each table now says which campaigns it counted. Gaming's Conversion Rate reads 34% everywhere. Use 4 as a share action's typical Entry worth, which every line now gives.
 
 ## 3.0.47 (2026-10-10)
 
