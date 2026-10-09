@@ -124,3 +124,5 @@ Answer publicly with the non-identifying summary. Resolve an eligibility dispute
 ## Private audit note template
 
 "Draw for [campaign] held on [date, time, time zone]. Entries closed at [time]. Input file [name], SHA-256 [hash], [N] rows, [M] unique eligible Entrants after merging [D] duplicates and excluding [E] entries under [rule]. Method: seeded random draw ([tool and version]), seed [value] taken from [source]. Winners: [tier, identifier]. Backups: [list]. Drawn by [name], witnessed by [name]."
+
+The draw reader rejects duplicate CSV or TSV headers after ignoring capitalization and surrounding whitespace. Automatic person-column selection recognizes `email`, `Email` and `EMAIL` equally, preserving the original column label. Draw times require an ISO date and time with a UTC offset, such as `2026-09-12T09:00:00+10:00` or a trailing `Z` for UTC. Verification checks every recorded count and every Winner and backup weight and key, alongside the identifiers, order and tiers. Missing or changed values fail verification.

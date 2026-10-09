@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review finished giveaways or diagnose live campaigns from numbers, reporting screenshots or Actions exports. Use for 'how did my giveaway do', 'giveaway post-mortem', 'why was conversion low', 'which actions worked', 'compare my campaigns', 'giveaway ROI', 'is this pace normal', 'nobody is entering', 'entries look fake', 'should I extend', or 'results dashboard'."
 metadata:
-  version: 1.6.41
+  version: 1.6.42
 ---
 
 # Giveaway Results Review
@@ -135,7 +135,7 @@ A sample in Gleam Actions export shape, 118 rows from 30 Entrants over five days
 - `references/reading-results.md`: how to read each metric, the Impressions caveat, common misreads, the recommendation map.
 - `scripts/campaign_report.py`: the full report from any export, Gleam as is and other platforms through `--map` or synonyms, with `--impressions`, `--prize-cost` (actual spending), `--prize-value` (stated value only), `--plan-cost`, `--benchmark-cpl`, `--sends`, `--partners`. Conversion Rate is withheld when Impressions are missing, nonpositive or below the Entrant count. Prize and plan costs must be finite and nonnegative. `--self-test` checks it.
 - `scripts/gleam_export.py`: reads an export into the review numbers, the per-action CSV and an Entrants CSV for the draw script. Headers ignore case, duplicate headers and missing Action values are rejected, and invalid rows stay out of the draw. Activity dates use account-local calendar days. `--self-test` checks it.
-- `scripts/review.py`: derived metrics, benchmark comparison and percentile rank from the numbers. `--self-test` checks it.
+- `scripts/review.py`: derived metrics, benchmark comparison and percentile rank from finite nonnegative numbers. Action and history CSVs accept comma, semicolon or tab delimiters and grouped thousands. Duplicate headers and malformed nonblank numeric cells are rejected with row and column guidance. Missing history cells and measured zeros retain their meaning. `--self-test` checks it.
 - `references/percentiles.json`: every fifth percentile of each metric for all campaigns, the campaigns we can compare fairly, each size and each vertical. Read by the script. No customer data.
 
 ## Related skills

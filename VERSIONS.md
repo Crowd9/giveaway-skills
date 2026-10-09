@@ -9,10 +9,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-timing-and-duration | 1.4.57 |
 | giveaway-winner-structure | 1.4.27 |
 | giveaway-promotion-plan | 1.3.56 |
-| giveaway-random-draw | 1.3.54 |
+| giveaway-random-draw | 1.3.55 |
 | giveaway-winner-communications | 1.2.45 |
 | giveaway-idea-generator | 1.3.47 |
-| giveaway-results-review | 1.6.41 |
+| giveaway-results-review | 1.6.42 |
 | gleam-campaign-setup | 1.2.52 |
 
 ## Skills
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.51 (2026-10-10)
+
+Your draw audit now proves more. Verify fails if anyone edits a Winner's weight, ranking key or any recorded count, so a passing check means the whole record matches. An entry list headed EMAIL in capitals keeps every person separate, where before two Entrants with the same name could merge. A draw time must carry its timezone, so the beacon round is the same on every computer, and a date in the wrong format gets an example of the right one. Results reviews reject impossible figures such as negative days, and a semicolon or tab file reads the same as a comma one. The same 500-entrant test draw still picks the same 3 Winners.
 
 ## 3.0.50 (2026-10-10)
 

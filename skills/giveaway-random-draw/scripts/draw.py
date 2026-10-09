@@ -36,7 +36,7 @@ verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but 
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.4.4"
+VERSION = "2.4.5"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
@@ -61,7 +61,7 @@ ID_KEYS = PERSON_KEYS + ("id", "ID", "comment_id", "post_id")
 
 def normalization_for(id_column):
     # Use the field label, never the value: an opaque ID may contain an @ sign.
-    column = id_column.lower()
+    column = id_column.strip().lower()
     email_label = column.rsplit(".", 1)[-1].replace("_", "").replace("-", "").replace(" ", "")
     if email_label in ("email", "emailaddress", "contactemail", "contactemailaddress"):
         return LEGACY_NORMALIZATION
@@ -95,7 +95,7 @@ def _flatten_json(obj):
 def person_columns(rows):
     keys = list(dict.fromkeys(k for row in rows for k in row))
     return list(dict.fromkeys(k for cand in PERSON_KEYS for k in keys
-                              if k == cand or k.endswith("." + cand)))
+                              if k.strip().lower() == cand.lower() or k.strip().lower().endswith("." + cand.lower())))
 
 def pick_id_column(rows, id_column):
     keys = list(dict.fromkeys(k for row in rows for k in row))
@@ -123,14 +123,20 @@ def load_entries(path, id_column):
     suffix = str(path).lower().rsplit(".", 1)[-1]
     first_field = next(csv.reader([lines[0]]))[0]
     headered = (suffix in ("csv", "tsv") or "," in lines[0] or "\t" in lines[0]
-                or (suffix != "txt" and first_field in ID_KEYS)
+                or (suffix != "txt" and first_field.strip().lower() in {key.lower() for key in ID_KEYS})
                 or (id_column is not None and id_column != "entrant"))
-    if headered and "," not in lines[0] and "\t" not in lines[0] and id_column is None and first_field not in ID_KEYS:
+    if headered and "," not in lines[0] and "\t" not in lines[0] and id_column is None and first_field.strip().lower() not in {key.lower() for key in ID_KEYS}:
         sys.exit(f"one-column {suffix} file whose first line '{first_field}' is not a recognised header: "
                  f"pass --id-column '{first_field}' if it is a header, or save a plain list as .txt")
     if headered:
         dialect = csv.excel_tab if suffix == "tsv" or ("\t" in lines[0] and "," not in lines[0]) else csv.excel
-        rows = list(csv.DictReader(io.StringIO(text.lstrip()), dialect=dialect))
+        reader = csv.DictReader(io.StringIO(text.lstrip()), dialect=dialect)
+        from collections import Counter
+        normalized = [header.strip().lower() for header in reader.fieldnames or []]
+        duplicates = sorted(name for name, count in Counter(normalized).items() if count > 1)
+        if duplicates:
+            sys.exit(f"duplicate CSV headers after ignoring case and whitespace: {', '.join(duplicates)}; give each column a unique name")
+        rows = list(reader)
         if not rows: sys.exit("no Entries below the input header")
         return rows, pick_id_column(rows, id_column), sha(raw)
     return [{"entrant": l.strip()} for l in lines], "entrant", sha(raw)
@@ -273,7 +279,12 @@ def warn_plus_clusters(clusters):
               "Addresses remain eligible unless an exclusion is confirmed under the terms.")
 
 def print_drand_plan(draw_at):
-    ts = datetime.datetime.fromisoformat(draw_at).timestamp(); r = drand_round_at_or_after(ts)
+    try:
+        timestamp = datetime.datetime.fromisoformat(draw_at.replace("Z", "+00:00"))
+        if timestamp.utcoffset() is None: raise ValueError("missing UTC offset")
+    except (TypeError, ValueError):
+        sys.exit("--draw-at requires an ISO time with a UTC offset, e.g. 2026-09-12T09:00:00+10:00 or 2026-09-11T23:00:00Z")
+    ts = timestamp.timestamp(); r = drand_round_at_or_after(ts)
     print(f"drand round at or after {draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
 
 def cmd_plan(a):
@@ -400,8 +411,12 @@ def cmd_verify(a):
             except Exception as ex:
                 print(f"warn could not refetch NIST pulse ({ex}); seed source unverified")
                 source_unverified = True
-    entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy)
-    if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL Entrant counts differ from the audit record"); ok = False
+    entrants, dupes, excluded, bad, clusters = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy)
+    counts = {"rows_read": len(rows), "unique_eligible": len(entrants), "duplicates_merged": dupes,
+              "excluded": excluded, "rows_with_invalid_weight": bad, "plus_address_clusters": len(clusters)}
+    for field, expected_count in counts.items():
+        if type(audit.get(field)) is not int or audit[field] != expected_count:
+            print(f"FAIL {field} differs from the audit record"); ok = False
     tiers = audit["rules"].get("tiers"); backups = audit["rules"].get("backups")
     if (not isinstance(tiers, list) or not tiers or
             any(not isinstance(t, list) or len(t) != 2 or not isinstance(t[0], str) or
@@ -417,10 +432,13 @@ def cmd_verify(a):
     elif isinstance(results, list) and len(results) == need:
         labels = [name for name, count in tiers for _ in range(count)]
         labels.extend(f"Backup {k + 1}" for k in range(backups))
-        expected = [(e["shown"], label) for e, label in zip(rank(entrants, audit["seed"]), labels)]
-        recorded = [(r.get("id"), r.get("tier")) if isinstance(r, dict) else None for r in results]
+        expected = [(e["shown"], label, e["weight"], e["key"]) for e, label in zip(rank(entrants, audit["seed"]), labels)]
+        recorded = [(r.get("id"), r.get("tier"), r.get("weight"), r.get("key"))
+                    if isinstance(r, dict) and all(type(r.get(field)) is int or
+                                                  (type(r.get(field)) is float and math.isfinite(r[field]))
+                                                  for field in ("weight", "key")) else None for r in results]
         if expected == recorded:
-            print(f"ok   recomputed all {need} committed places, including order and tier assignments")
+            print(f"ok   recomputed all {need} committed places, including order, tier assignments, weights and keys")
         else:
             version = audit.get("version")
             try:
@@ -429,11 +447,11 @@ def cmd_verify(a):
             except (AttributeError, TypeError, ValueError):
                 older = False
             legacy = sorted(entrants, key=lambda e: (-e["key"], e["id"]))
-            legacy_expected = [(e["shown"], label) for e, label in zip(legacy, labels)]
+            legacy_expected = [(e["shown"], label, e["weight"], e["key"]) for e, label in zip(legacy, labels)]
             if older and legacy_expected == recorded:
                 print(f"ok   verified all {need} committed places under the legacy ranking (audit version {version})")
             else:
-                print("FAIL recomputed result order, IDs or tier assignments differ from the audit record"); ok = False
+                print("FAIL recomputed result order, IDs, tier assignments, weights or keys differ from the audit record"); ok = False
     if not ok: print("FAIL"); return 1
     if source_unverified:
         print("PARTIAL: ranking recomputation verified; seed source unverified"); return 2
@@ -466,6 +484,20 @@ def verifier_self_test():
             ("Backup 1", "gamma", 0.7696785881239763),
             ("Backup 2", "beta", 0.4605470121165112)], original["results"]
         check(original, 0)
+        for field in ("rows_read", "unique_eligible", "duplicates_merged", "excluded",
+                      "rows_with_invalid_weight", "plus_address_clusters"):
+            for value in (original[field] + 1, None, True, str(original[field]), float(original[field])):
+                changed = copy.deepcopy(original); changed[field] = value
+                check(changed, 1)
+            changed = copy.deepcopy(original); del changed[field]
+            check(changed, 1)
+        for index in range(len(original["results"])):
+            for field in ("weight", "key"):
+                for value in (999999, 10 ** 400, -999, None, True, "1", float("nan"), float("inf")):
+                    changed = copy.deepcopy(original); changed["results"][index][field] = value
+                    check(changed, 1)
+                changed = copy.deepcopy(original); del changed["results"][index][field]
+                check(changed, 1)
         historical = copy.deepcopy(original)
         historical["version"] = historical["rules"]["tool_version"] = "2.4.2"
         historical["rules"]["method"] = "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id"
@@ -535,6 +567,30 @@ def self_test_input_formats():
                 rows, chosen, _ = read_file(name, "email\nalpha\nbeta\n", column)
                 pool, _, _, _, _ = prepare(rows, chosen, None, set())
                 assert [entrant["id"] for entrant in pool] == ["alpha", "beta"], (name, column, pool)
+        for headers in ("email,email,entries", "email, EMAIL ,entries", "email,entries,entries", "email,entries, ENTRIES "):
+            try: read_file("duplicates.csv", headers + "\nalpha,beta,1\n")
+            except SystemExit as error: assert "duplicate CSV headers" in str(error)
+            else: raise AssertionError("ambiguous headers accepted")
+            import contextlib
+            audit_path = os.path.join(directory, "duplicate-audit.json")
+            for command, flags in (("commit", []), ("draw", ["--seed", "r42", "--audit", audit_path])):
+                with contextlib.redirect_stdout(io.StringIO()) as output:
+                    try: main([command, os.path.join(directory, "duplicates.csv")] + flags)
+                    except SystemExit as error: assert "duplicate CSV headers" in str(error)
+                    else: raise AssertionError("ambiguous draw or commitment accepted")
+                assert not output.getvalue() and not os.path.exists(audit_path)
+        previous_ids = None
+        for label in ("email", "Email", "EMAIL"):
+            for name in ("people.csv", "people.tsv", "people"):
+                rows, chosen, _ = read_file(name, f"{label},name\na@example.com,Alex\nb@example.com,Alex\nc@example.com,Zoë\n" if name != "people.tsv" else f"{label}\tname\na@example.com\tAlex\nb@example.com\tAlex\nc@example.com\tZoë\n")
+                assert chosen == label
+                pool, dupes, *_ = prepare(rows, chosen, None, set())
+                ids = [entrant["shown"] for entrant in rank(pool, "r42")]
+                assert len(pool) == 3 and dupes == 0
+                assert previous_ids is None or ids == previous_ids
+                previous_ids = ids
+            rows, chosen, _ = read_file("single", f"{label}\na@example.com\nb@example.com\n")
+            assert chosen == label and len(rows) == 2
         rows, chosen, _ = read_file("custom.csv", '"account"\n"alpha"\n"beta"\n', "account")
         assert chosen == "account" and len(rows) == 2, rows
         rows, chosen, _ = read_file("custom.txt", "account\nalpha\nbeta\n", "account")
@@ -867,8 +923,24 @@ def self_test_identifier_case():
 
 
 def self_test_plan():
-    import contextlib, re
+    import contextlib, re, os, time
     from unittest.mock import patch
+    previous_timezone = os.environ.get("TZ")
+    try:
+        for zone in ("UTC", "Australia/Melbourne"):
+            os.environ["TZ"] = zone
+            if hasattr(time, "tzset"): time.tzset()
+            for invalid in ("2026-09-12T09:00:00", "12/09/2026 09:00"):
+                try: main(["plan", "--draw-at", invalid])
+                except SystemExit as error: assert "ISO time with a UTC offset" in str(error)
+                else: raise AssertionError("ambiguous or invalid draw time accepted")
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                assert main(["plan", "--draw-at", "2026-09-12T09:00:00+10:00"]) == 0
+            assert ": 6457886 " in output.getvalue()
+    finally:
+        if previous_timezone is None: os.environ.pop("TZ", None)
+        else: os.environ["TZ"] = previous_timezone
+        if hasattr(time, "tzset"): time.tzset()
     boundary = drand_round_time(6553045)
     for offset, expected_round in ((0, 6553045), (1, 6553046), (29, 6553046)):
         draw_at = datetime.datetime.fromtimestamp(boundary + offset, datetime.timezone.utc).isoformat()

@@ -17,7 +17,7 @@ Smaller campaigns show actual metrics only because the dataset has no matching p
 1,000 to 2,500, 2,500 to 10,000 and 10,000 or more Entrants, so a campaign is only ever compared with a group
 it belongs to.
 """
-import argparse, csv, json, math, os, statistics, sys
+import argparse, collections, contextlib, csv, json, math, os, re, statistics, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gleam_export import classify_action
 
@@ -244,14 +244,58 @@ def review(a):
         rows[0] = (*rows[0][:3], "No matching peers: the dataset starts at 100 Entrants")
     return rows
 
+@contextlib.contextmanager
+def review_csv(path):
+    """Detect the delimiter from the header and reject ambiguous column names."""
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        first = f.readline()
+        f.seek(0)
+        try:
+            dialect = csv.Sniffer().sniff(first, delimiters=",;\t") if first.strip() else csv.excel
+        except csv.Error as exc:
+            raise ValueError(f"{path}: header must use comma, semicolon or tab delimiters") from exc
+        rd = csv.reader(f, dialect, strict=True)
+        try:
+            header = next(rd, [])
+            normalized = [name.strip().casefold() for name in header]
+            duplicates = sorted(name for name, count in collections.Counter(normalized).items() if count > 1)
+            if duplicates:
+                raise ValueError(f"{path}: duplicate CSV headers after ignoring case and whitespace: {', '.join(duplicates)}; give each column a unique name")
+            yield rd, normalized
+        except csv.Error as exc:
+            raise ValueError(f"{path}: row {rd.line_num}: malformed CSV: {exc}") from exc
+
+
+def csv_number(value, path, row, column, optional=False):
+    value = (value or "").strip()
+    if optional and not value:
+        return None
+    # Accept only unambiguous three-digit grouping, preserving decimal points.
+    if re.fullmatch(r"[+]?[0-9]{1,3}(?:,[0-9]{3})+(?:\.[0-9]+)?", value):
+        value = value.replace(",", "")
+    elif re.fullmatch(r"[+]?[0-9]{1,3}(?: [0-9]{3})+(?:\.[0-9]+)?", value):
+        value = value.replace(" ", "")
+    try:
+        result = float(value)
+        if math.isfinite(result) and result >= 0:
+            return result
+    except ValueError:
+        pass
+    raise ValueError(f"{path}: row {row}, column {column}: expected a finite nonnegative number")
+
+
 def read_actions(path, contestants):
     out = []
-    with open(path, newline="", encoding="utf-8-sig") as f:
-        rd = csv.reader(f); header = next(rd, None)
+    with review_csv(path) as (rd, header):
+        if header and len(header) < 2:
+            raise ValueError(f"{path}: action header needs name and completions columns")
         for r in rd:
-            if len(r) < 2: continue
-            try: n = float(r[1].replace(",", ""))
-            except ValueError: continue
+            if not any(value.strip() for value in r): continue
+            if len(r) < 2 or len(r) > len(header):
+                raise ValueError(f"{path}: row {rd.line_num}: expected action name and completions, with an optional type column")
+            if not r[0].strip():
+                raise ValueError(f"{path}: row {rd.line_num}, column {header[0]}: action name is required")
+            n = csv_number(r[1], path, rd.line_num, header[1])
             fam = family(r[0])
             if contestants == 0:
                 out.append((r[0], "unavailable", "n/a", fam or "unclassified", "Per-Entrant rate unavailable: zero Entrants; no matching peers", n))
@@ -281,15 +325,18 @@ def read_actions(path, contestants):
 HIST_COLS = ("campaign", "contestants", "impressions", "entries", "invalid", "days", "methods", "emails")
 
 def read_history(path):
-    with open(path, newline="", encoding="utf-8-sig") as f:
-        rd = csv.DictReader(f); rows = []
-        for r in rd:
-            # Gleam writes its headers with capitals, a hand-made file usually does not, so read either
-            r = {(k or "").strip().lower(): v for k, v in r.items()}
+    rows = []
+    with review_csv(path) as (rd, header):
+        if header and "contestants" not in header:
+            raise ValueError(f"{path}: history header needs a Contestants column")
+        for values in rd:
+            if not any(value.strip() for value in values): continue
+            if len(values) > len(header):
+                raise ValueError(f"{path}: row {rd.line_num}: more values than header columns")
+            r = dict(zip(header, values))
             row = {"campaign": r.get("campaign") or r.get("name") or f"campaign {len(rows) + 1}"}
             for k in HIST_COLS[1:]:
-                try: row[k] = float(str(r.get(k, "")).replace(",", "")) if r.get(k, "") not in ("", None) else None
-                except ValueError: row[k] = None
+                row[k] = csv_number(r.get(k), path, rd.line_num, k, optional=True)
             rows.append(row)
     return rows
 
@@ -525,6 +572,66 @@ def self_test():
     assert "100.0%" in output.getvalue() and "0.0%" in output.getvalue()
     assert "dataset median 27% across 115,906 campaigns" in {r[0]: r[3] for r in review(A)}["Conversion Rate"]
     assert "platform average" not in str(review(A))
+    # Import dialects and explicit grouping must preserve every supplied observation.
+    def imported(text, reader):
+        with tempfile.NamedTemporaryFile("w+", suffix=".csv", newline="") as fixture:
+            fixture.write(text); fixture.flush()
+            return reader(fixture.name)
+    action_reader = lambda path: read_actions(path, 1800)
+    expected_actions = imported("action,completions,type\nSubscribe to newsletter,1200,Email Subscriptions\n", action_reader)
+    expected_history = imported("campaign,Contestants,entries,days,emails\nspring,1200,5000,10,900\n", read_history)
+    for delimiter in (",", ";", "\t"):
+        for count in ("1200", "1 200", '"1,200"'):
+            actions_text = delimiter.join(("action", "completions", "type")) + "\n" + delimiter.join(("Subscribe to newsletter", count, "Email Subscriptions")) + "\n\n"
+            history_text = delimiter.join(("campaign", "Contestants", "entries", "days", "emails")) + "\n" + delimiter.join(("spring", count, "5000", "10", "900")) + "\n"
+            assert imported(actions_text, action_reader) == expected_actions
+            assert imported(history_text, read_history) == expected_history
+    assert expected_actions[0][1] == "67%"
+    for reader, text, message in (
+        (read_history, "campaign,Contestants,Contestants\nspring,1200,12000\n", "duplicate CSV headers"),
+        (read_history, "campaign,Contestants, contestants \nspring,1200,12000\n", "duplicate CSV headers"),
+        (action_reader, "action,completions,completions\nSubscribe,900,9000\n", "duplicate CSV headers"),
+        (action_reader, "action,completions, COMPLETIONS \nSubscribe,900,9000\n", "duplicate CSV headers"),
+        (action_reader, "action,completions,type\nSubscribe\n", "row 2"),
+        (action_reader, "action,completions\nSubscribe,1,200\n", "row 2"),
+        (action_reader, "action,completions\n,1200\n", "action name"),
+        (read_history, "campaign,Contestants\nspring,1200,extra\n", "row 2"),
+    ):
+        try: imported(text, reader)
+        except ValueError as exc: assert message in str(exc), str(exc)
+        else: raise AssertionError(text)
+    for invalid in ("-1", "nan", "inf", "-inf", "1e999", "oops", "1 20", '"1,20"'):
+        for field in HIST_COLS[1:]:
+            try: imported(f"campaign,{field}," + ("Contestants" if field != "contestants" else "extra") + f"\nspring,{invalid},1200\n", read_history)
+            except ValueError as exc: assert "row 2" in str(exc) and "column " + field in str(exc)
+            else: raise AssertionError((field, invalid))
+        try: imported(f"action,completions\nSubscribe,{invalid}\n", action_reader)
+        except ValueError as exc: assert "row 2, column completions" in str(exc)
+        else: raise AssertionError(invalid)
+    for value in ("", " "):
+        missing = imported(f"campaign,Contestants,entries,days\nspring,1200,{value}\n", read_history)[0]
+        assert missing["entries"] is None and missing["days"] is None
+    observed = imported("campaign,Contestants,entries,days,emails\nspring,0,0,0,0\n", read_history)[0]
+    assert observed["contestants"] == observed["entries"] == observed["days"] == observed["emails"] == 0
+    assert imported("action,completions\nSubscribe,0\n", action_reader)[0][1] == "0%"
+    for flag in ("contestants", "impressions", "entries", "invalid", "days", "methods", "emails", "referrals", "actions-completed", "prize-value", "x-follows", "instagram-follows", "tiktok-follows", "twitch-follows", "youtube-subscribes", "discord-joins"):
+        for invalid in ("-1", "nan", "inf"):
+            errors, output = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stderr(errors), contextlib.redirect_stdout(output):
+                try: main(["--contestants", "1800", "--" + flag + "=" + invalid])
+                except SystemExit as exc: assert exc.code == 2
+                else: raise AssertionError((flag, invalid))
+            assert "error:" in errors.getvalue() and "Traceback" not in errors.getvalue()
+            assert not output.getvalue(), output.getvalue()
+    # CSV validation finishes before any benchmark or comparison is printed.
+    with tempfile.NamedTemporaryFile("w+", suffix=".csv") as malformed:
+        malformed.write("action,completions\nSubscribe,-1\n"); malformed.flush()
+        errors, output = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stderr(errors), contextlib.redirect_stdout(output):
+            try: main(["--contestants", "1800", "--actions", malformed.name])
+            except SystemExit as exc: assert exc.code == 2
+            else: raise AssertionError("malformed actions accepted")
+        assert "row 2, column completions" in errors.getvalue() and not output.getvalue()
     print("self-test passed"); return 0
 
 def entry_total(value):
@@ -539,7 +646,7 @@ def main(argv):
     ap.add_argument("--self-test", action="store_true"); ap.add_argument("--contestants", type=int); ap.add_argument("--impressions", type=int)
     ap.add_argument("--entries", type=entry_total); ap.add_argument("--invalid", type=entry_total, help="invalid Entries worth (the Entries column summed over invalid rows), never a count of rows"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")
-    ap.add_argument("--actions", help="CSV with action name and completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
+    ap.add_argument("--actions", help="CSV (comma, semicolon or tab) with action name and finite nonnegative completions per row, header row first; an optional third column names the Gleam action type (gleam_export.py writes it)")
     ap.add_argument("--vertical", help="rank against one vertical too: gaming, technology, fashion_beauty, food_drink, home, fitness_outdoor, travel_events, kids_family_pets, software, music_media")
     ap.add_argument("--emails", type=int, help="email signups collected"); ap.add_argument("--referrals", type=int, help="referral action completions recorded, including repeated completions")
     ap.add_argument("--actions-completed", type=int, help="total actions completed across all entry methods (sum of the actions report)")
@@ -549,21 +656,26 @@ def main(argv):
     ap.add_argument("--first-campaign", action="store_true",
                     help="this is the business's first campaign, so compare it with first campaigns (382 Entrants) "
                          "and not the campaign-weighted 492, which is mostly businesses on their eleventh or later")
-    ap.add_argument("--history", help="CSV of the organizer's previous campaigns, oldest first: campaign,Contestants,Impressions,Entries,invalid,days,methods,emails (missing cells allowed)")
+    ap.add_argument("--history", help="CSV (comma, semicolon or tab) of the organizer's previous campaigns, oldest first: campaign,Contestants,Impressions,Entries,invalid,days,methods,emails (missing cells allowed)")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if a.contestants is None: ap.error("--contestants is required")
-    if a.contestants < 0: ap.error("--contestants must be nonnegative")
+    for field in ("contestants", "impressions", "entries", "invalid", "days", "methods", "emails", "referrals", "actions_completed", "prize_value", "x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"):
+        value = getattr(a, field)
+        if value is not None and (value < 0 or (isinstance(value, float) and not math.isfinite(value))):
+            ap.error(f"--{field.replace('_', '-')} must be finite and nonnegative")
     try:
         rows = review(a)
-    except ValueError as exc:
+        acts = read_actions(a.actions, a.contestants) if a.actions else None
+        history = history_table(a, read_history(a.history)) if a.history else None
+    except (ValueError, OSError) as exc:
         ap.error(str(exc))
     print_table(rows, ("Metric", "This campaign", "Benchmark unavailable" if a.contestants < 100 else "Typical for campaigns your size", "Read"))
     print(plain_reading(rows))
     if a.actions:
-        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Completions as % of Entrants", "Comparison median", "Family", "Read"))
+        print(); print_table(acts, ("Action", "Completions as % of Entrants", "Comparison median", "Family", "Read"))
     if a.history:
-        rows, notes = history_table(a, read_history(a.history)); print()
+        rows, notes = history; print()
         print_table(rows, ("Metric", "This campaign", "Previous", "Your typical", "Change", "Record")); [print(n) for n in notes]
     return 0
 
