@@ -4,7 +4,9 @@ Advice from practice. A drawn entry is a Winner only after it passes these check
 
 ## Why it matters
 
-A drawn name has a real chance of failing. The typical campaign has 4.2% of entries marked invalid at verification, and mixes with referral actions run higher. Backups exist for this.
+The typical campaign has 4.2% of Entries marked invalid, and mixes with referral actions run higher. This measures Entry status across campaigns, not failed verification among selected Winners. It cannot determine how many backups a campaign needs.
+
+As operational practice, agree a backup procedure in the terms for a selected Entrant who is ineligible, declines or misses the reply deadline.
 
 [Extracted from 107,109 campaigns and 16,490 businesses. 45% of campaigns had 5% or more invalid. Count source: `analysis/output/invalid_share.json`.]
 
@@ -41,9 +43,11 @@ Enthusiastic Entrants who enter many giveaways ("compers") are legitimate. A hou
 | Prize | Ask for | Do not ask for |
 |---|---|---|
 | Under about 100 USD | A reply from the account or email that entered, and a delivery address | Any document |
-| 100 to 1,000 USD | The above, plus a message from the social account that entered (a DM from the same handle), and a name that matches the address | Government ID |
+| 100 to 1,000 USD | A reply from the entered email or account, and the name and delivery address needed for fulfilment. Ask for a DM only if that social account was used to enter and is relevant to eligibility under the terms | Government ID |
 | Over 1,000 USD, cash, travel | The above, plus one photo ID with the number covered, and proof of residence if the terms restrict region. View it, record that it was checked, delete it | A copy kept on file, card details, a login |
 | Skill contests or where local law requires | A signed declaration of eligibility and release, on the form your terms describe | Anything beyond the form |
+
+For an email-only Entrant, use a reply from the entered email and the eligibility checks required by the published terms. Prize value alone does not create a social-account requirement.
 
 Age checks need only a date of birth or an ID with the number covered. In the United States a Prize of 600 USD or more usually means a tax form for the Winner. That is US practice, checked 9 September 2026, and thresholds move. Confirm the threshold and the form with an accountant before asking.
 

@@ -15,7 +15,7 @@ timezone, so every time figure is account time. Status Invalid rows are counted 
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
 never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
 """
-import argparse, collections, csv, datetime as dt, math, os, statistics as st, sys, urllib.parse
+import argparse, collections, csv, datetime as dt, json, math, os, statistics as st, sys, urllib.parse
 
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
 # Keep gleam_export.py beside this script so all action counts use the same classifier.
@@ -25,6 +25,26 @@ try:
     import review as _bench
 except ImportError:
     _bench = None
+
+
+def parse_wide_worth(legacy=None, json_mapping=None):
+    """Preserve simple mappings and accept exact action titles through a JSON object."""
+    if legacy is not None and json_mapping is not None:
+        raise ValueError("use only one of --wide-worth and --wide-worth-json")
+    if json_mapping is not None:
+        try:
+            worth = json.loads(json_mapping)
+        except ValueError:
+            raise ValueError("--wide-worth-json must be a JSON object mapping action titles to Entries per completion") from None
+        if not isinstance(worth, dict) or any(
+                not isinstance(value, (str, int, float)) or isinstance(value, bool)
+                for value in worth.values()):
+            raise ValueError("--wide-worth-json must be a JSON object with numeric or string weights")
+        return worth
+    try:
+        return dict(kv.split("=", 1) for kv in legacy.split(",")) if legacy else {}
+    except ValueError:
+        raise ValueError("--wide-worth requires title=weight pairs separated by commas. Use --wide-worth-json for titles containing commas or equals signs") from None
 
 
 def reader_unit(v):
@@ -929,6 +949,30 @@ def self_test():
         assert "| Conversion Rate | 0.0% |" in result and "zero valid Entrants" in result
         assert "better than" not in result
         assert ("| Invalid Entries share | 100.0% |" if invalid_count else "| Invalid Entries share | unavailable |") in result
+    # Exercise the public CLI with exact punctuation/Unicode titles and legacy syntax.
+    import contextlib, io
+    for title, options in (
+        ("Visit our shop, then enter", ["--wide-worth-json", '{"Visit our shop, then enter": 5}']),
+        ("Visitez le café, puis entrez = oui", ["--wide-worth-json", json.dumps({"Visitez le café, puis entrez = oui": "5"}, ensure_ascii=False)]),
+        ("Join newsletter", ["--wide-worth", "Join newsletter=5"]),
+    ):
+        fixture = os.path.join(d, "wide-cli.csv")
+        with open(fixture, "w", newline="", encoding="utf-8") as resource:
+            writer = csv.writer(resource); writer.writerow(["Email", title]); writer.writerow(["a@example.com", 1])
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            assert main([fixture, "--wide-unit", "boolean", *options]) == 0
+        assert title in output.getvalue()
+        worth = parse_wide_worth(options[1] if options[0] == "--wide-worth" else None,
+                                 options[1] if options[0] == "--wide-worth-json" else None)
+        totals = analyze(load(fixture, wide_unit="boolean", wide_worth=worth), A)["topline"]
+        assert totals["actions"] == 1 and totals["entries"] == 5
+    for options in (["--wide-worth-json", "{"], ["--wide-worth-json", "[]"],
+                    ["--wide-worth-json", '{"Visit": null}'],
+                    ["--wide-worth", "Visit=1", "--wide-worth-json", '{"Visit": 1}']):
+        with contextlib.redirect_stderr(io.StringIO()), contextlib.redirect_stdout(io.StringIO()):
+            try: main([fixture, "--wide-unit", "boolean", *options])
+            except SystemExit as error: assert error.code == 2
+            else: raise AssertionError("invalid weight mapping must fail")
     print("self-test passed"); return 0
 
 def main(argv):
@@ -942,14 +986,16 @@ def main(argv):
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
     ap.add_argument("--complete-all-action", help="exact exported title confirmed as the configured complete-all action; no title inference")
     ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
-    ap.add_argument("--wide-worth", help="required Entries per completion for each populated wide method, e.g. 'Daily visit=1,Join newsletter=5'")
+    weights = ap.add_mutually_exclusive_group()
+    weights.add_argument("--wide-worth-json", help='JSON object mapping exact action titles to Entries per completion, e.g. {"Visit, then enter": 1}')
+    weights.add_argument("--wide-worth", help="required Entries per completion for each populated wide method, e.g. 'Daily visit=1,Join newsletter=5'")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")
     a.partners = [p.strip() for p in a.partners.split(",")] if a.partners else None
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if a.map else {}
     try:
-        worth = dict(kv.split("=", 1) for kv in a.wide_worth.split(",")) if a.wide_worth else {}
+        worth = parse_wide_worth(a.wide_worth, a.wide_worth_json)
         out = render(analyze(load(a.export, mapping, a.wide_unit, worth), a), a)
     except ValueError as exc:
         ap.error(str(exc))

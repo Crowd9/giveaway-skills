@@ -15,12 +15,20 @@ def draft(a):
                         "[Agree the eligibility, duplicate-account and automation rules before publishing.]")
     reserve_policy = (getattr(a, "reserve_policy", None) or
                       "[Agree the reserve procedure before publishing, including the recorded order of any pre-drawn reserves and what happens when they are exhausted.]")
+    judging_rules = ""
+    if a.method == "judged":
+        judging_rules = " " + " ".join(
+            label + ". " + (getattr(a, field, None) or placeholder)
+            for field, label, placeholder in (
+                ("judging_criteria", "Judging criteria", "[Agree and publish the judging criteria and scoring before opening entry.]"),
+                ("judges", "Judges", "[Identify the judges before opening entry.]"),
+                ("tie_break", "Tie-breaking", "[Agree and publish how tied scores are resolved before opening entry.]")))
     C = [f"Promoter. The promotion is run by {a.promoter}" + (f", {a.address}" if a.address else "") + " (the Promoter).",
          f"Entry period. Entries open at {a.open} and close at {a.close}. Entries received outside this period are invalid.",
          f"Eligibility. Entry is open to {a.eligible}. The following are not eligible: {a.exclude}.",
          "How to enter. Entrants complete the entry steps shown on the entry page. No purchase is necessary to enter. Where an optional step involves a purchase, a free entry route of equal weight is available. " + duplicate_policy + " Multiple chances legitimately earned under the entry rules remain valid.",
          f"Prize. {a.prize}. There " + ("is 1 Winner" if a.winners == 1 else f"are {a.winners} Winners") + ". The Prize is " + ("transferable" if a.transferable == "yes" else "not transferable") + ". " + ("No cash alternative is offered" if a.cash_alternative == "no" else "A cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
-         "Winner selection. Winners are selected " + ("at random from all valid Entries" if a.method == "random" else "by the Promoter's judges on the published criteria, and the judges' decision is final") + f" on {a.draw}." + (" The draw method is published in advance and the result can be verified from the published record." if a.method == "random" else ""),
+         "Winner selection. Winners are selected " + ("at random from all valid Entries" if a.method == "random" else "by the Promoter's judges on the published criteria, and the judges' decision is final") + f" on {a.draw}." + (" The draw method is published in advance and the result can be verified from the published record." if a.method == "random" else judging_rules),
          f"Notification. Winners are notified by {a.notify} within 3 days of selection and must respond within {a.reply_days} day{'s' if a.reply_days != 1 else ''} of notification. If a Winner does not respond, cannot be verified as eligible, or declines the Prize, the replacement procedure is: " + reserve_policy,
          "Verification. Winners may be asked to provide proof of identity, age and residence before the Prize is released.",
          f"Delivery. Prizes are {a.delivery}. The Promoter is not responsible for Prizes lost or damaged in transit once dispatched to the address the Winner supplied." + (" Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise." if a.region.lower() != "none" else ""),
@@ -65,6 +73,9 @@ def main(argv):
     ap.add_argument("--marketing-consent", action="store_true", help="add a marketing-consent clause separate from the personal-information clause: entry alone does not subscribe anyone, and how to unsubscribe")
     ap.add_argument("--duplicate-policy", help="settled eligibility, duplicate-account and automation rules, preserving legitimately earned chances. Omit to leave an agreement placeholder")
     ap.add_argument("--reserve-policy", help="settled replacement procedure, using eligible pre-drawn reserves in recorded order before any agreed fresh draw. Omit to leave an agreement placeholder")
+    ap.add_argument("--judging-criteria", help="published judging criteria and scoring for a judged contest. Omit to leave an agreement placeholder")
+    ap.add_argument("--judges", help="judges for a judged contest. Omit to leave an agreement placeholder")
+    ap.add_argument("--tie-break", help="published procedure for tied scores in a judged contest. Omit to leave an agreement placeholder")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args(argv)
     if a.winners < 1: ap.error("--winners must be a positive integer")
@@ -91,6 +102,22 @@ def main(argv):
         assert "[Agree the reserve procedure before publishing" in output.getvalue()
         assert "incomplete, duplicated, automated" not in output.getvalue()
         assert "a replacement Winner is selected the same way" not in output.getvalue()
+        with contextlib.redirect_stdout(io.StringIO()) as random_output:
+            main(required)
+        with contextlib.redirect_stdout(io.StringIO()) as judged_output:
+            main(required + ["--method", "judged"])
+        assert "[Agree and publish the judging criteria and scoring before opening entry.]" in judged_output.getvalue()
+        assert "[Identify the judges before opening entry.]" in judged_output.getvalue()
+        assert "[Agree and publish how tied scores are resolved before opening entry.]" in judged_output.getvalue()
+        judging_options = ["--judging-criteria", "Originality 60%, relevance 40%.", "--judges", "The published panel.", "--tie-break", "Higher originality score wins a tie."]
+        with contextlib.redirect_stdout(io.StringIO()) as judged_output:
+            main(required + ["--method", "judged", *judging_options])
+        for value in judging_options[1::2]: assert value in judged_output.getvalue()
+        assert "[Agree and publish" not in judged_output.getvalue()
+        assert "[Identify the judges" not in judged_output.getvalue()
+        with contextlib.redirect_stdout(io.StringIO()) as unchanged_random:
+            main(required + judging_options)
+        assert unchanged_random.getvalue() == random_output.getvalue()
         duplicate_policy = "One valid daily Entry earns one chance. Bonus actions earn the published extra chances. Repeated export rows are removed without removing legitimately earned chances. Automated Entries and duplicate accounts are invalid."
         reserve_policy = "Two reserves are drawn in order with the Winners. Offer the Prize to the first eligible reserve, then the second, allowing each 7 days to respond. If both are exhausted, conduct a fresh draw from the remaining eligible Entrants under the published method."
         with contextlib.redirect_stdout(io.StringIO()) as output:

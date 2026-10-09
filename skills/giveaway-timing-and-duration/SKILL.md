@@ -2,7 +2,7 @@
 name: giveaway-timing-and-duration
 description: "Set giveaway duration, launch date and wrap-up timeline. Use for 'how long should my giveaway run', 'when should I launch', 'best day to start', 'best time for an Instagram giveaway', 'Black Friday giveaway timing', 'should it run over Christmas', 'giveaway calendar', or 'evergreen giveaway'. Match dates to promotion, holidays, draw and fulfilment."
 metadata:
-  version: 1.4.47
+  version: 1.4.48
 ---
 
 # Giveaway Timing and Duration
@@ -50,7 +50,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 - Recommended duration and start date with the reason in one or two sentences.
 - A timeline: pre-launch (terms, assets, partner briefs), launch day, mid-campaign pushes, final 48 hours, draw, announce, fulfil.
-- Seasonal note if the date sits near a peak (extracted: December holds the most campaign starts). For a store in the fourth quarter, the season plan table in `references/holiday-benchmarks.md`: list build before the sale, nothing live over the sale, the gift guide campaign in early December, close before the shipping cutoff, the New Year restart.
+- Seasonal note if the date sits near a peak (extracted: December holds the most campaign starts). For a store in the fourth quarter, use the season plan table in `references/holiday-benchmarks.md`. For pre-sale list building, close before the sale, then plan the gift guide campaign before the shipping cutoff and the New Year restart. For advent and other objectives, preserve the requested launch date, including sale-period dates, unless audience availability, team capacity or delivery constraints prevent it.
 - Risks: quiet middle, holiday gaps, shipping cut-offs, time-zone confusion on the close time.
 - Next decision needed.
 

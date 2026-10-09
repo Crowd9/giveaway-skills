@@ -6,13 +6,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.52 |
 | giveaway-entry-method-planner | 1.2.48 |
-| giveaway-timing-and-duration | 1.4.47 |
-| giveaway-winner-structure | 1.4.20 |
-| giveaway-promotion-plan | 1.3.48 |
+| giveaway-timing-and-duration | 1.4.48 |
+| giveaway-winner-structure | 1.4.21 |
+| giveaway-promotion-plan | 1.3.49 |
 | giveaway-random-draw | 1.3.47 |
 | giveaway-winner-communications | 1.2.40 |
 | giveaway-idea-generator | 1.3.40 |
-| giveaway-results-review | 1.6.28 |
+| giveaway-results-review | 1.6.29 |
 | gleam-campaign-setup | 1.2.45 |
 
 ## Skills
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.31 (2026-10-10)
+
+Terms for a judged contest now include the criteria, who judges and how ties are broken, or leave a clear gap where you haven't decided. A column name with a comma in it no longer stops your export from loading into the report or dashboard.
+
+The timing plan keeps a launch date you chose during the holiday sale, unless your goal is building the list before the sale starts. Backup Winners are planned as practice, so the share of entries marked invalid is never read as your chance of needing one. A Winner who entered by email is verified by email, and directory and hashtag traffic is something to measure for yourself before you rule it out.
 
 ## 3.0.30 (2026-10-10)
 

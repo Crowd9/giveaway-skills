@@ -36,7 +36,9 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the P
 - Verification before release: check the winning entry completed the required action, the Entrant is eligible, and one person did not enter under several names. Apply the settled eligibility and reserve procedure where it fails.
 - Duplicates and fraud: say in the terms that entries from automation, duplicate accounts or ineligible regions are void.
 
-A drawn name has a real chance of failing verification. The typical campaign has 4.2% of entries marked invalid, and campaigns with a referral action run higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
+The typical campaign has 4.2% of Entries marked invalid, and campaigns with a referral action run higher. This Entry-status measure does not report failed verification among selected Winners or determine a backup count.
+
+As operational practice, draw from valid Entries only and verify the drawn Entry against the terms before naming anyone. Set a backup procedure in the terms for ineligibility, a decline or a missed reply deadline.
 
 [Extracted from 107,109 campaigns and 16,490 businesses. 45% of campaigns had 5% or more invalid. Count source: `analysis/output/invalid_share.json`.]
 

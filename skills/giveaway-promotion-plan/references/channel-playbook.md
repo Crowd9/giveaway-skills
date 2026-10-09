@@ -328,7 +328,7 @@ Giveaway posts are promotional content. Keep the rest of the feed running throug
 
 ## Hashtags and who they bring
 
-Use the brand's own tags and one or two for the product category. Generic giveaway tags (#giveaway, #win, #competition) and contest directories bring people who enter giveaways as a hobby. They enter, they rarely subscribe, and the results review shows this as few email signups on traffic from those sources. If the objective is followers or a list, leave the generic tags off. If the objective is raw entry count for a partner, use them and expect the difference.
+As practical advice, start with the brand's own tags and one or two for the product category. Assess generic giveaway tags (#giveaway, #win, #competition) and contest directories for audience fit before adding them. The available comparisons describe whole-campaign outcomes and do not establish subscriber quality or signup rates from those sources. Where attribution is available, measure signups from each source against the campaign's objective before deciding whether to keep using it.
 
 ## Per channel
 

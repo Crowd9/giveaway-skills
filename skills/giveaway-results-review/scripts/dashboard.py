@@ -558,7 +558,7 @@ def gather(a):
     if RV.PCT:
         RV.PCT = dict(RV.PCT, groups={key: group for key, group in RV.PCT.get("groups", {}).items() if isinstance(group, dict)})
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if getattr(a, "map", None) else {}
-    worth = dict(kv.split("=", 1) for kv in a.wide_worth.split(",")) if getattr(a, "wide_worth", None) else {}
+    worth = CR.parse_wide_worth(getattr(a, "wide_worth", None), getattr(a, "wide_worth_json", None))
     rows = CR.load(a.export, mapping, getattr(a, "wide_unit", None), worth)
     class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; coverage_start = getattr(a, "coverage_start", None); coverage_end = getattr(a, "coverage_end", None); partners = a.partners.split(",") if a.partners else None
     A.complete_all_action = getattr(a, "complete_all_action", None)
@@ -849,6 +849,24 @@ def self_test():
         totals = gather(Imported)["T"]
         assert totals["actions"] == report["topline"]["actions"] == completions
         assert totals["entries"] == report["topline"]["entries"] == entries
+    for title in ("Visit our shop, then enter", "Visitez le café, puis entrez = oui"):
+        imported = os.path.join(d, "wide-json.csv"); generated = os.path.join(d, "wide-json.html")
+        with open(imported, "w", newline="", encoding="utf-8") as resource:
+            writer = csv.writer(resource); writer.writerow(["Email", title]); writer.writerow(["a@example.com", 1])
+        weights_json = json.dumps({title: 5}, ensure_ascii=False)
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main([imported, "--out", generated, "--wide-unit", "boolean", "--wide-worth-json", weights_json]) == 0
+        with open(generated, encoding="utf-8") as resource: data = embedded_data(resource.read())
+        assert data["N"] == 1 and title in [action[0] for action in data["acts"]]
+        class JsonImported(A): export = imported; wide_unit = "boolean"; wide_worth_json = weights_json
+        totals = gather(JsonImported)["T"]
+        assert totals["actions"] == 1 and totals["entries"] == 5
+    for options in (["--wide-worth-json", "{"], ["--wide-worth-json", "[]"],
+                    ["--wide-worth", "Visit=1", "--wide-worth-json", '{"Visit": 1}']):
+        with contextlib.redirect_stderr(io.StringIO()), contextlib.redirect_stdout(io.StringIO()):
+            try: main([imported, "--out", generated, "--wide-unit", "boolean", *options])
+            except SystemExit as error: assert error.code == 2
+            else: raise AssertionError("invalid weight mapping must fail")
     ordinary = embedded_data(page)
     assert ordinary["N"] == 2 and ordinary["acts"]
     with open(p, encoding="utf-8") as source: timing_original = source.read()
@@ -1036,7 +1054,9 @@ def main(argv):
     ap.add_argument("--map", help="column mapping, e.g. who=Email Address,action=Entry Type,Entries=Points")
     ap.add_argument("--complete-all-action", help="exact exported title confirmed as the configured complete-all action; no title inference")
     ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
-    ap.add_argument("--wide-worth", help="Entries per completion for each populated wide method, e.g. Join newsletter=5")
+    weights = ap.add_mutually_exclusive_group()
+    weights.add_argument("--wide-worth-json", help='JSON object mapping exact action titles to Entries per completion, e.g. {"Visit, then enter": 1}')
+    weights.add_argument("--wide-worth", help="Entries per completion for each populated wide method, e.g. Join newsletter=5")
     ap.add_argument("--words", help="words.json written by the reviewer"); ap.add_argument("--site", help="site.json from the Reporting tab"); ap.add_argument("--out", default="dashboard.html")
     ap.add_argument("--impressions", type=int); ap.add_argument("--plan-cost", type=float); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--vertical"); ap.add_argument("--first-campaign", action="store_true")
     ap.add_argument("--coverage-start", type=CR.dt.date.fromisoformat, help="first confirmed complete export day, YYYY-MM-DD in account time")
