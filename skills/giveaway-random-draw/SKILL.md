@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a verifiable random giveaway draw from a list, CSV, spreadsheet or comment export. Use for 'pick a Winner', 'draw the Winner', 'choose Winners from these comments', 'weighted draw', 'backup Winners', 'redraw', or 'prove the draw was fair'. Handle deduplication, exclusions and tiers, commit before a public seed exists, and assess records of past draws."
 metadata:
-  version: 1.3.51
+  version: 1.3.52
 ---
 
 # Giveaway Random Draw

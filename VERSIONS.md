@@ -6,13 +6,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.53 |
 | giveaway-entry-method-planner | 1.2.51 |
-| giveaway-timing-and-duration | 1.4.50 |
+| giveaway-timing-and-duration | 1.4.51 |
 | giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.51 |
-| giveaway-random-draw | 1.3.51 |
+| giveaway-random-draw | 1.3.52 |
 | giveaway-winner-communications | 1.2.42 |
 | giveaway-idea-generator | 1.3.42 |
-| giveaway-results-review | 1.6.34 |
+| giveaway-results-review | 1.6.35 |
 | gleam-campaign-setup | 1.2.46 |
 
 ## Skills
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.39 (2026-10-10)
+
+The export converter that prepares your draw file now counts people by their account ID, so two Entrants who share a name keep separate places. If some rows are missing an ID, it tells you which ones and leaves your existing draw file untouched. Fix those rows and run it again, and every Entry a person earned stays with them.
 
 ## 3.0.38 (2026-10-10)
 

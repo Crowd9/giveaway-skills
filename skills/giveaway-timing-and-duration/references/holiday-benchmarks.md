@@ -80,7 +80,7 @@ These rows use actual run lengths with repeatable actions included, from `analys
 | Thanksgiving | 203 | 135 | 24.3% |
 | Prime Day and Singles Day | 85 | 53 | 24.0% |
 
-Christmas clears this no-theme baseline by 4.7 percentage points, Father's Day by 3.4 and Mother's Day by 1.7. Milestone also sits above it. Thanksgiving trails it by 2.6 percentage points and Prime Day and Singles Day by 2.9.
+Calculated from the Conversion Rates in `analysis/output/prize_timing_cuts.json` (`by_named_holiday`): Christmas clears the no-theme baseline by 4.7 percentage points (31.6% minus 26.9%), Father's Day by 3.4 (30.3% minus 26.9%) and Mother's Day by 1.7 (28.6% minus 26.9%). Milestone also sits above it. Thanksgiving trails it by 2.6 percentage points (26.9% minus 24.3%) and Prime Day and Singles Day by 2.9 (26.9% minus 24.0%).
 
 ## How early businesses launch
 

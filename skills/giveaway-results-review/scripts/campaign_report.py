@@ -686,7 +686,11 @@ def self_test():
             except ValueError as exc:
                 assert "column 'Email'" in str(exc) and "source CSV rows 3, 4" in str(exc), exc
             else: raise AssertionError("missing identifiers silently removed export rows")
-            summary = load_summary(missing_path)
+            try: load_summary(missing_path)
+            except ValueError as exc:
+                assert "source CSV rows 3, 4" in str(exc), exc
+            else: raise AssertionError("summary accepted missing person identifiers")
+            summary = load_summary(missing_path, "Participant")
             reconciled = analyze(load(missing_path, {"who": "Participant"}), C)["topline"]
             assert tuple(reconciled[k] for k in ("actions", "entries", "invalid_actions", "invalid_entries")) == tuple(
                 summary[k] for k in ("actions_completed", "entries", "invalid_rows", "invalid_entries"))
