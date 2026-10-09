@@ -43,7 +43,7 @@ Five optional jobs help plan the mix. In the answer, replace these labels with a
 
 ## Weighting
 
-- Give the asset-producing action 3 to 5 entries. For sharing, weight it at 5 to 9 entries per referral unless the Prize is small enough that a high weight invites abuse: the share click rate (viral share clicks over Impressions) peaks in that band and falls back to the weight-1 rate at 10 or more.
+- As a practical starting point, give the asset-producing action 3 to 5 entries and sharing 5 to 9 entries per referral. Choose the weight according to how much extra draw weight referrals should receive. The observed share click rate (viral share clicks over Impressions) was highest in that band and matched the weight-1 rate at 10 or more. This comparison does not predict what changing the weight would do to a campaign.
 
 | Weight offered | Share click rate |
 |---|---|
@@ -56,9 +56,9 @@ Five optional jobs help plan the mix. In the answer, replace these labels with a
 - One entry for visits and views. Two for follows and joins.
 - Daily repeatable actions keep a long campaign alive and inflate the entries recorded per Entrant. Extracted: a typical campaign records 430 entries for every 100 Entrants, and campaigns with more repeatable bonus actions sit well above that.
 - If the platform allows, make the asset action required before other actions unlock.
-- Boosting worth pays off on the referral share action and mostly does nothing for follow or join actions, so put the worth budget where it pays. This is correlation, not causation, in both directions: businesses likely reach for worth-boosting on actions that are already underperforming, so the Telegram, YouTube and UGC numbers below may just reflect a response to that weakness, not an effect of the setting itself, and the same question applies to the referral result, since businesses who most want shares may both boost worth and write better share copy. Leave Telegram, YouTube and UGC worth at default: boosting it is not a fix for low completion there.
+- Campaigns with boosted referral worth recorded more completions in the comparisons below. Follow and join results varied. Businesses chose their own weights, so these comparisons do not show whether raising worth would bring more people or improve completion. As practice, keep Telegram, YouTube and UGC worth at default and review whether the action fits the audience before changing its reward.
 
-| Action | Effect of boosted worth |
+| Action | Observed completion comparison with boosted worth |
 |---|---|
 | Referral share, 1,000-10,000 Entrants | +34-35% completions, 19-21% cheaper per completion |
 | Referral share, 10,000+ Entrants | +11% completions |
@@ -88,27 +88,27 @@ Among campaigns with no repeatable action and a run of 14 days or less, Telegram
 | Twitch Follows | -17% | +24% | 8,981 | 1,873 |
 <!-- /generated -->
 
-An app-download action's payoff depends heavily on the Prize. Match the action to a Prize the Entrant already wants the app for, and expect it to cost you against a cash or gift-card Prize or in gaming and esports specifically. These counts are small, the smallest cell resting on 56 businesses, so state the count every time and don't extend the pattern beyond these three cells.
+As practice, require an app download only when using the app is the campaign objective and the hardware Prize is relevant to its users. Otherwise keep the download optional or omit it. The hardware comparison below does not establish that requiring an install improves conversion. These counts are small, the smallest cell resting on 56 businesses, so state the count every time and do not extend the pattern beyond these three cells.
 
 <!-- generated:em_app_download -->
-| Context | Effect on conversion (against what the action and Prize predict separately) |
+| Context | Observed conversion association (against what the action and Prize predict separately) |
 |---|---|
-| Prize is tech hardware | 1.9x, earns its place (294 campaigns, 61 businesses) |
-| Prize is a gift card or cash | 0.751x, costs conversion (219 campaigns, 83 businesses) |
-| Gaming and esports vertical | 0.735x, costs conversion (265 campaigns, 56 businesses) |
+| Prize is tech hardware | 1.9x (294 campaigns, 61 businesses) |
+| Prize is a gift card or cash | 0.751x (219 campaigns, 83 businesses) |
+| Gaming and esports vertical | 0.735x (265 campaigns, 56 businesses) |
 <!-- /generated -->
 
 [Extracted from `analysis/output/success_profiles.json`, `interactions.entry_method_by_prize_type` and `.entry_method_by_industry`.]
 
 ## What it looks like when many Entrants were referred (extracted)
 
-A share action's value is the people it brings, which the dataset does not count. Campaigns offering one had more Entrants and lower conversion typically [`cmp_share` in action-families.md: 544 Entrants against 406, and conversion 23% lower], so treat it as an amplify action with a job, weight it for referrals, and expect low completion.
+Campaigns offering a share action had more Entrants and lower conversion typically [`cmp_share` in action-families.md: 544 Entrants against 406, and conversion 23% lower]. The dataset does not count the new people brought by that action, so these comparisons cannot establish a referral gain.
 
-**A share action is a design tradeoff, not a free addition.** When reach or new people is the objective, its reach and referral gain is worth the completion it costs elsewhere, and it's the case where a share action clearly earns its place. When the objective is a tight, high-completion list, that same cost is the reason to leave sharing out or push it to the bottom of the list. Consistent at every campaign size tested. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
+As practice, offer optional sharing when reaching new people is an objective. For a focused signup campaign, leave sharing out or place it after the signup. Choose based on the campaign's purpose, without promising a gain in reach or a loss of completion elsewhere. Lower completion on other actions was observed at the sizes below, with Telegram varying by size. [1,000-2,500, 2,500-10,000, 10,000+ Entrants.]
 
-What it buys:
+Observed differences:
 
-| Metric | Change with a share action |
+| Metric | Comparison with campaigns offering a share action |
 |---|---|
 | Impressions per Entrant | +33-52% (1.33x-1.52x) |
 | Entries per Entrant | +20-24% |
@@ -126,7 +126,7 @@ Completion on other actions running beside it (lower at every size tested except
 | App Downloads | 0.74x-0.96x |
 | UGC submissions | 0.21x-0.34x |
 
-Sharing's effect on email specifically depends on campaign size and is unsettled (cheaper and lower-yield at the smallest size, roughly flat to worse at 2,500-10,000 and 10,000+ Entrants), so don't claim sharing makes email cheaper or higher-yield as a general rule. [30 to 10,864 campaigns per group, 14 to 2,858 businesses. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_sharing`.] For the reach-side framing (what a share action brings in, weighed against what it costs elsewhere), see giveaway-promotion-plan.
+The email comparison with sharing varies by campaign size (cheaper and lower-yield at the smallest size, roughly flat to worse at 2,500-10,000 and 10,000+ Entrants), so don't claim sharing makes email cheaper or higher-yield as a general rule. [30 to 10,864 campaigns per group, 14 to 2,858 businesses. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_sharing`.] For planning referral promotion, see giveaway-promotion-plan.
 
 **A few action pairs cluster well above chance, and they're the effort-heavy ones.** As with the family table above, this describes what businesses choose to run together, not what pairing two actions would do to either one's completion.
 

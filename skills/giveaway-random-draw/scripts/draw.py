@@ -240,13 +240,20 @@ def load_exclusions(path):
     with open(path, encoding="utf-8-sig") as source:
         return {norm(line) for line in source if line.strip()}
 
+def warn_plus_clusters(clusters):
+    if clusters:
+        print(f"warning: {len(clusters)} groups of addresses share a local part with plus-tags (possible duplicate people). "
+              "Review before publishing the commitment or announcing Winners. "
+              "Addresses remain eligible unless an exclusion is confirmed under the terms.")
+
 def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
-    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
+    ents, dupes, excluded, bad, clusters = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
     print(f"rows_read {len(rows)}, unique_eligible {len(ents)}, duplicates_merged {dupes}, "
           f"excluded {excluded}, rows_with_invalid_weight {bad}")
+    warn_plus_clusters(clusters)
     notes = scan(ents)
     shown = notes if not getattr(a, "flagged_out", None) else notes[:20]
     for note in shown: print(f"review: {note}")
@@ -286,7 +293,7 @@ def cmd_draw(a):
     def show(x): return mask(x) if a.mask else x
     for r in result: print(f"{r['tier']}: {show(r['id'])}" + (f" (weight {r['weight']:g})" if a.weight_column else ""))
     print(f"\nrows_read {len(rows)}, unique_eligible {len(entrants)}, duplicates_merged {dupes}, excluded {excluded}, rows_with_invalid_weight {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
-    if clusters: print(f"warning: {len(clusters)} groups of addresses share a local part with plus-tags (possible duplicate people). Review before announcing.")
+    warn_plus_clusters(clusters)
     for note in scan(entrants): print(f"review: {note}")
     if a.audit:
         with open(a.audit, "w") as resource:
@@ -617,6 +624,35 @@ def self_test_missing_ids():
                 assert "no complete recognized person identifier column" in str(error), str(error)
             else: raise AssertionError("incomplete identifiers cannot fall back per row or use generic row IDs")
 
+def self_test_plus_preview():
+    import contextlib, pathlib, tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "aliases.csv"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        aliases = ["a@example.com", "a+one@example.com", "a+two@example.com"]
+        entries.write_text("email,entries\n" + "".join(f"{alias},{weight}\n" for alias, weight in zip(aliases, (1, 2, 3))))
+        rows, column, _ = load_entries(entries, None)
+        pool, duplicates, excluded, bad, clusters = prepare(rows, column, "entries", set())
+        assert [e["id"] for e in pool] == aliases and [e["weight"] for e in pool] == [1, 2, 3]
+        assert (duplicates, excluded, bad, len(clusters)) == (0, 0, 0, 1)
+        expected = [e["shown"] for e in rank(pool, "plus-preview-regression")]
+        common = [str(entries), "--weight-column", "entries", "--winners", "3"]
+        warnings = []
+        for command in ("commit", "draw"):
+            extra = ["--seed", "plus-preview-regression", "--audit", str(audit_path)] if command == "draw" else []
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                assert main([command] + common + extra) == 0
+            text = output.getvalue()
+            warnings.append(next(line for line in text.splitlines() if line.startswith("warning:")))
+            assert "unique_eligible 3, duplicates_merged 0, excluded 0, rows_with_invalid_weight 0" in text
+            if command == "commit": assert "Winner:" not in text and not audit_path.exists()
+        assert warnings[0] == warnings[1] and "1 groups" in warnings[0] and "remain eligible" in warnings[0]
+        audit = json.loads(audit_path.read_text())
+        assert [e["id"] for e in audit["results"]] == expected
+        assert audit["unique_eligible"] == 3 and audit["plus_address_clusters"] == 1
+        assert prepare(rows, column, "entries", set())[0] == [
+            {"id": alias, "shown": alias, "weight": weight} for alias, weight in zip(aliases, (1, 2, 3))]
+
 def self_test_recommit():
     import contextlib, pathlib, tempfile
     with tempfile.TemporaryDirectory() as directory:
@@ -687,6 +723,7 @@ def self_test_rank_underflow():
 
 
 def self_test():
+    self_test_plus_preview()
     self_test_missing_ids()
     self_test_rank_underflow()
     self_test_recommit()

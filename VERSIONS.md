@@ -5,15 +5,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.50 |
-| giveaway-entry-method-planner | 1.2.46 |
+| giveaway-entry-method-planner | 1.2.47 |
 | giveaway-timing-and-duration | 1.4.46 |
 | giveaway-winner-structure | 1.4.18 |
 | giveaway-promotion-plan | 1.3.47 |
-| giveaway-random-draw | 1.3.44 |
+| giveaway-random-draw | 1.3.45 |
 | giveaway-winner-communications | 1.2.39 |
 | giveaway-idea-generator | 1.3.39 |
-| giveaway-results-review | 1.6.25 |
-| gleam-campaign-setup | 1.2.42 |
+| giveaway-results-review | 1.6.26 |
+| gleam-campaign-setup | 1.2.43 |
 
 ## Skills
 
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.27 (2026-10-10)
+
+Your campaign report no longer drops rows that have no Entrant ID. It tells you which rows they are, so its totals match the converter's. Before you publish the commitment, a draw flags addresses that look like one person using plus-tags, so you can decide under your terms before any Winner is known.
+
+Entry-weighting advice describes what campaigns with each setup recorded, and keeps its defaults labelled as practice. Check the referral setup notes before launch: they now say separately when to offer referrals and when to cap them.
 
 ## 3.0.26 (2026-10-10)
 

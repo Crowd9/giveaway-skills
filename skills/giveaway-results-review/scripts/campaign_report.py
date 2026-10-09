@@ -127,10 +127,17 @@ def pct(a, b): return f"{a / b:.0%}" if b else "-"
 
 def load(path, mapping=None, wide_unit=None, wide_worth=None):
     with open(path, newline="", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f); raw = list(reader); header = reader.fieldnames or []
+        reader = csv.DictReader(f); raw = []; source_rows = []
+        for row in reader:
+            raw.append(row); source_rows.append(reader.line_num)
+        header = reader.fieldnames or []
     if not header: sys.exit("empty file: export headers are required")
     cols = resolve_columns(header, mapping or {})
     if "who" not in cols: sys.exit("no column names the Entrant. Pass --map who=<column>")
+    missing = [str(number) for number, row in zip(source_rows, raw) if not (row.get(cols["who"]) or "").strip()]
+    if missing:
+        raise ValueError(f"missing Entrant identifiers in column {cols['who']!r} at source CSV rows {', '.join(missing)}; "
+                         "reconcile identifiers or explicitly map a complete person identifier column before reporting")
     rows = []
     if "action" not in cols and raw:
         # Wide cells carry declared units; weights alone never imply one completion.
@@ -190,7 +197,6 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
         if wide and "details" in cols: r[cols["details"]] = ""
         for role, key in (("country", "Country"), ("city", "City"), ("details", "Details"), ("landing", "Landing Page URL")):
             if role in cols and cols[role] != key: r[key] = r.get(cols[role])
-    rows = [r for r in rows if r["_who"]]
     try: math.fsum(r["_entries"] for r in rows)
     except OverflowError: raise ValueError("Entries total exceeds the finite range; reconcile earned weights before export") from None
     load.last = {"columns": cols, "wide": wide, "wide_unit": wide_unit, "name_only": cols["who"].casefold() in ("name", "entrant", "user"), "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
@@ -589,6 +595,30 @@ def self_test():
     assert check_manual_totals(p) == (2, 4, 10, 1, 5)
     if os.path.exists(sample_path):
         assert check_manual_totals(sample_path) == (30, 114, 229, 4, 8)
+    # Missing identifiers stop reporting before valid or Invalid rows can disappear.
+    missing_path = os.path.join(d, "missing-identifiers.csv")
+    for blank in ("", " \t "):
+        for status in ("Valid", "Invalid"):
+            with open(missing_path, "w", newline="") as f:
+                wr = csv.writer(f); wr.writerow(["Email", "Participant", "Action", "Entries", "Status"])
+                wr.writerows([["a@example.com", "person-a", "Visit", 1, "Valid"],
+                              [blank, "person-b", "Visit", 99, status],
+                              [blank, "person-c", "Visit", 50, "Invalid"]])
+            try: load(missing_path)
+            except ValueError as exc:
+                assert "column 'Email'" in str(exc) and "source CSV rows 3, 4" in str(exc), exc
+            else: raise AssertionError("missing identifiers silently removed export rows")
+            summary = load_summary(missing_path)
+            reconciled = analyze(load(missing_path, {"who": "Participant"}), C)["topline"]
+            assert tuple(reconciled[k] for k in ("actions", "entries", "invalid_actions", "invalid_entries")) == tuple(
+                summary[k] for k in ("actions_completed", "entries", "invalid_rows", "invalid_entries"))
+    # Validate source rows before expanding a wide row into several completions.
+    with open(missing_path, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Visit"])
+        wr.writerows([["a@example.com", 3], [" ", 2]])
+    try: load(missing_path, wide_unit="completions", wide_worth={"Visit": 1})
+    except ValueError as exc: assert "source CSV rows 3;" in str(exc), exc
+    else: raise AssertionError("wide export accepted a missing identifier")
     # Incomplete histories never assign first touch from an arbitrary undated row.
     timing_path = os.path.join(d, "timing.csv")
     for times, known in ((("2026-05-01 10:00:00", "2026-05-02 10:00:00"), 1),
