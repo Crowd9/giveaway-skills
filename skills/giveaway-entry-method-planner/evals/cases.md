@@ -2,6 +2,10 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
+## Targeted fixture check, 10 October 2026
+
+Case 3: the answer separating completion events, weighted Entries and business value with the correct family ranking passed. The otherwise similar answer ranking visits highest failed. An independent reviewer assessed each fixture against the updated meaning criterion, then `evals/check_deliverable.py` returned the expected PASS or FAIL. These fixtures test the acceptance criteria, not generated answer quality.
+
 ## The 40-Prompt Evaluation, 11 September 2026
 
 Four of the forty prompts in `.omc/skill-loop/evalset.json` were run against this skill on 11 September 2026. Scoring was by an independent grader against `.omc/skill-loop/rubric.md`. Types are S straightforward, U underspecified, H hard realistic, T trap.

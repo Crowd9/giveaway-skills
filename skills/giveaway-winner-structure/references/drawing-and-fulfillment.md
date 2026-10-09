@@ -4,7 +4,7 @@ Advice unless marked as extracted.
 
 ## Structure tradeoffs
 
-One Prize for the money draws a bigger crowd than splitting it into several, and the gap grows with more units. For a fixed budget, one Prize worth wanting is the default. Several Winners earn their place when the units are the point: product sampling, digital Prizes, community rewards, daily draws.
+Common practice, our data doesn't cover this. Choose one Winner when keeping the Prize whole preserves its appeal and keeps fulfillment manageable. Choose several when the units serve product sampling, digital Prizes, community rewards or daily draws. Set the count from the objective, unit value and delivery cost.
 
 | Units | Campaigns | Crowd per Prize dollar | Entrants |
 |---|---|---|---|
@@ -13,7 +13,7 @@ One Prize for the money draws a bigger crowd than splitting it into several, and
 | Six to twenty | 4,276 | 0.64 | 565 |
 | Twenty-one or more | 1,566 | 0.77 | 1,065 |
 
-[Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The raw Entrants column runs the other way, highest in the largest unit-count group, because campaigns listing many things also spent more. Quote crowd per Prize dollar when the question is what a fixed budget bought, and the raw count when the question is what campaigns looked like.
+[Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The raw Entrants column runs the other way, highest in the largest unit-count group, where campaigns also stated larger Prize budgets. Both columns describe observed campaigns. Neither predicts what splitting one campaign's fixed budget would change.
 
 | Shape | Choose it when | Cost |
 |---|---|---|
@@ -33,7 +33,7 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the P
 
 - Random draws: use a method you can show (a platform draw, a published random-number source, a recorded screen). State the date and time with a time zone.
 - Judged entries: publish the criteria before launch, name the judges or their roles, and keep a scoring record.
-- Verification before release: check the winning entry completed the required action, the Entrant is eligible, and one person did not enter under several names. Disqualify and redraw where it fails.
+- Verification before release: check the winning entry completed the required action, the Entrant is eligible, and one person did not enter under several names. Apply the settled eligibility and reserve procedure where it fails.
 - Duplicates and fraud: say in the terms that entries from automation, duplicate accounts or ineligible regions are void.
 
 A drawn name has a real chance of failing verification. The typical campaign has 4.2% of entries marked invalid, and campaigns with a referral action run higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
@@ -96,6 +96,8 @@ Custom terms run long, and the generated draft below is far shorter, which is th
 
 ## Terms snippet to adapt
 
-"Winners are selected at random from valid entries on [date, time, time zone] using [method]. Winners are notified by [channel] within [N] days and must respond within 72 hours or the Prize is forfeited and redrawn. Entries that are incomplete, duplicated, automated or from ineligible regions are void. Prizes are as stated, with no cash alternative, and the promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable. Prizes are delivered within [N] days of confirmation. Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise. Winners' first names and [city or handle] may be published with their consent."
+Fill the reply period, duplicate policy and reserve procedure from the settled terms. Preserve multiple chances legitimately earned under those terms. Use the first eligible pre-drawn reserve in the recorded order before considering a fresh draw under the agreed procedure. If any of these rules is unsettled, mark it for agreement before publishing.
+
+"Winners are selected at random from valid entries on [date, time, time zone] using [method]. Winners are notified by [channel] within [N] days and must respond within [agreed reply period, with the deadline and time zone stated in the notice]. If a Winner does not reply or fails verification, [agreed reserve procedure]. Entries are checked under [agreed eligibility, duplicate-account and automation rules]. Multiple chances legitimately earned under the entry rules remain valid. Prizes are as stated, with no cash alternative, and the promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable. Prizes are delivered within [N] days of confirmation. Any tax, duty or charge arising from receipt of the Prize is the Winner's responsibility unless stated otherwise. Winners' first names and [city or handle] may be published with their consent."
 
 Sweepstakes and lottery law differs by jurisdiction. This is not legal advice. Have the terms checked where the giveaway runs.

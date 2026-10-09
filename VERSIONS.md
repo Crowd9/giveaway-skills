@@ -5,15 +5,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.41 |
-| giveaway-entry-method-planner | 1.2.38 |
-| giveaway-timing-and-duration | 1.4.36 |
-| giveaway-winner-structure | 1.4.8 |
+| giveaway-entry-method-planner | 1.2.39 |
+| giveaway-timing-and-duration | 1.4.37 |
+| giveaway-winner-structure | 1.4.9 |
 | giveaway-promotion-plan | 1.3.38 |
 | giveaway-random-draw | 1.3.34 |
-| giveaway-winner-communications | 1.2.30 |
+| giveaway-winner-communications | 1.2.31 |
 | giveaway-idea-generator | 1.3.34 |
 | giveaway-results-review | 1.6.8 |
-| gleam-campaign-setup | 1.2.36 |
+| gleam-campaign-setup | 1.2.37 |
 
 ## Skills
 
@@ -343,6 +343,18 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.9 (2026-10-10)
+
+The text you copy now matches the choices you made. Ask for Winner clauses and they carry your reply window, your rule on repeat entries and your reserve Winner, where they used to drop in a fixed 72 hours and a fresh redraw.
+
+A reply to someone who doubts the draw only says what you've checked. You get one version for a result you've confirmed, one for while the records are still being found, and one for a mistake you've found. None of them tells the reader the Winner qualified before you know it.
+
+The holiday plan no longer rules out the same week it recommends for a December launch. Closing before the sale applies to a store building its sale list, and anyone else gets the trade-off to weigh.
+
+Post-draw offers follow one rule. You honour what was promised at entry, send it once, and later emails need consent to the series. List clean-ups now look at clicks, replies and purchases as well as opens.
+
+Advice that read as a promise reads as what campaigns did. Choosing one Winner over ten is now about your Prize, fulfilment and goal, and leading with sharing for reach depends on how long your list is.
 
 ## 3.0.8 (2026-10-10)
 

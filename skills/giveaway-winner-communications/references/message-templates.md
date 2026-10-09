@@ -40,7 +40,7 @@ The official-account line matters. Fake accounts DM Entrants during and after gi
 
 "The [campaign name] Winner has been drawn and notified. Thank you for entering. As a thank-you, here is [a code, a guide, early access] valid until [date]. [Next campaign teaser if there is one.]"
 
-One message. No second offer chasing.
+Send the thank-you offer once and honor any offer already promised, including its recipients and conditions. Do not chase it with another offer or reminder. Later messages need recorded consent covering the series and should carry useful content or a non-shopping next step, as set out in `references/after-the-draw.md`.
 
 For a store, the offer is a code. Subject "A thank-you from [Brand]: [X]% off until [date]", preview "A thank-you from [Brand], one use, [N] days." Body: the Winner line, the code on its own line, what it applies to, the expiry, one button to the collection the Prize came from. Read the code mechanics in `references/after-the-draw.md` before sending.
 
@@ -52,10 +52,10 @@ For a store, the offer is a code. Subject "A thank-you from [Brand]: [X]% off un
 
 Post-draw problems arrive together. Work them in this order, whichever ones apply.
 
-1. Draw the reserve first. Nothing goes out naming a reserve Winner before one exists.
+1. Follow the settled reserve procedure, using the first eligible pre-drawn reserve before a fresh draw. Nothing goes out naming a reserve Winner before one exists.
 2. Close out the lapsed Winner, and log the attempts and the deadline that passed.
 3. Notify the reserve.
-4. Send anyone disputing the result a holding line first, then answer once from the draw record, at whatever point they turn up. The holding line buys the time to open the record, and it is the same for everyone: "Thanks, we are checking the draw record and will reply by [day, time zone]." Give a time inside one working day and keep it. A dispute never changes the draw.
+4. Send anyone disputing the result a holding line first, then answer from the checked draw and eligibility records, at whatever point they turn up. The holding line buys the time to open the record, and it is the same for everyone: "Thanks, we are checking the draw record and will reply by [day, time zone]." Give a time inside one working day and keep it. A complaint alone is no reason to redraw. Use the checked-facts branches below. For a confirmed error, check the terms before corrective action and put unresolved jurisdiction questions to the organizer's lawyer.
 5. Announce only after the reserve has verified and agreed to be named.
 
 ## Edge cases
@@ -64,8 +64,10 @@ Post-draw problems arrive together. Work them in this order, whichever ones appl
 |---|---|---|
 | No reply by the deadline | "We did not hear back by [deadline], so under the terms the Prize has passed to a reserve Winner. Sorry to miss you this time." | Send once, after the second attempt and the deadline. Log both attempts. |
 | No reserve Winner was drawn | Nothing to send yet. | Draw one before you send the message above: same valid entry list, same method, minus the Entrant who did not reply, and record it the way you recorded the first draw. The giveaway-random-draw skill runs it. |
-| Winner fails eligibility | "Thank you for entering. On checking, the entry does not meet [the eligibility rule in the terms], so we cannot award the Prize. A reserve Winner has been drawn." | State the rule, do not argue. Log it. |
-| Dispute from another Entrant | "The draw on [date] was run [method] from [N] valid entries, and the record is [where]. The Winner met the terms. We are happy to walk you through the record." | Answer with the record once. Never redraw to settle a complaint. Log the exchange. If they keep pushing, one more factual reply at most, then stop replying. |
+| Winner fails eligibility | "Thank you for entering. Our check found [verified eligibility issue] under [rule in the terms]. We are reviewing the next step under those terms and will update you by [date, time zone]." | Use only after checking the evidence. Follow the terms and reserve procedure, and seek legal review where the correction is unclear. Confirm a replacement only after it exists. Log the decision. |
+| Dispute, result substantiated | "We checked [draw and eligibility records]. The draw on [date] used [method], and the Winner met [checked eligibility rules]. Here is [shareable evidence or explanation]." | State only verified facts. Protect private information, log the exchange and review any new evidence. An unsupported complaint alone does not justify a redraw. |
+| Dispute, records missing | "We have not yet verified [missing fact]. We are checking [record needed] and will update you by [date, time zone]." | Keep the uncertainty visible. Do not claim the Winner was eligible or the draw was valid without the records. |
+| Dispute, process or eligibility error confirmed | "Our review confirmed [specific error]. We are checking the remedy under the published terms and will update you by [date, time zone]." | Check the terms before corrective action. Ask the organizer's lawyer about unresolved jurisdiction or remedy questions. Do not promise or run an automatic redraw. |
 | Prize out of stock | "The [Prize] is no longer available, so under the terms we are offering [substitute of equal or greater value]. Let us know by [date] if you would prefer [alternative]." | Substitution clause in the terms covers this. |
 | Winner asks for cash | "The Prize is as stated and the terms do not include a cash alternative. We can [ship it to someone you choose] if that helps." | Only if the terms say no cash alternative. |
 | Winner in a region with duties | "Your country may charge import duty on the Prize. [Who pays per the terms]. Tracking will show the estimate before delivery." | Say it before shipping. |

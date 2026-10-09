@@ -132,7 +132,7 @@ Reading it: visits and email signups are completed by most Entrants, and follows
 
 ## Position in the action list
 
-Typical share of Entrants who completed an action, by the action's list position, split by family. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice. Carry that into the sentence that uses the table. "Position does most of the work here" is the claim this cut cannot make, because the action a business put first is the one it cared about most, and a caveat added at the end of the answer does not undo a causal sentence in the body. Measured answers made this exact claim twice.
+Typical completion events per 100 Entrants, by the action's list position, split by family. The table's percentage labels describe event ratios, not the percentage of distinct people who completed an action. Businesses put the action they care about first, and Gleam shows actions in list order, so this mixes ordering with choice. Carry that into the sentence that uses the table. "Position does most of the work here" is the claim this cut cannot make, because the action a business put first is the one it cared about most, and a caveat added at the end of the answer does not undo a causal sentence in the body. Measured answers made this exact claim twice.
 
 <!-- generated:se_position -->
 | Family | 1st, % of Entrants | 2nd to 4th, % of Entrants | 5th and later, % of Entrants |
@@ -144,7 +144,7 @@ Typical share of Entrants who completed an action, by the action's list position
 | Content upload | 81 (0.81, 2,573 Actions) | 27 (0.27, 4,657 Actions) | 13 (0.13, 6,599 Actions) |
 <!-- /generated -->
 
-Every family sees fewer Entrants complete it the further down the list it sits, Viral Share included. An email signup in first position was completed by about every Entrant and a follow by about four in five, an email fifth or later by about three quarters of Entrants and a follow by about two fifths. Source: `analysis/output/field_cuts.json` `uptake_by_family_and_position`.
+Every family has a lower completion-event ratio in later positions in this comparison, Viral Share included. Use the family row for the proposed position. These ratios do not identify how many distinct Entrants completed an action, and the association does not establish the effect of moving it. Source: `analysis/output/field_cuts.json` `uptake_by_family_and_position`.
 
 ## Description length
 
@@ -504,9 +504,9 @@ Source for the invalid-entry share: `analysis/output/invalid_share.json` (`distr
 
 ## What this suggests for the setup, as advice
 
-- Put the action that produces the asset first and make it the single mandatory action. Position matters a lot: an email action completed by about every Entrant in first position, and a follow by about four in five, both fall away by fifth position or later (see the position table above). If giveaway-entry-method-planner is installed, its mix-by-objective reference has the fuller asset list and the ratios by campaign size. Otherwise use the position table above and leave the additional comparisons unavailable.
+- Put the action that produces the asset first and make it the single mandatory action. Completion-event ratios were lower in later positions, but this comparison also reflects which actions businesses chose to put first (see the position table above). If giveaway-entry-method-planner is installed, its mix-by-objective reference has the fuller asset list and the ratios by campaign size. Otherwise use the position table above and leave the additional comparisons unavailable.
 - Making that action mandatory is worth it beyond the completion count: it also tends to lower the cost per completion (see the entry-worth table above). Email saves the most as campaign size grows. Follow_x follows the same pattern from 2,500 Entrants up. Discord_join's mandatory cost is not a rule, it moves in opposite directions across the two sizes tested.
-- Keep the list short. Everything after the fourth action is completed by a minority, and eleven or more actions came with a lower Conversion Rate but more Entrants than one to three actions in that comparison.
+- Keep unnecessary effort out of the list. Later-position completion varies by family, so use its row in the position table to decide whether an action earns its place. Eleven or more actions came with a lower Conversion Rate but more Entrants than one to three actions in that comparison.
 - Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It falls away down the list like every other family: 16 completions per 100 Entrants in first position, 12 in the middle, 11 fifth or later. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
 - Use a question or choice template when you want an answer. Free-form custom actions lose half the Entrants.
 - Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a sixth of completions, and showing the page as HTML inside the widget costs over a quarter against a plain link.

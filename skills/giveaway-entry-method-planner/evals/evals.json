@@ -54,20 +54,21 @@
   {
    "id": 3,
    "prompt": "Which entry method gets the most entries?",
-   "expected_output": "Explains that completion when offered differs from total Entries, names page visits and email signup as the highest-completion families, and redirects to the objective because a completed visit produces nothing the business keeps. Gives figures only when useful to the choice, with sample sizes, relevant populations, missing-data notes and reader-facing source attribution whenever a dataset statistic appears.",
+   "expected_output": "Distinguishes weighted Entries from unweighted completion events per Entrant and from the asset produced. Acknowledges that bonus, loyalty or code has the highest listed completion ratio, with email the leading asset-producing family and visits below both. Does not infer total Entries or distinct people from that ratio. Redirects to the objective. Figures are optional, but any dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution.",
    "assertions": [
-    "Distinguishes uptake from value to the business",
-    "Names page visits and email signup as the highest-completion families. Figures are optional, but every dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution",
-    "Redirects to objective"
+    "Distinguishes weighted Entries, completion events per Entrant and business value",
+    "Acknowledges bonus, loyalty or code as the highest listed completion ratio and email as the leading asset-producing family. Rejects the blanket claim that visits or email have the highest completion ratio",
+    "Does not infer total Entries or distinct people from a completion ratio",
+    "Redirects to the objective. Figures are optional, but dataset statistics need sample sizes, relevant populations, missing-data notes and reader-facing attribution"
    ],
    "files": [],
    "assessment": "judgement-only: independent review required; no keyword check can establish the complete acceptance criteria",
    "review_checks": [
     {
      "id": "complete-deliverable",
-     "criterion": "Assess all original assertions against the answer and source evidence. Distinguishes uptake from value to the business Names page visits and email signup as the highest-completion families. Figures are optional, but every dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution Redirects to objective",
-     "pass_example": "Explains that completion when offered differs from total Entries, names page visits and email signup as the highest-completion families, and redirects to the objective because a completed visit produces nothing the business keeps. Gives figures only when useful to the choice, with sample sizes, relevant populations, missing-data notes and reader-facing source attribution whenever a dataset statistic appears.",
-     "fail_example": "The answer treats the highest completion rate as proof of the most total Entries and never considers the business objective."
+     "criterion": "Assess all assertions against the action-family table. Require the distinction between weighted Entries, completion events per Entrant and the useful asset produced. Require acknowledgment that bonus, loyalty or code has the highest listed ratio, with email the leading asset-producing family and visits below both. Reject a blanket visits-highest or email-highest completion ranking, total Entries inferred from ratios, or ratios described as shares of distinct people. Require an objective-based recommendation and population, sample size, missing-data scope and reader-facing attribution for any numerical dataset statistic.",
+     "pass_example": "Bonus, loyalty or code has the highest listed completion ratio. Email leads the asset-producing families and visits sit below both. Completion events are unweighted, while total Entries depend on entry weights and repetition. Choose around the useful asset you want.",
+     "fail_example": "Visits have the highest completion ratio, followed by email. Completion events differ from weighted Entries, so choose around the business asset."
     }
    ]
   },

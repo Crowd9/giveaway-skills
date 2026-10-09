@@ -69,16 +69,20 @@
   {
    "id": 3,
    "prompt": "Best day of the week to start a giveaway?",
-   "expected_output": "Says organizers start on weekdays about five times more often than weekends with Monday most common (with a sample size and reader-facing attribution to the campaign data), explains that this describes choice and shows nothing about results, and advises starting when the audience is online and the team can respond.",
+   "expected_output": "Recommends starting when the audience is available and the team can respond. May omit the weekday statistic. If used, attributes it to the campaign data, explicitly says the weekday table has no reported campaign count, and distinguishes organizer choice from outcomes. Never fabricates a count or borrows one from another population.",
    "assertions": [
-    "Attributes the weekday figure to the campaign data in reader-facing language and includes its sample size",
-    "Says it shows organizer choice and nothing about outcomes",
-    "Ties the choice to the audience and team availability"
+    "Ties the choice to audience and team availability",
+    "May omit the weekday statistic. If included, attributes it to campaign data, explicitly states the campaign count is unavailable, and describes organizer choice rather than outcomes",
+    "Rejects a fabricated or borrowed weekday sample size, including counts from the duration or full dataset populations"
    ],
    "files": [],
-   "checks": [
+   "assessment": "judgement-only: independent review required; no keyword check can establish the complete acceptance criteria",
+   "review_checks": [
     {
-     "contains": "Monday"
+     "id": "weekday-evidence",
+     "criterion": "Require audience and team availability to guide the recommendation. Accept practical advice without a weekday statistic. If a weekday statistic appears, require campaign-data attribution, an explicitly unavailable weekday campaign count, and a distinction between organizer choices and outcomes. Reject fabricated or borrowed sample sizes, even if a caveat appears elsewhere.",
+     "pass_example": "Start when your audience is available and your team can respond. The campaign data describes organizer preferences, but the weekday table has no reported campaign count and cannot show which day performs better.",
+     "fail_example": "Monday is most common in the weekday data from 116,499 campaigns, so start then when your team is available."
     }
    ]
   },

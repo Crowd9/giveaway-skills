@@ -73,7 +73,7 @@ The asset-yield comparison associates more Prize records with more reach actions
 | Reach | 28% to 55% |
 | Referrals | 8% to 25% |
 
-A campaign built to turn a fixed audience into Entrants at the lowest cost per person wants the single Prize. For reach or referrals, several Prizes are an option to test. These associations do not predict the outcome of that change.
+Common practice, our data doesn't cover this. Choose the structure from the value of each unit, fulfillment cost and campaign objective. A single Prize can preserve headline appeal, while several can support product trial or community rewards. Use the associations above as context for a test, without promising lower cost or more Entrants.
 
 A separate look at Entries per Entrant against Prize unit count finds different bend points by campaign size and plan tier. The two larger campaign-size groups bend around 14 to 15 units, while Pro and Business bend later. Treat these as descriptive fits, not a settled stopping point.
 
@@ -142,7 +142,7 @@ Source: `analysis/output/prize_timing_cuts.json` (winners_by_prize_category, win
 
 ## Winner count against Prize value (extracted, campaigns that stated a value)
 
-One Winner pulls a bigger crowd for the same stated Prize value than a large pool of Winners does, in the comparison below, even after allowing for the plain "bigger Prize, more Entrants" effect on its own (table below). The gap varies by price range and is not largest at the highest range. The combined column uses the value-adjusted index, while the range column also accounts for the winner-count group's typical crowd.
+Single-Winner campaigns had a higher ratio of observed to predicted Entrants than campaigns listing many Winners in the comparison below, after accounting for stated Prize value (table below). The gap varies by price range and is not largest at the highest range. The combined column uses the value-adjusted index, while the range column also accounts for the winner-count group's typical crowd.
 
 | Winner count | Ratio to predicted crowd, by price range | Ratio, all price ranges combined | Campaigns (combined) | Businesses (combined) |
 |---|---|---|---|---|
@@ -154,7 +154,7 @@ One Winner pulls a bigger crowd for the same stated Prize value than a large poo
 | Single Winner | 500-999 USD | 10,000-24,999 USD | 166 to 3,221 | 119 to 1,344 |
 | Pool (21+) | 500-999 USD | 25,000-49,999 USD | 54 to 506 | 45 to 202 |
 
-That is a cost on this one crowd-per-dollar measure. It does not weigh what a large pool buys: many Winners who each felt something good happened, many small wins worth posting about, and a Prize spread further across a community than one big Winner reaches. A campaign built to get the most Entrants for its stated Prize value wants the single Winner. A campaign built to spread a goodwill moment across a community, reward loyalty broadly, or run a low-stakes recurring series wants the large pool, and pays this crowd-per-dollar cost for it.
+The single-Winner group had the higher score on this measure. That association does not establish a cost from splitting one campaign's budget. Apply the practical choice above: keep the Prize whole when its unit value matters, or divide it when rewarding more people serves the objective and each unit remains worth winning. Account for fulfillment before choosing the count.
 
 Do not use this below 500 USD or above 49,999 USD, where it was not tested.
 

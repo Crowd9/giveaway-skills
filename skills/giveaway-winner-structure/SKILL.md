@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Set giveaway Winner counts, Prize tiers, draw rules, verification, response deadlines, redraws and fulfilment. Use for 'how many Winners', 'one Winner or several', 'runner-up Prizes', 'daily Winners', 'how do I pick the Winner', 'how to announce Winners', 'Winner terms', or 'what if the Winner does not reply'."
 metadata:
-  version: 1.4.8
+  version: 1.4.9
 ---
 
 # Giveaway Winner Structure
@@ -39,7 +39,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 
 0. **Settle eligibility first.** Which countries entry is open in, the minimum age, who is excluded, and whether the free entry route holds everywhere on that list. Load `references/eligibility-and-compliance.md` for the decisions, what businesses chose, and the questions to put to a lawyer. A permit or registration can move the start date, so that one goes to them before the dates are set, and giveaway-timing-and-duration needs the answer before it plans backwards from a launch.
 1. **Choose the shape.** One Winner, several equal Winners, tiers, or recurring draws. Default to one Prize worth wanting for acquisition. Split when sampling, digital Prizes, community rewards or daily draws make the unit count the point. Load `references/structure-findings.md` for what businesses chose and `references/drawing-and-fulfillment.md` for the tradeoffs. Decide from the objective: headline value favours one Winner, social proof and product trial favour several, a long campaign favours recurring draws.
-2. **Set the count.** Units the budget covers after fulfillment cost, divided so each Prize is still worth wanting. A runner-up Prize nobody wants is admin without benefit. Splitting a fixed budget across more Winners has a measured effect on how many people enter and what it costs, see `references/structure-findings.md`.
+2. **Set the count.** Units the budget covers after fulfillment cost, divided so each Prize is still worth wanting. A runner-up Prize nobody wants is admin without benefit. Use the observed comparisons in `references/structure-findings.md` as context. They do not predict how splitting this budget will change Entrants or cost.
 3. **Write the draw rules.** Random or judged, when, by whom, how ties and duplicate entries are handled, and how entries are verified before a Prize is released. Hand the running of a random draw to giveaway-random-draw once the rules are settled: it freezes the Entrant list, publishes a commitment before the seed exists, draws from a public beacon and writes the audit record these terms promise.
 4. **Write the verification rules.** Load `references/winner-verification.md`: entry checks, account signals, proof scaled to the Prize, and what to do when a drawn entry fails.
 5. **Write the contact and redraw rules.** Channel, reply deadline, number of attempts, and when the Prize passes to a redraw. 93.4% of the 115,361 campaigns with recorded terms settings give the Winner 7 days, which is the platform default, and 1.2% use 72 hours (`references/structure-findings.md`). Leave it at 7 unless the Prize expires, and say in the terms why it is shorter when it is.
