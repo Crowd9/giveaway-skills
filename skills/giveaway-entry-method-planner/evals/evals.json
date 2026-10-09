@@ -4,37 +4,26 @@
   {
    "id": 1,
    "prompt": "We're a skincare brand with 12k Instagram followers and a Klaviyo list. Goal is email subscribers. What should the entry methods be?",
-   "expected_output": "Email signup as the required action with opt-in wording and a stated entry weight. Two to four supporting actions on Instagram (follow, engage with a post) and a visit to a product page. A referral action, which can carry the highest weight of the list since it is optional and needs the incentive for reach. Leaves out account connections and content tasks. Cites the email family's uptake with n and labels it extracted. Ends with a next decision.",
+   "expected_output": "Email signup as the required action with opt-in wording and a stated entry weight. Keeps supporting actions on existing channels only when each has a plain reason tied to email subscribers, with that reason in one Why keep it column. Includes a sharing or referral action with a reason tied to reaching prospective subscribers and a stated weight. Leaves out account connections and content tasks. Uses method counts as context rather than a list-length target. Uses an email completion figure only when it helps the choice. Any dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution. Ends with a next decision.",
    "assertions": [
     "Email signup is required and given a stated entry weight",
     "Mentions opt-in consent wording",
     "Includes one sharing or referral action",
     "Excludes app installs and account connections",
-    "Cites uptake figure with sample size and a source label in the reader's words (from Gleam campaign data, or the campaign count in brackets)",
-    "No platform pitch"
+    "Completion figures are optional. If a dataset statistic appears, it carries its sample size, relevant population, missing-data note and reader-facing source attribution",
+    "No platform pitch",
+    "Every kept action has a plain reason tied to the email-subscriber objective in one Why keep it column",
+    "Does not use action-job taxonomy labels in the owner-facing table",
+    "Uses method counts only as context and never fills the list to hit a target"
    ],
    "files": [],
    "checks": [
     {
-     "count": "(?m)^\\|",
-     "min": 7
-    },
-    {
-     "count": "(?m)^\\|.*\\b(?:Required|Optional)\\b",
-     "min": 4
-    },
-    {
-     "contains": "Acquire"
-    },
-    {
-     "contains": "Amplify"
-    },
-    {
-     "count": "(?i)opt[- ]in",
+     "count": "(?i)why keep it",
      "min": 1
     },
     {
-     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
+     "count": "(?i)opt[- ]in",
      "min": 1
     }
    ]
@@ -65,23 +54,13 @@
   {
    "id": 3,
    "prompt": "Which entry method gets the most entries?",
-   "expected_output": "Explains that uptake describes completion when offered, names page visits and email signup as the highest-uptake families with figures and n, and redirects to the objective because high uptake on a visit produces nothing the business keeps.",
+   "expected_output": "Explains that completion when offered differs from total Entries, names page visits and email signup as the highest-completion families, and redirects to the objective because a completed visit produces nothing the business keeps. Gives figures only when useful to the choice, with sample sizes, relevant populations, missing-data notes and reader-facing source attribution whenever a dataset statistic appears.",
    "assertions": [
     "Distinguishes uptake from value to the business",
-    "Cites the families with figures and sample sizes",
+    "Names page visits and email signup as the highest-completion families. Figures are optional, but every dataset statistic includes its sample size, relevant population, missing-data note and reader-facing source attribution",
     "Redirects to objective"
    ],
-   "files": [],
-   "checks": [
-    {
-     "count": "\\d+(?:\\.\\d+)?%",
-     "min": 2
-    },
-    {
-     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
-     "min": 1
-    }
-   ]
+   "files": []
   },
   {
    "id": 4,

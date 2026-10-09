@@ -4,7 +4,7 @@ Missing facts narrow the answer, they never cancel it. When you do not know the 
 
 The only facts worth stopping for are the ones that would make you actively wrong: a legal or platform rule that turns on a country nobody has named, or a constraint the user has signalled without saying what it is. Even then, say which fact decides that part and answer the rest.
 
-Assumptions go in one line at the top, before the recommendation, short enough that the recommendation is still the first thing the reader takes in. "Assuming a 14-day run, UK entry only, and that you can email Entrants." An assumption states a condition and needs no defending. Cover every constraint this skill named above that the user did not give you. Dropping one silently is how a plan arrives with no date on it, and the reader cannot correct an assumption you never made out loud.
+Place assumptions as directed in the answer rules. "Assuming a 14-day run, UK entry only, and that you can email Entrants." An assumption states a condition and needs no defending. Cover every constraint this skill named above that the user did not give you. Dropping one silently is how a plan arrives with no date on it, and the reader cannot correct an assumption you never made out loud.
 
 When the user asks a direct question, answer that question first. A request for one figure, one comparison or one decision gets the figure, the comparison or the decision. The output shape below is a coverage checklist for a full request, and a narrow question takes the parts that bear on it.
 

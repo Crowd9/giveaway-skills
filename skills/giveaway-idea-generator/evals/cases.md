@@ -48,3 +48,11 @@ give me giveaway ideas for christmas
 ```
 
 The baseline interviewed the reader and delivered nothing, when three concepts on a stated assumption would have cost it nothing. The latest answer ships three complete concepts, a conditional pick with the condition named and one closing question on four words of prompt, and it prints the Christmas finding twice with no limit attached to any figure.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a loss. The judge flagged unclear Conversion Rate percentages without attribution in the table, methodology in the prose, an unsupported lottery claim about a discount-code Prize, and a desk or monitor suggestion that did not fit a software business.
+
+The rest of `evals.json` was not rerun.

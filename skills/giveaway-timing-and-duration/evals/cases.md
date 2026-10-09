@@ -50,3 +50,11 @@ best day to launch a giveaway?
 ```
 
 The baseline repeated the reference prose over the reference table and flattened a weekday spread that runs Friday 521 against Saturday 438. The latest answer refuses to manufacture a finding out of a null result and hands the decision back with the spread shown, and it calls 19.2% a majority when it is only the most common choice.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged parenthetical campaign counts that cluttered the prose, unexpected gaps between campaigns, and methodology-heavy wording about comparing Conversion Rate across durations.
+
+The rest of `evals.json` was not rerun.

@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.32 |
-| giveaway-entry-method-planner | 1.2.33 |
-| giveaway-timing-and-duration | 1.4.30 |
-| giveaway-winner-structure | 1.4.0 |
-| giveaway-promotion-plan | 1.3.32 |
-| giveaway-random-draw | 1.3.28 |
-| giveaway-winner-communications | 1.2.27 |
-| giveaway-idea-generator | 1.3.29 |
-| giveaway-results-review | 1.6.1 |
-| gleam-campaign-setup | 1.2.30 |
+| giveaway-prize-picker | 1.3.33 |
+| giveaway-entry-method-planner | 1.2.34 |
+| giveaway-timing-and-duration | 1.4.31 |
+| giveaway-winner-structure | 1.4.1 |
+| giveaway-promotion-plan | 1.3.33 |
+| giveaway-random-draw | 1.3.29 |
+| giveaway-winner-communications | 1.2.28 |
+| giveaway-idea-generator | 1.3.30 |
+| giveaway-results-review | 1.6.2 |
+| gleam-campaign-setup | 1.2.31 |
 
 ## Skills
 
@@ -343,6 +343,30 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.0 (2026-10-09)
+
+Answers start with the decision. The recommendation comes first, any assumptions sit in one short line under it,
+and the questions that would change the plan come at the end. Your own details come back in the answer, so a
+bakery with 300 followers gets a Prize plan priced for its counter and its town.
+
+Every figure now says whose campaigns it describes. A small business gets the benchmark for campaigns its own size,
+and a SaaS asking about Christmas is told when the only figure available covers every industry. Where a finding
+cuts both ways, both sides are given once, so a case against a long run also says that long runs drew more
+Entrants. Internal labels and sample arithmetic are translated into plain words or left out.
+
+Numbers nobody measured are gone. A results review no longer treats a fifth of entries failing as a health line,
+and the promotion advice no longer implies that 40 Entrants from 400 people is normal. Any number that is a
+planning guess is called one in the same sentence.
+
+A rigged-draw complaint gets a reply you can send and the steps for next time in plain words, with the terms and a
+lawyer checked before anyone talks about taking a Prize back. A low Conversion Rate gets the three checks you can
+run today before any benchmark. A consolation offer comes with a public cap and its full cost set against the
+budget you gave.
+
+Every skill was restructured, which is why the first number moves. Shorter skills read faster. The typical skill
+went from 5,806 words to 2,203, and the detail loads only when a question needs it. In a blind comparison of one
+question per skill, the new answers were preferred in 8 of 10.
 
 ## 2.4.0 (2026-10-06)
 

@@ -4,13 +4,13 @@
   {
    "id": 1,
    "prompt": "We launch a new running shoe on 14 October. Want to build hype and collect emails. How long should the giveaway run and when should it start?",
-   "expected_output": "Anchors on the launch date, recommends a two to three week run ending on or just before launch, starts on a weekday, gives a timeline with pushes, draw, announce and delivery, cites the duration distribution with n and the extracted label, and lists risks.",
+   "expected_output": "Anchors on the launch date, recommends a two to three week run ending on or just before launch, starts on a weekday, gives a timeline with pushes, draw, announce and delivery, cites the duration distribution with a sample size and reader-facing attribution to the campaign data, and lists risks.",
    "assertions": [
     "Anchors the end date to the launch",
     "Recommends a specific duration with a reason",
     "Starts on a weekday",
     "Includes a draw and announce step with a response deadline",
-    "Cites a dataset figure with sample size",
+    "Cites a dataset figure with sample size and reader-facing attribution to the campaign data",
     "No platform pitch"
    ],
    "files": [],
@@ -65,9 +65,9 @@
   {
    "id": 3,
    "prompt": "Best day of the week to start a giveaway?",
-   "expected_output": "Says organizers start on weekdays about five times more often than weekends with Monday most common (extracted, with n), explains that this describes choice and shows nothing about results, and advises starting when the audience is online and the team can respond.",
+   "expected_output": "Says organizers start on weekdays about five times more often than weekends with Monday most common (with a sample size and reader-facing attribution to the campaign data), explains that this describes choice and shows nothing about results, and advises starting when the audience is online and the team can respond.",
    "assertions": [
-    "Cites the weekday figure as extracted",
+    "Attributes the weekday figure to the campaign data in reader-facing language and includes its sample size",
     "Says it shows organizer choice and nothing about outcomes",
     "Ties the choice to the audience and team availability"
    ],

@@ -64,52 +64,88 @@ RECAP = r"(?i)\b(in conclusion|to recap|ultimately,|overall,|to sum up|all in al
 # Gleam's own words must arrive capitalised, because the reader has the dashboard open beside the answer.
 APP_LOWER = r"(?<![A-Za-z`\-])(impressions|conversion rate|entry methods?|viral shares?|email subscriptions?|secret code|visit a page|answer a question|chat members?|custom actions?|app downloads?|loyalty bonus(es)?|file uploads?|entrants?|contestants?|prizes?|winners?)\b"
 STIFF = r"\b(works the other way|pulls? in the opposite direction|the picture reverses|comes at a cost|on the other hand|that said|conversely|by contrast|it is worth (noting|remembering)|bear in mind|one thing to note)\b"
-JARGON = r"\b(contestant band|size band|per contestant|n\s*=\s*\d|stratified|cohort|controlled for|unstratified|clean subset|ordinary segment|uptake|extracted)\b"
+JARGON = r"\b(contestant band|size band|per contestant|n\s*=\s*\d|stratified|cohort|controlled for|unstratified|clean subset|ordinary segment|uptake|extracted|value index|playbook)\b"
 BAN = r"\b(so (skip|avoid|drop|do not add|don't add|do not use|don't use)|(skip|avoid) (the|a|an|any) \w+ action|not worth (adding|offering|running|using)|(do not|don't) (bother|add|offer) [a-z]|leave (it|that|the \w+) out)\b"
 # The analyst's units for a rate. A reader knows 53% and 1.5x; "53 per 100 Entrants" and "1.5 times" make them
 # stop and convert, and Stuart asked for the conversion to happen before the sentence reaches them.
 ANALYST_UNITS = r"\b(per (100|hundred)\b|\d+(?:\.\d+)? times (?:the|as|more|fewer|higher|lower|in (?:every )?100|what)\b|in every 100\b)"
 META = r"\b(this (answer|reply|response|recommendation) (is|does|gives|covers)|(i|we) (sent|gave|listed|showed) (you|above)|as (i|we) (said|noted) above|the (list|table|numbers) above (is|are|shows)|to summari[sz]e|in short,|in summary)\b"
 
-# A sentence asserting how an outside party behaves, or how often something happens, with no figure in it and no
-# word saying where it came from. Across six measured rounds the figures all traced to a reference and the prose
-# beside them did not: "that email send is the fastest reach you have", "a bio link pointing at last month's
-# campaign is the commonest version of this", "role addresses rarely become customers". Every one read like a
-# finding and none had a line behind it. The gate is loose on purpose. An instruction (a sentence opening on a
-# verb) is exempt because it claims nothing about the world, and a sentence naming a rule, a policy, the docs, the
-# data or a practice is exempt because it names its source. What is left is the sentence the writer has to either
-# source, turn into the thing to do, or cut.
+# Flag likely unsupported claims about an outside party or a frequency. This is a prompt for a source check,
+# not a truth test. Dates and durations do not support a claim. Measured rates, campaign/Entrant counts and
+# multiples retain their exemption, and a source needs a name, not just a word such as "documentation".
 PARTY = (r"\b(instagram|facebook|tiktok|twitter|youtube|discord|telegram|reddit|twitch|pinterest|linkedin|snapchat|whatsapp"
          r"|gmail|outlook|apple|google|klaviyo|mailchimp|shopify|paypal|stripe|random\.org|the platform|platforms|networks?"
          r"|the algorithm|regulators?|carriers?|payment providers?|inbox(es)?|spam folder|promotions tab|app stores?|courier|customs)\b")
+NAMED_PARTY = PARTY.split(r"|the platform")[0] + r")\b"
 GENERAL = (r"\b(plenty of|usually|typically|often|rarely|mostly|tends? to|commonest|the most \w+"
            r"|the (biggest|largest|fastest|slowest|cheapest|best|worst|strongest|weakest|second biggest|busiest|quietest|highest|lowest|earliest|hardest|easiest|safest|riskiest)"
            r"|(more|less|fewer|better|worse|higher|lower|faster|slower|cheaper) \w*\s?than|\w+est of (any|all|every))\b")
-# Naming who decides a point is allowed, so a rule, a policy or a law still exempts a sentence. The words "data",
-# "campaigns" and "practice" used to exempt one too, which let the overreaching claims through: 13 of 22 sentences
-# a grader flagged carried one of them. They now exempt only when the sentence shows its working, by citing a
-# reference, quoting a source or carrying a figure.
-SOURCED = r"\b(rules?|policy|policies|guidelines|law|laws|legal|reference|measured|according to|docs|documentation)\b"
+SOURCE_KIND = r"(?:rules?|policy|policies|guidelines|law|laws|docs|documentation|help(?: page| cent(?:er|re))?|report|study)"
+SOURCE_NAME = r"(?!(?:Official|The|A|An|Some|Documentation|Docs|Rules|Policy|Guidelines)\b)(?:[A-Z][A-Za-z0-9&.-]*(?: [A-Z][A-Za-z0-9&.-]*){0,4})"
+NAMED_SOURCE = re.compile(
+    r"\b" + SOURCE_NAME + r"['’]s (?:promotion |community |official |contest |fake-engagement )?" + SOURCE_KIND + r"\b"
+    r"|\b(?:the )?" + SOURCE_NAME + r" (?:promotion |community |official |contest |fake-engagement )?" + SOURCE_KIND + r"\b"
+    r"|\b[Aa]ccording to (?:the )?(?!Documentation\b|Docs\b|Rules\b|Policy\b|Guidelines\b)" + SOURCE_NAME + r"\b")
+MEASURED_CLAIM = re.compile(
+    r"\b\d+(?:\.\d+)?\s*(?:%|percent\b|x\b|times\b)"
+    r"|\b\d[\d,]*(?:\.\d+)?\s+(?:campaigns?|Entrants?|Contestants?|businesses?)\b", re.I)
+GLEAM_DOCS = re.compile(r"\b(?:Gleam['’]s (?:docs|documentation)|(?:the )?Gleam (?:docs|documentation))\b", re.I)
+
+
+def named_source(text):
+    if NAMED_SOURCE.search(text) or re.search(r"\bGleam campaign data\b", text, re.I):
+        return True
+    # A platform's own guidelines remain a named source when the possessive follows its name.
+    return bool(re.search(NAMED_PARTY + r"[^.!?]{0,120}\b(?:its (?:current )?" + SOURCE_KIND
+                          + r"|announced a guidelines? update)\b", text, re.I))
+
+
 INSTRUCTION = (r"^(\*\*)?(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm"
                r"|post|put|place|screenshot|report|reply|email|dm|message|name|state|link|open|paste|copy|export|download|upload|sort|read"
                r"|treat|plan|budget|expect|hold|leave|make|take|let|do|don't|do not|never|always|announce|tag|thank|quote|cap|freeze"
-               r"|record|suppress|fix|publish|pin|schedule|delete)\b")
+               r"|record|suppress|fix|publish|pin|schedule|delete|join|require|trim)\b")
 
 
 def unsourced_claims(text):
     out = []
-    for s in sentences(prose_only(text)):
+    body = prose_only(text)
+    gleam_docs_named = bool(GLEAM_DOCS.search(body))
+    for s in sentences(body):
         t = s.strip().lstrip("*-# ")
-        if re.search(r"\d", t) or t.endswith("?") or re.search(SOURCED, t, re.I):
+        if t.endswith(("?", ":")) or named_source(t) or re.match(r"(?i)^assuming\b", t):
             continue
+        # A restrictive rule condition defines which platforms an instruction applies to. It does not say
+        # that any named platform has that rule. A general behavioral claim still needs support.
+        if (not re.search(NAMED_PARTY, t, re.I) and not re.search(GENERAL, t, re.I)
+                and re.search(r"(?i)\bplatforms? (?:whose|where (?:the|their)) (?:promotion )?(?:rules?|policies)\b", t)):
+            continue
+        # This tightening targets outside-party claims. Numeric comparisons without an outside party keep
+        # the earlier exemption, since a bare total or a budget calculation can carry their meaning.
+        if re.search(r"\d", t) and not re.search(PARTY, t, re.I):
+            continue
+        # A named Gleam source elsewhere in the answer permits its quoted product wording. Remove only the
+        # quoted term, so an unrelated Gmail claim in that sentence still needs its own support.
+        reported = t
+        if gleam_docs_named:
+            t = re.sub(r"[\"“'‘]same-network[\"”'’]", "quoted filter wording", t, flags=re.I)
+        # Test a conditional instruction's action, not its budget or timing condition.
+        t = re.sub(r"(?i)^if\b[^,]+,\s*(?=" + INSTRUCTION.lstrip("^") + r")", "", t)
+        # A contextual count is not the measured outcome of the claim that follows it.
+        t = re.sub(r"(?i)^with \d[\d,]* (?:Entrants|campaigns|businesses),\s*", "", t)
         # An instruction exempts only the instruction. "Send it Tuesday because Gmail buries promotions" is an
         # instruction with a claim riding on its back, so the reason clause is tested on its own.
         if re.match(INSTRUCTION, t, re.I):
             t = re.sub(r"(?i)^.*?\b(because|since|as)\b", "", t, count=1) if re.search(r"(?i)\b(because|since|as)\b", t) else ""
             if not t.strip():
                 continue
-        if re.search(PARTY, t, re.I) or re.search(GENERAL, t, re.I):
-            out.append(t.strip())
+        # Keep separate clauses separate: a measured figure must not license an appended outside-party claim.
+        # A discount in the email's offer is an input, not a delivery measurement.
+        t = re.sub(r"(?i)\b(?:offering|with) (?:a )?\d+(?:\.\d+)?% (?:discount|off)\b", "an offer", t)
+        clauses = re.split(r";|,?\s+(?:but|and)\s+(?=(?:Gmail|Outlook|Facebook|Instagram|TikTok|Google)\b)", t, flags=re.I)
+        if any((re.search(PARTY, c, re.I) or re.search(GENERAL, c, re.I))
+               and not MEASURED_CLAIM.search(c) and not named_source(c) for c in clauses):
+            out.append(reported.strip())
     return out
 
 
@@ -346,7 +382,32 @@ def self_test():
     # The four ways a claim used to slip past: a reason clause riding on an instruction, and the words
     # "data", "campaigns" and "practice" standing in for a source.
     hatches = check(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "fails_claims.txt")).read())
-    assert hatches["unsourced_claims"] == 4, hatches
+    assert hatches["unsourced_claims"] == 7, hatches
+    supported = check(open(os.path.join(d, "passes_claims.txt")).read())
+    assert supported["unsourced_claims"] == 0, supported
+    for claim in ("Gmail usually hides giveaway emails.",
+                  "Gmail usually hides giveaway emails for 7 days.",
+                  "According to documentation, Gmail usually hides giveaway emails."):
+        assert unsourced_claims(claim) == [claim], claim
+    assert unsourced_claims('High blocks "same-network" entries.'), "unattributed wording needs a source"
+    assert unsourced_claims("Gleam's docs describe the levels. Gmail usually hides giveaway emails."), "no answer-wide exemption"
+    assert unsourced_claims("Across 100 campaigns, 20% used referrals, but Gmail usually hides giveaway emails."), "unrelated figure"
+    assert unsourced_claims("Send it for 7 days because Gmail usually hides giveaway emails."), "incidental duration"
+    assert unsourced_claims("According to Documentation, Gmail usually hides giveaway emails."), "capitalized generic source"
+    assert unsourced_claims("With 500 Entrants, Gmail usually hides giveaway emails for 7 days."), "contextual count"
+    for claim in ("Gmail usually hides giveaway emails offering a 10% discount.",
+                  "According to Official documentation, Gmail usually hides giveaway emails.",
+                  "According to The Documentation, Gmail usually hides giveaway emails.",
+                  "The platform usually hides giveaway emails according to its documentation."):
+        assert unsourced_claims(claim), claim
+    assert not unsourced_claims("Gleam's docs describe the levels. High blocks 'same-network' entries.")
+    attributed = 'Gleam documentation describes the levels. High blocks "same-network" entries and Gmail hides emails.'
+    assert unsourced_claims(attributed) == ['High blocks "same-network" entries and Gmail hides emails.']
+    assert not unsourced_claims("Share-to-enter on platforms whose promotion rules forbid it.")
+    assert unsourced_claims("Platforms usually hide giveaway emails for 7 days.")
+    assert unsourced_claims("From Monday, Gmail usually hides giveaway emails for 7 days.")
+    assert not unsourced_claims("Gmail delivered the most emails across 100 campaigns.")
+    assert not unsourced_claims("Instagram campaigns usually drew 2x the Entrants.")
     with open(fh.name, "w") as f2:
         f2.write("Pick the coffee subscription. That email send is the fastest reach you have.\n"
                  "Ask them which matters more to you this quarter.\n")

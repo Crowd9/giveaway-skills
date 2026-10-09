@@ -48,3 +48,11 @@ how many winners should i have
 ```
 
 The baseline delivered nothing while the reference carried a one-line default the reader could have acted on. The latest answer gives that default, the four conditions that override it and a worked sizing comparison on six words of prompt, and it supports a crowd-per-dollar claim with Conversion Rate figures, which are a different measure.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged an assumed response window stated before its assumption and advice to move to a backup based on account signals before the deadline.
+
+The rest of `evals.json` was not rerun.

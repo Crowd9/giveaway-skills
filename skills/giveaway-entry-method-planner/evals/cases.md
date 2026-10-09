@@ -60,3 +60,11 @@ Added the no-subscription-Action prompt in `evals.json`. The documentation revie
 Added two cases to `evals.json`. Case 6 is the 40 right Entrants against 4,000 wrong ones prompt, on gating, the qualifying question, follow-up and the scorecard. Case 7 puts the healthcare prompt entry-3 above into `evals.json` with its constraints as assertions, since entry-3 was only in the 40-prompt set and the model had improvised the qualifying-question pairing. Both are checked against `references/qualified-entry.md`, which labels the gating, question and follow-up advice as practice and says no output splits work email from free mail. No model response was generated or scored for these cases.
 
 Pass for case 6: a one-sentence buyer, one qualifying question as the required action with answer choices, sorting by email domain after entry as the default, no work-email against free-mail figure quoted, an owner and a response time for each tier, and a scorecard of qualified Entrants and cost per qualified Entrant in place of the crowd measures.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged unexplained per-Entrant wording and the Viral Share label, a source block split across paragraphs with raw counts, and a closing question after the recommendation.
+
+The rest of `evals.json` was not rerun.

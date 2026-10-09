@@ -4,13 +4,13 @@
   {
    "id": 1,
    "prompt": "Budget $1,500 for a giveaway of our meal-prep containers (they retail at $60 a set). Want reviews and photos. How many winners?",
-   "expected_output": "Recommends several equal winners of own product at cost (for example 10 to 15 sets after shipping), explains that product trial and photos favour count over headline, gives draw, contact, redraw and announcement rules, includes a terms snippet, cites the structure findings as extracted with n, and ends with a next decision.",
+   "expected_output": "Recommends several equal winners of own product at cost (for example 10 to 15 sets after shipping), explains that product trial and photos favour count over headline, gives draw, contact, redraw and announcement rules, includes a terms snippet, cites the structure findings with a sample size and reader-facing attribution to the campaign data, and ends with a next decision.",
    "assertions": [
     "Recommends multiple winners with a count and reasoning",
     "Accounts for shipping in the count",
     "Includes contact deadline and redraw rule",
     "Includes a terms snippet",
-    "Cites a dataset figure with sample size",
+    "Cites a dataset figure with sample size and reader-facing attribution to the campaign data",
     "No platform pitch"
    ],
    "files": [],

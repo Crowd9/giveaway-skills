@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 """Write the rules every skill shares into every skill, from one copy of each.
 
-Ten skills kept the same rules by hand and they drifted. The answer style had ten checksums on the day
-all ten were edited. The dataset scope had five wordings, three of them saying the data starts at 1,000
-Entrants when it starts at 101, so three skills told the reader their campaign was too small to compare.
-A rule worded ten ways is ten rules, and nothing in the repo could say which differences were meant.
-
 Each shared block lives in one file under scripts/ and is written into every skill between markers:
 
     <!-- generated:NAME -->
@@ -14,6 +9,7 @@ Each shared block lives in one file under scripts/ and is written into every ski
 
 Anything a single skill needs of its own sits outside the markers, under the same heading, where a
 re-render leaves it alone. That is where a skill's own evidence limits and its own questions live.
+Branch-specific rules ship as generated references, alongside the generated style checker.
 
   python3 scripts/render_shared.py            # rewrite every skill
   python3 scripts/render_shared.py --check    # exit 1 if a copy has drifted (CI)
@@ -33,10 +29,11 @@ BLOCKS = {
 }
 
 # whole files copied into every skill, so a skill folder installed on its own still has them.
-# The answer style is forty-odd rules. Measured across 40 answers, a model self-checking them by
-# reading still left about 10 style faults per 1,000 words, most of them the contrast sentences the
-# rules ban twice over. The checker catches those deterministically in one command, so it ships.
-FILES = {"scripts/style_check.py": "evals/style_check.py"}
+FILES = {
+    "scripts/style_check.py": "evals/style_check.py",
+    "references/house-style.md": "scripts/house-style.md",
+    "references/evidence-detail.md": "scripts/evidence-detail.md",
+}
 BANNER = ("# Generated from evals/style_check.py by scripts/render_shared.py. Edit the source, never this copy.\n"
           "# Run it on a draft answer before sending: python3 scripts/style_check.py draft.txt\n")
 
@@ -55,8 +52,12 @@ def main():
     copies = {}
     for dest, src in FILES.items():
         body = open(os.path.join(ROOT, src), encoding="utf-8").read()
-        first, _, rest = body.partition("\n")
-        copies[dest] = first + "\n" + BANNER + rest if first.startswith("#!") else BANNER + body
+        if dest.endswith(".md"):
+            banner = f"<!-- Generated from {src} by scripts/render_shared.py. Edit the source, never this copy. -->\n\n"
+            copies[dest] = banner + body
+        else:
+            first, _, rest = body.partition("\n")
+            copies[dest] = first + "\n" + BANNER + rest if first.startswith("#!") else BANNER + body
 
     drifted, written, missing = [], 0, []
     for skill in sorted(glob.glob(os.path.join(ROOT, "skills", "*", ""))):
@@ -70,7 +71,7 @@ def main():
             else:
                 os.makedirs(os.path.dirname(path), exist_ok=True)
                 open(path, "w", encoding="utf-8").write(body)
-                os.chmod(path, 0o755)
+                os.chmod(path, 0o755 if dest.endswith(".py") else 0o644)
                 written += 1
 
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "SKILL.md"))):
@@ -95,9 +96,9 @@ def main():
     if check:
         for d in drifted:
             print(f"  {d}: a shared block differs from its source under scripts/")
-        print(f"{len(drifted)} skills out of date" if drifted else "shared blocks in sync across all skills")
+        print(f"{len(drifted)} files out of date" if drifted else "shared blocks and files in sync across all skills")
         return 1 if (drifted or missing) else 0
-    print(f"{written} skills rewritten" if written else "shared blocks already in sync")
+    print(f"{written} files rewritten" if written else "shared blocks and files already in sync")
     return 1 if missing else 0
 
 

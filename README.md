@@ -54,7 +54,7 @@ Three giveaway concepts that fit your business, your date and your goal, then th
 
 - Hooks for the moment you have (launch, milestone, season, holiday, collaboration, daily series) and for moments you can manufacture
 - Each concept in five lines: title, hook, mechanic, prize direction, and the asset it builds
-- Campaign types measured (advent calendars, launches, drops, collaborations, series, cash, creator, charity and more) with Entrants, Conversion Rate and a value index for each
+- Campaign types measured (advent calendars, launches, drops, collaborations, series, cash, creator, charity and more) with Entrants, Conversion Rate and Entrants relative to campaigns offering Prizes of similar stated value
 - Store campaigns for Shopify and similar: win your cart, win your wishlist, bundle builder, restock drop, gift card tiers
 - What the campaigns that beat their prize money had in common, and the cheap prizes that drew crowds
 

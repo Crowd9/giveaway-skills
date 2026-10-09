@@ -56,3 +56,11 @@ Deduction standing in the latest grade, causal claim: "Once a business has run s
 ## Draw data integrity regression, 12 September 2026
 
 The converter self-test rejects missing and invalid Entries consistently in summary and export. The integration test preserves fractional earned weights, runs the generated review command, draws Winners and verifies the audit. Missing weights stop conversion before an output file is created. These are executable regression checks. No new model response was generated or graded.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged an unsourced failure threshold and headings that lengthened a short answer.
+
+The rest of `evals.json` was not rerun.

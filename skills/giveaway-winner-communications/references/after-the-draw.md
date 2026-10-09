@@ -110,4 +110,4 @@ Useful shapes:
 - Where did you hear about the giveaway? (fills the gap left by referrers that arrive as direct traffic)
 - Had you bought from us before entering? (yes or no, and the answer sizes how much of the list is new)
 
-Send the answers to whoever plans the next campaign. A Prize question answered by a few hundred Entrants is the cheapest Prize research available, and it feeds giveaway-prize-picker directly.
+Send the answers to whoever plans the next campaign and use them to build a Prize shortlist for giveaway-prize-picker.

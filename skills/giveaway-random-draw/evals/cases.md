@@ -58,3 +58,11 @@ The baseline stated its four defaults and left the reader no route they could ta
 ## Draw data integrity regression, 12 September 2026
 
 Executable self-tests now cover empty, truncated, reordered and reassigned audit results, plus single-column CSV headers and explicit identifier columns. The export integration also performs a weighted draw and verifies its audit. These are executable regression checks. No new model response was generated or graded.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a tie. The judge flagged clunky wording about committing a draw in advance, no check of the Winner's Entry against the terms, and an offer to discuss the draw by direct message that could invite further argument.
+
+The rest of `evals.json` was not rerun.

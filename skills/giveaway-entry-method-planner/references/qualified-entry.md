@@ -121,13 +121,13 @@ A campaign that draws 4,000 Entrants of whom 3% qualify has 120 qualified Entran
 
 ## An Example Entry List (illustrative)
 
-Built by hand to show the shape, and not taken from any campaign in the data. The buyer is a warehouse operations lead. A normal campaign carries one of each job label, and this one drops Grow social on purpose.
+Built by hand to show the shape, and not taken from any campaign in the data. The buyer is a warehouse operations lead. This example leaves out social follows because they do not help qualify or follow up with the buyer. The job column states the purpose in plain words.
 
 | Action | Job | Required or optional | Entry weight | What it produces |
 |---|---|---|---|---|
-| Answer the stock-counting question | Learn | Required | 1 | A sorted Entrant |
-| Entry form with company email and company name | Acquire | Collected on the entry form | none | A contact to tag by tier |
-| Visit the pricing page | Engage | Optional | 1 | An intent signal |
-| Refer a colleague | Amplify | Optional | 1 | A second Entrant who answers the same question |
+| Answer the stock-counting question | Identify the buyer | Required | 1 | A sorted Entrant |
+| Entry form with company email and company name | Collect a contact | Collected on the entry form | none | A contact to tag by tier |
+| Visit the pricing page | Show the product and pricing | Optional | 1 | An intent signal |
+| Refer a colleague | Bring in referrals | Optional | 1 | A second Entrant who answers the same question |
 
 The Prize that makes this list worth entering is the job of giveaway-prize-picker, and a Prize anyone would take undoes the sort.

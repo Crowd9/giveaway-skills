@@ -4,14 +4,15 @@
   {
    "id": 1,
    "prompt": "We're a small candle brand hitting 10k Instagram followers next month. Give us giveaway ideas. Budget about $300.",
-   "expected_output": "Three concepts (a simple milestone draw, a participatory scent-vote or UGC concept, a partner bundle), each with title, hook, mechanic, prize direction and asset. Recommends one for the objective and budget, cites the milestone hook share as extracted, names what to avoid, hands off to the prize picker or entry planner.",
+   "expected_output": "Three concepts (a simple milestone draw, a participatory scent-vote or UGC concept, a partner bundle), each with title, hook, mechanic, prize direction and asset. Recommends one for the objective and budget, uses the milestone hook without unsolicited title-share statistics, names what to avoid, hands off to the prize picker or entry planner.",
    "assertions": [
     "Three concepts of different shape",
-    "Milestone hook used with an extracted figure",
+    "Milestone hook fits the concept without unsolicited title shares or peak months",
     "Recommendation with reasoning",
     "Hands the reader on to the next piece of work, named in their own words",
     "No platform pitch",
-    "No entrant-number promise"
+    "No entrant-number promise",
+    "Any value comparison refers to a Prize of similar stated value, never actual spending"
    ],
    "files": [],
    "checks": [
@@ -34,22 +35,19 @@
     {
      "count": "(?m)^[\\s*>\\-]*Asset produced[:*]",
      "min": 3
-    },
-    {
-     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
-     "min": 1
     }
    ]
   },
   {
    "id": 2,
    "prompt": "Ideas for a Christmas giveaway for our SaaS?",
-   "expected_output": "Notes December is the busiest month (extracted share), suggests a series or advent format and a partner concept and a simple year-free plan concept, warns about the crowded month and shipping, avoids purchase conditions, hands off.",
+   "expected_output": "Three Christmas SaaS concepts, including a series or advent format, a partner concept and a simple year-free plan concept. Recommends one, avoids unsolicited title-share statistics and peak-month commentary, and gives a concrete next action.",
    "assertions": [
-    "Cites December share as extracted",
+    "No unsolicited title-share statistics or peak-month commentary",
     "At least one series or advent concept",
-    "Warns about competition for attention in December",
-    "Hands the reader on to the next piece of work, named in their own words"
+    "Recommendation fits the SaaS objective and available channels",
+    "Hands the reader on to the next piece of work, named in their own words",
+    "Any value comparison refers to a Prize of similar stated value, never actual spending"
    ],
    "files": [],
    "checks": [
@@ -59,21 +57,18 @@
     {
      "count": "(?i)\\badvent\\b|\\bseries\\b",
      "min": 1
-    },
-    {
-     "count": "\\d+(?:\\.\\d+)?%",
-     "min": 1
     }
    ]
   },
   {
    "prompt": "We're launching a new mechanical keyboard next month, pre-orders open the same day. Budget $600. Ideas?",
-   "expected_output": "Three concepts with a launch or early-access hook, quotes the launch subtype row (launches below the median on contestants and conversion, above on referrals, early access at index 1.08) as extracted with n, makes the product the prize in at least one concept, recommends promotion and a referral action first, hands off.",
+   "expected_output": "Three concepts with a launch or early-access hook, uses launch subtype figures only when they change the choice, with each metric's count, makes the product the prize in at least one concept, recommends promotion and a referral action first, hands off.",
    "assertions": [
-    "Quotes the launch subtype data with n",
+    "Quotes launch subtype figures only when they change the choice, with each metric's count",
     "At least one concept uses the product itself as the prize",
     "Recommends planning promotion and referral before the prize",
-    "Three concepts with hook, mechanic and prize direction"
+    "Three concepts with hook, mechanic and prize direction",
+    "Any value comparison refers to a Prize of similar stated value, never actual spending"
    ],
    "files": [],
    "id": 3,
@@ -99,10 +94,6 @@
      "min": 3
     },
     {
-     "count": "\\b\\d{1,3}(?:,\\d{3})+\\b|\\(\\d+\\)|\\b\\d+ campaigns\\b",
-     "min": 1
-    },
-    {
      "count": "(?i)\\breferral",
      "min": 1
     }
@@ -120,6 +111,27 @@
     "No mechanic is banned on the strength of an average, only on a rule, a law or a money risk"
    ],
    "files": []
+  },
+  {
+   "id": 5,
+   "prompt": "How common are collaboration and holiday hooks in campaign titles, and when do they peak? Give three Christmas SaaS concepts and recommend one.",
+   "expected_output": "Answers prevalence and timing from the hook rows with the applicable campaign base and scope, then gives three concepts and a recommendation.",
+   "assertions": [
+    "Title shares and peak months match the requested hook rows",
+    "Each quoted metric carries its population count and missing-data scope",
+    "Three concepts and a recommendation remain present"
+   ],
+   "files": [],
+   "checks": [
+    {
+     "count": "\\d+(?:\\.\\d+)?%",
+     "min": 1
+    },
+    {
+     "count": "(?m)^[\\s*>\\-]*Title[:*]",
+     "min": 3
+    }
+   ]
   }
  ]
 }

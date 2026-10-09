@@ -120,3 +120,19 @@ Skincare brand, Australia, we want to run a giveaway but our margins are thin an
 ```
 
 The baseline recommended a 2,000 AUD store credit while its own budget table totalled 850 AUD. The latest answer names the conflict the reader did not, that their promotion reaches the 22,000 subscribers they already have, and it rests the whole resale answer on an unsupported assertion without reaching for the non-transferable Prize clause.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged awkward wording about wholesale costs, a voucher promised to every Entrant despite a redemption cap, and sources separated into their own paragraph.
+
+The rest of `evals.json` was not rerun.
+
+## 13. Fixed budget with a capped consolation
+
+**Request:** We sell warehouse software and have a hard $1,000 total giveaway budget. The main Prize costs us $400 including delivery, and promotion costs $100. We expect 80 qualified non-Winners. We want to offer every one of them a printed stock-audit kit costing $8 plus $2 packing and $5 shipping. Can we promise that consolation, and what exact wording and budget should we publish?
+
+**Pass:** Each kit costs $15 including packing and shipping. Offering 80 kits takes campaign spend to $1,700. Public wording caps the offer at no more than 33 kits and names eligibility and allocation. At that cap, consolation liability is $495 and total spend is $995, including the main Prize and promotion. Extra costs reduce the cap.
+
+**Status:** Added 9 October 2026, not yet run. No model response generated or scored.
