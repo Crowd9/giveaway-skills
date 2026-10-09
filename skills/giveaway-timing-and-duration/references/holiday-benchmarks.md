@@ -1,12 +1,12 @@
 # Holiday benchmarks and calendar
 
-Built from the campaigns behind these numbers (116,499 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The Conversion Rate here is from the campaigns we can compare fairly (no repeatable action, 14 days or less). The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
+Built from the campaigns behind these numbers (116,499 campaigns). A campaign counts for a holiday when its title, incentive name or the first part of its description names it, so the rows are business-declared themes. Lead days is the holiday date minus the start date, for campaigns that started inside the 120 days before it. The first two tables use Conversion Rates from the campaigns we can compare fairly (no repeatable action, 14 days or less). The all-run comparisons below have their own baselines. The typical range given is the middle half of campaigns, from the lower quarter to the upper quarter. Every figure describes what businesses chose.
 
-Baseline for comparison across this page. The typical campaign draws 492 Entrants over 14 days, across 116,283 campaigns from 17,603 businesses. Read every Conversion Rate column on this page against 34.5%, the typical figure among the campaigns we can compare fairly, because those columns are counted on that group and carry its campaign count in brackets. The all-campaign Conversion Rate is 26.9%, lower because Impressions count once per visitor per day and a long run collects more of them for the same crowd. The public-holiday table below reads 492 Entrants for every other start across 90,764 campaigns, which is the same baseline arrived at on this page's own data.
+Baselines for the fair-comparison tables below, from `analysis/output/holidays.json` (`all_ordinary`). The typical campaign draws 492 Entrants over 14 days, across 116,283 campaigns from 17,603 businesses. Compare their Conversion Rates with 34.5%, the typical figure among the campaigns we can compare fairly. The JSON does not report that baseline's fair-comparison sample count separately. The first table gives each theme's fair-comparison count in brackets.
 
-These figures were wrong on this page until the benchmark floor moved from 1,000 Entrants to 100. Anything comparing a theme with the typical figure is measured against the numbers above, so check them against the generated tables before trusting a sentence that says above or below.
+These figures were wrong on this page until the benchmark floor moved from 1,000 Entrants to 100. In the fair-comparison tables, comparisons with the typical figure use the baselines above, so check them against the generated tables before trusting a sentence that says above or below.
 
-## By holiday
+## By holiday, with fair-comparison Conversion Rates
 
 <!-- generated:hol_by_holiday -->
 | Theme | Campaigns | Entrants | Conversion Rate (fair-comparison count) | Entries per Entrant | Duration days | Lead days, typical (range) | Closed on or before the day | Start months |
@@ -27,16 +27,16 @@ These figures were wrong on this page until the benchmark floor moved from 1,000
 
 Reading it:
 
-- Christmas and advent beats the all-campaign typical figures on both Entrants and Conversion Rate, on 4,895 campaigns, and Father's Day is the only other theme to do the same, on 329. It launches a typical 17 days out and 75% close on or before the day. Three in ten use a repeatable action, the advent calendar shape.
+- Christmas and advent exceeds the 492-Entrant baseline and the fair-comparison Conversion Rate baseline, on 4,895 campaigns, and Father's Day is the only other theme to do the same, on 329. It launches a typical 17 days out and 75% close on or before the day. Three in ten use a repeatable action, the advent calendar shape.
 - Every theme except Halloween sits above the typical figure on Entrants, with Black Friday and Cyber Monday at 898 and back to school at 876 the largest. Halloween at 482 is the only one below it.
 - Black Friday campaigns are short (8 days) and launch 7 days out. Family days launch about two weeks out and run about two weeks. Back to school launches about two and a half weeks out.
 - Roughly half of campaigns for a dated holiday close after the day. A Prize that only makes sense before the day (a gift for Mother's Day) needs a close a week before it, which is the minority pattern.
 - For most themes (see the "Closed on or before the day" column above), the majority run through the date and close after it. Those campaigns use the holiday as a hook for attention while people are already looking, and they keep collecting entries through the days around it, when a Christmas campaign would already have drawn. Read a close after the day as the default for those themes, and a close before it as the exception a gift-timed Prize forces.
 - Anniversary, birthday and milestone campaigns sit close to the all-campaign typical figures and run all year, so they are a hook to use when the calendar offers nothing.
 
-## Holiday theme against no theme, and how early businesses launch
+## More themes, with fair-comparison Conversion Rates
 
-A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. The all-run JSON comparison records 26.9% entering for campaigns naming no holiday (104,762 campaigns, 16,503 businesses). Its theme definitions differ from the generated fair-comparison rows below. Against that baseline:
+Compare this table's Conversion Rates with the 34.5% fair-comparison baseline above. Campaign and business counts cover each whole theme, while Conversion Rates cover only its fair-comparison subset. The source is `analysis/output/holidays.json` (`holidays`), with the subset counts for dated themes in the first table.
 
 <!-- generated:hol_theme -->
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |
@@ -58,7 +58,31 @@ A separate check, using all runs at their actual length, not the fair-comparison
 | Prime Day and Singles Day | 99 | 60 | 794 | 27.1% |
 <!-- /generated -->
 
-In the all-run JSON comparison, Christmas clears the no-theme baseline by 4.7 points, Father's Day by 3.4 and Mother's Day by 1.7. Milestone also sits above it, while Thanksgiving and Prime Day trail it by about three points. These comparisons use `analysis/output/prize_timing_cuts.json` (`by_named_holiday`), across actual run lengths with repeatable actions included. The generated table above retains the separate fair-comparison figures.
+## Holiday theme against no theme, all runs
+
+These rows use actual run lengths with repeatable actions included, from `analysis/output/prize_timing_cuts.json` (`by_named_holiday`). Compare each Conversion Rate with the no-theme baseline of 26.9% in this table, across 104,762 campaigns from 16,503 businesses. Theme definitions differ from the fair-comparison tables above. Missing theme and Conversion Rate coverage is not reported separately.
+
+| Theme | Campaigns | Businesses | Conversion Rate, all runs |
+|---|---|---|---|
+| No named holiday | 104,762 | 16,503 | 26.9% |
+| Christmas and advent | 3,556 | 1,104 | 31.6% |
+| Summer | 2,039 | 962 | 23.8% |
+| Anniversary or birthday | 1,361 | 785 | 24.3% |
+| Black Friday and Cyber Monday | 658 | 321 | 25.6% |
+| Halloween | 630 | 381 | 24.5% |
+| New Year | 592 | 428 | 23.5% |
+| Milestone | 587 | 407 | 27.6% |
+| Valentine's Day | 538 | 320 | 24.9% |
+| Easter | 400 | 243 | 24.9% |
+| Back to school | 394 | 244 | 26.4% |
+| Mother's Day | 335 | 262 | 28.6% |
+| Father's Day | 304 | 218 | 30.3% |
+| Thanksgiving | 203 | 135 | 24.3% |
+| Prime Day and Singles Day | 85 | 53 | 24.0% |
+
+Christmas clears this no-theme baseline by 4.7 percentage points, Father's Day by 3.4 and Mother's Day by 1.7. Milestone also sits above it. Thanksgiving trails it by 2.6 percentage points and Prime Day and Singles Day by 2.9.
+
+## How early businesses launch
 
 Lead time, days before the holiday date businesses started, for campaigns matched to a specific date:
 
@@ -80,6 +104,10 @@ Lead time, days before the holiday date businesses started, for campaigns matche
 <!-- /generated -->
 
 Black Friday launches closest to its date, a typical 7 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. These lead figures use `analysis/output/holidays.json` (`holidays`), matching the table above. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
+
+## Starts near a public holiday, all runs
+
+Use the every-other-start row in this table as its baseline, from `analysis/output/prize_timing_cuts.json` (`by_public_holiday_start`).
 
 Starting near a public holiday, on its own, does not move the numbers (table below). Both gaps sit under a point.
 

@@ -6,10 +6,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.53 |
 | giveaway-entry-method-planner | 1.2.50 |
-| giveaway-timing-and-duration | 1.4.48 |
+| giveaway-timing-and-duration | 1.4.49 |
 | giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.51 |
-| giveaway-random-draw | 1.3.50 |
+| giveaway-random-draw | 1.3.51 |
 | giveaway-winner-communications | 1.2.42 |
 | giveaway-idea-generator | 1.3.42 |
 | giveaway-results-review | 1.6.32 |
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.36 (2026-10-10)
+
+You can now plan a fair draw before you have your Entrant list. Give the draw script your draw time, and it tells you which public random number to announce. The fingerprints wait until the real list and rules are settled.
+
+Holiday Conversion Rates are each compared against a baseline from the same set of campaigns. Christmas campaigns converted 4.7 points above campaigns with no theme, and Thanksgiving and Prime Day campaigns 2.6 and 2.9 points below.
 
 ## 3.0.35 (2026-10-10)
 

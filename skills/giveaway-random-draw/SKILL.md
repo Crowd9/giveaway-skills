@@ -2,7 +2,7 @@
 name: giveaway-random-draw
 description: "Run or plan a verifiable random giveaway draw from a list, CSV, spreadsheet or comment export. Use for 'pick a Winner', 'draw the Winner', 'choose Winners from these comments', 'weighted draw', 'backup Winners', 'redraw', or 'prove the draw was fair'. Handle deduplication, exclusions and tiers, commit before a public seed exists, and assess records of past draws."
 metadata:
-  version: 1.3.50
+  version: 1.3.51
 ---
 
 # Giveaway Random Draw
@@ -48,7 +48,7 @@ For a request to run or prepare a draw, confirm the repeat-win policy before com
 7. **Verify** with `scripts/draw.py verify audit.json`, adding `--exclude <file>` whenever the draw used an exclusion file, since the check needs the same inputs the draw had and exits with an error without it. Tell the user anyone with the file, the audit record and a few lines of code can do the same. The method is documented in the script header so it can be redone in any language.
 8. **Deliver** the Winners, the audit summary, and what to do next (verify eligibility against the published terms, using the Winner-verification reference in giveaway-winner-structure if installed, contact with a deadline, keep the audit file, the input file and the exclusion file together).
 
-For a "how do I make my draw fair" question without a list, give the procedure from `references/draw-procedure.md` and the audit note template. Where the user has named a close or draw time, run the commit with `--draw-at` and give them the drand round number for that moment, which they can publish today. Where they have not, give the exact command they will run with their file name in it.
+For a "how do I make my draw fair" question without a list, give the procedure from `references/draw-procedure.md` and the audit note template. Where the user has named a close or draw time, run `python3 scripts/draw.py plan --draw-at "TIME_WITH_OFFSET"` with that time and give them the drand round number and timestamp, which they can publish today. Keep counts and hashes pending until the real list and rules are settled, and publish the commitment before that round exists. Where they have not, give the exact command they will run with their file name in it.
 
 ## Output
 
@@ -116,7 +116,7 @@ A "Gleam or the script" question has three answers, not two: the Winners tab dra
 
 A 40-row sample Entrant list with duplicates and one disposable domain sits at `examples/sample-entrants.csv`, for trying the commit and draw steps before the real export exists.
 
-- `scripts/draw.py`: `commit`, `draw`, `verify`, `--self-test`. Header documents the method. `--rules rules.json` keeps tiers, backups, id column, weight column and exclusions in one file so commit and draw cannot drift apart, and a flag on the command line wins over the file.
+- `scripts/draw.py`: `plan --draw-at`, `commit`, `draw`, `verify`, `--self-test`. Header documents the method. `--rules rules.json` keeps tiers, backups, id column, weight column and exclusions in one file so commit and draw cannot drift apart, and a flag on the command line wins over the file.
 - `references/draw-procedure.md`: pre-draw checklist, seed choices, tiers and backups, redraws, disputes, audit note template.
 - `references/getting-your-entrant-list.md`: exporting from spreadsheets, giveaway platforms and comment threads, what fields the script looks for, and the checks before committing, which apply to every list.
 - `references/gleam-draws.md`: only for explicit Gleam requests.

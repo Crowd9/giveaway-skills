@@ -4,6 +4,7 @@
 Input: CSV or TSV with a header, one id per line, or a JSON export of comments or Entrants (a list, or an object holding one,
 with the person named by a field such as username, author, handle, email or owner.username). Pass --id-column to override.
 
+  python3 draw.py plan    --draw-at "2026-09-12T09:00:00+10:00"
   python3 draw.py commit  entries.csv --tiers "Grand Prize:1,Runner-up:5" [--backups 2] [--id-column email]
                           [--weight-column Entries] [--exclude staff.txt] [--draw-at "2026-09-12T09:00:00+10:00"]
   python3 draw.py draw    entries.csv --tiers ... [same options] (--seed TEXT | --seed-drand ROUND | --seed-nist UNIXTIME)
@@ -28,6 +29,7 @@ How the draw works (documented so anyone can recheck it in any language):
   The audit record holds the SHA-256 of the input, the rules, the seed and its source, and every Winner's key,
   so `verify` (or a few lines in any language) reproduces the result exactly.
 
+plan prints the first drand round at or after the draw time and its timestamp without an Entrant file. Counts and hashes stay pending.
 commit prints a commitment (hash of the input plus the rules) to publish before the seed exists. With --draw-at it
 also prints the first drand round produced at or after that time, so the seed source can be announced in advance.
 verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but the beacon source is unverified.
@@ -270,6 +272,16 @@ def warn_plus_clusters(clusters):
               "Review before publishing the commitment or announcing Winners. "
               "Addresses remain eligible unless an exclusion is confirmed under the terms.")
 
+def print_drand_plan(draw_at):
+    ts = datetime.datetime.fromisoformat(draw_at).timestamp(); r = drand_round_at_or_after(ts)
+    print(f"drand round at or after {draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
+
+def cmd_plan(a):
+    print_drand_plan(a.draw_at)
+    print("Counts, input hash and commitment hash are pending until the real Entrant file and rules are settled. "
+          "Publish the commitment before the announced seed exists.")
+    return 0
+
 def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
     ents, dupes, excluded, bad, clusters = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
@@ -294,9 +306,7 @@ def cmd_commit(a):
               "Flagging is a prompt to look, never a verdict.")
     print("\nReconcile eligibility and earned weights with the published rules before publishing this commitment. "
           "Publish before the seed exists, then keep the input file unchanged.")
-    if a.draw_at:
-        ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at_or_after(ts)
-        print(f"drand round at or after {a.draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
+    if a.draw_at: print_drand_plan(a.draw_at)
     return 0
 
 def cmd_draw(a):
@@ -856,7 +866,27 @@ def self_test_identifier_case():
     assert sha(json.dumps(results).encode()) == "034efd2bbd74187dc272d8ffe66f12d3853352118e1c760474e538c2d91f552e"
 
 
+def self_test_plan():
+    import contextlib, re
+    from unittest.mock import patch
+    boundary = drand_round_time(6553045)
+    for offset, expected_round in ((0, 6553045), (1, 6553046), (29, 6553046)):
+        draw_at = datetime.datetime.fromtimestamp(boundary + offset, datetime.timezone.utc).isoformat()
+        output = io.StringIO()
+        # Planning must neither open an input or demonstration list nor call a beacon.
+        with patch("builtins.open", side_effect=AssertionError("planning must not open files")), \
+                patch(__name__ + ".fetch_json", side_effect=AssertionError("planning must not fetch a seed")), \
+                contextlib.redirect_stdout(output):
+            assert main(["plan", "--draw-at", draw_at]) == 0
+        text = output.getvalue()
+        produced = datetime.datetime.fromtimestamp(drand_round_time(expected_round), datetime.timezone.utc).isoformat()
+        assert f"drand round at or after {draw_at}: {expected_round} (produced {produced} UTC)" in text, text
+        assert "Counts, input hash and commitment hash are pending" in text, text
+        assert "rows_read" not in text and not re.search(r"\b[0-9a-f]{64}\b", text), text
+
+
 def self_test():
+    self_test_plan()
     self_test_identifier_case()
     self_test_seed_sources()
     self_test_plus_preview()
@@ -989,6 +1019,8 @@ def main(argv):
         p.add_argument("input"); p.add_argument("--winners", type=int); p.add_argument("--tiers"); p.add_argument("--backups", type=int)
         p.add_argument("--id-column", help="person/account column or dotted JSON path; required for ambiguous id fields or unrecognized headers"); p.add_argument("--weight-column"); p.add_argument("--exclude")
         p.add_argument("--rules", help="JSON file holding tiers, backups, winners, id-column, weight-column and exclude, so commit and draw read the same rules")
+    p = sub.add_parser("plan", help="name the drand round and timestamp without an Entrant file")
+    p.add_argument("--draw-at", required=True, help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     c.add_argument("--flagged-out", help="write flagged ids for review, then rerun commit with the approved file as --exclude and final rules. Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
@@ -1000,7 +1032,7 @@ def main(argv):
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if a.cmd in ("commit", "draw"): apply_rules(a)
-    return {"commit": cmd_commit, "draw": cmd_draw, "verify": cmd_verify}.get(a.cmd, lambda a: ap.print_help() or 2)(a)
+    return {"plan": cmd_plan, "commit": cmd_commit, "draw": cmd_draw, "verify": cmd_verify}.get(a.cmd, lambda a: ap.print_help() or 2)(a)
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
