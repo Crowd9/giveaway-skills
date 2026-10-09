@@ -48,7 +48,7 @@ def bench(metric, value, n, fmt=lambda v: f"{v:,.2f}", key=None, group=None):
 # Add a host when a report shows it under "Other referrers" with a meaningful entrant count. An unknown host is labelled, never dropped.
 DIRECTORIES = ("contestgirl", "giveawaybase", "ozbargain", "loquax", "latestdeals", "jeu-concours", "freestuffspot", "aussiecomps", "competitiondatabase",
                "giveawaylisting", "sweepstakes", "sweepsadvantage", "contestcanada", "hotukdeals", "prizefinder", "myoffers", "competitions")
-SOCIAL = ("facebook", "t.co", "twitter", "x.com", "reddit", "instagram", "tiktok", "youtube", "pinterest", "discord", "linkedin", "threads", "bsky")
+SOCIAL = ("facebook.com", "t.co", "twitter.com", "x.com", "reddit.com", "instagram.com", "tiktok.com", "youtube.com", "youtu.be", "pinterest.com", "discord.com", "discord.gg", "linkedin.com", "threads.net", "threads.com", "bsky.app")
 WEBMAIL = ("mail.google", "outlook.live", "mail.yahoo", "com.google.android.gm", "mail.", "webmail", "protonmail")
 SEARCH = ("google.", "bing.", "duckduckgo", "yahoo.com/search", "search.")
 HANDLE_COLS = ("Facebook", "Instagram", "Reddit", "Tiktok", "TikTok", "Twitter", "Youtube", "YouTube", "Discord", "Pinterest", "Twitch")
@@ -100,7 +100,7 @@ def channel(host, landing=None):
     if not host: return "Direct or unknown"
     if "gleam.io" in host: return "Gleam network (other campaigns and pages)"
     if any(d in host for d in DIRECTORIES): return "Competition directories"
-    if any(s in host for s in SOCIAL): return "Social"
+    if any(host.lower().rstrip(".") == s or host.lower().rstrip(".").endswith("." + s) for s in SOCIAL): return "Social"
     if any(w in host for w in WEBMAIL): return "Email (webmail)"
     if any(s in host for s in SEARCH): return "Search"
     return "Other referrers"
@@ -196,10 +196,12 @@ def analyze(rows, a):
                 if 0 <= g <= 1800: gaps[cur["Action"]].append(g)
     R["actions"] = [(act, d["completions"], len(d["who"]), d["completions"] / len(valid), len(d["who"]) / n, med(gaps[act]), d["invalid"]) for act, d in sorted(per.items(), key=lambda kv: -kv[1]["completions"])]
     # referral graph
-    referred_by = {}; sharer = collections.defaultdict(set); refer_rows = 0
+    referred_by = {}; sharer = collections.defaultdict(set)
+    referral_actions = [r for r in valid if r["_refer"]]
+    refer_rows = len(referral_actions); referral_people = {r["_who"] for r in referral_actions}; graph_rows = 0
     for r in valid:
         if r["_refer"] and "@" in (r.get("Details") or ""):
-            refer_rows += 1; ref = r["Details"].strip().lower(); sharer[r["_who"]].add(ref); referred_by.setdefault(ref, r["_who"])
+            graph_rows += 1; ref = r["Details"].strip().lower(); sharer[r["_who"]].add(ref); referred_by.setdefault(ref, r["_who"])
     referred_entrants = {e for e in referred_by if e in people}
     handles_of = lambda who: [c for c in HANDLE_COLS if any(r.get(c) for r in people.get(who, []))]
     top_sharers = []
@@ -207,11 +209,17 @@ def analyze(rows, a):
         joined = [e for e in refs if e in people]; brought = sum(sum(r["_entries"] for r in people[e]) for e in joined)
         one_action = sum(1 for e in joined if len(people[e]) == 1)
         top_sharers.append((display(people[who][0].get("Name")), len(refs), len(joined), entry_number(brought), len(handles_of(who)), one_action))
-    R["viral"] = {"refer_rows": refer_rows, "sharers": len(sharer), "referred_entrants": len(referred_entrants), "referred_share": len(referred_entrants) / n,
-                  "referrals_per_sharer": (refer_rows / len(sharer)) if sharer else None, "top": top_sharers,
-                  "participation": len(sharer) / n, "referral_conversion": len(referred_entrants) / refer_rows if refer_rows else None,
+    R["viral"] = {"refer_rows": refer_rows, "sharers": len(referral_people), "referred_entrants": len(referred_entrants), "referred_share": len(referred_entrants) / n,
+                  "referrals_per_sharer": (refer_rows / len(referral_people)) if referral_people else None, "top": top_sharers,
+                  "participation": len(referral_people) / n, "referral_conversion": len(referred_entrants) / refer_rows if refer_rows else None,
                   "lift": len(referred_entrants) / (n - len(referred_entrants)) if n > len(referred_entrants) else None,
                   "top_share": (top_sharers[0][1] / refer_rows) if top_sharers and refer_rows else None}
+    R["viral"]["graph_rows"] = graph_rows
+    R["viral"]["graph_complete"] = graph_rows == refer_rows
+    if graph_rows != refer_rows:
+        for key in ("referred_entrants", "referred_share", "referral_conversion", "lift", "top_share"):
+            R["viral"][key] = None
+        R["viral"]["top"] = []
     # geo
     first = {who: rs[0] for who, rs in people.items()}
     R["countries"] = collections.Counter(first[w].get("Country") or "unknown" for w in first).most_common(10)
@@ -261,15 +269,24 @@ def analyze(rows, a):
     # audience handles
     R["handles"] = [(c, sum(1 for w in people if any(r.get(c) for r in people[w])) / n) for c in HANDLE_COLS if c in rows[0] and any(r.get(c) for r in rows)]
     top = sorted(people.items(), key=lambda kv: -len(kv[1]))[:10]
-    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), entry_number(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())), len({r["_when"].date() for r in rs}) if all(r["_when"] for r in rs) else "unavailable", len(handles_of(who))) for who, rs in top]
+    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), entry_number(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())) if R["viral"]["graph_complete"] else "unavailable", len({r["_when"].date() for r in rs}) if all(r["_when"] for r in rs) else "unavailable", len(handles_of(who))) for who, rs in top]
     # promotions
     R["sends"] = []
-    if a.sends and whens:
+    coverage_start = getattr(a, "coverage_start", None)
+    coverage_end = getattr(a, "coverage_end", None)
+    if isinstance(coverage_start, str): coverage_start = dt.date.fromisoformat(coverage_start)
+    if isinstance(coverage_end, str): coverage_end = dt.date.fromisoformat(coverage_end)
+    if bool(coverage_start) != bool(coverage_end): raise ValueError("supply both --coverage-start and --coverage-end")
+    if coverage_start and coverage_start > coverage_end: raise ValueError("coverage start must be on or before coverage end")
+    if a.sends:
         byday = collections.Counter(w.date() for w in whens); newby = collections.Counter(first[w]["_when"].date() for w in first if first[w]["_when"])
         for item in a.sends.split(","):
             d, _, label = item.partition("="); day = dt.date.fromisoformat(d.strip())
-            after = sum(byday[day + dt.timedelta(days=i)] for i in range(2)); newa = sum(newby[day + dt.timedelta(days=i)] for i in range(2))
-            base_days = [day - dt.timedelta(days=i) for i in range(1, 8)]; base = sum(byday[x] for x in base_days) / 7
+            covered = (coverage_start is not None and coverage_start <= day - dt.timedelta(days=7)
+                       and coverage_end >= day + dt.timedelta(days=1) and len(whens) == len(valid))
+            after = sum(byday[day + dt.timedelta(days=i)] for i in range(2)) if covered else None
+            newa = sum(newby[day + dt.timedelta(days=i)] for i in range(2)) if covered else None
+            base = sum(byday[day - dt.timedelta(days=i)] for i in range(1, 8)) / 7 if covered else None
             R["sends"].append((label.strip() or d, day.isoformat(), after, newa, (after / 2) / base if base else None))
     # People are deduplicated across subscription Actions. Benchmarks still use completions.
     emails = sum(1 for rs in people.values() if any(_kind(r["Action"]) == "emails" for r in rs))
@@ -293,6 +310,18 @@ def retention_text(R):
     if coverage["missing"]:
         text += f" Excludes {coverage['missing']:,} of {coverage['total']:,} Entrants with missing or unusable timestamps; this subset may not represent all Entrants."
     return text
+
+
+def viral_text(V):
+    text = f"Referral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants)"
+    if V["referrals_per_sharer"] is not None: text += f", referrals per sharer {V['referrals_per_sharer']:.1f}"
+    text += f". Referral relationships available for {V['graph_rows']:,} of {V['refer_rows']:,} completions."
+    if not V["graph_complete"]:
+        return text + " Referred Entrants, referral conversion, viral lift and top-sharer graph measures are unavailable because referral relationships are incomplete."
+    text += f" referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)"
+    if V["referral_conversion"] is not None: text += f", share of referrals who joined {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)"
+    if V["lift"] is not None: text += f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)"
+    return text + "."
 
 
 def insights(R):
@@ -337,7 +366,8 @@ def render(R, a):
         w(f"Speed: of {S['multi']:,} multi-action entrants, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
     ins = insights(R); V = R["viral"]
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
-    w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {V['referred_entrants']:,} referred entrants.")
+    referred = f"{V['referred_entrants']:,}" if V["graph_complete"] else "unavailable (referral relationships incomplete)"
+    w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {referred} referred entrants.")
     if R.get("by_day"):
         peak = max(R["by_day"], key=lambda t: t[1])
         w(f"\nBy day (account time), new Entrants and actions. Peak day for new Entrants {peak[0].isoformat()} with {peak[1]:,}.")
@@ -348,8 +378,11 @@ def render(R, a):
         w("\nHour | " + " | ".join(DAYS) + "\n---|" + "---|" * 7)
         for h in range(24): w(f"{h:02d} | " + " | ".join(f"{R['heat'][(d, h)]:,}" if R["heat"][(d, h)] else "" for d in range(7)))
     if R["sends"]:
-        w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New Entrants in 48h | Lift |\n|---|---|---|---|---|")
-        for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
+        w("\nPromotional sends (send date and following account-time day against the preceding 7-day daily baseline, never a causal claim). Both windows require confirmed complete export coverage via --coverage-start and --coverage-end, inclusive full dates. Observed activity does not establish coverage.\n\n| Send | Date | Actions in 2 days | New Entrants in 2 days | Lift |\n|---|---|---|---|---|")
+        for label, day, actions, entrants, lift in R["sends"]:
+            activity = f"{actions:,} | {entrants:,}" if actions is not None else "unavailable | unavailable"
+            comparison = f"{lift:.1f}x" if lift is not None else "unavailable (incomplete coverage)" if actions is None else "unavailable (zero baseline)"
+            w(f"| {label} | {day} | {activity} | {comparison} |")
     w(f"\nUnique email subscribers: {R['email_subscribers']:,} (people with a valid subscription Action).")
     if R.get("prize_value") is not None:
         w(f"\nStated Prize value: {R['prize_value']:,.2f}. This is the advertised value, not actual spending.")
@@ -377,7 +410,7 @@ def render(R, a):
         typ, where = bench(None, comp / n, n, reader_unit, group=g) if g else ("-", "no matching group")
         w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
     w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
-    w(f"\n## Viral\n\nReferral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants), referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)" + (f", referrals per sharer {V['referrals_per_sharer']:.1f}" if V["referrals_per_sharer"] else "") + (f", share of referrals who joined {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)" if V["referral_conversion"] is not None else "") + (f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)." if V["lift"] is not None else "."))
+    w("\n## Viral\n\n" + viral_text(V))
     rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.2f}")
     w(f"\nReferral completions per Entrant: {V['refer_rows'] / n:.2f} here, {rtyp} typical for campaigns your size, {rwhere}.")
     if V["top"]:
@@ -558,6 +591,39 @@ def self_test():
         try: main(["--help"])
         except SystemExit as exc: assert exc.code == 0
     assert "referrer-host substrings" in help_output.getvalue() and "referrer hosts or UTM values" not in help_output.getvalue()
+    # Host suffixes cannot turn merchant domains into social traffic.
+    for host in ("walmart.com", "best.com", "notfacebook.com", "facebook.com.example.org"):
+        assert channel(host) == "Other referrers", host
+    for host in ("t.co", "m.facebook.com", "www.reddit.com", "X.COM", "www.instagram.com"):
+        assert channel(host) == "Social", host
+    # Referral completions survive missing, blank and partial graph data.
+    for details in (None, ("", ""), ("b@example.com", "")):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"] + (["Details"] if details is not None else []))
+            for i in range(2): wr.writerow([f"person{i}@example.com", "Refer Friends", 1] + ([details[i]] if details is not None else []))
+        partial = analyze(load(q), B); viral = partial["viral"]
+        assert viral["refer_rows"] == 2 and viral["sharers"] == 2 and viral["referrals_per_sharer"] == 1
+        assert viral["graph_rows"] == (1 if details and details[0] else 0)
+        assert viral["referred_entrants"] is None and viral["lift"] is None and viral["top"] == []
+        assert "relationships are incomplete" in render(partial, B)
+        assert all(row[3] == "unavailable" for row in partial["top_entrants"])
+    # Constant activity produces no lift only when both full windows are confirmed.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When"])
+        for day in range(1, 10):
+            for i in range(8): wr.writerow([f"person{i}@example.com", "Visit", 1, f"2026-05-{day:02d} 12:00:00"])
+    class Covered(B): sends = "2026-05-08=Reminder"; coverage_start = "2026-05-01"; coverage_end = "2026-05-09"
+    constant = load(q)
+    assert analyze(constant, Covered)["sends"][0][4] == 1.0
+    class Early(Covered): sends = "2026-05-02=Early reminder"
+    class ShortPost(Covered): coverage_end = "2026-05-08"
+    class Unconfirmed(B): sends = Covered.sends
+    for args in (Early, ShortPost, Unconfirmed):
+        report = analyze(constant, args)
+        assert report["sends"][0][2:] == (None, None, None)
+        assert "unavailable (incomplete coverage)" in render(report, args)
+    constant[0]["_when"] = None
+    assert analyze(constant, Covered)["sends"][0][4] is None
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None
@@ -570,6 +636,8 @@ def main(argv):
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--impressions", type=int); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--plan-cost", type=float); ap.add_argument("--benchmark-cpl", type=float)
     ap.add_argument("--sends", help='comma list of date=label, e.g. "2026-04-20=Launch email,2026-05-01=Last call"'); ap.add_argument("--partners", help="comma list of referrer-host substrings identifying partners (matches may overlap). For tagged email traffic, read the separate UTM rollup")
+    ap.add_argument("--coverage-start", type=dt.date.fromisoformat, help="first confirmed complete export day, YYYY-MM-DD in account time")
+    ap.add_argument("--coverage-end", type=dt.date.fromisoformat, help="last confirmed complete export day, inclusive, YYYY-MM-DD in account time")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
     a = ap.parse_args(argv)

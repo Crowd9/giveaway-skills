@@ -558,7 +558,7 @@ def gather(a):
     if RV.PCT:
         RV.PCT = dict(RV.PCT, groups={key: group for key, group in RV.PCT.get("groups", {}).items() if isinstance(group, dict)})
     rows = CR.load(a.export)
-    class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; partners = a.partners.split(",") if a.partners else None
+    class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; coverage_start = getattr(a, "coverage_start", None); coverage_end = getattr(a, "coverage_end", None); partners = a.partners.split(",") if a.partners else None
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
     b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
@@ -631,7 +631,7 @@ def tiles(D):
         return f"{value['p'][9]:.1f} typical for your size" if value else "Benchmark unavailable"
     t = [("Entrants", n(N), f"{D['band_label']} band"), ("Entries each", f"{T['entries_per_entrant']:.1f}", typical("entries_per_entrant") if N >= 100 else "No matching peers"),
          ("Actions each", f"{T['actions_per_entrant']:.1f}", typical("actions_per_contestant") if N >= 100 else "No matching peers"),
-         ("Referred Entrants", n(V["referred_entrants"]), f"{V['referred_share']:.0%} of Entrants")]
+         ("Referred Entrants", n(V["referred_entrants"]) if V["graph_complete"] else "unavailable", f"{V['referred_share']:.0%} of Entrants" if V["graph_complete"] else "Referral relationships incomplete")]
     if em: t[2] = ("Email signups", n(em), f"{em / N:.0%} of Entrants")
     return "\n".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v num">{esc(v)}</div><div class="c">{esc(c)}</div></div>' for l, v, c in t)
 
@@ -674,7 +674,8 @@ def render(D, W, S, a):
     else:
         topline += '<p>Actual costs unavailable. Stated Prize value alone does not establish spending.</p>'
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
-    journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {n(V['referred_entrants'])}. Referrals are an output per sharer, never a stage, so this is not a funnel."
+    referred = n(V["referred_entrants"]) if V["graph_complete"] else "unavailable (referral relationships incomplete)"
+    journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {referred}. Referrals are an output per sharer, never a stage, so this is not a funnel."
     channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x" if c[4] is not None else "unavailable", f"{c[5]:.1%}") for c in R["channels"]])
     hosts = table(["Host", "Entrants"], [(h, n(c)) for h, c in R["hosts"]])
     landing = ", ".join(f"{k} {n(v)} ({v / N:.0%})" for k, v in R["landing"])
@@ -729,7 +730,7 @@ def render(D, W, S, a):
     for k, v in {"TITLE": esc(title), "META": "".join(f"<span>{esc(m)}</span>" for m in meta), "PILLS": pills, "VERDICT": esc(W["verdict"]), "ASSUME": esc(W["assumptions"]), "TILES": tiles(D),
                  "BANDLABEL": esc(D["band_label"]), "BANDN": n(bslice["contestants"]["n"]) if bslice.get("contestants") else "-", "METRICROWS": metric_rows(D), "CHANGES": change_cards(W), "INSIGHTS": ins, "TOPLINE": topline, "SPEED": esc(speed), "JOURNEY": esc(journey),
                  "HEATPEAK": esc(f"Peak {CR.DAYS[heat_peak[0][0]]} {heat_peak[0][1]:02d}:00, {n(heat_peak[1])} actions") if heat_peak else "", "CHANNELS": channels, "HOSTS": hosts, "LANDING": esc(landing), "UTM": utm, "FRICTION": friction,
-                 "VIRALLINE": esc(f"Referral completions {n(V['refer_rows'])}, sharers {n(V['sharers'])} ({V['participation']:.0%} of Entrants), referred Entrants who entered {n(V['referred_entrants'])} ({V['referred_share']:.0%}), {V['referrals_per_sharer']:.1f} per sharer." if V["sharers"] else "No referral action ran."),
+                 "VIRALLINE": esc(CR.viral_text(V)),
                  "SHARERS": sharers, "CITIES": cities, "HANDLES": esc(handles), "RETENTION": esc(retention), "ENGAGED": engaged, "CAVEATS": caveats, "QUESTION": esc(W["question"]), "LEVERS": levers,
                  "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": script_json(data)}.items():
         page = page.replace("{{" + k + "}}", v)
@@ -767,6 +768,15 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    # Incomplete referral relationships remain unavailable throughout the dashboard.
+    partial = gather(A)
+    partial["R"]["viral"].update(graph_complete=False, graph_rows=0, referred_entrants=None,
+                                referred_share=None, referral_conversion=None, lift=None, top_share=None, top=[])
+    partial_page = render(partial, words_of(words), site_of(None), A)
+    assert "Referral completions 1" in partial_page
+    assert "relationships available for 0 of 1 completions" in partial_page
+    assert "unavailable (referral relationships incomplete)" in partial_page
+    assert "Referral relationships incomplete" in partial_page
     # Export labels must survive script embedding without adding executable markup.
     from html.parser import HTMLParser
     class ScriptParser(HTMLParser):
@@ -949,6 +959,8 @@ def main(argv):
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--words", help="words.json written by the reviewer"); ap.add_argument("--site", help="site.json from the Reporting tab"); ap.add_argument("--out", default="dashboard.html")
     ap.add_argument("--impressions", type=int); ap.add_argument("--plan-cost", type=float); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--vertical"); ap.add_argument("--first-campaign", action="store_true")
+    ap.add_argument("--coverage-start", type=CR.dt.date.fromisoformat, help="first confirmed complete export day, YYYY-MM-DD in account time")
+    ap.add_argument("--coverage-end", type=CR.dt.date.fromisoformat, help="last confirmed complete export day, inclusive, YYYY-MM-DD in account time")
     ap.add_argument("--repeatable", action="store_true"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int); ap.add_argument("--sends"); ap.add_argument("--partners")
     ap.add_argument("--title", help="campaign name for the page"); ap.add_argument("--dates", help="run dates as the reader would say them, e.g. 6 to 16 August 2026, 10 days, ended")
     a = ap.parse_args(argv)

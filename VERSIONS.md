@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.46 |
+| giveaway-prize-picker | 1.3.47 |
 | giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.43 |
 | giveaway-winner-structure | 1.4.15 |
-| giveaway-promotion-plan | 1.3.43 |
-| giveaway-random-draw | 1.3.38 |
+| giveaway-promotion-plan | 1.3.44 |
+| giveaway-random-draw | 1.3.39 |
 | giveaway-winner-communications | 1.2.35 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.16 |
+| giveaway-results-review | 1.6.17 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.18 (2026-10-10)
+
+A draw scheduled for a set time now uses the first random number published at or after that time. It used to pick one from up to 29 seconds before.
+
+Your campaign report puts a shopping site under Other and keeps it out of Social. It counts every referral action you completed, even when the export doesn't say who was referred. A reminder email only gets a lift figure when your export covers the week before it and the days after it in full.
+
+A store gift card is budgeted at what the goods cost you, plus delivery, so a $100 card at a 70% margin costs about $30 in stock. Cost and stated value stay separate when you read your Reporting tab, and deals forums are no longer ruled out for growing an email list.
 
 ## 3.0.17 (2026-10-10)
 

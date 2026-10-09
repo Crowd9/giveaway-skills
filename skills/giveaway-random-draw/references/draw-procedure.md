@@ -22,7 +22,7 @@ A draw is provable when three things hold: the Entrant list and rules were fixed
 
 | Source | How | Fits when |
 |---|---|---|
-| drand beacon (League of Entropy) | `commit --draw-at` prints the round number due at that time. Publish it. After that time, `draw --seed-drand ROUND` fetches the round's randomness from api.drand.sh and records the signature. Rounds are every 30 seconds and anyone can refetch a round forever. | Default choice. Free, no account, publicly verifiable. |
+| drand beacon (League of Entropy) | `commit --draw-at` prints the first round number due at or after the requested time. Publish it. After the printed production time, `draw --seed-drand ROUND` fetches the round's randomness from api.drand.sh and records the signature. Rounds are every 30 seconds and anyone can refetch a round forever. | Default choice. Free, no account, publicly verifiable. |
 | NIST Randomness Beacon | Announce a future minute. `draw --seed-nist UNIXTIME` fetches that pulse's output value. Pulses are every 60 seconds and signed by NIST. | Audiences that prefer a government source. |
 | A value published by a third party | A partner or witness emails a phrase before the draw, or a closing index value on a named date. `draw --seed "the value"`. | Co-sponsored giveaways with no internet at the draw. Keep the email. |
 | RANDOM.ORG | Third-Party Draw Service runs the draw and publishes a record for at least five years without exposing Entrants. The Signed API can also pre-commit with tickets and returns results signed with RANDOM.ORG's key. Paid, needs an account. | Organizers who want a named independent party rather than their own script. |

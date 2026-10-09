@@ -75,7 +75,7 @@ Extracted: outcomes for campaigns where one traffic source supplies over 10% of 
 | Search | 16.9% | 354 | 4.44 | 3,769 | 1,315 |
 
 YouTube and deals forums convert best of the channels with real volume, and search worst. Every row here is campaigns where that source already supplied a tenth of the Impressions, so the table describes campaigns that were already reaching people through it. It says nothing about what adding a channel would do. [Extracted from `analysis/output/field_cuts.json`, `outcomes_when_channel_over_10pct`.]
-Deals-forum traffic converts at 34.7%, second of the well-populated sources above and behind YouTube at 41.4%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, not a place to grow an email list or a referral chain from.
+Deals-forum traffic converts at 34.7%, second of the well-populated sources above and behind YouTube at 41.4%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, with limited referral activity in these campaigns. The referral result does not establish email acquisition performance. Subscriber quality is unknown, and email action completions do not establish a count of distinct subscribers.
 
 | Measure | Deals forums | For comparison |
 |---|---|---|

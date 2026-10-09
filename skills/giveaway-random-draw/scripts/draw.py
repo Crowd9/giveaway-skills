@@ -28,7 +28,7 @@ How the draw works (documented so anyone can recheck it in any language):
   so `verify` (or a few lines in any language) reproduces the result exactly.
 
 commit prints a commitment (hash of the input plus the rules) to publish before the seed exists. With --draw-at it
-also prints the drand round that will be produced at that time, so the seed source can be announced in advance.
+also prints the first drand round produced at or after that time, so the seed source can be announced in advance.
 verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but the beacon source is unverified.
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
@@ -204,6 +204,7 @@ def apply_rules(a):
 def commitment(digest, rules): return sha((digest + "\n" + json.dumps(rules, sort_keys=True, separators=(",", ":"))).encode())
 
 def drand_round_at(ts): return int((ts - DRAND["genesis_time"]) // DRAND["period"]) + 1
+def drand_round_at_or_after(ts): return math.ceil((ts - DRAND["genesis_time"]) / DRAND["period"]) + 1
 def drand_round_time(r): return DRAND["genesis_time"] + (r - 1) * DRAND["period"]
 
 def fetch_json(url):
@@ -249,8 +250,8 @@ def cmd_commit(a):
     print("\nReconcile eligibility and earned weights with the published rules before publishing this commitment. "
           "Publish before the seed exists, then keep the input file unchanged.")
     if a.draw_at:
-        ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at(ts)
-        print(f"drand round at {a.draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
+        ts = datetime.datetime.fromisoformat(a.draw_at).timestamp(); r = drand_round_at_or_after(ts)
+        print(f"drand round at or after {a.draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
     return 0
 
 def cmd_draw(a):
@@ -626,9 +627,21 @@ def self_test():
     example_round = int(documented_round.group(1))
     output = io.StringIO()
     with contextlib.redirect_stdout(output): cmd_commit(_a)
-    assert f"drand round at {_a.draw_at}: {example_round} " in output.getvalue(), output.getvalue()
+    assert f"drand round at or after {_a.draw_at}: {example_round} " in output.getvalue(), output.getvalue()
     assert example_round == 6457886
     assert drand_round_time(example_round) == datetime.datetime.fromisoformat(_a.draw_at).timestamp()
+    # Scheduling must round up, while current-round lookup must still round down.
+    boundary = drand_round_time(6553045)
+    for offset, expected_round in ((0, 6553045), (1, 6553046), (29, 6553046)):
+        requested = boundary + offset
+        _a.draw_at = datetime.datetime.fromtimestamp(requested, datetime.timezone.utc).isoformat()
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output): cmd_commit(_a)
+        assert f"drand round at or after {_a.draw_at}: {expected_round} " in output.getvalue(), output.getvalue()
+        assert drand_round_at_or_after(requested) == expected_round
+        assert drand_round_time(expected_round) >= requested
+        assert drand_round_time(expected_round - 1) < requested
+        assert drand_round_at(requested) == 6553045
     verifier_self_test()
     print("self-test passed"); return 0
 
