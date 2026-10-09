@@ -88,12 +88,12 @@ Two shorthands run through the tables below. The middle half is the middle half 
 | One prize record | 82.6% of campaigns | quantity may still exceed 1 |
 | Any quantity above 1 | 31.5% of campaigns | units listed, which may differ from Winners |
 | Prize value stated | 37.9% of prize records | 62.1% unknown |
-| Stated USD values | median 125, IQR 50 to 425, 90th pct 1,199 | 64,579 records. Max 1,000,000 |
-| Stated EUR values | median 75, IQR 39 to 332, 90th pct 2,200 | 35 records. Max 9,100 |
-| Stated GBP values | median 62, IQR 25 to 400, 90th pct 450 | 34 records. Max 1,200 |
-| Stated CAD values | median 545, IQR 200 to 2,180, 90th pct 4,500 | 21 records. Too few to use. Max 35,000 |
-| Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use. Max 60,000 |
-| Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 42,892 campaigns. Max 10,000,000 |
+| Stated USD values | median 125, IQR 50 to 425, 90th pct 1,199 | 64,579 records |
+| Stated EUR values | median 75, IQR 39 to 332, 90th pct 2,200 | 35 records |
+| Stated GBP values | median 62, IQR 25 to 400, 90th pct 450 | 34 records |
+| Stated CAD values | median 545, IQR 200 to 2,180, 90th pct 4,500 | 21 records. Too few to use |
+| Stated AUD values | median 600, IQR 129 to 3,600, 90th pct 6,000 | 18 records. Too few to use |
+| Fully valued campaign totals (USD) | median 299, IQR 90 to 1,000 | 42,892 campaigns |
 | Repeat organizers | 3,795 organizers with 5+ campaigns account for 81.5% of campaigns | patterns can reflect prolific accounts |
 | Plan tier | Business 29,645, Pro 62,061, Not Available 5, Premium 1,993, Hobby 10,802, Free 11,993 | tier at export time |
 <!-- /generated -->

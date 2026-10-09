@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose and evaluate giveaway, contest, sweepstakes or raffle Prizes, budgets and fulfilment. Use for 'what should we give away', 'is this a good Prize', 'giveaway budget', 'Prize bundle', 'what Prize gets the most entries', 'B2B giveaway Prize', 'webinar giveaway', or 'attract buyers, not freebie hunters'."
 metadata:
-  version: 1.3.42
+  version: 1.3.43
 ---
 
 # Giveaway Prize Picker
@@ -129,7 +129,7 @@ Advice is platform-neutral by default. When the user says they use Gleam or asks
 - `references/decision-criteria.md`: criteria, structure tradeoffs, budget template, fulfillment checklist.
 - `references/prize-taxonomy.md`: Prize categories with what the data shows for each, including how much crowd each category draws for the money. This is the file to quote for crowd per Prize dollar by category and, inside each industry, by category. The same figures appear inside `decision-criteria.md` and `evidence-and-limitations.md` as part of a longer argument, so quote this one and cite the others only for the reasoning around them.
 - `references/buyer-prizes.md`: the Prize for a buyer campaign. What the data holds and lacks on subscription, access and other Prizes only a buyer values, a test for a Prize that filters, how to make it hard to use for anyone who is not a buyer, the consolation for everyone qualified, and how to price and judge it per qualified Entrant. Mostly practice, labelled as such.
-- `references/examples.md`: anonymized example Prizes by category and objective.
+- `references/examples.md`: invented Prize illustrations by pattern, describing no real campaign or business.
 - `references/evidence-and-limitations.md`: what the dataset can and cannot support, with the numbers.
 - `references/gleam-setup.md`: only for explicit Gleam requests.
 - `references/prize-values-by-category-and-size.json`: stated USD Prize values (the lower quarter, typical and upper quarter, with the count of stated Prize values behind the cell) by category and campaign size. That count is Prize records, so a campaign with three valued Prizes counts three times, so write "116 stated Prize values". Load when the user asks what campaigns like theirs declare, and quote the cell with how many Prize values sit behind it. Thin cells behave oddly: beauty_wellness in campaigns of 2,500 to 10,000 Entrants has a lower quarter equal to its typical figure (250 USD) on 31 stated Prize values, which is a sample artifact of clustered round numbers. Below about 100 stated Prize values, quote the typical figure and the count of stated Prize values and leave the quarters alone.

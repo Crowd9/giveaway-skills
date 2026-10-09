@@ -12,7 +12,7 @@ These figures come from the campaigns we can compare fairly (crypto, unclear lis
 | 5 | 1.3% |
 | 6+ | 2.2% |
 
-Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10, maximum 1,133 (n=116,499). 40% of campaigns list more than one unit and 17% list tiered prizes (more than one position).
+Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10 (n=116,499). 40% of campaigns list more than one unit and 17% list tiered prizes (more than one position).
 
 | Band | Single unit | Tiered prizes | Ten or more units |
 |---|---|---|---|

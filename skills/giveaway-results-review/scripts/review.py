@@ -11,7 +11,8 @@ so long runs and daily actions pull down the Conversion Rate without anything be
 --invalid takes invalid Entries worth, the Entries column summed over rows whose status is Invalid, which is the unit
 gleam_export.py writes into the command it prints. The invalid share is derived as invalid / (Entries + invalid).
 
-Every campaign is ranked inside its own size band. The six bands run 100 to 250, 250 to 500, 500 to 1,000,
+Campaigns with at least 100 Entrants are ranked inside their own size band.
+Smaller campaigns show actual metrics only because the dataset has no matching peers. The six bands run 100 to 250, 250 to 500, 500 to 1,000,
 1,000 to 2,500, 2,500 to 10,000 and 10,000 or more Entrants, so a campaign is only ever compared with a group
 it belongs to.
 """
@@ -59,16 +60,16 @@ def rank(value, table, lower_is_better=False):
 
 table_pcts = list(range(5, 100, 5))
 
-def rank_line(metric, value, groups, lower_is_better=False, fmt="{:,.2f}"):
+def rank_line(metric, value, groups, lower_is_better=False, fmt="{:,.2f}", configuration=None):
     parts = []; target = None
     for label, key in groups:
         t = (PCT or {}).get("groups", {}).get(key, {}).get(metric)
         r = rank(value, t, lower_is_better)
         if r:
-            word = "better" if not lower_is_better else "lower"
-            parts.append(f"in the bottom 5% of {label} (across {r[1]:,} campaigns)" if r[0] == 0
+            word = configuration or ("better" if not lower_is_better else "lower")
+            parts.append(f"{word} than fewer than 5% of {label} (across {r[1]:,} campaigns)" if configuration and r[0] == 0 else f"in the bottom 5% of {label} (across {r[1]:,} campaigns)" if r[0] == 0
                          else f"{word} than {r[0]}% of {label} (across {r[1]:,} campaigns)")
-        if t and key.startswith("band") and not lower_is_better and value < t["p"][14]: target = (label, t["p"][14])
+        if t and key.startswith("band") and not configuration and not lower_is_better and value < t["p"][14]: target = (label, t["p"][14])
     line = ", ".join(parts)
     if target: line += f". The best quarter of {target[0]} reach " + fmt.format(target[1])
     return line
@@ -144,7 +145,7 @@ def review(a):
                      f"businesses on their eleventh or later. " + rank_line("contestants", a.contestants, groups)))
     else:
         rows.append(("Users", f"{a.contestants:,}", f"{typical('contestants', a.contestants):,.0f}", (band_rank("contestants", a.contestants, a.contestants) or position(a.contestants, BENCH["contestants"])) + ". " + rank_line("contestants", a.contestants, [g for g in groups if not g[1].startswith("band")])))
-    if a.entries:
+    if a.entries is not None:
         rows.append(("Entries", f"{a.entries:,}", f"{typical('entries', a.contestants) or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups)))
         epc = a.entries / a.contestants
         rows.append(("Entries per Entrant", f"{epc:.2f}", f"{typical('entries_per_entrant', a.contestants) or 0:,.2f}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
@@ -164,31 +165,37 @@ def review(a):
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)
         if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification, the planning assumption used here to prompt a check, not a measured health cutoff. Check for a validated-answer question first, then referral and Discord actions"))
-    if getattr(a, "actions_completed", None):
+    if getattr(a, "actions_completed", None) is not None:
         apc = a.actions_completed / a.contestants
         rows.append(("Actions completed per Entrant", f"{apc:.2f}", f"{typical('actions_per_contestant', a.contestants) or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))
     if a.days:
         pace = a.contestants / a.days
         rows.append(("Entrants per day", f"{pace:,.0f}", f"{typical('contestants_per_day', a.contestants) or 0:,.0f}", rank_line("contestants_per_day", pace, groups)))
-    if getattr(a, "prize_value", None):
+    if getattr(a, "prize_value", None) is not None:
         pv = a.prize_value / a.contestants
         rows.append(("Stated Prize value per Entrant", f"{pv:.2f}", f"{typical('stated_usd_per_contestant', a.contestants) or 0:.2f}", "USD, stated value. " + rank_line("stated_usd_per_contestant", pv, groups).replace("better than", "higher than")))
     for flag, key, label in [("x_follows", "x_follows", "X follows"), ("instagram_follows", "instagram_follows", "Instagram follows"), ("tiktok_follows", "tiktok_follows", "TikTok follows"), ("twitch_follows", "twitch_follows", "Twitch follows"), ("youtube_subscribes", "youtube_subscribes", "YouTube subscribes"), ("discord_joins", "discord_joins", "Discord joins")]:
         val = getattr(a, flag, None)
-        if val: rows.append((label, f"{val:,}", f"{typical(key, a.contestants) or 0:,.0f}", rank_line(key, val, groups)))
-    if getattr(a, "emails", None):
+        if val is not None: rows.append((label, f"{val:,}", f"{typical(key, a.contestants) or 0:,.0f}", rank_line(key, val, groups)))
+    if getattr(a, "emails", None) is not None:
         up = a.emails / a.contestants
         rows.append(("Email signups", f"{a.emails:,}", f"{BENCH['yield_median']['email'][band(a.contestants)]:,}", rank_line("email_signups", a.emails, groups)))
         # the typical figure comes from the same band table the rank reads, never the all-campaign family constant
         t_up = typical("email_uptake", a.contestants) or BENCH["family_uptake"]["email"]
         rows.append(("Email signups per Entrant", f"{up:.0%}" if up <= 1 else f"{up:.2f} each", f"{t_up:.0%}" if t_up <= 1 else f"{t_up:.2f} each", rank_line("email_uptake", up, groups)))
-    if getattr(a, "referrals", None):
+    if getattr(a, "referrals", None) is not None:
         rp = a.referrals / a.contestants
         rows.append(("Referred Entrants as a share of all Entrants", f"{rp:.0%}", "13%", rank_line("referrals_per_contestant", rp, groups)))
     if a.days:
-        rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", position(a.days, BENCH["duration_days"]) + ". " + rank_line("duration_days", a.days, groups).replace("better than", "longer than")))
+        rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", rank_line("duration_days", a.days, groups, configuration="longer")))
     if a.methods:
-        rows.append(("Entry actions", f"{a.methods}", "5", ("11 or more is more than most campaigns carry, and the campaigns that did drew a lower share of viewers through. Read the entry-method planner's friction section before adding another" if a.methods >= 11 else "within the usual range") + ". " + rank_line("methods", a.methods, groups).replace("better than", "more than")))
+        rows.append(("Entry actions", f"{a.methods}", "5", rank_line("methods", a.methods, groups, configuration="more")))
+    if a.contestants < 100:
+        # Every comparison source starts at 100 Entrants. Keep the measured values,
+        # but none of its benchmark cells or ranking prose applies below that floor.
+        rows = [(label, value, "-", note if label == "Invalid Entries" or value == "-" else "")
+                for label, value, benchmark, note in rows]
+        rows[0] = (*rows[0][:3], "No matching peers: the dataset starts at 100 Entrants")
     return rows
 
 def read_actions(path, contestants):
@@ -210,6 +217,9 @@ def read_actions(path, contestants):
             if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
             ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
             if ym: read += f", a typical campaign of {band_label(contestants)} collected {ym:,}"
+            if contestants < 100:
+                bench = None
+                read = "No matching peers: the dataset starts at 100 Entrants"
             # a share under one per Entrant reads as a percentage, above one as "each", so the writer copies reader units
             reader = lambda v: f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
             out.append((r[0], reader(up), reader(bench) if bench else "n/a", fam or "unclassified", read, up))
@@ -291,6 +301,36 @@ def self_test():
     assert hd["Users"][4] == "+20% against the previous" and hd["Users"][5] == "2 of 2 previous beaten" and notes, ht
     assert "1,000 to 2,500 Entrants" in d["Users"][3] and d["Entries per Entrant"][1] == "5.00" and d["Conversion Rate"][1] == "30.0%", rows
     assert "Invalid share of Entries" not in d and "Entries" in d and "better than" in d["Entries"][3]
+    # A measured zero is an outcome, while an omitted count stays absent.
+    class Zero(A):
+        entries = 0; emails = 0; referrals = 0; actions_completed = 0; prize_value = 0
+        x_follows = instagram_follows = tiktok_follows = twitch_follows = youtube_subscribes = discord_joins = 0
+    zd = {r[0]: r for r in review(Zero)}
+    for label in ("Entries", "Email signups", "X follows", "Instagram follows", "TikTok follows", "Twitch follows", "YouTube subscribes", "Discord joins"):
+        assert zd[label][1] == "0", zd
+    assert zd["Email signups per Entrant"][1] == zd["Referred Entrants as a share of all Entrants"][1] == "0%", zd
+    assert zd["Actions completed per Entrant"][1] == zd["Stated Prize value per Entrant"][1] == "0.00", zd
+    class Missing(Zero):
+        entries = emails = referrals = actions_completed = prize_value = None
+        x_follows = instagram_follows = tiktok_follows = twitch_follows = youtube_subscribes = discord_joins = None
+    md = {r[0]: r for r in review(Missing)}
+    assert set(zd) - set(md) == {"Entries", "Entries per Entrant", "Email signups", "Email signups per Entrant", "Referred Entrants as a share of all Entrants", "Actions completed per Entrant", "Stated Prize value per Entrant", "X follows", "Instagram follows", "TikTok follows", "Twitch follows", "YouTube subscribes", "Discord joins"}, md
+    for count in (40, 99):
+        class Below(A): contestants = count
+        for first in (False, True):
+            Below.first_campaign = first
+            below = review(Below)
+            assert all(r[2] == "-" for r in below), below
+            assert not any(term in str(below) for term in ("better than", "typical", "best quarter", "100 to 250")), below
+            assert below[0][1] == str(count) and "starts at 100" in below[0][3], below
+    class Floor(A): contestants = 100
+    floor = {r[0]: r for r in review(Floor)}
+    assert floor["Users"][2] != "-" and "100 to 250" in floor["Users"][3], floor
+    for config in (A, Zero, Floor):
+        cd = {r[0]: r for r in review(config)}
+        for label, word in (("Duration in days", "longer"), ("Entry actions", "more")):
+            assert word in cd[label][3], cd[label]
+            assert not any(term in cd[label][3] for term in ("best", "better", "reach", "top", "bottom", "usual")), cd[label]
     import tempfile, os
     with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, newline="") as fh:
         fh.write("campaign,Contestants,Impressions,Entries,invalid,days,methods,emails\nspring,1200,5000,5000,100,10,5,900\n")
@@ -321,6 +361,9 @@ def self_test():
         fa.write("action,completions,type\nVisit our store,1800,Visit a Page\nSubscribe to our newsletter,900,Email Subscriptions\nShare on Facebook,200,Viral Shares\n")
     acts = read_actions(fa.name, 1200)
     assert [r[0] for r in acts] == ["Visit our store", "Subscribe to our newsletter", "Share on Facebook"] and acts[0][1] == "1.5 each" and acts[1][1] == "75%", acts
+    for count in (40, 99):
+        below_actions = read_actions(fa.name, count)
+        assert all(r[2] == "n/a" and "starts at 100" in r[4] for r in below_actions), below_actions
     _os2.unlink(fa.name)
     hist = [{"campaign": str(i), "contestants": c, "impressions": None, "entries": None, "invalid": None, "days": None} for i, c in enumerate((100, 300))]
     assert history_table(First, hist)[0][0][3] == "200", "even history must average the two central values"
@@ -355,7 +398,7 @@ def main(argv):
     if a.self_test: return self_test()
     if not a.contestants: ap.error("--contestants is required")
     rows = review(a)
-    print_table(rows, ("Metric", "This campaign", "Typical for campaigns your size", "Read"))
+    print_table(rows, ("Metric", "This campaign", "Benchmark unavailable" if a.contestants < 100 else "Typical for campaigns your size", "Read"))
     print(plain_reading(rows))
     if a.actions:
         acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Completed by", "Typical for that action", "Family", "Read"))

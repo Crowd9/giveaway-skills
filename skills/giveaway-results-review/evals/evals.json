@@ -86,11 +86,11 @@
    ]
   },
   {
-   "prompt": "Day 4 of a 14 day giveaway. Impressions were 900 on day 1 and 610 yesterday. 130 Entrants so far, 3,100 Impressions in total. Is this pace normal and is anything wrong?",
-   "expected_output": "Says the campaign is live, day 4 of 14, and does not rank it. Reads yesterday against day one as a multiple (about two thirds) beside the 14 day row for day 4, names the row, and says a fall from day one is the typical shape. Says the table is Impressions only with no spread, so it cannot say how far under is unusual and gives no Entrant pace. Reads Conversion Rate so far (Entrants over Impressions) against the run length so far, labelled rough. Picks reach, conversion or broken with the figure that decides it.",
+   "prompt": "Day 4 since the start of a 14 day giveaway, counting the start date as day 0. Impressions were 900 on day 1 and 610 yesterday, day 3. 130 Entrants so far, 3,100 Impressions in total. Is this pace normal and is anything wrong?",
+   "expected_output": "Says the campaign is live, day 4 of 14, and does not rank it. Reads yesterday against day one as a multiple (about two thirds) beside the 14 day row for day 3 (0.63x, 16,935 campaigns from 5,045 businesses), names the observation day and row, and says a fall from day one is the typical shape. Rejects using the day 4 multiple of 0.52x for yesterday. Says the table is Impressions only with no spread, so it cannot say how far under is unusual and gives no Entrant pace. Reads Conversion Rate so far (Entrants over Impressions) against the run length so far, labelled rough. Picks reach, conversion or broken with the figure that decides it.",
    "assertions": [
     "States it is live and does not call any figure a result",
-    "Compares yesterday over day one with the 14 day row for the day and names the row",
+    "Compares yesterday, explicitly day 3, over day one (610 / 900, about 0.68x) with the 14 day row for day 3 (0.63x), and rejects a day 4 comparison (0.52x)",
     "Says the curve is Impressions and gives no Entrant pace",
     "Says the table has no spread",
     "Labels the conversion read as rough"
@@ -104,6 +104,10 @@
     {
      "count": "14.day",
      "min": 1
+    },
+    {
+     "count": "(?i)\\bday\\s*(?:3|three)\\b",
+     "min": 1
     }
    ],
    "id": 4,
@@ -113,6 +117,12 @@
      "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
      "pass_example": "Check whether the entry page converts incoming visitors before choosing a reach or conversion fix.",
      "fail_example": "That is your next decision."
+    },
+    {
+     "id": "observation-day",
+     "criterion": "Yesterday is explicitly day 3 since start, with start date day 0. Require comparison of 610 / 900 (about 0.68x) with the 14 day run, day 3 multiple of 0.63x. Reject use of day 4 or 0.52x as the comparison for yesterday, even if day 3 is mentioned elsewhere.",
+     "pass_example": "Yesterday was day 3. Its Impressions were about 0.68 times day one, beside 0.63 times in the 14 day run, day 3 row.",
+     "fail_example": "Yesterday was day 3, and its 0.68 multiple beats the day 4 benchmark of 0.52."
     }
    ]
   },

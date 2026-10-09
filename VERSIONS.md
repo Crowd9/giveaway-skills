@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.42 |
+| giveaway-prize-picker | 1.3.43 |
 | giveaway-entry-method-planner | 1.2.41 |
 | giveaway-timing-and-duration | 1.4.40 |
-| giveaway-winner-structure | 1.4.12 |
-| giveaway-promotion-plan | 1.3.40 |
+| giveaway-winner-structure | 1.4.13 |
+| giveaway-promotion-plan | 1.3.41 |
 | giveaway-random-draw | 1.3.36 |
 | giveaway-winner-communications | 1.2.33 |
 | giveaway-idea-generator | 1.3.36 |
-| giveaway-results-review | 1.6.11 |
+| giveaway-results-review | 1.6.12 |
 | gleam-campaign-setup | 1.2.39 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.13 (2026-10-10)
+
+The Prize examples are now invented to show each pattern, and none of them describes a real business or campaign. Tables give medians and ranges, and no longer quote a single largest value.
+
+Your results review shows a zero you entered as a zero, so a campaign that brought in no emails says so. A run under 100 Entrants gets its own figures without being ranked against campaigns it can't be compared with, and run length and action count are described plainly, never set as targets.
+
+The Prize calculator only compares a stated value you gave it, and its benchmarks now match the Prize skill's tables. Sharing Entrant details with a partner or an ad platform depends on the permissions you collected at entry. A follower count taken after the giveaway is read as the net change since launch, because it can't show which new followers stayed, so record the count on launch day.
 
 ## 3.0.12 (2026-10-10)
 

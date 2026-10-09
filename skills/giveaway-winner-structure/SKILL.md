@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Set giveaway Winner counts, Prize tiers, draw rules, verification, response deadlines, redraws and fulfilment. Use for 'how many Winners', 'one Winner or several', 'runner-up Prizes', 'daily Winners', 'how do I pick the Winner', 'how to announce Winners', 'Winner terms', or 'what if the Winner does not reply'."
 metadata:
-  version: 1.4.12
+  version: 1.4.13
 ---
 
 # Giveaway Winner Structure

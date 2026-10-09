@@ -8,7 +8,7 @@ After the campaign, pricing what actually happened: the same spend drew 1,800 En
 
 Costs are what you pay. --stated-value is the retail figure you advertise, which is what the benchmarks below use, because the
 export records what organizers stated, never what they paid. Benchmarks are medians from the ordinary segment of the campaign
-export (117,128 campaigns that reached 100 Entrants). Value per email or follow is yours to supply: expected revenue per
+export (116,283 campaigns that reached 100 Entrants). Value per email or follow is yours to supply: expected revenue per
 subscriber over the period you care about, or what you would pay a channel for the same list. The script reports the breakeven
 value if you give none. Nothing here predicts Entrants. Give the number you expect and the script prices it.
 
@@ -16,14 +16,16 @@ These benchmarks do not split by single-prize versus split-prize campaigns. Cost
 split-prize campaign than a single Prize of matched value and vertical, see giveaway-winner-structure for the numbers.
 """
 import argparse, json, math, sys
+from pathlib import Path
 
+# Source: analysis/output/roi_benchmarks.json, ordinary scope.
 BENCH = {
  "all": {
   "usd_per_contestant": 0.42,
   "usd_per_email": 0.4,
   "usd_per_follow": 0.47,
-  "usd_per_referral_entry": 2.89,
-  "emails_per_campaign": 712.0,
+  "usd_per_referral_entry": 2.9,
+  "emails_per_campaign": 714,
   "stated_pool_usd": 299.0
  },
  "by_band": {
@@ -34,52 +36,52 @@ BENCH = {
    "usd_per_referral_entry": 8.57,
    "emails_per_campaign": 157,
    "stated_pool_usd": 120.0,
-   "n": 33285
+   "n": 33021
   },
   "250-500": {
    "usd_per_contestant": 0.39,
    "usd_per_email": 0.34,
    "usd_per_follow": 0.36,
    "usd_per_referral_entry": 3.12,
-   "emails_per_campaign": 353,
-   "stated_pool_usd": 149.0,
-   "n": 25832
+   "emails_per_campaign": 354.0,
+   "stated_pool_usd": 148.0,
+   "n": 25625
   },
   "500-1k": {
-   "usd_per_contestant": 0.38,
+   "usd_per_contestant": 0.37,
    "usd_per_email": 0.42,
    "usd_per_follow": 0.43,
    "usd_per_referral_entry": 2.51,
-   "emails_per_campaign": 645,
+   "emails_per_campaign": 646,
    "stated_pool_usd": 260.0,
-   "n": 21886
+   "n": 21789
   },
   "1k-2.5k": {
    "usd_per_contestant": 0.36,
    "usd_per_email": 0.39,
    "usd_per_follow": 0.46,
    "usd_per_referral_entry": 2.21,
-   "emails_per_campaign": 1346,
-   "stated_pool_usd": 534.0,
-   "n": 20090
+   "emails_per_campaign": 1346.0,
+   "stated_pool_usd": 533.0,
+   "n": 19974
   },
   "2.5k-10k": {
    "usd_per_contestant": 0.29,
    "usd_per_email": 0.29,
-   "usd_per_follow": 0.37,
-   "usd_per_referral_entry": 2.16,
-   "emails_per_campaign": 3713,
+   "usd_per_follow": 0.38,
+   "usd_per_referral_entry": 2.18,
+   "emails_per_campaign": 3711,
    "stated_pool_usd": 1299.0,
-   "n": 12817
+   "n": 12703
   },
   "10k+": {
    "usd_per_contestant": 0.14,
    "usd_per_email": 0.16,
-   "usd_per_follow": 0.18,
-   "usd_per_referral_entry": 1.38,
-   "emails_per_campaign": 16566,
+   "usd_per_follow": 0.19,
+   "usd_per_referral_entry": 1.46,
+   "emails_per_campaign": 16633.0,
    "stated_pool_usd": 3000.0,
-   "n": 3218
+   "n": 3171
   }
  },
  "by_vertical": {
@@ -88,36 +90,36 @@ BENCH = {
    "usd_per_email": 0.09,
    "usd_per_follow": 0.23,
    "usd_per_referral_entry": 2.0,
-   "emails_per_campaign": 827.5,
+   "emails_per_campaign": 828.0,
    "stated_pool_usd": 70.0,
-   "n": 24965
+   "n": 24929
   },
   "gaming": {
    "usd_per_contestant": 0.42,
    "usd_per_email": 0.59,
-   "usd_per_follow": 0.38,
+   "usd_per_follow": 0.37,
    "usd_per_referral_entry": 2.11,
-   "emails_per_campaign": 478.0,
+   "emails_per_campaign": 490,
    "stated_pool_usd": 200.0,
-   "n": 24651
+   "n": 24229
   },
   "unclassified": {
    "usd_per_contestant": 0.55,
    "usd_per_email": 0.55,
-   "usd_per_follow": 0.73,
-   "usd_per_referral_entry": 3.87,
-   "emails_per_campaign": 578.0,
+   "usd_per_follow": 0.72,
+   "usd_per_referral_entry": 3.88,
+   "emails_per_campaign": 580,
    "stated_pool_usd": 379.0,
-   "n": 16694
+   "n": 16477
   },
   "technology": {
    "usd_per_contestant": 0.6,
-   "usd_per_email": 0.64,
-   "usd_per_follow": 0.51,
-   "usd_per_referral_entry": 2.49,
-   "emails_per_campaign": 768.0,
-   "stated_pool_usd": 540.0,
-   "n": 15589
+   "usd_per_email": 0.65,
+   "usd_per_follow": 0.52,
+   "usd_per_referral_entry": 2.54,
+   "emails_per_campaign": 764.5,
+   "stated_pool_usd": 545.0,
+   "n": 15543
   },
   "fitness_outdoor": {
    "usd_per_contestant": 0.69,
@@ -126,25 +128,25 @@ BENCH = {
    "usd_per_referral_entry": 3.57,
    "emails_per_campaign": 849.5,
    "stated_pool_usd": 540.0,
-   "n": 7801
+   "n": 7795
   },
   "kids_family_pets": {
    "usd_per_contestant": 0.52,
    "usd_per_email": 0.57,
    "usd_per_follow": 0.76,
-   "usd_per_referral_entry": 5.12,
-   "emails_per_campaign": 486.5,
+   "usd_per_referral_entry": 5.1,
+   "emails_per_campaign": 488,
    "stated_pool_usd": 249.0,
-   "n": 6837
+   "n": 6831
   },
   "fashion_beauty": {
    "usd_per_contestant": 0.44,
    "usd_per_email": 0.41,
    "usd_per_follow": 0.52,
    "usd_per_referral_entry": 2.99,
-   "emails_per_campaign": 880.0,
+   "emails_per_campaign": 880,
    "stated_pool_usd": 368.0,
-   "n": 6465
+   "n": 6457
   },
   "food_drink": {
    "usd_per_contestant": 0.5,
@@ -152,17 +154,17 @@ BENCH = {
    "usd_per_follow": 0.87,
    "usd_per_referral_entry": 2.78,
    "emails_per_campaign": 712,
-   "stated_pool_usd": 426.0,
-   "n": 4682
+   "stated_pool_usd": 427.5,
+   "n": 4681
   },
   "travel_events": {
    "usd_per_contestant": 0.86,
    "usd_per_email": 0.84,
    "usd_per_follow": 2.72,
-   "usd_per_referral_entry": 7.84,
-   "emails_per_campaign": 648,
+   "usd_per_referral_entry": 7.91,
+   "emails_per_campaign": 650.0,
    "stated_pool_usd": 599.0,
-   "n": 3979
+   "n": 3969
   },
   "home": {
    "usd_per_contestant": 0.48,
@@ -171,16 +173,16 @@ BENCH = {
    "usd_per_referral_entry": 3.32,
    "emails_per_campaign": 867.5,
    "stated_pool_usd": 510.0,
-   "n": 3713
+   "n": 3710
   },
   "software": {
-   "usd_per_contestant": 1.09,
+   "usd_per_contestant": 1.13,
    "usd_per_email": 1.19,
-   "usd_per_follow": 1.24,
-   "usd_per_referral_entry": 4.03,
+   "usd_per_follow": 1.28,
+   "usd_per_referral_entry": 4.39,
    "emails_per_campaign": 979.0,
    "stated_pool_usd": 1000.0,
-   "n": 1752
+   "n": 1662
   }
  }
 }
@@ -198,7 +200,7 @@ def run(a):
         if value is not None and (not math.isfinite(value) or value < 0):
             raise ValueError(field.replace("_", " ") + " must be finite and nonnegative")
     cost = (a.prize_cost or 0) + (a.promotion or 0) + (a.admin or 0) + (a.shipping or 0)
-    stated = a.stated_value if a.stated_value is not None else (a.prize_cost or 0)
+    stated = a.stated_value
     actual = any(count is not None for count in (a.emails, a.follows, a.referrals))
     est = any(count is None and action for count, action in ((a.emails, a.email_action), (a.follows, a.follow_action), (a.referrals, a.share_action)))
     emails = a.emails if a.emails is not None else (round(a.contestants * UPTAKE["email"]) if a.email_action else 0)
@@ -207,11 +209,16 @@ def run(a):
     bench = BENCH["by_vertical"].get(a.vertical) or BENCH["by_band"][band(a.contestants)]
     label = a.vertical if a.vertical in BENCH["by_vertical"] else f"band {band(a.contestants)}"
     rows = [("Total cost (what you pay)", money(cost), "", ""),
-            ("Cost per Entrant", money(cost / a.contestants), "", ""),
-            ("Stated value per Entrant", money(stated / a.contestants), money(bench["usd_per_contestant"]), label)]
-    if emails: rows += [("Cost per email signup", money(cost / emails), "", ""), ("Stated value per email signup", money(stated / emails), money(bench["usd_per_email"]), label)]
-    if follows: rows += [("Cost per follow", money(cost / follows), "", ""), ("Stated value per follow", money(stated / follows), money(bench["usd_per_follow"]), label)]
-    if refs: rows += [("Cost per referral entry", money(cost / refs), "", ""), ("Stated value per referral entry", money(stated / refs), money(bench.get("usd_per_referral_entry")), label)]
+            ("Cost per Entrant", money(cost / a.contestants), "", "")]
+    if stated is not None:
+        rows.append(("Stated value per Entrant", money(stated / a.contestants), money(bench["usd_per_contestant"]), label))
+    for count, asset, key in ((emails, "email signup", "usd_per_email"),
+                              (follows, "follow", "usd_per_follow"),
+                              (refs, "referral entry", "usd_per_referral_entry")):
+        if count:
+            rows.append(("Cost per " + asset, money(cost / count), "", ""))
+            if stated is not None:
+                rows.append(("Stated value per " + asset, money(stated / count), money(bench[key]), label))
     value = (a.value_per_email or 0) * emails + (a.value_per_follow or 0) * follows + (a.value_per_referral or 0) * refs
     if value:
         rows += [("Value of what was produced", money(value), "", "your per-unit values"), ("Return per dollar", f"{value / cost:.2f}" if cost else "-", "", "")]
@@ -228,15 +235,57 @@ def print_table(rows, header):
     widths = [max(len(str(x)) for x in col) for col in zip(header, *rows)]
     for line in [header] + rows: print("  ".join(str(x).ljust(w) for x, w in zip(line, widths)))
 
+def benchmark_self_test():
+    # Installed skills carry the reference, while the private aggregate source is optional.
+    reference = Path(__file__).resolve().parents[1] / "references" / "roi-benchmarks.md"
+    vertical_names = ("Music and media", "Gaming", "Unclassified", "Technology",
+                      "Fitness and outdoor", "Kids, family, pets", "Fashion and beauty",
+                      "Food and drink", "Travel and events", "Home", "Software")
+    band_names = ("100 to 250", "250 to 500", "500 to 1,000", "1,000 to 2,500",
+                  "2,500 to 10,000", "10,000 or more")
+    lines = reference.read_text().splitlines()
+    for section, names, columns in (
+        ("by_vertical", vertical_names, {1: "n", 3: "stated_pool_usd", 5: "usd_per_email",
+                                        6: "usd_per_follow", 7: "usd_per_referral_entry", 8: "emails_per_campaign"}),
+        ("by_band", band_names, {1: "n", 2: "stated_pool_usd", 4: "usd_per_email",
+                                5: "usd_per_follow", 6: "emails_per_campaign"}),
+    ):
+        for key, name in zip(BENCH[section], names):
+            cells = next(line for line in lines if line.startswith("| " + name + " |"))
+            cells = [cell.strip() for cell in cells.strip("|").split("|")]
+            for column, metric in columns.items():
+                value = BENCH[section][key][metric]
+                expected = f"{value:.2f}" if metric.startswith("usd_per_") else f"{value:,.0f}"
+                assert cells[column] == expected, (section, key, metric, cells[column], expected)
+    source_path = Path(__file__).resolve().parents[3] / "analysis" / "output" / "roi_benchmarks.json"
+    if source_path.is_file():
+        source = json.loads(source_path.read_text())
+        for section in BENCH:
+            rows = {"all": BENCH[section]} if section == "all" else BENCH[section]
+            for key, row in rows.items():
+                source_row = source[section] if section == "all" else source[section][key]
+                for metric, value in row.items():
+                    expected = round(source_row[metric], 2) if metric.startswith("usd_per_") else source_row[metric]
+                    assert value == expected, (section, key, metric, value, expected)
+
+
 def self_test():
     class A: prize_cost = 900; stated_value = 1500; promotion = 300; admin = 200; shipping = 0; contestants = 2000; vertical = "food_drink"
     class A(A): emails = None; follows = None; referrals = None; email_action = True; follow_action = True; share_action = True; value_per_email = 4; value_per_follow = 0; value_per_referral = 0
     rows, note = run(A); d = {r[0]: r for r in rows}
     assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Return per dollar"][1] == "4.86", rows
     A.value_per_email = 0; rows, _ = run(A); assert any(r[0] == "Breakeven value per email" for r in rows)
+    A.stated_value = None
+    rows, _ = run(A)
+    assert not any(r[0].startswith("Stated value") or r[2] for r in rows), rows
+    assert sum(r[0].startswith("Cost per") for r in rows) == 4, rows
+    A.stated_value = 1500
+    rows, _ = run(A); d = {r[0]: r for r in rows}
+    assert d["Cost per Entrant"][1] == "0.70" and d["Stated value per Entrant"][1] == "0.75", rows
     A.stated_value = 0
     rows, _ = run(A)
     assert dict((r[0], r[1]) for r in rows)["Stated value per Entrant"] == "0.00"
+    assert sum(r[0].startswith("Stated value") and r[1] == "0.00" for r in rows) == 4, rows
     A.emails = A.follows = A.referrals = 0
     _, note = run(A)
     assert note == "from the counts you gave", note
@@ -252,6 +301,7 @@ def self_test():
         else:
             raise AssertionError("invalid ROI input accepted: " + field)
         setattr(A, field, previous)
+    benchmark_self_test()
     print("self-test passed"); return 0
 
 def main(argv):

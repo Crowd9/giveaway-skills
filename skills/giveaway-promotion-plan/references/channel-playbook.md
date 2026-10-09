@@ -496,7 +496,7 @@ Three feed posts and one collab in fourteen days, with stories carrying the remi
 
 Write these down at launch, at close and 30 days after close, from the platform's own insights, and hand them to the results review:
 
-- Follower count on each promoted channel. The 30-day figure shows how many follow-to-enter followers stayed.
+- Follower count on each promoted channel. Report the difference as net follower change. New followers and unrelated unfollows affect the total, so it cannot show how many giveaway followers stayed. Measure retention only where records track that specific group over time.
 - Reach and saves on the launch post against your typical post from the previous month.
 - Link clicks from the bio link and from each story sticker, and the UTM totals from the entry page.
 - Comments answered and the typical time to first reply on the launch post.
@@ -510,7 +510,7 @@ One page, sent a week before their date.
 - What: one post and one story on [date], plus a repost of the Winner announcement.
 - Copy and assets: attached, editable, keep the link and the eligibility line.
 - Link: the entry page with their UTM or code, so they can see what they drove.
-- What they get: named as the Prize partner on the entry page and in every email, entries data if agreed, product.
+- What they get: named as the Prize partner on the entry page and in every email, aggregate campaign results, product. Share Entrant-level data only where the recorded notice and permissions cover sharing with that partner and its intended use, and the platform terms permit it.
 - Timing: post between [hours] in their audience's time zone. Tell us when it is live.
 - Rules: no purchase claims, no changes to eligibility, disclose the partnership where required.
 
@@ -521,9 +521,9 @@ One page, sent a week before their date.
 - Cap the spend at the cost of one more Winner. If the campaign is producing leads, cost per Entrant against the value of a lead decides whether to add more.
 - Never run paid to audiences outside eligibility. Wasted spend and angry Entrants.
 - Add a UTM to every link you post, on every channel, paid and organic. Source is the network, medium is the format (post, story, email, partner), campaign is the giveaway name. Without it the results review has traffic sources and no way to separate your posts from a partner's.
-- A store with Shopify Audiences or the equivalent can build the retargeting audience from the tagged customer segment without an export.
-- After the close, upload the Entrant list as a custom audience on the networks you run ads on. Exclude the Winners and anyone already a customer, then run the launch offer to the rest. Practice, with no dataset figure behind it: the dataset holds no purchase data.
-- Build a lookalike audience from that same Entrant list for the next campaign's launch push. Entrants opted in to a Prize, so a lookalike of them is a prospecting audience and should be judged on cost per lead against your usual sources.
+- A store with Shopify Audiences or the equivalent can build the retargeting audience from the tagged customer segment without an export only where the recorded notice, permissions and platform terms cover that advertising use.
+- After the close, use only Entrants whose recorded notice and permissions cover custom-audience advertising, and check the network's terms before uploading. Entry-only contact details do not establish that permission. Exclude the Winners and anyone already a customer, then run the launch offer to the rest. Practice, with no dataset figure behind it: the dataset holds no purchase data.
+- Build a lookalike audience for the next campaign's launch push only from Entrants whose recorded notice and permissions cover that use, where the network's terms permit it. Giveaway entry alone does not establish permission. Judge that prospecting audience on cost per lead against your usual sources.
 
 ## Afterwards
 

@@ -153,7 +153,7 @@
   {
    "id": 8,
    "prompt": "Data check: are sneaker 'chance to purchase' raffles counted as prizes anywhere?",
-   "expected_output": "Confirms they sit in the purchase_opportunity segment, appear in no ordinary benchmark, and appear in examples.md only under records not used.",
+   "expected_output": "Confirms they sit in the purchase_opportunity segment, appear in no ordinary benchmark, and appear in examples.md only under offers excluded from the illustrations.",
    "assertions": [
     "purchase_opportunity segment exists and holds the sneaker raffles",
     "No ordinary benchmark includes them",

@@ -82,3 +82,9 @@ These are synthetic checker fixtures, not model answers. Review JSON files conta
 The matching pass and fail answers and review verdicts are in `../../../evals/fixtures/giveaway-results-review/`. The CLI checks both outcomes with `--review`. Fixture success is not a model-quality score.
 
 Previously unchecked case 3 is now explicitly judgement-only, with a review rubric. It requires a supplied reviewer verdict and has not been rerun against a model.
+
+## 10 October 2026, review regressions
+
+`review.py --self-test` passes with ResourceWarnings treated as errors. Supplied zero outcomes remain visible and omitted counts stay absent. Campaigns with 40 and 99 Entrants retain measured metrics without benchmark claims, including action CSV rows. At 100 Entrants the size comparison remains available. Duration and action-count comparisons use neutral descriptions without achievement targets.
+
+Live case 4 now explicitly observes day 3 while asking on day 4, with the start date counted as day 0. Its expected comparison and meaning-review criterion require the day 3 row and reject the day 4 row. This case has not been rerun against a model.
