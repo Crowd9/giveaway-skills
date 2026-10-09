@@ -36,30 +36,21 @@
   {
    "id": 2,
    "prompt": "Conversion was only 19% on our 45-day giveaway with a daily bonus entry. Is something broken?",
-   "expected_output": "Explains impressions count once per user per day so a 45-day run with a daily action lowers the rate, compares to the 31 to 60 day figure of 23% and the 21% for 61 days or more, says nothing is necessarily broken, and points to what would show a real problem (contestants for the band, the asset action uptake).",
+   "expected_output": "Establishes how this platform counts views or Impressions. Explains repeated daily visits conditionally if its definition is unknown. Duration comparisons are context only and cannot prove why this campaign converted at 19%. Recommends checks of the entry flow, daily Entrants and action uptake without declaring the campaign healthy or broken from the rate alone.",
    "assertions": [
-    "Explains the impressions definition",
-    "Compares to the duration row",
-    "Does not call the result bad",
-    "Names what to check next"
+    "Establishes or qualifies the platform-specific Impressions definition",
+    "Treats duration and return visits as possible explanations, not a proven cause",
+    "Does not infer health or a fault from the rate alone",
+    "Names operational checks and identifies any benchmark population used"
    ],
    "files": [],
-   "checks": [
-    {
-     "count": "31\\s*(?:to|-|–)\\s*60",
-     "min": 1
-    },
-    {
-     "count": "(?i)once per \\w+",
-     "min": 1
-    }
-   ],
+   "checks": [],
    "review_checks": [
     {
      "id": "actionable-next-step",
-     "criterion": "Names a concrete next check or decision that follows from this case and explains what it resolves. A final pronoun or generic advice alone does not meet this requirement.",
-     "pass_example": "Check uptake of the email Action and compare Entrants with the relevant size band before treating conversion as a fault.",
-     "fail_example": "You should do better next time."
+     "criterion": "Qualifies the daily-counting explanation until the platform definition is established, and names entry-flow, daily-Entrant or action-uptake checks without attributing the rate to duration alone.",
+     "pass_example": "If your platform counts a returning visitor again each day, return visits could lower this rate. Confirm that definition and test the entry flow before deciding whether something is broken.",
+     "fail_example": "Every platform counts each visitor once per day, so the long run explains the rate and nothing is broken."
     }
    ]
   },
@@ -369,6 +360,101 @@
      "criterion": "Treat the custom bonus as named-action participation only. No complete-all claim is supported by its title, including titles containing complete, bonus or everything. Require an exact unique title confirmed in campaign configuration via --complete-all-action before reporting complete-all participation. A mapped action counts distinct valid Entrants once regardless of repeats and excludes invalid rows. Keep ordinary per-action participation available.",
      "pass_example": "One of two valid Entrants completed the named daily bonus. That does not establish that they completed every required action. Confirm the configured complete-all action and its unique exported title before mapping it. The mapped count includes each valid participant once and excludes invalid completions.",
      "fail_example": "Half completed everything because the action name contains Complete and bonus."
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "prompt": "Our completed gaming giveaway cost $100 in total and collected 1,000 Entrants and 800 email signups. We have not supplied the stated retail Prize value. Report cost per result and any supported industry comparison.",
+   "expected_output": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+   "assertions": [
+    "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "cost-value-separation",
+     "criterion": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+     "pass_example": "Actual spending was $0.10 per Entrant and $0.125 per email. The dataset comparison needs the stated Prize value, which is missing.",
+     "fail_example": "Your $0.10 cost per Entrant beats the gaming dataset benchmark."
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "prompt": "Our completed gaming giveaway cost $100 in total and collected 1,000 Entrants and 800 email signups. The stated retail Prize value was $500. Report cost per result and any supported industry comparison.",
+   "expected_output": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+   "assertions": [
+    "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "cost-value-separation",
+     "criterion": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+     "pass_example": "Actual spending was $0.10 per Entrant and $0.125 per email. The stated-value calculations are $0.50 and $0.625 respectively, and only those measures match the dataset benchmark basis.",
+     "fail_example": "Your $0.10 cost per Entrant beats the gaming dataset benchmark."
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "prompt": "Our completed campaign aimed to collect email subscribers: 100 Entrants, 10,000 Impressions, 100 Entries, no invalid Entries, zero email signups, zero referrals, and 100 completed actions. How did we do, and what should we change?",
+   "expected_output": "Lead with zero email signups against the email-acquisition objective. Do not manufacture a strength from the dataset floor or high Impressions. Keep supported metric comparisons and frame changes as tests with measured outcomes, without promising to reach benchmarks.",
+   "assertions": [
+    "Lead with zero email signups against the email-acquisition objective. Do not manufacture a strength from the dataset floor or high Impressions. Keep supported metric comparisons and frame changes as tests with measured outcomes, without promising to reach benchmarks.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "objective-first-verdict",
+     "criterion": "Lead with zero email signups against the email-acquisition objective. Do not manufacture a strength from the dataset floor or high Impressions. Keep supported metric comparisons and frame changes as tests with measured outcomes, without promising to reach benchmarks.",
+     "pass_example": "The campaign collected no email signups, so it did not deliver the subscriber objective. Check whether the signup action was available and working, then measure confirmed signups in a test.",
+     "fail_example": "Reaching 100 Entrants means several results were strong. A mandatory email action will close the signup gap."
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "prompt": "Our Brazilian Premium giveaway ran for 45 days with daily entry and converted only 8% of Impressions into Entrants. Can the country, plan tier and duration explain this, or should we inspect the entry page?",
+   "expected_output": "Treat country, plan tier, action burden, duration and return visits as possible explanations only. Establish the Impression definition and inspect the entry flow, daily Entrants and action uptake. Do not dismiss landing-page quality or declare the campaign healthy because of these characteristics.",
+   "assertions": [
+    "Treat country, plan tier, action burden, duration and return visits as possible explanations only. Establish the Impression definition and inspect the entry flow, daily Entrants and action uptake. Do not dismiss landing-page quality or declare the campaign healthy because of these characteristics.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "conversion-hypotheses",
+     "criterion": "Treat country, plan tier, action burden, duration and return visits as possible explanations only. Establish the Impression definition and inspect the entry flow, daily Entrants and action uptake. Do not dismiss landing-page quality or declare the campaign healthy because of these characteristics.",
+     "pass_example": "Duration and return visits may affect the rate, but these comparisons cannot identify its cause. Confirm the metric definition and test the entry page while checking daily Entrants and action uptake.",
+     "fail_example": "Premium campaigns convert lower because of their longer runs, so landing-page quality is not the problem."
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "prompt": "Our unnamed platform reports 19% conversion for a 45-day giveaway with daily entry. Its reporting guide says Impressions are unique visitors across the entire campaign. Can you explain this rate using repeat visits on different days?",
+   "expected_output": "Use the supplied campaign-wide unique-visitor definition. Do not apply once-per-person-per-day counting or attribute the rate to repeat visits enlarging the denominator. Keep operational checks and qualify dataset comparisons using a different metric definition.",
+   "assertions": [
+    "Use the supplied campaign-wide unique-visitor definition. Do not apply once-per-person-per-day counting or attribute the rate to repeat visits enlarging the denominator. Keep operational checks and qualify dataset comparisons using a different metric definition.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "platform-metric-definition",
+     "criterion": "Use the supplied campaign-wide unique-visitor definition. Do not apply once-per-person-per-day counting or attribute the rate to repeat visits enlarging the denominator. Keep operational checks and qualify dataset comparisons using a different metric definition.",
+     "pass_example": "With unique visitors counted across the whole campaign, return visits do not add another visitor to that denominator. Inspect the entry flow and action uptake, and keep differently defined dataset rates as limited context.",
+     "fail_example": "Daily return visits increase Impressions each day and explain your 19% rate."
     }
    ]
   }

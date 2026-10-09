@@ -519,6 +519,44 @@
      "fail_example": "All first campaigns should use the 100 to 250 band and its 120 USD Prize pool regardless of expected audience."
     }
    ]
+  },
+  {
+   "id": 25,
+   "prompt": "Our completed gaming giveaway cost $100 in total and collected 1,000 Entrants and 800 email signups. We have not supplied the stated retail Prize value. Report cost per result and any supported industry comparison.",
+   "expected_output": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+   "assertions": [
+    "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "cost-value-separation",
+     "criterion": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Omit dataset industry benchmark comparisons because stated value is unknown. Do not treat $100 actual spend as stated Prize value.",
+     "pass_example": "Actual spending was $0.10 per Entrant and $0.125 per email. The dataset comparison needs the stated Prize value, which is missing.",
+     "fail_example": "Your $0.10 cost per Entrant beats the gaming dataset benchmark."
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "prompt": "Our completed gaming giveaway cost $100 in total and collected 1,000 Entrants and 800 email signups. The stated retail Prize value was $500. Report cost per result and any supported industry comparison.",
+   "expected_output": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+   "assertions": [
+    "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "cost-value-separation",
+     "criterion": "Show actual cost of $0.10 per Entrant and $0.125 per email (about $0.13, or $0.12 with script rounding), separately from retail value. Show stated value of $0.50 per Entrant and $0.625 per email separately. Only these stated-value figures may be compared with dataset industry benchmarks, with their sample sizes and missing-data notes.",
+     "pass_example": "Actual spending was $0.10 per Entrant and $0.125 per email. The stated-value calculations are $0.50 and $0.625 respectively, and only those measures match the dataset benchmark basis.",
+     "fail_example": "Your $0.10 cost per Entrant beats the gaming dataset benchmark."
+    }
+   ]
   }
  ]
 }

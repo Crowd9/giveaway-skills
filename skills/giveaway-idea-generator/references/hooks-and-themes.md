@@ -362,18 +362,18 @@ The pattern is a business that has run many campaigns, more often with a secret 
 
 ## Store campaigns
 
-For a store, the giveaway is a shopping session with a Prize at the end. The data has one line on the shape: cart, wishlist and spree campaigns (matched on words like "win your cart" and "wishlist") draw about half again the Entrants of the typical campaign, 724 against 492, at a level share to enter and the second highest value index in the table at 1.42 (see the campaign-types table above). The data cannot see what they were for: every Entrant browsed the catalogue and told the store what they wanted. Gift card and voucher campaigns run smaller at 432 Entrants, on a value index of 1.18.
+For a store, a giveaway can invite browsing and collect product preferences when its entry steps ask for them. The data has one line on the shape: cart, wishlist and spree campaigns (matched on words like "win your cart" and "wishlist") draw about half again the Entrants of the typical campaign, 724 against 492, at a level share to enter and the second highest value index in the table at 1.42 (see the campaign-types table above). These types come from campaign wording. The data does not establish whether Entrants browsed the catalogue or submitted product preferences. Gift card and voucher campaigns run smaller at 432 Entrants, on a value index of 1.18.
 
-Formats to pick from, each with the store job it does:
+Formats to pick from, with the intended store job for each. Confirm which information the entry steps actually collect before planning personalized follow-up:
 
 - **Win your cart.** Entrants build a cart, submit the cart link or a screenshot, and one cart is paid for up to a cap. Job: browsing depth and a wishlist per Entrant. Cap the Prize at a number in the title ("up to 500 USD") so the cost is fixed.
-- **Win your wishlist.** Same shape on the wishlist app, lighter on the Entrant. Job: a wishlist per Entrant the store can email against when items restock or drop in price.
-- **Pick your Prize.** Three products from the range as the Prize options, Entrant chooses one on the form. Job: a preference vote across the range, and the Entrant reads three product pages to choose.
-- **Bundle builder.** The Prize is the bundle the Entrant designs from a set of options. Job: tells the store which combinations sell, and the bundle becomes the post-campaign offer.
+- **Win your wishlist.** Same shape on the wishlist app, lighter on the Entrant. Job: collect wishlists. Restock or price-drop messages can use the submitted items when the store has collected them and has permission to send marketing.
+- **Pick your Prize.** Three products from the range as the Prize options, Entrant chooses one on the form. Job: collect a preference vote across the range and invite visits to the product pages. A vote does not establish that the Entrant read those pages.
+- **Bundle builder.** The Prize is the bundle the Entrant designs from a set of options. Job: collect preferred combinations to test as a post-campaign offer. Selections do not establish which combinations will sell.
 - **Restock or drop.** A giveaway of the item that sells out, drawn on restock day. Job: the waitlist. Early access, beta and waitlist campaigns get 34% to enter, the highest of the launch subtypes with a usable count.
 - **Own product plus the next thing.** The Prize hierarchy in giveaway-prize-picker: the store's product with the aspirational adjacent item.
 - **Shopping spree with a partner.** Two stores, one cart across both, one entry page. Job: audience swap with a product that fits.
-- **Gift card tiers.** One large gift card and several small ones, so the store has many Winners who all come back to spend. Job: Winners who become customers, and codes with expiry dates that pull a visit.
+- **Gift card tiers.** One large gift card and several small ones, to invite Winners back to spend. Job: encourage a return visit and purchase, with redemption and sales checked afterward.
 - **Mystery box.** A box from the range at a stated value. Job: reach at fixed cost and content for the reveal.
 
 Season formats for a store, with the timing skill's holiday table behind them:
@@ -384,7 +384,7 @@ Season formats for a store, with the timing skill's holiday table behind them:
 - **Win your order back.** Recommend this only after defining a free nonbuyer route and an equivalent Prize in the terms. Use one public entry form that requires no purchase or order number, with the same entry limit, deadline and draw odds for buyers and nonbuyers. Set a fixed Prize amount before launch. For a buyer, refund their order up to that amount and pay any remainder in cash. For a nonbuyer, pay the full amount in cash. State the amount and both delivery options on the entry page, budget for the full amount, and have counsel check the jurisdiction's conditions before launch.
 - **January restart.** The product that pairs with December's purchases, launched in the last ten days of December. Campaigns live over New Year converted about the same as matched campaigns, at a ratio of 0.98, the best of any holiday in that table after Christmas.
 
-Every Entrant who did not win is a shopper who just browsed the store, so the non-Winner code in giveaway-winner-communications is the second half of a store campaign. Keep purchase out of the entry conditions: a purchase-to-enter reads as a lottery in most places, and the free entry route has to stay open.
+A non-Winner code from giveaway-winner-communications can invite a store visit where marketing permission allows. An email-only entry does not establish browsing, a wishlist or product preferences. Personalize follow-up only from information actually collected, otherwise use a general offer. Keep purchase out of the entry conditions: a purchase-to-enter reads as a lottery in most places, and the free entry route has to stay open.
 
 Cheap Prizes that drew crowds: a small set of campaigns with a tiny stated pool still reached thousands of Entrants, mostly from repeat businesses running few actions over a short run, with Prizes in tech hardware, game items and gift cards in gaming, music and media, and technology industries.
 

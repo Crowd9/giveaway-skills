@@ -98,3 +98,7 @@ Added a meaning-review case for the corrected guidance. These evaluation specifi
 Added meaning-review cases for preserving a live campaign's published closing date and requiring a configured complete-all mapping. These cases have not been run against a model. Repository validation checks their structure only.
 
 Both `campaign_report.py --self-test` and `dashboard.py --self-test` passed with ResourceWarnings treated as errors. The report tests custom daily-bonus, survey and complete-everything titles, explicit mapping, repeated completions, invalid rows, zero valid completions and unmatched mappings. The dashboard tests mapping propagation, unique valid participants and rendering without timestamps.
+
+## 10 October 2026, round-twenty-five content regressions
+
+Updated case 2 to require a conditional metric definition. Added cases 16 to 20 for cost/value separation, an objective-first verdict with zero signups, conversion hypotheses, and a campaign-wide unique-visitor counterexample. These cases have not been run against a model. Repository validation checks their structure only. The reported calculator examples were reproduced directly: actual-cost rows had no benchmarks, while supplied stated value produced separate benchmark rows.

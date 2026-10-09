@@ -79,3 +79,7 @@ Fixture pairs and supplied review records: `evals/fixtures/giveaway-idea-generat
 ## Answer scope regression, 10 October 2026
 
 Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.
+
+## Store behavior regression, 10 October 2026
+
+Case 14 covers email-only store entry and missing product preferences. Not yet run against a model. Repository validation is recorded in the 3.0.34 patch report.

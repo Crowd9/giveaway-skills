@@ -318,6 +318,27 @@
      "fail_example": "Your value index is 1.30."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "Our store ran a mystery-box giveaway with an email-only entry form and marketing consent. We collected no product choices, carts or wishlists. Suggest a follow-up concept for people who did not win. Can we send personalized restock messages based on what they browsed?",
+   "expected_output": "Explain that email-only entry establishes neither browsing nor product preferences. Suggest a general follow-up offer for consenting subscribers or an optional preference question for future personalization. Keep title-based campaign findings separate from observed behavior.",
+   "assertions": [
+    "Does not claim Entrants browsed products, submitted wishlists or disclosed preferences",
+    "Personalized restock messages require relevant product information actually collected and marketing permission",
+    "Any browsing or preference-collection mechanism is proposed, not reported as observed behavior",
+    "Title-based campaign categories do not establish individual behavior"
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "observed-store-behavior",
+     "criterion": "Email-only entry establishes neither browsing nor product preferences. Personalization requires relevant information actually collected and marketing permission. Treat campaign wording as a category, not evidence of individual behavior.",
+     "pass_example": "You collected email addresses and consent, but no product preferences. Send a general offer or invite subscribers to choose products before personalizing restock messages.",
+     "fail_example": "Every Entrant browsed your store, so send each person restock messages for the products they wanted."
+    }
+   ]
   }
  ]
 }

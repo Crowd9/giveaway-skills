@@ -181,7 +181,7 @@ Source: `analysis/output/templates.json` (`source_mix`, `by_template`).
 
 ## Benchmarks by plan tier
 
-A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`, which runs on the same 116,499 campaigns as the numbers above, so a tier row and the campaign-size table split one population two ways. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so a tier with more long or repeatable campaigns reads lower for that reason alone.
+A Free or Hobby organizer runs on a plan with no email or share action, so ranking that campaign against the Premium typical figure compares two different tools. Read a campaign against its own tier first, then against campaigns your size. Figures come from `field_cuts.json`, which runs on the same 116,499 campaigns as the numbers above, so a tier row and the campaign-size table split one population two ways. Conversion Rate here is Entrants over Impressions on every run in the tier, not the campaigns we can compare fairly, so duration and repeatable actions may affect the comparison. This table does not isolate their contribution to the rate.
 
 <!-- generated:bm_tier -->
 | Tier | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Methods | Email offered | Share offered |
@@ -193,7 +193,7 @@ A Free or Hobby organizer runs on a plan with no email or share action, so ranki
 | Premium | 1,993 | 202 | 1,221 | 23% | 5.34 | 22 | 10 | 61% | 39% |
 <!-- /generated -->
 
-Free campaigns carry no email or share action at all and Hobby campaigns carry almost none, so their Conversion Rate sits above Pro and Business on a smaller ask, not a stronger landing page. Premium campaigns run the most methods over the longest window and the lowest Conversion Rate follows from the duration and repeatable-action caveat, not from a weaker campaign.
+Free campaigns carry no email or share action at all and Hobby campaigns carry almost none. Premium campaigns run the most methods over the longest window. Action burden, duration and return visits are possible explanations for the rate differences. The table establishes none of them as the cause and cannot rule out landing-page or entry-flow problems. Check the entry flow, daily Entrant counts and action uptake before judging the campaign.
 
 ## Benchmarks by organizer stage, scale and business type
 
@@ -499,7 +499,7 @@ Source: `analysis/output/field_cuts.json` (`by_organizer_tenure`).
 | France | 2,174 | 356 | 349 | 27% | 4.73 | 14 | 7 | 3.67 | 13% |
 <!-- /generated -->
 
-Japan runs the highest plan-tier mix of the twelve, 62% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration and its 58% Conversion Rate are two readings of the same thing. Impressions count once per visitor per day, so a one-day campaign has one day of Impressions to divide into and converts higher by construction. Both figures rest on campaigns that are 91% repeats from a small set of accounts, so treat the row as a description of automated draws.
+Japan runs the highest plan-tier mix of the twelve, 62% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration and its 58% Conversion Rate describe the same group, without establishing why it converts at that rate. Impressions count once per visitor per day in this dataset. A one-day run cannot accumulate return visits across days, which may affect comparisons with longer runs. Check the campaign's own visit pattern and entry flow before attributing its rate to duration or country. Both figures rest on campaigns that are 91% repeats from a small set of accounts, so treat the row as a description of those campaigns.
 
 ### City benchmarks
 

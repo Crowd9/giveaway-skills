@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.52 |
+| giveaway-prize-picker | 1.3.53 |
 | giveaway-entry-method-planner | 1.2.49 |
 | giveaway-timing-and-duration | 1.4.48 |
 | giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.50 |
 | giveaway-random-draw | 1.3.49 |
 | giveaway-winner-communications | 1.2.41 |
-| giveaway-idea-generator | 1.3.41 |
-| giveaway-results-review | 1.6.31 |
+| giveaway-idea-generator | 1.3.42 |
+| giveaway-results-review | 1.6.32 |
 | gleam-campaign-setup | 1.2.46 |
 
 ## Skills
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.34 (2026-10-10)
+
+A results review now leads with how your campaign did against its goal. It names a strength only when the numbers show one, and it suggests changes as tests to try, without promising they'll close the gap.
+
+Low conversion is treated as something to check, with possible reasons offered as possibilities to test. What you spent stays apart from the stated value comparisons. Store giveaway ideas describe browsing and wishlists as mechanics you'd set up, so follow-up emails only use preferences you collected.
 
 ## 3.0.33 (2026-10-10)
 

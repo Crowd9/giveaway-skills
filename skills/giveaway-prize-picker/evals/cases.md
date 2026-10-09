@@ -169,3 +169,7 @@ Added assertions for the brief's answer corrections to an existing case. Not yet
 ## Expected audience budget comparison regression, 10 October 2026
 
 Added paired judgement-only regression cases 23 and 24. The source instructions were checked against both branches. These cases have not been run against a model.
+
+## 10 October 2026, round-twenty-five content regressions
+
+Added cases 25 and 26 for actual-cost-only reporting and separate actual-cost versus stated-value calculations. These cases have not been run against a model. Repository validation checks their structure only. The reported calculator examples were reproduced directly: actual-cost rows had no benchmarks, while supplied stated value produced separate benchmark rows.
