@@ -2,7 +2,7 @@
 name: giveaway-winner-structure
 description: "Set giveaway Winner counts, Prize tiers, draw rules, verification, response deadlines, redraws and fulfilment. Use for 'how many Winners', 'one Winner or several', 'runner-up Prizes', 'daily Winners', 'how do I pick the Winner', 'how to announce Winners', 'Winner terms', or 'what if the Winner does not reply'."
 metadata:
-  version: 1.4.10
+  version: 1.4.11
 ---
 
 # Giveaway Winner Structure
@@ -12,6 +12,8 @@ Turn a Prize budget into a Winner structure (how many, what tiers, how often) an
 ## Before starting
 
 If `.agents/product-marketing.md` exists in the project (or `.claude/product-marketing.md`), read it first. Ask only for what it lacks: total Prize budget and currency, whether the Prize can be split into units, how many Entrants are expected, where Winners can be, and whether any judging is skill-based.
+
+For an unresponsive Winner, lead with "Check the deadline in your terms" and load `references/drawing-and-fulfillment.md`. Base the next action on that deadline and the notification already sent. If the deadline is unknown, put any seven-day example only in the assumption line immediately after the advice. It is not an established deadline for this Winner. If the prevalence figure helps, write "most campaigns give 7 days" with the source population. Omit the percentage from the answer.
 
 ## What to ask first
 

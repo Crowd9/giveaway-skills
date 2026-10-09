@@ -42,6 +42,8 @@ A drawn name has a real chance of failing verification. The typical campaign has
 
 ## Contact and redraw
 
+When a Winner has already gone quiet, start with the deadline in the published terms and the notice they received. A seven-day example belongs in the assumption line only while their deadline is unknown. If no deadline was given, agree the next step before sending a new dated notice. Do not apply a new deadline retroactively.
+
 - Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline. The
   schedule is written out here so nobody has to work it out mid-answer:
 

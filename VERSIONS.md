@@ -6,13 +6,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.42 |
 | giveaway-entry-method-planner | 1.2.40 |
-| giveaway-timing-and-duration | 1.4.38 |
-| giveaway-winner-structure | 1.4.10 |
+| giveaway-timing-and-duration | 1.4.39 |
+| giveaway-winner-structure | 1.4.11 |
 | giveaway-promotion-plan | 1.3.39 |
 | giveaway-random-draw | 1.3.35 |
 | giveaway-winner-communications | 1.2.32 |
 | giveaway-idea-generator | 1.3.35 |
-| giveaway-results-review | 1.6.9 |
+| giveaway-results-review | 1.6.10 |
 | gleam-campaign-setup | 1.2.38 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.11 (2026-10-10)
+
+Ask how long to run a giveaway and you get dates. The timing answer ends with a plan from your start date through the holidays in range, with the draw, the Winner notice and delivery on it, and leaves your carrier's cut-off for you to check.
+
+If our data has no figure for your industry, you're told once, and you won't be handed another industry's number in its place.
+
+A results review that rules out a fault says it ruled out a fault, and stops short of claiming it found the cause. A Winner who hasn't replied starts with the deadline in your own terms, and the usual seven days is only the fallback.
 
 ## 3.0.10 (2026-10-10)
 

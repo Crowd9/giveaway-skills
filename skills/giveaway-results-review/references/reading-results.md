@@ -38,7 +38,7 @@ Source: analysis/output/field_cuts.json (email_traffic_by_provider, outcomes_whe
 
 ## The Impressions caveat
 
-A visitor who returns every day for a daily bonus counts as a new Impression each day and as one Entrant once. A 30-day campaign with a daily action can show a Conversion Rate half that of a 7-day campaign with the same audience. Conversion Rate falls as duration grows (table below). Before calling the Conversion Rate low, check run length and repeatable actions. A benchmark from campaigns without repeatable actions is context for a daily-entry campaign, never a forecast. The rate alone establishes neither a fault nor a healthy campaign, and aggregate thresholds cannot establish that the campaign worked. Next, check its daily Impressions, new Entrants and action completions for a specific drop to investigate.
+A visitor who returns every day for a daily bonus counts as a new Impression each day and as one Entrant once. A 30-day campaign with a daily action can show a Conversion Rate half that of a 7-day campaign with the same audience. Conversion Rate falls as duration grows (table below). Before calling the Conversion Rate low, check run length and repeatable actions. A benchmark from campaigns without repeatable actions is context for a daily-entry campaign, never a forecast. The rate alone establishes neither a fault nor a healthy campaign, and aggregate thresholds cannot establish that the campaign worked. A passed check rules out only the fault tested. It cannot prove that return visits caused the rate or that the whole campaign is healthy. Next, check its daily Impressions, new Entrants and action completions for a specific drop to investigate.
 
 | Duration | Conversion Rate |
 |---|---|
@@ -137,11 +137,11 @@ Entries and completions are the same count, worth only changes the credit.
 
 ## Common misreads
 
-- **A low Conversion Rate with a long run or daily action.** Usually the caveat above. Compare against the duration row, not the overall typical figure.
+- **A low Conversion Rate with a long run or daily action.** Return visits are a possible explanation. Check for entry faults and changes in daily Impressions, new Entrants and action completions before drawing a conclusion. Use the duration row as context with its repeatable-action caveat.
 - **A low Conversion Rate at a normal run length.** Usually reach. Campaigns in the top fifth of their size band by Impressions convert at about 11% where the bottom fifth convert at about 55%, and they drew more Entrants doing it. Check the Impression count before calling the page or the Prize weak.
 - **High entries, ordinary Entrant count.** Entry worth on share or bonus actions. Look at Entrants and actions.
 - **One action at 90%, the rest under 20%.** Normal: each action family completes at a different typical rate (table below), so a high top action and much lower others do not mean the others are broken. Rank against the typical figure for that family, not against the top action.
-- **A fifth or more of entries invalid** is a planning assumption for prioritising checks, with no measured threshold for campaign health. Check for a validated-answer question first (wrong answers count as invalid), then referral and Discord actions. Investigate reported entry problems at any share. Invalid entries are otherwise left out of the benchmarks.
+- **A fifth or more of entries invalid** is a suggested point to start checking, with no measured boundary between healthy and broken campaigns. Check for a question that only accepts the correct answer first (wrong answers count as invalid), then referral and Discord actions. Investigate reported entry problems at any share. Invalid entries are otherwise left out of the benchmarks.
 - **Fewer Entrants than last time.** Check the gap since the previous campaign, the Prize category, the month, and the number of actions before blaming promotion.
 
 | Family | Completions per 100 Entrants (typical) |
