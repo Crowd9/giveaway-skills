@@ -395,6 +395,63 @@
      "fail_example": "Entries flatten from day 10 to day 13."
     }
    ]
+  },
+  {
+   "id": 17,
+   "prompt": "Write a launch post and welcome email for our coffee giveaway.\nIt has email entry only, no referral action, and closes [date, time zone].",
+   "expected_output": "Deliver a launch post and welcome email with no referral link, referral nudge or extra-entry promise in either copy. Confirm entry and give the supplied close deadline.",
+   "assertions": [
+    "Deliver a launch post and welcome email with no referral link, referral nudge or extra-entry promise in either copy. Confirm entry and give the supplied close deadline.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "no-referral-copy",
+     "criterion": "Deliver a launch post and welcome email with no referral link, referral nudge or extra-entry promise in either copy. Confirm entry and give the supplied close deadline.",
+     "pass_example": "Post: Win our coffee Prize. Enter at [entry link] by [date, time zone]. Email: Thanks for entering. Your entry is confirmed. Entries close [date, time zone].",
+     "fail_example": "You are in. Refer a friend for extra entries using your personal referral link."
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "prompt": "Write the welcome email. We configured a referral action, but have not decided its reward or qualifying event yet.",
+   "expected_output": "Use the welcome-only branch. Omit referral links and reward promises until the organizer confirms both the reward and qualifying event.",
+   "assertions": [
+    "Use the welcome-only branch. Omit referral links and reward promises until the organizer confirms both the reward and qualifying event.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "unconfirmed-referral-reward",
+     "criterion": "Use the welcome-only branch. Omit referral links and reward promises until the organizer confirms both the reward and qualifying event.",
+     "pass_example": "Thanks for entering the giveaway. Entries close [date, time zone]. We will contact the Winner through [official channel].",
+     "fail_example": "Earn five extra entries whenever a friend clicks your referral link."
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "prompt": "Write the launch post and welcome email. Our configured referral action awards two extra Entries only after a friend completes a valid entry. We have no purchase reward.",
+   "expected_output": "Use the confirmed two-Entry reward and valid-entry condition consistently, with no reward for a click or purchase. Use a referral-link placeholder where appropriate.",
+   "assertions": [
+    "Use the confirmed two-Entry reward and valid-entry condition consistently, with no reward for a click or purchase. Use a referral-link placeholder where appropriate.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "confirmed-referral-copy",
+     "criterion": "Use the confirmed two-Entry reward and valid-entry condition consistently, with no reward for a click or purchase. Use a referral-link placeholder where appropriate.",
+     "pass_example": "Earn two extra Entries when a friend completes a valid entry through your referral link.",
+     "fail_example": "Earn two extra Entries when a friend clicks, plus more when they buy."
+    }
+   ]
   }
  ]
 }

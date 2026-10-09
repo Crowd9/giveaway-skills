@@ -83,3 +83,7 @@ Previously unchecked case 4 is now explicitly judgement-only, with a review rubr
 ## Cash requests and third-party delivery, 10 October 2026
 
 Added judgement-only cases for permitted and prohibited third-party delivery. The reference supplies a separate reply for each arrangement and leaves unconfirmed permission on the no-offer path. These cases have not been run against a model.
+
+## Prize substitution branches, 10 October 2026
+
+Added judgement-only regression cases. Reviewed the source instructions and copyable templates for the stated branches. These cases have not been run against a model.

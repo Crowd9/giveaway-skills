@@ -9,7 +9,8 @@ name and last initial) only.
                                         [--markdown report.md]
   python3 campaign_report.py --self-test
 
-Parsing rules. ID is per row: Entrants are keyed by lower-cased Email, with Name as the fallback. When is in the account's
+Parsing rules. ID is per row: Entrants use Email, then an explicit person-ID column, then Name.
+An explicit --map who selection takes precedence. Name-only grouping can merge different people. When is in the account's
 timezone, so every time figure is account time. Status Invalid rows are counted and excluded from engagement metrics.
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
 never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
@@ -53,7 +54,7 @@ WEBMAIL = ("mail.google", "outlook.live", "mail.yahoo", "com.google.android.gm",
 SEARCH = ("google.", "bing.", "duckduckgo", "yahoo.com/search", "search.")
 HANDLE_COLS = ("Facebook", "Instagram", "Reddit", "Tiktok", "TikTok", "Twitter", "Youtube", "YouTube", "Discord", "Pinterest", "Twitch")
 DAYS = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-SYNONYMS = {"who": ("Email", "Email Address", "E-mail", "Entrant Email", "User Email", "email", "Name", "Entrant", "User"),
+SYNONYMS = {"who": ("Email", "Email Address", "E-mail", "Entrant Email", "User Email", "email", "Entrant ID", "User ID", "Participant ID", "Account ID", "entrant_id", "user_id", "participant_id", "account_id", "Name", "Entrant", "User"),
             "action": ("Action", "Entry Method", "Entry Type", "Entry", "Method", "Task", "Action Name"),
             "entries": ("Entries", "Points", "Entry Count", "Worth", "Entries Earned", "Value"),
             "status": ("Status", "State", "Valid", "Verified"), "when": ("When", "Date", "Timestamp", "Created At", "Entered At", "Time", "Date Entered"),
@@ -186,7 +187,7 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
     rows = [r for r in rows if r["_who"]]
     try: math.fsum(r["_entries"] for r in rows)
     except OverflowError: raise ValueError("Entries total exceeds the finite range; reconcile earned weights before export") from None
-    load.last = {"columns": cols, "wide": wide, "wide_unit": wide_unit, "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
+    load.last = {"columns": cols, "wide": wide, "wide_unit": wide_unit, "name_only": cols["who"].casefold() in ("name", "entrant", "user"), "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
     return rows
 
 def analyze(rows, a):
@@ -396,9 +397,11 @@ def render(R, a):
     info = getattr(load, "last", None)
     if info:
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
+    if info and info.get("name_only"):
+        w("Name-only deduplication may merge different people who share a display name. Supply a person identifier with --map who=<column> before relying on Entrant counts.")
     if info and info["wide"]:
         w(f"Wide cell unit: {info['wide_unit']}. Entries use declared worth per completion. Summary dates cannot establish action times, so timing and speed are unavailable. Referral relationships require individual action rows.")
-    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
+    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique identifiers with a valid action). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
     def row(label, shown, metric=None, value=None, fmt=lambda v: f"{v:,.2f}"):
         typ, where = bench(metric, value, n, fmt) if metric else ("-", "no benchmark for this")
@@ -526,6 +529,39 @@ def self_test():
         assert "(slow)" not in sample and "Visits usually run" not in sample
         load(p)  # Restore the original fixture's column metadata.
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
+    # Person identifiers precede display names, while an explicit mapping wins.
+    identity_path = os.path.join(d, "identity.csv")
+    for person_column in ("Entrant ID", "User ID", "Participant ID", "Account ID", "user_id"):
+        with open(identity_path, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["ID", person_column, "Name", "Action", "Entries"])
+            wr.writerows([[1, "person-a", "Shared Name", "Visit", 1],
+                          [2, "person-b", "Shared Name", "Visit", 1],
+                          [3, "person-a", "Shared Name", "Follow", 1]])
+        identity = analyze(load(identity_path), C)
+        assert load.last["columns"]["who"] == person_column
+        assert identity["topline"]["entrants"] == 2 and identity["topline"]["actions"] == 3
+        assert "Name-only deduplication" not in render(identity, C)
+        named = analyze(load(identity_path, {"who": "Name"}), C)
+        assert named["topline"]["entrants"] == 1 and "Name-only deduplication" in render(named, C)
+    assert resolve_columns(["ID", "Name", "Action"], {})["who"] == "Name"
+    assert "who" not in resolve_columns(["ID", "Action ID", "Action"], {})
+    assert resolve_columns(["Email", "Name", "Entrant ID"], {})["who"] == "Email"
+    # Manual valid-status aggregation matches both tools, including an Invalid-only person.
+    from gleam_export import load as load_summary
+    def check_manual_totals(path):
+        with open(path, newline="") as f:
+            raw = list(csv.DictReader(f))
+        valid = [r for r in raw if (r.get("Status") or "Valid").strip().lower() in ("valid", "winner")]
+        invalid = [r for r in raw if r not in valid]
+        manual = (len({r["Email"].strip().lower() for r in valid}), len(valid),
+                  sum(float(r["Entries"]) for r in valid), len(invalid), sum(float(r["Entries"]) for r in invalid))
+        summary = load_summary(path); report = analyze(load(path), C)["topline"]
+        assert manual == tuple(summary[k] for k in ("contestants", "actions_completed", "entries", "invalid_rows", "invalid_entries"))
+        assert manual == tuple(report[k] for k in ("entrants", "actions", "entries", "invalid_actions", "invalid_entries"))
+        return manual
+    assert check_manual_totals(p) == (2, 4, 10, 1, 5)
+    if os.path.exists(sample_path):
+        assert check_manual_totals(sample_path) == (30, 114, 229, 4, 8)
     # Incomplete histories never assign first touch from an arbitrary undated row.
     timing_path = os.path.join(d, "timing.csv")
     for times, known in ((("2026-05-01 10:00:00", "2026-05-02 10:00:00"), 1),

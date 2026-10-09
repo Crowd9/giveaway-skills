@@ -8,11 +8,11 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.46 |
 | giveaway-winner-structure | 1.4.17 |
-| giveaway-promotion-plan | 1.3.46 |
-| giveaway-random-draw | 1.3.43 |
-| giveaway-winner-communications | 1.2.37 |
+| giveaway-promotion-plan | 1.3.47 |
+| giveaway-random-draw | 1.3.44 |
+| giveaway-winner-communications | 1.2.38 |
 | giveaway-idea-generator | 1.3.39 |
-| giveaway-results-review | 1.6.23 |
+| giveaway-results-review | 1.6.24 |
 | gleam-campaign-setup | 1.2.42 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.25 (2026-10-10)
+
+A draw stops when some Entrants are missing the ID column it would use. It tells you how many are missing and which complete column to use, where it used to drop them quietly. The results report keeps two people with the same name apart when their Entrant IDs differ.
+
+When a Prize is out of stock, the message to your Winner promises a substitute only if your terms allow one. Otherwise you get a holding message and the question to take to your lawyer. Promotion copy mentions referral rewards only when your giveaway has a referral action.
+
+Counting Actions and Entries by hand now leaves out the invalid ones, so your totals match the script's. Country splits count each person once, so use them to check where your Entrants are before you set eligibility for the next campaign.
 
 ## 3.0.24 (2026-10-10)
 

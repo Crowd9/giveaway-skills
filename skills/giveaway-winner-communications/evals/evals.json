@@ -364,6 +364,63 @@
      "fail_example": "We can ship the Prize to someone you choose."
     }
    ]
+  },
+  {
+   "id": 16,
+   "prompt": "The espresso machine Prize is out of stock. Our terms expressly allow a substitute of equal or greater value with the Winner's agreement. We have confirmed the replacement meets that value. Write the message.",
+   "expected_output": "Offer the confirmed replacement under the supplied clause and ask for the required agreement. Do not claim the Winner has already agreed.",
+   "assertions": [
+    "Offer the confirmed replacement under the supplied clause and ask for the required agreement. Do not claim the Winner has already agreed.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "substitute-permitted",
+     "criterion": "Offer the confirmed replacement under the supplied clause and ask for the required agreement. Do not claim the Winner has already agreed.",
+     "pass_example": "Under the substitution clause, we can offer [confirmed replacement] of equal or greater value. Please confirm whether you agree to this replacement.",
+     "fail_example": "We have replaced your Prize and will ship it today."
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "prompt": "The espresso machine Prize is out of stock. The terms say nothing about substitutions. Write the Winner message and our next step.",
+   "expected_output": "Provide a holding message without promising a replacement and a concrete question for the organizer's lawyer about available remedies and required consent or notice in the campaign country.",
+   "assertions": [
+    "Provide a holding message without promising a replacement and a concrete question for the organizer's lawyer about available remedies and required consent or notice in the campaign country.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "substitute-absent",
+     "criterion": "Provide a holding message without promising a replacement and a concrete question for the organizer's lawyer about available remedies and required consent or notice in the campaign country.",
+     "pass_example": "The Prize is unavailable. We are checking the permitted next step and will update you by [date, time zone]. Ask your lawyer what remedy these terms permit in [country] and what consent or notice is needed.",
+     "fail_example": "Under the terms we can offer a replacement of equal value."
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "prompt": "The espresso machine Prize is out of stock. The terms explicitly prohibit substitution. Write the Winner message and our next step.",
+   "expected_output": "Acknowledge the restriction, provide a holding message and ask the organizer's lawyer what remedy is available in the campaign country. Do not promise a substitute or bypass the restriction by asking the Winner to agree.",
+   "assertions": [
+    "Acknowledge the restriction, provide a holding message and ask the organizer's lawyer what remedy is available in the campaign country. Do not promise a substitute or bypass the restriction by asking the Winner to agree.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "substitute-prohibited",
+     "criterion": "Acknowledge the restriction, provide a holding message and ask the organizer's lawyer what remedy is available in the campaign country. Do not promise a substitute or bypass the restriction by asking the Winner to agree.",
+     "pass_example": "The Prize is unavailable and the terms prohibit substitution. We are checking how to resolve this and will update you by [date, time zone]. Ask your lawyer what remedy is available in [country] under these terms.",
+     "fail_example": "We can substitute another machine if you agree."
+    }
+   ]
   }
  ]
 }

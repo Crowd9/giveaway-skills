@@ -349,7 +349,9 @@ Use the brand's own tags and one or two for the product category. Generic giveaw
 
 Prize first, then the ask, then the deadline, then eligibility.
 
-"Win [Prize] (worth [value]). To enter: [required action] and [one supporting action]. Refer a friend for [N] extra entries. Closes [date, time, time zone]. Open to [eligibility]. Link in bio."
+"Win [Prize] (worth [value]). To enter: [required action] and [one supporting action]. Closes [date, time, time zone]. Open to [eligibility]. Link in bio."
+
+Add a referral line only when the referral action is configured and the reward and qualifying event are confirmed: "Earn [confirmed reward] when [exact qualifying event], using [working referral link]." Omit this line when those facts are absent or unconfirmed.
 
 Swap the first line at each push: mid run leads with a detail ("The [Prize] arrives in [feature]"), last call leads with the time ("Closes in 24 hours").
 
@@ -469,7 +471,7 @@ A worked example for a two-week run on Instagram plus email, with a partner on d
 | 1 | Launch | Carousel: Prize, how to enter, eligibility | Link sticker, "just launched" | Launch email within two hours | Pin the post, answer comments for the first hour |
 | 2 | - | Usual content | Poll about the Prize | - | - |
 | 3 | - | Usual content | Link sticker reminder | - | - |
-| 5 | Mid | Reel of the Prize in use | Entries so far, referral reward | Mid email | - |
+| 5 | Mid | Reel of the Prize in use | Entries so far, confirmed referral reward if configured | Mid email | - |
 | 6 | - | Usual content | Question sticker, answer three | - | - |
 | 8 | Partner | Collab post with the partner (appears on both feeds) | Repost the partner's story | - | Partner posts in their morning |
 | 10 | - | Usual content | Link sticker reminder | - | - |

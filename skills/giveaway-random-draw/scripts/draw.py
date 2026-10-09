@@ -71,14 +71,18 @@ def _flatten_json(obj):
         rows.append(flat)
     return rows
 
+def person_columns(rows):
+    keys = list(dict.fromkeys(k for row in rows for k in row))
+    return list(dict.fromkeys(k for cand in PERSON_KEYS for k in keys
+                              if k == cand or k.endswith("." + cand)))
+
 def pick_id_column(rows, id_column):
+    keys = list(dict.fromkeys(k for row in rows for k in row))
     if id_column:
-        if id_column not in rows[0]: sys.exit(f"column '{id_column}' not found; columns are {list(rows[0].keys())}")
+        if id_column not in keys: sys.exit(f"column '{id_column}' not found; columns are {keys}")
         return id_column
-    keys = list(rows[0].keys())
-    for cand in PERSON_KEYS:
-        for k in keys:
-            if k == cand or k.endswith("." + cand): return k
+    candidates = person_columns(rows)
+    if candidates: return candidates[0]
     sys.exit("cannot identify a person/account column safely; pass --id-column with the person identifier "
              f"(comment/post IDs must not stand in for people); columns are {keys}")
 
@@ -111,10 +115,17 @@ def load_entries(path, id_column):
     return [{"entrant": l.strip()} for l in lines], "entrant", sha(raw)
 
 def prepare(rows, id_column, weight_column, exclude):
+    missing = sum(not norm(row.get(id_column)) for row in rows)
+    if missing:
+        alternatives = [column for column in person_columns(rows) if column != id_column
+                        and all(norm(row.get(column)) for row in rows)]
+        guidance = (f"complete person identifier columns: {alternatives}; confirm one and pass --id-column"
+                    if alternatives else "no complete recognized person identifier column is available")
+        sys.exit(f"{missing} of {len(rows)} records lack the chosen identifier '{id_column}'; "
+                 f"{guidance}. Reconcile identifiers before drawing; no records were prepared.")
     seen, entrants, dupes, excluded, bad = {}, [], 0, 0, 0
     for r in rows:
         key = norm(r.get(id_column))
-        if not key: continue
         if key in exclude: excluded += 1; continue
         w = 1.0
         if weight_column:
@@ -231,9 +242,9 @@ def load_exclusions(path):
 
 def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
+    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
-    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
     print(f"rows_read {len(rows)}, unique_eligible {len(ents)}, duplicates_merged {dupes}, "
           f"excluded {excluded}, rows_with_invalid_weight {bad}")
     notes = scan(ents)
@@ -553,14 +564,58 @@ def self_test_numeric_ids():
     with tempfile.TemporaryDirectory() as directory:
         path = os.path.join(directory, "numeric.json")
         with open(path, "w") as output:
-            json.dump([{"id": 0}, {"id": 42}, {"id": "42"}], output)
+            json.dump([{"id": 42}, {"id": "42"}], output)
         rows, column, _ = load_entries(path, "id")
         pool, duplicates, _, _, _ = prepare(rows, column, None, set())
         assert [(e["id"], e["shown"]) for e in pool] == [("42", "42")]
         assert duplicates == 1
-        # Preserve eligibility for existing successful JSON draws with falsey IDs.
-        pool, _, _, _, _ = prepare([{ "id": value } for value in (0, False, None, "alpha")], "id", None, set())
-        assert [e["id"] for e in pool] == ["alpha"]
+        # Values previously silently omitted now require reconciliation before drawing.
+        try: prepare([{"id": value} for value in (0, False, None, "alpha")], "id", None, set())
+        except SystemExit as error: assert "3 of 4 records" in str(error), str(error)
+        else: raise AssertionError("empty normalized identifiers must stop the draw")
+
+def self_test_missing_ids():
+    import contextlib, pathlib, tempfile
+    from unittest.mock import patch
+    with tempfile.TemporaryDirectory() as directory:
+        directory = pathlib.Path(directory)
+        fixtures = [
+            ("sparse.csv", "email,user_id,id\nalpha,person-a,row-a\n,person-b,row-b\n,person-c,row-c\n"),
+            ("sparse.json", json.dumps([{"user_id": "person-a", "id": "row-a"},
+                                        {"email": "alpha", "user_id": "person-b", "id": "row-b"},
+                                        {"email": None, "user_id": "person-c", "id": "row-c"}])),
+        ]
+        for filename, content in fixtures:
+            path = directory / filename
+            path.write_text(content)
+            rows, column, _ = load_entries(path, None)
+            assert column == "email", column
+            assert load_entries(path, "email")[1] == "email"
+            for command in ("commit", "draw"):
+                audit_path = directory / "audit.json"
+                args = [command, str(path)]
+                if command == "draw": args += ["--seed", "regression-seed", "--audit", str(audit_path)]
+                with contextlib.redirect_stdout(io.StringIO()) as output, patch.dict(
+                        globals(), seed_from=lambda a: (_ for _ in ()).throw(AssertionError("seed requested before reconciliation"))):
+                    try: main(args)
+                    except SystemExit as error:
+                        message = str(error)
+                        assert "2 of 3 records" in message and "'email'" in message, message
+                        assert "complete person identifier columns: ['user_id']" in message, message
+                        assert "--id-column" in message, message
+                    else: raise AssertionError("missing identifiers must block commit and draw")
+                assert not output.getvalue() and not audit_path.exists()
+            pool, duplicates, excluded, bad, _ = prepare(rows, "user_id", None, set())
+            assert [e["id"] for e in pool] == ["person-a", "person-b", "person-c"]
+            assert (duplicates, excluded, bad) == (0, 0, 0)
+        for rows in ([{"email": "alpha", "id": "row-a"}, {"id": "row-b"}],
+                     [{}, {"email": "alpha"}],
+                     [{"email": "alpha", "user_id": "person-a"}, {"email": " ", "user_id": ""}]):
+            try: prepare(rows, pick_id_column(rows, None), None, set())
+            except SystemExit as error:
+                assert "1 of 2 records" in str(error), str(error)
+                assert "no complete recognized person identifier column" in str(error), str(error)
+            else: raise AssertionError("incomplete identifiers cannot fall back per row or use generic row IDs")
 
 def self_test_recommit():
     import contextlib, pathlib, tempfile
@@ -632,6 +687,7 @@ def self_test_rank_underflow():
 
 
 def self_test():
+    self_test_missing_ids()
     self_test_rank_underflow()
     self_test_recommit()
     self_test_numeric_ids()

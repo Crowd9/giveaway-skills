@@ -126,7 +126,14 @@ def load(path):
         if k: assets[k] += 1
     whens = [w for w in (parse_when(r.get("When") or "") for r in valid) if w]
     days = collections.Counter(w.date().isoformat() for w in whens); hours = collections.Counter(w.hour for w in whens)
-    countries = collections.Counter((r.get("Country") or "").strip() for r in valid if r.get("Country"))
+    # Match the full report: each valid Entrant contributes their earliest dated row,
+    # with undated rows last and file order breaking ties. Missing countries remain unknown.
+    first = {}
+    for r in sorted(valid, key=lambda row: (parse_when(row.get("When") or "").timestamp()
+                                          if parse_when(row.get("When") or "") else float("inf"))):
+        person = (r.get(who) or "").strip().lower()
+        if person: first.setdefault(person, r)
+    countries = collections.Counter(r.get("Country") or "unknown" for r in first.values())
     refs = collections.Counter()
     for r in valid:
         u = (r.get("Referring URL") or "").strip()
@@ -137,7 +144,7 @@ def load(path):
             "contestants": len(people), "entries": entries,
             "actions_completed": len(valid), "per_action": dict(per_action.most_common()), "assets": dict(assets), "days_covered": span,
             "by_day": dict(sorted(days.items())), "by_hour_local": dict(sorted(hours.items())), "countries": dict(countries.most_common(10)),
-            "country_share_top": countries.most_common(1)[0][1] / len(valid) if countries and valid else None, "referrers": dict(refs.most_common(8)), "person_column": who}
+            "country_share_top": countries.most_common(1)[0][1] / len(people) if countries and people else None, "referrers": dict(refs.most_common(8)), "person_column": who}
 
 def review_command(s, args):
     script = shlex.quote(str(Path(__file__).resolve().with_name("review.py")))
@@ -165,6 +172,27 @@ def self_test():
         w.writerow([4, "c@example.com", "Winner", "Refer 3 Friends", 5, "Canada", "2026-05-03 09:00:00 +1000", ""])
     s = load(p)
     assert s["contestants"] == 2 and s["entries"] == 8 and s["invalid_rows"] == 1 and s["invalid_entries"] == 4 and s["assets"] == {"emails": 1, "x_follows": 1, "referrals": 1} and s["days_covered"] == 3, s
+    assert s["countries"] == {"Australia": 1, "Canada": 1} and s["country_share_top"] == 0.5
+    # Activity volume does not weight audience geography; choose the earliest valid row.
+    geo_path = os.path.join(d, "geo.csv")
+    with open(geo_path, "w", newline="") as f:
+        w = csv.writer(f); w.writerow(["Email", "Status", "Action", "Entries", "Country", "When"])
+        w.writerows([["a@example.com", "Valid", "Visit", 1, "Australia", "2026-05-02 10:00:00"]] * 9)
+        w.writerow(["a@example.com", "Valid", "Visit", 1, "Canada", "2026-05-01 10:00:00"])
+        w.writerow(["b@example.com", "Winner", "Visit", 1, "Australia", ""])
+        w.writerow(["c@example.com", "Invalid", "Visit", 1, "France", "2026-04-01 10:00:00"])
+    geo = load(geo_path)
+    assert geo["countries"] == {"Canada": 1, "Australia": 1} and geo["country_share_top"] == 0.5
+    import campaign_report
+    class GeoArgs: impressions = None; prize_cost = None; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
+    report = campaign_report.analyze(campaign_report.load(geo_path), GeoArgs)
+    assert geo["countries"] == dict(report["countries"])
+    import contextlib, io
+    printed = io.StringIO()
+    with contextlib.redirect_stdout(printed):
+        assert main([geo_path]) == 0
+    assert "top countries (share of valid Entrants)" in printed.getvalue()
+    assert "'Canada': '50%'" in printed.getvalue() and "'Australia': '50%'" in printed.getvalue()
     class A: actions_csv = None
     assert "--invalid 4" in review_command(s, A), review_command(s, A)
     assert "# Impressions from the Reporting tab" in review_command(s, A) and "views" not in review_command(s, A).lower(), review_command(s, A)
@@ -271,7 +299,7 @@ def main(argv):
     if s["unweighted_rows"]: print(f"rows without a valid Entries value {s['unweighted_rows']:,} (counted at zero here; the draw export refuses them until reconciled)")
     print("assets", {k: f"{v:,}" for k, v in s["assets"].items()})
     print("per action"); [print(f"  {n:>7,}  {name}") for name, n in s["per_action"].items()]
-    print("top countries", {k: f"{v / s['valid_rows']:.0%}" for k, v in list(s["countries"].items())[:6]})
+    print("top countries (share of valid Entrants)", {k: f"{v / s['contestants']:.0%}" for k, v in list(s["countries"].items())[:6]})
     print("referrers", {k: v for k, v in s["referrers"].items()})
     if s["by_day"]:
         top = sorted(s["by_day"].items(), key=lambda kv: -kv[1])[:3]; print("busiest days", top, "  first", next(iter(s["by_day"])), "last", list(s["by_day"])[-1])

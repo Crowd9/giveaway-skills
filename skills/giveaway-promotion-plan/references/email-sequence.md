@@ -5,7 +5,7 @@ Advice. Nothing here carries a dataset figure. Two audiences get different email
 ## Architecture
 
 - Trigger: the launch date for the existing list, the entry sync for Entrants.
-- Goal: entries from the list, referrals from Entrants, and a clean opt-in that survives the Winners email.
+- Goal: entries from the list, referrals from Entrants when configured and confirmed, and a clean opt-in that survives the Winners email.
 - Exit: an address that enters leaves the not-entered branch at the next sync. Unsubscribe or a hard bounce exits everything.
 - Suppression: while the giveaway runs, hold the regular promotional sends for the not-entered branch on push days, so nobody gets two emails inside two hours. Existing customers who enter stay on the customer stream and receive the Entrant emails from there.
 - Sender: the from name and reply-to the list already knows. A reply-to that a person reads, since Winners and complaints answer this address.
@@ -15,17 +15,20 @@ Advice. Nothing here carries a dataset figure. Two audiences get different email
 | Email | When | Subject line pattern | Preview text | Body |
 |---|---|---|---|---|
 | Launch | Launch day, within two hours of the first post | "Win [Prize]" or "[Brand] is giving away [Prize]" | "Takes a minute to enter. Closes [date]." | Prize and value in the first line. Three-step entry. Deadline with time zone. Eligibility. One button to the entry page. |
-| Mid | Day 4 to 7 of a two-week run | "[Prize detail] and how to win it" | "[N] people are in. Here is what they are playing for." | One thing about the Prize that was not in the launch. Social proof if real (Entrants so far, a partner). Referral reward. Same button. |
+| Mid | Day 4 to 7 of a two-week run | "[Prize detail] and how to win it" | "[N] people are in. Here is what they are playing for." | One thing about the Prize that was not in the launch. Social proof if real (Entrants so far, a partner). Confirmed referral reward only when that action is configured. Same button. |
 | Last call | 24 to 36 hours before close | "Closes tomorrow: [Prize]" | "One minute to enter, then it is gone." | Deadline first. One sentence on the Prize. Button. |
 
 ## Entered
 
+Use referral messages only when a referral action is configured and the organizer confirms the reward and qualifying event. If either is absent or unconfirmed, use the welcome-only email and skip the referral nudge. A purchase reward needs separate confirmation.
+
 | Email | When | Subject line pattern | Preview text | Body |
 |---|---|---|---|---|
-| Welcome and referral | Within a day of entry, sent by the email provider's automation when the sync lands | "You are in. Want more entries?" | "Your referral link is inside." | Confirm the entry, name the brand so the address is recognised later, give the personal referral link and the reward per friend, and the close date. This starts the welcome series in giveaway-winner-communications, whose follow-up messages run after the draw. |
-| Last day nudge | The day before close | "Last day to add entries" | "Every friend you refer counts until [time]." | Referral link again, the close time with zone. Skip it when the campaign has no referral action. |
+| Welcome with configured, confirmed referral reward | Within a day of entry, sent by the email provider's automation when the sync lands | "You are in. Want more entries?" | "Your referral link is inside." | Confirm the entry, name the brand so the address is recognised later, give the working personal referral link and the confirmed reward with its exact qualifying event, and the close date. This starts the welcome series in giveaway-winner-communications, whose follow-up messages run after the draw. |
+| Welcome only, no confirmed referral mechanic | Within a day of entry, after the sync | "You are in: [campaign name]" | "Your entry is confirmed. Closes [date]." | "Thanks for entering the [Prize] giveaway from [Brand]. Entries close [date, time, time zone]. We will contact the Winner through [official channel] after the draw." Include no referral link or extra-entry promise. |
+| Last day nudge, configured and confirmed referrals only | The day before close | "Last day to add entries" | "Your referral reward closes at [time, time zone]." | Referral link again, the close time with zone. State the confirmed qualifying event and reward. Skip it when the referral action or reward is absent or unconfirmed. |
 
-The platform's own entry confirmation covers the entry itself. The welcome email is the one that carries the brand and the referral link into the inbox the Entrant actually reads, so send it even when the platform confirms.
+The platform's own entry confirmation covers the entry itself. The welcome email is the one that introduces the brand, with a referral link only when the mechanic and reward are confirmed, so send it even when the platform confirms.
 
 ## Everyone who opted in
 

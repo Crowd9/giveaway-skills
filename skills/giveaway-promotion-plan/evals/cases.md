@@ -74,3 +74,7 @@ These added cases are **not yet run against a model**. Synthetic passing and fai
 | 16 | impressions-not-entries | not yet run against a model |
 
 Fixtures and replay manifest: `evals/fixtures/giveaway-promotion-plan/` at the repository root. Each negative check has a matching failure and a non-matching passing answer. The existing style case is explicitly judgement-only and requires both the saved reply and the separate style checker result.
+
+## Configured referral copy, 10 October 2026
+
+Added judgement-only regression cases. Reviewed the source instructions and copyable templates for the stated branches. These cases have not been run against a model.
