@@ -5,15 +5,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.52 |
-| giveaway-entry-method-planner | 1.2.48 |
+| giveaway-entry-method-planner | 1.2.49 |
 | giveaway-timing-and-duration | 1.4.48 |
-| giveaway-winner-structure | 1.4.21 |
+| giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.50 |
-| giveaway-random-draw | 1.3.48 |
-| giveaway-winner-communications | 1.2.40 |
-| giveaway-idea-generator | 1.3.40 |
-| giveaway-results-review | 1.6.30 |
-| gleam-campaign-setup | 1.2.45 |
+| giveaway-random-draw | 1.3.49 |
+| giveaway-winner-communications | 1.2.41 |
+| giveaway-idea-generator | 1.3.41 |
+| giveaway-results-review | 1.6.31 |
+| gleam-campaign-setup | 1.2.46 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.33 (2026-10-10)
+
+Your report counts every referral someone completed, so a person who referred the same friend twice shows two referrals and one new Entrant. When you collect phone numbers or messaging subscribers, plan around the contact details you keep, since sending through a messaging app stays in that platform's hands. Our own tests now point to the style checker each skill ships with, so they run as written.
 
 ## 3.0.32 (2026-10-10)
 

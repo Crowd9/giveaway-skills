@@ -65,7 +65,7 @@
   {
    "id": 3,
    "prompt": "Style check applied to every conversational reply above.",
-   "expected_output": "Run the prize-picker evals/style_check.py on the saved reply.",
+   "expected_output": "Run `python3 scripts/style_check.py reply.txt` on the saved reply from this skill's folder.",
    "assertions": [
     "em_dashes == 0",
     "semicolons == 0",

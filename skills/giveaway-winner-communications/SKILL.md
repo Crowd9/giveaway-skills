@@ -2,7 +2,7 @@
 name: giveaway-winner-communications
 description: "Write messages after a giveaway draw. Use for 'Winner email', 'verify the Winner', 'collect the delivery address', 'shipping update', 'announce the Winner', 'what do I send non-Winners', 'Winner has not replied', 'someone says they should have won', 'ask the Winner for a photo', or 'what do I email Entrants after the giveaway'. Include timing and follow-up."
 metadata:
-  version: 1.2.40
+  version: 1.2.41
 ---
 
 # Giveaway Winner Communications

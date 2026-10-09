@@ -260,6 +260,7 @@ def analyze(rows, a):
     # referral graph
     referred_by = {}; sharer = collections.defaultdict(set)
     referral_actions = [r for r in valid if r["_refer"]]
+    referral_completions = collections.Counter(r["_who"] for r in referral_actions)
     refer_rows = len(referral_actions); referral_people = {r["_who"] for r in referral_actions}; graph_rows = 0
     email_people = collections.defaultdict(set)
     for r in rows:
@@ -277,10 +278,10 @@ def analyze(rows, a):
     referred_entrants = {e for e in referred_by if e in people}
     handles_of = lambda who: [c for c in HANDLE_COLS if any(r.get(c) for r in people.get(who, []))]
     top_sharers = []
-    for who, refs in sorted(sharer.items(), key=lambda kv: -len(kv[1]))[:10]:
+    for who, refs in sorted(sharer.items(), key=lambda kv: -referral_completions[kv[0]])[:10]:
         joined = [e for e in refs if e in people]; brought = sum(sum(r["_entries"] for r in people[e]) for e in joined)
         one_action = sum(1 for e in joined if len(people[e]) == 1)
-        top_sharers.append((display(people[who][0].get("Name")), len(refs), len(joined), entry_number(brought), len(handles_of(who)), one_action))
+        top_sharers.append((display(people[who][0].get("Name")), referral_completions[who], len(joined), entry_number(brought), len(handles_of(who)), one_action))
     R["viral"] = {"refer_rows": refer_rows, "sharers": len(referral_people), "referred_entrants": len(referred_entrants), "referred_share": len(referred_entrants) / n,
                   "referrals_per_sharer": (refer_rows / len(referral_people)) if referral_people else None, "top": top_sharers,
                   "participation": len(referral_people) / n, "referral_conversion": len(referred_entrants) / refer_rows if refer_rows else None,
@@ -745,6 +746,28 @@ def self_test():
     assert "Referral completions per Entrant: 1.50" in referral_report
     assert "referred entrants who entered 1 (50% of entrants)" in referral_report
     assert "Referred Entrants as a share of all Entrants" not in referral_report
+    # Repeat completions count separately while recipient outcomes stay unique.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Name", "Action", "Entries", "Details"])
+        wr.writerows([["a@example.com", "Alpha Person", "Refer Friends", 1, "b@example.com"],
+                      ["a@example.com", "Alpha Person", "Refer Friends", 1, "b@example.com"],
+                      ["b@example.com", "Beta Person", "Entry Confirmed", 5, ""]])
+    duplicate_referrals = load(q)
+    duplicate_report = analyze(duplicate_referrals, B)
+    viral = duplicate_report["viral"]
+    assert viral["refer_rows"] == 2 and viral["sharers"] == 1 and viral["top_share"] == 1
+    assert viral["referred_entrants"] == 1 and viral["top"][0] == ("Alpha P.", 2, 1, 5, 0, 1)
+    assert "| Alpha P. | 2 | 1 | 5 | 0 | 1 |" in render(duplicate_report, B)
+    # More completions outrank more distinct recipients, with invalid rows excluded.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Name", "Action", "Entries", "Details", "Status"])
+        wr.writerows([["c@example.com", "Gamma Person", "Refer Friends", 1, "b@example.com", "Valid"],
+                      ["c@example.com", "Gamma Person", "Refer Friends", 1, "absent@example.com", "Valid"],
+                      ["c@example.com", "Gamma Person", "Refer Friends", 1, "b@example.com", "Invalid"]])
+    ranked = analyze(load(q) + duplicate_referrals + [dict(duplicate_referrals[0])], B)["viral"]
+    assert ranked["refer_rows"] == 5 and ranked["sharers"] == 2 and ranked["top_share"] == 3 / 5
+    assert ranked["referred_entrants"] == 1 and ranked["top"] == [
+        ("Alpha P.", 3, 1, 5, 0, 1), ("Gamma P.", 2, 1, 5, 0, 1)]
     # Missing histories never become confirmed one-day participants.
     for timestamps in ((None, None), ("bad-date", "bad-date"), ("2026-05-01 10:00:00", "bad-date"),
                        ("2026-05-01 10:00:00", "2026-05-02 10:00:00")):

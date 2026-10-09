@@ -169,7 +169,9 @@ Neither a link nor a hashtag in the share text changes completion on this popula
 
 ## SMS and messaging opt-in (advice, no dataset support)
 
-A phone number or a messaging opt-in (SMS, WhatsApp, Messenger, a Telegram or Discord bot subscription used to message Entrants directly) is an owned channel in the same family as an email signup: the Entrant hands over a way to reach them that no platform can take away. The dataset carries no SMS action type and no bot-subscription action type, so there is no benchmark on this page for how many Entrants would complete a messaging opt-in, cost per number or anything else. That gap is specific to the messaging opt-in itself. Joining a Telegram channel or a Discord server is a different action and is measured, in the family table above and in the table below. Say plainly that a messaging opt-in has no benchmark when recommending one, and never borrow the email row or the channel-join row as a stand-in.
+For an owned audience, distinguish portable contact details from permission to message through a platform. When the business collects phone numbers or email addresses and retains the consent records, it keeps a contact list it can move between providers, subject to that consent. A WhatsApp, Messenger, Telegram or Discord bot opt-in may give the business a platform-specific identifier and messaging permission without a portable phone number or email address. Delivery access still depends on the platform and the account remaining available. No messaging option promises permanent access.
+
+The dataset carries no SMS action type and no bot-subscription action type, so there is no benchmark on this page for how many Entrants would complete a messaging opt-in, cost per number or anything else. That gap is specific to the messaging opt-in itself. Joining a Telegram channel or a Discord server is a different action and is measured, in the family table above and in the table below. Say plainly that a messaging opt-in has no benchmark when recommending one, and never borrow the email row or the channel-join row as a stand-in.
 
 What practice suggests, with no numbers attached:
 
