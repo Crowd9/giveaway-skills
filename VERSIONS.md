@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.58 |
-| giveaway-entry-method-planner | 1.2.57 |
-| giveaway-timing-and-duration | 1.4.57 |
-| giveaway-winner-structure | 1.4.27 |
-| giveaway-promotion-plan | 1.3.56 |
-| giveaway-random-draw | 1.3.56 |
-| giveaway-winner-communications | 1.2.45 |
-| giveaway-idea-generator | 1.3.47 |
-| giveaway-results-review | 1.6.42 |
-| gleam-campaign-setup | 1.2.52 |
+| giveaway-prize-picker | 1.3.59 |
+| giveaway-entry-method-planner | 1.2.58 |
+| giveaway-timing-and-duration | 1.4.58 |
+| giveaway-winner-structure | 1.4.28 |
+| giveaway-promotion-plan | 1.3.57 |
+| giveaway-random-draw | 1.3.57 |
+| giveaway-winner-communications | 1.2.46 |
+| giveaway-idea-generator | 1.3.48 |
+| giveaway-results-review | 1.6.43 |
+| gleam-campaign-setup | 1.2.53 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.53 (2026-10-10)
+
+Nothing an Entrant types can now trick you when you open your results. A name like =1+1 opens in your Winner list as plain text, never a spreadsheet formula. Hidden control characters in a name can't add a fake Winner line to your screen. Your campaign report shows names, cities and actions as plain words, so an Entrant can't slip in an image, a link or a heading. If your Entrant file would trigger a spreadsheet formula, the export warns you and leaves the file untouched so your draw stays the same. The 500-Entrant test draw still picks the same 3 Winners.
 
 ## 3.0.52 (2026-10-10)
 

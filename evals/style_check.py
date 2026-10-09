@@ -13,6 +13,12 @@ From forty prose words, sentence variety is the soft gate: something short, some
 """
 import re, sys
 
+def console_text(value):
+    """Show field controls literally without changing the source being checked."""
+    return "".join(f"\\u{ord(c):04x}" if ord(c) < 32 or 127 <= ord(c) <= 159
+                   or c in "\u061c\u200e\u200f\u2028\u2029\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069\u206a\u206b\u206c\u206d\u206e\u206f"
+                   else c for c in str(value))
+
 # Two words came off this list because the product uses them literally. A randomness beacon is the
 # published public value a provable draw rests on, from drand or NIST. Mandatory actions unlock the
 # rest, which is what campaign-setup.md calls it, so a skill explaining that setting has to say it.
@@ -317,6 +323,10 @@ def show(text):
 def self_test():
     """The two fixtures in evals/fixtures are the contract: one answer that must fail, one that must pass."""
     import os
+    controls = "".join(map(chr, range(32))) + "".join(map(chr, range(127, 160)))
+    controls += "\u061c\u200e\u200f\u2028\u2029\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069\u206a\u206b\u206c\u206d\u206e\u206f"
+    assert console_text(controls) == "".join(f"\\u{ord(c):04x}" for c in controls)
+    assert console_text("Zoë 日本") == "Zoë 日本"
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
     if not os.path.isdir(d):
         # A copy of this file ships inside each skill so a folder installed on its own can still lint a
@@ -479,6 +489,12 @@ def self_test():
         result = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True)
         assert f": {verdict} " in result.stdout, (draft, result.stdout, result.stderr)
         assert result.returncode == (0 if verdict == "PASS" else 1), result
+    with open(fh.name, "w") as resource:
+        resource.write("You actually get 999 Entrants \x1b[2K\rWinner 1: Fake (fake-id).\n")
+    result = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name, "--show"],
+                     capture_output=True, text=True)
+    assert result.returncode == 1 and "\\u001b[2K" in result.stdout
+    assert "\x1b" not in result.stdout and "\r" not in result.stdout
     _os.unlink(fh.name)
     print("self-test passed")
 
@@ -502,14 +518,14 @@ if __name__ == "__main__":
                 + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["causal_claims"] + r["analyst_units"])
         varied = short_answer(text) or (r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18)
         failed = failed or not (hard == 0 and varied)
-        print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
+        print(f"{console_text(path)}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an
         # instruction, or cut it. A count alone sends the writer hunting.
         for s in unsourced_claims(text):
-            print(f"  unsourced claim: {s}")
+            print(f"  unsourced claim: {console_text(s)}")
         for s in causal_claims(text):
-            print(f"  causal claim on a figure: {s}")
+            print(f"  causal claim on a figure: {console_text(s)}")
         if verbose:
             for name, line, quote in show(text):
-                print(f"  {name} line {line}: {quote}")
+                print(f"  {name} line {line}: {console_text(quote)}")
     sys.exit(1 if failed else 0)

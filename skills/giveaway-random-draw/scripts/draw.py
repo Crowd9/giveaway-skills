@@ -40,6 +40,16 @@ VERSION = "2.4.5"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
+def console_text(value):
+    """Keep untrusted fields on one terminal line without interpreting controls."""
+    return "".join(f"\\u{ord(char):04x}" if (ord(char) < 32 or 127 <= ord(char) <= 159
+                    or char in "\u061c\u200e\u200f\u2028\u2029" or "\u202a" <= char <= "\u202e"
+                    or "\u2066" <= char <= "\u206f") else char for char in str(value))
+
+def csv_text(value):
+    """Neutralize spreadsheet formulas in human-facing text cells only."""
+    return "'" + value if value.lstrip().startswith(("=", "+", "-", "@")) else value
+
 def sha(b): return hashlib.sha256(b).hexdigest()
 LEGACY_NORMALIZATION = "trim-lowercase"
 OPAQUE_NORMALIZATION = "trim-case-sensitive"
@@ -100,7 +110,7 @@ def person_columns(rows):
 def pick_id_column(rows, id_column):
     keys = list(dict.fromkeys(k for row in rows for k in row))
     if id_column:
-        if id_column not in keys: sys.exit(f"column '{id_column}' not found; columns are {keys}")
+        if id_column not in keys: sys.exit(f"column '{console_text(id_column)}' not found; columns are {keys}")
         return id_column
     candidates = person_columns(rows)
     if candidates: return candidates[0]
@@ -126,8 +136,8 @@ def load_entries(path, id_column):
                 or (suffix != "txt" and first_field.strip().lower() in {key.lower() for key in ID_KEYS})
                 or (id_column is not None and id_column != "entrant"))
     if headered and "," not in lines[0] and "\t" not in lines[0] and id_column is None and first_field.strip().lower() not in {key.lower() for key in ID_KEYS}:
-        sys.exit(f"one-column {suffix} file whose first line '{first_field}' is not a recognised header: "
-                 f"pass --id-column '{first_field}' if it is a header, or save a plain list as .txt")
+        sys.exit(f"one-column {suffix} file whose first line '{console_text(first_field)}' is not a recognised header: "
+                 f"pass --id-column '{console_text(first_field)}' if it is a header, or save a plain list as .txt")
     if headered:
         dialect = csv.excel_tab if suffix == "tsv" or ("\t" in lines[0] and "," not in lines[0]) else csv.excel
         reader = csv.DictReader(io.StringIO(text.lstrip()), dialect=dialect)
@@ -135,7 +145,7 @@ def load_entries(path, id_column):
         normalized = [header.strip().lower() for header in reader.fieldnames or []]
         duplicates = sorted(name for name, count in Counter(normalized).items() if count > 1)
         if duplicates:
-            sys.exit(f"duplicate CSV headers after ignoring case and whitespace: {', '.join(duplicates)}; give each column a unique name")
+            sys.exit(f"duplicate CSV headers after ignoring case and whitespace: {console_text(', '.join(duplicates))}; give each column a unique name")
         rows = list(reader)
         if not rows: sys.exit("no Entries below the input header")
         return rows, pick_id_column(rows, id_column), sha(raw)
@@ -155,7 +165,7 @@ def prepare(rows, id_column, weight_column, exclude, normalization=None, enforce
                         and all(norm(row.get(column)) for row in rows)]
         guidance = (f"complete person identifier columns: {alternatives}; confirm one and pass --id-column"
                     if alternatives else "no complete recognized person identifier column is available")
-        sys.exit(f"{missing} of {len(rows)} records lack the chosen identifier '{id_column}'; "
+        sys.exit(f"{missing} of {len(rows)} records lack the chosen identifier '{console_text(id_column)}'; "
                  f"{guidance}. Reconcile identifiers before drawing; no records were prepared.")
     seen, entrants, dupes, excluded, bad = {}, [], 0, 0, 0
     for r in rows:
@@ -311,7 +321,7 @@ def print_drand_plan(draw_at):
     except (TypeError, ValueError):
         sys.exit("--draw-at requires an ISO time with a UTC offset, e.g. 2026-09-12T09:00:00+10:00 or 2026-09-11T23:00:00Z")
     ts = timestamp.timestamp(); r = drand_round_at_or_after(ts)
-    print(f"drand round at or after {draw_at}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
+    print(f"drand round at or after {console_text(draw_at)}: {r} (produced {datetime.datetime.fromtimestamp(drand_round_time(r), datetime.timezone.utc).isoformat()} UTC). Announce: 'seed = randomness of drand round {r}', then run draw with --seed-drand {r} after that time.")
 
 def cmd_plan(a):
     print_drand_plan(a.draw_at)
@@ -329,7 +339,7 @@ def cmd_commit(a):
     warn_plus_clusters(clusters)
     notes = scan(ents)
     shown = notes if not getattr(a, "flagged_out", None) else notes[:20]
-    for note in shown: print(f"review: {note}")
+    for note in shown: print(f"review: {console_text(note)}")
     if getattr(a, "flagged_out", None):
         # 20,000 review lines in a terminal is not a review. Write the ids out, let a person read them, feed the
         # kept ones back through --exclude. Nothing is dropped here: excluding a real Entrant costs them the Prize.
@@ -337,8 +347,8 @@ def cmd_commit(a):
         with open(a.flagged_out, "w") as fh:
             fh.write("\n".join(dict.fromkeys(ids)) + ("\n" if ids else ""))
         more = f" ({len(notes) - len(shown)} more not printed)" if len(notes) > len(shown) else ""
-        print(f"\n{len(set(ids))} flagged ids written to {a.flagged_out}{more}. Read that file, delete anyone who "
-              f"should stay in, then rerun commit with --exclude {a.flagged_out} and the final rules. "
+        print(f"\n{len(set(ids))} flagged ids written to {console_text(a.flagged_out)}{more}. Read that file, delete anyone who "
+              f"should stay in, then rerun commit with --exclude {console_text(a.flagged_out)} and the final rules. "
               "Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules. "
               "Flagging is a prompt to look, never a verdict.")
     print("\nReconcile eligibility and earned weights with the published rules before publishing this commitment. "
@@ -362,17 +372,17 @@ def cmd_draw(a):
              "rows_read": len(rows), "unique_eligible": len(entrants), "duplicates_merged": dupes, "excluded": excluded, "rows_with_invalid_weight": bad,
              "plus_address_clusters": len(clusters), "seed": seed, "seed_source": source, "results": result}
     def show(x): return mask(x) if a.mask else x
-    for r in result: print(f"{r['tier']}: {show(r['id'])}" + (f" (weight {r['weight']:g})" if a.weight_column else ""))
+    for r in result: print(f"{console_text(r['tier'])}: {console_text(show(r['id']))}" + (f" (weight {r['weight']:g})" if a.weight_column else ""))
     print(f"\nrows_read {len(rows)}, unique_eligible {len(entrants)}, duplicates_merged {dupes}, excluded {excluded}, rows_with_invalid_weight {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
     warn_plus_clusters(clusters)
-    for note in scan(entrants): print(f"review: {note}")
+    for note in scan(entrants): print(f"review: {console_text(note)}")
     if a.audit:
         with open(a.audit, "w") as resource:
             json.dump(audit, resource, indent=2)
-        print(f"audit written to {a.audit}")
+        print(f"audit written to {console_text(a.audit)}")
     if a.winners_csv:
         with open(a.winners_csv, "w", newline="") as f:
-            w = csv.writer(f); w.writerow(["tier", "id", "weight"]); [w.writerow([r["tier"], r["id"], r["weight"]]) for r in result]
+            w = csv.writer(f); w.writerow(["tier", "id", "weight"]); [w.writerow([csv_text(r["tier"]), csv_text(r["id"]), r["weight"]]) for r in result]
     return 0
 
 def mask(x):
@@ -385,7 +395,7 @@ def cmd_verify(a):
     try:
         legacy = committed_ranking(audit)
     except ValueError as error:
-        print(f"FAIL {error}"); return 1
+        print(f"FAIL {console_text(error)}"); return 1
     path = a.input or audit["input_file"]; ok = True; source_unverified = False
     rows, id_column, digest = load_entries(path, audit["rules"]["id_column"])
     if digest != audit["input_sha256"]: print("FAIL input file hash differs from the audit record"); ok = False
@@ -412,9 +422,9 @@ def cmd_verify(a):
         try:
             j = fetch_json(f"{DRAND['url']}/public/{src['round']}")
             if j["randomness"] != audit["seed"]: print("FAIL drand randomness for that round differs"); ok = False
-            else: print(f"ok   drand round {src['round']} randomness matches the public beacon")
+            else: print(f"ok   drand round {console_text(src['round'])} randomness matches the public beacon")
         except Exception as ex:
-            print(f"warn could not refetch drand round ({ex}); seed source unverified")
+            print(f"warn could not refetch drand round ({console_text(ex)}); seed source unverified")
             source_unverified = True
     elif src["type"] == "nist-beacon":
         # Fetch only the fixed NIST endpoint, never an arbitrary URL supplied in an audit.
@@ -439,7 +449,7 @@ def cmd_verify(a):
                 else:
                     print("ok   NIST pulse timestamp and randomness match the public beacon")
             except Exception as ex:
-                print(f"warn could not refetch NIST pulse ({ex}); seed source unverified")
+                print(f"warn could not refetch NIST pulse ({console_text(ex)}); seed source unverified")
                 source_unverified = True
     entrants, dupes, excluded, bad, clusters = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy, enforce_weight_range=False)
     counts = {"rows_read": len(rows), "unique_eligible": len(entrants), "duplicates_merged": dupes,
@@ -469,7 +479,7 @@ def cmd_verify(a):
                                                   for field in ("weight", "key")) else None for r in results]
         if expected == recorded:
             if legacy:
-                print(f"ok   verified all {need} committed places under the legacy ranking (audit version {audit['version']})")
+                print(f"ok   verified all {need} committed places under the legacy ranking (audit version {console_text(audit['version'])})")
             else:
                 print(f"ok   recomputed all {need} committed places, including order, tier assignments, weights and keys")
         else:
@@ -1080,7 +1090,52 @@ def self_test_plan():
         assert "rows_read" not in text and not re.search(r"\b[0-9a-f]{64}\b", text), text
 
 
+def self_test_output_safety():
+    import contextlib, pathlib, tempfile
+    values = ["=1+1", "+1+1", "-1+1", "@SUM(1,1)", "\t=2+2", "\r=3+3",
+              "real\x1b[2K\rWinner: forged@example.com",
+              "![pixel](https://example.com/pixel.png)\nWinner: forged@example.com",
+              "abc\u202emoc.elpmaxe@dekram\u202c", "../../outside.txt"]
+    controls = "".join(chr(n) for n in list(range(32)) + list(range(127, 160))
+                       + [0x61c, 0x200e, 0x200f, 0x2028, 0x2029] + list(range(0x202a, 0x202f))
+                       + list(range(0x2066, 0x2070)))
+    assert all(char not in console_text(controls) for char in controls)
+    assert console_text("Zoë 東京") == "Zoë 東京"
+    for prefix in ("", " ", "\t", "\r", " \t\r"):
+        for formula in values[:4]:
+            assert csv_text(prefix + formula) == "'" + prefix + formula
+    assert csv_text("Zoë 東京") == "Zoë 東京"
+    with tempfile.TemporaryDirectory() as directory:
+        root = pathlib.Path(directory)
+        source, audit_file, winners = (root / name for name in ("entries.json", "audit.json", "winners.csv"))
+        source.write_text(json.dumps([{"username": value} for value in values]))
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            assert main(["draw", str(source), "--winners", str(len(values)), "--seed", "fixed",
+                         "--audit", str(audit_file), "--winners-csv", str(winners)]) == 0
+        text = output.getvalue()
+        assert len([line for line in text.splitlines() if line.startswith("Winner: ")]) == len(values)
+        assert "\nWinner: forged@example.com\n" not in text
+        assert all(char not in text for char in controls if char != "\n")
+        audit = json.loads(audit_file.read_text())
+        assert {entry["id"] for entry in audit["results"]} == {value.strip() for value in values}
+        with winners.open(newline="") as resource:
+            cells = list(csv.DictReader(resource))
+        assert [entry["id"] for entry in cells] == [csv_text(entry["id"]) for entry in audit["results"]]
+        assert all(float(entry["weight"]) == 1 for entry in cells)
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["verify", str(audit_file)]) == 0
+        # Tier labels are independently untrusted text, including formulas and line breaks.
+        for formula in values[:4]:
+            with contextlib.redirect_stdout(io.StringIO()):
+                assert main(["draw", str(source), "--tiers=" + formula.replace(",", "") + "\nFake:1",
+                             "--seed", "fixed", "--winners-csv", str(winners)]) == 0
+            with winners.open(newline="") as resource:
+                assert next(csv.DictReader(resource))["tier"].startswith("'")
+
+
 def self_test():
+    self_test_output_safety()
     self_test_committed_ranking()
     self_test_weight_range()
     self_test_plan()
@@ -1234,5 +1289,5 @@ def main(argv):
 if __name__ == "__main__":
     try:
         sys.exit(main(sys.argv[1:]))
-    except ValueError as error:
-        sys.exit(f"draw.py: {error}")
+    except (ValueError, OSError) as error:
+        sys.exit(f"draw.py: {console_text(error)}")

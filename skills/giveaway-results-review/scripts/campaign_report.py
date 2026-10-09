@@ -15,7 +15,7 @@ timezone, so every time figure is account time. Status Invalid rows are counted 
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
 never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
 """
-import argparse, collections, csv, datetime as dt, json, math, os, statistics as st, sys, urllib.parse
+import argparse, collections, csv, datetime as dt, json, math, os, re, statistics as st, sys, urllib.parse
 
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
 # Keep gleam_export.py beside this script so all action counts use the same classifier.
@@ -25,6 +25,13 @@ try:
     import review as _bench
 except ImportError:
     _bench = None
+
+
+def console_text(value):
+    """Show terminal controls visibly without changing stored identities."""
+    return "".join(f"\\u{ord(c):04x}" if ord(c) < 32 or 127 <= ord(c) <= 159
+                   or c in "\u061c\u200e\u200f\u2028\u2029\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069\u206a\u206b\u206c\u206d\u206e\u206f"
+                   else c for c in str(value))
 
 
 def parse_wide_worth(legacy=None, json_mapping=None):
@@ -437,7 +444,7 @@ def viral_text(V):
     return text + "."
 
 
-def insights(R):
+def insights(R, text=str):
     """The deterministic findings, each checkable against a table in the report."""
     T = R["topline"]; n = R["base"]
     ins = []
@@ -445,23 +452,27 @@ def insights(R):
     ch = [c for c in R["channels"] if c[1] >= 30 and c[4]]
     if ch:
         best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
-        ins.append(f"Source whose entrants went deepest: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
+        ins.append(f"Source whose entrants went deepest: {text(best[0])} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {text(worst[0])} at {worst[4]:.2f}x ({worst[1]:,}).")
     if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of timestamped actions happened within 48 hours of the first observed timestamp.")
     V = R["viral"]
     if V["top_share"] is not None: ins.append(f"Top sharer accounts for {V['top_share']:.0%} of referral completions" + (" (over 40%, review before crediting)." if V["top_share"] > 0.4 else "."))
     ins.append(f"Average depth {T['actions_per_entrant']:.1f} actions, {R['ten_plus'] / n:.0%} of entrants completed 10 or more.")
-    if R["cities"]: c0 = R["cities"][0]; ins.append(f"Biggest city concentration: {c0[0][0]}, {c0[0][1]} with {c0[1]:,} entrants ({c0[1] / n:.0%}).")
-    if R["countries"] and R["cities"] and R["countries"][0][0] != R["cities"][0][0][1]: ins.append(f"City and country leaders diverge: {R['countries'][0][0]} leads by country, {R['cities'][0][0][0]} leads by city.")
+    if R["cities"]: c0 = R["cities"][0]; ins.append(f"Biggest city concentration: {text(c0[0][0])}, {text(c0[0][1])} with {c0[1]:,} entrants ({c0[1] / n:.0%}).")
+    if R["countries"] and R["cities"] and R["countries"][0][0] != R["cities"][0][0][1]: ins.append(f"City and country leaders diverge: {text(R['countries'][0][0])} leads by country, {text(R['cities'][0][0][0])} leads by city.")
     if R["engagement"]["1"][1] > 0.1: ins.append(f"{R['engagement']['1'][0]:,} entrants ({R['engagement']['1'][1]:.0%}) completed one action only.")
     return ins
 
 
 def markdown_cell(value):
-    """Keep exported text in one Markdown table cell, including literal escape characters."""
-    return " ".join(str(value).splitlines()).replace("\\", "\\\\").replace("|", "\\|")
+    """Render exported labels literally, keeping table cells and terminal output intact."""
+    text = console_text(" ".join(str(value).splitlines()))
+    text = re.sub(r"([\\`*_{}\[\]<>!|#~():@&])", r"\\\1", text)
+    # Dots in web addresses can trigger bare-URL autolinking in Markdown viewers.
+    text = re.sub(r"(?i)\bwww\.", lambda match: match[0][:-1] + r"\.", text)
+    return text
 
 
-def render(R, a):
+def render(R, a, text=markdown_cell):
     L = []; w = L.append; T = R["topline"]; n = R["base"]
     conversion, conversion_note = conversion_rate(n, a.impressions)
     if not n:
@@ -477,11 +488,11 @@ def render(R, a):
         return "\n".join(L)
     info = getattr(load, "last", None)
     if info:
-        w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
+        w("Columns read: " + ", ".join(f"{text(k)} = {text(v)}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(text(v) for v in info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
     if info and info.get("name_only"):
         w("Name-only deduplication may merge different people who share a display name. Supply a person identifier with --map who=<column> before relying on Entrant counts.")
     if info and info["wide"]:
-        w(f"Wide cell unit: {info['wide_unit']}. Entries use declared worth per completion. Summary dates cannot establish action times, so timing and speed are unavailable. Referral relationships require individual action rows.")
+        w(f"Wide cell unit: {text(info['wide_unit'])}. Entries use declared worth per completion. Summary dates cannot establish action times, so timing and speed are unavailable. Referral relationships require individual action rows.")
     w(f"# Campaign report\n\nBase: {n:,} export entrants (unique identifiers with a valid action). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions is not None else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
     def row(label, shown, metric=None, value=None, fmt=lambda v: f"{v:,.2f}"):
@@ -504,7 +515,7 @@ def render(R, a):
         w(f"Speed excludes {S['missing']:,} of {S['eligible']:,} multi-action Entrants with missing or unusable timestamps; the covered subset may not represent all Entrants.")
     if S["completed_everything"] is not None:
         w(f"Completed everything (explicitly mapped action): {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%}).")
-    ins = insights(R); V = R["viral"]
+    ins = insights(R, text); V = R["viral"]
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     referred = f"{V['referred_entrants']:,}" if V["graph_complete"] else "unavailable (referral relationships incomplete)"
     w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {referred} referred entrants.")
@@ -524,7 +535,7 @@ def render(R, a):
         for label, day, actions, entrants, lift in R["sends"]:
             activity = f"{actions:,} | {entrants:,}" if actions is not None else "unavailable | unavailable"
             comparison = f"{lift:.1f}x" if lift is not None else "unavailable (incomplete coverage)" if actions is None else "unavailable (zero baseline)"
-            w(f"| {markdown_cell(label)} | {markdown_cell(day)} | {activity} | {comparison} |")
+            w(f"| {text(label)} | {text(day)} | {activity} | {comparison} |")
     w(f"\nUnique email subscribers: {R['email_subscribers']:,} (people with a valid subscription Action).")
     if R.get("prize_value") is not None:
         w(f"\nStated Prize value: {R['prize_value']:,.2f}. This is the advertised value, not actual spending.")
@@ -538,19 +549,19 @@ def render(R, a):
     for c in R["channels"]:
         depth = f"{c[4]:.2f}x" if c[4] is not None else "unavailable"
         invalid_rate = f"{c[5]:.1%}" if c[5] is not None else "unavailable"
-        w(f"| {markdown_cell(c[0])} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {depth} | {invalid_rate}{' (2x campaign rate or more)' if c[5] is not None and c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
-    w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {markdown_cell(h)} | {k:,} |" for h, k in R["hosts"]))
-    w("\nLanding page at first touch: " + ", ".join(f"{k} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
+        w(f"| {text(c[0])} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {depth} | {invalid_rate}{' (2x campaign rate or more)' if c[5] is not None and c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
+    w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {text(h)} | {k:,} |" for h, k in R["hosts"]))
+    w("\nLanding page at first touch: " + ", ".join(f"{text(k)} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
     if R.get("featured"):
         F = R["featured"]; w(f"\nFeatured on gleam.io/giveaways: {F['entrants']:,} entrants ({F['share']:.0%}) came from browsing the directory (landed on the listing with gleam.io as the referrer)" + (f", at {F['depth']:.2f}x the average actions per entrant" if F["depth"] else "") + f". {F['landed']:,} entrants ({F['landed_share']:.0%}) landed on the listing URL from any source, at {F['landed_depth']:.2f}x, since the listing link also gets shared by aggregators, email and social. Listing traffic is people browsing giveaways, so read its depth and email signups apart from your own channels.")
-    if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {markdown_cell(s)} | {markdown_cell(m)} | {markdown_cell(c)} | {k:,} |" for (s, m, c), k in R["utm"]))
-    if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ". Host substring matches can overlap, so do not sum partner rows. Read tagged email traffic in the separate UTM rollup.")
+    if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {text(s)} | {text(m)} | {text(c)} | {k:,} |" for (s, m, c), k in R["utm"]))
+    if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{text(p)} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ". Host substring matches can overlap, so do not sum partner rows. Read tagged email traffic in the separate UTM rollup.")
     else: w("\nPartner contribution needs --partners with referrer-host substrings. For tagged email traffic, read the separate UTM rollup. Overlapping host matches may count the same Entrant in multiple partner rows, so do not sum them.")
     w("\n## Entry methods\n\nUnique participation counts each Entrant once per action. Action benchmarks compare completions per Entrant across all campaign sizes offering that action.\n\n| Action | Completions | Entrants | Share of actions | Unique participation | Completions per Entrant | Typical completions per Entrant, campaigns offering it | Where completions per Entrant sit | Median gap since previous action | Invalid |\n|---|---|---|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         g = _gname(act) if _gname else None
         typ, where = bench(None, comp / n, n, lambda v: f"{v:.1f}", group=g) if g else ("-", "no matching group")
-        w(f"| {markdown_cell(act)} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {comp / n:.1f} | {typ} | {where} | {f'{sec:.0f}' if sec is not None else '-'} | {inv:,} |")
+        w(f"| {text(act)} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {comp / n:.1f} | {typ} | {where} | {f'{sec:.0f}' if sec is not None else '-'} | {inv:,} |")
     w("\nMedian gap since previous action is measured in seconds between recorded completions by the same Entrant, using gaps of at most 30 minutes only. It does not measure task duration and has no speed benchmark.")
     w("\n## Viral\n\n" + viral_text(V))
     rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.2f}")
@@ -559,13 +570,13 @@ def render(R, a):
         w("\n| Sharer | Referral completions | Referred who entered | Entries brought | Connected accounts | Referred doing one action |\n|---|---|---|---|---|---|")
         for s in V["top"]:
             tell = " (signal: no connected accounts, outsized referrals)" if s[4] == 0 and s[1] >= 10 else ""
-            w(f"| {markdown_cell(s[0])}{tell} | {s[1]:,} | {s[2]:,} | {s[3]:,} | {s[4]} | {s[5]:,} |")
+            w(f"| {text(s[0])}{tell} | {s[1]:,} | {s[2]:,} | {s[3]:,} | {s[4]} | {s[5]:,} |")
         w("\nSignals, never verdicts: a sharer with many referrals, no connected accounts and referred Entrants who mostly do one action deserves a look before any Prize.")
-    w("\n## Audience\n\n| Country | Entrants | Share |\n|---|---|---|" + "".join(f"\n| {markdown_cell(c)} | {k:,} | {k / n:.0%} |" for c, k in R["countries"]))
-    if R["cities"]: w("\n| City | Entrants |\n|---|---|" + "".join(f"\n| {markdown_cell(c)}, {markdown_cell(co)} | {k:,} |" for (c, co), k in R["cities"]))
-    if R["handles"]: w("\nConnected accounts: " + ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) + ".")
+    w("\n## Audience\n\n| Country | Entrants | Share |\n|---|---|---|" + "".join(f"\n| {text(c)} | {k:,} | {k / n:.0%} |" for c, k in R["countries"]))
+    if R["cities"]: w("\n| City | Entrants |\n|---|---|" + "".join(f"\n| {text(c)}, {text(co)} | {k:,} |" for (c, co), k in R["cities"]))
+    if R["handles"]: w("\nConnected accounts: " + ", ".join(f"{text(c)} {v:.0%}" for c, v in R["handles"]) + ".")
     w("\n" + retention_text(R))
-    w("\nMost engaged Entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {markdown_cell(t[0])} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
+    w("\nMost engaged Entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {text(t[0])} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
     w("""
 ## Outcomes
 
@@ -693,6 +704,41 @@ def self_test():
         f"| {safe_label('Entrant')} | 3 | 4 | 1 | 2 | 1 |",
     ):
         assert expected in rendered_lines, expected
+    # Entrant-controlled markup is literal in table cells and insight sentences.
+    hostile = copy.deepcopy(R)
+    image = "![pixel](https://example.com/pixel.png)"
+    link = "[Verify Winner](https://example.com/claim)"
+    country = '<img src="https://example.com/country.png">'
+    city = "Town\n\n# Winner: injected@example.com\n\n"
+    hostile["actions"] = [(link, 3, 2, 0.75, 1.0, 30, 1)]
+    hostile["top_entrants"] = [(image, 3, 4, 1, 2, 1)]
+    hostile["countries"] = [(country, 2)]
+    hostile["cities"] = [((city, country), 2)]
+    hostile_report = render(hostile, A)
+    for value in (image, link, country, city):
+        assert value not in hostile_report and markdown_cell(value) in hostile_report
+    assert not any(line.startswith("# Winner") for line in hostile_report.splitlines())
+    assert "Biggest city concentration: " + markdown_cell(city) in hostile_report
+    assert markdown_cell("Zoë 東京") == "Zoë 東京"
+    assert markdown_cell("WWW.example.com") == r"WWW\.example.com"
+    assert markdown_cell("&copy; &#60;img&#62;") == r"\&copy; \&\#60;img\&\#62;"
+    for control in ("\x00", "\x1b", "\x7f", "\x85", "\r", "\n", "\u061c", "\u202e", "\u2066"):
+        value = "Real" + control + "Winner: forged"
+        assert control not in console_text(value) and f"\\u{ord(control):04x}" in console_text(value)
+        hostile["actions"] = [(value, 3, 2, 0.75, 1.0, 30, 1)]
+        terminal = render(hostile, A, lambda value: markdown_cell(console_text(value)))
+        assert f"\\u{ord(control):04x}" in terminal
+    # Diagnostics encode controls from exported column labels too.
+    import contextlib, io
+    bad_header = os.path.join(d, "control-header.csv")
+    with open(bad_header, "w", newline="") as resource:
+        csv.writer(resource).writerows([["Name", "Action\x1b[2J\u202e"], ["A", "Visit"]])
+    errors = io.StringIO()
+    with contextlib.redirect_stderr(errors):
+        try: main([bad_header, "--map", "action=missing"])
+        except SystemExit as error: assert error.code == 2
+        else: raise AssertionError("missing mapped column must fail")
+    assert "\x1b" not in errors.getvalue() and "\u202e" not in errors.getvalue()
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     # Person identifiers precede display names, while an explicit mapping wins.
     identity_path = os.path.join(d, "identity.csv")
@@ -1172,10 +1218,11 @@ def main(argv):
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if a.map else {}
     try:
         worth = parse_wide_worth(a.wide_worth, a.wide_worth_json)
-        out = render(analyze(load(a.export, mapping, a.wide_unit, worth), a), a)
+        result = analyze(load(a.export, mapping, a.wide_unit, worth), a)
+        out = render(result, a)
     except ValueError as exc:
-        ap.error(str(exc))
-    print(out)
+        ap.error(console_text(exc))
+    print(render(result, a, lambda value: markdown_cell(console_text(value))))
     if a.markdown:
         with open(a.markdown, "w") as resource:
             resource.write(out + "\n")

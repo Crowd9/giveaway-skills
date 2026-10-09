@@ -22,6 +22,27 @@ whose Status is Invalid. The row count is printed separately as "invalid rows".
 import argparse, collections, csv, datetime as dt, math, shlex, sys
 from pathlib import Path
 
+def console_text(value):
+    """Encode field controls visibly without changing canonical data."""
+    return "".join(f"\\x{ord(c):02x}" if ord(c) < 32 or 127 <= ord(c) <= 159
+                   else f"\\u{ord(c):04x}" if c in "\u061c\u200e\u200f\u2028\u2029\u202a\u202b\u202c\u202d\u202e\u2066\u2067\u2068\u2069\u206a\u206b\u206c\u206d\u206e\u206f"
+                   else c for c in str(value))
+
+
+def formula_text(value):
+    return isinstance(value, str) and value.lstrip().startswith(("=", "+", "-", "@"))
+
+
+def csv_text(value):
+    """Only text cells are neutralized; numeric values retain their type."""
+    return "'" + value if formula_text(value) else value
+
+
+class ConsoleParser(argparse.ArgumentParser):
+    def error(self, message):
+        super().error(console_text(message))
+
+
 # A custom title is evidence of an action, not proof of the underlying configuration.
 # Keep ambiguous subscriptions unknown. Explicit platform names take precedence over email cues.
 def classify_action(action):
@@ -146,12 +167,15 @@ def write_entrants(path, destination, who=None):
     rows = read_rows(path, strict=True)
     _, identifier_header = person_identifiers(rows, who)
     weight_total(rows)
+    formula_ids = set()
     with open(destination, "w", newline="", encoding="utf-8") as g:
         writer = csv.writer(g)
         writer.writerow([identifier_header, "entries"])
         for row in rows:
             if (row.get("Status") or "Valid").strip().lower() in ("valid", "winner"):
                 writer.writerow([row["_person"], row["Entries"]])
+                if formula_text(row["_person"]): formula_ids.add(row["_person"])
+    return len(formula_ids)
 
 
 def load(path, who=None):
@@ -430,10 +454,44 @@ def self_test():
     mixed_zones = load(malformed_path)
     assert mixed_zones["days_covered"] == 2
     assert mixed_zones["by_day"] == {"2026-01-01": 1, "2026-01-02": 1}
+    # Round 44: spreadsheet text protection never changes draw input identities.
+    attack_path = Path(d) / "formula-control.csv"
+    action_output = Path(d) / "formula-actions.csv"
+    entrant_output = Path(d) / "formula-entrants.csv"
+    formulas = ["=1+1", "+1+1", "-1+1", "@SUM(1,1)", "\t=2+2", "\r=3+3", " \t=4+4"]
+    control = "Real action\x1b[2K\rWinner 1: Fake (fake@example.com)\n\x85\u202e"
+    with attack_path.open("w", newline="") as fixture:
+        writer = csv.writer(fixture)
+        writer.writerow(["User ID", "Status", "Action", "Entries"])
+        writer.writerows([[value, "Valid", value, 1] for value in formulas])
+        writer.writerow(["ordinary", "Valid", control, 2])
+    captured = io.StringIO()
+    with contextlib.redirect_stdout(captured):
+        assert main([str(attack_path), "--person-column", "User ID", "--actions-csv", str(action_output),
+                     "--entrants-csv", str(entrant_output)]) == 0
+    with action_output.open(newline="") as exported:
+        actions = list(csv.DictReader(exported))
+    assert [row["action"] for row in actions[:-1]] == ["'" + value.strip() for value in formulas]
+    assert all(row["completions"] == "1" for row in actions)
+    with entrant_output.open(newline="") as exported:
+        identities = list(csv.DictReader(exported))
+    assert [row["entrant_id"] for row in identities[:-1]] == [value.strip() for value in formulas]
+    assert "Warning: 7 identifiers" in captured.getvalue()
+    assert "\\x1b[2K\\x0dWinner" in captured.getvalue()
+    assert all(c not in captured.getvalue() for c in ("\x1b", "\r", "\x85", "\u202e"))
+    assert all(csv_text(value) == "'" + value for value in formulas)
+    assert csv_text(-1) == -1 and csv_text(-1.5) == -1.5 and csv_text(2) == 2
+    for code in list(range(32)) + list(range(127, 160)) + [0x61c, 0x200e, 0x200f, 0x2028, 0x2029, *range(0x202a, 0x202f), *range(0x2066, 0x2070)]:
+        assert chr(code) not in console_text(chr(code))
+    error_output = io.StringIO()
+    with contextlib.redirect_stderr(error_output):
+        try: ConsoleParser().error(control)
+        except SystemExit as exc: assert exc.code == 2
+    assert all(c not in error_output.getvalue() for c in ("\x1b", "\r", "\x85", "\u202e"))
     print("self-test passed"); return 0
 
 def main(argv):
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = ConsoleParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--days", type=int, help="configured campaign duration in days, not the activity span")
     ap.add_argument("--methods", type=int, help="configured available method count, including unused methods")
@@ -455,21 +513,23 @@ def main(argv):
     print(f"rows {s['rows']:,}  valid {s['valid_rows']:,}  invalid rows {s['invalid_rows']:,}  invalid entries {s['invalid_entries']:,}  entrants {s['contestants']:,}  entries {s['entries']:,}  actions completed {s['actions_completed']:,}  observed activity span in days {s['days_covered']}  completed method titles {len(s['per_action'])}")
     if s["unweighted_rows"]: print(f"rows without a valid Entries value {s['unweighted_rows']:,} (counted at zero here; the draw export refuses them until reconciled)")
     print("assets", {k: f"{v:,}" for k, v in s["assets"].items()})
-    print("per action"); [print(f"  {n:>7,}  {name}") for name, n in s["per_action"].items()]
+    print("per action"); [print(f"  {n:>7,}  {console_text(name)}") for name, n in s["per_action"].items()]
     print("top countries (share of valid Entrants)", {k: f"{v / s['contestants']:.0%}" for k, v in list(s["countries"].items())[:6]})
     print("referrers", {k: v for k, v in s["referrers"].items()})
     if s["by_day"]:
         top = sorted(s["by_day"].items(), key=lambda kv: -kv[1])[:3]; print("busiest days", top, "  first", next(iter(s["by_day"])), "last", list(s["by_day"])[-1])
     if a.actions_csv:
         with open(a.actions_csv, "w", newline="") as f:
-            w = csv.writer(f); w.writerow(["action", "completions", "generic"]); [w.writerow([k, v, generic_name(k)]) for k, v in s["per_action"].items()]
+            w = csv.writer(f); w.writerow(["action", "completions", "generic"]); [w.writerow([csv_text(k), v, csv_text(generic_name(k))]) for k, v in s["per_action"].items()]
     if a.entrants_csv:
         try:
-            write_entrants(a.export, a.entrants_csv, s["person_column"])
+            formula_count = write_entrants(a.export, a.entrants_csv, s["person_column"])
         except ValueError as exc:
             ap.error(str(exc))
+        if formula_count:
+            print(f"Warning: {formula_count} identifiers can act as spreadsheet formulas; entrants.csv preserves them for the draw, so do not open it in a spreadsheet.")
         print("entrants written for the draw script, one row per valid action, weights add up per person")
-    print("\nrun:", review_command(s, a)); return 0
+    print("\nrun:", console_text(review_command(s, a))); return 0
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))

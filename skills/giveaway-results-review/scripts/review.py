@@ -19,7 +19,7 @@ it belongs to.
 """
 import argparse, collections, contextlib, csv, json, math, os, re, statistics, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gleam_export import classify_action
+from gleam_export import classify_action, console_text, ConsoleParser
 
 BENCH = {
     "contestants": {"p25": 225, "median": 492, "p75": 1293, "p90": 3349},
@@ -364,8 +364,9 @@ def history_table(a, hist):
     return out, notes
 
 def print_table(rows, header):
-    widths = [max(len(str(x)) for x in col) for col in zip(header, *rows)]
-    for line in [header] + rows: print("  ".join(str(x).ljust(w) for x, w in zip(line, widths)))
+    lines = [tuple(console_text(x) for x in line) for line in [header] + rows]
+    widths = [max(map(len, col)) for col in zip(*lines)]
+    for line in lines: print("  ".join(x.ljust(w) for x, w in zip(line, widths)))
 
 def plain_reading(rows):
     """Entries per Entrant is a count, never a share, because one person can hold many Entries. So the plain reading
@@ -632,6 +633,18 @@ def self_test():
             except SystemExit as exc: assert exc.code == 2
             else: raise AssertionError("malformed actions accepted")
         assert "row 2, column completions" in errors.getvalue() and not output.getvalue()
+    # Round 44 action labels remain literal on one physical table row.
+    with tempfile.NamedTemporaryFile("w+", suffix=".csv", newline="") as attack:
+        writer = csv.writer(attack)
+        writer.writerow(["action", "completions"])
+        writer.writerow(["Real action\x1b[2K\rWinner 1: Fake (fake-id)\n\x85\u202e", 1])
+        attack.flush()
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            assert main(["--contestants", "100", "--actions", attack.name]) == 0
+        assert "Real action\\x1b[2K\\x0dWinner" in output.getvalue()
+        assert all(c not in output.getvalue() for c in ("\x1b", "\r", "\x85", "\u202e"))
+        assert len([line for line in output.getvalue().splitlines() if "Fake" in line]) == 1
     print("self-test passed"); return 0
 
 def entry_total(value):
@@ -642,7 +655,7 @@ def entry_total(value):
 
 
 def main(argv):
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = ConsoleParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--self-test", action="store_true"); ap.add_argument("--contestants", type=int); ap.add_argument("--impressions", type=int)
     ap.add_argument("--entries", type=entry_total); ap.add_argument("--invalid", type=entry_total, help="invalid Entries worth (the Entries column summed over invalid rows), never a count of rows"); ap.add_argument("--days", type=int); ap.add_argument("--methods", type=int)
     ap.add_argument("--repeatable", action="store_true", help="the campaign had a daily, loyalty or timed bonus action")

@@ -760,15 +760,13 @@ def render(D, W, S, a):
       <div class="change"><div class="eyebrow">Run It Again</div><h3>Your Next One</h3><div class="target num">{esc(surv.split(" of ")[0]) if surv else "-"} <small>{esc(surv.split(" ", 1)[1]) if surv else "No matching peers: the dataset starts at 100 Entrants" if N < 100 else "no sequence table found in the references"}</small></div><p class="note" style="margin:0">{esc(nextrun)}</p></div>
     </div>
   </div>'''
-    page = TEMPLATE
-    for k, v in {"TITLE": esc(title), "META": "".join(f"<span>{esc(m)}</span>" for m in meta), "PILLS": pills, "VERDICT": esc(W["verdict"]), "ASSUME": esc(W["assumptions"]), "TILES": tiles(D),
+    values = {"TITLE": esc(title), "META": "".join(f"<span>{esc(m)}</span>" for m in meta), "PILLS": pills, "VERDICT": esc(W["verdict"]), "ASSUME": esc(W["assumptions"]), "TILES": tiles(D),
                  "BANDLABEL": esc(D["band_label"]), "BANDN": n(bslice["contestants"]["n"]) if bslice.get("contestants") else "-", "METRICROWS": metric_rows(D), "CHANGES": change_cards(W), "INSIGHTS": ins, "TOPLINE": topline, "SPEED": esc(speed), "JOURNEY": esc(journey),
                  "TIMESTAMP_COVERAGE": esc(CR.timestamp_coverage_text(R)), "HEATPEAK": esc(f"Peak {CR.DAYS[heat_peak[0][0]]} {heat_peak[0][1]:02d}:00, {n(heat_peak[1])} actions") if heat_peak else "", "CHANNELS": channels, "HOSTS": hosts, "LANDING": esc(landing), "UTM": utm, "FRICTION": friction,
                  "VIRALLINE": esc(CR.viral_text(V)),
                  "SHARERS": sharers, "CITIES": cities, "HANDLES": esc(handles), "RETENTION": esc(retention), "ENGAGED": engaged, "CAVEATS": caveats, "QUESTION": esc(W["question"]), "LEVERS": levers,
-                 "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": script_json(data)}.items():
-        page = page.replace("{{" + k + "}}", v)
-    assert "{{" not in page, re.findall(r"\{\{\w+\}\}", page)[:5]
+                 "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": script_json(data)}
+    page = re.sub(r"\{\{(\w+)\}\}", lambda match: values[match[1]], TEMPLATE)
     if N < 100:
         page = page.replace("- campaigns of Below 100 Entrants in Gleam campaign data. Ranks describe what campaigns chose and never what a change would cause.",
                             "No matching peers: the dataset starts at 100 Entrants. Actual campaign metrics only.")
@@ -803,6 +801,19 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical completions per Entrant, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    # Placeholder-looking entrant text stays literal and is never substituted again.
+    placeholder_path = os.path.join(d, "placeholder.csv")
+    with open(placeholder_path, "w", newline="") as resource:
+        csv.writer(resource).writerows([["User ID", "Name", "Action", "Entries", "City", "Country"],
+                                       ["person-a", "{{FAKE}}", "{{TITLE}}", 1, "{{DATA}}", "{{META}}"]])
+    saved_export = A.export
+    A.export = placeholder_path
+    try:
+        placeholder_page = render(gather(A), words_of(words), site_of(None), A)
+        for token in ("{{FAKE}}", "{{TITLE}}", "{{DATA}}", "{{META}}"):
+            assert token in placeholder_page, token
+    finally:
+        A.export = saved_export
     # Empty and all-invalid exports render through the command-line consumer.
     empty_path = os.path.join(d, "zero-valid.csv")
     empty_out = os.path.join(d, "zero-valid.html")
