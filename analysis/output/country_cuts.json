@@ -211,7 +211,7 @@
    "days": 6.0,
    "methods": 7.0,
    "skill_signal_share": 0.0,
-   "non_random_selection_share": 0.001,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.617,
    "restricted_share": 0.041,
@@ -239,7 +239,10 @@
    "action_pinterest": 0.002,
    "action_loyalty_or_bonus": 0.008,
    "action_download_app": 0.121,
-   "action_steam": 0.044
+   "action_steam": 0.044,
+   "suppressed_below_floor": [
+    "non_random_selection_share"
+   ]
   },
   "india": {
    "n": 4062,
@@ -249,7 +252,7 @@
    "entries_per_entrant": 5.031,
    "days": 9.0,
    "methods": 7.0,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.009,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.106,
@@ -278,7 +281,10 @@
    "action_pinterest": 0.005,
    "action_loyalty_or_bonus": 0.005,
    "action_download_app": 0.047,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "skill_signal_share"
+   ]
   },
   "singapore": {
    "n": 3491,
@@ -290,7 +296,7 @@
    "methods": 6.0,
    "skill_signal_share": 0.019,
    "non_random_selection_share": 0.007,
-   "judged_selection_share": 0.001,
+   "judged_selection_share": null,
    "business_plus_share": 0.498,
    "restricted_share": 0.097,
    "custom_terms_share": 0.218,
@@ -317,7 +323,10 @@
    "action_pinterest": 0.006,
    "action_loyalty_or_bonus": 0.035,
    "action_download_app": 0.014,
-   "action_steam": 0.002
+   "action_steam": 0.002,
+   "suppressed_below_floor": [
+    "judged_selection_share"
+   ]
   },
   "germany": {
    "n": 3322,
@@ -393,9 +402,12 @@
    "action_upload_or_media": 0.027,
    "action_wallet": 0.214,
    "action_pinterest": 0.0,
-   "action_loyalty_or_bonus": 0.001,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.092,
-   "action_steam": 0.002
+   "action_steam": 0.002,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus"
+   ]
   },
   "vietnam": {
    "n": 2501,
@@ -485,7 +497,7 @@
    "methods": 8.0,
    "skill_signal_share": 0.014,
    "non_random_selection_share": 0.007,
-   "judged_selection_share": 0.001,
+   "judged_selection_share": null,
    "business_plus_share": 0.53,
    "restricted_share": 0.076,
    "custom_terms_share": 0.53,
@@ -512,7 +524,10 @@
    "action_pinterest": 0.017,
    "action_loyalty_or_bonus": 0.004,
    "action_download_app": 0.012,
-   "action_steam": 0.136
+   "action_steam": 0.136,
+   "suppressed_below_floor": [
+    "judged_selection_share"
+   ]
   },
   "philippines": {
    "n": 2053,
@@ -523,7 +538,7 @@
    "days": 17.0,
    "methods": 7.0,
    "skill_signal_share": 0.01,
-   "non_random_selection_share": 0.001,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.169,
    "restricted_share": 0.207,
@@ -551,7 +566,10 @@
    "action_pinterest": 0.075,
    "action_loyalty_or_bonus": 0.009,
    "action_download_app": 0.015,
-   "action_steam": 0.004
+   "action_steam": 0.004,
+   "suppressed_below_floor": [
+    "non_random_selection_share"
+   ]
   },
   "hong kong": {
    "n": 1973,
@@ -561,9 +579,9 @@
    "entries_per_entrant": 4.726,
    "days": 8.0,
    "methods": 7.0,
-   "skill_signal_share": 0.002,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.02,
-   "judged_selection_share": 0.001,
+   "judged_selection_share": null,
    "business_plus_share": 0.207,
    "restricted_share": 0.087,
    "custom_terms_share": 0.115,
@@ -590,7 +608,12 @@
    "action_pinterest": 0.03,
    "action_loyalty_or_bonus": 0.004,
    "action_download_app": 0.033,
-   "action_steam": 0.001
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_steam",
+    "judged_selection_share",
+    "skill_signal_share"
+   ]
   },
   "taiwan": {
    "n": 1920,
@@ -678,7 +701,7 @@
    "entries_per_entrant": 5.4,
    "days": 8.0,
    "methods": 7.0,
-   "skill_signal_share": 0.003,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.006,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.217,
@@ -705,9 +728,13 @@
    "action_upload_or_media": 0.036,
    "action_wallet": 0.034,
    "action_pinterest": 0.156,
-   "action_loyalty_or_bonus": 0.003,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.026,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "skill_signal_share"
+   ]
   },
   "malaysia": {
    "n": 1501,
@@ -717,7 +744,7 @@
    "entries_per_entrant": 4.838,
    "days": 6.0,
    "methods": 7.0,
-   "skill_signal_share": 0.003,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.015,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.411,
@@ -746,9 +773,13 @@
    "action_pinterest": 0.081,
    "action_loyalty_or_bonus": 0.042,
    "action_download_app": 0.005,
-   "action_steam": 0.001
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_steam",
+    "skill_signal_share"
+   ]
   },
-  "t\u00fcrkiye": {
+  "türkiye": {
    "n": 1406,
    "sites": 367,
    "contestants": 415.0,
@@ -756,7 +787,7 @@
    "entries_per_entrant": 4.034,
    "days": 8.0,
    "methods": 5.0,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.008,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.189,
@@ -785,7 +816,10 @@
    "action_pinterest": 0.011,
    "action_loyalty_or_bonus": 0.086,
    "action_download_app": 0.03,
-   "action_steam": 0.007
+   "action_steam": 0.007,
+   "suppressed_below_floor": [
+    "skill_signal_share"
+   ]
   },
   "sweden": {
    "n": 1311,
@@ -795,7 +829,7 @@
    "entries_per_entrant": 3.861,
    "days": 9.0,
    "methods": 5.0,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.035,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.14,
@@ -821,10 +855,14 @@
    "action_secret_code": 0.018,
    "action_upload_or_media": 0.011,
    "action_wallet": 0.016,
-   "action_pinterest": 0.002,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.011,
    "action_download_app": 0.005,
-   "action_steam": 0.02
+   "action_steam": 0.02,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "skill_signal_share"
+   ]
   },
   "the netherlands": {
    "n": 1232,
@@ -834,7 +872,7 @@
    "entries_per_entrant": 4.84,
    "days": 14.0,
    "methods": 7.0,
-   "skill_signal_share": 0.004,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.027,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.339,
@@ -863,7 +901,10 @@
    "action_pinterest": 0.005,
    "action_loyalty_or_bonus": 0.01,
    "action_download_app": 0.038,
-   "action_steam": 0.016
+   "action_steam": 0.016,
+   "suppressed_below_floor": [
+    "skill_signal_share"
+   ]
   },
   "united arab emirates": {
    "n": 742,
@@ -873,8 +914,8 @@
    "entries_per_entrant": 5.239,
    "days": 8.5,
    "methods": 7.0,
-   "skill_signal_share": 0.005,
-   "non_random_selection_share": 0.001,
+   "skill_signal_share": null,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.481,
    "restricted_share": 0.039,
@@ -900,9 +941,15 @@
    "action_upload_or_media": 0.063,
    "action_wallet": 0.135,
    "action_pinterest": 0.007,
-   "action_loyalty_or_bonus": 0.001,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.016,
-   "action_steam": 0.004
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_steam",
+    "non_random_selection_share",
+    "skill_signal_share"
+   ]
   },
   "egypt": {
    "n": 716,
@@ -917,31 +964,40 @@
    "judged_selection_share": 0.0,
    "business_plus_share": 0.885,
    "restricted_share": 0.0,
-   "custom_terms_share": 0.003,
+   "custom_terms_share": null,
    "pool_usd_p50": 200.0,
    "pool_stated_share": 0.028,
    "non_english_share": 0.89,
    "share_1k_plus": 0.152,
-   "action_email": 0.001,
+   "action_email": null,
    "action_viral_share": 0.035,
    "action_question_or_custom": 0.959,
    "action_x_follow": 0.061,
    "action_x_retweet_or_tweet": 0.013,
    "action_instagram_visit": 0.039,
-   "action_instagram_follow_or_post": 0.004,
+   "action_instagram_follow_or_post": null,
    "action_facebook": 0.045,
    "action_youtube": 0.053,
-   "action_tiktok": 0.003,
+   "action_tiktok": null,
    "action_discord": 0.011,
    "action_telegram": 0.011,
    "action_twitch": 0.018,
-   "action_secret_code": 0.003,
+   "action_secret_code": null,
    "action_upload_or_media": 0.0,
-   "action_wallet": 0.003,
+   "action_wallet": null,
    "action_pinterest": 0.0,
    "action_loyalty_or_bonus": 0.0,
-   "action_download_app": 0.003,
-   "action_steam": 0.0
+   "action_download_app": null,
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_download_app",
+    "action_email",
+    "action_instagram_follow_or_post",
+    "action_secret_code",
+    "action_tiktok",
+    "action_wallet",
+    "custom_terms_share"
+   ]
   },
   "thailand": {
    "n": 652,
@@ -977,10 +1033,13 @@
    "action_secret_code": 0.031,
    "action_upload_or_media": 0.029,
    "action_wallet": 0.061,
-   "action_pinterest": 0.005,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.029,
    "action_download_app": 0.017,
-   "action_steam": 0.025
+   "action_steam": 0.025,
+   "suppressed_below_floor": [
+    "action_pinterest"
+   ]
   },
   "mexico": {
    "n": 652,
@@ -1018,8 +1077,12 @@
    "action_wallet": 0.009,
    "action_pinterest": 0.009,
    "action_loyalty_or_bonus": 0.018,
-   "action_download_app": 0.006,
-   "action_steam": 0.006
+   "action_download_app": null,
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_download_app",
+    "action_steam"
+   ]
   },
   "south africa": {
    "n": 633,
@@ -1037,7 +1100,7 @@
    "custom_terms_share": 0.36,
    "pool_usd_p50": 2000.0,
    "pool_stated_share": 0.258,
-   "non_english_share": 0.002,
+   "non_english_share": null,
    "share_1k_plus": 0.291,
    "action_email": 0.221,
    "action_viral_share": 0.212,
@@ -1055,10 +1118,15 @@
    "action_secret_code": 0.098,
    "action_upload_or_media": 0.052,
    "action_wallet": 0.013,
-   "action_pinterest": 0.005,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.085,
    "action_download_app": 0.049,
-   "action_steam": 0.003
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "action_steam",
+    "non_english_share"
+   ]
   },
   "portugal": {
    "n": 521,
@@ -1068,7 +1136,7 @@
    "entries_per_entrant": 4.3,
    "days": 9.0,
    "methods": 6.0,
-   "skill_signal_share": 0.004,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.01,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.221,
@@ -1094,10 +1162,14 @@
    "action_secret_code": 0.063,
    "action_upload_or_media": 0.027,
    "action_wallet": 0.054,
-   "action_pinterest": 0.002,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.01,
    "action_download_app": 0.071,
-   "action_steam": 0.013
+   "action_steam": 0.013,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "skill_signal_share"
+   ]
   },
   "indonesia": {
    "n": 517,
@@ -1109,7 +1181,7 @@
    "methods": 9.0,
    "skill_signal_share": 0.0,
    "non_random_selection_share": 0.012,
-   "judged_selection_share": 0.002,
+   "judged_selection_share": null,
    "business_plus_share": 0.151,
    "restricted_share": 0.06,
    "custom_terms_share": 0.085,
@@ -1134,9 +1206,13 @@
    "action_upload_or_media": 0.054,
    "action_wallet": 0.497,
    "action_pinterest": 0.089,
-   "action_loyalty_or_bonus": 0.004,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.099,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "judged_selection_share"
+   ]
   },
   "italy": {
    "n": 512,
@@ -1146,8 +1222,8 @@
    "entries_per_entrant": 4.973,
    "days": 22.0,
    "methods": 7.0,
-   "skill_signal_share": 0.008,
-   "non_random_selection_share": 0.006,
+   "skill_signal_share": null,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.426,
    "restricted_share": 0.062,
@@ -1175,7 +1251,11 @@
    "action_pinterest": 0.012,
    "action_loyalty_or_bonus": 0.078,
    "action_download_app": 0.047,
-   "action_steam": 0.014
+   "action_steam": 0.014,
+   "suppressed_below_floor": [
+    "non_random_selection_share",
+    "skill_signal_share"
+   ]
   }
  },
  "by_country_1k_plus": {
@@ -1227,7 +1307,7 @@
    "days": 24.0,
    "methods": 6.0,
    "skill_signal_share": 0.019,
-   "non_random_selection_share": 0.001,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.517,
    "restricted_share": 0.249,
@@ -1255,7 +1335,10 @@
    "action_pinterest": 0.031,
    "action_loyalty_or_bonus": 0.035,
    "action_download_app": 0.027,
-   "action_steam": 0.033
+   "action_steam": 0.033,
+   "suppressed_below_floor": [
+    "non_random_selection_share"
+   ]
   },
   "canada": {
    "n": 2182,
@@ -1343,7 +1426,7 @@
    "entries_per_entrant": 4.937,
    "days": 9.0,
    "methods": 8.0,
-   "skill_signal_share": 0.002,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.006,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.144,
@@ -1372,7 +1455,10 @@
    "action_pinterest": 0.004,
    "action_loyalty_or_bonus": 0.004,
    "action_download_app": 0.051,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "skill_signal_share"
+   ]
   },
   "brazil": {
    "n": 1555,
@@ -1382,7 +1468,7 @@
    "entries_per_entrant": 5.6,
    "days": 1.0,
    "methods": 8.0,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.016,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.092,
@@ -1411,7 +1497,10 @@
    "action_pinterest": 0.0,
    "action_loyalty_or_bonus": 0.089,
    "action_download_app": 0.118,
-   "action_steam": 0.071
+   "action_steam": 0.071,
+   "suppressed_below_floor": [
+    "skill_signal_share"
+   ]
   },
   "singapore": {
    "n": 1465,
@@ -1423,7 +1512,7 @@
    "methods": 6.0,
    "skill_signal_share": 0.027,
    "non_random_selection_share": 0.005,
-   "judged_selection_share": 0.001,
+   "judged_selection_share": null,
    "business_plus_share": 0.584,
    "restricted_share": 0.094,
    "custom_terms_share": 0.212,
@@ -1447,10 +1536,15 @@
    "action_secret_code": 0.025,
    "action_upload_or_media": 0.067,
    "action_wallet": 0.094,
-   "action_pinterest": 0.003,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.004,
    "action_download_app": 0.015,
-   "action_steam": 0.003
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "action_steam",
+    "judged_selection_share"
+   ]
   },
   "germany": {
    "n": 1358,
@@ -1486,10 +1580,13 @@
    "action_secret_code": 0.077,
    "action_upload_or_media": 0.018,
    "action_wallet": 0.018,
-   "action_pinterest": 0.001,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.062,
    "action_download_app": 0.093,
-   "action_steam": 0.139
+   "action_steam": 0.139,
+   "suppressed_below_floor": [
+    "action_pinterest"
+   ]
   },
   "vietnam": {
    "n": 1156,
@@ -1499,7 +1596,7 @@
    "entries_per_entrant": 5.893,
    "days": 11.0,
    "methods": 8.5,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.01,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.377,
@@ -1525,10 +1622,15 @@
    "action_secret_code": 0.008,
    "action_upload_or_media": 0.035,
    "action_wallet": 0.261,
-   "action_pinterest": 0.001,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.0,
    "action_download_app": 0.035,
-   "action_steam": 0.001
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "action_steam",
+    "skill_signal_share"
+   ]
   },
   "south korea": {
    "n": 874,
@@ -1565,9 +1667,13 @@
    "action_upload_or_media": 0.034,
    "action_wallet": 0.339,
    "action_pinterest": 0.0,
-   "action_loyalty_or_bonus": 0.001,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.148,
-   "action_steam": 0.001
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_steam"
+   ]
   },
   "hong kong": {
    "n": 835,
@@ -1577,7 +1683,7 @@
    "entries_per_entrant": 5.081,
    "days": 10.0,
    "methods": 7.0,
-   "skill_signal_share": 0.001,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.031,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.249,
@@ -1604,9 +1710,13 @@
    "action_upload_or_media": 0.042,
    "action_wallet": 0.206,
    "action_pinterest": 0.03,
-   "action_loyalty_or_bonus": 0.004,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.048,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "skill_signal_share"
+   ]
   },
   "japan": {
    "n": 828,
@@ -1617,7 +1727,7 @@
    "days": 8.0,
    "methods": 9.0,
    "skill_signal_share": 0.0,
-   "non_random_selection_share": 0.002,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.501,
    "restricted_share": 0.021,
@@ -1645,7 +1755,10 @@
    "action_pinterest": 0.007,
    "action_loyalty_or_bonus": 0.017,
    "action_download_app": 0.231,
-   "action_steam": 0.053
+   "action_steam": 0.053,
+   "suppressed_below_floor": [
+    "non_random_selection_share"
+   ]
   },
   "taiwan": {
    "n": 695,
@@ -1681,10 +1794,15 @@
    "action_secret_code": 0.06,
    "action_upload_or_media": 0.063,
    "action_wallet": 0.053,
-   "action_pinterest": 0.003,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.009,
-   "action_download_app": 0.003,
-   "action_steam": 0.001
+   "action_download_app": null,
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_download_app",
+    "action_pinterest",
+    "action_steam"
+   ]
   },
   "philippines": {
    "n": 564,
@@ -1695,14 +1813,14 @@
    "days": 16.0,
    "methods": 7.0,
    "skill_signal_share": 0.011,
-   "non_random_selection_share": 0.002,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.234,
    "restricted_share": 0.294,
    "custom_terms_share": 0.566,
    "pool_usd_p50": 1500.0,
    "pool_stated_share": 0.363,
-   "non_english_share": 0.005,
+   "non_english_share": null,
    "share_1k_plus": 1.0,
    "action_email": 0.498,
    "action_viral_share": 0.683,
@@ -1721,9 +1839,14 @@
    "action_upload_or_media": 0.057,
    "action_wallet": 0.057,
    "action_pinterest": 0.113,
-   "action_loyalty_or_bonus": 0.002,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.028,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "non_english_share",
+    "non_random_selection_share"
+   ]
   },
   "poland": {
    "n": 536,
@@ -1734,8 +1857,8 @@
    "days": 17.0,
    "methods": 10.0,
    "skill_signal_share": 0.028,
-   "non_random_selection_share": 0.006,
-   "judged_selection_share": 0.002,
+   "non_random_selection_share": null,
+   "judged_selection_share": null,
    "business_plus_share": 0.56,
    "restricted_share": 0.116,
    "custom_terms_share": 0.507,
@@ -1759,10 +1882,16 @@
    "action_secret_code": 0.131,
    "action_upload_or_media": 0.024,
    "action_wallet": 0.024,
-   "action_pinterest": 0.006,
-   "action_loyalty_or_bonus": 0.009,
+   "action_pinterest": null,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.015,
-   "action_steam": 0.254
+   "action_steam": 0.254,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_pinterest",
+    "judged_selection_share",
+    "non_random_selection_share"
+   ]
   },
   "spain": {
    "n": 502,
@@ -1772,7 +1901,7 @@
    "entries_per_entrant": 5.041,
    "days": 15.0,
    "methods": 8.0,
-   "skill_signal_share": 0.004,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.012,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.191,
@@ -1799,9 +1928,13 @@
    "action_upload_or_media": 0.0,
    "action_wallet": 0.038,
    "action_pinterest": 0.014,
-   "action_loyalty_or_bonus": 0.004,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.024,
-   "action_steam": 0.024
+   "action_steam": 0.024,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "skill_signal_share"
+   ]
   },
   "malaysia": {
    "n": 474,
@@ -1811,7 +1944,7 @@
    "entries_per_entrant": 5.481,
    "days": 9.0,
    "methods": 7.0,
-   "skill_signal_share": 0.004,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.011,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.568,
@@ -1819,7 +1952,7 @@
    "custom_terms_share": 0.397,
    "pool_usd_p50": 1000.0,
    "pool_stated_share": 0.276,
-   "non_english_share": 0.002,
+   "non_english_share": null,
    "share_1k_plus": 1.0,
    "action_email": 0.215,
    "action_viral_share": 0.549,
@@ -1839,8 +1972,13 @@
    "action_wallet": 0.093,
    "action_pinterest": 0.181,
    "action_loyalty_or_bonus": 0.078,
-   "action_download_app": 0.004,
-   "action_steam": 0.0
+   "action_download_app": null,
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_download_app",
+    "non_english_share",
+    "skill_signal_share"
+   ]
   },
   "france": {
    "n": 452,
@@ -1876,10 +2014,13 @@
    "action_secret_code": 0.137,
    "action_upload_or_media": 0.031,
    "action_wallet": 0.042,
-   "action_pinterest": 0.004,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.066,
    "action_download_app": 0.027,
-   "action_steam": 0.038
+   "action_steam": 0.038,
+   "suppressed_below_floor": [
+    "action_pinterest"
+   ]
   },
   "the netherlands": {
    "n": 452,
@@ -1889,7 +2030,7 @@
    "entries_per_entrant": 5.94,
    "days": 14.0,
    "methods": 9.0,
-   "skill_signal_share": 0.002,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.0,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.409,
@@ -1915,12 +2056,17 @@
    "action_secret_code": 0.022,
    "action_upload_or_media": 0.015,
    "action_wallet": 0.044,
-   "action_pinterest": 0.007,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.013,
    "action_download_app": 0.053,
-   "action_steam": 0.004
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_pinterest",
+    "action_steam",
+    "skill_signal_share"
+   ]
   },
-  "t\u00fcrkiye": {
+  "türkiye": {
    "n": 419,
    "sites": 146,
    "contestants": 2834.0,
@@ -1929,7 +2075,7 @@
    "days": 10.0,
    "methods": 6.0,
    "skill_signal_share": 0.0,
-   "non_random_selection_share": 0.01,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.2,
    "restricted_share": 0.084,
@@ -1951,13 +2097,19 @@
    "action_discord": 0.313,
    "action_telegram": 0.396,
    "action_twitch": 0.217,
-   "action_secret_code": 0.01,
+   "action_secret_code": null,
    "action_upload_or_media": 0.021,
    "action_wallet": 0.232,
    "action_pinterest": 0.012,
-   "action_loyalty_or_bonus": 0.005,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.06,
-   "action_steam": 0.005
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_secret_code",
+    "action_steam",
+    "non_random_selection_share"
+   ]
   },
   "china": {
    "n": 409,
@@ -1975,7 +2127,7 @@
    "custom_terms_share": 0.1,
    "pool_usd_p50": 1000.0,
    "pool_stated_share": 0.496,
-   "non_english_share": 0.005,
+   "non_english_share": null,
    "share_1k_plus": 1.0,
    "action_email": 0.225,
    "action_viral_share": 0.592,
@@ -1994,9 +2146,13 @@
    "action_upload_or_media": 0.029,
    "action_wallet": 0.042,
    "action_pinterest": 0.083,
-   "action_loyalty_or_bonus": 0.005,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.064,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "non_english_share"
+   ]
   },
   "sweden": {
    "n": 387,
@@ -2031,11 +2187,15 @@
    "action_twitch": 0.214,
    "action_secret_code": 0.016,
    "action_upload_or_media": 0.016,
-   "action_wallet": 0.01,
+   "action_wallet": null,
    "action_pinterest": 0.0,
-   "action_loyalty_or_bonus": 0.008,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.0,
-   "action_steam": 0.034
+   "action_steam": 0.034,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_wallet"
+   ]
   },
   "united arab emirates": {
    "n": 342,
@@ -2045,7 +2205,7 @@
    "entries_per_entrant": 5.796,
    "days": 14.0,
    "methods": 9.0,
-   "skill_signal_share": 0.003,
+   "skill_signal_share": null,
    "non_random_selection_share": 0.0,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.567,
@@ -2071,10 +2231,16 @@
    "action_secret_code": 0.047,
    "action_upload_or_media": 0.094,
    "action_wallet": 0.126,
-   "action_pinterest": 0.012,
-   "action_loyalty_or_bonus": 0.003,
+   "action_pinterest": null,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.02,
-   "action_steam": 0.003
+   "action_steam": null,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_pinterest",
+    "action_steam",
+    "skill_signal_share"
+   ]
   },
   "bangladesh": {
    "n": 283,
@@ -2085,11 +2251,11 @@
    "days": 8.0,
    "methods": 9.0,
    "skill_signal_share": 0.0,
-   "non_random_selection_share": 0.004,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.018,
    "restricted_share": 0.0,
-   "custom_terms_share": 0.011,
+   "custom_terms_share": null,
    "pool_usd_p50": 375.0,
    "pool_stated_share": 0.24,
    "non_english_share": 0.0,
@@ -2103,7 +2269,7 @@
    "action_instagram_follow_or_post": 0.0,
    "action_facebook": 0.039,
    "action_youtube": 0.018,
-   "action_tiktok": 0.004,
+   "action_tiktok": null,
    "action_discord": 0.473,
    "action_telegram": 0.961,
    "action_twitch": 0.0,
@@ -2113,7 +2279,12 @@
    "action_pinterest": 0.0,
    "action_loyalty_or_bonus": 0.0,
    "action_download_app": 0.032,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_tiktok",
+    "custom_terms_share",
+    "non_random_selection_share"
+   ]
   },
   "indonesia": {
    "n": 249,
@@ -2124,14 +2295,14 @@
    "days": 7.0,
    "methods": 9.0,
    "skill_signal_share": 0.0,
-   "non_random_selection_share": 0.016,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.129,
    "restricted_share": 0.028,
    "custom_terms_share": 0.064,
    "pool_usd_p50": 250.0,
    "pool_stated_share": 0.462,
-   "non_english_share": 0.008,
+   "non_english_share": null,
    "share_1k_plus": 1.0,
    "action_email": 0.032,
    "action_viral_share": 0.707,
@@ -2145,14 +2316,20 @@
    "action_tiktok": 0.185,
    "action_discord": 0.365,
    "action_telegram": 0.655,
-   "action_twitch": 0.008,
+   "action_twitch": null,
    "action_secret_code": 0.036,
    "action_upload_or_media": 0.024,
    "action_wallet": 0.542,
    "action_pinterest": 0.153,
-   "action_loyalty_or_bonus": 0.004,
+   "action_loyalty_or_bonus": null,
    "action_download_app": 0.12,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_loyalty_or_bonus",
+    "action_twitch",
+    "non_english_share",
+    "non_random_selection_share"
+   ]
   },
   "thailand": {
    "n": 210,
@@ -2163,7 +2340,7 @@
    "days": 11.0,
    "methods": 8.0,
    "skill_signal_share": 0.095,
-   "non_random_selection_share": 0.014,
+   "non_random_selection_share": null,
    "judged_selection_share": 0.0,
    "business_plus_share": 0.533,
    "restricted_share": 0.076,
@@ -2178,7 +2355,7 @@
    "action_x_follow": 0.676,
    "action_x_retweet_or_tweet": 0.562,
    "action_instagram_visit": 0.095,
-   "action_instagram_follow_or_post": 0.019,
+   "action_instagram_follow_or_post": null,
    "action_facebook": 0.386,
    "action_youtube": 0.271,
    "action_tiktok": 0.052,
@@ -2188,10 +2365,15 @@
    "action_secret_code": 0.038,
    "action_upload_or_media": 0.038,
    "action_wallet": 0.071,
-   "action_pinterest": 0.01,
+   "action_pinterest": null,
    "action_loyalty_or_bonus": 0.029,
    "action_download_app": 0.024,
-   "action_steam": 0.0
+   "action_steam": 0.0,
+   "suppressed_below_floor": [
+    "action_instagram_follow_or_post",
+    "action_pinterest",
+    "non_random_selection_share"
+   ]
   }
  },
  "industry_mix_by_country": {
@@ -2318,8 +2500,8 @@
   },
   "brazil": {
    "random draw": 5194,
-   "ganhador aleat\u00f3rio": 35,
-   "sorteio aleat\u00f3rio": 27
+   "ganhador aleatório": 35,
+   "sorteio aleatório": 27
   },
   "canada": {
    "random draw": 6935
@@ -2653,11 +2835,14 @@
     "methods": 5.0,
     "email_offered": 0.281,
     "question_offered": 0.844,
-    "upload_offered": 0.014,
+    "upload_offered": null,
     "share_offered": 0.197,
     "instagram_offered": 0.454,
     "facebook_offered": 0.315,
-    "pool_usd_p50": 427.0
+    "pool_usd_p50": 427.0,
+    "suppressed_below_floor": [
+     "upload_offered"
+    ]
    }
   },
   "new zealand": {
@@ -2949,13 +3134,16 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.035,
    "terms_gdpr_or_privacy": 0.006,
-   "terms_skill_or_judged": 0.001,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.024,
    "terms_publicity_consent": 0.025,
    "terms_tax_liability": 0.034,
    "terms_platform_disclaimer": 0.029,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.005
+   "terms_sanctions_or_excluded_countries": 0.005,
+   "suppressed_below_floor": [
+    "terms_skill_or_judged"
+   ]
   },
   "singapore": {
    "n": 3491,
@@ -2971,7 +3159,7 @@
    "terms_age_18_plus": 0.034,
    "terms_no_purchase_necessary": 0.132,
    "terms_void_where_prohibited": 0.097,
-   "terms_permit_or_licence": 0.001,
+   "terms_permit_or_licence": null,
    "terms_employees_excluded": 0.113,
    "terms_gdpr_or_privacy": 0.046,
    "terms_skill_or_judged": 0.012,
@@ -2980,7 +3168,10 @@
    "terms_tax_liability": 0.103,
    "terms_platform_disclaimer": 0.107,
    "terms_shipping_limits": 0.002,
-   "terms_sanctions_or_excluded_countries": 0.03
+   "terms_sanctions_or_excluded_countries": 0.03,
+   "suppressed_below_floor": [
+    "terms_permit_or_licence"
+   ]
   },
   "germany": {
    "n": 3322,
@@ -3149,13 +3340,16 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.083,
    "terms_gdpr_or_privacy": 0.018,
-   "terms_skill_or_judged": 0.001,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.083,
    "terms_publicity_consent": 0.077,
    "terms_tax_liability": 0.085,
    "terms_platform_disclaimer": 0.084,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.008
+   "terms_sanctions_or_excluded_countries": 0.008,
+   "suppressed_below_floor": [
+    "terms_skill_or_judged"
+   ]
   },
   "taiwan": {
    "n": 1920,
@@ -3174,13 +3368,17 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.121,
    "terms_gdpr_or_privacy": 0.053,
-   "terms_skill_or_judged": 0.002,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.098,
    "terms_publicity_consent": 0.113,
    "terms_tax_liability": 0.118,
    "terms_platform_disclaimer": 0.123,
-   "terms_shipping_limits": 0.002,
-   "terms_sanctions_or_excluded_countries": 0.008
+   "terms_shipping_limits": null,
+   "terms_sanctions_or_excluded_countries": 0.008,
+   "suppressed_below_floor": [
+    "terms_shipping_limits",
+    "terms_skill_or_judged"
+   ]
   },
   "spain": {
    "n": 1886,
@@ -3224,13 +3422,17 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.071,
    "terms_gdpr_or_privacy": 0.041,
-   "terms_skill_or_judged": 0.003,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.065,
    "terms_publicity_consent": 0.065,
    "terms_tax_liability": 0.073,
    "terms_platform_disclaimer": 0.071,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.001
+   "terms_sanctions_or_excluded_countries": null,
+   "suppressed_below_floor": [
+    "terms_sanctions_or_excluded_countries",
+    "terms_skill_or_judged"
+   ]
   },
   "malaysia": {
    "n": 1501,
@@ -3249,15 +3451,20 @@
    "terms_permit_or_licence": 0.067,
    "terms_employees_excluded": 0.187,
    "terms_gdpr_or_privacy": 0.077,
-   "terms_skill_or_judged": 0.001,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.183,
    "terms_publicity_consent": 0.111,
    "terms_tax_liability": 0.113,
    "terms_platform_disclaimer": 0.112,
-   "terms_shipping_limits": 0.001,
-   "terms_sanctions_or_excluded_countries": 0.002
+   "terms_shipping_limits": null,
+   "terms_sanctions_or_excluded_countries": null,
+   "suppressed_below_floor": [
+    "terms_sanctions_or_excluded_countries",
+    "terms_shipping_limits",
+    "terms_skill_or_judged"
+   ]
   },
-  "t\u00fcrkiye": {
+  "türkiye": {
    "n": 1406,
    "sites": 367,
    "custom_terms_text_share": 0.045,
@@ -3274,13 +3481,16 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.033,
    "terms_gdpr_or_privacy": 0.009,
-   "terms_skill_or_judged": 0.001,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.02,
    "terms_publicity_consent": 0.032,
    "terms_tax_liability": 0.028,
    "terms_platform_disclaimer": 0.025,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.016
+   "terms_sanctions_or_excluded_countries": 0.016,
+   "suppressed_below_floor": [
+    "terms_skill_or_judged"
+   ]
   },
   "sweden": {
    "n": 1311,
@@ -3304,8 +3514,11 @@
    "terms_publicity_consent": 0.053,
    "terms_tax_liability": 0.047,
    "terms_platform_disclaimer": 0.056,
-   "terms_shipping_limits": 0.001,
-   "terms_sanctions_or_excluded_countries": 0.008
+   "terms_shipping_limits": null,
+   "terms_sanctions_or_excluded_countries": 0.008,
+   "suppressed_below_floor": [
+    "terms_shipping_limits"
+   ]
   },
   "the netherlands": {
    "n": 1232,
@@ -3324,13 +3537,16 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.154,
    "terms_gdpr_or_privacy": 0.061,
-   "terms_skill_or_judged": 0.004,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.155,
    "terms_publicity_consent": 0.153,
    "terms_tax_liability": 0.172,
    "terms_platform_disclaimer": 0.156,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.088
+   "terms_sanctions_or_excluded_countries": 0.088,
+   "suppressed_below_floor": [
+    "terms_skill_or_judged"
+   ]
   },
   "united arab emirates": {
    "n": 742,
@@ -3349,38 +3565,55 @@
    "terms_permit_or_licence": 0.0,
    "terms_employees_excluded": 0.074,
    "terms_gdpr_or_privacy": 0.046,
-   "terms_skill_or_judged": 0.005,
+   "terms_skill_or_judged": null,
    "terms_cash_alternative_excluded": 0.075,
    "terms_publicity_consent": 0.066,
    "terms_tax_liability": 0.073,
    "terms_platform_disclaimer": 0.073,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.012
+   "terms_sanctions_or_excluded_countries": 0.012,
+   "suppressed_below_floor": [
+    "terms_skill_or_judged"
+   ]
   },
   "egypt": {
    "n": 716,
    "sites": 37,
-   "custom_terms_text_share": 0.003,
-   "fully_custom_share": 0.003,
+   "custom_terms_text_share": null,
+   "fully_custom_share": null,
    "governing_law_named_other_country_share": 0.108,
    "draw_days_p50": 7.0,
    "response_days_p50": 7.0,
-   "privacy_page_share": 0.001,
-   "extra_terms_section_share": 0.006,
+   "privacy_page_share": null,
+   "extra_terms_section_share": null,
    "country_rule_share": 0.0,
-   "terms_age_18_plus": 0.001,
-   "terms_no_purchase_necessary": 0.003,
-   "terms_void_where_prohibited": 0.001,
+   "terms_age_18_plus": null,
+   "terms_no_purchase_necessary": null,
+   "terms_void_where_prohibited": null,
    "terms_permit_or_licence": 0.0,
-   "terms_employees_excluded": 0.003,
+   "terms_employees_excluded": null,
    "terms_gdpr_or_privacy": 0.0,
    "terms_skill_or_judged": 0.0,
-   "terms_cash_alternative_excluded": 0.003,
-   "terms_publicity_consent": 0.001,
-   "terms_tax_liability": 0.001,
-   "terms_platform_disclaimer": 0.001,
+   "terms_cash_alternative_excluded": null,
+   "terms_publicity_consent": null,
+   "terms_tax_liability": null,
+   "terms_platform_disclaimer": null,
    "terms_shipping_limits": 0.0,
-   "terms_sanctions_or_excluded_countries": 0.0
+   "terms_sanctions_or_excluded_countries": 0.0,
+   "suppressed_below_floor": [
+    "custom_terms_text_share",
+    "extra_terms_section_share",
+    "fully_custom_share",
+    "privacy_page_share",
+    "terms_age_18_plus",
+    "terms_cash_alternative_excluded",
+    "terms_employees_excluded",
+    "terms_no_purchase_necessary",
+    "terms_platform_disclaimer",
+    "terms_publicity_consent",
+    "terms_tax_liability",
+    "terms_void_where_prohibited"
+   ]
   },
   "mexico": {
    "n": 652,
@@ -3404,8 +3637,12 @@
    "terms_publicity_consent": 0.15,
    "terms_tax_liability": 0.175,
    "terms_platform_disclaimer": 0.081,
-   "terms_shipping_limits": 0.002,
-   "terms_sanctions_or_excluded_countries": 0.003
+   "terms_shipping_limits": null,
+   "terms_sanctions_or_excluded_countries": null,
+   "suppressed_below_floor": [
+    "terms_sanctions_or_excluded_countries",
+    "terms_shipping_limits"
+   ]
   }
  },
  "australia_skill_industries": {

@@ -2,7 +2,7 @@
 
 Extracted from the campaigns we could compare fairly in the dataset: campaigns that reached 100 or more unique Entrants, crypto and purchase-only campaigns removed. (116,499 campaigns.)
 
-Every figure below is the share of a campaign's Entrants who completed a given action, worked out as completions of that action divided by Entrants, then taken as the typical value across every campaign that offered it, shown as a count % of Entrants with the decimal it came from in brackets. A figure of 51 per 100 means about half the Entrants did it. A figure above 100 per 100 means the action was completed more than once per Entrant on average, which happens on daily and repeatable actions.
+Action-completion figures below count completion events per 100 Entrants, calculated for each campaign offering the action and then summarized across those campaigns. A figure of 51 means 51 completion events per 100 Entrants, with the underlying ratio in brackets. Repeatable actions can exceed 100. Percentage labels in the tables also describe these event ratios. They do not identify distinct people, unique subscribers or mailing permission. Use individual consent records to determine which addresses may be mailed. Missing completion-record and consent-record coverage is not reported in these aggregates.
 
 Action names are the dataset's generic names, which are history. Check the current name on the [How to Enter page](https://gleam.io/docs/competitions/setup/how-to-enter) before quoting one. Every figure describes what businesses chose and what their Entrants did. No comparison group of failed campaigns exists, so none of it shows cause. ()
 
@@ -42,12 +42,12 @@ By organizer tenure, a sixth-or-later campaign built from a template converts be
 
 Source: `analysis/output/templates.json` (`source_mix_first_campaign`, `template_tier_mix`, `template_share_by_year`, `template_by_organizer_tenure`).
 
-## What share of Entrants completed each Gleam action
+## Completion events per 100 Entrants for each Gleam action
 
 Actions offered by at least 300 campaigns, in order of how many campaigns offered them.
 
 <!-- generated:se2_uptake_actions -->
-| Action | Campaigns | Typical share who did it, % of Entrants | Typical range, % of Entrants |
+| Action | Campaigns | Typical completion events per 100 Entrants | Typical range, events per 100 Entrants |
 |---|---|---|---|
 | X Follows | 65,714 | 54 (0.54) | 39 to 70 (0.39 to 0.70) |
 | Visit a Page | 62,783 | 78 (0.78) | 56 to 100 (0.56 to 1.00) |
@@ -128,7 +128,7 @@ Actions offered by at least 300 campaigns, in order of how many campaigns offere
 
 Source: `analysis/output/gleam_settings.json` key `uptake_by_gleam_action`.
 
-Reading it: visits and email signups are completed by most Entrants, and follows run from about a third to two thirds. Viral Shares are the exception, a small share of Entrants refer someone, and a Viral Share entry is a referred person multiplied by entry worth, so the share of Entrants who actually shared is lower still. Uploads, blog posts and a paid Twitch subscription sit lowest, some of them under 5 in every 100 Entrants. Bonus reads above 100 because one Entrant can complete a repeatable action more than once.
+Reading it: visits and email actions have relatively high completion-event ratios. Viral Shares record referral completion events, without multiplying by Entry worth. These totals cannot identify the number of distinct referrers. Uploads, blog posts and paid Twitch subscriptions sit among the lowest ratios. Bonus exceeds one completion per Entrant on average. None of these ratios identifies the number of people who completed an action.
 
 ## Position in the action list
 
@@ -165,7 +165,7 @@ No description and short descriptions sit with the simplest campaigns, which als
 ## Custom Actions templates
 
 <!-- generated:se2_custom_templates -->
-| Template | Actions | Typical share who did it, % of Entrants |
+| Template | Actions | Typical completion events per 100 Entrants |
 |---|---|---|
 | visit | 158,511 | 78 (0.78) |
 | none | 52,187 | 50 (0.50) |
@@ -176,7 +176,7 @@ No description and short descriptions sit with the simplest campaigns, which als
 | choose_image | 972 | 97 (0.97) |
 <!-- /generated -->
 
-Custom Actions with no template (a free-form instruction) were completed by about half of Entrants, the lowest of any template. Question, single-choice and visit templates sit in the seventies, multiple choice and choose image higher, and bonus above 100 because a bonus can repeat (see table above).
+Custom Actions with no template (a free-form instruction) recorded about 50 completion events per 100 Entrants, the lowest ratio of any template. Question, single-choice and visit templates sit in the seventies, multiple choice and choose image higher, and bonus above 100 because a bonus can repeat (see table above).
 
 ## Throwaway account restriction
 
@@ -216,7 +216,7 @@ Visit a Page link options work the same way. A plain link outperforms embedding 
 
 Nearly every Viral Share action carried custom share text, not the default, so the dataset cannot compare the two. (41,140 Actions with custom text against 1,667 with the default, from `config_cuts` `share_text_length`.)
 
-## More settings that move how many Entrants complete an action
+## Completion-event ratios by setting
 
 Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Each setting shows the same pattern: fewer choices or shorter waits keep completion higher, and X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above.
 
@@ -246,7 +246,7 @@ Read from the action's own configuration. The count is Actions, one row per Acti
 
 Actions required is the exception worth flagging on its own: completion falls away as the number required climbs, and drops by roughly half again between 7 and 8.
 
-Email opt-in checkbox on or set to auto, by organizer country. Poland leads by a wide margin. Malaysia barely uses it.
+Email opt-in checkbox on or set to auto, by organizer country. Poland has the highest published share in this comparison. The Malaysia share is withheld because its supporting subset is too small.
 
 <!-- generated:se2_optin_country -->
 | Organizer country | Opt-in checkbox on or set to auto | Campaigns | Businesses |
@@ -254,7 +254,7 @@ Email opt-in checkbox on or set to auto, by organizer country. Poland leads by a
 | Poland | 71% | 824 | 38 |
 | United States | 34% | 22,522 | 3,253 |
 | Australia | 17% | 2,919 | 721 |
-| Malaysia | 2% | 168 | 14 |
+| Malaysia | - | 168 | 14 |
 <!-- /generated -->
 
 Source: `analysis/output/field_cuts.json` key `config_cuts`, `analysis/output/indicators.json` key `email_optin_checkbox_by_country`.
@@ -493,7 +493,7 @@ Source: `analysis/output/text_and_context.json` keys `question_types`, `visit_de
 
 ## Settings the other skills already measured
 
-- Email opt-in checkbox on: 89% of Entrants complete the email action against 100 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 92% against 85% in the table above because it uses the subset with no repeatable action and runs of 14 days or less (2,726 checkbox-on and 7,734 checkbox-off campaigns, `analysis/output/extra_cuts.json`, `optin_email_uptake_clean`), while the table above pools all run lengths. Quote whichever base the answer is about and say which one it is.
+- Email opt-in checkbox on: 89 completion events per 100 Entrants against 100 with it off (giveaway-entry-method-planner). The difference does not count people who skipped consent or addresses eligible for mailing. That gap is wider than the 92% against 85% in the table above because it uses the subset with no repeatable action and runs of 14 days or less (2,726 checkbox-on and 7,734 checkbox-off campaigns, `analysis/output/extra_cuts.json`, `optin_email_uptake_clean`), while the table above pools all run lengths. Quote whichever base the answer is about and say which one it is.
 - Validated-answer question: a typical 3% of entries come back invalid in the fair-comparison subset (509 campaigns, 77 businesses, `analysis/output/extra_cuts.json`, `invalid_validated_question_clean`). This subset excludes long runs and repeatable actions.
 - Custom terms: written by 39% of campaigns (`analysis/output/extra_cuts.json`, `custom_terms_share_all`).
 - Eleven or more actions: 17% more Entrants, with 31% of viewers entering against 44% for one to three, among campaigns with no repeatable action and runs of 14 days or less (6,762 and 10,802 campaigns respectively, `analysis/output/comparisons.json`, `method_count_clean`, also in giveaway-entry-method-planner).
@@ -508,8 +508,8 @@ Source for the invalid-entry share: `analysis/output/invalid_share.json` (`distr
 - Making that action mandatory is worth it beyond the completion count: it also tends to lower the cost per completion (see the entry-worth table above). Email saves the most as campaign size grows. Follow_x follows the same pattern from 2,500 Entrants up. Discord_join's mandatory cost is not a rule, it moves in opposite directions across the two sizes tested.
 - Keep unnecessary effort out of the list. Later-position completion varies by family, so use its row in the position table to decide whether an action earns its place. Eleven or more actions came with a lower Conversion Rate but more Entrants than one to three actions in that comparison.
 - Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It falls away down the list like every other family: 16 completions per 100 Entrants in first position, 12 in the middle, 11 fifth or later. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
-- Use a question or choice template when you want an answer. Free-form custom actions lose half the Entrants.
+- Use a question or choice template when you want an answer. Free-form custom actions recorded about 50 completion events per 100 Entrants in the template table above.
 - Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a sixth of completions, and showing the page as HTML inside the widget costs over a quarter against a plain link.
 - Keep the description under 150 words and lead with eligibility and Winner count, which the Gleam tips library also recommends.
 - Leave the fraud level on High, the default, and review Invalid entries on the Actions tab before drawing. Expect a few percent to fall away.
-- Turn on the opt-in checkbox when the list will be mailed. Expect about one in ten to skip it, and treat the rest as the mailable list.
+- Turn on the opt-in checkbox when collecting mailing consent. Build the mailable list from individual consent records, with duplicate addresses and subsequent unsubscribes accounted for. An email-action completion ratio alone cannot establish how many subscribers you can email.

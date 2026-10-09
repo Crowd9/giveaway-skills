@@ -500,16 +500,25 @@
   "2015": {
    "n": 9,
    "organizers": 9,
-   "template_share": 0.889,
+   "template_share": null,
    "own_copy_share": 0.0,
-   "blank_share": 0.111
+   "blank_share": null,
+   "suppressed_below_floor": [
+    "blank_share",
+    "template_share"
+   ]
   },
   "2019": {
    "n": 43,
    "organizers": 38,
-   "template_share": 0.907,
-   "own_copy_share": 0.047,
-   "blank_share": 0.047
+   "template_share": null,
+   "own_copy_share": null,
+   "blank_share": null,
+   "suppressed_below_floor": [
+    "blank_share",
+    "own_copy_share",
+    "template_share"
+   ]
   },
   "2020": {
    "n": 1159,
@@ -714,9 +723,12 @@
    "entries_per_entrant": 4.33,
    "days": 22.5,
    "methods": 8.0,
-   "email_offered": 0.031,
+   "email_offered": null,
    "share_offered": 0.276,
-   "prizes": 1.0
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "eSports Streaming Giveaway": {
    "n": 116,
@@ -786,9 +798,12 @@
    "entries_per_entrant": 4.805,
    "days": 13.0,
    "methods": 12.0,
-   "email_offered": 0.052,
+   "email_offered": null,
    "share_offered": 0.688,
-   "prizes": 1.0
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "Mr Beast's Giveaway": {
    "n": 77,
@@ -822,9 +837,12 @@
    "entries_per_entrant": 2.607,
    "days": 13.5,
    "methods": 3.0,
-   "email_offered": 0.049,
+   "email_offered": null,
    "share_offered": 0.098,
-   "prizes": 1.0
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "Promote Event": {
    "n": 56,
@@ -859,8 +877,11 @@
    "days": 8.0,
    "methods": 4.0,
    "email_offered": 0.0,
-   "share_offered": 0.021,
-   "prizes": 1.0
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "share_offered"
+   ]
   },
   "Grow Twitch Following": {
    "n": 46,
@@ -870,9 +891,13 @@
    "entries_per_entrant": 2.804,
    "days": 18.5,
    "methods": 4.0,
-   "email_offered": 0.022,
-   "share_offered": 0.087,
-   "prizes": 1.0
+   "email_offered": null,
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "Promote Crowdfunding Campaign": {
    "n": 46,
@@ -895,8 +920,11 @@
    "days": 16.0,
    "methods": 6.0,
    "email_offered": 0.27,
-   "share_offered": 0.108,
-   "prizes": 1.0
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "share_offered"
+   ]
   },
   "Free Gleam Campaign": {
    "n": 36,
@@ -906,9 +934,13 @@
    "entries_per_entrant": 3.633,
    "days": 17.0,
    "methods": 6.5,
-   "email_offered": 0.083,
-   "share_offered": 0.111,
-   "prizes": 1.0
+   "email_offered": null,
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "Drive YouTube Traffic": {
    "n": 35,
@@ -919,8 +951,11 @@
    "days": 19.0,
    "methods": 3.0,
    "email_offered": 0.0,
-   "share_offered": 0.114,
-   "prizes": 1.0
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "share_offered"
+   ]
   },
   "Build Online Presence": {
    "n": 31,
@@ -930,9 +965,13 @@
    "entries_per_entrant": 3.111,
    "days": 12.0,
    "methods": 7.0,
-   "email_offered": 0.871,
-   "share_offered": 0.839,
-   "prizes": 1.0
+   "email_offered": null,
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "Instagram Bio Contest": {
    "n": 31,
@@ -954,9 +993,13 @@
    "entries_per_entrant": 4.538,
    "days": 6.0,
    "methods": 4.0,
-   "email_offered": 0.161,
-   "share_offered": 0.032,
-   "prizes": 1.0
+   "email_offered": null,
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "Brand Partnership Giveaway": {
    "n": 30,
@@ -978,9 +1021,12 @@
    "entries_per_entrant": 5.645,
    "days": 20.0,
    "methods": 7.0,
-   "email_offered": 0.133,
+   "email_offered": null,
    "share_offered": 0.333,
-   "prizes": 1.0
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   }
  },
  "by_template_1k": {
@@ -1088,9 +1134,13 @@
    "entries_per_entrant": 2.091,
    "days": 16.0,
    "methods": 4.0,
-   "email_offered": 0.962,
-   "share_offered": 0.962,
-   "prizes": 1.0
+   "email_offered": null,
+   "share_offered": null,
+   "prizes": 1.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "eSports Streaming Giveaway": {
    "n": 36,

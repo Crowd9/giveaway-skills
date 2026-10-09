@@ -17,11 +17,13 @@ never funnel stages. The only funnel is Impressions to Entrants, and Impressions
 import argparse, collections, csv, datetime as dt, math, os, statistics as st, sys, urllib.parse
 
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
-# A copy of this script on its own still runs; the columns then say no benchmark was loaded.
+# Keep gleam_export.py beside this script so all action counts use the same classifier.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gleam_export import generic_name as _gname, kind as _kind
 try:
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import review as _bench; from gleam_export import generic_name as _gname
-except Exception:
-    _bench = None; _gname = None
+    import review as _bench
+except ImportError:
+    _bench = None
 
 
 def reader_unit(v):
@@ -215,11 +217,15 @@ def analyze(rows, a):
     R["countries"] = collections.Counter(first[w].get("Country") or "unknown" for w in first).most_common(10)
     cities = collections.Counter((first[w].get("City"), first[w].get("Country")) for w in first if first[w].get("City"))
     R["cities"] = cities.most_common(10)
-    # retention
-    days_active = collections.Counter()
+    # Only complete timestamp histories can support the one-day/returning comparison.
+    days_active = collections.Counter(); complete = 0
     for rs in people.values():
-        k = len({r["_when"].date() for r in rs if r["_when"]}); days_active["1" if k <= 1 else "2" if k == 2 else "3" if k == 3 else "4+"] += 1
-    R["retention"] = {k: (days_active[k], days_active[k] / n) for k in ("1", "2", "3", "4+")}
+        if any(r["_when"] is None for r in rs): continue
+        complete += 1
+        k = len({r["_when"].date() for r in rs})
+        days_active["1" if k == 1 else "2" if k == 2 else "3" if k == 3 else "4+"] += 1
+    R["retention_coverage"] = {"complete": complete, "missing": n - complete, "total": n}
+    R["retention"] = {k: (days_active[k], days_active[k] / complete) for k in ("1", "2", "3", "4+")} if complete else None
     # heatmap
     heat = collections.Counter((r["_when"].weekday(), r["_when"].hour) for r in valid if r["_when"])
     R["heat"] = heat; R["heat_peak"] = heat.most_common(1)[0] if heat else None
@@ -255,7 +261,7 @@ def analyze(rows, a):
     # audience handles
     R["handles"] = [(c, sum(1 for w in people if any(r.get(c) for r in people[w])) / n) for c in HANDLE_COLS if c in rows[0] and any(r.get(c) for r in rows)]
     top = sorted(people.items(), key=lambda kv: -len(kv[1]))[:10]
-    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), entry_number(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())), len({r["_when"].date() for r in rs if r["_when"]}), len(handles_of(who))) for who, rs in top]
+    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), entry_number(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())), len({r["_when"].date() for r in rs}) if all(r["_when"] for r in rs) else "unavailable", len(handles_of(who))) for who, rs in top]
     # promotions
     R["sends"] = []
     if a.sends and whens:
@@ -267,11 +273,22 @@ def analyze(rows, a):
             R["sends"].append((label.strip() or d, day.isoformat(), after, newa, (after / 2) / base if base else None))
     # ROI
     if a.prize_value is not None or a.plan_cost is not None:
-        cost = (a.prize_value or 0) + (a.plan_cost or 0); emails = sum(1 for rs in people.values() if any(("subscribe" in r["Action"].lower() or "newsletter" in r["Action"].lower()) for r in rs))
+        cost = (a.prize_value or 0) + (a.plan_cost or 0); emails = sum(1 for rs in people.values() if any(_kind(r["Action"]) == "emails" for r in rs))
         R["roi"] = {"cost": cost, "per_entrant": cost / n, "per_entry": cost / entries if entries else None, "per_email": cost / emails if emails else None, "emails": emails,
                     "lead_value": (a.benchmark_cpl * emails) if a.benchmark_cpl and emails else None}
     R["ten_plus"] = ten_plus
     return R
+
+def retention_text(R):
+    coverage = R["retention_coverage"]; ret = R["retention"]
+    if ret is None:
+        return f"Retention unavailable: {coverage['missing']:,} Entrants lack complete usable timestamps."
+    text = "Retention by distinct active days: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in ret.items())
+    text += f". {1 - ret['1'][1]:.0%} returned on a later day among {coverage['complete']:,} Entrants with complete usable timestamps."
+    if coverage["missing"]:
+        text += f" Excludes {coverage['missing']:,} of {coverage['total']:,} Entrants with missing or unusable timestamps; this subset may not represent all Entrants."
+    return text
+
 
 def insights(R):
     """The deterministic findings, each checkable against a table in the report."""
@@ -361,7 +378,7 @@ def render(R, a):
     w("\n## Audience\n\n| Country | Entrants | Share |\n|---|---|---|" + "".join(f"\n| {c} | {k:,} | {k / n:.0%} |" for c, k in R["countries"]))
     if R["cities"]: w("\n| City | Entrants |\n|---|---|" + "".join(f"\n| {c}, {co} | {k:,} |" for (c, co), k in R["cities"]))
     if R["handles"]: w("\nConnected accounts: " + ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) + ".")
-    Rt = R["retention"]; w("\nRetention by distinct active days: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in Rt.items()) + f". {1 - Rt['1'][1]:.0%} returned on a later day. One-day dominance is normal for a giveaway.")
+    w("\n" + retention_text(R))
     w("\nMost engaged Entrants:\n\n| Entrant | Actions | Entries | Referred | Days active | Connected accounts |\n|---|---|---|---|---|---|" + "".join(f"\n| {t[0]} | {t[1]} | {t[2]:,} | {t[3]} | {t[4]} | {t[5]} |" for t in R["top_entrants"]))
     w("""
 ## Outcomes
@@ -461,6 +478,35 @@ def self_test():
     assert "Referral completions per Entrant: 1.50" in referral_report
     assert "referred entrants who entered 1 (50% of entrants)" in referral_report
     assert "Referred Entrants as a share of all Entrants" not in referral_report
+    # Missing histories never become confirmed one-day participants.
+    for timestamps in ((None, None), ("bad-date", "bad-date"), ("2026-05-01 10:00:00", "bad-date"),
+                       ("2026-05-01 10:00:00", "2026-05-02 10:00:00")):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"] + (["When"] if timestamps[0] is not None else []))
+            for i, timestamp in enumerate(timestamps):
+                wr.writerow([f"person{i}@example.com", "Subscribe to our newsletter", 1] + ([timestamp] if timestamp is not None else []))
+        dated = analyze(load(q), B); rendered = render(dated, B)
+        count = sum(bool(parse_when(t)) for t in timestamps if t)
+        assert dated["retention_coverage"]["complete"] == count
+        if not count: assert "Retention unavailable" in rendered and "returned on a later day" not in rendered
+        elif count == 1: assert "Excludes 1 of 2 Entrants" in rendered and dated["retention"]["1"] == (1, 1.0)
+        else: assert dated["retention"]["1"] == (2, 1.0)
+    complete_history = load(p)
+    complete_history[1]["_when"] += dt.timedelta(days=1)
+    returned = analyze(complete_history, B)
+    assert returned["retention"]["2"] == (1, 0.5) and "50% returned on a later day" in render(returned, B)
+    # One undated action makes its participant's otherwise dated history incomplete.
+    history = load(p); history[0]["_when"] = None
+    assert analyze(history, B)["retention_coverage"] == {"complete": 1, "missing": 1, "total": 2}
+    for titles, expected in ((("Subscribe to our YouTube channel",) * 2, 0),
+                             (("Subscribe to our newsletter",) * 2, 2),
+                             (("Subscribe to our YouTube channel", "Subscribe to our newsletter"), 1)):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+            for i, title in enumerate(titles): wr.writerow([f"person{i}@example.com", title, 1])
+        report = analyze(load(q), A)
+        assert report["roi"]["emails"] == expected
+        assert report["roi"]["per_email"] == (150 / expected if expected else None)
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None

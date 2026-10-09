@@ -76,7 +76,7 @@ Campaign size repeats: after a campaign of 5,000 or more Entrants, about 51 in 1
 One campaign's size and the next one's size move together closely, a correlation of 0.66 out of 1 on a log scale.
 <!-- /generated -->
 
-Results repeat because audiences, lists and promotion habits repeat.
+Repeat audiences, lists and promotion habits are possible explanations to check in campaign records. This comparison does not measure their contribution.
 
 Source: `analysis/output/context_checks.json` (`persistence`).
 
@@ -272,7 +272,7 @@ The outcome table records fewer Entrants for weekend starts, with smaller differ
 | software | 136 | 283 | +69% | +44% |
 <!-- /generated -->
 
-A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a fifth more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays, which reads as a warm audience returning. It holds in nine of the eleven verticals, with fitness and outdoor and kids, family and pets the exceptions. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
+A campaign that starts within 30 days of the business's previous one draws more Entrants and gets about a fifth more of them to enter than a business's first campaign, with fewer Impressions needed per Entrant. Past 30 days the entry-rate gain is gone while the Entrant gain stays. Returning audiences are one hypothesis, but this comparison does not track returning people. It holds in nine of the eleven verticals, with fitness and outdoor and kids, family and pets the exceptions. Momentum is the one timing finding with a consistent direction, and it describes businesses that ran campaigns close together, so it cannot say that scheduling alone caused the lift.
 
 Source: `analysis/output/calendar.json` (`last_days_impression_curve_by_duration`) for the launch curve.
 
@@ -337,7 +337,7 @@ Source: analysis/output/field_cuts.json (by_tier, by_hosted_share), analysis/out
 
 ## Region (extracted)
 
-A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at double the typical Conversion Rate or more. The two move together by construction, because Impressions count once per visitor per day and a one-day campaign has one day of them.
+A short, high-entry-rate format fills the South American rows, and more specifically the Portuguese-language and Brazilian YouTube-hosted ones, running well below the typical campaign length at double the typical Conversion Rate or more. Impressions count once per visitor per day, so repeat visits across days can affect the denominator. This table does not establish how much that explains the regional differences.
 
 <!-- generated:tm2_region -->
 | Group | Campaigns | Businesses | Typical duration | Methods | Conversion Rate |
@@ -349,7 +349,7 @@ A short, high-entry-rate format fills the South American rows, and more specific
 The Brazilian YouTube-hosted row is read from the industries cut, which runs wider than the campaigns behind the rest of this page. It is 2,199 campaigns from 86 businesses, so it describes those accounts, never a market.
 <!-- /generated -->
 
-This is a short, high-entry-rate format run by a specific, well-established group of businesses, not a timing technique that travels. A short run works well here because the businesses running it already have an audience primed for a fast giveaway, not because cutting a run to a few days raises the Conversion Rate by itself.
+These rows describe short runs and high Conversion Rates among the sampled businesses. An audience ready for a fast giveaway is a hypothesis to check against their promotion and audience records. The table does not establish what shortening another campaign would change.
 
 Source: analysis/output/field_cuts.json (by_continent, by_language), analysis/output/industries.json (by_youtube_country).
 
@@ -359,7 +359,7 @@ Almost every campaign keeps the platform's 7-day default for both the draw windo
 
 Source for the response-window bands below: `analysis/output/field_cuts.json` (`by_response_days`). The band labels are `8_14_days` and `15_plus_days`.
 
-Response window length tracks a few points of Conversion Rate up to 14 days, and the 15-plus row sits lowest because those campaigns run about twice as long, not because their Entrants respond slower.
+Conversion Rate is higher across the response-window bands up to 14 days. The 15-plus-day band has the lowest Conversion Rate and the longest campaign duration. The table does not establish why Conversion Rates differ, and the configured response window does not measure how quickly Winners responded.
 
 <!-- generated:tm_response_days -->
 | Response window | Campaigns | Businesses | Conversion Rate | Days |
@@ -411,7 +411,7 @@ Month moves once, in December, and nowhere else:
 
 Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 4.0 points and the furthest by 5.3, on a run about two thirds the length of the rest of the year.
 
-The December lift holds inside most industries too, not just because certain industries happen to start more campaigns in December:
+December also has higher Conversion Rates within most industries in this comparison:
 
 <!-- generated:tm_december_best -->
 | Industry | December | Next-best month | Gap |

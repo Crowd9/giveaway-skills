@@ -714,7 +714,10 @@
     "entries_per_entrant": 4.432,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.086
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "tools_craft_diy": {
     "n": 30,
@@ -896,7 +899,10 @@
     "entries_per_entrant": 6.583,
     "days": 7.0,
     "methods": 8.0,
-    "email_offered": 0.016
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "vehicle": {
     "n": 59,
@@ -1098,7 +1104,10 @@
     "entries_per_entrant": 4.621,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.129
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    }
   },
   "toys_hobbies_collectibles": {
@@ -1718,7 +1727,10 @@
     "entries_per_entrant": 3.784,
     "days": 7.0,
     "methods": 5.0,
-    "email_offered": 0.091
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "regulated_goods_firearm": {
     "n": 33,
@@ -1912,7 +1924,10 @@
     "entries_per_entrant": 8.382,
     "days": 12.0,
     "methods": 12.0,
-    "email_offered": 0.019
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "game_item_or_skin": {
     "n": 42,
@@ -1964,7 +1979,10 @@
     "entries_per_entrant": 3.472,
     "days": 10.0,
     "methods": 5.0,
-    "email_offered": 0.009
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "tech_hardware": {
     "n": 261,
@@ -2004,7 +2022,10 @@
     "entries_per_entrant": 4.924,
     "days": 7.0,
     "methods": 6.0,
-    "email_offered": 0.03
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "experience_travel_tickets": {
     "n": 49,
@@ -2014,7 +2035,10 @@
     "entries_per_entrant": 4.01,
     "days": 15.0,
     "methods": 8.0,
-    "email_offered": 0.102
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "art_custom": {
     "n": 41,
@@ -2024,7 +2048,10 @@
     "entries_per_entrant": 1.0,
     "days": 8.0,
     "methods": 1.0,
-    "email_offered": 0.049
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "food_drink_consumables": {
     "n": 34,
@@ -2034,7 +2061,10 @@
     "entries_per_entrant": 6.199,
     "days": 26.0,
     "methods": 4.0,
-    "email_offered": 0.059
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "subscription_membership": {
     "n": 30,
@@ -2044,7 +2074,10 @@
     "entries_per_entrant": 3.744,
     "days": 11.5,
     "methods": 5.0,
-    "email_offered": 0.033
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    }
   },
   "health_wellness_fitness": {
@@ -2136,7 +2169,10 @@
     "entries_per_entrant": 5.286,
     "days": 6.0,
     "methods": 10.0,
-    "email_offered": 0.013
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "placeholder_name": {
     "n": 79,
@@ -2596,7 +2632,10 @@
     "entries_per_entrant": 1.0,
     "days": 1.0,
     "methods": 1.0,
-    "email_offered": 0.064
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "tools_craft_diy": {
     "n": 69,
@@ -3088,7 +3127,10 @@
     "entries_per_entrant": 2.917,
     "days": 18.0,
     "methods": 5.0,
-    "email_offered": 0.111
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "bundle_or_box": {
     "n": 42,
@@ -6212,7 +6254,10 @@
     "entries_per_entrant": 5.071,
     "days": 7.0,
     "methods": 6.0,
-    "email_offered": 0.016
+    "email_offered": null,
+    "suppressed_below_floor": [
+     "email_offered"
+    ]
    },
    "5": {
     "n": 252,

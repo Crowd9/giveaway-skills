@@ -2035,7 +2035,10 @@
    "2026": 17,
    "suppressed_below_floor": 1
   },
-  "wallet_address_entry_method_share": 0.004
+  "wallet_address_entry_method_share": null,
+  "suppressed_below_floor": [
+   "wallet_address_entry_method_share"
+  ]
  },
  "excluded_finance_crypto_industry": {
   "campaigns": 24653,

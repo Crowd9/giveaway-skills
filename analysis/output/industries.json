@@ -205,10 +205,13 @@
    "email_offered": 0.038,
    "email_uptake": 0.873,
    "referrals_per_contestant": 0.042,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.026,
    "sells_online_share": 0.09,
-   "business_plus_share": 0.055
+   "business_plus_share": 0.055,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "health_wellness_fitness": {
    "n": 3209,
@@ -397,10 +400,13 @@
    "email_offered": 0.315,
    "email_uptake": 0.978,
    "referrals_per_contestant": 0.128,
-   "shopify_share": 0.007,
+   "shopify_share": null,
    "woocommerce_share": 0.185,
    "sells_online_share": 0.071,
-   "business_plus_share": 0.335
+   "business_plus_share": 0.335,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "jewelry_watches": {
    "n": 468,
@@ -819,10 +825,13 @@
    "email_offered": 0.038,
    "email_uptake": 0.873,
    "referrals_per_contestant": 0.042,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.026,
    "sells_online_share": 0.09,
-   "business_plus_share": 0.055
+   "business_plus_share": 0.055,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "health_wellness_fitness": {
    "n": 3209,
@@ -1011,10 +1020,13 @@
    "email_offered": 0.315,
    "email_uptake": 0.978,
    "referrals_per_contestant": 0.128,
-   "shopify_share": 0.007,
+   "shopify_share": null,
    "woocommerce_share": 0.185,
    "sells_online_share": 0.071,
-   "business_plus_share": 0.335
+   "business_plus_share": 0.335,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "jewelry_watches": {
    "n": 468,
@@ -1237,10 +1249,13 @@
    "email_offered": 0.247,
    "email_uptake": 1.0,
    "referrals_per_contestant": 0.075,
-   "shopify_share": 0.003,
+   "shopify_share": null,
    "woocommerce_share": 0.108,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.589
+   "business_plus_share": 0.589,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "retail_marketplace": {
    "n": 1316,
@@ -1381,10 +1396,13 @@
    "email_offered": 0.084,
    "email_uptake": 0.923,
    "referrals_per_contestant": 0.132,
-   "shopify_share": 0.01,
+   "shopify_share": null,
    "woocommerce_share": 0.084,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.206
+   "business_plus_share": 0.206,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "jewelry_watches": {
    "n": 209,
@@ -1429,10 +1447,13 @@
    "email_offered": 0.607,
    "email_uptake": 1.015,
    "referrals_per_contestant": 0.14,
-   "shopify_share": 0.045,
+   "shopify_share": null,
    "woocommerce_share": 0.427,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.719
+   "business_plus_share": 0.719,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "nonprofit_community": {
    "n": 39,
@@ -1445,10 +1466,13 @@
    "email_offered": 0.667,
    "email_uptake": 0.927,
    "referrals_per_contestant": 0.107,
-   "shopify_share": 0.103,
+   "shopify_share": null,
    "woocommerce_share": 0.41,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.513
+   "business_plus_share": 0.513,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   }
  },
  "shared_platform_hosts": {
@@ -1631,13 +1655,18 @@
    "entries_per_entrant": 4.611,
    "days": 8.0,
    "methods": 6.0,
-   "email_offered": 0.064,
-   "email_uptake": 0.99,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.293,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.064
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "steam": {
    "n": 61,
@@ -1653,7 +1682,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.049
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "patreon": {
    "n": 60,
@@ -1663,13 +1695,18 @@
    "entries_per_entrant": 1.0,
    "days": 8.0,
    "methods": 1.0,
-   "email_offered": 0.05,
-   "email_uptake": 0.727,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.152,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.017
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "tiktok": {
    "n": 59,
@@ -1679,13 +1716,17 @@
    "entries_per_entrant": 3.594,
    "days": 11.0,
    "methods": 5.0,
-   "email_offered": 0.017,
-   "email_uptake": 0.755,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.205,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.085
+   "business_plus_share": 0.085,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   }
  },
  "label_confidence": {
@@ -2032,9 +2073,12 @@
    "email_uptake": 1.019,
    "referrals_per_contestant": 0.741,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.291,
-   "business_plus_share": 0.419
+   "business_plus_share": 0.419,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   }
  },
  "by_startup": {
@@ -2160,13 +2204,17 @@
    "entries_per_entrant": 4.09,
    "days": 14.0,
    "methods": 7.0,
-   "email_offered": 0.025,
-   "email_uptake": 3.77,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.22,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.15
+   "business_plus_share": 0.15,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   }
  },
  "by_industry_and_scale": {
@@ -2486,9 +2534,12 @@
    "email_uptake": 0.878,
    "referrals_per_contestant": 0.117,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.568,
-   "business_plus_share": 0.554
+   "business_plus_share": 0.554,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "electronics_tech:micro": {
    "n": 2057,
@@ -2901,10 +2952,13 @@
    "email_offered": 0.628,
    "email_uptake": 1.02,
    "referrals_per_contestant": 0.122,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.019,
    "sells_online_share": 0.624,
-   "business_plus_share": 0.412
+   "business_plus_share": 0.412,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "automotive:mid": {
    "n": 844,
@@ -2917,10 +2971,13 @@
    "email_offered": 0.797,
    "email_uptake": 1.007,
    "referrals_per_contestant": 0.135,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.155,
    "sells_online_share": 0.609,
-   "business_plus_share": 0.776
+   "business_plus_share": 0.776,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "retail_marketplace:small": {
    "n": 779,
@@ -2933,10 +2990,13 @@
    "email_offered": 0.694,
    "email_uptake": 1.015,
    "referrals_per_contestant": 0.063,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.077,
    "sells_online_share": 0.725,
-   "business_plus_share": 0.534
+   "business_plus_share": 0.534,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "retail_marketplace:micro": {
    "n": 775,
@@ -3061,10 +3121,13 @@
    "email_offered": 0.344,
    "email_uptake": 0.994,
    "referrals_per_contestant": 0.218,
-   "shopify_share": 0.003,
+   "shopify_share": null,
    "woocommerce_share": 0.085,
    "sells_online_share": 0.077,
-   "business_plus_share": 0.218
+   "business_plus_share": 0.218,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "creator_influencer:micro": {
    "n": 613,
@@ -3077,10 +3140,13 @@
    "email_offered": 0.078,
    "email_uptake": 0.759,
    "referrals_per_contestant": 0.098,
-   "shopify_share": 0.005,
+   "shopify_share": null,
    "woocommerce_share": 0.114,
    "sells_online_share": 0.289,
-   "business_plus_share": 0.041
+   "business_plus_share": 0.041,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "apparel_fashion:large": {
    "n": 603,
@@ -3287,10 +3353,13 @@
    "email_offered": 0.021,
    "email_uptake": 0.705,
    "referrals_per_contestant": 0.61,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.013,
    "sells_online_share": 0.12,
-   "business_plus_share": 0.336
+   "business_plus_share": 0.336,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "vietnam": {
    "n": 2497,
@@ -3335,10 +3404,13 @@
    "email_offered": 0.385,
    "email_uptake": 0.841,
    "referrals_per_contestant": 0.171,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.011,
    "sells_online_share": 0.57,
-   "business_plus_share": 0.533
+   "business_plus_share": 0.533,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "philippines": {
    "n": 2047,
@@ -3416,9 +3488,12 @@
    "email_uptake": 0.858,
    "referrals_per_contestant": 0.337,
    "shopify_share": 0.078,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.618,
-   "business_plus_share": 0.215
+   "business_plus_share": 0.215,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "malaysia": {
    "n": 1501,
@@ -3436,7 +3511,7 @@
    "sells_online_share": 0.569,
    "business_plus_share": 0.411
   },
-  "t\u00fcrkiye": {
+  "türkiye": {
    "n": 1401,
    "sites": 364,
    "contestants": 415.0,
@@ -3479,10 +3554,13 @@
    "email_offered": 0.285,
    "email_uptake": 0.835,
    "referrals_per_contestant": 0.251,
-   "shopify_share": 0.003,
+   "shopify_share": null,
    "woocommerce_share": 0.053,
    "sells_online_share": 0.543,
-   "business_plus_share": 0.346
+   "business_plus_share": 0.346,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "united arab emirates": {
    "n": 742,
@@ -3508,13 +3586,18 @@
    "entries_per_entrant": 5.045,
    "days": 8.0,
    "methods": 13.0,
-   "email_offered": 0.001,
-   "email_uptake": 1.015,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.275,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.003,
+   "woocommerce_share": null,
    "sells_online_share": 0.895,
-   "business_plus_share": 0.888
+   "business_plus_share": 0.888,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "woocommerce_share"
+   ]
   },
   "thailand": {
    "n": 652,
@@ -3527,10 +3610,13 @@
    "email_offered": 0.115,
    "email_uptake": 0.405,
    "referrals_per_contestant": 0.55,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.029,
    "sells_online_share": 0.255,
-   "business_plus_share": 0.351
+   "business_plus_share": 0.351,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "mexico": {
    "n": 645,
@@ -3575,10 +3661,13 @@
    "email_offered": 0.031,
    "email_uptake": 0.907,
    "referrals_per_contestant": 0.822,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.01,
    "sells_online_share": 0.3,
-   "business_plus_share": 0.151
+   "business_plus_share": 0.151,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "portugal": {
    "n": 515,
@@ -3591,10 +3680,13 @@
    "email_offered": 0.082,
    "email_uptake": 0.972,
    "referrals_per_contestant": 0.138,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.025,
    "sells_online_share": 0.14,
-   "business_plus_share": 0.227
+   "business_plus_share": 0.227,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "italy": {
    "n": 505,
@@ -3607,10 +3699,13 @@
    "email_offered": 0.511,
    "email_uptake": 0.894,
    "referrals_per_contestant": 0.229,
-   "shopify_share": 0.008,
+   "shopify_share": null,
    "woocommerce_share": 0.042,
    "sells_online_share": 0.651,
-   "business_plus_share": 0.432
+   "business_plus_share": 0.432,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "romania": {
    "n": 503,
@@ -3623,10 +3718,13 @@
    "email_offered": 0.145,
    "email_uptake": 0.666,
    "referrals_per_contestant": 0.615,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.254,
    "sells_online_share": 0.423,
-   "business_plus_share": 0.298
+   "business_plus_share": 0.298,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "bangladesh": {
    "n": 460,
@@ -3636,13 +3734,18 @@
    "entries_per_entrant": 6.263,
    "days": 8.0,
    "methods": 9.0,
-   "email_offered": 0.007,
-   "email_uptake": 0.934,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 1.339,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.004,
+   "woocommerce_share": null,
    "sells_online_share": 0.028,
-   "business_plus_share": 0.022
+   "business_plus_share": 0.022,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "woocommerce_share"
+   ]
   },
   "belgium": {
    "n": 459,
@@ -3687,10 +3790,13 @@
    "email_offered": 0.175,
    "email_uptake": 0.816,
    "referrals_per_contestant": 0.267,
-   "shopify_share": 0.003,
+   "shopify_share": null,
    "woocommerce_share": 0.129,
    "sells_online_share": 0.237,
-   "business_plus_share": 0.363
+   "business_plus_share": 0.363,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "argentina": {
    "n": 332,
@@ -3719,10 +3825,13 @@
    "email_offered": 0.283,
    "email_uptake": 0.898,
    "referrals_per_contestant": 0.183,
-   "shopify_share": 0.014,
+   "shopify_share": null,
    "woocommerce_share": 0.092,
    "sells_online_share": 0.618,
-   "business_plus_share": 0.038
+   "business_plus_share": 0.038,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "russia": {
    "n": 292,
@@ -3748,13 +3857,18 @@
    "entries_per_entrant": 2.093,
    "days": 7.0,
    "methods": 5.0,
-   "email_offered": 0.004,
-   "email_uptake": 0.881,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.062,
-   "shopify_share": 0.011,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.068,
-   "business_plus_share": 0.514
+   "business_plus_share": 0.514,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "shopify_share"
+   ]
   },
   "israel": {
    "n": 278,
@@ -3767,10 +3881,13 @@
    "email_offered": 0.083,
    "email_uptake": 1.022,
    "referrals_per_contestant": 0.301,
-   "shopify_share": 0.004,
+   "shopify_share": null,
    "woocommerce_share": 0.025,
    "sells_online_share": 0.665,
-   "business_plus_share": 0.151
+   "business_plus_share": 0.151,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "bulgaria": {
    "n": 278,
@@ -3784,9 +3901,12 @@
    "email_uptake": 0.928,
    "referrals_per_contestant": 0.187,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.011,
+   "woocommerce_share": null,
    "sells_online_share": 0.194,
-   "business_plus_share": 0.058
+   "business_plus_share": 0.058,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "hungary": {
    "n": 265,
@@ -3815,10 +3935,14 @@
    "email_offered": 0.069,
    "email_uptake": 0.884,
    "referrals_per_contestant": 0.08,
-   "shopify_share": 0.004,
-   "woocommerce_share": 0.015,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.506,
-   "business_plus_share": 0.291
+   "business_plus_share": 0.291,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "new zealand": {
    "n": 255,
@@ -3879,10 +4003,14 @@
    "email_offered": 0.145,
    "email_uptake": 0.973,
    "referrals_per_contestant": 0.174,
-   "shopify_share": 0.004,
-   "woocommerce_share": 0.018,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.32,
-   "business_plus_share": 0.211
+   "business_plus_share": 0.211,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "pakistan": {
    "n": 215,
@@ -3895,10 +4023,13 @@
    "email_offered": 0.126,
    "email_uptake": 0.772,
    "referrals_per_contestant": 0.345,
-   "shopify_share": 0.009,
+   "shopify_share": null,
    "woocommerce_share": 0.116,
    "sells_online_share": 0.251,
-   "business_plus_share": 0.195
+   "business_plus_share": 0.195,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "norway": {
    "n": 200,
@@ -3912,9 +4043,12 @@
    "email_uptake": 0.992,
    "referrals_per_contestant": 0.797,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.005,
+   "woocommerce_share": null,
    "sells_online_share": 0.205,
-   "business_plus_share": 0.395
+   "business_plus_share": 0.395,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "cyprus": {
    "n": 194,
@@ -3944,9 +4078,12 @@
    "email_uptake": 0.655,
    "referrals_per_contestant": 0.201,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.005,
+   "woocommerce_share": null,
    "sells_online_share": 0.856,
-   "business_plus_share": 0.075
+   "business_plus_share": 0.075,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "nigeria": {
    "n": 186,
@@ -3975,10 +4112,14 @@
    "email_offered": 0.191,
    "email_uptake": 0.93,
    "referrals_per_contestant": 0.415,
-   "shopify_share": 0.016,
-   "woocommerce_share": 0.027,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.29,
-   "business_plus_share": 0.208
+   "business_plus_share": 0.208,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "lithuania": {
    "n": 175,
@@ -4007,10 +4148,14 @@
    "email_offered": 0.189,
    "email_uptake": 0.974,
    "referrals_per_contestant": 0.34,
-   "shopify_share": 0.013,
-   "woocommerce_share": 0.006,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.182,
-   "business_plus_share": 0.327
+   "business_plus_share": 0.327,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "serbia": {
    "n": 146,
@@ -4023,10 +4168,13 @@
    "email_offered": 0.418,
    "email_uptake": 0.829,
    "referrals_per_contestant": 0.22,
-   "shopify_share": 0.021,
+   "shopify_share": null,
    "woocommerce_share": 0.377,
    "sells_online_share": 0.568,
-   "business_plus_share": 0.144
+   "business_plus_share": 0.144,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "seychelles": {
    "n": 110,
@@ -4040,9 +4188,13 @@
    "email_uptake": 1.036,
    "referrals_per_contestant": 0.144,
    "shopify_share": 0.209,
-   "woocommerce_share": 0.045,
+   "woocommerce_share": null,
    "sells_online_share": 0.455,
-   "business_plus_share": 0.027
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "woocommerce_share"
+   ]
   },
   "austria": {
    "n": 110,
@@ -4071,10 +4223,13 @@
    "email_offered": 0.152,
    "email_uptake": 0.973,
    "referrals_per_contestant": 0.203,
-   "shopify_share": 0.029,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.248,
-   "business_plus_share": 0.095
+   "business_plus_share": 0.095,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "latvia": {
    "n": 103,
@@ -4264,13 +4419,18 @@
    "entries_per_entrant": 5.082,
    "days": 8.0,
    "methods": 13.0,
-   "email_offered": 0.006,
-   "email_uptake": 0.72,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.331,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.003,
+   "woocommerce_share": null,
    "sells_online_share": 0.916,
-   "business_plus_share": 0.933
+   "business_plus_share": 0.933,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "woocommerce_share"
+   ]
   },
   "sv": {
    "n": 606,
@@ -4284,9 +4444,12 @@
    "email_uptake": 0.953,
    "referrals_per_contestant": 0.147,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.008,
+   "woocommerce_share": null,
    "sells_online_share": 0.932,
-   "business_plus_share": 0.102
+   "business_plus_share": 0.102,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "tr": {
    "n": 401,
@@ -4296,13 +4459,18 @@
    "entries_per_entrant": 5.051,
    "days": 5.0,
    "methods": 6.0,
-   "email_offered": 0.01,
-   "email_uptake": 0.672,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.377,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.007,
+   "woocommerce_share": null,
    "sells_online_share": 0.688,
-   "business_plus_share": 0.596
+   "business_plus_share": 0.596,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "woocommerce_share"
+   ]
   },
   "ko": {
    "n": 369,
@@ -4312,13 +4480,18 @@
    "entries_per_entrant": 5.44,
    "days": 7.0,
    "methods": 7.0,
-   "email_offered": 0.005,
-   "email_uptake": 1.006,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.339,
-   "shopify_share": 0.003,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.512,
-   "business_plus_share": 0.317
+   "business_plus_share": 0.317,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "shopify_share"
+   ]
   },
   "pl": {
    "n": 314,
@@ -4347,10 +4520,14 @@
    "email_offered": 0.438,
    "email_uptake": 1.875,
    "referrals_per_contestant": 0.115,
-   "shopify_share": 0.004,
-   "woocommerce_share": 0.012,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.246,
-   "business_plus_share": 0.4
+   "business_plus_share": 0.4,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "ja": {
    "n": 179,
@@ -4364,9 +4541,12 @@
    "email_uptake": 1.012,
    "referrals_per_contestant": 0.37,
    "shopify_share": 0.056,
-   "woocommerce_share": 0.006,
+   "woocommerce_share": null,
    "sells_online_share": 0.648,
-   "business_plus_share": 0.609
+   "business_plus_share": 0.609,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "ru": {
    "n": 165,
@@ -4376,13 +4556,18 @@
    "entries_per_entrant": 7.0,
    "days": 16.0,
    "methods": 9.0,
-   "email_offered": 0.012,
-   "email_uptake": 0.966,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.296,
-   "shopify_share": 0.006,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.315,
-   "business_plus_share": 0.612
+   "business_plus_share": 0.612,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "shopify_share"
+   ]
   },
   "zh-TW": {
    "n": 162,
@@ -4446,9 +4631,12 @@
    "email_uptake": 0.95,
    "referrals_per_contestant": 0.58,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.811,
-   "business_plus_share": 0.666
+   "business_plus_share": 0.666,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "gaming and esports": {
    "n": 2658,
@@ -4477,10 +4665,13 @@
    "email_offered": 0.065,
    "email_uptake": 1.002,
    "referrals_per_contestant": 0.842,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.033,
    "sells_online_share": 0.231,
-   "business_plus_share": 0.33
+   "business_plus_share": 0.33,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "gaming computer hardware retailer": {
    "n": 1384,
@@ -4506,13 +4697,17 @@
    "entries_per_entrant": 4.826,
    "days": 4.0,
    "methods": 6.0,
-   "email_offered": 0.001,
-   "email_uptake": 1.787,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.919,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.995,
-   "business_plus_share": 0.576
+   "business_plus_share": 0.576,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "cryptocurrency exchange trading": {
    "n": 1317,
@@ -4522,13 +4717,17 @@
    "entries_per_entrant": 5.504,
    "days": 5.0,
    "methods": 7.0,
-   "email_offered": 0.002,
-   "email_uptake": 0.92,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.711,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.63,
-   "business_plus_share": 0.257
+   "business_plus_share": 0.257,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "online community": {
    "n": 1227,
@@ -4570,13 +4769,18 @@
    "entries_per_entrant": 5.544,
    "days": 21.0,
    "methods": 10.0,
-   "email_offered": 0.001,
-   "email_uptake": 0.422,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.015,
    "shopify_share": 0.046,
    "woocommerce_share": 0.048,
    "sells_online_share": 0.098,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "media and entertainment": {
    "n": 892,
@@ -4621,10 +4825,13 @@
    "email_offered": 0.16,
    "email_uptake": 0.979,
    "referrals_per_contestant": 0.21,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.021,
    "sells_online_share": 0.438,
-   "business_plus_share": 0.179
+   "business_plus_share": 0.179,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "web3 profile platform": {
    "n": 722,
@@ -4670,9 +4877,12 @@
    "email_uptake": 0.943,
    "referrals_per_contestant": 0.087,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.363,
-   "business_plus_share": 0.409
+   "business_plus_share": 0.409,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "cryptocurrency token": {
    "n": 647,
@@ -4685,10 +4895,13 @@
    "email_offered": 0.159,
    "email_uptake": 0.985,
    "referrals_per_contestant": 0.696,
-   "shopify_share": 0.002,
+   "shopify_share": null,
    "woocommerce_share": 0.068,
    "sells_online_share": 0.227,
-   "business_plus_share": 0.306
+   "business_plus_share": 0.306,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "food and beverages": {
    "n": 592,
@@ -4701,10 +4914,13 @@
    "email_offered": 0.368,
    "email_uptake": 0.75,
    "referrals_per_contestant": 0.075,
-   "shopify_share": 0.007,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.465,
-   "business_plus_share": 0.389
+   "business_plus_share": 0.389,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "home and garden": {
    "n": 580,
@@ -4718,9 +4934,12 @@
    "email_uptake": 0.891,
    "referrals_per_contestant": 0.088,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.002,
+   "woocommerce_share": null,
    "sells_online_share": 0.516,
-   "business_plus_share": 0.51
+   "business_plus_share": 0.51,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "electronics and technology": {
    "n": 567,
@@ -4749,10 +4968,14 @@
    "email_offered": 0.013,
    "email_uptake": 0.367,
    "referrals_per_contestant": 0.214,
-   "shopify_share": 0.009,
-   "woocommerce_share": 0.005,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.107,
-   "business_plus_share": 0.036
+   "business_plus_share": 0.036,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "sporting goods": {
    "n": 499,
@@ -4874,13 +5097,17 @@
    "entries_per_entrant": 5.894,
    "days": 8.0,
    "methods": 8.0,
-   "email_offered": 0.01,
-   "email_uptake": 1.051,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.861,
    "shopify_share": 0.06,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.244,
-   "business_plus_share": 0.288
+   "business_plus_share": 0.288,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "entertainment and media": {
    "n": 384,
@@ -4896,7 +5123,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.003
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "mobile game developer": {
    "n": 379,
@@ -4942,9 +5172,12 @@
    "email_uptake": 0.807,
    "referrals_per_contestant": 0.095,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.011,
+   "woocommerce_share": null,
    "sells_online_share": 0.451,
-   "business_plus_share": 0.571
+   "business_plus_share": 0.571,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "nft gaming platform": {
    "n": 354,
@@ -5038,9 +5271,12 @@
    "email_uptake": 0.774,
    "referrals_per_contestant": 0.181,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.007,
+   "woocommerce_share": null,
    "sells_online_share": 0.152,
-   "business_plus_share": 0.166
+   "business_plus_share": 0.166,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "cryptocurrency token platform": {
    "n": 254,
@@ -5069,10 +5305,14 @@
    "email_offered": 0.085,
    "email_uptake": 0.59,
    "referrals_per_contestant": 0.244,
-   "shopify_share": 0.004,
-   "woocommerce_share": 0.016,
+   "shopify_share": null,
+   "woocommerce_share": null,
    "sells_online_share": 0.154,
-   "business_plus_share": 0.102
+   "business_plus_share": 0.102,
+   "suppressed_below_floor": [
+    "shopify_share",
+    "woocommerce_share"
+   ]
   },
   "gaming community platform": {
    "n": 246,
@@ -5086,9 +5326,12 @@
    "email_uptake": 0.745,
    "referrals_per_contestant": 0.097,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.008,
+   "woocommerce_share": null,
    "sells_online_share": 0.077,
-   "business_plus_share": 0.289
+   "business_plus_share": 0.289,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "cryptocurrency launchpad": {
    "n": 244,
@@ -5130,13 +5373,18 @@
    "entries_per_entrant": 6.197,
    "days": 16.0,
    "methods": 9.0,
-   "email_offered": 0.013,
-   "email_uptake": 1.079,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.093,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.251,
-   "business_plus_share": 0.009
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "gaming esports": {
    "n": 234,
@@ -5166,9 +5414,12 @@
    "email_uptake": 0.932,
    "referrals_per_contestant": 0.113,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.013,
+   "woocommerce_share": null,
    "sells_online_share": 0.504,
-   "business_plus_share": 0.094
+   "business_plus_share": 0.094,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "fashion and apparel": {
    "n": 230,
@@ -5194,13 +5445,18 @@
    "entries_per_entrant": 2.974,
    "days": 11.0,
    "methods": 3.0,
-   "email_offered": 0.004,
-   "email_uptake": 0.026,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.722,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.004
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "nft marketplace": {
    "n": 228,
@@ -5214,9 +5470,12 @@
    "email_uptake": 0.993,
    "referrals_per_contestant": 0.916,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.018,
+   "woocommerce_share": null,
    "sells_online_share": 0.14,
-   "business_plus_share": 0.465
+   "business_plus_share": 0.465,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "computer hardware retailer": {
    "n": 228,
@@ -5230,9 +5489,12 @@
    "email_uptake": 0.852,
    "referrals_per_contestant": 0.461,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.013,
+   "woocommerce_share": null,
    "sells_online_share": 0.886,
-   "business_plus_share": 0.281
+   "business_plus_share": 0.281,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "gaming headsets keyboards": {
    "n": 226,
@@ -5274,13 +5536,17 @@
    "entries_per_entrant": 5.533,
    "days": 8.0,
    "methods": 7.0,
-   "email_offered": 0.009,
-   "email_uptake": 2.418,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.906,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.07,
-   "business_plus_share": 0.242
+   "business_plus_share": 0.242,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "lifestyle blog": {
    "n": 201,
@@ -5310,9 +5576,12 @@
    "email_uptake": 0.918,
    "referrals_per_contestant": 0.23,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.021,
+   "woocommerce_share": null,
    "sells_online_share": 0.954,
-   "business_plus_share": 0.785
+   "business_plus_share": 0.785,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "blockchain gaming platform": {
    "n": 192,
@@ -5326,9 +5595,12 @@
    "email_uptake": 1.011,
    "referrals_per_contestant": 0.736,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.005,
+   "woocommerce_share": null,
    "sells_online_share": 0.177,
-   "business_plus_share": 0.271
+   "business_plus_share": 0.271,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "gaming": {
    "n": 191,
@@ -5338,13 +5610,17 @@
    "entries_per_entrant": 4.656,
    "days": 12.0,
    "methods": 7.0,
-   "email_offered": 0.026,
-   "email_uptake": 0.634,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.283,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.277,
-   "business_plus_share": 0.178
+   "business_plus_share": 0.178,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "trading card games": {
    "n": 181,
@@ -5375,8 +5651,11 @@
    "referrals_per_contestant": 0.067,
    "shopify_share": 0.272,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.994,
-   "business_plus_share": 0.05
+   "sells_online_share": null,
+   "business_plus_share": 0.05,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "marketing agency": {
    "n": 178,
@@ -5389,10 +5668,14 @@
    "email_offered": 0.478,
    "email_uptake": 1.0,
    "referrals_per_contestant": 0.347,
-   "shopify_share": 0.006,
+   "shopify_share": null,
    "woocommerce_share": 0.129,
-   "sells_online_share": 0.011,
-   "business_plus_share": 0.124
+   "sells_online_share": null,
+   "business_plus_share": 0.124,
+   "suppressed_below_floor": [
+    "sells_online_share",
+    "shopify_share"
+   ]
   }
  },
  "niche_by_industry": {
@@ -5409,9 +5692,12 @@
     "email_uptake": 1.021,
     "referrals_per_contestant": 0.099,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.002,
+    "woocommerce_share": null,
     "sells_online_share": 0.267,
-    "business_plus_share": 0.343
+    "business_plus_share": 0.343,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "travel experiences": {
     "n": 92,
@@ -5453,13 +5739,17 @@
     "entries_per_entrant": 2.962,
     "days": 16.0,
     "methods": 7.0,
-    "email_offered": 0.955,
-    "email_uptake": 1.05,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.075,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.295
+    "business_plus_share": 0.295,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "music festival": {
     "n": 22,
@@ -5473,9 +5763,12 @@
     "email_uptake": 1.037,
     "referrals_per_contestant": 0.134,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.136,
+    "woocommerce_share": null,
     "sells_online_share": 0.318,
-    "business_plus_share": 0.273
+    "business_plus_share": 0.273,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "music festival organizer": {
     "n": 18,
@@ -5506,8 +5799,12 @@
     "referrals_per_contestant": 0.105,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.235,
-    "business_plus_share": 0.235
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    }
   },
   "apparel_fashion": {
@@ -5538,10 +5835,13 @@
     "email_offered": 0.692,
     "email_uptake": 1.024,
     "referrals_per_contestant": 0.107,
-    "shopify_share": 0.031,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.631,
-    "business_plus_share": 0.308
+    "business_plus_share": 0.308,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "fashion apparel retailer": {
     "n": 54,
@@ -5571,9 +5871,14 @@
     "email_uptake": 1.049,
     "referrals_per_contestant": 0.176,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.041,
-    "sells_online_share": 0.918,
-    "business_plus_share": 0.061
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "apparel fashion retailer": {
     "n": 41,
@@ -5602,10 +5907,15 @@
     "email_offered": 0.829,
     "email_uptake": 0.991,
     "referrals_per_contestant": 0.169,
-    "shopify_share": 0.114,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.971,
-    "business_plus_share": 0.114
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "fashion apparel brand": {
     "n": 35,
@@ -5618,10 +5928,13 @@
     "email_offered": 0.686,
     "email_uptake": 1.023,
     "referrals_per_contestant": 0.095,
-    "shopify_share": 0.086,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.829,
-    "business_plus_share": 0.514
+    "business_plus_share": 0.514,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "fashion apparel": {
     "n": 23,
@@ -5631,13 +5944,19 @@
     "entries_per_entrant": 4.082,
     "days": 21.0,
     "methods": 6.0,
-    "email_offered": 0.217,
-    "email_uptake": 0.919,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.128,
-    "shopify_share": 0.087,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.652,
-    "business_plus_share": 0.13
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "shopify_share"
+    ]
    },
    "clothing retailer": {
     "n": 19,
@@ -5651,9 +5970,12 @@
     "email_uptake": 1.005,
     "referrals_per_contestant": 0.153,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.211,
+    "woocommerce_share": null,
     "sells_online_share": 0.684,
-    "business_plus_share": 0.368
+    "business_plus_share": 0.368,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "art_crafts": {
@@ -5670,8 +5992,12 @@
     "referrals_per_contestant": 0.169,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.061,
-    "business_plus_share": 0.091
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    }
   },
   "marketing_agency": {
@@ -5686,10 +6012,14 @@
     "email_offered": 0.559,
     "email_uptake": 1.0,
     "referrals_per_contestant": 0.347,
-    "shopify_share": 0.007,
+    "shopify_share": null,
     "woocommerce_share": 0.151,
-    "sells_online_share": 0.013,
-    "business_plus_share": 0.145
+    "sells_online_share": null,
+    "business_plus_share": 0.145,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "digital marketing agency": {
     "n": 16,
@@ -5704,8 +6034,12 @@
     "referrals_per_contestant": 0.153,
     "shopify_share": 0.0,
     "woocommerce_share": 0.375,
-    "sells_online_share": 0.188,
-    "business_plus_share": 0.188
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "cryptocurrency marketing agency": {
     "n": 15,
@@ -5721,7 +6055,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.733
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    }
   },
   "other": {
@@ -5771,7 +6108,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.043
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "giveaway platform": {
     "n": 38,
@@ -5786,8 +6126,11 @@
     "referrals_per_contestant": 0.228,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.079,
-    "business_plus_share": 0.211
+    "sells_online_share": null,
+    "business_plus_share": 0.211,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "online business": {
     "n": 30,
@@ -5797,13 +6140,19 @@
     "entries_per_entrant": 5.016,
     "days": 8.0,
     "methods": 6.0,
-    "email_offered": 0.067,
-    "email_uptake": 0.833,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.38,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.1,
+    "woocommerce_share": null,
     "sells_online_share": 0.167,
-    "business_plus_share": 0.033
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "various products": {
     "n": 22,
@@ -5818,8 +6167,12 @@
     "referrals_per_contestant": 0.456,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.227,
-    "business_plus_share": 0.091
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    }
   },
   "pets": {
@@ -5834,10 +6187,13 @@
     "email_offered": 0.719,
     "email_uptake": 1.022,
     "referrals_per_contestant": 0.102,
-    "shopify_share": 0.062,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.312,
-    "business_plus_share": 0.219
+    "business_plus_share": 0.219,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "technology chargers and accessories": {
     "n": 28,
@@ -5865,13 +6221,18 @@
     "entries_per_entrant": 4.468,
     "days": 15.0,
     "methods": 7.0,
-    "email_offered": 0.02,
-    "email_uptake": 1.233,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.157,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.163,
-    "business_plus_share": 0.02
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "content creator": {
     "n": 17,
@@ -5885,9 +6246,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.162,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.235,
+    "woocommerce_share": null,
     "sells_online_share": 0.588,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "local_services": {
@@ -5899,13 +6263,19 @@
     "entries_per_entrant": 2.258,
     "days": 5.0,
     "methods": 4.0,
-    "email_offered": 0.028,
-    "email_uptake": 0.891,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.205,
-    "shopify_share": 0.014,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.056,
-    "business_plus_share": 0.292
+    "sells_online_share": null,
+    "business_plus_share": 0.292,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "personal injury law": {
     "n": 30,
@@ -5937,9 +6307,12 @@
     "email_uptake": 0.902,
     "referrals_per_contestant": 0.088,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.002,
+    "woocommerce_share": null,
     "sells_online_share": 0.644,
-    "business_plus_share": 0.545
+    "business_plus_share": 0.545,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "home products": {
     "n": 71,
@@ -6018,10 +6391,15 @@
     "email_offered": 0.242,
     "email_uptake": 1.023,
     "referrals_per_contestant": 0.16,
-    "shopify_share": 0.016,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.984,
-    "business_plus_share": 0.032
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "beauty products": {
     "n": 25,
@@ -6034,10 +6412,13 @@
     "email_offered": 0.6,
     "email_uptake": 0.896,
     "referrals_per_contestant": 0.079,
-    "shopify_share": 0.08,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.72,
-    "business_plus_share": 0.24
+    "business_plus_share": 0.24,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "skincare products": {
     "n": 19,
@@ -6047,13 +6428,20 @@
     "entries_per_entrant": 3.123,
     "days": 9.0,
     "methods": 6.0,
-    "email_offered": 0.789,
-    "email_uptake": 0.988,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.13,
-    "shopify_share": 0.211,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.895,
-    "business_plus_share": 0.263
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "hair care products": {
     "n": 15,
@@ -6063,13 +6451,19 @@
     "entries_per_entrant": 2.317,
     "days": 14.0,
     "methods": 4.0,
-    "email_offered": 0.933,
-    "email_uptake": 0.899,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.165,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.933,
-    "business_plus_share": 0.333
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    }
   },
   "baby_kids": {
@@ -6103,7 +6497,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.731,
-    "business_plus_share": 0.192
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "baby products": {
     "n": 20,
@@ -6116,10 +6513,15 @@
     "email_offered": 1.0,
     "email_uptake": 1.024,
     "referrals_per_contestant": 0.055,
-    "shopify_share": 0.1,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.9,
-    "business_plus_share": 0.05
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "shopify_share"
+    ]
    }
   },
   "jewelry_watches": {
@@ -6134,10 +6536,13 @@
     "email_offered": 0.375,
     "email_uptake": 1.048,
     "referrals_per_contestant": 0.392,
-    "shopify_share": 0.188,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.562,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "jewelry brand": {
     "n": 15,
@@ -6147,13 +6552,19 @@
     "entries_per_entrant": 4.274,
     "days": 5.0,
     "methods": 11.0,
-    "email_offered": 0.8,
-    "email_uptake": 0.832,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.076,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.067,
-    "sells_online_share": 0.867,
-    "business_plus_share": 0.0
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    }
   },
   "retail_marketplace": {
@@ -6181,13 +6592,18 @@
     "entries_per_entrant": 9.971,
     "days": 8.0,
     "methods": 15.0,
-    "email_offered": 0.042,
-    "email_uptake": 1.003,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.096,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.958,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "online retailer": {
     "n": 60,
@@ -6197,13 +6613,17 @@
     "entries_per_entrant": 4.91,
     "days": 24.0,
     "methods": 7.0,
-    "email_offered": 0.033,
-    "email_uptake": 0.69,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.164,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.65,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "retail marketplace": {
     "n": 30,
@@ -6213,13 +6633,19 @@
     "entries_per_entrant": 5.63,
     "days": 23.0,
     "methods": 8.5,
-    "email_offered": 0.067,
-    "email_uptake": 0.649,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.247,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.033,
+    "woocommerce_share": null,
     "sells_online_share": 0.233,
-    "business_plus_share": 0.067
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    }
   },
   "health_wellness_fitness": {
@@ -6268,8 +6694,11 @@
     "referrals_per_contestant": 0.076,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.032,
-    "business_plus_share": 0.5
+    "sells_online_share": null,
+    "business_plus_share": 0.5,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "health and fitness": {
     "n": 90,
@@ -6282,10 +6711,13 @@
     "email_offered": 0.233,
     "email_uptake": 1.037,
     "referrals_per_contestant": 0.279,
-    "shopify_share": 0.044,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.222,
-    "business_plus_share": 0.256
+    "business_plus_share": 0.256,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "health and wellness": {
     "n": 72,
@@ -6295,13 +6727,21 @@
     "entries_per_entrant": 16.607,
     "days": 38.0,
     "methods": 21.0,
-    "email_offered": 0.042,
-    "email_uptake": 0.904,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.012,
-    "shopify_share": 0.014,
-    "woocommerce_share": 0.014,
-    "sells_online_share": 0.042,
-    "business_plus_share": 0.014
+    "shopify_share": null,
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "cannabis products": {
     "n": 34,
@@ -6316,8 +6756,11 @@
     "referrals_per_contestant": 0.108,
     "shopify_share": 0.0,
     "woocommerce_share": 0.382,
-    "sells_online_share": 0.941,
-    "business_plus_share": 0.618
+    "sells_online_share": null,
+    "business_plus_share": 0.618,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "sports nutrition supplements": {
     "n": 17,
@@ -6365,9 +6808,12 @@
     "email_uptake": 1.045,
     "referrals_per_contestant": 0.019,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.939,
+    "woocommerce_share": null,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.848
+    "business_plus_share": 0.848,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "nonprofit community": {
     "n": 17,
@@ -6377,13 +6823,19 @@
     "entries_per_entrant": 9.819,
     "days": 14.0,
     "methods": 14.0,
-    "email_offered": 0.118,
-    "email_uptake": 1.027,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.484,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.765,
+    "woocommerce_share": null,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.118
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "environmental nonprofit": {
     "n": 16,
@@ -6396,10 +6848,16 @@
     "email_offered": 0.375,
     "email_uptake": 0.954,
     "referrals_per_contestant": 0.141,
-    "shopify_share": 0.062,
-    "woocommerce_share": 0.125,
-    "sells_online_share": 0.25,
-    "business_plus_share": 0.062
+    "shopify_share": null,
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    }
   },
   "automotive": {
@@ -6415,9 +6873,12 @@
     "email_uptake": 0.982,
     "referrals_per_contestant": 0.123,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.006,
+    "woocommerce_share": null,
     "sells_online_share": 0.449,
-    "business_plus_share": 0.527
+    "business_plus_share": 0.527,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "automotive products": {
     "n": 107,
@@ -6430,10 +6891,14 @@
     "email_offered": 0.346,
     "email_uptake": 0.869,
     "referrals_per_contestant": 0.543,
-    "shopify_share": 0.028,
-    "woocommerce_share": 0.009,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.393,
-    "business_plus_share": 0.047
+    "business_plus_share": 0.047,
+    "suppressed_below_floor": [
+     "shopify_share",
+     "woocommerce_share"
+    ]
    }
   },
   "education": {},
@@ -6450,9 +6915,12 @@
     "email_uptake": 0.947,
     "referrals_per_contestant": 0.58,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.001,
+    "woocommerce_share": null,
     "sells_online_share": 0.812,
-    "business_plus_share": 0.666
+    "business_plus_share": 0.666,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency platform": {
     "n": 1437,
@@ -6465,10 +6933,13 @@
     "email_offered": 0.065,
     "email_uptake": 1.002,
     "referrals_per_contestant": 0.841,
-    "shopify_share": 0.002,
+    "shopify_share": null,
     "woocommerce_share": 0.033,
     "sells_online_share": 0.232,
-    "business_plus_share": 0.331
+    "business_plus_share": 0.331,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "cryptocurrency trading exchange": {
     "n": 1342,
@@ -6478,13 +6949,17 @@
     "entries_per_entrant": 4.826,
     "days": 4.0,
     "methods": 6.0,
-    "email_offered": 0.001,
-    "email_uptake": 1.787,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.919,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.995,
-    "business_plus_share": 0.576
+    "business_plus_share": 0.576,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency exchange trading": {
     "n": 1317,
@@ -6494,13 +6969,17 @@
     "entries_per_entrant": 5.504,
     "days": 5.0,
     "methods": 7.0,
-    "email_offered": 0.002,
-    "email_uptake": 0.92,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.711,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.63,
-    "business_plus_share": 0.257
+    "business_plus_share": 0.257,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency and finance": {
     "n": 871,
@@ -6529,10 +7008,13 @@
     "email_offered": 0.123,
     "email_uptake": 0.978,
     "referrals_per_contestant": 0.802,
-    "shopify_share": 0.002,
+    "shopify_share": null,
     "woocommerce_share": 0.012,
     "sells_online_share": 0.211,
-    "business_plus_share": 0.23
+    "business_plus_share": 0.23,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "cryptocurrency and blockchain": {
     "n": 478,
@@ -6558,13 +7040,17 @@
     "entries_per_entrant": 5.894,
     "days": 8.0,
     "methods": 8.0,
-    "email_offered": 0.01,
-    "email_uptake": 1.051,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.861,
     "shopify_share": 0.06,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.244,
-    "business_plus_share": 0.288
+    "business_plus_share": 0.288,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency exchange": {
     "n": 370,
@@ -6622,13 +7108,18 @@
     "entries_per_entrant": 2.974,
     "days": 11.0,
     "methods": 3.0,
-    "email_offered": 0.004,
-    "email_uptake": 0.026,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.722,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.004
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency gaming platform": {
     "n": 224,
@@ -6638,13 +7129,17 @@
     "entries_per_entrant": 4.696,
     "days": 5.0,
     "methods": 6.0,
-    "email_offered": 0.018,
-    "email_uptake": 0.965,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.938,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.107,
-    "business_plus_share": 0.112
+    "business_plus_share": 0.112,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency airdrop platform": {
     "n": 215,
@@ -6654,13 +7149,17 @@
     "entries_per_entrant": 5.533,
     "days": 8.0,
     "methods": 7.0,
-    "email_offered": 0.009,
-    "email_uptake": 2.418,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.906,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.07,
-    "business_plus_share": 0.242
+    "business_plus_share": 0.242,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "online community": {
     "n": 207,
@@ -6674,9 +7173,12 @@
     "email_uptake": 1.022,
     "referrals_per_contestant": 0.336,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.024,
+    "woocommerce_share": null,
     "sells_online_share": 0.29,
-    "business_plus_share": 0.271
+    "business_plus_share": 0.271,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "blockchain cryptocurrency": {
     "n": 163,
@@ -6706,9 +7208,12 @@
     "email_uptake": 0.993,
     "referrals_per_contestant": 0.79,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.026,
+    "woocommerce_share": null,
     "sells_online_share": 0.211,
-    "business_plus_share": 0.474
+    "business_plus_share": 0.474,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency exchange platform": {
     "n": 133,
@@ -6718,13 +7223,18 @@
     "entries_per_entrant": 7.818,
     "days": 8.0,
     "methods": 10.0,
-    "email_offered": 0.03,
-    "email_uptake": 0.976,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.817,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.008,
+    "woocommerce_share": null,
     "sells_online_share": 0.82,
-    "business_plus_share": 0.669
+    "business_plus_share": 0.669,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "blockchain gaming platform": {
     "n": 129,
@@ -6738,9 +7248,12 @@
     "email_uptake": 1.042,
     "referrals_per_contestant": 0.82,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.008,
+    "woocommerce_share": null,
     "sells_online_share": 0.062,
-    "business_plus_share": 0.217
+    "business_plus_share": 0.217,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency token launchpad": {
     "n": 120,
@@ -6766,13 +7279,18 @@
     "entries_per_entrant": 5.292,
     "days": 13.0,
     "methods": 7.0,
-    "email_offered": 0.017,
-    "email_uptake": 1.436,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.809,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.026,
+    "woocommerce_share": null,
     "sells_online_share": 0.165,
-    "business_plus_share": 0.209
+    "business_plus_share": 0.209,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "nft gaming platform": {
     "n": 111,
@@ -6814,13 +7332,19 @@
     "entries_per_entrant": 4.234,
     "days": 6.0,
     "methods": 6.0,
-    "email_offered": 0.01,
-    "email_uptake": 0.882,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.893,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.01,
-    "sells_online_share": 0.01,
-    "business_plus_share": 0.073
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.073,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "search engine": {
     "n": 94,
@@ -6850,9 +7374,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.812,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.011,
+    "woocommerce_share": null,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.12
+    "business_plus_share": 0.12,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency gaming nft": {
     "n": 88,
@@ -6867,8 +7394,11 @@
     "referrals_per_contestant": 1.046,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.011,
-    "business_plus_share": 0.068
+    "sells_online_share": null,
+    "business_plus_share": 0.068,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "cryptocurrency": {
     "n": 85,
@@ -6882,9 +7412,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 1.059,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.024,
+    "woocommerce_share": null,
     "sells_online_share": 0.082,
-    "business_plus_share": 0.341
+    "business_plus_share": 0.341,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency nft platform": {
     "n": 85,
@@ -6894,13 +7427,18 @@
     "entries_per_entrant": 5.29,
     "days": 7.0,
     "methods": 7.0,
-    "email_offered": 0.035,
-    "email_uptake": 1.023,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.598,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.012,
+    "woocommerce_share": null,
     "sells_online_share": 0.318,
-    "business_plus_share": 0.412
+    "business_plus_share": 0.412,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency wallet platform": {
     "n": 83,
@@ -6926,13 +7464,17 @@
     "entries_per_entrant": 6.474,
     "days": 14.0,
     "methods": 8.0,
-    "email_offered": 0.013,
-    "email_uptake": 1.177,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.876,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.4,
-    "business_plus_share": 0.338
+    "business_plus_share": 0.338,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency token airdrop": {
     "n": 67,
@@ -6942,13 +7484,18 @@
     "entries_per_entrant": 5.852,
     "days": 16.0,
     "methods": 8.0,
-    "email_offered": 0.015,
-    "email_uptake": 4.049,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.213,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.06,
-    "business_plus_share": 0.388
+    "sells_online_share": null,
+    "business_plus_share": 0.388,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "blockchain gaming": {
     "n": 63,
@@ -6990,13 +7537,17 @@
     "entries_per_entrant": 4.899,
     "days": 8.0,
     "methods": 7.0,
-    "email_offered": 0.049,
-    "email_uptake": 0.708,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.678,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.18,
-    "business_plus_share": 0.148
+    "business_plus_share": 0.148,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency software platform": {
     "n": 53,
@@ -7012,7 +7563,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.208,
-    "business_plus_share": 0.094
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "blockchain game": {
     "n": 51,
@@ -7027,8 +7581,11 @@
     "referrals_per_contestant": 0.548,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.098,
-    "business_plus_share": 0.333
+    "sells_online_share": null,
+    "business_plus_share": 0.333,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "cryptocurrency token community": {
     "n": 49,
@@ -7043,8 +7600,11 @@
     "referrals_per_contestant": 0.471,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.02,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "cryptocurrency nft": {
     "n": 46,
@@ -7060,7 +7620,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.109,
-    "business_plus_share": 0.043
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "cryptocurrency tokens": {
     "n": 42,
@@ -7074,9 +7637,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 1.172,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.024,
+    "woocommerce_share": null,
     "sells_online_share": 0.31,
-    "business_plus_share": 0.143
+    "business_plus_share": 0.143,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency community platform": {
     "n": 36,
@@ -7086,13 +7652,17 @@
     "entries_per_entrant": 6.392,
     "days": 14.0,
     "methods": 9.5,
-    "email_offered": 0.028,
-    "email_uptake": 0.754,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.036,
     "shopify_share": 0.0,
     "woocommerce_share": 0.139,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.528
+    "business_plus_share": 0.528,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "blockchain infrastructure": {
     "n": 34,
@@ -7102,13 +7672,17 @@
     "entries_per_entrant": 5.824,
     "days": 13.5,
     "methods": 9.0,
-    "email_offered": 0.029,
-    "email_uptake": 0.99,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.396,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.5,
-    "business_plus_share": 0.382
+    "business_plus_share": 0.382,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency wallet": {
     "n": 32,
@@ -7118,13 +7692,17 @@
     "entries_per_entrant": 6.379,
     "days": 14.0,
     "methods": 10.0,
-    "email_offered": 0.125,
-    "email_uptake": 0.908,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.408,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.219,
-    "business_plus_share": 0.312
+    "business_plus_share": 0.312,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency defi platform": {
     "n": 31,
@@ -7134,13 +7712,17 @@
     "entries_per_entrant": 4.548,
     "days": 9.5,
     "methods": 6.0,
-    "email_offered": 0.065,
-    "email_uptake": 4.325,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.973,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.548,
-    "business_plus_share": 0.484
+    "business_plus_share": 0.484,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency token exchange": {
     "n": 30,
@@ -7155,8 +7737,11 @@
     "referrals_per_contestant": 0.924,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.067,
-    "business_plus_share": 0.567
+    "sells_online_share": null,
+    "business_plus_share": 0.567,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "cryptocurrency nft gaming": {
     "n": 29,
@@ -7166,13 +7751,18 @@
     "entries_per_entrant": 5.3,
     "days": 9.0,
     "methods": 8.0,
-    "email_offered": 0.069,
-    "email_uptake": 0.991,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.459,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.31,
-    "business_plus_share": 0.172
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "nft collectibles": {
     "n": 27,
@@ -7182,13 +7772,17 @@
     "entries_per_entrant": 4.845,
     "days": 7.0,
     "methods": 6.0,
-    "email_offered": 0.148,
-    "email_uptake": 0.912,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.573,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.259,
-    "business_plus_share": 0.259
+    "business_plus_share": 0.259,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency blockchain": {
     "n": 25,
@@ -7198,13 +7792,19 @@
     "entries_per_entrant": 5.021,
     "days": 14.0,
     "methods": 6.0,
-    "email_offered": 0.08,
-    "email_uptake": 1.456,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.691,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.04,
-    "business_plus_share": 0.04
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "cryptocurrency payment platform": {
     "n": 24,
@@ -7214,13 +7814,19 @@
     "entries_per_entrant": 3.248,
     "days": 8.0,
     "methods": 5.0,
-    "email_offered": 0.083,
-    "email_uptake": 0.757,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.929,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.792,
-    "business_plus_share": 0.125
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "sports betting platform": {
     "n": 23,
@@ -7230,13 +7836,20 @@
     "entries_per_entrant": 5.523,
     "days": 17.0,
     "methods": 7.0,
-    "email_offered": 0.087,
-    "email_uptake": 0.612,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.935,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.043,
-    "sells_online_share": 0.826,
-    "business_plus_share": 0.13
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency airdrop": {
     "n": 23,
@@ -7252,7 +7865,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.304,
-    "business_plus_share": 0.13
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "play-to-earn gaming": {
     "n": 22,
@@ -7262,13 +7878,17 @@
     "entries_per_entrant": 6.656,
     "days": 21.0,
     "methods": 8.0,
-    "email_offered": 0.045,
-    "email_uptake": 1.587,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.837,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.682,
-    "business_plus_share": 0.455
+    "business_plus_share": 0.455,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency meme token": {
     "n": 22,
@@ -7283,8 +7903,12 @@
     "referrals_per_contestant": 1.039,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.091,
-    "business_plus_share": 0.136
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "nft gaming collectibles": {
     "n": 20,
@@ -7294,13 +7918,19 @@
     "entries_per_entrant": 4.223,
     "days": 7.0,
     "methods": 6.0,
-    "email_offered": 0.05,
-    "email_uptake": 0.457,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.658,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.1,
-    "business_plus_share": 0.05
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "defi platform": {
     "n": 19,
@@ -7316,7 +7946,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.579,
-    "business_plus_share": 0.158
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "cryptocurrency protocol": {
     "n": 19,
@@ -7330,9 +7963,13 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.618,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.105,
-    "sells_online_share": 0.211,
-    "business_plus_share": 0.579
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.579,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "decentralized exchange": {
     "n": 18,
@@ -7358,13 +7995,17 @@
     "entries_per_entrant": 5.753,
     "days": 11.0,
     "methods": 9.0,
-    "email_offered": 0.118,
-    "email_uptake": 0.836,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.783,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.588,
-    "business_plus_share": 0.471
+    "business_plus_share": 0.471,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "cryptocurrency nft community": {
     "n": 17,
@@ -7390,13 +8031,18 @@
     "entries_per_entrant": 5.818,
     "days": 7.0,
     "methods": 9.0,
-    "email_offered": 0.176,
-    "email_uptake": 0.688,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.313,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.235,
-    "business_plus_share": 0.471
+    "sells_online_share": null,
+    "business_plus_share": 0.471,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    }
   },
   "gaming_esports": {
@@ -7427,10 +8073,13 @@
     "email_offered": 0.144,
     "email_uptake": 0.966,
     "referrals_per_contestant": 0.21,
-    "shopify_share": 0.001,
+    "shopify_share": null,
     "woocommerce_share": 0.022,
     "sells_online_share": 0.423,
-    "business_plus_share": 0.176
+    "business_plus_share": 0.176,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "gaming content creator": {
     "n": 443,
@@ -7443,10 +8092,14 @@
     "email_offered": 0.014,
     "email_uptake": 0.366,
     "referrals_per_contestant": 0.213,
-    "shopify_share": 0.011,
-    "woocommerce_share": 0.007,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.099,
-    "business_plus_share": 0.038
+    "business_plus_share": 0.038,
+    "suppressed_below_floor": [
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "mobile game developer": {
     "n": 359,
@@ -7476,9 +8129,12 @@
     "email_uptake": 0.745,
     "referrals_per_contestant": 0.097,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.008,
+    "woocommerce_share": null,
     "sells_online_share": 0.077,
-    "business_plus_share": 0.289
+    "business_plus_share": 0.289,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "nft gaming platform": {
     "n": 237,
@@ -7488,13 +8144,17 @@
     "entries_per_entrant": 4.717,
     "days": 2.0,
     "methods": 6.0,
-    "email_offered": 0.021,
-    "email_uptake": 0.646,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.862,
     "shopify_share": 0.0,
     "woocommerce_share": 0.03,
     "sells_online_share": 0.08,
-    "business_plus_share": 0.743
+    "business_plus_share": 0.743,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "esports team": {
     "n": 232,
@@ -7507,10 +8167,14 @@
     "email_offered": 0.082,
     "email_uptake": 0.568,
     "referrals_per_contestant": 0.264,
-    "shopify_share": 0.004,
-    "woocommerce_share": 0.017,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.164,
-    "business_plus_share": 0.099
+    "business_plus_share": 0.099,
+    "suppressed_below_floor": [
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "gaming esports": {
     "n": 222,
@@ -7540,9 +8204,12 @@
     "email_uptake": 0.932,
     "referrals_per_contestant": 0.11,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.014,
+    "woocommerce_share": null,
     "sells_online_share": 0.488,
-    "business_plus_share": 0.094
+    "business_plus_share": 0.094,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "video game key retailer": {
     "n": 195,
@@ -7556,9 +8223,12 @@
     "email_uptake": 0.918,
     "referrals_per_contestant": 0.23,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.021,
+    "woocommerce_share": null,
     "sells_online_share": 0.954,
-    "business_plus_share": 0.785
+    "business_plus_share": 0.785,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "gaming": {
     "n": 191,
@@ -7568,13 +8238,17 @@
     "entries_per_entrant": 4.656,
     "days": 12.0,
     "methods": 7.0,
-    "email_offered": 0.026,
-    "email_uptake": 0.634,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.283,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.277,
-    "business_plus_share": 0.178
+    "business_plus_share": 0.178,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "video game developer": {
     "n": 165,
@@ -7588,9 +8262,12 @@
     "email_uptake": 0.628,
     "referrals_per_contestant": 0.089,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.03,
+    "woocommerce_share": null,
     "sells_online_share": 0.606,
-    "business_plus_share": 0.091
+    "business_plus_share": 0.091,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "url shortening platform": {
     "n": 164,
@@ -7616,13 +8293,17 @@
     "entries_per_entrant": 3.683,
     "days": 10.0,
     "methods": 6.0,
-    "email_offered": 0.025,
-    "email_uptake": 0.93,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.104,
     "shopify_share": 0.0,
     "woocommerce_share": 0.037,
     "sells_online_share": 0.245,
-    "business_plus_share": 0.031
+    "business_plus_share": 0.031,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "online gaming platform": {
     "n": 152,
@@ -7680,13 +8361,18 @@
     "entries_per_entrant": 6.994,
     "days": 8.0,
     "methods": 11.0,
-    "email_offered": 0.009,
-    "email_uptake": 0.365,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.02,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.056,
-    "business_plus_share": 0.009
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "indie game developer": {
     "n": 103,
@@ -7702,7 +8388,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.078,
     "sells_online_share": 0.913,
-    "business_plus_share": 0.019
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming equipment retailer": {
     "n": 88,
@@ -7717,8 +8406,12 @@
     "referrals_per_contestant": 0.275,
     "shopify_share": 0.0,
     "woocommerce_share": 0.273,
-    "sells_online_share": 0.989,
-    "business_plus_share": 0.011
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "online community": {
     "n": 86,
@@ -7732,9 +8425,13 @@
     "email_uptake": 0.748,
     "referrals_per_contestant": 0.398,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.047,
+    "woocommerce_share": null,
     "sells_online_share": 0.488,
-    "business_plus_share": 0.012
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    },
    "esports news media": {
     "n": 84,
@@ -7750,7 +8447,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.274,
-    "business_plus_share": 0.048
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "esports gaming": {
     "n": 83,
@@ -7763,10 +8463,13 @@
     "email_offered": 0.181,
     "email_uptake": 1.352,
     "referrals_per_contestant": 0.231,
-    "shopify_share": 0.012,
+    "shopify_share": null,
     "woocommerce_share": 0.169,
     "sells_online_share": 0.193,
-    "business_plus_share": 0.145
+    "business_plus_share": 0.145,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "blockchain gaming": {
     "n": 77,
@@ -7776,13 +8479,18 @@
     "entries_per_entrant": 5.288,
     "days": 11.0,
     "methods": 7.0,
-    "email_offered": 0.013,
-    "email_uptake": 0.883,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.412,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.039,
+    "woocommerce_share": null,
     "sells_online_share": 0.195,
-    "business_plus_share": 0.455
+    "business_plus_share": 0.455,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "game development studio": {
     "n": 68,
@@ -7796,9 +8504,13 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.619,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.029,
-    "sells_online_share": 0.015,
-    "business_plus_share": 0.868
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.868,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "gaming gear retailer": {
     "n": 67,
@@ -7827,10 +8539,14 @@
     "email_offered": 0.219,
     "email_uptake": 0.891,
     "referrals_per_contestant": 0.114,
-    "shopify_share": 0.078,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.172,
-    "business_plus_share": 0.047
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "cryptocurrency gaming platform": {
     "n": 63,
@@ -7840,13 +8556,17 @@
     "entries_per_entrant": 4.916,
     "days": 5.0,
     "methods": 6.0,
-    "email_offered": 0.063,
-    "email_uptake": 1.199,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.659,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.794,
-    "business_plus_share": 0.444
+    "business_plus_share": 0.444,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "blockchain gaming platform": {
     "n": 61,
@@ -7908,9 +8628,14 @@
     "email_uptake": 0.451,
     "referrals_per_contestant": 0.308,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.019,
-    "sells_online_share": 0.058,
-    "business_plus_share": 0.077
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "gaming esports news": {
     "n": 50,
@@ -7940,9 +8665,13 @@
     "email_uptake": 0.677,
     "referrals_per_contestant": 0.217,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.041,
+    "woocommerce_share": null,
     "sells_online_share": 0.755,
-    "business_plus_share": 0.102
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    },
    "gaming hardware": {
     "n": 49,
@@ -7984,13 +8713,18 @@
     "entries_per_entrant": 4.058,
     "days": 14.0,
     "methods": 8.0,
-    "email_offered": 0.045,
-    "email_uptake": 0.933,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.476,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.273,
-    "business_plus_share": 0.023
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "esports gaming community": {
     "n": 44,
@@ -8000,13 +8734,17 @@
     "entries_per_entrant": 6.0,
     "days": 14.5,
     "methods": 8.0,
-    "email_offered": 0.023,
-    "email_uptake": 1.069,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.059,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.227,
-    "business_plus_share": 0.273
+    "business_plus_share": 0.273,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "gaming esports platform": {
     "n": 40,
@@ -8016,13 +8754,18 @@
     "entries_per_entrant": 5.89,
     "days": 7.0,
     "methods": 7.0,
-    "email_offered": 0.025,
-    "email_uptake": 0.766,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.588,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.3,
-    "business_plus_share": 0.025
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "gaming merchandise retailer": {
     "n": 36,
@@ -8032,13 +8775,18 @@
     "entries_per_entrant": 3.659,
     "days": 8.5,
     "methods": 6.0,
-    "email_offered": 0.028,
-    "email_uptake": 1.007,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.156,
-    "shopify_share": 0.111,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.222,
-    "business_plus_share": 0.25
+    "business_plus_share": 0.25,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "shopify_share"
+    ]
    },
    "esports gaming team": {
     "n": 36,
@@ -8052,9 +8800,13 @@
     "email_uptake": 0.878,
     "referrals_per_contestant": 0.099,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.056,
-    "sells_online_share": 0.056,
-    "business_plus_share": 0.583
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.583,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "gaming skins marketplace": {
     "n": 35,
@@ -8083,10 +8835,15 @@
     "email_offered": 0.171,
     "email_uptake": 0.828,
     "referrals_per_contestant": 0.172,
-    "shopify_share": 0.086,
-    "woocommerce_share": 0.086,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.629,
-    "business_plus_share": 0.029
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "indie video game studio": {
     "n": 31,
@@ -8096,13 +8853,18 @@
     "entries_per_entrant": 5.716,
     "days": 14.0,
     "methods": 8.0,
-    "email_offered": 0.161,
-    "email_uptake": 0.774,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.278,
     "shopify_share": 0.0,
     "woocommerce_share": 0.226,
     "sells_online_share": 0.387,
-    "business_plus_share": 0.032
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "indie video game developer": {
     "n": 31,
@@ -8116,9 +8878,13 @@
     "email_uptake": 0.712,
     "referrals_per_contestant": 0.169,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.129,
+    "woocommerce_share": null,
     "sells_online_share": 0.484,
-    "business_plus_share": 0.032
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    },
    "gaming gear": {
     "n": 31,
@@ -8128,13 +8894,19 @@
     "entries_per_entrant": 4.918,
     "days": 18.0,
     "methods": 8.0,
-    "email_offered": 0.065,
-    "email_uptake": 0.806,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.111,
-    "shopify_share": 0.065,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.065,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "esports content creator": {
     "n": 28,
@@ -8150,7 +8922,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.071
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "esports betting platform": {
     "n": 28,
@@ -8165,8 +8940,12 @@
     "referrals_per_contestant": null,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.071,
-    "business_plus_share": 0.071
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "gaming peripherals": {
     "n": 28,
@@ -8176,13 +8955,17 @@
     "entries_per_entrant": 6.368,
     "days": 11.5,
     "methods": 9.0,
-    "email_offered": 0.143,
-    "email_uptake": 0.895,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.446,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.321,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "gaming news site": {
     "n": 27,
@@ -8198,7 +8981,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.074
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming brand": {
     "n": 24,
@@ -8208,13 +8994,18 @@
     "entries_per_entrant": 4.066,
     "days": 16.5,
     "methods": 6.5,
-    "email_offered": 0.083,
-    "email_uptake": 0.461,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.242,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.042,
+    "woocommerce_share": null,
     "sells_online_share": 0.292,
-    "business_plus_share": 0.5
+    "business_plus_share": 0.5,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "cryptocurrency gaming": {
     "n": 23,
@@ -8230,7 +9021,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.087
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming media publisher": {
     "n": 23,
@@ -8246,7 +9040,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.043
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "esports gaming merchandise": {
     "n": 22,
@@ -8262,7 +9059,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.136
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming esports community": {
     "n": 22,
@@ -8278,7 +9078,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.182
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "esports tournament platform": {
     "n": 21,
@@ -8288,13 +9091,18 @@
     "entries_per_entrant": 5.127,
     "days": 11.0,
     "methods": 9.0,
-    "email_offered": 0.048,
-    "email_uptake": 0.611,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.283,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.571,
-    "business_plus_share": 0.095
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "vr game developer": {
     "n": 19,
@@ -8304,13 +9112,18 @@
     "entries_per_entrant": 4.434,
     "days": 14.0,
     "methods": 8.0,
-    "email_offered": 0.105,
-    "email_uptake": 0.875,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.726,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.789,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "video game streaming": {
     "n": 19,
@@ -8352,13 +9165,20 @@
     "entries_per_entrant": 3.098,
     "days": 10.0,
     "methods": 4.0,
-    "email_offered": 0.125,
-    "email_uptake": 1.015,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.14,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.25,
-    "sells_online_share": 0.25,
-    "business_plus_share": 0.188
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    }
   },
   "electronics_tech": {
@@ -8486,9 +9306,12 @@
     "email_uptake": 0.852,
     "referrals_per_contestant": 0.461,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.013,
+    "woocommerce_share": null,
     "sells_online_share": 0.89,
-    "business_plus_share": 0.278
+    "business_plus_share": 0.278,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "gaming headsets keyboards": {
     "n": 226,
@@ -8517,10 +9340,13 @@
     "email_offered": 0.124,
     "email_uptake": 0.605,
     "referrals_per_contestant": 0.048,
-    "shopify_share": 0.006,
+    "shopify_share": null,
     "woocommerce_share": 0.041,
     "sells_online_share": 0.188,
-    "business_plus_share": 0.559
+    "business_plus_share": 0.559,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "gaming peripherals brand": {
     "n": 153,
@@ -8549,10 +9375,13 @@
     "email_offered": 0.402,
     "email_uptake": 0.834,
     "referrals_per_contestant": 0.363,
-    "shopify_share": 0.012,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.902,
-    "business_plus_share": 0.085
+    "business_plus_share": 0.085,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "online community": {
     "n": 81,
@@ -8568,7 +9397,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.074,
-    "business_plus_share": 0.012
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "tech electronics retailer": {
     "n": 73,
@@ -8594,13 +9426,17 @@
     "entries_per_entrant": 6.33,
     "days": 15.0,
     "methods": 9.0,
-    "email_offered": 0.015,
-    "email_uptake": 0.786,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.192,
     "shopify_share": 0.0,
     "woocommerce_share": 0.103,
     "sells_online_share": 0.838,
-    "business_plus_share": 0.132
+    "business_plus_share": 0.132,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "mechanical keyboards": {
     "n": 66,
@@ -8626,13 +9462,18 @@
     "entries_per_entrant": 7.329,
     "days": 1.0,
     "methods": 11.0,
-    "email_offered": 0.016,
-    "email_uptake": 0.73,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.445,
-    "shopify_share": 0.032,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.871,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "shopify_share"
+    ]
    },
    "pc gaming components": {
     "n": 50,
@@ -8642,13 +9483,18 @@
     "entries_per_entrant": 4.235,
     "days": 5.5,
     "methods": 5.0,
-    "email_offered": 0.08,
-    "email_uptake": 0.696,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.607,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.08,
-    "business_plus_share": 0.1
+    "sells_online_share": null,
+    "business_plus_share": 0.1,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share"
+    ]
    },
    "tech electronics": {
     "n": 50,
@@ -8693,10 +9539,16 @@
     "email_offered": 0.186,
     "email_uptake": 1.054,
     "referrals_per_contestant": 0.049,
-    "shopify_share": 0.07,
-    "woocommerce_share": 0.093,
-    "sells_online_share": 0.907,
-    "business_plus_share": 0.07
+    "shopify_share": null,
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "electronics tech": {
     "n": 42,
@@ -8709,10 +9561,13 @@
     "email_offered": 0.167,
     "email_uptake": 0.628,
     "referrals_per_contestant": 0.059,
-    "shopify_share": 0.024,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.143
+    "business_plus_share": 0.143,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "electronics tech brand": {
     "n": 36,
@@ -8722,13 +9577,19 @@
     "entries_per_entrant": 3.814,
     "days": 11.5,
     "methods": 8.5,
-    "email_offered": 0.083,
-    "email_uptake": 1.028,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.326,
-    "shopify_share": 0.056,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.944,
-    "business_plus_share": 0.222
+    "sells_online_share": null,
+    "business_plus_share": 0.222,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "gaming computers and monitors": {
     "n": 31,
@@ -8791,8 +9652,11 @@
     "referrals_per_contestant": 0.289,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.963,
-    "business_plus_share": 0.222
+    "sells_online_share": null,
+    "business_plus_share": 0.222,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "electronics": {
     "n": 23,
@@ -8807,8 +9671,11 @@
     "referrals_per_contestant": 0.299,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.174,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "consumer electronics retailer": {
     "n": 23,
@@ -8821,10 +9688,14 @@
     "email_offered": 0.696,
     "email_uptake": 0.758,
     "referrals_per_contestant": 0.171,
-    "shopify_share": 0.043,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.391,
-    "business_plus_share": 0.13
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "mechanical keyboard retailer": {
     "n": 23,
@@ -8834,13 +9705,19 @@
     "entries_per_entrant": 4.262,
     "days": 8.0,
     "methods": 7.0,
-    "email_offered": 0.783,
-    "email_uptake": 0.757,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.215,
-    "shopify_share": 0.87,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.87,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "consumer electronics": {
     "n": 20,
@@ -8853,10 +9730,14 @@
     "email_offered": 0.45,
     "email_uptake": 0.814,
     "referrals_per_contestant": 0.493,
-    "shopify_share": 0.05,
-    "woocommerce_share": 0.05,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.45,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "audio equipment brand": {
     "n": 18,
@@ -8869,10 +9750,14 @@
     "email_offered": 0.556,
     "email_uptake": 0.982,
     "referrals_per_contestant": 0.359,
-    "shopify_share": 0.167,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.833,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "shopify_share"
+    ]
    }
   },
   "toys_hobbies_collectibles": {
@@ -8935,10 +9820,14 @@
     "email_offered": 0.613,
     "email_uptake": 0.673,
     "referrals_per_contestant": 0.056,
-    "shopify_share": 0.032,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.726,
-    "business_plus_share": 0.065
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "collectibles": {
     "n": 57,
@@ -8954,7 +9843,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.649,
-    "business_plus_share": 0.07
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "trading card game retailer": {
     "n": 48,
@@ -8967,10 +9859,14 @@
     "email_offered": 0.521,
     "email_uptake": 0.555,
     "referrals_per_contestant": 0.104,
-    "shopify_share": 0.021,
+    "shopify_share": null,
     "woocommerce_share": 0.438,
     "sells_online_share": 0.812,
-    "business_plus_share": 0.062
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "anime collectibles retailer": {
     "n": 48,
@@ -8983,10 +9879,15 @@
     "email_offered": 0.875,
     "email_uptake": 0.647,
     "referrals_per_contestant": 0.263,
-    "shopify_share": 0.042,
-    "woocommerce_share": 0.021,
-    "sells_online_share": 0.938,
-    "business_plus_share": 0.0
+    "shopify_share": null,
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "board game retailer": {
     "n": 30,
@@ -9000,9 +9901,13 @@
     "email_uptake": 0.804,
     "referrals_per_contestant": 0.192,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.1,
+    "woocommerce_share": null,
     "sells_online_share": 0.367,
-    "business_plus_share": 0.033
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    }
   },
   "software_saas": {
@@ -9067,8 +9972,11 @@
     "referrals_per_contestant": 0.204,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.937,
-    "business_plus_share": 0.0
+    "sells_online_share": null,
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "business software": {
     "n": 16,
@@ -9078,13 +9986,19 @@
     "entries_per_entrant": 3.588,
     "days": 23.5,
     "methods": 7.5,
-    "email_offered": 0.312,
-    "email_uptake": 0.64,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.104,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.312,
+    "woocommerce_share": null,
     "sells_online_share": 0.562,
-    "business_plus_share": 0.125
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    }
   },
   "media_entertainment": {
@@ -9112,13 +10026,18 @@
     "entries_per_entrant": 5.5,
     "days": 21.0,
     "methods": 10.0,
-    "email_offered": 0.001,
-    "email_uptake": 0.422,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.012,
     "shopify_share": 0.0,
     "woocommerce_share": 0.048,
     "sells_online_share": 0.053,
-    "business_plus_share": 0.001
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "entertainment and media": {
     "n": 384,
@@ -9134,7 +10053,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.003
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "family lifestyle blog": {
     "n": 329,
@@ -9195,10 +10117,14 @@
     "email_offered": 0.559,
     "email_uptake": 0.652,
     "referrals_per_contestant": 0.081,
-    "shopify_share": 0.009,
-    "woocommerce_share": 0.045,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.486,
-    "business_plus_share": 0.414
+    "business_plus_share": 0.414,
+    "suppressed_below_floor": [
+     "shopify_share",
+     "woocommerce_share"
+    ]
    },
    "entertainment media": {
     "n": 101,
@@ -9211,10 +10137,13 @@
     "email_offered": 0.554,
     "email_uptake": 0.861,
     "referrals_per_contestant": 0.114,
-    "shopify_share": 0.01,
+    "shopify_share": null,
     "woocommerce_share": 0.139,
     "sells_online_share": 0.168,
-    "business_plus_share": 0.208
+    "business_plus_share": 0.208,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "online community": {
     "n": 82,
@@ -9229,8 +10158,12 @@
     "referrals_per_contestant": 0.351,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.024,
-    "business_plus_share": 0.024
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "content creator": {
     "n": 75,
@@ -9243,10 +10176,13 @@
     "email_offered": 0.267,
     "email_uptake": 1.012,
     "referrals_per_contestant": 0.155,
-    "shopify_share": 0.027,
+    "shopify_share": null,
     "woocommerce_share": 0.147,
     "sells_online_share": 0.613,
-    "business_plus_share": 0.08
+    "business_plus_share": 0.08,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "technology news and reviews": {
     "n": 60,
@@ -9256,13 +10192,18 @@
     "entries_per_entrant": 4.078,
     "days": 29.0,
     "methods": 6.0,
-    "email_offered": 0.05,
-    "email_uptake": 1.0,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.263,
     "shopify_share": 0.0,
     "woocommerce_share": 0.333,
     "sells_online_share": 0.2,
-    "business_plus_share": 0.083
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "gaming content creator": {
     "n": 44,
@@ -9278,7 +10219,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.159,
-    "business_plus_share": 0.045
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "media publishing": {
     "n": 42,
@@ -9292,9 +10236,12 @@
     "email_uptake": 1.055,
     "referrals_per_contestant": 0.054,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.048,
+    "woocommerce_share": null,
     "sells_online_share": 0.429,
-    "business_plus_share": 0.286
+    "business_plus_share": 0.286,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "lifestyle blog": {
     "n": 39,
@@ -9324,9 +10271,13 @@
     "email_uptake": 1.014,
     "referrals_per_contestant": 0.082,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.056,
-    "sells_online_share": 0.111,
-    "business_plus_share": 0.639
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.639,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "entertainment merchandise": {
     "n": 27,
@@ -9339,10 +10290,14 @@
     "email_offered": 0.556,
     "email_uptake": 0.924,
     "referrals_per_contestant": 0.321,
-    "shopify_share": 0.074,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.148
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    }
   },
   "sports_outdoors": {
@@ -9390,9 +10345,12 @@
     "email_uptake": 1.001,
     "referrals_per_contestant": 0.122,
     "shopify_share": 0.141,
-    "woocommerce_share": 0.01,
+    "woocommerce_share": null,
     "sells_online_share": 0.808,
-    "business_plus_share": 0.141
+    "business_plus_share": 0.141,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "firearms retailer": {
     "n": 61,
@@ -9406,9 +10364,12 @@
     "email_uptake": 0.93,
     "referrals_per_contestant": 0.634,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.066,
+    "woocommerce_share": null,
     "sells_online_share": 0.689,
-    "business_plus_share": 0.492
+    "business_plus_share": 0.492,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "online community": {
     "n": 60,
@@ -9454,9 +10415,12 @@
     "email_uptake": 1.002,
     "referrals_per_contestant": 0.444,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.036,
+    "woocommerce_share": null,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.218
+    "business_plus_share": 0.218,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "outdoor gear retailer": {
     "n": 49,
@@ -9470,9 +10434,12 @@
     "email_uptake": 1.011,
     "referrals_per_contestant": 0.103,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.02,
+    "woocommerce_share": null,
     "sells_online_share": 0.878,
-    "business_plus_share": 0.612
+    "business_plus_share": 0.612,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "outdoor sports": {
     "n": 43,
@@ -9504,7 +10471,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.079
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "outdoor gear brand": {
     "n": 36,
@@ -9566,9 +10536,13 @@
     "email_uptake": 0.939,
     "referrals_per_contestant": 0.225,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.062,
+    "woocommerce_share": null,
     "sells_online_share": 0.5,
-    "business_plus_share": 0.062
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    }
   },
   "food_drink": {
@@ -9583,10 +10557,13 @@
     "email_offered": 0.368,
     "email_uptake": 0.75,
     "referrals_per_contestant": 0.075,
-    "shopify_share": 0.007,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.465,
-    "business_plus_share": 0.389
+    "business_plus_share": 0.389,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "food beverage brand": {
     "n": 164,
@@ -9616,9 +10593,12 @@
     "email_uptake": 0.891,
     "referrals_per_contestant": 0.136,
     "shopify_share": 0.08,
-    "woocommerce_share": 0.036,
+    "woocommerce_share": null,
     "sells_online_share": 0.455,
-    "business_plus_share": 0.125
+    "business_plus_share": 0.125,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "energy drink brand": {
     "n": 75,
@@ -9633,8 +10613,11 @@
     "referrals_per_contestant": 0.046,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.947,
-    "business_plus_share": 0.387
+    "sells_online_share": null,
+    "business_plus_share": 0.387,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "online community": {
     "n": 70,
@@ -9660,13 +10643,20 @@
     "entries_per_entrant": 4.436,
     "days": 20.0,
     "methods": 8.0,
-    "email_offered": 0.907,
-    "email_uptake": 0.659,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.13,
-    "shopify_share": 0.116,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.953,
-    "business_plus_share": 0.093
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "shopify_share"
+    ]
    },
    "food brand": {
     "n": 31,
@@ -9679,10 +10669,14 @@
     "email_offered": 0.581,
     "email_uptake": 0.946,
     "referrals_per_contestant": 0.163,
-    "shopify_share": 0.032,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.516,
-    "business_plus_share": 0.161
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "specialty coffee": {
     "n": 19,
@@ -9695,10 +10689,14 @@
     "email_offered": 1.0,
     "email_uptake": 1.018,
     "referrals_per_contestant": 0.096,
-    "shopify_share": 0.105,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.684,
-    "business_plus_share": 0.105
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "specialty coffee brand": {
     "n": 18,
@@ -9713,8 +10711,12 @@
     "referrals_per_contestant": 0.129,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.889,
-    "business_plus_share": 0.056
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "food drink brand": {
     "n": 18,
@@ -9724,13 +10726,18 @@
     "entries_per_entrant": 2.253,
     "days": 52.5,
     "methods": 4.0,
-    "email_offered": 0.944,
-    "email_uptake": 1.019,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.122,
     "shopify_share": 0.0,
     "woocommerce_share": 0.722,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.167
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "craft cider brewery": {
     "n": 17,
@@ -9744,9 +10751,13 @@
     "email_uptake": 1.015,
     "referrals_per_contestant": null,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.235,
+    "woocommerce_share": null,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.118
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "woocommerce_share"
+    ]
    },
    "beverage brand": {
     "n": 15,
@@ -9772,13 +10783,18 @@
     "entries_per_entrant": 2.628,
     "days": 31.0,
     "methods": 5.0,
-    "email_offered": 0.733,
-    "email_uptake": 1.004,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.172,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.6,
-    "business_plus_share": 0.267
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    }
   }
  },
@@ -9855,13 +10871,18 @@
    "entries_per_entrant": 3.775,
    "days": 14.0,
    "methods": 5.0,
-   "email_offered": 0.001,
-   "email_uptake": 0.796,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.243,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   }
  },
  "by_youtube_country": {
@@ -9895,7 +10916,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "IN": {
    "n": 654,
@@ -9937,13 +10961,18 @@
    "entries_per_entrant": 3.417,
    "days": 9.0,
    "methods": 5.0,
-   "email_offered": 0.005,
-   "email_uptake": 0.813,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.118,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.003
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "ES": {
    "n": 309,
@@ -9959,7 +10988,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.003
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "CA": {
    "n": 231,
@@ -9991,7 +11023,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.009
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "TR": {
    "n": 195,
@@ -10007,7 +11042,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.005
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "DE": {
    "n": 183,
@@ -10023,7 +11061,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.005
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "HU": {
    "n": 104,
@@ -10055,7 +11096,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.011
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "AR": {
    "n": 53,
@@ -10105,7 +11149,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "Technology": {
    "n": 1512,
@@ -10137,7 +11184,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.003
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "Action-adventure_game": {
    "n": 671,
@@ -10147,13 +11197,17 @@
    "entries_per_entrant": 3.96,
    "days": 11.0,
    "methods": 6.0,
-   "email_offered": 0.001,
-   "email_uptake": 0.635,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.19,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.051
+   "business_plus_share": 0.051,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Video_game_culture": {
    "n": 607,
@@ -10185,7 +11239,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.004
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "Simulation_video_game": {
    "n": 314,
@@ -10227,13 +11284,17 @@
    "entries_per_entrant": 3.257,
    "days": 15.0,
    "methods": 5.0,
-   "email_offered": 0.024,
-   "email_uptake": 0.416,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.35,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Food": {
    "n": 84,
@@ -10243,13 +11304,17 @@
    "entries_per_entrant": 3.391,
    "days": 8.0,
    "methods": 5.0,
-   "email_offered": 0.012,
-   "email_uptake": 0.76,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.098,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Racing_video_game": {
    "n": 83,
@@ -10265,7 +11330,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.024
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "Casual_game": {
    "n": 78,
@@ -10313,7 +11381,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.046
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "Tourism": {
    "n": 60,
@@ -10323,13 +11394,17 @@
    "entries_per_entrant": 3.732,
    "days": 14.0,
    "methods": 4.0,
-   "email_offered": 0.017,
-   "email_uptake": 0.556,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.188,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Sports_game": {
    "n": 58,
@@ -10371,13 +11446,17 @@
    "entries_per_entrant": 1.0,
    "days": 22.0,
    "methods": 1.0,
-   "email_offered": 0.027,
-   "email_uptake": 0.796,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.249,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   }
  },
  "by_youtube_gaming": {
@@ -10477,7 +11556,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   }
  },
  "shopify_store_size": {
@@ -10542,8 +11624,11 @@
    "referrals_per_contestant": 0.159,
    "shopify_share": 1.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.999,
-   "business_plus_share": 0.519
+   "sells_online_share": null,
+   "business_plus_share": 0.519,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   }
  },
  "shopify_price_band": {
@@ -10576,8 +11661,11 @@
    "referrals_per_contestant": 0.138,
    "shopify_share": 1.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.996,
-   "business_plus_share": 0.256
+   "sells_online_share": null,
+   "business_plus_share": 0.256,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "under_20": {
    "n": 410,
@@ -10592,8 +11680,11 @@
    "referrals_per_contestant": 0.072,
    "shopify_share": 1.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.998,
-   "business_plus_share": 0.563
+   "sells_online_share": null,
+   "business_plus_share": 0.563,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "200+": {
    "n": 300,
@@ -10644,7 +11735,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.004
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming_esports:10k-100k": {
     "n": 844,
@@ -10660,7 +11754,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.004
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "electronics_tech:100k-1m": {
     "n": 668,
@@ -10692,7 +11789,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.012
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "other:100k-1m": {
     "n": 380,
@@ -10708,7 +11808,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.005
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "electronics_tech:1m+": {
     "n": 369,
@@ -10718,13 +11821,18 @@
     "entries_per_entrant": 4.033,
     "days": 20.0,
     "methods": 5.0,
-    "email_offered": 0.003,
-    "email_uptake": 0.706,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.101,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.005
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "creator_influencer:10k-100k": {
     "n": 359,
@@ -10734,13 +11842,17 @@
     "entries_per_entrant": 3.195,
     "days": 11.0,
     "methods": 4.0,
-    "email_offered": 0.006,
-    "email_uptake": 0.485,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.159,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.019
+    "business_plus_share": 0.019,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "gaming_esports:1k-10k": {
     "n": 333,
@@ -10756,7 +11868,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.015
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "gaming_esports:under_1k": {
     "n": 278,
@@ -10836,7 +11951,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.005
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "creator_influencer:1k-10k": {
     "n": 179,
@@ -10862,13 +11980,17 @@
     "entries_per_entrant": 2.938,
     "days": 11.0,
     "methods": 4.0,
-    "email_offered": 0.012,
-    "email_uptake": 0.452,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.133,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.036
+    "business_plus_share": 0.036,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "electronics_tech:under_1k": {
     "n": 157,
@@ -10878,13 +12000,17 @@
     "entries_per_entrant": 4.079,
     "days": 29.0,
     "methods": 6.0,
-    "email_offered": 0.006,
-    "email_uptake": 0.796,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.338,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "other:10k-100k": {
     "n": 114,
@@ -10900,7 +12026,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.026
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "finance_crypto:10k-100k": {
     "n": 109,
@@ -10958,13 +12087,18 @@
     "entries_per_entrant": 1.832,
     "days": 7.0,
     "methods": 2.0,
-    "email_offered": 0.058,
-    "email_uptake": 0.834,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.046,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.035
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "media_entertainment:1k-10k": {
     "n": 83,
@@ -10990,13 +12124,17 @@
     "entries_per_entrant": 2.358,
     "days": 12.0,
     "methods": 3.0,
-    "email_offered": 0.043,
-    "email_uptake": 0.964,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.221,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "food_drink:100k-1m": {
     "n": 64,
@@ -11022,13 +12160,18 @@
     "entries_per_entrant": 2.753,
     "days": 8.0,
     "methods": 3.0,
-    "email_offered": 0.032,
-    "email_uptake": 1.004,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": null,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.063
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "finance_crypto:1k-10k": {
     "n": 57,
@@ -11038,13 +12181,17 @@
     "entries_per_entrant": 3.783,
     "days": 16.0,
     "methods": 5.0,
-    "email_offered": 0.018,
-    "email_uptake": 1.856,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.622,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "media_entertainment:under_1k": {
     "n": 49,
@@ -11086,13 +12233,17 @@
     "entries_per_entrant": 2.581,
     "days": 8.0,
     "methods": 3.0,
-    "email_offered": 0.045,
-    "email_uptake": 0.681,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.057,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.273
+    "business_plus_share": 0.273,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "sports_outdoors:100k-1m": {
     "n": 36,
@@ -11166,13 +12317,17 @@
     "entries_per_entrant": 2.992,
     "days": 16.0,
     "methods": 5.0,
-    "email_offered": 0.032,
-    "email_uptake": 0.698,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.146,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    }
   },
   "telegram": {
@@ -11187,10 +12342,13 @@
     "email_offered": 0.015,
     "email_uptake": 1.023,
     "referrals_per_contestant": 0.622,
-    "shopify_share": 0.001,
+    "shopify_share": null,
     "woocommerce_share": 0.008,
     "sells_online_share": 0.493,
-    "business_plus_share": 0.474
+    "business_plus_share": 0.474,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "finance_crypto:1k-10k": {
     "n": 3251,
@@ -11232,13 +12390,18 @@
     "entries_per_entrant": 5.468,
     "days": 5.0,
     "methods": 7.0,
-    "email_offered": 0.001,
-    "email_uptake": 1.194,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.894,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.001,
+    "woocommerce_share": null,
     "sells_online_share": 0.636,
-    "business_plus_share": 0.547
+    "business_plus_share": 0.547,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "gaming_esports:10k-100k": {
     "n": 536,
@@ -11300,9 +12463,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.036,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.002,
+    "woocommerce_share": null,
     "sells_online_share": 0.917,
-    "business_plus_share": 0.071
+    "business_plus_share": 0.071,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "software_saas:1k-10k": {
     "n": 328,
@@ -11312,13 +12478,18 @@
     "entries_per_entrant": 6.197,
     "days": 8.0,
     "methods": 8.0,
-    "email_offered": 0.009,
-    "email_uptake": 1.047,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.122,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.003,
+    "woocommerce_share": null,
     "sells_online_share": 0.055,
-    "business_plus_share": 0.024
+    "business_plus_share": 0.024,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "media_entertainment:1k-10k": {
     "n": 318,
@@ -11332,9 +12503,13 @@
     "email_uptake": 1.054,
     "referrals_per_contestant": 0.015,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.006,
-    "sells_online_share": 0.013,
-    "business_plus_share": 0.588
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.588,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "other:1k-10k": {
     "n": 187,
@@ -11344,13 +12519,19 @@
     "entries_per_entrant": 5.908,
     "days": 8.0,
     "methods": 7.0,
-    "email_offered": 0.005,
-    "email_uptake": 0.883,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.542,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.005,
-    "sells_online_share": 0.011,
-    "business_plus_share": 0.235
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.235,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "software_saas:under_1k": {
     "n": 180,
@@ -11364,9 +12545,12 @@
     "email_uptake": 0.911,
     "referrals_per_contestant": 0.953,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.017,
+    "woocommerce_share": null,
     "sells_online_share": 0.117,
-    "business_plus_share": 0.056
+    "business_plus_share": 0.056,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "software_saas:10k-100k": {
     "n": 158,
@@ -11376,13 +12560,17 @@
     "entries_per_entrant": 6.924,
     "days": 8.0,
     "methods": 9.0,
-    "email_offered": 0.006,
-    "email_uptake": 0.982,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.399,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.038,
-    "business_plus_share": 0.051
+    "business_plus_share": 0.051,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "other:under_1k": {
     "n": 148,
@@ -11397,8 +12585,11 @@
     "referrals_per_contestant": 0.563,
     "shopify_share": 0.0,
     "woocommerce_share": 0.034,
-    "sells_online_share": 0.027,
-    "business_plus_share": 0.169
+    "sells_online_share": null,
+    "business_plus_share": 0.169,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "gaming_esports:100k+": {
     "n": 124,
@@ -11408,13 +12599,17 @@
     "entries_per_entrant": 8.383,
     "days": 2.0,
     "methods": 11.0,
-    "email_offered": 0.016,
-    "email_uptake": 0.819,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.129,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.113,
-    "business_plus_share": 0.298
+    "business_plus_share": 0.298,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "electronics_tech:1k-10k": {
     "n": 121,
@@ -11456,13 +12651,17 @@
     "entries_per_entrant": 4.861,
     "days": 8.0,
     "methods": 7.0,
-    "email_offered": 0.034,
-    "email_uptake": 0.496,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.229,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.239,
-    "business_plus_share": 0.557
+    "business_plus_share": 0.557,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "electronics_tech:under_1k": {
     "n": 74,
@@ -11472,13 +12671,19 @@
     "entries_per_entrant": 12.599,
     "days": 9.5,
     "methods": 24.0,
-    "email_offered": 0.054,
-    "email_uptake": 0.626,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.19,
     "shopify_share": 0.486,
-    "woocommerce_share": 0.014,
+    "woocommerce_share": null,
     "sells_online_share": 0.595,
-    "business_plus_share": 0.027
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "creator_influencer:10k-100k": {
     "n": 38,
@@ -11508,9 +12713,13 @@
     "email_uptake": 1.032,
     "referrals_per_contestant": 0.537,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.156,
-    "sells_online_share": 0.125,
-    "business_plus_share": 0.281
+    "woocommerce_share": null,
+    "sells_online_share": null,
+    "business_plus_share": 0.281,
+    "suppressed_below_floor": [
+     "sells_online_share",
+     "woocommerce_share"
+    ]
    },
    "art_crafts:under_1k": {
     "n": 31,
@@ -11520,13 +12729,19 @@
     "entries_per_entrant": 6.493,
     "days": 10.0,
     "methods": 12.0,
-    "email_offered": 0.097,
-    "email_uptake": 0.978,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.907,
-    "shopify_share": 0.097,
-    "woocommerce_share": 0.032,
+    "shopify_share": null,
+    "woocommerce_share": null,
     "sells_online_share": 0.774,
-    "business_plus_share": 0.677
+    "business_plus_share": 0.677,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "shopify_share",
+     "woocommerce_share"
+    ]
    }
   },
   "discord": {
@@ -11638,9 +12853,12 @@
     "email_uptake": 0.865,
     "referrals_per_contestant": 0.436,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.011,
+    "woocommerce_share": null,
     "sells_online_share": 0.225,
-    "business_plus_share": 0.145
+    "business_plus_share": 0.145,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "gaming_esports:under_1k": {
     "n": 436,
@@ -11653,10 +12871,13 @@
     "email_offered": 0.099,
     "email_uptake": 0.724,
     "referrals_per_contestant": 0.208,
-    "shopify_share": 0.002,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.241,
-    "business_plus_share": 0.094
+    "business_plus_share": 0.094,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "gaming_esports:100k+": {
     "n": 382,
@@ -11751,8 +12972,12 @@
     "referrals_per_contestant": 0.121,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.012,
-    "business_plus_share": 0.012
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    },
    "other:1k-10k": {
     "n": 59,
@@ -11778,13 +13003,18 @@
     "entries_per_entrant": 5.981,
     "days": 28.0,
     "methods": 11.0,
-    "email_offered": 0.057,
-    "email_uptake": 0.894,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.119,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.094
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "other:10k-100k": {
     "n": 41,
@@ -11810,13 +13040,17 @@
     "entries_per_entrant": 6.549,
     "days": 7.0,
     "methods": 10.0,
-    "email_offered": 0.027,
-    "email_uptake": 0.815,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.992,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.27,
-    "business_plus_share": 0.459
+    "business_plus_share": 0.459,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    }
   }
  },
@@ -11836,7 +13070,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.001
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "500-1k:100k-1m": {
     "n": 1019,
@@ -11862,13 +13099,17 @@
     "entries_per_entrant": 3.169,
     "days": 8.0,
     "methods": 4.0,
-    "email_offered": 0.004,
-    "email_uptake": 0.857,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.186,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.008
+    "business_plus_share": 0.008,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "100-250:100k-1m": {
     "n": 884,
@@ -11884,7 +13125,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.003
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "1k-2.5k:100k-1m": {
     "n": 701,
@@ -11932,7 +13176,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.002
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "2.5k-10k:100k-1m": {
     "n": 380,
@@ -11964,7 +13211,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.003
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "10k+:1m+": {
     "n": 272,
@@ -11974,13 +13224,18 @@
     "entries_per_entrant": 4.19,
     "days": 22.0,
     "methods": 5.0,
-    "email_offered": 0.011,
-    "email_uptake": 0.496,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.084,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.018
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "500-1k:10k-100k": {
     "n": 268,
@@ -11990,13 +13245,18 @@
     "entries_per_entrant": 3.534,
     "days": 11.0,
     "methods": 5.0,
-    "email_offered": 0.004,
-    "email_uptake": 0.681,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.173,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.011
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "2.5k-10k:1m+": {
     "n": 209,
@@ -12006,13 +13266,17 @@
     "entries_per_entrant": 2.921,
     "days": 8.0,
     "methods": 4.0,
-    "email_offered": 0.01,
-    "email_uptake": 0.692,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.081,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.263
+    "business_plus_share": 0.263,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "250-500:1k-10k": {
     "n": 188,
@@ -12022,13 +13286,18 @@
     "entries_per_entrant": 4.125,
     "days": 16.0,
     "methods": 5.5,
-    "email_offered": 0.021,
-    "email_uptake": 0.661,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.415,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.005
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "1k-2.5k:10k-100k": {
     "n": 165,
@@ -12060,7 +13329,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.025
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "1k-2.5k:under_1k": {
     "n": 115,
@@ -12086,13 +13358,17 @@
     "entries_per_entrant": 3.744,
     "days": 20.5,
     "methods": 5.0,
-    "email_offered": 0.01,
-    "email_uptake": 0.796,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.154,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "500-1k:1k-10k": {
     "n": 94,
@@ -12102,13 +13378,18 @@
     "entries_per_entrant": 3.658,
     "days": 23.0,
     "methods": 5.0,
-    "email_offered": 0.043,
-    "email_uptake": 0.619,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.421,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.021
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "500-1k:1m+": {
     "n": 80,
@@ -12118,13 +13399,17 @@
     "entries_per_entrant": 2.81,
     "days": 8.0,
     "methods": 3.0,
-    "email_offered": 0.013,
-    "email_uptake": 1.076,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.238,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "500-1k:under_1k": {
     "n": 73,
@@ -12150,13 +13435,17 @@
     "entries_per_entrant": 5.977,
     "days": 10.0,
     "methods": 8.0,
-    "email_offered": 0.057,
-    "email_uptake": 0.746,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.183,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.229
+    "business_plus_share": 0.229,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "2.5k-10k:10k-100k": {
     "n": 59,
@@ -12166,13 +13455,17 @@
     "entries_per_entrant": 5.649,
     "days": 15.0,
     "methods": 8.0,
-    "email_offered": 0.034,
-    "email_uptake": 0.815,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.12,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.119
+    "business_plus_share": 0.119,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "250-500:1m+": {
     "n": 50,
@@ -12182,13 +13475,17 @@
     "entries_per_entrant": 2.55,
     "days": 8.0,
     "methods": 3.0,
-    "email_offered": 0.06,
-    "email_uptake": 0.931,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": null,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "100-250:1m+": {
     "n": 47,
@@ -12204,7 +13501,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.021
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    },
    "1k-2.5k:1k-10k": {
     "n": 43,
@@ -12214,13 +13514,17 @@
     "entries_per_entrant": 3.039,
     "days": 22.0,
     "methods": 5.0,
-    "email_offered": 0.047,
-    "email_uptake": 0.595,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.625,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.0
+    "business_plus_share": 0.0,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "2.5k-10k:1k-10k": {
     "n": 32,
@@ -12236,7 +13540,10 @@
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.031
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share"
+    ]
    }
   },
   "telegram": {
@@ -12251,10 +13558,13 @@
     "email_offered": 0.049,
     "email_uptake": 0.826,
     "referrals_per_contestant": 0.379,
-    "shopify_share": 0.001,
+    "shopify_share": null,
     "woocommerce_share": 0.04,
     "sells_online_share": 0.382,
-    "business_plus_share": 0.209
+    "business_plus_share": 0.209,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "100-250:under_1k": {
     "n": 1240,
@@ -12267,10 +13577,13 @@
     "email_offered": 0.034,
     "email_uptake": 0.93,
     "referrals_per_contestant": 0.516,
-    "shopify_share": 0.002,
+    "shopify_share": null,
     "woocommerce_share": 0.017,
     "sells_online_share": 0.391,
-    "business_plus_share": 0.317
+    "business_plus_share": 0.317,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "250-500:under_1k": {
     "n": 1151,
@@ -12316,9 +13629,12 @@
     "email_uptake": 0.99,
     "referrals_per_contestant": 1.258,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.003,
+    "woocommerce_share": null,
     "sells_online_share": 0.421,
-    "business_plus_share": 0.263
+    "business_plus_share": 0.263,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "250-500:1k-10k": {
     "n": 874,
@@ -12379,10 +13695,13 @@
     "email_offered": 0.151,
     "email_uptake": 1.021,
     "referrals_per_contestant": 1.058,
-    "shopify_share": 0.004,
+    "shopify_share": null,
     "woocommerce_share": 0.033,
     "sells_online_share": 0.217,
-    "business_plus_share": 0.31
+    "business_plus_share": 0.31,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "500-1k:10k-100k": {
     "n": 820,
@@ -12427,10 +13746,13 @@
     "email_offered": 0.186,
     "email_uptake": 0.897,
     "referrals_per_contestant": 0.797,
-    "shopify_share": 0.003,
+    "shopify_share": null,
     "woocommerce_share": 0.026,
     "sells_online_share": 0.211,
-    "business_plus_share": 0.294
+    "business_plus_share": 0.294,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "500-1k:under_1k": {
     "n": 715,
@@ -12475,10 +13797,13 @@
     "email_offered": 0.044,
     "email_uptake": 1.023,
     "referrals_per_contestant": 1.193,
-    "shopify_share": 0.002,
+    "shopify_share": null,
     "woocommerce_share": 0.015,
     "sells_online_share": 0.283,
-    "business_plus_share": 0.38
+    "business_plus_share": 0.38,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "1k-2.5k:100k+": {
     "n": 514,
@@ -12492,9 +13817,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.732,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.004,
+    "woocommerce_share": null,
     "sells_online_share": 0.683,
-    "business_plus_share": 0.346
+    "business_plus_share": 0.346,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "500-1k:100k+": {
     "n": 275,
@@ -12504,13 +13832,18 @@
     "entries_per_entrant": 6.286,
     "days": 4.0,
     "methods": 7.0,
-    "email_offered": 0.004,
-    "email_uptake": 1.042,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.863,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.004,
+    "woocommerce_share": null,
     "sells_online_share": 0.756,
-    "business_plus_share": 0.291
+    "business_plus_share": 0.291,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "10k+:10k-100k": {
     "n": 251,
@@ -12524,9 +13857,12 @@
     "email_uptake": 0.964,
     "referrals_per_contestant": 1.306,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.004,
+    "woocommerce_share": null,
     "sells_online_share": 0.355,
-    "business_plus_share": 0.315
+    "business_plus_share": 0.315,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "10k+:1k-10k": {
     "n": 250,
@@ -12540,9 +13876,12 @@
     "email_uptake": 1.097,
     "referrals_per_contestant": 1.187,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.008,
+    "woocommerce_share": null,
     "sells_online_share": 0.14,
-    "business_plus_share": 0.428
+    "business_plus_share": 0.428,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "2.5k-10k:100k+": {
     "n": 248,
@@ -12552,13 +13891,17 @@
     "entries_per_entrant": 6.139,
     "days": 4.0,
     "methods": 9.0,
-    "email_offered": 0.004,
-    "email_uptake": 1.006,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.026,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.649,
-    "business_plus_share": 0.331
+    "business_plus_share": 0.331,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "250-500:100k+": {
     "n": 237,
@@ -12568,13 +13911,18 @@
     "entries_per_entrant": 5.652,
     "days": 6.0,
     "methods": 7.0,
-    "email_offered": 0.008,
-    "email_uptake": 0.895,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.626,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.004,
+    "woocommerce_share": null,
     "sells_online_share": 0.54,
-    "business_plus_share": 0.578
+    "business_plus_share": 0.578,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake",
+     "woocommerce_share"
+    ]
    },
    "100-250:100k+": {
     "n": 198,
@@ -12588,9 +13936,12 @@
     "email_uptake": null,
     "referrals_per_contestant": 0.383,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.005,
+    "woocommerce_share": null,
     "sells_online_share": 0.439,
-    "business_plus_share": 0.525
+    "business_plus_share": 0.525,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "10k+:100k+": {
     "n": 133,
@@ -12616,13 +13967,17 @@
     "entries_per_entrant": 5.509,
     "days": 14.0,
     "methods": 9.0,
-    "email_offered": 0.032,
-    "email_uptake": 0.768,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 1.237,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.184,
-    "business_plus_share": 0.408
+    "business_plus_share": 0.408,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    }
   },
   "discord": {
@@ -12701,10 +14056,13 @@
     "email_offered": 0.119,
     "email_uptake": 1.008,
     "referrals_per_contestant": 0.255,
-    "shopify_share": 0.001,
+    "shopify_share": null,
     "woocommerce_share": 0.08,
     "sells_online_share": 0.401,
-    "business_plus_share": 0.25
+    "business_plus_share": 0.25,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "2.5k-10k:10k-100k": {
     "n": 667,
@@ -12782,9 +14140,12 @@
     "email_uptake": 0.764,
     "referrals_per_contestant": 0.184,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.003,
+    "woocommerce_share": null,
     "sells_online_share": 0.22,
-    "business_plus_share": 0.09
+    "business_plus_share": 0.09,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "500-1k:100k+": {
     "n": 341,
@@ -12826,13 +14187,17 @@
     "entries_per_entrant": 6.362,
     "days": 7.0,
     "methods": 7.0,
-    "email_offered": 0.009,
-    "email_uptake": 0.457,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.704,
     "shopify_share": 0.0,
     "woocommerce_share": 0.157,
     "sells_online_share": 0.223,
-    "business_plus_share": 0.232
+    "business_plus_share": 0.232,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "2.5k-10k:100k+": {
     "n": 217,
@@ -12878,9 +14243,12 @@
     "email_uptake": 0.909,
     "referrals_per_contestant": 0.172,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.006,
+    "woocommerce_share": null,
     "sells_online_share": 0.536,
-    "business_plus_share": 0.419
+    "business_plus_share": 0.419,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "250-500:under_1k": {
     "n": 171,
@@ -12893,10 +14261,14 @@
     "email_offered": 0.193,
     "email_uptake": 0.871,
     "referrals_per_contestant": 0.226,
-    "shopify_share": 0.029,
+    "shopify_share": null,
     "woocommerce_share": 0.047,
     "sells_online_share": 0.281,
-    "business_plus_share": 0.029
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "shopify_share"
+    ]
    },
    "10k+:10k-100k": {
     "n": 166,
@@ -12910,9 +14282,12 @@
     "email_uptake": 1.015,
     "referrals_per_contestant": 0.848,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.03,
+    "woocommerce_share": null,
     "sells_online_share": 0.253,
-    "business_plus_share": 0.687
+    "business_plus_share": 0.687,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "10k+:100k+": {
     "n": 92,
@@ -12957,10 +14332,13 @@
     "email_offered": 0.275,
     "email_uptake": 0.715,
     "referrals_per_contestant": 0.52,
-    "shopify_share": 0.058,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.217,
-    "business_plus_share": 0.101
+    "business_plus_share": 0.101,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    }
   }
  },
@@ -13015,13 +14393,17 @@
    "entries_per_entrant": 2.729,
    "days": 8.0,
    "methods": 4.0,
-   "email_offered": 0.001,
-   "email_uptake": 0.288,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.169,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.014
+   "business_plus_share": 0.014,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "10k-100k:vpv_10k-100k": {
    "n": 814,
@@ -13069,7 +14451,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.004
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "1k-10k:vpv_1k-10k": {
    "n": 548,
@@ -13085,7 +14470,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.009
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "100k-1m:vpv_1k-10k": {
    "n": 377,
@@ -13095,13 +14483,18 @@
    "entries_per_entrant": 3.466,
    "days": 1.0,
    "methods": 4.0,
-   "email_offered": 0.003,
-   "email_uptake": 0.543,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.079,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.008
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "under_1k:vpv_under_1k": {
    "n": 377,
@@ -13143,13 +14536,17 @@
    "entries_per_entrant": 3.179,
    "days": 14.0,
    "methods": 4.0,
-   "email_offered": 0.009,
-   "email_uptake": 0.796,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.116,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "1k-10k:vpv_10k-100k": {
    "n": 66,
@@ -13181,7 +14578,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.022
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "10k-100k:vpv_100k+": {
    "n": 37,
@@ -13241,13 +14641,18 @@
    "entries_per_entrant": 2.736,
    "days": 8.0,
    "methods": 4.0,
-   "email_offered": 0.001,
-   "email_uptake": 0.288,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.159,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.001
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "1m+:channel_before_2017": {
    "n": 606,
@@ -13295,7 +14700,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.009
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "under_1k:channel_before_2017": {
    "n": 355,
@@ -13305,13 +14713,17 @@
    "entries_per_entrant": 3.597,
    "days": 16.5,
    "methods": 5.0,
-   "email_offered": 0.003,
-   "email_uptake": 0.796,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.172,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "under_1k:channel_2017_plus": {
    "n": 350,
@@ -13337,13 +14749,17 @@
    "entries_per_entrant": 3.442,
    "days": 15.0,
    "methods": 5.0,
-   "email_offered": 0.003,
-   "email_uptake": 0.698,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.358,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.0
+   "business_plus_share": 0.0,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "1m+:channel_2017_plus": {
    "n": 164,
@@ -13359,7 +14775,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.012
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   }
  },
  "channel_size_vs_direct_traffic": {
@@ -13468,8 +14887,11 @@
    "referrals_per_contestant": 0.135,
    "shopify_share": 1.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.996,
-   "business_plus_share": 0.378
+   "sells_online_share": null,
+   "business_plus_share": 0.378,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "CAD": {
    "n": 89,
@@ -13743,9 +15165,12 @@
    "email_uptake": 1.012,
    "referrals_per_contestant": 0.572,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.001,
+   "woocommerce_share": null,
    "sells_online_share": 0.98,
-   "business_plus_share": 0.922
+   "business_plus_share": 0.922,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "apparel & fashion": {
    "n": 1709,
@@ -13759,9 +15184,12 @@
    "email_uptake": 1.038,
    "referrals_per_contestant": 0.114,
    "shopify_share": 0.044,
-   "woocommerce_share": 0.002,
+   "woocommerce_share": null,
    "sells_online_share": 0.793,
-   "business_plus_share": 0.524
+   "business_plus_share": 0.524,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "media production": {
    "n": 1508,
@@ -13807,9 +15235,12 @@
    "email_uptake": 0.997,
    "referrals_per_contestant": 0.11,
    "shopify_share": 0.086,
-   "woocommerce_share": 0.003,
+   "woocommerce_share": null,
    "sells_online_share": 0.793,
-   "business_plus_share": 0.263
+   "business_plus_share": 0.263,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "sporting goods": {
    "n": 1089,
@@ -13998,10 +15429,13 @@
    "email_offered": 0.703,
    "email_uptake": 1.049,
    "referrals_per_contestant": 0.206,
-   "shopify_share": 0.009,
+   "shopify_share": null,
    "woocommerce_share": 0.05,
    "sells_online_share": 0.227,
-   "business_plus_share": 0.731
+   "business_plus_share": 0.731,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "law practice": {
    "n": 453,
@@ -14011,13 +15445,17 @@
    "entries_per_entrant": 5.081,
    "days": 7.0,
    "methods": 8.0,
-   "email_offered": 0.009,
-   "email_uptake": 0.652,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.105,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.823
+   "business_plus_share": 0.823,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "consumer electronics": {
    "n": 399,
@@ -14043,13 +15481,18 @@
    "entries_per_entrant": 2.034,
    "days": 5.0,
    "methods": 5.0,
-   "email_offered": 0.008,
-   "email_uptake": 0.44,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.074,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.011,
+   "woocommerce_share": null,
    "sells_online_share": 0.378,
-   "business_plus_share": 0.721
+   "business_plus_share": 0.721,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake",
+    "woocommerce_share"
+   ]
   },
   "food production": {
    "n": 353,
@@ -14075,13 +15518,17 @@
    "entries_per_entrant": 2.899,
    "days": 30.0,
    "methods": 4.0,
-   "email_offered": 0.011,
-   "email_uptake": 1.016,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.072,
    "shopify_share": 0.0,
    "woocommerce_share": 0.716,
    "sells_online_share": 0.793,
-   "business_plus_share": 0.858
+   "business_plus_share": 0.858,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "hospitality": {
    "n": 341,
@@ -14094,10 +15541,13 @@
    "email_offered": 0.589,
    "email_uptake": 0.59,
    "referrals_per_contestant": 0.057,
-   "shopify_share": 0.012,
+   "shopify_share": null,
    "woocommerce_share": 0.114,
    "sells_online_share": 0.886,
-   "business_plus_share": 0.528
+   "business_plus_share": 0.528,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "furniture": {
    "n": 294,
@@ -14126,10 +15576,13 @@
    "email_offered": 0.185,
    "email_uptake": 0.806,
    "referrals_per_contestant": 0.253,
-   "shopify_share": 0.014,
+   "shopify_share": null,
    "woocommerce_share": 0.045,
    "sells_online_share": 0.871,
-   "business_plus_share": 0.528
+   "business_plus_share": 0.528,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "management consulting": {
    "n": 279,
@@ -14142,10 +15595,13 @@
    "email_offered": 0.269,
    "email_uptake": 0.931,
    "referrals_per_contestant": 0.308,
-   "shopify_share": 0.014,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.401,
-   "business_plus_share": 0.832
+   "business_plus_share": 0.832,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "wholesale": {
    "n": 272,
@@ -14241,7 +15697,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.908,
-   "business_plus_share": 0.019
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   },
   "information services": {
    "n": 172,
@@ -14303,9 +15762,12 @@
    "email_uptake": 1.042,
    "referrals_per_contestant": 0.132,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.025,
+   "woocommerce_share": null,
    "sells_online_share": 0.783,
-   "business_plus_share": 0.59
+   "business_plus_share": 0.59,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "building materials": {
    "n": 152,
@@ -14315,13 +15777,17 @@
    "entries_per_entrant": 5.953,
    "days": 15.0,
    "methods": 12.0,
-   "email_offered": 0.974,
-   "email_uptake": 0.884,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.09,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.651,
-   "business_plus_share": 0.092
+   "business_plus_share": 0.092,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "restaurants": {
    "n": 152,
@@ -14382,10 +15848,14 @@
    "email_offered": 0.583,
    "email_uptake": 0.838,
    "referrals_per_contestant": 0.096,
-   "shopify_share": 0.042,
+   "shopify_share": null,
    "woocommerce_share": 0.469,
    "sells_online_share": 0.677,
-   "business_plus_share": 0.042
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share",
+    "shopify_share"
+   ]
   },
   "alternative medicine": {
    "n": 90,
@@ -14464,8 +15934,11 @@
    "referrals_per_contestant": 0.24,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.07,
-   "business_plus_share": 0.197
+   "sells_online_share": null,
+   "business_plus_share": 0.197,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "chemicals": {
    "n": 68,
@@ -14491,13 +15964,17 @@
    "entries_per_entrant": 5.404,
    "days": 15.0,
    "methods": 8.0,
-   "email_offered": 0.046,
-   "email_uptake": 1.073,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.029,
    "shopify_share": 0.0,
    "woocommerce_share": 0.908,
    "sells_online_share": 0.846,
-   "business_plus_share": 0.138
+   "business_plus_share": 0.138,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "fund-raising": {
    "n": 64,
@@ -14513,7 +15990,10 @@
    "shopify_share": 0.0,
    "woocommerce_share": 0.172,
    "sells_online_share": 0.094,
-   "business_plus_share": 0.078
+   "business_plus_share": null,
+   "suppressed_below_floor": [
+    "business_plus_share"
+   ]
   }
  },
  "by_employee_band": {
@@ -14836,10 +16316,13 @@
    "email_offered": 0.262,
    "email_uptake": 0.964,
    "referrals_per_contestant": 0.094,
-   "shopify_share": 0.016,
+   "shopify_share": null,
    "woocommerce_share": 0.026,
    "sells_online_share": 0.392,
-   "business_plus_share": 0.181
+   "business_plus_share": 0.181,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "Series C": {
    "n": 279,
@@ -14884,10 +16367,13 @@
    "email_offered": 0.395,
    "email_uptake": 0.8,
    "referrals_per_contestant": 0.113,
-   "shopify_share": 0.093,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 1.0,
-   "business_plus_share": 0.302
+   "business_plus_share": 0.302,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   }
  },
  "by_public_company": {
@@ -15000,10 +16486,13 @@
    "email_offered": 0.024,
    "email_uptake": 0.83,
    "referrals_per_contestant": 0.579,
-   "shopify_share": 0.001,
+   "shopify_share": null,
    "woocommerce_share": 0.002,
    "sells_online_share": 0.808,
-   "business_plus_share": 0.747
+   "business_plus_share": 0.747,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "China": {
    "n": 1893,
@@ -15045,13 +16534,17 @@
    "entries_per_entrant": 4.664,
    "days": 4.0,
    "methods": 6.0,
-   "email_offered": 0.001,
-   "email_uptake": 1.787,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.846,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.975,
-   "business_plus_share": 0.597
+   "business_plus_share": 0.597,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Brazil": {
    "n": 1424,
@@ -15157,13 +16650,17 @@
    "entries_per_entrant": 6.16,
    "days": 7.0,
    "methods": 9.0,
-   "email_offered": 0.002,
-   "email_uptake": 0.012,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 1.075,
    "shopify_share": 0.0,
    "woocommerce_share": 0.019,
    "sells_online_share": 0.249,
-   "business_plus_share": 0.46
+   "business_plus_share": 0.46,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "South Korea": {
    "n": 501,
@@ -15176,10 +16673,13 @@
    "email_offered": 0.014,
    "email_uptake": 0.939,
    "referrals_per_contestant": 0.398,
-   "shopify_share": 0.008,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.441,
-   "business_plus_share": 0.415
+   "business_plus_share": 0.415,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "France": {
    "n": 500,
@@ -15237,13 +16737,17 @@
    "entries_per_entrant": 5.29,
    "days": 8.0,
    "methods": 8.0,
-   "email_offered": 0.012,
-   "email_uptake": 1.484,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.933,
    "shopify_share": 0.015,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.469,
-   "business_plus_share": 0.543
+   "business_plus_share": 0.543,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Netherlands": {
    "n": 331,
@@ -15272,10 +16776,13 @@
    "email_offered": 0.235,
    "email_uptake": 0.948,
    "referrals_per_contestant": 0.148,
-   "shopify_share": 0.016,
+   "shopify_share": null,
    "woocommerce_share": 0.019,
    "sells_online_share": 0.251,
-   "business_plus_share": 0.119
+   "business_plus_share": 0.119,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   },
   "South Africa": {
    "n": 291,
@@ -15301,13 +16808,17 @@
    "entries_per_entrant": 6.296,
    "days": 8.0,
    "methods": 5.0,
-   "email_offered": 0.015,
-   "email_uptake": 1.282,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.749,
    "shopify_share": 0.0,
    "woocommerce_share": 0.485,
    "sells_online_share": 0.057,
-   "business_plus_share": 0.363
+   "business_plus_share": 0.363,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Portugal": {
    "n": 218,
@@ -15397,13 +16908,17 @@
    "entries_per_entrant": 1.979,
    "days": 1.0,
    "methods": 5.0,
-   "email_offered": 0.022,
-   "email_uptake": 0.756,
+   "email_offered": null,
+   "email_uptake": null,
    "referrals_per_contestant": 0.178,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.0,
-   "business_plus_share": 0.84
+   "business_plus_share": 0.84,
+   "suppressed_below_floor": [
+    "email_offered",
+    "email_uptake"
+   ]
   },
   "Indonesia": {
    "n": 170,
@@ -15418,8 +16933,11 @@
    "referrals_per_contestant": 0.985,
    "shopify_share": 0.0,
    "woocommerce_share": 0.0,
-   "sells_online_share": 0.012,
-   "business_plus_share": 0.047
+   "sells_online_share": null,
+   "business_plus_share": 0.047,
+   "suppressed_below_floor": [
+    "sells_online_share"
+   ]
   },
   "Argentina": {
    "n": 130,
@@ -15449,9 +16967,12 @@
    "email_uptake": 0.796,
    "referrals_per_contestant": 0.119,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.032,
+   "woocommerce_share": null,
    "sells_online_share": 0.54,
-   "business_plus_share": 0.579
+   "business_plus_share": 0.579,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "Austria": {
    "n": 100,
@@ -15513,9 +17034,12 @@
    "email_uptake": 0.943,
    "referrals_per_contestant": 0.321,
    "shopify_share": 0.084,
-   "woocommerce_share": 0.048,
+   "woocommerce_share": null,
    "sells_online_share": 0.337,
-   "business_plus_share": 0.265
+   "business_plus_share": 0.265,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "Thailand": {
    "n": 83,
@@ -15700,7 +17224,10 @@
    "action_uptake": 0.549,
    "conversion": 0.151,
    "entries_per_entrant": 8.694,
-   "email_offered": 0.019
+   "email_offered": null,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   }
  },
  "by_patreon_size": {
@@ -15781,9 +17308,12 @@
    "email_uptake": 0.722,
    "referrals_per_contestant": 0.207,
    "shopify_share": 0.0,
-   "woocommerce_share": 0.012,
+   "woocommerce_share": null,
    "sells_online_share": 0.036,
-   "business_plus_share": 0.091
+   "business_plus_share": 0.091,
+   "suppressed_below_floor": [
+    "woocommerce_share"
+   ]
   },
   "site_before_2012": {
    "n": 114,
@@ -15812,10 +17342,13 @@
    "email_offered": 0.676,
    "email_uptake": 0.788,
    "referrals_per_contestant": 0.163,
-   "shopify_share": 0.029,
+   "shopify_share": null,
    "woocommerce_share": 0.0,
    "sells_online_share": 0.8,
-   "business_plus_share": 0.095
+   "business_plus_share": 0.095,
+   "suppressed_below_floor": [
+    "shopify_share"
+   ]
   }
  },
  "by_bluesky_followers": {
@@ -16117,7 +17650,10 @@
    "action_uptake": 0.403,
    "conversion": 0.266,
    "entries_per_entrant": 11.385,
-   "email_offered": 0.015
+   "email_offered": null,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "Medical": {
    "n": 61,
@@ -16126,7 +17662,10 @@
    "action_uptake": 0.213,
    "conversion": 0.347,
    "entries_per_entrant": 3.989,
-   "email_offered": 0.066
+   "email_offered": null,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "Food &amp; Drink": {
    "n": 57,
@@ -16483,9 +18022,12 @@
     "email_uptake": 1.036,
     "referrals_per_contestant": 0.087,
     "shopify_share": 0.271,
-    "woocommerce_share": 0.009,
+    "woocommerce_share": null,
     "sells_online_share": 0.753,
-    "business_plus_share": 0.52
+    "business_plus_share": 0.52,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "postscript_sms": {
@@ -16517,9 +18059,12 @@
     "email_uptake": 1.003,
     "referrals_per_contestant": 0.103,
     "shopify_share": 0.717,
-    "woocommerce_share": 0.012,
+    "woocommerce_share": null,
     "sells_online_share": 0.904,
-    "business_plus_share": 0.416
+    "business_plus_share": 0.416,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "meta_pixel": {
@@ -16640,8 +18185,11 @@
     "referrals_per_contestant": 0.159,
     "shopify_share": 0.864,
     "woocommerce_share": 0.05,
-    "sells_online_share": 0.999,
-    "business_plus_share": 0.235
+    "sells_online_share": null,
+    "business_plus_share": 0.235,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    }
   },
   "recharge": {
@@ -16692,8 +18240,11 @@
     "referrals_per_contestant": 0.115,
     "shopify_share": 0.953,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.989,
-    "business_plus_share": 0.399
+    "sells_online_share": null,
+    "business_plus_share": 0.399,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    }
   },
   "afterpay": {
@@ -16807,13 +18358,17 @@
     "entries_per_entrant": 2.757,
     "days": 26.0,
     "methods": 5.0,
-    "email_offered": 0.135,
-    "email_uptake": 1.102,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.088,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.757,
-    "business_plus_share": 0.189
+    "business_plus_share": 0.189,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    }
   },
   "other": {
@@ -16862,8 +18417,12 @@
     "referrals_per_contestant": 0.073,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.049,
-    "business_plus_share": 0.073
+    "sells_online_share": null,
+    "business_plus_share": null,
+    "suppressed_below_floor": [
+     "business_plus_share",
+     "sells_online_share"
+    ]
    }
   },
   "local_services": {
@@ -16911,9 +18470,12 @@
     "email_uptake": 0.993,
     "referrals_per_contestant": 0.024,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.066,
+    "woocommerce_share": null,
     "sells_online_share": 0.213,
-    "business_plus_share": 0.459
+    "business_plus_share": 0.459,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "1-9": {
     "n": 60,
@@ -17324,8 +18886,11 @@
     "referrals_per_contestant": 0.094,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.979,
-    "business_plus_share": 0.679
+    "sells_online_share": null,
+    "business_plus_share": 0.679,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    },
    "1000+": {
     "n": 145,
@@ -17521,9 +19086,12 @@
     "email_uptake": 0.794,
     "referrals_per_contestant": 1.065,
     "shopify_share": 0.007,
-    "woocommerce_share": 0.004,
+    "woocommerce_share": null,
     "sells_online_share": 0.103,
-    "business_plus_share": 0.027
+    "business_plus_share": 0.027,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    },
    "1000+": {
     "n": 435,
@@ -17568,10 +19136,13 @@
     "email_offered": 0.168,
     "email_uptake": 0.745,
     "referrals_per_contestant": 0.096,
-    "shopify_share": 0.038,
+    "shopify_share": null,
     "woocommerce_share": 0.122,
     "sells_online_share": 0.29,
-    "business_plus_share": 0.229
+    "business_plus_share": 0.229,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "200-999": {
     "n": 93,
@@ -17686,8 +19257,11 @@
     "referrals_per_contestant": 0.046,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
-    "sells_online_share": 0.889,
-    "business_plus_share": 0.444
+    "sells_online_share": null,
+    "business_plus_share": 0.444,
+    "suppressed_below_floor": [
+     "sells_online_share"
+    ]
    }
   },
   "retail_marketplace": {
@@ -17731,13 +19305,17 @@
     "entries_per_entrant": 3.211,
     "days": 12.0,
     "methods": 6.0,
-    "email_offered": 0.028,
-    "email_uptake": 0.795,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.108,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.844,
-    "business_plus_share": 0.569
+    "business_plus_share": 0.569,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "1000+": {
     "n": 102,
@@ -17751,9 +19329,12 @@
     "email_uptake": 0.961,
     "referrals_per_contestant": 0.072,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.039,
+    "woocommerce_share": null,
     "sells_online_share": 1.0,
-    "business_plus_share": 0.608
+    "business_plus_share": 0.608,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "travel_events": {
@@ -17948,10 +19529,13 @@
     "email_offered": 0.476,
     "email_uptake": 0.931,
     "referrals_per_contestant": 0.158,
-    "shopify_share": 0.005,
+    "shopify_share": null,
     "woocommerce_share": 0.114,
     "sells_online_share": 0.919,
-    "business_plus_share": 0.33
+    "business_plus_share": 0.33,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "50-199": {
     "n": 100,
@@ -17995,13 +19579,17 @@
     "entries_per_entrant": 6.579,
     "days": 14.0,
     "methods": 9.0,
-    "email_offered": 0.006,
-    "email_uptake": 0.913,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.182,
     "shopify_share": 0.0,
     "woocommerce_share": 0.101,
     "sells_online_share": 0.04,
-    "business_plus_share": 0.229
+    "business_plus_share": 0.229,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    },
    "10-49": {
     "n": 317,
@@ -18080,10 +19668,13 @@
     "email_offered": 0.5,
     "email_uptake": 1.026,
     "referrals_per_contestant": 0.078,
-    "shopify_share": 0.02,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.931,
-    "business_plus_share": 0.51
+    "business_plus_share": 0.51,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    }
   },
   "finance_crypto": {
@@ -18180,10 +19771,13 @@
     "email_offered": 0.782,
     "email_uptake": 1.005,
     "referrals_per_contestant": 0.143,
-    "shopify_share": 0.01,
+    "shopify_share": null,
     "woocommerce_share": 0.276,
     "sells_online_share": 0.833,
-    "business_plus_share": 0.637
+    "business_plus_share": 0.637,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    },
    "1-9": {
     "n": 359,
@@ -18228,10 +19822,13 @@
     "email_offered": 0.806,
     "email_uptake": 0.96,
     "referrals_per_contestant": 0.17,
-    "shopify_share": 0.021,
+    "shopify_share": null,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.586,
-    "business_plus_share": 0.822
+    "business_plus_share": 0.822,
+    "suppressed_below_floor": [
+     "shopify_share"
+    ]
    }
   },
   "education": {
@@ -18307,13 +19904,17 @@
     "entries_per_entrant": 4.345,
     "days": 12.0,
     "methods": 7.5,
-    "email_offered": 0.069,
-    "email_uptake": 0.845,
+    "email_offered": null,
+    "email_uptake": null,
     "referrals_per_contestant": 0.062,
     "shopify_share": 0.0,
     "woocommerce_share": 0.0,
     "sells_online_share": 0.707,
-    "business_plus_share": 0.741
+    "business_plus_share": 0.741,
+    "suppressed_below_floor": [
+     "email_offered",
+     "email_uptake"
+    ]
    }
   },
   "nonprofit_community": {
@@ -18345,9 +19946,12 @@
     "email_uptake": 0.9,
     "referrals_per_contestant": 0.137,
     "shopify_share": 0.0,
-    "woocommerce_share": 0.047,
+    "woocommerce_share": null,
     "sells_online_share": 0.0,
-    "business_plus_share": 0.116
+    "business_plus_share": 0.116,
+    "suppressed_below_floor": [
+     "woocommerce_share"
+    ]
    }
   },
   "jewelry_watches": {

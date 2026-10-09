@@ -234,7 +234,7 @@ Steam, the business's own group (by_steam_group_size, action is a Steam group jo
 |---|---|---|---|---|
 | Under 1k | 64 | 26 | 30 | 9% |
 | 1k to 10k | 117 | 16 | 47 | 55% |
-| 10k to 100k | 53 | 11 | 55 | 2% |
+| 10k to 100k | 53 | 11 | 55 | - |
 <!-- /generated -->
 
 Patreon, the business's own page (by_patreon_size, action is a Patreon page visit):
@@ -295,8 +295,8 @@ App downloads by genre (by_app_genre):
 | Lifestyle | 79 | 37 | 50 | 47% |
 | News and magazines | 74 | 11 | 44 | 92% |
 | Action | 70 | 12 | 82 | 11% |
-| Productivity | 65 | 8 | 40 | 2% |
-| Medical | 61 | 5 | 21 | 7% |
+| Productivity | 65 | 8 | 40 | - |
+| Medical | 61 | 5 | 21 | - |
 | Food and drink | 57 | 27 | 30 | 40% |
 | Music and audio | 51 | 12 | 50 | 29% |
 | Role playing | 46 | 21 | 73 | 17% |
@@ -312,7 +312,7 @@ YouTube channel size (by_youtube_subscribers), methods and referrals:
 <!-- generated:af_youtube_size -->
 | Subscribers | Campaigns | Businesses | Methods | Referral entries % of Entrants | Email completed % of Entrants |
 |---|---|---|---|---|---|
-| Under 1k | 709 | 203 | 5 | 24 | 80 |
+| Under 1k | 709 | 203 | 5 | 24 | - |
 | 1k to 10k | 884 | 321 | 5 | 23 | 67 |
 | 10k to 100k | 2,079 | 490 | 4 | 18 | 76 |
 | 100k to 1m | 4,340 | 396 | 6 | 3 | 87 |

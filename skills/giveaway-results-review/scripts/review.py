@@ -17,6 +17,8 @@ Smaller campaigns show actual metrics only because the dataset has no matching p
 it belongs to.
 """
 import argparse, csv, json, math, os, statistics, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gleam_export import classify_action
 
 BENCH = {
     "contestants": {"p25": 225, "median": 492, "p75": 1293, "p90": 3349},
@@ -34,9 +36,7 @@ BENCH = {
     "yield_median": {"email": {"100-250": 157, "250-500": 353, "500-1k": 645, "1k-2.5k": 1346, "2.5k-10k": 3713, "10k+": 16566},
                      "share": {"100-250": 17, "250-500": 35, "500-1k": 84, "1k-2.5k": 218, "2.5k-10k": 515, "10k+": 1698}},
 }
-FAMILY_WORDS = {"email": ("email", "newsletter", "subscribe to", "signup", "sign up"), "share": ("share", "refer", "retweet", "repost", "viral"),
-                "content": ("upload", "submit", "photo", "video", "post a", "write", "comment"), "follow": ("follow", "subscribe", "join", "like"),
-                "visit": ("visit", "view", "watch", "check out", "page")}
+
 
 PCT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "references", "percentiles.json")
 
@@ -118,16 +118,8 @@ def lookup(table, x):
         if x <= limit: return v
     return table[-1][1]
 
-# A page visit about sharing reads as a share by keyword: "Join the Referral Program:" and "Check how to make a
-# giveaway Go Viral:" both sat in the share family on one export. A visit verb wins.
-VISIT_FIRST = ("check ", "read ", "learn", "see how", "program", "watch", "view ")
-
 def family(name):
-    n = name.lower()
-    if any(w in n for w in VISIT_FIRST): return "visit"
-    for fam, words in FAMILY_WORDS.items():
-        if any(w in n for w in words): return fam
-    return None
+    return classify_action(name)[2]
 
 def review(a):
     global PCT

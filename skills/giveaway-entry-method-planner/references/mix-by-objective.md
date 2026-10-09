@@ -341,7 +341,7 @@ Action shares among campaigns with 100 or more Entrants, by the business's count
 | Sweden | 1,311 | 137 | 9 | 5 | 7% | 11% | 32% | 50% | 33% | 1% | 2% |
 | The Netherlands | 1,232 | 253 | 14 | 7 | 28% | 35% | 71% | 53% | 40% | 18% | 3% |
 | United Arab Emirates | 742 | 153 | 8 | 7 | 5% | 41% | 87% | 24% | 19% | 30% | 14% |
-| Egypt | 716 | 37 | 8 | 13 | 0% | 4% | 6% | 4% | 4% | 1% | 0% |
+| Egypt | 716 | 37 | 8 | 13 | - | 4% | 6% | 4% | 4% | 1% | - |
 | Thailand | 652 | 170 | 8 | 8 | 12% | 47% | 74% | 8% | 47% | 18% | 6% |
 | Mexico | 652 | 183 | 8 | 5 | 10% | 16% | 44% | 51% | 57% | 7% | 1% |
 | South Africa | 633 | 155 | 15 | 6 | 22% | 21% | 61% | 50% | 44% | 6% | 1% |
@@ -381,7 +381,7 @@ Japan and India both lean on Telegram, offered in about half their campaigns. In
 
 [Source: `analysis/output/indicators.json`, mandatory_actions_by_country.]
 
-**Question actions.** A question action is closer to routine in East and Southeast Asia than elsewhere, with Vietnam, Singapore, Malaysia and South Korea all near or above half their campaigns. Answer validation stays rarely on wherever the question action runs, at or under a tenth of question actions in 19 of the 20 countries, and Taiwan is the exception at 16%.
+**Question actions.** A question action is closer to routine in East and Southeast Asia than elsewhere, with Vietnam, Singapore, Malaysia and South Korea all near or above half their campaigns. Among the published validation shares, Taiwan is highest at 16% and the other countries are at or below a tenth. Withheld shares cannot support a comparison.
 
 <!-- generated:em_question_country -->
 | Country | Campaigns | Businesses | Campaigns with a question action | Validation on, of those |
@@ -390,7 +390,7 @@ Japan and India both lean on Telegram, offered in about half their campaigns. In
 | Singapore | 3,491 | 271 | 53% | 6% |
 | Malaysia | 1,501 | 103 | 49% | 1% |
 | South Korea | 2,675 | 392 | 49% | 3% |
-| China | 1,541 | 136 | 46% | 1% |
+| China | 1,541 | 136 | 46% | - |
 | Taiwan | 1,920 | 157 | 38% | 16% |
 | Poland | 2,157 | 188 | 36% | 1% |
 | Hong Kong | 1,973 | 428 | 32% | 6% |
@@ -402,8 +402,8 @@ Japan and India both lean on Telegram, offered in about half their campaigns. In
 | United States | 57,289 | 8,720 | 12% | 10% |
 | Philippines | 2,053 | 289 | 11% | 4% |
 | Germany | 3,322 | 419 | 11% | 9% |
-| Brazil | 5,299 | 497 | 9% | 0% |
-| Spain | 1,884 | 496 | 8% | 1% |
+| Brazil | 5,299 | 497 | 9% | - |
+| Spain | 1,884 | 496 | 8% | - |
 | France | 2,174 | 356 | 8% | 3% |
 | Canada | 7,004 | 1,066 | 7% | 7% |
 <!-- /generated -->

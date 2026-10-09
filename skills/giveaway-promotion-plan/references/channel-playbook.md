@@ -186,9 +186,9 @@ Read that as who mails, never as what mailing does. Campaigns collecting mail cl
 | Media and entertainment | 21,533 | 2,077 | 2.2% |
 | Education | 1,862 | 356 | 1.7% |
 | Travel and events | 3,909 | 636 | 0.4% |
-| Marketing agency | 1,149 | 156 | 0.3% |
+| Marketing agency | 1,149 | 156 | - |
 | Apparel and fashion | 4,615 | 808 | 0.2% |
-| Pets | 937 | 204 | 0.1% |
+| Pets | 937 | 204 | - |
 <!-- /generated -->
 
 Plan tier tracks the same way, with Premium businesses drawing the most from mail clients and Hobby and Free the least. By organizer country, Italy leads the share of campaigns drawing a tenth of traffic from mail, ahead of Romania, Germany and the United States.

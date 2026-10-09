@@ -173,7 +173,7 @@
     "share_on_the_hour": 0.9287,
     "modal_hour": 0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "median_start_hour_local": 3.0,
@@ -358,7 +358,7 @@
     "contestants_weekend_p50": 634.0,
     "contestants_weekday_p50": 558.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "weekend_start_share": 0.2098,
@@ -562,7 +562,7 @@
     "nov_dec_share": 0.1845,
     "modal_month": 7
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "q1_share": 0.2888,
@@ -748,7 +748,7 @@
     "share_week_or_less": 0.573,
     "share_30_plus": 0.1207
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1393,
     "sites": 360,
     "days_p50": 8.0,
@@ -1100,7 +1100,7 @@
     "fully_custom_terms_share": 0.2851,
     "custom_tos_text_share": 0.2851
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1382,
     "sites": 360,
     "law_differs_share": 0.1295,
@@ -1283,7 +1283,7 @@
     "age_of_majority": 0.0163,
     "mentions_13_or_16": 0.0488
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 63,
     "sites": 26,
     "any_age_wording": 0.1429,
@@ -1468,7 +1468,7 @@
     "platform_disclaimer": 0.878,
     "skill_wording": 0.0081
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 63,
     "sites": 26,
     "no_purchase_necessary": 0.2063,
@@ -1691,7 +1691,7 @@
     "days_wallet_p50": 9.0,
     "days_no_wallet_p50": 6.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "wallet_share": 0.2063,
@@ -1732,10 +1732,13 @@
     "sites": 1066,
     "question_share": 0.0737,
     "validated_given_question": 0.0678,
-    "word_cap_changed_given_question": 0.0078,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 537.0,
-    "contestants_without_question_p50": 566.5
+    "contestants_without_question_p50": 566.5,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
    "australia": {
     "n": 6066,
@@ -1751,31 +1754,41 @@
     "n": 5299,
     "sites": 497,
     "question_share": 0.0902,
-    "validated_given_question": 0.0021,
-    "word_cap_changed_given_question": 0.0021,
+    "validated_given_question": null,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 635.0,
-    "contestants_without_question_p50": 512.0
+    "contestants_without_question_p50": 512.0,
+    "suppressed_below_floor": [
+     "validated_given_question",
+     "word_cap_changed_given_question"
+    ]
    },
    "japan": {
     "n": 4797,
     "sites": 235,
     "question_share": 0.2879,
     "validated_given_question": 0.0058,
-    "word_cap_changed_given_question": 0.0029,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 341.0,
-    "contestants_without_question_p50": 448.0
+    "contestants_without_question_p50": 448.0,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
    "india": {
     "n": 4062,
     "sites": 691,
     "question_share": 0.1974,
     "validated_given_question": 0.0249,
-    "word_cap_changed_given_question": 0.0025,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 694.5,
-    "contestants_without_question_p50": 882.5
+    "contestants_without_question_p50": 882.5,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
    "singapore": {
     "n": 3491,
@@ -1822,20 +1835,26 @@
     "sites": 356,
     "question_share": 0.0796,
     "validated_given_question": 0.0289,
-    "word_cap_changed_given_question": 0.0116,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 368.0,
-    "contestants_without_question_p50": 347.0
+    "contestants_without_question_p50": 347.0,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
    "poland": {
     "n": 2157,
     "sites": 188,
     "question_share": 0.3616,
     "validated_given_question": 0.0103,
-    "word_cap_changed_given_question": 0.0038,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 381.5,
-    "contestants_without_question_p50": 383.0
+    "contestants_without_question_p50": 383.0,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
    "philippines": {
     "n": 2053,
@@ -1871,33 +1890,44 @@
     "n": 1884,
     "sites": 496,
     "question_share": 0.0801,
-    "validated_given_question": 0.0066,
-    "word_cap_changed_given_question": 0.0132,
+    "validated_given_question": null,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 282.0,
-    "contestants_without_question_p50": 394.0
+    "contestants_without_question_p50": 394.0,
+    "suppressed_below_floor": [
+     "validated_given_question",
+     "word_cap_changed_given_question"
+    ]
    },
    "china": {
     "n": 1541,
     "sites": 136,
     "question_share": 0.4568,
-    "validated_given_question": 0.0071,
-    "word_cap_changed_given_question": 0.0028,
+    "validated_given_question": null,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 358.5,
-    "contestants_without_question_p50": 618.0
+    "contestants_without_question_p50": 618.0,
+    "suppressed_below_floor": [
+     "validated_given_question",
+     "word_cap_changed_given_question"
+    ]
    },
    "malaysia": {
     "n": 1501,
     "sites": 103,
     "question_share": 0.491,
     "validated_given_question": 0.0122,
-    "word_cap_changed_given_question": 0.0054,
+    "word_cap_changed_given_question": null,
     "word_cap_p50": 50.0,
     "contestants_with_question_p50": 551.0,
-    "contestants_without_question_p50": 597.0
+    "contestants_without_question_p50": 597.0,
+    "suppressed_below_floor": [
+     "word_cap_changed_given_question"
+    ]
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "question_share": 0.1593,
@@ -2028,17 +2058,23 @@
     "n": 2513,
     "sites": 615,
     "question_share": 0.1154,
-    "validated_given_question": 0.0172,
+    "validated_given_question": null,
     "email_share": 0.2583,
-    "share_action_share": 0.5854
+    "share_action_share": 0.5854,
+    "suppressed_below_floor": [
+     "validated_given_question"
+    ]
    },
    "automotive": {
     "n": 2331,
     "sites": 387,
     "question_share": 0.0588,
-    "validated_given_question": 0.0292,
+    "validated_given_question": null,
     "email_share": 0.5564,
-    "share_action_share": 0.5586
+    "share_action_share": 0.5586,
+    "suppressed_below_floor": [
+     "validated_given_question"
+    ]
    },
    "education": {
     "n": 1902,
@@ -2052,9 +2088,12 @@
     "n": 1659,
     "sites": 421,
     "question_share": 0.1103,
-    "validated_given_question": 0.0109,
+    "validated_given_question": null,
     "email_share": 0.3544,
-    "share_action_share": 0.3345
+    "share_action_share": 0.3345,
+    "suppressed_below_floor": [
+     "validated_given_question"
+    ]
    },
    "beauty_personal_care": {
     "n": 1420,
@@ -2076,9 +2115,12 @@
     "n": 1189,
     "sites": 138,
     "question_share": 0.0294,
-    "validated_given_question": 0.0571,
+    "validated_given_question": null,
     "email_share": 0.5299,
-    "share_action_share": 0.5593
+    "share_action_share": 0.5593,
+    "suppressed_below_floor": [
+     "validated_given_question"
+    ]
    },
    "pets": {
     "n": 983,
@@ -2203,18 +2245,24 @@
     "sites": 392,
     "paid_action_share": 0.0243,
     "secret_code_share": 0.009,
-    "loyalty_share": 0.0011,
+    "loyalty_share": null,
     "contestants_secret_p50": 1181.5,
-    "contestants_no_secret_p50": 502.0
+    "contestants_no_secret_p50": 502.0,
+    "suppressed_below_floor": [
+     "loyalty_share"
+    ]
    },
    "vietnam": {
     "n": 2501,
     "sites": 547,
     "paid_action_share": 0.0164,
     "secret_code_share": 0.0112,
-    "loyalty_share": 0.0004,
+    "loyalty_share": null,
     "contestants_secret_p50": 557.0,
-    "contestants_no_secret_p50": 818.0
+    "contestants_no_secret_p50": 818.0,
+    "suppressed_below_floor": [
+     "loyalty_share"
+    ]
    },
    "france": {
     "n": 2174,
@@ -2275,9 +2323,12 @@
     "sites": 136,
     "paid_action_share": 0.0201,
     "secret_code_share": 0.011,
-    "loyalty_share": 0.0019,
+    "loyalty_share": null,
     "contestants_secret_p50": 1036.0,
-    "contestants_no_secret_p50": 490.0
+    "contestants_no_secret_p50": 490.0,
+    "suppressed_below_floor": [
+     "loyalty_share"
+    ]
    },
    "malaysia": {
     "n": 1501,
@@ -2288,7 +2339,7 @@
     "contestants_secret_p50": 254.0,
     "contestants_no_secret_p50": 586.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "paid_action_share": 0.0213,
@@ -2454,7 +2505,7 @@
     "contestants_with_share_p50": 586.0,
     "contestants_without_share_p50": 537.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "share_action_share": 0.2653,
@@ -2735,7 +2786,10 @@
     "median_action_worth": 1.0,
     "share_of_actions_worth_gt1": 0.3359,
     "share_with_worth_5_plus": 0.4049,
-    "variable_worth_share": 0.0011
+    "variable_worth_share": null,
+    "suppressed_below_floor": [
+     "variable_worth_share"
+    ]
    },
    "vietnam": {
     "n": 2501,
@@ -2744,7 +2798,10 @@
     "median_action_worth": 1.0,
     "share_of_actions_worth_gt1": 0.4765,
     "share_with_worth_5_plus": 0.5922,
-    "variable_worth_share": 0.0004
+    "variable_worth_share": null,
+    "suppressed_below_floor": [
+     "variable_worth_share"
+    ]
    },
    "france": {
     "n": 2174,
@@ -2807,7 +2864,10 @@
     "median_action_worth": 2.0,
     "share_of_actions_worth_gt1": 0.5116,
     "share_with_worth_5_plus": 0.5185,
-    "variable_worth_share": 0.0019
+    "variable_worth_share": null,
+    "suppressed_below_floor": [
+     "variable_worth_share"
+    ]
    },
    "malaysia": {
     "n": 1501,
@@ -2818,7 +2878,7 @@
     "share_with_worth_5_plus": 0.3458,
     "variable_worth_share": 0.042
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "max_worth_p50": 10.0,
@@ -3003,7 +3063,7 @@
     "contestants_mandatory_p50": 598.5,
     "contestants_no_mandatory_p50": 334.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "any_mandatory_share": 0.5946,
@@ -3207,7 +3267,7 @@
     "pool_stated_share": 0.2725,
     "pool_usd_p50": 1000.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "prize_count_p50": 1.0,
@@ -3465,8 +3525,12 @@
     "sites": 708,
     "home_currency_share": 0.0058,
     "usd_share": 0.9937,
-    "third_currency_share": 0.0005,
-    "mixed_currency_share": 0.0002
+    "third_currency_share": null,
+    "mixed_currency_share": null,
+    "suppressed_below_floor": [
+     "mixed_currency_share",
+     "third_currency_share"
+    ]
    },
    "japan": {
     "n": 2652,
@@ -3481,8 +3545,11 @@
     "sites": 641,
     "home_currency_share": 0.0097,
     "usd_share": 0.9898,
-    "third_currency_share": 0.0005,
-    "mixed_currency_share": 0.0
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share"
+    ]
    },
    "canada": {
     "n": 1937,
@@ -3504,9 +3571,13 @@
     "n": 1037,
     "sites": 148,
     "home_currency_share": 0.0,
-    "usd_share": 0.999,
-    "third_currency_share": 0.001,
-    "mixed_currency_share": 0.0
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share",
+     "usd_share"
+    ]
    },
    "vietnam": {
     "n": 922,
@@ -3527,26 +3598,39 @@
    "brazil": {
     "n": 772,
     "sites": 100,
-    "home_currency_share": 0.0013,
-    "usd_share": 0.9974,
-    "third_currency_share": 0.0013,
-    "mixed_currency_share": 0.0
+    "home_currency_share": null,
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "home_currency_share",
+     "third_currency_share",
+     "usd_share"
+    ]
    },
    "germany": {
     "n": 718,
     "sites": 205,
-    "home_currency_share": 0.0014,
-    "usd_share": 0.9986,
+    "home_currency_share": null,
+    "usd_share": null,
     "third_currency_share": 0.0,
-    "mixed_currency_share": 0.0
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "home_currency_share",
+     "usd_share"
+    ]
    },
    "philippines": {
     "n": 698,
     "sites": 142,
     "home_currency_share": 0.0,
-    "usd_share": 0.9957,
-    "third_currency_share": 0.0043,
-    "mixed_currency_share": 0.0
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share",
+     "usd_share"
+    ]
    },
    "poland": {
     "n": 650,
@@ -3561,16 +3645,24 @@
     "sites": 171,
     "home_currency_share": 0.0096,
     "usd_share": 0.9888,
-    "third_currency_share": 0.0016,
-    "mixed_currency_share": 0.0
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share"
+    ]
    },
    "spain": {
     "n": 571,
     "sites": 220,
-    "home_currency_share": 0.0018,
-    "usd_share": 0.9965,
-    "third_currency_share": 0.0018,
-    "mixed_currency_share": 0.0
+    "home_currency_share": null,
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "home_currency_share",
+     "third_currency_share",
+     "usd_share"
+    ]
    },
    "china": {
     "n": 559,
@@ -3584,9 +3676,13 @@
     "n": 480,
     "sites": 150,
     "home_currency_share": 0.0,
-    "usd_share": 0.9979,
-    "third_currency_share": 0.0021,
-    "mixed_currency_share": 0.0
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share",
+     "usd_share"
+    ]
    },
    "taiwan": {
     "n": 463,
@@ -3600,17 +3696,25 @@
     "n": 422,
     "sites": 49,
     "home_currency_share": 0.0,
-    "usd_share": 0.9976,
-    "third_currency_share": 0.0024,
-    "mixed_currency_share": 0.0
+    "usd_share": null,
+    "third_currency_share": null,
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "third_currency_share",
+     "usd_share"
+    ]
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 380,
     "sites": 119,
-    "home_currency_share": 0.0026,
-    "usd_share": 0.9974,
+    "home_currency_share": null,
+    "usd_share": null,
     "third_currency_share": 0.0,
-    "mixed_currency_share": 0.0
+    "mixed_currency_share": 0.0,
+    "suppressed_below_floor": [
+     "home_currency_share",
+     "usd_share"
+    ]
    }
   }
  },
@@ -3788,7 +3892,7 @@
     "contestants_english_p50": 577.0,
     "contestants_non_english_p50": 196.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "english_share": 0.899,
@@ -3846,11 +3950,15 @@
     "n": 904,
     "sites": 64,
     "optin_on_or_auto_share": 0.1095,
-    "optin_on_share": 0.104,
-    "optin_auto_share": 0.0055,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.8031,
     "contestants_with_optin_p50": 630.0,
-    "contestants_without_optin_p50": 400.0
+    "contestants_without_optin_p50": 400.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "poland": {
     "n": 824,
@@ -3896,21 +4004,29 @@
     "n": 245,
     "sites": 84,
     "optin_on_or_auto_share": 0.1714,
-    "optin_on_share": 0.1592,
-    "optin_auto_share": 0.0122,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.3918,
     "contestants_with_optin_p50": 690.5,
-    "contestants_without_optin_p50": 1262.0
+    "contestants_without_optin_p50": 1262.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "india": {
     "n": 234,
     "sites": 44,
     "optin_on_or_auto_share": 0.0641,
-    "optin_on_share": 0.0513,
-    "optin_auto_share": 0.0128,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.7521,
     "contestants_with_optin_p50": 636.0,
-    "contestants_without_optin_p50": 1016.0
+    "contestants_without_optin_p50": 1016.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "china": {
     "n": 216,
@@ -3926,21 +4042,31 @@
     "n": 170,
     "sites": 47,
     "optin_on_or_auto_share": 0.2059,
-    "optin_on_share": 0.1824,
-    "optin_auto_share": 0.0235,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.4118,
     "contestants_with_optin_p50": 2044.0,
-    "contestants_without_optin_p50": 1200.0
+    "contestants_without_optin_p50": 1200.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "malaysia": {
     "n": 168,
     "sites": 14,
-    "optin_on_or_auto_share": 0.0238,
-    "optin_on_share": 0.0238,
+    "optin_on_or_auto_share": null,
+    "optin_on_share": null,
     "optin_auto_share": 0.0,
     "provider_integration_share": 0.7798,
-    "contestants_with_optin_p50": 546.5,
-    "contestants_without_optin_p50": 1650.5
+    "contestants_with_optin_p50": null,
+    "contestants_without_optin_p50": null,
+    "suppressed_below_floor": [
+     "contestants_with_optin_p50",
+     "contestants_without_optin_p50",
+     "optin_on_or_auto_share",
+     "optin_on_share"
+    ]
    },
    "spain": {
     "n": 166,
@@ -3966,11 +4092,15 @@
     "n": 56,
     "sites": 23,
     "optin_on_or_auto_share": 0.1786,
-    "optin_on_share": 0.125,
-    "optin_auto_share": 0.0536,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.2143,
     "contestants_with_optin_p50": 855.5,
-    "contestants_without_optin_p50": 1920.0
+    "contestants_without_optin_p50": 1920.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "vietnam": {
     "n": 38,
@@ -3982,15 +4112,19 @@
     "contestants_with_optin_p50": 553.0,
     "contestants_without_optin_p50": 587.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 31,
     "sites": 12,
     "optin_on_or_auto_share": 0.2903,
-    "optin_on_share": 0.0968,
-    "optin_auto_share": 0.1935,
+    "optin_on_share": null,
+    "optin_auto_share": null,
     "provider_integration_share": 0.2903,
     "contestants_with_optin_p50": 434.0,
-    "contestants_without_optin_p50": 1052.0
+    "contestants_without_optin_p50": 1052.0,
+    "suppressed_below_floor": [
+     "optin_auto_share",
+     "optin_on_share"
+    ]
    },
    "brazil": {
     "n": 30,
@@ -4364,7 +4498,7 @@
     "share_over_20pct": 0.5329,
     "invalid_share_p90": 0.5439
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1313,
     "sites": 352,
     "invalid_share_p50": 0.1336,
@@ -4709,7 +4843,7 @@
     "entries_per_contestant_p50": 4.8384,
     "contestants_p50": 571.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1396,
     "sites": 366,
     "impressions_per_contestant_p50": 3.208,
@@ -4912,7 +5046,7 @@
     "contestants_first_p50": 344.0,
     "contestants_repeat_p50": 586.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "repeat_campaign_share": 0.739,
@@ -5049,9 +5183,13 @@
     "sites": 289,
     "free_share": 0.1028,
     "pro_share": 0.6542,
-    "business_share": 0.1666,
-    "premium_share": 0.0019,
-    "business_plus_share": 0.1685
+    "business_share": null,
+    "premium_share": null,
+    "business_plus_share": 0.1685,
+    "suppressed_below_floor": [
+     "business_share",
+     "premium_share"
+    ]
    },
    "hong kong": {
     "n": 1973,
@@ -5076,18 +5214,26 @@
     "sites": 496,
     "free_share": 0.1502,
     "pro_share": 0.5053,
-    "business_share": 0.1752,
-    "premium_share": 0.0021,
-    "business_plus_share": 0.1773
+    "business_share": null,
+    "premium_share": null,
+    "business_plus_share": 0.1773,
+    "suppressed_below_floor": [
+     "business_share",
+     "premium_share"
+    ]
    },
    "china": {
     "n": 1541,
     "sites": 136,
     "free_share": 0.0766,
     "pro_share": 0.6801,
-    "business_share": 0.2135,
-    "premium_share": 0.0032,
-    "business_plus_share": 0.2167
+    "business_share": null,
+    "premium_share": null,
+    "business_plus_share": 0.2167,
+    "suppressed_below_floor": [
+     "business_share",
+     "premium_share"
+    ]
    },
    "malaysia": {
     "n": 1501,
@@ -5098,7 +5244,7 @@
     "premium_share": 0.056,
     "business_plus_share": 0.4111
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "free_share": 0.2688,
@@ -5245,7 +5391,7 @@
     "embed_impression_share": 0.3516,
     "directory_impression_share": 0.0092
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1404,
     "sites": 366,
     "hosted_impression_share": 0.5121,
@@ -5580,7 +5726,7 @@
     "email": 0.0005,
     "other_sites": 0.1306
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1404,
     "sites": 366,
     "direct": 0.4569,
@@ -5811,7 +5957,7 @@
     "instagram": 0.2039,
     "email_subscribe": 0.1119
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "youtube": 0.3812,
@@ -6278,7 +6424,7 @@
     "impressions_per_contestant_restricted_p50": 4.5337,
     "impressions_per_contestant_open_p50": 3.7625
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 1406,
     "sites": 367,
     "country_rule_share": 0.0505,
@@ -6376,7 +6522,7 @@
     "invalid_share_p50": 0.0953,
     "share_over_20pct": 0.2043
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 881,
     "sites": 194,
     "invalid_share_p50": 0.1033,
@@ -6543,7 +6689,7 @@
     "max_worth_p50": 3.0,
     "contestants_p50": 353.0
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "n": 957,
     "sites": 206,
     "days_p50": 8.0,
@@ -7307,7 +7453,7 @@
      "share_of_country": 0.0097
     }
    },
-   "t\u00fcrkiye": {
+   "türkiye": {
     "gaming_esports": {
      "n": 584,
      "sites": 111,

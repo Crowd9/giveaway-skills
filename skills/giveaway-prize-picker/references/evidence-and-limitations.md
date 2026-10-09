@@ -413,12 +413,12 @@ Among Prize listings that state a currency, how often that currency is the busin
 | Japan | 2,652 | 110 | 0% | 100% |
 | Australia | 1,965 | 641 | 1% | 99% |
 | India | 1,256 | 291 | 0% | 100% |
-| Brazil | 772 | 100 | 0% | 100% |
-| Germany | 718 | 205 | 0% | 100% |
-| South Korea | 480 | 150 | 0% | 100% |
+| Brazil | 772 | 100 | - | - |
+| Germany | 718 | 205 | - | - |
+| South Korea | 480 | 150 | 0% | - |
 <!-- /generated -->
 
-Outside the United States, the business's own currency appears on under 1% of stated Prize values in every country in this cut, and USD covers at least 99% of stated values, to the nearest point, in every one of them. A stated value from a Japanese or Brazilian business is a USD figure the business typed, not a local price converted to dollars. Price a Prize in the business's own currency when quoting it to Entrants, and treat every stated USD value in this dataset as USD-shaped regardless of where the campaign ran.
+Some currency shares are withheld because the supporting subgroup or its complement is too small. The published shares cannot establish a currency for an individual campaign. Price a Prize in the business's own currency when quoting it to Entrants, and check the recorded currency before interpreting a stated value.
 
 Source: `analysis/output/indicators.json` (prize_currency_localisation_by_country).
 

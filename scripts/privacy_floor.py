@@ -19,7 +19,7 @@ COUNT_KEY = re.compile(
 
 
 SUPPRESSION_KEY = "suppressed_below_floor"
-SAMPLE_KEY = re.compile(r"^(?:n|campaigns|[a-z_]+_n)$")
+SAMPLE_KEY = re.compile(r"^(?:n|campaigns|[a-z_]+_n|n_(?!businesses$|organizers$|organisers$)[a-z_]+)$")
 STATISTIC_KEY = re.compile(
     r"^(?:min|max|median|mean|std|count|p[0-9]+|.*_(?:mean|median|share|ratio|percentile))$"
 )
@@ -38,6 +38,129 @@ def is_count_map(value):
     )
 
 
+# Shares here are fractions of the campaigns in the sibling n/campaigns.
+# *_offered pairs with *_uptake; *_share pairs with named conditional summaries
+# below. n_<prefix>/<prefix>_n overrides a rounded share when present. Impression
+# ratios, baseline rates and shares of a larger parent population are excluded.
+NON_CAMPAIGN_SHARES = frozenset({
+    "baseline_share", "direct_share", "invalid_share", "median_email_share", "action_uptake",
+    "hosted_impression_share", "embed_impression_share", "directory_impression_share",
+    "own_product_signal_prize_share", "prize_value_missing_share", "value_stated_share",
+    "prize_value_stated_share", "share_of_campaigns", "share_of_prize_records",
+    "share_of_country", "share_of_band", "share_of_stores",
+    "share_of_tagged_email_impressions", "share_of_actions_worth_gt1",
+})
+DEPENDENTS = {
+    "email_offered": ("email_uptake",),
+    "referral_offered": ("referral_uptake",),
+    "share_offered": ("referrals_per_contestant", "referral_entries_per_100_entrants_where_offered"),
+    "mandatory_share": ("completions_when_mandatory",),
+    "any_mandatory_share": ("mandatory_count_when_used_p50", "contestants_mandatory_p50"),
+    "country_rule_share": ("contestants_restricted_p50", "impressions_per_contestant_restricted_p50"),
+    "wallet_share": ("contestants_wallet_p50", "days_wallet_p50"),
+    "question_share": ("validated_given_question", "word_cap_changed_given_question", "word_cap_p50", "contestants_with_question_p50"),
+    "pool_stated_share": ("pool_usd_p50",),
+    "secret_code_share": ("contestants_secret_p50",),
+    "optin_on_or_auto_share": ("contestants_with_optin_p50",),
+    "share_action_share": ("share_clicks_per_contestant_p50", "contestants_with_share_p50"),
+    "english_share": ("contestants_english_p50",),
+    "repeat_campaign_share": ("contestants_repeat_p50",),
+    "weekend_start_share": ("contestants_weekend_p50",),
+}
+COMPLEMENTS = {
+    "mandatory_share": ("completions_when_optional",),
+    "any_mandatory_share": ("contestants_no_mandatory_p50",),
+    "country_rule_share": ("contestants_open_p50", "impressions_per_contestant_open_p50"),
+    "wallet_share": ("contestants_no_wallet_p50", "days_no_wallet_p50"),
+    "question_share": ("contestants_without_question_p50",),
+    "secret_code_share": ("contestants_no_secret_p50",),
+    "optin_on_or_auto_share": ("contestants_without_optin_p50",),
+    "share_action_share": ("contestants_without_share_p50",),
+    "english_share": ("contestants_non_english_p50",),
+    "repeat_campaign_share": ("contestants_first_p50",),
+    "weekend_start_share": ("contestants_weekday_p50",),
+}
+
+
+def campaign_share(key):
+    return key not in NON_CAMPAIGN_SHARES and not key.startswith(("n_", "conditional_")) and (
+        key.endswith(("_share", "_offered")) or key.startswith(("share_", "action_", "terms_")))
+
+
+def conditional_suppressions(value):
+    """Fields to withhold, using only support identifiable in this aggregate.
+
+    Campaign support cannot certify five distinct businesses. Rounded shares are
+    conservative estimates; private generators must use exact subgroup counts.
+    Null shares remain withheld and cannot license a restored conditional metric.
+    """
+    fields = set()
+    n = value.get("n", value.get("campaigns"))
+    for key, share in value.items():
+        if not campaign_share(key):
+            continue
+        prefix = key.rsplit("_", 1)[0]
+        dependent = set(DEPENDENTS.get(key, ())) | {prefix + "_uptake"}
+        count = value.get(prefix + "_n", value.get("n_" + prefix))
+        support = count if type(count) is int else (
+            n * share if type(n) is int and type(share) in (int, float) and 0 <= share <= 1 else None)
+        if (support is not None and support < FLOOR) or share is None:
+            fields.update(k for k in dependent if k in value and value[k] is not None)
+        if share is None:
+            fields.update(k for k in COMPLEMENTS.get(key, ()) if k in value and value[k] is not None)
+        if type(n) is int and type(share) in (int, float) and 0 < share < 1:
+            remaining = n - support
+            if support < FLOOR or remaining < FLOOR:
+                fields.add(key)
+            if remaining < FLOOR:
+                fields.update(k for k in COMPLEMENTS.get(key, ()) if k in value and value[k] is not None)
+    # *_given_<condition> is a campaign proportion within the condition.
+    # Its own numerator and complement need the floor too, even when the
+    # condition as a whole has ample support (for example validated questions).
+    for key, rate in value.items():
+        if "_given_" not in key or type(rate) not in (int, float) or not 0 < rate < 1:
+            continue
+        condition = key.split("_given_", 1)[1]
+        denominator = value.get("n_" + condition, value.get(condition + "_n"))
+        if type(denominator) is not int:
+            share = value.get(condition + "_share", value.get(condition + "_offered"))
+            denominator = n * share if type(n) is int and type(share) in (int, float) else None
+        if denominator is not None and (denominator * rate < FLOOR or denominator * (1 - rate) < FLOOR):
+            fields.add(key)
+    # Explicit denominator conventions cover uptake rows and pairwise methods.
+    for key, metric in value.items():
+        if metric is None:
+            continue
+        count_keys = []
+        if key.endswith("_uptake"):
+            prefix = key[:-7]
+            count_keys = [prefix + "_n", "n_" + prefix]
+        elif key == "uptake" or key == "uptake_ratio_to_baseline":
+            count_keys = ["n_offered"]
+        elif key.startswith("conditional_") and "_given_" in key:
+            count_keys = ["n_" + key.split("_given_", 1)[1], "n_both"]
+        elif key == "lift":
+            count_keys = ["n_both"]
+        if any(type(value.get(k)) is int and value[k] < FLOOR for k in count_keys):
+            fields.add(key)
+    # A single hidden member of a published partition or sum is recoverable.
+    # Business+ is Business plus Premium, so hiding Business also protects a
+    # suppressed Premium from both that sum and the four-tier total.
+    for members in (
+        ("business_share", "premium_share", "business_plus_share"),
+        ("optin_on_share", "optin_auto_share", "optin_on_or_auto_share"),
+        ("free_share", "pro_share", "business_share", "premium_share"),
+        ("template_share", "own_copy_share", "blank_share"),
+    ):
+        if not all(k in value for k in members):
+            continue
+        hidden = [k for k in members if value[k] is None or k in fields]
+        if len(hidden) == 1:
+            candidates = [k for k in members if k not in hidden]
+            fields.add(candidates[0])
+    return fields
+
+
 def privacy_problems(value, path="$"):
     """Return failures without printing group labels, which may be private.
 
@@ -47,6 +170,8 @@ is explicitly zero. A parent count never excuses a smaller nested subgroup.
 """
     problems = []
     if isinstance(value, dict):
+        for key in sorted(conditional_suppressions(value)):
+            problems.append(f"{path}: {key} has conditional support below the privacy floor or withheld support")
         if is_count_map(value):
             for index, (key, count) in enumerate(value.items()):
                 if key != SUPPRESSION_KEY and 0 < count < FLOOR:

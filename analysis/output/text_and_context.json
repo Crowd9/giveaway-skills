@@ -259,7 +259,10 @@
    "entries_per_entrant": 1.8716814159292035,
    "stated_usd_per_contestant": 1.251700680272109,
    "usd_per_email": 0.8672646363509943,
-   "december_share": 0.02564102564102564
+   "december_share": null,
+   "suppressed_below_floor": [
+    "december_share"
+   ]
   },
   "South Africa": {
    "n": 66,
@@ -279,7 +282,10 @@
    "entries_per_entrant": 3.9166666666666665,
    "stated_usd_per_contestant": 1.380948497329038,
    "usd_per_email": 1.3461538461538463,
-   "december_share": 0.06153846153846154
+   "december_share": null,
+   "suppressed_below_floor": [
+    "december_share"
+   ]
   },
   "Poland": {
    "n": 50,

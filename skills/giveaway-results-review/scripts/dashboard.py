@@ -382,7 +382,7 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
       <div class="card">
         <h3>Connected Accounts and Retention</h3>
         <p>Connected accounts: {{HANDLES}}.</p>
-        <p>Retention by distinct active days: {{RETENTION}}. One-day dominance is normal for a giveaway.</p>
+        <p>{{RETENTION}}</p>
       </div>
       <div class="card">
         <h3>Most Engaged Entrants</h3>
@@ -541,13 +541,16 @@ def gather(a):
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
     b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
-    b.days = a.days or ((R["end"] - R["start"]).days + 1 if R.get("start") else None); b.methods = a.methods or len(R["actions"])
+    b.days = a.days; b.methods = a.methods
     emails = sum(comp for act, comp, *_ in R["actions"] if kind(act) == "emails")
     b.emails = emails or None
     b.referrals = R["viral"]["refer_rows"]; b.actions_completed = T["actions"]; b.prize_value = None
     for k in ("x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"): setattr(b, k, None)
     b.vertical = a.vertical; b.repeatable = a.repeatable; b.first_campaign = a.first_campaign; b.actions = None; b.history = None
     metrics = RV.review(b)
+    span = (R["end"].date() - R["start"].date()).days + 1 if R.get("start") else None
+    metrics.append(("Observed activity span in days", str(span) if span is not None else "unavailable", "-", "Completion timestamps only"))
+    metrics.append(("Completed method titles", str(sum(comp > 0 for _, comp, *_ in R["actions"])), "-", "Methods with valid completions only"))
     RV.PCT = RV.PCT or RV.load_pct(); band = RV.band(N) if N >= 100 else "below-100"; band_label = RV.band_label(N) if N >= 100 else "Below 100 Entrants"
     groups = RV.PCT.get("groups", {})
     def slice_of(key): return {m: {"n": groups[key][m]["n"], "p": groups[key][m]["p"]} for m in ("contestants", "email_uptake", "entries_per_entrant", "actions_per_contestant") if m in groups.get(key, {})}
@@ -642,7 +645,7 @@ def render(D, W, S, a):
     countries = [(c, v) for c, v in R["countries"]]
     cities = table(["City", "Entrants"], [(f"{c[0][0]}, {c[0][1]}", n(c[1])) for c in R["cities"]]) if R["cities"] else ""
     handles = ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) if R["handles"] else "none recorded"
-    ret = R["retention"]; retention = ", ".join(f"{k} day{'s' if k != '1' else ''} {n(v[0])} ({v[1]:.0%})" for k, v in ret.items())
+    retention = CR.retention_text(R)
     engaged = table(["Entrant", "Actions", "Entries", "Referred", "Days active", "Connected accounts"], [(t[0], t[1], f"{t[2]:,}", t[3], t[4], t[5]) for t in R["top_entrants"]])
     caveats = "".join(f"<li>{esc(c)}</li>" for c in W["caveats"])
     bslice = D["slices"]["band:" + D["band"]]
@@ -753,6 +756,40 @@ def self_test():
     floor = gather(A)
     assert floor["band"] == "100-250" and floor["slices"]["all"]
     assert any(x["typical"] is not None for x in floor["acts"])
+    # Only supplied settings select configured-duration/method comparisons.
+    with open(p, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When"])
+        for i in range(100): wr.writerow([f"person{i}@example.com", "Subscribe to our newsletter", 1, "2026-05-01 10:00:00"])
+    observed = {row[0]: row for row in gather(A)["metrics"]}
+    assert "Duration in days" not in observed and "Entry actions" not in observed
+    assert observed["Observed activity span in days"][1] == "1" and observed["Completed method titles"][1] == "1"
+    A.days = 14; A.methods = 6
+    configured = {row[0]: row for row in gather(A)["metrics"]}
+    assert configured["Duration in days"][1] == "14" and configured["Entry actions"][1] == "6"
+    A.days = A.methods = None
+    for timestamps in ((None, None), ("bad-date", "bad-date"), ("2026-05-01 10:00:00", "bad-date"),
+                       ("2026-05-01 10:00:00", "2026-05-02 10:00:00")):
+        with open(p, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"] + (["When"] if timestamps[0] is not None else []))
+            for i, timestamp in enumerate(timestamps):
+                wr.writerow([f"person{i}@example.com", "Subscribe to our newsletter", 1] + ([timestamp] if timestamp is not None else []))
+        dated = gather(A); page = render(dated, words_of(words), site_of(None), A)
+        complete = sum(bool(CR.parse_when(t)) for t in timestamps if t)
+        if not complete: assert "Retention unavailable" in page and "returned on a later day" not in page
+        elif complete == 1: assert "Excludes 1 of 2 Entrants" in page
+        else: assert "among 2 Entrants with complete usable timestamps" in page
+    from gleam_export import load as export_load
+    for titles, expected in ((("Subscribe to our YouTube channel",) * 2, 0),
+                             (("Subscribe to our newsletter",) * 2, 2),
+                             (("Subscribe to our YouTube channel", "Subscribe to our newsletter"), 1)):
+        with open(p, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+            for i, title in enumerate(titles): wr.writerow([f"person{i}@example.com", title, 1])
+        data = gather(A)
+        assert data["emails"] == data["R"]["roi"]["emails"] == export_load(p)["assets"].get("emails", 0) == expected
+        for title in titles:
+            if "YouTube" in title:
+                assert generic_name(title) != "Email Subscriptions" and RV.family(title) == "follow"
     print("self-test passed"); return 0
 
 

@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.44 |
-| giveaway-entry-method-planner | 1.2.42 |
-| giveaway-timing-and-duration | 1.4.41 |
+| giveaway-prize-picker | 1.3.45 |
+| giveaway-entry-method-planner | 1.2.43 |
+| giveaway-timing-and-duration | 1.4.42 |
 | giveaway-winner-structure | 1.4.14 |
-| giveaway-promotion-plan | 1.3.41 |
+| giveaway-promotion-plan | 1.3.42 |
 | giveaway-random-draw | 1.3.36 |
 | giveaway-winner-communications | 1.2.33 |
-| giveaway-idea-generator | 1.3.36 |
-| giveaway-results-review | 1.6.13 |
-| gleam-campaign-setup | 1.2.39 |
+| giveaway-idea-generator | 1.3.37 |
+| giveaway-results-review | 1.6.14 |
+| gleam-campaign-setup | 1.2.40 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.15 (2026-10-10)
+
+We took out each figure that rested on a handful of campaigns. The build now fails if one comes back.
+
+Your report keeps channel subscriptions on their own line, apart from email signups. An export with no usable dates says returning Entrants can't be measured, where it used to report none. Give the report your run length and the number of actions you set up, and it compares on those. Without them, it shows what Entrants did and skips the comparison.
+
+The setup guide keeps completed email actions apart from people you can email, which depends on each Entrant's consent. A few explanations of why one kind of campaign did better are now labelled as possible reasons to check against your own campaign.
 
 ## 3.0.14 (2026-10-10)
 

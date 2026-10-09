@@ -36,12 +36,77 @@ class PrivacyFloorTests(unittest.TestCase):
         self.assertTrue(privacy_problems({"campaigns": 10000, "businesses": 1}))
 
     def test_ratios_are_not_business_counts(self):
-        self.assertEqual(privacy_problems({"campaigns": 5, "n": 5,
+        self.assertEqual(privacy_problems({"campaigns": 100, "n": 100,
             "business_plus_share": 0.1, "repeat_organizer_share": 0.2,
             "campaigns_per_organizer_mean": 2.5}), [])
 
+    def test_single_campaign_email_conditional_is_withheld(self):
+        row = {"n": 960, "sites": 13, "email_offered": 0.001, "email_uptake": 0.422}
+        self.assertEqual(MODULE.conditional_suppressions(row), {"email_offered", "email_uptake"})
+        self.assertTrue(privacy_problems(row))
+
+    def test_tiny_cross_filters_and_small_complements(self):
+        for row, fields in (
+            ({"n": 517, "sites": 20, "judged_selection_share": 0.002}, {"judged_selection_share"}),
+            ({"n": 47, "sites": 22, "business_plus_share": 0.021}, {"business_plus_share"}),
+            ({"n": 100, "mandatory_share": 0.99, "completions_when_optional": 0.4},
+             {"mandatory_share", "completions_when_optional"}),
+        ):
+            self.assertEqual(MODULE.conditional_suppressions(row), fields)
+
+    def test_explicit_conditional_counts_and_exact_floor(self):
+        self.assertIn("email_uptake", MODULE.conditional_suppressions(
+            {"n": 100, "email_n": 4, "email_offered": 0.1, "email_uptake": 0.8}))
+        self.assertEqual(MODULE.conditional_suppressions(
+            {"n": 100, "email_n": 5, "email_offered": 0.049, "email_uptake": 0.8}), set())
+        self.assertIn("uptake", MODULE.conditional_suppressions({"n_offered": 4, "uptake": 0.8}))
+        self.assertIn("conditional_email_given_share", MODULE.conditional_suppressions(
+            {"n_share": 4, "n_both": 4, "conditional_email_given_share": 0.8}))
+
+    def test_null_shares_and_markers_cannot_license_restored_metrics(self):
+        for row, field in (
+            ({"n": 960, "email_offered": None, "email_uptake": 0.422}, "email_uptake"),
+            ({"n": 100, "mandatory_share": None, "completions_when_optional": 0.4}, "completions_when_optional"),
+        ):
+            row["suppressed_below_floor"] = [field]
+            self.assertIn(field, MODULE.conditional_suppressions(row))
+            row[field] = None
+            self.assertEqual(privacy_problems(row), [])
+
+    def test_partition_and_overlapping_sum_cannot_reconstruct_hidden_share(self):
+        row = {"n": 2053, "sites": 289, "free_share": 0.5, "pro_share": 0.3315,
+               "business_share": 0.1666, "premium_share": None, "business_plus_share": 0.1685}
+        self.assertIn("business_share", MODULE.conditional_suppressions(row))
+        row["business_share"] = None
+        self.assertEqual(MODULE.conditional_suppressions(row), set())
+        self.assertIn("optin_on_share", MODULE.conditional_suppressions(
+            {"n": 245, "optin_on_or_auto_share": 0.1714, "optin_on_share": 0.1592,
+             "optin_auto_share": None}))
+        self.assertTrue(MODULE.conditional_suppressions(
+            {"n": 100, "template_share": 0.6, "own_copy_share": 0.39, "blank_share": None}))
+
+    def test_nested_conditional_proportions_check_their_own_support(self):
+        row = {"n": 5299, "question_share": 0.0902,
+               "validated_given_question": 0.0021, "word_cap_changed_given_question": 0.0021}
+        self.assertEqual(MODULE.conditional_suppressions(row),
+                         {"validated_given_question", "word_cap_changed_given_question"})
+        self.assertIn("validated_given_question", MODULE.conditional_suppressions(
+            {"n": 1000, "question_share": 0.5, "validated_given_question": 0.996}))
+        self.assertIn("conditional_email_given_share", MODULE.conditional_suppressions(
+            {"n_share": 100, "n_both": 99, "conditional_email_given_share": 0.99}))
+
+    def test_zero_support_cannot_publish_a_conditional_metric(self):
+        self.assertIn("email_uptake", MODULE.conditional_suppressions(
+            {"n": 100, "email_offered": 0.0, "email_uptake": 0.8}))
+
+    def test_share_populations_and_unrelated_actions_are_not_conflated(self):
+        for key in ("direct_share", "directory_impression_share", "baseline_share", "share_of_campaigns", "action_uptake"):
+            self.assertEqual(privacy_problems({"n": 10, key: 0.01}), [])
+        self.assertEqual(MODULE.conditional_suppressions(
+            {"n": 65, "email_offered": 0.015, "action_uptake": 0.403}), {"email_offered"})
+
     def test_small_campaign_samples_fail_even_with_enough_businesses(self):
-        for key in ("n", "campaigns", "clean_n"):
+        for key in ("n", "campaigns", "clean_n", "n_offered", "n_both"):
             self.assertTrue(privacy_problems({key: 4, "businesses": 5}))
 
     def test_holi_month_buckets_do_not_inherit_five_businesses(self):

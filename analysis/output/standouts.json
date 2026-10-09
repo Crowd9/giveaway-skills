@@ -111,10 +111,13 @@
    "valued_n": 12,
    "stated_pool_usd": 596.5,
    "usd_per_contestant": 0.31530999210865357,
-   "repeat_organizer_share": 0.9361702127659575,
+   "repeat_organizer_share": null,
    "own_product_share": 0.10638297872340426,
    "duration": 12,
-   "actions": 5
+   "actions": 5,
+   "suppressed_below_floor": [
+    "repeat_organizer_share"
+   ]
   }
  },
  "standouts": {
@@ -329,9 +332,12 @@
   },
   "repeat_organizer_share": 0.8440366972477065,
   "own_product_share": 0.12844036697247707,
-  "december_share": 0.03669724770642202,
+  "december_share": null,
   "median_actions": 7,
-  "median_duration": 18.5
+  "median_duration": 18.5,
+  "suppressed_below_floor": [
+   "december_share"
+  ]
  },
  "industries": {
   "music_media": {

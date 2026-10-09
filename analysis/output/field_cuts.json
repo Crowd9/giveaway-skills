@@ -420,8 +420,11 @@
    "entries_per_entrant": 5.086,
    "days": 8.0,
    "methods": 13.0,
-   "email_offered": 0.006,
-   "share_offered": 0.02
+   "email_offered": null,
+   "share_offered": 0.02,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "sv": {
    "n": 606,
@@ -486,8 +489,11 @@
    "entries_per_entrant": 6.998,
    "days": 28.0,
    "methods": 8.0,
-   "email_offered": 0.038,
-   "share_offered": 0.163
+   "email_offered": null,
+   "share_offered": 0.163,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "ru": {
    "n": 100,
@@ -497,8 +503,11 @@
    "entries_per_entrant": 10.409,
    "days": 39.0,
    "methods": 13.0,
-   "email_offered": 0.02,
-   "share_offered": 0.21
+   "email_offered": null,
+   "share_offered": 0.21,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   }
  },
  "by_country_rule": {
@@ -1201,12 +1210,17 @@
   "wistia_watch": {
    "n": 1619,
    "sites": 7,
-   "mandatory_share": 0.002,
+   "mandatory_share": null,
    "worth": 1.0,
    "completions_per_contestant": 0.438,
    "worth_weighted_entries_per_contestant": 0.438,
-   "completions_when_mandatory": 0.252,
-   "completions_when_optional": 0.438
+   "completions_when_mandatory": null,
+   "completions_when_optional": null,
+   "suppressed_below_floor": [
+    "completions_when_mandatory",
+    "completions_when_optional",
+    "mandatory_share"
+   ]
   },
   "twitter_view_post": {
    "n": 1619,
@@ -1441,12 +1455,17 @@
   "blog_post": {
    "n": 413,
    "sites": 83,
-   "mandatory_share": 0.005,
+   "mandatory_share": null,
    "worth": 2.0,
    "completions_per_contestant": 0.009,
    "worth_weighted_entries_per_contestant": 0.027,
-   "completions_when_mandatory": 0.757,
-   "completions_when_optional": 0.009
+   "completions_when_mandatory": null,
+   "completions_when_optional": null,
+   "suppressed_below_floor": [
+    "completions_when_mandatory",
+    "completions_when_optional",
+    "mandatory_share"
+   ]
   },
   "tumblr_follow": {
    "n": 378,
@@ -1501,12 +1520,17 @@
   "goodreads_add_to_shelf": {
    "n": 277,
    "sites": 29,
-   "mandatory_share": 0.011,
+   "mandatory_share": null,
    "worth": 1.0,
    "completions_per_contestant": 0.347,
    "worth_weighted_entries_per_contestant": 0.599,
-   "completions_when_mandatory": 0.984,
-   "completions_when_optional": 0.343
+   "completions_when_mandatory": null,
+   "completions_when_optional": null,
+   "suppressed_below_floor": [
+    "completions_when_mandatory",
+    "completions_when_optional",
+    "mandatory_share"
+   ]
   },
   "discord_boost_server": {
    "n": 276,
@@ -1541,22 +1565,32 @@
   "pinterest_choose_pin": {
    "n": 255,
    "sites": 25,
-   "mandatory_share": 0.016,
+   "mandatory_share": null,
    "worth": 1.0,
    "completions_per_contestant": 0.119,
    "worth_weighted_entries_per_contestant": 0.167,
-   "completions_when_mandatory": 0.456,
-   "completions_when_optional": 0.119
+   "completions_when_mandatory": null,
+   "completions_when_optional": null,
+   "suppressed_below_floor": [
+    "completions_when_mandatory",
+    "completions_when_optional",
+    "mandatory_share"
+   ]
   },
   "bluesky_post": {
    "n": 200,
    "sites": 51,
-   "mandatory_share": 0.02,
+   "mandatory_share": null,
    "worth": 1.0,
    "completions_per_contestant": 0.102,
    "worth_weighted_entries_per_contestant": 0.124,
-   "completions_when_mandatory": 0.35,
-   "completions_when_optional": 0.1
+   "completions_when_mandatory": null,
+   "completions_when_optional": null,
+   "suppressed_below_floor": [
+    "completions_when_mandatory",
+    "completions_when_optional",
+    "mandatory_share"
+   ]
   }
  },
  "worth_bands_by_action": {
@@ -4521,7 +4555,10 @@
     "n": 449,
     "sites": 92,
     "completions_per_contestant": 0.091,
-    "mandatory_share": 0.004
+    "mandatory_share": null,
+    "suppressed_below_floor": [
+     "mandatory_share"
+    ]
    },
    "^.{14}$": {
     "n": 421,
@@ -4595,7 +4632,10 @@
     "n": 529,
     "sites": 79,
     "completions_per_contestant": 0.385,
-    "mandatory_share": 0.009
+    "mandatory_share": null,
+    "suppressed_below_floor": [
+     "mandatory_share"
+    ]
    },
    "11": {
     "n": 485,
@@ -4908,7 +4948,10 @@
    "days": 44.0,
    "methods": 1.0,
    "email_offered": 0.954,
-   "share_offered": 0.006
+   "share_offered": null,
+   "suppressed_below_floor": [
+    "share_offered"
+   ]
   },
   "china: shenzhen": {
    "n": 623,
@@ -5028,8 +5071,12 @@
    "entries_per_entrant": 1.0,
    "days": 0.0,
    "methods": 1.0,
-   "email_offered": 0.006,
-   "share_offered": 0.01
+   "email_offered": null,
+   "share_offered": null,
+   "suppressed_below_floor": [
+    "email_offered",
+    "share_offered"
+   ]
   },
   "united states: san francisco": {
    "n": 483,
@@ -5127,8 +5174,11 @@
    "entries_per_entrant": 9.691,
    "days": 1.0,
    "methods": 12.0,
-   "email_offered": 0.005,
-   "share_offered": 0.093
+   "email_offered": null,
+   "share_offered": 0.093,
+   "suppressed_below_floor": [
+    "email_offered"
+   ]
   },
   "united states: san jose": {
    "n": 401,
@@ -5161,7 +5211,10 @@
    "days": 1.0,
    "methods": 17.0,
    "email_offered": 0.0,
-   "share_offered": 0.003
+   "share_offered": null,
+   "suppressed_below_floor": [
+    "share_offered"
+   ]
   },
   "united kingdom: ipswich": {
    "n": 389,
@@ -7888,7 +7941,7 @@
   "selection_method": {
    "random draw": 114463,
    "tirage au sort": 47,
-   "ganhador aleat\u00f3rio": 35,
+   "ganhador aleatório": 35,
    "jurering": 32,
    "random draw to select finalists & then finalists judged": 31,
    "random draw to select finalists and then judged": 28

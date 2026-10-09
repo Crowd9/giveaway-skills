@@ -339,7 +339,10 @@
    "n": 1184,
    "organizers": 138,
    "median_email_share": 0.0036,
-   "share_of_campaigns_over_10pct": 0.004
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   },
   "home_garden": {
    "n": 3680,
@@ -357,7 +360,10 @@
    "n": 1149,
    "organizers": 156,
    "median_email_share": 0.0011,
-   "share_of_campaigns_over_10pct": 0.003
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   },
   "apparel_fashion": {
    "n": 4615,
@@ -369,7 +375,10 @@
    "n": 937,
    "organizers": 204,
    "median_email_share": 0.0051,
-   "share_of_campaigns_over_10pct": 0.001
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   }
  },
  "email_share_by_plan_tier": {
@@ -489,7 +498,10 @@
    "n": 391,
    "organizers": 108,
    "median_email_share": 0.0027,
-   "share_of_campaigns_over_10pct": 0.01
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   },
   "canada": {
    "n": 6508,
@@ -501,7 +513,10 @@
    "n": 347,
    "organizers": 52,
    "median_email_share": 0.0,
-   "share_of_campaigns_over_10pct": 0.009
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   },
   "australia": {
    "n": 5711,
@@ -519,7 +534,10 @@
    "n": 449,
    "organizers": 62,
    "median_email_share": 0.0028,
-   "share_of_campaigns_over_10pct": 0.007
+   "share_of_campaigns_over_10pct": null,
+   "suppressed_below_floor": [
+    "share_of_campaigns_over_10pct"
+   ]
   },
   "france": {
    "n": 1928,
