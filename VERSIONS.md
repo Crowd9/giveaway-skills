@@ -5,13 +5,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.54 |
-| giveaway-entry-method-planner | 1.2.52 |
+| giveaway-entry-method-planner | 1.2.53 |
 | giveaway-timing-and-duration | 1.4.53 |
-| giveaway-winner-structure | 1.4.23 |
+| giveaway-winner-structure | 1.4.24 |
 | giveaway-promotion-plan | 1.3.53 |
 | giveaway-random-draw | 1.3.52 |
 | giveaway-winner-communications | 1.2.43 |
-| giveaway-idea-generator | 1.3.43 |
+| giveaway-idea-generator | 1.3.44 |
 | giveaway-results-review | 1.6.36 |
 | gleam-campaign-setup | 1.2.48 |
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.44 (2026-10-10)
+
+When you ask how often small campaigns offer tiered Prizes, the answer now carries its sample: 15% of 33,074 campaigns from 9,533 businesses in the 100 to 250 Entrant band. The skill tests reward an answer that quotes that count, where before they marked it down. Two notes on earlier test runs now flag the 2 figures corrected since, so nobody copies an outdated example.
 
 ## 3.0.43 (2026-10-10)
 

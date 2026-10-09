@@ -41,6 +41,8 @@ B2B accounting practice in Ireland, 40 staff, we serve small business owners. Pa
 
 The baseline misread the Email uptake column as a claim about what the campaign offered. The latest answer picks a peer-nomination mechanic that answers both halves of the conflict on the 87 referrals per 100 Entrants that B2B campaigns run on, and it calls 547 Entrants close to the typical 492 and invents a reason the data cannot see.
 
+Correction to this historical assessment: the answer used a stale B2B figure. The current aggregate is 44 referrals per 100 Entrants across 12,728 campaigns from 1,779 businesses (`analysis/output/industries.json`, `by_audience.b2b`). It does not establish lead quality. The historical score is unchanged.
+
 ### idea-4 (U)
 
 ```

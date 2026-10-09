@@ -24,6 +24,8 @@ Total prize units per campaign: median 1, 75th percentile 3, 90th percentile 10 
 | 10k+ | 61% | 20% | 19% |
 <!-- /generated -->
 
+The 100 to 250 Entrant band contains 33,074 campaigns from 9,533 businesses, with 15% listing tiered Prizes. Source: `analysis/output/benchmarks.json`, `ordinary_benchmark.structure_detail.by_band["100-250"]`. These are listed Prizes, not completed awards, and campaigns below 100 Entrants are absent.
+
 ## Reading the tables
 
 - Four in five campaigns list a single Prize record, and three in five give away exactly one unit. One Winner is the default choice at every size.

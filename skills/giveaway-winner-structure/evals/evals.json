@@ -279,9 +279,9 @@
   {
    "id": 12,
    "prompt": "We usually get 150 Entrants. What share of campaigns our size list tiered Prizes?",
-   "expected_output": "Use the 100 to 250 Entrant band with 15% tiered Prizes. Do not relabel the overall 17% or borrow the overall sample count for the band.",
+   "expected_output": "Use 15% of 33,074 campaigns from 9,533 businesses in the 100 to 250 Entrant band. Describe listed tiered Prizes, not completed awards. Do not substitute the overall percentage or sample.",
    "assertions": [
-    "Reject presenting the all-campaign 17% as the matched band figure, confusing listed units with Winners awarded, or attaching the overall count to the band. Require the correct band and note its missing count.",
+    "Require the 100 to 250 Entrant band, 15% listing tiered Prizes, and its sample of 33,074 campaigns from 9,533 businesses. Reject presenting the overall 17% or overall sample as the matched band figure, claiming the band count is missing, or treating listed Prizes as completed awards.",
     "Reject contradictory unsafe advice anywhere in the answer."
    ],
    "files": [],
@@ -293,8 +293,8 @@
    "review_checks": [
     {
      "id": "matched-population",
-     "criterion": "Reject presenting the all-campaign 17% as the matched band figure, confusing listed units with Winners awarded, or attaching the overall count to the band. Require the correct band and note its missing count.",
-     "pass_example": "In the 100 to 250 Entrant band, 15% list tiered Prizes. Source: the structure table gives 116,499 campaigns overall but no count for this band. Campaigns below 100 Entrants are absent, and the figure describes listed Prizes rather than awards.",
+     "criterion": "Require the 100 to 250 Entrant band, 15% listing tiered Prizes, and its sample of 33,074 campaigns from 9,533 businesses. Reject presenting the overall 17% or overall sample as the matched band figure, claiming the band count is missing, or treating listed Prizes as completed awards.",
+     "pass_example": "In the 100 to 250 Entrant band, 15% of 33,074 campaigns from 9,533 businesses list tiered Prizes. Campaigns below 100 Entrants are absent, and the figure describes listed Prizes rather than completed awards.",
      "fail_example": "17% of campaigns your size list tiered Prizes."
     }
    ]
