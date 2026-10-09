@@ -85,7 +85,7 @@ Use consent, delivery failures and stronger engagement signals to review the seg
 - Sunset rule (planning assumption): review addresses after their first 30 to 60 days. A proxy-open-only address has no proven engagement. A real purchase or reply can show engagement even with no recorded open. If there is no stronger signal, suppress promotional sending or send one plain reconfirmation message where the recorded consent covers it, then suppress those who do not reconfirm. Honor unsubscribes immediately regardless of activity.
 - Re-permission copy, plain text, one link: "You entered the [campaign name] giveaway. Would you like to keep hearing from [Brand]? Confirm here: [link]. If not, this is the last marketing message." Subject: "Should we stop emailing you?"
 - Hard bounces come off immediately.
-- Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag known throwaway domains at draw time. They do not check role addresses.
+- A role-address prefix alone does not decide list admission. Apply recorded consent, delivery status and verified engagement to every address. A consented role address with a purchase or reply can join the core list if it has not unsubscribed or hard-bounced. Check any provider-specific restrictions separately against the provider's current documentation. The disposable-domain review lines from giveaway-random-draw flag known throwaway domains for review at draw time, not customer potential or permission to send marketing.
 - Only what survives this joins the core list.
 
 ## Record entry consent and marketing consent separately

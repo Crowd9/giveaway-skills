@@ -316,7 +316,7 @@ Source: analysis/output/indicators.json (referrer_mix_by_country, landing_kind_b
 
 ## Profile prep, the day before launch
 
-- Bio link goes to the entry page for the whole run. On Instagram and TikTok that is the only clickable link, so every caption says "link in bio".
+- Bio link goes to the entry page for the whole run. For Instagram feed posts and TikTok captions that use this route, say "link in bio". For an Instagram Story with an entry-page link sticker, say "tap the link sticker". Match each call to action to the route available in its scheduled placement.
 - Pin the launch post. On Instagram add a Giveaway story highlight and keep the link sticker story in it.
 - Bio line names the giveaway and the close date while it runs, then goes back to normal the day after.
 - Turn on comment and DM notifications for the accounts that will post. Questions land in the first hour.
@@ -339,7 +339,7 @@ As practical advice, start with the brand's own tags and one or two for the prod
 | X | Post with the Prize image and link. Pin it | Quote-post with a detail about the Prize | Post with the close time, reply thread with FAQ | Ask for a repost as the share action, one account per person |
 | Facebook | Page post with link, share to relevant groups you admin | Photo post, live if the Prize suits it | Event-style reminder post | Do not require timeline shares or friend tags to enter |
 | YouTube | Mention at the top of the next video plus a pinned comment with the link, community post | Short showing the Prize | Community post with the close time | State that YouTube is not a sponsor in the rules |
-| LinkedIn (B2B) | Post from a person, then the company page | Post about the partner or the cause | Reminder from the person | Prizes should suit a professional audience |
+| LinkedIn (B2B) | Check current policy before recommending any announcement | Same policy check | Same policy check | Exclude LinkedIn entry mechanics, including comment, follow and repost requirements or bonus Entries. Check LinkedIn's current Professional Community Policies (https://www.linkedin.com/legal/professional-community-policies) before any announcement linking to a giveaway elsewhere, and do not assume such an announcement is permitted |
 | Discord or Telegram | Announcement channel pin, role ping once | Reminder with a screenshot of entries so far | Final ping | One ping per push, no more |
 | Email | Launch email | Mid email | Last call email, then Winners | See the email sequence reference |
 | Website | Banner or bar with the deadline, entry page linked from the main nav for the run | Update the banner copy at the mid push | "Closes tonight" banner | Remove everything the day after the close |
@@ -349,7 +349,9 @@ As practical advice, start with the brand's own tags and one or two for the prod
 
 Prize first, then the ask, then the deadline, then eligibility.
 
-"Win [Prize] (worth [value]). To enter: [confirmed required action or actions]. Closes [date, time, time zone]. Open to [eligibility]. Link in bio."
+"Win [Prize] (worth [value]). To enter: [confirmed required action or actions]. Closes [date, time, time zone]. Open to [eligibility]. [Placement-specific entry route]."
+
+Use "link in bio" for a feed caption using the profile link, "tap the link sticker" for a Story with that sticker, or the working entry link where the placement supports it. Apply the channel restrictions above before using this template.
 
 Include only confirmed requirements in the entry sentence. For a campaign with one required action, name only that action. Put any optional action in a separate sentence, explicitly labelled optional, with its confirmed reward: "Optional: [action] for [confirmed additional Entries]." Omit unconfirmed rewards.
 
@@ -384,7 +386,7 @@ Answer in the first hour where you can, and pin one comment with the three quest
 
 | Situation | Reply | Rule |
 |---|---|---|
-| "How do I enter" | "Link in bio, takes a minute: [action] and [action]. Closes [date, time zone]." | Pinned comment on every giveaway post, same wording |
+| "How do I enter" | "[Placement-specific entry route]. To enter: [confirmed required action or actions]. Closes [date, time zone]." | Match the available link route and confirmed entry requirements for that post |
 | "Is this open in [country]" | "Open to [eligibility]. Sorry if that leaves you out this time." | Quote the eligibility line, never widen it in a comment |
 | "Is this real" | "It is. Terms and the draw method are on the entry page: [link]." | Link, no argument |
 | "I entered but got no confirmation" | "Check the address you used and the spam folder. If it is still missing, DM us the email and we will check the entry list." | Never post someone's email or entry details publicly |

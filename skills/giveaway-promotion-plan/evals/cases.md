@@ -90,3 +90,7 @@ Added judgement-only cases 20 and 21 for a required question with an optional ne
 ## Referral conversion comparator, 10 October 2026
 
 Added a judgement-only regression case after reviewing the source definition and aggregate cut. It distinguishes referral conversion from overall campaign conversion and leaves non-referral conversion unavailable. This case has not been run against a model. Repository checks are recorded in the patch report.
+
+## LinkedIn restrictions and Instagram placement routes, 10 October 2026
+
+Added judgement-only cases 23 and 24. Static review confirmed that the channel row excludes LinkedIn entry mechanics and requires a current policy check before any announcement, and that the profile instructions and copy templates distinguish feed bio links from Story link stickers. The existing LinkedIn rule was checked against the current official policy without copying policy text. These cases have not been run against a model. Repository gate results are recorded in the patch report.

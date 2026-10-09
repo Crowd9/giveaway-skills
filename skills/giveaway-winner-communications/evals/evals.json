@@ -440,6 +440,27 @@
      "fail_example": "Hard bounces show fake addresses entered only to win. More complaints mean the opt-in form was unclear, so rewrite it."
     }
    ]
+  },
+  {
+   "id": 20,
+   "prompt": "Review our B2B giveaway segment for admission to the core marketing list. All four contacts originally opted in: a role address that purchased, another role address that replied, a purchaser who later unsubscribed, and a purchaser whose address hard-bounced. Which should we retain or suppress? We have no provider-specific restrictions confirmed.",
+   "expected_output": "Retain the consented purchasing and replying role addresses if their recorded consent covers core-list marketing and delivery status allows it. Suppress the unsubscribed and hard-bounced purchasers regardless of purchase history. A role prefix alone does not decide admission. Verify any provider-specific restriction separately.",
+   "assertions": [
+    "Retains the consented role addresses with a purchase or reply when consent scope and delivery status allow core-list marketing.",
+    "Suppresses unsubscribed and hard-bounced addresses regardless of purchases or replies.",
+    "Does not infer customer potential or suppress an address solely from its role prefix.",
+    "Checks any provider-specific restrictions separately rather than inventing a blanket rule."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "role-address-admission",
+     "criterion": "Apply recorded consent, delivery status and verified engagement consistently. A role prefix alone does not exclude an engaged contact. Unsubscribe and hard-bounce suppression override engagement. Verify provider-specific restrictions separately.",
+     "pass_example": "Keep the purchasing and replying role contacts if their consent covers this marketing and their delivery status allows it. Suppress the unsubscribed and hard-bounced purchasers. Check current provider restrictions separately.",
+     "fail_example": "Remove all role addresses because they rarely become customers, but keep the unsubscribed purchaser because they bought."
+    }
+   ]
   }
  ]
 }

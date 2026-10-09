@@ -8,9 +8,9 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-entry-method-planner | 1.2.51 |
 | giveaway-timing-and-duration | 1.4.51 |
 | giveaway-winner-structure | 1.4.22 |
-| giveaway-promotion-plan | 1.3.51 |
+| giveaway-promotion-plan | 1.3.52 |
 | giveaway-random-draw | 1.3.52 |
-| giveaway-winner-communications | 1.2.42 |
+| giveaway-winner-communications | 1.2.43 |
 | giveaway-idea-generator | 1.3.42 |
 | giveaway-results-review | 1.6.35 |
 | gleam-campaign-setup | 1.2.46 |
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.40 (2026-10-10)
+
+Your promotion plan keeps entries off LinkedIn, and before any announcement there it asks you to check LinkedIn's community policies as they stand that day. Each caption now fits the placement you schedule. Feed captions send people to your bio link, and Stories send them to the link sticker. After the draw, a role address like info@ can join your core list when it opted in and bought or replied, so you keep the contacts who engage and drop the ones who never did.
 
 ## 3.0.39 (2026-10-10)
 

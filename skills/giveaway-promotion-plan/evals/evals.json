@@ -511,6 +511,44 @@
      "fail_example": "Referral visitors convert at two thirds the rate of other visitors, so remove referrals."
     }
    ]
+  },
+  {
+   "id": 23,
+   "prompt": "We sell B2B software and our audience is on LinkedIn. Plan our giveaway launch, midpoint and last call using only the promotion-plan skill. Can we ask people to comment, follow and repost for Entries, or just announce an entry page on our website?",
+   "expected_output": "Identify the LinkedIn restriction and exclude comment, follow and repost entry mechanics, including bonus Entries. Require a current policy check before recommending any LinkedIn announcement linking elsewhere. Do not describe off-platform announcements as automatically permitted.",
+   "assertions": [
+    "Identify the LinkedIn restriction and exclude comment, follow and repost entry mechanics, including bonus Entries. Require a current policy check before recommending any LinkedIn announcement linking elsewhere. Do not describe off-platform announcements as automatically permitted.",
+    "Copyable messages follow the same restrictions as the surrounding advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "linkedin-promotion-restriction",
+     "criterion": "Identify the LinkedIn restriction and exclude comment, follow and repost entry mechanics, including bonus Entries. Require a current policy check before recommending any LinkedIn announcement linking elsewhere. Do not describe off-platform announcements as automatically permitted.",
+     "pass_example": "Exclude LinkedIn engagement-to-enter mechanics. Check the current LinkedIn policy before recommending any announcement linking to the website giveaway.",
+     "fail_example": "Ask people to follow and repost for bonus Entries. A website giveaway announcement is always permitted on LinkedIn."
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "prompt": "Write an Instagram launch feed caption and a Story for our coffee giveaway. The feed sends people to the entry page in our bio. The Story has a working entry-page link sticker. Answering our coffee-preference question is the only required action. It closes 20 October at 5 pm Melbourne time and is open to Australian adults.",
+   "expected_output": "Write both placements. Direct feed readers to the bio link and Story viewers to the supplied link sticker. Preserve the same entry requirement, eligibility and closing time in both.",
+   "assertions": [
+    "Write both placements. Direct feed readers to the bio link and Story viewers to the supplied link sticker. Preserve the same entry requirement, eligibility and closing time in both.",
+    "Copyable messages follow the same restrictions as the surrounding advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "instagram-placement-link-route",
+     "criterion": "Write both placements. Direct feed readers to the bio link and Story viewers to the supplied link sticker. Preserve the same entry requirement, eligibility and closing time in both.",
+     "pass_example": "Feed: Link in bio. Story: Tap the link sticker.",
+     "fail_example": "Feed: Link in bio. Story: Visit our profile and use the link in bio."
+    }
+   ]
   }
  ]
 }
