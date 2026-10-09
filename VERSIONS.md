@@ -4,12 +4,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.33 |
+| giveaway-prize-picker | 1.3.34 |
 | giveaway-entry-method-planner | 1.2.34 |
 | giveaway-timing-and-duration | 1.4.31 |
-| giveaway-winner-structure | 1.4.1 |
+| giveaway-winner-structure | 1.4.2 |
 | giveaway-promotion-plan | 1.3.33 |
-| giveaway-random-draw | 1.3.29 |
+| giveaway-random-draw | 1.3.30 |
 | giveaway-winner-communications | 1.2.28 |
 | giveaway-idea-generator | 1.3.30 |
 | giveaway-results-review | 1.6.2 |
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.1 (2026-10-09)
+
+The Invalid-share figure now carries corrected campaign and business counts in the advice you use to draw and verify Winners. Prize-choice evaluations use the corrected dataset floor.
 
 ## 3.0.0 (2026-10-09)
 

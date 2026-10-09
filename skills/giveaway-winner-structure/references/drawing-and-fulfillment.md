@@ -38,7 +38,7 @@ Budget minus fulfillment (shipping, duties, substitutes, admin time) gives the P
 
 A drawn name has a real chance of failing verification. The typical campaign has 4.2% of entries marked invalid, and campaigns with a referral action run higher. Draw from valid entries only, verify the drawn entry against the terms before naming anyone, and keep backups for the ones that fail.
 
-[Extracted from 107,886 campaigns and 16,633 businesses. 45% of campaigns had 5% or more invalid.]
+[Extracted from 107,109 campaigns and 16,490 businesses. 45% of campaigns had 5% or more invalid. Count source: `analysis/output/invalid_share.json`.]
 
 ## Contact and redraw
 

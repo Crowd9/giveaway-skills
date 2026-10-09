@@ -10,7 +10,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 - Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
 - Choose and publish the future seed source before its value exists, alongside the commitment. Use the announced value only after it becomes available.
 
-- Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,886 campaigns and 16,633 businesses, and referral-heavy mixes ran higher. Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
+- Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,109 campaigns and 16,490 businesses, and referral-heavy mixes ran higher (source: `analysis/output/invalid_share.json`). Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
 
 `commit` also prints review lines for disposable email domains, one domain holding a fifth or more of the list, and runs of handles that differ only by a trailing number. They are prompts to look, never verdicts. Decide what to exclude, update the exclusion file, then commit again.
 
