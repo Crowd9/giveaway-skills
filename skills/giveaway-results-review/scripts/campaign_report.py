@@ -32,6 +32,7 @@ def bench(metric, value, n, fmt=lambda v: f"{v:,.2f}", key=None, group=None):
     """Two cells: the typical figure for campaigns this size (or the named group) and where this one sits."""
     if not _bench or value is None: return "-", "no benchmark loaded"
     _bench.PCT = _bench.PCT or _bench.load_pct()
+    if not _bench.PCT: return "-", "no benchmark loaded"
     if group is None:
         key = key or "band:" + _bench.band(n); t = _bench.PCT.get("groups", {}).get(key, {}).get(metric); label = f"campaigns of {_bench.band_label(n)}"
     else:
@@ -58,6 +59,7 @@ SYNONYMS = {"who": ("Email", "Email Address", "E-mail", "Entrant Email", "User E
 
 def resolve_columns(header, mapping):
     """Pick the column for each role from a user mapping (role=Column) or the synonym list. Missing roles are reported, never guessed."""
+    mapping = {k.lower(): v for k, v in mapping.items()}
     cols = {}; low = {h.lower(): h for h in header}
     for role, names in SYNONYMS.items():
         if mapping.get(role): cols[role] = mapping[role]; continue
@@ -105,6 +107,7 @@ def display(name):
     return (parts[0] + (" " + parts[-1][0] + "." if len(parts) > 1 else "")) if parts else "entrant"
 
 def med(xs): return st.median(xs) if xs else None
+def entry_number(value): return int(value) if value == int(value) else value
 def pct(a, b): return f"{a / b:.0%}" if b else "-"
 
 def load(path, mapping=None):
@@ -149,9 +152,10 @@ def analyze(rows, a):
     for r in valid: people[r["_who"]].append(r)
     for rs in people.values(): rs.sort(key=lambda r: r["_when"].timestamp() if r["_when"] else 0)
     n = len(people); R = {"base": n, "notes": []}
+    if not n: sys.exit("no valid Entrants in export")
     entries = sum(r["_entries"] for r in valid)
-    R["topline"] = {"entrants": n, "actions": len(valid), "entries": int(entries), "actions_per_entrant": len(valid) / n, "entries_per_entrant": entries / n,
-                    "invalid_actions": len(invalid), "invalid_rate": len(invalid) / len(rows) if rows else 0}
+    R["topline"] = {"entrants": n, "actions": len(valid), "entries": entry_number(entries), "actions_per_entrant": len(valid) / n, "entries_per_entrant": entries / n,
+                    "invalid_actions": len(invalid), "invalid_entries": sum(r["_entries"] for r in invalid), "invalid_rate": len(invalid) / len(rows) if rows else 0}
     # engagement distribution
     b = collections.Counter()
     for rs in people.values():
@@ -189,7 +193,7 @@ def analyze(rows, a):
     for who, refs in sorted(sharer.items(), key=lambda kv: -len(kv[1]))[:10]:
         joined = [e for e in refs if e in people]; brought = sum(sum(r["_entries"] for r in people[e]) for e in joined)
         one_action = sum(1 for e in joined if len(people[e]) == 1)
-        top_sharers.append((display(people[who][0].get("Name")), len(refs), len(joined), int(brought), len(handles_of(who)), one_action))
+        top_sharers.append((display(people[who][0].get("Name")), len(refs), len(joined), entry_number(brought), len(handles_of(who)), one_action))
     R["viral"] = {"refer_rows": refer_rows, "sharers": len(sharer), "referred_entrants": len(referred_entrants), "referred_share": len(referred_entrants) / n,
                   "referrals_per_sharer": (refer_rows / len(sharer)) if sharer else None, "top": top_sharers,
                   "participation": len(sharer) / n, "referral_conversion": len(referred_entrants) / refer_rows if refer_rows else None,
@@ -240,7 +244,7 @@ def analyze(rows, a):
     # audience handles
     R["handles"] = [(c, sum(1 for w in people if any(r.get(c) for r in people[w])) / n) for c in HANDLE_COLS if c in rows[0] and any(r.get(c) for r in rows)]
     top = sorted(people.items(), key=lambda kv: -len(kv[1]))[:10]
-    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), int(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())), len({r["_when"].date() for r in rs if r["_when"]}), len(handles_of(who))) for who, rs in top]
+    R["top_entrants"] = [(display(rs[0].get("Name")), len(rs), entry_number(sum(r["_entries"] for r in rs)), len(sharer.get(who, ())), len({r["_when"].date() for r in rs if r["_when"]}), len(handles_of(who))) for who, rs in top]
     # promotions
     R["sends"] = []
     if a.sends and whens:
@@ -390,6 +394,25 @@ def self_test():
     class B: impressions = None; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     R2 = analyze(load(q, {}), B); assert R2["topline"]["entrants"] == 2 and R2["topline"]["actions"] == 3 and load.last["wide"], R2["topline"]
     assert "referrer" in load.last["missing"] and "Follow on Instagram" in render(R2, B)
+    fractional = load(p)
+    for r in fractional: r["_entries"] = 1.25
+    fractional[3]["_entries"] = 1.5
+    fr = analyze(fractional, B)
+    assert fr["topline"]["entries"] == 5.25 and fr["top_entrants"][0][2] == 3.75, fr["top_entrants"]
+    assert fr["viral"]["top"][0][3] == 1.5, fr["viral"]["top"]
+    assert fr["topline"]["invalid_entries"] == 1.25, fr["topline"]
+    fractional[2]["Details"] = "absent@example.com"
+    assert analyze(fractional, B)["viral"]["top"][0][3] == 0
+    for empty in ([], [r for r in fractional if not r["_valid"]]):
+        try: analyze(empty, B)
+        except SystemExit as exc: assert str(exc) == "no valid Entrants in export", exc
+        else: raise AssertionError("empty campaign must explain why it cannot be reported")
+    assert resolve_columns(["Email", "Action", "Custom Worth"], {"Entries": "Custom Worth"})["entries"] == "Custom Worth"
+    saved_pct, saved_load = _bench.PCT, _bench.load_pct
+    try:
+        _bench.PCT = None; _bench.load_pct = lambda: None
+        assert bench("contestants", 100, 100) == ("-", "no benchmark loaded")
+    finally: _bench.PCT, _bench.load_pct = saved_pct, saved_load
     print("self-test passed"); return 0
 
 def main(argv):

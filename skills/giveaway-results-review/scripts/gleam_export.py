@@ -16,7 +16,7 @@ chance the export invented is worse than a review one row short. Valid fractiona
 The review.py command printed at the end passes --invalid as invalid Entries worth, the Entries column summed over rows
 whose Status is Invalid. The row count is printed separately as "invalid rows".
 """
-import argparse, collections, csv, datetime as dt, math, sys
+import argparse, collections, csv, datetime as dt, math, shlex, sys
 
 FOLLOW_KEYS = [("x_follows", ("follow", ("x", "twitter", "@"))), ("instagram_follows", ("follow", ("instagram",))), ("tiktok_follows", ("follow", ("tiktok",))),
                ("twitch_follows", ("follow", ("twitch",))), ("youtube_subscribes", ("subscribe", ("youtube",))), ("discord_joins", ("join", ("discord",)))]
@@ -124,7 +124,7 @@ def review_command(s, args):
     cmd += f" --methods {len(s['per_action'])}"
     for k in ("emails", "referrals", "x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"):
         if s["assets"].get(k): cmd += f" --{k.replace('_', '-')} {s['assets'][k]}"
-    if args.actions_csv: cmd += f" --actions {args.actions_csv}"
+    if args.actions_csv: cmd += f" --actions {shlex.quote(args.actions_csv)}"
     return cmd + " --impressions N   # Impressions from the Reporting tab"
 
 def self_test():
@@ -183,6 +183,10 @@ def self_test():
     write_entrants(p, output, "Email")
     assert kind("Refer Friends For Extra Entries") == "referrals" and kind("Join the Referral Program:") is None
     assert generic_name("Join the Referral Program:") == "Visit a Page" and generic_name("Refer Friends For Extra Entries") == "Viral Shares"
+    import shlex
+    A.actions_csv = "action results.csv"
+    command = shlex.split(review_command(s, A))
+    assert command[command.index("--actions") + 1] == A.actions_csv, command
     print("self-test passed"); return 0
 
 def main(argv):

@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.35 |
+| giveaway-prize-picker | 1.3.36 |
 | giveaway-entry-method-planner | 1.2.35 |
 | giveaway-timing-and-duration | 1.4.32 |
-| giveaway-winner-structure | 1.4.3 |
+| giveaway-winner-structure | 1.4.4 |
 | giveaway-promotion-plan | 1.3.34 |
-| giveaway-random-draw | 1.3.31 |
+| giveaway-random-draw | 1.3.32 |
 | giveaway-winner-communications | 1.2.28 |
 | giveaway-idea-generator | 1.3.30 |
-| giveaway-results-review | 1.6.3 |
+| giveaway-results-review | 1.6.4 |
 | gleam-campaign-setup | 1.2.31 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.3 (2026-10-09)
+
+The calculators give you the right answer on the awkward inputs. A Prize that ships abroad to a handful of Winners now carries its full shipping cost. A Prize with no stated value reads as zero per Entrant. A cost below zero or a share above 100% is refused with a plain error, so no broken total reaches your budget.
+
+Your export reads the way you'd expect. Half Entries stay as halves in the report and the dashboard, a typical figure across two past campaigns is the middle of the two, and an empty or all-invalid file tells you so in one line. A file name with a space in it works when you paste the command back.
+
+The draw takes numeric ids and refuses a negative number of Winners. Any draw that worked before picks exactly the same Winners now, checked on a fixed list and random number.
 
 ## 3.0.2 (2026-10-09)
 

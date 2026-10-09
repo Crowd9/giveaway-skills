@@ -217,7 +217,7 @@ DENOM = re.compile(r"(?:per|of every|out of)\s+100\s*(?:,)?\s*(?:against|versus)
 def columns_of(text):
     """Every table column in a file, as a list of value sets, so a pair can be matched inside one."""
     cols = []
-    for block in re.findall(r"\n((?:\|[^\n]*\n)+)", text):
+    for block in re.findall(r"(?:^|\n)((?:\|[^\n]*(?:\n|$))+)", text):
         rows = [r for r in block.split("\n") if r.startswith("|")]
         if len(rows) < 3:
             continue
@@ -325,6 +325,11 @@ def check_skill(path, root):
 def self_test():
     """A planted inversion must fail, and the file as it stands must pass."""
     import tempfile
+    table = "| Group | Entrants |\n|---|---|\n| First | 382 |\n| All | 492 |"
+    for prefix in ("", "Reference\n\n"):
+        for suffix in ("", "\n"):
+            assert columns_of(prefix + table + suffix) == [{"382", "492"}], \
+                "table boundary dropped a cited value"
     with tempfile.TemporaryDirectory() as root:
         os.makedirs(os.path.join(root, "analysis", "output"))
         fp = os.path.join(root, "analysis", "output", "sample.json")

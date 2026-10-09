@@ -15,7 +15,7 @@ value if you give none. Nothing here predicts Entrants. Give the number you expe
 These benchmarks do not split by single-prize versus split-prize campaigns. Cost per Entrant runs meaningfully higher for a
 split-prize campaign than a single Prize of matched value and vertical, see giveaway-winner-structure for the numbers.
 """
-import argparse, json, sys
+import argparse, json, math, sys
 
 BENCH = {
  "all": {
@@ -191,9 +191,16 @@ def band(n): return "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2
 def money(x): return "-" if x is None else f"{x:,.2f}"
 
 def run(a):
+    if a.contestants is None or a.contestants <= 0:
+        raise ValueError("contestants must be positive")
+    for field in ("prize_cost", "stated_value", "promotion", "admin", "shipping", "emails", "follows", "referrals", "value_per_email", "value_per_follow", "value_per_referral"):
+        value = getattr(a, field)
+        if value is not None and (not math.isfinite(value) or value < 0):
+            raise ValueError(field.replace("_", " ") + " must be finite and nonnegative")
     cost = (a.prize_cost or 0) + (a.promotion or 0) + (a.admin or 0) + (a.shipping or 0)
-    stated = a.stated_value or a.prize_cost or 0
-    est = not (a.emails or a.follows or a.referrals)
+    stated = a.stated_value if a.stated_value is not None else (a.prize_cost or 0)
+    actual = any(count is not None for count in (a.emails, a.follows, a.referrals))
+    est = any(count is None and action for count, action in ((a.emails, a.email_action), (a.follows, a.follow_action), (a.referrals, a.share_action)))
     emails = a.emails if a.emails is not None else (round(a.contestants * UPTAKE["email"]) if a.email_action else 0)
     follows = a.follows if a.follows is not None else (round(a.contestants * UPTAKE["follow"]) if a.follow_action else 0)
     refs = a.referrals if a.referrals is not None else (round(a.contestants * UPTAKE["referral"]) if a.share_action else 0)
@@ -211,6 +218,10 @@ def run(a):
     elif emails and cost:
         rows += [("Breakeven value per email", money(cost / emails), "", "what each address must be worth for the campaign to pay for itself, with follows and referrals valued at zero")]
     note = "estimated from how often the actions you named are completed, given your expected Contestants" if est else "from the counts you gave"
+    if est and actual:
+        note = "from the counts you gave, with missing action counts estimated from expected Contestants"
+    elif not est and not actual:
+        note = "not supplied and no action estimates requested"
     return rows, note
 
 def print_table(rows, header):
@@ -223,6 +234,24 @@ def self_test():
     rows, note = run(A); d = {r[0]: r for r in rows}
     assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Return per dollar"][1] == "4.86", rows
     A.value_per_email = 0; rows, _ = run(A); assert any(r[0] == "Breakeven value per email" for r in rows)
+    A.stated_value = 0
+    rows, _ = run(A)
+    assert dict((r[0], r[1]) for r in rows)["Stated value per Entrant"] == "0.00"
+    A.emails = A.follows = A.referrals = 0
+    _, note = run(A)
+    assert note == "from the counts you gave", note
+    A.follows = None
+    _, note = run(A)
+    assert "estimated" in note and "counts you gave" in note, note
+    for field, bad in [("contestants", 0), ("contestants", -1), ("prize_cost", -1), ("shipping", float("nan")), ("value_per_email", float("inf")), ("emails", -1)]:
+        previous = getattr(A, field); setattr(A, field, bad)
+        try:
+            run(A)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid ROI input accepted: " + field)
+        setattr(A, field, previous)
     print("self-test passed"); return 0
 
 def main(argv):
@@ -237,7 +266,11 @@ def main(argv):
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.contestants or a.prize_cost is None: ap.error("--prize-cost and --contestants are required")
-    rows, note = run(a); print_table(rows, ("Metric", "This campaign", "Benchmark median", "Note")); print(); print("Counts", note + ".")
+    try:
+        rows, note = run(a)
+    except ValueError as exc:
+        ap.error(str(exc))
+    print_table(rows, ("Metric", "This campaign", "Benchmark median", "Note")); print(); print("Counts", note + ".")
     return 0
 
 if __name__ == "__main__":

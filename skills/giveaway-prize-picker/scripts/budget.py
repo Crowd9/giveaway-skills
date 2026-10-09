@@ -16,6 +16,12 @@ Every figure is in one currency. For a Prize bought or shipped in another, conve
 import argparse, json, math, sys
 
 def compute(a):
+    for field in ("cost_ratio", "shipping", "international_share", "international_shipping", "duty_rate", "tax_on_prize", "substitute_reserve", "admin_hours", "hourly", "promotion", "contingency"):
+        value = getattr(a, field)
+        if not math.isfinite(value) or value < 0:
+            raise ValueError(field.replace("_", " ") + " must be finite and nonnegative")
+    if a.international_share > 1:
+        raise ValueError("international share must be between zero and one")
     consolation_values = (a.consolation_quantity, a.consolation_unit_cost, a.consolation_max_liability)
     consolation = None
     if any(v is not None for v in consolation_values):
@@ -35,11 +41,13 @@ def compute(a):
     prizes = []
     for p in a.prize:
         name, retail, units = p[0], float(p[1]), int(p[2]); digital = name.lower().endswith("(digital)")
+        if not math.isfinite(retail) or retail < 0 or units <= 0:
+            raise ValueError("Prize retail must be finite and nonnegative, and units must be positive")
         prizes.append({"name": name, "retail": retail, "units": units, "digital": digital})
     retail_total = sum(p["retail"] * p["units"] for p in prizes)
     cost_total = retail_total * a.cost_ratio
     phys_units = sum(p["units"] for p in prizes if not p["digital"])
-    intl_units = round(phys_units * a.international_share, 2); dom_units = phys_units - intl_units
+    intl_units = phys_units * a.international_share; dom_units = phys_units - intl_units
     shipping = dom_units * a.shipping + intl_units * a.international_shipping
     duty = sum(p["retail"] * p["units"] for p in prizes if not p["digital"]) * a.international_share * a.duty_rate
     winner_tax = retail_total * a.tax_on_prize
@@ -125,6 +133,26 @@ def self_test():
             pass
         else:
             raise AssertionError("invalid consolation offer accepted")
+    a.consolation_quantity = a.consolation_unit_cost = a.consolation_max_liability = None
+    a.international_share = 0.004; a.shipping = 0; a.international_shipping = 100
+    assert abs(dict(compute(a)["lines"])["Shipping (domestic + international units)"] - 0.4) < 1e-9
+    for field, bad in [("shipping", -1), ("cost_ratio", float("nan")), ("promotion", float("inf")), ("international_share", 1.1)]:
+        previous = getattr(a, field); setattr(a, field, bad)
+        try:
+            compute(a)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid budget input accepted: " + field)
+        setattr(a, field, previous)
+    for prize in [["Invalid", "-1", "1"], ["Invalid", "nan", "1"], ["Invalid", "10", "0"], ["Invalid", "10", "-1"]]:
+        a.prize = [prize]
+        try:
+            compute(a)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid prize accepted")
     print("self-test passed"); return 0
 
 if __name__ == "__main__": sys.exit(main(sys.argv[1:]))

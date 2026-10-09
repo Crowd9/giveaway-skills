@@ -39,7 +39,7 @@ BANNER = ("# Generated from evals/style_check.py by scripts/render_shared.py. Ed
 
 
 def block_re(name):
-    return re.compile(r"(<!-- generated:" + re.escape(name) + r" -->\n).*?(<!-- /generated -->\n)", re.S)
+    return re.compile(r"(<!-- generated:" + re.escape(name) + r" -->\n).*?(<!-- /generated -->(?:\n|$))", re.S)
 
 
 def main():

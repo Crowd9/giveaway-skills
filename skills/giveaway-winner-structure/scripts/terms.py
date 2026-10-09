@@ -60,6 +60,8 @@ def main(argv):
     ap.add_argument("--marketing-consent", action="store_true", help="add a marketing-consent clause separate from the personal-information clause: entry alone does not subscribe anyone, and how to unsubscribe")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args(argv)
+    if a.winners < 1: ap.error("--winners must be a positive integer")
+    if a.reply_days < 0: ap.error("--reply-days must be a nonnegative integer")
     if a.self_test:
         a.promoter = "Test Co"; a.name = "Test Draw"; a.open = "1 Jan"; a.close = "2 Jan"; a.draw = "3 Jan"; a.eligible = "adults"; a.exclude = "staff"
         a.prize = "One hat, value 10"; a.notify = "email"; a.publish = "first name"; a.delivery = "posted"; a.region = "AU"
@@ -73,6 +75,13 @@ def main(argv):
         assert "Note for the UK" in m, "a known region in a list must still get its note"
         assert "No note here covers DE, JP" in m, "an uncovered country must be named, never passed over in silence"
         assert "Note for Australia" not in m, "only the regions asked for get a note"
+        import contextlib, io
+        required = [item for key in ("promoter", "name", "open", "close", "draw", "eligible", "exclude", "prize", "notify", "publish", "delivery") for item in ("--" + key, "test")]
+        for option, value in (("--winners", "0"), ("--winners", "-1"), ("--reply-days", "-1")):
+            with contextlib.redirect_stderr(io.StringIO()), contextlib.redirect_stdout(io.StringIO()):
+                try: main(required + [option, value])
+                except SystemExit as error: assert error.code == 2
+                else: raise AssertionError("invalid counts must not generate terms: " + option + " " + value)
         print("self-test passed"); return 0
     print(draft(a)); return 0
 

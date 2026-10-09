@@ -28,6 +28,7 @@ jobs:
           python3 evals/style_check.py --self-test
           python3 evals/test_privacy_floor.py
           python3 evals/test_validate_versions.py
+          python3 evals/test_render_shared.py
           python3 evals/test_check_deliverable.py
           python3 evals/test_export_to_draw.py
           python3 scripts/check_claims.py --self-test

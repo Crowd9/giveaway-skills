@@ -539,7 +539,7 @@ def gather(a):
     class A: impressions = a.impressions; prize_value = a.prize_cost; plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; partners = a.partners.split(",") if a.partners else None
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
-    b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = int(R["topline"].get("invalid_entries", 0) or 0)
+    b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
     b.days = a.days or ((R["end"] - R["start"]).days + 1 if R.get("start") else None); b.methods = a.methods or len(R["actions"])
     emails = sum(comp for act, comp, *_ in R["actions"] if kind(act) == "emails")
     b.emails = emails or None
@@ -622,7 +622,7 @@ def render(D, W, S, a):
     heat = [[R["heat"][(d, h)] for d in range(7)] for h in range(24)]
     heat_peak = R["heat_peak"]
     ins = "".join(f"<li>{esc(i)}</li>" for i in D["insights"])
-    topline = table(["Metric", "Value"], [("Entrants (unique valid emails)", n(N)), ("Actions completed", n(T["actions"])), ("Entries", n(T["entries"])), ("Actions each", f"{T['actions_per_entrant']:.1f}"), ("Entries each", f"{T['entries_per_entrant']:.1f}"),
+    topline = table(["Metric", "Value"], [("Entrants (unique valid emails)", n(N)), ("Actions completed", n(T["actions"])), ("Entries", f"{T['entries']:,}"), ("Actions each", f"{T['actions_per_entrant']:.1f}"), ("Entries each", f"{T['entries_per_entrant']:.1f}"),
                                           ("Invalid actions", f"{n(T['invalid_actions'])} ({T['invalid_rate']:.1%} of rows)")] + ([("Conversion Rate", f"{N / a.impressions:.1%}")] if a.impressions else []))
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
     journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {n(V['referred_entrants'])}. Referrals are an output per sharer, never a stage, so this is not a funnel."
@@ -632,12 +632,12 @@ def render(D, W, S, a):
     utm = table(["Source", "Medium", "Campaign", "Entrants"], [(u[0][0], u[0][1], u[0][2], n(u[1])) for u in R["utm"]], num_from=3) if R["utm"] else "<p class=\"note\">No UTM parameters on any landing page.</p>"
     friction = table(["Action", "Completions", "Entrants", "Share of actions", "Completion rate", "Typical, campaigns offering it", "Where it sits", "Typical seconds", "Invalid"],
                      [(x["name"], n(x["completions"]), n(x["entrants"]), pct(x["share_actions"]), pct(x["rate"]), reader_unit(x["typical"]) if x["typical"] else "-", x["where"], (f"{x['seconds']:.0f}" + (" (slow)" if x["seconds"] > 120 else "")) if x["seconds"] is not None else "-", n(x["invalid"])) for x in D["acts"]])
-    sharers = table(["Sharer", "Referrals", "Entered", "Entries brought", "Connected accounts", "Referred doing one action"], [(s[0], n(s[1]), n(s[2]), n(s[3]), s[4], s[5]) for s in V["top"]]) if V["top"] else ""
+    sharers = table(["Sharer", "Referrals", "Entered", "Entries brought", "Connected accounts", "Referred doing one action"], [(s[0], n(s[1]), n(s[2]), f"{s[3]:,}", s[4], s[5]) for s in V["top"]]) if V["top"] else ""
     countries = [(c, v) for c, v in R["countries"]]
     cities = table(["City", "Entrants"], [(f"{c[0][0]}, {c[0][1]}", n(c[1])) for c in R["cities"]]) if R["cities"] else ""
     handles = ", ".join(f"{c} {v:.0%}" for c, v in R["handles"]) if R["handles"] else "none recorded"
     ret = R["retention"]; retention = ", ".join(f"{k} day{'s' if k != '1' else ''} {n(v[0])} ({v[1]:.0%})" for k, v in ret.items())
-    engaged = table(["Entrant", "Actions", "Entries", "Referred", "Days active", "Connected accounts"], [(t[0], t[1], n(t[2]), t[3], t[4], t[5]) for t in R["top_entrants"]])
+    engaged = table(["Entrant", "Actions", "Entries", "Referred", "Days active", "Connected accounts"], [(t[0], t[1], f"{t[2]:,}", t[3], t[4], t[5]) for t in R["top_entrants"]])
     caveats = "".join(f"<li>{esc(c)}</li>" for c in W["caveats"])
     bslice = D["slices"]["band:" + D["band"]]
     email_share = D["emails"] / N if D["emails"] else 0
@@ -711,6 +711,15 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    with open(p, encoding="utf-8") as source: fractional_invalid = source.read().replace(",Invalid,Subscribe to Our List,5,", ",Invalid,Subscribe to Our List,5.5,")
+    with open(p, "w", encoding="utf-8") as source: source.write(fractional_invalid)
+    metrics = {row[0]: row for row in gather(A)["metrics"]}
+    assert metrics["Invalid Entries"][1] == "5.5", metrics
+    with open(p, encoding="utf-8") as source: fractional = source.read().replace(",Valid,Entry Confirmed,1,", ",Valid,Entry Confirmed,1.25,")
+    with open(p, "w", encoding="utf-8") as source: source.write(fractional)
+    fractional_page = render(gather(A), words_of(words), site_of(None), A)
+    assert '>Entries</td><td class="num">10.5</td>' in fractional_page
+    assert '>9.25</td>' in fractional_page and '>1.25</td>' in fractional_page
     print("self-test passed"); return 0
 
 

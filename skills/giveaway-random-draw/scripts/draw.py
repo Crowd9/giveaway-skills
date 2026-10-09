@@ -37,7 +37,7 @@ DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
 def sha(b): return hashlib.sha256(b).hexdigest()
-def norm(s): return (s or "").strip().lower()
+def norm(s): return str(s or "").strip().lower()
 
 ID_KEYS = ("email", "Email", "username", "user_name", "handle", "authorChannelId.value", "authorDisplayName", "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name", "id", "ID")
 
@@ -119,7 +119,7 @@ def prepare(rows, id_column, weight_column, exclude):
                     raise ValueError("combined entry weights exceed the finite range; reconcile weights before drawing")
                 seen[key]["weight"] = total_weight
             continue
-        seen[key] = {"id": key, "shown": r.get(id_column).strip(), "weight": w}; entrants.append(seen[key])
+        seen[key] = {"id": key, "shown": str(r.get(id_column)).strip(), "weight": w}; entrants.append(seen[key])
     plus = {}
     for e in entrants:
         if "@" in e["id"]:
@@ -161,10 +161,13 @@ def rank(entrants, seed):
     return sorted(entrants, key=lambda e: (-e["key"], e["id"]))
 
 def parse_tiers(spec, winners):
-    if not spec: return [["Winner", winners]]
+    if not spec:
+        if type(winners) is not int or winners < 0: sys.exit("winners must be a nonnegative integer")
+        return [["Winner", winners]]
     out = []
     for part in spec.split(","):
         name, _, count = part.rpartition(":"); out.append([name.strip() or "Prize", int(count)])
+    if any(count < 0 for _, count in out): sys.exit("tier counts must be nonnegative integers")
     return out
 
 def rules_of(a, id_column, tiers):
@@ -179,6 +182,9 @@ def apply_rules(a):
             if hasattr(a, attr) and getattr(a, attr) is None: setattr(a, attr, v)
     if getattr(a, "backups", None) is None: a.backups = 0
     if getattr(a, "winners", None) is None: a.winners = 1
+    for attr in ("winners", "backups"):
+        if type(getattr(a, attr)) is not int or getattr(a, attr) < 0:
+            sys.exit(f"{attr} must be a nonnegative integer")
     return a
 
 def commitment(digest, rules): return sha((digest + "\n" + json.dumps(rules, sort_keys=True, separators=(",", ":"))).encode())
@@ -319,6 +325,12 @@ def verifier_self_test():
                 code = main(["verify", audit_path, "--input", entries])
             assert code == expected_code, output.getvalue()
             assert output.getvalue().splitlines()[-1] == ("PASS" if expected_code == 0 else "FAIL"), output.getvalue()
+        assert [(r["tier"], r["id"], r["key"]) for r in original["results"]] == [
+            ("Grand", "delta", 0.974794625452104),
+            ("Runner-up", "zeta", 0.9522387005466458),
+            ("Runner-up", "epsilon", 0.9454234991052942),
+            ("Backup 1", "gamma", 0.7696785881239763),
+            ("Backup 2", "beta", 0.4605470121165112)], original["results"]
         check(original, 0)
         for length in (0, 1, 3, 4):
             changed = copy.deepcopy(original); changed["results"] = changed["results"][:length]
@@ -363,7 +375,35 @@ def self_test_input_formats():
             except SystemExit: pass
             else: raise AssertionError("missing header or data must fail, never eat the first entrant: " + name)
 
+def self_test_invalid_counts():
+    for options in ({"winners": -1}, {"backups": -1}, {"tiers": "Grand:2,Runner-up:-1"}):
+        a = argparse.Namespace(rules=None, winners=1, backups=0, tiers=None)
+        for key, value in options.items(): setattr(a, key, value)
+        try:
+            apply_rules(a)
+            parse_tiers(a.tiers, a.winners)
+        except SystemExit as error:
+            assert "nonnegative integer" in str(error), str(error)
+        else:
+            raise AssertionError("negative place counts must fail: " + str(options))
+
+def self_test_numeric_ids():
+    import os, tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "numeric.json")
+        with open(path, "w") as output:
+            json.dump([{"id": 0}, {"id": 42}, {"id": "42"}], output)
+        rows, column, _ = load_entries(path, None)
+        pool, duplicates, _, _, _ = prepare(rows, column, None, set())
+        assert [(e["id"], e["shown"]) for e in pool] == [("42", "42")]
+        assert duplicates == 1
+        # Preserve eligibility for existing successful JSON draws with falsey IDs.
+        pool, _, _, _, _ = prepare([{ "id": value } for value in (0, False, None, "alpha")], "id", None, set())
+        assert [e["id"] for e in pool] == ["alpha"]
+
 def self_test():
+    self_test_numeric_ids()
+    self_test_invalid_counts()
     self_test_input_formats()
     import tempfile, os
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")

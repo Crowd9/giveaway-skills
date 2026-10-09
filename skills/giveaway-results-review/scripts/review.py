@@ -15,7 +15,7 @@ Every campaign is ranked inside its own size band. The six bands run 100 to 250,
 1,000 to 2,500, 2,500 to 10,000 and 10,000 or more Entrants, so a campaign is only ever compared with a group
 it belongs to.
 """
-import argparse, csv, json, math, os, sys
+import argparse, csv, json, math, os, statistics, sys
 
 BENCH = {
     "contestants": {"p25": 225, "median": 492, "p75": 1293, "p90": 3349},
@@ -192,7 +192,7 @@ def review(a):
 def read_actions(path, contestants):
     out = []
     with open(path, newline="", encoding="utf-8-sig") as f:
-        rd = csv.reader(f); header = next(rd)
+        rd = csv.reader(f); header = next(rd, None)
         for r in rd:
             if len(r) < 2: continue
             try: n = float(r[1].replace(",", ""))
@@ -242,7 +242,7 @@ def history_table(a, hist):
                           ("contestants_per_day", "Entrants per day", "{:,.0f}"), ("emails", "Email signups", "{:,.0f}")]:
         vals = [p.get(m) for p in prev if p.get(m) is not None]
         if now.get(m) is None or not vals: continue
-        last = vals[-1]; med = sorted(vals)[len(vals) // 2]
+        last = vals[-1]; med = statistics.median(vals)
         delta = (now[m] - last) / last if last else None
         out.append((label, fmt.format(now[m]), fmt.format(last), fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if now[m] > v)} of {len(vals)} previous beaten"))
     notes = []
@@ -320,6 +320,10 @@ def self_test():
     acts = read_actions(fa.name, 1200)
     assert [r[0] for r in acts] == ["Visit our store", "Subscribe to our newsletter", "Share on Facebook"] and acts[0][1] == "1.5 each" and acts[1][1] == "75%", acts
     _os2.unlink(fa.name)
+    hist = [{"campaign": str(i), "contestants": c, "impressions": None, "entries": None, "invalid": None, "days": None} for i, c in enumerate((100, 300))]
+    assert history_table(First, hist)[0][0][3] == "200", "even history must average the two central values"
+    with _tf2.NamedTemporaryFile("w", suffix=".csv") as empty:
+        assert read_actions(empty.name, 1200) == [], "empty action export has no rows"
     print("self-test passed"); return 0
 
 def entry_total(value):
