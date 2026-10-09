@@ -15,7 +15,7 @@ class VersionValidationTests(unittest.TestCase):
     def test_version_mirrors(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            for name in ('skills', '.claude-plugin'):
+            for name in ('skills', '.claude-plugin', 'analysis/output'):
                 shutil.copytree(ROOT / name, root / name)
             (root / 'evals').mkdir()
             shutil.copy(ROOT / 'evals/check_deliverable.py', root / 'evals/check_deliverable.py')

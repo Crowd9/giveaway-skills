@@ -46,12 +46,14 @@ def main():
     check = "--check" in sys.argv
     sources = {}
     for name, path in BLOCKS.items():
-        text = open(os.path.join(ROOT, path), encoding="utf-8").read()
+        with open(os.path.join(ROOT, path), encoding="utf-8") as resource:
+            text = resource.read()
         sources[name] = text if text.endswith("\n") else text + "\n"
 
     copies = {}
     for dest, src in FILES.items():
-        body = open(os.path.join(ROOT, src), encoding="utf-8").read()
+        with open(os.path.join(ROOT, src), encoding="utf-8") as resource:
+            body = resource.read()
         if dest.endswith(".md"):
             banner = f"<!-- Generated from {src} by scripts/render_shared.py. Edit the source, never this copy. -->\n\n"
             copies[dest] = banner + body
@@ -63,20 +65,26 @@ def main():
     for skill in sorted(glob.glob(os.path.join(ROOT, "skills", "*", ""))):
         for dest, body in copies.items():
             path = os.path.join(skill, dest)
-            if os.path.exists(path) and open(path, encoding="utf-8").read() == body:
+            existing = None
+            if os.path.exists(path):
+                with open(path, encoding="utf-8") as source:
+                    existing = source.read()
+            if existing == body:
                 continue
             rel = os.path.relpath(path, ROOT)
             if check:
                 drifted.append(rel)
             else:
                 os.makedirs(os.path.dirname(path), exist_ok=True)
-                open(path, "w", encoding="utf-8").write(body)
+                with open(path, "w", encoding="utf-8") as resource:
+                    resource.write(body)
                 os.chmod(path, 0o755 if dest.endswith(".py") else 0o644)
                 written += 1
 
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "SKILL.md"))):
         rel = os.path.relpath(f, ROOT)
-        text = new = open(f, encoding="utf-8").read()
+        with open(f, encoding="utf-8") as resource:
+            text = new = resource.read()
         for name, body in sources.items():
             pat = block_re(name)
             if not pat.search(new):
@@ -88,7 +96,8 @@ def main():
         if check:
             drifted.append(rel)
         else:
-            open(f, "w", encoding="utf-8").write(new)
+            with open(f, "w", encoding="utf-8") as resource:
+                resource.write(new)
             written += 1
 
     for m in missing:

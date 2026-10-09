@@ -428,7 +428,9 @@ def main(argv):
     a.partners = [p.strip() for p in a.partners.split(",")] if a.partners else None
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if a.map else {}
     out = render(analyze(load(a.export, mapping), a), a); print(out)
-    if a.markdown: open(a.markdown, "w").write(out + "\n")
+    if a.markdown:
+        with open(a.markdown, "w") as resource:
+            resource.write(out + "\n")
     return 0
 
 if __name__ == "__main__":

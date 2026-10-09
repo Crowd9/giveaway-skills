@@ -171,15 +171,20 @@ def parse_tiers(spec, winners):
     return out
 
 def rules_of(a, id_column, tiers):
-    return {"id_column": id_column, "weight_column": a.weight_column, "exclude_file_sha256": sha(open(a.exclude, "rb").read()) if a.exclude else None,
+    exclude_digest = None
+    if a.exclude:
+        with open(a.exclude, "rb") as source:
+            exclude_digest = sha(source.read())
+    return {"id_column": id_column, "weight_column": a.weight_column, "exclude_file_sha256": exclude_digest,
             "tiers": tiers, "backups": a.backups, "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id", "tool_version": VERSION}
 
 def apply_rules(a):
     """Fill any option the command line left unset from --rules FILE. Command-line flags win."""
     if getattr(a, "rules", None):
-        for k, v in json.load(open(a.rules)).items():
-            attr = k.replace("-", "_")
-            if hasattr(a, attr) and getattr(a, attr) is None: setattr(a, attr, v)
+        with open(a.rules) as resource:
+            for k, v in json.load(resource).items():
+                attr = k.replace("-", "_")
+                if hasattr(a, attr) and getattr(a, attr) is None: setattr(a, attr, v)
     if getattr(a, "backups", None) is None: a.backups = 0
     if getattr(a, "winners", None) is None: a.winners = 1
     for attr in ("winners", "backups"):
@@ -207,11 +212,17 @@ def seed_from(a):
         return j["outputValue"], {"type": "nist-beacon", "timeStamp": j["timeStamp"], "outputValue": j["outputValue"], "fetched_from": f"{NIST}/time/{int(a.seed_nist) * 1000}"}
     sys.exit("give --seed TEXT, --seed-drand ROUND or --seed-nist UNIXTIME (run `commit` first to announce one)")
 
+def load_exclusions(path):
+    if not path:
+        return set()
+    with open(path, encoding="utf-8-sig") as source:
+        return {norm(line) for line in source if line.strip()}
+
 def cmd_commit(a):
     rows, id_column, digest = load_entries(a.input, a.id_column); tiers = parse_tiers(a.tiers, a.winners)
     rules = rules_of(a, id_column, tiers); c = commitment(digest, rules)
     print(f"input sha256   {digest}\nrules          {json.dumps(rules, sort_keys=True)}\ncommitment     {c}")
-    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, {norm(l) for l in open(a.exclude, encoding="utf-8-sig") if l.strip()} if a.exclude else set())
+    ents, dupes, excluded, bad, _ = prepare(rows, id_column, a.weight_column, load_exclusions(a.exclude))
     print(f"rows_read {len(rows)}, unique_eligible {len(ents)}, duplicates_merged {dupes}, "
           f"excluded {excluded}, rows_with_invalid_weight {bad}")
     notes = scan(ents)
@@ -235,7 +246,7 @@ def cmd_commit(a):
 
 def cmd_draw(a):
     rows, id_column, digest = load_entries(a.input, a.id_column)
-    exclude = {norm(l) for l in open(a.exclude, encoding="utf-8-sig") if l.strip()} if a.exclude else set()
+    exclude = load_exclusions(a.exclude)
     entrants, dupes, excluded, bad, clusters = prepare(rows, id_column, a.weight_column, exclude)
     tiers = parse_tiers(a.tiers, a.winners); need = sum(c for _, c in tiers) + a.backups
     if len(entrants) < need: sys.exit(f"only {len(entrants)} unique eligible entrants for {need} places")
@@ -253,7 +264,10 @@ def cmd_draw(a):
     print(f"\nrows_read {len(rows)}, unique_eligible {len(entrants)}, duplicates_merged {dupes}, excluded {excluded}, rows_with_invalid_weight {bad}, seed source {source['type']}, commitment {audit['commitment'][:16]}...")
     if clusters: print(f"warning: {len(clusters)} groups of addresses share a local part with plus-tags (possible duplicate people). Review before announcing.")
     for note in scan(entrants): print(f"review: {note}")
-    if a.audit: json.dump(audit, open(a.audit, "w"), indent=2); print(f"audit written to {a.audit}")
+    if a.audit:
+        with open(a.audit, "w") as resource:
+            json.dump(audit, resource, indent=2)
+        print(f"audit written to {a.audit}")
     if a.winners_csv:
         with open(a.winners_csv, "w", newline="") as f:
             w = csv.writer(f); w.writerow(["tier", "id", "weight"]); [w.writerow([r["tier"], r["id"], r["weight"]]) for r in result]
@@ -264,14 +278,17 @@ def mask(x):
     return x[:3] + "***" if len(x) > 4 else "***"
 
 def cmd_verify(a):
-    audit = json.load(open(a.audit_file)); path = a.input or audit["input_file"]; ok = True
+    with open(a.audit_file) as resource:
+        audit = json.load(resource)
+    path = a.input or audit["input_file"]; ok = True
     rows, id_column, digest = load_entries(path, audit["rules"]["id_column"])
     if digest != audit["input_sha256"]: print("FAIL input file hash differs from the audit record"); ok = False
     if commitment(digest, audit["rules"]) != audit["commitment"]: print("FAIL commitment does not match input and rules"); ok = False
     exclude = set()
     if audit["rules"].get("exclude_file_sha256"):
         if not a.exclude: sys.exit("this draw used an exclusion file; pass it with --exclude to verify")
-        raw = open(a.exclude, "rb").read()
+        with open(a.exclude, "rb") as resource:
+            raw = resource.read()
         if sha(raw) != audit["rules"]["exclude_file_sha256"]: print("FAIL exclusion file hash differs"); ok = False
         exclude = {norm(l) for l in raw.decode("utf-8-sig").splitlines() if l.strip()}
     src = audit["seed_source"]
@@ -407,7 +424,8 @@ def self_test():
     self_test_input_formats()
     import tempfile, os
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
-    open(p, "w").write("email,entries\nA@x.com,1\nb@x.com,3\na@x.com,2\nc@x.com,0\nd@x.com,1\nb+promo@x.com,1\n")
+    with open(p, "w") as resource:
+        resource.write("email,entries\nA@x.com,1\nb@x.com,3\na@x.com,2\nc@x.com,0\nd@x.com,1\nb+promo@x.com,1\n")
     rows, col, _ = load_entries(p, None); assert col == "email"
     ents, dupes, exc, bad, clusters = prepare(rows, col, "entries", {"d@x.com"})
     assert [e["id"] for e in ents] == ["a@x.com", "b@x.com", "b+promo@x.com"] and dupes == 1 and exc == 1 and bad == 1 and len(clusters) == 1, (ents, dupes, exc, bad, clusters)
@@ -427,17 +445,24 @@ def self_test():
     assert drand_round_at(drand_round_time(1000)) == 1000 and drand_round_at(DRAND["genesis_time"]) == 1
     assert parse_tiers("Grand Prize:1,Runner-up:5", 9) == [["Grand Prize", 1], ["Runner-up", 5]]
     assert mask("someone@example.com") == "so***@example.com"
-    pj = os.path.join(d, "c.json"); open(pj, "w").write(json.dumps({"comments": [{"owner": {"username": "ann"}, "text": "hi"}, {"owner": {"username": "Ann"}, "text": "again"}, {"owner": {"username": "bob"}, "text": "x"}]}))
+    pj = os.path.join(d, "c.json")
+    with open(pj, "w") as resource:
+        resource.write(json.dumps({"comments": [{"owner": {"username": "ann"}, "text": "hi"}, {"owner": {"username": "Ann"}, "text": "again"}, {"owner": {"username": "bob"}, "text": "x"}]}))
     rows, col, _ = load_entries(pj, None); assert col == "owner.username" and len(rows) == 3, (col, rows)
     ents, dupes, *_ = prepare(rows, col, None, set()); assert [e["id"] for e in ents] == ["ann", "bob"] and dupes == 1
-    yj = os.path.join(d, "y.json"); open(yj, "w").write(json.dumps({"kind": "youtube#commentThreadListResponse", "items": [{"id": "Ugx1", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Ann", "authorChannelId": {"value": "UCa"}, "textDisplay": "hi"}}}}, {"id": "Ugx2", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Bob", "authorChannelId": {"value": "UCb"}, "textDisplay": "yo"}}}}]}))
+    yj = os.path.join(d, "y.json")
+    with open(yj, "w") as resource:
+        resource.write(json.dumps({"kind": "youtube#commentThreadListResponse", "items": [{"id": "Ugx1", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Ann", "authorChannelId": {"value": "UCa"}, "textDisplay": "hi"}}}}, {"id": "Ugx2", "snippet": {"topLevelComment": {"snippet": {"authorDisplayName": "Bob", "authorChannelId": {"value": "UCb"}, "textDisplay": "yo"}}}}]}))
     rows, col, _ = load_entries(yj, None); assert col.endswith("authorChannelId.value") and len(rows) == 2 and rows[0][col] == "UCa", (col, rows)
-    gj = os.path.join(d, "g.json"); open(gj, "w").write(json.dumps({"data": [{"id": "1", "text": "hi", "from": {"id": "9", "username": "ann"}}, {"id": "2", "text": "x", "from": {"id": "8", "username": "bob"}}]}))
+    gj = os.path.join(d, "g.json")
+    with open(gj, "w") as resource:
+        resource.write(json.dumps({"data": [{"id": "1", "text": "hi", "from": {"id": "9", "username": "ann"}}, {"id": "2", "text": "x", "from": {"id": "8", "username": "bob"}}]}))
     rows, col, _ = load_entries(gj, None); assert col == "from.username", (col, rows)
     sc = scan([{"id": f"ava_k_{2290+i}@example.com"} for i in range(6)] + [{"id": "x@mailinator.com"}])
     assert any("trailing number" in n for n in sc) and any("disposable" in n for n in sc), sc
     rp = os.path.join(d, "rules.json")
-    open(rp, "w").write(json.dumps({"tiers": "Grand Prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}))
+    with open(rp, "w") as resource:
+        resource.write(json.dumps({"tiers": "Grand Prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}))
     class R: rules = rp; tiers = None; backups = None; winners = None; id_column = None; weight_column = None; exclude = None
     apply_rules(R)
     assert (R.tiers, R.backups, R.winners, R.id_column, R.weight_column, R.exclude) == ("Grand Prize:1,Runner-up:5", 2, 1, "email", "entries", "staff.txt"), vars(R)
@@ -455,16 +480,19 @@ def self_test():
     _a = _A(); _a.input = fh.name; _a.id_column = "email"; _a.weight_column = None; _a.exclude = None
     _a.tiers = "Grand:1"; _a.winners = None; _a.backups = None; _a.rules = None; _a.draw_at = None; _a.flagged_out = out
     cmd_commit(_a)
-    flagged = [l.strip() for l in open(out) if l.strip()]
+    with open(out) as resource:
+        flagged = [l.strip() for l in resource if l.strip()]
     assert len(flagged) == 10, f"every disposable id must be written out, got {len(flagged)}"
     assert all(f.endswith("@mailinator.com") for f in flagged), flagged
     _os.unlink(fh.name); _os.unlink(out)
     # The commitment preview must expose missing weights before a seed is fetched or a draw is run.
     import contextlib, io
     preview_file = os.path.join(d, "preview.csv")
-    open(preview_file, "w").write("id,entries\nalpha,2\nalpha,3\nbeta,1\ngamma,\ndelta,0\nepsilon,4\n")
+    with open(preview_file, "w") as resource:
+        resource.write("id,entries\nalpha,2\nalpha,3\nbeta,1\ngamma,\ndelta,0\nepsilon,4\n")
     exclusion_file = os.path.join(d, "exclude.txt")
-    open(exclusion_file, "w", encoding="utf-8-sig").write("epsilon\n")
+    with open(exclusion_file, "w", encoding="utf-8-sig") as resource:
+        resource.write("epsilon\n")
     _a.input = preview_file; _a.id_column = "id"; _a.weight_column = "entries"
     _a.exclude = exclusion_file; _a.flagged_out = None
     output = io.StringIO()

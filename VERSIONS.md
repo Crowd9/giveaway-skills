@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.40 |
-| giveaway-entry-method-planner | 1.2.37 |
-| giveaway-timing-and-duration | 1.4.35 |
-| giveaway-winner-structure | 1.4.7 |
-| giveaway-promotion-plan | 1.3.37 |
-| giveaway-random-draw | 1.3.33 |
-| giveaway-winner-communications | 1.2.29 |
-| giveaway-idea-generator | 1.3.33 |
-| giveaway-results-review | 1.6.7 |
-| gleam-campaign-setup | 1.2.35 |
+| giveaway-prize-picker | 1.3.41 |
+| giveaway-entry-method-planner | 1.2.38 |
+| giveaway-timing-and-duration | 1.4.36 |
+| giveaway-winner-structure | 1.4.8 |
+| giveaway-promotion-plan | 1.3.38 |
+| giveaway-random-draw | 1.3.34 |
+| giveaway-winner-communications | 1.2.30 |
+| giveaway-idea-generator | 1.3.34 |
+| giveaway-results-review | 1.6.8 |
+| gleam-campaign-setup | 1.2.36 |
 
 ## Skills
 
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.8 (2026-10-10)
+
+Each skill now works when you install it on its own. A skill that hands you to another one carries on with its own steps when that one isn't installed. Figures quoted from our wider data still read correctly from the files that ship with the skill.
+
+The scripts you run close every file they open, and the build now fails if one ever doesn't. Every link inside a skill is checked too, so a pointer to a missing section can't ship. Any draw that worked before picks exactly the same Winners.
 
 ## 3.0.7 (2026-10-10)
 

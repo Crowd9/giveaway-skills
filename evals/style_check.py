@@ -316,13 +316,22 @@ def self_test():
         print("no fixtures here, so nothing to self-test. This copy lints a draft: "
               "python3 scripts/style_check.py draft.txt")
         return
-    bad, good = check(open(os.path.join(d, "fails.txt")).read()), check(open(os.path.join(d, "passes.txt")).read())
-    raw = check(open(os.path.join(d, "fails_raw.txt")).read())
-    stiff = check(open(os.path.join(d, "fails_stiff.txt")).read())
-    pat = check(open(os.path.join(d, "fails_patterns.txt")).read())
-    lc = check(open(os.path.join(d, "fails_lowercase.txt")).read())
-    lab = check(open(os.path.join(d, "fails_labels.txt")).read())
-    bold = check(open(os.path.join(d, "fails_bold.txt")).read())
+    with open(os.path.join(d, "fails.txt")) as resource:
+        bad = check(resource.read())
+    with open(os.path.join(d, "passes.txt")) as resource:
+        good = check(resource.read())
+    with open(os.path.join(d, "fails_raw.txt")) as resource:
+        raw = check(resource.read())
+    with open(os.path.join(d, "fails_stiff.txt")) as resource:
+        stiff = check(resource.read())
+    with open(os.path.join(d, "fails_patterns.txt")) as resource:
+        pat = check(resource.read())
+    with open(os.path.join(d, "fails_lowercase.txt")) as resource:
+        lc = check(resource.read())
+    with open(os.path.join(d, "fails_labels.txt")) as resource:
+        lab = check(resource.read())
+    with open(os.path.join(d, "fails_bold.txt")) as resource:
+        bold = check(resource.read())
     assert bold["bold_lead_ins"] >= 3, bold
     assert lab["label_openers"] >= 2, lab
     assert lc["lowercase_app_terms"] >= 5, lc
@@ -381,9 +390,11 @@ def self_test():
     assert clean["unsourced_claims"] == 0, clean
     # The four ways a claim used to slip past: a reason clause riding on an instruction, and the words
     # "data", "campaigns" and "practice" standing in for a source.
-    hatches = check(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "fails_claims.txt")).read())
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "fails_claims.txt")) as resource:
+        hatches = check(resource.read())
     assert hatches["unsourced_claims"] == 7, hatches
-    supported = check(open(os.path.join(d, "passes_claims.txt")).read())
+    with open(os.path.join(d, "passes_claims.txt")) as resource:
+        supported = check(resource.read())
     assert supported["unsourced_claims"] == 0, supported
     for claim in ("Gmail usually hides giveaway emails.",
                   "Gmail usually hides giveaway emails for 7 days.",
@@ -415,7 +426,8 @@ def self_test():
     assert "FAIL" in out and "unsourced claim: That email send" in out, f"an unsourced claim must block and be quoted, got: {out}"
     # A figure plus a causal connective blocks. The same figure stated plainly, a refusal of the cause, a start
     # date, a rule as the source and a bare plan number do not.
-    cz = check(open(os.path.join(d, "fails_causal.txt")).read())
+    with open(os.path.join(d, "fails_causal.txt")) as resource:
+        cz = check(resource.read())
     assert cz["causal_claims"] == 6, cz
     ok = check("About 42% more Entrants joined the referral campaigns, across 1,904 of them.\n"
                "The table cannot say whether the 19.2% is because of the list.\n"
@@ -433,7 +445,8 @@ if __name__ == "__main__":
         self_test(); sys.exit(0)
     verbose = "--show" in sys.argv[1:]
     for path in [a for a in sys.argv[1:] if not a.startswith("--")]:
-        text = open(path).read()
+        with open(path) as resource:
+            text = resource.read()
         r = check(text)
         # contrast_sentences and filler_words were left out of this sum, so the two commonest faults in
         # every measured run were the two the checker never failed on. 94 contrast sentences and 38 filler

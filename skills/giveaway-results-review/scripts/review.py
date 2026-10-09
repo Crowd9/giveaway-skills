@@ -40,7 +40,9 @@ FAMILY_WORDS = {"email": ("email", "newsletter", "subscribe to", "signup", "sign
 PCT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "references", "percentiles.json")
 
 def load_pct():
-    try: d = json.load(open(PCT_FILE))
+    try:
+        with open(PCT_FILE) as resource:
+            d = json.load(resource)
     except (OSError, ValueError): return None
     if d.get("bench"):
         BENCH.update({k: v for k, v in d["bench"].items() if v is not None})

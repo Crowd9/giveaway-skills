@@ -40,7 +40,8 @@ def reader_unit(v): return f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
 def md_table(path, marker=None, header_starts=None):
     """Rows of the generated table under a marker, or the first table whose header starts with a phrase."""
     if not os.path.exists(path): return []
-    text = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as resource:
+        text = resource.read()
     if marker:
         m = re.search(r"<!-- generated:" + re.escape(marker) + r" -->\n(.*?)<!-- /generated -->", text, re.S)
         if not m: return []
@@ -568,13 +569,17 @@ def gather(a):
 def words_of(path):
     W = {"assumptions": "Write the assumptions line here.", "verdict": "Write the verdict here: what the campaign did well with its rank, then the figure with the most room to close.",
          "pills": [], "changes": [], "caveats": [], "question": "End on the one question that would change the advice."}
-    if path: W.update(json.load(open(path, encoding="utf-8")))
+    if path:
+        with open(path, encoding="utf-8") as resource:
+            W.update(json.load(resource))
     return W
 
 
 def site_of(path):
     S = {"name": "", "url": "", "headerLogo": None, "headerColour": None, "elementsColour": None, "backgroundColour": None}
-    if path: S.update(json.load(open(path, encoding="utf-8")))
+    if path:
+        with open(path, encoding="utf-8") as resource:
+            S.update(json.load(resource))
     return S
 
 
@@ -702,8 +707,10 @@ def self_test():
                 ("Cy Q", "c@example.com", "Invalid", "Subscribe to Our List", 5, "", "Leeds", "United Kingdom", 6000, "https://gleam.io/x", "https://www.contestgirl.com/", "", "")]
         for i, (nm, em, stt, act, en, det, city, co, off, lp, ref, fb, tw) in enumerate(rows):
             wr.writerow([i, nm, em, stt, act, en, det, city, co, (base + dt.timedelta(seconds=off)).strftime("%Y-%m-%d %H:%M:%S %z"), lp, ref, fb, tw])
-    words = os.path.join(d, "w.json"); json.dump({"verdict": "Two Entrants.", "assumptions": "Assuming a test.", "question": "Which was it for you?", "pills": [{"kind": "good", "text": "A pill"}],
-                                                  "changes": [{"eyebrow": "Entry list", "title": "One change", "target": "3", "target_note": "addresses", "body": "Body.", "who": "Planner."}], "caveats": ["A caveat."]}, open(words, "w"))
+    words = os.path.join(d, "w.json")
+    with open(words, "w") as resource:
+        json.dump({"verdict": "Two Entrants.", "assumptions": "Assuming a test.", "question": "Which was it for you?", "pills": [{"kind": "good", "text": "A pill"}],
+                                                      "changes": [{"eyebrow": "Entry list", "title": "One change", "target": "3", "target_note": "addresses", "body": "Body.", "who": "Planner."}], "caveats": ["A caveat."]}, resource)
     wpath = words
     class A: export = p; words = wpath; site = None; impressions = 10; plan_cost = 50.0; prize_cost = 20.0; vertical = None; first_campaign = True; repeatable = False; days = None; methods = None; sends = None; partners = None; title = "Test"; dates = "1 May 2026"
     page = render(gather(A), words_of(words), site_of(None), A)
@@ -734,7 +741,9 @@ def main(argv):
     if a.self_test: return self_test()
     if not a.export: ap.error("an export is required")
     page = render(gather(a), words_of(a.words), site_of(a.site), a)
-    open(a.out, "w", encoding="utf-8").write(page); print(f"dashboard written to {a.out}"); return 0
+    with open(a.out, "w", encoding="utf-8") as resource:
+        resource.write(page)
+    print(f"dashboard written to {a.out}"); return 0
 
 
 if __name__ == "__main__":

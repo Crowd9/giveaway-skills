@@ -101,7 +101,8 @@ def stem(s):
 
 
 def check(path):
-    text = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as resource:
+        text = resource.read()
     tabs = tables(text)
     if not tabs:
         return []
@@ -236,7 +237,8 @@ def columns_of(text):
 
 def check_skill(path, root):
     """Figures in a SKILL.md body, against the reference each line names."""
-    text = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as resource:
+        text = resource.read()
     skill_dir = os.path.dirname(path)
     cache = {}
     hard, notes, ingen, infront = [], [], False, False
@@ -283,7 +285,8 @@ def check_skill(path, root):
             if not os.path.exists(fp):
                 continue
             if fp not in cache:
-                body = open(fp, encoding="utf-8").read()
+                with open(fp, encoding="utf-8") as resource:
+                    body = resource.read()
                 cache[fp] = (set(re.findall(r"(?<![\w.])(\d[\d,]*(?:\.\d+)?)", body.replace(",", ""))),
                              columns_of(body))
             p_, c_ = cache[fp]
@@ -303,7 +306,8 @@ def check_skill(path, root):
                     elif isinstance(o, (int, float)) and not isinstance(o, bool):
                         got.add(("%f" % float(o)).rstrip("0").rstrip("."))
                         got.add(("%f" % (float(o) * 100)).rstrip("0").rstrip("."))
-                _walk(_json.load(open(fp)))
+                with open(fp) as resource:
+                    _walk(_json.load(resource))
                 cache[fp] = (got, [])
             p_, _ = cache[fp]
             plain |= p_; named.append(out)
@@ -352,7 +356,8 @@ def self_test():
         assert not extracted(stale), "ambiguous distribution must be skipped"
     src = os.path.join(ROOT, "skills", "giveaway-idea-generator", "references", "hooks-and-themes.md")
     assert not check(src), f"the live file should be clean: {check(src)}"
-    text = open(src, encoding="utf-8").read()
+    with open(src, encoding="utf-8") as resource:
+        text = resource.read()
     # Anchor on the shape of the sentence, never on its figures. Pinning the exact numbers meant every honest
     # correction to the prose broke this self-test, and it stayed broken through several pushes because the
     # gate sweep ran the checks without running their self-tests.
@@ -361,7 +366,8 @@ def self_test():
         "- **Product launches** sit below the typical figure on Entrants,", text, count=1)
     assert n_sub == 1, "the planted fault did not apply, the sentence has moved"
     tmp = os.path.join(ROOT, ".planted-check.md")
-    open(tmp, "w").write(planted)
+    with open(tmp, "w") as resource:
+        resource.write(planted)
     try:
         found = check(tmp)
         assert found, "a planted inversion was not caught, so this check proves nothing"
@@ -370,7 +376,8 @@ def self_test():
     # the worst figure this repo has shipped, replanted: the line cites mix-by-objective.md and the
     # pair it states is in no column of it
     sk = os.path.join(ROOT, "skills", "giveaway-entry-method-planner", "SKILL.md")
-    body = open(sk, encoding="utf-8").read()
+    with open(sk, encoding="utf-8") as resource:
+        body = resource.read()
     planted = body.replace(
         "6. **Check friction.**",
         "6. **Check friction.** Extracted: campaigns with 11 or more methods drew a quarter fewer Entrants and "
@@ -378,7 +385,8 @@ def self_test():
         "against 2,305 (`references/mix-by-objective.md`).", 1)
     assert planted != body, "the friction step has moved, replant the fault somewhere real"
     tmp = sk + ".planted"
-    open(tmp, "w").write(planted)
+    with open(tmp, "w") as resource:
+        resource.write(planted)
     try:
         hard, _ = check_skill(tmp, ROOT)
         assert hard, "a replanted stale pair in a skill body was not caught, so this check proves nothing"

@@ -14,22 +14,23 @@ def check(path):
     """Root docs also take Stu Case headings, because they are the pages a reader meets on GitHub."""
     root_doc = os.path.dirname(os.path.abspath(path)) == os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     hits = []; code = False
-    for n, line in enumerate(open(path, encoding="utf-8"), 1):
-        if line.strip().startswith("```"): code = not code; continue
-        if code or line.startswith("|") or "last pass" in line.lower(): continue
-        quoted = '"rather than"' in line or '"instead of"' in line or "no semicolons" in line
-        if "—" in line: hits.append((n, "em dash"))
-        if ";" in line and "&" not in line and not quoted: hits.append((n, "semicolon"))
-        if any(ch in line for ch in "“”‘’"): hits.append((n, "curly quote"))
-        # Gleam's words take a capital in prose. A URL is not prose, and a capital there is a 404.
-        if URL_CAP.search(line): hits.append((n, "capital inside a URL"))
-        if CONTRAST.search(line) and not quoted: hits.append((n, "contrast pivot"))
-        m = BARE_RATE.search(line) if "/references/" in path.replace(os.sep, "/") else None
-        if m and "USD" not in m.group(0) and "$" not in m.group(0):
-            hits.append((n, "two rates under one in a sentence, say them per 100"))
-        if root_doc and line.startswith("#"):
-            bad = stu_case_problem(re.sub(r"^#+\s*", "", line))
-            if bad: hits.append((n, f"heading not Stu Case: {bad}"))
+    with open(path, encoding="utf-8") as resource:
+        for n, line in enumerate(resource, 1):
+            if line.strip().startswith("```"): code = not code; continue
+            if code or line.startswith("|") or "last pass" in line.lower(): continue
+            quoted = '"rather than"' in line or '"instead of"' in line or "no semicolons" in line
+            if "—" in line: hits.append((n, "em dash"))
+            if ";" in line and "&" not in line and not quoted: hits.append((n, "semicolon"))
+            if any(ch in line for ch in "“”‘’"): hits.append((n, "curly quote"))
+            # Gleam's words take a capital in prose. A URL is not prose, and a capital there is a 404.
+            if URL_CAP.search(line): hits.append((n, "capital inside a URL"))
+            if CONTRAST.search(line) and not quoted: hits.append((n, "contrast pivot"))
+            m = BARE_RATE.search(line) if "/references/" in path.replace(os.sep, "/") else None
+            if m and "USD" not in m.group(0) and "$" not in m.group(0):
+                hits.append((n, "two rates under one in a sentence, say them per 100"))
+            if root_doc and line.startswith("#"):
+                bad = stu_case_problem(re.sub(r"^#+\s*", "", line))
+                if bad: hits.append((n, f"heading not Stu Case: {bad}"))
     return hits
 
 URL_CAP = re.compile(r"https?://[^\s)\]`]*(?:Prize|Winner|Entrant|Contestant|Action|Impression|Conversion|Entry|Entries)")

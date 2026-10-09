@@ -17,21 +17,27 @@ jobs:
         run: python3 scripts/validate.py
       - name: Script self-tests
         run: |
-          python3 skills/giveaway-random-draw/scripts/draw.py --self-test
-          python3 skills/giveaway-prize-picker/scripts/budget.py --self-test
-          python3 skills/giveaway-winner-structure/scripts/terms.py --self-test
-          python3 skills/giveaway-results-review/scripts/review.py --self-test
-          python3 skills/giveaway-prize-picker/scripts/roi.py --self-test
-          python3 skills/giveaway-results-review/scripts/gleam_export.py --self-test
-          python3 skills/giveaway-results-review/scripts/campaign_report.py --self-test
-          python3 skills/giveaway-results-review/scripts/dashboard.py --self-test
-          python3 evals/style_check.py --self-test
-          python3 evals/test_privacy_floor.py
-          python3 evals/test_validate_versions.py
-          python3 evals/test_render_shared.py
-          python3 evals/test_check_deliverable.py
-          python3 evals/test_export_to_draw.py
-          python3 scripts/check_claims.py --self-test
+          set -euo pipefail
+          export PYTHONWARNINGS=error::ResourceWarning
+          resource_check() {
+            local log
+            log=$(mktemp)
+            python3 -W error::ResourceWarning "$@" 2>&1 | tee "$log"
+            # Finalizer exceptions can be printed even when Python exits successfully.
+            if grep -Eq 'ResourceWarning|Exception ignored' "$log"; then
+              rm -f "$log"
+              return 1
+            fi
+            rm -f "$log"
+          }
+          for script in skills/*/scripts/*.py; do
+            resource_check "$script" --self-test
+          done
+          resource_check evals/style_check.py --self-test
+          for test in evals/test_*.py; do
+            resource_check "$test"
+          done
+          resource_check scripts/check_claims.py --self-test
       - name: Style rules on prose
         run: python3 scripts/style_lint.py
 

@@ -20,7 +20,8 @@ fails, warns = [], []
 # 1. no published block is empty
 for f in sorted(os.listdir(OUT)):
     if not f.endswith(".json"): continue
-    d = json.load(open(os.path.join(OUT, f)))
+    with open(os.path.join(OUT, f)) as resource:
+        d = json.load(resource)
     fails.extend(f"analysis/output/{f}: {problem}" for problem in privacy_problems(d))
     for k, v in (d.items() if isinstance(d, dict) else []):
         if k in ("definitions", "source"): continue
@@ -34,19 +35,22 @@ for base, _, files in os.walk(os.path.join(ROOT, "skills")):
     for fn in files:
         if not fn.endswith(".md"): continue
         p = os.path.join(base, fn)
-        for n, line in enumerate(open(p), 1):
-            line = line.rstrip("\n")
-            if not line.startswith("|") or re.fullmatch(r"\|[\s|:-]+\|?", line): continue
-            cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            if len(cells) > 1 and any(c == "" for c in cells[1:]):
-                fails.append(f"{os.path.relpath(p, ROOT)}:{n}: a table cell is blank, use a dash where there is no figure")
+        with open(p) as resource:
+            for n, line in enumerate(resource, 1):
+                line = line.rstrip("\n")
+                if not line.startswith("|") or re.fullmatch(r"\|[\s|:-]+\|?", line): continue
+                cells = [c.strip() for c in line.strip().strip("|").split("|")]
+                if len(cells) > 1 and any(c == "" for c in cells[1:]):
+                    fails.append(f"{os.path.relpath(p, ROOT)}:{n}: a table cell is blank, use a dash where there is no figure")
 
 # 3. every generated marker has a generator, and the block is not empty
 names = set()
 for base, _, files in os.walk(os.path.join(ROOT, "skills")):
     for fn in files:
         if not fn.endswith(".md"): continue
-        p = os.path.join(base, fn); t = open(p).read()
+        p = os.path.join(base, fn)
+        with open(p) as resource:
+            t = resource.read()
         for m in re.finditer(r"<!-- generated:(\w+) -->\n(.*?)\n<!-- /generated -->", t, re.S):
             names.add(m.group(1))
             if not m.group(2).strip():
@@ -65,7 +69,8 @@ def _subtree_values(fn, keys):
     if ck in CACHE: return CACHE[ck]
     fp = os.path.join(OUT, fn)
     if not os.path.exists(fp): return None
-    d = json.load(open(fp))
+    with open(fp) as resource:
+        d = json.load(resource)
     subs = [d] if keys is None else [d[k] for k in keys if isinstance(d, dict) and k in d]
     if not subs: return None
     vals = set()
@@ -103,28 +108,29 @@ for base, _, files in os.walk(os.path.join(ROOT, "skills")):
         if not fn.endswith(".md"): continue
         fp = os.path.join(base, fn)
         ingen = False; vals = None
-        for n, line in enumerate(open(fp), 1):
-            line = line.rstrip("\n")
-            if line.startswith("<!-- generated:"): ingen = True; continue
-            if line.startswith("<!-- /generated"): ingen = False; continue
-            if line.startswith("## "): vals = None
-            m = SRC.search(line)
-            if m:
-                keys = [k for k in KEY.findall(m.group(2)) if k not in SKIP_KEY]
-                vals = _subtree_values(m.group(1), keys)
-                whole = _subtree_values(m.group(1), None)
-                CURRENT = m.group(1)
-                continue
-            s = line.strip()
-            if ingen or s.startswith("|") or not vals: continue
-            for num_s, pct in NUM.findall(DENOM.sub(" ", line)):
-                try: num = float(num_s.replace(",", ""))
-                except ValueError: continue
-                if num < 2 or num_s in BANDS: continue
-                checked += 1
-                if _matches(num, vals, pct == "%"): continue
-                where = "elsewhere in" if whole and _matches(num, whole, pct == "%") else "nowhere in"
-                warns.append(f"{os.path.relpath(fp, ROOT)}:{n}: {num_s}{pct} is {where} {CURRENT}, not under the keys this section names")
+        with open(fp) as resource:
+            for n, line in enumerate(resource, 1):
+                line = line.rstrip("\n")
+                if line.startswith("<!-- generated:"): ingen = True; continue
+                if line.startswith("<!-- /generated"): ingen = False; continue
+                if line.startswith("## "): vals = None
+                m = SRC.search(line)
+                if m:
+                    keys = [k for k in KEY.findall(m.group(2)) if k not in SKIP_KEY]
+                    vals = _subtree_values(m.group(1), keys)
+                    whole = _subtree_values(m.group(1), None)
+                    CURRENT = m.group(1)
+                    continue
+                s = line.strip()
+                if ingen or s.startswith("|") or not vals: continue
+                for num_s, pct in NUM.findall(DENOM.sub(" ", line)):
+                    try: num = float(num_s.replace(",", ""))
+                    except ValueError: continue
+                    if num < 2 or num_s in BANDS: continue
+                    checked += 1
+                    if _matches(num, vals, pct == "%"): continue
+                    where = "elsewhere in" if whole and _matches(num, whole, pct == "%") else "nowhere in"
+                    warns.append(f"{os.path.relpath(fp, ROOT)}:{n}: {num_s}{pct} is {where} {CURRENT}, not under the keys this section names")
 
 # Words that say where the data came from or how it is stored. They reached the public tree twice: an
 # enrichment vendor named in three reference files, and a phrase naming a second source in four shipped
@@ -138,7 +144,9 @@ for dirpath, dirnames, filenames in os.walk(ROOT):
         if not fn.endswith((".md", ".json", ".py", ".txt", ".yml", ".yaml")): continue
         fp = os.path.join(dirpath, fn)
         if os.path.abspath(fp) == os.path.abspath(__file__): continue
-        try: body = open(fp, encoding="utf-8").read()
+        try:
+            with open(fp, encoding="utf-8") as resource:
+                body = resource.read()
         except (UnicodeDecodeError, OSError): continue
         for m in PRIVATE.finditer(body):
             line = body[:m.start()].count("\n") + 1
