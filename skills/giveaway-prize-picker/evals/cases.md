@@ -58,7 +58,9 @@ Run each request against an assistant that has loaded `SKILL.md`. Pass criteria 
 
 **Request:** "We're a coffee roaster. If we spend $900 on prizes and $300 on promotion and expect 2,000 entrants with an email action, what does that cost us per subscriber and is it good value?"
 
-**Pass:** runs `scripts/roi.py` with the numbers, reports $1,200 total spend and $0.60 per expected Entrant, and labels the subscriber estimate and cost denominator. With the 85% completion assumption, that is 1,700 estimated signups and about $0.71 per signup. Gives the breakeven value per signup and asks for the user's value per subscriber before judging value. Leaves the stated-value comparison unavailable because the user supplied actual spending only. The food and drink benchmark is withheld. If stated Prize value is later supplied, any comparison uses an available size-band population with its sample size and missing-data note, or remains unavailable.
+**Pass:** runs `scripts/roi.py` with the numbers, reports $1,200 total spend and $0.60 per expected Entrant, and labels the subscriber estimate and cost denominator. With the 85% completion assumption, that is 1,700 estimated signups and about $0.71 per signup. Gives the breakeven contribution per signup after product and fulfilment costs and asks for the user's contribution per subscriber, or revenue and an explicit contribution margin, before judging financial return. Leaves the stated-value comparison unavailable because the user supplied actual spending only. The food and drink benchmark is withheld. If stated Prize value is later supplied, any comparison uses an available size-band population with its sample size and missing-data note, or remains unavailable.
+
+**2026-10-10 verification:** updated the contribution criterion by static review and ran `scripts/roi.py --self-test`. The revenue regression used 100 USD cost, 100 emails, 1 USD revenue per email and an explicit 50% contribution margin. It returned 100 USD revenue, 50 USD contribution and a 50 USD loss. No model response was generated or scored for this revision.
 
 ## 11. Style check (applies to every conversational case above)
 

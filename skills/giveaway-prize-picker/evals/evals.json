@@ -189,11 +189,11 @@
   },
   {
    "prompt": "We're a coffee roaster. If we spend $900 on prizes and $300 on promotion and expect 2,000 entrants with an email action, what does that cost us per subscriber and is it good value?",
-   "expected_output": "Calculates $1,200 total spend and $0.60 per expected Entrant. Calculates cost per email signup using an explicitly labelled signup estimate or a stated subscriber count, with the denominator and currency named. Leaves the stated-value benchmark comparison unavailable because no stated Prize value was supplied. The food and drink benchmark is withheld. If stated value is later supplied, uses an available size-band benchmark with its population labelled, or leaves the comparison unavailable. Gives the breakeven value per signup and asks for the user's value per subscriber before judging value.",
+   "expected_output": "Calculates $1,200 total spend and $0.60 per expected Entrant. Calculates cost per email signup using an explicitly labelled signup estimate or a stated subscriber count, with the denominator and currency named. Leaves the stated-value benchmark comparison unavailable because no stated Prize value was supplied. The food and drink benchmark is withheld. If stated value is later supplied, uses an available size-band benchmark with its population labelled, or leaves the comparison unavailable. Gives the breakeven contribution per signup after product and fulfilment costs and asks for the user's contribution per subscriber, or revenue and an explicit contribution margin, before judging financial return.",
    "assertions": [
     "Shows $900 + $300 = $1,200 total spend and $1,200 / 2,000 = $0.60 per expected Entrant, in words or arithmetic",
     "Labels subscriber counts as estimates, names the assumption and denominator for cost per signup, and gives the currency. If using the 85% completion estimate, shows 1,700 signups and about $0.71 per signup",
-    "Gives breakeven value per email",
+    "Gives breakeven contribution per email after product and fulfilment costs",
     "Asks for a value per subscriber before judging",
     "Does not quote the withheld food and drink benchmark or use actual spend as stated Prize value. Without a supplied stated Prize value, leaves the stated-value comparison unavailable. Any later benchmark uses an available size-band population with its sample size and missing-data note, names USD of stated Prize value per email signup, and separates that measure from actual campaign cost"
    ],

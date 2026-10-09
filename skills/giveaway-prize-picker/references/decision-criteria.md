@@ -249,7 +249,7 @@ The share beating the typical crowd for its stated value and the share falling s
 - **Discount codes as the headline Prize.** 1,046 campaigns, 0.73 on crowd per Prize dollar (about 27% below typical for the money), and a purchase condition dressed as a Prize. Use codes for everyone who did not win, under a real Prize, and read giveaway-winner-communications for the mechanics. [`analysis/output/prize_economics.json`, `by_prize_category`.]
 - **Ship the Prize as an order.** Create the Winner's Prize as a zero-value order in the store so it goes out through the normal pick, pack and tracking flow, and the Winner sees it in their account.
 - **Fourth quarter.** Reserve the Prize stock before the sale sells it out. Close a December draw at least a week before the carrier's cutoff, and where that is not possible make the Prize a gift card so the Winner still has it by the day.
-- **Budget line for the codes.** A store campaign has two costs: the Prize, and the discount taken up by non-Winners. Put the second in the budget as redemptions expected times average discount, and read the redemption count as the campaign's revenue line afterwards.
+- **Budget line for the codes.** A store campaign has two costs: the Prize, and the discount taken up by non-Winners. Budget the discount cost as expected redemptions times average discount. Afterwards, report redemption count, total discount cost and redeemed-order revenue separately. Obtain the monetary totals from order records, including discounts and refunds. The same redemption count can represent different revenue totals, and redeemed-order revenue alone does not establish incremental revenue from the campaign.
 
 ## Fulfillment checklist
 

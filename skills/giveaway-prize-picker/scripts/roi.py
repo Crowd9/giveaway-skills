@@ -9,8 +9,10 @@ After the campaign, pricing what actually happened: the same spend drew 1,800 En
 Costs are what you pay. --stated-value is the retail figure you advertise, which is what the benchmarks below use, because the
 export records what organizers stated, never what they paid. Benchmarks are medians from the ordinary segment of the campaign
 export (116,283 campaigns that reached 100 Entrants). Value per email or follow is yours to supply: expected revenue per
-subscriber over the period you care about, or what you would pay a channel for the same list. The script reports the breakeven
-value if you give none. Nothing here predicts Entrants. Give the number you expect and the script prices it.
+subscriber over a stated period, contribution after product and fulfilment costs, or an alternative acquisition price.
+Declare the meaning with --value-basis. Revenue needs an explicit --contribution-margin (a fraction from 0 to 1, after
+product and fulfilment costs) to calculate financial ROI. Undeclared values only produce a valuation multiple.
+With no values, the script reports the contribution per email required to cover campaign cost. Nothing here predicts Entrants. Give the number you expect and the script prices it.
 
 These benchmarks do not split by single-prize versus split-prize campaigns. Cost per Entrant runs meaningfully higher for a
 split-prize campaign than a single Prize of matched value and vertical, see giveaway-winner-structure for the numbers.
@@ -190,6 +192,15 @@ def run(a):
         value = getattr(a, field)
         if value is not None and (not math.isfinite(value) or value < 0):
             raise ValueError(field.replace("_", " ") + " must be finite and nonnegative")
+    basis = getattr(a, "value_basis", None)
+    margin = getattr(a, "contribution_margin", None)
+    if basis not in (None, "revenue", "contribution", "acquisition"):
+        raise ValueError("value basis must be revenue, contribution or acquisition")
+    if margin is not None:
+        if not math.isfinite(margin) or not 0 <= margin <= 1:
+            raise ValueError("contribution margin must be a finite fraction from 0 to 1")
+        if basis != "revenue":
+            raise ValueError("contribution margin requires --value-basis revenue")
     cost = (a.prize_cost or 0) + (a.promotion or 0) + (a.admin or 0) + (a.shipping or 0)
     stated = a.stated_value
     actual = any(count is not None for count in (a.emails, a.follows, a.referrals))
@@ -211,10 +222,27 @@ def run(a):
             if stated is not None:
                 rows.append(("Stated value per " + asset, money(stated / count), money(bench[key]), label))
     value = (a.value_per_email or 0) * emails + (a.value_per_follow or 0) * follows + (a.value_per_referral or 0) * refs
-    if value:
-        rows += [("Value of what was produced", money(value), "", "your per-unit values"), ("Return per dollar", f"{value / cost:.2f}" if cost else "-", "", "")]
+    supplied_value = any(v is not None for v in (a.value_per_email, a.value_per_follow, a.value_per_referral))
+    if supplied_value:
+        label, multiple = {
+            None: ("Supplied valuation", "Valuation per dollar"),
+            "revenue": ("Revenue", "Revenue per dollar"),
+            "contribution": ("Contribution after fulfilment", "Contribution per dollar"),
+            "acquisition": ("Alternative acquisition price", "Acquisition price per dollar"),
+        }[basis]
+        value_note = "your per-unit values, unvalued assets count as zero"
+        if basis in (None, "acquisition") or (basis == "revenue" and margin is None):
+            value_note += ", financial ROI unavailable"
+        rows += [(label, money(value), "", value_note),
+                 (multiple, f"{value / cost:.2f}" if cost else "-", "", "")]
+        contribution = value if basis == "contribution" else value * margin if margin is not None else None
+        if contribution is not None:
+            if basis == "revenue":
+                rows.append(("Contribution after fulfilment", money(contribution), "", "your explicit contribution margin"))
+            rows += [("Net contribution after campaign cost", money(contribution - cost), "", ""),
+                     ("Financial ROI", f"{(contribution - cost) / cost:.2%}" if cost else "-", "", "")]
     elif emails and cost:
-        rows += [("Breakeven value per email", money(cost / emails), "", "what each address must be worth for the campaign to pay for itself, with follows and referrals valued at zero")]
+        rows += [("Breakeven contribution per email", money(cost / emails), "", "after product and fulfilment costs, with follows and referrals valued at zero")]
     note = "estimated from how often the actions you named are completed, given your expected Contestants" if est else "from the counts you gave"
     if est and actual:
         note = "from the counts you gave, with missing action counts estimated from expected Contestants"
@@ -270,8 +298,9 @@ def self_test():
     rows, note = run(A); d = {r[0]: r for r in rows}
     assert "food_drink" not in BENCH["by_vertical"]
     assert d["Stated value per Entrant"][3] == "band 1k-2.5k", rows
-    assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Return per dollar"][1] == "4.86", rows
-    A.value_per_email = 0; rows, _ = run(A); assert any(r[0] == "Breakeven value per email" for r in rows)
+    assert d["Total cost (what you pay)"][1] == "1,400.00" and d["Cost per email signup"][1] == "0.82" and d["Valuation per dollar"][1] == "4.86", rows
+    A.value_per_email = A.value_per_follow = A.value_per_referral = None
+    rows, _ = run(A); assert any(r[0] == "Breakeven contribution per email" for r in rows)
     A.stated_value = None
     rows, _ = run(A)
     assert not any(r[0].startswith("Stated value") or r[2] for r in rows), rows
@@ -298,6 +327,53 @@ def self_test():
         else:
             raise AssertionError("invalid ROI input accepted: " + field)
         setattr(A, field, previous)
+    # Legacy values remain usable, without assuming what their financial basis is.
+    class Revenue(A):
+        prize_cost = 100; promotion = admin = shipping = 0; contestants = 100
+        emails = 100; follows = referrals = 0; value_per_email = 1
+        value_per_follow = value_per_referral = None
+        value_basis = None; contribution_margin = None
+    rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+    assert d["Valuation per dollar"] == "1.00" and "Financial ROI" not in d
+    Revenue.value_basis = "revenue"
+    rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+    assert d["Revenue"] == "100.00" and "Financial ROI" not in d
+    Revenue.contribution_margin = 0.5
+    rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+    assert d["Revenue"] == "100.00" and d["Contribution after fulfilment"] == "50.00"
+    assert d["Net contribution after campaign cost"] == "-50.00" and d["Financial ROI"] == "-50.00%"
+    for margin in (0, 1):
+        Revenue.contribution_margin = margin
+        rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+        assert d["Net contribution after campaign cost"] == money(100 * margin - 100)
+    for margin in (-0.1, 1.1, float("nan"), float("inf")):
+        Revenue.contribution_margin = margin
+        try:
+            run(Revenue)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid contribution margin accepted")
+    Revenue.contribution_margin = None
+    for basis in ("contribution", "acquisition"):
+        Revenue.value_basis = basis
+        rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+        assert ("Financial ROI" in d) == (basis == "contribution")
+        Revenue.contribution_margin = 0.5
+        try:
+            run(Revenue)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("margin accepted without revenue basis")
+        Revenue.contribution_margin = None
+    Revenue.value_basis = "revenue"; Revenue.contribution_margin = 0.5
+    Revenue.value_per_email = 0
+    rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+    assert d["Revenue"] == "0.00" and d["Financial ROI"] == "-100.00%"
+    Revenue.prize_cost = 0
+    rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
+    assert d["Revenue per dollar"] == "-" and d["Financial ROI"] == "-"
     benchmark_self_test()
     print("self-test passed"); return 0
 
@@ -310,6 +386,8 @@ def main(argv):
     ap.add_argument("--emails", type=int); ap.add_argument("--follows", type=int); ap.add_argument("--referrals", type=int)
     ap.add_argument("--email-action", action="store_true", help="estimate emails from Contestants"); ap.add_argument("--follow-action", action="store_true"); ap.add_argument("--share-action", action="store_true")
     ap.add_argument("--value-per-email", type=float); ap.add_argument("--value-per-follow", type=float); ap.add_argument("--value-per-referral", type=float)
+    ap.add_argument("--value-basis", choices=("revenue", "contribution", "acquisition"), help="meaning of all per-unit values; contribution is after product and fulfilment costs")
+    ap.add_argument("--contribution-margin", type=float, help="explicit revenue fraction retained after product and fulfilment costs, from 0 to 1; requires revenue basis")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.contestants or a.prize_cost is None: ap.error("--prize-cost and --contestants are required")

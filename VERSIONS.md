@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.47 |
+| giveaway-prize-picker | 1.3.48 |
 | giveaway-entry-method-planner | 1.2.45 |
-| giveaway-timing-and-duration | 1.4.43 |
+| giveaway-timing-and-duration | 1.4.44 |
 | giveaway-winner-structure | 1.4.15 |
 | giveaway-promotion-plan | 1.3.44 |
 | giveaway-random-draw | 1.3.39 |
 | giveaway-winner-communications | 1.2.35 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.17 |
+| giveaway-results-review | 1.6.18 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.19 (2026-10-10)
+
+The return calculator tells you whether a campaign really paid for itself. Give it revenue per subscriber and your margin, and it works out what you keep after product and delivery. A campaign that brings in $100 of revenue on $100 of spend shows as a loss once a 50% margin is applied.
+
+Your campaign report no longer counts a visit to a referral programme page as a referral, and claims speed only when every action has a time on it. Where an export lists how many times someone completed an action, each completion counts on its own.
+
+A discount code's result is reported as redemptions, discount cost and order revenue, each on its own line. Beauty campaigns are named first in the industry ranking, matching the table, and timing advice keeps page views apart from new Entrants.
 
 ## 3.0.18 (2026-10-10)
 

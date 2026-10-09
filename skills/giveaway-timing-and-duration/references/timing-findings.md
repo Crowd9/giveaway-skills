@@ -210,9 +210,9 @@ The fall continues past two weeks in both.
 
 Source: `analysis/output/calendar.json` (`per_day_by_length_industry`).
 
-## No late rush, only a launch spike (extracted)
+## Higher launch-day Impressions than closing-day Impressions (extracted)
 
-The closing day of a run carries a fraction of the launch day's traffic and sits close to the quietest days of the run. Entrants who have not acted by the final day mostly do not arrive late, the volume advantage sits with the launch and the day or two after it, not the close.
+Closing-day Impressions are lower than launch-day Impressions and close to the quietest days of the run. These are daily page views, which can include repeat visits. They do not establish when new Entrants first arrive or what share enter during the launch window.
 
 In a 7-day campaign, Impressions run highest on the launch day and the close sits among the quietest days:
 
@@ -230,7 +230,7 @@ In a 7-day campaign, Impressions run highest on the launch day and the close sit
 A 14-day campaign shows the same shape: close 5.8% (17,492 campaigns, 5,195 businesses) against 9.1% on the launch day (13,160 campaigns, 4,090 businesses), with the days between running 4.4% to 7.3%. Both curves are anchored to the close date, so a run a day longer or shorter than the label shifts every row by a day.
 <!-- /generated -->
 
-This is a finding about where volume sits, not a reason to close early. The people who were going to show up mostly showed up by the launch window, but the closing days still carry their own work: the deadline reminder, the last-call push and the draw itself shape whether the Entrants already signed up finish, respond to the Winner email and stay on the list afterward, the Entrant relationship `giveaway-winner-communications` covers. Cutting a run short trades that closing work away for a volume gain this data does not show happening.
+The daily Impressions comparison does not establish a benefit from closing early. Common practice, our data doesn't cover this. Use the closing days for deadline reminders and preparation for the draw and Winner messages. See `giveaway-winner-communications` for those messages.
 
 <!-- generated:cmp_weekday -->
 | Start weekday | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |

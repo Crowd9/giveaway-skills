@@ -19,7 +19,7 @@ import argparse, collections, csv, datetime as dt, math, os, statistics as st, s
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
 # Keep gleam_export.py beside this script so all action counts use the same classifier.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gleam_export import generic_name as _gname, kind as _kind
+from gleam_export import generic_name as _gname, kind as _kind, classify_action
 try:
     import review as _bench
 except ImportError:
@@ -119,23 +119,46 @@ def med(xs): return st.median(xs) if xs else None
 def entry_number(value): return int(value) if value == int(value) else value
 def pct(a, b): return f"{a / b:.0%}" if b else "-"
 
-def load(path, mapping=None):
+def load(path, mapping=None, wide_unit=None, wide_worth=None):
     with open(path, newline="", encoding="utf-8-sig") as f: raw = list(csv.DictReader(f))
     if not raw: sys.exit("empty file")
     cols = resolve_columns(list(raw[0].keys()), mapping or {})
     if "who" not in cols: sys.exit("no column names the Entrant. Pass --map who=<column>")
     rows = []
     if "action" not in cols:
-        # wide export: one row per person, one column per entry method holding a count or a yes
-        meta = METADATA_COLUMNS | {h.casefold() for h in cols.values()}; acts = [h for h in raw[0] if h.casefold() not in meta and any((r.get(h) or "").strip() not in ("", "0", "no", "false", "No", "False") for r in raw)]
+        # Wide cells carry declared units; weights alone never imply one completion.
+        if wide_unit not in ("boolean", "completions", "entries"):
+            raise ValueError("wide export requires --wide-unit boolean, completions or entries")
+        meta = METADATA_COLUMNS | {h.casefold() for h in cols.values()}
+        empty = ("", "0", "no", "false")
+        acts = [h for h in raw[0] if h.casefold() not in meta and any((r.get(h) or "").strip().casefold() not in empty for r in raw)]
         if not acts: sys.exit("no action column and no per-method columns found. Pass --map action=<column>")
+        from decimal import Decimal, InvalidOperation
+        worths = {}
+        for h in acts:
+            try: worth = Decimal(str((wide_worth or {}).get(h, "")))
+            except InvalidOperation: raise ValueError(f"supply --wide-worth '{h}=EntriesPerCompletion' from the campaign configuration") from None
+            if not worth.is_finite() or worth <= 0 or not math.isfinite(float(worth)) or float(worth) <= 0:
+                raise ValueError("wide Entries worth must be finite and positive")
+            worths[h] = worth
         for r in raw:
             for h in acts:
-                v = (r.get(h) or "").strip()
-                if v in ("", "0", "no", "false", "No", "False"): continue
-                # Explicit booleans mean one completion. Other values retain their weight for validation.
-                en = 1.0 if v.casefold() in ("yes", "true") else v
-                rows.append(dict(r, **{"Action": h, "Entries": en}))
+                v = (r.get(h) or "").strip().casefold()
+                if v in empty: continue
+                if wide_unit == "boolean":
+                    if v not in ("1", "yes", "true"):
+                        raise ValueError("boolean wide cells must be 0, 1, yes, no, true, false or blank")
+                    count = Decimal(1)
+                else:
+                    try: count = Decimal(v)
+                    except InvalidOperation: raise ValueError("numeric wide cells must contain finite nonnegative numbers") from None
+                    if not count.is_finite() or count < 0:
+                        raise ValueError("numeric wide cells must contain finite nonnegative numbers")
+                    if wide_unit == "entries": count /= worths[h]
+                    if count != count.to_integral_value():
+                        raise ValueError("wide values must resolve to a whole number of completions using the declared Entries worth")
+                for _ in range(int(count)):
+                    rows.append(dict(r, **{"Action": h, "Entries": str(worths[h])}))
         cols["action"] = "Action"; cols["entries"] = "Entries"; wide = True
     else: rows = raw; wide = False
     for r in rows:
@@ -143,20 +166,22 @@ def load(path, mapping=None):
         r["_who"] = (r.get(cols["who"]) or "").strip().lower()
         sv = str(r.get(cols["status"]) or "").strip().lower() if "status" in cols else ""
         r["_valid"] = sv in ("", "valid", "winner", "approved", "verified", "true", "yes", "1")
-        r["_when"] = parse_when(r.get(cols["when"])) if "when" in cols else None
+        r["_when"] = parse_when(r.get(cols["when"])) if "when" in cols and not wide else None
         try: r["_entries"] = float(r.get(cols.get("entries")) or "")
         except (TypeError, ValueError): r["_entries"] = float("nan")
         r["_unweighted"] = not math.isfinite(r["_entries"]) or r["_entries"] <= 0
         if r["_unweighted"]: r["_entries"] = 0.0
         r["_host"] = host_of(r.get(cols["referrer"])) if "referrer" in cols else ""
         r["_landing"] = landing_kind(r.get(cols["landing"])) if "landing" in cols else "unknown"; r["_channel"] = channel(r["_host"], r["_landing"])
-        r["_refer"] = "refer" in r["Action"].lower() or "share" in r["Action"].lower() and "@" in (r.get(cols.get("details", ""), "") or "")
+        asset, _, family = classify_action(r["Action"])
+        r["_refer"] = asset == "referrals" or family == "share" and "share" in r["Action"].lower() and "@" in (r.get(cols.get("details", ""), "") or "")
+        if wide and "details" in cols: r[cols["details"]] = ""
         for role, key in (("country", "Country"), ("city", "City"), ("details", "Details"), ("landing", "Landing Page URL")):
             if role in cols and cols[role] != key: r[key] = r.get(cols[role])
     rows = [r for r in rows if r["_who"]]
     try: math.fsum(r["_entries"] for r in rows)
     except OverflowError: raise ValueError("Entries total exceeds the finite range; reconcile earned weights before export") from None
-    load.last = {"columns": cols, "wide": wide, "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
+    load.last = {"columns": cols, "wide": wide, "wide_unit": wide_unit, "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
     return rows
 
 def analyze(rows, a):
@@ -176,13 +201,15 @@ def analyze(rows, a):
     R["engagement"] = {k: (b[k], b[k] / n) for k in ("1", "2-5", "6-10", "11+")}
     ten_plus = sum(1 for rs in people.values() if len(rs) >= 10)
     # speed
-    spans = []; ten = 0; sitting = 0; multi = 0
+    spans = []; ten = 0; sitting = 0; multi = 0; eligible = 0
     for rs in people.values():
-        ts = [r["_when"] for r in rs if r["_when"]]
-        if len(ts) < 2: continue
+        if len(rs) < 2: continue
+        eligible += 1
+        if any(r["_when"] is None for r in rs): continue
+        ts = [r["_when"] for r in rs]
         multi += 1; span = (max(ts) - min(ts)).total_seconds(); spans.append(span); ten += span <= 600; sitting += span <= 7200
     bonus_all = [r for r in valid if "complet" in r["Action"].lower() and ("bonus" in r["Action"].lower() or "everything" in r["Action"].lower())]
-    R["speed"] = {"multi": multi, "median_span_min": (med(spans) or 0) / 60, "within_10_min": ten / multi if multi else None, "one_sitting": sitting / multi if multi else None,
+    R["speed"] = {"multi": multi, "eligible": eligible, "missing": eligible - multi, "median_span_min": (med(spans) or 0) / 60, "within_10_min": ten / multi if multi else None, "one_sitting": sitting / multi if multi else None,
                   "completed_everything": (len({r["_who"] for r in bonus_all}), len({r["_who"] for r in bonus_all}) / n) if bonus_all else None}
     # actions: completions, unique, share, completion rate, median seconds
     per = collections.OrderedDict(); gaps = collections.defaultdict(list)
@@ -348,6 +375,8 @@ def render(R, a):
     info = getattr(load, "last", None)
     if info:
         w("Columns read: " + ", ".join(f"{k} = {v}" for k, v in info["columns"].items()) + (", wide export with one column per entry method" if info["wide"] else "") + (". Not in this file: " + ", ".join(info["missing"]) + ", so those sections are thin or omitted." if info["missing"] else "."))
+    if info and info["wide"]:
+        w(f"Wide cell unit: {info['wide_unit']}. Entries use declared worth per completion. Summary dates cannot establish action times, so timing and speed are unavailable. Referral relationships require individual action rows.")
     w(f"# Campaign report\n\nBase: {n:,} export entrants (unique valid emails). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
     def row(label, shown, metric=None, value=None, fmt=lambda v: f"{v:,.2f}"):
@@ -363,7 +392,11 @@ def render(R, a):
     E = R["engagement"]; w("\nEngagement by actions per Entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
     S = R["speed"]
     if S["multi"]:
-        w(f"Speed: of {S['multi']:,} multi-action entrants, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
+        w(f"Speed: among {S['multi']:,} of {S['eligible']:,} multi-action Entrants with complete usable timestamps, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
+    elif S["eligible"]:
+        w("Speed unavailable: no multi-action Entrants have complete usable timestamps.")
+    if S["missing"]:
+        w(f"Speed excludes {S['missing']:,} of {S['eligible']:,} multi-action Entrants with missing or unusable timestamps; the covered subset may not represent all Entrants.")
     ins = insights(R); V = R["viral"]
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     referred = f"{V['referred_entrants']:,}" if V["graph_complete"] else "unavailable (referral relationships incomplete)"
@@ -466,7 +499,7 @@ def self_test():
         wr = csv.writer(f); wr.writerow(["Email Address", "Date", "Country", "Follow on Instagram", "Join newsletter", "Share with friends"])
         wr.writerow(["x@example.com", "2026-05-01 09:00:00", "Ireland", "1", "1", "0"]); wr.writerow(["y@example.com", "2026-05-01 09:30:00", "Ireland", "1", "0", "0"])
     class B: impressions = None; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
-    R2 = analyze(load(q, {}), B); assert R2["topline"]["entrants"] == 2 and R2["topline"]["actions"] == 3 and load.last["wide"], R2["topline"]
+    R2 = analyze(load(q, {}, "boolean", {"Follow on Instagram": 1, "Join newsletter": 1}), B); assert R2["topline"]["entrants"] == 2 and R2["topline"]["actions"] == 3 and load.last["wide"], R2["topline"]
     assert "referrer" in load.last["missing"] and "Follow on Instagram" in render(R2, B)
     fractional = load(p)
     for r in fractional: r["_entries"] = 1.25
@@ -491,20 +524,17 @@ def self_test():
     with open(q, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["Email", "Name", "First Name", "ID", "IP Address", "Twitter", "Subscribe to newsletter"])
         wr.writerow(["x@example.com", "Example Person", "Example", "123", "unknown", "@example", "yes"])
-    wide_rows = load(q)
+    wide_rows = load(q, wide_unit="boolean", wide_worth={"Subscribe to newsletter": 1})
     assert len(wide_rows) == 1 and wide_rows[0]["Action"] == "Subscribe to newsletter"
     assert wide_rows[0]["_entries"] == 1
     # Invalid or missing weights retain actions at zero Entries, like gleam_export.py.
     for value in ("", "0", "-1", "NaN", "inf", "bad", "1.25"):
-        for wide in (False, True):
-            with open(q, "w", newline="") as f:
-                wr = csv.writer(f)
-                wr.writerow(["Email", "Subscribe to newsletter"] if wide else ["Email", "Action", "Entries"])
-                wr.writerow(["x@example.com", value] if wide else ["x@example.com", "Subscribe", value])
-            if wide and value in ("", "0"): continue  # No completed action in a wide boolean/count cell.
-            weighted = load(q); report = analyze(weighted, B)
-            assert report["topline"]["entries"] == (1.25 if value == "1.25" else 0)
-            assert report["topline"]["unweighted_rows"] == (0 if value == "1.25" else 1)
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+            wr.writerow(["x@example.com", "Subscribe", value])
+        weighted = load(q); report = analyze(weighted, B)
+        assert report["topline"]["entries"] == (1.25 if value == "1.25" else 0)
+        assert report["topline"]["unweighted_rows"] == (0 if value == "1.25" else 1)
     with open(q, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["Email", "Action"]); wr.writerow(["x@example.com", "Subscribe"])
     assert analyze(load(q), B)["topline"]["unweighted_rows"] == 1
@@ -624,6 +654,45 @@ def self_test():
         assert "unavailable (incomplete coverage)" in render(report, args)
     constant[0]["_when"] = None
     assert analyze(constant, Covered)["sends"][0][4] is None
+    # Shared referral classification keeps program visits out of the graph.
+    for title, expected in (("Join the Referral Program:", 0), ("Refer Friends", 1), ("Share with friends", 1)):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Details"])
+            wr.writerow(["a@example.com", title, 1, "b@example.com"])
+        assert analyze(load(q), B)["viral"]["refer_rows"] == expected
+    # A missing third timestamp invalidates an otherwise one-minute span.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When"])
+        for timestamp in ("2026-05-01 10:00:00", "2026-05-01 10:01:00", ""):
+            wr.writerow(["a@example.com", "Visit", 1, timestamp])
+    partial_rows = load(q); partial_speed = analyze(partial_rows, B)
+    assert partial_speed["speed"]["multi"] == 0 and partial_speed["speed"]["missing"] == 1
+    assert "Speed unavailable" in render(partial_speed, B)
+    assert "done within 10 minutes" not in render(partial_speed, B)
+    full_speed = analyze(partial_rows[:2], B)
+    assert full_speed["speed"]["within_10_min"] == 1 and full_speed["speed"]["median_span_min"] == 1
+    assert "1 of 1 multi-action Entrants with complete usable timestamps" in render(full_speed, B)
+    mixed = partial_rows + [dict(r, _who="b@example.com") for r in partial_rows[:2]]
+    assert "Speed excludes 1 of 2" in render(analyze(mixed, B), B)
+    # Declared wide units retain repeats, weights and unique participants.
+    for unit, values, worth, actions, entries in (
+        ("boolean", ("true", "yes"), 5, 2, 10),
+        ("completions", ("10", "2"), 3, 12, 36),
+        ("entries", ("10", "2.5"), 2.5, 5, 12.5)):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Daily visit", "Unused", "When"])
+            for i, value in enumerate(values): wr.writerow([f"p{i}@example.com", value, "false", "2026-05-01 10:00:00"])
+            for i, zero in enumerate(("0", "no", "false", "")): wr.writerow([f"zero{i}@example.com", zero, "0", ""])
+        wide_rows = load(q, wide_unit=unit, wide_worth={"Daily visit": worth})
+        report = analyze(wide_rows, B)
+        assert report["topline"]["entrants"] == 2 and report["topline"]["actions"] == actions
+        assert report["topline"]["entries"] == entries and report["actions"][0][1:3] == (actions, 2)
+        assert report["speed"]["multi"] == 0 and not report["by_day"]
+        if unit == "completions": assert report["engagement"]["6-10"] == (1, 0.5)
+    for unit, worth in ((None, {}), ("entries", {}), ("entries", {"Daily visit": 3}), ("boolean", {"Daily visit": 1})):
+        try: load(q, wide_unit=unit, wide_worth=worth)
+        except ValueError: pass
+        else: raise AssertionError("ambiguous wide units or invalid counts accepted")
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None
@@ -640,13 +709,16 @@ def main(argv):
     ap.add_argument("--coverage-end", type=dt.date.fromisoformat, help="last confirmed complete export day, inclusive, YYYY-MM-DD in account time")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
+    ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
+    ap.add_argument("--wide-worth", help="required Entries per completion for each populated wide method, e.g. 'Daily visit=1,Join newsletter=5'")
     a = ap.parse_args(argv)
     if a.self_test: return self_test()
     if not a.export: ap.error("export path required")
     a.partners = [p.strip() for p in a.partners.split(",")] if a.partners else None
     mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if a.map else {}
     try:
-        out = render(analyze(load(a.export, mapping), a), a)
+        worth = dict(kv.split("=", 1) for kv in a.wide_worth.split(",")) if a.wide_worth else {}
+        out = render(analyze(load(a.export, mapping, a.wide_unit, worth), a), a)
     except ValueError as exc:
         ap.error(str(exc))
     print(out)

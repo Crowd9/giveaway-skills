@@ -84,7 +84,7 @@ Homepage labels read from each business's own site, across the campaigns behind 
 | Local services | 917 | 181 | 532 | 25% | 7 | 11 | 342 |
 <!-- /generated -->
 
-Apparel and fashion has the highest Conversion Rate among the available rows at 31%, with electronics and tech next at 30%, and education asks for the most Actions at 9.
+Beauty personal care has the highest Conversion Rate among the available rows at 32%, followed by apparel and fashion at 31% and electronics and tech at 30%, and education asks for the most Actions at 9.
 
 By business type, on the same scope:
 
@@ -138,17 +138,21 @@ Typical Entrant counts have held near 470 to 600 since 2021 and Conversion Rate 
 
 ## Using the ROI script
 
-`scripts/roi.py` prices a campaign before or after it runs. Give it what the Prizes cost you, the stated value you advertise, promotion and admin spend, and either expected Entrants (with the actions you will offer) or the actual counts of emails, follows and referrals. It prints cost per result, stated value per result beside the benchmark for the industry or campaign size, and either the return per dollar on the per-unit values you supply or the breakeven value per email when there are email signups. If stated retail value is unknown, omit `--stated-value`. The script then omits stated-value comparisons and still reports costs from the supplied spending.
+`scripts/roi.py` prices a campaign before or after it runs. Give it what the Prizes cost you, the stated value you advertise, promotion and admin spend, and either expected Entrants (with the actions you will offer) or the actual counts of emails, follows and referrals. It prints cost per result, stated value per result beside the benchmark for the industry or campaign size, and the multiple on the per-unit values you supply. Without per-unit values, it gives the contribution per email needed to cover campaign cost when there are email signups. If stated retail value is unknown, omit `--stated-value`. The script then omits stated-value comparisons and still reports costs from the supplied spending.
 
 Before quoting cost per email, reconcile the script's total to the budget shown to the reader, including the capped consolation liability and reserve. Allocate each cost once across the script's cost inputs. Divide that same total by the actual or explicitly assumed email count, and name the count beside the result. If using the script's estimated count, label it as an assumption and distinguish email signups from all Entrants. With neither a known count nor an explicit assumption, omit the per-email price.
 
-Value per email is the business's number: expected revenue per subscriber over the period they care about, or the price of the same list from another channel. Say so in the answer and never invent one. A breakeven figure with no value attached is still useful: "each address has to be worth 0.79 USD" is a question the business can answer.
+Per-unit values belong to the business and cover a stated period. Keep existing `--value-per-email`, `--value-per-follow` and `--value-per-referral` inputs, and declare their shared meaning with `--value-basis revenue`, `--value-basis contribution` or `--value-basis acquisition`. Contribution means revenue after product and fulfilment costs, before the campaign spending already entered in the script. Acquisition means what another channel charges for the same asset. Do not mix these meanings or count the same order through both an email and a follow. Undeclared values produce a valuation multiple, with financial ROI unavailable.
+
+Revenue per dollar describes revenue against campaign spending. For financial ROI from revenue, supply `--contribution-margin` explicitly as the fraction remaining after product and fulfilment costs. No margin is assumed. Values declared as contribution can be compared directly with campaign cost. Alternative acquisition prices support a channel cost comparison, with financial ROI unavailable. Allocate each expense once, including fulfilment, so it appears either in the margin or in campaign spending.
+
+Worked example, with assumed inputs: a campaign costs 100 USD and produces 100 emails, each bringing 1 USD of revenue. Run `--prize-cost 100 --contestants 100 --emails 100 --value-per-email 1 --value-basis revenue --contribution-margin 0.5`. Revenue is 100 USD, contribution after fulfilment is 50 USD, and the campaign loses 50 USD after its cost. Revenue per dollar is 1.00 and financial ROI is negative 50%. With no per-unit values, the breakeven question is how much contribution each address must produce after product and fulfilment costs.
 
 ## Reading cost per asset as acquisition cost
 
 Cost per email signup or per follow is the giveaway's customer acquisition cost for that asset. It belongs beside what the team already pays for the same thing elsewhere: cost per lead on paid search, cost per follower on paid social, the rate an affiliate or a list rental charges. A giveaway that buys addresses at 0.39 USD is cheap or dear only against that internal number, and the team has it.
 
-The other half is what the asset is worth. Set a window the business can measure, 90 days after the campaign closes being the usual one, and ask what a new subscriber or follower converts to inside it: orders placed, revenue attributed, a trial started. That figure is the lifetime value the acquisition cost is judged against, and it is the business's to supply. The dataset holds none of it, so it can price what a giveaway captured and never what the capture was worth.
+The other half is what the asset is worth. Set a window the business can measure, 90 days after the campaign closes being the usual one, and ask what a new subscriber or follower converts to inside it: orders placed, revenue attributed, a trial started. Report order and trial counts separately from money. For financial breakeven, compare acquisition cost with contribution after product and fulfilment costs over that window. A window's revenue is a revenue measure, and the business supplies both the revenue and its costs. The dataset holds none of it, so it can price what a giveaway captured and never what the capture was worth.
 
 Two habits keep the comparison honest. Compare a giveaway list with a paid list, since both are cold. And measure the giveaway group separately in the email tool for those 90 days, because a giveaway group behaves nothing like people who found the business on their own.
 
