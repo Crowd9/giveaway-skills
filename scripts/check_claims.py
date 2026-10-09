@@ -204,6 +204,134 @@ def check_extracted(path, root):
     return hits
 
 
+# ---- suppressed groups in cited blocks ----------------------------------------------------
+
+# These two legacy sections predate source notes. Their current explicit
+# citations establish the source for the exact same tables in older revisions.
+LEGACY_YEAR_TABLES = {
+    "skills/giveaway-prize-picker/references/roi-benchmarks.md",
+    "skills/giveaway-results-review/references/benchmarks.md",
+}
+
+
+def check_suppressed(path, root):
+    """Check tables in a citation's heading section and prose in its own paragraph.
+
+    A heading of any level bounds a section. Within it, tables use the nearest
+    citation paragraph (ties prefer a following source note). This avoids
+    applying a later table's source to an earlier, unrelated table. Prose never
+    inherits a citation across a blank line. Uncited blocks remain unchecked except the two documented legacy year tables.
+    """
+    with open(path, encoding="utf-8") as source:
+        text = source.read()
+    hits, cache = [], {}
+    # Only an explicit label mapping in this document supplies a human alias.
+    # Never guess that underscores, substrings or similar words name one group.
+    aliases = {}
+    for raw, human in re.findall(r"`([a-z][a-z0-9_]*)` \(([A-Za-z][A-Za-z /&,-]{1,60})\)", text):
+        aliases.setdefault(raw.casefold(), set()).add(human.strip().casefold())
+    for human, raw in re.findall(r"(?:^|\n)([A-Za-z][A-Za-z /&,-]{1,60}) \(`([a-z][a-z0-9_]*)`\)", text):
+        aliases.setdefault(raw.casefold(), set()).add(human.strip().casefold())
+    # The ROI reference also defines one-to-one aliases as "gaming is
+    # gaming_esports, technology is electronics_tech". A list of several raw
+    # groups is an aggregate, not a human name for any individual child.
+    for human, raw in re.findall(
+            r"\b([a-z][a-z0-9_]*) is ([a-z][a-z0-9]*_[a-z0-9_]+)"
+            r"(?=,\s*[a-z][a-z0-9_]* is\b|[.)]|$)", text, re.I):
+        aliases.setdefault(raw.casefold(), set()).add(human.casefold())
+    lines = text.splitlines()
+    headings = [-1] + [i for i, line in enumerate(lines) if re.match(r"^#{1,6}\s", line)] + [len(lines)]
+    for start, end in zip(headings, headings[1:]):
+        paragraphs, current = [], []
+        for i in range(start + 1, end):
+            if lines[i].strip():
+                current.append(i)
+            elif current:
+                paragraphs.append(current)
+                current = []
+        if current:
+            paragraphs.append(current)
+        citations = []
+        legacy = (os.path.relpath(path, root).replace(os.sep, "/") in LEGACY_YEAR_TABLES
+                  and start >= 0 and lines[start].strip() == "## By start year"
+                  and not any(SKILL_OUT.search(lines[i]) for i in range(start + 1, end)))
+        if legacy:
+            # A synthetic source paragraph supplies table scope only, never prose.
+            paragraphs.append([])
+        for indexes in paragraphs:
+            paragraph = ("\n".join(lines[i] for i in indexes) if indexes else
+                         "`analysis/output/roi_benchmarks.json` (`by_start_year`)")
+            matches = list(SKILL_OUT.finditer(paragraph))
+            groups, resolved = [], False
+            for j, match in enumerate(matches):
+                filename = match.group(1)
+                if filename not in cache:
+                    fp = os.path.join(root, "analysis", "output", filename)
+                    if not os.path.isfile(fp):
+                        cache[filename] = {}
+                    else:
+                        with open(fp, encoding="utf-8") as aggregate:
+                            cache[filename] = json.load(aggregate)
+                data = cache[filename]
+                if not isinstance(data, dict):
+                    continue
+                tail = paragraph[match.end():matches[j + 1].start() if j + 1 < len(matches) else len(paragraph)]
+                # Existing citations use backticks or parenthesized bare keys.
+                keys = re.findall(r"`([a-z][a-z0-9_.]*)`", tail)
+                for parenthesized in re.findall(r"\(([^)]*)\)", tail):
+                    keys += re.findall(r"\b[a-z][a-z0-9_]*\b", parenthesized)
+                for key in dict.fromkeys(keys):
+                    node = data
+                    for part in key.split("."):
+                        node = node.get(part) if isinstance(node, dict) else None
+                    if not isinstance(node, dict):
+                        continue
+                    resolved = True
+                    labels = {str(k).casefold() for k, value in node.items() if value is None}
+                    listed = node.get("suppressed_below_floor", [])
+                    if isinstance(listed, list):
+                        labels.update(str(k).casefold() for k in listed if isinstance(k, (str, int)))
+                    labels |= {alias for label in labels for alias in aliases.get(label, ())}
+                    for label in sorted(labels):
+                        groups.append((filename, key, label))
+            if resolved:
+                citations.append((indexes or [end], groups))
+            if groups:
+                # Numeric labels alone are not figures. Remove all suppressed
+                # labels before looking for another number in the same sentence.
+                prose = "\n".join(lines[i] for i in indexes if not lines[i].lstrip().startswith("|"))
+                prose = SKILL_OUT.sub("", prose)
+                for sentence in re.split(r"(?<=[.!?])\s+", prose):
+                    for filename, key, label in groups:
+                        pattern = r"(?<!\w)" + re.escape(label) + r"(?!\w)"
+                        if not re.search(pattern, sentence, re.I):
+                            continue
+                        remainder = sentence
+                        for _, _, other in groups:
+                            remainder = re.sub(r"(?<!\w)" + re.escape(other) + r"(?!\w)", "", remainder, flags=re.I)
+                        if SKILL_NUM.search(remainder):
+                            hits.append(f"{os.path.relpath(path, root)}:{indexes[0] + 1}: prose quotes suppressed "
+                                        f"label {label!r} from {filename} ({key})")
+        if not citations:
+            continue
+        # A table is one contiguous run of pipe rows; generated markers do not
+        # change its scope. Formatting on a label does not change its identity.
+        for match in re.finditer(r"(?m)^[ \t]*\|[^\n]*(?:\n[ \t]*\|[^\n]*)*", "\n".join(lines[start + 1:end])):
+            row_start = start + 1 + "\n".join(lines[start + 1:end])[:match.start()].count("\n")
+            rows = match.group().splitlines()
+            row_end = row_start + len(rows) - 1
+            indexes, groups = min(citations, key=lambda item: (
+                min(abs(row_start - item[0][-1]), abs(item[0][0] - row_end)),
+                item[0][0] < row_start))
+            for offset, row in enumerate(rows):
+                first = row.strip().strip("|").split("|", 1)[0].strip().strip("*` ").casefold()
+                for filename, key, label in groups:
+                    if first == label:
+                        hits.append(f"{os.path.relpath(path, root)}:{row_start + offset + 1}: table quotes suppressed "
+                                    f"label {label!r} from {filename} ({key})")
+    return hits
+
+
 # a figure describing a file that ships with the skill is checked by counting that file, which the
 # reader can do as easily as the checker, so naming it is enough
 SKILL_EX = re.compile(r"`examples/[a-z0-9-]+\.(?:csv|json)`")
@@ -336,6 +464,48 @@ def self_test():
                 "table boundary dropped a cited value"
     with tempfile.TemporaryDirectory() as root:
         os.makedirs(os.path.join(root, "analysis", "output"))
+        fixture = os.path.join(root, "analysis", "output", "roi_benchmarks.json")
+        with open(fixture, "w", encoding="utf-8") as aggregate:
+            json.dump({"by_start_year": {"2020": None, "2022": {"n": 50},
+                                       "suppressed_below_floor": ["2021"]},
+                       "other": {"2020": {"n": 50}},
+                       "by_type": {"retail_store": None, "suppressed_below_floor": 1}}, aggregate)
+        reference = os.path.join(root, "reference.md")
+        source_note = "Source: `analysis/output/roi_benchmarks.json` (`by_start_year`)."
+        table = "| Year | Campaigns |\n|---|---|\n| 2022 | 50 |"
+        def suppressed(text, path=reference):
+            with open(path, "w", encoding="utf-8") as resource:
+                resource.write(text)
+            return check_suppressed(path, root)
+        current = "## By start year\n\n" + table + "\n\n" + source_note
+        assert not suppressed(current), "published year row should pass"
+        mapped = ("`retail_store` (Retail shops)\n\n| Type | Campaigns |\n|---|---|\n| RETAIL SHOPS | 50 |\n\n"
+                  "Source: `analysis/output/roi_benchmarks.json` (`by_type`).")
+        assert len(suppressed(mapped)) == 1, "explicit human label mapping missed"
+        assert not suppressed(mapped.replace("`retail_store` (Retail shops)", "")), "unguessed human form matched"
+        prose_mapping = mapped.replace("`retail_store` (Retail shops)", "Retail is retail_store, technology is electronics_tech.").replace("RETAIL SHOPS", "Retail")
+        assert len(suppressed(prose_mapping)) == 1, "explicit 'human is raw_key' mapping missed"
+        grouped_mapping = prose_mapping.replace("Retail is retail_store, technology", "Retail is retail_store, online_store and mall_store, technology")
+        assert not suppressed(grouped_mapping), "aggregate mapping treated as one suppressed child"
+        assert len(suppressed(current.replace("| 2022 |", "| 2020 |"))) == 1, "null year row missed"
+        assert len(suppressed(current.replace("| 2022 |", "| 2021 |"))) == 1, "listed year row missed"
+        assert len(suppressed(current.replace("`by_start_year`", "by_start_year").replace(
+            "| 2022 |", "| 2020 |"))) == 1, "bare citation key missed"
+        assert len(suppressed("2020 drew 500 Entrants. " + source_note)) == 1, "suppressed prose missed"
+        assert not suppressed("2020 is not published. " + source_note), "label alone is not a figure"
+        assert not suppressed("2020 and 2021 are not published. " + source_note), "year list is not a figure"
+        assert not suppressed("2020 drew 500 Entrants.\n\n" + source_note), "prose crossed paragraph"
+        assert not suppressed(source_note + "\n\n## Other\n\n" + table.replace("2022", "2020")), "citation crossed heading"
+        assert not suppressed(current + "\n\n" + table.replace("2022", "2020") +
+                              "\n\nSource: `analysis/output/roi_benchmarks.json` (`other`)."), "citation crossed table source"
+        for relative in LEGACY_YEAR_TABLES:
+            legacy_path = os.path.join(root, relative)
+            os.makedirs(os.path.dirname(legacy_path), exist_ok=True)
+            legacy = current.replace("2022", "2020").replace(source_note, "")
+            assert len(suppressed(legacy, legacy_path)) == 1, "legacy suppressed year missed"
+            assert not suppressed(legacy), "legacy exception leaked to an unrelated path"
+    with tempfile.TemporaryDirectory() as root:
+        os.makedirs(os.path.join(root, "analysis", "output"))
         fp = os.path.join(root, "analysis", "output", "sample.json")
         tmp = os.path.join(root, "reference.md")
         with open(fp, "w", encoding="utf-8") as aggregate:
@@ -396,6 +566,9 @@ def self_test():
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "SKILL.md"))):
         live_hard += check_skill(f, ROOT)[0]
     assert not live_hard, f"the skills as they stand should be clean: {live_hard}"
+    for pattern in ("skills/*/SKILL.md", "skills/*/references/*.md"):
+        for path in glob.glob(os.path.join(ROOT, pattern)):
+            assert not check_suppressed(path, ROOT), f"live suppressed claims: {check_suppressed(path, ROOT)}"
     print("self-test passed")
     return 0
 
@@ -403,22 +576,25 @@ def self_test():
 def main():
     if "--self-test" in sys.argv:
         return self_test()
-    bad, extracted_bad = [], []
+    bad, extracted_bad, suppressed_bad = [], [], []
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "references", "*.md"))):
         bad += check(f)
         extracted_bad += check_extracted(f, ROOT)
+        suppressed_bad += check_suppressed(f, ROOT)
     skill_bad, skill_notes = [], []
     for f in sorted(glob.glob(os.path.join(ROOT, "skills", "*", "SKILL.md"))):
+        suppressed_bad += check_suppressed(f, ROOT)
         h, n = check_skill(f, ROOT)
         skill_bad += h; skill_notes += n
     for n in skill_notes:
         print("  note: " + n)
-    for b in bad + skill_bad + extracted_bad:
+    for b in bad + skill_bad + extracted_bad + suppressed_bad:
         print("  " + b)
     print(f"\n{len(bad)} sentences contradict the table they read, {len(skill_bad)} figures in a skill body "
           f"disagree with the reference it cites, {len(skill_notes)} uncited figures in a skill body, "
-          f"{len(extracted_bad)} extracted population counts disagree with their cited distribution")
-    return 1 if (bad or skill_bad or extracted_bad) else 0
+          f"{len(extracted_bad)} extracted population counts disagree with their cited distribution, "
+          f"{len(suppressed_bad)} claims quote suppressed groups")
+    return 1 if (bad or skill_bad or extracted_bad or suppressed_bad) else 0
 
 
 if __name__ == "__main__":

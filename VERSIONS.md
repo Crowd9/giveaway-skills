@@ -344,6 +344,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 3.0.43 (2026-10-10)
+
+A figure Gleam withholds because fewer than 5 businesses sit behind it can no longer slip back into a skill. The build now fails when a reference table or sentence quotes a year, country or other group that the campaign data it cites keeps private. You can rely on that check after every edit, so the 3.0.42 removals stay removed.
+
 ## 3.0.42 (2026-10-10)
 
 Ten references now say exactly what Gleam campaign data says. Year comparisons only show the years published for that group, and no comparison leans on a group too small to publish. Choosing an email provider, you'll see the honest picture from Gleam campaign data: HubSpot, AWeber and Zapier campaigns completed email less often than campaigns with no integration. In Gleam campaign data, Lunar New Year is the holiday launched closest to its date, and gaming and esports is the largest industry. Every table that counts Entries now calls them Entries, so a figure like 3.76 Entries per Entrant means the same thing in every skill.
