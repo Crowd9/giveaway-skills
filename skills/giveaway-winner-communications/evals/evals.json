@@ -326,6 +326,44 @@
      "fail_example": "Your Prize has been awarded to a reserve. We will draw the reserve tomorrow."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "Our Winner asks for cash. The terms exclude a cash alternative and permit delivery to another person and transfer of the Prize. The claim deadline is [deadline, time zone]. Write the reply.",
+   "expected_output": "Offers third-party delivery only within the supplied transfer and delivery permissions, and refuses cash.",
+   "assertions": [
+    "Offers third-party delivery only within the supplied transfer and delivery permissions, and refuses cash.",
+    "The copyable reply follows the same permissions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "cash-third-party-permit",
+     "criterion": "Offers third-party delivery only within the supplied transfer and delivery permissions, and refuses cash.",
+     "pass_example": "We cannot offer cash. Under the terms, we can ship the Prize to someone you choose at a permitted destination.",
+     "fail_example": "We can send cash instead."
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "prompt": "Our Winner asks for cash. The terms exclude a cash alternative and prohibit delivery to another person and transfer of the Prize. The claim deadline is [deadline, time zone]. Write the reply.",
+   "expected_output": "Refuses cash without offering third-party delivery or transfer. Gives a usable message asking the Winner to accept the stated Prize by the supplied deadline.",
+   "assertions": [
+    "Refuses cash without offering third-party delivery or transfer. Gives a usable message asking the Winner to accept the stated Prize by the supplied deadline.",
+    "The copyable reply follows the same permissions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "cash-third-party-prohibit",
+     "criterion": "Refuses cash without offering third-party delivery or transfer. Gives a usable message asking the Winner to accept the stated Prize by the supplied deadline.",
+     "pass_example": "The terms do not include a cash alternative. Please confirm by [deadline, time zone] whether you wish to accept the Prize under the published terms.",
+     "fail_example": "We can ship the Prize to someone you choose."
+    }
+   ]
   }
  ]
 }

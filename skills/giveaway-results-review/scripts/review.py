@@ -142,9 +142,9 @@ def review(a):
     else:
         rows.append(("Users", f"{a.contestants:,}", f"{typical('contestants', a.contestants):,.0f}", (band_rank("contestants", a.contestants, a.contestants) or position(a.contestants, BENCH["contestants"])) + ". " + rank_line("contestants", a.contestants, [g for g in groups if not g[1].startswith("band")])))
     if a.entries is not None:
-        rows.append(("Entries", f"{a.entries:,}", f"{typical('entries', a.contestants) or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups)))
+        rows.append(("Entries", f"{a.entries:,}", f"{typical('entries', a.contestants) or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups, configuration="higher")))
         epc = a.entries / a.contestants
-        rows.append(("Entries per Entrant", f"{epc:.2f}", f"{typical('entries_per_entrant', a.contestants) or 0:,.2f}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups)))
+        rows.append(("Entries per Entrant", f"{epc:.2f}", f"{typical('entries_per_entrant', a.contestants) or 0:,.2f}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups, configuration="higher")))
     if a.impressions:
         conv = a.contestants / a.impressions
         rows.append(("Impressions", f"{a.impressions:,}", f"{typical('impressions', a.contestants) or 0:,.0f}", position(a.impressions, BENCH["impressions"]) + ". " + rank_line("impressions", a.impressions, groups)))
@@ -169,7 +169,7 @@ def review(a):
         rows.append(("Entrants per day", f"{pace:,.0f}", f"{typical('contestants_per_day', a.contestants) or 0:,.0f}", rank_line("contestants_per_day", pace, groups)))
     if getattr(a, "prize_value", None) is not None:
         pv = a.prize_value / a.contestants
-        rows.append(("Stated Prize value per Entrant", f"{pv:.2f}", f"{typical('stated_usd_per_contestant', a.contestants) or 0:.2f}", "USD, stated value. " + rank_line("stated_usd_per_contestant", pv, groups).replace("better than", "higher than")))
+        rows.append(("Stated Prize value per Entrant", f"{pv:.2f}", f"{typical('stated_usd_per_contestant', a.contestants) or 0:.2f}", "USD, stated value. " + rank_line("stated_usd_per_contestant", pv, groups, configuration="higher")))
     for flag, key, label in [("x_follows", "x_follows", "X follows"), ("instagram_follows", "instagram_follows", "Instagram follows"), ("tiktok_follows", "tiktok_follows", "TikTok follows"), ("twitch_follows", "twitch_follows", "Twitch follows"), ("youtube_subscribes", "youtube_subscribes", "YouTube subscribes"), ("discord_joins", "discord_joins", "Discord joins")]:
         val = getattr(a, flag, None)
         if val is not None: rows.append((label, f"{val:,}", f"{typical(key, a.contestants) or 0:,.0f}", rank_line(key, val, groups)))
@@ -292,6 +292,14 @@ def self_test():
     assert "Email signups" in d and "better than" in d["Email signups"][3], rows
     assert d["Actions completed per Entrant"][1] == "3.00" and "Entrants per day" in d and "Impressions" in d and "better than" in d["Impressions"][3], rows
     assert "X follows" in d and "better than" in d["X follows"][3] and "higher than" in d["Stated Prize value per Entrant"][3], rows
+    # Stated value describes the Prize configuration, without a performance target.
+    for value, ratio, rank_text in ((100, "0.06", "higher than 5%"), (0, "0.00", "higher than fewer than 5%")):
+        class Prize(A): prize_value = value; vertical = None
+        prize = {r[0]: r for r in review(Prize)}["Stated Prize value per Entrant"]
+        assert prize[1:3] == (ratio, "0.36"), prize
+        assert rank_text + " of all campaigns" in prize[3], prize
+        assert rank_text + " of campaigns of 1,000 to 2,500 Entrants" in prize[3], prize
+        assert not any(term in prize[3] for term in ("best", "better", "bottom", "reach", "target")), prize
     # the column is the band's own median, never the platform average the note carries
     assert d["Conversion Rate"][2] == f"{median_of('conversion', 'band:' + band(1800)):.0%}" != f"{BENCH['platform_average_conversion']:.0%}", rows
     hist = [{"campaign": "spring", "contestants": 1200, "impressions": 5000, "entries": 5000, "invalid": 100, "days": 10, "methods": 5, "emails": 900},
@@ -316,7 +324,7 @@ def self_test():
     assert "may explain part" in repeated["Conversion Rate"][3] and "neither a fault nor operational health" in repeated["Conversion Rate"][3]
     assert "without anything being wrong" not in str(repeated)
     assert "1,000 to 2,500 Entrants" in d["Users"][3] and d["Entries per Entrant"][1] == "5.00" and d["Conversion Rate"][1] == "30.0%", rows
-    assert "Invalid share of Entries" not in d and "Entries" in d and "better than" in d["Entries"][3]
+    assert "Invalid share of Entries" not in d and "Entries" in d and "higher than" in d["Entries"][3] and "best quarter" not in d["Entries"][3] and "better than" not in d["Entries per Entrant"][3]
     # A measured zero is an outcome, while an omitted count stays absent.
     class Zero(A):
         entries = 0; emails = 0; referrals = 0; actions_completed = 0; prize_value = 0

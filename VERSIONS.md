@@ -7,12 +7,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-prize-picker | 1.3.49 |
 | giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.46 |
-| giveaway-winner-structure | 1.4.15 |
+| giveaway-winner-structure | 1.4.16 |
 | giveaway-promotion-plan | 1.3.45 |
-| giveaway-random-draw | 1.3.40 |
-| giveaway-winner-communications | 1.2.35 |
+| giveaway-random-draw | 1.3.41 |
+| giveaway-winner-communications | 1.2.36 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.20 |
+| giveaway-results-review | 1.6.21 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.22 (2026-10-10)
+
+The scripts now say what the guidance says. If you exclude entries before a draw, you're told to publish a fresh commitment covering them first, so the draw still matches what you announced. Generated terms keep the chances Entrants earned, use your reserve Winners in order, and leave a clear gap wherever you haven't decided yet.
+
+Read Prize value, Entries and Entries per Entrant in your results review as a position. The review says higher or lower and leaves the judgement to your goal. The reply to a Winner asking for cash only offers to send the Prize to someone else when your terms allow it.
+
+We took out a rule of thumb about doubling traffic that the table under it didn't support, so read the comparison for your own campaign size.
 
 ## 3.0.21 (2026-10-10)
 

@@ -66,9 +66,9 @@ to 10.7 times the reach for 1.22 to 3.17 times the crowd, and the Conversion Rat
 10% to 15% in the highest fifth across the six bands. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.7 times the
 Impressions goes with 3.17 times the Entrants, which is close to the square root of the reach multiple.
 
-The working rule that falls out: doubling the traffic you put in front of a page goes with roughly 40% more
-Entrants, not twice as many. Read it as a description of campaigns at each reach level and never as what adding a
-channel would do for this campaign, because nothing here holds the audience or the Prize constant.
+Use the measured comparison within the reader's size band. These groups describe campaigns at each reach level,
+with no universal traffic multiplier or forecast for adding a channel to this campaign. Nothing here holds the
+audience or the Prize constant.
 
 Every band, so a reader's own row is here:
 

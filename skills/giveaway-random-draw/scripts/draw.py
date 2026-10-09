@@ -246,7 +246,9 @@ def cmd_commit(a):
             fh.write("\n".join(dict.fromkeys(ids)) + ("\n" if ids else ""))
         more = f" ({len(notes) - len(shown)} more not printed)" if len(notes) > len(shown) else ""
         print(f"\n{len(set(ids))} flagged ids written to {a.flagged_out}{more}. Read that file, delete anyone who "
-              f"should stay in, then pass it to the draw as --exclude {a.flagged_out}. Flagging is a prompt to look, never a verdict.")
+              f"should stay in, then rerun commit with --exclude {a.flagged_out} and the final rules. "
+              "Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules. "
+              "Flagging is a prompt to look, never a verdict.")
     print("\nReconcile eligibility and earned weights with the published rules before publishing this commitment. "
           "Publish before the seed exists, then keep the input file unchanged.")
     if a.draw_at:
@@ -543,7 +545,42 @@ def self_test_numeric_ids():
         pool, _, _, _, _ = prepare([{ "id": value } for value in (0, False, None, "alpha")], "id", None, set())
         assert [e["id"] for e in pool] == ["alpha"]
 
+def self_test_recommit():
+    import contextlib, pathlib, tempfile
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "entries.csv"
+        exclusions = pathlib.Path(directory) / "approved.txt"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        entries.write_text("email,entries\nalpha,2\nbeta,3\ngamma,1\n")
+        common = [str(entries), "--weight-column", "entries", "--tiers", "Grand:1", "--backups", "1"]
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            assert main(["commit"] + common + ["--flagged-out", str(exclusions)]) == 0
+        preview = output.getvalue()
+        assert f"rerun commit with --exclude {exclusions} and the final rules" in preview, preview
+        assert "Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules" in preview, preview
+        for args in (["commit", "--help"],):
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                try: main(args)
+                except SystemExit as error: assert error.code == 0
+            help_text = " ".join(output.getvalue().split())
+            assert "rerun commit with the approved file as --exclude and final rules" in help_text, help_text
+            assert "Publish the new commitment before the seed exists" in help_text, help_text
+        exclusions.write_text("gamma\n")
+        final_rules = common + ["--exclude", str(exclusions)]
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            assert main(["commit"] + final_rules) == 0
+        final_commitment = next(line.split()[-1] for line in output.getvalue().splitlines() if line.startswith("commitment"))
+        preview_commitment = next(line.split()[-1] for line in preview.splitlines() if line.startswith("commitment"))
+        assert final_commitment != preview_commitment
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["draw"] + final_rules + ["--seed", "recommit-regression", "--audit", str(audit_path)]) == 0
+            assert main(["verify", str(audit_path), "--exclude", str(exclusions)]) == 0
+        audit = json.loads(audit_path.read_text())
+        assert audit["commitment"] == final_commitment
+        assert audit["excluded"] == 1 and all(row["id"] != "gamma" for row in audit["results"])
+
 def self_test():
+    self_test_recommit()
     self_test_numeric_ids()
     self_test_account_ids()
     self_test_invalid_counts()
@@ -671,7 +708,7 @@ def main(argv):
         p.add_argument("--id-column", help="person/account column or dotted JSON path; required for ambiguous id fields or unrecognized headers"); p.add_argument("--weight-column"); p.add_argument("--exclude")
         p.add_argument("--rules", help="JSON file holding tiers, backups, winners, id-column, weight-column and exclude, so commit and draw read the same rules")
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
-    c.add_argument("--flagged-out", help="write the flagged ids to this file for review, then pass it to draw as --exclude. Use it on a list too long to read in a terminal")
+    c.add_argument("--flagged-out", help="write flagged ids for review, then rerun commit with the approved file as --exclude and final rules. Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
     d.add_argument("--seed", help="text for reproduction; fairness requires a preannounced future source beyond organizer control")
     d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")

@@ -79,3 +79,7 @@ These are synthetic checker fixtures, not model answers. Review JSON files conta
 The matching pass and fail answers and review verdicts are in `../../../evals/fixtures/giveaway-winner-communications/`. The CLI checks both outcomes with `--review`. Fixture success is not a model-quality score.
 
 Previously unchecked case 4 is now explicitly judgement-only, with a review rubric. It requires a supplied reviewer verdict and has not been rerun against a model.
+
+## Cash requests and third-party delivery, 10 October 2026
+
+Added judgement-only cases for permitted and prohibited third-party delivery. The reference supplies a separate reply for each arrangement and leaves unconfirmed permission on the no-offer path. These cases have not been run against a model.
