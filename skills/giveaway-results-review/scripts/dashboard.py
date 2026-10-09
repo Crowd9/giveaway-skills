@@ -277,7 +277,7 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
 </section>
 
 <section id="report">
-  <div class="subhead"><h2>The Report, in the Order of the Reporting Tabs</h2><span class="note" style="margin:0">Every figure from the skill's report script on the export, so any sentence above can be checked against a table here. Where a typical figure sits beside a number it comes from campaigns the same size in Gleam campaign data; where none does, the data holds no comparison. Times are account time.</span></div>
+  <div class="subhead"><h2>The Report, in the Order of the Reporting Tabs</h2><span class="note" style="margin:0">Every figure from the skill's report script on the export, so any sentence above can be checked against a table here. Topline typical figures compare campaigns in the same size band in Gleam campaign data. Entry-method benchmarks compare all campaign sizes offering that action. Where no typical figure appears, the data holds no comparison. Times are account time.</span></div>
   <div class="tabs" role="tablist" aria-label="Reporting tabs">
     <button role="tab" aria-selected="true" aria-controls="tab-overview" id="t-overview">Overview</button>
     <button role="tab" aria-selected="false" aria-controls="tab-traffic" id="t-traffic">Traffic</button>
@@ -348,17 +348,17 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
   <div class="panel" id="tab-entry" role="tabpanel" aria-labelledby="t-entry" hidden>
     <div class="card">
       <div class="subhead">
-        <h3>Every Entry Method, Share of Entrants Who Completed It</h3>
+        <h3>Every Entry Method, Completions per Entrant</h3>
         <div class="toggle" role="group" aria-label="Sort actions"><button id="sortShare" aria-pressed="true">By completion</button><button id="sortOrder" aria-pressed="false">Campaign order</button></div>
       </div>
-      <div class="legend"><span><i style="background:var(--s-visit)"></i>Page visit</span><span><i style="background:var(--s-email)"></i>Email</span><span><i style="background:var(--s-follow)"></i>Follow</span><span><i style="background:var(--s-share)"></i>Share or refer</span><span><i style="background:var(--s-content)"></i>Content</span><span><i style="background:var(--s-other)"></i>Bonus or other</span><span>&#124; tick marks the typical share for that kind of action, where one exists</span></div>
+      <div class="legend"><span><i style="background:var(--s-visit)"></i>Page visit</span><span><i style="background:var(--s-email)"></i>Email</span><span><i style="background:var(--s-follow)"></i>Follow</span><span><i style="background:var(--s-share)"></i>Share or refer</span><span><i style="background:var(--s-content)"></i>Content</span><span><i style="background:var(--s-other)"></i>Bonus or other</span><span>&#124; tick marks typical completions per Entrant for that kind of action, where one exists</span></div>
       <div class="acts" id="acts"></div>
-      <p class="note">Typical is the share of Entrants completing that kind of action across campaigns your size that offered it, and it reads as "each" where people complete it more than once.</p>
+      <p class="note">Bars and ticks count completions per Entrant, including repeat completions. Typical compares all campaign sizes offering that action. Unique participation below counts each Entrant once per action.</p>
     </div>
     <div class="card" style="margin-top:16px">
       <h3>Drop-Off, Friction and Speed</h3>
       {{FRICTION}}
-      <p class="note">Typical is the completion rate of campaigns your size that offered that kind of action, and the rank is the share of them this campaign beats. Typical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only.</p>
+      <p class="note">Typical and rank compare completions per Entrant across all campaign sizes offering that kind of action. Unique participation is separate and has no benchmark here. Typical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only.</p>
     </div>
   </div>
 
@@ -490,14 +490,14 @@ const DATA={{DATA}};
   const fam={visit:"var(--s-visit)",email:"var(--s-email)",follow:"var(--s-follow)",share:"var(--s-share)",content:"var(--s-content)",other:"var(--s-other)"};
   const famName={visit:"page visit",email:"email",follow:"follow",share:"share or refer",content:"content",other:"bonus or other"};
   function render(order){
-    list.innerHTML='<div class="act"><span class="hd">Entry Method</span><span class="hd">Share of Entrants</span><span class="hd pct">This</span><span class="hd typ">Typical</span></div>';
+    list.innerHTML='<div class="act"><span class="hd">Entry Method</span><span class="hd">Completions per Entrant</span><span class="hd pct">This</span><span class="hd typ">Typical</span></div>';
     const rows=order==="share"?[...DATA.acts].sort((a,b)=>b[2]-a[2]):DATA.acts;
     const scale=Math.max(1.5,...rows.map(a=>a[2]),...rows.map(a=>a[3]||0));
     rows.forEach(a=>{const r=document.createElement("div");r.className="act";
-      const tick=a[3]==null?"":`<span class="tick" style="left:${Math.min(100,a[3]/scale*100)}%" title="typical ${a[3]<=1?Math.round(a[3]*100)+"%":a[3].toFixed(1)+" each"}"></span>`;
-      r.innerHTML=`<span class="n"></span><span class="track" aria-hidden="true"><span class="fill" style="width:${a[2]/scale*100}%;background:${fam[a[4]]||fam.other}"></span>${tick}</span><span class="pct num">${pct(a[2])}</span><span class="typ num">${a[3]==null?"n/a":a[3]<=1?Math.round(a[3]*100)+"%":a[3].toFixed(1)+" each"}</span>`;
+      const tick=a[3]==null?"":`<span class="tick" style="left:${Math.min(100,a[3]/scale*100)}%" title="typical ${a[3].toFixed(1)+" completions per Entrant"}"></span>`;
+      r.innerHTML=`<span class="n"></span><span class="track" aria-hidden="true"><span class="fill" style="width:${a[2]/scale*100}%;background:${fam[a[4]]||fam.other}"></span>${tick}</span><span class="pct num">${a[2].toFixed(1)}</span><span class="typ num">${a[3]==null?"n/a":a[3].toFixed(1)}</span>`;
       const label=r.querySelector(".n");label.textContent=a[0];label.title=a[0];
-      r.setAttribute("aria-label",`${a[0]}, ${famName[a[4]]||"other"}, completed by ${pct(a[2])} of Entrants, ${fmt(a[1])} completions`);
+      r.setAttribute("aria-label",`${a[0]}, ${famName[a[4]]||"other"}, ${a[2].toFixed(1)} completions per Entrant, completed by ${pct(a[5])} of Entrants, ${fmt(a[1])} completions`);
       list.appendChild(r);});
   }
   render("share");
@@ -680,8 +680,8 @@ def render(D, W, S, a):
     hosts = table(["Host", "Entrants"], [(h, n(c)) for h, c in R["hosts"]])
     landing = ", ".join(f"{k} {n(v)} ({v / N:.0%})" for k, v in R["landing"])
     utm = table(["Source", "Medium", "Campaign", "Entrants"], [(u[0][0], u[0][1], u[0][2], n(u[1])) for u in R["utm"]], num_from=3) if R["utm"] else "<p class=\"note\">No UTM parameters on any landing page.</p>"
-    friction = table(["Action", "Completions", "Entrants", "Share of actions", "Completion rate", "Typical, campaigns offering it", "Where it sits", "Typical seconds", "Invalid"],
-                     [(x["name"], n(x["completions"]), n(x["entrants"]), pct(x["share_actions"]), pct(x["rate"]), reader_unit(x["typical"]) if x["typical"] else "-", x["where"], (f"{x['seconds']:.0f}" + (" (slow)" if x["seconds"] > 120 else "")) if x["seconds"] is not None else "-", n(x["invalid"])) for x in D["acts"]])
+    friction = table(["Action", "Completions", "Entrants", "Share of actions", "Unique participation", "Completions per Entrant", "Typical completions per Entrant, campaigns offering it", "Where completions per Entrant sit", "Typical seconds", "Invalid"],
+                     [(x["name"], n(x["completions"]), n(x["entrants"]), pct(x["share_actions"]), pct(x["rate"]), f"{x['share']:.1f}", f"{x['typical']:.1f}" if x["typical"] is not None else "-", x["where"], (f"{x['seconds']:.0f}" + (" (slow)" if x["seconds"] > 120 else "")) if x["seconds"] is not None else "-", n(x["invalid"])) for x in D["acts"]])
     sharers = table(["Sharer", "Referrals", "Entered", "Entries brought", "Connected accounts", "Referred doing one action"], [(s[0], n(s[1]), n(s[2]), f"{s[3]:,}", s[4], s[5]) for s in V["top"]]) if V["top"] else ""
     countries = [(c, v) for c, v in R["countries"]]
     cities = table(["City", "Entrants"], [(f"{c[0][0]}, {c[0][1]}", n(c[1])) for c in R["cities"]]) if R["cities"] else ""
@@ -692,7 +692,7 @@ def render(D, W, S, a):
     bslice = D["slices"]["band:" + D["band"]]
     email_share = D["emails"] / N if D["emails"] else 0
     data = {"N": N, "emails": D["emails"], "daily": daily, "depth": [(k, v[0]) for k, v in E.items()], "sources": [(c[0], c[1]) for c in R["channels"] if c[1]],
-            "countries": countries, "acts": [(x["name"], x["completions"], x["share"], x["typical"], x["family"]) for x in D["acts"]], "heat": heat, "slices": D["slices"], "band": "band:" + D["band"],
+            "countries": countries, "acts": [(x["name"], x["completions"], x["share"], x["typical"], x["family"], x["rate"]) for x in D["acts"]], "heat": heat, "slices": D["slices"], "band": "band:" + D["band"],
             "band_label": D["band_label"], "reach": D["reach"], "pool": D["pool"], "email_share": email_share, "site": S}
     seq = D["seq"]; curve = {r[0]: r for r in seq["curve"]}; splits = {r[0]: r for r in seq["splits"]}
     nextrun = ""
@@ -765,9 +765,25 @@ def self_test():
     class A: export = p; words = wpath; site = None; impressions = 10; plan_cost = 50.0; prize_cost = 20.0; vertical = None; first_campaign = True; repeatable = False; days = None; methods = None; sends = None; partners = None; title = "Test"; dates = "1 May 2026"
     page = render(gather(A), words_of(words), site_of(None), A)
     assert reach_rows(RV.band_label(5298)) and reach_rows(RV.band_label(150)), "the reach table must resolve for every band label"
-    for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical, campaigns offering it", "Conversion Rate"):
+    for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical completions per Entrant, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    repeated = os.path.join(d, "repeated.csv")
+    with open(repeated, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        for i in range(100):
+            wr.writerow([f"person{i}@example.com", "Entry Confirmed", 1])
+            if i < 50:
+                for _ in range(10): wr.writerow([f"person{i}@example.com", "Visit a Page", 1])
+    class Repeated(A): export = repeated
+    repeated_data = gather(Repeated)
+    visit = next(x for x in repeated_data["acts"] if x["name"] == "Visit a Page")
+    assert visit["rate"] == 0.5 and visit["share"] == 5.0 and visit["completions"] == 500
+    repeated_page = render(repeated_data, words_of(words), site_of(None), Repeated)
+    assert '<td class="num">50%</td><td class="num">5.0</td>' in repeated_page
+    assert "Unique participation" in repeated_page and "all campaign sizes offering that action" in repeated_page
+    assert "completed by ${pct(a[5])} of Entrants" in repeated_page
+    assert "campaigns your size that offered" not in repeated_page
     # Incomplete referral relationships remain unavailable throughout the dashboard.
     partial = gather(A)
     partial["R"]["viral"].update(graph_complete=False, graph_rows=0, referred_entrants=None,

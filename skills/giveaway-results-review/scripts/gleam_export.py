@@ -24,6 +24,9 @@ def classify_action(action):
     """Return (asset key, benchmark name, family) from one shared title classifier."""
     import re
     a = action.lower()
+    if a.strip() == "watch a video": return None, "Watch a Video", "visit"
+    if "youtube" in a and "visit" in a:
+        return None, "YouTube Channel Visits", "visit"
     if any(w in a for w in ("check ", "read ", "learn", "see how", "program", "watch", "view ", "visit ")):
         return None, "Visit a Page", "visit"
     platforms = (("youtube", "youtube_subscribes", "", "subscribe"),
@@ -212,6 +215,13 @@ def self_test():
     for title in ("Subscribe", "Subscribe to Brand", "Sign up", "Email a friend", "Enter your email", "Follow @brand"):
         assert kind(title) is None, title
     assert classify_action("Visit our newsletter page") == (None, "Visit a Page", "visit")
+    assert classify_action("Visit our YouTube channel") == (None, "YouTube Channel Visits", "visit")
+    assert classify_action("Watch a Video") == (None, "Watch a Video", "visit")
+    assert classify_action("Join our referral program") == (None, "Visit a Page", "visit")
+    assert classify_action("Refer a friend") == ("referrals", "Viral Shares", "share")
+    assert classify_action("Follow on Instagram") == ("instagram_follows", "Instagram Follows", "follow")
+    assert classify_action("Subscribe on Twitch") == (None, "Twitch Subscribers", "follow")
+    assert classify_action("Watch our subscription program overview") == (None, "Visit a Page", "visit")
     for title in ("Subscribe", "Subscribe to Brand", "Sign up"):
         assert classify_action(title) == (None, "", None), title
     print("self-test passed"); return 0

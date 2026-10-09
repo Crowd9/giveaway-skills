@@ -104,7 +104,7 @@ Dates for the next sixteen months. The launch window is the holiday date minus t
 | Black Friday and Cyber Monday | Fri 27 Nov 2026 | 13 Nov to 24 Nov | 18 Nov | Black Friday and Cyber Monday week: 3% of starts, 35% entered |
 | Christmas and advent | Fri 25 Dec 2026 | 29 Nov to 16 Dec | 07 Dec | Christmas and advent week: 1% of starts, 37% entered |
 | New Year | Fri 01 Jan 2027 | 07 Dec to 28 Dec | 17 Dec | - |
-| Lunar New Year | Mon 01 Feb 2027 | 22 Jan to 31 Jan | 26 Jan | Lunar New Year week: 2% of starts, 33% entered |
+| Lunar New Year | Sat 06 Feb 2027 | 27 Jan to 05 Feb | 31 Jan | Lunar New Year week: 2% of starts, 33% entered |
 | Valentine's Day | Sun 14 Feb 2027 | 24 Jan to 08 Feb | 31 Jan | Valentine's Day week: 2% of starts, 33% entered |
 | Easter | Sun 28 Mar 2027 | 07 Mar to 24 Mar | 15 Mar | Easter week: 2% of starts, 35% entered |
 | Mother's Day | Sun 09 May 2027 | 18 Apr to 03 May | 25 Apr | Mother's Day week: 2% of starts, 33% entered |

@@ -74,8 +74,8 @@ Extracted: outcomes for campaigns where one traffic source supplies over 10% of 
 | The Gleam directory | 23.9% | 622 | 4.78 | 7,443 | 2,436 |
 | Search | 16.9% | 354 | 4.44 | 3,769 | 1,315 |
 
-YouTube and deals forums convert best of the channels with real volume, and search worst. Every row here is campaigns where that source already supplied a tenth of the Impressions, so the table describes campaigns that were already reaching people through it. It says nothing about what adding a channel would do. [Extracted from `analysis/output/field_cuts.json`, `outcomes_when_channel_over_10pct`.]
-Deals-forum traffic converts at 34.7%, second of the well-populated sources above and behind YouTube at 41.4%, which earns it a spot on the promotion list. The audience rarely refers a friend, and on that measure it is last of every source here. Comparing like-sized campaigns does not change the picture. Treat deals forums as a source that turns visitors into Entrants, with limited referral activity in these campaigns. The referral result does not establish email acquisition performance. Subscriber quality is unknown, and email action completions do not establish a count of distinct subscribers.
+Campaigns receiving over 10% of their Impressions from YouTube or deals forums have the highest whole-campaign Conversion Rates in this table, while campaigns meeting that threshold for search have the lowest. These are conditional campaign medians, not source-attributed conversion or referral rates. The comparison does not show which channel converts its own visitors best or what adding a channel would do. [Extracted from `analysis/output/field_cuts.json`, `outcomes_when_channel_over_10pct`.]
+Campaigns meeting the deals-forum threshold recorded a 34.7% whole-campaign Conversion Rate, behind the YouTube group's 41.4%. Their whole-campaign referral rate is lowest among the sources compared here. Size-band comparisons also describe whole campaigns. These outcomes alone do not establish that deals-forum visitors convert well or rarely refer a friend. Subscriber quality is unknown, and email action completions do not establish a count of distinct subscribers.
 
 | Measure | Deals forums | For comparison |
 |---|---|---|
@@ -86,9 +86,9 @@ Deals-forum traffic converts at 34.7%, second of the well-populated sources abov
 | Entries per Entrant, campaigns of 1,000 to 2,500 Entrants | 1.76 [933 campaigns, 142 businesses] | - |
 | Entries per Entrant, campaigns of 2,500 to 10,000 Entrants | 2.31 [230 campaigns, 59 businesses] | - |
 
-Referrals are where deals-forum traffic really trails, at 5.3 per 100 Entrants against 11.6 for direct. On Entries per Entrant it sits at the top of the table at 4.91, just above direct and well above Meta, so the old reading that it trails every channel on both counts was wrong on the second. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
+Campaigns meeting the deals-forum threshold recorded 5.3 referrals per 100 Entrants against 11.6 for campaigns meeting the direct-traffic threshold. Their Entries per Entrant median is 4.91, above the direct and Meta groups. These measures cover all Entrants in each campaign. [Extracted from `analysis/output/field_cuts.json`, `channel_quantity_vs_quality`, `outcomes_when_channel_over_10pct` and `channel_quality_by_size_band`.]
 
-Meta sees a Conversion Rate five and a half points under X's, 24.8% against 30.3%, and carries the bigger traffic share of the two. It lags on follow-through as well: Meta runs fewer Actions per Entrant than X, and the gap holds at every campaign size. A campaign leaning on Meta for reach has room to add a referral or bonus-entry push to close that gap.
+Campaigns meeting the Meta threshold recorded a whole-campaign Conversion Rate five and a half points under the X group, 24.8% against 30.3%. Meta supplies a larger share of all Impressions. Whole-campaign Actions per Entrant are lower in the Meta group, including within the size bands shown. These comparisons do not identify which visitors completed Actions or establish that adding a referral or bonus-entry push would close the gap.
 
 | Measure | Meta | X |
 |---|---|---|

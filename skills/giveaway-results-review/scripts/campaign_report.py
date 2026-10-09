@@ -69,12 +69,17 @@ METADATA_COLUMNS = {name.casefold() for names in SYNONYMS.values() for name in n
 def resolve_columns(header, mapping):
     """Pick the column for each role from a user mapping (role=Column) or the synonym list. Missing roles are reported, never guessed."""
     mapping = {k.lower(): v for k, v in mapping.items()}
+    for role, column in mapping.items():
+        if role not in SYNONYMS:
+            raise ValueError(f"unknown mapping role {role!r}; available roles: {', '.join(SYNONYMS)}")
+        if column not in header:
+            raise ValueError(f"mapped column {column!r} for {role} is missing; available headers: {', '.join(header)}")
     cols = {}; low = {h.lower(): h for h in header}
     for role, names in SYNONYMS.items():
         if mapping.get(role): cols[role] = mapping[role]; continue
         for n in names:
             if n.lower() in low: cols[role] = low[n.lower()]; break
-    if "who" in cols and cols["who"].lower() in ("name", "entrant", "user"):
+    if "who" not in mapping and "who" in cols and cols["who"].lower() in ("name", "entrant", "user"):
         for n in ("Email", "Email Address", "E-mail"):
             if n.lower() in low: cols["who"] = low[n.lower()]; break
     return cols
@@ -436,12 +441,12 @@ def render(R, a):
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
     if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ". Host substring matches can overlap, so do not sum partner rows. Read tagged email traffic in the separate UTM rollup.")
     else: w("\nPartner contribution needs --partners with referrer-host substrings. For tagged email traffic, read the separate UTM rollup. Overlapping host matches may count the same Entrant in multiple partner rows, so do not sum them.")
-    w("\n## Entry methods\n\n| Action | Completions | Entrants | Share of actions | Completion rate | Typical, campaigns offering it | Where it sits | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|---|---|")
+    w("\n## Entry methods\n\nUnique participation counts each Entrant once per action. Action benchmarks compare completions per Entrant across all campaign sizes offering that action.\n\n| Action | Completions | Entrants | Share of actions | Unique participation | Completions per Entrant | Typical completions per Entrant, campaigns offering it | Where completions per Entrant sit | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         flag = " (slow)" if sec and sec > 120 else ""
         g = _gname(act) if _gname else None
-        typ, where = bench(None, comp / n, n, reader_unit, group=g) if g else ("-", "no matching group")
-        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
+        typ, where = bench(None, comp / n, n, lambda v: f"{v:.1f}", group=g) if g else ("-", "no matching group")
+        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {comp / n:.1f} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
     w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
     w("\n## Viral\n\n" + viral_text(V))
     rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.2f}")
@@ -515,6 +520,28 @@ def self_test():
         except SystemExit as exc: assert str(exc) == "no valid Entrants in export", exc
         else: raise AssertionError("empty campaign must explain why it cannot be reported")
     assert resolve_columns(["Email", "Action", "Custom Worth"], {"Entries": "Custom Worth"})["entries"] == "Custom Worth"
+    for role in ("status", "who", "Entries"):
+        try: load(p, {role: "Missing Column"})
+        except ValueError as exc:
+            assert "Missing Column" in str(exc) and "available headers: ID, Name, Email, Status" in str(exc), exc
+        else: raise AssertionError(f"missing mapped {role} column accepted")
+    for bad_mapping in ({"sta tus": "Status"}, {"status": ""}):
+        try: load(p, bad_mapping)
+        except ValueError: pass
+        else: raise AssertionError("invalid mapping accepted")
+    assert not load(p, {"status": "Status", "who": "Email", "Entries": "Entries"})[-1]["_valid"]
+    assert resolve_columns(["Email", "Name"], {"who": "Name"})["who"] == "Name"
+    repeated = os.path.join(d, "repeated.csv")
+    with open(repeated, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        for i in range(100):
+            wr.writerow([f"person{i}@example.com", "Entry Confirmed", 1])
+            if i < 50:
+                for _ in range(10): wr.writerow([f"person{i}@example.com", "Visit a Page", 1])
+    repeated_report = render(analyze(load(repeated), B), B)
+    assert "| Visit a Page | 500 | 50 | 83% | 50% | 5.0 |" in repeated_report
+    assert "Unique participation | Completions per Entrant | Typical completions per Entrant" in repeated_report
+    assert "across all campaign sizes offering that action" in repeated_report
     # Small exports never acquire a ranking, including action-family comparisons.
     for count in (1, 30, 99):
         assert bench("contestants", count, count)[0] == "-"

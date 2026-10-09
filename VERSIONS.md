@@ -6,13 +6,13 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.48 |
 | giveaway-entry-method-planner | 1.2.45 |
-| giveaway-timing-and-duration | 1.4.44 |
+| giveaway-timing-and-duration | 1.4.45 |
 | giveaway-winner-structure | 1.4.15 |
-| giveaway-promotion-plan | 1.3.44 |
+| giveaway-promotion-plan | 1.3.45 |
 | giveaway-random-draw | 1.3.39 |
 | giveaway-winner-communications | 1.2.35 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.18 |
+| giveaway-results-review | 1.6.19 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.20 (2026-10-10)
+
+Lunar New Year 2027 falls on Saturday 6 February, and the launch window around it now matches. The calendar had it five days early.
+
+If you map a column that isn't in your export, the report stops and lists the columns it found, so a typo can't quietly mark invalid entries as valid. Each Action in your report is compared with its own kind. You'll see how many people did it and, on a separate line, how many times it was done.
+
+Channel advice now says what happened in campaigns that got a lot of traffic from a source, and stops short of calling it that source's own Conversion Rate.
 
 ## 3.0.19 (2026-10-10)
 
