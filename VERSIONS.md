@@ -5,14 +5,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.53 |
-| giveaway-entry-method-planner | 1.2.50 |
+| giveaway-entry-method-planner | 1.2.51 |
 | giveaway-timing-and-duration | 1.4.50 |
 | giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.51 |
 | giveaway-random-draw | 1.3.51 |
 | giveaway-winner-communications | 1.2.42 |
 | giveaway-idea-generator | 1.3.42 |
-| giveaway-results-review | 1.6.33 |
+| giveaway-results-review | 1.6.34 |
 | gleam-campaign-setup | 1.2.46 |
 
 ## Skills
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.38 (2026-10-10)
+
+Action benchmarks are labelled as ranges across Actions, because one campaign can offer several. Use them to judge an Action, never to rank your campaign. Your campaign report keeps every number under its own heading, even when an action name in your export contains a pipe or a line break.
 
 ## 3.0.37 (2026-10-10)
 
