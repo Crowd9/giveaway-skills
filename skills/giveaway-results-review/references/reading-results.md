@@ -125,7 +125,7 @@ Splitting the campaigns behind these numbers into ten equal-count tenths by Entr
 
 ## Tone
 
-The reader ran the campaign and is deciding whether to run another. Lead with what worked and its rank. Every gap becomes a target with a route: the benchmark it can reach, the previous campaign that reached it, and the single change that closes it. The percentile file holds the top quarter for every metric, so "the top quarter of campaigns this size reach X" is always available as the target. A campaign in the dataset already beat the 100-Entrant floor, which most giveaways never reach, and the review can say so.
+The reader ran the campaign and is deciding whether to run another. Lead with what worked and its rank. Every gap becomes a target with a route: the benchmark it can reach, the previous campaign that reached it, and the single change that closes it. The percentile file holds the top quarter for every metric, so "the top quarter of campaigns this size reach X" is always available as the target. The comparison includes campaigns with at least 100 Entrants. It cannot establish how many giveaways fall below that floor or whether clearing it beats most giveaways.
 
 ## Judgement words
 
@@ -133,7 +133,7 @@ A rank says where a figure sits. It does not say the figure is bad. Most metrics
 
 ## Entries and completions
 
-Entries and completions are the same count, worth only changes the credit.
+Entrants count people. Completed Actions count valid action completions. Entries add up the worth credited for those completions, so weighted Entries can exceed the completion count. For example, ten valid completed Actions worth five Entries each produce ten completions and fifty Entries, regardless of how many people completed them.
 
 ## Common misreads
 

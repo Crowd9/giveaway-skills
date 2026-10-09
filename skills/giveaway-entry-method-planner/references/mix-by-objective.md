@@ -39,7 +39,7 @@ Source: `analysis/output/templates.json` (`by_template`).
 
 ### Every action has a job (advice, from Gleam's campaign team)
 
-Five internal jobs help plan the mix. In the answer, replace these labels with a plain reason tied to the reader's objective, such as collect email signups, grow Instagram followers or bring in referrals. Keep actions only when that reason earns their place. Acquire: email signup, SMS or messaging opt-in, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. A normal campaign has one of each, with a second social channel only when the audience is really there. Judge an amplify action by referrals, never by completion rate.
+Five optional jobs help plan the mix. In the answer, replace these labels with a plain reason tied to the reader's objective, such as collect email signups, grow Instagram followers or bring in referrals. Keep actions only when that reason earns their place. Acquire: email signup, SMS or messaging opt-in, account creation, app install, community join, the actions that create an owned relationship. Grow social: a follow on the one or two networks where the audience already is. Learn: a single-choice or open question that collects something the business can use, such as which flavour, which feature, which destination, never trivia. Engage: a visit, a video, a secret code, a bonus, exposure to the product. Amplify: Viral Share or refer a friend, low completion by nature and the only action that brings new people. Choose only the jobs that support the requested asset and audience. A campaign can use just the acquisition action, with supporting actions added when each earns its place. Judge an amplify action by referrals, never by completion rate.
 
 ## Weighting
 
@@ -239,7 +239,7 @@ Every industry with enough campaigns gets a row (23 industries, from 116,283 cam
 | Jewelry and watches | 418 | 162 | Secret code 2.8x (91 campaigns, 29 businesses). Email signup 1.6x (218 campaigns, 77 businesses) | Discord join 0.5x (36 campaigns, 16 businesses). X repost 0.6x (57 campaigns, 27 businesses). TikTok follow 0.7x (34 campaigns, 26 businesses) | Referral share 1.6x (162 campaigns, 87 businesses). Secret code 1.5x (91 campaigns, 29 businesses) | TikTok follow 0.7x (34 campaigns, 26 businesses) |
 <!-- /generated -->
 
-**Gaming and esports campaigns lean on Discord, Twitch and X reposts over the all-industry rate, and underuse email.** Email is the weak spot in this industry: offered in 16.2% of gaming campaigns against 33.0% across all industries, and where it is offered it completes at 0.83x the all-industry completion, the lowest of the 13 Actions in the table below. Don't lean on email as the primary acquisition action for a gaming campaign.
+**Gaming and esports campaigns offer Discord, Twitch and X reposts more often, and email less often, than the all-industry rate.** Email is offered in 16.2% of gaming campaigns against 33.0% across all industries, and where it is offered it completes at 0.83x its all-industry completion rate, the lowest relative index of the 13 Actions in the table below. Each index compares an Action with its own baseline, so it cannot rank different Actions by absolute completion or value to the requested asset. Keep email as the primary acquisition action when the objective is an email list. Consider Discord, Twitch or X only when the audience and objective support them.
 
 <!-- generated:em3_gaming_actions -->
 | Action | Offered, gaming and esports | Offered, all industries | Ratio | Completion against all industries | Campaigns offering it | Businesses |
@@ -715,11 +715,11 @@ Across the wider 116,499-campaign population, 42% had at least 5% invalid Entrie
 
 Keep entry consent and marketing consent separate, and collect the permission needed for each use. Entry consent is agreement to the terms of the giveaway, and it is collected on the entry form and recorded in the terms the Entrant accepts. Marketing consent is agreement to receive specified promotional messages. An Email Subscription Action collects it through a checkbox on the User Details form, and Newsletter signup also collects explicit consent. Check the recorded choice and wording for each person. Contact details can exist without either subscription Action. One does not imply the other, and an Entrant who declines the second is still a valid Entrant.
 
-- Email entries need opt-in wording that says what the Entrant will receive and how to leave. Many jurisdictions require it and most email tools enforce it.
-- Where the region requires double opt-in (Germany and much of the EU for email, and most regimes for SMS), the confirmation goes out at the moment of capture and only confirmed contacts join the list. Plan for a share of Entrants never confirming.
+- Ask counsel what consent wording and records fit the campaign's countries, audience and email or SMS channel. Draft wording that says what the Entrant will receive and how to leave, then check it against that advice and the chosen provider's documented setup.
+- Ask counsel whether double opt-in is appropriate or required for this email or SMS flow in the relevant countries. If the agreed flow uses it, send confirmation at capture and add only confirmed contacts to the marketing list. Plan for a share of Entrants never confirming.
 - Retention is a legal question this skill cannot answer. How long entry data, contact details and Winner records may be held, and what has to be deleted at the end, goes to the business's privacy counsel before the campaign opens.
 - Follow-to-enter, tag-a-friend and share-to-enter are governed by each network's promotion rules, which change. Read the current rules for each network you name.
-- Do not require a purchase to enter where sweepstakes law forbids it. Discount codes as entries count as a purchase condition in most readings.
+- For discount-code or purchase-linked entries, ask counsel whether the proposed access to the code creates a purchase condition in the relevant jurisdictions, whether the mechanic can run, and whether a free route or other changes are needed. Describe how people obtain the code and configure the entry flow according to that advice before launch.
 - Age and region limits belong in the terms and on the entry form.
 
 This skill does not give legal advice.
@@ -735,7 +735,7 @@ The actions a store wants send the Entrant into the catalogue and bring somethin
 - **Pick your Prize.** A choice action with the three Prize options, so the preference is recorded on entry.
 - **Subscribe with the store tag.** The Email Subscriptions action synced to the store's customer list with the campaign name as the tag, so the non-Winner code and the welcome series go to the right segment.
 - **Refer a friend.** Where the platform can cap referrals per person, leave the cap off unless the Prize is small enough that referral farming pays. The friend lands on the store, and the referrer earns entries when the friend enters. A second reward when the friend buys is a mechanic the store can run through its own code, with no figure in the dataset.
-- **Keep purchase out of the entry.** An order number as an entry, or bonus entries for buying, is a purchase condition. Where it runs at all it needs a free entry route of equal weight and a lawyer's read of the terms.
+- **Review purchase-linked entries before launch.** For order-number entries or bonus entries for buying, ask counsel whether the proposed mechanic can run in the relevant jurisdictions and whether a free entry route, particular weighting or other changes are needed. Configure the mechanic and terms according to that advice.
 
 ## Follows that lapse after the campaign (advice)
 

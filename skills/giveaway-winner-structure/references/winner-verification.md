@@ -21,7 +21,7 @@ Do these before contacting anyone. They use your own records and take minutes.
 
 ## Read the account
 
-Open the social account or email that entered. None of these alone proves fraud. Three or more together usually do.
+Open the social account or email that entered. These signals are reasons to investigate. Their number does not prove fraud. Exclude an Entrant only after confirming a breach of the published eligibility rules, with the reason recorded for that Entrant.
 
 | Signal | What it looks like |
 |---|---|
@@ -34,7 +34,7 @@ Open the social account or email that entered. None of these alone proves fraud.
 | Disposable email | A throwaway domain, a mailbox that bounces, or one that never replies |
 | Location mismatch | Profile, language and IP point somewhere the terms exclude |
 
-Enthusiastic Entrants who enter many giveaways ("compers") are legitimate. A full feed of entries is not a reason to disqualify. Multiple accounts for one person are.
+Enthusiastic Entrants who enter many giveaways ("compers") are legitimate. A household of compers can share an address and have new accounts. Keep each eligible member in the draw. A full feed of entries or multiple accounts warrants exclusion only when the records confirm a breach of the published rules.
 
 ## Ask for proof in proportion to the Prize
 
@@ -57,7 +57,7 @@ Age checks need only a date of birth or an ID with the number covered. In the Un
 
 ## When it fails
 
-- No reply by the deadline, a failed check, or a decline: move to the first backup under the same audit record. No redraw.
+- No reply by the deadline, a confirmed eligibility breach, or a decline: follow the published backup procedure under the same audit record. An unresolved signal needs review before any exclusion.
 - Record the reason privately. Never publish why someone was disqualified.
-- If several drawn entries fail the same way, stop and look at the list. A cluster of fake accounts usually means the referral or comment action was gamed. Exclude the cluster, note it, and draw again from a fresh commitment.
+- If several drawn entries raise the same concern, pause and review each one against the published rules. Record each confirmed breach privately and retain eligible cluster members. Use the applicable backup or input-correction procedure. If correcting the eligible list requires another draw under the terms, preserve the original record and publish a replacement commitment tied to a future seed before it exists.
 - Announce Winners by first name and city, or handle, with consent, only after verification is complete.

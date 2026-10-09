@@ -134,7 +134,7 @@ This looks at each Prize row: the typical number of Winners on a category's rows
 | Art and custom | 178 | 106 | 1 | 21% | 99 | 27% |
 <!-- /generated -->
 
-One Winner per Prize row is standard across every category (table above): the typical row names one Winner everywhere, so a row naming more than one Winner is the exception. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest categories sit in the middle of the multi-Winner range. That highest-value category, firearms, also carries the lowest Conversion Rate at 19%, in line with the extra eligibility steps it carries elsewhere in this repository.
+The typical Prize row names one Winner in every category except discount or coupon (table above). Discount or coupon rows have a typical count of three Winners and a 61% multi-Winner share across 1,046 campaigns and 344 businesses. Use the relevant category row when considering Winner count. USD per Winner tracks what the category costs per unit, not how often a row goes multi-Winner: the highest-value category pays the most per Winner on the lowest multi-Winner share, and the cheapest categories sit in the middle of the multi-Winner range. That highest-value category, firearms, also carries the lowest Conversion Rate at 19%, in line with the extra eligibility steps it carries elsewhere in this repository.
 
 Within experience, travel, tickets, flights or hotel packages alone return 1,000 USD per Winner, well above the category's 399 USD typical figure, because the category mixes cheap tickets with priced-out travel.
 

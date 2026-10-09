@@ -498,6 +498,19 @@ def self_test():
     output = io.StringIO()
     with contextlib.redirect_stdout(output): cmd_commit(_a)
     assert "rows_read 6, unique_eligible 2, duplicates_merged 1, excluded 1, rows_with_invalid_weight 2" in output.getvalue(), output.getvalue()
+    # Keep the worked example tied to the actual commitment output, not a copied round.
+    import pathlib, re
+    procedure = (pathlib.Path(__file__).resolve().parents[1] / "references" / "draw-procedure.md").read_text()
+    documented_time = re.search(r'commit entries\.csv[^\n]*--draw-at "([^"]+)"', procedure)
+    documented_round = re.search(r'--seed-drand (\d+) --audit draw-2026-09-12\.json', procedure)
+    assert documented_time and documented_round, "documented commit and draw commands must be present"
+    _a.draw_at = documented_time.group(1)
+    example_round = int(documented_round.group(1))
+    output = io.StringIO()
+    with contextlib.redirect_stdout(output): cmd_commit(_a)
+    assert f"drand round at {_a.draw_at}: {example_round} " in output.getvalue(), output.getvalue()
+    assert example_round == 6457886
+    assert drand_round_time(example_round) == datetime.datetime.fromisoformat(_a.draw_at).timestamp()
     verifier_self_test()
     print("self-test passed"); return 0
 

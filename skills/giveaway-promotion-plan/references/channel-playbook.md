@@ -24,7 +24,7 @@ Direct traffic supplies nearly half of all Impressions, well ahead of any single
 | Deals forums | 1.2% |
 | TikTok | 0.9% |
 
-Direct is the largest single line by far. A giveaway link travels through DMs, texts and QR codes that do not show where the click came from, so a large direct share is what real word-of-mouth reach looks like in the data, not a gap in the channel plan.
+Direct is the largest single line and means unattributed traffic. DMs, texts, QR links and untagged email can all leave visits without a recorded source. Direct alone does not establish word of mouth or prove that referrals worked. When attribution matters, use tagged links for each placement and recorded referral measures to check which activity brought people in.
 
 Embeds carried 51% of Impressions and hosted pages 49%. Traffic splits almost evenly between the Gleam-hosted page and an embed on the organizer's own site, so the profile-prep and per-channel steps below apply whichever way the campaign is set up.
 

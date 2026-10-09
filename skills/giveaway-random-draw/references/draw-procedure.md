@@ -6,13 +6,13 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 
 - Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets only the public summary described below. It cannot reproduce the ranking.
 - Apply the duplicate and weighting rules in the published terms. Before launching a new campaign, decide whether each person gets one chance or bonus entries add up.
-- List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries flagged as automated.
+- List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries confirmed to breach a published rule on automation. Investigate flags before excluding anyone.
 - Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
 - Choose and publish the future seed source before its value exists, alongside the commitment. Use the announced value only after it becomes available.
 
 - Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,109 campaigns and 16,490 businesses, and referral-heavy mixes ran higher (source: `analysis/output/invalid_share.json`). Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
 
-`commit` also prints review lines for disposable email domains, one domain holding a fifth or more of the list, and runs of handles that differ only by a trailing number. They are prompts to look, never verdicts. Decide what to exclude, update the exclusion file, then commit again.
+`commit` also prints review lines for disposable email domains, one domain holding a fifth or more of the list, and runs of handles that differ only by a trailing number. They are prompts to look, never verdicts. Confirm a breach of the published eligibility rules for each exclusion, retain eligible Entrants, update the exclusion file, then commit again.
 
 ## Why commit first
 
@@ -47,9 +47,9 @@ Write the rules once into a small JSON file so the commit and the draw cannot di
 # 1. Freeze the list, then commit and announce the drand round for the draw time
 python3 scripts/draw.py commit entries.csv --rules rules.json --draw-at "2026-09-12T09:00:00+10:00"
 
-# 2. After that time, draw once
+# 2. After that time, draw once using the round printed by commit
 python3 scripts/draw.py draw entries.csv --rules rules.json \
-  --seed-drand 6452000 --audit draw-2026-09-12.json --winners-csv winners.csv --mask
+  --seed-drand 6457886 --audit draw-2026-09-12.json --winners-csv winners.csv --mask
 
 # 3. Anyone with the same files can check
 python3 scripts/draw.py verify draw-2026-09-12.json --exclude staff.txt

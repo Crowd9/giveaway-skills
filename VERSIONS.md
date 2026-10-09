@@ -5,15 +5,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.42 |
-| giveaway-entry-method-planner | 1.2.40 |
-| giveaway-timing-and-duration | 1.4.39 |
-| giveaway-winner-structure | 1.4.11 |
-| giveaway-promotion-plan | 1.3.39 |
-| giveaway-random-draw | 1.3.35 |
-| giveaway-winner-communications | 1.2.32 |
-| giveaway-idea-generator | 1.3.35 |
-| giveaway-results-review | 1.6.10 |
-| gleam-campaign-setup | 1.2.38 |
+| giveaway-entry-method-planner | 1.2.41 |
+| giveaway-timing-and-duration | 1.4.40 |
+| giveaway-winner-structure | 1.4.12 |
+| giveaway-promotion-plan | 1.3.40 |
+| giveaway-random-draw | 1.3.36 |
+| giveaway-winner-communications | 1.2.33 |
+| giveaway-idea-generator | 1.3.36 |
+| giveaway-results-review | 1.6.11 |
+| gleam-campaign-setup | 1.2.39 |
 
 ## Skills
 
@@ -344,9 +344,23 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 3.0.12 (2026-10-10)
+
+The worked draw example now uses the random number for the time it commits to. It used to point at a number from three days earlier, which would have broken the promise the draw makes.
+
+A new account or a feed full of giveaways is a reason to look closer at an entry, and a Winner is only disqualified for breaking a rule in your terms. Real compers in the same household keep their place.
+
+The advice no longer reads more into your numbers than they hold. Direct traffic is described as traffic we can't attribute. Clearing 100 Entrants isn't described as beating most giveaways, and a weighted Entry is never counted as a completed action.
+
+Your plan and your goal come first. Pro customers can pick their plan from the setup question. An email goal keeps email as the main action whatever your industry, and an entry list no longer has to cover five kinds of action. Coupon giveaways typically name three Winners across 1,046 campaigns, and the advice now says so.
+
+Questions about consent flows and discount-code mechanics now come back as the question to put to your lawyer, with the setup steps for each answer. Timing and promotion plans for a two-week run send the same pushes on the same days.
+
+The style checker every skill runs on its own answer now returns a failing exit code when it prints FAIL, so a script built on it can stop.
+
 ## 3.0.11 (2026-10-10)
 
-Ask how long to run a giveaway and you get dates. The timing answer ends with a plan from your start date through the holidays in range, with the draw, the Winner notice and delivery on it, and leaves your carrier's cut-off for you to check.
+Ask how long to run a giveaway and you get dates. The plan runs from your start date and dates the draw, the Winner notice and delivery. Check your carrier's cut-off before you lock the delivery date.
 
 If our data has no figure for your industry, you're told once, and you won't be handed another industry's number in its place.
 
@@ -354,7 +368,7 @@ A results review that rules out a fault says it ruled out a fault, and stops sho
 
 ## 3.0.10 (2026-10-10)
 
-Answers carry the numbers that decide your question and leave the rest out. With every figure now matched to our data, answers had started quoting far more of them, so they came out longer and harder to act on. Now you get at most two figures per point, and one plain source line when figures are quoted.
+Answers carry the numbers that decide your question, so the reply stays short enough to act on. With every figure now matched to our data, answers had started quoting far more of them, so they came out longer and harder to act on. Now you get at most two figures per point, and one plain source line when figures are quoted.
 
 Phrases meant for the skill have stopped reaching you. A Prize plan's totals, caps and the wording you publish now agree with each other, and an entry plan sorts each action into keep, drop, or keep only if a condition holds.
 

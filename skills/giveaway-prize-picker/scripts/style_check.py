@@ -446,6 +446,7 @@ if __name__ == "__main__":
     if "--self-test" in sys.argv[1:]:
         self_test(); sys.exit(0)
     verbose = "--show" in sys.argv[1:]
+    failed = False
     for path in [a for a in sys.argv[1:] if not a.startswith("--")]:
         with open(path) as resource:
             text = resource.read()
@@ -460,6 +461,7 @@ if __name__ == "__main__":
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
                 + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["causal_claims"] + r["analyst_units"])
         varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
+        failed = failed or not (hard == 0 and varied)
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an
         # instruction, or cut it. A count alone sends the writer hunting.
@@ -470,3 +472,4 @@ if __name__ == "__main__":
         if verbose:
             for name, line, quote in show(text):
                 print(f"  {name} line {line}: {quote}")
+    sys.exit(1 if failed else 0)

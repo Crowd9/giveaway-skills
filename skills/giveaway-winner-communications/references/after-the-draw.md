@@ -57,11 +57,13 @@ Honor any promised offer, including its recipients, value and conditions. If no 
 - **Codes during a sale.** A 15% code sent the day the store goes 30% off is dead on arrival. Before Black Friday or a seasonal sale, make the non-Winner offer early access to the sale, or a code that stacks on one item, and say which it is in the email.
 - **Keep the offer optional.** A shopping discount is separate from a payment requirement to enter or claim the Prize. Honor a code already promised at entry without rewriting the terms after the draw. For a jurisdiction question, ask the organizer's lawyer: "Does our optional offer and its entry-page wording fit the promotion rules in [country]?"
 
-## Keep the giveaway list on its own stream
+## Keep the giveaway list in its own segment
 
-Send the Winners email and the whole welcome series from a separate stream, segment or subaccount, kept apart from the list the business mails every week.
+Common practice, our data doesn't cover this. Use a giveaway segment to select recipients by recorded consent, measure the sends and suppress addresses under the hygiene rule below. Keep Winner claim messages separate from marketing sends according to their purpose and consent.
 
-A giveaway list opens and clicks less than a list built from purchases. Mailbox providers read engagement per sending domain and stream, so a large low-engagement send lands the core list in the promotions tab or the spam folder alongside it. The separation costs one segment in the email tool and protects the asset the giveaway was meant to grow.
+A segment is an audience filter, as [Mailchimp explains](https://mailchimp.com/resources/manage-your-audience/). It does not isolate sender reputation when sends share a domain and sending infrastructure. [Google tracks domain and IP reputation](https://support.google.com/mail/answer/14668346?hl=en), so a segment alone cannot promise protection for the core list.
+
+Describe infrastructure separation only when the provider documents what it separates. For example, [Postmark separates transactional and broadcast traffic onto distinct IP ranges](https://postmarkapp.com/support/article/1082-what-types-of-messages-are-a-good-fit-for-postmark). A stream or subaccount name alone establishes no such separation. Check the provider's current setup before recommending it.
 
 Move an address to the core list only when the recorded consent covers it and there is stronger engagement evidence: clicks that your email tool identifies as coming from people after filtering automated activity, a reply, a purchase or explicit reconfirmation. An open alone does not establish engagement. Check the provider's current [Mailchimp Apple privacy guidance](https://mailchimp.com/help/apple-privacy-faq/) or equivalent help page for how it filters automated activity.
 

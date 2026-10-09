@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Map a giveaway plan to documented Gleam Competitions settings. Use for 'set this up in Gleam', 'fraud setting', 'Gleam draw', 'Gleam impressions', 'Gleam terms', 'mandatory action', 'daily entries', 'free entry alternative', 'export entries', 'Gleam on Shopify', 'Quick Draws', 'repeat Winners', or 'admin entries'. Cover setup, operation and reporting."
 metadata:
-  version: 1.2.38
+  version: 1.2.39
 ---
 
 # Gleam Campaign Setup
@@ -30,7 +30,7 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 <!-- /generated -->
 
 1. Do you already have a plan (Prize, actions, dates, Winner structure) from the other skills, or are we starting from scratch in Gleam?
-2. Which Gleam plan are you on, Free, Hobby, Business or Premium?
+2. Which Gleam plan are you on, Free, Hobby, Pro, Business or Premium?
 3. Is this a full setup walk-through, a specific setting lookup, or a reporting question?
 4. Are you on Shopify?
 
