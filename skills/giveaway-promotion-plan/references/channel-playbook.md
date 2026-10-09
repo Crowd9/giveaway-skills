@@ -244,7 +244,7 @@ Source: analysis/output/success_profiles.json (interactions.referral_action_by_c
 
 ## What a shared link is worth
 
-Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, 13.9% of Viral Share clicks end in a referred entry, on 42,512 campaigns from 6,919 businesses. The same campaigns turn 21.8% of ordinary Impressions into Entrants, so a shared link converts a visitor at about two thirds the rate of any other visit to the page.
+Extracted, viral_click_conversion_excluding_crypto: with finance and crypto organizers removed, median share-click conversion is 13.9%, on 42,512 campaigns from 6,919 businesses. This measures the share of Viral Share clicks that end in a referred entry within each campaign. The same campaigns have a median overall Conversion Rate of 21.8%, including referral traffic. Non-referral conversion is not available in this cut, so these figures cannot establish whether referral visitors convert worse than other visitors.
 
 Crypto organizers are now out of the population before any cut runs, so `viral_click_conversion` and `viral_click_conversion_excluding_crypto` hold the same campaigns and report the same 13.9%. The gap those two keys used to describe has gone, and either one gives the figure to plan an ordinary business against.
 

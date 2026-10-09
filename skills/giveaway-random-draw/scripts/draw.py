@@ -17,7 +17,7 @@ tiers, backups, winners, id-column, weight-column, exclude. A flag given on the 
   {"tiers": "Grand Prize:1,Runner-up:5", "backups": 2, "id-column": "email", "weight-column": "entries", "exclude": "staff.txt"}
 
 How the draw works (documented so anyone can recheck it in any language):
-  1. Entrants are read, ids trimmed and lower-cased, duplicates merged (weights add up when a weight column is given),
+  1. Entrants are read, ids trimmed (opaque account IDs keep case, other identifiers are lower-cased), duplicates merged (weights add up when a weight column is given),
      exclusions removed, invalid or zero weights dropped.
   2. Supplied seed text permits reproduction. Fairness requires a preannounced future source beyond the
      organizer's control, such as a drand round or NIST beacon pulse fetched after it exists.
@@ -34,12 +34,19 @@ verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but 
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.4.3"
+VERSION = "2.4.4"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
 def sha(b): return hashlib.sha256(b).hexdigest()
-def norm(s): return str(s or "").strip().lower()
+LEGACY_NORMALIZATION = "trim-lowercase"
+OPAQUE_NORMALIZATION = "trim-case-sensitive"
+
+def norm(s, policy=LEGACY_NORMALIZATION):
+    value = str(s or "").strip()
+    if policy == LEGACY_NORMALIZATION: return value.lower()
+    if policy == OPAQUE_NORMALIZATION: return value
+    raise ValueError(f"unsupported identifier normalization: {policy}")
 
 ACCOUNT_ID_KEYS = ("authorChannelId.value", "authorChannelId", "from.id", "from.id_str",
                    "author_id", "author.id", "author.id_str", "user_id", "user.id", "user.id_str",
@@ -49,6 +56,18 @@ PERSON_KEYS = ("email", "Email") + ACCOUNT_ID_KEYS + ("username", "user_name", "
                "author_name", "author", "commenter", "owner", "user", "entrant", "name", "Name")
 # Generic object IDs remain recognized headers, but need an explicit person-ID choice.
 ID_KEYS = PERSON_KEYS + ("id", "ID", "comment_id", "post_id")
+
+def normalization_for(id_column):
+    # Use the field label, never the value: an opaque ID may contain an @ sign.
+    column = id_column.lower()
+    email_label = column.rsplit(".", 1)[-1].replace("_", "").replace("-", "").replace(" ", "")
+    if email_label in ("email", "emailaddress", "contactemail", "contactemailaddress"):
+        return LEGACY_NORMALIZATION
+    if any(column == key.lower() or column.endswith("." + key.lower()) for key in ACCOUNT_ID_KEYS):
+        return OPAQUE_NORMALIZATION
+    labels = (key.lower() for key in PERSON_KEYS if key not in ACCOUNT_ID_KEYS)
+    return (LEGACY_NORMALIZATION if any(column == key or column.endswith("." + key)
+                                       for key in labels) else OPAQUE_NORMALIZATION)
 
 def _flatten_json(obj):
     """Best-effort: find the list of comment or Entrant objects inside a JSON export and the field that names the person."""
@@ -114,7 +133,9 @@ def load_entries(path, id_column):
         return rows, pick_id_column(rows, id_column), sha(raw)
     return [{"entrant": l.strip()} for l in lines], "entrant", sha(raw)
 
-def prepare(rows, id_column, weight_column, exclude):
+def prepare(rows, id_column, weight_column, exclude, normalization=None):
+    policy = normalization if normalization is not None else normalization_for(id_column)
+    exclude = {norm(value, policy) for value in exclude}
     missing = sum(not norm(row.get(id_column)) for row in rows)
     if missing:
         alternatives = [column for column in person_columns(rows) if column != id_column
@@ -125,7 +146,7 @@ def prepare(rows, id_column, weight_column, exclude):
                  f"{guidance}. Reconcile identifiers before drawing; no records were prepared.")
     seen, entrants, dupes, excluded, bad = {}, [], 0, 0, 0
     for r in rows:
-        key = norm(r.get(id_column))
+        key = norm(r.get(id_column), policy)
         if key in exclude: excluded += 1; continue
         w = 1.0
         if weight_column:
@@ -196,7 +217,7 @@ def rules_of(a, id_column, tiers):
     if a.exclude:
         with open(a.exclude, "rb") as source:
             exclude_digest = sha(source.read())
-    return {"id_column": id_column, "weight_column": a.weight_column, "exclude_file_sha256": exclude_digest,
+    return {"id_column": id_column, "id_normalization": normalization_for(id_column), "weight_column": a.weight_column, "exclude_file_sha256": exclude_digest,
             "tiers": tiers, "backups": a.backups, "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); rank by log(u)/weight descending; ties by id", "tool_version": VERSION}
 
 def apply_rules(a):
@@ -241,7 +262,7 @@ def load_exclusions(path):
     if not path:
         return set()
     with open(path, encoding="utf-8-sig") as source:
-        return {norm(line) for line in source if line.strip()}
+        return {line.strip() for line in source if line.strip()}
 
 def warn_plus_clusters(clusters):
     if clusters:
@@ -318,13 +339,16 @@ def cmd_verify(a):
     rows, id_column, digest = load_entries(path, audit["rules"]["id_column"])
     if digest != audit["input_sha256"]: print("FAIL input file hash differs from the audit record"); ok = False
     if commitment(digest, audit["rules"]) != audit["commitment"]: print("FAIL commitment does not match input and rules"); ok = False
+    policy = audit["rules"].get("id_normalization", LEGACY_NORMALIZATION)
+    if policy not in (LEGACY_NORMALIZATION, OPAQUE_NORMALIZATION):
+        print("FAIL unsupported identifier normalization policy"); return 1
     exclude = set()
     if audit["rules"].get("exclude_file_sha256"):
         if not a.exclude: sys.exit("this draw used an exclusion file; pass it with --exclude to verify")
         with open(a.exclude, "rb") as resource:
             raw = resource.read()
         if sha(raw) != audit["rules"]["exclude_file_sha256"]: print("FAIL exclusion file hash differs"); ok = False
-        exclude = {norm(l) for l in raw.decode("utf-8-sig").splitlines() if l.strip()}
+        exclude = {l.strip() for l in raw.decode("utf-8-sig").splitlines() if l.strip()}
     src = audit.get("seed_source")
     if not isinstance(src, dict) or src.get("type") not in ("drand", "nist-beacon", "published text"):
         print("FAIL unsupported or missing seed source type"); print("FAIL"); return 1
@@ -366,7 +390,7 @@ def cmd_verify(a):
             except Exception as ex:
                 print(f"warn could not refetch NIST pulse ({ex}); seed source unverified")
                 source_unverified = True
-    entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude)
+    entrants, dupes, excluded, bad, _ = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy)
     if (len(entrants), dupes, excluded) != (audit["unique_eligible"], audit["duplicates_merged"], audit["excluded"]): print("FAIL Entrant counts differ from the audit record"); ok = False
     tiers = audit["rules"].get("tiers"); backups = audit["rules"].get("backups")
     if (not isinstance(tiers, list) or not tiers or
@@ -766,7 +790,74 @@ def self_test_seed_sources():
             "", {"type": "published text", "value": ""})
 
 
+def self_test_identifier_case():
+    import contextlib, copy, pathlib, tempfile
+    from unittest.mock import patch
+    for column in ("authorChannelId.value", "snippet.authorChannelId.value", "from.id", "id", "customAccount"):
+        rows = [{column: key, "entries": value} for key, value in (("UCa", 2), ("UCA", 3), (" UCa ", 4))]
+        entrants, dupes, excluded, _, _ = prepare(rows, column, "entries", set())
+        assert [(e["id"], e["weight"]) for e in entrants] == [("UCa", 6), ("UCA", 3)]
+        assert (dupes, excluded) == (1, 0)
+        entrants, dupes, excluded, _, _ = prepare(rows, column, "entries", {" UCa "})
+        assert [(e["id"], e["weight"]) for e in entrants] == [("UCA", 3)]
+        assert (dupes, excluded) == (0, 2)
+    address = "Example@" + "example.com"
+    rows = [{"email": address, "entries": 2}, {"email": address.lower(), "entries": 3}]
+    for column in ("email", "EMAIL", "email_address", "contact_email", "contact.EmailAddress"):
+        email_rows = [{column: row["email"], "entries": row["entries"]} for row in rows]
+        entrants, dupes, _, _, _ = prepare(email_rows, column, "entries", set())
+        assert len(entrants) == 1 and entrants[0]["weight"] == 5 and dupes == 1
+        assert prepare(email_rows, column, None, {address.upper()})[2] == 2
+    assert prepare([{"account_id": address}, {"account_id": address.lower()}],
+                   "account_id", None, set())[1] == 0
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "entries.json"
+        exclusions = pathlib.Path(directory) / "excluded.txt"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        entries.write_text(json.dumps([{"authorChannelId": {"value": key}, "entries": weight}
+                                      for key, weight in (("UCa", 2), ("UCA", 3), ("UCa", 4), ("UCb", 1))]))
+        exclusions.write_text(" UCa \n")
+        common = [str(entries), "--weight-column", "entries", "--exclude", str(exclusions)]
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            assert main(["commit"] + common) == 0
+        published = next(line.split()[-1] for line in output.getvalue().splitlines() if line.startswith("commitment"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["draw"] + common + ["--winners", "1", "--seed", "case-regression", "--audit", str(audit_path)]) == 0
+            assert main(["verify", str(audit_path), "--exclude", str(exclusions)]) == 0
+        audit = json.loads(audit_path.read_text())
+        assert audit["commitment"] == published
+        assert audit["rules"]["id_normalization"] == OPAQUE_NORMALIZATION
+        assert audit["unique_eligible"] == 2 and audit["excluded"] == 2
+        # Build a historical audit using the former normalization, including its
+        # exclusion behavior. Its rules predate the explicit policy field.
+        with patch.dict(globals(), normalization_for=lambda column: LEGACY_NORMALIZATION, VERSION="2.4.3"), \
+                contextlib.redirect_stdout(io.StringIO()):
+            assert main(["draw"] + common + ["--seed", "case-regression", "--audit", str(audit_path)]) == 0
+        historical = json.loads(audit_path.read_text())
+        assert historical["unique_eligible"] == 1 and historical["excluded"] == 3
+        del historical["rules"]["id_normalization"]
+        historical["commitment"] = commitment(historical["input_sha256"], historical["rules"])
+        audit_path.write_text(json.dumps(historical))
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["verify", str(audit_path), "--exclude", str(exclusions)]) == 0
+        for invalid in ("unknown", None, 1):
+            changed = copy.deepcopy(audit)
+            changed["rules"]["id_normalization"] = invalid
+            changed["commitment"] = commitment(changed["input_sha256"], changed["rules"])
+            audit_path.write_text(json.dumps(changed))
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                assert main(["verify", str(audit_path), "--exclude", str(exclusions)]) == 1
+            assert "unsupported identifier normalization" in output.getvalue()
+    fixture = pathlib.Path(__file__).resolve().parents[1] / "examples" / "sample-entrants.csv"
+    rows, column, _ = load_entries(fixture, None)
+    entrants, *_ = prepare(rows, column, "entries", set())
+    results = [(e["shown"], e["weight"], e["key"]) for e in rank(entrants, "seed-1")]
+    # Captured before the case-policy change: every ranked email, weight and key.
+    assert sha(json.dumps(results).encode()) == "034efd2bbd74187dc272d8ffe66f12d3853352118e1c760474e538c2d91f552e"
+
+
 def self_test():
+    self_test_identifier_case()
     self_test_seed_sources()
     self_test_plus_preview()
     self_test_missing_ids()

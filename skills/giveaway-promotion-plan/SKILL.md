@@ -2,7 +2,7 @@
 name: giveaway-promotion-plan
 description: "Promote or rescue a giveaway. Use for 'how do I promote my giveaway', 'launch posts', 'giveaway email sequence', 'partner brief', 'should I boost the post', 'nobody is entering', 'entries look fake', 'it is rigged', 'someone is impersonating us', 'we got taken down', 'can I change the Prize or end date', or 'should I extend'. Write schedules, copy and next steps."
 metadata:
-  version: 1.3.50
+  version: 1.3.51
 ---
 
 # Giveaway Promotion Plan

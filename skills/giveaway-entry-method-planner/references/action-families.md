@@ -400,11 +400,11 @@ Entrants per 100 Impressions falls from 44 at one to three methods to 29 at seve
 
 Entries on the share action are referral entries: the platform's reporting terms define entries as actions completed times entry worth, and the Viral Share report counts a successful share as a user who entered as a direct result of it. Share completion here counts referred Entrants, not entries, so it is not weighted by the worth the business set. Worth is in the data, and a share action carries a median worth of 5, the highest of any family, so the entries a share generates run well above the count shown. Campaigns offering a share action had 33% more Entrants and 23% lower conversion in the campaigns we can compare fairly, which describes the businesses who chose it. It cannot show whether the referrals added people who would otherwise have stayed away. An email signup came with 29% more Entrants and about a sixth less conversion. What both cost in this data is the share of Impressions that converted, and neither came with a smaller crowd, so weigh the conversion price against the asset the action collects.
 
-A click on that share link converts differently than the click itself suggests: a shared link converts at about two-thirds the rate of any other visit [13.9% against 21.8%].
+Median share-click conversion is 13.9%, against a median overall campaign Conversion Rate of 21.8% on the same campaigns, including referral traffic. Non-referral conversion is not available in this cut, so these figures cannot establish whether referral visitors convert worse than other visitors.
 
 | Cut | Share-click conversion |
 |---|---|
-| The ordinary population | 13.9% (against 21.8% for ordinary Impressions on the same campaigns, 42,512 campaigns, 6,919 businesses) |
+| The ordinary population | 13.9% (against 21.8% overall campaign conversion, including referral traffic, on the same campaigns, 42,512 campaigns, 6,919 businesses) |
 | Worth 1 to 9 | 11.9%-15.1% |
 | Worth 10 or more | 15.1% (13,665 campaigns, 2,183 businesses), with more clicks per Entrant too (0.98 against 0.86 at worth 1) |
 

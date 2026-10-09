@@ -95,3 +95,7 @@ Fixture pairs and supplied review records: `evals/fixtures/giveaway-entry-method
 ## Answer scope regression, 10 October 2026
 
 Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.
+
+## Referral conversion comparator, 10 October 2026
+
+Added a judgement-only regression case after reviewing the source definition and aggregate cut. It distinguishes referral conversion from overall campaign conversion and leaves non-referral conversion unavailable. This case has not been run against a model. Repository checks are recorded in the patch report.

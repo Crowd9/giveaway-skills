@@ -91,3 +91,7 @@ Added judgement-only regression cases. Reviewed the source instructions and copy
 ## Answer scope regression, 10 October 2026
 
 Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.
+
+## Email failure diagnosis, 10 October 2026
+
+Added a judgement-only regression case after reviewing the source instructions and Mailchimp bounce documentation. It requires concrete checks before inferring intent or choosing a remedy. This case has not been run against a model. Repository checks are recorded in the patch report.

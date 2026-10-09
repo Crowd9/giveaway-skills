@@ -84,10 +84,12 @@ chances. Record the weighting and any input correction in the audit note.
 Each Entrant gets a sortable key from a hash of the seed and their id. Sort by key, highest first, ties broken by id, and the first Entrants fill the tiers in order, then the backups. Ten lines in Python, JavaScript or Go reproduce it, and the audit record lists every Winner's key for comparison.
 
 ```
-u = first 8 bytes of SHA-256(seed + "|" + lowercase trimmed id), read as an unsigned integer
+u = first 8 bytes of SHA-256(seed + "|" + normalized id), read as an unsigned integer
 u = (u + 0.5) / 2^64
 key = u ^ (1 / weight)   # weight = 1 when unweighted
 ```
+
+The committed `id_normalization` rule controls how identifiers are prepared for duplicate merging, exclusions and hashing. `trim-lowercase` trims whitespace and lowercases email addresses, handles and other recognized person labels. Email headers include `email`, `email_address`, `contact_email` and `contact_email_address`, ignoring capitalization, spaces, hyphens and underscores. Dotted paths use the final field label. `trim-case-sensitive` trims whitespace while preserving opaque account IDs, including explicit custom identifier columns. Audits without this rule use the legacy `trim-lowercase` policy.
 
 A private verifier with the original identifier can check that the audit record holds the same key for that person. Worked example with seed `seed-2026` and Entrant id `ann`:
 

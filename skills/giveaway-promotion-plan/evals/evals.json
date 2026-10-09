@@ -493,6 +493,24 @@
      "fail_example": "To enter, answer our question and subscribe to our newsletter."
     }
    ]
+  },
+  {
+   "id": 22,
+   "prompt": "Do referral visitors convert worse than other visitors? Use the referral conversion benchmarks to tell me whether to keep referrals in our giveaway.",
+   "expected_output": "Identify 21.8% as overall campaign conversion including referral traffic, compared with 13.9% share-click conversion on 42,512 campaigns from 6,919 businesses. State that non-referral conversion is unavailable and avoid deciding referrals underperform other visitors from these figures.",
+   "assertions": [
+    "Identify 21.8% as overall campaign conversion including referral traffic, compared with 13.9% share-click conversion on 42,512 campaigns from 6,919 businesses. State that non-referral conversion is unavailable and avoid deciding referrals underperform other visitors from these figures."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "referral-overall-comparator",
+     "criterion": "Identify 21.8% as overall campaign conversion including referral traffic, compared with 13.9% share-click conversion on 42,512 campaigns from 6,919 businesses. State that non-referral conversion is unavailable and avoid deciding referrals underperform other visitors from these figures.",
+     "pass_example": "The comparison includes referral traffic in the overall figure. It does not provide conversion for non-referral visitors, so we cannot rank those two groups.",
+     "fail_example": "Referral visitors convert at two thirds the rate of other visitors, so remove referrals."
+    }
+   ]
   }
  ]
 }

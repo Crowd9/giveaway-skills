@@ -5,12 +5,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | Skill | Version |
 |---|---|
 | giveaway-prize-picker | 1.3.53 |
-| giveaway-entry-method-planner | 1.2.49 |
+| giveaway-entry-method-planner | 1.2.50 |
 | giveaway-timing-and-duration | 1.4.48 |
 | giveaway-winner-structure | 1.4.22 |
-| giveaway-promotion-plan | 1.3.50 |
-| giveaway-random-draw | 1.3.49 |
-| giveaway-winner-communications | 1.2.41 |
+| giveaway-promotion-plan | 1.3.51 |
+| giveaway-random-draw | 1.3.50 |
+| giveaway-winner-communications | 1.2.42 |
 | giveaway-idea-generator | 1.3.42 |
 | giveaway-results-review | 1.6.32 |
 | gleam-campaign-setup | 1.2.46 |
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.35 (2026-10-10)
+
+A draw keeps two accounts apart when their IDs differ only in capital letters, so neither loses their place or their chances to the other. Email addresses still match regardless of case, and an older draw record checks out exactly as before.
+
+The referral figure is compared with the campaign's overall Conversion Rate, never with other visitors, which the data doesn't separate. If emails bounce or people complain, read the bounce reasons and your consent records first, and change the entry form only if they point there.
 
 ## 3.0.34 (2026-10-10)
 

@@ -86,3 +86,7 @@ Added assertions for the brief's answer corrections to the existing case. Not ye
 ## Required and optional action copy, 10 October 2026
 
 Added judgement-only cases 20 and 21 for a required question with an optional newsletter signup and a campaign with only one entry action. These cases have not been run against a model. Repository checks are recorded in the patch report.
+
+## Referral conversion comparator, 10 October 2026
+
+Added a judgement-only regression case after reviewing the source definition and aggregate cut. It distinguishes referral conversion from overall campaign conversion and leaves non-referral conversion unavailable. This case has not been run against a model. Repository checks are recorded in the patch report.

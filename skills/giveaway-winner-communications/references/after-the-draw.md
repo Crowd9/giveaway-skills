@@ -73,10 +73,10 @@ Read these in the email provider within a day or two of the Winners email, for t
 
 - Unsubscribe rate on that send.
 - Spam complaint rate on that send.
-- Bounce rate, hard bounces especially, which say how many addresses were typed to win and never to be read.
+- Bounce rate and the provider's reported reasons, especially for hard bounces. [Mailchimp describes bounces as delivery failures](https://mailchimp.com/help/soft-vs-hard-bounces/). Inspect the reasons and where the addresses came from before choosing a remedy. A bounce does not establish why someone supplied the address.
 - Clicks after your email tool has filtered automated activity, replies, purchases and explicit reconfirmations. Treat open share as uncertain because privacy features can generate opens without a person reading.
 
-A complaint rate that jumps on the Winners email usually means the entry form did not make the marketing opt-in obvious, so people who only wanted a Prize are receiving marketing. Fix the form before the next campaign. Set the numbers down beside the campaign report so the next giveaway has something to compare with.
+If complaints rise on the Winners email, check recorded marketing consent, where the list came from, whether recipients would recognize the sender, and the content and frequency of recent sends. Choose a remedy from those findings. A complaint increase alone does not establish that the entry form was defective. Set the numbers down beside the campaign report so the next giveaway has something to compare with.
 
 ## Hygiene before the core list
 

@@ -422,6 +422,24 @@
      "fail_example": "We can substitute another machine if you agree."
     }
    ]
+  },
+  {
+   "id": 19,
+   "prompt": "The Winners email had hard bounces and more spam complaints than our previous send. Does that mean people entered fake addresses and our opt-in form was unclear? Tell us what to check and fix.",
+   "expected_output": "Check provider bounce reasons, list provenance, recorded marketing consent, sender recognition, message content and send frequency before selecting a remedy. Do not infer deliberate fake addresses or diagnose a defective opt-in form from bounces and complaints alone.",
+   "assertions": [
+    "Check provider bounce reasons, list provenance, recorded marketing consent, sender recognition, message content and send frequency before selecting a remedy. Do not infer deliberate fake addresses or diagnose a defective opt-in form from bounces and complaints alone."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "email-failure-diagnosis",
+     "criterion": "Check provider bounce reasons, list provenance, recorded marketing consent, sender recognition, message content and send frequency before selecting a remedy. Do not infer deliberate fake addresses or diagnose a defective opt-in form from bounces and complaints alone.",
+     "pass_example": "Inspect the provider bounce reasons and how addresses joined the list. Review recorded consent, sender recognition, content and send frequency before choosing a fix. These symptoms alone do not prove intent or the cause.",
+     "fail_example": "Hard bounces show fake addresses entered only to win. More complaints mean the opt-in form was unclear, so rewrite it."
+    }
+   ]
   }
  ]
 }
