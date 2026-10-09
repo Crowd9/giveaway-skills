@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose and evaluate giveaway, contest, sweepstakes or raffle Prizes, budgets and fulfilment. Use for 'what should we give away', 'is this a good Prize', 'giveaway budget', 'Prize bundle', 'what Prize gets the most entries', 'B2B giveaway Prize', 'webinar giveaway', or 'attract buyers, not freebie hunters'."
 metadata:
-  version: 1.3.57
+  version: 1.3.58
 ---
 
 # Giveaway Prize Picker
@@ -98,7 +98,7 @@ This folder works alone. `analysis/output/` paths name source data that is not i
 <!-- /generated -->
 
 - Cash and gift cards are the default a reader reaches for, and the data does not support the reason they reach for it. Gift card or cash campaigns drew a typical 451 Entrants, below the all-campaign figure, where regulated goods drew 2,133, music gear 1,290 and tech hardware 893 (`analysis/output/benchmarks.json`, `ordinary_benchmark.by_prize_category`, campaigns containing each category). Where a gift card earns its place is crowd per Prize dollar at 1.07, a little above typical for the money, as the reason to consider one. Say so plainly when recommending one.
-- Distinguish a stated retail value from what the business actually paid. When a user's expected audience is small, calibrate against their own band in `references/roi-benchmarks.md`: the typical stated Prize pool is 120 USD at 100 to 250 Entrants and 148 USD at 250 to 500, against 3,000 USD for campaigns above 10,000.
+- Distinguish a stated retail value from what the business actually paid. Below 100 Entrants, the ROI script withholds benchmarks because the data starts at 100 Entrants. For a supported audience size, calibrate against their own band in `references/roi-benchmarks.md`: the typical stated Prize pool is 120 USD at 100 to 250 Entrants and 148 USD at 250 to 500, against 3,000 USD for campaigns above 10,000.
 - A small crowd is not a weak result for a buyer campaign, and a big one is not a strong result. No figure here says how many of any category's Entrants were buyers.
 - Measure sales, lead quality, profitability and retention from their own records. Keep Entrants, Entries and Impressions distinct.
 
@@ -134,7 +134,7 @@ Advice is platform-neutral by default. When the user says they use Gleam or asks
 - `references/gleam-setup.md`: only for explicit Gleam requests.
 - `references/prize-values-by-category-and-size.json`: stated USD Prize values (the lower quarter, typical and upper quarter, with the count of stated Prize values behind the cell) by category and campaign size. That count is Prize records, so a campaign with three valued Prizes counts three times, so write "116 stated Prize values". Load when the user asks what campaigns like theirs declare, and quote the cell with how many Prize values sit behind it. Thin cells behave oddly: beauty_wellness in campaigns of 2,500 to 10,000 Entrants has a lower quarter equal to its typical figure (250 USD) on 31 stated Prize values, which is a sample artifact of clustered round numbers. Below about 100 stated Prize values, quote the typical figure and the count of stated Prize values and leave the quarters alone.
 - `references/roi-benchmarks.md`: stated Prize value % of Entrants, per email signup, per follow and per referral entry by industry, campaign size and year, which industries get the most for the money, and how to use the ROI script.
-- `scripts/roi.py`: cost per result, declared valuation multiples and financial ROI from contribution, before or after a campaign. Benchmarks compare stated value per result. `--self-test` checks it. Every benchmark in it is USD, so convert the reader's figures to USD before running it, say the rate you used, and give the answer back in the reader's own currency. For `scripts/budget.py`, convert all inputs to the currency named by `--currency` first. Its `--rate` records the rate and date in the printed breakdown only.
+- `scripts/roi.py`: cost per result, declared valuation multiples and financial ROI from contribution, before or after a campaign. Benchmarks compare stated value per result for campaigns from 100 Entrants. Industry names ignore case, and unknown names return the supported choices. `--self-test` checks it. Every benchmark in it is USD, so convert the reader's figures to USD before running it, say the rate you used, and give the answer back in the reader's own currency. For `scripts/budget.py`, convert all inputs to the currency named by `--currency` first. Its `--rate` records the rate and date in the printed breakdown only.
 - `scripts/budget.py`: budget calculator (`--self-test`, `--help`). Every figure in and out is an estimate. Pass `--winners` for cost per Winner, since a bundle can have several Prize units for one Winner. End a digital Prize name with `(digital)` to omit shipping and duty for those units.
 
 ## Related skills

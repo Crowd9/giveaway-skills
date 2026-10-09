@@ -142,6 +142,13 @@ def pct(a, b): return f"{a / b:.0%}" if b else "-"
 def load(path, mapping=None, wide_unit=None, wide_worth=None):
     with open(path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f); raw = []; source_rows = []
+        header = reader.fieldnames or []
+        seen = set()
+        for column in header:
+            normalized = column.strip().casefold()
+            if normalized in seen:
+                raise ValueError(f"duplicate CSV header {column!r}; rename or remove duplicate columns before reporting")
+            seen.add(normalized)
         for row in reader:
             raw.append(row); source_rows.append(reader.line_num)
         header = reader.fieldnames or []
@@ -218,7 +225,22 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
     load.last = {"columns": cols, "wide": wide, "wide_unit": wide_unit, "name_only": cols["who"].casefold() in ("name", "entrant", "user"), "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
     return rows
 
+def conversion_rate(entrants, impressions):
+    """One availability rule for the report and every dashboard view."""
+    if impressions is None:
+        return None, "unavailable: supply Impressions for the same reporting period and population"
+    if impressions <= 0:
+        return None, "pending: supply positive Impressions for the same reporting period and population"
+    if entrants > impressions:
+        return None, "pending: Entrants exceed Impressions. Supply counts for matching reporting periods and populations before comparing conversion"
+    return entrants / impressions, None
+
+
 def analyze(rows, a):
+    for name in ("prize_cost", "plan_cost"):
+        value = getattr(a, name, None)
+        if value is not None and (not math.isfinite(value) or value < 0):
+            raise ValueError(f"--{name.replace('_', '-')} must be finite and nonnegative")
     complete_all_action = getattr(a, "complete_all_action", None)
     if complete_all_action is not None and (not complete_all_action.strip() or not any(r["Action"] == complete_all_action for r in rows)):
         raise ValueError("--complete-all-action must exactly match an exported action title confirmed in the campaign configuration")
@@ -441,13 +463,14 @@ def markdown_cell(value):
 
 def render(R, a):
     L = []; w = L.append; T = R["topline"]; n = R["base"]
+    conversion, conversion_note = conversion_rate(n, a.impressions)
     if not n:
         w("# Campaign report\n\n| Metric | Value |\n|---|---|")
         for label, key in (("Users", "entrants"), ("Actions completed", "actions"), ("Entries", "entries"),
                            ("Invalid Actions", "invalid_actions"), ("Invalid Entries", "invalid_entries")):
             w(f"| {label} | {T[key]:,} |")
         if a.impressions is not None: w(f"| Impressions | {a.impressions:,} |")
-        w("| Conversion Rate | " + ("0.0%" if a.impressions and a.impressions > 0 else "unavailable") + " |")
+        w("| Conversion Rate | " + (f"{conversion:.1%}" if conversion is not None else conversion_note) + " |")
         total = T["entries"] + T["invalid_entries"]
         w("| Invalid Entries share | " + (f"{T['invalid_entries'] / total:.1%}" if total else "unavailable") + " |")
         w("\nPer-Entrant ratios, engagement and referral outcomes are unavailable: zero valid Entrants. No matching peers: the dataset starts at 100 Entrants.")
@@ -459,7 +482,7 @@ def render(R, a):
         w("Name-only deduplication may merge different people who share a display name. Supply a person identifier with --map who=<column> before relying on Entrant counts.")
     if info and info["wide"]:
         w(f"Wide cell unit: {info['wide_unit']}. Entries use declared worth per completion. Summary dates cannot establish action times, so timing and speed are unavailable. Referral relationships require individual action rows.")
-    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique identifiers with a valid action). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions else ", so there is no Impressions-to-entrants funnel here."))
+    w(f"# Campaign report\n\nBase: {n:,} export entrants (unique identifiers with a valid action). Times are the account timezone. Impressions are not in the dataset" + (f", {a.impressions:,} supplied from the Reporting tab." if a.impressions is not None else ", so there is no Impressions-to-entrants funnel here."))
     w("\n## Overview\n")
     def row(label, shown, metric=None, value=None, fmt=lambda v: f"{v:,.2f}"):
         typ, where = bench(metric, value, n, fmt) if metric else ("-", "no benchmark for this")
@@ -469,7 +492,7 @@ def render(R, a):
                    row("Actions each", f"{T['actions_per_entrant']:.1f}", "actions_per_contestant", T["actions_per_entrant"], lambda v: f"{v:.1f}"),
                    row("Entries each", f"{T['entries_per_entrant']:.1f}", "entries_per_entrant", T["entries_per_entrant"], lambda v: f"{v:.1f}"),
                    row("Invalid actions", f"{T['invalid_actions']:,} ({T['invalid_rate']:.1%} of rows)")]
-                  + ([row("Conversion Rate", f"{n / a.impressions:.1%}", "conversion", n / a.impressions, lambda v: f"{v:.0%}")] if a.impressions else [])))
+                  + ([row("Conversion Rate", f"{conversion:.1%}", "conversion", conversion, lambda v: f"{v:.0%}") if conversion is not None else row("Conversion Rate", conversion_note)] if a.impressions is not None else [])))
     w("\nTypical is the median of campaigns in the same size band in Gleam campaign data, and the rank is the share of that band this campaign beats. Engagement depth, speed, timing, traffic mix, audience and retention have no benchmark in the data, so those sections describe this campaign alone.")
     E = R["engagement"]; w("\nEngagement by actions per Entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
     S = R["speed"]
@@ -556,7 +579,51 @@ Nothing in this section is in the dataset. Pull each figure from the email provi
 Run the same four again after the next campaign and the pair becomes a trend.""")
     return "\n".join(L)
 
+def reporting_input_self_test(entrypoint, output_flag):
+    """Exercise the same malformed CSV and manual-count cases through both CLIs."""
+    import contextlib, io, tempfile
+    from pathlib import Path
+    with tempfile.TemporaryDirectory() as directory:
+        source = Path(directory) / "export.csv"
+        output = Path(directory) / "report.out"
+        base = "Email,Name,Action,Entries,When\na@example.com,José,Visit,1,2026-04-13\nb@example.com,Zoë,Visit,2,2026-04-14\n"
+        def run(contents, flags=(), error=None):
+            source.write_text(contents, encoding="utf-8")
+            output.write_text("untouched", encoding="utf-8")
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                try:
+                    result = entrypoint([str(source), output_flag, str(output), *flags])
+                except SystemExit as exc:
+                    assert error and exc.code == 2, (exc.code, stderr.getvalue())
+                    assert error in stderr.getvalue(), stderr.getvalue()
+                    assert "Traceback" not in stderr.getvalue()
+                    assert output.read_text(encoding="utf-8") == "untouched"
+                    return stderr.getvalue()
+            assert error is None and result == 0, (error, result)
+            return output.read_text(encoding="utf-8")
+        for header in ("Email,Email", "Email,email", "Email, EMAIL "):
+            run(header + ",Action,Entries\na@example.com,z@example.com,Visit,1\nb@example.com,z@example.com,Visit,1\n", error="duplicate CSV header")
+        for header in ("Entries,Entries", "Entries,entries", "Entries, ENTRIES "):
+            run("Email,Action," + header + "\na@example.com,Visit,1,8\nb@example.com,Visit,2,9\n", error="duplicate CSV header")
+        for impressions, shown in ((-1, "pending:"), (0, "pending:"), (1, "pending:"), (2, "100.0%"), (4, "50.0%")):
+            result = run(base, ("--impressions", str(impressions)))
+            assert "Conversion Rate" in result and shown in result, (impressions, result)
+            if impressions <= 1:
+                assert "200.0%" not in result and "-200.0%" not in result
+            rate, note = conversion_rate(2, impressions)
+            assert (rate is None) == (impressions <= 1)
+            if impressions <= 1:
+                assert note in result
+        for flag in ("--prize-cost", "--plan-cost"):
+            for value in ("-100", "nan", "inf", "-inf"):
+                run(base, (flag + "=" + value,), error=flag + " must be finite and nonnegative")
+            result = run(base, (flag, "0"))
+            assert "0.00" in result
+
+
 def self_test():
+    reporting_input_self_test(main, "--markdown")
     import os, tempfile
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     with open(p, "w", newline="") as f:

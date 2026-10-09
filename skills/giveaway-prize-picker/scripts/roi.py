@@ -2,7 +2,7 @@
 """Giveaway ROI, before or after the campaign. No dependencies.
 
 Before the campaign, pricing a plan: we will spend 1,400 USD all in on a food and drink campaign we expect to draw 2,000 Entrants, and an email address is worth 4 USD to us.
-  python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --email-action --vertical food_drink --value-per-email 4
+  python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --email-action --value-per-email 4
 After the campaign, pricing what actually happened: the same spend drew 1,800 Entrants, 1,500 addresses, 900 follows and 200 referral Entries.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --contestants 1800 --emails 1500 --follows 900 --referrals 200 --value-per-email 4
 
@@ -181,7 +181,7 @@ BENCH = {
 }
 UPTAKE = {"email": 0.85, "follow": 0.53, "referral": 0.11}   # median completions per Entrant when the action is offered
 
-def band(n): return "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2.5k" if n >= 1000 else "500-1k" if n >= 500 else "250-500" if n >= 250 else "100-250"
+def band(n): return None if n < 100 else "10k+" if n >= 10000 else "2.5k-10k" if n >= 2500 else "1k-2.5k" if n >= 1000 else "500-1k" if n >= 500 else "250-500" if n >= 250 else "100-250"
 
 def money(x): return "-" if x is None else f"{x:,.2f}"
 
@@ -192,6 +192,9 @@ def run(a):
         value = getattr(a, field)
         if value is not None and (not math.isfinite(value) or value < 0):
             raise ValueError(field.replace("_", " ") + " must be finite and nonnegative")
+    vertical = a.vertical.strip().casefold() if a.vertical is not None else None
+    if vertical is not None and vertical not in BENCH["by_vertical"]:
+        raise ValueError("unknown industry " + repr(a.vertical) + "; valid industries: " + ", ".join(BENCH["by_vertical"]))
     basis = getattr(a, "value_basis", None)
     margin = getattr(a, "contribution_margin", None)
     if basis not in (None, "revenue", "contribution", "acquisition"):
@@ -208,19 +211,20 @@ def run(a):
     emails = a.emails if a.emails is not None else (round(a.contestants * UPTAKE["email"]) if a.email_action else None)
     follows = a.follows if a.follows is not None else (round(a.contestants * UPTAKE["follow"]) if a.follow_action else None)
     refs = a.referrals if a.referrals is not None else (round(a.contestants * UPTAKE["referral"]) if a.share_action else None)
-    bench = BENCH["by_vertical"].get(a.vertical) or BENCH["by_band"][band(a.contestants)]
-    label = a.vertical if a.vertical in BENCH["by_vertical"] else f"band {band(a.contestants)}"
+    size_band = band(a.contestants)
+    bench = (BENCH["by_vertical"][vertical] if vertical else BENCH["by_band"][size_band]) if size_band else None
+    label = (vertical or f"band {size_band}") if bench else "Benchmark unavailable: data starts at 100 Entrants"
     rows = [("Total cost (what you pay)", money(cost), "", ""),
             ("Cost per Entrant", money(cost / a.contestants), "", "")]
     if stated is not None:
-        rows.append(("Stated value per Entrant", money(stated / a.contestants), money(bench["usd_per_contestant"]), label))
+        rows.append(("Stated value per Entrant", money(stated / a.contestants), money(bench["usd_per_contestant"]) if bench else "-", label))
     for count, asset, key in ((emails, "email signup", "usd_per_email"),
                               (follows, "follow", "usd_per_follow"),
                               (refs, "referral entry", "usd_per_referral_entry")):
         if count:
             rows.append(("Cost per " + asset, money(cost / count), "", ""))
             if stated is not None:
-                rows.append(("Stated value per " + asset, money(stated / count), money(bench[key]), label))
+                rows.append(("Stated value per " + asset, money(stated / count), money(bench[key]) if bench else "-", label))
     assets = ((emails, a.value_per_email, "emails"), (follows, a.value_per_follow, "follows"),
               (refs, a.value_per_referral, "referrals"))
     missing = [name for count, unit_value, name in assets if count is None and unit_value is not None]
@@ -302,7 +306,7 @@ def benchmark_self_test():
 
 
 def self_test():
-    class A: prize_cost = 900; stated_value = 1500; promotion = 300; admin = 200; shipping = 0; contestants = 2000; vertical = "food_drink"
+    class A: prize_cost = 900; stated_value = 1500; promotion = 300; admin = 200; shipping = 0; contestants = 2000; vertical = None
     class A(A): emails = None; follows = None; referrals = None; email_action = True; follow_action = True; share_action = True; value_per_email = 4; value_per_follow = 0; value_per_referral = 0
     rows, note = run(A); d = {r[0]: r for r in rows}
     assert "food_drink" not in BENCH["by_vertical"]
@@ -407,6 +411,36 @@ def self_test():
     rows, note = run(Missing); d = {r[0]: r[1] for r in rows}
     assert d["Contribution after fulfilment"] == "340.00" and d["Financial ROI"] == "240.00%"
     assert "estimated" in note
+    # Reproductions: sub-100 campaigns have costs but no matching benchmark.
+    class Small(A):
+        prize_cost = 200; stated_value = 300; promotion = admin = shipping = 0
+        contestants = 20; emails = 10; follows = referrals = None
+        email_action = follow_action = share_action = False
+        vertical = None
+    rows, _ = run(Small); d = {r[0]: r for r in rows}
+    assert d["Cost per Entrant"][1] == "10.00" and d["Cost per email signup"][1] == "20.00"
+    assert d["Stated value per Entrant"][1] == "15.00" and d["Stated value per email signup"][1] == "30.00"
+    assert band(20) is None and band(99) is None
+    for vertical in (None, "technology"):
+        Small.vertical = vertical
+        rows, _ = run(Small)
+        assert all(r[2] == "-" and "data starts at 100 Entrants" in r[3]
+                   for r in rows if r[0].startswith("Stated value")), rows
+    Small.contestants = 100; Small.vertical = None
+    rows, _ = run(Small); d = {r[0]: r for r in rows}
+    assert d["Stated value per Entrant"][2:] == ("0.77", "band 100-250")
+    Small.contestants = 200; Small.emails = 100; Small.vertical = "technology"
+    lowercase = run(Small)
+    Small.vertical = "Technology"
+    assert run(Small) == lowercase
+    assert {r[0]: r for r in lowercase[0]}["Stated value per email signup"][2:] == ("0.65", "technology")
+    Small.vertical = "technologgy"
+    try:
+        run(Small)
+    except ValueError as exc:
+        assert "unknown industry" in str(exc) and all(v in str(exc) for v in BENCH["by_vertical"])
+    else:
+        raise AssertionError("unknown industry silently accepted")
     benchmark_self_test()
     print("self-test passed"); return 0
 

@@ -86,8 +86,21 @@ def read_rows(path, strict=False):
     unweighted: the summary keeps it at zero and reports it, the draw export refuses it, because a chance the
     export invented is worse than a review that is one row short."""
     with open(path, newline="", encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
+        reader = csv.DictReader(f)
+        headers = reader.fieldnames or []
+        normalized = [header.strip().casefold() for header in headers]
+        duplicates = sorted(name for name, count in collections.Counter(normalized).items() if count > 1)
+        if duplicates:
+            raise ValueError(f"duplicate CSV headers after ignoring case and whitespace: {', '.join(duplicates)}; give each column a unique name")
+        supported = {name.casefold(): name for name in
+                     ("Email", "Status", "Action", "Entries", "Country", "When", "Referring URL")}
+        reader.fieldnames = [supported.get(name, header.strip()) for name, header in zip(normalized, headers)]
+        if "Action" not in reader.fieldnames:
+            raise ValueError("not a Gleam Actions export: no Action column")
+        rows = list(reader)
     for number, row in enumerate(rows, 2):
+        if not (row.get("Action") or "").strip():
+            raise ValueError(f"source CSV row {number}: missing Action; supply the completed action title before export")
         try:
             weight = float(row.get("Entries") or "")
         except (TypeError, ValueError):
@@ -111,6 +124,8 @@ def weight_total(rows):
 def person_identifiers(rows, who=None):
     """Validate one confirmed identity column for every source row before counting or writing."""
     who = who or "Email"
+    if rows:
+        who = next((name for name in rows[0] if isinstance(name, str) and name.casefold() == who.strip().casefold()), who)
     if not rows or who not in rows[0]:
         raise ValueError("no person identifier column available; pass --person-column with a confirmed stable person ID column")
     if who.strip().lower() in ("name", "entrant", "user", "display name", "display_name"):
@@ -165,7 +180,8 @@ def load(path, who=None):
     for r in valid:
         u = (r.get("Referring URL") or "").strip()
         refs[u.split("/")[2] if u.startswith("http") and u.count("/") >= 2 else (u or "direct or unknown")] += 1
-    span = (max(whens).date() - min(whens).date()).days + 1 if whens else None
+    dates = [when.date() for when in whens]
+    span = (max(dates) - min(dates)).days + 1 if dates else None
     return {"rows": len(rows), "valid_rows": len(valid), "invalid_rows": len(bad), "invalid_entries": weight_total(bad),
             "unweighted_rows": sum(1 for r in rows if r.get("_unweighted")),
             "contestants": len(people), "entries": entries,
@@ -377,6 +393,43 @@ def self_test():
     assert classify_action("Watch our subscription program overview") == (None, "Visit a Page", "visit")
     for title in ("Subscribe", "Subscribe to Brand", "Sign up"):
         assert classify_action(title) == (None, "", None), title
+    # Ambiguous columns and truncated actions fail before either output is replaced.
+    malformed_path = Path(d) / "malformed.csv"
+    protected = Path(d) / "protected.csv"
+    protected.write_text("existing output\n")
+    for contents, message in (
+        ("Email,Email,Status,Action,Entries\na@example.com,z@example.com,Valid,Visit,1\nb@example.com,z@example.com,Valid,Visit,1\n", "duplicate CSV headers"),
+        ("Email, email ,Status,Action,Entries\na@example.com,z@example.com,Valid,Visit,1\n", "duplicate CSV headers"),
+        ("Email,Status,Action,Entries,Entries\na@example.com,Valid,Visit,1,8\n", "duplicate CSV headers"),
+        ("Email,Status,Action,Entries,ENTRIES\na@example.com,Valid,Visit,1,8\n", "duplicate CSV headers"),
+        ("Email,Status,Action,Entries\na@example.com,Valid\n", "source CSV row 2: missing Action"),
+    ):
+        malformed_path.write_text(contents)
+        for operation in (lambda: load(malformed_path),
+                          lambda: write_entrants(malformed_path, protected)):
+            try: operation()
+            except ValueError as exc: assert message in str(exc), exc
+            else: raise AssertionError("malformed export accepted")
+            assert protected.read_text() == "existing output\n"
+        error = io.StringIO()
+        with contextlib.redirect_stderr(error):
+            try: main([str(malformed_path), "--actions-csv", str(protected), "--entrants-csv", str(protected)])
+            except SystemExit as exc: assert exc.code == 2
+            else: raise AssertionError("CLI accepted malformed export")
+        assert message in error.getvalue() and "Traceback" not in error.getvalue()
+        assert protected.read_text() == "existing output\n"
+    # Header case cannot change whether an Invalid row reaches the draw.
+    for status_header in ("Status", "status", "STATUS"):
+        malformed_path.write_text(f"email,{status_header},ACTION,entries\na@example.com,Invalid,Visit,5\n")
+        status_summary = load(malformed_path)
+        assert status_summary["invalid_rows"] == 1 and status_summary["invalid_entries"] == 5
+        assert status_summary["valid_rows"] == 0 and status_summary["entries"] == 0
+        write_entrants(malformed_path, protected)
+        assert protected.read_bytes() == b"email,entries\r\n"
+    malformed_path.write_text("Email,Status,Action,Entries,When\na@example.com,Valid,Visit,1,2026-01-01 10:00:00\nb@example.com,Valid,Visit,1,2026-01-02 10:00:00 +1000\n")
+    mixed_zones = load(malformed_path)
+    assert mixed_zones["days_covered"] == 2
+    assert mixed_zones["by_day"] == {"2026-01-01": 1, "2026-01-02": 1}
     print("self-test passed"); return 0
 
 def main(argv):

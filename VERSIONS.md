@@ -4,7 +4,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.57 |
+| giveaway-prize-picker | 1.3.58 |
 | giveaway-entry-method-planner | 1.2.57 |
 | giveaway-timing-and-duration | 1.4.57 |
 | giveaway-winner-structure | 1.4.27 |
@@ -12,7 +12,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-random-draw | 1.3.54 |
 | giveaway-winner-communications | 1.2.45 |
 | giveaway-idea-generator | 1.3.47 |
-| giveaway-results-review | 1.6.40 |
+| giveaway-results-review | 1.6.41 |
 | gleam-campaign-setup | 1.2.52 |
 
 ## Skills
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.50 (2026-10-10)
+
+An invalid entry can no longer reach your draw, however the export spells its status column. Exports with two columns of the same name now stop with a clear message, so no Entrant's chances are merged with someone else's. A report never shows a Conversion Rate above 100% or a negative cost per Entrant. If the counts don't fit, it waits for figures that match. A campaign under 100 Entrants is told the data starts at 100, where before it was compared with bigger campaigns. Name an industry in any case, and an unknown one lists the valid choices.
 
 ## 3.0.49 (2026-10-10)
 

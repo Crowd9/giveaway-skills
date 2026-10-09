@@ -575,6 +575,10 @@ def gather(a):
     for k in ("x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"): setattr(b, k, None)
     b.vertical = a.vertical; b.repeatable = a.repeatable; b.first_campaign = a.first_campaign; b.actions = None; b.history = None
     metrics = RV.review(b)
+    conversion, conversion_note = CR.conversion_rate(N, a.impressions)
+    if a.impressions is not None and conversion is None:
+        metrics = [metric for metric in metrics if metric[0] != "Conversion Rate"]
+        metrics.append(("Conversion Rate", "-", "-", conversion_note))
     labels = {"Email signups": "Email subscription completions", "Email signups per Entrant": "Email subscription completions per Entrant"}
     metrics = [(labels.get(label, label), *values) for label, *values in metrics]
     span = (R["end"].date() - R["start"].date()).days + 1 if R.get("start") else None
@@ -659,6 +663,7 @@ def table(headers, rows, num_from=1):
 
 
 def render(D, W, S, a):
+    conversion, conversion_note = CR.conversion_rate(D["N"], a.impressions)
     if not D["N"]:
         T = D["T"]
         total_entries = T["entries"] + T["invalid_entries"]
@@ -668,8 +673,8 @@ def render(D, W, S, a):
                    ("Invalid action share", f"{T['invalid_rate']:.1%}" if T["invalid_rate"] is not None else "unavailable"),
                    ("Invalid Entries share", f"{T['invalid_entries'] / total_entries:.1%}" if total_entries and not T["unweighted_rows"] else "unavailable"),
                    ("Actions each", "unavailable"), ("Entries each", "unavailable")]
-        if a.impressions and a.impressions > 0:
-            metrics.append(("Conversion Rate", "0.0%"))
+        if a.impressions is not None:
+            metrics.append(("Conversion Rate", f"{conversion:.1%}" if conversion is not None else conversion_note))
         title = esc(a.title or "Campaign Results Review")
         return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
                 f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title>'
@@ -690,7 +695,7 @@ def render(D, W, S, a):
     heat_peak = R["heat_peak"]
     ins = "".join(f"<li>{esc(i)}</li>" for i in D["insights"])
     topline = table(["Metric", "Value"], [("Entrants (unique valid emails)", n(N)), ("Actions completed", n(T["actions"])), ("Entries", f"{T['entries']:,}"), ("Actions each", f"{T['actions_per_entrant']:.1f}"), ("Entries each", f"{T['entries_per_entrant']:.1f}"),
-                                          ("Invalid actions", f"{n(T['invalid_actions'])} ({T['invalid_rate']:.1%} of rows)")] + ([("Conversion Rate", f"{N / a.impressions:.1%}")] if a.impressions else []))
+                                          ("Invalid actions", f"{n(T['invalid_actions'])} ({T['invalid_rate']:.1%} of rows)")] + ([("Conversion Rate", f"{conversion:.1%}" if conversion is not None else conversion_note)] if a.impressions is not None else []))
     if R.get("prize_value") is not None:
         topline += f'<p>Stated Prize value: {R["prize_value"]:,.2f}. Advertised value, excluded from spending.</p>'
     if R.get("roi"):
@@ -773,6 +778,7 @@ def render(D, W, S, a):
 
 
 def self_test():
+    CR.reporting_input_self_test(main, "--out")
     import tempfile
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     import datetime as dt

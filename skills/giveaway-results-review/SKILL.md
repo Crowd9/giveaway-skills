@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review finished giveaways or diagnose live campaigns from numbers, reporting screenshots or Actions exports. Use for 'how did my giveaway do', 'giveaway post-mortem', 'why was conversion low', 'which actions worked', 'compare my campaigns', 'giveaway ROI', 'is this pace normal', 'nobody is entering', 'entries look fake', 'should I extend', or 'results dashboard'."
 metadata:
-  version: 1.6.40
+  version: 1.6.41
 ---
 
 # Giveaway Results Review
@@ -133,8 +133,8 @@ A sample in Gleam Actions export shape, 118 rows from 30 Entrants over five days
 - `scripts/dashboard.py`: the results dashboard as one HTML file, from the export and `words.json`, themed by the site block. Run it only when a dashboard was asked for.
 - `references/live-campaign.md`: a campaign that is still running. Day-by-day Impressions and share-click pace by run length, the closing days, where Impressions come from, reach against conversion against broken, entries that look fake, and extend, push or accept. The curves are from the data and the rest is labelled practice.
 - `references/reading-results.md`: how to read each metric, the Impressions caveat, common misreads, the recommendation map.
-- `scripts/campaign_report.py`: the full report from any export, Gleam as is and other platforms through `--map` or synonyms, with `--impressions`, `--prize-cost` (actual spending), `--prize-value` (stated value only), `--plan-cost`, `--benchmark-cpl`, `--sends`, `--partners`. `--self-test` checks it.
-- `scripts/gleam_export.py`: reads an export into the review numbers, the per-action CSV and an Entrants CSV for the draw script. `--self-test` checks it.
+- `scripts/campaign_report.py`: the full report from any export, Gleam as is and other platforms through `--map` or synonyms, with `--impressions`, `--prize-cost` (actual spending), `--prize-value` (stated value only), `--plan-cost`, `--benchmark-cpl`, `--sends`, `--partners`. Conversion Rate is withheld when Impressions are missing, nonpositive or below the Entrant count. Prize and plan costs must be finite and nonnegative. `--self-test` checks it.
+- `scripts/gleam_export.py`: reads an export into the review numbers, the per-action CSV and an Entrants CSV for the draw script. Headers ignore case, duplicate headers and missing Action values are rejected, and invalid rows stay out of the draw. Activity dates use account-local calendar days. `--self-test` checks it.
 - `scripts/review.py`: derived metrics, benchmark comparison and percentile rank from the numbers. `--self-test` checks it.
 - `references/percentiles.json`: every fifth percentile of each metric for all campaigns, the campaigns we can compare fairly, each size and each vertical. Read by the script. No customer data.
 
