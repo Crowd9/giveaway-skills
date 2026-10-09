@@ -68,10 +68,15 @@ def generic_name(action):
     return classify_action(action)[1]
 
 def parse_when(s):
-    for fmt in ("%Y-%m-%d %H:%M:%S %z", "%Y-%m-%d %H:%M:%S", "%d/%m/%Y %H:%M", "%Y-%m-%dT%H:%M:%S%z"):
-        try: return dt.datetime.strptime(s.strip(), fmt)
-        except ValueError: continue
-    return None
+    """Read export timestamps without changing the account-local time or UTC offset."""
+    value = (s or "").strip()
+    for separator in (" ", "T"):
+        for seconds in ("%S", "%S.%f"):
+            for zone in (" %z", "%z", ""):
+                try: return dt.datetime.strptime(value, f"%Y-%m-%d{separator}%H:%M:{seconds}{zone}")
+                except ValueError: continue
+    try: return dt.datetime.strptime(value, "%d/%m/%Y %H:%M")
+    except ValueError: return None
 
 def read_rows(path, strict=False):
     """Rows with their Entries parsed. A row whose Entries is blank, zero, negative or not a number counts as
@@ -157,6 +162,16 @@ def review_command(s, args):
     return cmd + " --impressions N   # Impressions from the Reporting tab"
 
 def self_test():
+    # The shared parser preserves fractional precision and explicit offsets.
+    for zone, offset in (("Z", dt.timedelta()), ("+10:00", dt.timedelta(hours=10)), ("-04:30", -dt.timedelta(hours=4, minutes=30)), ("", None)):
+        for separator in ("T", " "):
+            parsed = parse_when(f"2026-05-01{separator}00:15:00.123456{zone}")
+            assert parsed.microsecond == 123456 and parsed.utcoffset() == offset
+            assert parsed.date() == dt.date(2026, 5, 1) and parsed.hour == 0
+    for malformed in (None, "", "bad-date", "2026-05-01", "2026-05-01T00:15:00.nopeZ", "2026-13-01T00:15:00.123Z"):
+        assert parse_when(malformed) is None, malformed
+    assert parse_when("01/05/2026 10:30") == dt.datetime(2026, 5, 1, 10, 30)
+    assert parse_when("2026-05-01 10:30:00.5 +1000").utcoffset() == dt.timedelta(hours=10)
     for title in ("What is your preferred flavour?", "Tell us your preferences", "Answer a question: which do you prefer?"):
         assert classify_action(title)[0] is None and classify_action(title)[2] != "share"
     assert generic_name("Answer a question: which do you prefer?") == "Answer a Question"

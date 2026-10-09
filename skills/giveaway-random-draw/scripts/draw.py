@@ -223,6 +223,9 @@ def fetch_json(url):
     with urllib.request.urlopen(url, timeout=20) as r: return json.load(r)
 
 def seed_from(a):
+    if sum(getattr(a, key, None) is not None for key in ("seed", "seed_drand", "seed_nist")) != 1:
+        sys.exit("give exactly one seed source: --seed TEXT, --seed-drand ROUND or --seed-nist UNIXTIME "
+                 "(run `commit` first to announce one)")
     if a.seed is not None: return a.seed, {"type": "published text", "value": a.seed}
     if a.seed_drand:
         r = int(a.seed_drand); now = datetime.datetime.now(datetime.timezone.utc).timestamp()
@@ -722,7 +725,49 @@ def self_test_rank_underflow():
                 assert "legacy ranking (audit version 2.4.2)" in output.getvalue(), output.getvalue()
 
 
+def self_test_seed_sources():
+    import contextlib, itertools, pathlib, tempfile
+    from unittest.mock import patch
+    sources = (("seed", "regression-seed"), ("seed_drand", "1"), ("seed_nist", "1"))
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "entries.csv"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        entries.write_text("id\nalpha\nbeta\ngamma\ndelta\n")
+        for count in (0, 2, 3):
+            for chosen in itertools.combinations(sources, count):
+                namespace = argparse.Namespace(seed=None, seed_drand=None, seed_nist=None)
+                flags = []
+                for key, value in chosen:
+                    setattr(namespace, key, value)
+                    flags += ["--" + key.replace("_", "-"), value]
+                with patch.dict(globals(), fetch_json=lambda url: (_ for _ in ()).throw(
+                        AssertionError("invalid seed sources must fail before fetching"))):
+                    try: seed_from(namespace)
+                    except SystemExit as error: assert "exactly one seed source" in str(error), str(error)
+                    else: raise AssertionError("invalid seed sources accepted by seed_from")
+                    with contextlib.redirect_stderr(io.StringIO()) as errors:
+                        try: main(["draw", str(entries), "--id-column", "id", "--audit", str(audit_path)] + flags)
+                        except SystemExit as error: assert error.code == 2, error.code
+                        else: raise AssertionError("invalid seed sources accepted by CLI")
+                    assert ("not allowed with argument" if count else "required") in errors.getvalue()
+                assert not audit_path.exists()
+        responses = [{"round": 1, "randomness": "regression-seed", "signature": "fixture"},
+                     {"pulse": {"outputValue": "regression-seed", "timeStamp": "fixture"}}]
+        for (key, value), source_type in zip(sources, ("published text", "drand", "nist-beacon")):
+            with patch.dict(globals(), fetch_json=lambda url: responses[0 if "/public/" in url else 1]), \
+                    contextlib.redirect_stdout(io.StringIO()):
+                assert main(["draw", str(entries), "--id-column", "id", "--winners", "4",
+                             "--audit", str(audit_path), "--" + key.replace("_", "-"), value]) == 0
+            audit = json.loads(audit_path.read_text())
+            assert audit["seed"] == "regression-seed"
+            assert audit["seed_source"]["type"] == source_type
+            assert [row["id"] for row in audit["results"]] == ["delta", "gamma", "alpha", "beta"]
+        assert seed_from(argparse.Namespace(seed="", seed_drand=None, seed_nist=None)) == (
+            "", {"type": "published text", "value": ""})
+
+
 def self_test():
+    self_test_seed_sources()
     self_test_plus_preview()
     self_test_missing_ids()
     self_test_rank_underflow()
@@ -856,8 +901,9 @@ def main(argv):
     c = sub.add_parser("commit", help="hash the input and rules; optionally name the drand round for a draw time"); common(c); c.add_argument("--draw-at", help="ISO time with offset, e.g. 2026-09-12T09:00:00+10:00")
     c.add_argument("--flagged-out", help="write flagged ids for review, then rerun commit with the approved file as --exclude and final rules. Publish the new commitment before the seed exists, then draw with the same input, exclusions and rules")
     d = sub.add_parser("draw", help="run the draw once"); common(d)
-    d.add_argument("--seed", help="text for reproduction; fairness requires a preannounced future source beyond organizer control")
-    d.add_argument("--seed-drand", help="drand round number announced in advance"); d.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
+    seeds = d.add_mutually_exclusive_group(required=True)
+    seeds.add_argument("--seed", help="text for reproduction; fairness requires a preannounced future source beyond organizer control")
+    seeds.add_argument("--seed-drand", help="drand round number announced in advance"); seeds.add_argument("--seed-nist", help="unix time of a NIST beacon pulse announced in advance")
     d.add_argument("--audit"); d.add_argument("--winners-csv"); d.add_argument("--mask", action="store_true", help="print masked ids for announcements")
     v = sub.add_parser("verify", help="recompute a draw from its audit record"); v.add_argument("audit_file"); v.add_argument("--input"); v.add_argument("--exclude")
     a = ap.parse_args(argv)

@@ -455,6 +455,44 @@
      "fail_example": "Earn two extra Entries when a friend clicks, plus more when they buy."
     }
    ]
+  },
+  {
+   "id": 20,
+   "prompt": "Write a launch post for our coffee giveaway. Answering our coffee-preference question is required to enter. Newsletter signup is optional and awards two additional Entries. Closes 20 October at 5 pm Melbourne time.",
+   "expected_output": "Require only the coffee-preference answer in the entry sentence. Put newsletter signup in a separate, explicitly optional sentence with two additional Entries.",
+   "assertions": [
+    "Require only the coffee-preference answer in the entry sentence. Put newsletter signup in a separate, explicitly optional sentence with two additional Entries.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "optional-action-copy",
+     "criterion": "Require only the coffee-preference answer in the entry sentence. Put newsletter signup in a separate, explicitly optional sentence with two additional Entries.",
+     "pass_example": "To enter, answer our coffee-preference question. Optional: subscribe to our newsletter for two additional Entries.",
+     "fail_example": "Answer and subscribe to enter."
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "prompt": "Write a launch post for our coffee giveaway. Answering our coffee-preference question is the only entry action. There are no optional actions or bonus Entries. Closes 20 October at 5 pm Melbourne time.",
+   "expected_output": "Name the coffee-preference question as the only entry action. Add no supporting action, newsletter signup, referral prompt or bonus Entry promise.",
+   "assertions": [
+    "Name the coffee-preference question as the only entry action. Add no supporting action, newsletter signup, referral prompt or bonus Entry promise.",
+    "The copyable message obeys the same conditions as the advice."
+   ],
+   "files": [],
+   "assessment_mode": "judgement-only",
+   "review_checks": [
+    {
+     "id": "single-action-copy",
+     "criterion": "Name the coffee-preference question as the only entry action. Add no supporting action, newsletter signup, referral prompt or bonus Entry promise.",
+     "pass_example": "To enter, answer our coffee-preference question.",
+     "fail_example": "To enter, answer our question and subscribe to our newsletter."
+    }
+   ]
   }
  ]
 }

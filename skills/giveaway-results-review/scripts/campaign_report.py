@@ -20,7 +20,7 @@ import argparse, collections, csv, datetime as dt, json, math, os, statistics as
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
 # Keep gleam_export.py beside this script so all action counts use the same classifier.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gleam_export import generic_name as _gname, kind as _kind, classify_action
+from gleam_export import generic_name as _gname, kind as _kind, classify_action, parse_when
 try:
     import review as _bench
 except ImportError:
@@ -130,12 +130,6 @@ def channel(host, landing=None):
     if any(w in host for w in WEBMAIL): return "Email (webmail)"
     if any(s in host for s in SEARCH): return "Search"
     return "Other referrers"
-
-def parse_when(s):
-    for fmt in ("%Y-%m-%d %H:%M:%S %z", "%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S%z", "%d/%m/%Y %H:%M"):
-        try: return dt.datetime.strptime((s or "").strip(), fmt)
-        except ValueError: continue
-    return None
 
 def display(name):
     parts = (name or "").split()
@@ -768,6 +762,36 @@ def self_test():
     complete_history[1]["_when"] += dt.timedelta(days=1)
     returned = analyze(complete_history, B)
     assert returned["retention"]["2"] == (1, 0.5) and "50% returned on a later day" in render(returned, B)
+    # Fractional ISO exports retain daily counts, return visits and first-touch attribution.
+    from gleam_export import load as export_summary
+    for zone in ("Z", "+10:00", "-04:30", ""):
+        pair = []
+        for fraction in ("", ".123456"):
+            with open(q, "w", newline="") as f:
+                wr = csv.writer(f)
+                wr.writerow(["Email", "Action", "Entries", "When", "Country", "Referring URL"])
+                # Reverse file order so attribution has to use parsed chronology.
+                wr.writerow(["a@example.com", "Visit", 1, f"2026-05-02T00:15:00{fraction}{zone}", "Canada", "https://example.org/"])
+                wr.writerow(["a@example.com", "Visit", 1, f"2026-05-01T23:45:00{fraction}{zone}", "Australia", "https://facebook.com/"])
+                wr.writerow(["b@example.com", "Visit", 1, f"2026-05-02T00:30:00{fraction}{zone}", "Canada", "https://example.org/"])
+            pair.append((analyze(load(q), B), export_summary(q)))
+        plain, fractional = pair[0][0], pair[1][0]
+        for key in ("by_day", "retention", "retention_coverage", "first_touch_coverage", "date_coverage", "channels", "hosts", "countries"):
+            assert plain[key] == fractional[key], (zone, key)
+        assert fractional["by_day"] == [(dt.date(2026, 5, 1), 1, 1), (dt.date(2026, 5, 2), 1, 2)]
+        assert fractional["retention"]["2"] == (1, 0.5)
+        assert fractional["first_touch_coverage"] == {"complete": 2, "missing": 0, "total": 2}
+        assert dict(fractional["hosts"]) == {"facebook.com": 1, "example.org": 1}
+        for key in ("by_day", "by_hour_local", "days_covered", "countries"):
+            assert pair[0][1][key] == pair[1][1][key], (zone, key)
+        assert pair[1][1]["by_day"] == {"2026-05-01": 1, "2026-05-02": 2}
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When"])
+        wr.writerow(["a@example.com", "Visit", 1, "2026-05-01T23:45:00.nopeZ"])
+    unavailable = analyze(load(q), B)
+    assert unavailable["retention"] is None and unavailable["by_day"] == []
+    assert unavailable["first_touch_coverage"] == {"complete": 0, "missing": 1, "total": 1}
+    assert export_summary(q)["by_day"] == {} and export_summary(q)["days_covered"] is None
     # One undated action makes its participant's otherwise dated history incomplete.
     history = load(p); history[0]["_when"] = None
     assert analyze(history, B)["retention_coverage"] == {"complete": 1, "missing": 1, "total": 2}

@@ -349,7 +349,9 @@ As practical advice, start with the brand's own tags and one or two for the prod
 
 Prize first, then the ask, then the deadline, then eligibility.
 
-"Win [Prize] (worth [value]). To enter: [required action] and [one supporting action]. Closes [date, time, time zone]. Open to [eligibility]. Link in bio."
+"Win [Prize] (worth [value]). To enter: [confirmed required action or actions]. Closes [date, time, time zone]. Open to [eligibility]. Link in bio."
+
+Include only confirmed requirements in the entry sentence. For a campaign with one required action, name only that action. Put any optional action in a separate sentence, explicitly labelled optional, with its confirmed reward: "Optional: [action] for [confirmed additional Entries]." Omit unconfirmed rewards.
 
 Add a referral line only when the referral action is configured and the reward and qualifying event are confirmed: "Earn [confirmed reward] when [exact qualifying event], using [working referral link]." Omit this line when those facts are absent or unconfirmed.
 
