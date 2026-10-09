@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.37 |
-| giveaway-entry-method-planner | 1.2.35 |
-| giveaway-timing-and-duration | 1.4.33 |
-| giveaway-winner-structure | 1.4.5 |
+| giveaway-prize-picker | 1.3.38 |
+| giveaway-entry-method-planner | 1.2.36 |
+| giveaway-timing-and-duration | 1.4.34 |
+| giveaway-winner-structure | 1.4.6 |
 | giveaway-promotion-plan | 1.3.35 |
 | giveaway-random-draw | 1.3.33 |
 | giveaway-winner-communications | 1.2.29 |
 | giveaway-idea-generator | 1.3.31 |
-| giveaway-results-review | 1.6.5 |
-| gleam-campaign-setup | 1.2.32 |
+| giveaway-results-review | 1.6.6 |
+| gleam-campaign-setup | 1.2.33 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.5 (2026-10-10)
+
+The entry planner's numbers match our data again. When every figure was rebuilt on one set of campaigns, the tables written by hand in the entry planner were left behind, so about 140 cells were quoting the old set. They now match, and one piece of advice moved with them. If you ask for a single action, a bonus entry converts best at 52%, then a question at 46%, then an email at 45%.
+
+Lists with seven to ten actions and none required see 0.70 optional completions per Entrant, where the old table said 0.67. You'll also see the real sample behind each row, which is several times larger than the old ranges suggested.
+
+Every other figure that was quoted without saying where it came from now names its source, and a line that described a handful of businesses has gone.
 
 ## 3.0.4 (2026-10-09)
 

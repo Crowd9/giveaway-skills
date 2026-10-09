@@ -499,6 +499,9 @@ Source: `analysis/output/text_and_context.json` keys `question_types`, `visit_de
 - Validated-answer question: a typical 17% of entries come back invalid, because wrong answers count as invalid (giveaway-entry-method-planner).
 - Custom terms: written by 49% of campaigns (giveaway-winner-structure).
 - Eleven or more actions: 17% more Entrants, with 31% of viewers entering against 44% for one to three, among campaigns with no repeatable action and runs of 14 days or less (6,762 and 10,802 campaigns respectively, `analysis/output/comparisons.json`, `method_count_clean`, also in giveaway-entry-method-planner).
+
+Source for the invalid-entry share: `analysis/output/invalid_share.json` (`distribution`, `by_share_action`).
+
 - Invalid entries: a typical 4.2% of entries, higher with Viral Share, Discord and retweet actions (giveaway-winner-structure).
 
 ## What this suggests for the setup, as advice

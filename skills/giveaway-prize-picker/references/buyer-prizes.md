@@ -19,7 +19,17 @@ From `analysis/output/prize_timing_cuts.json`, `by_prize_category`, campaigns of
 
 [Typical values per campaign. Conversion Rate is the share of people who saw the campaign and entered. Source: `analysis/output/prize_timing_cuts.json`, `by_prize_category`.]
 
-Campaigns that gave away a subscription or membership drew a typical 372 Entrants, against 433 for gift cards and cash and 923 for tech hardware. Crowd per Prize dollar for subscriptions was 0.51 across 1,559 campaigns (`prize-taxonomy.md`). Inside software and SaaS the category sat at 0.24 across 60 campaigns from 29 businesses, where the all-industry figure for it is 0.47. Those are crowd measures, and a buyer campaign should set them aside. Nothing in the data says whether the smaller crowds held a larger share of buyers.
+Campaigns that gave away a subscription or membership drew a typical 372 Entrants, against 433 for gift cards and cash and 923 for tech hardware.
+
+Source: `analysis/output/prize_economics.json`, `by_prize_category`, `subscription_membership`.
+
+Crowd per Prize dollar for subscriptions was 0.51 across 1,559 campaigns (`prize-taxonomy.md`).
+
+Source: `analysis/output/vertical_profiles.json`, `prize_category_index_by_industry`, `software_saas.subscription_membership`.
+
+Inside software and SaaS the category sat at 0.24 across 60 campaigns from 29 businesses, where the all-industry figure for it is 0.47. Those are crowd measures, and a buyer campaign should set them aside. Nothing in the data says whether the smaller crowds held a larger share of buyers.
+
+Source for the category-fit comparison below: `analysis/output/prize_economics.json`, `audience_fit`, `audience_specific` and `generic`.
 
 Four limits on what that shows.
 

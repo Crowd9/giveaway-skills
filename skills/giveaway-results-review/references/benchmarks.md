@@ -591,7 +591,7 @@ The share-action line and the top-fifth line answer different questions and cann
 
 ## Campaign weighted against business weighted
 
-[Extracted from `analysis/output/organizer_history.json`, `sequence_curve_all`, `reach_rate_by_first_band`, `ordinary_n` and `ordinary_organizers`. The shares below are worked from those counts and are not stored figures.]
+[Extracted from `analysis/output/organizer_history.json`, `sequence_curve_all`, `reach_rate_by_first_band`, `ordinary_n` and `ordinary_organizers`. The shares below are worked from those counts and are not stored figures: 63,775 / 116,499 rounds to 55%, and 1,965 / 17,633 rounds to 11%.]
 
 Every benchmark on this page counts campaigns, and campaigns are not spread evenly across businesses. 63,775 of the 116,499, which is 55%, come from the 1,965 businesses on their eleventh campaign or later, 11% of the 17,633. The median business ran one or two campaigns in total. So a typical figure here describes the businesses that run giveaways constantly, and a reader on their first campaign is being measured against people who have run dozens.
 
@@ -609,6 +609,8 @@ The first row below is one campaign per business, which is the business-weighted
 <!-- /generated -->
 
 A first campaign drew 382 Entrants where the all-campaign figure is 492, so the headline benchmark sits about 29% above what a first-timer's peers actually did. Quote 382 to a reader running their first campaign and 492 only when they have run several. Entries per Entrant moves the same way, 3.67 against 4.38, because a business on its eleventh campaign runs more actions.
+
+The all-campaign inputs come from `analysis/output/benchmarks.json` (`ordinary_benchmark`): `valid_contestants.median` is 492 and `entries_per_contestant.median` is 4.38 when rounded. The difference above is (492 / 382 - 1) × 100, rounded to 29%.
 
 None of this says that running more campaigns produces bigger ones. The businesses still running an eleventh campaign are the ones whose earlier campaigns went well enough to justify another, which is survivorship, never a result.
 

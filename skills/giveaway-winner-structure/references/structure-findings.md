@@ -216,8 +216,12 @@ readings point a reader in opposite directions. The count is also the share, and
 across two rounds got this pair wrong, so read the line above the table before quoting a share from it. The next most common reply window is two days on 2,390 campaigns, then one day on 1,365. A 72-hour
 deadline, which trade advice often recommends, is written into 1.2% of these campaigns (1,354 of 115,361, `analysis/output/winner_terms.json`, `terms_timetable.reply_days.values.3`).
 
-Judging is close to non-existent. 99.2% name a random draw, and every other method together covers a few
-hundred campaigns, most of them one business running the same wording repeatedly.
+Source for selection shares: `analysis/output/winner_terms.json` (`selection_method`).
+
+Judging is close to non-existent. 99.2% name a random draw, and every other method together covers the
+remaining 0.8%.
+
+Source for the default windows: `analysis/output/winner_terms.json` (`terms_timetable`), with seven days stored as the `values.7` key for both windows.
 
 The practical reading: 7 days is what a reader's Entrants will expect because it is what almost every Gleam
 campaign says, and a shorter deadline is a deliberate choice to defend in the terms. Pick a shorter one when the

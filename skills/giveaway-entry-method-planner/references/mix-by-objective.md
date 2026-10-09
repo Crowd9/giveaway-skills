@@ -27,11 +27,11 @@ Each Gleam library template ships a different default mix of methods, email and 
 | Template | Methods | Email offered | Share offered |
 |---|---|---|---|
 | Email Signup | 4 | 92% | 61% |
-| Refer A Friend | 5 | 33% | 92% |
-| E-Commerce Giveaway | 9 | 78% | 80% |
-| Gleam Sweepstakes | 7 | 57% | 60% |
-| Instant Entry | 1 | 6% | 7% |
-| YouTube Contest | 7 | 8% | 46% |
+| Refer A Friend | 4 | 35% | 92% |
+| E-Commerce Giveaway | 9 | 79% | 80% |
+| Gleam Sweepstakes | 7 | 58% | 60% |
+| Instant Entry | 1 | 7% | 6% |
+| YouTube Contest | 6 | 9% | 38% |
 
 Each template's default mix is a starting point, not a fixed one, so weight and add actions against the objective table above.
 
@@ -60,12 +60,12 @@ Five internal jobs help plan the mix. In the answer, replace these labels with a
 
 | Action | Effect of boosted worth |
 |---|---|
-| Referral share, 1,000-10,000 Entrants | +34-36% entries, 19-36% cheaper per completion |
-| Referral share, 10,000+ Entrants | +7% entries |
-| Follow (X, Twitch, TikTok) | within 15% either way, no consistent direction |
-| Telegram Channel Members | 0.55x-0.70x completions |
-| YouTube Entries | 0.53x-0.94x completions |
-| UGC submissions | 0.20x-0.62x completions |
+| Referral share, 1,000-10,000 Entrants | +34-35% completions, 19-21% cheaper per completion |
+| Referral share, 10,000+ Entrants | +11% completions |
+| Follow (X, Twitch, TikTok) | within 17% either way, no consistent direction |
+| Telegram Channel Members | 0.57x-0.74x completions |
+| YouTube Entries | 0.53x-0.85x completions |
+| UGC submissions | 0.20x-0.57x completions |
 
 [Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_worth_tier`.]
 
@@ -112,32 +112,32 @@ What it buys:
 
 | Metric | Change with a share action |
 |---|---|
-| Impressions per Entrant | +30-60% (1.34x-1.57x) |
-| Entries per Entrant | +20-26% |
-| Visits to the business's own site | +19-75% |
+| Impressions per Entrant | +33-52% (1.33x-1.52x) |
+| Entries per Entrant | +20-24% |
+| Visits to the business's own site | +19-71% |
 | Referral entries from people the campaign didn't already reach | 13 per 100 Entrants typical, 65+ in the top tenth (see above) |
 
-What it costs (completion on other actions running beside it, all directionally consistent at every size tested):
+Completion on other actions running beside it (lower at every size tested except Telegram, which varies by size):
 
 | Action | Completion multiplier |
 |---|---|
-| X Follows | 0.42x-0.71x |
+| X Follows | 0.43x-0.71x |
 | Twitch Follows | 0.20x-0.66x |
-| Chat Members | 0.66x-0.83x |
-| Telegram Channel Members | 0.50x-0.70x |
-| YouTube Entries | 0.68x-0.75x |
+| Chat Members | 0.77x-0.82x |
+| Telegram Channel Members | 0.60x-1.61x |
+| YouTube Entries | 0.68x-0.74x |
 | App Downloads | 0.74x-0.96x |
-| UGC submissions | 0.20x-0.27x |
+| UGC submissions | 0.21x-0.34x |
 
-Sharing's effect on email specifically depends on campaign size and is unsettled (cheaper and lower-yield at the smallest size, roughly flat to worse at 2,500-10,000 and 10,000+ Entrants), so don't claim sharing makes email cheaper or higher-yield as a general rule. [1,202 to 10,779 campaigns per group, 376 to 2,845 businesses. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_sharing`.] For the reach-side framing (what a share action brings in, weighed against what it costs elsewhere), see giveaway-promotion-plan.
+Sharing's effect on email specifically depends on campaign size and is unsettled (cheaper and lower-yield at the smallest size, roughly flat to worse at 2,500-10,000 and 10,000+ Entrants), so don't claim sharing makes email cheaper or higher-yield as a general rule. [30 to 10,864 campaigns per group, 14 to 2,858 businesses. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_sharing`.] For the reach-side framing (what a share action brings in, weighed against what it costs elsewhere), see giveaway-promotion-plan.
 
 **A few action pairs cluster well above chance, and they're the effort-heavy ones.** As with the family table above, this describes what businesses choose to run together, not what pairing two actions would do to either one's completion.
 
 | Action pair | Co-occurrence lift |
 |---|---|
-| Content + account-connection | 1.87x (1,151 campaigns, 284 businesses) |
-| Content + engagement | 1.67x (1,040 campaigns, 398 businesses) |
-| Email + follow, the most common pair in the data | 0.95x, the only common pair below 1.0 (9,603 campaigns, 1,838 businesses) |
+| Content + account-connection | 1.41x (3,998 campaigns, 915 businesses) |
+| Content + engagement | 1.97x (7,210 campaigns, 1,164 businesses) |
+| Email + follow | 0.96x (25,855 campaigns, 3,645 businesses) |
 
 [Extracted from `analysis/output/method_mix.json`, `family_pair_lift`.]
 
@@ -446,21 +446,21 @@ These describe businesses' choices in each country, never a country's effect on 
 
 ## What each action produced per campaign (extracted)
 
-Typical completions per campaign among campaigns that offered the action, completions % of Entrants, and stated USD of Prize per completion where the pool was valued. A completion is a signup, follow or join at that moment. Full table with quarter-by-quarter detail and campaigns by size in the results-review skill.
+Typical completions per campaign among campaigns that offered the action, completions % of Entrants, and stated USD of Prize per completion where the pool was valued. A completion is a signup, follow or join at that moment. Full table with quarter-by-quarter detail and campaigns by size in the results-review skill. Source: `analysis/output/asset_yield.json`, `yield_by_asset`.
 
 | Asset | Campaigns | Typical per campaign | Share of Entrants | Stated USD per completion |
 |---|---|---|---|---|
-| Email Subscriptions | 39,532 | 712 | 99 | 0.40 |
-| X Follows | 66,279 | 309 | 61 | 0.64 |
-| Instagram Follows | 8,234 | 372 | 61 | 0.81 |
-| TikTok Follows | 14,329 | 230 | 38 | 1.22 |
-| Twitch Follows | 22,521 | 335 | 77 | 0.57 |
-| YouTube Entries | 3,506 | 374 | 83 | 0.70 |
-| Chat Members | 19,190 | 268 | 48 | 1.15 |
-| Telegram Channel Members | 4,153 | 640 | 88 | 0.77 |
-| App Downloads | 3,495 | 339 | 41 | 1.31 |
-| Referral entries (Viral Shares) | 42,900 | 88 | 12 | 2.89 |
-| Content submissions | 3,308 | 112 | 18 | 15.89 |
+| Email Subscriptions | 39,339 | 714 | 99 | 0.40 |
+| X Follows | 65,714 | 308 | 61 | 0.64 |
+| Instagram Follows | 8,208 | 370 | 61 | 0.81 |
+| TikTok Follows | 14,295 | 230 | 38 | 1.22 |
+| Twitch Follows | 22,490 | 335 | 77 | 0.57 |
+| YouTube Entries | 3,495 | 373 | 83 | 0.70 |
+| Chat Members | 18,890 | 264 | 48 | 1.15 |
+| Telegram Channel Members | 3,916 | 638 | 87 | 0.77 |
+| App Downloads | 3,463 | 335 | 41 | 1.31 |
+| Referral entries (Viral Shares) | 42,536 | 88 | 11 | 2.90 |
+| Content submissions | 3,271 | 110 | 17 | 16.00 |
 
 Stated Prize value per email signup and per follow by vertical sits in the Prize picker's `roi-benchmarks.md`. An Email Subscriptions action in a typical campaign produced about 700 email signups. The same campaign's Viral Share produced about 90 referral entries, and a content action about 110 submissions. Those are recorded completions among campaigns offering the action, never a count of available contact addresses or of individual marketing consent, and each row covers its own campaigns, so the medians do not describe one campaign's combined results.
 
@@ -468,31 +468,31 @@ Stated Prize value per email signup and per follow by vertical sits in the Prize
 
 Completions % of Entrants for the action, typical value across campaigns offering it.
 
-Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`. Sample counts are Actions offered, not campaigns:
+Completions % of Entrants by position in the action list, from `analysis/output/field_cuts.json` `uptake_by_family_and_position`. The sharing comparison uses `share|1st.completions_per_contestant` and `share|5th+.completions_per_contestant`. Sample counts are Actions offered, not campaigns:
 
 | Family | 1st | 2nd to 4th | 5th or later |
 |---|---|---|---|
 | Email signup | 101 (20,986 Actions) | 78 (10,182 Actions) | 73 (16,859 Actions) |
-| Visit a page | 98 (14,449 Actions) | 87 (84,512 Actions) | 75 (132,797 Actions) |
-| Follow or subscribe | 82 (20,468 Actions) | 56 (75,063 Actions) | 43 (116,619 Actions) |
+| Visit a page | 98 (14,449 Actions) | 86 (84,512 Actions) | 75 (132,797 Actions) |
+| Follow or subscribe | 82 (20,468 Actions) | 56 (75,063 Actions) | 42 (116,619 Actions) |
 | Content upload | 81 (2,573 Actions) | 27 (4,657 Actions) | 13 (6,599 Actions) |
 | Share or refer | 16 (993 Actions) | 12 (11,344 Actions) | 11 (30,470 Actions) |
 
-Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it.
+Every family falls down the list, and a follow loses about half its completions between first place and fifth. Put the action that captures the asset at the top. Sharing sits at 16% of Entrants in first and 12% in the next three, then 11% fifth or later: it completes lowest of any family wherever it sits, and it gives up 5 points between first place and fifth, the smallest drop in the table, so the bottom slot is the cheapest place to put it. That drop is the difference between the cited completion ratios, multiplied by a hundred and rounded to whole percentage points.
 
 The position advantage extends past email and follow, and holds by campaign size. The ratio below is the asset's completions per Entrant in the first list position over the same asset later in the list, split into three groups by campaign size. [Scope: 1,000+ Entrant campaigns. Extracted from `analysis/output/asset_yield.json`, `yield_by_asset_and_position`.]
 
 | Asset | 1,000-2,500 | 2,500-10,000 | 10,000+ |
 |---|---|---|---|
-| Email Subscriptions | 1.42x | 1.45x | 1.28x |
-| X Follows | 1.43x | 1.57x | 1.60x |
-| Instagram Follows | 1.40x | 1.76x | 1.99x |
-| Twitch Follows | 1.68x | 1.76x | 1.98x |
-| Chat Members | 1.61x | 1.90x | too few campaigns to report |
+| Email Subscriptions | 1.42x | 1.45x | 1.27x |
+| X Follows | 1.44x | 1.59x | 1.62x |
+| Instagram Follows | 1.40x | 1.76x | too few campaigns to report |
+| Twitch Follows | 1.68x | 1.77x | 1.98x |
+| Chat Members | 1.60x | 1.91x | too few campaigns to report |
 | YouTube Entries | 2.09x | 2.23x | too few campaigns to report |
-| Visit the business's own site | 1.36x | 1.51x | 1.51x |
+| Visit the business's own site | 1.36x | 1.50x | 1.50x |
 
-Every asset with enough volume to test held its position advantage at every size. Chat Members and YouTube Entries don't clear enough campaigns at 10,000+ Entrants to report. [Campaign counts behind the ratios above range from 31 (Instagram Follows, first position, 10,000+ Entrants, 15 businesses) to 26,147 (visits to the business's own site, later position, 1,000-2,500 Entrants, 2,564 businesses).]
+Every asset with enough volume to test held its position advantage at every size. Instagram Follows, Chat Members and YouTube Entries don't clear enough campaigns at 10,000+ Entrants to report. [Campaign counts behind the ratios above range from 38 (Twitch Follows, first position, 10,000+ Entrants, 21 businesses) to 26,161 (visits to the business's own site, later position, 1,000-2,500 Entrants, 2,581 businesses).]
 
 **Which asset goes first, when the objective is reach.** The advice above is to put the asset action first, and that has a direction when the asset is sharing. In campaigns offering both an email action and a share action, listing share before email records more share completions on lists of 1 to 6 methods and on lists of 11 or more, and fewer on lists of 7 to 10. The gain is worth planning around only at 11 or more methods, where share-first campaigns record about two thirds again the share completions. Treat the short-list difference as too small to act on. This is about order within a fixed list. List length is the separate friction effect further down this file.
 
@@ -502,9 +502,9 @@ Every asset with enough volume to test held its position advantage at every size
 | 7-10 methods | 10 per 100 | 13 per 100 |
 | 11+ methods | 34 per 100 | 20 per 100 |
 
-Email does not consistently pay for it: it completes about 83 to 104 per 100 Entrants when it follows a share action, against roughly 89 to 101 when it leads, lower on short lists and level or a little higher on longer ones. [Share-first campaigns/businesses: 676/257 (1-6), 1,827/424 (7-10), 4,567/528 (11+). Email-first: 5,877/1,669 (1-6), 6,965/1,893 (7-10), 7,511/1,240 (11+). Extracted from `analysis/output/method_mix.json`, `share_position_relative_to_email` and `top_combinations`.]
+Email does not consistently pay for it: it completes about 82 to 104 per 100 Entrants when it follows a share action, against roughly 89 to 101 when it leads, lower on short lists and level or a little higher on longer ones. [Share-first campaigns/businesses: 672/256 (1-6), 1,821/421 (7-10), 4,554/521 (11+). Email-first: 5,863/1,666 (1-6), 6,945/1,889 (7-10), 7,463/1,234 (11+). Extracted from `analysis/output/method_mix.json`, `share_position_relative_to_email` and `top_combinations`.]
 
-A cross-check on exact combinations shows the same direction on share: follow, visit and share with no email completes about 45 per 100 Entrants on share [3,802 campaigns, 1,367 businesses]. Add email to a share-carrying shape and share completion runs about 8 to 36 per 100 across the five combinations carrying both, under the matching shape without email in every pair.
+A cross-check on exact combinations shows the same direction on share: follow, visit and share with no email completes about 45 per 100 Entrants on share [3,790 campaigns, 1,359 businesses]. Add email to a share-carrying shape and share completion runs about 8 to 36 per 100 across the five combinations carrying both, under the matching shape without email in every pair.
 
 **What leads the list and overall conversion.** Campaigns led by different action families show different conversion, pooled across every method count, not split by list length. This is an association across the whole dataset, not a comparison within a fixed list length, and businesses who lead with a quick connect-account step or a single question may already be running a leaner campaign in every other respect. Treat it as a pattern to weigh, not a rule to follow.
 
@@ -544,19 +544,19 @@ A feedback or open question is completed most, by about 86 of every 100 Entrants
 
 Trivia is the only type with a right answer, which is the plain reading of why it sits last. [Source: `analysis/output/text_and_context.json`, `question_types`.]
 
-Share copy on Viral Share and X Posts actions (59,548 actions with custom text, from `analysis/output/text_and_context.json` `share_copy`): a hashtag, first person and an emoji all complete higher. Length does not run one way, with short copy highest and the 60 to 140 character band lowest. Most of the hashtag gap is the action type, since X Posts actions carry hashtags and record more completions than Viral Share (about 34 against 11 per 100 Entrants), first person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
+Share copy on Viral Share and X Posts actions (59,012 actions with custom text, from `analysis/output/text_and_context.json` `share_copy`): a hashtag, first person and an emoji all complete higher. Length does not run one way, with short copy highest and the 60 to 140 character band lowest. Most of the hashtag gap is the action type, since X Posts actions carry hashtags and record more completions than Viral Share (about 34 against 11 per 100 Entrants), first person and an emoji still sit higher within the same copy length. Nearly every campaign wrote custom share text, so the default cannot be compared.
 
 | Copy trait | Completion (per 100 Entrants) |
 |---|---|
-| Short, under 60 characters | 24 (1,139 actions) |
-| Medium, 60-140 characters | 16 (39,841 actions) |
-| Long, over 140 characters | 20 (18,568 actions) |
-| No hashtag | 13 (46,841 actions) |
-| With hashtag | 35 (12,707 actions) |
-| Not first person | 15 (49,458 actions) |
-| First person | 29 (10,090 actions) |
-| No emoji | 16 (56,701 actions) |
-| With emoji | 33 (2,847 actions) |
+| Short, under 60 characters | 24 (1,123 actions) |
+| Medium, 60-140 characters | 16 (39,435 actions) |
+| Long, over 140 characters | 20 (18,454 actions) |
+| No hashtag | 13 (46,415 actions) |
+| With hashtag | 35 (12,597 actions) |
+| Not first person | 15 (48,969 actions) |
+| First person | 29 (10,043 actions) |
+| No emoji | 16 (56,264 actions) |
+| With emoji | 32 (2,748 actions) |
 
 Visit actions by where they send people:
 
@@ -593,28 +593,30 @@ Longer lists went with a lower share of Impressions converting, though their Ent
 
 Actions that cost the most: account connections (sign in with a social account), app installs, anything that leaves the entry page, and content creation. Keep those optional unless they are the objective.
 
-**A single well-chosen action beats most combinations.** Among campaigns running exactly one action family, a question-only campaign gets more Entrants through than any other single-family or multi-family combination tested. This ranks the leanest campaigns against each other and does not repeat the method-count table below, it says which single action to reach for when the campaign only needs one.
+**A single well-chosen action beats most combinations.** Among campaigns running exactly one action family, a bonus-only campaign has the highest Conversion Rate among the combinations listed, followed by question-only and email-only campaigns. This ranks the leanest campaigns against each other and does not repeat the method-count table below, it says which single action to reach for when the campaign only needs one.
 
 | Single-family campaign | Conversion Rate |
 |---|---|
-| Question-only | 54.9% (862 campaigns, 135 businesses) |
-| Bonus-only | 44.2% (437 campaigns, 184 businesses) |
-| Email-only | 44.2% (1,017 campaigns, 223 businesses) |
-| Visit-only | 42.6% (1,160 campaigns, 286 businesses) |
+| Question-only | 45.6% (2,464 campaigns, 403 businesses) |
+| Bonus-only | 52.2% (2,428 campaigns, 639 businesses) |
+| Email-only | 44.5% (2,502 campaigns, 471 businesses) |
+| Visit-only | 39.6% (3,810 campaigns, 1,052 businesses) |
 | Any 2+ family combination | below 40% |
 
 [Extracted from `analysis/output/method_mix.json`, `top_combinations`.]
+
+Source for the required-action comparisons: `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`. Entrant differences use `contestants` for one required action divided by the comparison group in each method band, minus one, expressed as a percentage and rounded.
 
 **More required actions costs completion on the optional ones, not overall conversion.** Holding total method count fixed, adding required actions lowers completion on whatever stays optional, while the campaign's conversion barely moves. Whether this is fatigue or businesses routing their lower-appeal actions into optional slots when they require more elsewhere can't be told apart in this data.
 
 | Methods | Required actions | Optional-action completion | Conversion Rate |
 |---|---|---|---|
-| 7-10 | 0 | 67 per 100 | 25.1%-27.4% |
-| 7-10 | 1 | 50 per 100 | 25.1%-27.4% |
-| 7-10 | 2 | 49 per 100 | 25.1%-27.4% |
-| 7-10 | 3+ | 43 per 100 | 25.1%-27.4% |
-| 11+ | 0 | 58 per 100 | 18.6%-21.1% |
-| 11+ | 3+ | 36 per 100 | 18.6%-21.1% |
+| 7-10 | 0 | 70 per 100 | 24.5% |
+| 7-10 | 1 | 54 per 100 | 24.0% |
+| 7-10 | 2 | 52 per 100 | 23.7% |
+| 7-10 | 3+ | 38 per 100 | 26.0% |
+| 11+ | 0 | 61 per 100 | 22.4% |
+| 11+ | 3+ | 39 per 100 | 20.5% |
 
 **Exactly one required action goes with the biggest crowd, in every method band.** The Entrant count peaks at one
 and drops on either side, and the shape repeats three times:
@@ -634,23 +636,23 @@ usually decided what the campaign is for and put a push behind it, where requiri
 requiring three makes the reader work before they are in. Nothing here shows that switching an action to required
 would add Entrants to this campaign.
 
-[7-10 methods: 553 to 5,493 campaigns, 275 to 1,660 businesses per group. 11+ methods: 503 to 6,107 campaigns, 174 to 1,226 businesses per group. Extracted from `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`.]
+[7-10 methods: 2,095 to 18,990 campaigns, 799 to 4,297 businesses per group. 11+ methods: 1,908 to 19,534 campaigns, 436 to 2,562 businesses per group. Extracted from `analysis/output/method_mix.json`, `mandatory_count_vs_optional_completion`.]
 
-**Conversion falls steadily with every action added, and there is no reliable point where it stops.** The curve halves between one action and thirteen, and quoting a single turning point to a reader overstates what the data holds.
+**Conversion generally falls as action count rises, and there is no reliable point where the decline stops.** The curve halves between one action and thirteen, and quoting a single turning point to a reader overstates what the data holds.
 
 | Actions | Campaigns | Conversion Rate |
 |---|---|---|
-| 1 | 4,887 | 49.9% |
-| 4 | 4,312 | 35.4% |
-| 7 | 3,327 | 31.3% |
-| 10 | 1,649 | 27.3% |
-| 13 | 997 | 26.0% |
-| 16 | 289 | 25.3% |
+| 1 | 4,886 | 49.7% |
+| 4 | 4,288 | 35.4% |
+| 7 | 3,287 | 31.3% |
+| 10 | 1,628 | 27.2% |
+| 13 | 990 | 26.0% |
+| 16 | 288 | 25.3% |
 | 20 | 524 | 68.8% |
 
-A two-segment fit over the pooled 38,810 campaigns [`analysis/output/thresholds.json`, `action_count`] puts its breakpoint at 15 to 16 actions, and that is the fitter finding where the curve turns back up, never where the decline eases. The same search repeated inside each industry, size band and plan tier lands anywhere from 3 to 17 across eighteen groups, with the 10,000-plus band at 3 and the 500 to 1,000 band at 17. The source calls that stratification noise, and it is: no ordering by size, tier or industry survives it. So never quote a reader an elbow for their own group, and never promise them a count where the cost stops.
+A two-segment fit over the pooled 38,463 campaigns [`analysis/output/thresholds.json`, `action_count`] puts its breakpoint at 15 to 16 actions, and that is the fitter finding where the curve turns back up, never where the decline eases. The same search repeated inside each industry, size band and plan tier lands anywhere from 3 to 17 across eighteen groups, with the 10,000-plus band at 3 and the 500 to 1,000 band at 17. The source calls that stratification noise, and it is: no ordering by size, tier or industry survives it. So never quote a reader an elbow for their own group, and never promise them a count where the cost stops.
 
-What the curve does support is the shape. Each action from the first to about the thirteenth costs Conversion Rate, steeply at first and more slowly later. Past sixteen it climbs back up on a few hundred campaigns per point, likely a handful of unusually well-optimized businesses still clearing 100 Entrants at that length, and that climb is no evidence that more actions help. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
+What the curve does support is the shape. Conversion Rate generally falls from the first action to about the thirteenth, with some increases between adjacent counts. Past sixteen it climbs back up on a few hundred campaigns per point, likely a handful of unusually well-optimized businesses still clearing 100 Entrants at that length, and that climb is no evidence that more actions help. [Ratios against what action count and size predict separately ran 91%-110% for conversion and 92%-111% for engagement, across all 12 groups. Extracted from `analysis/output/thresholds.json`, `action_count`, and `analysis/output/success_profiles.json`, `interactions.action_count_by_conversion_and_band` and `.action_count_by_engagement_and_band`.]
 
 **Campaigns running more actions convert lower, and that holds inside most industries and not only pooled across all of them.** [`analysis/output/vertical_profiles.json`, `top_quartile_vs_rest_by_industry`.] In at least 13 of the 21 industries tested, the top quarter by conversion runs fewer actions and far less social or referral friction than the rest of that same industry, a like-for-like version of the pattern above.
 
@@ -689,7 +691,7 @@ Two kinds of action sit on a list. The cheap kind is a visit, a follow or an eng
 
 Read it with three limits. Conversion Rate here is the typical value across every campaign in the group, never the fair-comparison subset used elsewhere in this file, so run length and repeatable Actions are mixed in. The share of cheap types travels with the length of the list: the mostly costly group ran a typical 2 Entry Methods, the two mixed groups ran 9 and the all-cheap group ran 6, so the table cannot separate the mix from the count. The mostly costly group is a short list, which fits its highest Conversion Rate and its 1.1 Entries each.
 
-What it answers about piling on easy actions: the campaigns whose lists were 75% to 100% cheap types converted at 27% on a typical 6 Entry Methods, against 22% and 25% for the two mixed groups on 9. Mostly cheap lists did not convert lower than lists that mixed in costly types, and the data holds no separate limit for cheap Actions. The action-count curve above is the guide on length, since Conversion Rate fell with each Action added from the first to about the thirteenth. Entries per Entrant rises with every Action an Entrant completes, so read the 4.2 against 5.1 and 5.4 as partly the list length.
+What it answers about piling on easy actions: the campaigns whose lists were 75% to 100% cheap types converted at 27% on a typical 6 Entry Methods, against 22% and 25% for the two mixed groups on 9. Mostly cheap lists did not convert lower than lists that mixed in costly types, and the data holds no separate limit for cheap Actions. The action-count curve above is the guide on length, since Conversion Rate generally fell from the first Action to about the thirteenth. Entries per Entrant rises with every Action an Entrant completes, so read the 4.2 against 5.1 and 5.4 as partly the list length.
 
 [Population: campaigns of 100 or more Entrants carrying at least one cheap or costly action type, 1,398 to 10,418 businesses per group. Extracted from `analysis/output/method_mix.json`, `reach_vs_deep`.]
 

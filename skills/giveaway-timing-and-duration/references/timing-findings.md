@@ -357,6 +357,8 @@ Source: analysis/output/field_cuts.json (by_continent, by_language), analysis/ou
 
 Almost every campaign keeps the platform's 7-day default for both the draw window and the response window, so this mostly shows businesses keeping the default, not choosing seven days on purpose. [94.3% of campaigns use the 7-day draw window and 93.4% the 7-day response window, out of the 115,361 campaigns whose terms record these settings, from `analysis/output/winner_terms.json` (`terms_timetable`). The earlier pair of 96% figures carried a campaign count that traces to no run of the source, so both are read off the recorded denominator now.]
 
+Source for the response-window bands below: `analysis/output/field_cuts.json` (`by_response_days`). The band labels are `8_14_days` and `15_plus_days`.
+
 Response window length tracks a few points of Conversion Rate up to 14 days, and the 15-plus row sits lowest because those campaigns run about twice as long, not because their Entrants respond slower.
 
 <!-- generated:tm_response_days -->
