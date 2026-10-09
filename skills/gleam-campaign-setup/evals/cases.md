@@ -50,3 +50,11 @@ how do i set up a giveaway in gleam
 ```
 
 The baseline handed back nothing, so a reader who answered the questions still had no idea what the setup involves. The latest answer delivers the whole five-tab shape with the settings that bite and then asks its three questions, and it hand-waves on how many actions where the sibling skill carries a number.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged repeated Setup tab headings, excess length and an unnecessary documentation-read date.
+
+The rest of `evals.json` was not rerun.

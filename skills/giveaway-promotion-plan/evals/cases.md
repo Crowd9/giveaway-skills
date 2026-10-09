@@ -48,3 +48,11 @@ nobody is entering our giveaway
 ```
 
 The baseline asked three questions and offered no default plan for a reader who wants something to do before they answer. The latest answer states its assumptions in one line and then ships the schedule, the copy, the email branches and the named directories, and it buries the broken entry link in a risks list at the bottom.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged an unsourced benchmark, a day table that exceeded the requested duration, and internal methodology about the campaign floor and directory outreach.
+
+The rest of `evals.json` was not rerun.

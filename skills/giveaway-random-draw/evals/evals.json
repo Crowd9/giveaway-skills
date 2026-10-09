@@ -45,17 +45,18 @@
   {
    "id": 2,
    "prompt": "A follower says our draw was rigged. We picked the winner with a random number site last week. What do we do?",
-   "expected_output": "Says what can be shown now (screenshot or record if one exists, the entrant count, the method) and what cannot be reconstructed, advises against redrawing to appease, and sets up the next draw with a frozen list, published seed and audit file using the procedure reference.",
+   "expected_output": "Preserves the original Entrant list, published rules, messages and any existing screenshot or draw record. Explains what can be established and what cannot be reconstructed. Writes a public reply conditional on the available evidence, without claiming proof the records cannot support or exposing private Entrant data. Advises against redrawing to settle the complaint. Gives one plain-language next-draw procedure: freeze the list and rules, publish their commitment before a future public seed exists, draw once and keep an audit record for verification. Commands are unnecessary for this complaint.",
    "assertions": [
     "Does not recommend redrawing to settle the complaint",
     "Explains what evidence exists and what does not",
-    "Recommends the frozen-list, seed and audit procedure for next time"
+    "Recommends the frozen-list, seed and audit procedure for next time",
+    "Preserves existing evidence before responding",
+    "Writes a public reply conditional on the available evidence without claiming unsupported proof or exposing private Entrant data",
+    "Gives one plain-language next-draw procedure without requiring command-line instructions",
+    "Publishes the commitment before the future public seed exists"
    ],
    "files": [],
    "checks": [
-    {
-     "contains": "draw.py commit"
-    },
     {
      "count": "(?i)\\bfroze|\\bfreez|\\bfrozen",
      "min": 1

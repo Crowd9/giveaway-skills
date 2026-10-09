@@ -161,7 +161,7 @@ def review(a):
         rows.append(("Conversion Rate", "-", "-", "skipped: no Impressions given, and the export never holds them, so take the figure from the Reporting tab"))
     if a.invalid is not None and a.entries:
         inv = a.invalid / (a.entries + a.invalid)
-        if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification. Check for a validated-answer question first, then referral and Discord actions"))
+        if inv >= 0.2: rows.append(("Invalid Entries", f"{a.invalid:,}", "", "a fifth or more of Entries failed verification, the planning assumption used here to prompt a check, not a measured health cutoff. Check for a validated-answer question first, then referral and Discord actions"))
     if getattr(a, "actions_completed", None):
         apc = a.actions_completed / a.contestants
         rows.append(("Actions completed per Entrant", f"{apc:.2f}", f"{typical('actions_per_contestant', a.contestants) or 0:.2f}", "entry worth removed. " + rank_line("actions_per_contestant", apc, groups)))

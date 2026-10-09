@@ -21,12 +21,13 @@ for d in sorted(glob.glob("skills/*/")):
     fm = m.group(1)
     fname = re.search(r"^name:\s*(.+)$", fm, re.M)
     desc = re.search(r"^description:\s*(.+)$", fm, re.M)
-    ver = re.search(r"^\s+version:\s*(\S+)$", fm, re.M)
+    metadata = re.search(r"^metadata:[ \t]*\n((?:[ \t]+[^\n]*\n?)+)", fm, re.M)
+    ver = re.search(r"^[ \t]+version:[ \t]*(\S+)", metadata.group(1), re.M) if metadata else None
     if not fname or fname.group(1).strip() != name: errors.append(f"{name}: frontmatter name must equal directory name")
     if not re.fullmatch(r"[a-z0-9]([a-z0-9-]{0,62}[a-z0-9])?", name) or "--" in name: errors.append(f"{name}: invalid name")
     if not desc or not 1 <= len(desc.group(1)) <= 1024: errors.append(f"{name}: description missing or over 1024 chars")
-    if not ver: warnings.append(f"{name}: no metadata.version")
-    if text.count("\n") > MAX_LINES: warnings.append(f"{name}: SKILL.md over {MAX_LINES} lines")
+    if not ver or ver.group(1) in ('""', "''", "null", "~"): errors.append(f"{name}: no metadata.version")
+    if len(text.splitlines()) >= MAX_LINES: errors.append(f"{name}: SKILL.md must be under {MAX_LINES} lines")
     for ref in set(re.findall(r"`(references/[a-z0-9-]+\.md)`", text)):
         if not os.path.exists(os.path.join(d, ref)): errors.append(f"{name}: {ref} referenced but missing")
     for md in glob.glob(d + "**/*.md", recursive=True):
@@ -36,7 +37,8 @@ for d in sorted(glob.glob("skills/*/")):
                 if re.search(pat, l) and "semicolons" not in l and "em dashes" not in l:
                     errors.append(f"{os.path.relpath(md)}:{i}: {label}")
     ev = os.path.join(d, "evals", "evals.json")
-    if not os.path.exists(ev): warnings.append(f"{name}: no evals/evals.json")
+    if not os.path.exists(os.path.join(d, "evals", "cases.md")): errors.append(f"{name}: no evals/cases.md")
+    if not os.path.exists(ev): errors.append(f"{name}: no evals/evals.json")
     else:
         try:
             j = json.load(open(ev)); assert j["skill_name"] == name and j["evals"]

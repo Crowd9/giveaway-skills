@@ -2,7 +2,7 @@
 
 Everything here is general advice unless a sentence is marked as a dataset finding.
 
-Four USD tables sit in this repository and each answers a different question. Use the one that matches what is being asked.
+Four USD tables sit in this repository and each answers a different question. In answers, translate "crowd for the money" and "crowd per Prize dollar" into Entrants compared with campaigns offering Prizes of similar stated value. Use the one that matches what is being asked.
 
 | Table | Where | The question it answers |
 |---|---|---|

@@ -379,8 +379,8 @@ offers one has made it up. Work through it in this order, because the cheap chec
 - Complete one entry end to end and watch it appear in the report. That tells you the page, the Actions and the
   recording all work.
 - Ask what audience the campaign has actually reached: followers, list size, the traffic the posts got. A
-  campaign in front of 400 people is not underperforming at 40 Entrants, and no amount of promotion advice
-  substitutes for reach that was never there.
+  small reach caps the result, so count how many people actually saw the campaign before judging its
+  Entrants. No amount of promotion advice substitutes for reach that was never there.
 - Then treat it as reach. The schedule above still applies over whatever days are left, with the last call
   brought forward so it lands before the close.
 - Say which of these you checked and what it showed. A reader who is told to "promote harder" without a link

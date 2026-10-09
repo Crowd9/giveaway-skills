@@ -1,0 +1,8 @@
+According to the Example Research Institute, Gmail delivered 80% of the measured emails.
+
+Facebook's promotion rules prohibit share-to-enter.
+
+The Gleam documentation describes the Fraud Levels.
+High blocks "same-network" entries.
+
+Gleam's docs describe High as blocking "same-network" entries.

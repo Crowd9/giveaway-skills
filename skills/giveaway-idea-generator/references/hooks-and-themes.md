@@ -130,7 +130,7 @@ The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, dura
 
 ## Campaign types (extracted)
 
-A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical for the money. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
+A type is declared by words in the title, incentive name or the start of the description, so a campaign can carry several and the rows overlap. The value index is the campaign's Entrants against the typical Entrants for its stated-USD value, 1.00 being typical among campaigns offering a Prize of similar stated value. Uptake, where it appears below, is how many Entrants completed the action, out of every Entrant. Conversion Rate is from the campaigns we can compare fairly, the ones with no repeatable action and a run of 14 days or less, which is what makes Impressions comparable between them. The table below includes the all-campaign baseline as its own row. ()
 
 <!-- generated:ig_types -->
 Three columns here carry three different counts. The campaign and business counts cover the whole type, the
@@ -184,7 +184,7 @@ Reading it:
   | Top fifth by low cost per Entrant | 0.57 | 2,781 | 831 |
 
 - **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. An existing audience does that.
-- **Cash** gets the highest share to enter of any type at 61%, on 570 Entrants, with the most actions of any type and long runs. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.17, so they draw a fair crowd for what a business spends.
+- **Cash** gets the highest share to enter of any type at 61%, on 570 Entrants, with the most actions of any type and long runs. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.17, so those campaigns drew more Entrants than typical among campaigns offering a Prize of similar stated value.
 - **Community and Discord** campaigns record 20 referrals per 100 Entrants, well above the typical 12, behind scavenger hunt, flash and quiz campaigns. **Quiz and trivia** campaigns run a quarter below the typical figure on Entrants and a third below on value index. They carry 21 referrals per 100 Entrants against the typical 12.
 - **Product launches** draw a little more crowd than typical at 546 Entrants against 492, on a low share to enter at 29% and a value index just under typical at 0.98. Photo or video contests at 21% and US sweepstakes wording at 22% sit lower, so sort the column before writing a superlative off this row. A launch has no audience yet, which is the point of running one, so plan the promotion first.
 - **Photo or video contests** are the smallest type in the table at 252 Entrants, on the lowest share to enter at 21% and the lowest value index at 0.27, which is what asking for a made thing costs. **Creator or streamer** campaigns are next at 317. A **weekly or monthly series** sits a little under typical at 457, spreading one audience across many draws. **Flash** campaigns of 24 to 72 hours sit above typical on both Entrants and share to enter, 598 and 39%, so a short window is not by itself a small campaign. **UK competition wording** lands near typical on size at 508.
@@ -294,7 +294,9 @@ By industry, a separate check of launch wording in campaign names and descriptio
 
 Source: `analysis/output/standouts.json` (`launch_subtypes`), `analysis/output/prize_timing_cuts.json` (`by_launch_wording`, `launch_wording_by_industry`).
 
-### Campaigns that beat their Prize money (extracted)
+### Campaigns above typical for their stated Prize value (extracted)
+
+The comparisons below use stated Prize value, including the per-Entrant amounts. They do not measure the organizer's cash spending.
 
 <!-- generated:ig_standout_lead -->
 Campaigns that beat their Prize money drew at least three times the typical Entrants for their stated Prize level. What they had more often than the rest, against a typical cost of 0.13 USD per Entrant, where the all-campaign figure is 0.42:
@@ -398,7 +400,7 @@ Cheap Prizes that drew crowds: a small set of campaigns with a tiny stated pool 
 | Actions (typical) | 7 |
 | Duration (typical) | 22 days |
 
-A small Prize in front of an audience that already exists beats a large Prize in front of nobody. Both checks on this page describe campaigns that outran their budget, so read them against the spending benchmarks in giveaway-prize-picker before setting a Prize budget from them.
+A small Prize in front of an audience that already exists beats a large Prize in front of nobody. Both checks on this page compare Entrants with campaigns offering a Prize of similar stated value, so read them against the stated-value benchmarks in giveaway-prize-picker before setting a Prize budget from them.
 
 ## Hooks by business type (extracted)
 

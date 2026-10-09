@@ -2,7 +2,7 @@
 
 For a giveaway that is already running and going wrong. Everything on this page is common practice, nothing in the data covers it, with two exceptions. The pace of a typical run is extracted and sits in the channel playbook under "Where the traffic lands across the run". The Gleam notes quote what the Gleam documentation says and stop there.
 
-Every campaign behind the dataset figures reached at least 100 Entrants, so the ones that stalled were filtered out before anything was measured. There is no base rate for how often a stall is a broken page and how often it is a quiet audience, and an answer that offers one has made it up.
+Every campaign behind the dataset figures reached at least 100 Entrants, so the ones that stalled were filtered out before anything was measured. There is no base rate for how often a stall is a broken page and how often it is a quiet audience, and an answer that offers one has made it up. This paragraph is for you. Keep the reasoning out of the answer and give the reader the checks.
 
 Two rules hold for the whole page:
 

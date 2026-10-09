@@ -52,3 +52,11 @@ The baseline closed on an offer to send more, which the skill's own style rules 
 ## Contact and consent regression, 12 September 2026
 
 Added the no-subscription-Action prompt in `evals.json`. The documentation review checked the workflow and reference for separate address, consent and Action-usage decisions. No model response was generated or scored for this new case.
+
+## 9 October 2026, ten-prompt blind comparison
+
+One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairwise judge. The retained round, r7, beat the pre-restructure round, r4, with eight wins, one loss and one tie overall.
+
+This skill's retained-round verdict was a win. The judge flagged an instruction to count two groups without explaining how, and an unsupported claim that a few hundred answers would provide cheap Prize research.
+
+The rest of `evals.json` was not rerun.

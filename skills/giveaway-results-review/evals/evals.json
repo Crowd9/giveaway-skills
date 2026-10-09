@@ -4,11 +4,11 @@
   {
    "id": 1,
    "prompt": "Our giveaway just ended. 1,800 entrants, 6,000 views, 9,000 entries, 400 invalid, ran 14 days with 6 entry methods. We wanted email subscribers. How did we do?",
-   "expected_output": "Runs review.py, places 1,800 in the 1k to 2.5k band below the median, reads 30% conversion against the 37% clean peer figure and the 34% platform average, asks for or reads the per-action counts to judge the email action, gives at most three changes each tied to a figure and to the next piece of work, ends with the next decision.",
+   "expected_output": "Calculates 1,800 / 6,000 = 30% Conversion Rate and 9,000 / 1,800 = 5 Entries per Entrant, places 1,800 in the 1k to 2.5k band below the median, reads 30% conversion against the 37% clean peer figure and the 34% platform average, asks for or reads the per-action counts to judge the email action, gives at most three changes each tied to a figure and to the next piece of work, ends with the next decision.",
    "assertions": [
-    "Shows the script output",
+    "Shows 1,800 Entrants / 6,000 views = 30% Conversion Rate and 9,000 Entries / 1,800 Entrants = 5 Entries per Entrant, with the units and denominators clear",
     "States the band and position for contestants",
-    "Compares conversion to the peer figure for 6 actions",
+    "Compares Conversion Rate with the clean peer population for six Actions, identifies any broader comparison population separately, and includes sample sizes and missing-data notes for dataset statistics",
     "Does not benchmark invalid entries",
     "Recommends at most three changes, each naming the next piece of work in the reader's own words",
     "No abstract good or bad verdict"
@@ -16,7 +16,7 @@
    "files": [],
    "checks": [
     {
-     "count": "review\\.py",
+     "count": "\\b30(?:\\.0+)?\\s*%",
      "min": 1
     },
     {

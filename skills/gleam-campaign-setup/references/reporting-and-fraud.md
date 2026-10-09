@@ -39,9 +39,9 @@ nothing here says what any level produced. What it does give a reader is the yar
 | Top hundredth | 38.4% |
 
 So roughly one entry in twenty is marked Invalid in a typical campaign, and a campaign above about 18% is in the
-noisiest tenth. Use it to answer "is my invalid rate bad" and to decide whether raising the level from the High
-default is worth the risk of catching real Entrants. A share action makes almost no difference to it, 4.6%
-typical against 3.9% without one, so a campaign that offers sharing is not thereby inviting fraud.
+noisiest tenth. That position cannot establish whether the filter is effective or which level to use. Campaigns
+with a share action recorded 4.6% typical against 3.9% without one. Next, review your own Invalid entries
+and any reports of legitimate Entrants being blocked before deciding whether a setting needs to change.
 
 Scope: campaigns of 100 or more Entrants that recorded at least one entry, on the ordinary population, so crypto, ambiguous and purchase-only campaigns are out. The filter level a campaign ran on is not in the data, so this is what the Invalid share looked like, never what any level produced. Source: `analysis/output/invalid_share.json`.
 

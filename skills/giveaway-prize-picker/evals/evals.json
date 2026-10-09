@@ -189,18 +189,19 @@
   },
   {
    "prompt": "We're a coffee roaster. If we spend $900 on prizes and $300 on promotion and expect 2,000 entrants with an email action, what does that cost us per subscriber and is it good value?",
-   "expected_output": "Runs roi.py with the numbers, reports cost per contestant and per email beside the food and drink benchmark (0.31 USD per email stated value), gives the breakeven value per email, refuses to call it good or bad without a value per subscriber from the user, and asks for that value.",
+   "expected_output": "Calculates $1,200 total spend and $0.60 per expected Entrant. Calculates cost per email signup using an explicitly labelled signup estimate or a stated subscriber count, with the denominator and currency named. Compares any food and drink benchmark using stated Prize value per email signup, identifies its campaign population and separates that measure from actual spend per signup. Gives the breakeven value per signup and asks for the user's value per subscriber before judging value.",
    "assertions": [
-    "Shows roi.py output",
-    "Compares to the food and drink benchmark",
+    "Shows $900 + $300 = $1,200 total spend and $1,200 / 2,000 = $0.60 per expected Entrant, in words or arithmetic",
+    "Labels subscriber counts as estimates, names the assumption and denominator for cost per signup, and gives the currency. If using the 85% completion estimate, shows 1,700 signups and about $0.71 per signup",
     "Gives breakeven value per email",
-    "Asks for a value per subscriber before judging"
+    "Asks for a value per subscriber before judging",
+    "Any benchmark identifies the food and drink campaign population, sample size and missing-data note, uses USD of stated Prize value per email signup, and distinguishes that measure from actual campaign cost"
    ],
    "files": [],
    "id": 10,
    "checks": [
     {
-     "count": "roi\\.py\\s+--",
+     "count": "0\\.60\\b|\\b60\\s*cents\\b",
      "min": 1
     },
     {
@@ -253,6 +254,20 @@
      "min": 1
     }
    ]
+  },
+  {
+   "id": 13,
+   "prompt": "We sell warehouse software and have a hard $1,000 total giveaway budget. The main Prize costs us $400 including delivery, and promotion costs $100. We expect 80 qualified non-Winners. We want to offer every one of them a printed stock-audit kit costing $8 plus $2 packing and $5 shipping. Can we promise that consolation, and what exact wording and budget should we publish?",
+   "expected_output": "Rejects the uncapped promise because each kit costs $15 all in and 80 kits cost $1,200, bringing total spend to $1,700 against the $1,000 limit. Reserves $500 for consolations, caps the offer at no more than 33 kits, and states how recipients qualify and how the capped kits are allocated. Gives public wording containing that quantity cap. Shows the chosen cap times $15, the maximum consolation liability and the complete campaign total including the $400 main Prize and $100 promotion. At 33 kits the liability is $495 and the total is $995, leaving $5. Any extra costs reduce the cap, and expected participation never replaces the public cap.",
+   "assertions": [
+    "Identifies $15 as the all-in cost per kit, including $8 product, $2 packing and $5 shipping",
+    "Shows 80 kits would cost $1,200 and produce $1,700 total spend, exceeding the $1,000 budget",
+    "Provides public offer wording with an explicit cap of no more than 33 kits, eligibility and an allocation rule",
+    "Calculates maximum consolation liability as the chosen public cap multiplied by $15 and compares the full total with the $1,000 budget",
+    "Includes the $400 main Prize and $100 promotion in the full total, with any extra costs funded by reducing the cap",
+    "Does not rely on expected uptake or redemptions to bound liability"
+   ],
+   "files": []
   }
  ]
 }
