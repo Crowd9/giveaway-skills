@@ -301,8 +301,15 @@ def cmd_verify(a):
             raw = resource.read()
         if sha(raw) != audit["rules"]["exclude_file_sha256"]: print("FAIL exclusion file hash differs"); ok = False
         exclude = {norm(l) for l in raw.decode("utf-8-sig").splitlines() if l.strip()}
-    src = audit["seed_source"]
-    if src["type"] == "drand":
+    src = audit.get("seed_source")
+    if not isinstance(src, dict) or src.get("type") not in ("drand", "nist-beacon", "published text"):
+        print("FAIL unsupported or missing seed source type"); print("FAIL"); return 1
+    if src["type"] == "published text":
+        if not isinstance(src.get("value"), str) or src["value"] != audit["seed"]:
+            print("FAIL published text value does not match the seed"); ok = False
+        else:
+            print("ok   recorded published text matches the seed; publication must be checked separately")
+    elif src["type"] == "drand":
         try:
             j = fetch_json(f"{DRAND['url']}/public/{src['round']}")
             if j["randomness"] != audit["seed"]: print("FAIL drand randomness for that round differs"); ok = False
@@ -390,6 +397,11 @@ def verifier_self_test():
             ("Backup 1", "gamma", 0.7696785881239763),
             ("Backup 2", "beta", 0.4605470121165112)], original["results"]
         check(original, 0)
+        for source in ({"type": "unrecognized-beacon"}, {}, None, [],
+                       {"type": "published text"}, {"type": "published text", "value": 123},
+                       {"type": "published text", "value": "different-seed"}):
+            changed = copy.deepcopy(original); changed["seed_source"] = source
+            check(changed, 1)
         # Fabricated metadata must never gain PASS merely by recomputing matching Winners.
         from unittest.mock import patch
         nist = copy.deepcopy(original)
@@ -409,6 +421,11 @@ def verifier_self_test():
                 check(changed, 1)
             mismatch = copy.deepcopy(pulse); mismatch["pulse"]["outputValue"] = "actual-beacon-value"
             with patch.dict(globals(), fetch_json=lambda url: mismatch): check(nist, 1)
+        drand = copy.deepcopy(original); drand["seed_source"] = {"type": "drand", "round": 1000}
+        with patch.dict(globals(), fetch_json=lambda url: {"randomness": original["seed"]}):
+            check(drand, 0)
+        with patch.dict(globals(), fetch_json=lambda url: {"randomness": "different-seed"}):
+            check(drand, 1)
         def unavailable(url): raise OSError("offline test")
         with patch.dict(globals(), fetch_json=unavailable):
             check(nist, 2)

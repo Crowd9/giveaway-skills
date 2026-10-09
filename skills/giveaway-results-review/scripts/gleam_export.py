@@ -43,7 +43,7 @@ def classify_action(action):
             return None, "", None
     if "follow" in a and re.search(r"\bx\b|twitter", a):
         return "x_follows", "X Follows", "follow"
-    if "refer" in a: return "referrals", "Viral Shares", "share"
+    if re.search(r"\b(?:refer|refers|referred|referring|referral|referrals)\b", a): return "referrals", "Viral Shares", "share"
     if a.strip(" :") == "newsletter" or (any(w in a for w in ("newsletter", "email", "mailing list", "our list", "giveaway list")) and any(w in a for w in ("subscri", "sign up", "signup", "join", "opt in", "opt-in"))):
         return "emails", "Email Subscriptions", "email"
     if "share" in a: return None, "", "share"
@@ -148,6 +148,11 @@ def review_command(s, args):
     return cmd + " --impressions N   # Impressions from the Reporting tab"
 
 def self_test():
+    for title in ("What is your preferred flavour?", "Tell us your preferences", "Answer a question: which do you prefer?"):
+        assert classify_action(title)[0] is None and classify_action(title)[2] != "share"
+    assert generic_name("Answer a question: which do you prefer?") == "Answer a Question"
+    for title in ("Refer a friend", "Referral bonus", "Friends referred", "Referrals"):
+        assert classify_action(title) == ("referrals", "Viral Shares", "share")
     import os, tempfile
     d = tempfile.mkdtemp(); p = os.path.join(d, "e.csv")
     with open(p, "w", newline="") as f:

@@ -193,7 +193,7 @@ def analyze(rows, a):
     valid = [r for r in rows if r["_valid"]]; invalid = [r for r in rows if not r["_valid"]]
     people = collections.defaultdict(list)
     for r in valid: people[r["_who"]].append(r)
-    for rs in people.values(): rs.sort(key=lambda r: r["_when"].timestamp() if r["_when"] else 0)
+    for rs in people.values(): rs.sort(key=lambda r: r["_when"].timestamp() if r["_when"] else float("inf"))
     n = len(people); R = {"base": n, "notes": []}
     if not n: sys.exit("no valid Entrants in export")
     entries = sum(r["_entries"] for r in valid)
@@ -266,14 +266,18 @@ def analyze(rows, a):
         days_active["1" if k == 1 else "2" if k == 2 else "3" if k == 3 else "4+"] += 1
     R["retention_coverage"] = {"complete": complete, "missing": n - complete, "total": n}
     R["retention"] = {k: (days_active[k], days_active[k] / complete) for k in ("1", "2", "3", "4+")} if complete else None
+    first = {who: rs[0] for who, rs in people.items() if all(r["_when"] is not None for r in rs)}
+    R["first_touch_coverage"] = {"complete": len(first), "missing": n - len(first), "total": n}
     # heatmap
     heat = collections.Counter((r["_when"].weekday(), r["_when"].hour) for r in valid if r["_when"])
     R["heat"] = heat; R["heat_peak"] = heat.most_common(1)[0] if heat else None
     whens = [r["_when"] for r in valid if r["_when"]]
+    R["date_coverage"] = {"entrants_known": len(first), "entrants_unknown": n - len(first),
+                          "actions_known": len(whens), "actions_unknown": len(valid) - len(whens)}
     if whens:
         start = min(whens); R["first48"] = sum(1 for w in whens if (w - start).total_seconds() <= 172800) / len(whens); R["start"] = start; R["end"] = max(whens)
     # by day: the day each Entrant first acted, and actions that day. The curve the Reporting tab draws, here as a table.
-    new_by_day = collections.Counter(rs[0]["_when"].date() for rs in people.values() if rs and rs[0]["_when"])
+    new_by_day = collections.Counter(r["_when"].date() for r in first.values())
     act_by_day = collections.Counter(r["_when"].date() for r in valid if r["_when"])
     R["by_day"] = [(d, new_by_day[d], act_by_day[d]) for d in sorted(act_by_day)]
     # traffic: first touch channels, hosts, hosted vs embedded, utm
@@ -284,8 +288,13 @@ def analyze(rows, a):
     for c in ch_all:
         ppl = [w for w in first if first[w]["_channel"] == c]; ch_apc[c] = (sum(len(people[w]) for w in ppl) / len(ppl)) / avg_apc if ppl else None
     R["channels"] = [(c, ft[c], ft[c] / n, ch_actions[c], ch_apc[c], ch_invalid[c] / ch_all[c] if ch_all[c] else 0) for c in sorted(ch_all, key=lambda c: -ft[c])]
+    if n > len(first):
+        R["channels"].append(("Unknown first touch (incomplete timestamps)", n - len(first), (n - len(first)) / n, 0, None, None))
+        fh["unknown first touch (incomplete timestamps)"] += n - len(first)
     R["hosts"] = fh.most_common(12); R["invalid_rate_all"] = R["topline"]["invalid_rate"]
-    lp = collections.Counter(first[w]["_landing"] for w in first); R["landing"] = lp.most_common(6)
+    lp = collections.Counter(first[w]["_landing"] for w in first)
+    if n > len(first): lp["unknown first touch (incomplete timestamps)"] += n - len(first)
+    R["landing"] = lp.most_common(6)
     feat = [w for w in first if first[w]["_channel"] == "Gleam giveaways directory (featured)"]
     landed = [w for w in first if first[w]["_landing"] == "Gleam giveaways directory"]
     R["featured"] = {"entrants": len(feat), "share": len(feat) / n, "depth": (sum(len(people[w]) for w in feat) / len(feat)) / avg_apc if feat else None,
@@ -333,6 +342,13 @@ def analyze(rows, a):
     R["ten_plus"] = ten_plus
     return R
 
+def timestamp_coverage_text(R):
+    c = R["first_touch_coverage"]; d = R["date_coverage"]
+    return (f"First touch and entry date known for {c['complete']:,} of {c['total']:,} Entrants with complete usable timestamps. "
+            f"Unknown entry date: {d['entrants_unknown']:,} Entrants. Unknown action date: {d['actions_unknown']:,} Actions. "
+            "Traffic shares use all Entrants, including unknown first touch. Row-source Action counts remain available.")
+
+
 def retention_text(R):
     coverage = R["retention_coverage"]; ret = R["retention"]
     if ret is None:
@@ -365,7 +381,7 @@ def insights(R):
     if ch:
         best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
         ins.append(f"Source whose entrants went deepest: {best[0]} at {best[4]:.2f}x the average actions per entrant ({best[1]:,} entrants). Least deep: {worst[0]} at {worst[4]:.2f}x ({worst[1]:,}).")
-    if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of all actions happened in the first 48 hours.")
+    if R.get("first48") is not None: ins.append(f"{R['first48']:.0%} of timestamped actions happened within 48 hours of the first observed timestamp.")
     V = R["viral"]
     if V["top_share"] is not None: ins.append(f"Top sharer accounts for {V['top_share']:.0%} of referral completions" + (" (over 40%, review before crediting)." if V["top_share"] > 0.4 else "."))
     ins.append(f"Average depth {T['actions_per_entrant']:.1f} actions, {R['ten_plus'] / n:.0%} of entrants completed 10 or more.")
@@ -406,11 +422,13 @@ def render(R, a):
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     referred = f"{V['referred_entrants']:,}" if V["graph_complete"] else "unavailable (referral relationships incomplete)"
     w(f"\nEntrant journey: entered {n:,} (100%), completed more than one action {n - E['1'][0]:,} ({(n - E['1'][0]) / n:.0%}), shared {V['sharers']:,} ({V['participation']:.0%}), referred new entrants (an output per sharer, never a stage): {referred} referred entrants.")
+    w("\n" + timestamp_coverage_text(R))
     if R.get("by_day"):
         peak = max(R["by_day"], key=lambda t: t[1])
-        w(f"\nBy day (account time), new Entrants and actions. Peak day for new Entrants {peak[0].isoformat()} with {peak[1]:,}.")
+        w("\nBy day (account time), new Entrants and actions." + (f" Peak day for known new Entrants {peak[0].isoformat()} with {peak[1]:,}." if peak[1] else " Entry dates are unknown for all Entrants."))
         w("\nDay | New Entrants | Actions\n---|---|---")
         for d, ne, ac in R["by_day"]: w(f"{d.isoformat()} | {ne:,} | {ac:,}")
+        w(f"Unknown date | {R['date_coverage']['entrants_unknown']:,} | {R['date_coverage']['actions_unknown']:,}")
     if R["heat_peak"]:
         (dw, hr), cnt = R["heat_peak"]; w(f"\nActivity peak: {DAYS[dw]} {hr:02d}:00 account time with {cnt:,} actions. A single campaign's heatmap follows its launch timing.")
         w("\nHour | " + " | ".join(DAYS) + "\n---|" + "---|" * 7)
@@ -430,10 +448,11 @@ def render(R, a):
         w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The dataset carries no order data, so nothing here is revenue.")
         w("Only supplied costs are included. Add any missing Prize, plan, promotion and other costs before treating this as total campaign spending.")
     else: w("\nCost per result needs actual Prize cost or plan cost (--prize-cost, --plan-cost, optional --benchmark-cpl). Stated Prize value alone does not establish spending.")
-    w("\n## Traffic\n\nFirst-touch channel per valid Entrant (earliest valid row's referrer). Actions and invalid rates use each row's own source, including sources with no valid Entrants. Depth is unavailable without valid first-touch Entrants. Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
+    w("\n## Traffic\n\nFirst-touch channel per valid Entrant (earliest valid row's referrer, only with complete usable timestamps). Actions and invalid rates use each row's own source, including sources with no valid Entrants. Depth is unavailable without valid first-touch Entrants. Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
     for c in R["channels"]:
         depth = f"{c[4]:.2f}x" if c[4] is not None else "unavailable"
-        w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {depth} | {c[5]:.1%}{' (2x campaign rate or more)' if c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
+        invalid_rate = f"{c[5]:.1%}" if c[5] is not None else "unavailable"
+        w(f"| {c[0]} | {c[1]:,} | {c[2]:.0%} | {c[3]:,} | {depth} | {invalid_rate}{' (2x campaign rate or more)' if c[5] is not None and c[5] >= 2 * R['invalid_rate_all'] and c[5] > 0 else ''} |")
     w("\nRaw referrers (first touch):\n\n| Host | Entrants |\n|---|---|" + "".join(f"\n| {h} | {k:,} |" for h, k in R["hosts"]))
     w("\nLanding page at first touch: " + ", ".join(f"{k} {v:,} ({v / n:.0%})" for k, v in R["landing"]) + ". gleam.io/KEY/slug is the hosted page, gleam.io/giveaways/KEY is the directory listing, any other host is an embed.")
     if R.get("featured"):
@@ -497,6 +516,31 @@ def self_test():
     assert "| Users | 2 |" in out and "Typical, campaigns your size" in out and "starts at 100 Entrants" in out and "better than" not in out, out[:900]
     assert "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
+    # Incomplete histories never assign first touch from an arbitrary undated row.
+    timing_path = os.path.join(d, "timing.csv")
+    for times, known in ((("2026-05-01 10:00:00", "2026-05-02 10:00:00"), 1),
+                         (("2026-05-01 10:00:00", ""), 0), (("", ""), 0)):
+        with open(timing_path, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "When", "Referring URL"])
+            wr.writerows([["a@example.com", "Visit", 1, times[0], "https://google.com/"],
+                          ["a@example.com", "Follow on X", 1, times[1], "https://x.com/"]])
+        timing = analyze(load(timing_path), C)
+        assert timing["first_touch_coverage"] == {"complete": known, "missing": 1 - known, "total": 1}
+        assert sum(row[1] for row in timing["by_day"]) + timing["date_coverage"]["entrants_unknown"] == 1
+        assert sum(row[2] for row in timing["by_day"]) + timing["date_coverage"]["actions_unknown"] == 2
+        assert sum(row[1] for row in timing["channels"]) == 1
+        assert sum(row[2] for row in timing["channels"]) == 1
+        assert sum(row[3] for row in timing["channels"]) == 2
+        search = next(row for row in timing["channels"] if row[0] == "Search")
+        social = next(row for row in timing["channels"] if row[0] == "Social")
+        assert search[1] == known and social[1] == 0 and search[3] == social[3] == 1
+        assert f"Unknown entry date: {1 - known} Entrants" in render(timing, C)
+        if not known:
+            assert "Peak day" not in render(timing, C)
+            assert timing["hosts"] == [("unknown first touch (incomplete timestamps)", 1)]
+            assert timing["landing"] == [("unknown first touch (incomplete timestamps)", 1)]
+            assert not timing["utm"] and timing["featured"] is None
+    load(p)  # Restore column metadata for the original fixture.
     out2 = render(analyze(load(p), C), C)
     assert "| Conversion Rate | 20.0% |" in out2 and "supplied from the Reporting tab" in out2 and "Views" not in out2 and "share who entered" not in out2.lower(), out2[:400]
     q = os.path.join(d, "wide.csv")
@@ -627,10 +671,10 @@ def self_test():
     assert "roi" not in legacy and "Stated Prize value alone does not establish spending" in render(legacy, ValueOnly)
     # Invalid-only sources stay visible without gaining valid people or depth.
     with open(q, "w", newline="") as f:
-        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status", "Referring URL", "Landing Page URL"])
-        wr.writerows([["valid@example.com", "Visit", 1, "Valid", "", "https://example.org/?utm_source=partnera"],
-                      ["invalid@example.com", "Visit", 1, "Invalid", "https://facebook.com/", ""],
-                      ["host@example.com", "Visit", 1, "Valid", "https://partner.example.org/", ""]])
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status", "Referring URL", "Landing Page URL", "When"])
+        wr.writerows([["valid@example.com", "Visit", 1, "Valid", "", "https://example.org/?utm_source=partnera", "2026-05-01 10:00:00"],
+                      ["invalid@example.com", "Visit", 1, "Invalid", "https://facebook.com/", "", "2026-05-01 10:00:00"],
+                      ["host@example.com", "Visit", 1, "Valid", "https://partner.example.org/", "", "2026-05-01 10:00:00"]])
     class Partners(B): partners = ["partnera", "partner.example.org", "example.org"]
     traffic = analyze(load(q), Partners)
     social = next(c for c in traffic["channels"] if c[0] == "Social")

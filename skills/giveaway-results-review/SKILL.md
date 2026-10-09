@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review finished giveaways or diagnose live campaigns from numbers, reporting screenshots or Actions exports. Use for 'how did my giveaway do', 'giveaway post-mortem', 'why was conversion low', 'which actions worked', 'compare my campaigns', 'giveaway ROI', 'is this pace normal', 'nobody is entering', 'entries look fake', 'should I extend', or 'results dashboard'."
 metadata:
-  version: 1.6.19
+  version: 1.6.20
 ---
 
 # Giveaway Results Review

@@ -293,7 +293,7 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
       <div class="card">
         <div class="subhead"><h3>New Entrants by Day</h3></div>
         <div class="chart" id="dailyChart"></div>
-        <p class="note">First day each Entrant acted, from the export.</p>
+        <p class="note">{{TIMESTAMP_COVERAGE}}</p>
       </div>
       <div class="card">
         <h3>Topline</h3>
@@ -328,7 +328,7 @@ input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset
       <div class="card">
         <h3>Channels, With Depth and Invalid Rate</h3>
         {{CHANNELS}}
-        <p class="note">Entrants and depth use each person's first valid source. Actions and invalid rates use each row's source. Depth is unavailable for channels with no valid first-touch Entrants. Signals, never verdicts.</p>
+        <p class="note">Entrants and depth use each person's first valid source when timestamps are complete. Shares use all Entrants, including unknown first touch. Actions and invalid rates use each row's source. Depth is unavailable for channels with no valid first-touch Entrants. Signals, never verdicts.</p>
       </div>
     </div>
     <div class="grid2" style="margin-top:16px">
@@ -438,7 +438,7 @@ const DATA={{DATA}};
 
   // daily: area of new Entrants with the peak marked
   (function(){
-    const daily=DATA.daily;if(!daily||daily.length<2)return;
+    const daily=DATA.daily;if(!daily||daily.length<2||!daily.some(d=>d[1]>0))return;
     const host=document.getElementById("dailyChart"),W=520,H=230,pl=48,pr=14,pt=18,pb=34;
     const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"New Entrants by day"},host);
     const raw=Math.max(...daily.map(d=>d[1])),step=Math.pow(10,Math.floor(Math.log10(raw||1))),max=Math.ceil(raw/step)*step||1;
@@ -676,10 +676,10 @@ def render(D, W, S, a):
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
     referred = n(V["referred_entrants"]) if V["graph_complete"] else "unavailable (referral relationships incomplete)"
     journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {referred}. Referrals are an output per sharer, never a stage, so this is not a funnel."
-    channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x" if c[4] is not None else "unavailable", f"{c[5]:.1%}") for c in R["channels"]])
+    channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x" if c[4] is not None else "unavailable", f"{c[5]:.1%}" if c[5] is not None else "unavailable") for c in R["channels"]])
     hosts = table(["Host", "Entrants"], [(h, n(c)) for h, c in R["hosts"]])
     landing = ", ".join(f"{k} {n(v)} ({v / N:.0%})" for k, v in R["landing"])
-    utm = table(["Source", "Medium", "Campaign", "Entrants"], [(u[0][0], u[0][1], u[0][2], n(u[1])) for u in R["utm"]], num_from=3) if R["utm"] else "<p class=\"note\">No UTM parameters on any landing page.</p>"
+    utm = table(["Source", "Medium", "Campaign", "Entrants"], [(u[0][0], u[0][1], u[0][2], n(u[1])) for u in R["utm"]], num_from=3) if R["utm"] else "<p class=\"note\">No UTM parameters on known first-touch landing pages.</p>"
     friction = table(["Action", "Completions", "Entrants", "Share of actions", "Unique participation", "Completions per Entrant", "Typical completions per Entrant, campaigns offering it", "Where completions per Entrant sit", "Typical seconds", "Invalid"],
                      [(x["name"], n(x["completions"]), n(x["entrants"]), pct(x["share_actions"]), pct(x["rate"]), f"{x['share']:.1f}", f"{x['typical']:.1f}" if x["typical"] is not None else "-", x["where"], (f"{x['seconds']:.0f}" + (" (slow)" if x["seconds"] > 120 else "")) if x["seconds"] is not None else "-", n(x["invalid"])) for x in D["acts"]])
     sharers = table(["Sharer", "Referrals", "Entered", "Entries brought", "Connected accounts", "Referred doing one action"], [(s[0], n(s[1]), n(s[2]), f"{s[3]:,}", s[4], s[5]) for s in V["top"]]) if V["top"] else ""
@@ -691,7 +691,7 @@ def render(D, W, S, a):
     caveats = "".join(f"<li>{esc(c)}</li>" for c in W["caveats"])
     bslice = D["slices"]["band:" + D["band"]]
     email_share = D["emails"] / N if D["emails"] else 0
-    data = {"N": N, "emails": D["emails"], "daily": daily, "depth": [(k, v[0]) for k, v in E.items()], "sources": [(c[0], c[1]) for c in R["channels"] if c[1]],
+    data = {"date_coverage": R["date_coverage"], "N": N, "emails": D["emails"], "daily": daily, "depth": [(k, v[0]) for k, v in E.items()], "sources": [(c[0], c[1]) for c in R["channels"] if c[1]],
             "countries": countries, "acts": [(x["name"], x["completions"], x["share"], x["typical"], x["family"], x["rate"]) for x in D["acts"]], "heat": heat, "slices": D["slices"], "band": "band:" + D["band"],
             "band_label": D["band_label"], "reach": D["reach"], "pool": D["pool"], "email_share": email_share, "site": S}
     seq = D["seq"]; curve = {r[0]: r for r in seq["curve"]}; splits = {r[0]: r for r in seq["splits"]}
@@ -729,7 +729,7 @@ def render(D, W, S, a):
     page = TEMPLATE
     for k, v in {"TITLE": esc(title), "META": "".join(f"<span>{esc(m)}</span>" for m in meta), "PILLS": pills, "VERDICT": esc(W["verdict"]), "ASSUME": esc(W["assumptions"]), "TILES": tiles(D),
                  "BANDLABEL": esc(D["band_label"]), "BANDN": n(bslice["contestants"]["n"]) if bslice.get("contestants") else "-", "METRICROWS": metric_rows(D), "CHANGES": change_cards(W), "INSIGHTS": ins, "TOPLINE": topline, "SPEED": esc(speed), "JOURNEY": esc(journey),
-                 "HEATPEAK": esc(f"Peak {CR.DAYS[heat_peak[0][0]]} {heat_peak[0][1]:02d}:00, {n(heat_peak[1])} actions") if heat_peak else "", "CHANNELS": channels, "HOSTS": hosts, "LANDING": esc(landing), "UTM": utm, "FRICTION": friction,
+                 "TIMESTAMP_COVERAGE": esc(CR.timestamp_coverage_text(R)), "HEATPEAK": esc(f"Peak {CR.DAYS[heat_peak[0][0]]} {heat_peak[0][1]:02d}:00, {n(heat_peak[1])} actions") if heat_peak else "", "CHANNELS": channels, "HOSTS": hosts, "LANDING": esc(landing), "UTM": utm, "FRICTION": friction,
                  "VIRALLINE": esc(CR.viral_text(V)),
                  "SHARERS": sharers, "CITIES": cities, "HANDLES": esc(handles), "RETENTION": esc(retention), "ENGAGED": engaged, "CAVEATS": caveats, "QUESTION": esc(W["question"]), "LEVERS": levers,
                  "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": script_json(data)}.items():
@@ -810,6 +810,25 @@ def self_test():
         return json.loads(parser.scripts[0].split("const DATA=", 1)[1].split(";\n", 1)[0])
     ordinary = embedded_data(page)
     assert ordinary["N"] == 2 and ordinary["acts"]
+    with open(p, encoding="utf-8") as source: timing_original = source.read()
+    try:
+        with open(p, "w", newline="") as source:
+            wr = csv.writer(source); wr.writerow(["Email", "Action", "Entries", "When", "Referring URL"])
+            wr.writerows([["a@example.com", "Visit", 1, "2026-05-01 10:00:00", "https://google.com/"],
+                          ["a@example.com", "Follow on X", 1, "", "https://x.com/"],
+                          ["b@example.com", "Visit", 1, "2026-05-02 10:00:00", "https://google.com/"],
+                          ["c@example.com", "Visit", 1, "", "https://x.com/"]])
+        timing_page = render(gather(A), words_of(words), site_of(None), A)
+        timing = embedded_data(timing_page)
+        assert timing["N"] == 3 and sum(x[1] for x in timing["sources"]) == 3
+        assert ["Search", 1] in timing["sources"]
+        assert ["Unknown first touch (incomplete timestamps)", 2] in timing["sources"]
+        assert sum(x[1] for x in timing["daily"]) + timing["date_coverage"]["entrants_unknown"] == 3
+        assert sum(x[2] for x in timing["daily"]) + timing["date_coverage"]["actions_unknown"] == 4
+        assert "Unknown entry date: 2 Entrants" in timing_page and "Unknown action date: 2 Actions" in timing_page
+        assert "Shares use all Entrants, including unknown first touch" in timing_page
+    finally:
+        with open(p, "w", encoding="utf-8") as source: source.write(timing_original)
     hostile = "</script><script>alert(1)</script>"
     with open(p, encoding="utf-8") as source: original_export = source.read()
     try:

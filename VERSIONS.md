@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.48 |
+| giveaway-prize-picker | 1.3.49 |
 | giveaway-entry-method-planner | 1.2.45 |
-| giveaway-timing-and-duration | 1.4.45 |
+| giveaway-timing-and-duration | 1.4.46 |
 | giveaway-winner-structure | 1.4.15 |
 | giveaway-promotion-plan | 1.3.45 |
-| giveaway-random-draw | 1.3.39 |
+| giveaway-random-draw | 1.3.40 |
 | giveaway-winner-communications | 1.2.35 |
 | giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.19 |
+| giveaway-results-review | 1.6.20 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.21 (2026-10-10)
+
+The return calculator no longer reports a total loss when you haven't given it a count. It shows the valuation as unavailable and names what's missing.
+
+A draw keeps past Winners in the pool when your terms allow them, and a draw record with a seed from a source it doesn't recognise no longer passes the check. A question asking which flavour someone prefers is counted as a question, where it used to be counted as a referral. An Entrant whose actions aren't all dated is shown as unknown for first touch, so one undated action can't move them to another channel.
+
+Dates that change each year are now things to check, never fixed in the plan. Prime Day comes from Amazon's announcement for your year and market. Christmas draw days come from the official calendar for the country, including substitute holidays. For back-to-school, check your audience's own school term dates before you set the launch.
 
 ## 3.0.20 (2026-10-10)
 

@@ -96,6 +96,8 @@ Source: `analysis/output/prize_timing_cuts.json` (`by_named_holiday`, `holiday_l
 
 Dates for the next sixteen months. The launch window is the holiday date minus the typical range of lead days businesses used, and the typical launch is the midpoint of that range. Dates for Mother's Day and Father's Day are the US convention (second Sunday in May, third Sunday in June). The UK Mother's Day is the fourth Sunday of Lent and Australia's Father's Day is the first Sunday of September, so shift those for those audiences. Diwali and Lunar New Year dates are entered by hand for each year.
 
+The back-to-school row below uses an analysis reference point. Its Date, Launch window and Typical launch cells are illustrative offsets from that reference point, not operational dates for a school audience. Obtain the requested year's term dates from the audience's school or district calendar before calculating an actual launch window. Keep the dataset lead-time figures above as context, and leave the plan relative if those term dates are unavailable.
+
 <!-- generated:hol_calendar -->
 | Holiday | Date | Launch window | Typical launch | What that week looked like |
 |---|---|---|---|---|
@@ -360,7 +362,7 @@ Dates for the ones with a fixed or predictable day:
 | Star Wars Day | Mon 04 May 2026 and Tue 04 May 2027 |
 | Canada Day | Wed 01 Jul 2026 and Thu 01 Jul 2027 |
 | Independence Day (US) | Sat 04 Jul 2026 and Sun 04 Jul 2027 |
-| Amazon Prime Day | mid July, announced by Amazon each year |
+| Amazon Prime Day | Check [Amazon's official news](https://www.aboutamazon.com/news/retail) for the announcement for the requested year and market before setting the launch window. Leave the anchor undated until announced, because its timing and participating markets can change. |
 | World Photography Day | Wed 19 Aug 2026 |
 | National Dog Day | Wed 26 Aug 2026 |
 | Labor Day (US) | Mon 07 Sep 2026 |

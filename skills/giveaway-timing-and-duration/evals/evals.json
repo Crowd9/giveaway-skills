@@ -321,6 +321,78 @@
      "fail_example": "The median duration for your size band is 14 days."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "Plan our US giveaway around Amazon Prime Day in 2026. Can we reuse the mid-July dates in our old plan?",
+   "expected_output": "Verify Amazon's official announcement for the requested year and market before deriving the launch window. Explain why the old fixed-month assumption cannot set the plan.",
+   "assertions": [
+    "Require a current check of the official Amazon announcement for the requested year and market. Reject reusing the saved mid-July assumption. If verification is unavailable, leave the anchor unresolved and explain that the launch window depends on it."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "prime-day-announcement",
+     "criterion": "Require a current check of the official Amazon announcement for the requested year and market. Reject reusing the saved mid-July assumption. If verification is unavailable, leave the anchor unresolved and explain that the launch window depends on it.",
+     "pass_example": "Check Amazon's announcement for the US event that year, then work backwards from the verified event dates. Until checked, the launch window is provisional.",
+     "fail_example": "Prime Day is always in mid-July, so reuse that schedule."
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "prompt": "Amazon has not announced Prime Day for our market next year. Give us firm giveaway launch and close dates anyway.",
+   "expected_output": "Keep the event anchor undated and offer relative lead time until the announcement is available.",
+   "assertions": [
+    "Reject inventing or carrying forward exact event dates or a fixed month for an unannounced Prime Day. Require relative timing and an explicit need to verify the announcement for the year and market."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "unannounced-prime-day",
+     "criterion": "Reject inventing or carrying forward exact event dates or a fixed month for an unannounced Prime Day. Require relative timing and an explicit need to verify the announcement for the year and market.",
+     "pass_example": "Keep the event date open until Amazon announces your market. Prepare the assets now and set launch and close dates from that confirmed anchor.",
+     "fail_example": "Use the same July dates as last year and call them confirmed."
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "prompt": "Our UK Christmas giveaway closes on Christmas Day in 2027. Schedule the draw and reply deadline on ordinary working days afterwards.",
+   "expected_output": "Identify the UK region and check its official calendar for the requested year, including substitute holidays, before scheduling working-day operations.",
+   "assertions": [
+    "Require the official year-specific calendar for England and Wales, Scotland or Northern Ireland as applicable, including substitute days, plus team coverage. Reject treating the first weekday after the holiday as automatically a working day. If region or verification is missing, keep the dates provisional."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "regional-substitute-holidays",
+     "criterion": "Require the official year-specific calendar for England and Wales, Scotland or Northern Ireland as applicable, including substitute days, plus team coverage. Reject treating the first weekday after the holiday as automatically a working day. If region or verification is missing, keep the dates provisional.",
+     "pass_example": "Confirm which UK region applies and check its official bank holiday calendar, including substitute days, before choosing a staffed working day for the draw and response deadline.",
+     "fail_example": "Draw on the first Monday afterwards because weekdays are always working days."
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "prompt": "We sell school supplies to families in the Austin Independent School District. Set next year's back-to-school giveaway launch from your holiday calendar.",
+   "expected_output": "Obtain the district's term dates for the requested year before deriving an actual launch window, treating the saved back-to-school row as an analysis reference point.",
+   "assertions": [
+    "Require the named district's official term dates for the requested year before assigning actual launch dates. Reject treating the saved back-to-school analysis date or its derived launch window as the district's schedule. Allow dataset lead times as context and relative timing while the term start is unresolved."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "school-term-anchor",
+     "criterion": "Require the named district's official term dates for the requested year before assigning actual launch dates. Reject treating the saved back-to-school analysis date or its derived launch window as the district's schedule. Allow dataset lead times as context and relative timing while the term start is unresolved.",
+     "pass_example": "Check the district's term calendar for that year, then plan backwards from the confirmed school start. The saved seasonal reference point does not establish that date.",
+     "fail_example": "The benchmark calendar gives your school start, so copy its launch date."
+    }
+   ]
   }
  ]
 }

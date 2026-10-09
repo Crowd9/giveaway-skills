@@ -18,7 +18,7 @@ Advice. The timing findings are in UTC and skew to northern-hemisphere businesse
 |---|---|
 | Australia | 25 to 26 December, 1 January, Australia Day (26 January), Easter Friday to Monday, Anzac Day (25 April), plus state days (Melbourne Cup in Victoria, Labour Day varies) |
 | New Zealand | 25 to 26 December, 1 to 2 January, Waitangi Day (6 February), Easter, Anzac Day, Matariki (June or July) |
-| UK | 25 to 26 December, 1 January, Good Friday and Easter Monday, early May and late May bank holidays, late August bank holiday |
+| UK | Check the requested year in the [official bank holiday calendar](https://www.gov.uk/bank-holidays) for England and Wales, Scotland or Northern Ireland, including substitute days. Regional holidays differ. |
 | US | Thanksgiving (fourth Thursday of November) through the weekend, 25 December, 1 January, 4 July, Memorial Day and Labor Day weekends |
 | Canada | 1 July, first Monday of September, second Monday of October (Thanksgiving), 25 to 26 December |
 | India | Diwali (October or November, date moves), Holi (March), Independence Day (15 August), Republic Day (26 January), regional festivals |
@@ -27,7 +27,8 @@ Advice. The timing findings are in UTC and skew to northern-hemisphere businesse
 
 ## Using it
 
-- Close and draw on a working day for the audience's region, at a time the team is at work.
+- Before setting launch, close, draw or response deadlines, check the official holiday calendar for the requested year and audience region, including substitute weekdays. A weekday can still be a public holiday. Confirm team coverage, then close and draw on a working day at a time the team is at work.
+- For a back-to-school campaign, verify the audience's school or district term dates. The seasonal ranges above are orientation only, and the analysis reference point in `holiday-benchmarks.md` does not set the operational launch date.
 - A seasonal Prize goes live in the audience's season: a barbecue in November for Australia, in May for the UK.
 - December is the busiest month for starts in the data. In the southern hemisphere it is also the start of the long summer holiday, so audiences thin out from about 20 December.
 - Ramadan (dates move about 11 days earlier each year) and Lunar New Year (January or February) change daily rhythms for large audiences. Check the year's dates.

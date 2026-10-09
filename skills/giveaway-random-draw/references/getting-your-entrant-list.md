@@ -93,6 +93,5 @@ Read the counts back: 11 rows read, 1 excluded (the organizer), 10 unique eligib
 - Open the file and read ten rows. Confirm the person column, the count, and that the last comments before close are present.
 - Remove entries after the close time. If the dataset has a timestamp column, filter on it before the draw and say so in the audit note.
 - Decide the duplicate rule. The script merges exact matches after trimming and lower-casing. It flags plus-addressed emails but does not merge them.
-- For a comment or social draw, drop the organizer's own account from the list before committing. A handle matching the brand's account is not an Entrant, whether or not the user named it as an exclusion.
-- Put staff, partners and previous Winners in the exclusion file, one id per line, using the same identifier as the Entrant file.
+- Check the organizer's account, staff, partners and previous Winners against the published eligibility rules. Put only ineligible accounts in the exclusion file, one id per line, using the same identifier as the Entrant file. Keep previous Winners in the pool when repeat wins are permitted.
 - Save the file with a dated name and never edit it after `commit`. Any fix means a new commit before the seed exists.

@@ -2,7 +2,7 @@
 """Giveaway ROI, before or after the campaign. No dependencies.
 
 Before the campaign, pricing a plan: we will spend 1,400 USD all in on a food and drink campaign we expect to draw 2,000 Entrants, and an email address is worth 4 USD to us.
-  python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --vertical food_drink --value-per-email 4
+  python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --admin 200 --contestants 2000 --email-action --vertical food_drink --value-per-email 4
 After the campaign, pricing what actually happened: the same spend drew 1,800 Entrants, 1,500 addresses, 900 follows and 200 referral Entries.
   python3 roi.py --prize-cost 900 --stated-value 1500 --promotion 300 --contestants 1800 --emails 1500 --follows 900 --referrals 200 --value-per-email 4
 
@@ -205,9 +205,9 @@ def run(a):
     stated = a.stated_value
     actual = any(count is not None for count in (a.emails, a.follows, a.referrals))
     est = any(count is None and action for count, action in ((a.emails, a.email_action), (a.follows, a.follow_action), (a.referrals, a.share_action)))
-    emails = a.emails if a.emails is not None else (round(a.contestants * UPTAKE["email"]) if a.email_action else 0)
-    follows = a.follows if a.follows is not None else (round(a.contestants * UPTAKE["follow"]) if a.follow_action else 0)
-    refs = a.referrals if a.referrals is not None else (round(a.contestants * UPTAKE["referral"]) if a.share_action else 0)
+    emails = a.emails if a.emails is not None else (round(a.contestants * UPTAKE["email"]) if a.email_action else None)
+    follows = a.follows if a.follows is not None else (round(a.contestants * UPTAKE["follow"]) if a.follow_action else None)
+    refs = a.referrals if a.referrals is not None else (round(a.contestants * UPTAKE["referral"]) if a.share_action else None)
     bench = BENCH["by_vertical"].get(a.vertical) or BENCH["by_band"][band(a.contestants)]
     label = a.vertical if a.vertical in BENCH["by_vertical"] else f"band {band(a.contestants)}"
     rows = [("Total cost (what you pay)", money(cost), "", ""),
@@ -221,9 +221,15 @@ def run(a):
             rows.append(("Cost per " + asset, money(cost / count), "", ""))
             if stated is not None:
                 rows.append(("Stated value per " + asset, money(stated / count), money(bench[key]), label))
-    value = (a.value_per_email or 0) * emails + (a.value_per_follow or 0) * follows + (a.value_per_referral or 0) * refs
+    assets = ((emails, a.value_per_email, "emails"), (follows, a.value_per_follow, "follows"),
+              (refs, a.value_per_referral, "referrals"))
+    missing = [name for count, unit_value, name in assets if count is None and unit_value is not None]
+    value = sum(count * unit_value for count, unit_value, _ in assets
+                if count is not None and unit_value is not None)
     supplied_value = any(v is not None for v in (a.value_per_email, a.value_per_follow, a.value_per_referral))
-    if supplied_value:
+    if supplied_value and missing:
+        rows.append(("Valuation unavailable", "-", "", "missing counts: " + ", ".join(missing)))
+    elif supplied_value:
         label, multiple = {
             None: ("Supplied valuation", "Valuation per dollar"),
             "revenue": ("Revenue", "Revenue per dollar"),
@@ -248,6 +254,9 @@ def run(a):
         note = "from the counts you gave, with missing action counts estimated from expected Contestants"
     elif not est and not actual:
         note = "not supplied and no action estimates requested"
+    unknown = [name for count, _, name in assets if count is None]
+    if unknown and actual:
+        note += "; counts not supplied: " + ", ".join(unknown)
     return rows, note
 
 def print_table(rows, header):
@@ -374,6 +383,30 @@ def self_test():
     Revenue.prize_cost = 0
     rows, _ = run(Revenue); d = {r[0]: r[1] for r in rows}
     assert d["Revenue per dollar"] == "-" and d["Financial ROI"] == "-"
+    # Unknown counts cannot become zero returns, including partly supplied histories.
+    class Missing(Revenue):
+        prize_cost = 100; emails = follows = referrals = None
+        email_action = follow_action = share_action = False
+        value_per_email = 4; value_per_follow = value_per_referral = None
+        value_basis = "contribution"; contribution_margin = None
+    rows, note = run(Missing); d = {r[0]: r[1] for r in rows}
+    assert "Valuation unavailable" in d and "Financial ROI" not in d
+    assert "not supplied" in note
+    Missing.emails = 0
+    rows, _ = run(Missing); d = {r[0]: r[1] for r in rows}
+    assert d["Contribution after fulfilment"] == "0.00" and d["Financial ROI"] == "-100.00%"
+    Missing.emails = 50
+    rows, note = run(Missing); d = {r[0]: r[1] for r in rows}
+    assert d["Contribution after fulfilment"] == "200.00" and d["Financial ROI"] == "100.00%"
+    assert "counts not supplied: follows, referrals" in note
+    Missing.value_per_follow = 2
+    rows, _ = run(Missing); d = {r[0]: r[1] for r in rows}
+    assert "Valuation unavailable" in d and "Financial ROI" not in d
+    assert "Contribution after fulfilment" not in d
+    Missing.value_per_follow = None; Missing.emails = None; Missing.email_action = True
+    rows, note = run(Missing); d = {r[0]: r[1] for r in rows}
+    assert d["Contribution after fulfilment"] == "340.00" and d["Financial ROI"] == "240.00%"
+    assert "estimated" in note
     benchmark_self_test()
     print("self-test passed"); return 0
 

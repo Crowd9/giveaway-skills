@@ -2,6 +2,10 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
+## Calendar regression criteria, 10 October 2026
+
+Cases 14 to 17 cover verified Prime Day announcements, unannounced events, regional UK substitute holidays and district term dates. These are review criteria with illustrative passing and failing answers, not a generated-answer run. No new external calendar dates are stored.
+
 ## Criterion review, 10 October 2026
 
 Case 3 now distinguishes start-share popularity from recorded outcomes. An independent reviewer found no defects in the updated criterion or its passing and failing examples. The prior fixture results below predate this change. No new generated answer run is claimed.
