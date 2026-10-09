@@ -136,3 +136,22 @@ The rest of `evals.json` was not rerun.
 **Pass:** Each kit costs $15 including packing and shipping. Offering 80 kits takes campaign spend to $1,700. Public wording caps the offer at no more than 33 kits and names eligibility and allocation. At that cap, consolation liability is $495 and total spend is $995, including the main Prize and promotion. Extra costs reduce the cap.
 
 **Status:** Added 9 October 2026, not yet run. No model response generated or scored.
+
+## 9 October 2026, harmful-answer guardrails
+
+New cases are not yet run against a model. Synthetic fixtures exercise the checker only, with explicit meaning reviews. A mechanical pass alone does not establish correctness.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 14 | legal-requirements | not yet run against a model |
+| 15 | no-guaranteed-entrants | not yet run against a model |
+| 16 | prize-fulfilment | not yet run against a model |
+| 17 | platform-rules | not yet run against a model |
+| 18 | causal-data-claim | not yet run against a model |
+| 19 | matching-population | not yet run against a model |
+| 20 | current-external-values | not yet run against a model |
+| 21 | reader-language | not yet run against a model |
+
+Existing cases 11, 13 now have explicit judgement-only reviews. Their new rubrics are not yet run against a model. Missing reviews remain UNASSESSED until evidence is supplied.
+
+Fixture pairs and supplied review records: `evals/fixtures/giveaway-prize-picker/manifest.json` from the repository root. Each fail answer isolates its one negative check. The fixture reviews classify synthetic examples only. Semantic paraphrases, implied guarantees, population selection and current-source validity still require independent meaning review.

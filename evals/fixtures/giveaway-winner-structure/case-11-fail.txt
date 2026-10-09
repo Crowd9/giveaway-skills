@@ -1,0 +1,1 @@
+I loaded references/evidence-detail.md and ran scripts/style_check.py before answering.

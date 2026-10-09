@@ -1,0 +1,6 @@
+{
+  "reader-language": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: Your value index is 1.30."
+  }
+}

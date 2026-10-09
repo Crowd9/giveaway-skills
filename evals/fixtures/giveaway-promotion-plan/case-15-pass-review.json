@@ -1,0 +1,6 @@
+{
+  "matched-population": {
+    "passed": true,
+    "reason": "Synthetic passing fixture: Use the 100 to 250 Entrant row, with its campaign and business counts, rather than presenting the all-size 4.91 as the matched benchmark."
+  }
+}

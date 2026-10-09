@@ -1,0 +1,6 @@
+{
+  "matching-population": {
+    "passed": true,
+    "reason": "Synthetic pass example: The gaming email-action row compares completion with the all-industry rate. Use that industry comparison and its campaign and business counts. Keep completion separate from how often campaigns offered email signup."
+  }
+}

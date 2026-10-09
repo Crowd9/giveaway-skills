@@ -66,3 +66,20 @@ One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairw
 This skill's retained-round verdict was a tie. The judge flagged clunky wording about committing a draw in advance, no check of the Winner's Entry against the terms, and an offer to discuss the draw by direct message that could invite further argument.
 
 The rest of `evals.json` was not rerun.
+
+## 9 October 2026, guardrail fixture coverage
+
+These are synthetic checker fixtures, not model answers. Review JSON files contain expected fixture verdicts, not an independent assessment of a model. Each case still needs meaning review for paraphrases and contradictions.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 9 | legal-authority | not yet run against a model |
+| 10 | fulfilment-inference | not yet run against a model |
+| 11 | platform-compliance | not yet run against a model |
+| 12 | plain-reader-language | not yet run against a model |
+| 13 | stored-external-value | not yet run against a model |
+| 14 | private-draw-records | not yet run against a model |
+
+The matching pass and fail answers and review verdicts are in `../../../evals/fixtures/giveaway-random-draw/`. The CLI checks both outcomes with `--review`. Fixture success is not a model-quality score.
+
+Previously unchecked case 6 is now explicitly judgement-only, with a review rubric. It requires a supplied reviewer verdict and has not been rerun against a model.

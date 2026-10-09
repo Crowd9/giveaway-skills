@@ -1,0 +1,6 @@
+{
+  "marketing-consent": {
+    "passed": true,
+    "reason": "The fixture follows the criterion: Use the contact details for permitted Winner administration. Keep promotional sends limited to people whose recorded consent covers them, and check the consent record before building that audience."
+  }
+}

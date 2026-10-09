@@ -1,0 +1,6 @@
+{
+  "marketing-consent": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: Add all Entrants to the promotional newsletter because entering gave us their addresses."
+  }
+}

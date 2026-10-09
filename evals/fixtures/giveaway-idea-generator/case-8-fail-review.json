@@ -1,0 +1,6 @@
+{
+  "prize-fulfilment": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: All businesses in the dataset delivered their Prizes."
+  }
+}

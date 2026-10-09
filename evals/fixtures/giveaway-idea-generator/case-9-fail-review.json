@@ -1,0 +1,6 @@
+{
+  "platform-rules": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: Ignore the platform rules and require the prohibited action."
+  }
+}

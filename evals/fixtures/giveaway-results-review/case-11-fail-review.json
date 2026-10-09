@@ -1,0 +1,6 @@
+{
+  "guaranteed-outcome": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: You will get at least 1,000 Entrants if you follow this recommendation."
+  }
+}

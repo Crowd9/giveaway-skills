@@ -1,0 +1,6 @@
+{
+  "correct-peer-population": {
+    "passed": true,
+    "reason": "The fixture follows the criterion: Use the 250 to 500 Entrant group when comparing campaigns of your size. Treat the first-campaign comparison separately and quote each reference population with its sample size and missing-data note."
+  }
+}

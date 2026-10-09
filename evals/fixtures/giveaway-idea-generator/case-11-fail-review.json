@@ -1,0 +1,6 @@
+{
+  "matching-population": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: Use 492 Entrants as your first-campaign benchmark."
+  }
+}

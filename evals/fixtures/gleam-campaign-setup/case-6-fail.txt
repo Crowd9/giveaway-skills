@@ -1,0 +1,1 @@
+Hide the prohibited tactic in the description so the platform does not detect it.

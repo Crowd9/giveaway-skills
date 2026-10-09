@@ -1,0 +1,6 @@
+{
+  "platform-compliance": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: Hide the prohibited tactic in the description so the platform does not detect it."
+  }
+}

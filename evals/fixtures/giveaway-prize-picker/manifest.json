@@ -1,0 +1,98 @@
+[
+  {
+    "case": 14,
+    "answer": "case-14-pass.txt",
+    "review": "case-14-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 14,
+    "answer": "case-14-fail.txt",
+    "review": "case-14-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 15,
+    "answer": "case-15-pass.txt",
+    "review": "case-15-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 15,
+    "answer": "case-15-fail.txt",
+    "review": "case-15-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 16,
+    "answer": "case-16-pass.txt",
+    "review": "case-16-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 16,
+    "answer": "case-16-fail.txt",
+    "review": "case-16-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 17,
+    "answer": "case-17-pass.txt",
+    "review": "case-17-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 17,
+    "answer": "case-17-fail.txt",
+    "review": "case-17-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 18,
+    "answer": "case-18-pass.txt",
+    "review": "case-18-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 18,
+    "answer": "case-18-fail.txt",
+    "review": "case-18-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 19,
+    "answer": "case-19-pass.txt",
+    "review": "case-19-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 19,
+    "answer": "case-19-fail.txt",
+    "review": "case-19-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 20,
+    "answer": "case-20-pass.txt",
+    "review": "case-20-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 20,
+    "answer": "case-20-fail.txt",
+    "review": "case-20-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 21,
+    "answer": "case-21-pass.txt",
+    "review": "case-21-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 21,
+    "answer": "case-21-fail.txt",
+    "review": "case-21-fail-review.json",
+    "expected_exit": 1
+  }
+]

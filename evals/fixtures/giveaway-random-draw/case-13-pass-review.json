@@ -1,0 +1,6 @@
+{
+  "stored-external-value": {
+    "passed": true,
+    "reason": "The fixture follows the criterion: Check the current fee and included features at https://gleam.io/pricing before selecting a plan. The required features determine the tier, so leave the cost pending until that page is verified."
+  }
+}

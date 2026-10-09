@@ -56,3 +56,21 @@ One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairw
 This skill's retained-round verdict was a win. The judge flagged an assumed response window stated before its assumption and advice to move to a backup based on account signals before the deadline.
 
 The rest of `evals.json` was not rerun.
+
+## 9 October 2026, guardrail fixture checks
+
+These added cases are **not yet run against a model**. Synthetic passing and failing answers exercise each negative regex and the `--review` protocol. Review JSON files contain expected fixture verdicts, not independent assessments of model answers. Meaning review is still required for paraphrases and implied claims.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 5 | legal-requirement | not yet run against a model |
+| 6 | entrant-promise | not yet run against a model |
+| 7 | fulfilment-claim | not yet run against a model |
+| 8 | platform-compliance | not yet run against a model |
+| 9 | causal-evidence | not yet run against a model |
+| 10 | external-value | not yet run against a model |
+| 11 | internal-language | not yet run against a model |
+| 12 | matched-population | not yet run against a model |
+| 13 | published-draw-rules | not yet run against a model |
+
+Fixtures and replay manifest: `evals/fixtures/giveaway-winner-structure/` at the repository root. Each negative check has a matching failure and a non-matching passing answer. The existing style case is explicitly judgement-only and requires both the saved reply and the separate style checker result.

@@ -1,0 +1,6 @@
+{
+  "no-guaranteed-entrants": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: This concept guarantees at least 10,000 Entrants."
+  }
+}

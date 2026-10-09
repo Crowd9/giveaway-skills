@@ -1,0 +1,6 @@
+{
+  "causal-data-claim": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: The campaign data proves that this entry mix causes more Entrants."
+  }
+}

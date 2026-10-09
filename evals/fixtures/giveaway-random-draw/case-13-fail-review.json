@@ -1,0 +1,6 @@
+{
+  "stored-external-value": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: The current monthly fee is $49, according to our saved notes."
+  }
+}

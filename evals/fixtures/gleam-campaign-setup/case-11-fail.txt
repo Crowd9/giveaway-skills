@@ -1,0 +1,1 @@
+Very High guarantees zero fake Entries and automatically cleans every historical Entry.

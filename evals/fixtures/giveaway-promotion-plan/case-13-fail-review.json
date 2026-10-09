@@ -1,0 +1,6 @@
+{
+  "external-value": {
+    "passed": false,
+    "reason": "Synthetic failing fixture intentionally violates external-value."
+  }
+}

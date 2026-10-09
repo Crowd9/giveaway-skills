@@ -1,0 +1,6 @@
+{
+  "no-zero-fraud-promise": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: Very High guarantees zero fake Entries and automatically cleans every historical Entry."
+  }
+}

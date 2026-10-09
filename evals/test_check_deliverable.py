@@ -65,6 +65,59 @@ class DeliverableTests(unittest.TestCase):
         for path in ROOT.glob('skills/*/evals/evals.json'):
             validate_cases(json.loads(path.read_text())['evals'])
 
+    def test_every_case_has_an_assessment(self):
+        for path in ROOT.glob('skills/*/evals/evals.json'):
+            for case in json.loads(path.read_text())['evals']:
+                with self.subTest(skill=path.parent.parent.name, case=case['id']):
+                    self.assertTrue(case.get('checks') or case.get('review_checks'))
+
+    def test_guardrail_fixture_manifests(self):
+        manifests = sorted((ROOT / 'evals/fixtures').glob('*/manifest.json'))
+        self.assertEqual(len(manifests), len(list(ROOT.glob('skills/*/evals/evals.json'))))
+        for manifest in manifests:
+            evals = ROOT / 'skills' / manifest.parent.name / 'evals/evals.json'
+            cases = {str(c['id']): c for c in json.loads(evals.read_text())['evals']}
+            coverage = {}
+            for fixture in json.loads(manifest.read_text()):
+                case_id = str(fixture['case'])
+                case = cases[case_id]
+                answer = manifest.parent / fixture['answer']
+                expected = fixture['expected_exit']
+                with self.subTest(skill=manifest.parent.name, answer=answer.name):
+                    command = [sys.executable, str(ROOT / 'evals/check_deliverable.py'),
+                               str(evals), case_id, str(answer)]
+                    if fixture.get('review'):
+                        command += ['--review', str(manifest.parent / fixture['review'])]
+                    result = subprocess.run(command, capture_output=True, text=True)
+                    self.assertEqual(result.returncode, expected, result.stdout + result.stderr)
+                    text = answer.read_text()
+                    negative = [c for c in case.get('checks', []) if 'not_count' in c]
+                    hits = {i for i, check in enumerate(negative) if run([check], text)}
+                    proof = coverage.setdefault(case_id, {'pass': False, 'isolated': set()})
+                    if expected == 0:
+                        self.assertEqual(run(case.get('checks', []), text), [])
+                        if case.get('review_checks'):
+                            self.assertEqual(assess(case, text)[0], 'UNASSESSED')
+                        proof['pass'] = True
+                    elif expected == 1:
+                        self.assertTrue(hits, 'Fail fixture must fail mechanically, without review')
+                        if len(hits) == 1:
+                            proof['isolated'].update(hits)
+            expected_cases = {case_id for case_id, case in cases.items()
+                              if case.get('review_checks') and
+                              any('not_count' in check for check in case.get('checks', []))}
+            # The pre-existing correction regression has its own fixture test above.
+            if manifest.parent.name == 'giveaway-random-draw':
+                expected_cases.discard('7')
+            self.assertEqual(set(coverage), expected_cases,
+                             'Every guardrail case needs fixture coverage')
+            for case_id, proof in coverage.items():
+                with self.subTest(skill=manifest.parent.name, case=case_id):
+                    self.assertTrue(proof['pass'], 'Missing passing fixture')
+                    negative = [c for c in cases[case_id].get('checks', []) if 'not_count' in c]
+                    self.assertEqual(proof['isolated'], set(range(len(negative))),
+                                     'Each negative check needs an isolated failing fixture')
+
 
 if __name__ == '__main__':
     unittest.main()

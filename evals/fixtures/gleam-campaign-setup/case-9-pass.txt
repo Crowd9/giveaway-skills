@@ -1,0 +1,1 @@
+Those campaigns differed in their recorded results. That comparison does not isolate what produced the difference, so test the change against your own objective before attributing an improvement to it.

@@ -1,0 +1,1 @@
+Your forecast belongs beside first campaigns, not the campaign-weighted overall median. Use the first-campaign reference and its business count before judging it.

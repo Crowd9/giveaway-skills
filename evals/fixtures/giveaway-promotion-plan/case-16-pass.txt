@@ -1,0 +1,1 @@
+That curve counts visits by day, not who entered on each day. Use it to schedule supporting posts without treating it as an Entrant forecast.

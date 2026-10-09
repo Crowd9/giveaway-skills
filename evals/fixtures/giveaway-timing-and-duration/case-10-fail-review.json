@@ -1,0 +1,6 @@
+{
+  "causal-evidence": {
+    "passed": false,
+    "reason": "Synthetic failing fixture intentionally violates causal-evidence."
+  }
+}

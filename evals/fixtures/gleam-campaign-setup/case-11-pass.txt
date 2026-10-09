@@ -1,0 +1,1 @@
+Keep High as the default and review suspicious Entries on the Actions tab. Verify any claimed effect on existing Entries in current official documentation before relying on it.

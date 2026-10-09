@@ -56,3 +56,22 @@ One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairw
 This skill's retained-round verdict was a loss. The judge flagged unclear Conversion Rate percentages without attribution in the table, methodology in the prose, an unsupported lottery claim about a discount-code Prize, and a desk or monitor suggestion that did not fit a software business.
 
 The rest of `evals.json` was not rerun.
+
+## 9 October 2026, harmful-answer guardrails
+
+New cases are not yet run against a model. Synthetic fixtures exercise the checker only, with explicit meaning reviews. A mechanical pass alone does not establish correctness.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 6 | legal-requirements | not yet run against a model |
+| 7 | no-guaranteed-entrants | not yet run against a model |
+| 8 | prize-fulfilment | not yet run against a model |
+| 9 | platform-rules | not yet run against a model |
+| 10 | causal-data-claim | not yet run against a model |
+| 11 | matching-population | not yet run against a model |
+| 12 | current-external-values | not yet run against a model |
+| 13 | reader-language | not yet run against a model |
+
+Existing cases 4 now have explicit judgement-only reviews. Their new rubrics are not yet run against a model. Missing reviews remain UNASSESSED until evidence is supplied.
+
+Fixture pairs and supplied review records: `evals/fixtures/giveaway-idea-generator/manifest.json` from the repository root. Each fail answer isolates its one negative check. The fixture reviews classify synthetic examples only. Semantic paraphrases, implied guarantees, population selection and current-source validity still require independent meaning review.

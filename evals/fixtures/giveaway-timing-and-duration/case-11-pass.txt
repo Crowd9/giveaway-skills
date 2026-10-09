@@ -1,0 +1,1 @@
+Keep the fee and approval timing unconfirmed until you check the current authority's source. The answers determine the budget allowance and earliest launch date.

@@ -60,3 +60,22 @@ One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairw
 This skill's retained-round verdict was a win. The judge flagged an instruction to count two groups without explaining how, and an unsupported claim that a few hundred answers would provide cheap Prize research.
 
 The rest of `evals.json` was not rerun.
+
+## 9 October 2026, guardrail fixture coverage
+
+These are synthetic checker fixtures, not model answers. Review JSON files contain expected fixture verdicts, not an independent assessment of a model. Each case still needs meaning review for paraphrases and contradictions.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 6 | legal-authority | not yet run against a model |
+| 7 | fulfilment-inference | not yet run against a model |
+| 8 | platform-compliance | not yet run against a model |
+| 9 | plain-reader-language | not yet run against a model |
+| 10 | causal-data-claim | not yet run against a model |
+| 11 | guaranteed-outcome | not yet run against a model |
+| 12 | marketing-consent | not yet run against a model |
+| 13 | reserve-not-yet-drawn | not yet run against a model |
+
+The matching pass and fail answers and review verdicts are in `../../../evals/fixtures/giveaway-winner-communications/`. The CLI checks both outcomes with `--review`. Fixture success is not a model-quality score.
+
+Previously unchecked case 4 is now explicitly judgement-only, with a review rubric. It requires a supplied reviewer verdict and has not been rerun against a model.

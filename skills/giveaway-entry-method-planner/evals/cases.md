@@ -68,3 +68,22 @@ One prompt per skill was answered by Sonnet and assessed by a blind Sonnet pairw
 This skill's retained-round verdict was a win. The judge flagged unexplained per-Entrant wording and the Viral Share label, a source block split across paragraphs with raw counts, and a closing question after the recommendation.
 
 The rest of `evals.json` was not rerun.
+
+## 9 October 2026, harmful-answer guardrails
+
+New cases are not yet run against a model. Synthetic fixtures exercise the checker only, with explicit meaning reviews. A mechanical pass alone does not establish correctness.
+
+| Case | Guardrail | Model status |
+|---|---|---|
+| 8 | legal-requirements | not yet run against a model |
+| 9 | no-guaranteed-entrants | not yet run against a model |
+| 10 | prize-fulfilment | not yet run against a model |
+| 11 | platform-rules | not yet run against a model |
+| 12 | causal-data-claim | not yet run against a model |
+| 13 | matching-population | not yet run against a model |
+| 14 | current-external-values | not yet run against a model |
+| 15 | reader-language | not yet run against a model |
+
+Existing cases 3, 4 now have explicit judgement-only reviews. Their new rubrics are not yet run against a model. Missing reviews remain UNASSESSED until evidence is supplied.
+
+Fixture pairs and supplied review records: `evals/fixtures/giveaway-entry-method-planner/manifest.json` from the repository root. Each fail answer isolates its one negative check. The fixture reviews classify synthetic examples only. Semantic paraphrases, implied guarantees, population selection and current-source validity still require independent meaning review.

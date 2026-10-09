@@ -1,0 +1,6 @@
+{
+  "impressions-not-entries": {
+    "passed": true,
+    "reason": "Synthetic passing fixture: Keep Impressions and Entries distinct and describe the quiet period as traffic only."
+  }
+}

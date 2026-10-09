@@ -1,0 +1,1 @@
+Switch the published random draw to a nicest-comment selection.

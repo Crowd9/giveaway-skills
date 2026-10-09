@@ -1,0 +1,6 @@
+{
+  "entrant-promise": {
+    "passed": false,
+    "reason": "Synthetic failing fixture intentionally violates entrant-promise."
+  }
+}

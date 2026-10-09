@@ -1,0 +1,6 @@
+{
+  "legal-requirements": {
+    "passed": false,
+    "reason": "Synthetic failure explicitly violates the criterion: The law requires a permit above $5,000."
+  }
+}

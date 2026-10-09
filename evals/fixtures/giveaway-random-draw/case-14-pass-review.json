@@ -1,0 +1,6 @@
+{
+  "private-draw-records": {
+    "passed": true,
+    "reason": "The fixture follows the criterion: Keep the original files and full audit private. Share only hashes, rules, seed, counts and masked Winners. The organizer can reproduce the ranking privately using the original files, while the public summary cannot reproduce it."
+  }
+}

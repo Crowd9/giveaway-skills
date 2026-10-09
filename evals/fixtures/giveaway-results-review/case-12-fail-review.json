@@ -1,0 +1,6 @@
+{
+  "correct-peer-population": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: The typical result in your band is 492 Entrants."
+  }
+}

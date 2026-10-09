@@ -1,0 +1,6 @@
+{
+  "fulfilment-inference": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: Most businesses delivered their Prizes, according to the campaign dataset."
+  }
+}

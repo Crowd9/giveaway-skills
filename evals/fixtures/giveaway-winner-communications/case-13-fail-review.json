@@ -1,0 +1,6 @@
+{
+  "reserve-not-yet-drawn": {
+    "passed": false,
+    "reason": "The fixture violates the criterion: Your Prize has been awarded to a reserve. We will draw the reserve tomorrow."
+  }
+}

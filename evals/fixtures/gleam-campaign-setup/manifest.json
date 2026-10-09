@@ -1,0 +1,190 @@
+[
+  {
+    "case": 4,
+    "answer": "case-4-pass.txt",
+    "review": "case-4-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 4,
+    "answer": "case-4-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 4,
+    "answer": "case-4-fail.txt",
+    "review": "case-4-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 4,
+    "answer": "case-4-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 5,
+    "answer": "case-5-pass.txt",
+    "review": "case-5-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 5,
+    "answer": "case-5-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 5,
+    "answer": "case-5-fail.txt",
+    "review": "case-5-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 5,
+    "answer": "case-5-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 6,
+    "answer": "case-6-pass.txt",
+    "review": "case-6-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 6,
+    "answer": "case-6-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 6,
+    "answer": "case-6-fail.txt",
+    "review": "case-6-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 6,
+    "answer": "case-6-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 7,
+    "answer": "case-7-pass.txt",
+    "review": "case-7-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 7,
+    "answer": "case-7-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 7,
+    "answer": "case-7-fail.txt",
+    "review": "case-7-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 7,
+    "answer": "case-7-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 8,
+    "answer": "case-8-pass.txt",
+    "review": "case-8-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 8,
+    "answer": "case-8-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 8,
+    "answer": "case-8-fail.txt",
+    "review": "case-8-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 8,
+    "answer": "case-8-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 9,
+    "answer": "case-9-pass.txt",
+    "review": "case-9-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 9,
+    "answer": "case-9-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 9,
+    "answer": "case-9-fail.txt",
+    "review": "case-9-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 9,
+    "answer": "case-9-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 10,
+    "answer": "case-10-pass.txt",
+    "review": "case-10-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 10,
+    "answer": "case-10-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 10,
+    "answer": "case-10-fail.txt",
+    "review": "case-10-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 10,
+    "answer": "case-10-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 11,
+    "answer": "case-11-pass.txt",
+    "review": "case-11-pass-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 11,
+    "answer": "case-11-pass.txt",
+    "expected_exit": 2
+  },
+  {
+    "case": 11,
+    "answer": "case-11-fail.txt",
+    "review": "case-11-fail-review.json",
+    "expected_exit": 1
+  },
+  {
+    "case": 11,
+    "answer": "case-11-fail.txt",
+    "expected_exit": 1
+  },
+  {
+    "case": 8,
+    "answer": "case-8-safe-paraphrase.txt",
+    "review": "case-8-safe-paraphrase-review.json",
+    "expected_exit": 0
+  },
+  {
+    "case": 9,
+    "answer": "case-9-safe-paraphrase.txt",
+    "review": "case-9-safe-paraphrase-review.json",
+    "expected_exit": 0
+  }
+]
