@@ -61,24 +61,24 @@ A campaign-level cut on the same campaigns behind these numbers, one row per cam
 | Art and custom | 136 | 76 | 358 | 33% | 3.2 | 6 | 40% |
 <!-- /generated -->
 
-Among the categories with real size, home, garden, appliance and food, drink, consumables convert at 31% and 30%, behind placeholder Prize names at 34%. Music gear and regulated goods offer email most often, at 61% and 60%. Regulated goods runs the most Entry Methods at 11, three clear of the next highest, and has the lowest Conversion Rate at 19%, consistent with the eligibility friction that category carries. Discount or coupon has the highest Conversion Rate of all at 40%, on a typical seven-day run that fits a promotion with a form more than a Prize people wait for.
+Among the categories with real size, home, garden, appliance and food, drink, consumables convert at 32% and 30%, behind placeholder Prize names at 38%. Music gear and regulated goods offer email most often, at 61% and 62%. Regulated goods runs the most Entry Methods at 11, three clear of the next highest, and has the lowest Conversion Rate at 18%, consistent with the eligibility friction that category carries. Discount or coupon has the highest Conversion Rate of all at 40%, on a typical seven-day run that fits a promotion with a form more than a Prize people wait for.
 
 The two or three Prize categories businesses reach for most, by industry:
 
 | Industry | Most common categories (share of the industry's campaigns) |
 |---|---|
-| Electronics and tech | Tech hardware (61%, 4,399 campaigns), Other or unclassified (20%, 1,426 campaigns), Bundle or box (5%, 379 campaigns) |
-| Gaming and esports | Tech hardware (35%, 2,208 campaigns), Game items or skins (23%, 1,458 campaigns), Other or unclassified (19%, 1,194 campaigns) |
-| Media and entertainment | Tech hardware (31%, 1,513 campaigns), Other or unclassified (22%, 1,091 campaigns), Bundle or box (16%, 771 campaigns) |
-| Sports and outdoors | Other or unclassified (27%, 606 campaigns), Regulated goods (firearms) (21%, 460 campaigns), Bundle or box (13%, 296 campaigns) |
-| Food and drink | Other or unclassified (19%, 318 campaigns), Bundle or box (17%, 280 campaigns), Gift card or cash (14%, 239 campaigns) |
-| Home and garden | Other or unclassified (30%, 494 campaigns), Home, garden, appliance (25%, 417 campaigns), Bundle or box (13%, 222 campaigns) |
-| Apparel and fashion | Merch, apparel, collectibles (39%, 629 campaigns), Gift card or cash (23%, 377 campaigns), Other or unclassified (18%, 288 campaigns) |
-| Travel and events | Experience, travel, tickets (55%, 687 campaigns), Other or unclassified (18%, 220 campaigns), Gift card or cash (14%, 176 campaigns) |
-| Automotive | Regulated goods (firearms) (37%, 392 campaigns), Other or unclassified (24%, 259 campaigns), Gift card or cash (13%, 140 campaigns) |
-| Toys, hobbies and collectibles | Toys and collectibles (38%, 322 campaigns), Other or unclassified (25%, 207 campaigns), Bundle or box (14%, 115 campaigns) |
+| Electronics and tech | Tech hardware (51%, 7,969 campaigns), Other or unclassified (23%, 3,596 campaigns), Placeholder Prize name (6%, 870 campaigns) |
+| Gaming and esports | Other or unclassified (25%, 5,970 campaigns), Game items or skins (24%, 5,816 campaigns), Tech hardware (22%, 5,330 campaigns) |
+| Media and entertainment | Other or unclassified (24%, 5,268 campaigns), Gift card or cash (24%, 5,093 campaigns), Tech hardware (13%, 2,731 campaigns) |
+| Sports and outdoors | Other or unclassified (29%, 1,363 campaigns), Regulated goods (firearms) (13%, 606 campaigns), Bundle or box (13%, 593 campaigns) |
+| Food and drink | Gift card or cash (20%, 943 campaigns), Other or unclassified (18%, 839 campaigns), Bundle or box (14%, 678 campaigns) |
+| Home and garden | Other or unclassified (28%, 1,046 campaigns), Home, garden, appliance (20%, 732 campaigns), Gift card or cash (17%, 613 campaigns) |
+| Apparel and fashion | Merch, apparel, collectibles (26%, 1,208 campaigns), Gift card or cash (25%, 1,150 campaigns), Other or unclassified (15%, 703 campaigns) |
+| Travel and events | Experience, travel, tickets (52%, 2,080 campaigns), Gift card or cash (15%, 610 campaigns), Other or unclassified (15%, 604 campaigns) |
+| Automotive | Gift card or cash (23%, 540 campaigns), Other or unclassified (22%, 500 campaigns), Regulated goods (firearms) (17%, 397 campaigns) |
+| Toys, hobbies and collectibles | Toys and collectibles (24%, 1,126 campaigns), Other or unclassified (24%, 1,114 campaigns), Bundle or box (14%, 638 campaigns) |
 
-Gaming and esports splits its Prizes three ways (hardware, game items, other) where electronics and tech and travel and events each concentrate on one category. Automotive's regulated-goods share (37%, 392 campaigns) sits on only 12 businesses, at the floor for a figure this skill quotes, and reads as a handful of firearms retailers labelled automotive, not a general pattern for cars.
+Gaming and esports is split across unclassified Prizes, game items and hardware. Electronics and tech and travel and events each put about half their campaigns in one category. Automotive's regulated-goods row is concentrated in a small group of businesses, so it does not describe a general pattern for cars.
 
 Source: `analysis/output/prize_timing_cuts.json` (by_prize_category, prize_category_by_industry).
 
@@ -157,7 +157,7 @@ Source: `analysis/output/vertical_profiles.json` (prize_category_index_by_indust
 Pick the category that matches the objective first, then choose the item:
 
 - Leads or sales in a niche: own product, store credit, category bundle, membership.
-- Discount codes and coupons appear as Prizes in 1,054 campaigns. They require a purchase, so treat them as a promotion with an entry form, and use them as a consolation tier under a real Prize if at all.
+- Discount codes and coupons appear as Prizes in 1,046 campaigns. They require a purchase, so treat them as a promotion with an entry form, and use them as a consolation tier under a real Prize if at all.
 - Hobby and home audiences: category gear (sports, music, tools, home) selects for the audience in a way generic electronics cannot.
 - Reach or launch awareness: hardware or gift card tied to the brand, or the launched product itself.
 - Community and UGC: merch, signed items, exclusive access, experiences with the team.

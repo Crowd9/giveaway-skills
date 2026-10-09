@@ -2,69 +2,69 @@
 
 ## Which template to start from (extracted)
 
-From the campaign analysis's campaign-history match, scope 100 or more Entrants, finance and crypto businesses excluded (120,559 campaigns across the four source kinds). Where the build started from:
+From the campaign analysis's campaign-history match, scope 100 or more Entrants, finance and crypto businesses excluded (116,498 campaigns across the four source kinds). Where the build started from:
 
 | Source | Share | Campaigns | Businesses | Conversion Rate |
 |---|---|---|---|---|
-| Own earlier campaign, copied | 58% | 69,476 | 5,830 | 26.6% |
-| Blank, no copying | 23% | 28,223 | 11,226 | 28.4% |
-| Gleam library template | 9% | 10,477 | 6,709 | 26.2% |
-| A campaign outside the dataset | 10% | 12,383 | 4,397 | 25.4% |
+| Own earlier campaign, copied | 58% | 67,690 | 5,640 | 26.5% |
+| Blank, no copying | 23% | 26,892 | 10,759 | 28.6% |
+| Gleam library template | 9% | 9,955 | 6,467 | 26.3% |
+| A campaign outside the dataset | 10% | 11,961 | 4,211 | 25.3% |
 
 Most campaigns are a copy of the business's own earlier campaign, not a fresh build or a library template. A blank build gets a little more to enter than either kind of copy.
 
 The 20 library templates with the most campaigns, typical figures:
 
-| Template | Campaigns | Businesses | Entrants | Conversion Rate | Actions/Entrant | Days | Methods | Email offered | Share offered |
+| Template | Campaigns | Businesses | Entrants | Conversion Rate | Entries/Entrant | Days | Methods | Email offered | Share offered |
 |---|---|---|---|---|---|---|---|---|---|
-| Gleam Sweepstakes | 3,185 | 2,372 | 703 | 23.9% | 4.27 | 15 | 7 | 57% | 60% |
-| Instant Entry | 1,783 | 939 | 250 | 46.8% | 1.00 | 8 | 1 | 6% | 7% |
-| YouTube Contest | 692 | 502 | 465 | 27.5% | 4.02 | 15 | 7 | 8% | 46% |
-| Email Signup | 422 | 345 | 740 | 29.9% | 1.92 | 15 | 4 | 92% | 61% |
-| Refer A Friend | 308 | 269 | 566 | 23.1% | 2.57 | 18.5 | 5 | 33% | 92% |
-| E-Commerce Giveaway | 282 | 256 | 614 | 23.1% | 4.45 | 17 | 9 | 78% | 80% |
-| Instagram Contest | 252 | 227 | 478 | 23.3% | 3.49 | 15 | 6 | 29% | 59% |
-| Twitter / X Contest | 210 | 171 | 279.5 | 22.4% | 4.69 | 9 | 6 | 7% | 38% |
-| Contest Entry Form | 200 | 163 | 658 | 24.3% | 2.24 | 16 | 3 | 34% | 16% |
-| Social Media Giveaway | 179 | 167 | 288 | 26.1% | 4.55 | 14 | 7 | 16% | 24% |
-| Photo Contest | 162 | 143 | 316 | 10.5% | 2.20 | 21 | 3 | 23% | 22% |
-| Email Signup Referrals | 153 | 117 | 666 | 27.3% | 1.93 | 16 | 3 | 96% | 94% |
-| Grow Twitch Stream | 128 | 113 | 301.5 | 24.7% | 4.34 | 26 | 8 | 3% | 27% |
-| eSports Streaming Giveaway | 120 | 111 | 404.5 | 25.6% | 4.69 | 15 | 8 | 10% | 29% |
-| Facebook Contest | 109 | 99 | 423 | 22.2% | 3.25 | 15 | 6 | 20% | 75% |
-| Ask A Question | 98 | 83 | 340 | 32.6% | 2.40 | 14 | 3 | 13% | 11% |
-| Promote Shopify Store | 96 | 88 | 754.5 | 22.0% | 4.21 | 16.5 | 8 | 74% | 75% |
-| Basic Instagram Contest | 88 | 71 | 329 | 30.6% | 2.73 | 14 | 4 | 15% | 12% |
-| Build Pre-Launch Awareness | 87 | 85 | 483 | 21.0% | 4.42 | 22 | 8 | 64% | 71% |
-| Survey Form | 82 | 34 | 573 | 30.9% | 4.84 | 13 | 12 | 5% | 70% |
+| Gleam Sweepstakes | 3,097 | 2,310 | 748 | 24.0% | 4.23 | 15 | 7 | 58% | 60% |
+| Instant Entry | 1,717 | 924 | 248 | 47.2% | 1.00 | 8 | 1 | 7% | 6% |
+| YouTube Contest | 603 | 493 | 437 | 27.4% | 3.72 | 18 | 6 | 9% | 38% |
+| Email Signup | 420 | 343 | 742.5 | 29.9% | 1.92 | 15 | 4 | 92% | 61% |
+| Refer A Friend | 286 | 251 | 606.5 | 22.9% | 2.44 | 19 | 4 | 35% | 92% |
+| E-Commerce Giveaway | 273 | 248 | 618 | 23.2% | 4.45 | 17 | 9 | 79% | 80% |
+| Instagram Contest | 244 | 219 | 500.5 | 23.3% | 3.49 | 14 | 6 | 29% | 58% |
+| Contest Entry Form | 181 | 155 | 765 | 24.3% | 1.94 | 17 | 3 | 37% | 17% |
+| Social Media Giveaway | 171 | 159 | 285 | 25.8% | 4.50 | 14 | 7 | 16% | 22% |
+| Twitter / X Contest | 159 | 131 | 282 | 22.3% | 4.43 | 9.5 | 6 | 8% | 31% |
+| Photo Contest | 157 | 138 | 345 | 10.5% | 2.26 | 21 | 3 | 24% | 22% |
+| Email Signup Referrals | 149 | 113 | 666 | 27.3% | 1.91 | 16 | 3 | 97% | 94% |
+| Grow Twitch Stream | 127 | 112 | 306 | 24.7% | 4.33 | 22.5 | 8 | 3% | 28% |
+| eSports Streaming Giveaway | 116 | 107 | 418.5 | 25.8% | 4.64 | 15 | 7.5 | 10% | 28% |
+| Facebook Contest | 107 | 97 | 423 | 22.1% | 3.21 | 14 | 6 | 21% | 75% |
+| Ask A Question | 100 | 84 | 358 | 32.5% | 2.20 | 13.5 | 3 | 13% | 11% |
+| Promote Shopify Store | 95 | 87 | 761 | 21.9% | 4.25 | 16 | 8 | 75% | 76% |
+| Basic Instagram Contest | 88 | 71 | 329 | 30.6% | 2.73 | 12 | 4 | 15% | 12% |
+| Survey Form | 77 | 33 | 572 | 32.7% | 4.80 | 13 | 12 | 5% | 69% |
+| Mr Beast's Giveaway | 77 | 74 | 599 | 18.8% | 5.72 | 22 | 9 | 49% | 66% |
 
 Instant Entry is the fastest build on the list, a single-action template. Photo Contest sits at the other end, the lowest Conversion Rate among these templates despite one of the longer runs. (Figures for both are in the table above.)
 
-Which templates each industry reaches for, top three by share of that industry's templated campaigns (`*` marks a template under 30 campaigns or 10 businesses for that industry, advice only):
+Which templates each industry reaches for, up to three by share of that industry's templated campaigns (`*` marks a template under 30 campaigns or 10 businesses for that industry, advice only):
 
 | Industry | Top templates |
 |---|---|
 | Gaming and esports | Gleam Sweepstakes 30%, Instant Entry 12%, YouTube Contest 8% |
-| Electronics and tech | Gleam Sweepstakes 33%, Instant Entry 10%, YouTube Contest 10% |
-| Apparel and fashion | Instant Entry 56%, Gleam Sweepstakes 19%, Email Signup 4% |
+| Electronics and tech | Gleam Sweepstakes 33%, YouTube Contest 10%, Instant Entry 10% |
+| Apparel and fashion | Instant Entry 57%, Gleam Sweepstakes 20%, Email Signup 4% |
 | Media and entertainment | Gleam Sweepstakes 29%, Instant Entry 14%, YouTube Contest 10% |
 | Sports and outdoors | Gleam Sweepstakes 39%, Instant Entry 10%, Email Signup 9% |
 | Food and drink | Gleam Sweepstakes 42%, Instant Entry 16%, Email Signup 5% |
-| Other | Gleam Sweepstakes 22%, Instant Entry 22%, Twitter / X Contest 7% |
-| Home and garden | Gleam Sweepstakes 35%, Instant Entry 7%, Email Signup 7% |
-| Travel and events | Gleam Sweepstakes 35%, Instant Entry 14%, Easter Egg Hunt 6%* |
+| Other | Instant Entry 23%, Gleam Sweepstakes 23%, YouTube Contest 6% |
+| Home and garden | Gleam Sweepstakes 35%, Instant Entry 8%, Email Signup 8% |
+| Travel and events | Gleam Sweepstakes 36%, Instant Entry 14%, Easter Egg Hunt 6%* |
 | Toys, hobbies and collectibles | Gleam Sweepstakes 32%, Instant Entry 15%, YouTube Contest 8%* |
-| Software and SaaS | YouTube Contest 28%, Gleam Sweepstakes 22%, Instant Entry 8%* |
+| Software and SaaS | Gleam Sweepstakes 30%, Instant Entry 11%*, YouTube Contest 9%* |
 | Health, wellness and fitness | Gleam Sweepstakes 40%, Instant Entry 10%, Email Signup 6%* |
-| Creator or influencer | YouTube Contest 29%, Instant Entry 21%, Gleam Sweepstakes 14% |
+| Creator or influencer | YouTube Contest 28%, Instant Entry 22%, Gleam Sweepstakes 15% |
 | Beauty and personal care | Gleam Sweepstakes 34%, Instant Entry 13%*, Email Signup 11%* |
-| Automotive | Gleam Sweepstakes 30%, Instant Entry 16%, E-Commerce Giveaway 7%* |
-| Education | Gleam Sweepstakes 35%, Instant Entry 12%*, Refer A Friend 7%* |
-| Art and crafts | Gleam Sweepstakes 26%, Instant Entry 18%, YouTube Contest 12%* |
-| Retail and marketplace | Gleam Sweepstakes 21%*, Instant Entry 14%*, E-Commerce Giveaway 7%* |
-| Pets | Gleam Sweepstakes 32%, Photo Contest 9%*, Instant Entry 8%* |
+| Automotive | Gleam Sweepstakes 31%, Instant Entry 16%, E-Commerce Giveaway 7%* |
+| Education | Gleam Sweepstakes 34%, Instant Entry 12%*, Refer A Friend 7%* |
+| Art and crafts | Gleam Sweepstakes 26%, Instant Entry 19%, YouTube Contest 12%* |
+| Retail and marketplace | Gleam Sweepstakes 21%*, Instant Entry 15%* |
+| Pets | Gleam Sweepstakes 33%, Photo Contest 10%*, Instant Entry 9%* |
 
-Gleam Sweepstakes and Instant Entry lead in most industries. Apparel and fashion is the exception, where Instant Entry alone takes 56% of that industry's templated campaigns against 19% for Gleam Sweepstakes. Software and SaaS leans toward YouTube Contest first.
+Gleam Sweepstakes and Instant Entry lead in most industries. Apparel and fashion is the exception, where Instant Entry alone takes 57% of that industry's templated campaigns against 20% for Gleam Sweepstakes. Software and SaaS now reaches for Gleam Sweepstakes first.
 
 Source: `analysis/output/templates.json` (`source_mix`, `by_template`, `template_by_industry`).
 
@@ -121,12 +121,12 @@ Two pairings draw more than the hook and the type would predict apart, on the 10
 
 | Pairing | Ratio vs. predicted | Campaigns | Businesses |
 |---|---|---|---|
-| Anniversary or birthday + sweepstakes wording | 2.14 | 84 | 47 |
-| Summer + stated-milestone framing | 1.91 | 40 | 32 |
+| Anniversary or birthday + sweepstakes wording | 1.28 | 139 | 77 |
+| Summer + stated-milestone framing | 1.98 | 73 | 54 |
 
-Both counts sit at or just above this dataset's floor for a two-way check, so quote the campaign count with either. About one in eight of the anniversary-or-birthday-plus-sweepstakes rows trace to a single business's own numbered series, so read that pairing loosely.
+These are small two-way cuts, so quote the campaign count with either (`analysis/output/success_profiles.json`, `interactions.holiday_by_campaign_type`). About one in eight of the anniversary-or-birthday-plus-sweepstakes rows trace to a single business's own numbered series, so read that pairing loosely.
 
-The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent is the only theme above the all-campaign typical figures on both counts, and the smaller dates section lists the national and world days businesses used (National Coffee Day, World Photography Day, National Sticker Day) and the holidays nobody in the data has taken. Load it when the hook is a date.
+The timing skill's `holiday-benchmarks.md` holds Entrants, Conversion Rate, duration and launch lead days for each holiday theme, with a dated calendar. Christmas and advent and Father's Day are above the all-campaign typical figures on both counts, and the smaller dates section lists the national and world days businesses used (National Coffee Day, World Photography Day, National Sticker Day) and the holidays nobody in the data has taken. Load it when the hook is a date.
 
 ## Campaign types (extracted)
 
@@ -173,15 +173,17 @@ Reading it:
 - **Advent or daily calendars** get the second highest share to enter of any type at 44%, on 602 Entrants, which is 22% above the typical figure: six days, six actions, and a reason to come back (figures in the table above). The shape wins, and it is a December shape.
 - **Campaigns that say free entry or no purchase** run long, carry 5.6 Actions per Entrant and repeatable bonuses, and post the highest value index at 2.18. Those are the professional sweepstakes operators. Copy the discipline, not the action count.
 - **Sweepstakes wording** carries the largest US campaigns at 806 Entrants, on a value index level with typical at 1.01 and a low share to enter at 22%, which is the long-run, daily-entry pattern.
-- **Collaborations** are 14% of campaigns and draw 603 Entrants, 23% above the typical figure. The title proxy for a partner does not by itself mark a strong campaign: the Prize-picker reference shows the value index rises further when the collaboration is signalled in the title alone (see table below). A collab title trades Conversion Rate for reach: on the 100-plus-Entrant frame, and after matching on size and industry, it still lands more often in the top fifth by raw audience and by value-index performance, but less often in the top fifth by Conversion Rate among the campaigns we can compare fairly, or by low cost per Entrant (see table below). That reach is the point for a business without a partner's audience of their own: borrowing attention costs Conversion Rate and cost per Entrant, and earns it back in who shows up.
+- **Collaborations** are 14% of campaigns and draw 603 Entrants, 23% above the typical figure. The title proxy for a partner does not by itself mark a strong campaign: the title-only collaboration signal has a value index below typical (see table below). The matched cohorts show a mixed pattern: on the 100-plus-Entrant frame, collaboration titles are more common in the top fifth by audience and value-index performance after matching industry, but less common in the top fifth by Conversion Rate or low cost per Entrant after matching size and industry (see table below). For a business seeking a partner's audience, these associations make collaboration worth testing. They do not predict the reach, Conversion Rate or cost of adding that partner.
 
-  | Collaboration title signal, matched comparison | Ratio vs. matched non-collab | Campaigns | Businesses |
+  | Collaboration title signal, matched comparison | Index or prevalence ratio | Campaigns | Businesses |
   |---|---|---|---|
-  | Value index (collab signalled in title alone) | 1.15 | – | – |
-  | Top fifth by raw audience | 1.21 | 7,120 | 1,607 |
-  | Top fifth by value-index performance | 1.25 | 2,795 | 749 |
-  | Top fifth by Conversion Rate (fair-comparison count) | 0.39 | 2,113 | 326 |
-  | Top fifth by low cost per Entrant | 0.57 | 2,781 | 831 |
+  | Value index (collab signalled in title alone) | 0.94 | 2,967 | 1,112 |
+  | Top fifth by raw audience | 1.35 | 23,256 | 4,467 |
+  | Top fifth by value-index performance | 1.18 | 8,590 | 2,098 |
+  | Top fifth by Conversion Rate (fair-comparison count) | 0.41 | 7,839 | 1,092 |
+  | Top fifth by low cost per Entrant | 0.55 | 8,580 | 2,071 |
+
+  The first row uses `analysis/output/context_checks.json`, `collaboration_signal`, and counts valued campaigns with the title signal. The remaining rows use `analysis/output/success_profiles.json`, `success_cohorts.*.stratified.collaboration_in_title`, and count each top-fifth cohort. Their ratios compare the prevalence of collaboration titles in the top fifth with the rest. Audience and value-index cohorts match industry, while conversion and cost cohorts also match campaign size.
 
 - **Creator and streamer** campaigns get 39% to enter on 4.9 Actions per Entrant, both above the typical figure. Their audiences are the smallest in the table after photo and video UGC, at 317 Entrants. An existing audience does that.
 - **Cash** gets the highest share to enter of any type at 61%, on 567 Entrants, with the most actions of any type and a typical ten-day run. **Gift cards** draw fewer Entrants than typical at 432 against 492 and a slightly lower share to enter, on one of the higher value indexes in the table at 1.18, so those campaigns drew more Entrants than typical among campaigns offering a Prize of similar stated value.
@@ -280,15 +282,15 @@ Source: `analysis/output/shape_capture.json`.
 | Restock or back in stock | 47 | 407 | 69% (20) | 1.03 | 11 |
 <!-- /generated -->
 
-Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 546 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 15 referrals per 100 Entrants, above the all-campaign typical figure of 11 (the campaign-types baseline above): a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 395 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a third already do, and treat the campaign as the start of the list.
+Launch campaigns run a little above the all-campaign typical figure on Entrants and below it on Conversion Rate, 546 and 29% against 492 and 35%, and above it on referrals per 100 Entrants (figures in the table above). A launch has no audience yet, and its Entrants share more. Early access, beta and waitlist campaigns are the exception on Conversion Rate at 34%, the highest of the launch subtypes with a usable count, and carry 15 referrals per 100 Entrants, above the all-campaign typical figure of 11 (the campaign-types baseline above): a promise of first access is a reason to bring a friend. They are also the smallest of the launch subtypes at 395 Entrants. Around half of pre-order and crowdfunding campaigns come from first-time or occasional businesses. For a launch, plan the promotion and the referral action first, keep the Prize the product itself, since roughly a quarter of launch-or-new-release campaigns already do, and treat the campaign as the start of the list.
 
 By industry, a separate check of launch wording in campaign names and descriptions (wider scope than the subtypes above, keeps crypto businesses) shows where each wording concentrates. Match the wording to the industries that already use it.
 
 | Wording | Leading industry | Campaigns | 2nd industry | Campaigns | 3rd industry | Campaigns |
 |---|---|---|---|---|---|---|
-| Launch or release | Electronics and tech | 320 | Gaming and esports | 269 | – | – |
-| Crowdfunding | Electronics and tech | 31 | Toys, hobbies and collectibles* | 29 | Gaming and esports* | 23 |
-| Pre-order | Media and entertainment | 36 | Gaming and esports* | 27 | – | – |
+| Launch or release | Gaming and esports | 994 | Electronics and tech | 563 | Media and entertainment | 551 |
+| Crowdfunding | Gaming and esports | 308 | Toys, hobbies and collectibles | 224 | Electronics and tech | 51 |
+| Pre-order | Media and entertainment | 189 | Gaming and esports | 110 | Toys, hobbies and collectibles | 42 |
 
 (`*` under 30 campaigns, advice only.) Conversion Rate and referral figures for each wording are in the timing skill's `timing-findings.md`.
 
@@ -391,14 +393,14 @@ Cheap Prizes that drew crowds: a small set of campaigns with a tiny stated pool 
 
 | Cheap Prizes that drew crowds | - |
 |---|---|
-| Campaigns | 114 |
-| Businesses | 60 |
+| Campaigns | 109 |
+| Businesses | 62 |
 | Stated pool | under 250 USD |
 | Entrants reached | 5,000 or more |
-| From repeat businesses | 82% |
-| Gave away own product | 11% |
+| From repeat businesses | 84% |
+| Gave away own product | 13% |
 | Actions (typical) | 7 |
-| Duration (typical) | 22 days |
+| Duration (typical) | 18.5 days |
 
 A small Prize in front of an audience that already exists beats a large Prize in front of nobody. Both checks on this page compare Entrants with campaigns offering a Prize of similar stated value, so read them against the stated-value benchmarks in giveaway-prize-picker before setting a Prize budget from them.
 
@@ -410,11 +412,11 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 
 | Creator campaigns | Value |
 |---|---|
-| Campaigns | 6,672 |
-| Businesses | 1,131 |
-| Entry rate | 36% |
-| Duration (typical) | 11 days |
-| Email offered | 5.5% |
+| Campaigns | 21,907 |
+| Businesses | 4,076 |
+| Entry rate | 34% |
+| Duration (typical) | 9 days |
+| Email offered | 4.5% |
 
 **Startups and B2B sellers run referral-heavy campaigns.** Both run far more referrals per 100 Entrants than the all-campaign typical figure of 13, and neither has an existing list to email, so the concept has to be the kind a person forwards: early access, a nomination, a peer invite.
 
@@ -423,28 +425,28 @@ Where the business runs from and what it sells shapes which hook lands, ahead of
 | Startup-stage | 23,190 | 5,227 | 58 | 15% |
 | B2B-audience | 12,728 | 1,779 | 44 | 19% |
 
-**Shopify's large stores run one-day flash campaigns**, leaning on urgency for a list that already exists, not on reach. Smaller Shopify stores run the opposite shape, a longer campaign with more methods and less email pressure.
+**Shopify's large stores run shorter campaigns.** Their typical run lasts ten days against fourteen for the smallest stores, with fewer methods and email offered more often.
 
 | Shopify store size | Campaigns | Businesses | Duration (typical) | Methods | Email offered | Entry rate |
 |---|---|---|---|---|---|---|
-| 1,000 or more products | 429 | 42 | 1 day | 4 | 89% | 28% |
-| Under 50 products | 312 | 127 | 16 days | 7 | 62% | – |
+| 1,000 or more products | 879 | 98 | 10 days | 5 | 81% | 24% |
+| Under 50 products | 833 | 312 | 14 days | 7 | 60% | – |
 
-**App businesses vary by genre on what Entrants will do.** Finance apps asking for a download see the most Actions per Entrant of any genre measured, so a finance app's audience will complete a multi-step action list for a reason to open the app. Shopping apps sit closer to the all-campaign typical figure, so make the download one action among several, not the campaign's whole point.
+**App businesses vary by genre on what Entrants will do.** Finance apps asking for a download see more Entries per Entrant than shopping apps, though card apps are higher still. Keep the action list tied to a reason to open the app. Shopping apps sit closer to the all-campaign typical figure, so make the download one action among several, not the campaign's whole point.
 
-| App genre (download ask) | Campaigns | Businesses | Download rate | Actions per Entrant |
+| App genre (download ask) | Campaigns | Businesses | Download rate | Entries per Entrant |
 |---|---|---|---|---|
-| Finance | 554 | 79 | 79% | 15.0 |
-| Shopping | 542 | 69 | 36% | 5.0 |
+| Finance | 1,132 | 90 | 70% | 14.5 |
+| Shopping | 878 | 98 | 37% | 4.6 |
 
 **Australian publishers lean on games-of-skill entries.** Campaigns with a judged or skill signal in Australia run 2 methods against 6, get 18% to enter against 30%, and carry a typical Prize pool of $2,135 against $699. A skill or judged entry is often the legal route for a promotion run without a permit in Australia, and the smaller method count and larger pool follow from that route.
 
 | Australia | Campaigns | Businesses | Methods | Actions per Entrant | Entry rate | Prize pool (typical) |
 |---|---|---|---|---|---|---|
-| Judged or skill signal | 631 | 126 | 2 | 1.8 | 18% | $2,135 |
-| Other | 5,802 | 1,349 | 6 | – | 30% | $699 |
+| Judged or skill signal | 629 | 124 | 2 | 1.8 | 18% | $2,135 |
+| Other | 5,437 | 1,277 | 6 | – | 30% | $699 |
 
-(320 of the 631 skill/judged campaigns are from media and entertainment businesses.)
+(320 of the 629 skill/judged campaigns are from media and entertainment businesses.)
 
 ## Niches (extracted)
 
@@ -452,20 +454,20 @@ A dozen niches, each at least 10 businesses, picked as example angles, not a ful
 
 | Niche | Campaigns | Businesses | Conversion Rate | Email offered |
 |---|---|---|---|---|
-| Online community | 503 | 125 | 27% | 44% |
-| Gaming platform | 303 | 90 | 29% | 16% |
-| Electronics retailer | 181 | 46 | 24% | 58% |
-| Gaming content creator | 77 | 41 | 29% | 6% |
-| Electronics and tech | 572 | 17 | 36% | 30% |
-| Media and entertainment | 201 | 16 | 19% | 61% |
-| Tech products | 230 | 15 | 27% | 38% |
-| Sports equipment | 72 | 14 | 25% | 75% |
-| Sporting goods | 304 | 12 | 31% | 49% |
-| Food and beverage brand | 78 | 12 | 32% | 53% |
-| Home and garden | 350 | 11 | 39% | 59% |
-| Food and beverages | 319 | 10 | 29% | 41% |
+| Online community | 1,227 | 149 | 25% | 38% |
+| Gaming platform | 806 | 178 | 28% | 16% |
+| Electronics retailer | 421 | 92 | 26% | 41% |
+| Gaming content creator | 550 | 249 | 28% | 1% |
+| Electronics and tech | 1,101 | 17 | 30% | 32% |
+| Media and entertainment | 892 | 24 | 20% | 36% |
+| Tech products | 498 | 17 | 29% | 41% |
+| Sports equipment | 99 | 23 | 24% | 52% |
+| Sporting goods | 499 | 15 | 30% | 44% |
+| Food and beverage brand | 164 | 14 | 32% | 44% |
+| Home and garden | 580 | 13 | 31% | 59% |
+| Food and beverages | 592 | 15 | 26% | 37% |
 
-A niche with a low email-offered share (a gaming content creator at 6%) is a reach play running on an existing audience. A niche with a high one (sports equipment at 75%) is building a list on top of the giveaway. Match the concept's asset to which one the niche already leans toward.
+A niche with a low email-offered share (a gaming content creator at 1%) is a reach play running on an existing audience. A niche with a high one (sports equipment at 52%) is building a list on top of the giveaway. Match the concept's asset to which one the niche already leans toward.
 
 Source: `analysis/output/industries.json` (`by_org_scale`, `by_org_stage`, `by_audience`, `shopify_store_size`, `by_app_genre`, `by_niche`, `niche_by_industry`), `analysis/output/country_cuts.json` (`skill_against_other`, `australia_skill_industries`).
 
@@ -486,7 +488,7 @@ Source: `analysis/output/industries.json` (`by_org_scale`, `by_org_stage`, `by_a
 
 The own-product-plus-adjacent-item formula and its worked pairs live in one place: the Prize hierarchy in giveaway-prize-picker. Point there once the concept is chosen.
 
-What belongs to the concept is the collaboration test: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a Prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 30% of the time against 19% for the rest (title proxy, 1,138 campaigns, 448 businesses). That reach has a cost: a collab title gets fewer to enter and costs more per Entrant than a matched non-collab campaign once size and industry are compared like with like, set against the audience and value-index gains in the campaign-types reading above. Bring in a partner when their audience is worth more than that entry-rate and cost-per-Entrant hit, most often a smaller business reaching into a bigger or adjacent list it could not otherwise afford to reach.
+What belongs to the concept is the collaboration test: same customer, different product. A partner should be non-competing, complementary, similar in positioning, and able to bring reach as well as a Prize. Extracted: campaigns whose title signals a collaboration reached the top fifth 23% of the time against 20% for the rest (title proxy, 2,967 valued campaigns, 1,112 businesses, `analysis/output/context_checks.json`, `collaboration_signal`). Collaboration titles are less common among top-fifth Conversion Rate and low-cost campaigns after matching size and industry, and more common among top-fifth audience and value-index campaigns after matching industry. Those prevalence ratios describe the observed groups. Choose a partner for a relevant audience you can reach together, and measure the result against your own campaign goals.
 
 ## Title wording (extracted, campaigns we can compare fairly)
 
@@ -504,7 +506,7 @@ What belongs to the concept is the collaboration test: same customer, different 
 | gewinnspiel | 286 | 44 | 1,332 | 36% | 4.3 | 34% |
 <!-- /generated -->
 
-"Raffle" is a UK word and still carries one action and the highest share entering in the table at 46%, on 718 Entrants (see table above). "Competition" carried the same pattern in the first data pull and has since fallen to a smaller base with a lower Conversion Rate, so it no longer stands out the same way. "Sweepstakes" is the US word and carries 742 Entrants, the largest of the English titles here. Titles with none of the usual words are 17% December starts, the highest share of any English title word here, which is the advent calendar pattern.
+"Raffle" is a UK word and still carries one action and the highest share entering in the table at 47%, on 718 Entrants (see table above). "Competition" carried the same pattern in the first data pull and has since fallen to a smaller base with a lower Conversion Rate, so it no longer stands out the same way. "Sweepstakes" is the US word and carries 742 Entrants, the largest of the English titles here. Titles with none of the usual words are 17% December starts, the highest share of any English title word here, which is the advent calendar pattern.
 
 Titles that start with "Win" or state a value draw fewer Entrants than titles without those features, and an emoji makes almost no difference:
 
@@ -516,7 +518,7 @@ Titles that start with "Win" or state a value draw fewer Entrants than titles wi
 | Emoji | 1,495 | 471 | 451 |
 <!-- /generated -->
 
-Titles over 60 characters got the most to enter, at 42% (909 campaigns). The title reflects the business's market and habits more than it moves anyone.
+Titles under 30 characters got the most to enter, at 37% (15,160 campaigns), against 36% for titles over 60 characters (3,337 campaigns). The title reflects the business's market and habits more than it moves anyone.
 
 ## Mechanics (advice)
 

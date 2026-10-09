@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.38 |
+| giveaway-prize-picker | 1.3.39 |
 | giveaway-entry-method-planner | 1.2.36 |
-| giveaway-timing-and-duration | 1.4.34 |
-| giveaway-winner-structure | 1.4.6 |
-| giveaway-promotion-plan | 1.3.35 |
+| giveaway-timing-and-duration | 1.4.35 |
+| giveaway-winner-structure | 1.4.7 |
+| giveaway-promotion-plan | 1.3.36 |
 | giveaway-random-draw | 1.3.33 |
 | giveaway-winner-communications | 1.2.29 |
-| giveaway-idea-generator | 1.3.31 |
-| giveaway-results-review | 1.6.6 |
-| gleam-campaign-setup | 1.2.33 |
+| giveaway-idea-generator | 1.3.32 |
+| giveaway-results-review | 1.6.7 |
+| gleam-campaign-setup | 1.2.34 |
 
 ## Skills
 
@@ -343,6 +343,20 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.6 (2026-10-10)
+
+Every hand-written figure across the skills now matches our data. The entry planner wasn't the only place left behind when the figures moved to one set of campaigns. The idea, Prize, timing, structure, promotion, results and setup skills had the same gap, and so did the README.
+
+Some advice moved with the numbers, so here is what changed for you.
+
+- Partner and collaboration giveaways don't stand out on value for money once the data is current, so you'll no longer be told they do
+- Giving away your own product looks different by industry in our data: tech and sports campaigns did better with it, gaming campaigns did worse
+- Above a few hundred dollars, a bigger Prize pool doesn't reliably bring a bigger crowd, and gaming isn't the exception it was described as
+- A SaaS business choosing a template is now pointed at the Sweepstakes template, which its peers use most
+- The busiest weeks of the year convert slightly better than the quietest, and tech shows the widest gap at 44% against 39%
+
+Where a finding reads as a comparison between campaigns, it says so, and the few lines that implied a cause are gone.
 
 ## 3.0.5 (2026-10-10)
 

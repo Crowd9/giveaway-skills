@@ -40,51 +40,51 @@ A Prize that matches the business's own category draws no more crowd for the mon
 | Generic (cash, gift card, bundle, subscription, discount) | 36,845 | 8,215 | 463 | 1.00 |
 <!-- /generated -->
 
-Splitting the same budget across records buys about a fifth less crowd per Prize dollar. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
+Campaigns with several Prize records drew about a quarter less crowd per Prize dollar than single-record campaigns. Use several records when the reason is fulfilment or fairness, not when the reason is reach.
 
 Expect a broad Prize to bring Entrants who never buy. That is acceptable when the objective needs reach and the follow-up handles the mismatch. It becomes a problem when the leads go straight to a sales team.
 
 For a foot-traffic or local objective, name the reason directly: cash, electronics or a gift card to somewhere else can be won and used without the Winner ever visiting, so a broad Prize buys reach, not the visit the objective needs. Own product or in-store credit fixes this because redemption in person is the filter.
 
-Before allowing for size, own product shows up in 17% of campaigns, and those campaigns drew more Entrants and more Actions per Entrant on a lower Conversion Rate than bought-in ones. That comparison does not hold campaign size or industry constant, and it describes what businesses saw with no comparison group of failed campaigns.
+Before allowing for size, own product shows up in 17% of campaigns, and those campaigns drew more Entrants and fewer Entries per Entrant on a lower Conversion Rate than bought-in ones. That comparison does not hold campaign size or industry constant, and it describes what businesses saw with no comparison group of failed campaigns.
 
 | | Own product | Bought-in |
 |---|---|---|
-| Share of campaigns | 17% [19,671 campaigns, 5,168 businesses] | 83% [97,457 campaigns, 14,966 businesses] |
-| Typical Entrant count | 695 | 464 |
-| Actions per Entrant | 4.1 | 3.3 |
-| Conversion Rate | 34% | 39% |
+| Share of campaigns | 17% [19,602 campaigns, 5,124 businesses] | 83% [96,681 campaigns, 14,836 businesses] |
+| Typical Entrant count | 696 | 464 |
+| Entries per Entrant | 4.0 | 4.5 |
+| Conversion Rate | 26% | 27% |
 
-Once compared like with like by size and industry, using your own product as the Prize costs quality, not turnout: raw Entrant count is statistically the same either way (even odds), but own-product campaigns land among the top performers less often on Conversion Rate, on crowd per Prize dollar, and on keeping cost % of Entrants low, and less often on engagement too. A ratio below 1.00 means own product shows up less often among the top performers on that measure than a bought-in Prize does, once campaigns are compared like with like. It does not cost email signups, where the ratio actually rises once compared like with like, so own product is not shown to hurt that action.
+Compared within the source's stated groups, own-product Prizes appear more often among campaigns with the most Entrants and the strongest crowd per Prize dollar, and less often among the top performers on Conversion Rate, cost per Entrant and engagement. Entrant and value-adjusted cohorts compare within industry. The other cohorts compare within campaign size and industry. A ratio below 1.00 means the own-product flag is less common in the top fifth than in the rest. These are feature-prevalence ratios, not changes in performance caused by the Prize. Email signups also show a small positive association after matching.
 
 | Measure (top performers) | Ratio, compared like with like | Ratio, before allowing for size | Campaigns | Businesses |
 |---|---|---|---|---|
-| Raw Entrant count | 1.00 | - | - | - |
-| Conversion Rate | 0.77 | 0.83 | 2,113 | 326 |
-| Crowd per Prize dollar | 0.93 | 1.01 | 19,671 | 5,168 |
-| Cost % of Entrants | 0.73 | 0.61 | 2,781 | 831 |
-| Engagement | 0.88 | 0.78 | 7,113 | 1,425 |
-| Email signups | 1.002 | 0.799 | - | - |
+| Raw Entrant count | 1.23 | 1.48 | 23,256 | 4,467 |
+| Conversion Rate | 0.76 | 0.72 | 7,839 | 1,092 |
+| Crowd per Prize dollar | 1.03 | 1.09 | 8,590 | 2,098 |
+| Cost per Entrant | 0.54 | 0.38 | 8,580 | 2,071 |
+| Engagement | 0.81 | 0.68 | 23,250 | 3,371 |
+| Email signups | 1.047 | 0.621 | 7,863 | 1,648 |
 
-What own product buys back is fit: the Entrant who wanted it is closer to a buyer than an Entrant chasing a generic Prize, and the cost to you is wholesale, not the retail figure stated to Entrants. That trade is the right call when the objective is a qualified list or a repeat customer, not the largest crowd at any quality, and it reverses by industry and flattens by campaign size, covered next.
+What own product buys back is fit: the Entrant who wanted it is closer to a buyer than an Entrant chasing a generic Prize, and the cost to you is wholesale, not the retail figure stated to Entrants. That trade is the right call when the objective is a qualified list or a repeat customer, not the largest crowd at any quality, and the size of the association varies by industry and campaign size, covered next.
 
-That quality cost is not even across industries or campaign sizes. By industry, own product trails bought-in Prizes on crowd per Prize dollar overall and in media and entertainment and gaming and esports, but the gap reverses in electronics and tech and goes flat in sports and outdoors, so a store selling into either category is not paying the pooled cost.
+Own product trails bought-in Prizes on crowd per Prize dollar overall and in each of the four industries below. The gap is smallest in electronics and tech. Counts describe the full group, while the index uses only its valued campaigns.
 
 | Industry | Own product | Bought-in |
 |---|---|---|
-| Overall | 0.96, about 4% below typical [7,845 campaigns, 2,266 businesses] | 1.02, about 2% above [27,652 campaigns, 5,106 businesses] |
-| Media and entertainment | 1.01, about 1% above typical [382 campaigns, 136 businesses] | 1.26, about 26% above [4,616 campaigns, 512 businesses] |
-| Gaming and esports | 1.01, about 1% above typical [864 campaigns, 273 businesses] | 1.07, about 7% above [5,442 campaigns, 1,287 businesses] |
-| Electronics and tech (reversed) | 0.94, about 6% below typical [2,356 campaigns, 408 businesses] | 0.90, about 10% below [4,916 campaigns, 820 businesses] |
-| Sports and outdoors (flat) | 0.97, close to typical [512 campaigns, 232 businesses] | 0.98, close to typical [1,753 campaigns, 412 businesses] |
+| Overall | 0.93 [19,602 campaigns, 5,124 businesses, 7,510 valued campaigns] | 1.01 [96,681 campaigns, 14,836 businesses, 35,443 valued campaigns] |
+| Media and entertainment | 0.94 [1,389 campaigns, 378 businesses, 388 valued campaigns] | 1.20 [20,151 campaigns, 1,865 businesses, 8,530 valued campaigns] |
+| Gaming and esports | 0.78 [2,666 campaigns, 717 businesses, 863 valued campaigns] | 0.82 [21,563 campaigns, 4,357 businesses, 6,610 valued campaigns] |
+| Electronics and tech | 1.17 [4,296 campaigns, 674 businesses, 1,443 valued campaigns] | 1.20 [11,247 campaigns, 1,751 businesses, 3,584 valued campaigns] |
+| Sports and outdoors | 1.17 [1,095 campaigns, 421 businesses, 574 valued campaigns] | 1.26 [3,540 campaigns, 782 businesses, 1,743 valued campaigns] |
 
 By campaign size, crowd per Prize dollar does not reverse the same way: own product trails bought-in Prizes at every size tested. Conversion Rate tells a different story by campaign size: own product converts worse than bought-in at the smallest size but better at the two larger ones, on the same campaigns as the crowd-per-Prize-dollar figures above, so a larger campaign chasing buyers over browsers is where the trade pays off most cleanly on this measure.
 
 | Campaign size (Entrants) | Crowd/$, own product | Crowd/$, bought-in | Conversion Rate, own product | Conversion Rate, bought-in |
 |---|---|---|---|---|
-| 1,000 to 2,500 | 0.69, 31% below typical [4,244 campaigns, 1,627 businesses] | 0.75, 25% below typical [15,558 campaigns, 3,970 businesses] | 27.0% | 28.4% |
-| 2,500 to 10,000 | 1.51, 51% above typical [2,891 campaigns, 1,017 businesses] | 1.66, 66% above typical [9,684 campaigns, 2,334 businesses] | 28.0% | 27.0% |
-| 10,000 and up | 5.29, far above typical [710 campaigns, 258 businesses] | 5.69, far above typical [2,410 campaigns, 562 businesses] | 30.9% | 27.9% |
+| 1,000 to 2,500 | 1.64 [4,257 campaigns, 1,645 businesses, 1,698 valued campaigns] | 2.03 [15,717 campaigns, 4,029 businesses, 6,078 valued campaigns] | 26.9% | 28.5% |
+| 2,500 to 10,000 | 3.38 [2,926 campaigns, 1,041 businesses, 1,205 valued campaigns] | 3.87 [9,777 campaigns, 2,373 businesses, 3,915 valued campaigns] | 27.8% | 27.0% |
+| 10,000 and up | 10.81 [715 campaigns, 262 businesses, 224 valued campaigns] | 12.06 [2,456 campaigns, 581 businesses, 908 valued campaigns] | 30.2% | 28.2% |
 
 ### Prize hierarchy (advice, from Gleam's campaign team)
 
@@ -92,37 +92,37 @@ This ordering is one operator's working practice, written down by the team that 
 
 A default order to consider, adapted to the business: an audience-specific hero Prize, then your own product plus the aspirational thing your customer wants next (coffee plus an espresso machine, supplements plus a sports watch, skincare plus a beauty device), then own product or own-brand credit, then an exclusive or limited item, then category-specific equipment, then a relevant collaboration bundle, then generic technology, then cash, then a generic gift card. The question that finds the adjacent Prize: what does the customer's ideal day contain right before or after using this product?
 
-Audience-specific Prizes (moderate confidence, holds in 3 of 4 industries tested): a Prize matched to the site's audience (a gaming item on a gaming site, tech hardware on an electronics site) buys more crowd for the money than a generic Prize (cash, gift card, subscription, bundle) in electronics and tech, media and entertainment and gaming and esports, margin small in the latter two. It reverses in sports and outdoors, both close to typical. A third bucket, Prizes matching neither the audience nor the generic list, is not directionally stable across industries and is not reported here.
+Audience-specific Prizes show mixed associations across the four industries tested. They draw more crowd for the money than generic Prizes in electronics and tech and sports and outdoors, and less in media and entertainment and gaming and esports. The table lists the full group and its valued subset. A third bucket, Prizes matching neither the audience nor the generic list, is not reported here.
 
 | Industry | Audience-specific | Generic |
 |---|---|---|
-| Electronics and tech | 0.97, about 3% below typical [4,832 campaigns, 783 businesses] | 0.76, about 24% below [1,155 campaigns, 340 businesses] |
-| Media and entertainment | 1.07, about 7% above typical [613 campaigns, 109 businesses] | 1.05, about 5% above [1,434 campaigns, 276 businesses] |
-| Gaming and esports | 1.08, about 8% above typical [1,840 campaigns, 504 businesses] | 1.05, about 5% above [1,317 campaigns, 485 businesses] |
-| Sports and outdoors (reversed) | 0.88, about 12% below typical [326 campaigns, 135 businesses] | 0.90, about 10% below [612 campaigns, 257 businesses] |
+| Electronics and tech | 1.61 [7,826 campaigns, 1,334 businesses, 2,363 valued campaigns] | 0.94 [2,501 campaigns, 649 businesses, 1,072 valued campaigns] |
+| Media and entertainment | 0.87 [1,288 campaigns, 287 businesses, 375 valued campaigns] | 1.29 [8,375 campaigns, 920 businesses, 4,277 valued campaigns] |
+| Gaming and esports | 0.75 [5,881 campaigns, 1,573 businesses, 1,673 valued campaigns] | 0.80 [6,095 campaigns, 1,679 businesses, 2,502 valued campaigns] |
+| Sports and outdoors | 1.24 [335 campaigns, 145 businesses, 169 valued campaigns] | 1.12 [1,335 campaigns, 497 businesses, 726 valued campaigns] |
 
-Collaborations work when they pass one test: same customer, different product. Campaigns whose title signals a collaboration ("x", "collab", "partner") drew noticeably more crowd for the money than typical, and reached the best fifth of campaigns far more often than the rest [1,138 campaigns, a title proxy].
+Collaborations should pass one practical test: same customer, different product. The title-signal cut now reports less crowd for the money than typical, but a slightly larger share reaching the top fifth [2,967 valued campaigns, 1,112 businesses].
 
 | | Collaboration-titled | Rest |
 |---|---|---|
-| Crowd per Prize dollar | 1.15, about 15% above typical | 0.99, about 1% below typical |
-| Reached the best fifth of campaigns | 30% of the time | 19% of the time |
+| Crowd per Prize dollar | 0.94, about 6% below typical | 1.00, typical |
+| Reached the best fifth of campaigns | 23% of the time | 20% of the time |
 
 Crowd per Prize dollar means a campaign's Entrants divided by the typical Entrants for other campaigns at the same stated Prize cost, so 1.00 is typical for the money.
 
-A wider definition of collaboration, matching the campaign or Prize name, with the title alone excluded, puts the figure on a much larger base, and on that base the lift disappears: collaborations sit at 0.94 against 1.00 for everything else. The one industry where it survives is media and entertainment, where collaborations reach 2.57 against 1.18 for the rest of that industry. Elsewhere a collaboration lands level with its own industry or a little below. Read the pooled row, not the title-only figure above it, when a partner is the question. Counts in brackets are campaigns with a stated Prize value, the only ones a value index can be computed on.
+The collaboration cut in `analysis/output/prize_economics.json` gives the same pooled direction: collaborations sit at 0.94 against 1.00 for everything else. The substantial positive gap is in media and entertainment, where collaborations reach 2.59 against 1.18 for the rest of that industry. Elsewhere the gap is small or negative. Use the industry row when a partner is the question. Counts in brackets are campaigns with a stated Prize value, the only ones a value index can be computed on.
 
 | Industry | Wider collaboration | Rest |
 |---|---|---|
-| Pooled (all industries) | 0.94 [2,985 valued campaigns] | 1.00 [40,188] |
-| Media and entertainment | 2.57, about 157% above typical [338] | 1.18, about 18% above typical [8,589] |
-| Electronics and tech | 1.20, about 20% above typical [501] | 1.20, about 20% above typical [4,555] |
-| Gaming and esports | 0.82, about 18% below typical [920] | 0.81, about 19% below typical [6,644] |
-| Sports and outdoors | 1.11, about 11% above typical [117] | 1.25, about 25% above typical [2,201] |
+| Pooled (all industries) | 0.94 [2,967 valued campaigns] | 1.00 [39,986 valued campaigns] |
+| Media and entertainment | 2.59 [338 valued campaigns] | 1.18 [8,580 valued campaigns] |
+| Electronics and tech | 1.20 [501 valued campaigns] | 1.19 [4,526 valued campaigns] |
+| Gaming and esports | 0.82 [909 valued campaigns] | 0.81 [6,564 valued campaigns] |
+| Sports and outdoors | 1.11 [117 valued campaigns] | 1.25 [2,200 valued campaigns] |
 
 ## Structure tradeoffs
 
-Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns drew about 15% more crowd for the money than typical (1.15 on crowd per Prize dollar) against 36% less for six to twenty units (0.64), in the crowd-per-Prize-dollar-by-number-of-Prize-units table in `references/evidence-and-limitations.md`. Split the budget only when the units are the point: sampling, digital Prizes, community rewards, or tiers that make the campaign read better. Before finalizing Prize count against a fixed budget, check `giveaway-winner-structure`'s structure findings: splitting that budget across several Prizes costs turnout against one Prize of the same value, with the full breakdown by Prize value there.
+Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns drew about 15% more crowd for the money than typical (1.15 on crowd per Prize dollar) against 36% less for six to twenty units (0.64), in the crowd-per-Prize-dollar-by-number-of-Prize-units table in `references/evidence-and-limitations.md`. Split the budget only when the units are the point: sampling, digital Prizes, community rewards, or tiers that make the campaign read better. Before finalizing Prize count against a fixed budget, check `giveaway-winner-structure`'s structure findings: splitting that budget across several Prizes was associated with fewer Entrants than one Prize of the same value, with the full breakdown by Prize value there.
 
 | Structure | Strengths | Costs and risks |
 |---|---|---|
@@ -132,26 +132,26 @@ Default for an acquisition giveaway: one Prize worth wanting. One-unit campaigns
 | Bundle around your product | Raises headline value cheaply with partners; teaches your category | Partner obligations; substitutes needed if items go out of stock |
 | Recurring (daily, weekly) | Keeps a long campaign alive; good for content series | Requires repeated draws and announcements |
 
-Looking at the campaigns behind these numbers: 82% listed one Prize, and 32% listed a quantity above one for at least one Prize [25,054 of 116,499 campaigns listed five or more Prize units].
+Looking at the campaigns behind these numbers: 83% listed one Prize, and 32% listed a quantity above one for at least one Prize [24,591 of 116,499 campaigns listed five or more Prize units].
 
-Typical Entrant counts for single-Winner and multi-unit structures were almost identical [492 against 510], which says nothing about effect because every campaign passed the dataset's 100-Entrant floor. Those raw Entrant counts and the crowd-per-Prize-dollar figures by number of Prize units are the same campaigns seen two ways: raw, one unit and many units drew the same crowd, and once the money is held constant, one unit sits above typical and six or more below. The crowd-per-Prize-dollar table in `references/evidence-and-limitations.md` carries the second view, and it is the one to quote when a budget is fixed.
+Typical Entrant counts for single-unit and five-plus-unit structures were almost identical [492 against 513], which says nothing about effect because every campaign passed the dataset's 100-Entrant floor. Those raw Entrant counts and the crowd-per-Prize-dollar figures by number of Prize units are the same campaigns seen two ways: raw, one unit and five or more units drew a similar crowd, and once the money is held constant, one unit sits above typical and six or more below. The crowd-per-Prize-dollar table in `references/evidence-and-limitations.md` carries the second view, and it is the one to quote when a budget is fixed.
 
 ## Stated Prize cost per email signup (extracted)
 
-For campaigns with an email action and every Prize valued in USD, the stated pool divided by email signups. Of the categories with the most campaigns, cash and gift cards sit lowest at 0.16 and experiences highest at 1.16. Use it to sanity-check a budget against the list it is meant to build, and remember the stated value is what the organizer wrote.
+For campaigns with an email action and every Prize valued in USD, the stated pool divided by email signups. Of the categories with the most campaigns, cash and gift cards sit lowest at 0.20 and experiences highest at 1.20. Use it to sanity-check a budget against the list it is meant to build, and remember the stated value is what the organizer wrote.
 
 | Prize category | Campaigns | Typical USD per signup |
 |---|---|---|
-| Other or unclassified | 5,142 | 0.59 |
-| Gift card or cash | 4,398 | 0.16 |
-| Tech hardware | 3,000 | 0.42 |
-| Bundle or box | 2,666 | 0.60 |
-| Game items or skins | 1,465 | 0.42 |
-| Experience, travel, tickets | 930 | 1.16 |
-| Merch, apparel, collectibles | 828 | 0.49 |
-| Regulated goods (firearms) | 606 | 0.39 |
-| Home, garden, appliance | 604 | 0.49 |
-| Placeholder Prize name | 496 | 0.56 |
+| Other or unclassified | 4,747 | 0.59 |
+| Gift card or cash | 5,103 | 0.20 |
+| Tech hardware | 2,987 | 0.42 |
+| Bundle or box | 2,541 | 0.58 |
+| Game items or skins | 1,437 | 0.45 |
+| Experience, travel, tickets | 861 | 1.20 |
+| Merch, apparel, collectibles | 795 | 0.50 |
+| Regulated goods (firearms) | 603 | 0.39 |
+| Home, garden, appliance | 601 | 0.49 |
+| Placeholder Prize name | 478 | 0.54 |
 
 ## What another dollar of Prize money is worth (extracted)
 
@@ -161,9 +161,9 @@ with the money, slowly:
 | Prize pool tenth | Campaigns | Typical pool USD | Typical Entrants |
 |---|---|---|---|
 | lowest | 4,301 | 20 | 272 |
-| third | 4,301 | 90 | 310 |
-| fifth | 4,300 | 227 | 523 |
-| seventh | 4,300 | 550 | 809 |
+| third | 4,301 | 90 | 306 |
+| fifth | 4,300 | 227 | 520 |
+| seventh | 4,300 | 550 | 816 |
 | ninth | 4,300 | 1,850 | 1,516 |
 | highest | 4,300 | 4,600 | 2,022 |
 
@@ -173,7 +173,7 @@ front of the page goes with about 40% more, which is the figure in the promotion
 and the two are in different units. What the data supports is the ordering. Where a business is deciding
 between a bigger Prize and a bigger push, the Prize is the slower of the two.
 
-Three limits, all of which matter here. Only 38% of campaigns valued every Prize, so this describes the
+Three limits, all of which matter here. Only 37% of campaigns valued every Prize, so this describes the
 businesses organised enough to fill the field. A bigger Prize goes with a bigger business and a bigger audience,
 so the Prize money is not what bought the crowd. And the bottom tenth sits at a 20 USD pool. That is a different kind of campaign, and reading the range as one
 smooth curve overstates it.
@@ -196,11 +196,11 @@ Promotion                     (separate from the prize, and easy to starve)
 Contingency                   (5 to 10%)
 ```
 
-Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 65,018 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 43,109 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, with no price of admission implied.
+Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 64,579 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 42,892 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, with no price of admission implied.
 
 | Measure | Typical | Middle half | Note |
 |---|---|---|---|
-| Per-listing stated value | 125 | 50 to 424 | nine in ten declared less than 1,199 |
+| Per-listing stated value | 125 | 50 to 425 | nine in ten declared less than 1,199 |
 | Fully valued campaign total | 299 | 90 to 1,000 | - |
 | Campaign total, 1,000-2,500 Entrants | 530 | - | - |
 | Campaign total, 2,500-10,000 Entrants | 1,299 | - | - |
@@ -211,42 +211,42 @@ Entrants rise with the stated pool up to about 5,000 USD and fall back above it 
 | Stated Prize pool | Typical Entrants |
 |---|---|
 | Under 50 USD | 266 |
-| 50,000 USD and up | 1,095 |
+| 50,000 USD and up | 1,128 |
 
 Prize value and Entrant count move together only loosely: ten times the stated pool comes with about 2.2 times the Entrants, and value accounts for about 23% of the spread in Entrant counts, so most of what separates a big campaign from a small one is something other than the money. All of it describes what businesses chose and who they were. A bigger Prize comes with a bigger business, so none of it says a bigger Prize would lift a given campaign.
 
-Below 5,000 USD, a 1% bigger Prize buys a quarter to a half of a percent more Entrants. Past that point, extra Prize spend still buys more Entrants in most industries, just far less per dollar. Name both exception industries whenever this ceiling is cited, and do not treat it as a rule for every industry.
+Across the four bands from 250 to 4,999 USD, a 1% larger stated pool is associated with about 0.46% to 0.63% more Entrants. Higher bands alternate between small increases and declines, so the pooled curve supplies no reliable return for another dollar.
 
 | Spend level (USD) | Extra Entrants per 1% bigger Prize | Campaigns | Businesses |
 |---|---|---|---|
-| 250 to 4,999 (four bands) | 0.24 to 0.53 | - | - |
-| 5,000 and up (four bands) | 0.06, 0.08, 0.02, 0.11 | 710 down to 72 | 378 down to 49 |
+| 250 to 4,999 (four bands) | 0.46 to 0.63 | - | - |
+| 5,000 and up (four bands) | 0.03, -0.41, 0.24, -0.70 | 1,099, 553, 130, 146 | 631, 359, 103, 101 |
 
-The same flattening shows up within plan tier and within some industries, at the 5,000-9,999 USD spend level. It does not hold in gaming and esports or sports and outdoors, where value kept predicting more Entrants through this dataset's biggest campaigns, so a campaign in either industry is not up against this ceiling.
+The larger-pool association varies by tier and industry. Gaming and esports still rises at 5,000 to 9,999 USD but falls in the next band. Sports and outdoors rises across those two bands. These differences rule out a universal budget ceiling.
 
 | Cut, at 5,000-9,999 USD (unless noted) | Extra Entrants per 1% bigger Prize | Campaigns | Businesses |
 |---|---|---|---|
-| Pro tier | -0.00 | 284 | 181 |
-| Business tier | -0.08 | 329 | 207 |
-| Electronics and tech | -0.31 | 139 | 71 |
-| Media and entertainment | -0.42 | 47 | 30 |
-| Gaming and esports (exception, still rising) | 0.55, and 0.13 at 10,000-24,999 | 83 | 42 |
-| Sports and outdoors (exception, still rising) | 0.19, then 0.26 at 10,000-24,999 | - | - |
+| Pro tier | 0.09 | 441 | 307 |
+| Business tier | -0.25 | 521 | 313 |
+| Electronics and tech | -0.04 | 191 | 104 |
+| Media and entertainment | -1.11 | 82 | 47 |
+| Gaming and esports | 0.17, then -0.46 at 10,000-24,999 | 134 | 74 |
+| Sports and outdoors | 0.23, then 0.06 at 10,000-24,999 | 97 | 69 |
 
-A cheap Prize is not a mark against a campaign on this measure: at the cheaper spend levels, campaigns beat their own typical Entrant count for the money by 50% or more more often than they miss it by as much. That margin is what a small budget buys here, a real chance of outperforming its own price tag, and it is the right call when the audience in front of the campaign already wants what's on offer and the objective does not need the largest possible crowd. It reverses at the top, so the same margin does not carry into the largest budgets. This describes campaigns that already cleared this reference's 100-Entrant floor, two things happening together, never a test of what a cheap Prize would do in front of a smaller audience.
+The share beating the typical crowd for its stated value and the share falling short are close at the low end. The 250 to 499 USD band has slightly more misses than beats, and the highest band is even. This gives no clear cheap-Prize advantage. These are selected campaigns that already reached 100 Entrants, with no comparison group of smaller or failed campaigns.
 
 | Spend level (USD) | Beat by 50%+ (crowd/$ 1.5+) | Missed by 50%+ (crowd/$ below 0.667) | Campaigns |
 |---|---|---|---|
-| Under 50 | 29% | 20% | 246 |
-| 250 to 499 | 27% | 17% | 2,132 |
-| 50,000 and up (reversed) | 40% | 44% | 72 |
+| Under 50 | 29% | 28% | 6,063 |
+| 250 to 499 | 37% | 39% | 6,146 |
+| 50,000 and up | 42% | 42% | 146 |
 
 ## Prizes for a store
 
-- **Own product at cost.** The stated value is retail, your cost is wholesale, and the Entrant who wanted it is already a customer. That is the trade: margin spent, not list price, for a Winner who fits your audience by definition. Once campaign size and industry are held constant, the mechanic costs quality: it stands lower than a bought-in Prize on Conversion Rate, on crowd per Prize dollar and on cost % of Entrants (see the own-product finding above), though raw Entrant count and email signups hold up. That cost reverses in electronics and tech, is flat in sports and outdoors, and on Conversion Rate alone it turns in own product's favor above 2,500 Entrants. It fits best when the objective is a buyer, not the largest crowd at any cost, and least when the objective is pure reach and margin can't absorb a discount.
+- **Own product at cost.** The stated value is retail, your cost is wholesale, and the Prize filters for interest in the product. The own-product comparisons above show lower Conversion Rate and low-cost performance, but more frequent top-fifth Entrant and crowd-per-dollar results after the source's matching. Own product trails bought-in on the typical crowd-per-dollar figure in all four industry rows. Conversion Rate turns in its favor above 2,500 Entrants. Use fit and actual cost to decide, since none of these figures measures lead quality.
 - **Win your cart up to a cap.** The Prize is whatever the Winner put in the cart, capped at a stated number. The cap is the budget, and the title carries it. Cart and wishlist campaigns sit at 1.42 on crowd per Prize dollar, about 42% above typical for the money and the second highest figure of any campaign type, on 450 valued campaigns of 902. They also draw 724 Entrants against a typical 492. Price them as a wishlist and browsing play that also reaches. [`analysis/output/campaign_types.json`, `types`.]
 - **Gift card to your own store.** Costs the margin on what the Winner spends, and the Winner comes back to spend it. Gift card campaigns post 1.18 on crowd per Prize dollar, about 18% above typical for the money, on 6,787 valued campaigns of 11,095, while drawing fewer Entrants than typical at 432. A gift card to someone else's store buys reach and sends the Winner elsewhere. [`analysis/output/campaign_types.json`, `types`.]
-- **Discount codes as the headline Prize.** 1,054 campaigns, 0.73 on crowd per Prize dollar (about 27% below typical for the money), and a purchase condition dressed as a Prize. Use codes for everyone who did not win, under a real Prize, and read giveaway-winner-communications for the mechanics. [`analysis/output/prize_economics.json`, `by_prize_category`.]
+- **Discount codes as the headline Prize.** 1,046 campaigns, 0.73 on crowd per Prize dollar (about 27% below typical for the money), and a purchase condition dressed as a Prize. Use codes for everyone who did not win, under a real Prize, and read giveaway-winner-communications for the mechanics. [`analysis/output/prize_economics.json`, `by_prize_category`.]
 - **Ship the Prize as an order.** Create the Winner's Prize as a zero-value order in the store so it goes out through the normal pick, pack and tracking flow, and the Winner sees it in their account.
 - **Fourth quarter.** Reserve the Prize stock before the sale sells it out. Close a December draw at least a week before the carrier's cutoff, and where that is not possible make the Prize a gift card so the Winner still has it by the day.
 - **Budget line for the codes.** A store campaign has two costs: the Prize, and the discount taken up by non-Winners. Put the second in the budget as redemptions expected times average discount, and read the redemption count as the campaign's revenue line afterwards.
@@ -271,7 +271,7 @@ A cheap Prize is not a mark against a campaign on this measure: at the cheaper s
 - Promising Entrant numbers. Volume comes from promotion, audience size and entry friction. No Prize guarantees it, and this dataset cannot show that any Prize caused participation.
 - Regional or regulated Prizes offered globally. Alcohol, firearms, gift cards locked to one country, or travel that needs visas. Check the accessibility criterion before the headline.
 - One Prize, many objectives. A single PS5 cannot both build a niche email list and drive mass awareness. Pick one objective per giveaway.
-- Copying a big campaign's Prize. A local business does not need the typical figures from campaigns of 10,000 Entrants and up. Half of all campaigns in this skill's data ran at a fraction of that size and Prize spend (see the budget template above). The cheap Prizes that drew crowds cut in giveaway-idea-generator lists 114 campaigns under 250 USD that passed 5,000 Entrants, and the campaigns that beat their Prize money cut sits next to it. Both point the same way: the audience in front of the Prize did the work, and most of those businesses had run campaigns before [four in five].
+- Copying a big campaign's Prize. A local business does not need the typical figures from campaigns of 10,000 Entrants and up. Half of all campaigns in this skill's data ran at a fraction of that size and Prize spend (see the budget template above). The cheap Prizes that drew crowds cut in giveaway-idea-generator lists 109 campaigns under 250 USD that passed 5,000 Entrants, and the campaigns that beat their Prize money cut sits next to it. Both point the same way: the audience in front of the Prize did the work, and most of those businesses had run campaigns before [four in five].
 
 ## When the Prize is unrelated to the business
 

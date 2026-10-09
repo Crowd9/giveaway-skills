@@ -8,12 +8,12 @@ One Prize for the money draws a bigger crowd than splitting it into several, and
 
 | Units | Campaigns | Crowd per Prize dollar | Entrants |
 |---|---|---|---|
-| One | 26,976 | 1.15 | 509 |
-| Two to five | 10,243 | 0.82 | 463 |
-| Six to twenty | 4,349 | 0.64 | 562 |
-| Twenty-one or more | 1,605 | 0.78 | 1,065 |
+| One | 26,919 | 1.15 | 509 |
+| Two to five | 10,192 | 0.82 | 463 |
+| Six to twenty | 4,276 | 0.64 | 565 |
+| Twenty-one or more | 1,566 | 0.77 | 1,065 |
 
-[Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The raw Entrants column runs the other way, rising with unit count, because campaigns listing many things also spent more. Quote crowd per Prize dollar when the question is what a fixed budget bought, and the raw count when the question is what campaigns looked like.
+[Extracted from `analysis/output/context_checks.json`, `winner_count_index_value_adjusted`.] The raw Entrants column runs the other way, highest in the largest unit-count group, because campaigns listing many things also spent more. Quote crowd per Prize dollar when the question is what a fixed budget bought, and the raw count when the question is what campaigns looked like.
 
 | Shape | Choose it when | Cost |
 |---|---|---|
@@ -73,25 +73,25 @@ A drawn name has a real chance of failing verification. The typical campaign has
 
 ## How many businesses write their own terms (extracted)
 
-Half of ordinary campaigns write their own terms in place of the platform default. Custom-terms campaigns run larger and convert lower than campaigns on the platform default, among the campaigns we can compare fairly. That describes who writes terms, not what terms do. Larger and more careful businesses write their own. It says nothing about the terms causing either figure.
+About two in five ordinary campaigns write their own terms in place of the platform default. Custom-terms campaigns run larger and convert lower than campaigns on the platform default, among the campaigns we can compare fairly. That describes who writes terms, not what terms do. Larger and more careful businesses write their own. It says nothing about the terms causing either figure.
 
 | | Custom terms | Platform default |
 |---|---|---|
 | Typical Entrants | 591 | 401 |
-| Campaigns | 13,591 | 26,259 |
-| Businesses | 2,107 | 5,862 |
-| Conversion Rate | 30.9% | 37.0% |
+| Campaigns | 13,562 | 25,940 |
+| Businesses | 2,094 | 5,792 |
+| Conversion Rate | 30.9% | 36.9% |
 
 Campaigns with custom terms drew about 47% more Entrants and got a smaller share of their viewers through. Both figures describe the businesses that wrote their own terms, which are the larger and more practised ones, so neither says that writing terms changes a result. [Extracted from `analysis/output/extra_cuts.json`, `custom_terms_clean`, among the campaigns we can compare fairly.]
 
 Custom terms run long, and the generated draft below is far shorter, which is the point.
 
-| Custom terms (18,308 campaigns) | - |
+| Custom terms (45,528 campaigns) | - |
 |---|---|
-| Typical length | 1,444 words |
-| Carry a no-purchase line | 66% |
-| Carry an age line | 31% |
-| Say worldwide or international | 31% |
+| Typical length | 1,249 words |
+| Carry a no-purchase line | 62% |
+| Carry an age line | 29% |
+| Say worldwide or international | 29% |
 | Say US only | 3% |
 
 ## Terms snippet to adapt

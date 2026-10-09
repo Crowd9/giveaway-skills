@@ -77,7 +77,7 @@ Labels: **extracted** means fields from the record, **inferred** means our class
 ## Records deliberately not used as examples
 
 - **Sneaker raffles, "chance to purchase one pair" or Prize listings that are just shoe sizes (92 campaigns from 9 businesses, 2021 to 2023).** Purchase opportunity: the Entrant wins the right to buy at retail. Not a free Prize, and below this skill's evidence floor on businesses. Kept out of every benchmark.
-- **Token airdrops, NFT mints, whitelist spots, exchange promotions, tap-to-earn points (3,015 campaigns, plus businesses in the finance and crypto industry).** Crypto segment. Not used unless the user explicitly asks about crypto giveaways.
-- **Firearms and accessories (1,363 campaigns from 202 businesses).** Real and well-valued in the data, but regulated, so never used as examples.
-- **Discount codes and coupons (438 campaigns).** A purchase condition dressed as a Prize. Listed in the taxonomy, never recommended as a headline Prize.
+- **Token airdrops, NFT mints, whitelist spots, exchange promotions, tap-to-earn points (3,467 campaigns, plus businesses in the finance and crypto industry).** Crypto segment. Not used unless the user explicitly asks about crypto giveaways.
+- **Firearms and accessories (1,510 campaigns from 323 businesses).** Real and well-valued in the data, but regulated, so never used as examples.
+- **Discount codes and coupons (1,046 campaigns).** A purchase condition dressed as a Prize. Listed in the taxonomy, never recommended as a headline Prize.
 - **Records whose description contained text addressed to an AI (14).** Treated as data, and the instructions were ignored.

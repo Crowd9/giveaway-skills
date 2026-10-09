@@ -1,6 +1,6 @@
 # Benchmarks
 
-The script ranks a campaign against every fifth percentile of twelve figures in `percentiles.json` (Entrants, Impressions (views of the campaign page), Conversion Rate, actions and entries per Entrant, entries, Entrants per day, action count, duration, stated Prize value per Entrant, email signups, share who signed up for email, referral entries per Entrant, follows by network), plus completions per Entrant for 51 Gleam actions, for all campaigns, the campaigns we can compare fairly, campaigns your size, and your vertical. The tables below give the typical figure and the reading guide.
+The script ranks a campaign against every fifth percentile of 21 figures in `percentiles.json` (Entrants, Impressions (views of the campaign page), Conversion Rate, actions and entries per Entrant, entries, Entrants per day, action count, duration, stated Prize value per Entrant, email signups, share who signed up for email, referral entries per Entrant, follows by network), plus completions per Entrant for 74 Gleam actions, for all campaigns, the campaigns we can compare fairly, campaigns your size, and your vertical. The tables below give the typical figure and the reading guide.
 
 Every figure is drawn from the campaigns behind these numbers (116,499 campaigns that reached 100 unique Entrants, crypto and purchase-only campaigns removed). Typical figures unless stated. The campaigns we can compare fairly have no repeatable action and a run of 14 days or less, because Impressions are unique per person per day.
 
@@ -243,7 +243,7 @@ By business type (`by_business_type`, from what the organizer's homepage sells):
 | Nonprofit | 968 | 280 | 390 | 26% | 3.33 | 16 | 33% |
 <!-- /generated -->
 
-By industry (`by_industry_excluding_crypto`), finance_crypto (43,194 campaigns) held out on the same crypto exclusion as the rest of this page:
+By industry (`by_industry_excluding_crypto`), finance_crypto (24,669 campaigns) held out on the same crypto exclusion as the rest of this page:
 
 <!-- generated:bm_industry -->
 | Industry | Campaigns | Businesses | Entrants | Conversion Rate | Entries per Entrant | Days | Email offered |
@@ -499,7 +499,7 @@ Source: `analysis/output/field_cuts.json` (`by_organizer_tenure`).
 | France | 2,174 | 356 | 349 | 27% | 4.73 | 14 | 7 | 3.67 | 13% |
 <!-- /generated -->
 
-Japan runs the highest plan-tier mix of the twelve, 62% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration and its 58% Conversion Rate are two readings of the same thing. Impressions count once per visitor per day, so a one-day campaign has one day of Impressions to divide into and converts higher by construction. Both figures rest on campaigns that are 90% repeats from a small set of accounts, so treat the row as a description of automated draws.
+Japan runs the highest plan-tier mix of the twelve, 62% of campaigns on Business or above, against 9% for Brazil. Brazil's one-day typical duration and its 58% Conversion Rate are two readings of the same thing. Impressions count once per visitor per day, so a one-day campaign has one day of Impressions to divide into and converts higher by construction. Both figures rest on campaigns that are 91% repeats from a small set of accounts, so treat the row as a description of automated draws.
 
 ### City benchmarks
 
@@ -558,9 +558,9 @@ Source: `analysis/output/field_cuts.json` (`by_tier`, `by_campaign_sequence`, `b
 
 ## Other reference points
 
-- Top fifth against bottom fifth by Entrants pulls apart on Impressions and Prize pool, not on Conversion Rate or organizer experience (table below). Previous campaigns from the organizer no longer separate the two groups, unlike the earlier dataset where the top fifth had noticeably more.
+- Top fifth against bottom fifth by Entrants differs most on Impressions and Prize pool (table below). The top fifth also has more previous campaigns, 12 against 7, and a Conversion Rate of 28% against 25%.
 
-- After a campaign of 5,000 or more Entrants, the next one reached 5,000 again 61% of the time, against 12% after a smaller one.
+- After a campaign of 5,000 or more Entrants, the next one reached 5,000 again 51% of the time, against 3% after a smaller one (`analysis/output/context_checks.json`, `persistence`, 6,584 and 90,786 pairs across 1,231 and 8,256 businesses respectively). Only pairs with the required campaign counts enter this comparison.
 
 - Two more comparisons among the campaigns we can compare fairly: a campaign launched within 30 days of the organizer's previous one converts noticeably better than a first campaign and draws 42% more Entrants, and a campaign without a share action converts better than one with while drawing about a quarter fewer Entrants (table below).
 
@@ -587,7 +587,7 @@ Reach is what separates the two, 25 times the Impressions for a Conversion Rate 
 
 The share-action line and the top-fifth line answer different questions and cannot be read as one finding. The share-action line splits campaigns by a setting the organizer chose before launch. The top-fifth line splits the same campaigns by the result they got afterwards. Neither says that adding or removing a share action moves a campaign between the fifths.
 
-- December: 10.4% of starts, a quarter again an even month, and December campaigns drew more Entrants at a higher Conversion Rate, 560 at 30.8% against 471 to 508 at 25.6% to 26.9% across the other eleven months. [Extracted from `analysis/output/prize_timing_cuts.json`, `by_start_month`.]
+- December: 10.4% of starts, a quarter again an even month, and December campaigns drew more Entrants at a higher Conversion Rate, 560 at 30.9% against 471 to 508 at 25.6% to 26.9% across the other eleven months. [Extracted from `analysis/output/prize_timing_cuts.json`, `by_start_month`.]
 
 ## Campaign weighted against business weighted
 

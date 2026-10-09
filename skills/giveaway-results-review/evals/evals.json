@@ -4,7 +4,7 @@
   {
    "id": 1,
    "prompt": "Our giveaway just ended. 1,800 entrants, 6,000 views, 9,000 entries, 400 invalid, ran 14 days with 6 entry methods. We wanted email subscribers. How did we do?",
-   "expected_output": "Calculates 1,800 / 6,000 = 30% Conversion Rate and 9,000 / 1,800 = 5 Entries per Entrant, places 1,800 in the 1k to 2.5k band below the median, reads 30% conversion against the 37% clean peer figure and the 34% platform average, asks for or reads the per-action counts to judge the email action, gives at most three changes each tied to a figure and to the next piece of work, ends with the next decision.",
+   "expected_output": "Calculates 1,800 / 6,000 = 30% Conversion Rate and 9,000 / 1,800 = 5 Entries per Entrant, places 1,800 in the 1k to 2.5k band above its 1,484 median, reads 30% conversion against the 35% clean peer figure for six actions, the 28% duration figure for 14 days and the 27% platform average, asks for or reads the per-action counts to judge the email action, gives at most three changes each tied to a figure and to the next piece of work, ends with the next decision.",
    "assertions": [
     "Shows 1,800 Entrants / 6,000 views = 30% Conversion Rate and 9,000 Entries / 1,800 Entrants = 5 Entries per Entrant, with the units and denominators clear",
     "States the band and position for contestants",
@@ -36,7 +36,7 @@
   {
    "id": 2,
    "prompt": "Conversion was only 19% on our 45-day giveaway with a daily bonus entry. Is something broken?",
-   "expected_output": "Explains impressions count once per user per day so a 45-day run with a daily action lowers the rate, compares to the 31 to 60 day figure of 24% and the 23% for 61 days or more, says nothing is necessarily broken, and points to what would show a real problem (contestants for the band, the asset action uptake).",
+   "expected_output": "Explains impressions count once per user per day so a 45-day run with a daily action lowers the rate, compares to the 31 to 60 day figure of 23% and the 21% for 61 days or more, says nothing is necessarily broken, and points to what would show a real problem (contestants for the band, the asset action uptake).",
    "assertions": [
     "Explains the impressions definition",
     "Compares to the duration row",

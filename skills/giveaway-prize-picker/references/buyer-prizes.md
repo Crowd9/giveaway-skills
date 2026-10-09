@@ -23,7 +23,7 @@ Campaigns that gave away a subscription or membership drew a typical 372 Entrant
 
 Source: `analysis/output/prize_economics.json`, `by_prize_category`, `subscription_membership`.
 
-Crowd per Prize dollar for subscriptions was 0.51 across 1,559 campaigns (`prize-taxonomy.md`).
+Crowd per Prize dollar for subscriptions was 0.51 across 696 valued campaigns (`prize-taxonomy.md`).
 
 Source: `analysis/output/vertical_profiles.json`, `prize_category_index_by_industry`, `software_saas.subscription_membership`.
 
@@ -64,7 +64,7 @@ Put each candidate through four questions.
 3. **Can you deliver it to a buyer in the time promised and the region they are in?** Use the fulfillment checklist in `decision-criteria.md`.
 4. **Does winning teach them what you sell?** A Prize that uses the product does this for free.
 
-Then price it to the work. Where a Prize carries a stated USD value, campaigns in the software industry stated a typical 1,000 USD pool (1,752 campaigns, 571 businesses, `roi-benchmarks.md`). That is a stated value and never what the business paid, and a buyer campaign has no reason to chase it.
+Then price it to the work. Where a Prize carries a stated USD value, campaigns in the software industry stated a typical 1,000 USD pool (1,662 campaigns, 545 businesses, `roi-benchmarks.md`). That is a stated value and never what the business paid, and a buyer campaign has no reason to chase it.
 
 ## Making the Prize Hard to Use If You Are Not a Buyer (advice)
 

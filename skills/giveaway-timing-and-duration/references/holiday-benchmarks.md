@@ -36,7 +36,7 @@ Reading it:
 
 ## Holiday theme against no theme, and how early businesses launch
 
-A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. Campaigns naming no holiday get 34.8% to enter (101,318 campaigns, 16,101 businesses). Against that baseline:
+A separate check, using all runs at their actual length, not the fair-comparison set the table above uses. The all-run JSON comparison records 26.9% entering for campaigns naming no holiday (104,762 campaigns, 16,503 businesses). Its theme definitions differ from the generated fair-comparison rows below. Against that baseline:
 
 <!-- generated:hol_theme -->
 | Theme | Campaigns | Businesses | Entrants | Conversion Rate |
@@ -58,7 +58,7 @@ A separate check, using all runs at their actual length, not the fair-comparison
 | Prime Day and Singles Day | 99 | 60 | 794 | 27.1% |
 <!-- /generated -->
 
-Christmas clears the no-theme baseline by four points and is the only theme to do so by more than one. Father's Day and Lunar New Year sit level with it. Everything from Milestone down runs behind the baseline, and Thanksgiving and Prime Day trail it by seven points. This reads differently from the fair-comparison table above, because this check counts every run at its actual length, long or short, repeatable actions included.
+In the all-run JSON comparison, Christmas clears the no-theme baseline by 4.7 points, Father's Day by 3.4 and Mother's Day by 1.7. Milestone also sits above it, while Thanksgiving and Prime Day trail it by about three points. These comparisons use `analysis/output/prize_timing_cuts.json` (`by_named_holiday`), across actual run lengths with repeatable actions included. The generated table above retains the separate fair-comparison figures.
 
 Lead time, days before the holiday date businesses started, for campaigns matched to a specific date:
 
@@ -79,7 +79,7 @@ Lead time, days before the holiday date businesses started, for campaigns matche
 | Lunar New Year | 76 | 1 day | 5 days | 10 days |
 <!-- /generated -->
 
-Black Friday launches closest to its date, a typical 7 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
+Black Friday launches closest to its date, a typical 7 days out. Halloween launches furthest ahead of the fixed dates most businesses use, a typical 18 days out, just ahead of Christmas at 17. These lead figures use `analysis/output/holidays.json` (`holidays`), matching the table above. Summer and back to school have no single calendar date behind them, so a share of the lower-quarter figure already sits past the reference point used to measure lead time.
 
 Starting near a public holiday, on its own, does not move the numbers (table below). Both gaps sit under a point.
 
@@ -125,15 +125,15 @@ Prime Day, Singles' Day, anniversaries and milestones have no fixed date here, s
 
 Four dates decide a store's fourth quarter, and the data gives each a shape. Dates below are 2026, the 2027 rows in the calendar move them a day.
 
-One rule off this table gets missed most often, so it is stated here in plain sight: a Black Friday campaign closes **before** the sale, and no giveaway stays live from 27 to 30 November. For a US audience that means the Wednesday, not the Thursday, because `calendar-by-region.md` counts Thanksgiving through the weekend as dead days. Closing on Thanksgiving puts the draw on Black Friday morning, which a measured answer did while quoting the rule that forbids it. Campaigns live over that weekend got 10% fewer people to enter than matched campaigns. An answer that quotes the 10% and then closes on Black Friday itself has argued against its own figure, which happened in measured answers twice.
+One rule off this table gets missed most often, so it is stated here in plain sight: a Black Friday campaign closes **before** the sale, and no giveaway stays live from 27 to 30 November. For a US audience that means the Wednesday, not the Thursday, because `calendar-by-region.md` counts Thanksgiving through the weekend as dead days. Closing on Thanksgiving puts the draw on Black Friday morning, which a measured answer did while quoting the rule that forbids it. Campaigns live over that weekend recorded an 11% lower Conversion Rate than matched campaigns. An answer that quotes the 11% and then closes on Black Friday itself has argued against its own figure, which happened in measured answers twice.
 
 | Slot | Window (2026) | What the data says | What the giveaway does for the store |
 |---|---|---|---|
-| Pre-sale list build | Launch 13 to 24 Nov, close by 25 Nov for a US audience (the day before Thanksgiving) | Black Friday campaigns run 8 days and launch 7 days out (648 campaigns with a lead figure). Campaigns live over Black Friday get 10% fewer to enter than matched campaigns (Cyber Monday alone 10% fewer), and week 47, the week before Thanksgiving, sits at 33% entered, a point above the year's quietest weeks | Build the list that receives the sale. Close the giveaway the day before the sale, send the Winners email with early access as the non-Winner offer, then the sale email to the same segment |
+| Pre-sale list build | Launch 13 to 24 Nov, close by 25 Nov for a US audience (the day before Thanksgiving) | Black Friday campaigns run 8 days and launch 7 days out (648 campaigns with a lead figure). Campaigns live over Black Friday record an 11% lower Conversion Rate than matched campaigns (Cyber Monday alone 10% fewer), and week 47, the week before Thanksgiving, sits at 33% entered, a point above the year's quietest weeks | Build the list that receives the sale. Close the giveaway the day before the sale, send the Winners email with early access as the non-Winner offer, then the sale email to the same segment |
 | The sale itself | 27 to 30 Nov | Week 48, Thanksgiving and Black Friday week, holds 3% of starts at 35% entered and week 49, the first week of December, 40% | No giveaway live. The store is selling, the audience is being sold to from every direction, and a Prize on the same page splits the click |
-| December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent sits above the typical figures on both Entrants and Conversion Rate, and the two weeks before Christmas get the most to enter of any week in the data (figures just below this table). Advent calendars: 600 Entrants, 44% entered, six days, six actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero Prize from the gift guide, closing before the shipping cutoff so the Winner has it by the day |
+| December | Launch 27 Nov to 14 Dec, 6 Dec typical | Christmas and advent sits above the typical figures on both Entrants and Conversion Rate, and the two weeks before Christmas get the most to enter of any week in the data (figures just below this table). Advent calendars: 602.5 Entrants, 44% entered, six days, six actions | The gift guide campaign. Advent or 12 days with a product a day, or one hero Prize from the gift guide, closing before the shipping cutoff so the Winner has it by the day |
 | Shipping cutoff | Set by the carrier, usually mid December for domestic | 75% of Christmas campaigns close on or before the day | The Prize ships as an order through the store with tracking. Close the draw a week before the cutoff, or make the Prize a gift card |
-| New Year | Launch 9 to 27 Dec, 20 Dec typical | New Year campaigns run 16 days at 31% entered (931 campaigns), and being live over Christmas or New Year came with about the same share entering as matched campaigns, at ratios of 1.01 and 0.98, the two best of any holiday in the table | The restart campaign for the January customer: resolutions, restock, the product that pairs with what they bought in December |
+| New Year | Launch 9 to 27 Dec, 20 Dec typical | New Year campaigns run 16 days at 31% entered (931 campaigns), and being live over Christmas or New Year came with about the same share entering as matched campaigns, at ratios of 0.99 and 0.98, the two best of any holiday in the table | The restart campaign for the January customer: resolutions, restock, the product that pairs with what they bought in December |
 
 <!-- generated:hol_december -->
 Christmas and advent sits above the typical figures on both Entrants (587) and Conversion Rate (39%) on 4,895 campaigns, and weeks 50 and 51, the two weeks before Christmas, get the most to enter of any week in the data at 41% each (1,381 and 1,193 fair-comparison campaigns), with week 49, the first week of December, just behind at 40% on the largest count (1,562).
@@ -141,28 +141,28 @@ Christmas and advent sits above the typical figures on both Entrants (587) and C
 
 Two rules fall out of the table. A store builds the list before the sale and sells to it during the sale, so the giveaway and the discount never share a week. And December is crowded (about a quarter again a typical month on starts) and still gets the most people to enter, so a store that skips December because of the noise is skipping the best week of the year.
 
-The no-penalty part is not unique to December: across all the campaigns behind these numbers, the busiest quarter of calendar weeks by volume converts a little better than the quietest quarter, not worse (table below). Nine of the thirteen busiest weeks carry no named holiday and convert about the same as the quiet weeks. The lift in the pooled figure comes almost entirely from weeks 48 to 51, Black Friday through the week before Christmas.
+The no-penalty part is not unique to December: across all the campaigns behind these numbers, the busiest quarter of calendar weeks by volume converts a little better than the quietest quarter, not worse (table below). The source does not provide a separate pooled Conversion Rate for the busiest weeks outside the holiday peak, so it cannot isolate how much of the difference comes from holiday weeks.
 
 | Quarter of weeks | Conversion Rate | Campaigns | Businesses |
 |---|---|---|---|
-| Busiest quarter | 40.1% | 12,304 | 3,548 |
-| Quietest quarter | 36.9% | 7,939 | 2,921 |
+| Busiest quarter | 36.3% | 11,947 | unavailable |
+| Quietest quarter | 33.9% | 8,235 | unavailable |
 
-By industry the picture is mixed (table below). Electronics and tech shows the same pattern, though both quarters mix in some holiday weeks. Gaming and esports is flat. Media and entertainment shows the widest gap of the three, which the holiday-week split alone does not fully explain.
+All three industries we break out show the same pattern (table below), though both quarters mix in some holiday weeks. Electronics and tech has the widest gap and gaming and esports the smallest. The source does not isolate the holiday-week contribution.
 
 | Industry | Busiest quarter CR | Quietest quarter CR | Busiest (campaigns / businesses) | Quietest (campaigns / businesses) |
 |---|---|---|---|---|
-| Electronics and tech | 53.5% | 40.8% | 2,486 / 570 | 1,462 / 449 |
-| Gaming and esports | 37.6% | 35.7% | 2,359 / 913 | 1,676 / 735 |
-| Media and entertainment | 42.9% | 28.1% | 1,649 / 311 | 1,055 / 240 |
+| Electronics and tech | 44.0% | 39.0% | 1,931 / unavailable | 1,192 / unavailable |
+| Gaming and esports | 35.1% | 33.4% | 2,880 / unavailable | 2,121 / unavailable |
+| Media and entertainment | 33.7% | 30.6% | 1,581 / unavailable | 1,111 / unavailable |
 
-A busy launch week is not, on its own, a crowding risk. What moves the number most reliably is whether that week also carries holiday demand.
+These comparisons do not show that a busy launch week reduces conversion. Holiday timing and industry remain part of the comparison. Source: `analysis/output/calendar.json` (`seasonal_crowding`). Counts beside Conversion Rate cover the fair-comparison campaigns (`clean_n`), whose business counts are unavailable. Campaigns outside that subset do not contribute to the rate.
 
-Prime Day and Singles Day draw 794 Entrants, well above the typical figure, on the lowest Conversion Rate of any theme in the table above at 27.1%. Singles Day's share of its own week is in the table below. Mother's Day and Father's Day launch about two weeks out and run two weeks. For a store the family days are gift days, so the gift guide shape applies.
+Prime Day and Singles Day draw 794 Entrants, well above the typical figure, on the lowest Conversion Rate of any theme in the table above at 27.1%. The share of week 46 starts naming any holiday is below, from `analysis/output/calendar_names.json` (`holiday_named_share_by_week.46`). This does not isolate Singles Day. Mother's Day and Father's Day launch about two weeks out and run two weeks. For a store the family days are gift days, so the gift guide shape applies.
 
 | Date | Week | Share of that week's starts naming it |
 |---|---|---|
-| Singles Day | 46 (11 Nov) | 25% |
+| Any named holiday | 46 (11 Nov) | 20% |
 
 Source for the advent-calendar row above: `analysis/output/campaign_types.json` (`types`, Advent or daily calendar).
 
@@ -231,10 +231,10 @@ Reading it:
 
 - Weeks 48 to 51, late November to mid December, are the launch peak, and they get the most people to enter of any stretch in the year (table above). About a third of those starts name a holiday. Week 52, Christmas week itself, drops back down on both share of starts and Conversion Rate.
 
-| Week | Share of starts (unrounded) |
+| Week | Share of starts (rounded) |
 |---|---|
-| 48 to 51 | 2.6% to 3.4% each |
-| 52 | 1.4% |
+| 48 to 51 | 2.2% to 2.9% each |
+| 52 | 1.3% |
 
 - Week 49, the first week of December, has the largest fair-comparison count in the peak stretch. Week 51, the week before Christmas, converts higher still on a smaller count (table above). The advent shape runs through both, and so do plain December campaigns.
 

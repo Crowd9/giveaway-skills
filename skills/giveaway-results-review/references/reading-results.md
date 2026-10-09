@@ -42,14 +42,11 @@ A visitor who returns every day for a daily bonus counts as a new Impression eac
 
 | Duration | Conversion Rate |
 |---|---|
-| The campaigns we can compare fairly (no repeatable action, 14 days or less) | 38% |
-| 31 to 60 days | 24% |
-| 61 days or more | 23% |
+| The campaigns we can compare fairly (no repeatable action, 14 days or less) | 35% |
+| 31 to 60 days | 23% |
+| 61 days or more | 21% |
 
-Those three rows are a summary of the shape. Quote the five-row table in `references/benchmarks.md` when you put
-a duration figure in front of a reader, because it is cut differently, carries its campaign counts, and reads a
-point lower at the long end. Two tables on the same subject disagree by a point here for that reason, so name the
-one you used.
+Source: `analysis/output/calendar.json` (`all.conv_clean`, 39,462 campaigns) and `analysis/output/comparisons.json` (`duration_no_repeatable`, 11,419 and 2,929 campaigns for the longer runs). Only campaigns with the required duration, action and Impression fields enter these comparisons. The five-row duration table in `references/benchmarks.md` supplies the finer comparison.
 
 ## What extra reach is worth (extracted)
 
@@ -65,8 +62,8 @@ Rate move a long way, while the Entrant count barely does. In the 1,000 to 2,500
 | highest fifth | 3,988 | 14,836 | 1,788 | 11% |
 
 Nearly six times the Impressions goes with about 45% more Entrants. The same shape holds in every band, from 5.5
-to 10.7 times the reach for 1.22 to 3.17 times the crowd, and the Conversion Rate falls from about 55% to about
-11% in all six. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.7 times the
+to 10.7 times the reach for 1.22 to 3.17 times the crowd, and the Conversion Rate falls from 48% to 58% in the lowest fifth to
+10% to 15% in the highest fifth across the six bands. The 10,000-plus band is the one with no ceiling on its Entrant counts, and there 10.7 times the
 Impressions goes with 3.17 times the Entrants, which is close to the square root of the reach multiple.
 
 The working rule that falls out: doubling the traffic you put in front of a page goes with roughly 40% more
@@ -117,14 +114,14 @@ Source: `analysis/output/reach_returns.json`.
 
 ## Why this skill compares campaigns by size, not a size trend
 
-Splitting the campaigns behind these numbers into ten equal-count tenths by Entrant count, from `thresholds.json`'s `size_deciles`, shows no tenth where action count, entries per Entrant or Conversion Rate meaningfully bends: all three stay in a narrow band across every tenth tested (table below) [11,734 to 11,735 campaigns per tenth, 2,539 to 5,022 organizers]. Campaign size on its own carries no independent trend. The size splits used throughout this skill's benchmarks exist because where a threshold sits moves by size, not because a bigger campaign performs better on its own. Read a size-specific benchmark as the figure for campaigns of that size, not as a rung on a ladder where bigger always wins.
+Splitting the campaigns behind these numbers into ten equal-count tenths by Entrant count, from `thresholds.json`'s `size_deciles`, shows no tenth where action count, entries per Entrant or Conversion Rate meaningfully bends: all three stay in a narrow band across every tenth tested (table below) [11,649 to 11,650 campaigns per tenth, 2,504 to 4,977 organizers]. Campaign size on its own carries no independent trend. The size splits used throughout this skill's benchmarks exist because where a threshold sits moves by size, not because a bigger campaign performs better on its own. Read a size-specific benchmark as the figure for campaigns of that size, not as a rung on a ladder where bigger always wins.
 
 | Metric | Range across the ten tenths |
 |---|---|
 | Action count | 6 to 7 |
-| Entries per Entrant | 4.00 to 4.74 |
+| Entries per Entrant | 3.99 to 4.74 |
 | Conversion Rate | 25.3% to 28.3% |
-| Entrants (typical in the tenth) | 119 to 6,149 |
+| Entrants (typical in the tenth) | 119 to 6,101 |
 
 ## Tone
 
@@ -149,58 +146,60 @@ Entries and completions are the same count, worth only changes the credit.
 
 | Family | Completions per 100 Entrants (typical) |
 |---|---|
-| Visits and email signups | 75 to 89 |
-| Follows | 46 |
-| Shares | 20 |
-| Content | 23 |
+| Visits and email signups | 78 to 85 |
+| Follows | 53 |
+| Shares | 11 |
+| Content | 12 |
+
+Source: `analysis/output/percentiles.json` (`bench.family_uptake`).
 
 ## Organizer experience at a large campaign size
 
-From `success_profiles.json`'s organizer-experience-by-size interaction, all campaigns, matched on Entrant size. Once we allow for Entrant size, a highly experienced organizer is not reliably more efficient than a first-timer: the ratio of actual to size-predicted Conversion Rate stays close to 1 across every cell tested (table below). No reliable overall experience effect once size is held fixed.
+From `success_profiles.json`'s organizer-experience-by-size interaction, the campaigns we can compare fairly, matched on Entrant size. The ratios compare each cell's Conversion Rate with the value expected from both its size and organizer-experience group. Across all cells they range from 0.832 to 1.076. These are descriptive differences, with no uncertainty interval in the output.
 
-| Cells compared | Ratio, actual to size-predicted Conversion Rate |
+| Cells compared (at 10,000+ Entrants) | Ratio, actual to expected Conversion Rate |
 |---|---|
-| 1st campaign | 0.87 |
-| 21st-or-later campaign | 1.04 |
+| 1st campaign | 0.83 |
+| 21st-or-later campaign | 1.08 |
 
-Sample: 71 to 2,984 campaigns per cell, 53 to 860 organizers.
+Sample across all cells: 81 to 4,472 campaigns per cell, 56 to 2,042 organizers. Only campaigns with the fields needed for the clean Conversion Rate and experience comparison are included.
 
-The one pattern that survives: first-time and early organizers running an unusually large campaign see a Conversion Rate below what size alone would predict, a real if modest inexperience penalty (table below). These two findings are not in conflict, they describe different sizes: no reliable effect at ordinary sizes, a real penalty only at the largest sizes for the newest organizers. Cite them together, useful when reviewing results for a large campaign run by a newer organizer.
+First-time and early organizers running an unusually large campaign show the largest downward departures from the expected rate:
 
-| Organizer experience (at 10,000+ Entrants) | Ratio, actual to predicted Conversion Rate | Campaigns | Organizers |
+| Organizer experience (at 10,000+ Entrants) | Ratio, actual to expected Conversion Rate | Campaigns | Organizers |
 |---|---|---|---|
-| First-time | 0.867 | 71 | 71 |
-| 2nd to 5th campaign | 0.864 | 133 | 99 |
+| First-time | 0.832 | 81 | 81 |
+| 2nd to 5th campaign | 0.838 | 142 | 107 |
 
-The penalty runs about 13%.
+The gaps are about 17% and 16%. Check a large campaign from a newer organizer against its own comparison group. These ratios do not establish that experience caused the difference.
 
 Source: `analysis/output/success_profiles.json` (`interactions.organizer_experience_by_performance_and_band`).
 
 ## Why a peer campaign in the same vertical outperforms
 
-From `vertical_profiles.json`'s best-quarter-versus-rest cut, by industry, on 13 tested industries. In 9 of the 13, the campaigns with the best quarter of Conversion Rate are run by organizers meaningfully deeper into their own platform history than the rest of that same industry (nth-campaign ratio, best quarter over rest, 1.15 or higher):
+From `vertical_profiles.json`'s best-quarter-versus-rest cut, by industry, on 21 tested industries. In 17 of the 21, the campaigns with the best quarter of Conversion Rate are run by organizers deeper into their own platform history than the rest of that industry (nth-campaign ratio of at least 1.15). Four industries reverse the pattern. Only industries with enough businesses for publication appear, and the source carries no uncertainty intervals.
 
 | Industry | Ratio (nth campaign, best quarter over rest) | Campaigns, best quarter / rest | Businesses, best quarter / rest |
 |---|---|---|---|
-| Software and SaaS | 9.8x | 31 / 93 | 13 / 44 |
-| Travel and events | 6.6x | 57 / 171 | 14 / 52 |
-| Apparel and fashion | 5.9x | 230 / 681 | 18 / 125 |
-| Home and garden | 4.7x | 119 / 348 | 14 / 91 |
-| Electronics and tech | 4.0x | 632 / 1,896 | 47 / 400 |
-| Gaming and esports | 3.5x | 591 / 1,773 | 126 / 622 |
-| Media and entertainment | 2.0x | 278 / 831 | 36 / 179 |
-| Retail and marketplace | 1.5x | 105 / 315 | 10 / 46 |
+| Software and SaaS | 3.5x | 135 / 396 | 46 / 175 |
+| Travel and events | 6.4x | 194 / 576 | 57 / 200 |
+| Apparel and fashion | 8.9x | 499 / 1,494 | 48 / 333 |
+| Home and garden | 5.0x | 271 / 804 | 49 / 192 |
+| Electronics and tech | 3.9x | 1,428 / 4,281 | 115 / 851 |
+| Gaming and esports | 3.0x | 2,487 / 7,461 | 490 / 2,022 |
+| Media and entertainment | 1.9x | 1,342 / 4,026 | 223 / 752 |
+| Retail and marketplace | 5.1x | 360 / 1,074 | 16 / 139 |
 
-Two industries reverse the pattern, both small cells, and two more are flat, following it neither way (table below). That is strong but not universal, one industry short of this skill's own 70% robustness bar, so read it as a pattern worth checking in a peer's own history, not a settled rule, and name the two reversals whenever it is cited.
+The reversals are toys, health and fitness, education and marketing agencies. Name those exceptions when citing the experience pattern.
 
-| Industry | Ratio | Campaigns | Organizers |
+| Industry | Ratio | Campaigns, best quarter / rest | Businesses, best quarter / rest |
 |---|---|---|---|
-| Toys, hobbies and collectibles (reverses) | 0.14x | 51 | 27 |
-| Sports and outdoors (reverses) | 0.8x | 92 | 49 |
-| Food and drink (flat) | ~1.1x | — | — |
-| Marketing agency (flat) | ~1.1x | — | — |
+| Toys, hobbies and collectibles | 0.46x | 332 / 993 | 104 / 195 |
+| Health, wellness and fitness | 0.64x | 201 / 597 | 61 / 139 |
+| Education | 0.06x | 247 / 738 | 58 / 87 |
+| Marketing agency | 0.55x | 101 / 294 | 29 / 50 |
 
-Campaign size does not explain it. Only 6 of the same 13 industries show the best-quarter campaigns even modestly larger than the rest of their industry, typical ratio 1.10, essentially flat. A peer's bigger campaign is not why it sees a higher Conversion Rate, its organizer's own history is the more consistent lead.
+Campaign size also differs. In 13 of the 21 industries the best-quarter campaigns are at least 15% larger, and the median size ratio across all industries is 1.27. Read size and organizer history together. This comparison does not isolate either as the cause of a higher Conversion Rate.
 
 Source: `analysis/output/vertical_profiles.json` (`top_quartile_vs_rest_by_industry`).
 
@@ -210,18 +209,18 @@ Invalid share is reported as a figure only, never scored. It varies sharply by i
 
 | Industry | Typical invalid share | Campaigns | Organizers |
 |---|---|---|---|
-| Crypto | 22.3% | 42,004 | 6,961 |
-| Media | 2.9% | 19,991 | 1,955 |
+| Crypto | 21.7% | 23,974 | 4,195 |
+| Media | 2.8% | 19,800 | 1,927 |
 
 Most of the country gap in invalid share is industry mix. The table reads each country's typical invalid share for all industries and again with crypto and SaaS organizers set aside.
 
 | Country | All industries | Crypto and SaaS excluded |
 |---|---|---|
-| India | 30.5% (5,802 campaigns, 825 organizers) | 4.2% (1,476 campaigns, 420 organizers) |
-| Japan | 22.6% (6,307 campaigns, 288 organizers) | 9.9% (1,027 campaigns, 137 organizers) |
-| Singapore | 19.8% (4,622 campaigns, 332 organizers) | 7.4% (1,142 campaigns, 141 organizers) |
-| Vietnam | 26.2% (3,578 campaigns, 746 organizers) | 19.1% (672 campaigns, 201 organizers) |
-| Turkiye | 15.8% (2,009 campaigns, 489 organizers) | 10.9% (926 campaigns, 204 organizers) |
+| India | 26.0% (3,867 campaigns, 646 organizers) | 3.6% (1,386 campaigns, 401 organizers) |
+| Japan | 21.4% (4,684 campaigns, 233 organizers) | 9.5% (935 campaigns, 124 organizers) |
+| Singapore | 18.5% (3,401 campaigns, 256 organizers) | 7.1% (1,088 campaigns, 127 organizers) |
+| Vietnam | 24.1% (2,337 campaigns, 525 organizers) | 18.4% (541 campaigns, 178 organizers) |
+| Turkiye | 13.4% (1,313 campaigns, 352 organizers) | 10.3% (881 campaigns, 194 organizers) |
 
 Vietnam and Turkiye keep most of their gap once crypto and SaaS are excluded. India, Japan and Singapore do not. Six percent of campaigns carry no invalid count and are left out of every figure on this page.
 
@@ -231,7 +230,7 @@ Source: `analysis/output/indicators.json` (`invalid_entry_share_by_industry`, `i
 
 | Figure that is off | Likely change | Skill |
 |---|---|---|
-| Entrants low for campaigns your size, Conversion Rate fine | Reach. The top fifth of campaigns had 25 times the Impressions of the bottom fifth at the same Conversion Rate. Promotion channels, partners, timing | giveaway-promotion-plan, giveaway-timing-and-duration |
+| Entrants low for campaigns your size, Conversion Rate fine | Reach. The top fifth of campaigns had 25 times the Impressions of the bottom fifth, with Conversion Rates of 28% and 25% (`analysis/output/context_checks.json`, `top_vs_bottom_quintile`). Promotion channels, partners, timing | giveaway-promotion-plan, giveaway-timing-and-duration |
 | Conversion Rate low on a campaign we can compare fairly | Landing fit: Prize appeal, too many actions, a mandatory action on the wrong network | giveaway-prize-picker, giveaway-entry-method-planner |
 | Actions per Entrant low | Entry mix and ordering, entry worth | giveaway-entry-method-planner |
 | The asset action (email, follow) underperformed | Make it the single mandatory action, cut the rest | giveaway-entry-method-planner |
@@ -260,5 +259,7 @@ A campaign that ran in November or December compares against its week as well as
 | Week | Conversion Rate |
 |---|---|
 | 48 to 51 | 35% to 41% |
-| 47 | 32% |
+| 47 | 33% |
 | Year typical | 35% |
+
+Source for the week table: `analysis/output/calendar.json` (`by_start_week.47` to `by_start_week.51`, `all.conv_clean`). Clean Conversion Rate samples are 845 to 1,562 campaigns per week and 39,462 for the year. Campaigns without the required timing and Impression fields are excluded.

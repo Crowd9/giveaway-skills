@@ -2,7 +2,7 @@
 name: giveaway-idea-generator
 description: "Generate or score giveaway concepts. Use for 'giveaway ideas', 'Instagram giveaway ideas', 'ideas for my Shopify store', 'win your cart', 'Christmas giveaway', 'ideas for our launch', '10k follower milestone', 'collaboration giveaway', or 'is my idea any good'. Recommend three concepts with hooks, mechanics and Prize directions, or evaluate the user's concept."
 metadata:
-  version: 1.3.31
+  version: 1.3.32
 ---
 
 # Giveaway Idea Generator

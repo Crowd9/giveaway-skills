@@ -3,7 +3,7 @@
 [![Checks](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml/badge.svg)](https://github.com/Crowd9/giveaway-skills/actions/workflows/checks.yml)
 [![Licence MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 
-Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 167,068 real campaigns. Ten skills cover the whole job, from the idea to the draw to the review afterwards. No code to write. Install once, then ask in plain English.
+Plan, run and draw a giveaway your audience will trust, with an AI assistant that has read 144,878 real campaigns. Ten skills cover the whole job, from the idea to the draw to the review afterwards. No code to write. Install once, then ask in plain English.
 
 Works with Claude Code, OpenAI Codex, Cursor and any assistant that reads `SKILL.md` files under the [Agent Skills specification](https://agentskills.io). Maintained by [Gleam](https://gleam.io), and the advice fits any giveaway platform.
 
@@ -171,7 +171,7 @@ Every message after the draw, in send order, in your voice.
 
 Your finished campaign read against 116,499 others in its own size band, from 100 Entrants up, and what to change next time.
 
-- A script that ranks twelve figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
+- A script that ranks 21 figures against all campaigns, your size band and your industry ("better than 70% of food and drink campaigns")
 - What the campaign produced (addresses, follows, joins, referrals) against the yield for its size, and what each one cost
 - Conversion read against the peer figure for your number of actions and your run length, with the impressions caveat applied
 - Each entry action ranked against every campaign that offered the same action, so you see which one carried the campaign
@@ -241,16 +241,16 @@ Most giveaway advice is somebody's opinion. These skills are built on 116,499 re
 Some of what that shows:
 
 - **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 382.
-- **Most campaigns are small and cheap.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
+- **The largest size band has the smallest typical Prize pool.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Stated Prize value per recorded email signup varied by industry.** Among campaigns offering email signup with every Prize valued in USD, music and media recorded 0.09 USD per signup and software 1.19.
 - **Larger stated Prize pools were associated with more Entrants.** Among campaigns with fully stated Prize values, ten times the Prize value came with about 2.2 times the Entrants. Stated value accounted for about 23% of the observed spread in Entrant counts, without establishing the effect of extra spending.
 - **Prize categories differed at similar stated values.** Among valued campaigns, tech hardware drew 42% more Entrants than typical for that stated value and a subscription drew 49% less.
-- **Entries per Entrant were similar across size bands.** The smallest band recorded 4.46 and the largest 5.28. Those averages alone cannot diagnose a small campaign's reach.
+- **Entries per Entrant were similar across size bands.** The smallest band recorded 4.09 and the largest 4.37. Those medians alone cannot diagnose a small campaign's reach.
 - **Reach separates a big campaign from a small one.** The top fifth of campaigns had 25 times the Impressions of the bottom fifth, for a Conversion Rate about two points apart.
 - **Longer Action lists were associated with lower Conversion Rate.** Among the ordinary campaigns compared, those carrying 11 or more entry Actions converted 31% of viewers against 44% for a short list. They also drew 17% more Entrants.
 - **Frequent repeat campaigns differed from first campaigns.** Among campaigns compared for repeat timing, those starting within 30 days of the previous campaign drew 42% more Entrants than first campaigns and converted 38% of viewers against 31%.
-- **December had the most starts and the highest observed monthly Conversion Rate.** Its campaigns converted 30.8% of viewers against 26.9% across the year. In the holiday comparison of ordinary campaigns lasting at most two weeks without repeatable bonus Actions, the two weeks before Christmas recorded 41% Conversion Rate.
+- **December had the most starts and the highest observed monthly Conversion Rate.** Its campaigns converted 30.9% of viewers against 26.9% across the year. In the holiday comparison of ordinary campaigns lasting at most two weeks without repeatable bonus Actions, the two weeks before Christmas recorded 41% Conversion Rate.
 - **Secret Code campaigns recorded more Entrants without lower Conversion Rate in this comparison.** Among 1,594 campaigns from 563 businesses offering the Action, Entrants were more than a quarter higher than in the comparison group. This is an observed association, and neither delivery effort nor promotion cost was measured.
 - **Music gear campaigns drew nearly three times the Entrants of gift card or cash campaigns.** In the Prize-category comparison, music gear campaigns drew a typical 1,290 Entrants against 450 for a gift card or cash, and 93% more crowd than their Prize price predicts. Regulated goods draw the most of all at 2,133.
 - **The Prizes that feel most generous sit at the bottom of the table.** A trip, a stay or a pair of tickets drew 40% less crowd than its price band predicts, and a subscription 49% less, the two lowest rows for crowd per Prize dollar.

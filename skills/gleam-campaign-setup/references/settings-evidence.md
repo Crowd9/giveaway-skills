@@ -495,9 +495,9 @@ Source: `analysis/output/text_and_context.json` keys `question_types`, `visit_de
 
 ## Settings the other skills already measured
 
-- Email opt-in checkbox on: 89% of Entrants complete the email action against 101 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 92% against 85% in the table above because it compares like with like on campaign size and industry, where the table above pools every campaign. Quote whichever base the answer is about and say which one it is.
-- Validated-answer question: a typical 17% of entries come back invalid, because wrong answers count as invalid (giveaway-entry-method-planner).
-- Custom terms: written by 49% of campaigns (giveaway-winner-structure).
+- Email opt-in checkbox on: 89% of Entrants complete the email action against 100 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 92% against 85% in the table above because it uses the subset with no repeatable action and runs of 14 days or less (2,726 checkbox-on and 7,734 checkbox-off campaigns, `analysis/output/extra_cuts.json`, `optin_email_uptake_clean`), while the table above pools all run lengths. Quote whichever base the answer is about and say which one it is.
+- Validated-answer question: a typical 3% of entries come back invalid in the fair-comparison subset (509 campaigns, 77 businesses, `analysis/output/extra_cuts.json`, `invalid_validated_question_clean`). This subset excludes long runs and repeatable actions.
+- Custom terms: written by 39% of campaigns (`analysis/output/extra_cuts.json`, `custom_terms_share_all`).
 - Eleven or more actions: 17% more Entrants, with 31% of viewers entering against 44% for one to three, among campaigns with no repeatable action and runs of 14 days or less (6,762 and 10,802 campaigns respectively, `analysis/output/comparisons.json`, `method_count_clean`, also in giveaway-entry-method-planner).
 
 Source for the invalid-entry share: `analysis/output/invalid_share.json` (`distribution`, `by_share_action`).

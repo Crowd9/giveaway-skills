@@ -168,9 +168,9 @@ This campaign-sequence cut from `field_cuts.json` (`by_campaign_sequence`) count
 
 ## Inferred Prize values from text
 
-To reduce the 61% gap we parsed explicit amounts from Prize names ("$4,000 RTX PC"), from "worth / valued at / MSRP" phrases in descriptions, and from campaign titles of single-Prize campaigns. Validation against listings that carried both a stated and a parsed value agreed within ±20% most of the time. Disagreements are mostly totals across several Prizes, marketing round numbers, or a cash component inside a larger bundle. The "$" symbol is recorded as "USD?" because it is ambiguous between USD, CAD, AUD and others, so parsed-only "$" values are kept separate from stated values and never used in a listing-level claim.
+To reduce the 62% gap we parsed explicit amounts from Prize names ("$4,000 RTX PC"), from "worth / valued at / MSRP" phrases in descriptions, and from campaign titles of single-Prize campaigns. Validation against listings that carried both a stated and a parsed value agreed within ±20% most of the time. Disagreements are mostly totals across several Prizes, marketing round numbers, or a cash component inside a larger bundle. The "$" symbol is recorded as "USD?" because it is ambiguous between USD, CAD, AUD and others, so parsed-only "$" values are kept separate from stated values and never used in a listing-level claim.
 
-Coverage rises from 40.5% to 48.5% of listings.
+Coverage rises from 37.9% to 46.7% of listings.
 
 <!-- generated:ev_parsing -->
 | Parsing measure | Value |
@@ -187,7 +187,7 @@ Category typical figures for stated values are given in the taxonomy as referenc
 
 ## Prize value, adjusted
 
-A  field cut confirms the coverage gap holds at scale: 38.8% of Prize listings carry a stated value, and 99.9% of those are USD. Every typical figure below rests on that self-selected minority.
+A  field cut confirms the coverage gap holds at scale: 37.9% of Prize listings carry a stated value, and 99.8% of those are USD. Every typical figure below rests on that self-selected minority.
 
 Campaigns whose every Prize carried a stated USD value: 42,953, from 9,089 businesses. Prize cost per Entrant is the stated pool divided by Entrants, and stated value is what the organizer wrote, which need not be what they paid.
 
@@ -288,7 +288,7 @@ By Prize category:
 | Discount or coupon | 85 | 16% | 300 | 50 to 750 | 0.84 |
 <!-- /generated -->
 
-Regulated goods and vehicle Prizes state a value most often (64% and 60%), consistent with retailers who already price these items for sale. Experience, travel and tickets carries the highest stated USD per Entrant of any cut here, 1.24 USD.
+Regulated goods and vehicle Prizes state a value most often (64% and 60%), consistent with retailers who already price these items for sale. Experience, travel and tickets carries the highest stated USD per Entrant of any Prize category here, 1.24 USD.
 
 Toys and collectibles states a value least often, so its typical pool describes a small, self-selected group [14% of the category, 298 valued campaigns from 159 businesses].
 
@@ -385,7 +385,7 @@ Region is the top-level domain of the business's site, so a .com business in Man
 | Poland | 50 | 462 | 44% | 5.52 |
 <!-- /generated -->
 
-Brazil has twice the Conversion Rate of the global-domain rate, 54% against 26%.
+Brazil has a higher Conversion Rate than the global-domain group, 57% against 34%.
 
 <!-- generated:ev_language -->
 | Language guess | Campaigns | Entrants | Conversion Rate | Entries per Entrant |
@@ -449,11 +449,11 @@ Flags found by text pattern in the Prize description, in the campaigns we can co
 
 ## Classification limits
 
-- Prize categories come from name-pattern rules plus an AI-assisted label pass on the names the rules missed. 6.7% of Prize listings remain unclassified and 6.0% are placeholders ("1st Prize", or a campaign title reused as the Prize name). Per campaign the gap is wider, because a campaign takes its category from its Prize listings and many have none that classify: 31,365 of the 117,329 campaigns sit in other or unclassified and 5,199 in placeholder names, so 31% of campaigns carry no usable Prize category and other or unclassified is the largest category in the data, ahead of tech hardware at 20,271. That gap is not a backlog. The unclassified names are a long tail: 52,928 listings across 37,143 distinct names, where the forty most repeated names cover 7.2% and no single word appears in more than 1.6%, so no extra pattern rule reaches them. Reading them instead was tested and measured. Two independent passes over the same 200 names, both working from the same category definitions, agreed on 50% of them, and a confidence gate did not rescue it: where both passes called themselves confident, agreement reached 66%. A Prize name a business typed is often too thin to place, so the honest reading of the unclassified third is that it cannot be classified from the name, and every category figure in this skill describes the two thirds that can. Label-pass categories are an AI model's inference over business-typed text in many languages, spot-checked but not systematically measured for accuracy.
+- Prize categories come from name-pattern rules plus an AI-assisted label pass on the names the rules missed. 24.2% of Prize listings remain unclassified and 4.4% are placeholders ("1st Prize", or a campaign title reused as the Prize name). The campaign-level cut assigns one primary category to each campaign: 28,097 of the 116,499 campaigns sit in other or unclassified and 4,838 in placeholder names, so 28% of campaigns carry no usable Prize category and other or unclassified is the largest category in the data, ahead of tech hardware at 20,219. That gap is not a backlog. The unclassified names are a long tail: 52,928 listings across 37,143 distinct names, where the forty most repeated names cover 7.2% and no single word appears in more than 1.6%, so no extra pattern rule reaches them. Reading them instead was tested and measured. Two independent passes over the same 200 names, both working from the same category definitions, agreed on 50% of them, and a confidence gate did not rescue it: where both passes called themselves confident, agreement reached 66%. A Prize name a business typed is often too thin to place, so the honest reading of the unclassified share is that it cannot be classified from the name, and every category figure in this skill describes the classified portion. Label-pass categories are an AI model's inference over business-typed text in many languages, spot-checked but not systematically measured for accuracy.
 - The own-product flag is a word-overlap heuristic with both false positives and false negatives.
-- Crypto detection is conservative on purpose. The ambiguous campaigns probably include some regular giveaways and some crypto ones [1,251 of them]. The label pass caught token names the rules had missed, but non-English crypto campaigns (an Arabic-language token airdrop, an NFT platform's mystery box) were seen among the campaigns behind these numbers during spot checks, so a small residual remains.
+- Crypto detection is conservative on purpose. The current ambiguous segment contains no campaigns (`analysis/output/benchmarks.json`, `excluded_ambiguous.campaigns`). The label pass caught token names the rules had missed, but non-English crypto campaigns (an Arabic-language token airdrop, an NFT platform's mystery box) were seen among the campaigns behind these numbers during spot checks, so a small residual remains.
 
-Categorization draws on 49,511 listings from name-pattern rules plus 8,553 more from the label pass after dropping low-confidence labels. Rules alone would leave about 21% unclassified.
+The current source labels all 170,599 Prize records as rule-classified (`analysis/output/benchmarks.json`, `ordinary_benchmark.category_source`). Unclassified and placeholder records remain in that total.
 
 ## Company profile data (thin)
 

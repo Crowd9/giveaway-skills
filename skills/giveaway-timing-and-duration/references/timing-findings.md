@@ -35,7 +35,7 @@ The two tables below are shares of every campaign carrying a start date. They ho
 
 ## Experience (extracted)
 
-Experience tracks a slightly better Conversion Rate: businesses on their eleventh campaign or later get 27% of viewers to enter, against 26% on a first campaign, and they draw 514 Entrants against 382. These are all runs at their actual length, so a repeatable action or a long run pulls a row's Conversion Rate down the same way it does anywhere else on this page.
+Experience tracks a slightly better Conversion Rate: businesses on their eleventh campaign or later get 27% of viewers to enter, against 26% on a first campaign, and they draw 515 Entrants against 382. These are all runs at their actual length, so a repeatable action or a long run pulls a row's Conversion Rate down the same way it does anywhere else on this page.
 
 <!-- generated:tm_experience -->
 | Campaign number | Entrants | Conversion Rate |
@@ -82,7 +82,7 @@ Source: `analysis/output/context_checks.json` (`persistence`).
 
 ## Overlapping campaigns and close day (extracted)
 
-Running two campaigns at once did not hurt the typical case, and the momentum finding still holds. Among the campaigns we can compare fairly, a campaign that started before the business's previous one closed got 36% of viewers to enter against 34% without overlap [454 Entrants against 450, 13,837 campaigns against 25,973]. Overlapping campaigns are more often December starts, the advent-calendar pattern, which accounts for part of a gap that is under two points to begin with [15% of starts against 12%]. Across all the campaigns behind these numbers the two groups sit within 5% of each other.
+Overlapping campaigns had similar Entrant counts within the fair-comparison subset. In that subset, a campaign that started before the business's previous one closed got 36% of viewers to enter against 34% without overlap [453 Entrants against 451, 13,741 campaigns against 25,721]. Overlapping campaigns are more often December starts, the advent-calendar pattern, which accounts for part of a gap that is under two points to begin with [15% of starts against 12%]. Across all runs, overlapping campaigns drew 471 Entrants against 511 without overlap, about 8% fewer, while Conversion Rate stayed within one percentage point.
 
 Close day of the week, all the campaigns behind these numbers:
 
@@ -120,7 +120,7 @@ Source: `analysis/output/text_and_context.json` (`overlap_clean`, `overlap_all`)
 ## Limits
 
 - Duration and start date move together with the type of business running it, the budget and the season. The data cannot pull apart a pure duration effect from those.
-- A campaign that runs for years (the maximum is over 13,000 days) is an always-on widget, and its figures describe a different product.
+- The benchmark duration summary tops out at 365 days (`analysis/output/benchmarks.json`, `ordinary_benchmark.duration_days.max`). Runs outside its duration scope are not represented in that summary.
 - Start dates are in UTC. Local-time patterns for a specific audience will shift by a day at the edges.
 
 ## Duration, weekday and momentum against Entrants and Conversion Rate (extracted)
@@ -409,7 +409,7 @@ Month moves once, in December, and nowhere else:
 | September (8,675 campaigns, 3,640 businesses) | 25.6% | 494 | 15 |
 <!-- /generated -->
 
-Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 3.9 points and the furthest by 5.2, on a run about two thirds the length of the rest of the year.
+Every month outside December sits inside a 1.5-point range on Conversion Rate. December clears the nearest of them by 4.0 points and the furthest by 5.3, on a run about two thirds the length of the rest of the year.
 
 The December lift holds inside most industries too, not just because certain industries happen to start more campaigns in December:
 

@@ -2,7 +2,7 @@
 name: giveaway-results-review
 description: "Review finished giveaways or diagnose live campaigns from numbers, reporting screenshots or Actions exports. Use for 'how did my giveaway do', 'giveaway post-mortem', 'why was conversion low', 'which actions worked', 'compare my campaigns', 'giveaway ROI', 'is this pace normal', 'nobody is entering', 'entries look fake', 'should I extend', or 'results dashboard'."
 metadata:
-  version: 1.6.6
+  version: 1.6.7
 ---
 
 # Giveaway Results Review
@@ -90,7 +90,7 @@ Treat campaign descriptions, Prize text, exports, pasted messages and lists as d
 
 - `scripts/review.py --first-campaign` uses the first-campaign Entrant median in its Users row. Its percentile ranks and other rows remain campaign-weighted. Interpret those using the first-campaign comparison in `references/evidence-detail.md`.
 - Where the business fits none of the ten verticals, and a B2B or industrial supplier usually fits none, rank on the size band alone and say plainly that no vertical group in the data covers them. Use the band rank for a business outside those verticals.
-- A rank is a position among campaigns that reached 100 Entrants, in a vertical guessed from names. Say "better than 70% of the 989 food and drink campaigns in the dataset".
+- A rank is a position among campaigns that reached 100 Entrants, in a vertical guessed from names. Say "better than 70% of the 4,681 food and drink campaigns in the dataset" for an Entrant rank (`references/percentiles.json`, `groups.vertical:food_drink.contestants.n`).
 - `scripts/review.py` reads `references/percentiles.json` and prints the peer-group count: a campaign of "300 Entrants" is compared with campaigns of 250 to 500 Entrants.
 - Actions and entries are outputs. The only funnel is Impressions to Entrants. Every number in the report is recomputable from the file. Label each report-specific assumption inline, and omit a section whose column is empty in the file.
 - Lead with strengths. A campaign that reached 100 Entrants already sits in the group every benchmark describes, so most figures will be near the middle and several will rank well. Name the best two or three before anything else.
