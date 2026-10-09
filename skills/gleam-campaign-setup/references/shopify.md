@@ -21,22 +21,22 @@ Five minutes.
 
 ## What the dataset shows for Shopify stores
 
-From the campaign data, Shopify stores with a labelled organizer site and 100 or more Entrants.
+From the campaign data, stores with a labelled organizer site and 100 or more Entrants. Product count, price and currency comparisons cover Shopify campaigns with that store attribute recorded. The platform comparison covers campaigns labelled Shopify or WooCommerce. Missing attribute coverage is not reported for these cuts.
 
-Bigger stores, pricier stores and Australian-currency stores offer email more than their counterparts, and Shopify stores offer email more but ask for fewer actions than WooCommerce stores.
+The 1,000+ product group recorded a typical ten-day run. The under-20 USD price group had longer runs and offered email more often than the 200+ USD group. Australian-currency stores offered email more often than US-currency stores. Shopify campaigns offered email more often than WooCommerce campaigns and recorded fewer Entries per Entrant. That measure does not count Entry Methods or justify shortening an Action list. These are historical comparisons, not predictions of what changing a setting will achieve.
 
 | Comparison | Group | Email offered | Other | Campaigns (businesses) |
 |---|---|---|---|---|
-| Product count | 1,000+ products | 88.8% | 1-day run | 429 (42) |
-| | 50 to 199 products | 48.8% | 12-day run | 443 (127) |
-| Price | 200 USD and over | 76.4% | 28-day run, the longest and highest of the four price groups | 144 (60) |
-| | Under 20 USD | 67.3% | 26-day run | 98 (36) |
-| Country | Australian-currency | 91.3% | - | 126 (55) |
-|  | US-currency | 54.3% | - | 1,332 (268) |
-| Platform | Shopify | 59.0% | 3.20 actions per Entrant | 1,689 (423) |
-| | WooCommerce | 44.7% | 4.72 actions per Entrant | 2,309 (468) |
+| Product count | 1,000+ products | 80.7% | 10-day run | 879 (98) |
+| | 50 to 199 products | 48.5% | 11-day run | 892 (245) |
+| Price | 200 USD and over | 62.0% | 21-day run | 300 (138) |
+| | Under 20 USD | 73.9% | 28-day run | 410 (94) |
+| Currency | Australian dollars | 82.9% | - | 251 (112) |
+| | US dollars | 51.3% | - | 2,635 (555) |
+| Platform | Shopify | 53.3% | 3.76 Entries per Entrant | 3,997 (937) |
+| | WooCommerce | 39.6% | 4.54 Entries per Entrant | 7,660 (1,107) |
 
-Source: `analysis/output/industries.json`, shopify_store_size, shopify_price_band, shopify_currency, by_store_platform.
+Source: `analysis/output/industries.json`, shopify_store_size, shopify_price_band, shopify_currency, by_store_platform. Each row counts campaigns and distinct businesses. A median describes the typical campaign in that group.
 
 ## What the docs do not cover
 

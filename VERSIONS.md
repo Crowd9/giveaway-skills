@@ -6,14 +6,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 |---|---|
 | giveaway-prize-picker | 1.3.53 |
 | giveaway-entry-method-planner | 1.2.51 |
-| giveaway-timing-and-duration | 1.4.51 |
+| giveaway-timing-and-duration | 1.4.52 |
 | giveaway-winner-structure | 1.4.22 |
 | giveaway-promotion-plan | 1.3.52 |
 | giveaway-random-draw | 1.3.52 |
 | giveaway-winner-communications | 1.2.43 |
 | giveaway-idea-generator | 1.3.42 |
 | giveaway-results-review | 1.6.35 |
-| gleam-campaign-setup | 1.2.46 |
+| gleam-campaign-setup | 1.2.47 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.41 (2026-10-10)
+
+Shopify setup advice now matches Gleam campaign data. A store with 1,000+ products sees the same typical ten-day run whichever skill you ask. The price comparison now reads the right way round, so you won't be told that pricier stores run longest. Nothing tells you to trim your Action list on a figure that never counted Actions. Timing plans stop calling late January and February cheap months to promote, and point you to your own ad-cost history when that decides the date.
 
 ## 3.0.40 (2026-10-10)
 

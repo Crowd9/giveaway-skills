@@ -304,6 +304,24 @@
      "fail_example": "Cut it below 150 words because the data proves that longer descriptions reduce Conversion Rate."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "We use Gleam on a Shopify store with 1,000 products. What historical duration should we compare with? Do stores in the 200+ USD price group have the longest campaigns and offer email most often?",
+   "expected_output": "Uses ten days as the historical median for the 1,000+ product Shopify group (879 campaigns, 98 businesses). Rejects the claim that the 200+ USD price group has the longest runs or highest email offering: it records 21 days and 62.0% (300 campaigns, 138 businesses), below the under-20 USD group at 28 days and 73.9% (410 campaigns, 94 businesses). Keeps these separate populations observational and does not forecast the effect of changing duration.",
+   "assertions": [
+    "Uses ten days as the historical median for the 1,000+ product Shopify group (879 campaigns, 98 businesses). Rejects the claim that the 200+ USD price group has the longest runs or highest email offering: it records 21 days and 62.0% (300 campaigns, 138 businesses), below the under-20 USD group at 28 days and 73.9% (410 campaigns, 94 businesses). Keeps these separate populations observational and does not forecast the effect of changing duration."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "shopify-duration-and-price-ranking",
+     "criterion": "Uses ten days as the historical median for the 1,000+ product Shopify group (879 campaigns, 98 businesses). Rejects the claim that the 200+ USD price group has the longest runs or highest email offering: it records 21 days and 62.0% (300 campaigns, 138 businesses), below the under-20 USD group at 28 days and 73.9% (410 campaigns, 94 businesses). Keeps these separate populations observational and does not forecast the effect of changing duration.",
+     "pass_example": "The 1,000+ product group had a ten-day median across 879 campaigns from 98 businesses. The 200+ USD group recorded 21 days and 62.0% email offered across 300 campaigns from 138 businesses, compared with 28 days and 73.9% across 410 campaigns from 94 businesses in the under-20 USD group. These observations do not predict the effect of changing your duration. Missing attribute coverage is not reported.",
+     "fail_example": "Large Shopify stores typically run for one day, and the 200+ USD group has the longest runs and highest email offering."
+    }
+   ]
   }
  ]
 }

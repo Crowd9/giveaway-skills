@@ -27,6 +27,6 @@ Advice. Fill in the dates and delete what does not apply.
 ## Seasonal notes
 
 - December is the busiest month for launches in the data, holding 10.4% of starts against 8.3% for an even month. December campaigns get 30.9% to enter against 25.6% to 26.9% for every other month, on a run of 10 days against 14 or 15 (12,068 campaigns, 3,958 businesses). More competition, more attention, slower shipping. Close before the shipping cut-off if the Prize must arrive for a holiday. [Extracted from `analysis/output/prize_timing_cuts.json` (`by_start_month`), the start month table in `holiday-benchmarks.md` and `timing-findings.md`.]
-- Late January and February are quiet and cheap for attention.
+- If low advertising cost determines the launch date, use your own seasonal channel-cost history. Campaign start counts do not measure advertising prices.
 - Align with the audience's calendar, not the business's. A back-to-school Prize in the week schools return, a gardening Prize in early spring for that hemisphere.
 - Avoid closing on a public holiday or a weekend when nobody on the team will draw and respond. The Conversion Rate itself does not drop on a weekend or public-holiday close once run length is held fixed, so team availability is the reason to plan around it, not a performance cost.
