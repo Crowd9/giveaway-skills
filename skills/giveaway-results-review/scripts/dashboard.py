@@ -561,6 +561,7 @@ def gather(a):
     worth = dict(kv.split("=", 1) for kv in a.wide_worth.split(",")) if getattr(a, "wide_worth", None) else {}
     rows = CR.load(a.export, mapping, getattr(a, "wide_unit", None), worth)
     class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; coverage_start = getattr(a, "coverage_start", None); coverage_end = getattr(a, "coverage_end", None); partners = a.partners.split(",") if a.partners else None
+    A.complete_all_action = getattr(a, "complete_all_action", None)
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
     b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
@@ -676,6 +677,8 @@ def render(D, W, S, a):
     else:
         topline += '<p>Actual costs unavailable. Stated Prize value alone does not establish spending.</p>'
     speed = (f"Of {n(Sp['multi'])} multi-action Entrants, first to last {Sp['median_span_min']:.0f} minutes typical, {Sp['within_10_min']:.0%} done within 10 minutes, {Sp['one_sitting']:.0%} in one sitting." if Sp.get("multi") else "")
+    if Sp["completed_everything"] is not None:
+        speed += f" Completed everything (explicitly mapped action): {n(Sp['completed_everything'][0])} Entrants ({Sp['completed_everything'][1]:.0%})."
     referred = n(V["referred_entrants"]) if V["graph_complete"] else "unavailable (referral relationships incomplete)"
     journey = f"Entered {n(N)} (100%), completed more than one action {n(N - E['1'][0])} ({(N - E['1'][0]) / N:.0%}), shared {n(V['sharers'])} ({V['participation']:.0%}), referred new Entrants {referred}. Referrals are an output per sharer, never a stage, so this is not a funnel."
     channels = table(["Channel", "Entrants", "Share", "Actions", "Depth vs average", "Invalid rate"], [(c[0], n(c[1]), pct(c[2]), n(c[3]), f"{c[4]:.2f}x" if c[4] is not None else "unavailable", f"{c[5]:.1%}" if c[5] is not None else "unavailable") for c in R["channels"]])
@@ -770,6 +773,20 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical completions per Entrant, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    # The explicit mapping reaches the report and dashboard without title inference.
+    bonus_path = os.path.join(d, "bonus.csv")
+    with open(bonus_path, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status"])
+        wr.writerows([["a@example.com", "Complete daily bonus", 1, "Valid"],
+                      ["a@example.com", "Complete daily bonus", 1, "Valid"],
+                      ["b@example.com", "Subscribe", 1, "Valid"],
+                      ["b@example.com", "Complete daily bonus", 1, "Invalid"]])
+    class Bonus(A): export = bonus_path
+    assert gather(Bonus)["R"]["speed"]["completed_everything"] is None
+    class MappedBonus(Bonus): complete_all_action = "Complete daily bonus"
+    mapped_bonus = gather(MappedBonus)
+    assert mapped_bonus["R"]["speed"]["completed_everything"] == (1, 0.5)
+    assert "Completed everything (explicitly mapped action): 1 Entrants (50%)." in render(mapped_bonus, words_of(words), site_of(None), MappedBonus)
     repeated = os.path.join(d, "repeated.csv")
     with open(repeated, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
@@ -1017,6 +1034,7 @@ def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--map", help="column mapping, e.g. who=Email Address,action=Entry Type,Entries=Points")
+    ap.add_argument("--complete-all-action", help="exact exported title confirmed as the configured complete-all action; no title inference")
     ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
     ap.add_argument("--wide-worth", help="Entries per completion for each populated wide method, e.g. Join newsletter=5")
     ap.add_argument("--words", help="words.json written by the reviewer"); ap.add_argument("--site", help="site.json from the Reporting tab"); ap.add_argument("--out", default="dashboard.html")

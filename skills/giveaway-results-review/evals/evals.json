@@ -335,6 +335,42 @@
      "fail_example": "Both inputs mean an address is worth $4, so set --benchmark-cpl 4 in either case and report the revenue as alternative acquisition cost."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "We are on day 85 of a 124-day giveaway. Nearly all entries arrived in week one and the last month is quiet. Should we close today and draw? The published closing date is still day 124 and I have not checked whether the terms permit a change.",
+   "expected_output": "Keep the published day-124 closing date unless a permitted change is established. Frontloaded activity does not authorize an earlier close or draw. Route any proposed date change through the published-terms check before recommending it. A fresh push or accepting the quiet period remains possible.",
+   "assertions": [
+    "Keep the published day-124 closing date unless a permitted change is established. Frontloaded activity does not authorize an earlier close or draw. Route any proposed date change through the published-terms check before recommending it. A fresh push or accepting the quiet period remains possible."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "live-published-close",
+     "criterion": "Keep the published day-124 closing date unless a permitted change is established. Frontloaded activity does not authorize an earlier close or draw. Route any proposed date change through the published-terms check before recommending it. A fresh push or accepting the quiet period remains possible.",
+     "pass_example": "Keep the day-124 close. Check the published terms before considering any date change, and draw only after the permitted entry window ends.",
+     "fail_example": "The campaign is effectively finished, so close today and draw."
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "prompt": "The export has two valid Entrants. Person A visited our shop and completed “Complete daily bonus” twice. Person B subscribed to our newsletter. Person B also has an invalid daily-bonus row. Can I say half completed everything? I have not supplied the action configuration. If I later confirm a unique configured complete-all action title, how should the report count it?",
+   "expected_output": "Treat the custom bonus as named-action participation only. No complete-all claim is supported by its title, including titles containing complete, bonus or everything. Require an exact unique title confirmed in campaign configuration via --complete-all-action before reporting complete-all participation. A mapped action counts distinct valid Entrants once regardless of repeats and excludes invalid rows. Keep ordinary per-action participation available.",
+   "assertions": [
+    "Treat the custom bonus as named-action participation only. No complete-all claim is supported by its title, including titles containing complete, bonus or everything. Require an exact unique title confirmed in campaign configuration via --complete-all-action before reporting complete-all participation. A mapped action counts distinct valid Entrants once regardless of repeats and excludes invalid rows. Keep ordinary per-action participation available."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "complete-all-mapping",
+     "criterion": "Treat the custom bonus as named-action participation only. No complete-all claim is supported by its title, including titles containing complete, bonus or everything. Require an exact unique title confirmed in campaign configuration via --complete-all-action before reporting complete-all participation. A mapped action counts distinct valid Entrants once regardless of repeats and excludes invalid rows. Keep ordinary per-action participation available.",
+     "pass_example": "One of two valid Entrants completed the named daily bonus. That does not establish that they completed every required action. Confirm the configured complete-all action and its unique exported title before mapping it. The mapped count includes each valid participant once and excludes invalid completions.",
+     "fail_example": "Half completed everything because the action name contains Complete and bonus."
+    }
+   ]
   }
  ]
 }

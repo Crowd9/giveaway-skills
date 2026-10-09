@@ -7,6 +7,7 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 - Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets only the public summary described below. It cannot reproduce the ranking.
 - Apply the duplicate and weighting rules in the published terms. Before launching a new campaign, decide whether each person gets one chance or bonus entries add up.
 - List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries confirmed to breach a published rule on automation. Investigate flags before excluding anyone.
+- Confirm whether one person may win multiple Prizes before committing. The script gives each person at most one Prize across all tiers and uses distinct people for backups, even when weights represent several earned Entries. Repeat-win terms need a compatible method, selected and checked against those terms before any commitment or draw. Keep the promised policy and chances.
 - Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
 - Choose and publish the future seed source before its value exists, alongside the commitment. Use the announced value only after it becomes available.
 
@@ -31,7 +32,7 @@ Do not let the script or the organizer generate the seed. A generated seed can b
 
 ## Running it
 
-Write the rules once into a small JSON file so the commit and the draw cannot disagree.
+Use these commands only after confirming that the terms limit each person to one Prize. Write the rules once into a small JSON file so the commit and the draw cannot disagree. Include the settled one-Prize-per-person policy in the published rules beside the commitment.
 
 ```json
 {

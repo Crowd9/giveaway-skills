@@ -92,3 +92,9 @@ Live case 4 now explicitly observes day 3 while asking on day 4, with the start 
 ## 10 October 2026, round-sixteen content regressions
 
 Added a meaning-review case for the corrected guidance. These evaluation specifications have not been run against a model. Repository validation checks their structure only.
+
+## 10 October 2026, round-twenty regressions
+
+Added meaning-review cases for preserving a live campaign's published closing date and requiring a configured complete-all mapping. These cases have not been run against a model. Repository validation checks their structure only.
+
+Both `campaign_report.py --self-test` and `dashboard.py --self-test` passed with ResourceWarnings treated as errors. The report tests custom daily-bonus, survey and complete-everything titles, explicit mapping, repeated completions, invalid rows, zero valid completions and unmatched mappings. The dashboard tests mapping propagation, unique valid participants and rendering without timestamps.

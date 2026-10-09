@@ -285,6 +285,25 @@
      "fail_example": "Adding a post-visit question will cost you about a sixth of completions, and making email mandatory will save money per completion."
     }
    ]
+  },
+  {
+   "id": 13,
+   "prompt": "My Gleam campaign description is 200 words, clearly covering the Prize, delivery area, collection dates and necessary fulfilment details with no repetition. Must I cut it below 150 words to improve Conversion Rate?",
+   "expected_output": "Retain the necessary details and suggest only targeted edits. Treat 150 words as an optional drafting preference, not an evidence-backed cutoff or a promised Conversion Rate improvement.",
+   "assertions": [
+    "Retains essential Prize and fulfilment details rather than enforcing a universal word limit.",
+    "Does not claim the dataset proves a 150-word cutoff or predicts a Conversion Rate improvement."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "description-length-preference",
+     "criterion": "Retains necessary Prize and fulfilment details, treating 150 words only as an optional drafting preference, without claiming a proven cutoff or predicted Conversion Rate gain.",
+     "pass_example": "Keep the clear 200-word description and its delivery details. Use 150 words only as a starting point when useful. The comparison does not establish a cutoff.",
+     "fail_example": "Cut it below 150 words because the data proves that longer descriptions reduce Conversion Rate."
+    }
+   ]
   }
  ]
 }

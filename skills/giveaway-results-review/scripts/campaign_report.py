@@ -203,6 +203,9 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
     return rows
 
 def analyze(rows, a):
+    complete_all_action = getattr(a, "complete_all_action", None)
+    if complete_all_action is not None and (not complete_all_action.strip() or not any(r["Action"] == complete_all_action for r in rows)):
+        raise ValueError("--complete-all-action must exactly match an exported action title confirmed in the campaign configuration")
     valid = [r for r in rows if r["_valid"]]; invalid = [r for r in rows if not r["_valid"]]
     people = collections.defaultdict(list)
     for r in valid: people[r["_who"]].append(r)
@@ -226,9 +229,9 @@ def analyze(rows, a):
         if any(r["_when"] is None for r in rs): continue
         ts = [r["_when"] for r in rs]
         multi += 1; span = (max(ts) - min(ts)).total_seconds(); spans.append(span); ten += span <= 600; sitting += span <= 7200
-    bonus_all = [r for r in valid if "complet" in r["Action"].lower() and ("bonus" in r["Action"].lower() or "everything" in r["Action"].lower())]
+    bonus_all = {r["_who"] for r in valid if r["Action"] == complete_all_action}
     R["speed"] = {"multi": multi, "eligible": eligible, "missing": eligible - multi, "median_span_min": (med(spans) or 0) / 60, "within_10_min": ten / multi if multi else None, "one_sitting": sitting / multi if multi else None,
-                  "completed_everything": (len({r["_who"] for r in bonus_all}), len({r["_who"] for r in bonus_all}) / n) if bonus_all else None}
+                  "completed_everything": (len(bonus_all), len(bonus_all) / n) if complete_all_action is not None else None}
     # actions: completions, unique, share, completion rate, median seconds
     per = collections.OrderedDict(); gaps = collections.defaultdict(list)
     for r in valid:
@@ -449,11 +452,13 @@ def render(R, a):
     E = R["engagement"]; w("\nEngagement by actions per Entrant: " + ", ".join(f"{k}: {v[0]:,} ({v[1]:.0%})" for k, v in E.items()) + ".")
     S = R["speed"]
     if S["multi"]:
-        w(f"Speed: among {S['multi']:,} of {S['eligible']:,} multi-action Entrants with complete usable timestamps, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours)." + (f" Completed everything: {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%})." if S["completed_everything"] else ""))
+        w(f"Speed: among {S['multi']:,} of {S['eligible']:,} multi-action Entrants with complete usable timestamps, typical first-to-last span {S['median_span_min']:.0f} minutes, {S['within_10_min']:.0%} done within 10 minutes, {S['one_sitting']:.0%} in one sitting (under 2 hours).")
     elif S["eligible"]:
         w("Speed unavailable: no multi-action Entrants have complete usable timestamps.")
     if S["missing"]:
         w(f"Speed excludes {S['missing']:,} of {S['eligible']:,} multi-action Entrants with missing or unusable timestamps; the covered subset may not represent all Entrants.")
+    if S["completed_everything"] is not None:
+        w(f"Completed everything (explicitly mapped action): {S['completed_everything'][0]:,} entrants ({S['completed_everything'][1]:.0%}).")
     ins = insights(R); V = R["viral"]
     w("\nInsights:\n" + "\n".join(f"- {i}" for i in ins))
     referred = f"{V['referred_entrants']:,}" if V["graph_complete"] else "unavailable (referral relationships incomplete)"
@@ -848,6 +853,31 @@ def self_test():
     assert "1 of 1 multi-action Entrants with complete usable timestamps" in render(full_speed, B)
     mixed = partial_rows + [dict(r, _who="b@example.com") for r in partial_rows[:2]]
     assert "Speed excludes 1 of 2" in render(analyze(mixed, B), B)
+    # Custom bonus titles never establish complete-all participation.
+    for title in ("Complete daily bonus", "Complete bonus survey", "Completed everything"):
+        with open(q, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries", "Status"])
+            wr.writerows([["a@example.com", "Visit our shop", 1, "Valid"],
+                          ["a@example.com", title, 5, "Valid"],
+                          ["a@example.com", title, 5, "Valid"],
+                          ["b@example.com", "Subscribe to newsletter", 1, "Valid"],
+                          ["b@example.com", title, 5, "Invalid"],
+                          ["c@example.com", title, 5, "Invalid"]])
+        bonus_rows = load(q)
+        unmapped = analyze(bonus_rows, B)
+        assert unmapped["speed"]["completed_everything"] is None
+        assert "Completed everything (explicitly mapped action):" not in render(unmapped, B)
+        assert next(row[2] for row in unmapped["actions"] if row[0] == title) == 1
+        class Mapped(B): complete_all_action = title
+        mapped = analyze(bonus_rows, Mapped)
+        assert mapped["speed"]["completed_everything"] == (1, 0.5)
+        assert "Completed everything (explicitly mapped action): 1 entrants (50%)." in render(mapped, Mapped)
+        zero_rows = [dict(r, _valid=False) if r["Action"] == title else r for r in bonus_rows]
+        assert analyze(zero_rows, Mapped)["speed"]["completed_everything"] == (0, 0)
+        class WrongMapping(B): complete_all_action = title + " typo"
+        try: analyze(bonus_rows, WrongMapping)
+        except ValueError as exc: assert "exactly match" in str(exc)
+        else: assert False, "an unmatched complete-all mapping must fail"
     # Declared wide units retain repeats, weights and unique participants.
     for unit, values, worth, actions, entries in (
         ("boolean", ("true", "yes"), 5, 2, 10),
@@ -910,6 +940,7 @@ def main(argv):
     ap.add_argument("--coverage-end", type=dt.date.fromisoformat, help="last confirmed complete export day, inclusive, YYYY-MM-DD in account time")
     ap.add_argument("--markdown", help="write the report here as well as printing it")
     ap.add_argument("--map", help="column mapping for exports from other platforms, e.g. \"who=Email Address,action=Entry Type,Entries=Points,when=Date,status=Verified,referrer=Source\"")
+    ap.add_argument("--complete-all-action", help="exact exported title confirmed as the configured complete-all action; no title inference")
     ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
     ap.add_argument("--wide-worth", help="required Entries per completion for each populated wide method, e.g. 'Daily visit=1,Join newsletter=5'")
     a = ap.parse_args(argv)

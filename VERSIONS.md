@@ -9,11 +9,11 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-timing-and-duration | 1.4.47 |
 | giveaway-winner-structure | 1.4.19 |
 | giveaway-promotion-plan | 1.3.48 |
-| giveaway-random-draw | 1.3.46 |
+| giveaway-random-draw | 1.3.47 |
 | giveaway-winner-communications | 1.2.40 |
 | giveaway-idea-generator | 1.3.40 |
-| giveaway-results-review | 1.6.27 |
-| gleam-campaign-setup | 1.2.44 |
+| giveaway-results-review | 1.6.28 |
+| gleam-campaign-setup | 1.2.45 |
 
 ## Skills
 
@@ -343,6 +343,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.29 (2026-10-10)
+
+A quiet stretch on a live campaign no longer leads to advice to close early. The published close date stands unless your terms let you change it.
+
+Tell the draw whether one person may win more than one Prize. The draw script gives each person one place, so a campaign that allows repeat wins is pointed to another method before anything is committed. The report counts someone as having completed everything only when you map that action yourself. Keep your campaign description short, but keep the Prize and delivery details your Entrants need.
 
 ## 3.0.28 (2026-10-10)
 

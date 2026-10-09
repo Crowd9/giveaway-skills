@@ -2,7 +2,7 @@
 name: gleam-campaign-setup
 description: "Map a giveaway plan to documented Gleam Competitions settings. Use for 'set this up in Gleam', 'fraud setting', 'Gleam draw', 'Gleam impressions', 'Gleam terms', 'mandatory action', 'daily entries', 'free entry alternative', 'export entries', 'Gleam on Shopify', 'Quick Draws', 'repeat Winners', or 'admin entries'. Cover setup, operation and reporting."
 metadata:
-  version: 1.2.44
+  version: 1.2.45
 ---
 
 # Gleam Campaign Setup
@@ -79,7 +79,7 @@ This folder works alone. `analysis/output/` paths name source data that is not i
 - A setting that depends on the plan gets written into the checklist anyway, marked as depending on the plan, with one line saying what changes on each.
 - Plan names appear only where a page names them (custom terms on Hobby and above, custom fields and custom post-entry emails on Business, webhooks on Premium, as read on 9 September 2026).
 - A single-fact lookup ("where is the fraud setting", "what does impressions mean") gets the setting, the page link and nothing else, with no `references/settings-evidence.md` tables. Any question asking whether a setting is a good idea, what it will do to completions, or how to react to something happening in a live campaign loads that file and quotes the row.
-- Leave the Fraud Level on High, the default, and review Invalid entries on the Actions tab before drawing. Put Mandatory actions first. Keep the description under 150 words (`references/settings-evidence.md`). Use an opt-in checkbox for the email action. Those four hold on every campaign, so say them without waiting for the reference.
+- Leave the Fraud Level on High, the default, and review Invalid entries on the Actions tab before drawing. Put Mandatory actions first. Use an opt-in checkbox for the email action. Say those defaults without waiting for the reference. Keep descriptions concise while retaining essential Prize and fulfilment details. As a drafting preference, start around 150 words when useful, then keep the space needed for clarity. `references/settings-evidence.md` does not establish a word-count cutoff.
 - Advice about what to give away, which actions to use, how long to run and how many Winners lives in the neutral skills. This skill says where the setting is, what the product does with it, and what Entrants did with each action in the dataset.
 
 ## How to write the answer

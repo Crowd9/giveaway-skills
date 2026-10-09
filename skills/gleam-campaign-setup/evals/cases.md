@@ -85,3 +85,7 @@ Added a meaning-review case for the corrected guidance. These evaluation specifi
 ## Answer scope regression, 10 October 2026
 
 Added assertions for the brief's answer corrections to the existing case. Not yet run against a model. Repository checks are recorded in the patch report.
+
+## 10 October 2026, description length regression
+
+Case 13 covers a clear description with necessary fulfilment details. Added for meaning review, not yet run against a model.

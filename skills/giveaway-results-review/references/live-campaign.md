@@ -216,7 +216,7 @@ The review's part is the arithmetic and the question. Give the days left, where 
 - **Accept** when the objective is met, or the pushes are spent and the curve is at its quiet level.
 - **Extend** only with a dated new push at the start of the extension. Nothing in the data measures what bare added days bring in. Any change of date goes through the terms check in the promotion plan's live rescue reference.
 
-A finished campaign wearing a live end date is its own case, in `references/gleam-reporting.md`: most Entrants came in the first week and it has run for months, so the change is to close it and draw.
+When most Entrants came in the first week and the campaign has run quietly for months, keep its published closing date. Consider a fresh push or accept the quiet period. Before recommending an earlier close, establish that the change is permitted through the terms check in the promotion plan's live rescue reference. Draw only after the permitted entry window ends. See `references/gleam-reporting.md` for the live reporting workflow.
 
 ## What to Hand Back
 

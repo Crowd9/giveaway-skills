@@ -87,3 +87,7 @@ Previously unchecked case 6 is now explicitly judgement-only, with a review rubr
 ## 10 October 2026, round-sixteen content regressions
 
 Added a meaning-review case for the corrected guidance. Case 4 now requires preparation pending closed-campaign rules, with a separate follow-up case for settled multiple-comment chances. These evaluation specifications have not been run against a model. Repository validation checks their structure only.
+
+## 10 October 2026, round-twenty draw capability boundary
+
+Added meaning-review cases 16 and 17 for repeat-win terms and an unknown repeat-win policy. Case 15 now supplies the one-Prize-per-person rule so its command workflow remains appropriate. These evaluation specifications have not been run against a model. The script and ranking were unchanged.
