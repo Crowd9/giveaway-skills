@@ -23,7 +23,8 @@ How the draw works (documented so anyone can recheck it in any language):
      organizer's control, such as a drand round or NIST beacon pulse fetched after it exists.
   3. Each Entrant gets key = u ** (1 / weight), where u = SHA-256(seed + "|" + id) read as a number in (0, 1).
      This is Efraimidis-Spirakis weighted sampling without replacement. With no weights it is a uniform draw.
-  4. Entrants are sorted by key, highest first. Tiers and backups are filled in that order.
+  4. Entrants are sorted by log(u) / weight, highest first, avoiding key underflow.
+     This preserves the mathematical key order. Tiers and backups are filled in that order.
   The audit record holds the SHA-256 of the input, the rules, the seed and its source, and every Winner's key,
   so `verify` (or a few lines in any language) reproduces the result exactly.
 
@@ -33,7 +34,7 @@ verify returns 0 on success, 1 on a mismatch, or 2 when ranking checks pass but 
 """
 import argparse, csv, hashlib, io, json, math, sys, datetime, urllib.request
 
-VERSION = "2.4.2"
+VERSION = "2.4.3"
 DRAND = {"url": "https://api.drand.sh", "genesis_time": 1595431050, "period": 30, "chain_hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"}
 NIST = "https://beacon.nist.gov/beacon/2.0/pulse"
 
@@ -167,7 +168,7 @@ def rank(entrants, seed):
         h = hashlib.sha256((seed + "|" + e["id"]).encode()).digest()
         u = (int.from_bytes(h[:8], "big") + 0.5) / 2 ** 64          # uniform in (0, 1), never exactly 0 or 1
         e["u"] = u; e["key"] = u ** (1.0 / e["weight"])
-    return sorted(entrants, key=lambda e: (-e["key"], e["id"]))
+    return sorted(entrants, key=lambda e: (-math.log(e["u"]) / e["weight"], e["id"]))
 
 def parse_tiers(spec, winners):
     if not spec:
@@ -185,7 +186,7 @@ def rules_of(a, id_column, tiers):
         with open(a.exclude, "rb") as source:
             exclude_digest = sha(source.read())
     return {"id_column": id_column, "weight_column": a.weight_column, "exclude_file_sha256": exclude_digest,
-            "tiers": tiers, "backups": a.backups, "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id", "tool_version": VERSION}
+            "tiers": tiers, "backups": a.backups, "method": "sha256(seed|id) -> u in (0,1); key = u^(1/weight); rank by log(u)/weight descending; ties by id", "tool_version": VERSION}
 
 def apply_rules(a):
     """Fill any option the command line left unset from --rules FILE. Command-line flags win."""
@@ -366,7 +367,18 @@ def cmd_verify(a):
         if expected == recorded:
             print(f"ok   recomputed all {need} committed places, including order and tier assignments")
         else:
-            print("FAIL recomputed result order, IDs or tier assignments differ from the audit record"); ok = False
+            version = audit.get("version")
+            try:
+                parts = tuple(int(part) for part in version.split("."))
+                older = len(parts) == 3 and (0, 0, 0) < parts < (2, 4, 3)
+            except (AttributeError, TypeError, ValueError):
+                older = False
+            legacy = sorted(entrants, key=lambda e: (-e["key"], e["id"]))
+            legacy_expected = [(e["shown"], label) for e, label in zip(legacy, labels)]
+            if older and legacy_expected == recorded:
+                print(f"ok   verified all {need} committed places under the legacy ranking (audit version {version})")
+            else:
+                print("FAIL recomputed result order, IDs or tier assignments differ from the audit record"); ok = False
     if not ok: print("FAIL"); return 1
     if source_unverified:
         print("PARTIAL: ranking recomputation verified; seed source unverified"); return 2
@@ -399,6 +411,11 @@ def verifier_self_test():
             ("Backup 1", "gamma", 0.7696785881239763),
             ("Backup 2", "beta", 0.4605470121165112)], original["results"]
         check(original, 0)
+        historical = copy.deepcopy(original)
+        historical["version"] = historical["rules"]["tool_version"] = "2.4.2"
+        historical["rules"]["method"] = "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id"
+        historical["commitment"] = commitment(historical["input_sha256"], historical["rules"])
+        check(historical, 0)
         for source in ({"type": "unrecognized-beacon"}, {}, None, [],
                        {"type": "published text"}, {"type": "published text", "value": 123},
                        {"type": "published text", "value": "different-seed"}):
@@ -579,7 +596,43 @@ def self_test_recommit():
         assert audit["commitment"] == final_commitment
         assert audit["excluded"] == 1 and all(row["id"] != "gamma" for row in audit["results"])
 
+def self_test_rank_underflow():
+    import contextlib, copy, pathlib, tempfile
+    seed = "regression-seed"
+    ids = ("alpha", "beta", "gamma", "delta")
+    def ranked(weights):
+        return rank([{"id": key, "weight": weight} for key, weight in zip(ids, weights)], seed)
+    ordinary = ranked([1] * 4)
+    tiny = ranked([0.0001] * 4)
+    assert [e["id"] for e in tiny] == [e["id"] for e in ordinary] == ["delta", "gamma", "alpha", "beta"]
+    assert all(e["key"] == 0.0 for e in tiny)
+    unequal = ranked([0.00001, 0.00002, 0.00003, 0.00004])
+    assert [e["id"] for e in unequal] == [e["id"] for e in ranked([1, 2, 3, 4])]
+    assert [e["id"] for e in unequal] == ["delta", "gamma", "beta", "alpha"]
+    assert all(e["key"] == 0.0 for e in unequal)
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "entries.csv"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        entries.write_text("id,entries\n" + "".join(f"{key},0.0001\n" for key in ids))
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main(["draw", str(entries), "--id-column", "id", "--weight-column", "entries",
+                         "--winners", "4", "--seed", seed, "--audit", str(audit_path)]) == 0
+        audit = json.loads(audit_path.read_text())
+        audit["results"].sort(key=lambda row: row["id"])
+        for version, expected_code in (("2.4.2", 0), (VERSION, 1), ("9.0.0", 1), (None, 1)):
+            historical = copy.deepcopy(audit)
+            historical["version"] = historical["rules"]["tool_version"] = version
+            historical["rules"]["method"] = "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id"
+            historical["commitment"] = commitment(historical["input_sha256"], historical["rules"])
+            audit_path.write_text(json.dumps(historical))
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                assert main(["verify", str(audit_path)]) == expected_code
+            if expected_code == 0:
+                assert "legacy ranking (audit version 2.4.2)" in output.getvalue(), output.getvalue()
+
+
 def self_test():
+    self_test_rank_underflow()
     self_test_recommit()
     self_test_numeric_ids()
     self_test_account_ids()

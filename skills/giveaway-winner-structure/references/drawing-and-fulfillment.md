@@ -61,7 +61,7 @@ When a Winner has already gone quiet, start with the deadline in the published t
 
 ## Announcement
 
-- Announce on the channels used to promote, within a week of the draw.
+- Announce on the channels used to promote after verification and acceptance, naming the Winner only with publication consent. If they decline, announce confirmation without their name. Follow the published terms for timing. If confirmation takes more than a week, send a pending-confirmation update under those terms: "The draw is complete and Winner confirmation is still in progress. We will share the result once confirmation is complete." Allow any reserve their full response window before announcing a confirmed Winner.
 - Thank Entrants and, when the objective was leads, give everyone something small (a code, a guide) so the list stays warm.
 - Ask Winners for a photo or a line of feedback, and only use it with permission. The photo and review request in giveaway-winner-communications is the wording for it, sent about a week after delivery, and it is the step that turns one Winner into a repeat customer and a piece of proof for the next campaign.
 

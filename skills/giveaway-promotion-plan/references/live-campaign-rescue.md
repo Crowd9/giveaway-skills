@@ -117,13 +117,13 @@ Decide in this order. Each step is cheaper than the one after.
 |---|---|---|
 | Something was broken | Fix it, then judge the audience on days when the page worked. Adding back the days lost is an extension, so it goes through the changes table | A run of days with a broken page says nothing about demand |
 | Impressions under the curve and pushes still unsent | Send the scheduled pushes first, the partner next and paid last, capped at what one extra Winner would cost | They are already planned and cost the least |
-| Impressions on the curve, Entrants behind the objective, pushes spent | Change what the page asks, through the changes table, or accept | More traffic into a page that does not convert returns the same rate |
+| Impressions on the curve, Entrants behind an entry target, pushes spent | Change what the page asks, through the changes table, or accept | More traffic into a page that does not convert returns the same rate |
 | Everything spent, traffic at the quiet-middle level, objective missed | Extend only with a dated new push at the start of the extension, or accept | Nothing in the data measures what bare added days bring in |
 | Objective reached | Accept. Close and draw on the date in the terms | Every date in the terms stays true |
 
 On a run of two weeks or more, the playbook's curve puts the close a little above the quiet middle on its own. The results review's live mode has the closing days by run length. Plan the last-call push for that stretch.
 
-Ask what the campaign was for before calling a number short. A list of 100 customers is met at 100 Entrants. A reader with a small audience who has reached most of it is not underperforming.
+Ask what the campaign was for before calling a number short. Compare the target with purchasing customers, consented subscribers or qualified leads, using the outcome the reader actually wants. Entry records alone establish none of these. With 100 Entrants, 20 consented subscribers and no purchases, a target of 100 purchasing customers remains unmet. An unavailable outcome count stays unknown, so do not call the objective reached. Judge an entry target by Entrants and the audience the reader can reach.
 
 An extension has costs the dataset cannot measure, such as the terms, a permit tied to dates, a partner who posted for the old close, and a Winner contact window that starts later. Put them to the lawyer in one message with the new date.
 

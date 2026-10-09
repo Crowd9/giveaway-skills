@@ -145,17 +145,20 @@ def review(a):
         rows.append(("Entries", f"{a.entries:,}", f"{typical('entries', a.contestants) or 0:,.0f}", "depends on entry worth. " + rank_line("entries", a.entries, groups, configuration="higher")))
         epc = a.entries / a.contestants
         rows.append(("Entries per Entrant", f"{epc:.2f}", f"{typical('entries_per_entrant', a.contestants) or 0:,.2f}", position(epc, BENCH["entries_per_contestant"]) + ". Depends on entry worth, compare with care. " + rank_line("entries_per_entrant", epc, groups, configuration="higher")))
-    if a.impressions:
-        conv = a.contestants / a.impressions
+    if a.impressions is not None:
         rows.append(("Impressions", f"{a.impressions:,}", f"{typical('impressions', a.contestants) or 0:,.0f}", position(a.impressions, BENCH["impressions"]) + ". " + rank_line("impressions", a.impressions, groups)))
-        peer_m = lookup(BENCH["conv_by_methods"], a.methods) if a.methods else None
-        peer_d = lookup(BENCH["conv_by_duration"], a.days) if a.days else None
-        note = f"platform average {BENCH['platform_average_conversion']:.0%}"
-        if peer_m: note += f", the campaigns we can compare fairly with {a.methods} actions {peer_m:.0%}"
-        if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
-        if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day. Return visits during a long run or a daily action may explain part of this rate. The rate establishes neither a fault nor operational health. Check the entry flow, required actions and traffic sources before judging it"
-        note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
-        rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
+        if a.contestants > a.impressions:
+            rows.append(("Conversion Rate", "-", "-", "pending: Entrants exceed Impressions. Supply counts for matching reporting periods and populations before comparing conversion"))
+        else:
+            conv = a.contestants / a.impressions
+            peer_m = lookup(BENCH["conv_by_methods"], a.methods) if a.methods else None
+            peer_d = lookup(BENCH["conv_by_duration"], a.days) if a.days else None
+            note = f"platform average {BENCH['platform_average_conversion']:.0%}"
+            if peer_m: note += f", the campaigns we can compare fairly with {a.methods} actions {peer_m:.0%}"
+            if peer_d: note += f", campaigns of {a.days} days {peer_d:.0%}"
+            if a.repeatable or (a.days and a.days > 14): note += ". Impressions count once per person per day. Return visits during a long run or a daily action may explain part of this rate. The rate establishes neither a fault nor operational health. Check the entry flow, required actions and traffic sources before judging it"
+            note += ". " + rank_line("conversion", conv, conv_groups, fmt="{:.0%}")
+            rows.append(("Conversion Rate", f"{conv:.1%}", f"{typical('conversion', a.contestants) or BENCH['platform_average_conversion']:.0%}", note))
     else:
         rows.append(("Conversion Rate", "-", "-", "skipped: no Impressions given, and the export never holds them, so take the figure from the Reporting tab"))
     if a.invalid is not None and a.entries:
@@ -187,7 +190,7 @@ def review(a):
     if a.days:
         rows.append(("Duration in days", f"{a.days}", f"{typical('duration_days', a.contestants) or 0:,.0f}", rank_line("duration_days", a.days, groups, configuration="longer")))
     if a.methods:
-        rows.append(("Entry actions", f"{a.methods}", "5", rank_line("methods", a.methods, groups, configuration="more")))
+        rows.append(("Entry actions", f"{a.methods}", f"{typical('methods', a.contestants):,.0f}", rank_line("methods", a.methods, groups, configuration="more")))
     if a.contestants < 100:
         # Every comparison source starts at 100 Entrants. Keep the measured values,
         # but none of its benchmark cells or ranking prose applies below that floor.
@@ -242,7 +245,7 @@ def read_history(path):
 def history_table(a, hist):
     """This campaign beside the organizer's previous ones and their own typical figure."""
     def metrics(c, i, e, inv, d):
-        return {"contestants": c, "conversion": c / i if c is not None and i else None, "entries_per_entrant": e / c if e is not None and c else None,
+        return {"contestants": c, "conversion": c / i if c is not None and i and c <= i else None, "entries_per_entrant": e / c if e is not None and c else None,
                 "invalid_share": inv / (e + inv) if e is not None and inv is not None and (e + inv) else None, "contestants_per_day": c / d if c is not None and d else None}
     prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in hist]
     for h in prev: h["emails_val"] = h.get("emails")
@@ -366,6 +369,27 @@ def self_test():
     srows = review(Small); sd = {r[0]: r for r in srows}
     assert sd["Users"][1] == "300" and "250 to 500 Entrants" in sd["Users"][3], srows
     assert "Conversion Rate" in sd and "better than" in sd["Conversion Rate"][3], srows
+    # Each printed Entry Method median comes from its own shipped size band.
+    for count in (100, 250, 500, 1000, 2500, 10000):
+        class Sized(Small): contestants = count
+        methods = next(r for r in review(Sized) if r[0] == "Entry actions")
+        assert methods[2] == f"{median_of('methods', 'band:' + band(count)):,.0f}", methods
+    assert sd["Conversion Rate"][1] == "30.0%"
+    for count, impressions_count in ((50, 16), (300, 100), (300, 0)):
+        class Incompatible(Small): contestants = count; impressions = impressions_count
+        incompatible = {r[0]: r for r in review(Incompatible)}
+        conversion = incompatible["Conversion Rate"]
+        assert conversion[1:3] == ("-", "-") and "pending" in conversion[3], conversion
+        assert "matching reporting periods and populations" in conversion[3], conversion
+        assert "better than" not in conversion[3] and "300.0%" not in str(incompatible)
+        class Matching(Incompatible): impressions = 1000
+        matching = {r[0]: r for r in review(Matching)}
+        for label in incompatible.keys() - {"Conversion Rate", "Impressions"}:
+            assert incompatible[label] == matching[label], label
+        assert "Conversion Rate" not in {r[0] for r in history_table(Incompatible, hist)[0]}
+    class NoImpressions(Small): impressions = None
+    absent = next(r for r in review(NoImpressions) if r[0] == "Conversion Rate")
+    assert absent[1:3] == ("-", "-") and "no Impressions given" in absent[3], absent
     assert plain_reading(rows) == "\nEach person took about 5.0 Entries, about 16% above typical for campaigns this size.", plain_reading(rows)
     assert plain_reading(srows) == "\nEach person took about 4.0 Entries, about 13% below typical for campaigns this size.", plain_reading(srows)
     # the column says "for campaigns your size", so the two sizes must not be handed the same figure

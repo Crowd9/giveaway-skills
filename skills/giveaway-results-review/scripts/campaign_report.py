@@ -460,13 +460,12 @@ def render(R, a):
     if R["utm"]: w("\nUTM rollup (first touch):\n\n| Source | Medium | Campaign | Entrants |\n|---|---|---|---|" + "".join(f"\n| {s} | {m} | {c} | {k:,} |" for (s, m, c), k in R["utm"]))
     if R.get("partners"): w("\nPartners (by referrer host): " + ", ".join(f"{p} {k:,} entrants ({sh:.1%})" for p, k, sh in R["partners"]) + ". Host substring matches can overlap, so do not sum partner rows. Read tagged email traffic in the separate UTM rollup.")
     else: w("\nPartner contribution needs --partners with referrer-host substrings. For tagged email traffic, read the separate UTM rollup. Overlapping host matches may count the same Entrant in multiple partner rows, so do not sum them.")
-    w("\n## Entry methods\n\nUnique participation counts each Entrant once per action. Action benchmarks compare completions per Entrant across all campaign sizes offering that action.\n\n| Action | Completions | Entrants | Share of actions | Unique participation | Completions per Entrant | Typical completions per Entrant, campaigns offering it | Where completions per Entrant sit | Typical seconds | Invalid |\n|---|---|---|---|---|---|---|---|---|---|")
+    w("\n## Entry methods\n\nUnique participation counts each Entrant once per action. Action benchmarks compare completions per Entrant across all campaign sizes offering that action.\n\n| Action | Completions | Entrants | Share of actions | Unique participation | Completions per Entrant | Typical completions per Entrant, campaigns offering it | Where completions per Entrant sit | Median gap since previous action | Invalid |\n|---|---|---|---|---|---|---|---|---|---|")
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
-        flag = " (slow)" if sec and sec > 120 else ""
         g = _gname(act) if _gname else None
         typ, where = bench(None, comp / n, n, lambda v: f"{v:.1f}", group=g) if g else ("-", "no matching group")
-        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {comp / n:.1f} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
-    w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
+        w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {comp / n:.1f} | {typ} | {where} | {f'{sec:.0f}' if sec is not None else '-'} | {inv:,} |")
+    w("\nMedian gap since previous action is measured in seconds between recorded completions by the same Entrant, using gaps of at most 30 minutes only. It does not measure task duration and has no speed benchmark.")
     w("\n## Viral\n\n" + viral_text(V))
     rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.2f}")
     w(f"\nReferral completions per Entrant: {V['refer_rows'] / n:.2f} here, {rtyp} typical for campaigns your size, {rwhere}.")
@@ -515,6 +514,17 @@ def self_test():
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
     assert "| Users | 2 |" in out and "Typical, campaigns your size" in out and "starts at 100 Entrants" in out and "better than" not in out, out[:900]
     assert "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
+    # Measured action gaps remain descriptive, including gaps above two minutes.
+    assert next(row[5] for row in R["actions"] if row[0] == "Refer 3 Friends") == 370
+    assert "| Median gap since previous action |" in out and "| 370 |" in out
+    assert "gaps of at most 30 minutes" in out and "does not measure task duration" in out
+    assert "(slow)" not in out and "Visits usually run" not in out and "Typical seconds" not in out
+    sample_path = os.path.join(os.path.dirname(__file__), "..", "examples", "sample-actions-export.csv")
+    if os.path.exists(sample_path):
+        sample = render(analyze(load(sample_path), A), A)
+        assert "| 1590 |" in sample and "| 1740 |" in sample
+        assert "(slow)" not in sample and "Visits usually run" not in sample
+        load(p)  # Restore the original fixture's column metadata.
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     # Incomplete histories never assign first touch from an arbitrary undated row.
     timing_path = os.path.join(d, "timing.csv")

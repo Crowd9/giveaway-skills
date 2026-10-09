@@ -22,11 +22,11 @@ Never ask for the full document if a partial suffices. Never ask for financial d
 
 For experiences: dates, what is included, what to bring, the contact on the day.
 
-## 4. Public announcement (within a week of the draw, every promotion channel)
+## 4. Public announcement (after verification and acceptance, every promotion channel)
 
 "Our [campaign name] Winner is [first name] from [city] (or [handle]). Congratulations. Thank you to everyone who entered, [N] of you. [One line about what is next, or the small offer.]"
 
-Only after the Winner has consented to being named. If they decline, announce that a Winner has been confirmed and leave the name out.
+Publish after verification and acceptance, naming the Winner only with publication consent. If they decline, announce that a Winner has been confirmed and leave the name out of every social version too. Follow the published terms for timing and give each reserve their full response window. If confirmation takes more than a week, send this pending-confirmation update under those terms: "The draw is complete and Winner confirmation is still in progress. We will share the result once confirmation is complete."
 
 Social versions of the same announcement:
 

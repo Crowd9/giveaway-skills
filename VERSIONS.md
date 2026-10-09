@@ -7,12 +7,12 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-prize-picker | 1.3.49 |
 | giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.46 |
-| giveaway-winner-structure | 1.4.16 |
-| giveaway-promotion-plan | 1.3.45 |
-| giveaway-random-draw | 1.3.41 |
-| giveaway-winner-communications | 1.2.36 |
-| giveaway-idea-generator | 1.3.38 |
-| giveaway-results-review | 1.6.21 |
+| giveaway-winner-structure | 1.4.17 |
+| giveaway-promotion-plan | 1.3.46 |
+| giveaway-random-draw | 1.3.42 |
+| giveaway-winner-communications | 1.2.37 |
+| giveaway-idea-generator | 1.3.39 |
+| giveaway-results-review | 1.6.22 |
 | gleam-campaign-setup | 1.2.41 |
 
 ## Skills
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.23 (2026-10-10)
+
+A weighted draw ranks Entrants the same way however small their weights are. With very small fractional weights, every Entrant used to tie, and the first name alphabetically won. Any draw that worked before picks the same Winners, and an older draw record still checks out.
+
+Your results review compares your action count with the typical count for your campaign size, which is 6 or 7 depending on size, where it used to say 5 for everyone. If your Entrants outnumber your Impressions, it asks for counts from the same period before it rates your Conversion Rate.
+
+A target of 100 customers is measured in customers, never Entrants. The report shows the gap between actions without calling it slow, and a Winner is announced only once they've confirmed. If you run a win-your-order-back giveaway, set out the free way in and the Prize for someone selected without an order before you launch.
 
 ## 3.0.22 (2026-10-10)
 

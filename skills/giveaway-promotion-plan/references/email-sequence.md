@@ -31,7 +31,9 @@ The platform's own entry confirmation covers the entry itself. The welcome email
 
 | Email | When | Subject line pattern | Preview text | Body |
 |---|---|---|---|---|
-| Winners | Within a week of the draw | "The [Prize] Winner is..." | "Plus a thank-you for everyone who entered." | First name and city or handle, with consent. Thank everyone. A small offer or a next-campaign teaser. Then the welcome series continues in giveaway-winner-communications. |
+| Winners | After verification and acceptance, following the published terms | "The [Prize] Winner is confirmed" | "Plus a thank-you for everyone who entered." | First name and city or handle, only with publication consent. If consent is declined, confirm the result without naming the Winner. Thank everyone. A small offer or a next-campaign teaser. Then the welcome series continues in giveaway-winner-communications. |
+
+Give each reserve their full response window. If confirmation takes more than a week, send a pending-confirmation update under the published terms: "The draw is complete and Winner confirmation is still in progress. We will share the result once confirmation is complete."
 
 ## Before the launch email
 
