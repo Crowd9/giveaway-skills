@@ -5,13 +5,13 @@
 
 Hard fails: em dashes, semicolons, curly quotes, an assistant opener or closer, a question as a heading, a label opener
 (a sentence announcing the next block instead of saying the thing), three or more paragraphs led by the same bold label,
-the answer commenting on itself, a closing sentence that carries no number and asks for nothing, a mechanic banned
+the answer commenting on itself, a long answer closing without a number or action, a mechanic banned
 on the strength of an average when no platform rule, law or money risk is named nearby, a raw pair of decimals the reader
 has to divide themselves, analysis jargon that belongs in the reference files, a literary join nobody says out loud,
 a figure explained by a causal verb the table cannot back, an answer over sixty words that never once says "you", and any of Gleam's own words written without its capital,
 which covers the dashboard names and the product nouns Entrant, Contestant, Prize and Winner. "entries" stays out:
 the repo's own prose uses it as a common noun 194 times, so flagging it would fail the references it is drawn from.
-Sentence variety is the soft gate: something short, something long, so the answer does not read as one template rhythm.
+From forty prose words, sentence variety is the soft gate: something short, something long, so the answer does not read as one template rhythm.
 """
 import re, sys
 
@@ -52,7 +52,7 @@ FAUX_INSIGHT = r"\b(what (most people|nobody|everyone) (gets? wrong|tells? you|m
 # a decision verb through.
 # The idea generator's concept sheet is a fixed set of labels the skill asks for, so those are not reveals either.
 CONCEPT_LABELS = r"Title|Hook|Mechanic|Prize direction|Asset produced|Objective|Budget|Channels"
-COLON_REVEAL = (r"(?m)^(?!(?:" + CONCEPT_LABELS + r")\s*:)"
+COLON_REVEAL = (r"(?m)^(?!(?:" + CONCEPT_LABELS + r"|Optional)\s*:)"
                 r"[A-Z](?![^.!?:\n]{0,60}"
                 r"(?:day|days|week|weeks|month|months|hour|hours|out|later|before|after|launch|onwards)\s*:)"
                 r"[^.!?:\n]{6,60}: "
@@ -229,6 +229,12 @@ def blizzards(text):
     return out
 
 
+def short_answer(text):
+    # Below forty prose words, adding both sentence lengths or a closing action pads a factual lookup.
+    # Count only prose: quoted code, URLs and table rows cannot turn a lookup into a long answer.
+    return sum(len(s.split()) for s in sentences(prose_only(text))) < 40
+
+
 def check(text):
     sents = sentences(text)
     lens = [len(s.split()) for s in sents]
@@ -237,17 +243,19 @@ def check(text):
     # An inline bold label runs into the sentence. A bold name alone on its line is a title, which some answers need.
     bold_leads = sum(1 for p in paras if re.match(r"^\*\*[^*]{2,60}\*\*[.:]? +\S", p))
     last = sents[-1] if sents else ""
-    ACTION = r"\b(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm|next decision|next step)\b"
+    ACTION = r"\b(pick|choose|send|run|set|ask|check|start|close|draw|tell|give|use|keep|drop|add|book|write|say|decide|confirm|reply|next decision|next step)\b"
     asks = last.strip().endswith("?") and re.search(r"\byou(r|'ll|'re|'ve)?\b", last, re.I)
     # An offer is not a next step. "Want the DM template?" hands the work back and reads as an assistant
     # touting for more turns, where the reader wanted to be told what to do on Monday. A closing question
     # still earns its place when it asks for the one fact that would change the recommendation.
     offer = int(bool(last.strip().endswith("?") and re.search(OFFER, last, re.I)))
-    empty_end = int(bool(last) and not asks and not re.search(r"\d", last) and len(last.split()) < 22 and not re.search(ACTION, last.lower()))
+    empty_end = int(not short_answer(text) and bool(last) and not asks and not re.search(r"\d", last) and len(last.split()) < 22 and not re.search(ACTION, last.lower())
+                    and not re.match(INSTRUCTION, last.strip().lower()))
+    unfenced = re.sub(r"```.*?```", " ", text, flags=re.S)
     return {
-        "em_dashes": text.count("—"),
-        "semicolons": sum(1 for l in text.split("\n") if ";" in l and not l.startswith("|")),
-        "curly_quotes": len(re.findall("[“”‘’]", text)),
+        "em_dashes": unfenced.count("—"),
+        "semicolons": sum(1 for l in unfenced.split("\n") if ";" in l and not l.startswith("|")),
+        "curly_quotes": len(re.findall("[“”‘’]", unfenced)),
         "filler_words": len(re.findall(FILLER, prose_only(text), re.I)),
         "assistant_opener": int(bool(re.search(OPENERS, text.strip(), re.I))),
         "assistant_closer": len(re.findall(CLOSERS, text, re.I)),
@@ -439,6 +447,40 @@ def self_test():
     assert ok["causal_claims"] == 0, ok
     units = check("Referrals ran at 19 per 100 Entrants, about 1.5 times the typical campaign. You drew 2.2x the crowd, and 53% subscribed.")
     assert units["analyst_units"] == 2, units
+    # Optional is a required template label, but an unrelated colon reveal still fails.
+    optional = "Optional: visit our website for 2 additional Entries."
+    assert check(optional)["colon_reveals"] == 0
+    assert check("The hidden detail: visit our website.")["colon_reveals"] == 1
+    # Short factual answers need neither padding for rhythm nor an invented final action.
+    lookup = "The fraud setting is on the Setup tab (https://gleam.io/docs/competitions/setup)."
+    assert short_answer(lookup) and check(lookup)["empty_ending"] == 0
+    # Exactly forty prose words still need a short sentence. The digit isolates the rhythm fault.
+    no_short = ("You " + "review " * 18 + "today. " + "You " + "review " * 18 + "1.")
+    assert not short_answer(no_short) and check(no_short)["shortest_sentence"] == 20
+    # A long answer still needs a useful ending, even when its rhythm already passes.
+    context = "Read it. " + ("You " + "review " * 18 + "today. ") * 2
+    empty = context + "That is the situation."
+    assert check(empty)["empty_ending"] == 1
+    for ending in ("Reply by Friday.", "Export your list.", "Post your reminder."):
+        assert check(context + ending)["empty_ending"] == 0, ending
+    # A common verb mid-sentence is not an instruction.
+    assert check(context + "That will make the difference.")["empty_ending"] == 1
+    # Fenced diagnostics retain their exact punctuation. Unfenced and inline code keep the old rule.
+    punctuation = "A—B; “C”"
+    for key, count in (("em_dashes", 1), ("semicolons", 1), ("curly_quotes", 2)):
+        assert check("```\n" + punctuation + "\n```")[key] == 0, key
+        assert check(punctuation)[key] == count, key
+        assert check("`" + punctuation + "`")[key] == count, key
+    # Exercise actual verdicts, so a correct counter cannot hide a broken short-answer CLI exemption.
+    for draft, verdict in ((optional, "PASS"), (lookup, "PASS"), (no_short, "FAIL"),
+                           (empty, "FAIL"), (context + "Reply by Friday.", "PASS"),
+                           (lookup + "\n```\n" + punctuation + "\n```", "PASS"),
+                           (lookup + "\n" + punctuation, "FAIL")):
+        with open(fh.name, "w") as resource:
+            resource.write(draft)
+        result = _sp.run([sys.executable, _os.path.abspath(__file__), fh.name], capture_output=True, text=True)
+        assert f": {verdict} " in result.stdout, (draft, result.stdout, result.stderr)
+        assert result.returncode == (0 if verdict == "PASS" else 1), result
     _os.unlink(fh.name)
     print("self-test passed")
 
@@ -460,7 +502,7 @@ if __name__ == "__main__":
                 + r["bans_without_a_reason"] + r["raw_metric_pairs"] + r["reader_facing_jargon"] + r["stiff_phrases"] + r["no_second_person"] + r["lowercase_app_terms"] + r["faux_insight"] + r["colon_reveals"] + r["puffery"]
                 + r["weasel_attribution"] + r["superficial_analysis"] + r["metadiscourse"] + r["rhetorical_setups"] + r["recap_endings"]
                 + r["runaway_sentences"] + r["offer_endings"] + r["figure_blizzards"] + r["unsourced_claims"] + r["causal_claims"] + r["analyst_units"])
-        varied = r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18
+        varied = short_answer(text) or (r["shortest_sentence"] <= 8 and r["longest_sentence"] >= 18)
         failed = failed or not (hard == 0 and varied)
         print(f"{path}: {'PASS' if hard == 0 and varied else 'FAIL'} {r}")
         # Always quoted, because the fix is a decision per sentence: name the line it rests on, make it an

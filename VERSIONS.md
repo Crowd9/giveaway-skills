@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.55 |
-| giveaway-entry-method-planner | 1.2.54 |
-| giveaway-timing-and-duration | 1.4.54 |
-| giveaway-winner-structure | 1.4.25 |
-| giveaway-promotion-plan | 1.3.54 |
-| giveaway-random-draw | 1.3.53 |
-| giveaway-winner-communications | 1.2.44 |
-| giveaway-idea-generator | 1.3.45 |
-| giveaway-results-review | 1.6.37 |
-| gleam-campaign-setup | 1.2.49 |
+| giveaway-prize-picker | 1.3.56 |
+| giveaway-entry-method-planner | 1.2.55 |
+| giveaway-timing-and-duration | 1.4.55 |
+| giveaway-winner-structure | 1.4.26 |
+| giveaway-promotion-plan | 1.3.55 |
+| giveaway-random-draw | 1.3.54 |
+| giveaway-winner-communications | 1.2.45 |
+| giveaway-idea-generator | 1.3.46 |
+| giveaway-results-review | 1.6.38 |
+| gleam-campaign-setup | 1.2.50 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.47 (2026-10-10)
+
+The writing rules and the style check that enforces them now agree, so an answer that follows the rules passes. A one-line answer to a quick question no longer gets padded to satisfy a rhythm rule meant for longer replies. Copy that ends "Reply by Friday." counts as ending on an action, and a promotion caption can label an optional action "Optional:" as the plan requires. When you ask whether a draft is clean, the pasted check output no longer fails the check itself. Answers name the next job in plain words, never the skill behind it, and the lawyer question in the Prize picker reads "What local giveaway rules apply".
 
 ## 3.0.46 (2026-10-10)
 

@@ -44,7 +44,7 @@ Campaigns with several Prize records drew about a quarter less crowd per Prize d
 
 Expect a broad Prize to bring Entrants who never buy. That is acceptable when the objective needs reach and the follow-up handles the mismatch. It becomes a problem when the leads go straight to a sales team.
 
-For a foot-traffic or local objective, name the reason directly: cash, electronics or a gift card to somewhere else can be won and used without the Winner ever visiting, so a broad Prize buys reach, not the visit the objective needs. Own product or in-store credit fixes this because redemption in person is the filter.
+For a foot-traffic or local objective, name the reason directly: cash, electronics or a gift card to somewhere else can be won and used without the Winner ever visiting, so these Prizes do not require the store visit your objective needs. Own product or in-store credit fixes this because redemption in person is the filter.
 
 Before allowing for size, own product shows up in 17% of campaigns, and those campaigns drew more Entrants and fewer Entries per Entrant on a lower Conversion Rate than bought-in ones. That comparison does not hold campaign size or industry constant, and it describes what businesses saw with no comparison group of failed campaigns.
 

@@ -30,7 +30,7 @@ Half of all campaigns sat between 225 and 1,290 Entrants, and the script compare
 | 10,000 or more | 3,171 | 748 |
 <!-- /generated -->
 
-State entries as entries per 100 Entrants, not the raw decimal, using the row above. Give the reader's own figure the same way (entries divided by Entrants, times 100), and state the gap against the typical figure as a percentage or a plain multiple ("about half the typical rate"), never as two decimals side by side.
+State Entries as Entries each, using the Entries per Entrant row above. Give the reader's own figure the same way (Entries divided by Entrants), and state the gap against the typical figure as a percentage or a plain multiple ("about half the typical rate").
 
 ## Conversion Rate, by number of actions (the campaigns we can compare fairly)
 
@@ -546,7 +546,7 @@ Entries per Entrant barely moves across the whole range, from 4.46 in the smalle
 
 Conversion Rate climbs gently with size, from 27% to 33%. A share action is offered far less often in small campaigns, 30% against 61% in the largest band, and email peaks in the middle bands at 32% against 17% in the smallest. Those are the two gaps a small campaign can close on its own, and the target is the next band's own figure.
 
-State entries the same way here: entries per 100 Entrants, not the raw decimal (table below). Read a campaign's own figure against the matching row and state the gap as a percentage or a plain multiple ("about half", "roughly double"), never as two decimals set side by side.
+State Entries as Entries each here too: divide the matching cell in the table below by 100. Compare with the campaign's own Entries divided by Entrants and state the gap as a percentage or a plain multiple ("about half", "roughly double").
 
 <!-- generated:bm2_band_entries -->
 | Size | Entries per 100 Entrants |
