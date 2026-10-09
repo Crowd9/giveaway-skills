@@ -563,6 +563,8 @@ def gather(a):
     class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; coverage_start = getattr(a, "coverage_start", None); coverage_end = getattr(a, "coverage_end", None); partners = a.partners.split(",") if a.partners else None
     A.complete_all_action = getattr(a, "complete_all_action", None)
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
+    if not N:
+        return {"R": R, "T": T, "N": N}
     class B: pass
     b = B(); b.contestants = N; b.impressions = a.impressions; b.entries = T["entries"]; b.invalid = R["topline"].get("invalid_entries", 0) or 0
     b.days = a.days; b.methods = a.methods
@@ -657,6 +659,28 @@ def table(headers, rows, num_from=1):
 
 
 def render(D, W, S, a):
+    if not D["N"]:
+        T = D["T"]
+        total_entries = T["entries"] + T["invalid_entries"]
+        metrics = [("Entrants", "0"), ("Actions completed", n(T["actions"])),
+                   ("Entries", n(T["entries"])), ("Invalid actions", n(T["invalid_actions"])),
+                   ("Invalid Entries", "unavailable" if T["unweighted_rows"] else f"{T['invalid_entries']:,}"),
+                   ("Invalid action share", f"{T['invalid_rate']:.1%}" if T["invalid_rate"] is not None else "unavailable"),
+                   ("Invalid Entries share", f"{T['invalid_entries'] / total_entries:.1%}" if total_entries and not T["unweighted_rows"] else "unavailable"),
+                   ("Actions each", "unavailable"), ("Entries each", "unavailable")]
+        if a.impressions and a.impressions > 0:
+            metrics.append(("Conversion Rate", "0.0%"))
+        title = esc(a.title or "Campaign Results Review")
+        return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title>'
+                '<style>body{font:16px system-ui;max-width:960px;margin:48px auto;padding:0 24px}'
+                'table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #ddd}</style>'
+                f'</head><body><main><h1>{title}</h1><p>This export has zero valid Entrants.</p>'
+                + table(["Metric", "Value"], metrics)
+                + (f'<p>{n(T["unweighted_rows"])} rows have missing or unusable Entries weights. '
+                   'Invalid Entries totals and their share are unavailable until weights are reconciled.</p>' if T["unweighted_rows"] else "")
+                + '<p>Per-Entrant rates, engagement, referrals and benchmark comparisons are unavailable. '
+                'Check export filters and validity statuses before reviewing performance.</p></main></body></html>')
     R, T, N = D["R"], D["T"], D["N"]; V = R["viral"]; E = R["engagement"]; Sp = R["speed"]
     title = a.title or "Campaign Results Review"
     meta = [x for x in [a.dates, f"{D['band_label']} band", a.vertical and f"{a.vertical.replace('_', ' ')} vertical", "First campaign at this size" if a.first_campaign else None] if x]
@@ -773,6 +797,33 @@ def self_test():
     for must in ("Two Entrants.", "A pill", "One change", "tab-levers", "id=\"emailShare\"", "Play With the Levers", "Ann L.", "Toronto, Canada", "Typical completions per Entrant, campaigns offering it", "Conversion Rate"):
         assert must in page, must
     assert "a@example.com" not in page and "{{" not in page and "per 100" not in page
+    # Empty and all-invalid exports render through the command-line consumer.
+    empty_path = os.path.join(d, "zero-valid.csv")
+    empty_out = os.path.join(d, "zero-valid.html")
+    for invalid_count in (0, 1):
+        with open(empty_path, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["User ID", "Action", "Entries", "Status"])
+            wr.writerows([["ABC", "Visit", 40, "Invalid"]] * invalid_count)
+        assert main([empty_path, "--out", empty_out, "--impressions", "10"]) == 0
+        with open(empty_out, encoding="utf-8") as f:
+            empty_page = f.read()
+        assert "zero valid Entrants" in empty_page and "0.0%" in empty_page
+        assert "Invalid Entries</td><td class=\"num\">" + str(invalid_count * 40) in empty_page
+        assert ("100.0%" in empty_page) == bool(invalid_count)
+        assert 'Actions each</td><td class="num">unavailable' in empty_page
+        assert "benchmark comparisons are unavailable" in empty_page
+        assert "better than" not in empty_page and 'type="range"' not in empty_page
+    for weights in ([""], [40, "NaN"]):
+        with open(empty_path, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow(["User ID", "Action", "Entries", "Status"])
+            wr.writerows([["ABC", "Visit", weight, "Invalid"] for weight in weights])
+        assert main([empty_path, "--out", empty_out]) == 0
+        with open(empty_out, encoding="utf-8") as f:
+            empty_page = f.read()
+        assert 'Invalid Entries</td><td class="num">unavailable' in empty_page
+        assert 'Invalid Entries share</td><td class="num">unavailable' in empty_page
+        assert "missing or unusable Entries weights" in empty_page
+        assert 'Invalid action share</td><td class="num">100.0%' in empty_page
     # The explicit mapping reaches the report and dashboard without title inference.
     bonus_path = os.path.join(d, "bonus.csv")
     with open(bonus_path, "w", newline="") as f:

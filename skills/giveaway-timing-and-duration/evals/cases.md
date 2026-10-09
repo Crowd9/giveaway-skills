@@ -91,3 +91,7 @@ Fixtures and replay manifest: `evals/fixtures/giveaway-timing-and-duration/` at 
 ## Targeted rerun, 10 October 2026
 
 Case 2 (three-month coffee subscription giveaway): PASS. A fresh answer described 7 to 29 days as the middle half across 115,754 campaigns, identified the quiet-middle risk, offered a shorter run or recurring monthly draw, and rejected a causal duration ranking. An independent reviewer passed `duration-evidence`, and `check_deliverable.py` passed both mechanical checks. Answer and review are saved in the implementation scratchpad as `3016-timing-case2.txt` and `3016-timing-case2-review.json`.
+
+## 10 October 2026, annual relaunch baseline regression
+
+Case 18 added for the restricted annual-gap sample. The reference retains the observed share and sample counts, removes the unconditional random comparator, and labels same-month scheduling as practical advice. Static reference review completed. This case has not yet run against a model.

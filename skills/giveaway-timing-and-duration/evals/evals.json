@@ -393,6 +393,24 @@
      "fail_example": "The benchmark calendar gives your school start, so copy its launch date."
     }
    ]
+  },
+  {
+   "id": 18,
+   "prompt": "Your calendar says 56.7% of relaunches 330 to 400 days after a previous campaign happen in the same month. Does that prove businesses prefer seasonal timing compared with an 8.3% random baseline, and should we repeat in the same month?",
+   "expected_output": "Explains the restricted-gap sampling effect and why the unconditional random comparator is invalid. Retains the observed share with its scope if quoted and treats same-month scheduling as practical advice.",
+   "assertions": [
+    "Require explaining that the 330 to 400 day restriction itself concentrates relaunches near the original month, so the observed share alone does not establish seasonal preference. Reject an unconditional 8.3% random baseline and any invented replacement dataset benchmark. If quoting 56.7%, retain 1,187 pairs across 1,000 businesses and disclose unreported missing-date coverage. Frame same-month scheduling as practical advice conditional on audience and team needs."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "annual-relaunch-baseline",
+     "criterion": "Require explaining that the 330 to 400 day restriction itself concentrates relaunches near the original month, so the observed share alone does not establish seasonal preference. Reject an unconditional 8.3% random baseline and any invented replacement dataset benchmark. If quoting 56.7%, retain 1,187 pairs across 1,000 businesses and disclose unreported missing-date coverage. Frame same-month scheduling as practical advice conditional on audience and team needs.",
+     "pass_example": "The restricted gaps already favor the original month, so this sample alone cannot establish seasonal preference. Consider repeating in the same month if it still suits your audience and team.",
+     "fail_example": "The same-month share is far above an 8.3% random baseline, proving seasonal preference."
+    }
+   ]
   }
  ]
 }

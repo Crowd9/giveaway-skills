@@ -191,7 +191,9 @@ def load(path, mapping=None, wide_unit=None, wide_worth=None):
     else: rows = raw; wide = False
     for r in rows:
         r["Action"] = (r.get(cols["action"]) or "").strip() or "unnamed action"
-        r["_who"] = (r.get(cols["who"]) or "").strip().lower()
+        r["_who"] = (r.get(cols["who"]) or "").strip()
+        if cols["who"].casefold() in {"email", "email address", "e-mail", "entrant email", "user email"}:
+            r["_who"] = r["_who"].lower()
         r["_emails"] = {(r.get(h) or "").strip().lower() for h in header
                         if h.casefold() in {"email", "email address", "e-mail", "entrant email", "user email"}
                         and "@" in (r.get(h) or "")}
@@ -599,6 +601,19 @@ def self_test():
     assert resolve_columns(["ID", "Name", "Action"], {})["who"] == "Name"
     assert "who" not in resolve_columns(["ID", "Action ID", "Action"], {})
     assert resolve_columns(["Email", "Name", "Entrant ID"], {})["who"] == "Email"
+    # Opaque identifiers retain case, including explicit mappings; email deduplicates.
+    for column, mapping, values, expected in (
+        ("User ID", {}, ["ABC", "abc"], 2),
+        ("Custom ID", {"who": "Custom ID"}, ["ABC", "abc"], 2),
+        ("Email", {}, ["A@example.com", "a@example.com"], 1),
+        ("Email Address", {"who": "Email Address"}, ["A@example.com", "a@example.com"], 1),
+    ):
+        with open(identity_path, "w", newline="") as f:
+            wr = csv.writer(f); wr.writerow([column, "Action", "Entries"])
+            wr.writerows([[value, "Visit", 1] for value in values])
+        identity = analyze(load(identity_path, mapping), C)
+        assert identity["base"] == expected
+        assert identity["topline"]["actions_per_entrant"] == 2 / expected
     # Manual valid-status aggregation matches both tools, including an Invalid-only person.
     from gleam_export import load as load_summary
     def check_manual_totals(path):
