@@ -142,18 +142,24 @@ Entrants count people. Completed Actions count valid action completions. Entries
 - **A low Conversion Rate with a long run or daily action.** Return visits are a possible explanation. Check for entry faults and changes in daily Impressions, new Entrants and action completions before drawing a conclusion. Use the duration row as context with its repeatable-action caveat.
 - **A low Conversion Rate at a normal run length.** Usually reach. Campaigns in the top fifth of their size band by Impressions convert at about 11% where the bottom fifth convert at about 55%, and they drew more Entrants doing it. Check the Impression count before calling the page or the Prize weak.
 - **High entries, ordinary Entrant count.** Entry worth on share or bonus actions. Look at Entrants and actions.
-- **One action at 90%, the rest under 20%.** Normal: each action family completes at a different typical rate (table below), so a high top action and much lower others do not mean the others are broken. Rank against the typical figure for that family, not against the top action.
+- **One action at 90%, the rest under 20%.** A high top action and much lower others need comparisons against matching groups before a judgement. Use the exact action type's offering-campaign median and rank in `references/percentiles.json` (`per_action_uptake`), or the individual-method family median in `references/benchmarks.md` when the type is unmatched. A sum across a family needs its own matching comparison.
 - **A fifth or more of entries invalid** is a suggested point to start checking, with no measured boundary between healthy and broken campaigns. Check for a question that only accepts the correct answer first (wrong answers count as invalid), then referral and Discord actions. Investigate reported entry problems at any share. Invalid entries are otherwise left out of the benchmarks.
 - **Fewer Entrants than last time.** Check the gap since the previous campaign, the Prize category, the month, and the number of actions before blaming promotion.
 
-| Family | Completions per 100 Entrants (typical) |
+### Family summary with undocumented comparison groups
+
+| Family | Completions per 100 Entrants (reported summary median) |
 |---|---|
 | Visits and email signups | 78 to 85 |
 | Follows | 53 |
 | Shares | 11 |
 | Content | 12 |
 
-Source: `analysis/output/percentiles.json` (`bench.family_uptake`).
+Source: `analysis/output/percentiles.json` (`bench.family_uptake`), base population 116,285 ordinary campaigns with at least 100 Entrants. The JSON describes benchmark medians but omits each family's membership, observation count, aggregation and where-offered rule. These figures cannot establish a matched individual-action or family-total verdict. Leave that comparison pending until those definitions are available.
+
+For individual methods, `references/benchmarks.md` instead reports medians across offered methods within broad families, from `analysis/output/benchmarks.json`. Sharing completions equal about 26% of Entrants across 80,835 methods in 60,707 campaigns, and content completions equal 31% across 26,035 methods in 21,573 campaigns. These are method observations within 116,499 ordinary campaigns, with uptake capped at five and no separate missing-uptake count. Several methods in one campaign contribute several observations.
+
+For example, 100 completions of one generic sharing method among 500 Entrants means completions equal to 20% of Entrants, below the broad method-family median of 26%. If the type is confirmed as Viral Shares, the matching `per_action_uptake` median is completions equal to about 11% of Entrants from 42,536 offering campaigns, and the same 20% is above it. `review.py` follows this selection and prints the comparison group. Neither figure is a distinct-person share.
 
 ## Organizer experience at a large campaign size
 

@@ -55,7 +55,7 @@ State entries as entries per 100 Entrants, not the raw decimal, using the row ab
 | 61 or more | 2,929 | 21% |
 <!-- /generated -->
 
-## How many did each kind of action (completions per Entrant, all campaigns)
+## Individual methods within each family (completions per Entrant)
 
 <!-- generated:bm2_families -->
 | Family | Campaigns offering | Typical | Typical range |
@@ -67,7 +67,13 @@ State entries as entries per 100 Entrants, not the raw decimal, using the row ab
 | Post or create content | 21,573 | 0.31 | 0.14 to 0.44 |
 <!-- /generated -->
 
-A share entry is a referred person multiplied by entry worth, so the share row is not a click rate. Full family tables sit in the entry-method-planner skill.
+Source: `analysis/output/benchmarks.json`, `ordinary_benchmark.entry_methods.families`, from 116,499 ordinary campaigns with at least 100 Entrants. Each observation is one offered method's unweighted completions divided by its campaign's Entrants, capped at five. Typical is the median and the range is the middle half of these method observations. A campaign offering several methods contributes several observations. Campaigns without that family contribute none. Available uptake observations are 374,795 visits, 172,265 follows, 80,835 shares, 49,466 email methods and 26,035 content methods. The source gives no separate missing-uptake count.
+
+Use this table for an unmatched individual method, never a sum across a family or a campaign percentile rank. When an exact action type is available, use `references/percentiles.json`'s `per_action_uptake`: campaign-level completions per Entrant among campaigns offering that type, with its own sample count and median at the 50th percentile. Sharing completions include reposts and referrals, count events, and need no adjustment for Entry worth.
+
+For one generic sharing method, 100 completions from 500 Entrants means completions equal to 20% of Entrants, below this family's typical 26%. An identified Viral Shares type instead uses its own median, completions equal to about 11% of Entrants across 42,536 offering campaigns, so 20% is above it. These comparisons answer different questions.
+
+The separate `analysis/output/percentiles.json` summary `bench.family_uptake` gives sharing completions equal to 11.39% of Entrants and content completions equal to 12.21%, rounded to 11% and 12%. Its base population is 116,285 ordinary campaigns, and its definition calls these benchmark medians, but it supplies no family membership, observation counts, aggregation rule or where-offered rule. Keep those figures as an unverified-scope summary, with no verdict until those definitions are available. Full method-family tables sit in the entry-method-planner skill.
 
 ## What campaigns produced (extracted)
 

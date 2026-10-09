@@ -24,7 +24,10 @@ Every hosted giveaway tool has an Entrant or users export, usually CSV, with an 
 
 ## Comment giveaways
 
-Comment exports are the messy case. There is no built-in "download comments" button on the major networks for ordinary accounts, so the file comes from an API call or a third-party picker tool. Whatever the source, the rules are the same: export once after close, keep the file, and deduplicate by account, since one person can comment many times.
+Comment exports are the messy case. There is no built-in "download comments" button on the major networks for ordinary accounts, so the file comes from an API call or a third-party picker tool. Whatever the source, export once after close, keep the original file, and prepare the eligible comments according to the published rules.
+
+- One chance per person: deduplicate by account and omit `--weight-column`. Multiple comments from the same account give that person one chance.
+- One chance per eligible comment: count eligible comments for each account into an `entries` column before deduplicating to one row per account. Apply any per-person cap from the terms, then pass `--weight-column entries` to both `commit` and `draw`. Two eligible comments from one account and one from another give weights of 2 and 1. Under one-chance-per-person rules, the same comments give weights of 1 and 1.
 
 | Network | Where the file comes from | Field that names the person |
 |---|---|---|

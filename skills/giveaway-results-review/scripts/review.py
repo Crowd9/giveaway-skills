@@ -39,6 +39,17 @@ BENCH = {
 }
 
 
+# Individual-method medians and observation counts from benchmarks.json,
+# ordinary_benchmark.entry_methods.families. Never substitute the undocumented
+# bench.family_uptake summary from percentiles.json for this comparison.
+METHOD_FAMILY = {
+    "visit": (0.8040089086859689, 374795, 94082),
+    "follow": (0.5062240663900415, 172265, 77459),
+    "share": (0.2554112554112554, 80835, 60707),
+    "email": (0.8363636363636363, 49466, 40537),
+    "content": (0.30566534914361, 26035, 21573),
+}
+
 PCT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "references", "percentiles.json")
 
 def load_pct():
@@ -246,21 +257,23 @@ def read_actions(path, contestants):
                 out.append((r[0], "unavailable", "n/a", fam or "unclassified", "Per-Entrant rate unavailable: zero Entrants; no matching peers", n))
                 continue
             up = n / contestants
-            bench = BENCH["family_uptake"].get(fam)
-            read = (("at or above" if bench and up >= bench else "below") + " what's typical for that kind of action") if bench else "no matching group to compare against"
+            family_group = METHOD_FAMILY.get(fam)
+            bench = family_group[0] if family_group else None
+            read = (f"{'at or above' if up >= bench else 'below'} the individual-method family median "
+                    f"({family_group[1]:,} methods in {family_group[2]:,} offering campaigns)") if family_group else "no matching group to compare against"
             gname = r[2].strip() if len(r) > 2 and r[2].strip() else r[0]
             t = (PCT or {}).get("per_action_uptake", {}).get(gname)
             rr = rank(up, t)
             # the typical column and the rank read the same group, or a repost at triple the family figure lands in the bottom fifth
             if t: bench = t["p"][9]
-            if rr: read = f"better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
+            if rr: read = f"{'at or above' if up >= bench else 'below'} the action-type median; better than {rr[0]}% of the {rr[1]:,} campaigns offering {gname}"
             ym = BENCH["yield_median"].get(fam, {}).get(band(contestants))
             if ym: read += f", a typical campaign of {band_label(contestants)} collected {ym:,}"
             if contestants < 100:
                 bench = None
                 read = "No matching peers: the dataset starts at 100 Entrants"
-            # a share under one per Entrant reads as a percentage, above one as "each", so the writer copies reader units
-            reader = lambda v: f"{v:.0%}" if v <= 1 else f"{v:.1f} each"
+            # Completion events can repeat, so these percentages compare completions with the Entrant count.
+            reader = lambda v: f"{v * 100:.0f}%"
             out.append((r[0], reader(up), reader(bench) if bench else "n/a", fam or "unclassified", read, up))
     # the sort key rides along as a sixth field and is dropped before printing
     return [row[:5] for row in sorted(out, key=lambda x: -x[5])]
@@ -458,11 +471,20 @@ def self_test():
     with _tf2.NamedTemporaryFile("w", suffix=".csv", delete=False) as fa:
         fa.write("action,completions,type\nVisit our store,1800,Visit a Page\nSubscribe to our newsletter,900,Email Subscriptions\nShare on Facebook,200,Viral Shares\n")
     acts = read_actions(fa.name, 1200)
-    assert [r[0] for r in acts] == ["Visit our store", "Subscribe to our newsletter", "Share on Facebook"] and acts[0][1] == "1.5 each" and acts[1][1] == "75%", acts
+    assert [r[0] for r in acts] == ["Visit our store", "Subscribe to our newsletter", "Share on Facebook"] and acts[0][1] == "150%" and acts[1][1] == "75%", acts
     for count in (40, 99):
         below_actions = read_actions(fa.name, count)
         assert all(r[2] == "n/a" and "starts at 100" in r[4] for r in below_actions), below_actions
     _os2.unlink(fa.name)
+    # Same 100/500 completion rate, two explicitly different comparison groups.
+    with _tf2.NamedTemporaryFile("w+", suffix=".csv") as sharing:
+        sharing.write("action,completions,type\nShare on Facebook,100,\nRefer Friends For Extra Entries,100,Viral Shares\n")
+        sharing.flush()
+        generic, referral = read_actions(sharing.name, 500)
+    assert generic[1:3] == ("20%", "26%") and "below the individual-method family median" in generic[4], generic
+    assert "80,835 methods in 60,707 offering campaigns" in generic[4], generic
+    assert referral[1:3] == ("20%", "11%") and "at or above the action-type median" in referral[4], referral
+    assert "42,536 campaigns offering Viral Shares" in referral[4], referral
     hist = [{"campaign": str(i), "contestants": c, "impressions": None, "entries": None, "invalid": None, "days": None} for i, c in enumerate((100, 300))]
     assert history_table(First, hist)[0][0][3] == "200", "even history must average the two central values"
     with _tf2.NamedTemporaryFile("w", suffix=".csv") as empty:
@@ -539,7 +561,7 @@ def main(argv):
     print_table(rows, ("Metric", "This campaign", "Benchmark unavailable" if a.contestants < 100 else "Typical for campaigns your size", "Read"))
     print(plain_reading(rows))
     if a.actions:
-        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Completed by", "Typical for that action", "Family", "Read"))
+        acts = read_actions(a.actions, a.contestants); print(); print_table(acts, ("Action", "Completions as % of Entrants", "Comparison median", "Family", "Read"))
     if a.history:
         rows, notes = history_table(a, read_history(a.history)); print()
         print_table(rows, ("Metric", "This campaign", "Previous", "Your typical", "Change", "Record")); [print(n) for n in notes]

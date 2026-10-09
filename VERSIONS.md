@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.54 |
-| giveaway-entry-method-planner | 1.2.53 |
-| giveaway-timing-and-duration | 1.4.53 |
-| giveaway-winner-structure | 1.4.24 |
-| giveaway-promotion-plan | 1.3.53 |
-| giveaway-random-draw | 1.3.52 |
-| giveaway-winner-communications | 1.2.43 |
-| giveaway-idea-generator | 1.3.44 |
-| giveaway-results-review | 1.6.36 |
-| gleam-campaign-setup | 1.2.48 |
+| giveaway-prize-picker | 1.3.55 |
+| giveaway-entry-method-planner | 1.2.54 |
+| giveaway-timing-and-duration | 1.4.54 |
+| giveaway-winner-structure | 1.4.25 |
+| giveaway-promotion-plan | 1.3.54 |
+| giveaway-random-draw | 1.3.53 |
+| giveaway-winner-communications | 1.2.44 |
+| giveaway-idea-generator | 1.3.45 |
+| giveaway-results-review | 1.6.37 |
+| gleam-campaign-setup | 1.2.49 |
 
 ## Skills
 
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.46 (2026-10-10)
+
+Your results review now gives one verdict for each action. A sharing action with completions equal to 20% of Entrants reads below the typical 26% whether the script or the written guide answers. A confirmed Viral Shares action is read against its own median of about 11%. Action counts are described as completions, so nobody mistakes 52 completions from 26 people for 52% of your audience. If your terms give a chance per comment, the draw steps keep every comment's chance. Email-list plans keep marketing consent optional, so someone who declines it still enters.
 
 ## 3.0.45 (2026-10-10)
 
