@@ -139,13 +139,14 @@ A schedule that fills the whole run, with the copy written.
 
 ### Random Draw
 
-A draw you can't steer, from a script that needs no account and no dependencies.
+A draw anyone holding your inputs can rerun to the same Winners, from a script that needs no account and no dependencies.
 
-- Publish the commitment to your Entrant list and rules, plus a specific future beacon round, before its seed exists
+- Publish the commitment to your Entrant list and rules, plus the exact future beacon round, before that round exists, and keep the dated announcement
 - Draw from a public randomness beacon (drand or NIST), or an outside source you name in advance, and rerun it from the original inputs to show the same Winners
-- Reads CSV, spreadsheet exports, one-per-line lists and comment exports from Instagram, TikTok and YouTube
+- Reads CSV, spreadsheet exports, one-per-line lists and comment exports from Instagram, TikTok and YouTube. Keep the same file format from commit to draw
 - Deduplication, exclusions, entry weights, tiers, backups, and review lines for suspicious entry clusters
-- Audit record with the input hash, seed, round and timestamp, and a verify command that refetches the beacon
+- Audit record with the input hash, seed, round and timestamp, and a verify command that refetches the beacon. A verify PASS proves the Winners recompute from these inputs and this seed. It does not prove the seed or round was announced in advance
+- Published hashes let anyone who can guess the whole list confirm it. Publish these hashes only when the list is not guessable, or publish the commitment alone. The commitment alone can still confirm a guessed list when the rules are known
 
 > "Pick 3 winners from this CSV, weight by entries, exclude staff."
 

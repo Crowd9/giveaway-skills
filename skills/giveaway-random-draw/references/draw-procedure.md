@@ -4,12 +4,12 @@ Advice from practice. Sweepstakes and lottery law differs by jurisdiction. This 
 
 ## Before the draw
 
-- Close entries at the time and time zone in the terms. Export the list once and keep that file. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets only the public summary described below. It cannot reproduce the ranking.
+- Close entries at the time and time zone in the terms. Export the list once and keep that file. Keep the same file format from commit to draw. Record its hash (the script prints it). The verify step hashes the file it is given and compares that to the hash in the audit record, so it needs the same export, byte for byte. A copy with the emails hashed, trimmed or reordered will not match, and there is no mode that verifies against one. A sponsor who must not see addresses gets only the public summary described below. It cannot reproduce the ranking.
 - Apply the duplicate and weighting rules in the published terms. Before launching a new campaign, decide whether each person gets one chance or bonus entries add up.
 - List exclusions in a separate file: staff and their households, previous Winners if the terms bar them, Entrants from ineligible regions, entries confirmed to breach a published rule on automation. Investigate flags before excluding anyone.
 - Confirm whether one person may win multiple Prizes before committing. The script gives each person at most one Prize across all tiers and uses distinct people for backups, even when weights represent several earned Entries. Repeat-win terms need a compatible method, selected and checked against those terms before any commitment or draw. Keep the promised policy and chances.
 - Use the tiers and backup rules in the published terms. The script's `--backups` is a total count across the draw, so include enough for the announced procedure.
-- Choose and publish the future seed source before its value exists, alongside the commitment. Use the announced value only after it becomes available.
+- Publish the commitment and the exact future beacon round before that round exists, and keep the dated announcement. For another seed source, announce the source and exact future event before its value exists. Use only that announced value.
 
 - Expect some entries to fail verification. Across ordinary campaigns in the dataset the typical campaign had 4.2% of entries marked invalid, across 107,109 campaigns and 16,490 businesses, and referral-heavy mixes ran higher (source: `analysis/output/invalid_share.json`). Draw from valid entries only, and treat a drawn name as a Winner only after the entry checks out.
 
@@ -56,7 +56,7 @@ python3 scripts/draw.py draw entries.csv --rules rules.json \
 python3 scripts/draw.py verify draw-2026-09-12.json --exclude staff.txt
 ```
 
-Verification reconstructs every Winner and backup place from the committed tiers and backup count. The audit must contain that exact number of results in the recomputed order, with matching identifiers and Prize assignments. Missing Winners, omitted backups and reassigned tiers fail verification.
+A verify PASS proves the Winners recompute from these inputs and this seed. It does not prove the seed or round was announced in advance. Check the dated announcement separately. Verification reconstructs every Winner and backup place from the committed tiers and backup count. The audit must contain that exact number of results in the recomputed order, with matching identifiers and Prize assignments. Missing Winners, omitted backups and reassigned tiers fail verification.
 
 Every option still works as a flag, and a flag on the command line overrides the file. Publish the rules beside the commitment so readers can see what was fixed in advance. Remove private paths and personal data from the public copy, while retaining the exact original rules privately for verification.
 
@@ -74,19 +74,20 @@ zero, negative or otherwise invalid weights according to the published rules. Co
 Entrant retains their earned chances. Keep `--weight-column` when the campaign promised weighted entries.
 A successful command does not establish that the inputs were correct.
 
-**The published terms decide weighting.** The key is `u ^ (1 / weight)`. Weights determine the chances at each
+**The published terms decide weighting.** The recorded key is `u ^ (1 / weight)`. Weights determine the chances at each
 selection among the Entrants still eligible, with Winners removed from later selections. Preserve bonus entries
 when the campaign promised them. Prize value or concerns about appearances do not justify changing those
 chances. Record the weighting and any input correction in the audit note.
 
 ## Checking it without the script
 
-Each Entrant gets a sortable key from a hash of the seed and their id. Sort by key, highest first, ties broken by id, and the first Entrants fill the tiers in order, then the backups. Ten lines in Python, JavaScript or Go reproduce it, and the audit record lists every Winner's key for comparison.
+Choose the ranking from the committed `rules.tool_version` and `rules.method`. Reject any disagreement with the outer audit version or method. Versions before 2.4.3 sort the power key highest first. Versions 2.4.3 onward sort the score below lowest first. Break ties by normalized id, then fill tiers in order and backups last. Never try another ranking when verification fails. Use the script's binary64 arithmetic, including its rounding, to reproduce the order.
 
 ```
 u = first 8 bytes of SHA-256(seed + "|" + normalized id), read as an unsigned integer
 u = (u + 0.5) / 2^64
-key = u ^ (1 / weight)   # weight = 1 when unweighted
+key = u ^ (1 / weight)   # recorded key, weight = 1 when unweighted
+score = -log(u) / weight # ranking score for versions 2.4.3 onward
 ```
 
 The committed `id_normalization` rule controls how identifiers are prepared for duplicate merging, exclusions and hashing. `trim-lowercase` trims whitespace and lowercases email addresses, handles and other recognized person labels. Email headers include `email`, `email_address`, `contact_email` and `contact_email_address`, ignoring capitalization, spaces, hyphens and underscores. Dotted paths use the final field label. `trim-case-sensitive` trims whitespace while preserving opaque account IDs, including explicit custom identifier columns. Audits without this rule use the legacy `trim-lowercase` policy.
@@ -100,7 +101,7 @@ first 8 bytes 2c7bf4025594c526 → 3205423850667164966
 u = (3205423850667164966 + 0.5) / 2^64 = 0.1737663751
 ```
 
-Unweighted, that is the Entrant's key.
+Unweighted, that is the Entrant's recorded key. Current draws rank by the score even when recorded keys round to the same value.
 
 Deduplication is per identifier column. The script merges rows that match on the one column named by `--id-column`, so somebody who entered by email on one action and by handle on another counts twice unless the dataset links the two into one row. Pick the column that is unique per person in your file, and where the dataset carries both, merge them before you commit.
 
@@ -109,7 +110,7 @@ Deduplication is per identifier column. The script merges rows that match on the
 - Verify each drawn Entrant against the terms before calling them a Winner: required action completed, eligible region, age, one account.
 - Contact by the channel the Entrant gave. Two attempts, the second sent halfway to the reply deadline from the terms, then forfeiture and the next backup. On a seven-day deadline that puts the attempts about 72 hours apart.
 - If the terms allow another draw after backups run out, use the same frozen list with everyone already drawn added to exclusions. Publish a new commitment and a future seed source before the seed exists, and record it as draw 2.
-- Publish only a separate summary: commitment hash, input file hash, rules, method, seed and its source, counts and masked Winners. Remove all personal data and private paths. The full audit contains original Winner identifiers, and `--mask` changes console Winner lines only. Keep the full audit, Winners CSV, input and exclusions private.
+- Publish only a separate summary: commitment hash, input file hash, rules, method, seed and its source, counts and masked Winners. Published hashes let anyone who can guess the whole list confirm it. Publish these hashes only when the list is not guessable, or publish the commitment alone. The commitment alone can still confirm a guessed list when the rules are known. Remove all personal data and private paths. The full audit contains original Winner identifiers, and `--mask` changes console Winner lines only. Keep the full audit, Winners CSV, input and exclusions private.
 - The public summary lets readers check the announced commitment and seed source. It cannot reproduce the ranking without the private inputs. Redacting or hashing identifiers changes the ranking.
 - Keep the input file, the exclusions file, the audit JSON and the announcement together for as long as the terms or local law require.
 

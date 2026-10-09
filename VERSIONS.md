@@ -9,7 +9,7 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 | giveaway-timing-and-duration | 1.4.57 |
 | giveaway-winner-structure | 1.4.27 |
 | giveaway-promotion-plan | 1.3.56 |
-| giveaway-random-draw | 1.3.55 |
+| giveaway-random-draw | 1.3.56 |
 | giveaway-winner-communications | 1.2.45 |
 | giveaway-idea-generator | 1.3.47 |
 | giveaway-results-review | 1.6.42 |
@@ -343,6 +343,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.52 (2026-10-10)
+
+A draw audit can no longer be edited to pick a different Winner. The ranking now comes from the version locked into your commitment, so changing the version label fails verify. Weights too small or too large to rank safely are rejected with a clear message before anything is committed. The draw guide now says exactly what a passing check proves: your Winners recompute from your inputs and seed. Publish your commitment and the exact beacon round before that round exists, and keep the dated announcement, because that announcement is what shows you didn't pick the seed.
 
 ## 3.0.51 (2026-10-10)
 

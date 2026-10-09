@@ -141,7 +141,12 @@ def load_entries(path, id_column):
         return rows, pick_id_column(rows, id_column), sha(raw)
     return [{"entrant": l.strip()} for l in lines], "entrant", sha(raw)
 
-def prepare(rows, id_column, weight_column, exclude, normalization=None):
+# For nonzero log(u), 2^-53 <= -log(u) <= 65*log(2); these bounds keep scores normal and finite.
+MIN_WEIGHT, MAX_WEIGHT = 2.0 ** -1016, 2.0 ** 969
+LEGACY_METHOD = "sha256(seed|id) -> u in (0,1); key = u^(1/weight); highest keys win; ties by id"
+LOG_METHOD = "sha256(seed|id) -> u in (0,1); key = u^(1/weight); rank by log(u)/weight descending; ties by id"
+
+def prepare(rows, id_column, weight_column, exclude, normalization=None, enforce_weight_range=True):
     policy = normalization if normalization is not None else normalization_for(id_column)
     exclude = {norm(value, policy) for value in exclude}
     missing = sum(not norm(row.get(id_column)) for row in rows)
@@ -170,6 +175,9 @@ def prepare(rows, id_column, weight_column, exclude, normalization=None):
                 seen[key]["weight"] = total_weight
             continue
         seen[key] = {"id": key, "shown": str(r.get(id_column)).strip(), "weight": w}; entrants.append(seen[key])
+    if enforce_weight_range and any(not MIN_WEIGHT <= e["weight"] <= MAX_WEIGHT for e in entrants):
+        raise ValueError(f"entry weights must be between {MIN_WEIGHT:g} and {MAX_WEIGHT:g} inclusive "
+                         "after merging duplicates; rescale weights before committing or drawing")
     plus = {}
     for e in entrants:
         if "@" in e["id"]:
@@ -203,12 +211,30 @@ def scan(entrants):
         notes.append(f"{len(v)} handles differ only by a trailing number, e.g. {v[0]}, {v[1]}, {v[2]}")
     return notes
 
-def rank(entrants, seed):
+def rank(entrants, seed, legacy=False):
     for e in entrants:
         h = hashlib.sha256((seed + "|" + e["id"]).encode()).digest()
-        u = (int.from_bytes(h[:8], "big") + 0.5) / 2 ** 64          # uniform in (0, 1), never exactly 0 or 1
+        u = (int.from_bytes(h[:8], "big") + 0.5) / 2 ** 64          # binary64 can round the upper endpoint to 1.0
         e["u"] = u; e["key"] = u ** (1.0 / e["weight"])
+    if legacy:
+        return sorted(entrants, key=lambda e: (-e["key"], e["id"]))
     return sorted(entrants, key=lambda e: (-math.log(e["u"]) / e["weight"], e["id"]))
+
+def committed_ranking(audit):
+    rules = audit["rules"]
+    version = rules.get("tool_version")
+    if audit.get("version") != version or ("method" in audit and audit["method"] != rules.get("method")):
+        raise ValueError("outer version or method disagrees with committed rules")
+    try:
+        parts = tuple(int(part) for part in version.split("."))
+    except (AttributeError, TypeError, ValueError):
+        raise ValueError("unsupported committed tool version") from None
+    if len(parts) != 3 or not (2, 1, 0) <= parts <= tuple(map(int, VERSION.split("."))):
+        raise ValueError("unsupported committed tool version")
+    legacy = parts < (2, 4, 3)
+    if rules.get("method") != (LEGACY_METHOD if legacy else LOG_METHOD):
+        raise ValueError("committed method disagrees with committed tool version")
+    return legacy
 
 def parse_tiers(spec, winners):
     if not spec:
@@ -356,6 +382,10 @@ def mask(x):
 def cmd_verify(a):
     with open(a.audit_file) as resource:
         audit = json.load(resource)
+    try:
+        legacy = committed_ranking(audit)
+    except ValueError as error:
+        print(f"FAIL {error}"); return 1
     path = a.input or audit["input_file"]; ok = True; source_unverified = False
     rows, id_column, digest = load_entries(path, audit["rules"]["id_column"])
     if digest != audit["input_sha256"]: print("FAIL input file hash differs from the audit record"); ok = False
@@ -411,7 +441,7 @@ def cmd_verify(a):
             except Exception as ex:
                 print(f"warn could not refetch NIST pulse ({ex}); seed source unverified")
                 source_unverified = True
-    entrants, dupes, excluded, bad, clusters = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy)
+    entrants, dupes, excluded, bad, clusters = prepare(rows, id_column, audit["rules"]["weight_column"], exclude, policy, enforce_weight_range=False)
     counts = {"rows_read": len(rows), "unique_eligible": len(entrants), "duplicates_merged": dupes,
               "excluded": excluded, "rows_with_invalid_weight": bad, "plus_address_clusters": len(clusters)}
     for field, expected_count in counts.items():
@@ -432,26 +462,18 @@ def cmd_verify(a):
     elif isinstance(results, list) and len(results) == need:
         labels = [name for name, count in tiers for _ in range(count)]
         labels.extend(f"Backup {k + 1}" for k in range(backups))
-        expected = [(e["shown"], label, e["weight"], e["key"]) for e, label in zip(rank(entrants, audit["seed"]), labels)]
+        expected = [(e["shown"], label, e["weight"], e["key"]) for e, label in zip(rank(entrants, audit["seed"], legacy=legacy), labels)]
         recorded = [(r.get("id"), r.get("tier"), r.get("weight"), r.get("key"))
                     if isinstance(r, dict) and all(type(r.get(field)) is int or
                                                   (type(r.get(field)) is float and math.isfinite(r[field]))
                                                   for field in ("weight", "key")) else None for r in results]
         if expected == recorded:
-            print(f"ok   recomputed all {need} committed places, including order, tier assignments, weights and keys")
-        else:
-            version = audit.get("version")
-            try:
-                parts = tuple(int(part) for part in version.split("."))
-                older = len(parts) == 3 and (0, 0, 0) < parts < (2, 4, 3)
-            except (AttributeError, TypeError, ValueError):
-                older = False
-            legacy = sorted(entrants, key=lambda e: (-e["key"], e["id"]))
-            legacy_expected = [(e["shown"], label, e["weight"], e["key"]) for e, label in zip(legacy, labels)]
-            if older and legacy_expected == recorded:
-                print(f"ok   verified all {need} committed places under the legacy ranking (audit version {version})")
+            if legacy:
+                print(f"ok   verified all {need} committed places under the legacy ranking (audit version {audit['version']})")
             else:
-                print("FAIL recomputed result order, IDs, tier assignments, weights or keys differ from the audit record"); ok = False
+                print(f"ok   recomputed all {need} committed places, including order, tier assignments, weights and keys")
+        else:
+            print("FAIL recomputed result order, IDs, tier assignments, weights or keys differ from the audit record"); ok = False
     if not ok: print("FAIL"); return 1
     if source_unverified:
         print("PARTIAL: ranking recomputation verified; seed source unverified"); return 2
@@ -780,6 +802,107 @@ def self_test_recommit():
         assert audit["commitment"] == final_commitment
         assert audit["excluded"] == 1 and all(row["id"] != "gamma" for row in audit["results"])
 
+def self_test_committed_ranking():
+    import contextlib, copy, pathlib, tempfile
+    # Captured by running git-show sources for every draw.py revision through release 3.0.51.
+    # Each tuple retains the source commit, actual version, commitment, normalization and result order.
+    fixtures = [
+        ('deae3f5', '2.4.5', 'c63332f5cc8db0c7348834cf99e3d0d972c1affc37cfee28e53acda11f311e09', 'trim-case-sensitive', ('delta', 'gamma', 'alpha', 'beta')),
+        ('a15a6e1', '2.4.4', 'c024284539dbe37c076e0aa151787c30caaddb8bb5408fe065944222437744f2', 'trim-case-sensitive', ('delta', 'gamma', 'alpha', 'beta')),
+        ('0f3730e', '2.4.4', 'c024284539dbe37c076e0aa151787c30caaddb8bb5408fe065944222437744f2', 'trim-case-sensitive', ('delta', 'gamma', 'alpha', 'beta')),
+        ('b4e52d9', '2.4.3', '2e1b0dae0c02416670e52a3f4556f8f50bf891701fd5e38641531328d7ffa91a', None, ('delta', 'gamma', 'alpha', 'beta')),
+        ('2035a66', '2.4.3', '2e1b0dae0c02416670e52a3f4556f8f50bf891701fd5e38641531328d7ffa91a', None, ('delta', 'gamma', 'alpha', 'beta')),
+        ('da5c6bb', '2.4.3', '2e1b0dae0c02416670e52a3f4556f8f50bf891701fd5e38641531328d7ffa91a', None, ('delta', 'gamma', 'alpha', 'beta')),
+        ('a1181e9', '2.4.3', '2e1b0dae0c02416670e52a3f4556f8f50bf891701fd5e38641531328d7ffa91a', None, ('delta', 'gamma', 'alpha', 'beta')),
+        ('9b0102f', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('5afb6d6', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('795e419', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('76b158f', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('182fcd6', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('7748373', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('2113e8a', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('139cc8e', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('7cdd296', '2.4.2', '0c0ece795fef70c4495c63912522c8810b0789455ef0df293a19eee6049131b4', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('62e0e43', '2.4.0', 'f517e9a20deb8c5a00c1143bd04583b31d3ff5fe2387eba717b9fe9f1118f585', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('ff9905d', '2.4.0', 'f517e9a20deb8c5a00c1143bd04583b31d3ff5fe2387eba717b9fe9f1118f585', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('82ee2d7', '2.4.0', 'f517e9a20deb8c5a00c1143bd04583b31d3ff5fe2387eba717b9fe9f1118f585', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('6f6bbbf', '2.4.0', 'f517e9a20deb8c5a00c1143bd04583b31d3ff5fe2387eba717b9fe9f1118f585', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('aa96b51', '2.3.0', 'fa5ae90dc2bd48e774daff19c1f8a0cb9437686f0e893d4e3bed593dee99471b', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('324eb25', '2.2.0', '7be271da1bc1858a34777e0b92fc7cc6cd97a975fd1ee242b1a51824339533be', None, ('alpha', 'beta', 'delta', 'gamma')),
+        ('fc04424', '2.1.0', '53a74b25f1eb152406295b85e0301a192a841b18c1026c202f6927a40f442126', None, ('alpha', 'beta', 'delta', 'gamma')),
+    ]
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "entries.csv"
+        audit_path = pathlib.Path(directory) / "audit.json"
+        entries.write_text("id,entries\nalpha,1e20\nbeta,1e20\ngamma,1e20\ndelta,1e20\n")
+        for commit, version, committed, policy, order in fixtures:
+            legacy = tuple(map(int, version.split("."))) < (2, 4, 3)
+            rules = {"id_column": "id", "weight_column": "entries", "exclude_file_sha256": None,
+                     "tiers": [["Winner", 3]], "backups": 1,
+                     "method": LEGACY_METHOD if legacy else LOG_METHOD, "tool_version": version}
+            if policy is not None: rules["id_normalization"] = policy
+            audit = {"version": version, "input_file": str(entries),
+                     "input_sha256": "ce19fed33fcc071d7ab04511624cbe2dd2bd81c0c70905a72b0acfa00a337ba0",
+                     "rules": rules, "commitment": committed, "rows_read": 4, "unique_eligible": 4,
+                     "duplicates_merged": 0, "excluded": 0, "rows_with_invalid_weight": 0,
+                     "plus_address_clusters": 0, "seed": "regression-seed",
+                     "seed_source": {"type": "published text", "value": "regression-seed"},
+                     "results": [{"tier": "Winner" if i < 3 else "Backup 1", "id": key,
+                                  "weight": 1e20, "key": 1.0} for i, key in enumerate(order)]}
+            def check(record, expected):
+                audit_path.write_text(json.dumps(record))
+                with contextlib.redirect_stdout(io.StringIO()) as output:
+                    actual = main(["verify", str(audit_path)])
+                assert actual == expected, (commit, output.getvalue())
+                if expected == 0: assert output.getvalue().rstrip().endswith("PASS")
+            check(audit, 0)
+            # Neither direction may fall back to the other ranking, even with matching metadata.
+            alternate = ("delta", "gamma", "alpha", "beta") if legacy else ("alpha", "beta", "delta", "gamma")
+            changed = copy.deepcopy(audit)
+            for row, key in zip(changed["results"], alternate): row["id"] = key
+            check(changed, 1)
+            changed["version"] = VERSION if legacy else "2.4.2"
+            check(changed, 1)
+            changed = copy.deepcopy(audit); changed["version"] = "2.4.2" if not legacy else VERSION
+            check(changed, 1)
+            changed = copy.deepcopy(audit); changed["method"] = "different method"
+            check(changed, 1)
+            changed = copy.deepcopy(audit); changed["rules"]["method"] = "different method"
+            changed["commitment"] = commitment(changed["input_sha256"], changed["rules"])
+            check(changed, 1)
+
+
+def self_test_weight_range():
+    import contextlib, pathlib, tempfile
+    from unittest.mock import patch
+    with tempfile.TemporaryDirectory() as directory:
+        entries = pathlib.Path(directory) / "weights.csv"
+        common = [str(entries), "--id-column", "id", "--weight-column", "entries"]
+        for weight in (1e-320, MIN_WEIGHT / 2, MAX_WEIGHT * 2):
+            entries.write_text("id,entries\n" + "".join(f"{key},{weight!r}\n" for key in ("alpha", "beta", "gamma", "delta")))
+            for command in ("commit", "draw"):
+                for seed in ("explicit-seed-0", "explicit-seed-1", "explicit-seed-2"):
+                    args = [command] + common + (["--seed", seed] if command == "draw" else [])
+                    with patch(__name__ + ".seed_from", side_effect=AssertionError("must reject before seed selection")):
+                        with contextlib.redirect_stdout(io.StringIO()) as output:
+                            try: main(args)
+                            except ValueError as error: assert "entry weights must be between" in str(error)
+                            else: raise AssertionError((command, weight, "unsupported weight accepted"))
+                    assert "commitment" not in output.getvalue()
+        for weight in (MIN_WEIGHT, 1, 10 ** 9, 1e20, MAX_WEIGHT):
+            entries.write_text(f"id,entries\nalpha,{weight!r}\nbeta,{weight!r}\n")
+            for command in ("commit", "draw"):
+                with contextlib.redirect_stdout(io.StringIO()):
+                    assert main([command] + common + (["--seed", "explicit-seed-0"] if command == "draw" else [])) == 0
+            for u in (2.0 ** -65, 1.0 - 2.0 ** -53):
+                score = -math.log(u) / weight
+                assert math.isfinite(score) and score >= sys.float_info.min
+        entries.write_text(f"id,entries\nalpha,{MAX_WEIGHT!r}\nalpha,{MAX_WEIGHT!r}\n")
+        try: prepare(*load_entries(str(entries), "id")[:2], "entries", set())
+        except ValueError as error: assert "after merging duplicates" in str(error)
+        else: raise AssertionError("combined weight outside the supported range accepted")
+
+
 def self_test_rank_underflow():
     import contextlib, copy, pathlib, tempfile
     seed = "regression-seed"
@@ -958,6 +1081,8 @@ def self_test_plan():
 
 
 def self_test():
+    self_test_committed_ranking()
+    self_test_weight_range()
     self_test_plan()
     self_test_identifier_case()
     self_test_seed_sources()
@@ -1107,4 +1232,7 @@ def main(argv):
     return {"plan": cmd_plan, "commit": cmd_commit, "draw": cmd_draw, "verify": cmd_verify}.get(a.cmd, lambda a: ap.print_help() or 2)(a)
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except ValueError as error:
+        sys.exit(f"draw.py: {error}")
