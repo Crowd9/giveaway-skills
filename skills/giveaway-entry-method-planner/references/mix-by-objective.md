@@ -71,7 +71,7 @@ Five optional jobs help plan the mix. In the answer, replace these labels with a
 
 ## Actions that came with more people (extracted)
 
-Among the campaigns we can compare fairly (no repeatable action, a run of 14 days or less, which is what makes Impressions comparable), Secret Code (a code shown on a stream, in a newsletter or in store) is the standout: it comes with a bigger crowd at no cost to Conversion Rate, the only Action in the table with that shape. Everything else trades one against the other. An app download and a Telegram join both come with a bigger crowd and give up Conversion Rate to get it, and the follow actions come with a smaller crowd that converts better on arrival. All of it describes what businesses chose, and a business that reaches a big crowd is also the sort to offer more Actions, so read a row as company an Action keeps.
+Among campaigns with no repeatable action and a run of 14 days or less, Telegram joins came with more Entrants and a higher Conversion Rate. Secret Code came with more Entrants and about the same Conversion Rate. App downloads came with more Entrants and a lower Conversion Rate. Follow actions differed: X Follows came with fewer Entrants and a lower Conversion Rate, while Twitch Follows came with fewer Entrants and a higher Conversion Rate. Read the counts and both measures in each row. These associations describe the campaigns businesses ran and do not show what adding an Action would change. Missing-data coverage is not reported separately for these rows.
 
 <!-- generated:em_actions_baseline -->
 | Action | Entrants vs the campaigns without it | Conversion Rate vs the same | Campaigns | Businesses |

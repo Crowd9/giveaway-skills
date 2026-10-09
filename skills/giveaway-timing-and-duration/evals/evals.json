@@ -69,20 +69,21 @@
   {
    "id": 3,
    "prompt": "Best day of the week to start a giveaway?",
-   "expected_output": "Recommends starting when the audience is available and the team can respond. May omit the weekday statistic. If used, attributes it to the campaign data, explicitly says the weekday table has no reported campaign count, and distinguishes organizer choice from outcomes. Never fabricates a count or borrows one from another population.",
+   "expected_output": "Recommends starting when the audience is available and the team can respond. May omit weekday statistics. If used, distinguishes the start-share table about organizer choices, whose sample count is unreported, from outcome tables, whose rows have campaign counts. Quotes the relevant row count for an outcome and notes that missing start-date coverage is unreported. Describes associations without claiming that choosing a day changes results.",
    "assertions": [
     "Ties the choice to audience and team availability",
-    "May omit the weekday statistic. If included, attributes it to campaign data, explicitly states the campaign count is unavailable, and describes organizer choice rather than outcomes",
-    "Rejects a fabricated or borrowed weekday sample size, including counts from the duration or full dataset populations"
+    "May omit weekday statistics. If included, attributes them to campaign data and distinguishes popularity from recorded outcomes",
+    "For start-share figures, explicitly states that the table has no reported campaign count. For outcome figures, uses the quoted rows' own campaign counts and states that missing start-date coverage is unreported",
+    "Rejects fabricated or borrowed sample sizes, claims that all weekday outcomes are equal, and causal weekday recommendations"
    ],
    "files": [],
    "assessment": "judgement-only: independent review required; no keyword check can establish the complete acceptance criteria",
    "review_checks": [
     {
      "id": "weekday-evidence",
-     "criterion": "Require audience and team availability to guide the recommendation. Accept practical advice without a weekday statistic. If a weekday statistic appears, require campaign-data attribution, an explicitly unavailable weekday campaign count, and a distinction between organizer choices and outcomes. Reject fabricated or borrowed sample sizes, even if a caveat appears elsewhere.",
-     "pass_example": "Start when your audience is available and your team can respond. The campaign data describes organizer preferences, but the weekday table has no reported campaign count and cannot show which day performs better.",
-     "fail_example": "Monday is most common in the weekday data from 116,499 campaigns, so start then when your team is available."
+     "criterion": "Require audience and team availability to guide the recommendation. Accept practical advice without a weekday statistic. If statistics appear, require campaign-data attribution and distinguish the start-share popularity table from the outcome tables. Start-share figures require disclosure of the unreported sample count. Outcome figures require their own row campaign counts and disclosure that missing start-date coverage is unreported. Reject fabricated or borrowed counts, claims of equal Entrant outcomes, or claims that selecting a day causes a result.",
+     "pass_example": "Start when your audience is available and your team can respond. In the campaign data outcome table, Saturday starts recorded a median of 438 Entrants across 8,372 campaigns, while Friday starts recorded 520 across 18,193. Missing start-date coverage is unreported. These associations do not show what changing your start day would do.",
+     "fail_example": "Monday is most common in the weekday data from 116,499 campaigns, so start then. Weekday has no difference in Entrant outcomes."
     }
    ]
   },

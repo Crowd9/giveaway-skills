@@ -1476,10 +1476,7 @@
   "indiegogo": 6,
   "weebly": 6,
   "google_play": 5,
-  "substack": 4,
-  "itch": 4,
-  "bigcartel": 2,
-  "squarespace": 1
+  "suppressed_below_floor": 4
  },
  "by_host_rule": {
   "youtube": {

@@ -5,7 +5,7 @@
      --open "2026-10-01 09:00 AEST" --close "2026-10-14 23:59 AEST" --draw "2026-10-15 10:00 AEST" \
      --eligible "Australian residents aged 18 or over" --exclude "employees of the promoter and their immediate families" \
      --prize "One Sweet Week box (seven pastries and a coffee daily for seven days), retail value AUD 70" --winners 5 \
-     --method random --notify "email and Instagram direct message" --reply-days 3 --publish "first name and suburb" \
+     --method random --notify "email and Instagram direct message" --reply-days 7 --publish "first name and suburb" \
      --delivery "collected in store within 30 days" --cash-alternative no --region AU
 """
 import argparse, sys
@@ -15,7 +15,7 @@ def draft(a):
          f"Entry period. Entries open at {a.open} and close at {a.close}. Entries received outside this period are invalid.",
          f"Eligibility. Entry is open to {a.eligible}. The following are not eligible: {a.exclude}.",
          "How to enter. Entrants complete the entry steps shown on the entry page. No purchase is necessary to enter. Where an optional step involves a purchase, a free entry route of equal weight is available. Entries that are incomplete, duplicated, automated, or made through multiple accounts are void.",
-         f"Prize. {a.prize}. There " + ("is 1 Winner" if a.winners == 1 else f"are {a.winners} Winners") + ". The Prize is " + ("not transferable and no cash alternative is offered" if a.cash_alternative == "no" else "transferable and a cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
+         f"Prize. {a.prize}. There " + ("is 1 Winner" if a.winners == 1 else f"are {a.winners} Winners") + ". The Prize is " + ("transferable" if a.transferable == "yes" else "not transferable") + ". " + ("No cash alternative is offered" if a.cash_alternative == "no" else "A cash alternative of equal value may be requested") + ". The Promoter may substitute a Prize of equal or greater value if the stated Prize becomes unavailable.",
          "Winner selection. Winners are selected " + ("at random from all valid Entries" if a.method == "random" else "by the Promoter's judges on the published criteria, and the judges' decision is final") + f" on {a.draw}." + (" The draw method is published in advance and the result can be verified from the published record." if a.method == "random" else ""),
          f"Notification. Winners are notified by {a.notify} within 3 days of selection and must respond within {a.reply_days} day{'s' if a.reply_days != 1 else ''} of notification. If a Winner does not respond, cannot be verified as eligible, or declines the Prize, the Prize is forfeited and a replacement Winner is selected the same way.",
          "Verification. Winners may be asked to provide proof of identity, age and residence before the Prize is released.",
@@ -56,7 +56,8 @@ def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     for k in ("promoter", "name", "open", "close", "draw", "eligible", "exclude", "prize", "notify", "publish", "delivery"): ap.add_argument("--" + k, required="--self-test" not in argv)
     ap.add_argument("--address", default=""); ap.add_argument("--winners", type=int, default=1); ap.add_argument("--method", choices=["random", "judged"], default="random")
-    ap.add_argument("--reply-days", type=int, default=3); ap.add_argument("--cash-alternative", choices=["yes", "no"], default="no"); ap.add_argument("--region", default="none", help="one or more of AU, UK, US, EU, CA, comma separated. Any other country is named in the output as uncovered")
+    ap.add_argument("--reply-days", type=int, default=7); ap.add_argument("--cash-alternative", choices=["yes", "no"], default="no"); ap.add_argument("--region", default="none", help="one or more of AU, UK, US, EU, CA, comma separated. Any other country is named in the output as uncovered")
+    ap.add_argument("--transferable", choices=["yes", "no"], default="no", help="whether the Prize can be transferred, independently of a cash alternative")
     ap.add_argument("--marketing-consent", action="store_true", help="add a marketing-consent clause separate from the personal-information clause: entry alone does not subscribe anyone, and how to unsubscribe")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args(argv)
@@ -77,6 +78,21 @@ def main(argv):
         assert "Note for Australia" not in m, "only the regions asked for get a note"
         import contextlib, io
         required = [item for key in ("promoter", "name", "open", "close", "draw", "eligible", "exclude", "prize", "notify", "publish", "delivery") for item in ("--" + key, "test")]
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            main(required)
+        assert "must respond within 7 days" in output.getvalue()
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            main(required + ["--reply-days", "2"])
+        assert "must respond within 2 days" in output.getvalue()
+        for cash in ("yes", "no"):
+            for transfer in ("yes", "no"):
+                with contextlib.redirect_stdout(io.StringIO()) as output:
+                    main(required + ["--cash-alternative", cash, "--transferable", transfer])
+                text = output.getvalue()
+                assert ("The Prize is transferable." in text) == (transfer == "yes")
+                assert ("The Prize is not transferable." in text) == (transfer == "no")
+                assert ("A cash alternative of equal value may be requested." in text) == (cash == "yes")
+                assert ("No cash alternative is offered." in text) == (cash == "no")
         for option, value in (("--winners", "0"), ("--winners", "-1"), ("--reply-days", "-1")):
             with contextlib.redirect_stderr(io.StringIO()), contextlib.redirect_stdout(io.StringIO()):
                 try: main(required + [option, value])

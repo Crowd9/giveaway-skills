@@ -29,16 +29,50 @@ class PrivacyFloorTests(unittest.TestCase):
                     "organizers_rest", "organizers_with", "organizers_reached",
                     "organizers_top_stratified", "ordinary_organizers",
                     "n_businesses", "business_count", "distinct_business_count",
-                    "n_organizers", "organizer_count"):
+                    "n_organizers", "organizer_count", "sites"):
             self.assertTrue(privacy_problems({key: 4}), key)
 
     def test_campaign_volume_cannot_clear_business_floor(self):
         self.assertTrue(privacy_problems({"campaigns": 10000, "businesses": 1}))
 
-    def test_ratios_and_campaign_counts_are_not_business_counts(self):
-        self.assertEqual(privacy_problems({"campaigns": 1, "n": 1,
+    def test_ratios_are_not_business_counts(self):
+        self.assertEqual(privacy_problems({"campaigns": 5, "n": 5,
             "business_plus_share": 0.1, "repeat_organizer_share": 0.2,
             "campaigns_per_organizer_mean": 2.5}), [])
+
+    def test_small_campaign_samples_fail_even_with_enough_businesses(self):
+        for key in ("n", "campaigns", "clean_n"):
+            self.assertTrue(privacy_problems({key: 4, "businesses": 5}))
+
+    def test_holi_month_buckets_do_not_inherit_five_businesses(self):
+        holi = {"smaller_themes": {"Holi": {"n": 5, "organizers": 5,
+                "start_months": {"Mar": 4, "Dec": 1}}}}
+        problems = privacy_problems(holi)
+        self.assertEqual(len(problems), 2)
+        self.assertNotIn("Dec", " ".join(problems))
+        self.assertNotIn("Holi", " ".join(problems))
+
+    def test_count_maps_cover_arbitrary_bucket_labels(self):
+        for dimension, label in (("weekday", "Mon"), ("country", "US"),
+                ("niche", "art"), ("value_band", "100-250")):
+            for count in range(1, 5):
+                self.assertTrue(privacy_problems({dimension: {label: count}}))
+            self.assertEqual(privacy_problems({dimension: {label: 5}}), [])
+
+    def test_suppression_metadata_and_summary_statistics_are_not_buckets(self):
+        for value in ({"Sep": 9, "suppressed_below_floor": 1},
+                      {"suppressed_below_floor": 2},
+                      {"n": 20, "min": 1, "p25": 2, "median": 3, "max": 4},
+                      {"p25": 1, "p50": 2, "p75": 3}):
+            self.assertEqual(privacy_problems(value), [])
+
+    def test_sites_container_is_traversed_instead_of_treated_as_count(self):
+        self.assertEqual(privacy_problems({"sites": {"large": {"n": 8}}}), [])
+        self.assertTrue(privacy_problems({"sites": {"small": {"n": 4}}}))
+
+    def test_prose_definitions_are_not_counts_but_numeric_groups_still_are(self):
+        self.assertEqual(privacy_problems({"definitions": {"sites": "Distinct businesses"}}), [])
+        self.assertTrue(privacy_problems({"definitions": {"sites": 4}}))
 
     def test_invalid_count_types_fail(self):
         for count in (None, True, "5", 5.0, -1):

@@ -244,7 +244,7 @@ This is a finding about where volume sits, not a reason to close early. The peop
 | Sunday | 11,195 | 454 (-5%) | 4.50 (+3%) | 27% (+4%) | 3.7 | 7 |
 <!-- /generated -->
 
-Start weekday shows no difference on Conversion Rate or Entries per Entrant, and weekend starts draw about a tenth fewer Entrants. Businesses favour weekdays, and the data gives little reason to prefer one day over another.
+The outcome table records fewer Entrants for weekend starts, with smaller differences in Conversion Rate and Entries per Entrant. Its row counts describe the observed outcomes. The start-share table near the top describes organizer choices and has no reported sample count. Missing start-date coverage is not reported separately. Neither table establishes what choosing a different day would change, so plan around audience availability and team coverage.
 
 <!-- generated:cmp_recency -->
 | Gap since previous campaign, clean subset | Campaigns | Contestants | Entries per entrant | Contestants per impression | Impressions per contestant | Methods |
@@ -388,7 +388,7 @@ A separate check, using all runs at their actual length, for a second read on th
 | Sunday | 11,231 | 4,192 | 454 | 27% |
 <!-- /generated -->
 
-Entrants run from 438 on Saturday to 521 on Friday and the Conversion Rate from 26% to 28% across the week, the same read as the duration-matched weekday table above: flat on Conversion Rate, with about a tenth fewer Entrants on a weekend start. Weekday still shows no usable difference on Conversion Rate.
+This outcome table also records fewer Entrants for weekend starts and a narrow range of Conversion Rates. Use its own campaign and business counts when quoting a row. It describes recorded results alongside start days, without establishing the effect of choosing a day.
 
 Month moves once, in December, and nowhere else:
 

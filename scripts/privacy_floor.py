@@ -1,4 +1,4 @@
-"""Check distinct-business counts at every depth of published aggregate JSON.
+"""Check business and campaign counts at every depth of published aggregate JSON.
 
 This guard checks explicit counts, including subgroup counts on comparison rows.
 It cannot recover missing distinct-business counts from campaign counts. Private
@@ -9,13 +9,33 @@ import re
 
 FLOOR = 5
 COUNT_KEY = re.compile(
-    r"^(?:(?:n_(?:businesses|organizers|organisers))|"
+    r"^(?:sites|(?:n_(?:businesses|organizers|organisers))|"
     r"(?:(?:unique|distinct)_)?(?:business|organizer|organiser)_count|"
     r"(?:(?:unique|distinct|ordinary|clean|valued|collab)_)?"
     r"(?:businesses|organizers|organisers)"
     r"(?:_(?:count|sites|reached|offered|with|with_5_plus_campaigns|"
     r"top|rest|top_stratified|top_raw))?)$"
 )
+
+
+SUPPRESSION_KEY = "suppressed_below_floor"
+SAMPLE_KEY = re.compile(r"^(?:n|campaigns|[a-z_]+_n)$")
+STATISTIC_KEY = re.compile(
+    r"^(?:min|max|median|mean|std|count|p[0-9]+|.*_(?:mean|median|share|ratio|percentile))$"
+)
+
+
+def is_count_map(value):
+    """Recognize categorical integer counts, excluding summary-statistic objects.
+
+    Labels may be months, years, countries, niches or numeric value bands. The
+    suppression marker records removed bucket totals and is never a cohort.
+    """
+    counts = {key: count for key, count in value.items() if key != SUPPRESSION_KEY}
+    return bool(counts) and all(type(count) is int for count in counts.values()) and not any(
+        COUNT_KEY.fullmatch(key) or SAMPLE_KEY.fullmatch(key) or STATISTIC_KEY.fullmatch(key)
+        for key in counts
+    )
 
 
 def privacy_problems(value, path="$"):
@@ -27,14 +47,23 @@ is explicitly zero. A parent count never excuses a smaller nested subgroup.
 """
     problems = []
     if isinstance(value, dict):
+        if is_count_map(value):
+            for index, (key, count) in enumerate(value.items()):
+                if key != SUPPRESSION_KEY and 0 < count < FLOOR:
+                    problems.append(f"{path}.bucket[{index}]: campaign count is below the five-campaign privacy floor")
         for key, count in value.items():
-            if not COUNT_KEY.fullmatch(key):
+            if SAMPLE_KEY.fullmatch(key) and type(count) is int and 0 < count < FLOOR:
+                problems.append(f"{path}: {key} is below the five-campaign privacy floor")
+            if not COUNT_KEY.fullmatch(key) or isinstance(count, (dict, list)):
                 continue
             if type(count) is not int or count < 0:
                 problems.append(f"{path}: {key} must be a nonnegative integer")
             elif count < FLOOR and not (count == 0 and _empty_cohort(value)):
                 problems.append(f"{path}: {key} is below the five-business privacy floor")
-        for index, child in enumerate(value.values()):
+        for index, (key, child) in enumerate(value.items()):
+            if key == "definitions" and isinstance(child, dict) and all(
+                    isinstance(description, str) for description in child.values()):
+                continue
             problems.extend(privacy_problems(child, f"{path}.object[{index}]"))
     elif isinstance(value, list):
         for index, child in enumerate(value):
@@ -108,6 +137,7 @@ def committed_file_problems(path, content, mode="100644"):
 def check_committed_files():
     """Inspect tracked working-tree contents so local and CI checks agree."""
     from pathlib import Path
+    import json
     import subprocess
 
     root = Path(__file__).resolve().parents[1]
@@ -123,7 +153,13 @@ def check_committed_files():
             content = ""  # Never follow a symlink to read external content.
         else:
             content = file.read_bytes().decode("utf-8", errors="replace")
-        for problem in committed_file_problems(path, content, mode):
+        problems = committed_file_problems(path, content, mode)
+        if mode != "120000" and path.startswith("analysis/output/") and path.endswith(".json"):
+            try:
+                problems.extend(privacy_problems(json.loads(content)))
+            except json.JSONDecodeError:
+                problems.append("invalid aggregate JSON")
+        for problem in problems:
             print(f"{path}: {problem}")
             failures += 1
     if not failures:

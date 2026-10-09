@@ -513,7 +513,7 @@ const DATA={{DATA}};
   function upd1(){const sh=+es.value/100;ec.innerHTML=fmt(Math.round(sh*N))+' <small>addresses if <span>'+Math.round(sh*100)+'%</span> of your '+fmt(N)+' Entrants sign up</small>';const t=SL[DATA.band].email;if(!t){er.textContent="";return;}er.textContent="Campaigns your size that ran an email action typically got a signup from "+(t.p[9]>=0.95?"almost every Entrant":Math.round(t.p[9]*100)+"% of Entrants")+". At "+Math.round(sh*100)+"% you'd be ahead of "+beats(sh,t)+"% of them, across "+fmt(t.n)+" campaigns.";}
   es.addEventListener("input",upd1);upd1();
   const en=document.getElementById("ent"),enb=document.getElementById("entBand"),enr=document.getElementById("entRank");
-  function upd2(){const n=+en.value;const k=bandOf(n),b=SL[k];enb.innerHTML='<span>'+fmt(n)+'</span> <small>Entrants puts you with campaigns of '+b.label+', where the typical one gets '+fmt(Math.round(b.contestants.p[9]))+', with '+b.entries_per_entrant.p[9].toFixed(1)+' Entries and '+b.actions_per_contestant.p[9].toFixed(1)+' actions each</small>';enr.textContent="That beats "+beats(n,SL.all.contestants)+"% of all "+fmt(SL.all.contestants.n)+" campaigns and "+beats(n,b.contestants)+"% of the "+fmt(b.contestants.n)+" your size. Getting there is what the promotion plan is for.";}
+  function upd2(){const n=+en.value;if(N<100||n<100){enb.textContent=fmt(n)+" Entrants";enr.textContent="No matching peers: the dataset starts at 100 Entrants";return;}const k=bandOf(n),b=SL[k];enb.innerHTML='<span>'+fmt(n)+'</span> <small>Entrants puts you with campaigns of '+b.label+', where the typical one gets '+fmt(Math.round(b.contestants.p[9]))+', with '+b.entries_per_entrant.p[9].toFixed(1)+' Entries and '+b.actions_per_contestant.p[9].toFixed(1)+' actions each</small>';enr.textContent="That beats "+beats(n,SL.all.contestants)+"% of all "+fmt(SL.all.contestants.n)+" campaigns and "+beats(n,b.contestants)+"% of the "+fmt(b.contestants.n)+" your size. Getting there is what the promotion plan is for.";}
   en.addEventListener("input",upd2);upd2();
   const pr=document.getElementById("prize"),prp=document.getElementById("prizePer");
   function upd3(){const c=+pr.value;prp.innerHTML='<span>'+fmt(c)+'</span> <small>works out at '+(c?(c/N).toFixed(2):"-")+' an Entrant'+(DATA.emails?' and '+(c?(c/DATA.emails).toFixed(2):"-")+' an address':'')+'</small>';}
@@ -548,22 +548,23 @@ def gather(a):
     for k in ("x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"): setattr(b, k, None)
     b.vertical = a.vertical; b.repeatable = a.repeatable; b.first_campaign = a.first_campaign; b.actions = None; b.history = None
     metrics = RV.review(b)
-    RV.PCT = RV.PCT or RV.load_pct(); band = RV.band(N); band_label = RV.band_label(N)
+    RV.PCT = RV.PCT or RV.load_pct(); band = RV.band(N) if N >= 100 else "below-100"; band_label = RV.band_label(N) if N >= 100 else "Below 100 Entrants"
     groups = RV.PCT.get("groups", {})
     def slice_of(key): return {m: {"n": groups[key][m]["n"], "p": groups[key][m]["p"]} for m in ("contestants", "email_uptake", "entries_per_entrant", "actions_per_contestant") if m in groups.get(key, {})}
     bands = {"band:100-250": ("100 to 250", 100, 250), "band:250-500": ("250 to 500", 250, 500), "band:500-1k": ("500 to 1,000", 500, 1000),
              "band:1k-2.5k": ("1,000 to 2,500", 1000, 2500), "band:2.5k-10k": ("2,500 to 10,000", 2500, 10000), "band:10k+": ("10,000 or more", 10000, 10 ** 9)}
     slices = {k: dict(label=v[0], lo=v[1], hi=v[2], **slice_of(k)) for k, v in bands.items()}
     slices["all"] = slice_of("all")
+    if N < 100: slices = {"band:below-100": {}}
     acts = []
     for act, comp, uniq, share, rate, sec, inv in R["actions"]:
         g = generic_name(act); fam = RV.family(act) or "other"
-        t = RV.PCT.get("per_action_uptake", {}).get(g) if g else None
+        t = RV.PCT.get("per_action_uptake", {}).get(g) if g and N >= 100 else None
         typ = t["p"][9] if t else None; rr = RV.rank(comp / N, t) if t else None
         acts.append({"name": act, "completions": comp, "share": comp / N, "typical": typ, "family": fam if fam in FAMILY_COLOUR else "other",
-                     "where": (f"better than {rr[0]}% of {n(rr[1])} offering {g}" if rr else "no matching group"), "entrants": uniq, "share_actions": share, "rate": rate, "seconds": sec, "invalid": inv})
+                     "where": (f"better than {rr[0]}% of {n(rr[1])} offering {g}" if rr else "No matching peers: the dataset starts at 100 Entrants" if N < 100 else "no matching group"), "entrants": uniq, "share_actions": share, "rate": rate, "seconds": sec, "invalid": inv})
     return {"R": R, "T": T, "N": N, "emails": emails, "metrics": metrics, "band": band, "band_label": band_label, "slices": slices, "acts": acts,
-            "reach": reach_rows(band_label), "pool": pool_rows(), "seq": seq_rows(), "insights": CR.insights(R)}
+            "reach": reach_rows(band_label) if N >= 100 else [], "pool": pool_rows() if N >= 100 else [], "seq": seq_rows() if N >= 100 else {"curve": [], "survival": [], "splits": []}, "insights": CR.insights(R)}
 
 
 def words_of(path):
@@ -594,8 +595,8 @@ def metric_rows(D):
 def tiles(D):
     T, N, R = D["T"], D["N"], D["R"]; V = R["viral"]
     em = D["emails"]
-    t = [("Entrants", n(N), f"{D['band_label']} band"), ("Entries each", f"{T['entries_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['entries_per_entrant']['p'][9]:.1f} typical for your size"),
-         ("Actions each", f"{T['actions_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['actions_per_contestant']['p'][9]:.1f} typical for your size"),
+    t = [("Entrants", n(N), f"{D['band_label']} band"), ("Entries each", f"{T['entries_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['entries_per_entrant']['p'][9]:.1f} typical for your size" if N >= 100 else "No matching peers"),
+         ("Actions each", f"{T['actions_per_entrant']:.1f}", f"{D['slices'][('band:' + D['band'])]['actions_per_contestant']['p'][9]:.1f} typical for your size" if N >= 100 else "No matching peers"),
          ("Referred Entrants", n(V["referred_entrants"]), f"{V['referred_share']:.0%} of Entrants")]
     if em: t[2] = ("Email signups", n(em), f"{em / N:.0%} of Entrants")
     return "\n".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v num">{esc(v)}</div><div class="c">{esc(c)}</div></div>' for l, v, c in t)
@@ -674,11 +675,11 @@ def render(D, W, S, a):
     <div class="subhead"><h3>Play With the Levers</h3><span class="note" style="margin:0">Move a slider and see what campaigns like yours got at that level, from Gleam campaign data. It's a comparison, not a prediction: bigger Prizes tend to come from bigger brands with bigger audiences, and more traffic usually means a different campaign.</span></div>
     <div class="changes">
       <div class="change"><div class="eyebrow">Your List</div><h3>Get More Entrants Onto Your List</h3><input type="range" id="emailShare" min="0" max="100" value="{round(email_share * 100)}" step="1" aria-label="Target share of Entrants signing up"><div class="target num" id="emailCount"></div><p id="emailRank" class="note" style="margin:0"></p></div>
-      <div class="change"><div class="eyebrow">Next Campaign</div><h3>Aim Bigger Next Time</h3><input type="range" id="ent" min="100" max="{max(20000, N * 2)}" value="{N}" step="1" aria-label="Entrants on the next run"><div class="target num" id="entBand"></div><p id="entRank" class="note" style="margin:0"></p></div>
+      <div class="change"><div class="eyebrow">Next Campaign</div><h3>Aim Bigger Next Time</h3><input type="range" id="ent" min="1" max="{max(20000, N * 2)}" value="{N}" step="1" aria-label="Entrants on the next run"><div class="target num" id="entBand"></div><p id="entRank" class="note" style="margin:0"></p></div>
       <div class="change"><div class="eyebrow">Your Spend</div><h3>What Your Prize Bought You</h3><input type="range" id="prize" min="0" max="{max(5000, int(a.prize_cost or 0) * 2)}" value="{int(a.prize_cost or 0)}" step="10" aria-label="Prize cost"><div class="target num" id="prizePer"></div><p class="note" style="margin:0">Worked on your {n(N)} Entrants{(" and " + n(data["emails"]) + " addresses") if data["emails"] else ""}. Cost benchmarks by vertical live in the Prize picker.</p></div>
       {reach_card}
       {pool_card}
-      <div class="change"><div class="eyebrow">Run It Again</div><h3>Your Next One</h3><div class="target num">{esc(surv.split(" of ")[0]) if surv else "-"} <small>{esc(surv.split(" ", 1)[1]) if surv else "no sequence table found in the references"}</small></div><p class="note" style="margin:0">{esc(nextrun)}</p></div>
+      <div class="change"><div class="eyebrow">Run It Again</div><h3>Your Next One</h3><div class="target num">{esc(surv.split(" of ")[0]) if surv else "-"} <small>{esc(surv.split(" ", 1)[1]) if surv else "No matching peers: the dataset starts at 100 Entrants" if N < 100 else "no sequence table found in the references"}</small></div><p class="note" style="margin:0">{esc(nextrun)}</p></div>
     </div>
   </div>'''
     page = TEMPLATE
@@ -690,6 +691,11 @@ def render(D, W, S, a):
                  "NCOUNTRIES": n(len(set(c for c, _ in countries))) if countries else "0", "DATA": json.dumps(data)}.items():
         page = page.replace("{{" + k + "}}", v)
     assert "{{" not in page, re.findall(r"\{\{\w+\}\}", page)[:5]
+    if N < 100:
+        page = page.replace("- campaigns of Below 100 Entrants in Gleam campaign data. Ranks describe what campaigns chose and never what a change would cause.",
+                            "No matching peers: the dataset starts at 100 Entrants. Actual campaign metrics only.")
+        page = page.replace("Move a slider and see what campaigns like yours got at that level, from Gleam campaign data. It's a comparison, not a prediction: bigger Prizes tend to come from bigger brands with bigger audiences, and more traffic usually means a different campaign.",
+                            "Move a slider to calculate targets from your campaign counts. No matching peers: the dataset starts at 100 Entrants.")
     return page
 
 
@@ -727,6 +733,26 @@ def self_test():
     fractional_page = render(gather(A), words_of(words), site_of(None), A)
     assert '>Entries</td><td class="num">10.5</td>' in fractional_page
     assert '>9.25</td>' in fractional_page and '>1.25</td>' in fractional_page
+    small = gather(A)
+    assert small["band"] == "below-100" and small["slices"] == {"band:below-100": {}}
+    assert not small["reach"] and not small["pool"] and not any(small["seq"].values())
+    assert all(x["typical"] is None and "starts at 100" in x["where"] for x in small["acts"])
+    assert "100 to 250" not in fractional_page and "better than" not in fractional_page
+    assert "Actual campaign metrics only" in fractional_page
+    # The dashboard inherits the reader's zero-and-report weight policy.
+    with open(p, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        wr.writerow(["x@example.com", "Subscribe", "NaN"])
+    unweighted = gather(A)
+    assert unweighted["T"]["entries"] == 0 and unweighted["T"]["unweighted_rows"] == 1
+    assert "rows without a valid Entries value" in render(unweighted, words_of(words), site_of(None), A)
+    # At the floor, comparisons remain available.
+    with open(p, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        for i in range(100): wr.writerow([f"person{i}@example.com", "Subscribe to Our List", "1"])
+    floor = gather(A)
+    assert floor["band"] == "100-250" and floor["slices"]["all"]
+    assert any(x["typical"] is not None for x in floor["acts"])
     print("self-test passed"); return 0
 
 

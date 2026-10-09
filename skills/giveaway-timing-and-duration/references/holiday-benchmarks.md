@@ -308,7 +308,7 @@ Source: `analysis/output/calendar_names.json` (`name_date_agreement`).
 
 ## Smaller and obscure dates (extracted)
 
-Themes that fewer than 100 campaigns named, so the shape only: campaigns, typical Entrants and the months they started. Under 50 campaigns the typical figure is a rough read.
+Smaller themes and narrow matches, showing campaigns, typical Entrants and the months they started. Under 50 campaigns the typical figure is a rough read. Start-month buckets below the privacy floor are omitted, with a dash where none remain.
 
 <!-- generated:hol_smaller -->
 | Theme | Campaigns | Entrants | Start months |
@@ -327,27 +327,27 @@ Themes that fewer than 100 campaigns named, so the shape only: campaigns, typica
 | Amazon Prime Day | 70 | 946 | Jul and Jun |
 | Labor Day (US) | 69 | 925 | Aug and Sep |
 | Carnival | 50 | 468 | Feb and Mar |
-| International Women's Day | 46 | 308 | Mar and Feb |
-| March Madness | 46 | 474 | Mar and Apr |
+| International Women's Day | 46 | 308 | Mar |
+| March Madness | 46 | 474 | Mar |
 | Chinese or Lunar New Year | 35 | 538 | Feb and Jan |
 | Super Bowl | 32 | 821 | Feb and Jan |
 | April Fools | 29 | 1,296 | Apr and Mar |
-| Canada Day | 28 | 1,916 | Jun and Jul |
+| Canada Day | 28 | 1,916 | Jun |
 | Diwali | 27 | 1,008 | Oct and Nov |
 | Galentine's Day | 25 | 990 | Feb and Jan |
 | Stocking stuffers | 20 | 296 | Nov and Dec |
 | Ramadan or Eid | 18 | 550 | Mar and Apr |
 | Cinco de Mayo | 15 | 437 | Apr and May |
-| Oktoberfest | 15 | 335 | Sep and Aug |
-| Midsummer | 13 | 726 | Jun and Jul |
-| Boxing Day | 10 | 980 | Dec and Nov |
-| Hanukkah | 9 | 468 | Dec and Nov |
-| Day of the Dead | 7 | 609 | Oct and May |
+| Oktoberfest | 15 | 335 | Sep |
+| Midsummer | 13 | 726 | Jun |
+| Boxing Day | 10 | 980 | Dec |
+| Hanukkah | 9 | 468 | Dec |
+| Day of the Dead | 7 | 609 | Oct |
 | Pi Day | 6 | 894 | Mar |
-| Holi | 5 | 2,547 | Mar and Dec |
+| Holi | 5 | 2,547 | - |
 <!-- /generated -->
 
-Named days that businesses used (National Coffee Day, National Sticker Day and similar) no longer clear five distinct businesses in the campaign analysis, each down to one to four businesses, mostly one, so none of them publish as a standalone figure any more. The pattern still holds in the National days and World days rows above: a named day nobody else in your category uses is a hook with no competition. Canada Day and April Fools carry the largest campaigns in this group on small counts, both tied to a single day of attention.
+Individual named days below the five-business privacy floor are omitted from the campaign analysis. The National days and World days rows combine broader themes. A named day can provide a relevant hook, but these aggregate rows do not establish how much competition a specific date has.
 
 Dates for the ones with a fixed or predictable day:
 
@@ -368,8 +368,7 @@ Dates for the ones with a fixed or predictable day:
 | Super Bowl | Sun 14 Feb 2027, the same day as Valentine's |
 
 
-A few more do appear and still fall short of the 30 campaigns a theme row here needs, so they get a count and no
-typical figure to plan against. Every count below comes from one definition, generated with the rest of this page.
+The smaller themes below meet the five-business privacy floor. Their typical Entrant counts are rough comparisons on small samples. Every count below comes from one definition, generated with the rest of this page.
 
 <!-- generated:smaller_named -->
 | Theme | Campaigns | Businesses | Typical Entrants | Busiest start months |
@@ -379,13 +378,13 @@ typical figure to plan against. Every count below comes from one definition, gen
 | Ramadan or Eid | 18 | 12 | 550 | Mar (8), Apr (6) |
 | Galentine's Day | 25 | 14 | 990 | Feb (17), Jan (6) |
 | Cinco de Mayo | 15 | 12 | 437 | Apr (9), May (6) |
-| Oktoberfest | 15 | 11 | 335 | Sep (9), Aug (2) |
-| Midsummer | 13 | 11 | 726 | Jun (6), Jul (3) |
-| Boxing Day | 10 | 8 | 980 | Dec (6), Nov (2) |
-| Hanukkah | 9 | 6 | 468 | Dec (6), Nov (3) |
-| Day of the Dead | 7 | 5 | 609 | Oct (5), May (1) |
+| Oktoberfest | 15 | 11 | 335 | Sep (9) |
+| Midsummer | 13 | 11 | 726 | Jun (6) |
+| Boxing Day | 10 | 8 | 980 | Dec (6) |
+| Hanukkah | 9 | 6 | 468 | Dec (6) |
+| Day of the Dead | 7 | 5 | 609 | Oct (5) |
 | Pi Day | 6 | 5 | 894 | Mar (6) |
-| Holi | 5 | 5 | 2,547 | Mar (4), Dec (1) |
+| Holi | 5 | 5 | 2,547 | - |
 
 Matched on the campaign title, the Prize name and the description, across the campaigns these benchmarks describe. Below the five-business floor and so not published: Juneteenth, Giving Tuesday, Small Business Saturday, Australia Day, Eurovision, Black History Month, Bonfire Night, Movember, Bastille Day, Grandparents Day.
-<!-- /generated --> Diwali also appears in the week and live-over tables above, which place it by its date and not by its wording. A campaign that names the holiday only in its description is not counted, so each count is a floor. Few businesses name any of these, so a hook built on one has little company in the data.
+<!-- /generated --> Diwali also appears in the week and live-over tables above, which place it by its date and not by its wording. Matches include the campaign title, Prize name and description. These counts describe the matching campaigns in the dataset and do not measure all competition for attention around a date.

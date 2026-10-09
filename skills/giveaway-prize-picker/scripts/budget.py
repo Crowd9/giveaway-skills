@@ -9,6 +9,7 @@ Check the arithmetic still works after an edit.
   python3 budget.py --self-test
 
 --cost-ratio is what a unit costs you as a fraction of retail (1.0 for bought at retail, 0.5 for own product at half).
+Pass --winners with the number of people winning to show cost per Winner. Prize units may share a Winner.
 Shipping and duty apply to physical units only (end the Prize name with "(digital)" to skip them).
 Every figure is in one currency. For a Prize bought or shipped in another, convert before you enter it and pass --rate
 "1 USD = 0.92 EUR, 9 Sep 2026" so the rate and the date it was taken sit on the printed breakdown.
@@ -38,6 +39,8 @@ def compute(a):
                        "full_redemption_cost": full_redemption_cost, "maximum_liability": a.consolation_max_liability}
     if a.budget is not None and (not math.isfinite(a.budget) or a.budget < 0):
         raise ValueError("budget must be finite and nonnegative")
+    if a.winners is not None and (not isinstance(a.winners, int) or isinstance(a.winners, bool) or a.winners < 1):
+        raise ValueError("winners must be a positive integer")
     prizes = []
     for p in a.prize:
         name, retail, units = p[0], float(p[1]), int(p[2]); digital = name.lower().endswith("(digital)")
@@ -62,7 +65,8 @@ def compute(a):
              ("Contingency", contingency)]
     total = subtotal + contingency
     result = {"currency": a.currency, "prizes": prizes, "retail_value_total": retail_total, "lines": lines, "total_estimate": total,
-              "headline_value_you_can_state": retail_total, "cost_per_winner": total / max(1, sum(p["units"] for p in prizes)),
+              "headline_value_you_can_state": retail_total, "cost_per_prize_unit": total / max(1, sum(p["units"] for p in prizes)),
+              "winners": a.winners, "cost_per_winner": total / a.winners if a.winners is not None else None,
               "consolation": consolation}
     if a.budget is not None:
         result.update(budget=a.budget, budget_remaining=a.budget - total, within_budget=total <= a.budget + 1e-9)
@@ -71,6 +75,7 @@ def compute(a):
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--currency", default="USD"); ap.add_argument("--prize", nargs=3, action="append", metavar=("NAME", "RETAIL", "UNITS"), default=[])
+    ap.add_argument("--winners", type=int, help="number of people winning, which can differ from the number of Prize units")
     ap.add_argument("--cost-ratio", type=float, default=1.0); ap.add_argument("--shipping", type=float, default=0.0)
     ap.add_argument("--international-share", type=float, default=0.0); ap.add_argument("--international-shipping", type=float, default=0.0)
     ap.add_argument("--duty-rate", type=float, default=0.0); ap.add_argument("--tax-on-prize", type=float, default=0.0)
@@ -98,7 +103,9 @@ def main(argv):
     if r["consolation"]:
         offer = r["consolation"]
         print(f"Consolation capped at {offer['quantity']} redemptions at {c} {offer['unit_cost']:,.2f} each, maximum liability {c} {offer['maximum_liability']:,.2f}.")
-    print(f"Total estimate: {c} {r['total_estimate']:,.0f}  (about {c} {r['cost_per_winner']:,.0f} per winner). Estimates only. Confirm prices and shipping quotes before committing.")
+    print(f"Total estimate: {c} {r['total_estimate']:,.0f}  (about {c} {r['cost_per_prize_unit']:,.0f} per Prize unit). Estimates only. Confirm prices and shipping quotes before committing.")
+    if r["winners"] is not None:
+        print(f"Cost per Winner: {c} {r['cost_per_winner']:,.0f} across {r['winners']} Winner(s).")
     if a.budget is not None:
         label = "Estimated budget remaining" if r["within_budget"] else "Over budget"
         print(f"{label}: {c} {abs(r['budget_remaining']):,.2f}")
@@ -110,7 +117,7 @@ def self_test():
     class A: pass
     a = A(); a.currency = "USD"; a.prize = [["Grand", "500", "1"], ["Runner (digital)", "60", "5"]]; a.cost_ratio = 0.5; a.shipping = 20; a.international_share = 0.5
     a.international_shipping = 60; a.duty_rate = 0.1; a.tax_on_prize = 0; a.substitute_reserve = 1; a.admin_hours = 2; a.hourly = 50; a.promotion = 100; a.contingency = 0.1
-    a.consolation_quantity = None; a.consolation_unit_cost = None; a.consolation_max_liability = None; a.budget = None
+    a.consolation_quantity = None; a.consolation_unit_cost = None; a.consolation_max_liability = None; a.budget = None; a.winners = None
     r = compute(a); L = dict(r["lines"])
     assert r["retail_value_total"] == 800 and L["Prize cost to you (retail x cost ratio)"] == 400
     assert abs(L["Shipping (domestic + international units)"] - (0.5 * 20 + 0.5 * 60)) < 1e-9   # one physical unit split
@@ -153,6 +160,29 @@ def self_test():
             pass
         else:
             raise AssertionError("invalid prize accepted")
+    import contextlib, io
+    args = ["--prize", "Camera", "400", "1", "--prize", "Lens", "200", "1", "--contingency", "0"]
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(args + ["--winners", "1", "--json"]) == 0
+    bundle = json.loads(output.getvalue())
+    assert bundle["cost_per_prize_unit"] == 300 and bundle["cost_per_winner"] == 600
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(args + ["--winners", "1"]) == 0
+    assert "300 per Prize unit" in output.getvalue() and "Cost per Winner: USD 600" in output.getvalue()
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(args) == 0
+    assert "300 per Prize unit" in output.getvalue() and "Cost per Winner" not in output.getvalue()
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(args + ["--winners", "2", "--json"]) == 0
+    assert json.loads(output.getvalue())["cost_per_winner"] == 300
+    for count in ("0", "-1", "1.5"):
+        with contextlib.redirect_stderr(io.StringIO()):
+            try:
+                main(args + ["--winners", count])
+            except SystemExit as exc:
+                assert exc.code == 2
+            else:
+                raise AssertionError("invalid Winner count accepted")
     print("self-test passed"); return 0
 
 if __name__ == "__main__": sys.exit(main(sys.argv[1:]))

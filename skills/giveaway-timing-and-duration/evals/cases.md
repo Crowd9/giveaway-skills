@@ -2,9 +2,13 @@
 
 Machine-readable form: `evals.json`. Style checks use `evals/style_check.py` at the repo root.
 
+## Criterion review, 10 October 2026
+
+Case 3 now distinguishes start-share popularity from recorded outcomes. An independent reviewer found no defects in the updated criterion or its passing and failing examples. The prior fixture results below predate this change. No new generated answer run is claimed.
+
 ## Targeted fixture check, 10 October 2026
 
-Case 3: the attributed weekday answer with an explicitly unavailable campaign count passed, and practical scheduling advice omitting the statistic passed. The answer borrowing the full-dataset count failed. An independent reviewer assessed each fixture against the updated meaning criterion, then `evals/check_deliverable.py` returned the expected PASS or FAIL. These fixtures test the acceptance criteria, not generated answer quality.
+Historical result before the 3.0.14 distinction between popularity and outcomes. Case 3: the attributed weekday answer with an explicitly unavailable campaign count passed, and practical scheduling advice omitting the statistic passed. The answer borrowing the full-dataset count failed. An independent reviewer assessed each fixture against the updated meaning criterion, then `evals/check_deliverable.py` returned the expected PASS or FAIL. These fixtures test the acceptance criteria, not generated answer quality.
 
 ## The 40-Prompt Evaluation, 11 September 2026
 

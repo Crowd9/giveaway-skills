@@ -4,15 +4,15 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.43 |
-| giveaway-entry-method-planner | 1.2.41 |
-| giveaway-timing-and-duration | 1.4.40 |
-| giveaway-winner-structure | 1.4.13 |
+| giveaway-prize-picker | 1.3.44 |
+| giveaway-entry-method-planner | 1.2.42 |
+| giveaway-timing-and-duration | 1.4.41 |
+| giveaway-winner-structure | 1.4.14 |
 | giveaway-promotion-plan | 1.3.41 |
 | giveaway-random-draw | 1.3.36 |
 | giveaway-winner-communications | 1.2.33 |
 | giveaway-idea-generator | 1.3.36 |
-| giveaway-results-review | 1.6.12 |
+| giveaway-results-review | 1.6.13 |
 | gleam-campaign-setup | 1.2.39 |
 
 ## Skills
@@ -343,6 +343,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.14 (2026-10-10)
+
+We removed thirty small counts, such as a holiday start month only one or two campaigns shared. The build now fails if one comes back.
+
+Generated terms give a Winner seven days to reply, matching the advice, and offering a cash alternative no longer makes the Prize transferable as well. The budget calculator shows the cost of each Prize unit and, when you give it your Winner count, the cost of each Winner.
+
+A report built from your export no longer counts columns like Name as entry actions. It checks that every Entry weight is a real number, and it keeps referral completions apart from the people they brought in. Under 100 Entrants, the report and dashboard skip the peer ranking.
+
+Two lines of entry advice that disagreed with their own table now agree with it. Weekday advice now keeps which day businesses pick apart from how each day performed.
 
 ## 3.0.13 (2026-10-10)
 

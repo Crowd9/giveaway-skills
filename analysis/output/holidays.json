@@ -87,8 +87,7 @@
    "start_months": {
     "Nov": 203,
     "Oct": 50,
-    "Dec": 4,
-    "Sep": 3
+    "suppressed_below_floor": 2
    },
    "lead_days_median": 14,
    "lead_days_p25": 7,
@@ -176,7 +175,7 @@
     "Jun": 218,
     "May": 73,
     "Aug": 25,
-    "Jul": 4
+    "suppressed_below_floor": 1
    },
    "lead_days_median": 12.0,
    "lead_days_p25": 7,
@@ -198,7 +197,7 @@
     "Mar": 204,
     "Apr": 194,
     "Feb": 32,
-    "Dec": 4
+    "suppressed_below_floor": 1
    },
    "lead_days_median": 10,
    "lead_days_p25": 4,

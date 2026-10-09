@@ -244,7 +244,7 @@
    "contestants": 308.0,
    "start_months": {
     "Mar": 44,
-    "Feb": 1
+    "suppressed_below_floor": 1
    }
   },
   "March Madness": {
@@ -253,7 +253,7 @@
    "contestants": 473.5,
    "start_months": {
     "Mar": 38,
-    "Apr": 4
+    "suppressed_below_floor": 1
    }
   },
   "Super Bowl": {
@@ -280,7 +280,7 @@
    "contestants": 1916.5,
    "start_months": {
     "Jun": 27,
-    "Jul": 1
+    "suppressed_below_floor": 1
    }
   },
   "Pride": {
@@ -343,7 +343,7 @@
    "contestants": 335,
    "start_months": {
     "Sep": 9,
-    "Aug": 2
+    "suppressed_below_floor": 1
    }
   },
   "Midsummer": {
@@ -352,7 +352,7 @@
    "contestants": 726,
    "start_months": {
     "Jun": 6,
-    "Jul": 3
+    "suppressed_below_floor": 1
    }
   },
   "Holi": {
@@ -360,8 +360,7 @@
    "organizers": 5,
    "contestants": 2547,
    "start_months": {
-    "Mar": 4,
-    "Dec": 1
+    "suppressed_below_floor": 2
    }
   },
   "Boxing Day": {
@@ -370,7 +369,7 @@
    "contestants": 980.0,
    "start_months": {
     "Dec": 6,
-    "Nov": 2
+    "suppressed_below_floor": 1
    }
   },
   "Pi Day": {
@@ -387,7 +386,7 @@
    "contestants": 468,
    "start_months": {
     "Dec": 6,
-    "Nov": 3
+    "suppressed_below_floor": 1
    }
   },
   "Day of the Dead": {
@@ -396,7 +395,7 @@
    "contestants": 609,
    "start_months": {
     "Oct": 5,
-    "May": 1
+    "suppressed_below_floor": 1
    }
   }
  },

@@ -14,7 +14,7 @@ timezone, so every time figure is account time. Status Invalid rows are counted 
 Details on a refer action holds the referred person's email: that is the referral graph. Actions and Entries are outputs,
 never funnel stages. The only funnel is Impressions to Entrants, and Impressions are not in the dataset.
 """
-import argparse, collections, csv, datetime as dt, os, statistics as st, sys, urllib.parse
+import argparse, collections, csv, datetime as dt, math, os, statistics as st, sys, urllib.parse
 
 # The benchmark columns come from review.py and the action families from gleam_export.py, both beside this file.
 # A copy of this script on its own still runs; the columns then say no benchmark was loaded.
@@ -30,6 +30,7 @@ def reader_unit(v):
 
 def bench(metric, value, n, fmt=lambda v: f"{v:,.2f}", key=None, group=None):
     """Two cells: the typical figure for campaigns this size (or the named group) and where this one sits."""
+    if n < 100: return "-", "No matching peers: the dataset starts at 100 Entrants"
     if not _bench or value is None: return "-", "no benchmark loaded"
     _bench.PCT = _bench.PCT or _bench.load_pct()
     if not _bench.PCT: return "-", "no benchmark loaded"
@@ -56,6 +57,12 @@ SYNONYMS = {"who": ("Email", "Email Address", "E-mail", "Entrant Email", "User E
             "status": ("Status", "State", "Valid", "Verified"), "when": ("When", "Date", "Timestamp", "Created At", "Entered At", "Time", "Date Entered"),
             "country": ("Country",), "city": ("City",), "referrer": ("Referring URL", "Referrer", "Referer", "Referral URL", "Source", "Traffic Source"),
             "landing": ("Landing Page URL", "Landing Page", "Landing URL", "Page URL", "URL"), "details": ("Details", "Referred Email", "Referral", "Referred", "Answer")}
+
+# Identity, location and account fields are metadata even when a synonym was not selected.
+METADATA_COLUMNS = {name.casefold() for names in SYNONYMS.values() for name in names} | {
+    name.casefold() for name in HANDLE_COLS
+} | {"id", "user id", "entrant id", "first name", "last name", "full name", "ip", "ip address",
+     "address", "postal code", "postcode", "zip", "zip code", "phone", "phone number", "birthday", "age", "gender"}
 
 def resolve_columns(header, mapping):
     """Pick the column for each role from a user mapping (role=Column) or the synonym list. Missing roles are reported, never guessed."""
@@ -118,14 +125,14 @@ def load(path, mapping=None):
     rows = []
     if "action" not in cols:
         # wide export: one row per person, one column per entry method holding a count or a yes
-        meta = set(cols.values()); acts = [h for h in raw[0] if h not in meta and any((r.get(h) or "").strip() not in ("", "0", "no", "false", "No", "False") for r in raw)]
+        meta = METADATA_COLUMNS | {h.casefold() for h in cols.values()}; acts = [h for h in raw[0] if h.casefold() not in meta and any((r.get(h) or "").strip() not in ("", "0", "no", "false", "No", "False") for r in raw)]
         if not acts: sys.exit("no action column and no per-method columns found. Pass --map action=<column>")
         for r in raw:
             for h in acts:
                 v = (r.get(h) or "").strip()
                 if v in ("", "0", "no", "false", "No", "False"): continue
-                try: en = float(v)
-                except ValueError: en = 1.0
+                # Explicit booleans mean one completion. Other values retain their weight for validation.
+                en = 1.0 if v.casefold() in ("yes", "true") else v
                 rows.append(dict(r, **{"Action": h, "Entries": en}))
         cols["action"] = "Action"; cols["entries"] = "Entries"; wide = True
     else: rows = raw; wide = False
@@ -135,14 +142,18 @@ def load(path, mapping=None):
         sv = str(r.get(cols["status"]) or "").strip().lower() if "status" in cols else ""
         r["_valid"] = sv in ("", "valid", "winner", "approved", "verified", "true", "yes", "1")
         r["_when"] = parse_when(r.get(cols["when"])) if "when" in cols else None
-        try: r["_entries"] = float(r.get(cols["entries"]) or 0) if "entries" in cols else 1.0
-        except ValueError: r["_entries"] = 1.0
+        try: r["_entries"] = float(r.get(cols.get("entries")) or "")
+        except (TypeError, ValueError): r["_entries"] = float("nan")
+        r["_unweighted"] = not math.isfinite(r["_entries"]) or r["_entries"] <= 0
+        if r["_unweighted"]: r["_entries"] = 0.0
         r["_host"] = host_of(r.get(cols["referrer"])) if "referrer" in cols else ""
         r["_landing"] = landing_kind(r.get(cols["landing"])) if "landing" in cols else "unknown"; r["_channel"] = channel(r["_host"], r["_landing"])
         r["_refer"] = "refer" in r["Action"].lower() or "share" in r["Action"].lower() and "@" in (r.get(cols.get("details", ""), "") or "")
         for role, key in (("country", "Country"), ("city", "City"), ("details", "Details"), ("landing", "Landing Page URL")):
             if role in cols and cols[role] != key: r[key] = r.get(cols[role])
     rows = [r for r in rows if r["_who"]]
+    try: math.fsum(r["_entries"] for r in rows)
+    except OverflowError: raise ValueError("Entries total exceeds the finite range; reconcile earned weights before export") from None
     load.last = {"columns": cols, "wide": wide, "missing": [k for k in ("status", "when", "entries", "country", "city", "referrer", "landing", "details") if k not in cols]}
     return rows
 
@@ -155,7 +166,7 @@ def analyze(rows, a):
     if not n: sys.exit("no valid Entrants in export")
     entries = sum(r["_entries"] for r in valid)
     R["topline"] = {"entrants": n, "actions": len(valid), "entries": entry_number(entries), "actions_per_entrant": len(valid) / n, "entries_per_entrant": entries / n,
-                    "invalid_actions": len(invalid), "invalid_entries": sum(r["_entries"] for r in invalid), "invalid_rate": len(invalid) / len(rows) if rows else 0}
+                    "unweighted_rows": sum(bool(r.get("_unweighted")) for r in rows), "invalid_actions": len(invalid), "invalid_entries": sum(r["_entries"] for r in invalid), "invalid_rate": len(invalid) / len(rows) if rows else 0}
     # engagement distribution
     b = collections.Counter()
     for rs in people.values():
@@ -266,6 +277,7 @@ def insights(R):
     """The deterministic findings, each checkable against a table in the report."""
     T = R["topline"]; n = R["base"]
     ins = []
+    if T["unweighted_rows"]: ins.append(f"{T['unweighted_rows']:,} rows without a valid Entries value, counted at zero. Reconcile earned weights before a draw.")
     ch = [c for c in R["channels"] if c[1] >= 30 and c[4]]
     if ch:
         best = max(ch, key=lambda c: c[4]); worst = min(ch, key=lambda c: c[4])
@@ -317,7 +329,8 @@ def render(R, a):
         w("\nPromotional sends (activity in the 48 hours after each send against the 7-day daily baseline before it, never a causal claim):\n\n| Send | Date | Actions in 48h | New Entrants in 48h | Lift |\n|---|---|---|---|---|")
         for s in R["sends"]: w(f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | {s[4]:.1f}x |" if s[4] else f"| {s[0]} | {s[1]} | {s[2]:,} | {s[3]:,} | no baseline |")
     if R.get("roi"):
-        r = R["roi"]; w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {r['per_entry']:.4f} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
+        r = R["roi"]; per_entry = format(r["per_entry"], ".4f") if r["per_entry"] is not None else "unavailable"
+        w(f"\nCost per result on the inputs given (prize plus plan cost {r['cost']:,.0f}): {r['per_entrant']:.2f} per entrant, {per_entry} per entry" + (f", {r['per_email']:.2f} per email subscriber ({r['emails']:,} subscribers)" if r["per_email"] else "") + (f". Lead-value proxy at the benchmark cost per lead of {a.benchmark_cpl:.2f} that the user supplied: {r['lead_value']:,.0f}. That is what the same subscribers would cost through another channel, an assumption priced at the user's own figure." if r["lead_value"] else "."))
         w("A real revenue figure comes from joining Entrant email against store orders over a fixed window and summing order value. The dataset carries no order data, so nothing here is revenue.")
     else: w("\nROI needs Prize value and plan cost (--prize-value, --plan-cost, optional --benchmark-cpl).")
     w("\n## Traffic\n\nFirst-touch channel per Entrant (earliest row's referrer). Email clicks arrive as webmail or direct and are undercounted.\n\n| Channel | Entrants | Share | Actions | Depth vs average | Invalid rate |\n|---|---|---|---|---|---|")
@@ -337,8 +350,8 @@ def render(R, a):
         w(f"| {act} | {comp:,} | {uniq:,} | {share:.0%} | {rate:.0%} | {typ} | {where} | {f'{sec:.0f}{flag}' if sec is not None else '-'} | {inv:,} |")
     w("\nTypical seconds is the gap from the Entrant's previous action, in-session gaps under 30 minutes only. Visits usually run a few seconds, referrals minutes.")
     w(f"\n## Viral\n\nReferral completions {V['refer_rows']:,}, sharers {V['sharers']:,} ({V['participation']:.0%} of entrants), referred entrants who entered {V['referred_entrants']:,} ({V['referred_share']:.0%} of entrants)" + (f", referrals per sharer {V['referrals_per_sharer']:.1f}" if V["referrals_per_sharer"] else "") + (f", share of referrals who joined {V['referral_conversion']:.0%} (referred entrants divided by referral completions, no click data)" if V["referral_conversion"] is not None else "") + (f", viral lift +{V['lift']:.0%} (referred divided by non-referred entrants)." if V["lift"] is not None else "."))
-    rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.0%}")
-    w(f"\nReferred Entrants as a share of all Entrants: {V['refer_rows'] / n:.0%} here, {rtyp} typical for campaigns your size, {rwhere}.")
+    rtyp, rwhere = bench("referrals_per_contestant", V["refer_rows"] / n, n, lambda v: f"{v:.2f}")
+    w(f"\nReferral completions per Entrant: {V['refer_rows'] / n:.2f} here, {rtyp} typical for campaigns your size, {rwhere}.")
     if V["top"]:
         w("\n| Sharer | Referral completions | Referred who entered | Entries brought | Connected accounts | Referred doing one action |\n|---|---|---|---|---|---|")
         for s in V["top"]:
@@ -382,7 +395,7 @@ def self_test():
     assert landing_kind("https://gleam.io/giveaways/UQW3q") == "Gleam giveaways directory" and landing_kind("https://gleam.io/UQW3q/apple-airpods") == "hosted page on gleam.io" and landing_kind("https://shop.example.com/win") == "embedded on shop.example.com"
     assert R["channels"][0][0] in ("Email (webmail)", "Competition directories") and R["utm"][0][1] == 1 and R["roi"]["emails"] == 1 and R["partners"][0][1] == 1, (R["channels"], R["utm"], R["roi"])
     out = render(R, A); assert "## Viral" in out and "Ann L." in out and "a@example.com" not in out and "Toronto, Canada" in out, out[:300]
-    assert "| Users | 2 |" in out and "Typical, campaigns your size" in out and "better than" in out and "campaigns offering" in out, out[:900]
+    assert "| Users | 2 |" in out and "Typical, campaigns your size" in out and "starts at 100 Entrants" in out and "better than" not in out, out[:900]
     assert "Impressions are not in the dataset" in out and "so there is no Impressions-to-entrants funnel here" in out, out[:400]
     class C: impressions = 10; prize_value = None; plan_cost = None; benchmark_cpl = None; sends = None; partners = None
     out2 = render(analyze(load(p), C), C)
@@ -408,6 +421,46 @@ def self_test():
         except SystemExit as exc: assert str(exc) == "no valid Entrants in export", exc
         else: raise AssertionError("empty campaign must explain why it cannot be reported")
     assert resolve_columns(["Email", "Action", "Custom Worth"], {"Entries": "Custom Worth"})["entries"] == "Custom Worth"
+    # Small exports never acquire a ranking, including action-family comparisons.
+    for count in (1, 30, 99):
+        assert bench("contestants", count, count)[0] == "-"
+        assert "starts at 100" in bench(None, 1, count, group="Email")[1]
+    assert "better than" in bench("contestants", 100, 100)[1]
+    # Metadata must not become actions in wide exports.
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Name", "First Name", "ID", "IP Address", "Twitter", "Subscribe to newsletter"])
+        wr.writerow(["x@example.com", "Example Person", "Example", "123", "unknown", "@example", "yes"])
+    wide_rows = load(q)
+    assert len(wide_rows) == 1 and wide_rows[0]["Action"] == "Subscribe to newsletter"
+    assert wide_rows[0]["_entries"] == 1
+    # Invalid or missing weights retain actions at zero Entries, like gleam_export.py.
+    for value in ("", "0", "-1", "NaN", "inf", "bad", "1.25"):
+        for wide in (False, True):
+            with open(q, "w", newline="") as f:
+                wr = csv.writer(f)
+                wr.writerow(["Email", "Subscribe to newsletter"] if wide else ["Email", "Action", "Entries"])
+                wr.writerow(["x@example.com", value] if wide else ["x@example.com", "Subscribe", value])
+            if wide and value in ("", "0"): continue  # No completed action in a wide boolean/count cell.
+            weighted = load(q); report = analyze(weighted, B)
+            assert report["topline"]["entries"] == (1.25 if value == "1.25" else 0)
+            assert report["topline"]["unweighted_rows"] == (0 if value == "1.25" else 1)
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action"]); wr.writerow(["x@example.com", "Subscribe"])
+    assert analyze(load(q), B)["topline"]["unweighted_rows"] == 1
+    assert "unavailable per entry" in render(analyze(load(q), A), A)
+    with open(q, "w", newline="") as f:
+        wr = csv.writer(f); wr.writerow(["Email", "Action", "Entries"])
+        wr.writerows([["x@example.com", "Subscribe", "1e308"], ["y@example.com", "Subscribe", "1e308"]])
+    try: load(q)
+    except ValueError as exc: assert "finite range" in str(exc)
+    else: raise AssertionError("overflowing Entry weights accepted")
+    repeated = load(p)
+    repeated.append(dict(repeated[2]))
+    repeated.append(dict(repeated[2], Details="absent@example.com"))
+    referral_report = render(analyze(repeated, B), B)
+    assert "Referral completions per Entrant: 1.50" in referral_report
+    assert "referred entrants who entered 1 (50% of entrants)" in referral_report
+    assert "Referred Entrants as a share of all Entrants" not in referral_report
     saved_pct, saved_load = _bench.PCT, _bench.load_pct
     try:
         _bench.PCT = None; _bench.load_pct = lambda: None

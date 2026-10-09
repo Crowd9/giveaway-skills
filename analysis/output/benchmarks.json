@@ -27,14 +27,7 @@
    "AUD": 22,
    "CAD": 21,
    "USDT": 10,
-   "NZD": 2,
-   "GPD": 2,
-   "TRY": 2,
-   "UDD": 1,
-   "SEK": 1,
-   "TGBP": 1,
-   "BRL": 1,
-   "COIN": 1
+   "suppressed_below_floor": 8
   },
   "campaigns_missing_description": 15702,
   "campaigns_with_zero_impressions": 518,
@@ -1227,7 +1220,7 @@
      "Free": 2849,
      "Hobby": 2519,
      "Premium": 245,
-     "Not Available": 1
+     "suppressed_below_floor": 1
     }
    },
    "500-1k": {
@@ -1429,7 +1422,7 @@
      "Hobby": 607,
      "Free": 448,
      "Premium": 397,
-     "Not Available": 1
+     "suppressed_below_floor": 1
     }
    },
    "10k+": {
@@ -1497,7 +1490,7 @@
      "Premium": 273,
      "Free": 189,
      "Hobby": 84,
-     "Not Available": 3
+     "suppressed_below_floor": 1
     }
    }
   },
@@ -2034,13 +2027,13 @@
    "max": 12271
   },
   "start_years": {
-   "2015": 1,
    "2021": 75,
    "2022": 47,
    "2023": 23,
    "2024": 33,
    "2025": 63,
-   "2026": 17
+   "2026": 17,
+   "suppressed_below_floor": 1
   },
   "wallet_address_entry_method_share": 0.004
  },
