@@ -17,6 +17,7 @@ The review.py command printed at the end passes --invalid as invalid Entries wor
 whose Status is Invalid. The row count is printed separately as "invalid rows".
 """
 import argparse, collections, csv, datetime as dt, math, shlex, sys
+from pathlib import Path
 
 # A custom title is evidence of an action, not proof of the underlying configuration.
 # Keep ambiguous subscriptions unknown. Explicit platform names take precedence over email cues.
@@ -139,12 +140,13 @@ def load(path):
             "country_share_top": countries.most_common(1)[0][1] / len(valid) if countries and valid else None, "referrers": dict(refs.most_common(8)), "person_column": who}
 
 def review_command(s, args):
-    cmd = f"python3 review.py --contestants {s['contestants']} --entries {s['entries']} --invalid {s['invalid_entries']} --actions-completed {s['actions_completed']}"
+    script = shlex.quote(str(Path(__file__).resolve().with_name("review.py")))
+    cmd = f"python3 {script} --contestants {s['contestants']} --entries {s['entries']} --invalid {s['invalid_entries']} --actions-completed {s['actions_completed']}"
     if getattr(args, "days", None) is not None: cmd += f" --days {args.days}"
     if getattr(args, "methods", None) is not None: cmd += f" --methods {args.methods}"
     for k in ("emails", "referrals", "x_follows", "instagram_follows", "tiktok_follows", "twitch_follows", "youtube_subscribes", "discord_joins"):
         if s["assets"].get(k): cmd += f" --{k.replace('_', '-')} {s['assets'][k]}"
-    if args.actions_csv: cmd += f" --actions {shlex.quote(args.actions_csv)}"
+    if args.actions_csv: cmd += f" --actions {shlex.quote(str(Path(args.actions_csv).resolve()))}"
     return cmd + " --impressions N   # Impressions from the Reporting tab"
 
 def self_test():
@@ -211,10 +213,30 @@ def self_test():
     import shlex
     A.actions_csv = "action results.csv"
     command = shlex.split(review_command(s, A))
-    assert command[command.index("--actions") + 1] == A.actions_csv, command
+    assert command[command.index("--actions") + 1] == str(Path(A.actions_csv).resolve()), command
     assert "--days" not in review_command(s, A) and "--methods" not in review_command(s, A)
     A.days = 14; A.methods = 6
     assert "--days 14 --methods 6" in review_command(s, A)
+    # Printed commands work outside the install, including paths with spaces.
+    import shutil, subprocess
+    installation = Path(d) / "installed skill with spaces"
+    (installation / "scripts").mkdir(parents=True)
+    (installation / "references").mkdir()
+    source = Path(__file__).resolve().parent
+    for filename in ("gleam_export.py", "review.py"):
+        shutil.copyfile(source / filename, installation / "scripts" / filename)
+    shutil.copyfile(source.parent / "references" / "percentiles.json", installation / "references" / "percentiles.json")
+    elsewhere = Path(d) / "another directory"; elsewhere.mkdir()
+    for cwd in (installation, elsewhere):
+        converted = subprocess.run([sys.executable, str(installation / "scripts" / "gleam_export.py"), p], cwd=cwd, capture_output=True, text=True)
+        assert converted.returncode == 0, converted.stderr
+        printed = next(line.removeprefix("run: ") for line in converted.stdout.splitlines() if line.startswith("run: "))
+        args = shlex.split(printed, comments=True)
+        args[args.index("--impressions") + 1] = "10"
+        assert args[1] == str((installation / "scripts" / "review.py").resolve())
+        checked = subprocess.run(args, cwd=cwd, capture_output=True, text=True)
+        assert checked.returncode == 0, checked.stderr
+
     assert classify_action("Subscribe to our YouTube channel") == ("youtube_subscribes", "", "follow")
     assert classify_action("Subscribe to our newsletter") == ("emails", "Email Subscriptions", "email")
     for title in ("Subscribe", "Subscribe to Brand", "Sign up", "Email a friend", "Enter your email", "Follow @brand"):

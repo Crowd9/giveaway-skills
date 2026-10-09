@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.49 |
+| giveaway-prize-picker | 1.3.50 |
 | giveaway-entry-method-planner | 1.2.45 |
 | giveaway-timing-and-duration | 1.4.46 |
 | giveaway-winner-structure | 1.4.17 |
 | giveaway-promotion-plan | 1.3.46 |
-| giveaway-random-draw | 1.3.42 |
+| giveaway-random-draw | 1.3.43 |
 | giveaway-winner-communications | 1.2.37 |
 | giveaway-idea-generator | 1.3.39 |
-| giveaway-results-review | 1.6.22 |
-| gleam-campaign-setup | 1.2.41 |
+| giveaway-results-review | 1.6.23 |
+| gleam-campaign-setup | 1.2.42 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.24 (2026-10-10)
+
+Your past campaigns are compared without your test runs. A test with three Entrants used to turn this campaign into a 9,900% jump, and now it's left out and counted so you know.
+
+The dashboard reads the same exports the report does, including mapped columns and wide exports. The command the converter prints next runs from the folder you're in.
+
+Setup advice describes how campaigns with each setting did, and leaves you to decide without promising a gain or a loss. A draw from comments waits for your rules on repeat comments before it runs. Prize-structure advice explains which campaigns sit behind each comparison, and a figure for what an address is worth to you no longer stands in for what leads cost elsewhere.
 
 ## 3.0.23 (2026-10-10)
 

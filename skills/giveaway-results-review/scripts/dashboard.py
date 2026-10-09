@@ -557,7 +557,9 @@ def gather(a):
     RV.PCT = RV.PCT or RV.load_pct()
     if RV.PCT:
         RV.PCT = dict(RV.PCT, groups={key: group for key, group in RV.PCT.get("groups", {}).items() if isinstance(group, dict)})
-    rows = CR.load(a.export)
+    mapping = dict(kv.split("=", 1) for kv in a.map.split(",")) if getattr(a, "map", None) else {}
+    worth = dict(kv.split("=", 1) for kv in a.wide_worth.split(",")) if getattr(a, "wide_worth", None) else {}
+    rows = CR.load(a.export, mapping, getattr(a, "wide_unit", None), worth)
     class A: impressions = a.impressions; prize_cost = a.prize_cost; prize_value = getattr(a, "prize_value", None); plan_cost = a.plan_cost; benchmark_cpl = None; sends = a.sends; coverage_start = getattr(a, "coverage_start", None); coverage_end = getattr(a, "coverage_end", None); partners = a.partners.split(",") if a.partners else None
     R = CR.analyze(rows, A); T = R["topline"]; N = R["base"]
     class B: pass
@@ -808,6 +810,28 @@ def self_test():
         parser = ScriptParser(); parser.feed(document); parser.close()
         assert len(parser.scripts) == 1, "an export label created another script element"
         return json.loads(parser.scripts[0].split("const DATA=", 1)[1].split(";\n", 1)[0])
+    # Dashboard CLI accepts the same import configuration as the report.
+    import contextlib, io
+    for label, csv_text, options, mapping, unit, worth, completions, entries in (
+        ("mapped", "Participant,Task,Points\na@example.com,Join newsletter,5\n", ["--map", "who=Participant,action=Task,Entries=Points"], {"who": "Participant", "action": "Task", "Entries": "Points"}, None, {}, 1, 5),
+        ("boolean", "Email,Join newsletter\na@example.com,1\n", ["--wide-unit", "boolean", "--wide-worth", "Join newsletter=5"], {}, "boolean", {"Join newsletter": "5"}, 1, 5),
+        ("completions", "Email,Join newsletter\na@example.com,2\n", ["--wide-unit", "completions", "--wide-worth", "Join newsletter=5"], {}, "completions", {"Join newsletter": "5"}, 2, 10),
+        ("entries", "Email,Join newsletter\na@example.com,10\n", ["--wide-unit", "entries", "--wide-worth", "Join newsletter=5"], {}, "entries", {"Join newsletter": "5"}, 2, 10),
+    ):
+        imported = os.path.join(d, label + ".csv"); generated = os.path.join(d, label + ".html")
+        with open(imported, "w") as resource: resource.write(csv_text)
+        with contextlib.redirect_stdout(io.StringIO()):
+            assert main([imported, "--out", generated, *options]) == 0
+        with open(generated) as resource: data = embedded_data(resource.read())
+        class ReportArgs(A): benchmark_cpl = None
+        report = CR.analyze(CR.load(imported, mapping, unit, worth), ReportArgs)
+        assert data["N"] == report["base"] == 1
+        class Imported(A): export = imported; wide_unit = unit
+        Imported.map = options[1] if label == "mapped" else None
+        Imported.wide_worth = "Join newsletter=5" if unit else None
+        totals = gather(Imported)["T"]
+        assert totals["actions"] == report["topline"]["actions"] == completions
+        assert totals["entries"] == report["topline"]["entries"] == entries
     ordinary = embedded_data(page)
     assert ordinary["N"] == 2 and ordinary["acts"]
     with open(p, encoding="utf-8") as source: timing_original = source.read()
@@ -992,6 +1016,9 @@ def self_test():
 def main(argv):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", nargs="?"); ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--map", help="column mapping, e.g. who=Email Address,action=Entry Type,Entries=Points")
+    ap.add_argument("--wide-unit", choices=("boolean", "completions", "entries"), help="required interpretation of per-method wide cells")
+    ap.add_argument("--wide-worth", help="Entries per completion for each populated wide method, e.g. Join newsletter=5")
     ap.add_argument("--words", help="words.json written by the reviewer"); ap.add_argument("--site", help="site.json from the Reporting tab"); ap.add_argument("--out", default="dashboard.html")
     ap.add_argument("--impressions", type=int); ap.add_argument("--plan-cost", type=float); ap.add_argument("--prize-cost", type=float, help="actual Prize cost paid by the organizer"); ap.add_argument("--prize-value", type=float, help="stated retail Prize value, excluded from spending"); ap.add_argument("--vertical"); ap.add_argument("--first-campaign", action="store_true")
     ap.add_argument("--coverage-start", type=CR.dt.date.fromisoformat, help="first confirmed complete export day, YYYY-MM-DD in account time")

@@ -462,6 +462,24 @@
      "fail_example": "Your value index is 1.30."
     }
    ]
+  },
+  {
+   "id": 22,
+   "prompt": "With a fixed budget, should I offer one Prize or many? Your raw comparison says 492 versus 513 Entrants. Are those exactly the same campaigns as your adjusted comparison?",
+   "expected_output": "Distinguishes the broader raw one-unit versus five-plus population from the value-adjusted one, two-to-five, six-to-twenty and twenty-one-plus groups. Uses the paired table’s sample sizes and 509, 463, 565 and 1,065 typical Entrants if explaining adjustment. Does not attribute the population difference solely to adjustment or predict an effect of splitting this budget.",
+   "assertions": [
+    "Distinguishes the broader raw one-unit versus five-plus population from the value-adjusted one, two-to-five, six-to-twenty and twenty-one-plus groups. Uses the paired table’s sample sizes and 509, 463, 565 and 1,065 typical Entrants if explaining adjustment. Does not attribute the population difference solely to adjustment or predict an effect of splitting this budget."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "prize-unit-populations",
+     "criterion": "Distinguishes the broader raw one-unit versus five-plus population from the value-adjusted one, two-to-five, six-to-twenty and twenty-one-plus groups. Uses the paired table’s sample sizes and 509, 463, 565 and 1,065 typical Entrants if explaining adjustment. Does not attribute the population difference solely to adjustment or predict an effect of splitting this budget.",
+     "pass_example": "The 492 versus 513 comparison uses a broader population and one-unit versus five-plus groups. The paired adjusted table instead uses one, two-to-five, six-to-twenty and twenty-one-plus units: 26,919, 10,192, 4,276 and 1,566 campaigns, with typical Entrants of 509, 463, 565 and 1,065. It omits campaigns without usable value information. The population and bins changed as well as the adjustment, so this does not predict what splitting your budget will do.",
+     "fail_example": "The 492 versus 513 figures are exactly the same campaigns as the adjusted comparison, so adjusting for Prize value alone proves that splitting your budget will lose Entrants."
+    }
+   ]
   }
  ]
 }

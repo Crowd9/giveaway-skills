@@ -265,6 +265,24 @@
      "fail_example": "Very High guarantees zero fake Entries and automatically cleans every historical Entry."
     }
    ]
+  },
+  {
+   "id": 12,
+   "prompt": "Should I add a visit delay, a post-visit question and the throwaway restriction, and make email mandatory? Tell me how many completions I will lose or save.",
+   "expected_output": "Describes recorded completion-event ratios and stated Prize value per completion using each table’s population. Separates objective-based recommendations from observed differences. Does not predict a completion loss, gain or saving from changing a setting.",
+   "assertions": [
+    "Describes recorded completion-event ratios and stated Prize value per completion using each table’s population. Separates objective-based recommendations from observed differences. Does not predict a completion loss, gain or saving from changing a setting."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "observed-settings-only",
+     "criterion": "Describes recorded completion-event ratios and stated Prize value per completion using each table’s population. Separates objective-based recommendations from observed differences. Does not predict a completion loss, gain or saving from changing a setting.",
+     "pass_example": "Visit actions with a question recorded 71 completion events per 100 Entrants across 17,184 Actions, compared with 84 across 175,741 on-click Actions. These are different campaigns, so the comparison does not predict your loss. Use a question when collecting an answer is part of your objective. Missing completion-record coverage is not reported.",
+     "fail_example": "Adding a post-visit question will cost you about a sixth of completions, and making email mandatory will save money per completion."
+    }
+   ]
   }
  ]
 }

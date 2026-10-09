@@ -83,3 +83,7 @@ These are synthetic checker fixtures, not model answers. Review JSON files conta
 The matching pass and fail answers and review verdicts are in `../../../evals/fixtures/giveaway-random-draw/`. The CLI checks both outcomes with `--review`. Fixture success is not a model-quality score.
 
 Previously unchecked case 6 is now explicitly judgement-only, with a review rubric. It requires a supplied reviewer verdict and has not been rerun against a model.
+
+## 10 October 2026, round-sixteen content regressions
+
+Added a meaning-review case for the corrected guidance. Case 4 now requires preparation pending closed-campaign rules, with a separate follow-up case for settled multiple-comment chances. These evaluation specifications have not been run against a model. Repository validation checks their structure only.

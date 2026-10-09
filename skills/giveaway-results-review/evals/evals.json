@@ -317,6 +317,24 @@
      "fail_example": "The typical result in your band is 492 Entrants."
     }
    ]
+  },
+  {
+   "id": 13,
+   "prompt": "For the Reporting review, compare two separate inputs: “an address brings $4 revenue” and “we pay $4 per lead elsewhere”. Which goes into benchmarkCpl, and how should you handle the other?",
+   "expected_output": "Only the alternative-channel acquisition cost populates benchmarkCpl and --benchmark-cpl. Revenue goes to the ROI workflow with an explicit revenue basis and contribution margin before a contribution return. Contribution values use the contribution basis. Missing margin leaves return unavailable. Does not treat revenue as acquisition cost.",
+   "assertions": [
+    "Only the alternative-channel acquisition cost populates benchmarkCpl and --benchmark-cpl. Revenue goes to the ROI workflow with an explicit revenue basis and contribution margin before a contribution return. Contribution values use the contribution basis. Missing margin leaves return unavailable. Does not treat revenue as acquisition cost."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "subscriber-value-basis",
+     "criterion": "Only the alternative-channel acquisition cost populates benchmarkCpl and --benchmark-cpl. Revenue goes to the ROI workflow with an explicit revenue basis and contribution margin before a contribution return. Contribution values use the contribution basis. Missing margin leaves return unavailable. Does not treat revenue as acquisition cost.",
+     "pass_example": "“We pay $4 per lead elsewhere” supplies benchmarkCpl and --benchmark-cpl. “An address brings $4 revenue” belongs in the ROI workflow with --value-basis revenue and an explicit --contribution-margin before a contribution return. Without that margin, leave the return unavailable. If $4 is already contribution after product and fulfilment costs, declare --value-basis contribution.",
+     "fail_example": "Both inputs mean an address is worth $4, so set --benchmark-cpl 4 in either case and report the revenue as alternative acquisition cost."
+    }
+   ]
   }
  ]
 }

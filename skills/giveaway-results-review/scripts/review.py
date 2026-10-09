@@ -247,7 +247,9 @@ def history_table(a, hist):
     def metrics(c, i, e, inv, d):
         return {"contestants": c, "conversion": c / i if c is not None and i and c <= i else None, "entries_per_entrant": e / c if e is not None and c else None,
                 "invalid_share": inv / (e + inv) if e is not None and inv is not None and (e + inv) else None, "contestants_per_day": c / d if c is not None and d else None}
-    prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in hist]
+    eligible = [h for h in hist if h["contestants"] is not None and h["contestants"] >= 100]
+    excluded = len(hist) - len(eligible)
+    prev = [dict(h, **metrics(h["contestants"], h["impressions"], h["entries"], h["invalid"], h["days"])) for h in eligible]
     for h in prev: h["emails_val"] = h.get("emails")
     now = metrics(a.contestants, a.impressions, a.entries, a.invalid, a.days); now["emails"] = getattr(a, "emails", None)
     out = []
@@ -258,7 +260,7 @@ def history_table(a, hist):
         last = prev[-1].get(m); med = statistics.median(vals)
         delta = (now[m] - last) / last if last else None
         out.append((label, fmt.format(now[m]), fmt.format(last) if last is not None else "-", fmt.format(med), f"{delta:+.0%} against the previous" if delta is not None else "", f"{sum(1 for v in vals if now[m] > v)} of {len(vals)} previous beaten"))
-    notes = []
+    notes = [f"Excluded {excluded} previous campaign(s) with fewer than 100 Entrants or an unknown Entrant count"] if excluded else []
     if prev and prev[-1]["contestants"] is not None and prev[-1]["contestants"] >= 5000: notes.append("After a campaign of 5,000 or more, the next one reached 5,000 in 57% of cases in the dataset")
     elif prev and prev[-1]["contestants"] is not None: notes.append("After a campaign under 5,000, the next one reached 5,000 in 11% of cases in the dataset, so a jump past it is unusual")
     return out, notes
@@ -317,7 +319,17 @@ def self_test():
         assert missing_previous[label][2] == "-" and missing_previous[label][4] == "", missing_previous
     assert missing_previous["Conversion Rate"][3] == "24.0%" and missing_previous["Email signups"][3] == "900"
     partial[-1]["contestants"] = None
-    assert {r[0]: r for r in history_table(A, partial)[0]}["Users"][2] == "-"
+    unknown_rows, unknown_notes = history_table(A, partial)
+    assert {r[0]: r for r in unknown_rows}["Users"][2] == "1,200"
+    assert "Excluded 1" in unknown_notes[0]
+    test_campaign = dict(hist[-1], contestants=3, impressions=4)
+    mixed, mixed_notes = history_table(A, [test_campaign, *hist, test_campaign])
+    assert mixed == ht and "Excluded 2" in mixed_notes[0]
+    assert mixed_notes[1:] == notes
+    tests_only, tests_notes = history_table(A, [test_campaign])
+    assert tests_only == [] and len(tests_notes) == 1 and "Excluded 1" in tests_notes[0]
+    assert "next one" not in tests_notes[0]
+    assert history_table(A, []) == ([], [])
     class Repeated(A): contestants = 100; referrals = 150; days = 20; impressions = 1000
     repeated = {r[0]: r for r in review(Repeated)}
     referral = repeated["Referral completions per Entrant"]

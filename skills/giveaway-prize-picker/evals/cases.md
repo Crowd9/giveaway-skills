@@ -157,3 +157,7 @@ New cases are not yet run against a model. Synthetic fixtures exercise the check
 Existing cases 11, 13 now have explicit judgement-only reviews. Their new rubrics are not yet run against a model. Missing reviews remain UNASSESSED until evidence is supplied.
 
 Fixture pairs and supplied review records: `evals/fixtures/giveaway-prize-picker/manifest.json` from the repository root. Each fail answer isolates its one negative check. The fixture reviews classify synthetic examples only. Semantic paraphrases, implied guarantees, population selection and current-source validity still require independent meaning review.
+
+## 10 October 2026, round-sixteen content regressions
+
+Added a meaning-review case for the corrected guidance. These evaluation specifications have not been run against a model. Repository validation checks their structure only.

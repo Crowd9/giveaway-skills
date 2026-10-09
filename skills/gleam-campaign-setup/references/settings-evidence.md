@@ -180,7 +180,7 @@ Custom Actions with no template (a free-form instruction) recorded about 50 comp
 
 ## Throwaway account restriction
 
-The throwaway account restriction lowers completion:
+Actions with the throwaway account restriction enabled recorded a lower completion-event ratio:
 
 <!-- generated:se2_throwaway -->
 | Throwaway account restriction | Actions | Typical completion, % of Entrants |
@@ -189,11 +189,11 @@ The throwaway account restriction lowers completion:
 | Off | 138,267 | 49% (0.49) |
 <!-- /generated -->
 
-That is consistent with the setting rejecting some accounts, and nothing here shows which of the rejected ones were real people.
+The groups used different campaign configurations. The comparison does not establish the effect of enabling the restriction or identify which rejected accounts belonged to real people.
 
 ## Visit action options
 
-Visit actions can complete on click, after a delay, or after a question about the page. Completing on click gets the most Entrants through. A post-visit question costs the most.
+Visit actions can complete on click, after a delay, or after a question about the page. Actions completing on click recorded the highest completion-event ratio, and actions with a post-visit question recorded the lowest.
 
 <!-- generated:se2_visit_mode -->
 | Completion option | Typical completion, % of Entrants | Actions |
@@ -204,7 +204,7 @@ Visit actions can complete on click, after a delay, or after a question about th
 | Option unset | 78% (0.78) | 164,426 |
 <!-- /generated -->
 
-Visit a Page link options work the same way. A plain link outperforms embedding the page as HTML inside the widget. An Open Graph preview does best of all.
+Among Visit a Page link options, plain links recorded a higher completion-event ratio than pages embedded as HTML inside the widget. Open Graph previews recorded the highest ratio.
 
 <!-- generated:se2_visit_link -->
 | Link option | Typical completion, % of Entrants | Actions |
@@ -218,7 +218,7 @@ Nearly every Viral Share action carried custom share text, not the default, so t
 
 ## Completion-event ratios by setting
 
-Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Each setting shows the same pattern: fewer choices or shorter waits keep completion higher, and X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above.
+Read from the action's own configuration. The count is Actions, one row per Action offered, so it runs above the campaign population and is never a campaign count. Configurations with fewer choices or shorter waits generally recorded higher completion-event ratios. X throwaway account restriction (per campaign) matches the direction of the per-action figure in Throwaway account restriction above. These comparisons describe different campaigns and do not predict the result of changing a setting.
 
 <!-- generated:se_config -->
 | Setting | Option | Completion, % of Entrants (decimal) | Actions | Businesses |
@@ -503,11 +503,11 @@ Source for the invalid-entry share: `analysis/output/invalid_share.json` (`distr
 ## What this suggests for the setup, as advice
 
 - Put the action that produces the asset first and make it the single mandatory action. Completion-event ratios were lower in later positions, but this comparison also reflects which actions businesses chose to put first (see the position table above). If giveaway-entry-method-planner is installed, its mix-by-objective reference has the fuller asset list and the ratios by campaign size. Otherwise use the position table above and leave the additional comparisons unavailable.
-- Making that action mandatory is worth it beyond the completion count: it also tends to lower the cost per completion (see the entry-worth table above). Email saves the most as campaign size grows. Follow_x follows the same pattern from 2,500 Entrants up. Discord_join's mandatory cost is not a rule, it moves in opposite directions across the two sizes tested.
+- Choose mandatory status according to the campaign objective. Mandatory email actions recorded lower stated Prize value per completion in the entry-worth table above, with wider differences in larger size bands. Follow_x showed the same direction from 2,500 Entrants up. Discord_join showed opposite directions across the two sizes tested. These are observed comparisons, with no measured saving from changing mandatory status.
 - Keep unnecessary effort out of the list. Later-position completion varies by family, so use its row in the position table to decide whether an action earns its place. Eleven or more actions came with a lower Conversion Rate but more Entrants than one to three actions in that comparison.
 - Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It falls away down the list like every other family: 16 completions per 100 Entrants in first position, 12 in the middle, 11 fifth or later. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
 - Use a question or choice template when you want an answer. Free-form custom actions recorded about 50 completion events per 100 Entrants in the template table above.
-- Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a sixth of completions, and showing the page as HTML inside the widget costs over a quarter against a plain link.
+- Use on-click completion for a simple visit objective. Add a delay or question when the objective requires time on the page or an answer. The visit-option tables above record lower completion-event ratios for questions than clicks, and for embedded HTML than plain links. They do not establish how many completions this campaign would lose by changing its configuration.
 - Keep the description under 150 words and lead with eligibility and Winner count, which the Gleam tips library also recommends.
 - Leave the fraud level on High, the default, and review Invalid entries on the Actions tab before drawing. Expect a few percent to fall away.
 - Turn on the opt-in checkbox when collecting mailing consent. Build the mailable list from individual consent records, with duplicate addresses and subsequent unsubscribes accounted for. An email-action completion ratio alone cannot establish how many subscribers you can email.
