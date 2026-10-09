@@ -2,7 +2,7 @@
 name: giveaway-prize-picker
 description: "Choose and evaluate giveaway, contest, sweepstakes or raffle Prizes, budgets and fulfilment. Use for 'what should we give away', 'is this a good Prize', 'giveaway budget', 'Prize bundle', 'what Prize gets the most entries', 'B2B giveaway Prize', 'webinar giveaway', or 'attract buyers, not freebie hunters'."
 metadata:
-  version: 1.3.36
+  version: 1.3.37
 ---
 
 # Giveaway Prize Picker
@@ -132,8 +132,8 @@ Advice is platform-neutral by default. When the user says they use Gleam or asks
 - `references/gleam-setup.md`: only for explicit Gleam requests.
 - `references/prize-values-by-category-and-size.json`: stated USD Prize values (the lower quarter, typical and upper quarter, with the count of stated Prize values behind the cell) by category and campaign size. That count is Prize records, so a campaign with three valued Prizes counts three times, so write "116 stated Prize values". Load when the user asks what campaigns like theirs declare, and quote the cell with how many Prize values sit behind it. Thin cells behave oddly: beauty_wellness in campaigns of 2,500 to 10,000 Entrants has a lower quarter equal to its typical figure (250 USD) on 40 stated Prize values, which is a sample artifact of clustered round numbers. Below about 100 stated Prize values, quote the typical figure and the count of stated Prize values and leave the quarters alone.
 - `references/roi-benchmarks.md`: stated Prize value % of Entrants, per email signup, per follow and per referral entry by industry, campaign size and year, which industries get the most for the money, and how to use the ROI script.
-- `scripts/roi.py`: cost per result and return per dollar before or after a campaign, with benchmarks beside each figure. `--self-test` checks it. Every benchmark in it is USD, so convert the reader's figures to USD before running it, say the rate you used, and give the answer back in the reader's own currency. `scripts/budget.py --rate` does the same conversion for a budget.
-- `scripts/budget.py`: budget calculator (`--self-test`, `--help`). Every figure in and out is an estimate.
+- `scripts/roi.py`: cost per result and return per dollar before or after a campaign, with benchmarks beside each figure. `--self-test` checks it. Every benchmark in it is USD, so convert the reader's figures to USD before running it, say the rate you used, and give the answer back in the reader's own currency. For `scripts/budget.py`, convert all inputs to the currency named by `--currency` first. Its `--rate` records the rate and date in the printed breakdown only.
+- `scripts/budget.py`: budget calculator (`--self-test`, `--help`). Every figure in and out is an estimate. End a digital Prize name with `(digital)` to omit shipping and duty for those units.
 
 ## Related skills
 

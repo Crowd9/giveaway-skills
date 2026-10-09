@@ -16,7 +16,7 @@ Five minutes.
 
 - Shopify integrations are on the Pro plan and above. Check the plan first.
 - Under Settings, Integrations, Shopify, turn on Sync Gleam subscribers to Shopify customer list. Subscribe actions on Competitions and Rewards campaigns, and Capture emails, then sync to the customer list.
-- Add tags in the site settings, or per campaign by changing Use site settings to Add different tags. Tag with the campaign name so the non-Winner code, the welcome series and the retargeting segment in giveaway-promotion-plan all filter on it.
+- Add tags in the site settings, or per campaign by changing Use site settings to Add different tags. Tag with the campaign name so the non-Winner code and welcome series in giveaway-winner-communications, and the retargeting segment in giveaway-promotion-plan, all filter on it.
 - **Test before launch**: create the competition with a Subscribe action linked to Shopify, complete the action from the dashboard, go to the Actions tab and mark the invalidated admin action valid, and the address appears in the customer list within a few minutes.
 
 ## What the dataset shows for Shopify stores

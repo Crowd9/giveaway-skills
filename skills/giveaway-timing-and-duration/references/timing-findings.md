@@ -49,7 +49,7 @@ Experience tracks a slightly better Conversion Rate: businesses on their elevent
 
 These are campaigns that already reached 100 Entrants, so a business that stopped after a weak first run is missing, and the curve mostly shows who kept going. Read it with the momentum finding below: running again, soon, is the pattern that comes with better numbers.
 
-A shorter first campaign is part of that pattern too: businesses that went on to run a second campaign ran a shorter first one than businesses that did not, at every starting size. [13 days against 16 for a first campaign under 250 Entrants, 22 against 31 at 10,000 or more.] For advice on a new business's first-campaign duration, mention this and see giveaway-results-review for the full table by campaign size.
+A shorter first campaign is part of that pattern too: businesses that went on to run a second campaign ran a shorter first one than businesses that did not, at every starting size. [13 days against 15 for a first campaign under 250 Entrants, 21 against 30 at 10,000 or more, rounded to whole days from `analysis/output/organizer_history.json`, `first_campaign_by_survival_matched_on_band`.] For advice on a new business's first-campaign duration, mention this and see giveaway-results-review for the full table by campaign size.
 
 ## Cadence and persistence (extracted)
 

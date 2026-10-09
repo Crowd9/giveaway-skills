@@ -10,7 +10,7 @@ Read from the official documentation on 9 September 2026.
 - **Actions**: entry methods completed.
 - **Entries**: actions completed multiplied by entry worth.
 - **Users**: unique people who entered.
-- **Conversion Rate**: users who entered after viewing. Across the campaigns behind these skills, the typical figure is about 28%.
+- **Conversion Rate**: users who entered after viewing. Across the 116,285 campaigns in `analysis/output/percentiles.json` (`scope.campaigns`), the typical figure is 26.9% (`bench.platform_average_conversion`).
 - **Events**: optional metrics outside the incentivised actions, such as Facebook likes.
 
 [Reporting Tab](https://gleam.io/docs/competitions/data/reporting-tab) shows the campaign over time with a date-range filter. The Actions report under Data & Reporting ranks completed actions by volume.
@@ -43,7 +43,7 @@ noisiest tenth. That position cannot establish whether the filter is effective o
 with a share action recorded 4.6% typical against 3.9% without one. Next, review your own Invalid entries
 and any reports of legitimate Entrants being blocked before deciding whether a setting needs to change.
 
-Scope: campaigns of 100 or more Entrants that recorded at least one entry, on the ordinary population, so crypto, ambiguous and purchase-only campaigns are out. The filter level a campaign ran on is not in the data, so this is what the Invalid share looked like, never what any level produced. Source: `analysis/output/invalid_share.json`.
+Scope: 107,109 campaigns from 16,490 businesses, with 100 or more Entrants that recorded at least one entry, on the ordinary population, so crypto, ambiguous and purchase-only campaigns are out. The filter level a campaign ran on is not in the data, so this is what the Invalid share looked like, never what any level produced. Source: `analysis/output/invalid_share.json`.
 
 The documentation describes what the filter does to entries as they arrive. It does not say what happens to entries already collected when the level is changed part way through a campaign, so do not tell a user that raising the level will or will not re-screen what is already in. Say the docs do not cover it, and that the Actions tab is where the entries already collected get reviewed before the draw.
 

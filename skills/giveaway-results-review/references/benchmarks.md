@@ -325,7 +325,7 @@ Company size, company age, plan tier and organizer scale move together, so read 
 
 ## Campaign sequence and organizer activity
 
-Where the organizer sits in their own run of campaigns, from `field_cuts.json`'s `by_campaign_sequence` and `by_organizer_active`:
+Where the organizer sits in this source's campaign sequence, from `field_cuts.json`'s `by_campaign_sequence` and `by_organizer_active`. Its first-campaign row covers 17,633 businesses. The business-weighted table below uses `organizer_history.json`, which sequences every campaign in any segment before selecting ordinary campaigns, leaving 17,247 first campaigns. Keep each row's population and rate together:
 
 <!-- generated:bm_sequence -->
 | Sequence | Campaigns | Businesses | Entrants | Conversion Rate | Days |

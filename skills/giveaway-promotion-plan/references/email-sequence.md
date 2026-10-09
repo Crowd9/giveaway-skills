@@ -22,7 +22,7 @@ Advice. Nothing here carries a dataset figure. Two audiences get different email
 
 | Email | When | Subject line pattern | Preview text | Body |
 |---|---|---|---|---|
-| Welcome and referral | Within a day of entry, sent by the email provider's automation when the sync lands | "You are in. Want more entries?" | "Your referral link is inside." | Confirm the entry, name the brand so the address is recognised later, give the personal referral link and the reward per friend, and the close date. This is message one of the welcome series in giveaway-winner-communications. |
+| Welcome and referral | Within a day of entry, sent by the email provider's automation when the sync lands | "You are in. Want more entries?" | "Your referral link is inside." | Confirm the entry, name the brand so the address is recognised later, give the personal referral link and the reward per friend, and the close date. This starts the welcome series in giveaway-winner-communications, whose follow-up messages run after the draw. |
 | Last day nudge | The day before close | "Last day to add entries" | "Every friend you refer counts until [time]." | Referral link again, the close time with zone. Skip it when the campaign has no referral action. |
 
 The platform's own entry confirmation covers the entry itself. The welcome email is the one that carries the brand and the referral link into the inbox the Entrant actually reads, so send it even when the platform confirms.

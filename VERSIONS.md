@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.36 |
+| giveaway-prize-picker | 1.3.37 |
 | giveaway-entry-method-planner | 1.2.35 |
-| giveaway-timing-and-duration | 1.4.32 |
-| giveaway-winner-structure | 1.4.4 |
-| giveaway-promotion-plan | 1.3.34 |
-| giveaway-random-draw | 1.3.32 |
-| giveaway-winner-communications | 1.2.28 |
-| giveaway-idea-generator | 1.3.30 |
-| giveaway-results-review | 1.6.4 |
-| gleam-campaign-setup | 1.2.31 |
+| giveaway-timing-and-duration | 1.4.33 |
+| giveaway-winner-structure | 1.4.5 |
+| giveaway-promotion-plan | 1.3.35 |
+| giveaway-random-draw | 1.3.33 |
+| giveaway-winner-communications | 1.2.29 |
+| giveaway-idea-generator | 1.3.31 |
+| giveaway-results-review | 1.6.5 |
+| gleam-campaign-setup | 1.2.32 |
 
 ## Skills
 
@@ -343,6 +343,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.4 (2026-10-09)
+
+Every skill now gives you the same number for the same thing. Where two skills quoted one figure two ways, the one that had drifted from our data was corrected, and where two figures describe different campaigns, each now says which.
+
+One of them changed the advice. The setup skill said a list of eleven or more actions came with a quarter fewer Entrants. Our data says those campaigns drew 17% more Entrants than lists of one to three, at a lower Conversion Rate, and the entry planner already said so. Keep the list short for conversion, and you'll know what the long list does and doesn't cost.
+
+The smaller corrections cover the reply window most campaigns keep (93.4%) and the share that give three days (1.2%). The typical Conversion Rate across all campaigns is 26.9%, and the crypto median is 580 Entrants. A dozen campaign-type figures in the idea guide had drifted a point or two from their table.
+
+The instructions match the scripts you run. A flag a skill mentioned that the script never had is gone, the currency rate is described as a note you convert by hand, and each skill that hands you to another lands on a section that covers it.
 
 ## 3.0.3 (2026-10-09)
 

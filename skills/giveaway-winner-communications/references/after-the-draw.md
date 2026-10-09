@@ -4,7 +4,7 @@ Advice from practice, except the subscription-Action usage table below. The camp
 
 ## Most campaigns ran no email Action (extracted)
 
-Everything on this page runs on email, and the majority of campaigns never ran an email Action, so they collected no address through the campaign. Marketing permission is a separate switch, the subscriber checkbox the setup skill describes, and this cut does not measure it. The share of campaigns
+The email series on this page needs contact addresses and recorded marketing consent. The majority of campaigns never ran an email Action, but addresses may still come from the entry form. Marketing permission is a separate switch, the subscriber checkbox the setup skill describes, and this cut does not measure it. The share of campaigns
 offering an email or newsletter Action rises with size and stays a minority at every size:
 
 <!-- generated:wc_email_band -->
@@ -19,10 +19,9 @@ offering an email or newsletter Action rises with size and stays a minority at e
 <!-- /generated -->
 
 So in three campaigns out of four at the small end, and in more than half at every size, the campaign ran no
-email Action, so it collected no address through one and has no list for the series on this page to go to.
+email Action. That says nothing about addresses collected through the entry form or consent to the series.
 The table measures which Actions campaigns offered, never how many addresses exist or who ticked a box.
-Where there is no email Action there is no welcome series and no sunset rule to run, and the public announcement
-is the only message that reaches the people who did not win. Check three things before choosing the message channel:
+Check three things before choosing the message channel:
 
 - **Address availability.** Inspect the campaign's contact records. An address can be collected through the User Details form even when no subscription Action is offered. If there is no usable email address, use the available contact channel for the Winner and the public announcement for the audience.
 - **Marketing consent.** Check each person's recorded opt-in and its scope. An Email Subscription Action gets consent through a checkbox on the User Details form. Newsletter signup also collects explicit consent. Having an address alone grants no marketing permission. Keep Winner administration separate from promotional messages.
@@ -32,9 +31,9 @@ Plan the promotional welcome series only for people with recorded marketing cons
 
 Source: `analysis/output/benchmarks.json` (`ordinary_benchmark.entry_methods.by_band.share_with_family`).
 
-## The welcome series that starts with the non-Winner message
+## Entry welcome and post-draw messages
 
-The series starts at entry. Message one is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them only to people whose recorded marketing consent covers the series, from the giveaway stream, on a fixed schedule, and stop.
+The series starts at entry. The opening message is the welcome and referral email the promotion plan sends within a day of the sync landing, while the giveaway still runs. The three below follow the draw. Send them only to people whose recorded marketing consent covers the series, from the giveaway stream, on a fixed schedule, and stop.
 
 | Message | When | What it does |
 |---|---|---|
@@ -54,7 +53,7 @@ Every Entrant browsed the store to enter, so the result email is the store's bes
 - **Minimum spend or a collection limit** so the code does not turn the cheapest item free. Exclude sale items and gift cards.
 - **A tier for referrers.** Entrants who referred a friend get a larger code. The referral entries are in the dataset, so the segment is a filter on the Entrant list.
 - **Winners get no code.** They got the Prize. The welcome series still goes to them.
-- **Track it.** The redemption count is the campaign's revenue line in giveaway-results-review, and the code name carries the campaign name so the store's reports show it. Without the code, revenue attribution is a join of Entrant email to orders.
+- **Track it.** Record redemptions and the resulting order value in the store, then give those outcomes to giveaway-results-review. Name the code for the campaign so the store's reports identify it. Without the code, revenue attribution is a join of Entrant email to orders.
 - **Codes during a sale.** A 15% code sent the day the store goes 30% off is dead on arrival. Before Black Friday or a seasonal sale, make the non-Winner offer early access to the sale, or a code that stacks on one item, and say which it is in the email.
 - **Wording that keeps the terms honest.** The code is a thank-you after the draw, never promised on the entry form as a reward for entering, which would make it a purchase condition under most sweepstakes readings.
 
@@ -84,7 +83,7 @@ Addresses that never open in their first weeks are the ones that cost sender rep
 - Sunset rule (external practice, no dataset support here): an address that has opened nothing in its first 30 to 60 days gets suppressed. Suppress it outright, or send one plain re-permission email and suppress everyone who ignores that. It never joins the core list.
 - Re-permission copy, plain text, one link: "You entered the [campaign name] giveaway and have not opened anything since. Tap here if you want to keep hearing from [Brand]. If not, this is the last one." Subject: "Should we stop emailing you?"
 - Hard bounces come off immediately.
-- Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag the same addresses at draw time.
+- Role addresses (info@, sales@, contact@) and obvious throwaway domains rarely become customers. The disposable-domain review lines from giveaway-random-draw flag known throwaway domains at draw time. They do not check role addresses.
 - Only what survives this joins the core list.
 
 ## Record entry consent and marketing consent separately

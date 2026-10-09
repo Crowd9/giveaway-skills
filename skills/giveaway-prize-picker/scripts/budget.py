@@ -9,7 +9,7 @@ Check the arithmetic still works after an edit.
   python3 budget.py --self-test
 
 --cost-ratio is what a unit costs you as a fraction of retail (1.0 for bought at retail, 0.5 for own product at half).
-Shipping and duty apply to physical units only (add --digital to a Prize to skip them).
+Shipping and duty apply to physical units only (end the Prize name with "(digital)" to skip them).
 Every figure is in one currency. For a Prize bought or shipped in another, convert before you enter it and pass --rate
 "1 USD = 0.92 EUR, 9 Sep 2026" so the rate and the date it was taken sit on the printed breakdown.
 """

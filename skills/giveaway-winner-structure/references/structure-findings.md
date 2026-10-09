@@ -205,7 +205,7 @@ Every share below is out of the 115,361 campaigns whose terms record these setti
 | Setting | Value | Campaigns | Share |
 |---|---|---|---|
 | Days after close before the draw | 7 (Gleam's default) | 108,813 | 94.3% |
-| Days a Winner has to reply | 7 (Gleam's default) | 107,694 | 93.3% |
+| Days a Winner has to reply | 7 (Gleam's default) | 107,694 | 93.4% |
 | Selection method | Random Draw | 114,444 | 99.2% |
 <!-- /generated -->
 
@@ -214,7 +214,7 @@ weighed up. Never write that 93% of businesses chose seven days: 93% of them lef
 readings point a reader in opposite directions. The count is also the share, and the population is the line printed above the table. Answers have reached for the
 116,499-campaign figure from elsewhere on this page, which reconciles with no share here. Six measured answers
 across two rounds got this pair wrong, so read the line above the table before quoting a share from it. The next most common reply window is two days on 2,390 campaigns, then one day on 1,365. A 72-hour
-deadline, which trade advice often recommends, is written into fewer than one campaign in a hundred here.
+deadline, which trade advice often recommends, is written into 1.2% of these campaigns (1,354 of 115,361, `analysis/output/winner_terms.json`, `terms_timetable.reply_days.values.3`).
 
 Judging is close to non-existent. 99.2% name a random draw, and every other method together covers a few
 hundred campaigns, most of them one business running the same wording repeatedly.

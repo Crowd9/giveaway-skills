@@ -69,7 +69,7 @@ The table below counts every campaign that cleared the 100-Entrant floor, before
 Excluded campaigns are similar in size to ordinary ones (crypto median 580 contestants versus 492 ordinary), so exclusion changes who is in the benchmark and leaves the size distribution alone.
 <!-- /generated -->
 
-The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 732 Entrants versus 492 for the rest. Any claim that crypto inflated participation figures is a hypothesis.
+The crypto rule combines Prize names, campaign names, descriptions and Entry Method types. A single weak keyword never decides. Excluding crypto changes who is in the benchmark and leaves campaign size where it was: crypto typical 580 Entrants across 3,467 campaigns versus 492 across the 116,499 ordinary campaigns (`analysis/output/benchmarks.json`, `excluded_crypto.valid_contestants` and `ordinary_benchmark.valid_contestants`). Any claim that crypto inflated participation figures is a hypothesis.
 
 A homepage-label industry cut on the campaign analysis confirms the exclusion is not a small correction: finance and crypto is the largest single industry by campaign count, ahead of gaming and esports. See `references/roi-benchmarks.md` for the table this cut produced.
 
@@ -157,7 +157,7 @@ Homepage labels also split businesses into listed and private companies. Private
 
 ## Repeat businesses
 
-Campaign sequence tracks how many campaigns a business had already run. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it, since businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them.
+This campaign-sequence cut from `field_cuts.json` (`by_campaign_sequence`) counts 17,633 first campaigns. The results-review business-weighted table uses `organizer_history.json`, which sequences all segments before selecting ordinary campaigns, leaving 17,247 first campaigns. Keep these populations separate. Conversion Rate rises and duration shrinks the more campaigns a business has already run. Recency does not explain it, since businesses active in the last 12 months convert about the same as inactive ones (28% against 27%). The likelier explanation is who kept going: businesses whose early campaigns worked well enough are the ones who keep running them.
 
 <!-- generated:ev_sequence -->
 | Campaign sequence | Conversion Rate | Duration | Campaigns | Businesses |

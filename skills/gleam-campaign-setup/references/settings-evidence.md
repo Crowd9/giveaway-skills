@@ -498,14 +498,14 @@ Source: `analysis/output/text_and_context.json` keys `question_types`, `visit_de
 - Email opt-in checkbox on: 89% of Entrants complete the email action against 101 of every 100 off. About one in ten Entrants skips a visible checkbox (giveaway-entry-method-planner). That gap is wider than the 92% against 85% in the table above because it compares like with like on campaign size and industry, where the table above pools every campaign. Quote whichever base the answer is about and say which one it is.
 - Validated-answer question: a typical 17% of entries come back invalid, because wrong answers count as invalid (giveaway-entry-method-planner).
 - Custom terms: written by 49% of campaigns (giveaway-winner-structure).
-- Eleven or more actions: a quarter fewer Entrants, 32% of viewers enter against 48% for one to three (giveaway-entry-method-planner).
+- Eleven or more actions: 17% more Entrants, with 31% of viewers entering against 44% for one to three, among campaigns with no repeatable action and runs of 14 days or less (6,762 and 10,802 campaigns respectively, `analysis/output/comparisons.json`, `method_count_clean`, also in giveaway-entry-method-planner).
 - Invalid entries: a typical 4.2% of entries, higher with Viral Share, Discord and retweet actions (giveaway-winner-structure).
 
 ## What this suggests for the setup, as advice
 
 - Put the action that produces the asset first and make it the single mandatory action. Position matters a lot: an email action completed by about every Entrant in first position, and a follow by about four in five, both fall away by fifth position or later (see the position table above). See giveaway-entry-method-planner's `references/mix-by-objective.md` for the fuller asset list and the ratios by campaign size.
 - Making that action mandatory is worth it beyond the completion count: it also tends to lower the cost per completion (see the entry-worth table above). Email saves the most as campaign size grows. Follow_x follows the same pattern from 2,500 Entrants up. Discord_join's mandatory cost is not a rule, it moves in opposite directions across the two sizes tested.
-- Keep the list short. Everything after the fourth action is completed by a minority, and eleven or more actions came with fewer Entrants.
+- Keep the list short. Everything after the fourth action is completed by a minority, and eleven or more actions came with a lower Conversion Rate but more Entrants than one to three actions in that comparison.
 - Set Viral Share expectations at one referred entry per eight Entrants, and weight it accordingly. It falls away down the list like every other family: 16 completions per 100 Entrants in first position, 12 in the middle, 11 fifth or later. Viral Share can be capped at a maximum number of referred users and is unlimited by default. Leave it off unless the Prize is small enough that referral farming pays, then cap it and check the referral graph before the draw.
 - Use a question or choice template when you want an answer. Free-form custom actions lose half the Entrants.
 - Let visit actions complete on click, or after a delay of five to ten seconds. A post-visit question costs about a sixth of completions, and showing the page as HTML inside the widget costs over a quarter against a plain link.
