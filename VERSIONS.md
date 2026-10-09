@@ -344,6 +344,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
 
+## 3.1.0 (2026-10-10)
+
+Every update from 3.0.2 to 3.0.53 in one release. Your draw is harder to tamper with, every number you quote traces back to Gleam campaign data, and your scripts cope with the messy files real campaigns produce. Run the same draw twice and you get the same Winners, and an edited audit fails its check.
+
 ## 3.0.53 (2026-10-10)
 
 Nothing an Entrant types can now trick you when you open your results. A name like =1+1 opens in your Winner list as plain text, never a spreadsheet formula. Hidden control characters in a name can't add a fake Winner line to your screen. Your campaign report shows names, cities and actions as plain words, so an Entrant can't slip in an image, a link or a heading. If your Entrant file would trigger a spreadsheet formula, the export warns you and leaves the file untouched so your draw stays the same. The 500-Entrant test draw still picks the same 3 Winners.
