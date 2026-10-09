@@ -36,11 +36,11 @@ Social versions of the same announcement:
 
 The official-account line matters. Fake accounts DM Entrants during and after giveaways asking for a delivery fee or card details, and the announcement is where Entrants look to check.
 
-## 5. Message to everyone else (with the announcement, to opted-in Entrants)
+## 5. Thank-you to non-Winners with marketing consent (with the announcement)
 
 "The [campaign name] Winner has been drawn and notified. Thank you for entering. As a thank-you, here is [a code, a guide, early access] valid until [date]. [Next campaign teaser if there is one.]"
 
-Send the thank-you offer once and honor any offer already promised, including its recipients and conditions. Do not chase it with another offer or reminder. Later messages need recorded consent covering the series and should carry useful content or a non-shopping next step, as set out in `references/after-the-draw.md`.
+Name recipients by their consent and Winner status in headings and send instructions. If using group labels, keep their definitions identical throughout. An offer promised to Winners too needs a heading that includes them. Send the thank-you offer once and honor any offer already promised, including its recipients and conditions. Do not chase it with another offer or reminder. Later messages need recorded consent covering the series and should carry useful content or a non-shopping next step, as set out in `references/after-the-draw.md`.
 
 For a store, the offer is a code. Subject "A thank-you from [Brand]: [X]% off until [date]", preview "A thank-you from [Brand], one use, [N] days." Body: the Winner line, the code on its own line, what it applies to, the expiry, one button to the collection the Prize came from. Read the code mechanics in `references/after-the-draw.md` before sending.
 

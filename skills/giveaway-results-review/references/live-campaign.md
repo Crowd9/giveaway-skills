@@ -1,6 +1,6 @@
 # Reading a Campaign That Is Still Running
 
-The live mode of the review. A finished campaign is ranked against finished campaigns. A running one cannot be, because its Entrants, Entries and follows are still rising and every rank is a floor. What a live read can do is diagnose: reach, conversion or something broken, and what to do first.
+The live mode of the review. A finished campaign is ranked against finished campaigns. For a running campaign, say "These are your totals so far, and they can still grow before the close." Any rank describes where those totals stand today, without judging the final result. What a live read can do is diagnose: reach, conversion or something broken, and what to do first.
 
 ## What the Data Holds and What It Does Not
 
@@ -13,7 +13,7 @@ The live mode of the review. A finished campaign is ranked against finished camp
 
 1. Say it is live in the first line, with days run of days planned, as `references/gleam-reporting.md` says. Use the days run for every rate and the planned days for nothing.
 2. Collect Impressions for each day from the Reporting tab, since the export does not carry them. Take Entrants for each day and the time of the last Entry from the export's When column. Ask what changed and when, which pushes have gone out and on what dates, and what the campaign is for.
-3. Run `campaign_report.py` on the export and `review.py` with the days elapsed. Treat the Entrants, Entries and follows ranks as floors, and never write "below typical" about a live total.
+3. Run `campaign_report.py` on the export and `review.py` with the days elapsed. Describe Entrants, Entries and follows as totals so far. Any rank is where they stand today, and a live total cannot yet be judged "below typical".
 
 ## Is the Pace Normal for This Day (Extracted)
 

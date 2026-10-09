@@ -2,7 +2,7 @@
 name: giveaway-entry-method-planner
 description: "Choose giveaway actions, required steps and entry weights. Use for 'how should people enter', 'how many actions', 'bonus entries', 'review my entry list', 'TikTok giveaway entry methods', 'should I require an email', 'how do I get shares', 'qualified leads', or 'keep freebie hunters out'. Match email, social, community and UGC actions to the objective."
 metadata:
-  version: 1.2.39
+  version: 1.2.40
 ---
 
 # Giveaway Entry Method Planner
@@ -52,8 +52,8 @@ The questions below are the ones worth asking, in the order they matter. Ask at 
 ## Output
 
 - Recommended entry list as a table: action, required or optional, entry weight, and one "Why keep it" column with a plain reason tied to the objective for every action. Translate the internal jobs Acquire, Grow social and Amplify into what the action does for this reader.
-- Add the family's completion figure only where it helps decide whether to keep an action, with its campaign count and source label.
-- What to leave out and why.
+- Explain completion patterns through the decision: required follows were completed more often, while optional follows leave a shorter route to entry. Quote a completion ratio only when its size decides the choice, explain that it counts actions completed and can include repeats, and never turn it into a share of distinct people.
+- Separate Keep, Drop and Conditional choices. Keep is the recommended table, Drop names actions to remove, and Conditional names the condition that would earn each remaining action a place. Put Discord or installs here when they depend on a different objective.
 - Consent and rules notes: email opt-in wording, age or region limits, platform terms for follow-to-enter on the named channels. Entry consent and marketing consent are separate, so say where each is collected. Say plainly that the user should confirm local rules.
 - What happens to the asset in the first 30 days: the welcome series, the separate segment, the sunset rule for people who never open, and the consent noted at capture. The using what you built section of `references/mix-by-objective.md` holds it, and giveaway-winner-communications writes the messages.
 - For a buyer campaign: the one-sentence buyer, the gate or sort chosen, the qualifying question with its answer choices, the tiers with an owner and a response time each, and the scorecard that replaces crowd size.
@@ -90,13 +90,13 @@ This folder works alone. `analysis/output/` paths name source data that is not i
 ## How to write the answer
 
 <!-- generated:answer_style -->
-Write for a business owner or marketer as a colleague who has run giveaways. Lead with the verdict or recommendation using their product, dates and numbers. Put assumptions in one short line immediately after it. Make the next action clear within two sentences. When that action is a message, write it out.
+Write for a business owner or marketer as a colleague who has run giveaways. Lead with the verdict or recommendation using their details. Put assumptions in one short line immediately after it. Make the next action clear immediately. When that action is a message, write it out.
 
-Keep paragraphs that change what the reader should do. Give each recommendation once, with variants only when they change the choice. Reasoning belongs in sentences. Use bullets for parallel items people scan. Label copyable messages and checklist steps with what they are and when they go. Keep each caveat to one short sentence.
+Keep paragraphs that change the decision. Give each recommendation once. Quote only figures that decide the question, at most two per point. Leave the rest in the reference. Reasoning belongs in sentences. Use bullets for parallel items people scan. Label copyable messages and checklist steps with what they are and when they go. Keep each caveat to one short sentence.
 
 End on the next decision or a concrete detail: a number, date or direct instruction. A closing question names the missing fact that would change the recommendation, includes "you" or "your", and is the final sentence. Make routine decisions yourself and deliver the work in this answer.
 
-Keep reference files and skill names internal. Translate internal labels, dashboard-absent measures and sample arithmetic into plain meaning or drop them. Put sample sizes in a Source line naming the campaigns counted. Translate handoffs into the next work. Include dataset methods, exclusions and concentration only when they change this decision. Check that budgets, totals and list counts agree with the recommendation and assumptions. Make conditional requirements explicit.
+Keep reference files and skill names internal. Translate internal labels, dashboard-absent measures and sample arithmetic into plain meaning or drop them. Only when quoting figures, give at most one short source line with sample sizes in plain words, without filenames or keys. Include methods, exclusions and concentration only when decisive. Check that budgets, totals and list counts agree with the recommendation and assumptions. Make conditional requirements explicit.
 
 Use the dashboard's exact names and capitals: Impressions, Actions, Entries, Users, Conversion Rate, Events, Entry Method, and action names such as Viral Shares and Secret Code. Capitalise Prize, Winner, Entrant and Contestant too. Ordinary words stay plain.
 

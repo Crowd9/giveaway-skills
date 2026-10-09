@@ -35,7 +35,7 @@ A row in the actions table with no name and no type is an Entry Method that was 
 The prompt can arrive while the campaign is still running. Read `status`, or compare `endsAt` with today's date, before ranking anything. On a live campaign:
 
 - Say so in the first line, with days run of days planned.
-- Rank Entrants, Entries and follows as a floor: "2,886 Entrants after 85 of 124 days, already inside the 2,500 to 10,000 band, and the rank below is where it stands today". Never call a live total a result.
+- Describe Entrants, Entries and follows as totals so far: "2,886 Entrants after 85 of 124 days, already inside the 2,500 to 10,000 band, and the rank below is where it stands today". Never call a live total a result.
 - Use `daysElapsed`, or the days between `startsAt` and today, as the run length for Entrants per day and the duration caveat, never the planned `days`.
 - Read the daily pattern from the export's When column. A campaign that took most of its Entrants in its first week and has run for three months is a finished campaign wearing a live end date, and the change to make is to close it and draw.
 - Keep the changes for next time, and add the one change that still helps this run, usually a fresh push or an earlier close.

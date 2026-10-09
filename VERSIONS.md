@@ -4,16 +4,16 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.41 |
-| giveaway-entry-method-planner | 1.2.39 |
-| giveaway-timing-and-duration | 1.4.37 |
-| giveaway-winner-structure | 1.4.9 |
-| giveaway-promotion-plan | 1.3.38 |
-| giveaway-random-draw | 1.3.34 |
-| giveaway-winner-communications | 1.2.31 |
-| giveaway-idea-generator | 1.3.34 |
-| giveaway-results-review | 1.6.8 |
-| gleam-campaign-setup | 1.2.37 |
+| giveaway-prize-picker | 1.3.42 |
+| giveaway-entry-method-planner | 1.2.40 |
+| giveaway-timing-and-duration | 1.4.38 |
+| giveaway-winner-structure | 1.4.10 |
+| giveaway-promotion-plan | 1.3.39 |
+| giveaway-random-draw | 1.3.35 |
+| giveaway-winner-communications | 1.2.32 |
+| giveaway-idea-generator | 1.3.35 |
+| giveaway-results-review | 1.6.9 |
+| gleam-campaign-setup | 1.2.38 |
 
 ## Skills
 
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.10 (2026-10-10)
+
+Answers carry the numbers that decide your question and leave the rest out. With every figure now matched to our data, answers had started quoting far more of them, so they came out longer and harder to act on. Now you get at most two figures per point, and one plain source line when figures are quoted.
+
+Phrases meant for the skill have stopped reaching you. A Prize plan's totals, caps and the wording you publish now agree with each other, and an entry plan sorts each action into keep, drop, or keep only if a condition holds.
+
+In a blind comparison of one question per skill, these answers were preferred over the 3.0.0 answers in 5 of 8 that weren't a tie, and scored as more honest.
 
 ## 3.0.9 (2026-10-10)
 

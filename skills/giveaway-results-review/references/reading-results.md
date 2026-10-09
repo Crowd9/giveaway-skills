@@ -129,7 +129,7 @@ The reader ran the campaign and is deciding whether to run another. Lead with wh
 
 ## Judgement words
 
-A rank says where a figure sits. It does not say the figure is bad. Most metrics here have a narrow spread, so a campaign can be "better than 15% of campaigns" on email signups while four in five of its Entrants still subscribed. Write the figure, the typical figure and the rank. Use weak or strong only for the bottom or top tenth, or a gap of a third or more from the typical figure, and say so in the same sentence. Absolute reads matter too: 68% of Entrants subscribing is most of them.
+A rank says where a figure sits. It does not say the figure is bad. Most metrics here have a narrow spread, so a campaign can be "better than 15% of campaigns" on email signups while four in five of its Entrants still subscribed. Choose the typical figure or rank that answers the question. This grading rule is for you: use weak or strong only for the bottom or top tenth, or a gap of a third or more from the typical figure in a relevant group. Tell the reader the actual comparison, without explaining which words a threshold allows. A group with different repeatable actions or run length cannot decide whether their result is low, so say that once and omit relative-gap arithmetic against it. Absolute reads matter too: 68% of Entrants subscribing is most of them.
 
 ## Entries and completions
 

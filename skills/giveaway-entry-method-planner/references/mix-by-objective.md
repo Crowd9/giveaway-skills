@@ -1,6 +1,6 @@
 # Mix by objective
 
-Advice unless marked as extracted. Completion throughout this file means recorded completed events (`entry_count`) divided by the campaign's Entrants, without multiplying by Entry worth: about 75 per 100 is three completions for every four Entrants, not three distinct people. Source definition: `analysis/output/field_cuts.json`, `definitions.completions_per_contestant`.
+Advice unless marked as extracted. Completion throughout this file means recorded completed events (`entry_count`) divided by the campaign's Entrants, without multiplying by Entry worth: about 75 per 100 is three completions for every four Entrants, not three distinct people. Source definition: `analysis/output/field_cuts.json`, `definitions.completions_per_contestant`. This definition is for you. Tell the reader what it changes in their list, such as "Required follows were completed more often, so making them optional trades some follows for a shorter route to entry." Keep ratios out of action descriptions unless their size decides the choice. If quoting one, name the action counted and explain that repeats count too.
 
 ## Patterns
 

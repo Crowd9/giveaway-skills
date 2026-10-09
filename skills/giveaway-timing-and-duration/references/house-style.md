@@ -6,13 +6,13 @@
 
 Translate rates into one of three shapes. Shares of people or campaigns are percentages: "48% of Entrants followed on Instagram", "referred Entrants were 19% of the total". Counts above one per person use "each": "2.5 Entries each", "1.5 visits each". Comparisons use the letter x with no space: "1.5x the typical campaign". A rate of "0.52 joins per Entrant" becomes "about 52% of Entrants joined". Reference tables keep per-100 columns, which can exceed 100. Translate those cells to percentages or "each" in the answer.
 
-Use two figures per paragraph, three at the outside, sharing one denominator. Pick the figure that decides the recommendation and a second only when it earns its place. Put any remaining figures in a table. If the reader's size is unknown, ask or identify the middle case you use.
+Quote at most two figures per point, chosen because they decide the reader's question. Leave other figures in the reference, including figures that would only lengthen a table. If the reader's size is unknown, ask or identify the middle case you use.
 
 Copy every figure from the open reference. Before sending, search the reference for every quoted figure, then check its row label and column header against the sentence. Check Entry Method counts against what was counted inside an Action, and Prize-value-per-email against stated Prize value. A configuration row supports only the dimensions it contains.
 
 Use the count printed beside the figure's own table. A table headed "1,000 or more Entrants" describes that group. A rate per Entrant measures a different thing from a share of campaigns. "Email signups per Entrant, where offered" at 0.96 means campaigns offering it saw about 96% of Entrants sign up.
 
-Share one sample count only across metrics with the same population. Otherwise give each metric its own count there, or keep only the primary metric. Describe the source in the reader's words, such as "across 3,954 campaigns" or "from Gleam campaign data", once at the section's end. Keep "extracted" as an internal evidence label.
+Share one sample count only across metrics with the same population. Otherwise keep only metrics whose sample counts and relevant missing-data notes fit one short source line. Give that line only when quoting figures, in plain words naming the campaigns counted. Keep file names, keys and "extracted" internal. Leave source blocks and extra figures in the reference.
 
 Take both sides of a comparison from the same table and use its like-for-like row. Read both cells before claiming one is higher. Recompute every stated difference from the figures printed beside it: 403 against 460 is about 12% fewer. Retain only differences that the quoted figures reproduce. Before a superlative such as "most", "largest", "best" or "cheapest", sort and check the relevant column.
 

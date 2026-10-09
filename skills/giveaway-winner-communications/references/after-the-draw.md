@@ -44,7 +44,7 @@ Common practice, our data doesn't cover this. The series starts at entry. The op
 
 After message three the subscriber either joins the core list or drops out under the hygiene rule below. Three messages is the practice, chosen so the sequence finishes before entry interest fades. Adjust the count to what the business has to say.
 
-## The code for everyone who did not win
+## The code for non-Winners with marketing consent
 
 Honor any promised offer, including its recipients, value and conditions. If no offer was promised, an optional thank-you code is a practical choice for a store. Send it only where the recorded marketing consent covers it. Mechanics, from practice:
 
@@ -63,7 +63,7 @@ Send the Winners email and the whole welcome series from a separate stream, segm
 
 A giveaway list opens and clicks less than a list built from purchases. Mailbox providers read engagement per sending domain and stream, so a large low-engagement send lands the core list in the promotions tab or the spam folder alongside it. The separation costs one segment in the email tool and protects the asset the giveaway was meant to grow.
 
-Move an address to the core list only when the recorded consent covers it and there is stronger engagement evidence: provider-filtered human clicks, a reply, a purchase or explicit reconfirmation. An open alone does not establish engagement. Check the provider's current [Mailchimp Apple privacy guidance](https://mailchimp.com/help/apple-privacy-faq/) or equivalent help page for how it filters automated activity.
+Move an address to the core list only when the recorded consent covers it and there is stronger engagement evidence: clicks that your email tool identifies as coming from people after filtering automated activity, a reply, a purchase or explicit reconfirmation. An open alone does not establish engagement. Check the provider's current [Mailchimp Apple privacy guidance](https://mailchimp.com/help/apple-privacy-faq/) or equivalent help page for how it filters automated activity.
 
 ## Watch the send
 
@@ -72,7 +72,7 @@ Read these in the email provider within a day or two of the Winners email, for t
 - Unsubscribe rate on that send.
 - Spam complaint rate on that send.
 - Bounce rate, hard bounces especially, which say how many addresses were typed to win and never to be read.
-- Provider-filtered human clicks, replies, purchases and explicit reconfirmations. Treat open share as uncertain because privacy features can generate opens without a person reading.
+- Clicks after your email tool has filtered automated activity, replies, purchases and explicit reconfirmations. Treat open share as uncertain because privacy features can generate opens without a person reading.
 
 A complaint rate that jumps on the Winners email usually means the entry form did not make the marketing opt-in obvious, so people who only wanted a Prize are receiving marketing. Fix the form before the next campaign. Set the numbers down beside the campaign report so the next giveaway has something to compare with.
 

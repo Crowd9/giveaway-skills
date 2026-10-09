@@ -152,6 +152,8 @@ Typical Entrant counts have held near 470 to 600 since 2021 and Conversion Rate 
 
 `scripts/roi.py` prices a campaign before or after it runs. Give it what the Prizes cost you, the stated value you advertise, promotion and admin spend, and either expected Entrants (with the actions you will offer) or the actual counts of emails, follows and referrals. It prints cost per result, stated value per result beside the benchmark for the industry or campaign size, and either the return per dollar on the per-unit values you supply or the breakeven value per email when there are email signups. If stated retail value is unknown, omit the script's stated-value rows from the answer: without `--stated-value`, it uses Prize cost in those rows.
 
+Before quoting cost per email, reconcile the script's total to the budget shown to the reader, including the capped consolation liability and reserve. Allocate each cost once across the script's cost inputs. Divide that same total by the actual or explicitly assumed email count, and name the count beside the result. If using the script's estimated count, label it as an assumption and distinguish email signups from all Entrants. With neither a known count nor an explicit assumption, omit the per-email price.
+
 Value per email is the business's number: expected revenue per subscriber over the period they care about, or the price of the same list from another channel. Say so in the answer and never invent one. A breakeven figure with no value attached is still useful: "each address has to be worth 0.79 USD" is a question the business can answer.
 
 ## Reading cost per asset as acquisition cost
