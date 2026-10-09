@@ -4,10 +4,10 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 
 | Skill | Version |
 |---|---|
-| giveaway-prize-picker | 1.3.51 |
+| giveaway-prize-picker | 1.3.52 |
 | giveaway-entry-method-planner | 1.2.48 |
 | giveaway-timing-and-duration | 1.4.47 |
-| giveaway-winner-structure | 1.4.19 |
+| giveaway-winner-structure | 1.4.20 |
 | giveaway-promotion-plan | 1.3.48 |
 | giveaway-random-draw | 1.3.47 |
 | giveaway-winner-communications | 1.2.40 |
@@ -343,6 +343,14 @@ Repo version lives in `.claude-plugin/plugin.json` and `marketplace.json`. Bump 
 - 1.2.25 (2026-09-12): A claim pass sits beside the figure pass, for the sentences that carry no number.
 - 1.2.26 (2026-09-12): A question the data cannot answer gets labelled best practice.
 - 1.2.27 (2026-09-12): External values are not stored, only what to look up and why it changes the plan.
+
+## 3.0.30 (2026-10-10)
+
+A Winner who unfollowed after the draw is only disqualified if your terms said the follow had to stay. Otherwise the check is whether they completed the action when your terms say it counts.
+
+The budget calculator takes your real shipping quote for a bundle that goes out as one parcel, and an exact replacement reserve for a bundle mixing your own product with something you buy in. Existing budgets work out the same as before.
+
+For a first campaign, estimate how many people you can reach, then plan your Prize budget against campaigns of that size, such as 100 to 250 or 250 to 500 Entrants.
 
 ## 3.0.29 (2026-10-10)
 

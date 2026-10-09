@@ -187,7 +187,7 @@ Label every figure an estimate. Verify current prices when a tool is available a
 ```
 Prize retail value            (per unit x units)
 Your actual cost              (wholesale, own product at cost, partner-supplied at 0)
-Shipping / delivery           (per winner, destination-dependent)
+Shipping / delivery           (quoted parcels, destination-dependent)
 Duties, import tax, sales tax (who pays, and disclose it)
 Winner-side taxes             (some jurisdictions tax prizes, so disclose it)
 Substitution reserve          (if the item may be unavailable)
@@ -195,6 +195,10 @@ Admin time                    (drawing, contacting, verifying, chasing)
 Promotion                     (separate from the prize, and easy to starve)
 Contingency                   (5 to 10%)
 ```
+
+In `scripts/budget.py`, shipping defaults to a charge for each physical Prize unit. Use `--shipping-total` with the complete delivery quote when several items share a parcel or one Winner needs several parcels. The override replaces shipping only. Duties and taxes remain separate. Winner count does not determine parcel count.
+
+For mixed-cost Prizes, set `--cost-ratio` to total actual Prize cost divided by total retail value, then use `--substitute-reserve-amount` for the actual replacement cost being reserved. For example, an own product worth $100 that costs $30 plus a bought $500 device has $600 retail value and $530 actual cost. A ratio of `0.8833333333333333` and `--substitute-reserve-amount 500` reserve the device's full replacement cost. Use either that amount or `--substitute-reserve`, which prices reserve units using the global ratio.
 
 Typical Prize values across the campaigns behind these numbers, and by campaign size, are shown below [stated USD values only, 64,579 of 170,599 Prize listings, 62% of listings have no stated value, fully valued campaign totals from 42,892 campaigns]. Bigger campaigns declared bigger Prizes, and bigger businesses run bigger campaigns, so read that as who runs what, with no price of admission implied.
 

@@ -481,6 +481,44 @@
      "fail_example": "The 492 versus 513 figures are exactly the same campaigns as the adjusted comparison, so adjusting for Prize value alone proves that splitting your budget will lose Entrants."
     }
    ]
+  },
+  {
+   "id": 23,
+   "prompt": "This is our first giveaway. We expect 150 Entrants based on the audience we can reach. Which stated Prize pool benchmark should we compare our budget with? Is that an audience guarantee?",
+   "expected_output": "Use the 100 to 250 Entrant band and its 120 USD typical stated Prize pool. Treat this as a comparison, not an actual-cost requirement or a guaranteed audience. Do not replace the supplied estimate with the first-campaign median.",
+   "assertions": [
+    "Matches 150 expected Entrants to the 100 to 250 band and 120 USD. Distinguishes stated Prize value from actual spend, disclaims prediction, and preserves the user estimate. Includes available sample size and missing-data limitations without borrowing an overall count for the band.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "expected-audience-budget-band",
+     "criterion": "Matches 150 expected Entrants to the 100 to 250 band and 120 USD. Distinguishes stated Prize value from actual spend, disclaims prediction, and preserves the user estimate. Includes available sample size and missing-data limitations without borrowing an overall count for the band.",
+     "pass_example": "At your estimate of 150 Entrants, compare with the 100 to 250 band and its 120 USD stated Prize pool. That is stated value rather than actual spend and does not guarantee that audience. The band covers 33,021 campaigns. Actual spend is absent, and campaigns below 100 Entrants are outside the dataset.",
+     "fail_example": "Because this is your first campaign, expect 382 Entrants and budget against that guaranteed audience."
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "prompt": "This is our first giveaway. We expect 400 Entrants based on the audience we can reach. Which stated Prize pool benchmark should we compare our budget with? Is that an audience guarantee?",
+   "expected_output": "Use the 250 to 500 Entrant band and its 148 USD typical stated Prize pool. Do not assign the 100 to 250 band or 120 USD solely because this is a first campaign. Treat the comparison as neither an actual-cost requirement nor an audience guarantee.",
+   "assertions": [
+    "Matches 400 expected Entrants to the 250 to 500 band and 148 USD. Does not default first campaigns to 120 USD or forecast 382 Entrants. Distinguishes stated value from spend and prediction. Includes available sample size and missing-data limitations without borrowing an overall count for the band.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "expected-audience-budget-band",
+     "criterion": "Matches 400 expected Entrants to the 250 to 500 band and 148 USD. Does not default first campaigns to 120 USD or forecast 382 Entrants. Distinguishes stated value from spend and prediction. Includes available sample size and missing-data limitations without borrowing an overall count for the band.",
+     "pass_example": "At your estimate of 400 Entrants, compare with the 250 to 500 band and its 148 USD stated Prize pool. That is stated value rather than actual spend and does not guarantee that audience. The band covers 25,625 campaigns. Actual spend is absent, and campaigns below 100 Entrants are outside the dataset.",
+     "fail_example": "All first campaigns should use the 100 to 250 band and its 120 USD Prize pool regardless of expected audience."
+    }
+   ]
   }
  ]
 }

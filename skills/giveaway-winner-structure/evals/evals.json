@@ -321,6 +321,44 @@
      "fail_example": "Switch the published random draw to a nicest-comment selection."
     }
    ]
+  },
+  {
+   "id": 14,
+   "prompt": "Our drawn Entrant completed the required follow and shared post before closing, and our records confirm both. They unfollowed and deleted the post after closing. The published terms required completion during entry but said nothing about keeping either action in place. Should they fail verification?",
+   "expected_output": "Keep the Entrant eligible on these action checks because timely completion is verified and the terms did not require retention. Continue the remaining published eligibility checks. If completion evidence were missing, investigate it instead of automatically excluding.",
+   "assertions": [
+    "Requires verified completion at the time promised. Does not disqualify for removal after closing when retention was never required. Missing completion evidence prompts investigation before exclusion.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "published-action-retention",
+     "criterion": "Requires verified completion at the time promised. Does not disqualify for removal after closing when retention was never required. Missing completion evidence prompts investigation before exclusion.",
+     "pass_example": "The records confirm completion during entry. Removing the follow and post after closing does not breach the stated terms. Continue the remaining eligibility checks.",
+     "fail_example": "Disqualify them because the follow and shared post must still be present at verification."
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "prompt": "Our drawn Entrant completed the required follow and shared post before closing, then unfollowed and deleted the post. Our records confirm this happened before verification. The published terms explicitly required both actions to remain in place until verification. Should they fail verification?",
+   "expected_output": "Treat the confirmed removal before verification as a breach of the explicit retention requirement. Record the reason privately and follow the published backup procedure. Missing or uncertain evidence requires investigation first.",
+   "assertions": [
+    "Applies the explicit retention requirement through verification and confirms the breach before exclusion. Records the reason privately and uses the published backup procedure. Does not excuse removal merely because entry has closed.",
+    "Reject contradictory advice anywhere in the answer."
+   ],
+   "files": [],
+   "checks": [],
+   "review_checks": [
+    {
+     "id": "published-action-retention",
+     "criterion": "Applies the explicit retention requirement through verification and confirms the breach before exclusion. Records the reason privately and uses the published backup procedure. Does not excuse removal merely because entry has closed.",
+     "pass_example": "The records confirm removal before the promised retention period ended. Record that breach privately and follow the published backup procedure.",
+     "fail_example": "They completed the actions before closing, so the retention clause can be ignored."
+    }
+   ]
   }
  ]
 }

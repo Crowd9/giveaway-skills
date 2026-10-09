@@ -240,8 +240,8 @@ Most giveaway advice is somebody's opinion. These skills are built on 116,499 re
 
 Some of what that shows:
 
-- **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so plan against 382.
-- **The largest size band has the smallest typical Prize pool.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD, which is the biggest group in the data and the row a first campaign should budget against.
+- **A first campaign drew 382 Entrants, and 25.5% of the people who saw it entered.** That is 17,247 businesses running their first. The all-campaign figure of 492 is set by the businesses that run giveaways constantly, so use 382 for a first-campaign comparison, not as a forecast.
+- **The smallest audience band is the largest group in the data.** 28% drew 100 to 250 Entrants on a stated Prize pool of about 120 USD. Choose the budget comparison from your expected audience size, including for a first campaign.
 - **An email address cost about 0.39 USD of stated Prize value** in a campaign of 1,000 to 2,500 Entrants, and 0.16 USD in campaigns over 10,000.
 - **Stated Prize value per recorded email signup varied by industry.** Among campaigns offering email signup with every Prize valued in USD, music and media recorded 0.09 USD per signup and software 1.19.
 - **Larger stated Prize pools were associated with more Entrants.** Among campaigns with fully stated Prize values, ten times the Prize value came with about 2.2 times the Entrants. Stated value accounted for about 23% of the observed spread in Entrant counts, without establishing the effect of extra spending.

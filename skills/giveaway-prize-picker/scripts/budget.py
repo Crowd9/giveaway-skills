@@ -11,12 +11,21 @@ Check the arithmetic still works after an edit.
 --cost-ratio is what a unit costs you as a fraction of retail (1.0 for bought at retail, 0.5 for own product at half).
 Pass --winners with the number of people winning to show cost per Winner. Prize units may share a Winner.
 Shipping and duty apply to physical units only (end the Prize name with "(digital)" to skip them).
+For bundles or multiple parcels, --shipping-total overrides calculated shipping with the complete delivery quote.
+For mixed-cost Prizes, --substitute-reserve-amount sets the actual replacement reserve instead of using the global cost ratio.
 Every figure is in one currency. For a Prize bought or shipped in another, convert before you enter it and pass --rate
 "1 USD = 0.92 EUR, 9 Sep 2026" so the rate and the date it was taken sit on the printed breakdown.
 """
 import argparse, json, math, sys
 
 def compute(a):
+    shipping_total = getattr(a, "shipping_total", None)
+    reserve_amount = getattr(a, "substitute_reserve_amount", None)
+    for field, value in (("shipping total", shipping_total), ("substitute reserve amount", reserve_amount)):
+        if value is not None and (not math.isfinite(value) or value < 0):
+            raise ValueError(field + " must be finite and nonnegative")
+    if reserve_amount is not None and a.substitute_reserve:
+        raise ValueError("choose substitute reserve units or an amount, not both")
     for field in ("cost_ratio", "shipping", "international_share", "international_shipping", "duty_rate", "tax_on_prize", "substitute_reserve", "admin_hours", "hourly", "promotion", "contingency"):
         value = getattr(a, field)
         if not math.isfinite(value) or value < 0:
@@ -52,14 +61,19 @@ def compute(a):
     phys_units = sum(p["units"] for p in prizes if not p["digital"])
     intl_units = phys_units * a.international_share; dom_units = phys_units - intl_units
     shipping = dom_units * a.shipping + intl_units * a.international_shipping
+    if shipping_total is not None:
+        shipping = shipping_total
     duty = sum(p["retail"] * p["units"] for p in prizes if not p["digital"]) * a.international_share * a.duty_rate
     winner_tax = retail_total * a.tax_on_prize
     substitute = a.substitute_reserve * (max((p["retail"] for p in prizes), default=0) * a.cost_ratio)
+    if reserve_amount is not None:
+        substitute = reserve_amount
     admin = a.admin_hours * a.hourly
     consolation_reserve = consolation["maximum_liability"] if consolation else 0
     subtotal = cost_total + shipping + duty + winner_tax + substitute + admin + a.promotion + consolation_reserve
     contingency = subtotal * a.contingency
-    lines = [("Prize cost to you (retail x cost ratio)", cost_total), ("Shipping (domestic + international units)", shipping),
+    shipping_label = "Shipping (quoted total)" if shipping_total is not None else "Shipping (domestic + international units)"
+    lines = [("Prize cost to you (retail x cost ratio)", cost_total), (shipping_label, shipping),
              ("Duties on international units", duty), ("Prize tax you cover", winner_tax), ("Substitute reserve", substitute),
              ("Admin time", admin), ("Promotion", a.promotion), ("Consolation maximum liability", consolation_reserve),
              ("Contingency", contingency)]
@@ -77,9 +91,12 @@ def main(argv):
     ap.add_argument("--currency", default="USD"); ap.add_argument("--prize", nargs=3, action="append", metavar=("NAME", "RETAIL", "UNITS"), default=[])
     ap.add_argument("--winners", type=int, help="number of people winning, which can differ from the number of Prize units")
     ap.add_argument("--cost-ratio", type=float, default=1.0); ap.add_argument("--shipping", type=float, default=0.0)
+    ap.add_argument("--shipping-total", type=float, help="total delivery quote for all parcels, overrides calculated shipping only")
     ap.add_argument("--international-share", type=float, default=0.0); ap.add_argument("--international-shipping", type=float, default=0.0)
     ap.add_argument("--duty-rate", type=float, default=0.0); ap.add_argument("--tax-on-prize", type=float, default=0.0)
-    ap.add_argument("--substitute-reserve", type=float, default=0.0, help="units of the most expensive Prize held back at cost")
+    reserve = ap.add_mutually_exclusive_group()
+    reserve.add_argument("--substitute-reserve", type=float, default=0.0, help="units of the most expensive Prize held back at cost")
+    reserve.add_argument("--substitute-reserve-amount", type=float, help="actual replacement reserve in the chosen currency, instead of units at the global cost ratio")
     ap.add_argument("--admin-hours", type=float, default=0.0); ap.add_argument("--hourly", type=float, default=0.0)
     ap.add_argument("--promotion", type=float, default=0.0); ap.add_argument("--contingency", type=float, default=0.08)
     ap.add_argument("--consolation-quantity", type=int, help="maximum number of consolation redemptions offered")
@@ -183,6 +200,51 @@ def self_test():
                 assert exc.code == 2
             else:
                 raise AssertionError("invalid Winner count accepted")
+    # Shipping quotes count parcels, independently of Prize units and Winners.
+    shipping_args = args + ["--shipping", "25", "--json"]
+    for extra, expected_shipping, expected_total in [
+        (["--winners", "1"], 50, 650),
+        (["--winners", "1", "--shipping-total", "25"], 25, 625),
+        (["--winners", "1", "--shipping-total", "50"], 50, 650),
+        (["--winners", "2", "--shipping-total", "65"], 65, 665),
+        (["--winners", "1", "--shipping-total", "0"], 0, 600),
+    ]:
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            assert main(shipping_args + extra) == 0
+        result = json.loads(output.getvalue())
+        assert result["lines"][1][1] == expected_shipping
+        assert result["total_estimate"] == expected_total
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(shipping_args + ["--shipping-total", "25", "--international-share", "0.5", "--duty-rate", "0.1"]) == 0
+    result = json.loads(output.getvalue())
+    assert dict(result["lines"])["Duties on international units"] == 30
+    assert result["total_estimate"] == 655
+    mixed = ["--prize", "Own product", "100", "1", "--prize", "Device", "500", "1",
+             "--cost-ratio", str(530 / 600), "--contingency", "0", "--json"]
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(mixed + ["--substitute-reserve-amount", "500"]) == 0
+    result = json.loads(output.getvalue())
+    assert result["lines"][0][1] == 530 and dict(result["lines"])["Substitute reserve"] == 500
+    assert result["total_estimate"] == 1030
+    with contextlib.redirect_stdout(io.StringIO()) as output:
+        assert main(mixed + ["--substitute-reserve-amount", "0"]) == 0
+    assert json.loads(output.getvalue())["total_estimate"] == 530
+    for option in ("--shipping-total", "--substitute-reserve-amount"):
+        for bad in ("-1", "nan", "inf"):
+            with contextlib.redirect_stderr(io.StringIO()):
+                try:
+                    main(args + [option, bad])
+                except SystemExit as exc:
+                    assert exc.code == 2
+                else:
+                    raise AssertionError("invalid override accepted: " + option)
+    with contextlib.redirect_stderr(io.StringIO()):
+        try:
+            main(mixed + ["--substitute-reserve", "1", "--substitute-reserve-amount", "500"])
+        except SystemExit as exc:
+            assert exc.code == 2
+        else:
+            raise AssertionError("conflicting reserve options accepted")
     print("self-test passed"); return 0
 
 if __name__ == "__main__": sys.exit(main(sys.argv[1:]))

@@ -118,7 +118,7 @@ Source: `analysis/output/prize_timing_cuts.json` (by_industry_ordinary, by_busin
 | 2,500 to 10,000 | 12,703 | 1,299 | 3,983 | 0.29 | 0.38 | 3,711 |
 | 10,000 or more | 3,171 | 3,000 | 16,186 | 0.16 | 0.19 | 16,633 |
 
-Bigger campaigns pay less per result on the stated figure, and they also have the audiences that make them big. A first campaign should budget against the 100 to 250 or 250 to 500 Entrant row, where the typical stated pool is 120 to 148 USD.
+Bigger campaigns pay less per result on the stated figure, and they also have the audiences that make them big. Choose the row matching your expected audience size, including for a first campaign. The 100 to 250 and 250 to 500 Entrant rows have typical stated pools of 120 and 148 USD respectively. These comparisons do not predict your audience.
 
 The 100 to 250 row costs more per email signup (1.03) than any band above it, which reads backwards. Only 23% of campaigns that size offer an email action at all, against 38% at 500 to 1,000, so the ratio rests on the few small campaigns that both valued their Prize and collected addresses [11,682 valued campaigns in the band]. Quote the stated pool for this band and treat its cost per email signup as thin.
 

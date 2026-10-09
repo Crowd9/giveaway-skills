@@ -14,7 +14,7 @@ Do these before contacting anyone. They use your own records and take minutes.
 
 - The entry exists in the frozen export with the same identifier the draw used.
 - It arrived inside the entry window, in the time zone the terms state.
-- Every required action is still complete: the follow is still in place, the shared post still exists, the answer was right.
+- Every required action was completed at the time specified by the published terms. Require a follow or shared post to remain in place only when the terms explicitly require that retention. A removed action alone fails this check only when it breaches that requirement. Missing completion evidence calls for investigation before any exclusion.
 - One entry per person per the terms. Look for the same person under a second email, a plus-addressed variant, or two handles with the same display name.
 - The person is not staff, a partner, their household, or a prior Winner the terms exclude.
 - The entered region and age fit the eligibility clause.

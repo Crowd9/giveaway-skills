@@ -74,3 +74,7 @@ These added cases are **not yet run against a model**. Synthetic passing and fai
 | 13 | published-draw-rules | not yet run against a model |
 
 Fixtures and replay manifest: `evals/fixtures/giveaway-winner-structure/` at the repository root. Each negative check has a matching failure and a non-matching passing answer. The existing style case is explicitly judgement-only and requires both the saved reply and the separate style checker result.
+
+## Published action retention regression, 10 October 2026
+
+Added paired judgement-only regression cases 14 and 15. The source instructions were checked against both branches. These cases have not been run against a model.

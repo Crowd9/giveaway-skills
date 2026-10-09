@@ -165,3 +165,7 @@ Added a meaning-review case for the corrected guidance. These evaluation specifi
 ## Answer scope regression, 10 October 2026
 
 Added assertions for the brief's answer corrections to an existing case. Not yet run against a model. Repository checks are recorded in the patch report.
+
+## Expected audience budget comparison regression, 10 October 2026
+
+Added paired judgement-only regression cases 23 and 24. The source instructions were checked against both branches. These cases have not been run against a model.
